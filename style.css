@@ -1592,3 +1592,155 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
         padding: 0 !important;
     }
 }
+
+/* ==========================================
+   ESTILOS DA OFENSIVA DIÁRIA (DAILY STREAK)
+   ========================================== */
+.header-actions-group {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    z-index: 100;
+}
+
+.streak-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(249, 115, 22, 0.15);
+    border: 1.5px solid #f97316;
+    color: #ffedd5;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
+    transition: all 0.3s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.streak-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.45);
+}
+
+.streak-badge #streak-count {
+    color: #fb923c;
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.btn-conquistas-header {
+    background: rgba(251, 191, 36, 0.15);
+    border: 1.5px solid #fbbf24;
+    color: #fef08a;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.btn-conquistas-header:hover {
+    background: rgba(251, 191, 36, 0.25);
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(251, 191, 36, 0.4);
+}
+
+/* ==========================================
+   ESTILOS DO MURAL DE CONQUISTAS (BADGES)
+   ========================================== */
+.modal-conquistas-box {
+    max-width: 680px !important;
+    width: 90% !important;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.grid-conquistas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.2rem 0;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.card-conquista {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-conquista.desbloqueada {
+    border-color: #fbbf24;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(217, 119, 6, 0.04));
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.15);
+}
+
+.card-conquista.desbloqueada:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(251, 191, 36, 0.3);
+}
+
+.card-conquista.bloqueada {
+    opacity: 0.55;
+    border-style: dashed;
+    background: var(--bg-color);
+    filter: grayscale(0.8);
+}
+
+.icon-conquista {
+    font-size: 2.4rem;
+    line-height: 1;
+    min-width: 45px;
+    text-align: center;
+}
+
+.info-conquista h4 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.info-conquista p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin: 0;
+}
+
+.data-desbloqueio {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: bold;
+    color: #d97706;
+}
+
+.status-bloqueado {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}

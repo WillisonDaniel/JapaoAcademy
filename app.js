@@ -354,6 +354,7 @@ function toggleModuloConcluido(modIdx, mode) {
         atualizarBadgeSRS(t);
         playBeep('success');
         mostrarToast(`✅ <strong>${modTitle}</strong> de ${labelCurso} concluído! <br><small>${deck.length} cards disponíveis no SRS.</small>`);
+        registrarAtividadeDiaria();
     } else {
         progressoGlobal[progressKey].splice(idx, 1);
         salvarProgressoGlobal();
@@ -802,6 +803,13 @@ function processGameResult(isCorrect, heardText = "") {
         if (!isInfiniteLives) { gStreak++; if (gStreak > gMaxStreak) gMaxStreak = gStreak; gScore += 10 + Math.floor(gStreak / 5); }
         else { gStreak = 0; gScore += 10; }
 
+        registrarAtividadeDiaria();
+        if (isVoice) {
+            const countVoice = (parseInt(localStorage.getItem('ja_voice_answers_count')) || 0) + 1;
+            localStorage.setItem('ja_voice_answers_count', countVoice);
+            if (countVoice >= 10) checarEConcederConquista('ach_voice_pro');
+        }
+
         card.classList.add('pop', 'glow-success');
         let heardHtml = (isVoice && heardText) ? `<div style="font-size:0.85rem; color:#15803d; font-weight:normal; margin-top:6px; text-transform:none;">🗣️ Você disse: "${heardText}"</div>` : "";
         feed.innerHTML = `✨ Perfeito! (${gCard.r})${meaningText} ${heardHtml}`; feed.style.color = '#22c55e'; feed.style.opacity = '1';
@@ -1057,6 +1065,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.setProperty('--current-primary', 'var(--game-primary)');
         initGameScreen();
     }
+
+    // Inicialização da Ofensiva Diária e Conquistas
+    garantirElementosCabecalhoEModal();
+    atualizarHeaderStreak();
+    checarConquistasGerais();
 });
 
 function renderQuizQuestion(questionObj, index) {
@@ -2097,6 +2110,11 @@ function renderizarConclusaoSRS() {
     const container = document.getElementById('conteudo-card-srs');
     const xpGanho = (srsAcertosSessao * 5) + (srsSessaoCards.length * 2);
 
+    // Registra sessão no SRS para contagem de conquistas e atividade diária
+    const srsCount = (parseInt(localStorage.getItem('ja_srs_reviews_count')) || 0) + 1;
+    localStorage.setItem('ja_srs_reviews_count', srsCount);
+    registrarAtividadeDiaria();
+
     container.innerHTML = `
         <span style="font-size: 4rem; animation: pop 0.5s;">🧠</span>
         <h2 style="color: #22c55e;">Sessão de Revisão Concluída!</h2>
@@ -2511,6 +2529,7 @@ function renderizarEtapa() {
         calcularProgressoGlobal();
         atualizarUIProgresso();
         sincronizarBaralhoSRS();
+        registrarAtividadeDiaria();
     }
 }
 
@@ -2785,4 +2804,300 @@ function tocarAudio(texto) {
         u.lang = 'ja-JP';
         window.speechSynthesis.speak(u);
     }
+}
+
+// ==========================================
+// SISTEMA DE OFENSIVA DIÁRIA (DAILY STREAK)
+// ==========================================
+
+function getTodayDateString() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function getYesterdayDateString() {
+    const d = new Date();
+    d.setDate(d.getDate() - 1);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function registrarAtividadeDiaria() {
+    const today = getTodayDateString();
+    const yesterday = getYesterdayDateString();
+
+    let streakData = { count: 0, lastActiveDate: null };
+    try {
+        const saved = localStorage.getItem('ja_streak_data');
+        if (saved) streakData = JSON.parse(saved);
+    } catch (e) { }
+
+    if (!streakData.count) streakData.count = 0;
+
+    if (streakData.lastActiveDate === today) {
+        // Já registrou hoje — mantém o contador atual
+    } else if (streakData.lastActiveDate === yesterday) {
+        // Incrementa se estudou ontem
+        streakData.count += 1;
+        streakData.lastActiveDate = today;
+        localStorage.setItem('ja_streak_data', JSON.stringify(streakData));
+        playBeep('success');
+        mostrarToast(`🔥 <strong>Incrível!</strong> Sua ofensiva diária aumentou para <strong>${streakData.count} dia(s) seguidos!</strong>`);
+    } else {
+        // Mais antigo ou nulo: reseta para 1
+        streakData.count = 1;
+        streakData.lastActiveDate = today;
+        localStorage.setItem('ja_streak_data', JSON.stringify(streakData));
+        mostrarToast(`🔥 <strong>Ofensiva Iniciada!</strong> 1º dia de estudo concluído hoje.`);
+    }
+
+    atualizarHeaderStreak();
+    checarConquistasGerais();
+}
+
+function atualizarHeaderStreak() {
+    garantirElementosCabecalhoEModal();
+
+    let streakData = { count: 0, lastActiveDate: null };
+    try {
+        const saved = localStorage.getItem('ja_streak_data');
+        if (saved) streakData = JSON.parse(saved);
+    } catch (e) { }
+
+    if (streakData.lastActiveDate && streakData.lastActiveDate !== getTodayDateString() && streakData.lastActiveDate !== getYesterdayDateString()) {
+        streakData.count = 0;
+        localStorage.setItem('ja_streak_data', JSON.stringify(streakData));
+    }
+
+    const countElem = document.getElementById('streak-count');
+    if (countElem) countElem.innerText = streakData.count || 0;
+}
+
+// ==========================================
+// SISTEMA DE CONQUISTAS (BADGES DESBLOQUEÁVEIS)
+// ==========================================
+
+const CATALOGO_CONQUISTAS = [
+    {
+        id: 'ach_first_step',
+        title: 'Primeiros Passos',
+        icon: '🐣',
+        desc: 'Concluiu o 1º Módulo de qualquer curso.'
+    },
+    {
+        id: 'ach_hira_master',
+        title: 'Mestre do Hiragana',
+        icon: '📜',
+        desc: 'Concluiu todos os módulos de Hiragana.'
+    },
+    {
+        id: 'ach_kata_master',
+        title: 'Mestre do Katakana',
+        icon: '🔤',
+        desc: 'Concluiu todos os módulos de Katakana.'
+    },
+    {
+        id: 'ach_kanji_n5',
+        title: 'Iniciado nos Ideogramas',
+        icon: '🏯',
+        desc: 'Concluiu todos os módulos do Kanji N5.'
+    },
+    {
+        id: 'ach_srs_10',
+        title: 'Memória de Aço',
+        icon: '🧠',
+        desc: 'Completou 10 sessões de revisão no SRS.'
+    },
+    {
+        id: 'ach_streak_7',
+        title: 'Hábito Imparável',
+        icon: '🔥',
+        desc: 'Atingiu 7 dias seguidos de ofensiva diária.'
+    },
+    {
+        id: 'ach_voice_pro',
+        title: 'Voz de Ouro',
+        icon: '🗣️',
+        desc: 'Acertou 10 respostas por voz no Minigame.'
+    }
+];
+
+function obteConquistasDesbloqueadas() {
+    try {
+        const salvo = localStorage.getItem('ja_unlocked_achievements');
+        return salvo ? JSON.parse(salvo) : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function checarEConcederConquista(id) {
+    const unlocked = obteConquistasDesbloqueadas();
+    if (!unlocked[id]) {
+        const c = CATALOGO_CONQUISTAS.find(item => item.id === id);
+        if (!c) return;
+
+        unlocked[id] = new Date().toLocaleDateString('pt-BR');
+        localStorage.setItem('ja_unlocked_achievements', JSON.stringify(unlocked));
+        playBeep('success');
+
+        mostrarToast(`
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 2.2rem; animation: pop 0.5s;">🏆</span>
+                <div>
+                    <div style="font-size: 0.72rem; color: #fbbf24; text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px;">Conquista Desbloqueada!</div>
+                    <strong style="font-size: 0.98rem; color: #fff;">${c.icon} ${c.title}</strong>
+                </div>
+            </div>
+        `, 4500);
+
+        renderizarMuralConquistas();
+    }
+}
+
+function checarConquistasGerais() {
+    const totalModuloConcluidos = (progressoGlobal.modulosConcluidos || []).length +
+        (progressoGlobal.progress_hiragana || []).length +
+        (progressoGlobal.progress_katakana || []).length +
+        (progressoGlobal.progress_kanji || []).length;
+
+    if (totalModuloConcluidos >= 1) checarEConcederConquista('ach_first_step');
+
+    const totalHira = (typeof HIRA_COURSE_DATA !== 'undefined' ? HIRA_COURSE_DATA.length : 10);
+    if ((progressoGlobal.progress_hiragana || []).length >= totalHira) checarEConcederConquista('ach_hira_master');
+
+    const totalKata = (typeof KATA_COURSE_DATA !== 'undefined' ? KATA_COURSE_DATA.length : 10);
+    if ((progressoGlobal.progress_katakana || []).length >= totalKata) checarEConcederConquista('ach_kata_master');
+
+    const totalKanjiN5 = (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data.length : 10);
+    if ((progressoGlobal.progress_kanji || []).length >= totalKanjiN5) checarEConcederConquista('ach_kanji_n5');
+
+    const totalSRS = parseInt(localStorage.getItem('ja_srs_reviews_count')) || 0;
+    if (totalSRS >= 10) checarEConcederConquista('ach_srs_10');
+
+    let streakData = { count: 0 };
+    try {
+        const s = localStorage.getItem('ja_streak_data');
+        if (s) streakData = JSON.parse(s);
+    } catch (e) { }
+    if ((streakData.count || 0) >= 7) checarEConcederConquista('ach_streak_7');
+
+    const totalVoz = parseInt(localStorage.getItem('ja_voice_answers_count')) || 0;
+    if (totalVoz >= 10) checarEConcederConquista('ach_voice_pro');
+}
+
+// AUTO-INJEÇÃO DE COMPONENTES DE CABEÇALHO E MODAL
+function garantirElementosCabecalhoEModal() {
+    const header = document.querySelector('header');
+    if (header) {
+        let group = header.querySelector('.header-actions-group');
+        if (!group) {
+            group = document.createElement('div');
+            group.className = 'header-actions-group';
+
+            const btnTema = header.querySelector('.theme-btn');
+            if (btnTema) {
+                btnTema.parentNode.insertBefore(group, btnTema);
+                group.appendChild(btnTema);
+            } else {
+                header.appendChild(group);
+            }
+        }
+
+        if (!document.getElementById('streak-badge-header')) {
+            const streakDiv = document.createElement('div');
+            streakDiv.id = 'streak-badge-header';
+            streakDiv.className = 'streak-badge';
+            streakDiv.title = 'Dias seguidos de estudo';
+            streakDiv.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
+            group.insertBefore(streakDiv, group.firstChild);
+        }
+
+        if (!document.getElementById('btn-conquistas-hdr')) {
+            const btnAc = document.createElement('button');
+            btnAc.id = 'btn-conquistas-hdr';
+            btnAc.className = 'btn-conquistas-header';
+            btnAc.title = 'Mural de Conquistas';
+            btnAc.innerHTML = `🏆 Conquistas`;
+            btnAc.onclick = abrirModalConquistas;
+            group.insertBefore(btnAc, group.querySelector('.theme-btn') || null);
+        }
+    }
+
+    if (!document.getElementById('modal-conquistas')) {
+        const modalDiv = document.createElement('div');
+        modalDiv.id = 'modal-conquistas';
+        modalDiv.className = 'modal-overlay';
+        modalDiv.style.display = 'none';
+        modalDiv.innerHTML = `
+            <div class="modal-box modal-conquistas-box">
+                <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:0.8rem;">
+                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🏆 Mural de Conquistas</h2>
+                    <button onclick="fecharModalConquistas()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.8rem;">
+                    Desbloqueie medalhas exclusivas completando suas metas diárias e lições!
+                </p>
+                <div id="grid-conquistas" class="grid-conquistas"></div>
+                <button onclick="fecharModalConquistas()" class="fechar-modal">Fechar</button>
+            </div>
+        `;
+        document.body.appendChild(modalDiv);
+    }
+}
+
+function abrirModalConquistas() {
+    garantirElementosCabecalhoEModal();
+    renderizarMuralConquistas();
+    const modal = document.getElementById('modal-conquistas');
+    if (modal) modal.style.display = 'flex';
+}
+
+function fecharModalConquistas() {
+    const modal = document.getElementById('modal-conquistas');
+    if (modal) modal.style.display = 'none';
+}
+
+function renderizarMuralConquistas() {
+    const grid = document.getElementById('grid-conquistas');
+    if (!grid) return;
+
+    const unlocked = obteConquistasDesbloqueadas();
+    let html = '';
+
+    CATALOGO_CONQUISTAS.forEach(c => {
+        const isUnlocked = !!unlocked[c.id];
+        const dataStr = unlocked[c.id];
+
+        if (isUnlocked) {
+            html += `
+                <div class="card-conquista desbloqueada">
+                    <div class="icon-conquista">${c.icon}</div>
+                    <div class="info-conquista">
+                        <h4>${c.title}</h4>
+                        <p>${c.desc}</p>
+                        <span class="data-desbloqueio">✨ Conquistado em ${dataStr}</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            html += `
+                <div class="card-conquista bloqueada">
+                    <div class="icon-conquista">🔒</div>
+                    <div class="info-conquista">
+                        <h4>${c.title}</h4>
+                        <p>${c.desc}</p>
+                        <span class="status-bloqueado">🔒 Bloqueado</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
+
+    grid.innerHTML = html;
 }
