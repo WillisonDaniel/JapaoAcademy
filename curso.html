@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Japonês - Japão Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body data-mode="curso">
+    <header>
+        <a href="index.html" class="btn-voltar">⬅ Voltar ao Menu</a>
+        <h1>🎌 Curso de Japonês (CEFR)</h1>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <!-- TELA 1: HUB DE NÍVEIS -->
+    <main id="hub-niveis" class="container">
+        <!-- BANNER DE REVISÃO SRS -->
+        <div class="banner-srs">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
+                <h3>Revisão Inteligente da Memória</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS()" class="btn-srs-action">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <h2>Hub de Proficiência</h2>
+
+        <!-- DASHBOARD DE PROGRESSO GLOBAL DO CURSO -->
+        <div id="dashboard-progresso-global" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 25px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">📈 Progresso Geral do Curso</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">105 Módulos em 4 Níveis (A1 ➔ A2 ➔ B1 ➔ B2)</div>
+                </div>
+                <div style="text-align: right;">
+                    <span id="progresso-global-percent" style="font-size: 1.4rem; font-weight: bold; color: #22c55e;">0%</span>
+                    <div id="progresso-global-xp" style="font-weight: bold; color: #fbbf24; font-size: 0.9rem;">0 XP</div>
+                </div>
+            </div>
+            <div style="background: var(--bg-color); height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border-color);">
+                <div id="progresso-global-bar" style="background: linear-gradient(90deg, #22c55e, #3b82f6); width: 0%; height: 100%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <button id="btn-ver-certificado-hub" onclick="abrirModalCertificado()" style="display: none; background: linear-gradient(135deg, #b45309, #d97706); color: #fff; border: none; padding: 14px 24px; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; margin-bottom: 20px; width: 100%; box-shadow: var(--shadow);">
+            🎓 Ver Meu Certificado de Fluência B2
+        </button>
+
+        <div class="grid-niveis">
+            <div class="card-nivel" id="card-nivel-a1" onclick="abrirTrilha('A1')">
+                <span class="tag" id="tag-nivel-a1" style="background: #22c55e; color: #fff;">INICIANTE</span>
+                <h3>Nível A1</h3>
+                <p>31 Módulos • Sobrevivência & Etiqueta</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-a2" onclick="abrirTrilha('A2')">
+                <span class="tag" id="tag-nivel-a2" style="background: #e63946; color: #fff;">DISPONÍVEL</span>
+                <h3>Nível A2</h3>
+                <p>30 Módulos • Comunicação do Dia a Dia</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-b1" onclick="abrirTrilha('B1')">
+                <span class="tag" id="tag-nivel-b1" style="background: #028090; color: #fff;">DISPONÍVEL</span>
+                <h3>Nível B1</h3>
+                <p>24 Módulos • Intermediário & Fluência Social</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-b2" onclick="abrirTrilha('B2')">
+                <span class="tag" id="tag-nivel-b2" style="background: #b45309; color: #fff;">DISPONÍVEL</span>
+                <h3>Nível B2</h3>
+                <p>20 Módulos • Avançado & Imersão Total</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A1 ATUALIZADA (6 MÓDULOS) -->
+    <main id="trilha-a1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A1 (Seções 1 a 6)</h2>
+
+        <!-- SEÇÃO 1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Primeiros Passos & Etiqueta</h3>
+            <div id="lista-modulos-secao1">
+                <button class="btn-modulo" id="mod-0-btn" onclick="iniciarModulo(0, 'A1')">
+                    🔓 Módulo 1: Saudações Básicas & 'Desu'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-1-btn" onclick="iniciarModulo(1, 'A1')" disabled>
+                    🔒 Módulo 2: Prazer em Conhecer & Cartões de Visita
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-2-btn" onclick="iniciarModulo(2, 'A1')" disabled>
+                    🔒 Módulo 3: As Palavras Mágicas: Arigatou & Sumimasen
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-3-btn" onclick="iniciarModulo(3, 'A1')" disabled>
+                    🔒 Módulo 4: Despedidas e Variações: Sayounara vs. Ja ne
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-4-btn" onclick="iniciarModulo(4, 'A1')" disabled>
+                    🔒 Módulo 5: Pessoas, Pronomes e Respeito (-san, -sensei)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 COMPLETA (MÓDULOS 6 AO 10) -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Identidade & Profissões</h3>
+            <div id="lista-modulos-secao2">
+                <button class="btn-modulo bloqueado" id="mod-5-btn" onclick="iniciarModulo(5, 'A1')" disabled>
+                    🔒 Módulo 6: Nacionalidades e Países (Jin & Go)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-6-btn" onclick="iniciarModulo(6, 'A1')" disabled>
+                    🔒 Módulo 7: Profissões & Ocupações (Gakusei, Kaishain)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-7-btn" onclick="iniciarModulo(7, 'A1')" disabled>
+                    🔒 Módulo 8: A Magia da Pergunta: O Marcador 'Ka' e 'Dare'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-8-btn" onclick="iniciarModulo(8, 'A1')" disabled>
+                    🔒 Módulo 9: Números de 1 a 10 & Dizendo sua Idade (-sai)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-9-btn" onclick="iniciarModulo(9, 'A1')" disabled>
+                    🔒 Módulo 10: O Conector da Empatia: Partícula 'Mo' & Revisão
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 (MÓDULOS 11 AO 15) -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Localização, Lugares & Movimento</h3>
+            <div id="lista-modulos-secao3">
+                <button class="btn-modulo bloqueado" id="mod-10-btn" onclick="iniciarModulo(10, 'A1')" disabled>
+                    🔒 Módulo 11: Onde Fica? (Kore, Sore, Are & Koko, Soko, Asoko)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-11-btn" onclick="iniciarModulo(11, 'A1')" disabled>
+                    🔒 Módulo 12: Verbos de Existência: Imasu & Arimasu
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-12-btn" onclick="iniciarModulo(12, 'A1')" disabled>
+                    🔒 Módulo 13: Verbos de Movimento: Ikimasu, Kimasu, Kaerimasu
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-13-btn" onclick="iniciarModulo(13, 'A1')" disabled>
+                    🔒 Módulo 14: Meios e Ferramentas: A Partícula 'de' (で)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-14-btn" onclick="iniciarModulo(14, 'A1')" disabled>
+                    🔒 Módulo 15: Perguntando 'Quando?' & Datas (Itsu, -gatsu, -nichi)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 (MÓDULOS 16 AO 20) -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Números, Dinheiro & Compras</h3>
+            <div id="lista-modulos-secao4">
+                <button class="btn-modulo bloqueado" id="mod-15-btn" onclick="iniciarModulo(15, 'A1')" disabled>
+                    🔒 Módulo 16: Contando de 1 a 10
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-16-btn" onclick="iniciarModulo(16, 'A1')" disabled>
+                    🔒 Módulo 17: Dinheiro e Preços
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-17-btn" onclick="iniciarModulo(17, 'A1')" disabled>
+                    🔒 Módulo 18: Comprando na Loja de Conveniência
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-18-btn" onclick="iniciarModulo(18, 'A1')" disabled>
+                    🔒 Módulo 19: Comida & Bebida I
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-19-btn" onclick="iniciarModulo(19, 'A1')" disabled>
+                    🔒 Módulo 20: Comida & Bebida II e Sabores
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 (MÓDULOS 21 AO 25) -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Tempo, Horários & Rotina</h3>
+            <div id="lista-modulos-secao5">
+                <button class="btn-modulo bloqueado" id="mod-20-btn" onclick="iniciarModulo(20, 'A1')" disabled>
+                    🔒 Módulo 21: Que Horas São? (...ji, ...fun, Han)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-21-btn" onclick="iniciarModulo(21, 'A1')" disabled>
+                    🔒 Módulo 22: Os Dias da Semana
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-22-btn" onclick="iniciarModulo(22, 'A1')" disabled>
+                    🔒 Módulo 23: As Partes do Dia e do Tempo
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-23-btn" onclick="iniciarModulo(23, 'A1')" disabled>
+                    🔒 Módulo 24: Verbos de Ação I - Consumo
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-24-btn" onclick="iniciarModulo(24, 'A1')" disabled>
+                    🔒 Módulo 25: Verbos de Ação II - Movimento
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 (MÓDULOS 26 AO 31) -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Navegação, Existência & Desafio Final</h3>
+            <div id="lista-modulos-secao6">
+                <button class="btn-modulo bloqueado" id="mod-25-btn" onclick="iniciarModulo(25, 'A1')" disabled>
+                    🔒 Módulo 26: Pelo Transporte Público (Densha, Basu, Takushi)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-26-btn" onclick="iniciarModulo(26, 'A1')" disabled>
+                    🔒 Módulo 27: Perdido na Rua: Onde Fica? (Doko & Koko, Soko, Asoko)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-27-btn" onclick="iniciarModulo(27, 'A1')" disabled>
+                    🔒 Módulo 28: Coisas que Existem - Arimasu (Inanimado)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-28-btn" onclick="iniciarModulo(28, 'A1')" disabled>
+                    🔒 Módulo 29: Pessoas e Animais que Existem - Imasu (Animado)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-29-btn" onclick="iniciarModulo(29, 'A1')" disabled>
+                    🔒 Módulo 30: Conectando Ideias Básicas (Soshite, Demo, Mo)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-30-btn" onclick="iniciarModulo(30, 'A1')" disabled>
+                    🏆 Módulo 31: Revisão Geral & O Desafio do Aeroporto
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TELA TRILHA NÍVEL A2 -->
+    <main id="trilha-a2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A2 (Seções 1 a 6)</h2>
+
+        <!-- SEÇÃO 1 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Minha Rotina & Estilo de Vida</h3>
+            <div id="lista-modulos-a2-secao1">
+                <button class="btn-modulo" id="mod-a2-0-btn" onclick="iniciarModulo(0, 'A2')">
+                    🔓 Módulo 1: A Minha Rotina Diária
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-1-btn" onclick="iniciarModulo(1, 'A2')" disabled>
+                    🔒 Módulo 2: Com que Frequência? (Advérbios)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-2-btn" onclick="iniciarModulo(2, 'A2')" disabled>
+                    🔒 Módulo 3: Fim de Semana e Hobbies
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-3-btn" onclick="iniciarModulo(3, 'A2')" disabled>
+                    🔒 Módulo 4: Adjetivos em Ação (Parte 1: -i)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-4-btn" onclick="iniciarModulo(4, 'A2')" disabled>
+                    🔒 Módulo 5: Adjetivos em Ação (Parte 2: -na)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Passado, Experiências e Histórias</h3>
+            <div id="lista-modulos-a2-secao2">
+                <button class="btn-modulo bloqueado" id="mod-a2-5-btn" onclick="iniciarModulo(5, 'A2')" disabled>
+                    🔒 Módulo 6: O Passado dos Verbos (-mashita)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-6-btn" onclick="iniciarModulo(6, 'A2')" disabled>
+                    🔒 Módulo 7: O Passado dos Adjetivos (-katta / -deshita)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-7-btn" onclick="iniciarModulo(7, 'A2')" disabled>
+                    🔒 Módulo 8: Onde Você Esteve? (Viagens)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-8-btn" onclick="iniciarModulo(8, 'A2')" disabled>
+                    🔒 Módulo 9: Expressando Gostos e Habilidades (Suki/Jouzu)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-9-btn" onclick="iniciarModulo(9, 'A2')" disabled>
+                    🔒 Módulo 10: Comparando Coisas (Yori / Hou ga)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Conexão, Pedidos e Regras</h3>
+            <div id="lista-modulos-a2-secao3">
+                <button class="btn-modulo bloqueado" id="mod-a2-10-btn" onclick="iniciarModulo(10, 'A2')" disabled>
+                    🔒 Módulo 11: A Mágica da Forma TE (Conjunções)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-11-btn" onclick="iniciarModulo(11, 'A2')" disabled>
+                    🔒 Módulo 12: Pedindo Favores com Educação (...te kudasai)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-12-btn" onclick="iniciarModulo(12, 'A2')" disabled>
+                    🔒 Módulo 13: O que você está fazendo agora? (...te imasu)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-13-btn" onclick="iniciarModulo(13, 'A2')" disabled>
+                    🔒 Módulo 14: Pedindo Permissão (...te mo ii desu ka)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-14-btn" onclick="iniciarModulo(14, 'A2')" disabled>
+                    🔒 Módulo 15: Proibições e Regras (...te wa ikemasen)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Compras, Viagens e Navegação Avançada</h3>
+            <div id="lista-modulos-a2-secao4">
+                <button class="btn-modulo bloqueado" id="mod-a2-15-btn" onclick="iniciarModulo(15, 'A2')" disabled>
+                    🔒 Módulo 16: Conectando Ações em Sequência
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-16-btn" onclick="iniciarModulo(16, 'A2')" disabled>
+                    🔒 Módulo 17: Comprando Passagens e Traslados
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-17-btn" onclick="iniciarModulo(17, 'A2')" disabled>
+                    🔒 Módulo 18: No Hotel e Ryokan
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-18-btn" onclick="iniciarModulo(18, 'A2')" disabled>
+                    🔒 Módulo 19: Dando e Recebendo Direções Detalhadas
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-19-btn" onclick="iniciarModulo(19, 'A2')" disabled>
+                    🔒 Módulo 20: Expressando Desejos Pessoais (-tai)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Saúde, Clima e Sentimentos</h3>
+            <div id="lista-modulos-a2-secao5">
+                <button class="btn-modulo bloqueado" id="mod-a2-20-btn" onclick="iniciarModulo(20, 'A2')" disabled>
+                    🔒 Módulo 21: O Clima e as Estações do Ano
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-21-btn" onclick="iniciarModulo(21, 'A2')" disabled>
+                    🔒 Módulo 22: Na Farmácia e no Médico
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-22-btn" onclick="iniciarModulo(22, 'A2')" disabled>
+                    🔒 Módulo 23: Expressando Necessidade (...nakereba narimasen)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-23-btn" onclick="iniciarModulo(23, 'A2')" disabled>
+                    🔒 Módulo 24: Dando Conselhos Leves (...hou ga ii)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-24-btn" onclick="iniciarModulo(24, 'A2')" disabled>
+                    🔒 Módulo 25: Explicando Motivos e Razões (...kara)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 A2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Vida Social, Interações e Convites</h3>
+            <div id="lista-modulos-a2-secao6">
+                <button class="btn-modulo bloqueado" id="mod-a2-25-btn" onclick="iniciarModulo(25, 'A2')" disabled>
+                    🔒 Módulo 26: Fazendo Convites (...masen ka / ...mashou)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-26-btn" onclick="iniciarModulo(26, 'A2')" disabled>
+                    🔒 Módulo 27: Aceitando e Recusando com Delicadeza (Chotto...)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-27-btn" onclick="iniciarModulo(27, 'A2')" disabled>
+                    🔒 Módulo 28: Dar e Receber Presentes/Favores (Ageru/Kureru)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-28-btn" onclick="iniciarModulo(28, 'A2')" disabled>
+                    🔒 Módulo 29: Planos e Intenções para o Futuro (...tsumori)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-29-btn" onclick="iniciarModulo(29, 'A2')" disabled>
+                    🏆 Módulo 30: Desafio de Simulação A2
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TELA TRILHA NÍVEL B1 -->
+    <main id="trilha-b1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B1 (Seções 1 a 6)</h2>
+
+        <!-- SEÇÃO 1 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: O Mundo Informal & Conversa Fluida</h3>
+            <div id="lista-modulos-b1-secao1">
+                <button class="btn-modulo" id="mod-b1-0-btn" onclick="iniciarModulo(0, 'B1')">
+                    🔓 Módulo 1: A Forma Casual (Futsuu-kei)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-1-btn" onclick="iniciarModulo(1, 'B1')" disabled>
+                    🔒 Módulo 2: Contração de Verbos na Fala Real (...teru, ...nakya)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-2-btn" onclick="iniciarModulo(2, 'B1')" disabled>
+                    🔒 Módulo 3: Expressando Citações e Pensamentos (...to omoimasu)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-3-btn" onclick="iniciarModulo(3, 'B1')" disabled>
+                    🔒 Módulo 4: Dúvidas e Incertezas (...ka dou ka / ...kamo)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Narrativa, Causas e Imprevistos</h3>
+            <div id="lista-modulos-b1-secao2">
+                <button class="btn-modulo bloqueado" id="mod-b1-4-btn" onclick="iniciarModulo(4, 'B1')" disabled>
+                    🔒 Módulo 5: Explicando Razões com Nuance (...node / ...kara)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-5-btn" onclick="iniciarModulo(5, 'B1')" disabled>
+                    🔒 Módulo 6: Arrependimento e Conclusão (...chau / ...te shimaimashita)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-6-btn" onclick="iniciarModulo(6, 'B1')" disabled>
+                    🔒 Módulo 7: Voz Passiva (Ukemi)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-7-btn" onclick="iniciarModulo(7, 'B1')" disabled>
+                    🔒 Módulo 8: Situações de Incômodo (Passiva de Incômodo)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Hipóteses, Condições e Mudanças</h3>
+            <div id="lista-modulos-b1-secao3">
+                <button class="btn-modulo bloqueado" id="mod-b1-8-btn" onclick="iniciarModulo(8, 'B1')" disabled>
+                    🔒 Módulo 9: Condicionais I (Tara & To)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-9-btn" onclick="iniciarModulo(9, 'B1')" disabled>
+                    🔒 Módulo 10: Condicionais II (Ba & Nara)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-10-btn" onclick="iniciarModulo(10, 'B1')" disabled>
+                    🔒 Módulo 11: Mudança de Estado e Hábitos (...you ni naru)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-11-btn" onclick="iniciarModulo(11, 'B1')" disabled>
+                    🔒 Módulo 12: Tentativas e Experiências (...te miru / ...koto ga aru)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Transações de Favores & Relações Humanas</h3>
+            <div id="lista-modulos-b1-secao4">
+                <button class="btn-modulo bloqueado" id="mod-b1-12-btn" onclick="iniciarModulo(12, 'B1')" disabled>
+                    🔒 Módulo 13: Favores em Ação I (...te ageru / ...te kureru)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-13-btn" onclick="iniciarModulo(13, 'B1')" disabled>
+                    🔒 Módulo 14: Favores em Ação II (...te morau)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-14-btn" onclick="iniciarModulo(14, 'B1')" disabled>
+                    🔒 Módulo 15: Voz Causativa (Saseru)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-15-btn" onclick="iniciarModulo(15, 'B1')" disabled>
+                    🔒 Módulo 16: Causativa-Passiva (Saserareru)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Sociedade, Trabalho & Introdução ao Keigo</h3>
+            <div id="lista-modulos-b1-secao5">
+                <button class="btn-modulo bloqueado" id="mod-b1-16-btn" onclick="iniciarModulo(16, 'B1')" disabled>
+                    🔒 Módulo 17: Linguagem de Respeito (Sonkeigo)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-17-btn" onclick="iniciarModulo(17, 'B1')" disabled>
+                    🔒 Módulo 18: Linguagem de Humildade (Kenjougo)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-18-btn" onclick="iniciarModulo(18, 'B1')" disabled>
+                    🔒 Módulo 19: E-mails e Telefonemas Profissionais
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-19-btn" onclick="iniciarModulo(19, 'B1')" disabled>
+                    🔒 Módulo 20: Entrevistas de Emprego & Apresentação Corporativa
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 B1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Cultura, Nuances & Desafio B1</h3>
+            <div id="lista-modulos-b1-secao6">
+                <button class="btn-modulo bloqueado" id="mod-b1-20-btn" onclick="iniciarModulo(20, 'B1')" disabled>
+                    🔒 Módulo 21: Expressando Aparência e Sensações (...sou / ...mitai)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-21-btn" onclick="iniciarModulo(21, 'B1')" disabled>
+                    🔒 Módulo 22: Regras da Sociedade Japonesa (Etiqueta & Onsen)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-22-btn" onclick="iniciarModulo(22, 'B1')" disabled>
+                    🔒 Módulo 23: Leitura e Interpretação de Notícias/Avisos
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-23-btn" onclick="iniciarModulo(23, 'B1')" disabled>
+                    🏆 Módulo 24: Desafio de Simulação B1
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TELA TRILHA NÍVEL B2 -->
+    <main id="trilha-b2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B2 (Seções 1 a 5)</h2>
+
+        <!-- SEÇÃO 1 B2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Nuances Avançadas & Expressão de Emoções</h3>
+            <div id="lista-modulos-b2-secao1">
+                <button class="btn-modulo" id="mod-b2-0-btn" onclick="iniciarModulo(0, 'B2')">
+                    🔓 Módulo 1: Expressando Expectativas e Decepções (...koto ni natte iru)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-1-btn" onclick="iniciarModulo(1, 'B2')" disabled>
+                    🔒 Módulo 2: Nuances de "Apenas" Avançados (...dake de naku, ...ni suginai)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-2-btn" onclick="iniciarModulo(2, 'B2')" disabled>
+                    🔒 Módulo 3: Expressando Julgamentos e Críticas Sutis (...kuse ni, ...wari ni wa)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-3-btn" onclick="iniciarModulo(3, 'B2')" disabled>
+                    🔒 Módulo 4: Linguagem Figurada e Expressões Idiomáticas (Kanyouku)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 B2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: O Mundo dos Negócios & Etiqueta Corporativa</h3>
+            <div id="lista-modulos-b2-secao2">
+                <button class="btn-modulo bloqueado" id="mod-b2-4-btn" onclick="iniciarModulo(4, 'B2')" disabled>
+                    🔒 Módulo 5: Keigo Avançado (Sonkeigo e Kenjougo Profundos)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-5-btn" onclick="iniciarModulo(5, 'B2')" disabled>
+                    🔒 Módulo 6: Redação de E-mails Corporativos & Relatórios
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-6-btn" onclick="iniciarModulo(6, 'B2')" disabled>
+                    🔒 Módulo 7: Negociação & Resolução de Conflitos (...kanemasu)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-7-btn" onclick="iniciarModulo(7, 'B2')" disabled>
+                    🔒 Módulo 8: Apresentações e Discursos de Negócios (Pitch Executivo)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 B2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Análise de Mídia, Notícias & Atualidades</h3>
+            <div id="lista-modulos-b2-secao3">
+                <button class="btn-modulo bloqueado" id="mod-b2-8-btn" onclick="iniciarModulo(8, 'B2')" disabled>
+                    🔒 Módulo 9: Leitura de Notícias e Jornalismo (NHK News)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-9-btn" onclick="iniciarModulo(9, 'B2')" disabled>
+                    🔒 Módulo 10: Anúncios, Editais e Avisos Governamentais (Shiyakusho)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-10-btn" onclick="iniciarModulo(10, 'B2')" disabled>
+                    🔒 Módulo 11: Entendendo Mídia & Animes sem Legendas (Kansai-ben & Gírias)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-11-btn" onclick="iniciarModulo(11, 'B2')" disabled>
+                    🔒 Módulo 12: Temas Sociais e Ambientais (Koureika Shakai)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 B2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Argumentação, Debates & Textos Acadêmicos</h3>
+            <div id="lista-modulos-b2-secao4">
+                <button class="btn-modulo bloqueado" id="mod-b2-12-btn" onclick="iniciarModulo(12, 'B2')" disabled>
+                    🔒 Módulo 13: Conectores Lógicos e Transição Acadêmica (...sae ...ba, ...ni mo karawazu)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-13-btn" onclick="iniciarModulo(13, 'B2')" disabled>
+                    🔒 Módulo 14: Defendendo Teses e Pontos de Vista (...to ieru darou)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-14-btn" onclick="iniciarModulo(14, 'B2')" disabled>
+                    🔒 Módulo 15: Leitura Dramática & Literatura Japonesa (Bungaku)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-15-btn" onclick="iniciarModulo(15, 'B2')" disabled>
+                    🔒 Módulo 16: Análise de Causa e Efeito Avançados (...o kikkake ni)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 B2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Imersão Total & Maestria</h3>
+            <div id="lista-modulos-b2-secao5">
+                <button class="btn-modulo bloqueado" id="mod-b2-16-btn" onclick="iniciarModulo(16, 'B2')" disabled>
+                    🔒 Módulo 17: Dialetos e Variações Regionais (Kansai, Kyushu, Okinawa)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-17-btn" onclick="iniciarModulo(17, 'B2')" disabled>
+                    🔒 Módulo 18: Onomatopeias e Mimetismos Avançados (Waku-waku, Pika-pika)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-18-btn" onclick="iniciarModulo(18, 'B2')" disabled>
+                    🔒 Módulo 19: Etiqueta Cultural Avançada & Filosofia Japonesa (Omotenashi, Ikigai)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-19-btn" onclick="iniciarModulo(19, 'B2')" disabled>
+                    🏆 Módulo 20: O Grande Desafio B2 (Trabalho de Conclusão de Curso)
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- TELA 3: REPRODUTOR DE AULAS -->
+    <main id="player-aula" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="etapa-titulo">Etapa 1 de 5</span>
+            <button onclick="fecharAula()">✖ Sair</button>
+        </div>
+        <div id="conteudo-etapa"></div>
+        <div class="botoes-acao">
+            <button id="btn-voltar-etapa" onclick="voltarEtapa()" style="display: none;">⬅ Voltar</button>
+            <button id="btn-avancar" onclick="avancarEtapa()">Avançar ➔</button>
+        </div>
+    </main>
+
+    <!-- TELA 4: PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DE OPÇÕES DO CURSO -->
+    <div id="modal-opcoes" class="modal-overlay" style="display: none;"
+        onclick="if(event.target === this) fecharOpcoesCurso()">
+        <div class="modal-box">
+            <h3>⚙️ Configurações do Curso</h3>
+
+            <!-- NOVO CAMPO: NOME DO ALUNO -->
+            <div class="modal-option" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+                <span>Seu Nome / Apelido (Para os diálogos):</span>
+                <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)"
+                    placeholder="Ex: Carlos, Ana, Kenji..."
+                    style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
+            </div>
+
+            <div class="modal-option">
+                <span>Desbloquear Todos os Módulos</span>
+                <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)"
+                    style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
+            </div>
+            <div class="modal-option">
+                <span>Modo de Leitura</span>
+                <select id="sel-leitura"
+                    style="padding: 0.4rem; border-radius: 6px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color);">
+                    <option value="kanji">Kanji + Furigana</option>
+                    <option value="kana">Apenas Kana</option>
+                    <option value="romaji">Romaji</option>
+                </select>
+            </div>
+            <button onclick="resetarProgressoCurso()"
+                style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar
+                Progresso</button>
+            <button class="fechar-modal" onclick="fecharOpcoesCurso()">Salvar e Fechar</button>
+        </div>
+    </div>
+
+    <!-- MODAL DO CERTIFICADO B2 -->
+    <div id="modal-certificado" class="modal-cert-overlay" style="display: none;">
+        <div class="modal-cert-container">
+            <div class="modal-cert-actions">
+                <button class="btn-cert-action print-btn" onclick="imprimirCertificado()">🖨️ Baixar / Imprimir Certificado (PDF)</button>
+                <button class="btn-cert-action close-btn" onclick="fecharModalCertificado()">✖️ Fechar</button>
+            </div>
+            
+            <!-- CARTÃO DO CERTIFICADO COM A IMAGEM LOGO -->
+            <div id="certificado-card">
+                <div class="cert-border-outer">
+                    <div class="cert-border-inner">
+                        <!-- HEADER COM LOGO E TORII -->
+                        <div class="cert-header">
+                            <img src="logo.png" alt="Japão Academy Logo" class="cert-logo-img">
+                            <div class="cert-brand-title">JAPÃO ACADEMY</div>
+                            <div class="cert-brand-subtitle">ECOSSISTEMA INTEGRADO DE ENSINO DE LÍNGUA JAPONESA</div>
+                        </div>
+
+                        <!-- TÍTULOS DO CERTIFICADO -->
+                        <div class="cert-main-title">CERTIFICADO DE CONCLUSÃO & PROFICIENCY</div>
+                        <div class="cert-level-subtitle">NÍVEL ADVANCED B2 (CEFR)</div>
+
+                        <!-- TEXTO DESCRITIVO -->
+                        <div class="cert-body-text">
+                            Certificamos que <strong id="cert-nome-aluno" class="cert-student-name">Estudante</strong> concluiu com êxito a trilha completa de aprendizado de Japonês (Níveis A1, A2, B1 e B2) do ecossistema Japão Academy, demonstrando domínio em gramática, comunicação corporativa, Keigo e leitura fluente.
+                        </div>
+
+                        <!-- GRID DE METADADOS -->
+                        <div class="cert-meta-grid">
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label">🕒 CARGA HORÁRIA</span>
+                                <strong class="cert-meta-val">120 Horas-Aula</strong>
+                            </div>
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label">📅 DATA DE EMISSÃO</span>
+                                <strong class="cert-meta-val" id="cert-data">--/--/----</strong>
+                            </div>
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label">🔑 CÓDIGO DE AUTENTICIDADE</span>
+                                <strong class="cert-meta-val" id="cert-hash">JA-B2-000000</strong>
+                            </div>
+                        </div>
+
+                        <!-- SELO DE AUTENTICIDADE E ASSINATURAS -->
+                        <div class="cert-footer">
+                            <div class="cert-signature-box">
+                                <div class="cert-signature-line"></div>
+                                <small>Coordenação Pedagógica<br>Japão Academy</small>
+                            </div>
+                            <div class="cert-stamp">
+                                <div class="cert-stamp-inner">
+                                    <span>🔴 日本語認定</span>
+                                    <small>VERIFIED PROFICIENCY</small>
+                                </div>
+                            </div>
+                            <div class="cert-signature-box">
+                                <div class="cert-signature-line"></div>
+                                <small>Diretoria de Ensino<br>Japão Academy</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts do site -->
+    <script src="data_curso_a1.js"></script>
+    <script src="data_curso_a2.js"></script>
+    <script src="data_curso_b1.js"></script>
+    <script src="data_curso_b2.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

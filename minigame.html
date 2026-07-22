@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kana Master Pro - Japão Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
+</head>
+<body data-mode="game">
+    <header>
+        <a href="index.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">Kana Master Pro</h1>
+        <p id="mainDesc">Minigame Interativo: Flashcards, Digitação e Pronúncia</p>
+    </header>
+
+    <div class="container">
+        <div id="game-container-wrapper">
+            <div style="width: 100%; max-width: 800px;">
+                
+                <!-- TELA DO MENU DE CONFIGURAÇÃO DO JOGO -->
+                <div id="game-menu-screen" class="module-content" style="display: block;">
+                    <h2 class="module-title" style="border-color: var(--game-primary); color: var(--game-primary); text-align: center;">🎮 Kana Master Pro</h2>
+                    <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Personalize seu treino com base no seu progresso no curso!</p>
+                    
+                    <div style="text-align: center; margin-bottom: 2rem; background: var(--bg-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <span style="font-weight:bold; color:var(--game-primary); font-size: 1.1rem;">🏆 Recorde: <span id="menu-high-score">0</span> pts</span>
+                        <span style="margin: 0 1rem; color: var(--border-color);">|</span>
+                        <span style="font-weight:bold; color:#f59e0b; font-size: 1.1rem;">🔥 Melhor Combo: <span id="menu-max-combo">0</span>x</span>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="g-cat-box">
+                            <div style="font-weight: bold; color: var(--game-primary); margin-bottom: 1rem; text-transform: uppercase;">🔠 1. Escolha o Alfabeto</div>
+                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <label class="g-cb-label active script-lbl"><input type="radio" name="script_mode" value="hiragana" style="display:none" checked><span style="font-size: 1.5rem;">あ</span> Hiragana</label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="katakana" style="display:none"><span style="font-size: 1.5rem;">ア</span> Katakana</label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji" style="display:none"><span style="font-size: 1.5rem;">漢</span> Kanji N5</label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="all" style="display:none"><span style="font-size: 1.5rem;">あ+ア+漢</span> Misturado</label>
+                            </div>
+                        </div>
+
+                        <div class="g-cat-box">
+                            <div style="font-weight: bold; color: var(--game-primary); margin-bottom: 1rem; text-transform: uppercase;">🎙️ 2. Modo de Resposta</div>
+                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                                <label class="g-cb-label active mode-lbl"><input type="radio" name="input_mode" value="typing" style="display:none" checked>⌨️ Digitação</label>
+                                <label class="g-cb-label mode-lbl"><input type="radio" name="input_mode" value="voice" style="display:none">🎙️ Pronúncia (Voz)</label>
+                            </div>
+                        </div>
+
+                        <div class="g-cat-box" style="grid-column: 1 / -1; border-color: #ef4444;">
+                            <div style="font-weight: bold; color: #ef4444; margin-bottom: 0.5rem; text-transform: uppercase;">💖 3. Dificuldade</div>
+                            <label style="display:flex; align-items:center; gap:0.8rem; cursor:pointer; font-weight:600; color:var(--text-main); font-size: 1.05rem;">
+                                <input type="checkbox" id="g-infinite-lives" style="width: 1.3rem; height: 1.3rem; accent-color: #ef4444;"> Vidas Infinitas (Treina sem perder os recordes)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                        <div class="g-cat-box">
+                            <div style="font-weight: bold; color: var(--hira-primary); margin-bottom: 1rem; text-transform: uppercase;">📚 Progresso (Módulos)</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod1" checked> Mód 1</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod2"> Mód 2</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod3"> Mód 3</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod4"> Mód 4</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod5"> Mód 5</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod6"> Mód 6</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod7"> Mód 7</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod8"> Mód 8</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod9"> Mód 9</label>
+                                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="mod10"> Mód 10</label>
+                            </div>
+                        </div>
+                        <div class="g-cat-box">
+                            <div style="font-weight: bold; color: var(--success-color); margin-bottom: 1rem; text-transform: uppercase;">📖 Palavras Reais</div>
+                            <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="words_easy"> Iniciante</label>
+                            <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="words_medium"> Intermediário</label>
+                            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main)"><input type="checkbox" class="cat-cb" value="words_hard"> Avançado</label>
+                        </div>
+                    </div>
+                    <button class="g-start-btn" onclick="startGame()">INICIAR TREINO 🚀</button>
+                </div>
+
+                <!-- TELA DO GAMEPLAY EM SI -->
+                <div id="game-play-screen" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; background: var(--card-bg); padding: 1rem 2rem; border-radius: 16px; margin-bottom: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border-color);">
+                        <div style="cursor: pointer; font-weight: bold; color: var(--text-muted); text-transform: uppercase;" onclick="exitGame()">⬅ Sair</div>
+                        <div style="display: flex; gap: 2rem; align-items: center;">
+                            <div style="font-weight: bold; font-size: 1.2rem; color: #ef4444;">❤️ <span id="g-lives">3</span></div>
+                            <div style="font-weight: bold; font-size: 1.2rem; color: #f59e0b;">🔥 <span id="g-combo">0</span>x</div>
+                            <div style="font-weight: bold; font-size: 1.2rem; color: var(--game-primary);">Pontos: <span id="g-score">0</span></div>
+                        </div>
+                    </div>
+
+                    <div id="g-card-main" class="g-card-area">
+                        <span id="g-badge" style="position: absolute; top: 1.5rem; background: rgba(126, 34, 206, 0.1); color: var(--game-primary); padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">ALFABETO</span>
+                        
+                        <div style="margin: 2rem 0; cursor: pointer; text-align: center;" onclick="if(gCard) speakKana(gCard.k)">
+                            <div id="g-big-kana" class="g-char">あ</div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">🔊 Clique para ouvir</div>
+                        </div>
+                        
+                        <input type="text" id="g-ans-input" class="g-input" placeholder="ROMAJI" autocomplete="off" onkeydown="if(event.key === 'Enter') checkTypingAnswer()">
+                        <button id="g-mic-btn" class="mic-btn" style="display:none;" onclick="startListening()">🎤 Falar</button>
+                        <div id="g-feedback" style="min-height: 3rem; margin-top: 1rem; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px; transition: 0.2s; opacity: 0; text-align: center; display: flex; flex-direction: column; justify-content: center;">...</div>
+                    </div>
+                    <div id="g-hint-text" style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem;">Pressione <kbd style="background: var(--card-bg); border: 1px solid var(--border-color); padding: 2px 6px; border-radius: 4px; color: var(--text-main);">ENTER</kbd> para confirmar.</div>
+                </div>
+
+                <!-- TELA DE FIM DE JOGO -->
+                <div id="game-over-screen" style="display: none; text-align: center;" class="module-content">
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">💥</div>
+                    <h2 style="font-size: 2.5rem; font-family: 'Fredoka', sans-serif; font-weight: bold; color: var(--text-main); margin-bottom: 0.5rem;">Fim de Jogo!</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">A prática leva à perfeição.</p>
+                    
+                    <div style="display: flex; justify-content: center; gap: 3rem; background: var(--bg-color); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <div>
+                            <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-muted); text-transform: uppercase;">Pontuação</div>
+                            <div id="g-final-score" style="font-size: 3rem; font-family: 'Fredoka', sans-serif; font-weight: bold; color: var(--game-primary);">0</div>
+                        </div>
+                        <div style="border-left: 2px solid var(--border-color); padding-left: 3rem;">
+                            <div style="font-size: 0.85rem; font-weight: bold; color: var(--text-muted); text-transform: uppercase;">Combo Máximo</div>
+                            <div id="g-final-combo" style="font-size: 3rem; font-family: 'Fredoka', sans-serif; font-weight: bold; color: #f59e0b;">0x</div>
+                        </div>
+                    </div>
+                    <button class="g-start-btn" style="margin-top: 0;" onclick="showGameTab('menu')">JOGAR NOVAMENTE 🔄</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="data_hiragana.js"></script>
+    <script src="data_katakana.js"></script>
+    <script src="data_kanji_n5.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
