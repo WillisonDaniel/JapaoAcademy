@@ -110,6 +110,7 @@ header p { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto; 
 .course-btn.hira { background: linear-gradient(135deg, #ef233c, #d90429); }
 .course-btn.kata { background: linear-gradient(135deg, #00bfb2, #028090); }
 .course-btn.game { background: linear-gradient(135deg, #a855f7, #7e22ce); }
+.course-btn.dict { background: linear-gradient(135deg, #028090, #155e75); border: 1px solid rgba(6, 182, 212, 0.3); }
 .course-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.25); }
 .course-btn span { font-size: 3.5rem; font-family: 'Noto Sans JP', sans-serif; margin-bottom: -10px; }
 .course-btn p { font-size: 0.95rem; font-weight: normal; opacity: 0.9; margin: 0; }
@@ -1606,6 +1607,26 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
     z-index: 100;
 }
 
+/* Anula posicionamento absoluto de botoes inseridos dentro do grupo para alinhar via flexbox */
+.header-actions-group > * {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .header-actions-group {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        justify-content: center;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
 .streak-badge {
     display: inline-flex;
     align-items: center;
@@ -1743,4 +1764,250 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
     font-size: 0.72rem;
     font-weight: bold;
     color: var(--text-muted);
+}
+
+/* ==========================================
+   ESTILOS DO DICIONÁRIO & GLOSSÁRIO UNIVERSAL
+   ========================================== */
+.btn-dicionario-header {
+    background: rgba(2, 128, 144, 0.15);
+    border: 1.5px solid #028090;
+    color: #7dd3fc;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 0.25s ease;
+}
+
+.btn-dicionario-header:hover {
+    background: rgba(2, 128, 144, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 14px rgba(2, 128, 144, 0.4);
+}
+
+.modal-dict-box {
+    width: 90% !important;
+    max-width: 1200px !important;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    resize: both;
+    overflow: auto;
+    min-width: 700px;
+}
+
+.dict-filter-pill {
+    background: var(--bg-color);
+    border: 1.5px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.35rem 0.95rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.dict-filter-pill:hover {
+    border-color: var(--current-primary);
+    color: var(--text-main);
+}
+
+.dict-filter-pill.active {
+    background: var(--current-primary);
+    color: white;
+    border-color: var(--current-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.grid-dict-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.dict-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.dict-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dict-card-kanji { border-left: 4px solid #b45309; }
+.dict-card-grammar { border-left: 4px solid #e63946; }
+.dict-card-vocab { border-left: 4px solid #028090; }
+
+.dict-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.dict-tag, .badge-gramatica, .badge-vocab {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    width: fit-content;
+    margin-bottom: 4px;
+}
+
+.tag-kanji { background: rgba(180, 83, 9, 0.15); color: #f59e0b; border: 1px solid #b45309; }
+.tag-grammar { background: rgba(230, 57, 70, 0.15); color: #e63946; border: 1px solid #e63946; }
+.tag-vocab { background: rgba(2, 128, 144, 0.15); color: #028090; border: 1px solid #028090; }
+
+.dict-origin {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    word-break: break-word;
+    line-height: 1.3;
+}
+
+.dict-grammar-title, .dict-vocab-body, .dict-kanji-body {
+    margin-top: 10px;
+}
+
+/* Kanji Card Internals */
+.dict-kanji-body {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dict-kanji-char {
+    font-size: 3.2rem;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #f59e0b;
+    line-height: 1;
+}
+
+.dict-kanji-info {
+    flex: 1;
+}
+
+.dict-kanji-meaning {
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.dict-readings {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+}
+
+.dict-mnemonic {
+    font-size: 0.82rem;
+    background: var(--bg-color);
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+    color: var(--text-main);
+}
+
+.dict-ex-box {
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Grammar Card Internals */
+.dict-grammar-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.15rem;
+    color: #e63946;
+    margin: 0;
+}
+
+.dict-grammar-rule {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.dict-grammar-formula {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    color: #e63946;
+    font-weight: bold;
+}
+
+.dict-grammar-ex {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* Vocab Card Internals */
+.dict-vocab-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dict-vocab-term {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.dict-vocab-romaji {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #028090;
+    text-transform: lowercase;
+}
+
+.dict-vocab-trans {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.dict-context {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-color);
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+}
+
+.dict-audio-btn {
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
 }

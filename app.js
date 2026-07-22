@@ -173,8 +173,9 @@ function applySavedTheme() {
         if (document.body) document.body.classList.remove('dark-theme');
     }
 
-    const btn = document.querySelector('.theme-btn');
-    if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.textContent = isDark ? '☀️' : '🌙';
+    });
 }
 
 applySavedTheme();
@@ -192,8 +193,9 @@ function toggleTheme() {
 
     localStorage.setItem('ja_theme', isDark ? 'dark' : 'light');
 
-    const btn = document.querySelector('.theme-btn');
-    if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.textContent = isDark ? '☀️' : '🌙';
+    });
 }
 
 function setupSmoothTransitions() {
@@ -2144,6 +2146,7 @@ function renderizarConclusaoSRS() {
 
 // Funções do Modal de Opções
 function abrirOpcoesCurso() {
+    garantirElementosCabecalhoEModal();
     const modal = document.getElementById('modal-opcoes');
     if (modal) {
         atualizarUIProgresso();
@@ -2999,25 +3002,20 @@ function garantirElementosCabecalhoEModal() {
         if (!group) {
             group = document.createElement('div');
             group.className = 'header-actions-group';
-
-            const btnTema = header.querySelector('.theme-btn');
-            if (btnTema) {
-                btnTema.parentNode.insertBefore(group, btnTema);
-                group.appendChild(btnTema);
-            } else {
-                header.appendChild(group);
-            }
+            header.appendChild(group);
         }
 
+        // 1. Badge da Ofensiva
         if (!document.getElementById('streak-badge-header')) {
             const streakDiv = document.createElement('div');
             streakDiv.id = 'streak-badge-header';
             streakDiv.className = 'streak-badge';
             streakDiv.title = 'Dias seguidos de estudo';
             streakDiv.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
-            group.insertBefore(streakDiv, group.firstChild);
+            group.appendChild(streakDiv);
         }
 
+        // 2. Botão de Conquistas
         if (!document.getElementById('btn-conquistas-hdr')) {
             const btnAc = document.createElement('button');
             btnAc.id = 'btn-conquistas-hdr';
@@ -3025,8 +3023,58 @@ function garantirElementosCabecalhoEModal() {
             btnAc.title = 'Mural de Conquistas';
             btnAc.innerHTML = `🏆 Conquistas`;
             btnAc.onclick = abrirModalConquistas;
-            group.insertBefore(btnAc, group.querySelector('.theme-btn') || null);
+            group.appendChild(btnAc);
         }
+
+        // 3. Botão de Dicionário & Glossário
+        if (!document.getElementById('btn-dicionario-hdr')) {
+            const btnDict = document.createElement('button');
+            btnDict.id = 'btn-dicionario-hdr';
+            btnDict.className = 'btn-dicionario-header';
+            btnDict.title = 'Dicionário & Glossário';
+            btnDict.innerHTML = `📖 Dicionário`;
+            btnDict.onclick = abrirModalDicionario;
+            group.appendChild(btnDict);
+        }
+
+        // 4. Botão de Opções / Configurações (em todo o site)
+        let btnConfig = document.getElementById('btn-config-curso');
+        if (!btnConfig) {
+            btnConfig = document.createElement('button');
+            btnConfig.id = 'btn-config-curso';
+            btnConfig.title = 'Opções e Configurações';
+            btnConfig.innerHTML = `⚙️ Opções`;
+            btnConfig.onclick = abrirOpcoesCurso;
+            group.appendChild(btnConfig);
+        } else if (btnConfig.parentNode !== group) {
+            group.appendChild(btnConfig);
+        }
+
+        // 5. Botão de Tema Escuro/Claro (em todo o site)
+        let btnTema = header.querySelector('.theme-btn');
+        if (!btnTema) {
+            btnTema = document.createElement('button');
+            btnTema.className = 'theme-btn';
+            btnTema.title = 'Alternar Tema';
+            btnTema.onclick = toggleTheme;
+            btnTema.textContent = (localStorage.getItem('ja_theme') === 'dark') ? '☀️' : '🌙';
+            group.appendChild(btnTema);
+        } else if (btnTema.parentNode !== group) {
+            group.appendChild(btnTema);
+        }
+
+        // Reordena para ficar padronizado em todas as paginas: [Streak] [Conquistas] [Dicionário] [Opções] [Tema]
+        const elStreak = document.getElementById('streak-badge-header');
+        const elConq = document.getElementById('btn-conquistas-hdr');
+        const elDict = document.getElementById('btn-dicionario-hdr');
+        const elCfg = document.getElementById('btn-config-curso');
+        const elTema = header.querySelector('.theme-btn');
+
+        if (elStreak) group.appendChild(elStreak);
+        if (elConq) group.appendChild(elConq);
+        if (elDict) group.appendChild(elDict);
+        if (elCfg) group.appendChild(elCfg);
+        if (elTema) group.appendChild(elTema);
     }
 
     if (!document.getElementById('modal-conquistas')) {
@@ -3048,6 +3096,69 @@ function garantirElementosCabecalhoEModal() {
             </div>
         `;
         document.body.appendChild(modalDiv);
+    }
+
+    if (!document.getElementById('modal-opcoes')) {
+        const modalOp = document.createElement('div');
+        modalOp.id = 'modal-opcoes';
+        modalOp.className = 'modal-overlay';
+        modalOp.style.display = 'none';
+        modalOp.onclick = function (e) { if (e.target === this) fecharOpcoesCurso(); };
+        modalOp.innerHTML = `
+            <div class="modal-box">
+                <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
+                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
+                    <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
+                    <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
+                </div>
+                <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
+                    <span>Desbloquear Todos os Módulos</span>
+                    <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
+                </div>
+                <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
+                    <span>Modo de Leitura</span>
+                    <select id="sel-leitura" style="padding: 0.4rem; border-radius: 6px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color);">
+                        <option value="kanji">Kanji + Furigana</option>
+                        <option value="kana">Apenas Kana</option>
+                        <option value="romaji">Romaji</option>
+                    </select>
+                </div>
+                <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
+                <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
+            </div>
+        `;
+        document.body.appendChild(modalOp);
+    }
+
+    if (!document.getElementById('modal-dicionario')) {
+        const modalDict = document.createElement('div');
+        modalDict.id = 'modal-dicionario';
+        modalDict.className = 'modal-overlay';
+        modalDict.style.display = 'none';
+        modalDict.onclick = function (e) { if (e.target === this) fecharModalDicionario(); };
+        modalDict.innerHTML = `
+            <div class="modal-box modal-dict-box">
+                <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
+                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">📖 Dicionário & Glossário Universal</h2>
+                    <button onclick="fecharModalDicionario()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                </div>
+                <div class="dict-search-wrapper" style="margin-bottom: 1rem;">
+                    <input type="text" id="dict-search-input" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em português, romaji, kana ou kanji..." style="width:100%; padding:0.8rem 1.2rem; border-radius:12px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
+                </div>
+                <div class="dict-filters-row" style="display:flex; gap:0.5rem; margin-bottom:0.8rem; flex-wrap:wrap;">
+                    <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">Tudo</button>
+                    <button class="dict-filter-pill" data-cat="kanji" onclick="selecionarCategoriaDicionario('kanji')">🔤 Kanjis</button>
+                    <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
+                    <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
+                </div>
+                <div id="dict-results-counter" style="font-size:0.82rem; color:var(--text-muted); font-weight:600; margin-bottom:1rem;">
+                    Carregando glossário...
+                </div>
+                <div id="dict-results-container" class="grid-dict-results"></div>
+                <button onclick="fecharModalDicionario()" class="fechar-modal" style="margin-top:1rem;">Fechar Dicionário</button>
+            </div>
+        `;
+        document.body.appendChild(modalDict);
     }
 }
 
@@ -3100,4 +3211,374 @@ function renderizarMuralConquistas() {
     });
 
     grid.innerHTML = html;
+}
+
+// ==========================================
+// MECANISMO E INTERFACE DO DICIONÁRIO UNIVERSAL
+// ==========================================
+
+let glossarioUniversalCache = null;
+let dictDebounceTimer = null;
+let dictCategoriaAtiva = 'tudo';
+
+function carregarTodosOsDatasets(callback) {
+    const scripts = [
+        { check: () => typeof CURSO_A1_DADOS !== 'undefined', src: 'data_curso_a1.js' },
+        { check: () => typeof CURSO_A2_DADOS !== 'undefined', src: 'data_curso_a2.js' },
+        { check: () => typeof CURSO_B1_DADOS !== 'undefined', src: 'data_curso_b1.js' },
+        { check: () => typeof CURSO_B2_DADOS !== 'undefined', src: 'data_curso_b2.js' },
+        { check: () => typeof kanjiN5Data !== 'undefined', src: 'data_kanji_n5.js' },
+        { check: () => typeof RAW_H !== 'undefined', src: 'data_hiragana.js' },
+        { check: () => typeof RAW_K !== 'undefined', src: 'data_katakana.js' }
+    ];
+
+    let pendentes = 0;
+
+    scripts.forEach(s => {
+        if (!s.check()) {
+            let existingScript = document.querySelector(`script[src="${s.src}"]`);
+            if (!existingScript) {
+                pendentes++;
+                const scriptEl = document.createElement('script');
+                scriptEl.src = s.src;
+                scriptEl.onload = () => {
+                    pendentes--;
+                    if (pendentes === 0 && callback) callback();
+                };
+                scriptEl.onerror = () => {
+                    pendentes--;
+                    if (pendentes === 0 && callback) callback();
+                };
+                document.head.appendChild(scriptEl);
+            }
+        }
+    });
+
+    if (pendentes === 0 && callback) {
+        callback();
+    }
+}
+
+function compilarGlossarioUniversal() {
+    if (glossarioUniversalCache) return glossarioUniversalCache;
+
+    const lista = [];
+
+    // 1. CURSO PRINCIPAL (A1, A2, B1, B2)
+    const cursos = getTodosOsCursos();
+    ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+        const modulos = cursos[lvl] || [];
+        modulos.forEach(mod => {
+            if (mod.stage2_drops && Array.isArray(mod.stage2_drops)) {
+                mod.stage2_drops.forEach(drop => {
+                    if (drop.type === 'vocab') {
+                        lista.push({
+                            type: 'vocab',
+                            term: drop.kanji || drop.romaji,
+                            romaji: drop.romaji || '',
+                            translation: drop.translation || '',
+                            context: drop.timeContext || '',
+                            module: mod.title || `Módulo ${mod.id}`,
+                            level: lvl,
+                            origin: `Curso ${lvl}`
+                        });
+                    } else if (drop.type === 'grammar_pill') {
+                        lista.push({
+                            type: 'grammar',
+                            title: drop.title || '',
+                            rule: drop.rule || '',
+                            formula: drop.formula || '',
+                            example: drop.example || '',
+                            module: mod.title || `Módulo ${mod.id}`,
+                            level: lvl,
+                            origin: `Curso ${lvl}`
+                        });
+                    }
+                });
+            }
+        });
+    });
+
+    // 2. CURSO KANJI N5
+    if (typeof kanjiN5Data !== 'undefined' && Array.isArray(kanjiN5Data)) {
+        kanjiN5Data.forEach(mod => {
+            if (mod.kanjis && Array.isArray(mod.kanjis)) {
+                mod.kanjis.forEach(item => {
+                    lista.push({
+                        type: 'kanji',
+                        character: item.character || '',
+                        meaning: item.meaning || '',
+                        kunyomi: item.kunyomi || '',
+                        onyomi: item.onyomi || '',
+                        mnemonic: item.mnemonic || '',
+                        examples: item.examples || [],
+                        module: mod.title || 'Kanji N5',
+                        level: 'N5',
+                        origin: 'Kanji N5'
+                    });
+                });
+            }
+        });
+    }
+
+    // 3. CURSO HIRAGANA (RAW_H & HIRA_COURSE_DATA)
+    if (typeof HIRA_COURSE_DATA !== 'undefined' && Array.isArray(HIRA_COURSE_DATA)) {
+        HIRA_COURSE_DATA.forEach(mod => {
+            if (mod.vocab && Array.isArray(mod.vocab)) {
+                mod.vocab.forEach(v => {
+                    lista.push({
+                        type: 'vocab',
+                        term: v.kana || '',
+                        romaji: v.romaji || '',
+                        translation: v.meaning || '',
+                        context: '',
+                        module: mod.title || 'Hiragana',
+                        level: 'Hiragana',
+                        origin: 'Curso de Hiragana'
+                    });
+                });
+            }
+        });
+    }
+    if (typeof RAW_H !== 'undefined') {
+        ['words_easy', 'words_medium', 'words_hard'].forEach(cat => {
+            if (RAW_H[cat] && Array.isArray(RAW_H[cat])) {
+                RAW_H[cat].forEach(v => {
+                    if (v.m) {
+                        lista.push({
+                            type: 'vocab',
+                            term: v.k || '',
+                            romaji: v.r || '',
+                            translation: v.m || '',
+                            context: v.a ? `Kanji: ${v.a.join(', ')}` : '',
+                            module: `Vocabulário Hiragana (${cat.replace('words_', '')})`,
+                            level: 'Hiragana',
+                            origin: 'Curso de Hiragana'
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    // 4. CURSO KATAKANA (RAW_K & KATA_COURSE_DATA)
+    if (typeof KATA_COURSE_DATA !== 'undefined' && Array.isArray(KATA_COURSE_DATA)) {
+        KATA_COURSE_DATA.forEach(mod => {
+            if (mod.vocab && Array.isArray(mod.vocab)) {
+                mod.vocab.forEach(v => {
+                    lista.push({
+                        type: 'vocab',
+                        term: v.kana || '',
+                        romaji: v.romaji || '',
+                        translation: v.meaning || '',
+                        context: '',
+                        module: mod.title || 'Katakana',
+                        level: 'Katakana',
+                        origin: 'Curso de Katakana'
+                    });
+                });
+            }
+        });
+    }
+    if (typeof RAW_K !== 'undefined') {
+        ['words_easy', 'words_medium', 'words_hard'].forEach(cat => {
+            if (RAW_K[cat] && Array.isArray(RAW_K[cat])) {
+                RAW_K[cat].forEach(v => {
+                    if (v.m) {
+                        lista.push({
+                            type: 'vocab',
+                            term: v.k || '',
+                            romaji: v.r || '',
+                            translation: v.m || '',
+                            context: v.a ? `Kanji: ${v.a.join(', ')}` : '',
+                            module: `Vocabulário Katakana (${cat.replace('words_', '')})`,
+                            level: 'Katakana',
+                            origin: 'Curso de Katakana'
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    glossarioUniversalCache = lista;
+    return lista;
+}
+
+function normalizarTexto(txt) {
+    if (!txt) return '';
+    return txt.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+}
+
+function filtrarGlossarioDebounced(query) {
+    clearTimeout(dictDebounceTimer);
+    dictDebounceTimer = setTimeout(() => {
+        renderizarResultadosDicionario(query);
+    }, 180);
+}
+
+function selecionarCategoriaDicionario(cat) {
+    dictCategoriaAtiva = cat;
+    document.querySelectorAll('.dict-filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+    });
+    const input = document.getElementById('dict-search-input');
+    const query = input ? input.value : '';
+    renderizarResultadosDicionario(query);
+}
+
+function abrirModalDicionario() {
+    garantirElementosCabecalhoEModal();
+    const modal = document.getElementById('modal-dicionario');
+    if (modal) {
+        modal.style.display = 'flex';
+        const counter = document.getElementById('dict-results-counter');
+        if (counter) counter.innerText = '⚡ Carregando banco de dados universal...';
+
+        carregarTodosOsDatasets(() => {
+            glossarioUniversalCache = null; // força recompilação com todos os datasets carregados
+            const input = document.getElementById('dict-search-input');
+            const query = input ? input.value : '';
+            renderizarResultadosDicionario(query);
+            if (input) setTimeout(() => input.focus(), 100);
+        });
+    }
+}
+
+function fecharModalDicionario() {
+    const modal = document.getElementById('modal-dicionario');
+    if (modal) modal.style.display = 'none';
+}
+
+function renderizarResultadosDicionario(queryStr = '') {
+    const container = document.getElementById('dict-results-container');
+    const counter = document.getElementById('dict-results-counter');
+    if (!container) return;
+
+    const base = compilarGlossarioUniversal();
+    const q = normalizarTexto(queryStr);
+
+    let filtrados = base.filter(item => {
+        if (dictCategoriaAtiva !== 'tudo') {
+            if (item.type !== dictCategoriaAtiva) return false;
+        }
+
+        if (!q) return true;
+
+        if (item.type === 'vocab') {
+            return normalizarTexto(item.term).includes(q) ||
+                   normalizarTexto(item.romaji).includes(q) ||
+                   normalizarTexto(item.translation).includes(q) ||
+                   normalizarTexto(item.module).includes(q);
+        }
+        if (item.type === 'grammar') {
+            return normalizarTexto(item.title).includes(q) ||
+                   normalizarTexto(item.rule).includes(q) ||
+                   normalizarTexto(item.formula).includes(q) ||
+                   normalizarTexto(item.example).includes(q) ||
+                   normalizarTexto(item.module).includes(q);
+        }
+        if (item.type === 'kanji') {
+            const inExamples = (item.examples || []).some(ex =>
+                normalizarTexto(ex.word).includes(q) ||
+                normalizarTexto(ex.wordMeaning).includes(q) ||
+                normalizarTexto(ex.sentence).includes(q) ||
+                normalizarTexto(ex.sentenceMeaning).includes(q)
+            );
+            return normalizarTexto(item.character).includes(q) ||
+                   normalizarTexto(item.meaning).includes(q) ||
+                   normalizarTexto(item.kunyomi).includes(q) ||
+                   normalizarTexto(item.onyomi).includes(q) ||
+                   normalizarTexto(item.mnemonic).includes(q) ||
+                   inExamples;
+        }
+
+        return false;
+    });
+
+    if (counter) {
+        counter.innerText = `Mostrando ${filtrados.length} item(ns) encontrado(s)`;
+    }
+
+    if (filtrados.length === 0) {
+        container.innerHTML = `
+            <div style="text-align:center; padding: 2.5rem 1rem; color: var(--text-muted); grid-column: 1 / -1;">
+                <span style="font-size: 3rem;">🔍</span>
+                <h4 style="margin-top: 0.5rem; color: var(--text-main);">Nenhum resultado encontrado</h4>
+                <p style="font-size: 0.9rem;">Tente pesquisar com outro termo em português, romaji, kana ou kanji.</p>
+            </div>
+        `;
+        return;
+    }
+
+    const visiveis = filtrados.slice(0, 100);
+
+    let html = '';
+    visiveis.forEach(item => {
+        if (item.type === 'kanji') {
+            let exHtml = '';
+            if (item.examples && item.examples.length > 0) {
+                exHtml = item.examples.slice(0, 2).map(ex => `
+                    <div class="dict-ex-item">
+                        <strong>${ex.word}</strong> (${ex.wordMeaning}): <em>${ex.sentence}</em>
+                    </div>
+                `).join('');
+            }
+
+            html += `
+                <div class="dict-card dict-card-kanji">
+                    <div class="dict-card-header">
+                        <span class="dict-tag tag-kanji">🔤 Kanji • ${item.level}</span>
+                        <span class="dict-origin">${item.origin}</span>
+                    </div>
+                    <div class="dict-kanji-body">
+                        <div class="dict-kanji-char">${item.character}</div>
+                        <div class="dict-kanji-info">
+                            <div class="dict-kanji-meaning">${item.meaning}</div>
+                            <div class="dict-readings">
+                                <div><strong>Kun:</strong> ${item.kunyomi || '-'}</div>
+                                <div><strong>On:</strong> ${item.onyomi || '-'}</div>
+                            </div>
+                        </div>
+                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Kanji">🔊</button>
+                    </div>
+                    ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
+                    ${exHtml ? `<div class="dict-ex-box">${exHtml}</div>` : ''}
+                </div>
+            `;
+        } else if (item.type === 'grammar') {
+            html += `
+                <div class="dict-card dict-card-grammar">
+                    <div class="dict-card-header">
+                        <span class="dict-tag tag-grammar">💡 Gramática • ${item.level}</span>
+                        <span class="dict-origin">${item.module}</span>
+                    </div>
+                    <h3 class="dict-grammar-title">${fNome(item.title)}</h3>
+                    <p class="dict-grammar-rule">${fNome(item.rule)}</p>
+                    <div class="dict-grammar-formula"><code>${fNome(item.formula)}</code></div>
+                    <div class="dict-grammar-ex"><strong>Exemplo:</strong> ${fNome(item.example)}</div>
+                </div>
+            `;
+        } else if (item.type === 'vocab') {
+            html += `
+                <div class="dict-card dict-card-vocab">
+                    <div class="dict-card-header">
+                        <span class="dict-tag tag-vocab">📚 Vocabulário • ${item.level}</span>
+                        <span class="dict-origin">${item.module}</span>
+                    </div>
+                    <div class="dict-vocab-body">
+                        <div>
+                            <div class="dict-vocab-term kana-text">${item.term}</div>
+                            <div class="dict-vocab-romaji">${item.romaji}</div>
+                            <div class="dict-vocab-trans">${item.translation}</div>
+                        </div>
+                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.romaji || item.term}')" title="Ouvir Pronúncia">🔊</button>
+                    </div>
+                    ${item.context ? `<div class="dict-context">💡 ${fNome(item.context)}</div>` : ''}
+                </div>
+            `;
+        }
+    });
+
+    container.innerHTML = html;
 }
