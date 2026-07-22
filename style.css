@@ -744,6 +744,11 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
     box-shadow: 0 10px 20px rgba(230, 57, 70, 0.2);
 }
 
+.card-kanji-nivel:not(.bloqueado):hover {
+    border-color: #b45309;
+    box-shadow: 0 10px 20px rgba(180, 83, 9, 0.3), 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
 .card-nivel.bloqueado {
     opacity: 0.5;
     cursor: not-allowed;

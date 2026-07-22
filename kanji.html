@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Kanjis (N5 a N1) - Japão Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
+</head>
+
+<body data-mode="kanji">
+    <header>
+        <a href="index.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">🏯 Curso de Kanjis (N5 a N1)</h1>
+        <p id="mainDesc">Ideogramas e Vocabulário de Proficiência do N5 ao N1.</p>
+    </header>
+
+    <div class="container">
+        <!-- BANNER DE REVISÃO SRS DE KANJI -->
+        <div class="banner-srs" style="border-color: rgba(180, 83, 9, 0.4);">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag"
+                    style="background: rgba(180, 83, 9, 0.2); color: #f59e0b; border-color: #b45309;">🏯 REPETIÇÃO
+                    ESPAÇADA (KANJI)</span>
+                <h3>Revisão Inteligente da Memória</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('kanji')" class="btn-srs-action"
+                    style="background: linear-gradient(135deg, #b45309, #d97706);">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <div id="study-area" style="display: block;">
+            <h2>Hub de Proficiência em Kanjis (JLPT)</h2>
+
+            <!-- DASHBOARD DE PROGRESSO & XP DE KANJIS -->
+            <div id="dashboard-progresso-kanji"
+                style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 25px; box-shadow: var(--shadow);">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                    <div>
+                        <strong style="font-size: 1.1rem; color: var(--text-main);">📈 Progresso Geral em Kanji</strong>
+                        <div id="progresso-kanji-subtext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">
+                            0 / 10 Módulos Dominados no N5
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <span id="progresso-kanji-percent"
+                            style="font-size: 1.4rem; font-weight: bold; color: #f59e0b;">0%</span>
+                        <div id="progresso-kanji-xp" style="font-weight: bold; color: #fbbf24; font-size: 0.9rem;">0 XP</div>
+                    </div>
+                </div>
+                <div
+                    style="background: var(--bg-color); height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div id="progresso-kanji-bar"
+                        style="background: linear-gradient(90deg, #b45309, #f59e0b); width: 0%; height: 100%; transition: width 0.4s ease;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID DE NÍVEIS JLPT -->
+            <div class="grid-niveis">
+                <div class="card-nivel card-kanji-nivel" id="card-kanji-n5" onclick="abrirTrilhaKanji('N5')">
+                    <span class="tag" id="tag-kanji-n5" style="background: #22c55e; color: #fff;">DISPONÍVEL</span>
+                    <h3>Nível N5</h3>
+                    <p>10 Módulos • Ideogramas Básicos & Elementares</p>
+                </div>
+                <div class="card-nivel card-kanji-nivel bloqueado" id="card-kanji-n4" onclick="abrirTrilhaKanji('N4')">
+                    <span class="tag" id="tag-kanji-n4" style="background: var(--text-muted); color: #fff;">🔒 BLOQUEADO</span>
+                    <h3>Nível N4</h3>
+                    <p>15 Módulos • Ideogramas do Dia a Dia</p>
+                </div>
+                <div class="card-nivel card-kanji-nivel bloqueado" id="card-kanji-n3" onclick="abrirTrilhaKanji('N3')">
+                    <span class="tag" id="tag-kanji-n3" style="background: var(--text-muted); color: #fff;">🔒 BLOQUEADO</span>
+                    <h3>Nível N3</h3>
+                    <p>20 Módulos • Ideogramas Intermediários</p>
+                </div>
+                <div class="card-nivel card-kanji-nivel bloqueado" id="card-kanji-n2" onclick="abrirTrilhaKanji('N2')">
+                    <span class="tag" id="tag-kanji-n2" style="background: var(--text-muted); color: #fff;">🔒 BLOQUEADO</span>
+                    <h3>Nível N2</h3>
+                    <p>25 Módulos • Ideogramas Avançados & Leitura Fluida</p>
+                </div>
+                <div class="card-nivel card-kanji-nivel bloqueado" id="card-kanji-n1" onclick="abrirTrilhaKanji('N1')">
+                    <span class="tag" id="tag-kanji-n1" style="background: var(--text-muted); color: #fff;">🔒 BLOQUEADO</span>
+                    <h3>Nível N1</h3>
+                    <p>30 Módulos • Maestria Total em Kanji</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+        <main id="player-srs" style="display: none;">
+            <div class="barra-progresso">
+                <span id="srs-etapa-titulo">Revisão SRS Kanji</span>
+                <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+            </div>
+
+            <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+            <div class="srs-botoes-acao">
+                <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                    Ver Resposta 👁️
+                </button>
+
+                <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                    <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                        ❌ Errei
+                        <small>Revisar amanhã</small>
+                    </button>
+                    <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                        🟡 Difícil
+                        <small>Aumento leve</small>
+                    </button>
+                    <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                        🟢 Bom
+                        <small>Intervalo médio</small>
+                    </button>
+                    <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                        🌟 Fácil
+                        <small>Intervalo longo</small>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="data_kanji_n5.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

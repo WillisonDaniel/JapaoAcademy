@@ -364,6 +364,7 @@ function toggleModuloConcluido(modIdx, mode) {
     }
 
     atualizarChecklistTabs(t);
+    if (t === 'kanji') atualizarUIProgressoKanji();
 }
 
 function atualizarChecklistTabs(mode) {
@@ -1036,14 +1037,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (mode === 'curso' || mode === 'japa') {
         document.documentElement.style.setProperty('--current-primary', 'var(--japa-primary)');
+        atualizarUIProgresso();
     } else if (mode === 'hiragana' || mode === 'katakana' || mode === 'kanji') {
         let primaryColor = 'var(--hira-primary)';
         if (mode === 'katakana') primaryColor = 'var(--kata-primary)';
         if (mode === 'kanji') primaryColor = 'var(--kanji-primary)';
 
         document.documentElement.style.setProperty('--current-primary', primaryColor);
-        renderCourseTabs();
-        loadCourseModule(0);
+
+        // Se estiver na pagina do Hub de Kanjis (kanji.html)
+        if (document.getElementById('dashboard-progresso-kanji')) {
+            atualizarUIProgressoKanji();
+        } else if (document.getElementById('tabContainer')) {
+            renderCourseTabs();
+            loadCourseModule(0);
+        }
+        atualizarBadgeSRS(mode);
     } else if (mode === 'game') {
         document.documentElement.style.setProperty('--current-primary', 'var(--game-primary)');
         initGameScreen();
@@ -1231,6 +1240,17 @@ function carregarProgressoGlobal() {
     if (!Array.isArray(res.progress_kanji)) res.progress_kanji = [];
     res.progress_curso_principal = res.modulosConcluidos;
 
+    // Sincroniza leitura dedicada do japao_academy_kanji_progress
+    const kanjiSalvo = localStorage.getItem('japao_academy_kanji_progress');
+    if (kanjiSalvo) {
+        try {
+            const kData = JSON.parse(kanjiSalvo);
+            if (kData && Array.isArray(kData.progress_kanji)) {
+                res.progress_kanji = Array.from(new Set([...res.progress_kanji, ...kData.progress_kanji]));
+            }
+        } catch (e) { }
+    }
+
     localStorage.setItem('japao_academy_progress', JSON.stringify(res));
     return res;
 }
@@ -1264,6 +1284,96 @@ function salvarProgressoGlobal() {
         localStorage.setItem('ja_modulos_concluidos_b2', JSON.stringify(concIdx));
         localStorage.setItem('ja_progresso_b2', JSON.stringify(desbIdx));
     }
+
+    // Persistência isolada de Kanji no localStorage em 'japao_academy_kanji_progress'
+    const concKanjiCount = (progressoGlobal.progress_kanji || []).length;
+    localStorage.setItem('japao_academy_kanji_progress', JSON.stringify({
+        progress_kanji: progressoGlobal.progress_kanji || [],
+        xpTotal: concKanjiCount * 100,
+        modulosConcluidosN5: progressoGlobal.progress_kanji || []
+    }));
+}
+
+// ==========================================
+// LÓGICA DE PROGRESSÃO E HUB DO CURSO DE KANJI (N5 a N1)
+// ==========================================
+function eNivelKanjiDesbloqueado(nivelJLPT) {
+    if (modoDesbloqueado) return true;
+    const lvl = (nivelJLPT || 'N5').toUpperCase();
+    if (lvl === 'N5') return true;
+
+    // N4 só desbloqueia após concluir TODOS os módulos do N5 (10 módulos)
+    if (lvl === 'N4') {
+        const totalN5 = (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data.length : 10);
+        const concN5 = (progressoGlobal.progress_kanji || []).length;
+        return concN5 >= totalN5;
+    }
+    if (lvl === 'N3') return eNivelKanjiDesbloqueado('N4') && false;
+    if (lvl === 'N2') return eNivelKanjiDesbloqueado('N3') && false;
+    if (lvl === 'N1') return eNivelKanjiDesbloqueado('N2') && false;
+    return false;
+}
+
+function abrirTrilhaKanji(nivelJLPT) {
+    const lvl = (nivelJLPT || 'N5').toUpperCase();
+
+    if (lvl === 'N5') {
+        window.location.href = 'kanji_n5.html';
+        return;
+    }
+
+    if (!eNivelKanjiDesbloqueado(lvl)) {
+        const nivelAnterior = (lvl === 'N4') ? 'N5' : (lvl === 'N3') ? 'N4' : (lvl === 'N2') ? 'N3' : 'N2';
+        alert(`🔒 Conclua todos os módulos do Nível ${nivelAnterior} para liberar o Nível ${lvl}!`);
+        return;
+    }
+
+    alert(`✨ O Nível ${lvl} estará disponível em breve no Japão Academy!`);
+}
+
+function calcularProgressoKanjiGlobal() {
+    const totalN5 = (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data.length : 10);
+    const concCount = (progressoGlobal.progress_kanji || []).length;
+    const percentual = totalN5 > 0 ? Math.min(100, Math.round((concCount / totalN5) * 100)) : 0;
+    const xpCalculado = concCount * 100;
+
+    const elPercent = document.getElementById('progresso-kanji-percent');
+    const elXP = document.getElementById('progresso-kanji-xp');
+    const elBar = document.getElementById('progresso-kanji-bar');
+    const elSubtext = document.getElementById('progresso-kanji-subtext');
+
+    if (elPercent) elPercent.innerText = `${percentual}%`;
+    if (elXP) elXP.innerText = `${xpCalculado} XP`;
+    if (elBar) elBar.style.width = `${percentual}%`;
+    if (elSubtext) elSubtext.innerText = `${concCount} / ${totalN5} Módulos Dominados no N5`;
+
+    return { percentual, concCount, totalN5, xpCalculado };
+}
+
+function atualizarUIProgressoKanji() {
+    calcularProgressoKanjiGlobal();
+
+    ['N5', 'N4', 'N3', 'N2', 'N1'].forEach(lvl => {
+        const card = document.getElementById(`card-kanji-${lvl.toLowerCase()}`);
+        const tag = document.getElementById(`tag-kanji-${lvl.toLowerCase()}`);
+        const desb = eNivelKanjiDesbloqueado(lvl);
+
+        if (card) {
+            if (desb) {
+                card.classList.remove('bloqueado');
+                if (tag) {
+                    tag.innerText = "DISPONÍVEL";
+                    tag.style.background = (lvl === 'N5') ? "#22c55e" : "#b45309";
+                }
+            } else {
+                card.classList.add('bloqueado');
+                if (tag) {
+                    tag.innerText = "🔒 BLOQUEADO";
+                    tag.style.background = "var(--text-muted)";
+                }
+            }
+        }
+    });
 }
 
 // LÓGICA DE VERIFICAÇÃO DE DESBLOQUEIO DE NÍVEIS E MÓDULOS (PROGRESSÃO GRADUAL)
