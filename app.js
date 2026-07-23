@@ -2287,6 +2287,13 @@ function resetarProgressoCurso() {
     localStorage.removeItem('ja_srs_katakana_deck');
     localStorage.removeItem('ja_srs_kanji_deck');
 
+    // Reset de Gamificação (XP, Nível, Ofensiva e Conquistas)
+    localStorage.removeItem('ja_user_stats');
+    localStorage.removeItem('ja_unlocked_achievements');
+    localStorage.removeItem('ja_streak_data');
+    localStorage.removeItem('ja_srs_reviews_count');
+    localStorage.removeItem('ja_voice_answers_count');
+
     const inputNome = document.getElementById('input-nome-usuario');
     if (inputNome) inputNome.value = "";
 
@@ -2299,9 +2306,12 @@ function resetarProgressoCurso() {
     salvarProgressoGlobal();
     calcularProgressoGlobal();
     atualizarUIProgresso();
+    atualizarHeaderXP();
+    atualizarHeaderStreak();
+    if (typeof renderizarMuralConquistas === 'function') renderizarMuralConquistas();
     voltarAoHub();
 
-    alert("Progresso, simulados e certificado reiniciados com sucesso!");
+    alert("Progresso, XP, níveis, conquistas, simulados e certificado reiniciados com sucesso!");
     fecharOpcoesCurso();
 }
 
@@ -4485,4 +4495,15 @@ function verificarTracoCanvas(canvasId) {
             mostrarToast(`❌ <strong>Traço Incompleto:</strong> Cobertura atual em <strong>${Math.round(taxaCobertura * 100)}%</strong>. Exige no mínimo 50%.`);
         }
     }
+}
+
+// ==========================================
+// REGISTRO DO SERVICE WORKER PWA (OFFLINE)
+// ==========================================
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('⚡ Service Worker PWA Ativo!', reg.scope))
+            .catch(err => console.error('Erro ao registrar PWA:', err));
+    });
 }
