@@ -7,6 +7,12 @@ const kanjiN5Data = [
         module: 1,
         title: "Módulo 1: Guia Fundamental e Anatomia do Kanji",
         description: "O alicerce definitivo da sua jornada! Aprofunde-se na lógica dos radicais (Busshu), na mecânica do Okurigana, nas regras de ouro do Kakijun e nos segredos da sonorização (Rendaku).",
+        grammar: {
+            title: "Frases de Identificação: ～は ～です (A é B)",
+            explanation: "A estrutura fundamental do japonês é: [Tópico] は [Identificação] です. A partícula は (wa) marca o TEMA/TÓPICO da frase (o que estamos falando). です (desu) é o verbo de ligação formal equivalente a 'é/são'. Para negar, use ではありません (dewa arimasen) ou o informal じゃない (ja nai).",
+            example: "これは漢字です。漢字は日本語の文字ではありません。中国語から来ました。",
+            translation: "Isto é um kanji. Kanji não é um caractere japonês. Veio do chinês."
+        },
         kanjis: [
             {
                 character: "漢",
@@ -183,6 +189,12 @@ const kanjiN5Data = [
         module: 2,
         title: "Módulo 2: Números, Contagem e Moeda",
         description: "Aprenda a base numérica do japonês, contadores essenciais e como perguntar/expressar preços e quantidades no N5.",
+        grammar: {
+            title: "Contadores Numéricos: ～円 / ～個 / ～本 / ～枚",
+            explanation: "No japonês, números NÃO existem sozinhos com substantivos — precisam de CONTADORES específicos. Os mais essenciais do N5 são: 円 (en) para preços em iene; 個 (ko) para objetos pequenos/redondos; 本 (hon) para objetos cilíndricos longos (canetas, garrafas); 枚 (mai) para objetos planos (papéis, camisas). Para perguntar o preço: いくらですか？ (Ikura desu ka? = Quanto custa?)",
+            example: "このペンは三本で五百円です。りんごが二個あります。",
+            translation: "Estas três canetas custam quinhentos ienes. Há duas maçãs."
+        },
         kanjis: [
             {
                 character: "一",
@@ -498,6 +510,12 @@ const kanjiN5Data = [
         module: 3,
         title: "Módulo 3: Tempo, Dias da Semana e Calendário",
         description: "Domine os ideogramas dos dias da semana, meses, anos e horas — essenciais para agendar compromissos e entender rotinas no N5.",
+        grammar: {
+            title: "Marcação de Tempo: ～に / ～から / ～まで (Horário, De... Até...)",
+            explanation: "Para indicar QUANDO algo acontece, use に após horas, dias e meses (ex: 月曜日に - na segunda-feira; 三時に - às três horas). Para expressar uma faixa de tempo, use から (kara = de/a partir de) e まで (made = até/antes de): 月曜日から金曜日まで trabalho. Para durações (quanto tempo dura), NÃO use に — use apenas o número com contador.",
+            example: "水曜日の二時から四時まで日本語のクラスがあります。",
+            translation: "Na quarta-feira, tenho aula de japonês das duas às quatro horas."
+        },
         kanjis: [
             {
                 character: "日",
@@ -833,6 +851,12 @@ const kanjiN5Data = [
         module: 4,
         title: "Módulo 4: Natureza, Fenômenos e Meio Ambiente",
         description: "Explore os elementos naturais no N5 e domine a gramática da existência: use 「あります」 para coisas inanimadas (montanhas, rios) e 「います」 para seres vivos (animais).",
+        grammar: {
+            title: "Verbos de Existência: あります vs います (Há / Existe)",
+            explanation: "Regra de ouro do N5: Para indicar a EXISTÊNCIA de algo, use dois verbos diferentes. あります (arimasu) → para coisas INANIMADAS: objetos, plantas, lugares, fenômenos naturais (山があります = Há uma montanha). います (imasu) → para seres ANIMADOS: pessoas, animais, insetos (犬がいます = Há um cachorro). Para indicar onde está: [Lugar] に [Sujeito] が あります/います.",
+            example: "公園に大きい木があります。その木の下に白い犬がいます。",
+            translation: "Há uma grande árvore no parque. Embaixo dessa árvore há um cachorro branco."
+        },
         kanjis: [
             {
                 character: "山",
@@ -1063,6 +1087,12 @@ const kanjiN5Data = [
         module: 5,
         title: "Módulo 5: Posição, Direção e Espaço",
         description: "Aprenda a navegar pelo mundo! Domine os ideogramas de localização e a estrutura gramatical fundamental para dizer onde pessoas e objetos estão (〜の〜にあります/います).",
+        grammar: {
+            title: "Localização: ～の + Posição + に あります/います",
+            explanation: "Para descrever a posição de algo em relação a um ponto de referência, use a estrutura: [Objeto] は [Referência] の [Posição] に あります/います. Exemplos de posições: 上 (ue - cima), 下 (shita - baixo), 中 (naka - dentro), 外 (soto - fora), 前 (mae - frente), 後ろ (ushiro - atrás), 右 (migi - direita), 左 (hidari - esquerda), 間 (aida - entre), 隣 (tonari - ao lado).",
+            example: "本はテーブルの上にあります。猫はいすの下にいます。",
+            translation: "O livro está em cima da mesa. O gato está embaixo da cadeira."
+        },
         kanjis: [
             {
                 character: "上",
@@ -1293,6 +1323,12 @@ const kanjiN5Data = [
         module: 6,
         title: "Módulo 6: Pessoas, Relações e Família",
         description: "Domine o vocabulário humano do N5 e a regra de ouro cultural de 'Uchi vs. Soto' (família própria vs. família alheia), além dos pronomes e contadores de pessoas.",
+        grammar: {
+            title: "Posse e Relação: の (Partícula de Posse e Ligação)",
+            explanation: "A partícula の (no) é multifuncional no N5: (1) Indica POSSE como 'de': 私の本 = meu livro (lit. livro de mim); 田中さんの家族 = família do Sr. Tanaka. (2) Liga substantivos descrevendo o tipo: 女の人 = mulher (lit. pessoa do tipo mulher). (3) Substitui um substantivo já mencionado (pronome): この本は私のです = Este livro é meu. Note a diferença cultural: use vocabulário humilde para sua própria família (父 chichi) e respeitoso para a família alheia (お父さん otousan).",
+            example: "これは私の家族の写真です。左が父で、右が母です。",
+            translation: "Esta é uma foto da minha família. À esquerda é meu pai e à direita é minha mãe."
+        },
         kanjis: [
             {
                 character: "人",
@@ -1529,6 +1565,12 @@ const kanjiN5Data = [
         module: 7,
         title: "Módulo 7: Verbos de Ação e Movimento",
         description: "Coloque o idioma em movimento! Domine os principais ideogramas de ação do N5 e aprenda a conectar verbos às partículas essenciais do dia a dia: 「を」 (objeto direto), 「へ/に」 (direção) e 「で」 (local da ação).",
+        grammar: {
+            title: "Partículas de Ação: を / へ・に / で (Objeto / Destino / Local)",
+            explanation: "As três partículas de ação mais importantes do N5: を (o): marca o OBJETO DIRETO que recebe a ação → 本を読みます (leio o livro). へ ou に (e / ni): indica o DESTINO ou DIREÇÃO do movimento → 学校へ行きます (vou à escola). で (de): indica o LOCAL onde uma ação dinâmica acontece → 図書館で勉強します (estudo na biblioteca). ATENÇÃO: に para estado/existência, で para ação ativa. Forma do passado: -ます → -ました.",
+            example: "図書館で日本語の本を読みました。来週、東京へ行きます。",
+            translation: "Li um livro em japonês na biblioteca. Na semana que vem, vou a Tóquio."
+        },
         kanjis: [
             {
                 character: "行",
@@ -1759,6 +1801,12 @@ const kanjiN5Data = [
         module: 8,
         title: "Módulo 8: Adjetivos e Qualidades N5",
         description: "Deixe o seu japonês muito mais expressivo! Domine os pares de adjetivos opostos mais essenciais do N5 (grande/pequeno, novo/velho, alto/barato), as cores fundamentais e a regra de modificação de substantivos.",
+        grammar: {
+            title: "Adjetivos い vs. な: Conjugação e Modificação de Substantivos",
+            explanation: "O japonês tem dois tipos de adjetivos com regras distintas. ADJETIVOS-い (terminam em い): conectam direto ao substantivo → 大きいいえ (casa grande); negativa: 大きくない (não é grande); passado: 大きかった (era grande). ADJETIVOS-な (originalmente substantivos): precisam de な antes do substantivo → 有名な人 (pessoa famosa); negativa: 有名ではない; passado: 有名だった. Para comparações no N5: A は B より [Adjetivo] です (A é mais [adj] que B); A と B と どちらが [Adj] ですか (Qual dos dois, A ou B, é mais [adj]?).",
+            example: "新しい車より古い自転車のほうが好きです。白い猫はとても小さくて可愛いです。",
+            translation: "Prefiro a bicicleta velha ao carro novo. O gato branco é muito pequeno e fofo."
+        },
         kanjis: [
             {
                 character: "大",
@@ -1989,6 +2037,12 @@ const kanjiN5Data = [
         module: 9,
         title: "Módulo 9: Sociedade, Escola e Vida Cotidiana",
         description: "O gran finale do curso N5! Domine os ideogramas essenciais da vida escolar, transporte e comércio. Aprenda a formular perguntas com 「何」 (o que/qual) e a dominar os sufixos de idiomas (〜語) e estabelecimentos.",
+        grammar: {
+            title: "Perguntas com Interrogativos: 何 / どこ / いつ / 誤 (O quê / Onde / Quando / Quem)",
+            explanation: "As palavras interrogativas do N5 são essenciais na vida cotidiana. Use: 何 (nani/nan = O quê) → 何を飲みますか (O que bebe?); どこ (doko = Onde) → 学校はどこですか (Onde é a escola?); いつ (itsu = Quando) → 試験はいつですか (Quando é a prova?); 誤 (dare = Quem) → あの人は誤ですか (Quem é aquela pessoa?); どの (dono = Qual) → どの本ですか (Qual livro?). NUNCA use ka (か) em afirmativas; ele SEMPRE indica pergunta.",
+            example: "すみません、驅はどこですか？この魚は何ですか？いつから学校が始まりますか？",
+            translation: "Com licença, onde é a estação? O que é esse peixe? Quando começa a escola?"
+        },
         kanjis: [
             {
                 character: "学",
@@ -2240,6 +2294,12 @@ const kanjiN5Data = [
         module: 10,
         title: "Módulo 10: Culinária, Alimentos e Restaurantes",
         description: "Expanda seu vocabulário para o universo gastronômico japonês! Aprenda ideogramas essenciais sobre ingredientes, pratos típicos, bebidas e termos indispensáveis para o dia a dia e viagens.",
+        grammar: {
+            title: "Expressões de Preferência: ～が 好きです / がきらいです (Gosto / Não Gosto)",
+            explanation: "Para expressar preferências alimentares no N5, a estrutura é: [Pessoa] は [Coisa] が 好きです (gosta de). O ponto crítico: use が (ga), não を (o), antes de 好き (suki = gostar) e 嫌い (kirai = não gostar/detestar). Para intensificar use 大好き (daisuki = adorar) e 大嫌い (daikirai = detestar muito). Para indicar o que quer pedir, use: ～をください (~ o kudasai = Por favor, me dê ~) ou ～にします (~ni shimasu = Vou pedir o ~, para fazer escolha).",
+            example: "山田さんは魚料理が大妃きですが、肉がきらいです。寓海老山を一つください。",
+            translation: "O Sr. Yamada adora peixe, mas não gosta de carne. Por favor, me dê um onigiride salmon."
+        },
         kanjis: [
             {
                 character: "魚",

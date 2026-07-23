@@ -264,6 +264,8 @@ function getCourseData(mode) {
         return (typeof KATA_COURSE_DATA !== 'undefined' ? KATA_COURSE_DATA : (typeof katakanaData !== 'undefined' ? katakanaData : null));
     } else if (mode === 'kanji') {
         return (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null);
+    } else if (mode === 'kanji_n4') {
+        return (typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null);
     }
     return null;
 }
@@ -342,7 +344,8 @@ function toggleModuloConcluido(modIdx, mode) {
 
     if (t === 'hiragana') { progressKey = 'progress_hiragana'; labelCurso = 'Hiragana'; }
     else if (t === 'katakana') { progressKey = 'progress_katakana'; labelCurso = 'Katakana'; }
-    else if (t === 'kanji') { progressKey = 'progress_kanji'; labelCurso = 'Kanji'; }
+    else if (t === 'kanji') { progressKey = 'progress_kanji'; labelCurso = 'Kanji N5'; }
+    else if (t === 'kanji_n4') { progressKey = 'progress_kanji_n4'; labelCurso = 'Kanji N4'; }
     else return;
 
     if (!progressoGlobal[progressKey]) progressoGlobal[progressKey] = [];
@@ -388,7 +391,7 @@ function atualizarChecklistTabs(mode) {
 function loadCourseModule(idx) {
     const mode = document.body.getAttribute('data-mode') || courseMode;
 
-    if (mode === 'kanji') {
+    if (mode === 'kanji' || mode === 'kanji_n4') {
         renderKanjiModule(idx);
         return;
     }
@@ -482,12 +485,77 @@ function checkCourseQuiz(idx, correct, type) {
     else { feed.textContent = `❌ Era: ${correct}`; feed.className = "feedback incorrect"; playBeep('error'); }
 }
 
+function renderQuizQuestion(q, i, mode = 'kanji') {
+    const safeAns = (q.a || '').replace(/'/g, "\\'");
+    
+    if (q.type === 'choice' || (q.options && Array.isArray(q.options) && q.options.length > 0)) {
+        const optionsHTML = q.options.map(opt => `
+            <button class="quiz-option-btn" onclick="verificarQuizEscolha(${i}, '${safeAns}', '${opt.replace(/'/g, "\\'")}', this)" style="display:block; margin:6px 0; width:100%; text-align:left; padding:12px 16px; border-radius:10px; border:1.5px solid var(--border-color); background:var(--card-bg); color:var(--text-main); font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.2s ease;">
+                🔘 ${opt}
+            </button>
+        `).join('');
+
+        return `
+            <div class="question-block" style="background:var(--card-bg); border:1.5px solid var(--border-color); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow);">
+                <div class="question-text" style="font-weight:700; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                    <span style="font-size:1.05rem; color:var(--text-main);">${i + 1}. ${q.q}</span>
+                    <span class="badge" style="background:rgba(168, 85, 247, 0.15); color:#a855f7; border:1px solid #a855f7; padding:4px 10px; border-radius:12px; font-size:0.8rem; font-weight:bold;">🔘 Múltipla Escolha</span>
+                </div>
+                <div class="quiz-options-group">${optionsHTML}</div>
+                <div id="cf_${i}" class="feedback" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
+            </div>
+        `;
+    } else {
+        return `
+            <div class="question-block" style="background:var(--card-bg); border:1.5px solid var(--border-color); border-radius:12px; padding:18px; margin-bottom:16px; box-shadow:var(--shadow);">
+                <div class="question-text" style="font-weight:700; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                    <span style="font-size:1.05rem; color:var(--text-main);">${i + 1}. ${q.q}</span>
+                    <span class="badge" style="background:rgba(14, 165, 233, 0.15); color:#0ea5e9; border:1px solid #0ea5e9; padding:4px 10px; border-radius:12px; font-size:0.8rem; font-weight:bold;">⌨️ Digitação</span>
+                </div>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                    <input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${safeAns}', '${q.type}')" placeholder="Sua resposta em hiragana, romaji ou português..." style="flex:1; min-width:200px; padding:12px; border-radius:10px; border:1.5px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-weight:600; outline:none; font-size:0.95rem;">
+                    <button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${safeAns}', '${q.type}')" style="padding:12px 22px; background:var(--current-primary); color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; font-size:0.95rem;">Verificar</button>
+                </div>
+                <div id="cf_${i}" class="feedback" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
+            </div>
+        `;
+    }
+}
+
+function verificarQuizEscolha(idx, respostaCorreta, respostaSelecionada, btnEl) {
+    const feed = document.getElementById(`cf_${idx}`);
+    const parent = btnEl.parentElement;
+    if (parent) {
+        parent.querySelectorAll('button').forEach(b => {
+            b.style.opacity = '0.5';
+            b.style.borderColor = 'var(--border-color)';
+            b.style.backgroundColor = 'var(--card-bg)';
+        });
+    }
+    btnEl.style.opacity = '1';
+
+    const isCorrect = (respostaSelecionada.trim().toLowerCase() === respostaCorreta.trim().toLowerCase());
+    if (isCorrect) {
+        btnEl.style.borderColor = '#22c55e';
+        btnEl.style.backgroundColor = 'rgba(34, 197, 94, 0.15)';
+        if (feed) feed.innerHTML = '<span style="color: #22c55e;">✨ Resposta Correta! Parabéns! +10 XP</span>';
+        playBeep('success');
+        adicionarXP(10, 'Exercício de Múltipla Escolha');
+    } else {
+        btnEl.style.borderColor = '#ef4444';
+        btnEl.style.backgroundColor = 'rgba(239, 68, 68, 0.15)';
+        if (feed) feed.innerHTML = `<span style="color: #ef4444;">❌ Resposta incorreta. Correto: <strong>${respostaCorreta}</strong></span>`;
+        playBeep('error');
+    }
+}
+
 // ==========================================
-// RENDERIZAÇÃO DO CURSO DE KANJI N5 (ESTRUTURA PERFEITA E DEFENSIVA)
+// RENDERIZAÇÃO DO CURSO DE KANJI N5 & N4 (ESTRUTURA PERFEITA E DEFENSIVA)
 // ==========================================
 function renderKanjiModule(moduleIndex) {
     const container = document.getElementById('moduleDisplay');
-    const dataBase = typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null;
+    const mode = document.body.getAttribute('data-mode') || courseMode;
+    const dataBase = getCourseData(mode) || (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null);
     if (!container || !dataBase) return;
 
     const moduleData = dataBase[moduleIndex];
@@ -503,6 +571,26 @@ function renderKanjiModule(moduleIndex) {
         <p style="margin-bottom:2rem; color:var(--text-muted);">${fNome(moduleData.description || moduleData.desc || '')}</p>
     `;
     container.appendChild(headerDiv);
+
+    // BANNER DE GRAMÁTICA (N5 ou N4, conforme o modo atual)
+    if (moduleData.grammar) {
+        const grammarDiv = document.createElement('div');
+        grammarDiv.className = 'kanji-grammar-box';
+        grammarDiv.style.cssText = 'background: rgba(180, 83, 9, 0.08); border: 2px solid #f59e0b; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; box-shadow: var(--shadow);';
+        const grammarNivel = (mode === 'kanji_n4') ? 'N4' : 'N5';
+        grammarDiv.innerHTML = `
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span style="font-size:1.4rem;">💡</span>
+                <strong style="font-size:1.15rem; color:#f59e0b;">Gramática ${grammarNivel} Aplicada: ${moduleData.grammar.title}</strong>
+            </div>
+            <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:12px;">${moduleData.grammar.explanation}</p>
+            <div style="background:var(--card-bg); border-left:4px solid #f59e0b; padding:10px 14px; border-radius:8px; font-size:0.9rem;">
+                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${moduleData.grammar.example}</span> 
+                <small style="color:var(--text-muted); display:block; margin-top:3px;">"${moduleData.grammar.translation}"</small>
+            </div>
+        `;
+        container.appendChild(grammarDiv);
+    }
 
     // VERIFICAÇÃO: Se for a Tabela Geral de Revisão (Módulo 10)
     if (moduleData.isReviewTable) {
@@ -1413,8 +1501,17 @@ function abrirTrilhaKanji(nivelJLPT) {
         return;
     }
 
+    if (lvl === 'N4') {
+        if (!eNivelKanjiDesbloqueado(lvl)) {
+            alert(`🔒 Conclua todos os módulos do Nível N5 para liberar o Nível N4!`);
+            return;
+        }
+        window.location.href = 'kanji_n4.html';
+        return;
+    }
+
     if (!eNivelKanjiDesbloqueado(lvl)) {
-        const nivelAnterior = (lvl === 'N4') ? 'N5' : (lvl === 'N3') ? 'N4' : (lvl === 'N2') ? 'N3' : 'N2';
+        const nivelAnterior = (lvl === 'N3') ? 'N4' : (lvl === 'N2') ? 'N3' : 'N2';
         alert(`🔒 Conclua todos os módulos do Nível ${nivelAnterior} para liberar o Nível ${lvl}!`);
         return;
     }
@@ -1505,6 +1602,9 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     }
     if (t === 'kanji') {
         return (progressoGlobal.progress_kanji || []).includes(modIdx);
+    }
+    if (t === 'kanji_n4') {
+        return (progressoGlobal.progress_kanji_n4 || []).includes(modIdx);
     }
 
     const cursos = getTodosOsCursos();
@@ -1680,6 +1780,17 @@ function initApp() {
     if (progressoGlobal.nivelAtual) nivelAtivo = progressoGlobal.nivelAtual;
     calcularProgressoGlobal();
     atualizarUIProgresso();
+
+    if (document.getElementById('tabContainer')) {
+        renderCourseTabs();
+        loadCourseModule(0);
+    }
+
+    const mode = document.body.getAttribute('data-mode') || courseMode;
+    if (mode) {
+        atualizarBadgeSRS(mode);
+    }
+
     console.log("🚀 Japão Academy Inicializado | Nível Ativo:", nivelAtivo, "| Módulos Concluídos:", progressoGlobal.modulosConcluidos.length, "/ 105");
 }
 
@@ -1703,6 +1814,7 @@ function getDeckKeySRS(tipo) {
     if (t === 'hiragana') return 'ja_srs_hiragana_deck';
     if (t === 'katakana') return 'ja_srs_katakana_deck';
     if (t === 'kanji') return 'ja_srs_kanji_deck';
+    if (t === 'kanji_n4') return 'ja_srs_kanji_n4_deck';
     if (t === 'a2') return 'ja_srs_a2_deck';
     if (t === 'b1') return 'ja_srs_b1_deck';
     if (t === 'b2') return 'ja_srs_b2_deck';
@@ -1899,6 +2011,39 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                 }
             });
         }
+    } else if (t === 'kanji_n4') {
+        if (typeof kanjiN4Data !== 'undefined') {
+            const tamOrig = deck.length;
+            deck = deck.filter(card => eModuloAprendido(card.modIdx, 'kanji_n4'));
+            if (deck.length !== tamOrig) alterado = true;
+
+            kanjiN4Data.forEach((mod, modIdx) => {
+                if (eModuloAprendido(modIdx, 'kanji_n4')) {
+                    modulosConcluidosNomes.push(mod.title || `Módulo ${mod.module || (modIdx + 1)}`);
+                    if (mod.kanjis && Array.isArray(mod.kanjis)) {
+                        mod.kanjis.forEach(k => {
+                            const cardId = `kanji_n4_${k.character}`;
+                            if (!deck.some(d => d.id === cardId)) {
+                                deck.push({
+                                    id: cardId,
+                                    modIdx: modIdx,
+                                    modTitle: mod.title || `Módulo ${mod.module || (modIdx + 1)}`,
+                                    dropType: 'kanji',
+                                    character: k.character,
+                                    meaning: k.meaning,
+                                    kunyomi: k.kunyomi,
+                                    onyomi: k.onyomi,
+                                    mnemonic: k.mnemonic,
+                                    examples: k.examples || [],
+                                    repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
+                                });
+                                alterado = true;
+                            }
+                        });
+                    }
+                }
+            });
+        }
     }
 
     if (alterado) {
@@ -1923,7 +2068,13 @@ function atualizarBadgeSRS(tipo) {
         const mode = document.body.getAttribute('data-mode') || 'curso';
         tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
     }
-    const tUpper = tipo.toUpperCase();
+    let labelExibicao = 'A1';
+    if (tipo === 'kanji_n4' || tipo === 'n4') labelExibicao = 'Kanji N4';
+    else if (tipo === 'kanji' || tipo === 'n5') labelExibicao = 'Kanji N5';
+    else if (tipo === 'hiragana') labelExibicao = 'Hiragana';
+    else if (tipo === 'katakana') labelExibicao = 'Katakana';
+    else labelExibicao = tipo.toUpperCase();
+
     const deck = sincronizarBaralhoSRS(tipo);
     const agora = Date.now();
     const pendentes = deck.filter(c => c.dueDate <= agora);
@@ -1938,10 +2089,10 @@ function atualizarBadgeSRS(tipo) {
             desc.innerText = "Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!";
             if (btn) btn.innerText = "Iniciar Revisão ➔";
         } else if (pendentes.length === 0) {
-            desc.innerText = `✨ Suas revisões de hoje estão em dia! Pratique com seu baralho de ${tUpper} (${deck.length} cards liberados).`;
+            desc.innerText = `✨ Suas revisões de hoje estão em dia! Pratique com seu baralho de ${labelExibicao} (${deck.length} cards liberados).`;
             if (btn) btn.innerText = "Prática Livre do Baralho ➔";
         } else {
-            desc.innerText = `🔥 Você tem ${pendentes.length} item(ns) de ${tUpper} aguardando revisão hoje!`;
+            desc.innerText = `🔥 Você tem ${pendentes.length} item(ns) de ${labelExibicao} aguardando revisão hoje!`;
             if (btn) btn.innerText = "Iniciar Revisão ➔";
         }
     }
@@ -3463,6 +3614,7 @@ function carregarTodosOsDatasets(callback) {
         { check: () => typeof CURSO_B1_DADOS !== 'undefined', src: 'data_curso_b1.js' },
         { check: () => typeof CURSO_B2_DADOS !== 'undefined', src: 'data_curso_b2.js' },
         { check: () => typeof kanjiN5Data !== 'undefined', src: 'data_kanji_n5.js' },
+        { check: () => typeof kanjiN4Data !== 'undefined', src: 'data_kanji_n4.js' },
         { check: () => typeof RAW_H !== 'undefined', src: 'data_hiragana.js' },
         { check: () => typeof RAW_K !== 'undefined', src: 'data_katakana.js' }
     ];
@@ -3550,6 +3702,28 @@ function compilarGlossarioUniversal() {
                         module: mod.title || 'Kanji N5',
                         level: 'N5',
                         origin: 'Kanji N5'
+                    });
+                });
+            }
+        });
+    }
+
+    // 2b. CURSO KANJI N4
+    if (typeof kanjiN4Data !== 'undefined' && Array.isArray(kanjiN4Data)) {
+        kanjiN4Data.forEach(mod => {
+            if (mod.kanjis && Array.isArray(mod.kanjis)) {
+                mod.kanjis.forEach(item => {
+                    lista.push({
+                        type: 'kanji',
+                        character: item.character || '',
+                        meaning: item.meaning || '',
+                        kunyomi: item.kunyomi || '',
+                        onyomi: item.onyomi || '',
+                        mnemonic: item.mnemonic || '',
+                        examples: item.examples || [],
+                        module: mod.title || 'Kanji N4',
+                        level: 'N4',
+                        origin: 'Kanji N4'
                     });
                 });
             }
