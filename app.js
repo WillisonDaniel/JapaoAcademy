@@ -439,6 +439,7 @@ function loadCourseModule(idx) {
                     <canvas id="${canvasId}" class="kanji-canvas" width="190" height="190" data-char="${rawChar}"></canvas>
                     <div class="canvas-toolbar">
                         <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                        <button class="canvas-btn btn-kakijun" onclick="animarKakijun('${canvasId}')" title="Ordem dos Traços">🎬 Traços</button>
                         <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                         <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                         <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
@@ -602,6 +603,7 @@ function renderKanjiModule(moduleIndex) {
                             <canvas id="${canvasId}" class="kanji-canvas" width="200" height="200" data-char="${charVal}"></canvas>
                             <div class="canvas-toolbar">
                                 <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                                <button class="canvas-btn btn-kakijun" onclick="animarKakijun('${canvasId}')" title="Ordem dos Traços">🎬 Traços</button>
                                 <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                                 <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                                 <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
@@ -2574,6 +2576,8 @@ function renderizarEtapa() {
         const modId = mod.id;
         if (!progressoGlobal.modulosConcluidos.includes(modId)) {
             progressoGlobal.modulosConcluidos.push(modId);
+            adicionarXP(100, 'Conclusão de Módulo');
+            dispararConfeti({ particleCount: 100, spread: 90, origin: { y: 0.5 } });
         }
 
         if (temProximo) {
@@ -2874,12 +2878,146 @@ function verificarDialogoMassa(idx, feedback, isCorrect, btnElement) {
     fb.innerHTML = `<span style="color: ${cor};">${fNome(feedback)}</span>`;
 }
 
-function tocarAudio(texto) {
+let velocidadeAudioAtual = 1.0;
+let activeRecognitionInstance = null;
+
+function alternarVelocidadeAudio(btnElement) {
+    velocidadeAudioAtual = (velocidadeAudioAtual === 1.0) ? 0.6 : 1.0;
+    const isSlow = (velocidadeAudioAtual === 0.6);
+    mostrarToast(isSlow ? '🐢 <strong>Modo Áudio Lento (0.6x) Ativado!</strong>' : '⚡ <strong>Modo Áudio Normal (1.0x) Ativado!</strong>');
+    
+    document.querySelectorAll('.btn-speed-toggle').forEach(btn => {
+        btn.innerText = isSlow ? '🐢 Lento (0.6x)' : '⚡ Normal (1.0x)';
+        btn.classList.toggle('speed-slow', isSlow);
+    });
+}
+
+function tocarAudio(texto, rateOverride = null) {
+    if (!texto) return;
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const u = new SpeechSynthesisUtterance(texto);
         u.lang = 'ja-JP';
+        u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
         window.speechSynthesis.speak(u);
+    }
+}
+
+function speakKana(texto, rateOverride = null) {
+    tocarAudio(texto, rateOverride);
+}
+
+function gravarEPronunciar(textoEsperado, btnElementId) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        mostrarToast('⚠️ <strong>Recurso não suportado:</strong> Seu navegador não suporta o Reconhecimento de Voz da Web Speech API. Tente no Google Chrome ou Edge.');
+        return;
+    }
+
+    const btnEl = document.getElementById(btnElementId) || (typeof event !== 'undefined' && event ? event.currentTarget : null);
+
+    if (activeRecognitionInstance) {
+        activeRecognitionInstance.stop();
+        activeRecognitionInstance = null;
+        if (btnEl) {
+            btnEl.classList.remove('recording-active');
+            btnEl.innerHTML = '🎙️ Treinar Pronúncia';
+        }
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'ja-JP';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 3;
+
+    activeRecognitionInstance = recognition;
+
+    if (btnEl) {
+        btnEl.classList.add('recording-active');
+        btnEl.innerHTML = '🔴 Escutando... Fale!';
+    }
+    mostrarToast('🎙️ <strong>Escutando em Japonês...</strong> Fale em voz alta!');
+    playBeep('click');
+
+    recognition.onresult = (e) => {
+        activeRecognitionInstance = null;
+        if (btnEl) {
+            btnEl.classList.remove('recording-active');
+            btnEl.innerHTML = '🎙️ Treinar Pronúncia';
+        }
+
+        const transcripts = [];
+        for (let i = 0; i < e.results.length; i++) {
+            for (let j = 0; j < e.results[i].length; j++) {
+                transcripts.push(e.results[i][j].transcript.trim());
+            }
+        }
+
+        const rawExpected = normalizarTexto(textoEsperado);
+        let matchScore = 0;
+        let bestTranscript = transcripts[0] || '';
+
+        transcripts.forEach(tr => {
+            const normTr = normalizarTexto(tr);
+            if (normTr === rawExpected) {
+                matchScore = 1.0;
+                bestTranscript = tr;
+            } else if (normTr.includes(rawExpected) || rawExpected.includes(normTr)) {
+                matchScore = Math.max(matchScore, 0.85);
+                bestTranscript = tr;
+            } else {
+                const lenMax = Math.max(normTr.length, rawExpected.length) || 1;
+                let sameCount = 0;
+                for (let c = 0; c < Math.min(normTr.length, rawExpected.length); c++) {
+                    if (normTr[c] === rawExpected[c]) sameCount++;
+                }
+                const score = sameCount / lenMax;
+                if (score > matchScore) {
+                    matchScore = score;
+                    bestTranscript = tr;
+                }
+            }
+        });
+
+        if (matchScore >= 0.70) {
+            playBeep('success');
+            mostrarToast(`🎉 <strong>Pronúncia Correta!</strong> Ouvi: <em>"${bestTranscript}"</em> (+10 XP)`);
+            adicionarXP(10, 'Pronúncia Aprovada em Japonês');
+            dispararConfeti({ particleCount: 40, spread: 50, origin: { y: 0.8 } });
+        } else {
+            playBeep('error');
+            mostrarToast(`🎧 <strong>Quase! Tente novamente.</strong> Ouvi: <em>"${bestTranscript}"</em> (Esperado: "${textoEsperado}")`);
+        }
+    };
+
+    recognition.onerror = (e) => {
+        activeRecognitionInstance = null;
+        if (btnEl) {
+            btnEl.classList.remove('recording-active');
+            btnEl.innerHTML = '🎙️ Treinar Pronúncia';
+        }
+        if (e.error !== 'no-speech' && e.error !== 'aborted') {
+            mostrarToast(`⚠️ <strong>Erro no Microfone:</strong> ${e.error}. Verifique se concedeu permissão.`);
+        }
+    };
+
+    recognition.onend = () => {
+        activeRecognitionInstance = null;
+        if (btnEl) {
+            btnEl.classList.remove('recording-active');
+            btnEl.innerHTML = '🎙️ Treinar Pronúncia';
+        }
+    };
+
+    try {
+        recognition.start();
+    } catch (err) {
+        activeRecognitionInstance = null;
+        if (btnEl) {
+            btnEl.classList.remove('recording-active');
+            btnEl.innerHTML = '🎙️ Treinar Pronúncia';
+        }
     }
 }
 
@@ -3079,6 +3217,13 @@ function garantirElementosCabecalhoEModal() {
             header.appendChild(group);
         }
 
+        // 0. Widget de XP e Nível do Perfil
+        if (!document.getElementById('xp-profile-widget-container')) {
+            const xpDiv = document.createElement('div');
+            xpDiv.id = 'xp-profile-widget-container';
+            group.appendChild(xpDiv);
+        }
+
         // 1. Badge da Ofensiva
         if (!document.getElementById('streak-badge-header')) {
             const streakDiv = document.createElement('div');
@@ -3137,18 +3282,22 @@ function garantirElementosCabecalhoEModal() {
             group.appendChild(btnTema);
         }
 
-        // Reordena para ficar padronizado em todas as paginas: [Streak] [Conquistas] [Dicionário] [Opções] [Tema]
+        // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Tema]
+        const elXp = document.getElementById('xp-profile-widget-container');
         const elStreak = document.getElementById('streak-badge-header');
         const elConq = document.getElementById('btn-conquistas-hdr');
         const elDict = document.getElementById('btn-dicionario-hdr');
         const elCfg = document.getElementById('btn-config-curso');
         const elTema = header.querySelector('.theme-btn');
 
+        if (elXp) group.appendChild(elXp);
         if (elStreak) group.appendChild(elStreak);
         if (elConq) group.appendChild(elConq);
         if (elDict) group.appendChild(elDict);
         if (elCfg) group.appendChild(elCfg);
         if (elTema) group.appendChild(elTema);
+
+        atualizarHeaderXP();
     }
 
     if (!document.getElementById('modal-conquistas')) {
@@ -3536,27 +3685,31 @@ function selecionarCategoriaDicionario(cat) {
 }
 
 function abrirModalDicionario() {
-    garantirElementosCabecalhoEModal();
-    const modal = document.getElementById('modal-dicionario');
-    if (modal) {
-        modal.style.display = 'flex';
-        const counter = document.getElementById('dict-results-counter');
-        if (counter) counter.innerText = '⚡ Carregando banco de dados universal...';
-
-        carregarTodosOsDatasets(() => {
-            glossarioUniversalCache = null; // força recompilação com todos os datasets carregados
-            const input = document.getElementById('dict-search-input');
-            const query = input ? input.value : '';
-            renderizarResultadosDicionario(query);
-            if (input) setTimeout(() => input.focus(), 100);
-        });
+    if (!window.location.pathname.includes('dicionario.html')) {
+        window.location.href = 'dicionario.html';
+        return;
     }
+    const input = document.getElementById('dict-search-input');
+    if (input) input.focus();
 }
 
 function fecharModalDicionario() {
     const modal = document.getElementById('modal-dicionario');
     if (modal) modal.style.display = 'none';
 }
+
+// Auto-inicialização automática quando estiver na página dedicada dicionario.html
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname.includes('dicionario.html') || document.getElementById('dict-results-container')) {
+        carregarTodosOsDatasets(() => {
+            glossarioUniversalCache = null;
+            const input = document.getElementById('dict-search-input');
+            const query = input ? input.value : '';
+            renderizarResultadosDicionario(query);
+            if (input) setTimeout(() => input.focus(), 100);
+        });
+    }
+});
 
 function renderizarResultadosDicionario(queryStr = '') {
     const container = document.getElementById('dict-results-container');
@@ -3656,7 +3809,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                                 <div><strong>On:</strong> ${item.onyomi || '-'}</div>
                             </div>
                         </div>
-                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Kanji">🔊</button>
+                        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-end;">
+                            <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Kanji">🔊</button>
+                            <button class="btn-mic" id="btn-mic-kanji-${idx}" onclick="gravarEPronunciar('${item.character}', 'btn-mic-kanji-${idx}')" title="Treinar Pronúncia">🎙️ Treinar</button>
+                        </div>
                     </div>
                     ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
                     ${exHtml ? `<div class="dict-ex-box">${exHtml}</div>` : ''}
@@ -3666,6 +3822,7 @@ function renderizarResultadosDicionario(queryStr = '') {
                         <canvas id="${canvasId}" class="kanji-canvas" width="160" height="160" data-char="${item.character}"></canvas>
                         <div class="canvas-toolbar">
                             <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                            <button class="canvas-btn btn-kakijun" onclick="animarKakijun('${canvasId}')" title="Ordem dos Traços">🎬 Traços</button>
                             <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                             <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                             <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
@@ -3700,7 +3857,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                             <div class="dict-vocab-romaji">${item.romaji}</div>
                             <div class="dict-vocab-trans">${item.translation}</div>
                         </div>
-                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.romaji || item.term}')" title="Ouvir Pronúncia">🔊</button>
+                        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-end;">
+                            <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.romaji || item.term}')" title="Ouvir Pronúncia">🔊</button>
+                            <button class="btn-mic" id="btn-mic-v-${idx}" onclick="gravarEPronunciar('${item.term}', 'btn-mic-v-${idx}')" title="Treinar Pronúncia">🎙️ Treinar</button>
+                        </div>
                     </div>
                     ${item.context ? `<div class="dict-context">💡 ${fNome(item.context)}</div>` : ''}
                 </div>
@@ -3723,7 +3883,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                             <div class="dict-vocab-term kana-text" onclick="speakKana('${item.character}')" style="cursor:pointer;" title="Ouvir Kana">${item.character} 🔊</div>
                             <div class="dict-vocab-romaji">Romaji: ${item.romaji}</div>
                         </div>
-                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Pronúncia">🔊</button>
+                        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-end;">
+                            <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Pronúncia">🔊</button>
+                            <button class="btn-mic" id="btn-mic-k-${idx}" onclick="gravarEPronunciar('${item.character}', 'btn-mic-k-${idx}')" title="Treinar Pronúncia">🎙️ Treinar</button>
+                        </div>
                     </div>
                     ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
                     ${item.stroke ? `<div class="dict-ex-box"><strong>✏️ Traço:</strong> ${item.stroke}</div>` : ''}
@@ -3733,6 +3896,7 @@ function renderizarResultadosDicionario(queryStr = '') {
                         <canvas id="${canvasId}" class="kanji-canvas" width="160" height="160" data-char="${item.character}"></canvas>
                         <div class="canvas-toolbar">
                             <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                            <button class="canvas-btn btn-kakijun" onclick="animarKakijun('${canvasId}')" title="Ordem dos Traços">🎬 Traços</button>
                             <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                             <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                             <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
@@ -3749,10 +3913,145 @@ function renderizarResultadosDicionario(queryStr = '') {
 }
 
 // ==========================================
+// SISTEMA DE GAMIFICAÇÃO (XP, RANKS E CONFETI)
+// ==========================================
+
+const RANKS = [
+    { minXp: 0, level: 1, name: "Iniciante", kanji: "初心者", icon: "🌱" },
+    { minXp: 100, level: 2, name: "Aprendiz", kanji: "見習い", icon: "📖" },
+    { minXp: 300, level: 3, name: "Ronin", kanji: "浪人", icon: "🗡️" },
+    { minXp: 700, level: 4, name: "Samurai", kanji: "侍", icon: "⚔️" },
+    { minXp: 1500, level: 5, name: "Shogun", kanji: "将軍", icon: "🏯" },
+    { minXp: 2700, level: 6, name: "Daimyo", kanji: "大名", icon: "⛩️" },
+    { minXp: 4500, level: 7, name: "Sensei", kanji: "先生", icon: "🎓" },
+    { minXp: 7000, level: 8, name: "Kage", kanji: "影", icon: "👤" },
+    { minXp: 10500, level: 9, name: "Kamisama", kanji: "神様", icon: "⚡" },
+    { minXp: 15000, level: 10, name: "Tatsujin", kanji: "達人", icon: "👑" }
+];
+
+function obterStatsUsuario() {
+    const raw = localStorage.getItem('ja_user_stats');
+    let stats = { xp: 0, level: 1, streak: 1 };
+    if (raw) {
+        try { stats = Object.assign(stats, JSON.parse(raw)); } catch (e) {}
+    }
+    return stats;
+}
+
+function salvarStatsUsuario(stats) {
+    localStorage.setItem('ja_user_stats', JSON.stringify(stats));
+}
+
+function calcularRank(xp) {
+    let currentRank = RANKS[0];
+    let nextRank = RANKS[1];
+
+    for (let i = RANKS.length - 1; i >= 0; i--) {
+        if (xp >= RANKS[i].minXp) {
+            currentRank = RANKS[i];
+            nextRank = RANKS[i + 1] || null;
+            break;
+        }
+    }
+
+    const startXp = currentRank.minXp;
+    const targetXp = nextRank ? nextRank.minXp : (startXp + 1000);
+    const progressXp = xp - startXp;
+    const requiredXp = targetXp - startXp;
+    const percent = Math.min(100, Math.max(0, Math.round((progressXp / requiredXp) * 100)));
+
+    return {
+        currentRank,
+        nextRank,
+        percent,
+        progressXp,
+        requiredXp
+    };
+}
+
+function dispararConfeti(opcoes = {}) {
+    const defaultOptions = { particleCount: 50, spread: 60, origin: { y: 0.8 } };
+    const merged = Object.assign({}, defaultOptions, opcoes);
+
+    if (typeof confetti === 'function') {
+        confetti(merged);
+    } else {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js';
+        script.onload = () => {
+            if (typeof confetti === 'function') confetti(merged);
+        };
+        document.head.appendChild(script);
+    }
+}
+
+function adicionarXP(qtd, motivo = '') {
+    if (!qtd || qtd <= 0) return;
+    const stats = obterStatsUsuario();
+    const prevRankInfo = calcularRank(stats.xp);
+
+    stats.xp += qtd;
+    const newRankInfo = calcularRank(stats.xp);
+    stats.level = newRankInfo.currentRank.level;
+
+    salvarStatsUsuario(stats);
+
+    mostrarToast(`⭐ <strong>+${qtd} XP!</strong> ${motivo ? `<small>(${motivo})</small>` : ''}`);
+
+    if (newRankInfo.currentRank.level > prevRankInfo.currentRank.level) {
+        dispararConfeti({ particleCount: 80, spread: 80, origin: { y: 0.6 } });
+        playBeep('success');
+        mostrarToast(`🎉 <strong>PARABÉNS! SUBIU DE NÍVEL!</strong><br>Você alcançou o Rank <strong>${newRankInfo.currentRank.name} (${newRankInfo.currentRank.kanji})</strong>!`);
+    }
+
+    atualizarHeaderXP();
+}
+
+function atualizarHeaderXP() {
+    const container = document.getElementById('xp-profile-widget-container');
+    const stats = obterStatsUsuario();
+    const rankInfo = calcularRank(stats.xp);
+
+    if (container) {
+        container.innerHTML = `
+            <div class="xp-profile-widget" title="XP: ${stats.xp} • Próximo Nível: ${rankInfo.nextRank ? rankInfo.nextRank.minXp : 'Máximo'}">
+                <div class="xp-widget-top">
+                    <span class="xp-rank-tag">${rankInfo.currentRank.icon} Nível ${rankInfo.currentRank.level} • ${rankInfo.currentRank.name}</span>
+                    <span class="xp-val-text">${stats.xp} XP</span>
+                </div>
+                <div class="xp-bar-bg">
+                    <div class="xp-bar-fill" style="width: ${rankInfo.percent}%;"></div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// ==========================================
 // MOTOR DE ESCRITA INTERATIVA (CANVAS ENGINE)
 // ==========================================
 
 const canvasStateMap = {};
+let ultimoCanvasAtivoId = null;
+
+// Escutador global de teclado para atalho Ctrl+Z / Cmd+Z (Desfazer Traço)
+window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+        const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+        if (activeTag === 'input' || activeTag === 'textarea') return;
+
+        let targetId = ultimoCanvasAtivoId;
+        const hoveredCanvas = document.querySelector('.kanji-canvas:hover');
+        if (hoveredCanvas && hoveredCanvas.id) {
+            targetId = hoveredCanvas.id;
+        }
+
+        if (targetId) {
+            e.preventDefault();
+            desfazerUltimoTracoCanvas(targetId);
+        }
+    }
+});
 
 function getCanvasPos(canvas, event) {
     const rect = canvas.getBoundingClientRect();
@@ -3859,6 +4158,9 @@ function inicializarCanvasInterativo(canvasEl) {
         const state = canvasStateMap[canvasId];
         if (!state) return;
 
+        interromperAnimacaoKakijun(canvasId);
+        ultimoCanvasAtivoId = canvasId;
+
         // Salva o snapshot atual para permitir desfazer o traço
         if (!state.history) state.history = [];
         const snapCtx = canvasEl.getContext('2d');
@@ -3893,6 +4195,10 @@ function inicializarCanvasInterativo(canvasEl) {
         if (state) state.isDrawing = false;
     }
 
+    // Eventos de Foco e Mouse Hover
+    canvasEl.addEventListener('mouseenter', () => { ultimoCanvasAtivoId = canvasId; });
+    canvasEl.addEventListener('focus', () => { ultimoCanvasAtivoId = canvasId; });
+
     // Eventos de Mouse
     canvasEl.addEventListener('mousedown', iniciarTraco);
     canvasEl.addEventListener('mousemove', desenharTraco);
@@ -3914,6 +4220,7 @@ function inicializarTodosOsCanvases() {
 }
 
 function limparCanvas(canvasId) {
+    interromperAnimacaoKakijun(canvasId);
     const canvasEl = document.getElementById(canvasId);
     if (!canvasEl) return;
     const state = canvasStateMap[canvasId];
@@ -3924,6 +4231,7 @@ function limparCanvas(canvasId) {
 }
 
 function desfazerUltimoTracoCanvas(canvasId) {
+    interromperAnimacaoKakijun(canvasId);
     const canvasEl = document.getElementById(canvasId);
     if (!canvasEl) return;
 
@@ -3941,6 +4249,111 @@ function desfazerUltimoTracoCanvas(canvasId) {
 
     canvasEl.classList.remove('canvas-success', 'canvas-error');
     playBeep('click');
+}
+
+function animarKakijun(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (!canvasEl) return;
+
+    const rawAttr = canvasEl.getAttribute('data-char') || '';
+    const cleanSymbol = rawAttr.split(' ')[0].split('(')[0].trim();
+    if (!cleanSymbol) return;
+
+    if (!canvasStateMap[canvasId]) {
+        canvasStateMap[canvasId] = {
+            isDrawing: false,
+            guideVisible: true,
+            charSymbol: cleanSymbol
+        };
+    }
+
+    const state = canvasStateMap[canvasId];
+    interromperAnimacaoKakijun(canvasId);
+
+    state.animating = true;
+    canvasEl.classList.remove('canvas-success', 'canvas-error');
+
+    const w = canvasEl.width;
+    const h = canvasEl.height;
+    const ctx = canvasEl.getContext('2d');
+
+    // 1. Criar canvas temporario para capturar os pontos do stencil
+    const offscreen = document.createElement('canvas');
+    offscreen.width = w;
+    offscreen.height = h;
+    const offCtx = offscreen.getContext('2d');
+
+    offCtx.fillStyle = '#000000';
+    offCtx.font = `${Math.round(h * 0.65)}px 'Noto Sans JP', sans-serif`;
+    offCtx.textAlign = 'center';
+    offCtx.textBaseline = 'middle';
+    offCtx.fillText(cleanSymbol, w / 2, h / 2 + (h * 0.05));
+
+    const maskData = offCtx.getImageData(0, 0, w, h).data;
+
+    const points = [];
+    for (let y = 0; y < h; y++) {
+        for (let x = 0; x < w; x++) {
+            const idx = (y * w + x) * 4;
+            if (maskData[idx + 3] > 40) {
+                points.push({ x, y });
+            }
+        }
+    }
+
+    if (points.length === 0) {
+        state.animating = false;
+        return;
+    }
+
+    // 2. Limpa o canvas e redesenha o fundo
+    redesenharFundoCanvas(canvasEl);
+
+    const isDark = document.documentElement.classList.contains('dark-theme');
+    const strokeColor = isDark ? '#38bdf8' : '#e63946';
+
+    let currentStep = 0;
+    const batchSize = Math.max(10, Math.floor(points.length / 50));
+
+    mostrarToast(`🎬 <strong>Animando traços de "${cleanSymbol}"...</strong>`);
+    playBeep('click');
+
+    function step() {
+        if (!state.animating) return;
+
+        ctx.fillStyle = strokeColor;
+        const limit = Math.min(currentStep + batchSize, points.length);
+
+        for (let i = currentStep; i < limit; i++) {
+            const pt = points[i];
+            ctx.beginPath();
+            ctx.arc(pt.x, pt.y, 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        currentStep = limit;
+
+        if (currentStep < points.length) {
+            state.animFrameId = requestAnimationFrame(step);
+        } else {
+            state.animating = false;
+            state.animFrameId = null;
+            playBeep('success');
+        }
+    }
+
+    state.animFrameId = requestAnimationFrame(step);
+}
+
+function interromperAnimacaoKakijun(canvasId) {
+    const state = canvasStateMap[canvasId];
+    if (state && state.animating) {
+        state.animating = false;
+        if (state.animFrameId) {
+            cancelAnimationFrame(state.animFrameId);
+            state.animFrameId = null;
+        }
+    }
 }
 
 function alternarGuiaCanvas(canvasId) {
@@ -4048,7 +4461,19 @@ function verificarTracoCanvas(canvasId) {
     if (aprovado) {
         canvasEl.classList.add('canvas-success');
         playBeep('success');
-        mostrarToast(`✨ <strong>Excelente!</strong> Traço de <strong>"${cleanSymbol}"</strong> aprovado com <strong>${Math.round(taxaCobertura * 100)}% de precisão!</strong>`);
+        const pct = Math.round(taxaCobertura * 100);
+        mostrarToast(`✨ <strong>Excelente!</strong> Traço de <strong>"${cleanSymbol}"</strong> aprovado com <strong>${pct}% de precisão!</strong>`);
+
+        // Recompensa de XP e efeito de confeti por precisão no traço
+        if (taxaCobertura >= 0.90) {
+            adicionarXP(30, 'Precisão Mestre no Traço (≥90%)');
+            dispararConfeti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
+        } else if (taxaCobertura >= 0.70) {
+            adicionarXP(15, 'Precisão Excelente no Traço (≥70%)');
+        } else {
+            adicionarXP(10, 'Traço Aprovado');
+        }
+
         registrarAtividadeDiaria();
     } else {
         canvasEl.classList.add('canvas-error');

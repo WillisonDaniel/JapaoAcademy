@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário & Glossário Universal - Japão Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
+</head>
+<body data-mode="dict">
+    <header>
+        <a href="index.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">📖 Dicionário & Glossário Universal</h1>
+        <p id="mainDesc">Pesquisa unificada de ideogramas, kana, tópicos gramaticais e vocabulário completo.</p>
+    </header>
+
+    <div class="dict-page-container">
+        <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
+            <input type="text" id="dict-search-input" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em português, romaji, kana ou kanji..." style="width:100%; padding:0.9rem 1.4rem; border-radius:14px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1.05rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
+        </div>
+        <div class="dict-filters-row" style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap; justify-content:center;">
+            <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">Tudo</button>
+            <button class="dict-filter-pill" data-cat="hiragana" onclick="selecionarCategoriaDicionario('hiragana')">🌸 Hiragana</button>
+            <button class="dict-filter-pill" data-cat="katakana" onclick="selecionarCategoriaDicionario('katakana')">⚡ Katakana</button>
+            <button class="dict-filter-pill" data-cat="kanji" onclick="selecionarCategoriaDicionario('kanji')">🔤 Kanjis</button>
+            <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
+            <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
+        </div>
+        <div id="dict-results-counter" style="font-size:0.9rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;">
+            ⚡ Carregando banco de dados universal...
+        </div>
+        <div id="dict-results-container" class="grid-dict-results"></div>
+    </div>
+
+    <!-- CARREGAMENTO DE TODOS OS DATASETS DO ECOSSISTEMA -->
+    <script src="data_curso_a1.js"></script>
+    <script src="data_curso_a2.js"></script>
+    <script src="data_curso_b1.js"></script>
+    <script src="data_curso_b2.js"></script>
+    <script src="data_kanji_n5.js"></script>
+    <script src="data_hiragana.js"></script>
+    <script src="data_katakana.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
