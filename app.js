@@ -196,6 +196,8 @@ function toggleTheme() {
     document.querySelectorAll('.theme-btn').forEach(btn => {
         btn.textContent = isDark ? '☀️' : '🌙';
     });
+
+    inicializarTodosOsCanvases();
 }
 
 function setupSmoothTransitions() {
@@ -414,11 +416,45 @@ function loadCourseModule(idx) {
         return;
     }
 
-    let charsHtml = data.chars.map(c => `<div class="char-card"><div><div class="char-header"><span class="char-symbol kana-text">${c.char}</span><div><button class="audio-btn" onclick="speakKana('${c.char.split(' ')[0]}')">🔊</button><span class="char-romaji">${c.romaji}</span></div></div><div class="char-info"><strong>💡 Dica:</strong> ${c.mnemonic}</div></div><div class="char-info" style="margin-top:0.8rem; border-top:1px dashed var(--border-color); padding-top:0.5rem;"><strong>✏️ Traço:</strong> ${c.stroke}</div></div>`).join('');
+    let charsHtml = data.chars.map((c, idx) => {
+        const rawChar = c.char.split(' ')[0];
+        const canvasId = `canvas-kana-${idx}`;
+        return `
+            <div class="char-card">
+                <div>
+                    <div class="char-header">
+                        <span class="char-symbol kana-text">${c.char}</span>
+                        <div>
+                            <button class="audio-btn" onclick="speakKana('${rawChar}')">🔊</button>
+                            <span class="char-romaji">${c.romaji}</span>
+                        </div>
+                    </div>
+                    <div class="char-info"><strong>💡 Dica:</strong> ${c.mnemonic}</div>
+                    <div class="char-info" style="margin-top:0.8rem; border-top:1px dashed var(--border-color); padding-top:0.5rem;"><strong>✏️ Traço:</strong> ${c.stroke}</div>
+                </div>
+
+                <!-- CANVAS INTERATIVO DE ESCRITA -->
+                <div class="canvas-practice-box">
+                    <span class="canvas-practice-title">✏️ Treino Motor de Traço:</span>
+                    <canvas id="${canvasId}" class="kanji-canvas" width="190" height="190" data-char="${rawChar}"></canvas>
+                    <div class="canvas-toolbar">
+                        <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                        <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
+                        <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
+                        <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
+                        <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
     let vocabHtml = data.vocab.map(v => `<div class="vocab-card" style="grid-column: ${v.kana.length > 5 ? 'span 2' : 'span 1'};"><div class="vocab-kana kana-text" onclick="speakKana('${v.kana}')">${v.kana} 🔊</div><div class="vocab-romaji">${v.romaji}</div><div class="vocab-meaning">${v.meaning}</div></div>`).join('');
     let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback"></span></div>`).join('');
 
     display.innerHTML = `<h2 class="module-title">${data.title}</h2><p style="margin-bottom:2rem; color:var(--text-muted);">${data.desc}</p><h3 class="section-title">🔤 Caracteres/Regras</h3><div class="char-grid">${charsHtml}</div><h3 class="section-title">📚 Vocabulário Prático</h3><div class="vocab-grid">${vocabHtml}</div><div class="quiz-section"><h3 class="section-title" style="margin-top:0;">🧠 Exercícios</h3>${quizHtml}</div>`;
+    
+    inicializarTodosOsCanvases();
 }
 
 function courseConvert(input) {
@@ -446,7 +482,7 @@ function checkCourseQuiz(idx, correct, type) {
 }
 
 // ==========================================
-// RENDERIZAÇÃO DO CURSO DE KANJI N5 (ESTRUTURA PERFEITA)
+// RENDERIZAÇÃO DO CURSO DE KANJI N5 (ESTRUTURA PERFEITA E DEFENSIVA)
 // ==========================================
 function renderKanjiModule(moduleIndex) {
     const container = document.getElementById('moduleDisplay');
@@ -456,16 +492,14 @@ function renderKanjiModule(moduleIndex) {
     const moduleData = dataBase[moduleIndex];
     if (!moduleData) return;
 
-    // Conclusão agora é manual via checklist — não auto-marca ao abrir
-
     container.innerHTML = '';
 
     // 1. CABEÇALHO DO MÓDULO (Topo)
     const headerDiv = document.createElement('div');
     headerDiv.className = 'module-header';
     headerDiv.innerHTML = `
-        <h2 class="module-title">${moduleData.title}</h2>
-        <p style="margin-bottom:2rem; color:var(--text-muted);">${moduleData.description}</p>
+        <h2 class="module-title">${fNome(moduleData.title || `Módulo ${moduleIndex + 1}`)}</h2>
+        <p style="margin-bottom:2rem; color:var(--text-muted);">${fNome(moduleData.description || moduleData.desc || '')}</p>
     `;
     container.appendChild(headerDiv);
 
@@ -474,96 +508,134 @@ function renderKanjiModule(moduleIndex) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'review-grid-container';
 
-        moduleData.kanjis.forEach(item => {
-            const cell = document.createElement('div');
-            cell.className = 'review-grid-cell';
+        (moduleData.kanjis || []).forEach(item => {
+            try {
+                const charVal = item.character || item.kanji || item.char || '';
+                const meaningVal = item.meaning || item.significado || '';
+                const kunVal = item.kunyomi || item.kun || '-';
+                const onVal = item.onyomi || item.on || '-';
 
-            cell.innerHTML = `
-                <div class="grid-char">${item.character}</div>
-                <div class="grid-meaning">${item.meaning}</div>
-                <div class="grid-readings">
-                    <div><strong>K:</strong> ${item.kunyomi ? item.kunyomi.split(' ')[0] : '-'}</div>
-                    <div><strong>O:</strong> ${item.onyomi ? item.onyomi.split(' ')[0] : '-'}</div>
-                </div>
-                <div class="grid-badge">Módulo ${item.originModule || '?'}</div>
-            `;
+                const cell = document.createElement('div');
+                cell.className = 'review-grid-cell';
+                cell.innerHTML = `
+                    <div class="grid-char">${charVal}</div>
+                    <div class="grid-meaning">${meaningVal}</div>
+                    <div class="grid-readings">
+                        <div><strong>K:</strong> ${kunVal.split(' ')[0]}</div>
+                        <div><strong>O:</strong> ${onVal.split(' ')[0]}</div>
+                    </div>
+                    <div class="grid-badge">Módulo ${item.originModule || '?'}</div>
+                `;
 
-            cell.addEventListener('click', (e) => {
-                playKanjiAudio(item.character, e);
-            });
+                cell.addEventListener('click', (e) => {
+                    playKanjiAudio(charVal, e);
+                });
 
-            gridDiv.appendChild(cell);
+                gridDiv.appendChild(cell);
+            } catch (err) {
+                console.error("Erro ao renderizar celula de revisao kanji:", err);
+            }
         });
 
         container.appendChild(gridDiv);
-        return; // Interrompe aqui: o Módulo 10 não tem cards normais nem quiz
+        return;
     }
 
     // 2. CARDS DE ESTUDO DO MÓDULO (Meio da página)
     const gridDiv = document.createElement('div');
     gridDiv.className = 'kanji-grid';
 
-    moduleData.kanjis.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'kana-card kanji-card-layout';
-        card.style.animationDelay = `${index * 0.05}s`;
+    const kanjisList = moduleData.kanjis || [];
+    kanjisList.forEach((item, index) => {
+        try {
+            const card = document.createElement('div');
+            card.className = 'kana-card kanji-card-layout';
+            card.style.animationDelay = `${index * 0.05}s`;
 
-        let examplesHTML = '';
-        if (item.examples && item.examples.length > 0) {
-            examplesHTML = `<div class="kanji-examples-title">Exemplos & Gramática:</div>`;
-            item.examples.forEach(ex => {
-                examplesHTML += `
-                    <div class="kanji-example-item">
-                        <div class="ex-word">
-                            ${ex.word} <span>(${ex.wordMeaning})</span>
-                            <button class="audio-btn" onclick="playKanjiAudio('${ex.sentence}', event)" title="Ouvir frase">🔊</button>
+            const charVal = item.character || item.kanji || item.char || '';
+            const meaningVal = item.meaning || item.significado || '';
+            const kunVal = item.kunyomi || item.kun || '-';
+            const onVal = item.onyomi || item.on || '-';
+            const mnemonicVal = item.mnemonic || item.dica || '';
+            const examplesList = item.examples || item.exemplos || [];
+
+            let examplesHTML = '';
+            if (examplesList.length > 0) {
+                examplesHTML = `<div class="kanji-examples-title">Exemplos & Gramática:</div>`;
+                examplesList.forEach(ex => {
+                    const w = ex.word || ex.palavra || '';
+                    const wm = ex.wordMeaning || ex.significadoPalavra || ex.significado || '';
+                    const s = ex.sentence || ex.frase || '';
+                    const sm = ex.sentenceMeaning || ex.traducaoFrase || ex.traducao || '';
+
+                    examplesHTML += `
+                        <div class="kanji-example-item">
+                            <div class="ex-word">
+                                ${w} ${wm ? `<span>(${wm})</span>` : ''}
+                                ${s ? `<button class="audio-btn" onclick="playKanjiAudio('${s.replace(/'/g, "\\'")}', event)" title="Ouvir frase">🔊</button>` : ''}
+                            </div>
+                            ${s ? `<div class="ex-sentence">${s}</div>` : ''}
+                            ${sm ? `<div class="ex-translation">"${sm}"</div>` : ''}
                         </div>
-                        <div class="ex-sentence">${ex.sentence}</div>
-                        <div class="ex-translation">"${ex.sentenceMeaning}"</div>
+                    `;
+                });
+            }
+
+            const mnemonicHTML = mnemonicVal
+                ? `<div class="kanji-mnemonic">
+                     <strong>💡 Dica Mnemônica:</strong> ${mnemonicVal}
+                   </div>`
+                : '';
+
+            const canvasId = `canvas-kanji-${moduleIndex}-${index}`;
+
+            card.innerHTML = `
+                <div class="kanji-detail-grid">
+                    <div class="kanji-main-box">
+                        <div class="kanji-char">${charVal}</div>
+                        <div class="kanji-meaning">${meaningVal}</div>
+                        <button class="audio-btn" onclick="playKanjiAudio('${charVal}', event)" style="width:100%; margin-top:8px; padding: 8px;">🔊 Ouvir Kanji</button>
+
+                        <!-- CANVAS INTERATIVO DE ESCRITA DE KANJI -->
+                        <div class="canvas-practice-box">
+                            <span class="canvas-practice-title">✏️ Treino Motor do Ideograma:</span>
+                            <canvas id="${canvasId}" class="kanji-canvas" width="200" height="200" data-char="${charVal}"></canvas>
+                            <div class="canvas-toolbar">
+                                <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                                <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
+                                <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
+                                <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
+                                <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                            </div>
+                        </div>
                     </div>
-                `;
-            });
+                    <div class="kanji-info-box">
+                        <div class="kanji-reading-group">
+                            <span class="reading-label">Kunyomi (Japonês):</span>
+                            <div class="reading-val kunyomi-val">${kunVal}</div>
+                        </div>
+                        <div class="kanji-reading-group">
+                            <span class="reading-label">Onyomi (Chino-Japonês):</span>
+                            <div class="reading-val onyomi-val">${onVal}</div>
+                        </div>
+                        ${mnemonicHTML}
+                        ${examplesHTML}
+                    </div>
+                </div>
+            `;
+
+            gridDiv.appendChild(card);
+        } catch (err) {
+            console.error("Erro ao renderizar card individual do Kanji N5:", err);
         }
-
-        // Blindagem contra o undefined (só desenha se a dica existir)
-        const mnemonicHTML = item.mnemonic
-            ? `<div class="kanji-mnemonic">
-                 <strong>💡 Dica Mnemônica:</strong> ${item.mnemonic}
-               </div>`
-            : '';
-
-        card.innerHTML = `
-            <div class="kanji-detail-grid">
-                <div class="kanji-main-box">
-                    <div class="kanji-char">${item.character}</div>
-                    <div class="kanji-meaning">${item.meaning}</div>
-                    <button class="audio-btn" onclick="playKanjiAudio('${item.character}', event)" style="width:100%; margin-top:12px; padding: 8px;">🔊 Ouvir Kanji</button>
-                </div>
-                <div class="kanji-info-box">
-                    <div class="kanji-reading-group">
-                        <span class="reading-label">Kunyomi (Japonês):</span>
-                        <div class="reading-val kunyomi-val">${item.kunyomi || '-'}</div>
-                    </div>
-                    <div class="kanji-reading-group">
-                        <span class="reading-label">Onyomi (Chino-Japonês):</span>
-                        <div class="reading-val onyomi-val">${item.onyomi || '-'}</div>
-                    </div>
-                    ${mnemonicHTML}
-                    ${examplesHTML}
-                </div>
-            </div>
-        `;
-
-        gridDiv.appendChild(card);
     });
 
-    // Inserimos a grade de estudos no container ANTES dos exercícios
     container.appendChild(gridDiv);
 
     /// 3. EXERCÍCIOS DE FIXAÇÃO (Final da página)
     if (moduleData.quiz && moduleData.quiz.length > 0) {
         // Usa a função renderQuizQuestion para alternar entre input e múltipla escolha automaticamente
-        let quizHtml = moduleData.quiz.map((q, i) => renderQuizQuestion(q, i)).join('');
+        let quizHtml = moduleData.quiz.map((q, i) => renderQuizQuestion(q, i, 'kanji')).join('');
 
         const quizDiv = document.createElement('div');
         quizDiv.className = 'quiz-section';
@@ -573,6 +645,8 @@ function renderKanjiModule(moduleIndex) {
         // Inserimos o quiz POR ÚLTIMO
         container.appendChild(quizDiv);
     }
+
+    inicializarTodosOsCanvases();
 }
 
 function playKanjiAudio(text, event) {
@@ -3147,6 +3221,8 @@ function garantirElementosCabecalhoEModal() {
                 </div>
                 <div class="dict-filters-row" style="display:flex; gap:0.5rem; margin-bottom:0.8rem; flex-wrap:wrap;">
                     <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">Tudo</button>
+                    <button class="dict-filter-pill" data-cat="hiragana" onclick="selecionarCategoriaDicionario('hiragana')">🌸 Hiragana</button>
+                    <button class="dict-filter-pill" data-cat="katakana" onclick="selecionarCategoriaDicionario('katakana')">⚡ Katakana</button>
                     <button class="dict-filter-pill" data-cat="kanji" onclick="selecionarCategoriaDicionario('kanji')">🔤 Kanjis</button>
                     <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
                     <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
@@ -3321,9 +3397,25 @@ function compilarGlossarioUniversal() {
         });
     }
 
-    // 3. CURSO HIRAGANA (RAW_H & HIRA_COURSE_DATA)
+    // 3. CURSO HIRAGANA (CARACTERES E VOCABULÁRIO)
     if (typeof HIRA_COURSE_DATA !== 'undefined' && Array.isArray(HIRA_COURSE_DATA)) {
         HIRA_COURSE_DATA.forEach(mod => {
+            if (mod.chars && Array.isArray(mod.chars)) {
+                mod.chars.forEach(c => {
+                    const rawChar = c.char ? c.char.split(' ')[0] : '';
+                    lista.push({
+                        type: 'hiragana',
+                        character: rawChar,
+                        term: c.char,
+                        romaji: c.romaji || '',
+                        mnemonic: c.mnemonic || '',
+                        stroke: c.stroke || '',
+                        module: mod.title || 'Tabela Hiragana',
+                        level: 'Hiragana',
+                        origin: 'Curso de Hiragana'
+                    });
+                });
+            }
             if (mod.vocab && Array.isArray(mod.vocab)) {
                 mod.vocab.forEach(v => {
                     lista.push({
@@ -3361,9 +3453,25 @@ function compilarGlossarioUniversal() {
         });
     }
 
-    // 4. CURSO KATAKANA (RAW_K & KATA_COURSE_DATA)
+    // 4. CURSO KATAKANA (CARACTERES E VOCABULÁRIO)
     if (typeof KATA_COURSE_DATA !== 'undefined' && Array.isArray(KATA_COURSE_DATA)) {
         KATA_COURSE_DATA.forEach(mod => {
+            if (mod.chars && Array.isArray(mod.chars)) {
+                mod.chars.forEach(c => {
+                    const rawChar = c.char ? c.char.split(' ')[0] : '';
+                    lista.push({
+                        type: 'katakana',
+                        character: rawChar,
+                        term: c.char,
+                        romaji: c.romaji || '',
+                        mnemonic: c.mnemonic || '',
+                        stroke: c.stroke || '',
+                        module: mod.title || 'Tabela Katakana',
+                        level: 'Katakana',
+                        origin: 'Curso de Katakana'
+                    });
+                });
+            }
             if (mod.vocab && Array.isArray(mod.vocab)) {
                 mod.vocab.forEach(v => {
                     lista.push({
@@ -3465,6 +3573,13 @@ function renderizarResultadosDicionario(queryStr = '') {
 
         if (!q) return true;
 
+        if (item.type === 'hiragana' || item.type === 'katakana' || item.type === 'kana') {
+            return normalizarTexto(item.character).includes(q) ||
+                   normalizarTexto(item.romaji).includes(q) ||
+                   normalizarTexto(item.mnemonic).includes(q) ||
+                   normalizarTexto(item.stroke).includes(q) ||
+                   normalizarTexto(item.module).includes(q);
+        }
         if (item.type === 'vocab') {
             return normalizarTexto(item.term).includes(q) ||
                    normalizarTexto(item.romaji).includes(q) ||
@@ -3514,7 +3629,7 @@ function renderizarResultadosDicionario(queryStr = '') {
     const visiveis = filtrados.slice(0, 100);
 
     let html = '';
-    visiveis.forEach(item => {
+    visiveis.forEach((item, idx) => {
         if (item.type === 'kanji') {
             let exHtml = '';
             if (item.examples && item.examples.length > 0) {
@@ -3525,6 +3640,7 @@ function renderizarResultadosDicionario(queryStr = '') {
                 `).join('');
             }
 
+            const canvasId = `canvas-dict-${idx}`;
             html += `
                 <div class="dict-card dict-card-kanji">
                     <div class="dict-card-header">
@@ -3544,6 +3660,18 @@ function renderizarResultadosDicionario(queryStr = '') {
                     </div>
                     ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
                     ${exHtml ? `<div class="dict-ex-box">${exHtml}</div>` : ''}
+
+                    <!-- CANVAS DE ESCRITA NO DICIONÁRIO -->
+                    <div class="canvas-practice-box" style="margin-top:0.6rem; padding-top:0.6rem;">
+                        <canvas id="${canvasId}" class="kanji-canvas" width="160" height="160" data-char="${item.character}"></canvas>
+                        <div class="canvas-toolbar">
+                            <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                            <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
+                            <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
+                            <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
+                            <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                        </div>
+                    </div>
                 </div>
             `;
         } else if (item.type === 'grammar') {
@@ -3577,8 +3705,359 @@ function renderizarResultadosDicionario(queryStr = '') {
                     ${item.context ? `<div class="dict-context">💡 ${fNome(item.context)}</div>` : ''}
                 </div>
             `;
+        } else if (item.type === 'hiragana' || item.type === 'katakana' || item.type === 'kana') {
+            const isHira = item.type === 'hiragana' || item.level === 'Hiragana';
+            const tagClass = isHira ? 'tag-hiragana' : 'tag-katakana';
+            const cardClass = isHira ? 'dict-card-hiragana' : 'dict-card-katakana';
+            const tagLabel = isHira ? '🌸 Hiragana' : '⚡ Katakana';
+
+            const canvasId = `canvas-dict-kana-${idx}`;
+            html += `
+                <div class="dict-card ${cardClass}">
+                    <div class="dict-card-header">
+                        <span class="dict-tag ${tagClass}">${tagLabel}</span>
+                        <span class="dict-origin">${item.module}</span>
+                    </div>
+                    <div class="dict-vocab-body">
+                        <div>
+                            <div class="dict-vocab-term kana-text" onclick="speakKana('${item.character}')" style="cursor:pointer;" title="Ouvir Kana">${item.character} 🔊</div>
+                            <div class="dict-vocab-romaji">Romaji: ${item.romaji}</div>
+                        </div>
+                        <button class="audio-btn dict-audio-btn" onclick="speakKana('${item.character}')" title="Ouvir Pronúncia">🔊</button>
+                    </div>
+                    ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
+                    ${item.stroke ? `<div class="dict-ex-box"><strong>✏️ Traço:</strong> ${item.stroke}</div>` : ''}
+
+                    <!-- CANVAS DE ESCRITA NO DICIONÁRIO PARA KANAS -->
+                    <div class="canvas-practice-box" style="margin-top:0.6rem; padding-top:0.6rem;">
+                        <canvas id="${canvasId}" class="kanji-canvas" width="160" height="160" data-char="${item.character}"></canvas>
+                        <div class="canvas-toolbar">
+                            <button class="canvas-btn btn-pincel" onclick="ativarPincelCanvas('${canvasId}')" title="Pincel">🖌️ Pincel</button>
+                            <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
+                            <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
+                            <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
+                            <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
     });
 
     container.innerHTML = html;
+    inicializarTodosOsCanvases();
+}
+
+// ==========================================
+// MOTOR DE ESCRITA INTERATIVA (CANVAS ENGINE)
+// ==========================================
+
+const canvasStateMap = {};
+
+function getCanvasPos(canvas, event) {
+    const rect = canvas.getBoundingClientRect();
+    let clientX = 0;
+    let clientY = 0;
+
+    if (event.touches && event.touches.length > 0) {
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else if (event.changedTouches && event.changedTouches.length > 0) {
+        clientX = event.changedTouches[0].clientX;
+        clientY = event.changedTouches[0].clientY;
+    } else {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
+
+    const rw = (rect.width && rect.width > 0) ? rect.width : canvas.width;
+    const rh = (rect.height && rect.height > 0) ? rect.height : canvas.height;
+
+    const scaleX = canvas.width / rw;
+    const scaleY = canvas.height / rh;
+
+    const x = (clientX - rect.left) * scaleX;
+    const y = (clientY - rect.top) * scaleY;
+
+    return {
+        x: isNaN(x) ? 0 : x,
+        y: isNaN(y) ? 0 : y
+    };
+}
+
+function redesenharFundoCanvas(canvasEl) {
+    if (!canvasEl) return;
+    const canvasId = canvasEl.id;
+    const rawAttr = canvasEl.getAttribute('data-char') || '';
+    const cleanSymbol = rawAttr.split(' ')[0].split('(')[0].trim();
+
+    if (!canvasStateMap[canvasId]) {
+        canvasStateMap[canvasId] = {
+            isDrawing: false,
+            guideVisible: true,
+            charSymbol: cleanSymbol
+        };
+    } else {
+        canvasStateMap[canvasId].charSymbol = cleanSymbol;
+    }
+
+    const state = canvasStateMap[canvasId];
+    const ctx = canvasEl.getContext('2d');
+    const w = canvasEl.width;
+    const h = canvasEl.height;
+
+    // 1. Limpa o canvas totalmente
+    ctx.clearRect(0, 0, w, h);
+
+    // 2. Linhas guia ortogonais discretas (retículo central)
+    ctx.save();
+    ctx.strokeStyle = document.documentElement.classList.contains('dark-theme') ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+
+    ctx.beginPath();
+    ctx.moveTo(w / 2, 0); ctx.lineTo(w / 2, h);
+    ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2);
+    ctx.stroke();
+    ctx.restore();
+
+    // 3. Guia de Molde Translúcido do Caractere (se visível)
+    if (state.guideVisible && state.charSymbol) {
+        ctx.save();
+        const isDark = document.documentElement.classList.contains('dark-theme');
+        ctx.font = `${Math.round(h * 0.65)}px 'Noto Sans JP', sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.16)' : 'rgba(0, 0, 0, 0.14)';
+        ctx.fillText(state.charSymbol, w / 2, h / 2 + (h * 0.05));
+        ctx.restore();
+    }
+}
+
+function inicializarCanvasInterativo(canvasEl) {
+    if (!canvasEl) return;
+    const canvasId = canvasEl.id;
+    const charSymbol = canvasEl.getAttribute('data-char') || '';
+
+    if (!canvasStateMap[canvasId]) {
+        canvasStateMap[canvasId] = {
+            isDrawing: false,
+            guideVisible: true,
+            charSymbol: charSymbol
+        };
+    }
+
+    redesenharFundoCanvas(canvasEl);
+
+    if (canvasEl.hasAttribute('data-initialized')) return;
+    canvasEl.setAttribute('data-initialized', 'true');
+
+    const ctx = canvasEl.getContext('2d');
+
+    function iniciarTraco(e) {
+        if (e.type === 'touchstart') e.preventDefault();
+        const state = canvasStateMap[canvasId];
+        if (!state) return;
+
+        // Salva o snapshot atual para permitir desfazer o traço
+        if (!state.history) state.history = [];
+        const snapCtx = canvasEl.getContext('2d');
+        state.history.push(snapCtx.getImageData(0, 0, canvasEl.width, canvasEl.height));
+        if (state.history.length > 25) state.history.shift();
+
+        state.isDrawing = true;
+
+        const isDark = document.documentElement.classList.contains('dark-theme');
+        ctx.lineWidth = 7;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = isDark ? '#38bdf8' : '#e63946';
+
+        const pos = getCanvasPos(canvasEl, e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+    }
+
+    function desenharTraco(e) {
+        const state = canvasStateMap[canvasId];
+        if (!state || !state.isDrawing) return;
+        if (e.type === 'touchmove') e.preventDefault();
+
+        const pos = getCanvasPos(canvasEl, e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+    }
+
+    function finalizarTraco(e) {
+        const state = canvasStateMap[canvasId];
+        if (state) state.isDrawing = false;
+    }
+
+    // Eventos de Mouse
+    canvasEl.addEventListener('mousedown', iniciarTraco);
+    canvasEl.addEventListener('mousemove', desenharTraco);
+    canvasEl.addEventListener('mouseup', finalizarTraco);
+    canvasEl.addEventListener('mouseleave', finalizarTraco);
+
+    // Eventos de Touch Mobile / Tablet
+    canvasEl.addEventListener('touchstart', iniciarTraco, { passive: false });
+    canvasEl.addEventListener('touchmove', desenharTraco, { passive: false });
+    canvasEl.addEventListener('touchend', finalizarTraco, { passive: false });
+}
+
+function inicializarTodosOsCanvases() {
+    setTimeout(() => {
+        document.querySelectorAll('.kanji-canvas').forEach(canvas => {
+            inicializarCanvasInterativo(canvas);
+        });
+    }, 50);
+}
+
+function limparCanvas(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (!canvasEl) return;
+    const state = canvasStateMap[canvasId];
+    if (state) state.history = [];
+    canvasEl.classList.remove('canvas-success', 'canvas-error');
+    redesenharFundoCanvas(canvasEl);
+    playBeep('click');
+}
+
+function desfazerUltimoTracoCanvas(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (!canvasEl) return;
+
+    const state = canvasStateMap[canvasId];
+    if (!state || !state.history || state.history.length === 0) {
+        canvasEl.classList.remove('canvas-success', 'canvas-error');
+        redesenharFundoCanvas(canvasEl);
+        playBeep('click');
+        return;
+    }
+
+    const lastState = state.history.pop();
+    const ctx = canvasEl.getContext('2d');
+    ctx.putImageData(lastState, 0, 0);
+
+    canvasEl.classList.remove('canvas-success', 'canvas-error');
+    playBeep('click');
+}
+
+function alternarGuiaCanvas(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (!canvasEl) return;
+
+    if (!canvasStateMap[canvasId]) {
+        canvasStateMap[canvasId] = {
+            isDrawing: false,
+            guideVisible: true,
+            charSymbol: canvasEl.getAttribute('data-char') || ''
+        };
+    }
+
+    const state = canvasStateMap[canvasId];
+    state.guideVisible = !state.guideVisible;
+
+    const btn = document.getElementById(`btn-guia-${canvasId}`);
+    if (btn) {
+        btn.innerText = state.guideVisible ? '👁️ Guia ON' : '🙈 Guia OFF';
+        btn.classList.toggle('btn-guia-off', !state.guideVisible);
+    }
+
+    redesenharFundoCanvas(canvasEl);
+    playBeep('click');
+}
+
+function ativarPincelCanvas(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (canvasEl) {
+        canvasEl.focus();
+        mostrarToast('🖌️ <strong>Modo Pincel Ativo:</strong> Desenhe os traços na caixa!');
+    }
+}
+
+function verificarTracoCanvas(canvasId) {
+    const canvasEl = document.getElementById(canvasId);
+    if (!canvasEl) return;
+
+    const rawAttr = canvasEl.getAttribute('data-char') || '';
+    const cleanSymbol = rawAttr.split(' ')[0].split('(')[0].trim();
+    if (!cleanSymbol) return;
+
+    const w = canvasEl.width;
+    const h = canvasEl.height;
+    const ctx = canvasEl.getContext('2d');
+
+    // 1. Criar canvas temporário em memória (off-screen) para servir como MÁSCARA MODELO
+    const offscreen = document.createElement('canvas');
+    offscreen.width = w;
+    offscreen.height = h;
+    const offCtx = offscreen.getContext('2d');
+
+    offCtx.fillStyle = '#000000';
+    offCtx.font = `${Math.round(h * 0.65)}px 'Noto Sans JP', sans-serif`;
+    offCtx.textAlign = 'center';
+    offCtx.textBaseline = 'middle';
+    offCtx.fillText(cleanSymbol, w / 2, h / 2 + (h * 0.05));
+
+    // 2. Capturar array de pixels da MÁSCARA e do DESENHO DO USUÁRIO
+    const targetImgData = offCtx.getImageData(0, 0, w, h).data;
+    const userImgData = ctx.getImageData(0, 0, w, h).data;
+
+    let pixelsLetraAlvo = 0;
+    let pixelsAcerto = 0;
+    let pixelsErro = 0;
+
+    for (let i = 0; i < targetImgData.length; i += 4) {
+        const isTarget = targetImgData[i + 3] > 40;
+        if (isTarget) pixelsLetraAlvo++;
+
+        const r = userImgData[i];
+        const g = userImgData[i + 1];
+        const b = userImgData[i + 2];
+        const a = userImgData[i + 3];
+
+        // Identifica se o usuário desenhou no pixel (qualquer opacidade alpha > 80)
+        const isUserStroke = (a > 80);
+
+        if (isUserStroke) {
+            if (isTarget) {
+                pixelsAcerto++;
+            } else {
+                pixelsErro++;
+            }
+        }
+    }
+
+    canvasEl.classList.remove('canvas-success', 'canvas-error');
+
+    const totalDesenhado = pixelsAcerto + pixelsErro;
+    if (totalDesenhado < 40) {
+        canvasEl.classList.add('canvas-error');
+        playBeep('error');
+        mostrarToast('⚠️ <strong>Desenho em Branco:</strong> Desenhe o caractere na caixa antes de verificar!');
+        return;
+    }
+
+    // 3. Regra de Avaliação Rígida (50% de Cobertura e máx 30% de Penalidade)
+    const taxaCobertura = pixelsAcerto / (pixelsLetraAlvo || 1);
+    const taxaPenalidade = pixelsErro / (pixelsAcerto + 1);
+
+    const aprovado = (taxaCobertura >= 0.50) && (taxaPenalidade < 0.30);
+
+    if (aprovado) {
+        canvasEl.classList.add('canvas-success');
+        playBeep('success');
+        mostrarToast(`✨ <strong>Excelente!</strong> Traço de <strong>"${cleanSymbol}"</strong> aprovado com <strong>${Math.round(taxaCobertura * 100)}% de precisão!</strong>`);
+        registrarAtividadeDiaria();
+    } else {
+        canvasEl.classList.add('canvas-error');
+        playBeep('error');
+
+        if (taxaPenalidade >= 0.30) {
+            mostrarToast(`❌ <strong>Traço Fora da Guia:</strong> Evite rabiscar fora do contorno da letra (${Math.round(taxaPenalidade * 100)}% excedente).`);
+        } else {
+            mostrarToast(`❌ <strong>Traço Incompleto:</strong> Cobertura atual em <strong>${Math.round(taxaCobertura * 100)}%</strong>. Exige no mínimo 50%.`);
+        }
+    }
 }

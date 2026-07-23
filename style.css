@@ -1791,9 +1791,10 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
 }
 
 .modal-dict-box {
-    width: 90% !important;
-    max-width: 1200px !important;
+    width: 85vw !important;
+    max-width: 1400px !important;
     max-height: 85vh;
+    margin: auto;
     display: flex;
     flex-direction: column;
     resize: both;
@@ -1852,6 +1853,9 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
 }
 
 .dict-card-kanji { border-left: 4px solid #b45309; }
+.dict-card-kana { border-left: 4px solid #a855f7; }
+.dict-card-hiragana { border-left: 4px solid #ef233c; }
+.dict-card-katakana { border-left: 4px solid #00bfb2; }
 .dict-card-grammar { border-left: 4px solid #e63946; }
 .dict-card-vocab { border-left: 4px solid #028090; }
 
@@ -1876,6 +1880,9 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
 }
 
 .tag-kanji { background: rgba(180, 83, 9, 0.15); color: #f59e0b; border: 1px solid #b45309; }
+.tag-kana { background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid #a855f7; }
+.tag-hiragana { background: rgba(239, 35, 60, 0.15); color: #ef233c; border: 1px solid #ef233c; }
+.tag-katakana { background: rgba(0, 191, 178, 0.15); color: #00bfb2; border: 1px solid #00bfb2; }
 .tag-grammar { background: rgba(230, 57, 70, 0.15); color: #e63946; border: 1px solid #e63946; }
 .tag-vocab { background: rgba(2, 128, 144, 0.15); color: #028090; border: 1px solid #028090; }
 
@@ -2010,4 +2017,198 @@ body.dark-mode .grid-badge { background: #0f172a; color: #cbd5e1; border-color: 
     padding: 0.4rem 0.7rem;
     border-radius: 8px;
     font-size: 0.9rem;
+}
+
+/* ==========================================
+   ESTILOS DO CURSO DE KANJI N5 (GRID & CARDS)
+   ========================================== */
+.kanji-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.kanji-card-layout {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.kanji-detail-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    align-items: start;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .kanji-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.kanji-main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.kanji-char {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #b45309;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.kanji-meaning {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.kanji-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.canvas-practice-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-color);
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.canvas-practice-title {
+    font-size: 0.82rem;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.kanji-canvas {
+    position: relative !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+    cursor: crosshair;
+    transition: border-color 0.2s ease;
+}
+
+.kanji-canvas:hover {
+    border-color: var(--current-primary);
+}
+
+.canvas-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 4px 0;
+}
+
+.canvas-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.32rem 0.4rem;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex: 1 1 calc(33.33% - 6px);
+    min-width: 0;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.canvas-btn:hover {
+    background: var(--current-primary);
+    color: white;
+    border-color: var(--current-primary);
+}
+
+.canvas-btn.btn-desfazer {
+    background: rgba(14, 165, 233, 0.12);
+    border-color: #0ea5e9;
+    color: #0ea5e9;
+}
+
+.canvas-btn.btn-desfazer:hover {
+    background: #0ea5e9;
+    color: white;
+}
+
+.canvas-btn.btn-guia-off {
+    opacity: 0.7;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.canvas-btn.btn-verificar {
+    background: rgba(46, 204, 113, 0.15);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.canvas-btn.btn-verificar:hover {
+    background: #2ecc71;
+    color: white;
+}
+
+.kanji-canvas.canvas-success {
+    border: 3px solid #2ecc71 !important;
+    box-shadow: 0 0 14px rgba(46, 204, 113, 0.5) !important;
+    transition: all 0.3s ease;
+}
+
+.kanji-canvas.canvas-error {
+    border: 3px solid #e74c3c !important;
+    box-shadow: 0 0 14px rgba(231, 76, 60, 0.5) !important;
+    transition: all 0.3s ease;
 }
