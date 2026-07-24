@@ -1630,16 +1630,36 @@ function salvarProgressoGlobal() {
         modulosConcluidosN5: progressoGlobal.progress_kanji || []
     }));
 
-    // Sincronização Assíncrona com Firebase Firestore se usuário autenticado
+    // Sincronização Assíncrona com Firebase Firestore em segundo plano se usuário autenticado
+    salvarSilenciosamenteNaNuvem();
+}
+
+function salvarSilenciosamenteNaNuvem() {
     const fb = window.jaFirebase;
-    if (fb && fb.auth && fb.auth.currentUser && fb.db && fb.doc && fb.setDoc) {
-        const user = fb.auth.currentUser;
+    const user = fb && fb.auth ? fb.auth.currentUser : null;
+    if (!user || !fb || !fb.db || !fb.doc || !fb.setDoc) return;
+
+    try {
+        const backupObj = {
+            progressoGlobal: JSON.parse(localStorage.getItem('japao_academy_progress') || (typeof progressoGlobal !== 'undefined' ? JSON.stringify(progressoGlobal) : '{}')),
+            userStats: JSON.parse(localStorage.getItem('ja_user_stats') || '{}'),
+            streakData: JSON.parse(localStorage.getItem('ja_streak_data') || '{}'),
+            achievements: JSON.parse(localStorage.getItem('ja_unlocked_achievements') || '[]'),
+            favoritos: JSON.parse(localStorage.getItem('ja_favoritos_deck') || '[]'),
+            cadernoErros: JSON.parse(localStorage.getItem('ja_caderno_erros') || '[]'),
+            nomeUsuario: localStorage.getItem('ja_nome_usuario') || (typeof nomeUsuario !== 'undefined' ? nomeUsuario : ''),
+            updatedAt: new Date().toISOString()
+        };
+
         const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
-        fb.setDoc(docRef, progressoGlobal, { merge: true }).catch(err => {
+        fb.setDoc(docRef, backupObj, { merge: true }).catch(err => {
             console.warn("⚠️ Falha ao enviar dados em segundo plano para o Firestore:", err);
         });
+    } catch (e) {
+        console.warn("⚠️ Erro ao preparar backup silencioso para o Firestore:", e);
     }
 }
+window.salvarSilenciosamenteNaNuvem = salvarSilenciosamenteNaNuvem;
 
 // ==========================================
 // CAMADA DE INTEGRAÇÃO COM FIREBASE (AUTH & FIRESTORE)
@@ -1655,30 +1675,59 @@ async function sincronizarProgressoComFirestore(user) {
 
         if (docSnap.exists()) {
             const dataRemote = docSnap.data() || {};
-            // Sincronização inteligente via união de conjuntos mantendo progresso local e nuvem
-            progressoGlobal = {
-                ...progressoGlobal,
-                ...dataRemote,
-                modulosConcluidos: Array.from(new Set([...(progressoGlobal.modulosConcluidos || []), ...(dataRemote.modulosConcluidos || [])])),
-                modulosDesbloqueados: Array.from(new Set([...(progressoGlobal.modulosDesbloqueados || []), ...(dataRemote.modulosDesbloqueados || [])])),
-                progress_hiragana: Array.from(new Set([...(progressoGlobal.progress_hiragana || []), ...(dataRemote.progress_hiragana || [])])),
-                progress_katakana: Array.from(new Set([...(progressoGlobal.progress_katakana || []), ...(dataRemote.progress_katakana || [])])),
-                progress_kanji: Array.from(new Set([...(progressoGlobal.progress_kanji || []), ...(dataRemote.progress_kanji || [])])),
-                progress_kanji_n4: Array.from(new Set([...(progressoGlobal.progress_kanji_n4 || []), ...(dataRemote.progress_kanji_n4 || [])])),
-                progress_kanji_n3: Array.from(new Set([...(progressoGlobal.progress_kanji_n3 || []), ...(dataRemote.progress_kanji_n3 || [])])),
-                progress_kanji_n2: Array.from(new Set([...(progressoGlobal.progress_kanji_n2 || []), ...(dataRemote.progress_kanji_n2 || [])])),
-                progress_kanji_n1: Array.from(new Set([...(progressoGlobal.progress_kanji_n1 || []), ...(dataRemote.progress_kanji_n1 || [])])),
-                xpTotal: Math.max(progressoGlobal.xpTotal || 0, dataRemote.xpTotal || 0)
-            };
-            localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
-            console.log("☁️ Progresso sincronizado com o Firestore!");
+
+            if (dataRemote.progressoGlobal) {
+                progressoGlobal = {
+                    ...progressoGlobal,
+                    ...dataRemote.progressoGlobal,
+                    modulosConcluidos: Array.from(new Set([...(progressoGlobal.modulosConcluidos || []), ...(dataRemote.progressoGlobal.modulosConcluidos || [])])),
+                    modulosDesbloqueados: Array.from(new Set([...(progressoGlobal.modulosDesbloqueados || []), ...(dataRemote.progressoGlobal.modulosDesbloqueados || [])])),
+                    progress_hiragana: Array.from(new Set([...(progressoGlobal.progress_hiragana || []), ...(dataRemote.progressoGlobal.progress_hiragana || [])])),
+                    progress_katakana: Array.from(new Set([...(progressoGlobal.progress_katakana || []), ...(dataRemote.progressoGlobal.progress_katakana || [])])),
+                    progress_kanji: Array.from(new Set([...(progressoGlobal.progress_kanji || []), ...(dataRemote.progressoGlobal.progress_kanji || [])])),
+                    progress_kanji_n4: Array.from(new Set([...(progressoGlobal.progress_kanji_n4 || []), ...(dataRemote.progressoGlobal.progress_kanji_n4 || [])])),
+                    progress_kanji_n3: Array.from(new Set([...(progressoGlobal.progress_kanji_n3 || []), ...(dataRemote.progressoGlobal.progress_kanji_n3 || [])])),
+                    progress_kanji_n2: Array.from(new Set([...(progressoGlobal.progress_kanji_n2 || []), ...(dataRemote.progressoGlobal.progress_kanji_n2 || [])])),
+                    progress_kanji_n1: Array.from(new Set([...(progressoGlobal.progress_kanji_n1 || []), ...(dataRemote.progressoGlobal.progress_kanji_n1 || [])])),
+                    xpTotal: Math.max(progressoGlobal.xpTotal || 0, dataRemote.progressoGlobal.xpTotal || 0)
+                };
+                localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
+            } else if (dataRemote.modulosConcluidos || dataRemote.xpTotal) {
+                progressoGlobal = { ...progressoGlobal, ...dataRemote };
+                localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
+            }
+
+            if (dataRemote.userStats) {
+                localStorage.setItem('ja_user_stats', JSON.stringify(dataRemote.userStats));
+            }
+            if (dataRemote.streakData) {
+                localStorage.setItem('ja_streak_data', JSON.stringify(dataRemote.streakData));
+            }
+            if (dataRemote.achievements) {
+                localStorage.setItem('ja_unlocked_achievements', JSON.stringify(dataRemote.achievements));
+            }
+            if (dataRemote.favoritos) {
+                localStorage.setItem('ja_favoritos_deck', JSON.stringify(dataRemote.favoritos));
+            }
+            if (dataRemote.cadernoErros) {
+                localStorage.setItem('ja_caderno_erros', JSON.stringify(dataRemote.cadernoErros));
+            }
+            if (dataRemote.nomeUsuario) {
+                localStorage.setItem('ja_nome_usuario', dataRemote.nomeUsuario);
+                if (typeof nomeUsuario !== 'undefined') nomeUsuario = dataRemote.nomeUsuario;
+            }
+
+            mostrarToast("☁️ Progresso sincronizado com a nuvem!");
         } else {
-            await fb.setDoc(docRef, progressoGlobal, { merge: true });
+            salvarSilenciosamenteNaNuvem();
             console.log("☁️ Primeiro backup gravado com sucesso no Firestore!");
         }
 
-        calcularProgressoGlobal();
-        atualizarUIProgresso();
+        if (typeof carregarProgressoGlobal === 'function') carregarProgressoGlobal();
+        if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+        if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
+        if (typeof atualizarHeaderStreak === 'function') atualizarHeaderStreak();
+        if (typeof renderizarMuralConquistas === 'function') renderizarMuralConquistas();
     } catch (err) {
         console.warn("⚠️ Erro ao sincronizar progresso com o Firestore:", err);
     }
@@ -4327,6 +4376,7 @@ function registrarAtividadeDiaria() {
 
     atualizarHeaderStreak();
     checarConquistasGerais();
+    salvarSilenciosamenteNaNuvem();
 }
 
 function atualizarHeaderStreak() {
@@ -5558,6 +5608,7 @@ function adicionarXP(qtd, motivo = '') {
     }
 
     atualizarHeaderXP();
+    salvarSilenciosamenteNaNuvem();
 }
 
 function removerXP(qtd, motivo = '') {
