@@ -40,6 +40,21 @@
             <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
             <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
         </div>
+        <div id="dict-subfilters-kanji" class="dict-subfilters-row" style="display: none; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
+            <button class="dict-subfilter-pill active" data-sub="tudo" onclick="selecionarSubNivelKanji('tudo')">Todos (N5-N1)</button>
+            <button class="dict-subfilter-pill" data-sub="N5" onclick="selecionarSubNivelKanji('N5')">🟢 N5</button>
+            <button class="dict-subfilter-pill" data-sub="N4" onclick="selecionarSubNivelKanji('N4')">🟡 N4</button>
+            <button class="dict-subfilter-pill" data-sub="N3" onclick="selecionarSubNivelKanji('N3')">🟠 N3</button>
+            <button class="dict-subfilter-pill" data-sub="N2" onclick="selecionarSubNivelKanji('N2')">🔴 N2</button>
+            <button class="dict-subfilter-pill" data-sub="N1" onclick="selecionarSubNivelKanji('N1')">🟣 N1</button>
+        </div>
+        <div id="dict-subfilters-vocab" class="dict-subfilters-row" style="display: none; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
+            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🔵 A1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟢 A2</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟡 B1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B2" onclick="selecionarSubNivelVocab('B2')">🔴 B2</button>
+        </div>
         <div id="dict-results-counter" style="font-size:0.9rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;">
             ⚡ Carregando banco de dados universal...
         </div>
@@ -53,8 +68,12 @@
     <script src="data_curso_b2.js"></script>
     <script src="data_kanji_n5.js"></script>
     <script src="data_kanji_n4.js"></script>
+    <script src="data_kanji_n3.js"></script>
+    <script src="data_kanji_n2.js"></script>
+    <script src="data_kanji_n1.js"></script>
     <script src="data_hiragana.js"></script>
     <script src="data_katakana.js"></script>
+    <script type="module" src="firebase-init.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

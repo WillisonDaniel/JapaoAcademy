@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Kanji N5 - Japão Academy</title>
+    <title>Curso de Kanji N1 - Japão Academy</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
@@ -23,27 +23,27 @@
     <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
 </head>
 
-<body data-mode="kanji">
+<body data-mode="kanji_n1">
     <header>
         <a href="kanji.html" class="home-btn">⬅ Voltar ao Hub de Kanjis</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1 id="mainTitle">Curso de Kanji N5</h1>
-        <p id="mainDesc">Ideogramas, Leituras (Kun/On) e Gramática na prática.</p>
+        <h1 id="mainTitle">Curso de Kanji N1</h1>
+        <p id="mainDesc">Maestria total nos 2.136 Jōyō Kanjis com leitura temática erudita e Keigo avançado.</p>
     </header>
 
     <div class="container">
-        <!-- BANNER DE REVISÃO SRS DE KANJI N5 -->
+        <!-- BANNER DE REVISÃO SRS DE KANJI N1 -->
         <div class="banner-srs" style="border-color: rgba(180, 83, 9, 0.4);">
             <div class="srs-banner-info">
                 <span class="srs-badge-tag"
                     style="background: rgba(180, 83, 9, 0.2); color: #f59e0b; border-color: #b45309;">🏯 REPETIÇÃO
-                    ESPAÇADA (Kanji N5)</span>
+                    ESPAÇADA (Kanji N1)</span>
                 <h3>Revisão Inteligente da Memória</h3>
                 <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
                 <div class="srs-modos-filtro">
-                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos', 'kanji')">🟢 Pendentes</button>
-                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos', 'kanji')">⭐ Favoritos</button>
-                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros', 'kanji')">❌ Caderno de Erros</button>
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos', 'kanji_n1')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos', 'kanji_n1')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros', 'kanji_n1')">❌ Caderno de Erros</button>
                 </div>
             </div>
             <div class="srs-banner-action">
@@ -51,7 +51,7 @@
                     <span class="srs-counter-badge" id="srs-badge-count">0</span>
                     <small>pendentes</small>
                 </div>
-                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('kanji')" class="btn-srs-action"
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('kanji_n1')" class="btn-srs-action"
                     style="background: linear-gradient(135deg, #b45309, #d97706);">
                     Iniciar Revisão ➔
                 </button>
@@ -99,8 +99,8 @@
         </main>
     </div>
 
-    <!-- Puxa os dados exclusivos do Kanji N5 e o script motor -->
-    <script src="data_kanji_n5.js"></script>
+    <!-- Puxa os dados exclusivos do Kanji N1 e o script motor -->
+    <script src="data_kanji_n1.js"></script>
     <script type="module" src="firebase-init.js"></script>
     <script src="app.js"></script>
 </body>

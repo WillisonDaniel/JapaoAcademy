@@ -213,6 +213,262 @@ Módulo 19: Etiqueta Cultural Avançada & Filosofia Japonesa (Conceitos como Omo
 
 Módulo 20: O Grande Desafio B2 (Trabalho de Conclusão de Curso) (Simulação real: Apresentação de um projeto corporativo/pessoal inteiramente em japonês)
 
+## ⛩️ Mapeamento Curricular: JLPT N3 Kanji
+- **Total de Kanjis Novos:** ~370 Kanjis
+- **Estrutura:** 18 Módulos Temáticos de Estudo + 1 Módulo Final de Tabela Geral e Revisão (`isReviewTable: true`, Total: 19 Módulos)
+- **Média por Módulo:** ~18 a 20 Kanjis
+- **Recursos por Módulo:** Explicação Gramatical N3, Cards de Kanjis (Kun/On/Exemplos/Mnemônicos/Canvas), Bloco de Leitura Guiada com Furigana e Romaji e Quiz de 10 Questões.
+
+### 🗺️ Mapa Temático dos Módulos do N3
+
+#### 🟢 Bloco 1: Cotidiano Avançado e Vida Social
+- **Módulo 1: Vida Urbana, Moradia e Trânsito Complexo**
+  - Temas: Bairros, construções urbanas, sinais de trânsito, acidentes e vias públicas.
+  - Exemplos de Kanjis: 港 (porto), 渡 (atravessar), 招 (convidar), 築 (construir).
+- **Módulo 2: Vestuário, Moda e Cuidados Pessoais**
+  - Temas: Roupas, tecidos, cores complexas, calçados e estética.
+  - Exemplos de Kanjis: 服 (roupa - revisão/composto), 換 (trocar), 髪 (cabelo), 姿 (figura/aparência).
+- **Módulo 3: Alimentação, Culinária e Ingredientes Avançados**
+  - Temas: Métodos de cozimento, sabores complexos, utensílios e restaurantes.
+  - Exemplos de Kanjis: 焼 (assar/grelhar), 煮 (cozinhar/ferver), 皿 (prato), 汁 (sopa/caldo).
+- **Módulo 4: Relações Humanas, Sentimentos e Emoções**
+  - Temas: Relações interpessoais, sentimentos, traços de personalidade e empatia.
+  - Exemplos de Kanjis: 悲 (tristeza), 怒 (raiva), 害 (dano/prejuízo), 喜 (alegria).
+
+#### 🔵 Bloco 2: Trabalho, Economia e Sociedade
+- **Módulo 5: Trabalho, Escritório e Profissões**
+  - Temas: Emprego, reuniões, cargos, setores corporativos e tarefas.
+  - Exemplos de Kanjis: 職 (emprego/cargo), 係 (encarregado), 務 (dever/tarefa), 頼 (confiar/pedir).
+- **Módulo 6: Comércio, Finanças e Negócios**
+  - Temas: Compras, pagamentos, bancos, taxas e economia básica.
+  - Exemplos de Kanjis: 費 (custo/despesa), 税 (imposto), 貯 (economizar/poupar), 賃 (aluguel/tarifa).
+- **Módulo 7: Saúde, Medicina e Sintomas**
+  - Temas: Doenças, exames, órgãos do corpo, remédios e hospitalização.
+  - Exemplos de Kanjis: 痛 (dor), 治 (curar), 薬 (remédio), 牙/歯 (dente).
+- **Módulo 8: Educação, Ciência e Tecnologia**
+  - Temas: Matérias escolares, pesquisas, experimentos, computadores e inovação.
+  - Exemplos de Kanjis: 研 (pesquisar), 究 (investigar), 術 (técnica/arte), 科 (ciência/seção).
+
+#### 🟡 Bloco 3: Natureza, Meio Ambiente e Geografia
+- **Módulo 9: Clima, Desastres Naturais e Meteorologia**
+  - Temas: Estações, tempestades, terremotos, temperatura e clima.
+  - Exemplos de Kanjis: 波 (onda), 津 (porto/tsunami), 震 (tremer/terremoto), 暴 (violento/tempestade).
+- **Módulo 10: Geografia, Relevo e Países**
+  - Temas: Regiões, fronteiras, capitais, clima e terreno.
+  - Exemplos de Kanjis: 域 (região/área), 陸 (terra firme/continente), 坂 (ladeira), 湾 (baía).
+- **Módulo 11: Animais, Plantas e Ecossistemas**
+  - Temas: Fauna, flora, preservação, florestas e ecologia.
+  - Exemplos de Kanjis: 虫 (inseto), 芝 (grama), 植 (plantar), 畜 (pecuária).
+
+#### 🟣 Bloco 4: Comunicação, Cultura e Mídia
+- **Módulo 12: Mídia, Notícias e Imprensa**
+  - Temas: Jornais, artigos, transmissões de TV, entrevistas e reportagens.
+  - Exemplos de Kanjis: 報 (informação/relatório), 告 (anunciar/notificar), 録 (gravar), 放送 (transmissão).
+- **Módulo 13: Cultura, Tradições e Artes**
+  - Temas: Festivais, história, música, teatro e arte tradicional.
+  - Exemplos de Kanjis: 劇 (teatro/drama), 舞 (dança/palco), 演 (atuação), 祭 (festival).
+- **Módulo 14: Viagens, Lazer e Esportes**
+  - Temas: Turismo, hotéis, passeios, bagagens e esportes.
+  - Exemplos de Kanjis: 旅 (viagem), 宿 (hospedagem/pousada), 景 (vista/paisagem), 投 (arremessar/jogar).
+
+#### 🔴 Bloco 5: Ações, Verbos e Conceitos Abstratos
+- **Módulo 15: Verbos de Transformação e Mudança**
+  - Temas: Crescimento, alteração, decisão, começo e fim.
+  - Exemplos de Kanjis: 変 (mudar), 化 (transformar), 決 (decidir), 始/終 (iniciar/terminar).
+- **Módulo 16: Adjetivos e Qualidades Intermediárias**
+  - Temas: Graus de intensidade, formatos, utilidade e estados físicos.
+  - Exemplos de Kanjis: 複 (complexo), 算 (calcular), 易 (fácil/simples), 難 (difícil).
+- **Módulo 17: Regras, Leis e Sociedade Política**
+  - Temas: Direitos, deveres, regras sociais, justiça e governança.
+  - Exemplos de Kanjis: 規 (regra/norma), 則 (regulamento), 律 (lei), 認 (reconhecer/aprovar).
+- **Módulo 18: Tempo Relativo, Frequência e Ordem**
+  - Temas: Passado recente, prazos, ordem cronológica e momentos.
+  - Exemplos de Kanjis: 序 (ordem/sequência), 昔 (antigamente), 頃 (por volta de), 続 (continuar).
+- **Módulo 19: Tabela Geral e Revisão N3 (`isReviewTable: true`)**
+  - Conteúdo: Grade completa de consulta rápida de todos os ~370 Kanjis do N3 com áudio e integração instantânea ao Dicionário.
+
+## ⛩️ Mapeamento Curricular: JLPT N2 Kanji
+- **Total de Kanjis Novos:** ~380 Kanjis
+- **Estrutura:** 20 Módulos Temáticos de Estudo + 1 Módulo Final de Tabela Geral e Revisão (`isReviewTable: true`, Total: 21 Módulos)
+- **Média por Módulo:** ~18 a 20 Kanjis
+- **Recursos por Módulo:** Explicação Gramatical N2, Cards de Kanjis (Kun/On/Exemplos/Mnemônicos/Canvas), Bloco de Leitura Guiada com Furigana e Romaji e Quiz de 10 Questões.
+
+### 🗺️ Mapa Temático dos Módulos do N2
+
+#### 🟢 Bloco 1: Negócios, Economia e Ambiente Corporativo
+- **Módulo 1: Mundo Corporativo, Gestão e Estrutura de Empresas**
+  - Temas: Diretoria, departamentos, contratação, estratégias e negociações de negócios.
+  - Exemplos de Kanjis: 企 (empresa/planejar), 業 (negócio - compostos), 招 (convidar/atrair), 創 (criar/fundar).
+- **Módulo 2: Finanças, Mercado, Contratos e Comércio Internacional**
+  - Temas: Ações, investimentos, lucros, prejuízos, taxas de câmbio e contratos.
+  - Exemplos de Kanjis: 財 (fortuna/patrimônio), 価 (valor/preço), 益 (lucro/benefício), 損 (perda/dano).
+- **Módulo 3: Emprego, Trabalho, Direitos e Relações Trabalhistas**
+  - Temas: Salário, aposentadoria, condições de trabalho, demissão e sindicato.
+  - Exemplos de Kanjis: 雇 (empregar), 賃 (salário/aluguel - avançado), 職 (cargo/ocupação - avançado), 避 (evitar/esquivar).
+
+#### 🔵 Bloco 2: Sociedade, Leis, Política e Governo
+- **Módulo 4: Política, Eleições e Governança**
+  - Temas: Partidos, votação, parlamento, políticas públicas e democracia.
+  - Exemplos de Kanjis: 政 (política/governo), 治 (governar/curar), 票 (voto/cédula), 争 (disputar/contender).
+- **Módulo 5: Leis, Justiça, Crime e Direitos Civis**
+  - Temas: Tribunais, julgamentos, leis, infrações, regulamentações e direitos humanos.
+  - Exemplos de Kanjis: 律 (lei/ritmo), 犯 (crime/cometer), 罪 (culpa/delito), 裁判 (julgamento).
+- **Módulo 6: Notícias, Imprensa e Mídia de Massa**
+  - Temas: Jornalismo, manchetes, entrevistas, transmissões de rádio/TV e liberdade de expressão.
+  - Exemplos de Kanjis: 報 (relatório/notícia), 独 (independente/sozinho), 演 (apresentar/performar), 論 (argumentar/tese).
+
+#### 🟡 Bloco 3: Ciência, Tecnologia e Medicina Avançada
+- **Módulo 7: Ciência, Pesquisa e Método Científico**
+  - Temas: Experimentos, teorias, descobertas, dados estatísticos e análise de laboratório.
+  - Exemplos de Kanjis: 説 (teoria/explicar), 測 (medir/estimar), 験 (testar/verificar), 査 (investigar/examinar).
+- **Módulo 8: Tecnologia, Engenharia e Sociedade Digital**
+  - Temas: Software, redes, inteligência artificial, máquinas e inovação tecnológica.
+  - Exemplos de Kanjis: 技 (técnica/habilidade), 構 (construção/estrutura), 備 (equipar/preparar), 導 (guiar/conduzir).
+- **Módulo 9: Saúde Pública, Medicina e Anatomia Humana**
+  - Temas: Órgãos internos, tratamento médico, cirurgia, sintomas e epidemias.
+  - Exemplos de Kanjis: 臓 (órgão interno), 診 (examinar/diagnosticar), 療 (tratamento), 症 (sintoma).
+
+#### 🟣 Bloco 4: Meio Ambiente, Geografia e Fenômenos Naturais
+- **Módulo 10: Ecologia, Meio Ambiente e Sustentabilidade**
+  - Temas: Reciclagem, poluição, recursos naturais, aquecimento global e energias renováveis.
+  - Exemplos de Kanjis: 環 (meio ambiente/anel), 境 (fronteira/limite), 護 (proteger), 廃 (descartar/abandonar).
+- **Módulo 11: Geologia, Desastres e Prevenção de Risco**
+  - Temas: Terremotos, erupções, furacões, evacuação e estruturas de segurança.
+  - Exemplos de Kanjis: 震 (tremer/sismo), 災 (desastre/calamidade), 防 (prevenir/defender), 避 (evacuar/abrigar).
+
+#### 🔴 Bloco 5: Psicologia, Relações e Expressões Humanas
+- **Módulo 12: Psicologia, Estado Mental e Emoções Complexas**
+  - Temas: Ansiedade, confiança, estresse, motivação, percepção e inteligência emocional.
+  - Exemplos de Kanjis: 態 (estado/condição), 惑 (ilusão/perplexidade), 悩 (preocupar-se), 欲 (desejar/ambição).
+- **Módulo 13: Relações Sociais, Redes e Convivência Comunitária**
+  - Temas: Comunidade, vizinhança, etiqueta social, cooperação e conflitos interpessoais.
+  - Exemplos de Kanjis: 協 (cooperar), 団 (grupo/organização), 互 (mútuo/recíproco), 礼 (cortesia/agradecimento).
+
+#### 🟤 Bloco 6: Cultura, Arte, Literatura e Filosofia
+- **Módulo 14: Literatura, Leitura de Ensaios e Escrita Acadêmica**
+  - Temas: Romances, poesias, citações, ensaios e crítica literária.
+  - Exemplos de Kanjis: 評 (avaliar/criticar), 描 (descrever/desenhar), 著 (escrever/autor), 誌 (revista/registro).
+- **Módulo 15: Artes, História e Patrimônio Cultural**
+  - Temas: Museus, monumentos, tradições históricas, arquitetura clássica e exposições.
+  - Exemplos de Kanjis: 歴 (história/passado), 史 (crônica/história), 展 (exibir/expandir), 宝 (tesouro/precioso).
+
+#### 🟠 Bloco 7: Verbos de Ação Avançados e Modificadores
+- **Módulo 16: Verbos de Mudança, Decisão e Conclusão**
+  - Temas: Alterar, determinar, julgar, resolver e alcançar objetivos.
+  - Exemplos de Kanjis: 定 (decidir/fixar), 判 (julgar/discernir), 達 (atingir/alcançar), 済 (concluir/resolver).
+- **Módulo 17: Verbos de Relação, Causa e Efeito**
+  - Temas: Influenciar, causar, depender, resultar e vincular fatos.
+  - Exemplos de Kanjis: 因 (causa/origem), 結 (vincular/concluir), 促 (promover/estimular), 影響 (influência).
+- **Módulo 18: Adjetivos e Qualidades de Alto Nível**
+  - Temas: Complexidade, precisão, raridade, abundância e proporção.
+  - Exemplos de Kanjis: 密 (denso/secreto), 確 (certo/preciso), 豊 (abundante/rico), 珍 (raro/curioso).
+- **Módulo 19: Tempo Relativo, Prazos e Transição Historico-Social**
+  - Temas: Prazos formais, períodos históricos, evolução temporária e frequência.
+  - Exemplos de Kanjis: 限 (limite/prazo), 期 (período/fase), 経 (passar o tempo/experiência), 延 (adiar/estender).
+- **Módulo 20: Expressões Figuradas, Onomatopeias e Linguagem Formal (Keigo Avançado)**
+  - Temas: Keigo institucional, metáforas cotidianas de negócios e conectores formais.
+  - Exemplos de Kanjis: 拝 (reverenciar/ver em Keigo), 承 (consentir/entender), 謙 (humilde), 遜 (modesto).
+- **Módulo 21: Tabela Geral e Revisão N2 (`isReviewTable: true`)**
+  - Conteúdo: Grade completa de consulta rápida de todos os ~380 Kanjis do N2 com suporte a áudio TTS, busca e integração total com o Dicionário Universal.
+
+## ⛩️ Mapeamento Curricular: JLPT N1 Kanji
+- **Total de Kanjis Novos:** ~1.136 Kanjis (fechando a lista completa de 2.136 Jōyō Kanjis)
+- **Estrutura:** 24 Módulos Temáticos de Estudo + 1 Módulo Final de Tabela Geral e Revisão (`isReviewTable: true`, Total: 25 Módulos)
+- **Média por Módulo:** ~45 a 50 Kanjis
+- **Recursos por Módulo:** Explicação Gramatical N1, Cards de Kanjis (Kun/On/Exemplos/Mnemônicos/Canvas), Bloco de Leitura Guiada com Furigana e Romaji e Quiz de 10 Questões.
+
+### 🗺️ Mapa Temático dos Módulos do N1
+
+#### 🟢 Bloco 1: Filosofia, Pensamento e Abstração Profunda
+- **Módulo 1: Filosofia, Ética, Existência e Psicologia Humana**
+  - Temas: Dilemas morais, consciência, virtude, subjetividade e destino.
+  - Exemplos de Kanjis: 哲 (filosofia), 倫 (ética), 魂 (alma), 凝 (concentrar/congelar), 悟 (despertar/compreender).
+- **Módulo 2: Religião, Espiritualidade e Tradições Antigas**
+  - Temas: Ritos, crenças, mitologia, templos clássicos e textos sagrados.
+  - Exemplos de Kanjis: 禅 (Zen), 僧 (monge), 祈 (rezar/orar), 幽 (oculto/escuridão), 遍 (universal/amplo).
+
+#### 🔵 Bloco 2: Direito, Geopolítica e Burocracia Estatal
+- **Módulo 3: Direito Constitucional, Legislação e Jurisprudência**
+  - Temas: Artigos constitucionais, cláusulas, processos judiciais complexos e sanções.
+  - Exemplos de Kanjis: 憲 (constituição), 條/条 (artigo/cláusula), 訴 (processar/alegar), 赦 (perdoar/anistiar).
+- **Módulo 4: Relações Internacionais, Diplomas e Geopolítica**
+  - Temas: Tratados de paz, embaixadas, soberania, conflitos globais e negociações de cúpula.
+  - Exemplos de Kanjis: 邦 (nação/país), 盟 (aliança/pacto), 領 (território/domínio), 侵 (invadir), 妥 (compromisso/concessão).
+- **Módulo 5: Administração Pública, Burocracia e Finanças Públicas**
+  - Temas: Orçamento de estado, auditorias, políticas fiscais e regulamentação bancária central.
+  - Exemplos de Kanjis: 幣 (moeda/câmbio), 監査 (auditoria), 租 (imposto/tributo), 滞 (estagnar/atrasar).
+
+#### 🟡 Bloco 3: Economia Avançada, Indústria e Mercados Globais
+- **Módulo 6: Macroeconomia, Câmbio e Mercados Financeiros**
+  - Temas: Inflação, flutuação cambial, fusões corporativas (M&A) e ativos financeiros.
+  - Exemplos de Kanjis: 騰 (subir/inflacionar), 暴 (despencar/violento - compostos), 膨 (inflar/expandir), 融 (financiar/fundir).
+- **Módulo 7: Indústria Pesada, Logística e Infraestrutura Nacional**
+  - Temas: Mineração, energia nuclear, usinas, malha rodoviária e transportes marítimos.
+  - Exemplos de Kanjis: 坑 (mina), 汽 (vapor), 搬 (transportar/carregar), 蓄 (acumular/armazenar).
+
+#### 🟣 Bloco 4: Ciências da Natureza, Medicina e Astronomia
+- **Módulo 8: Física, Química e Fenômenos Quânticos/Atômicos**
+  - Temas: Partículas, compostos químicos, reações, física teórica e elementos.
+  - Exemplos de Kanjis: 融 (fusão), 凝 (condensação), 磁 (magnetismo), 硝 (nitrato/pólvora).
+- **Módulo 9: Biologia Avançada, Genética e Anatomia Detalhada**
+  - Temas: DNA, tecidos celulares, biociência, patologias raras e imunologia.
+  - Exemplos de Kanjis: 胞 (célula), 膜 (membrana), 菌 (bactéria/fungo), 胎 (feto/embrião).
+- **Módulo 10: Astronomia, Meteorologia Avançada e Ciências da Terra**
+  - Temas: Constelações, atmosfera, placas tectônicas, órbita espacial e erupções.
+  - Exemplos de Kanjis: 彗 (cometa), 軌 (órbita/trilho), 霜 (geada), 霧 (névoa/neblina).
+
+#### 🔴 Bloco 5: Literatura, Arte e Linguagem Formal
+- **Módulo 11: Literatura Clássica, Poesia e Expressão Escrita (Bungo)**
+  - Temas: Estilo literário antigo, prosa clássica, metáforas poéticas e antologias.
+  - Exemplos de Kanjis: 詠 (recitar poesia), 雅 (elegância/refinamento), 愁 (melancolia), 吟 (cantarolar/recitar).
+- **Módulo 12: Arquitetura, Belas Artes e Estética Tradicional**
+  - Temas: Escultura, caligrafia, gravuras, cerâmica e teoria da arte.
+  - Exemplos de Kanjis: 彫 (esculpir), 漆 (laqueado/urushi), 匠 (artesão/mestre), 陶 (cerâmica).
+- **Módulo 13: Linguagem Jornalística de Elite e Redação de Ensaios**
+  - Temas: Artigos de opinião, editoriais, críticas políticas e ensaios acadêmicos.
+  - Exemplos de Kanjis: 箇 (item/tópico), 彙 (vocabulário/coleção), 歪 (distorcer/falsificar), 弊 (vício/mal).
+
+#### 🟤 Bloco 6: Fenômenos Sociais, Demografia e Sociologia
+- **Módulo 14: Demografia, Urbanização e Transformações Sociais**
+  - Temas: Envelhecimento populacional, êxodo rural, diversidade e sociologia urbana.
+  - Exemplos de Kanjis: 衰 (declinar/fraquejar), 孤 (solitário/órfão), 摩 (desgastar/fricionar), 疎 (alienar/distanciar).
+- **Módulo 15: Psicologia Comportamental e Patologias Sociais**
+  - Temas: Preconceito, discriminação, distúrbios comportamentais e dinâmicas de grupo.
+  - Exemplos de Kanjis: 偏 (parcial/preconceituoso), 虐 (maltratar/abusar), 嫉 (inveja/ciúme), 傲 (arrogância).
+
+#### 🟠 Bloco 7: Expressões Idiomáticas (Yojijukugo) e Nuances Formais
+- **Módulo 16: Expressões Idiomáticas de 4 Caracteres (Yojijukugo) - Parte 1**
+  - Temas: Expressões clássicas chinesas sobre sabedoria, perseverança e natureza.
+  - Exemplos de Kanjis: 臥 (deitar/perseverar), 薪 (lenha), 勉 (esforço - compostos eruditos).
+- **Módulo 17: Expressões Idiomáticas de 4 Caracteres (Yojijukugo) - Parte 2**
+  - Temas: Expressões de relações humanas, sorte, mudança rápida e contradição.
+  - Exemplos de Kanjis: 矛盾 (contradição), 試 (tentativa - erudito), 錯 (confusão/erro).
+- **Módulo 18: Linguagem Honorífica Máxima (Keigo de Alto Nível)**
+  - Temas: Linguagem protocolar da Família Imperial, alta diplomacia e ritos formais.
+  - Exemplos de Kanjis: 陛 (sua majestade), 殿 (palácio/senhor), 賜 (conceder/agradecer), 奉 (oferecer/dedicar).
+
+#### ⚪ Bloco 8: Verbos e Adjetivos Eruditos de Uso Raro/Específico
+- **Módulo 19: Verbos Eruditos de Estado, Transformação e Ocorrência**
+  - Temas: Surgir, desvanecer, oscilar, intensificar e ocultar.
+  - Exemplos de Kanjis: 漂 (derrapar/boiar), 潜 (submergir/esconder), 弄 (manipular/brincar com).
+- **Módulo 20: Verbos Eruditos de Destruição, Restauração e Controle**
+  - Temas: Aniquilar, restaurar, subjugar, restringir e libertar.
+  - Exemplos de Kanjis: 滅 (destruir/extinguir), 抑 (reprimir), 縛 (amarrar/restringir), 阻 (bloquear/impedir).
+- **Módulo 21: Adjetivos Eruditos de Textura, Forma e Sensação**
+  - Temas: Bruto, refinado, escorregadio, áspero, vago e límpido.
+  - Exemplos de Kanjis: 粗 (grosseiro/bruto), 滑 (liso/escorregadio), 潤 (úmido/lucrativo), 茫 (vasto/indefinido).
+- **Módulo 22: Adjetivos Eruditos de Intensidade e Escala**
+  - Temas: Extremamente denso, insignificante, gigante, minúsculo e eterno.
+  - Exemplos de Kanjis: 莫 (enorme/vasto), 微 (minúsculo), 悠 (eterno/calmo), 烈 (intenso/feroz).
+- **Módulo 23: Partículas Históricas, Prefixos e Sufixos Arcaicos**
+  - Temas: Modificadores de texto acadêmico e marcas de registro formal antigo.
+  - Exemplos de Kanjis: 尚 (ainda assim), 且 (além disso), 概 (geralmente/esboço).
+- **Módulo 24: Kanjis de Nomes Próprios, Regiões Históricas e Geografia do Japão**
+  - Temas: Prefeituras japonesas, topônimos históricos e nomes de famílias tradicionais.
+  - Exemplos de Kanjis: 阜 (Prefeitura de Gifu), 潟 (Prefeitura de Niigata), 媛 (Prefeitura de Ehime), 茨 (Prefeitura de Ibaraki).
+- **Módulo 25: Tabela Geral e Revisão N1 (`isReviewTable: true`)**
+  - Conteúdo: Tabela completa e dicionário interativo de todos os ~1.136 Kanjis do N1, concluindo a grade integral de 2.136 Kanjis do Japão Academy!
+
 ## 👤 Personalização Dinâmica
 - Nome do aluno salvo em `localStorage` sob a chave `ja_nome_usuario`.
 - Função `fNome()` no `app.js` substitui marcadores `[Seu Nome]` ou `[Nome]` dinamicamente nas lições e diálogos do `data_curso_a1.js`.

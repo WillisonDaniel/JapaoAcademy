@@ -45,11 +45,16 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div class="g-cat-box">
                             <div style="font-weight: bold; color: var(--game-primary); margin-bottom: 1rem; text-transform: uppercase;">🔠 1. Escolha o Alfabeto</div>
-                            <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-                                <label class="g-cb-label active script-lbl"><input type="radio" name="script_mode" value="hiragana" style="display:none" checked><span style="font-size: 1.5rem;">あ</span> Hiragana</label>
-                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="katakana" style="display:none"><span style="font-size: 1.5rem;">ア</span> Katakana</label>
-                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji" style="display:none"><span style="font-size: 1.5rem;">漢</span> Kanji N5</label>
-                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="all" style="display:none"><span style="font-size: 1.5rem;">あ+ア+漢</span> Misturado</label>
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem; max-height: 320px; overflow-y: auto; padding-right: 4px;">
+                                <label class="g-cb-label active script-lbl"><input type="radio" name="script_mode" value="hiragana" style="display:none" checked><span style="font-size: 1.3rem;">あ</span> Hiragana</label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="katakana" style="display:none"><span style="font-size: 1.3rem;">ア</span> Katakana</label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_n5" style="display:none"><span>🟢 Kanji N5</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_n4" style="display:none"><span>🟡 Kanji N4</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_n3" style="display:none"><span>🟠 Kanji N3</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_n2" style="display:none"><span>🔴 Kanji N2</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_n1" style="display:none"><span>🟣 Kanji N1</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="kanji_all" style="display:none"><span>🏯 Todos os Kanjis (N5-N1)</span></label>
+                                <label class="g-cb-label script-lbl"><input type="radio" name="script_mode" value="all" style="display:none"><span style="font-size: 1.3rem;">あ+ア+漢</span> Misturado (Tudo)</label>
                             </div>
                         </div>
 
@@ -147,6 +152,11 @@
     <script src="data_hiragana.js"></script>
     <script src="data_katakana.js"></script>
     <script src="data_kanji_n5.js"></script>
+    <script src="data_kanji_n4.js"></script>
+    <script src="data_kanji_n3.js"></script>
+    <script src="data_kanji_n2.js"></script>
+    <script src="data_kanji_n1.js"></script>
+    <script type="module" src="firebase-init.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

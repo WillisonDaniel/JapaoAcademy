@@ -477,7 +477,7 @@ function loadCourseModule(idx) {
     let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback"></span></div>`).join('');
 
     display.innerHTML = `<h2 class="module-title">${data.title}</h2><p style="margin-bottom:2rem; color:var(--text-muted);">${data.desc}</p><h3 class="section-title">🔤 Caracteres/Regras</h3><div class="char-grid">${charsHtml}</div><h3 class="section-title">📚 Vocabulário Prático</h3><div class="vocab-grid">${vocabHtml}</div><div class="quiz-section"><h3 class="section-title" style="margin-top:0;">🧠 Exercícios</h3>${quizHtml}</div>`;
-    
+
     inicializarTodosOsCanvases();
 }
 
@@ -507,7 +507,7 @@ function checkCourseQuiz(idx, correct, type) {
 
 function renderQuizQuestion(q, i, mode = 'kanji') {
     const safeAns = (q.a || '').replace(/'/g, "\\'");
-    
+
     if (q.type === 'choice' || (q.options && Array.isArray(q.options) && q.options.length > 0)) {
         const optionsHTML = q.options.map(opt => `
             <button class="quiz-option-btn" onclick="verificarQuizEscolha(${i}, '${safeAns}', '${opt.replace(/'/g, "\\'")}', this)" style="display:block; margin:6px 0; width:100%; text-align:left; padding:12px 16px; border-radius:10px; border:1.5px solid var(--border-color); background:var(--card-bg); color:var(--text-main); font-weight:600; font-size:0.95rem; cursor:pointer; transition:all 0.2s ease;">
@@ -612,12 +612,26 @@ function renderKanjiModule(moduleIndex) {
         container.appendChild(grammarDiv);
     }
 
-    // VERIFICAÇÃO: Se for a Tabela Geral de Revisão (Módulo 10)
+    // VERIFICAÇÃO: Se for a Tabela Geral de Revisão
     if (moduleData.isReviewTable) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'review-grid-container';
 
-        (moduleData.kanjis || []).forEach(item => {
+        let reviewKanjis = (moduleData.kanjis && moduleData.kanjis.length > 0) ? moduleData.kanjis : [];
+        if (reviewKanjis.length === 0 && Array.isArray(dataBase)) {
+            dataBase.forEach((mod, modIdx) => {
+                if (mod && !mod.isReviewTable && mod.kanjis && Array.isArray(mod.kanjis)) {
+                    mod.kanjis.forEach(k => {
+                        reviewKanjis.push({
+                            ...k,
+                            originModule: mod.module || (modIdx + 1)
+                        });
+                    });
+                }
+            });
+        }
+
+        reviewKanjis.forEach(item => {
             try {
                 const charVal = item.character || item.kanji || item.char || '';
                 const meaningVal = item.meaning || item.significado || '';
@@ -994,21 +1008,50 @@ function startGame() {
         if ((mode === 'katakana' || mode === 'both' || mode === 'all') && typeof RAW_K !== 'undefined' && RAW_K[cat]) {
             RAW_K[cat].forEach(i => gPool.push({ ...i, s: 'K', c: CAT_NAMES[cat] || cat.toUpperCase() }));
         }
-        // Carrega Kanjis do N5 correspondentes ao módulo selecionado
-        if ((mode === 'kanji' || mode === 'all') && typeof kanjiN5Data !== 'undefined') {
-            let kMod = kanjiN5Data.find(m => m.module === modNum);
-            if (kMod && kMod.kanjis && !kMod.isReviewTable) {
-                kMod.kanjis.forEach(item => {
-                    let reading = getKanjiReading(item);
-                    gPool.push({
-                        k: item.character,
-                        r: reading,
-                        m: item.meaning,
-                        s: 'N', // Identificador para Kanji
-                        c: `Módulo ${modNum} (Kanji)`
-                    });
-                });
+        // Carrega Kanjis de acordo com o modo selecionado (kanji_n5, kanji_n4, kanji_n3, kanji_n2, kanji_n1, kanji_all, kanji ou all)
+        const isKanjiMode = mode.startsWith('kanji') || mode === 'kanji' || mode === 'all';
+        if (isKanjiMode) {
+            const allKanjiDatasets = [
+                { id: 'kanji_n5', data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, tag: 'Kanji N5' },
+                { id: 'kanji_n4', data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, tag: 'Kanji N4' },
+                { id: 'kanji_n3', data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, tag: 'Kanji N3' },
+                { id: 'kanji_n2', data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, tag: 'Kanji N2' },
+                { id: 'kanji_n1', data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, tag: 'Kanji N1' }
+            ];
+
+            let activeKanjiDatasets = [];
+            if (mode === 'kanji_n5') {
+                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n5');
+            } else if (mode === 'kanji_n4') {
+                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n4');
+            } else if (mode === 'kanji_n3') {
+                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n3');
+            } else if (mode === 'kanji_n2') {
+                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n2');
+            } else if (mode === 'kanji_n1') {
+                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n1');
+            } else {
+                // 'kanji_all', 'kanji' ou 'all'
+                activeKanjiDatasets = allKanjiDatasets;
             }
+
+            activeKanjiDatasets.forEach(ds => {
+                if (ds.data) {
+                    let kMod = ds.data.find(m => m.module === modNum);
+                    if (kMod && kMod.kanjis && !kMod.isReviewTable) {
+                        kMod.kanjis.forEach(item => {
+                            let reading = getKanjiReading(item);
+                            gPool.push({
+                                k: item.character || item.kanji,
+                                r: reading,
+                                m: item.meaning,
+                                s: 'N', // Identificador para Kanji
+                                c: `${ds.tag} • Mód ${modNum}`
+                            });
+                        });
+                    }
+                }
+            });
         }
     });
 
@@ -1130,7 +1173,7 @@ function cleanJapaneseText(text) {
 
 function normalizePhonetic(text) {
     if (!text) return "";
-    
+
     // 1. Limpeza estrita de pontuação japonesa e ocidental ANTES do Wanakana
     let clean = cleanJapaneseText(text);
 
@@ -1146,7 +1189,7 @@ function normalizePhonetic(text) {
     if (/^v[aeiou]/i.test(clean)) {
         clean = 'b' + clean.slice(1);
     }
-    
+
     // 4. Desduplicação de vogais finais repetidas (ex: 'booo' -> 'bo', 'neee' -> 'ne')
     clean = clean.replace(/([aeiou])\1+$/g, "$1");
 
@@ -1174,8 +1217,8 @@ function normalizePhonetic(text) {
 }
 
 function levenshtein(a, b) {
-    const matrix = []; 
-    for (let i = 0; i <= b.length; i++) matrix[i] = [i]; 
+    const matrix = [];
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
     for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
     for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
@@ -1183,7 +1226,7 @@ function levenshtein(a, b) {
                 matrix[i][j] = matrix[i - 1][j - 1];
             } else {
                 matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1, 
+                    matrix[i - 1][j - 1] + 1,
                     Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
                 );
             }
@@ -1193,14 +1236,14 @@ function levenshtein(a, b) {
 }
 
 function checkSpeechAnswer(transcripts) {
-    if (gProc) return; 
-    gProc = true; 
-    let isCorrect = false; 
+    if (gProc) return;
+    gProc = true;
+    let isCorrect = false;
     let heardText = transcripts[0] || "...";
 
     // Resposta esperada convertida para Romaji limpo (Moeda Única de Comparação)
     let rawExpectedKana = cleanJapaneseText(gCard.k);
-    let expectedRomaji = normalizePhonetic(gCard.k || gCard.r);
+    let expectedRomaji = normalizePhonetic(gCard.r || gCard.k);
 
     console.log(`[Speech Debug] Target: "${gCard.k}" (Romaji Esperado: "${expectedRomaji}") | Hypotheses:`, transcripts);
 
@@ -1229,7 +1272,7 @@ function checkSpeechAnswer(transcripts) {
         // Katakana (ゼ。) <-> Hiragana (ぜ) -> ze === ze!
         // ==========================================
         if (
-            romajiConvertido === expectedRomaji || 
+            romajiConvertido === expectedRomaji ||
             alphabetFallbackRomajis.includes(expectedRomaji)
         ) {
             isCorrect = true;
@@ -1251,7 +1294,7 @@ function checkSpeechAnswer(transcripts) {
         // ==========================================
         const homophoneList = KANJI_HOMOPHONE_MAP[expectedRomaji] || [];
         if (
-            homophoneList.includes(rawClean) || 
+            homophoneList.includes(rawClean) ||
             homophoneList.includes(romajiConvertido)
         ) {
             isCorrect = true;
@@ -1263,7 +1306,7 @@ function checkSpeechAnswer(transcripts) {
         // CRITÉRIO 4: TOLERÂNCIA DAKUON / HANDAKUON
         // (ex: 'go' para 'gu', 'be' para 'bi', 'ze' para 'zo')
         // ==========================================
-        let inSameDakuonFamily = DAKUON_FAMILIES.some(family => 
+        let inSameDakuonFamily = DAKUON_FAMILIES.some(family =>
             family.includes(expectedRomaji) && (family.includes(romajiConvertido) || alphabetFallbackRomajis.some(r => family.includes(r)))
         );
         if (inSameDakuonFamily) {
@@ -1287,7 +1330,7 @@ function checkSpeechAnswer(transcripts) {
         // ==========================================
         if (expectedRomaji === "n" || rawExpectedKana === "ん" || rawExpectedKana === "ン") {
             if (["m", "n", "nn", "ng", "um", "un", "hum", "uh", "en", "an", "on"].includes(romajiConvertido)) {
-                isCorrect = true; 
+                isCorrect = true;
                 heardText = t;
                 break;
             }
@@ -1296,8 +1339,8 @@ function checkSpeechAnswer(transcripts) {
         let maxAllowedDist = expectedRomaji.length >= 8 ? 3 : (expectedRomaji.length <= 4 ? 1 : 2);
         let dist = levenshtein(romajiConvertido, expectedRomaji);
         if (
-            dist <= maxAllowedDist || 
-            romajiConvertido.includes(expectedRomaji) || 
+            dist <= maxAllowedDist ||
+            romajiConvertido.includes(expectedRomaji) ||
             expectedRomaji.includes(romajiConvertido)
         ) {
             isCorrect = true;
@@ -1528,6 +1571,10 @@ function carregarProgressoGlobal() {
     if (!Array.isArray(res.progress_hiragana)) res.progress_hiragana = [];
     if (!Array.isArray(res.progress_katakana)) res.progress_katakana = [];
     if (!Array.isArray(res.progress_kanji)) res.progress_kanji = [];
+    if (!Array.isArray(res.progress_kanji_n4)) res.progress_kanji_n4 = [];
+    if (!Array.isArray(res.progress_kanji_n3)) res.progress_kanji_n3 = [];
+    if (!Array.isArray(res.progress_kanji_n2)) res.progress_kanji_n2 = [];
+    if (!Array.isArray(res.progress_kanji_n1)) res.progress_kanji_n1 = [];
     res.progress_curso_principal = res.modulosConcluidos;
 
     // Sincroniza leitura dedicada do japao_academy_kanji_progress
@@ -1547,7 +1594,7 @@ function carregarProgressoGlobal() {
 
 function salvarProgressoGlobal() {
     localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
-    
+
     // Sincroniza legados para retrocompatibilidade
     const cursos = getTodosOsCursos();
     if (cursos.A1) {
@@ -1582,6 +1629,238 @@ function salvarProgressoGlobal() {
         xpTotal: concKanjiCount * 100,
         modulosConcluidosN5: progressoGlobal.progress_kanji || []
     }));
+
+    // Sincronização Assíncrona com Firebase Firestore se usuário autenticado
+    const fb = window.jaFirebase;
+    if (fb && fb.auth && fb.auth.currentUser && fb.db && fb.doc && fb.setDoc) {
+        const user = fb.auth.currentUser;
+        const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
+        fb.setDoc(docRef, progressoGlobal, { merge: true }).catch(err => {
+            console.warn("⚠️ Falha ao enviar dados em segundo plano para o Firestore:", err);
+        });
+    }
+}
+
+// ==========================================
+// CAMADA DE INTEGRAÇÃO COM FIREBASE (AUTH & FIRESTORE)
+// ==========================================
+
+async function sincronizarProgressoComFirestore(user) {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.db || !user) return;
+
+    try {
+        const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
+        const docSnap = await fb.getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const dataRemote = docSnap.data() || {};
+            // Sincronização inteligente via união de conjuntos mantendo progresso local e nuvem
+            progressoGlobal = {
+                ...progressoGlobal,
+                ...dataRemote,
+                modulosConcluidos: Array.from(new Set([...(progressoGlobal.modulosConcluidos || []), ...(dataRemote.modulosConcluidos || [])])),
+                modulosDesbloqueados: Array.from(new Set([...(progressoGlobal.modulosDesbloqueados || []), ...(dataRemote.modulosDesbloqueados || [])])),
+                progress_hiragana: Array.from(new Set([...(progressoGlobal.progress_hiragana || []), ...(dataRemote.progress_hiragana || [])])),
+                progress_katakana: Array.from(new Set([...(progressoGlobal.progress_katakana || []), ...(dataRemote.progress_katakana || [])])),
+                progress_kanji: Array.from(new Set([...(progressoGlobal.progress_kanji || []), ...(dataRemote.progress_kanji || [])])),
+                progress_kanji_n4: Array.from(new Set([...(progressoGlobal.progress_kanji_n4 || []), ...(dataRemote.progress_kanji_n4 || [])])),
+                progress_kanji_n3: Array.from(new Set([...(progressoGlobal.progress_kanji_n3 || []), ...(dataRemote.progress_kanji_n3 || [])])),
+                progress_kanji_n2: Array.from(new Set([...(progressoGlobal.progress_kanji_n2 || []), ...(dataRemote.progress_kanji_n2 || [])])),
+                progress_kanji_n1: Array.from(new Set([...(progressoGlobal.progress_kanji_n1 || []), ...(dataRemote.progress_kanji_n1 || [])])),
+                xpTotal: Math.max(progressoGlobal.xpTotal || 0, dataRemote.xpTotal || 0)
+            };
+            localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
+            console.log("☁️ Progresso sincronizado com o Firestore!");
+        } else {
+            await fb.setDoc(docRef, progressoGlobal, { merge: true });
+            console.log("☁️ Primeiro backup gravado com sucesso no Firestore!");
+        }
+
+        calcularProgressoGlobal();
+        atualizarUIProgresso();
+    } catch (err) {
+        console.warn("⚠️ Erro ao sincronizar progresso com o Firestore:", err);
+    }
+}
+
+function inicializarAuthObserverFirebase() {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.auth || !fb.onAuthStateChanged) return;
+
+    fb.onAuthStateChanged(fb.auth, async (user) => {
+        if (user) {
+            console.log("🔥 Firebase Auth: Usuário autenticado:", user.email, user.uid);
+            nomeUsuario = user.displayName || user.email.split('@')[0] || 'Estudante';
+            localStorage.setItem('ja_nome_usuario', nomeUsuario);
+
+            const elUserEmail = document.getElementById('firebase-user-email');
+            if (elUserEmail) elUserEmail.innerText = user.email || '';
+
+            await sincronizarProgressoComFirestore(user);
+        } else {
+            console.log("ℹ️ Firebase Auth: Nenhum usuário logado. Mantendo persistência local.");
+        }
+        garantirElementosCabecalhoEModal();
+        atualizarUIProgresso();
+    });
+}
+
+async function fazerLoginEmailSenha(email, senha) {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.auth || !fb.signInWithEmailAndPassword) {
+        mostrarToast("⚠️ Serviço de autenticação Firebase não inicializado.");
+        return { success: false, error: "Firebase indisponível" };
+    }
+    try {
+        const userCred = await fb.signInWithEmailAndPassword(fb.auth, email, senha);
+        mostrarToast(`🎉 <strong>Bem-vindo(a) de volta!</strong> Login efetuado.`);
+        playBeep('success');
+        return { success: true, user: userCred.user };
+    } catch (err) {
+        let msg = "Falha no login. Verifique e-mail e senha.";
+        if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password') msg = "Senha ou e-mail incorreto.";
+        if (err.code === 'auth/user-not-found') msg = "Usuário não encontrado.";
+        if (err.code === 'auth/invalid-email') msg = "E-mail inválido.";
+        mostrarToast(`❌ <strong>Erro no Login:</strong> ${msg}`);
+        playBeep('error');
+        return { success: false, error: msg };
+    }
+}
+
+async function fazerCadastroEmailSenha(email, senha, nome = '') {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.auth || !fb.createUserWithEmailAndPassword) {
+        mostrarToast("⚠️ Serviço de autenticação Firebase não inicializado.");
+        return { success: false, error: "Firebase indisponível" };
+    }
+    try {
+        const userCred = await fb.createUserWithEmailAndPassword(fb.auth, email, senha);
+        if (nome) {
+            nomeUsuario = nome;
+            localStorage.setItem('ja_nome_usuario', nome);
+        }
+        mostrarToast(`✨ <strong>Conta Criada com Sucesso!</strong> Seja bem-vindo(a)!`);
+        playBeep('success');
+        return { success: true, user: userCred.user };
+    } catch (err) {
+        let msg = "Não foi possível criar a conta.";
+        if (err.code === 'auth/email-already-in-use') msg = "Este e-mail já está cadastrado.";
+        if (err.code === 'auth/weak-password') msg = "A senha deve ter pelo menos 6 caracteres.";
+        if (err.code === 'auth/invalid-email') msg = "E-mail inválido.";
+        mostrarToast(`❌ <strong>Erro no Cadastro:</strong> ${msg}`);
+        playBeep('error');
+        return { success: false, error: msg };
+    }
+}
+
+async function fazerLoginGoogle() {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.auth || !fb.signInWithPopup || !fb.GoogleAuthProvider) {
+        mostrarToast("⚠️ Autenticação Google indisponível.");
+        return { success: false, error: "Firebase indisponível" };
+    }
+    try {
+        const provider = new fb.GoogleAuthProvider();
+        const userCred = await fb.signInWithPopup(fb.auth, provider);
+        mostrarToast(`🚀 <strong>Autenticado com o Google!</strong> Olá, ${userCred.user.displayName || 'Estudante'}!`);
+        playBeep('success');
+        return { success: true, user: userCred.user };
+    } catch (err) {
+        mostrarToast(`❌ <strong>Erro no Login Google:</strong> ${err.message || 'Operação cancelada.'}`);
+        playBeep('error');
+        return { success: false, error: err.message };
+    }
+}
+
+async function fazerLogout() {
+    const fb = window.jaFirebase;
+    if (!fb || !fb.auth || !fb.signOut) return;
+    try {
+        await fb.signOut(fb.auth);
+        mostrarToast(`👋 <strong>Sessão Encerrada.</strong> Você deslogou do Japão Academy.`);
+        playBeep('click');
+    } catch (err) {
+        console.warn("⚠️ Erro ao deslogar:", err);
+    }
+}
+
+function abrirModalAuth(aba = 'login') {
+    garantirElementosCabecalhoEModal();
+    const modal = document.getElementById('modal-auth');
+    if (modal) {
+        alternarAbaAuth(aba);
+        modal.style.display = 'flex';
+    }
+}
+
+function fecharModalAuth() {
+    const modal = document.getElementById('modal-auth');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+function fecharModalAuthAoClicarFora(e) {
+    if (e.target && e.target.id === 'modal-auth') {
+        fecharModalAuth();
+    }
+}
+
+function alternarAbaAuth(aba) {
+    const tabLogin = document.getElementById('tab-auth-login');
+    const tabCad = document.getElementById('tab-auth-cadastro');
+    const formLogin = document.getElementById('form-auth-login');
+    const formCad = document.getElementById('form-auth-cadastro');
+
+    if (aba === 'login') {
+        if (tabLogin) tabLogin.classList.add('active');
+        if (tabCad) tabCad.classList.remove('active');
+        if (formLogin) formLogin.style.display = 'block';
+        if (formCad) formCad.style.display = 'none';
+    } else {
+        if (tabCad) tabCad.classList.add('active');
+        if (tabLogin) tabLogin.classList.remove('active');
+        if (formCad) formCad.style.display = 'block';
+        if (formLogin) formLogin.style.display = 'none';
+    }
+}
+
+async function executarLoginEmail(e) {
+    if (e) e.preventDefault();
+    const emailEl = document.getElementById('auth-login-email');
+    const passEl = document.getElementById('auth-login-password');
+    if (!emailEl || !passEl) return;
+
+    const res = await fazerLoginEmailSenha(emailEl.value, passEl.value);
+    if (res.success) {
+        emailEl.value = '';
+        passEl.value = '';
+        fecharModalAuth();
+    }
+}
+
+async function executarCadastroEmail(e) {
+    if (e) e.preventDefault();
+    const nameEl = document.getElementById('auth-reg-name');
+    const emailEl = document.getElementById('auth-reg-email');
+    const passEl = document.getElementById('auth-reg-password');
+    if (!emailEl || !passEl) return;
+
+    const res = await fazerCadastroEmailSenha(emailEl.value, passEl.value, nameEl ? nameEl.value : '');
+    if (res.success) {
+        if (nameEl) nameEl.value = '';
+        emailEl.value = '';
+        passEl.value = '';
+        fecharModalAuth();
+    }
+}
+
+async function executarLoginGoogle() {
+    const res = await fazerLoginGoogle();
+    if (res.success) {
+        fecharModalAuth();
+    }
 }
 
 // ==========================================
@@ -1598,9 +1877,24 @@ function eNivelKanjiDesbloqueado(nivelJLPT) {
         const concN5 = (progressoGlobal.progress_kanji || []).length;
         return concN5 >= totalN5;
     }
-    if (lvl === 'N3') return eNivelKanjiDesbloqueado('N4') && false;
-    if (lvl === 'N2') return eNivelKanjiDesbloqueado('N3') && false;
-    if (lvl === 'N1') return eNivelKanjiDesbloqueado('N2') && false;
+    // N3 desbloqueia após N4
+    if (lvl === 'N3') {
+        const totalN4 = (typeof kanjiN4Data !== 'undefined' ? kanjiN4Data.length : 15);
+        const concN4 = (progressoGlobal.progress_kanji_n4 || []).length;
+        return eNivelKanjiDesbloqueado('N4') && concN4 >= totalN4;
+    }
+    // N2 desbloqueia após N3
+    if (lvl === 'N2') {
+        const totalN3 = (typeof kanjiN3Data !== 'undefined' ? kanjiN3Data.length : 19);
+        const concN3 = (progressoGlobal.progress_kanji_n3 || []).length;
+        return eNivelKanjiDesbloqueado('N3') && concN3 >= totalN3;
+    }
+    // N1 desbloqueia após N2
+    if (lvl === 'N1') {
+        const totalN2 = (typeof kanjiN2Data !== 'undefined' ? kanjiN2Data.length : 21);
+        const concN2 = (progressoGlobal.progress_kanji_n2 || []).length;
+        return eNivelKanjiDesbloqueado('N2') && concN2 >= totalN2;
+    }
     return false;
 }
 
@@ -1612,22 +1906,16 @@ function abrirTrilhaKanji(nivelJLPT) {
         return;
     }
 
-    if (lvl === 'N4') {
-        if (!eNivelKanjiDesbloqueado(lvl)) {
-            alert(`🔒 Conclua todos os módulos do Nível N5 para liberar o Nível N4!`);
-            return;
-        }
-        window.location.href = 'kanji_n4.html';
-        return;
-    }
-
     if (!eNivelKanjiDesbloqueado(lvl)) {
-        const nivelAnterior = (lvl === 'N3') ? 'N4' : (lvl === 'N2') ? 'N3' : 'N2';
+        const nivelAnterior = (lvl === 'N4') ? 'N5' : (lvl === 'N3') ? 'N4' : (lvl === 'N2') ? 'N3' : 'N2';
         alert(`🔒 Conclua todos os módulos do Nível ${nivelAnterior} para liberar o Nível ${lvl}!`);
         return;
     }
 
-    alert(`✨ O Nível ${lvl} estará disponível em breve no Japão Academy!`);
+    if (lvl === 'N4') { window.location.href = 'kanji_n4.html'; return; }
+    if (lvl === 'N3') { window.location.href = 'kanji_n3.html'; return; }
+    if (lvl === 'N2') { window.location.href = 'kanji_n2.html'; return; }
+    if (lvl === 'N1') { window.location.href = 'kanji_n1.html'; return; }
 }
 
 function calcularProgressoKanjiGlobal() {
@@ -1711,11 +1999,20 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     if (t === 'katakana') {
         return (progressoGlobal.progress_katakana || []).includes(modIdx);
     }
-    if (t === 'kanji') {
+    if (t === 'kanji' || t === 'kanji_n5' || t === 'n5') {
         return (progressoGlobal.progress_kanji || []).includes(modIdx);
     }
-    if (t === 'kanji_n4') {
+    if (t === 'kanji_n4' || t === 'n4') {
         return (progressoGlobal.progress_kanji_n4 || []).includes(modIdx);
+    }
+    if (t === 'kanji_n3' || t === 'n3') {
+        return (progressoGlobal.progress_kanji_n3 || []).includes(modIdx);
+    }
+    if (t === 'kanji_n2' || t === 'n2') {
+        return (progressoGlobal.progress_kanji_n2 || []).includes(modIdx);
+    }
+    if (t === 'kanji_n1' || t === 'n1') {
+        return (progressoGlobal.progress_kanji_n1 || []).includes(modIdx);
     }
 
     const cursos = getTodosOsCursos();
@@ -1822,7 +2119,7 @@ function atualizarUIProgresso() {
     const tagB2 = document.getElementById('tag-nivel-b2');
 
     if (cardA1) cardA1.classList.remove('bloqueado');
-    
+
     if (cardA2) {
         if (eNivelDesbloqueado('A2')) {
             cardA2.classList.remove('bloqueado');
@@ -1850,6 +2147,21 @@ function atualizarUIProgresso() {
             if (tagB2) { tagB2.innerText = "🔒 BLOQUEADO"; tagB2.style.background = "var(--text-muted)"; }
         }
     }
+
+    // Atualiza cards no Hub de Kanjis (kanji.html)
+    ['n4', 'n3', 'n2', 'n1'].forEach(lvl => {
+        const cardK = document.getElementById(`card-kanji-${lvl}`);
+        const tagK = document.getElementById(`tag-kanji-${lvl}`);
+        if (cardK) {
+            if (eNivelKanjiDesbloqueado(lvl.toUpperCase())) {
+                cardK.classList.remove('bloqueado');
+                if (tagK) { tagK.innerText = "DISPONÍVEL"; tagK.style.background = "#22c55e"; }
+            } else {
+                cardK.classList.add('bloqueado');
+                if (tagK) { tagK.innerText = "🔒 BLOQUEADO"; tagK.style.background = "var(--text-muted)"; }
+            }
+        }
+    });
 
     const btnCertHub = document.getElementById('btn-ver-certificado-hub');
     if (btnCertHub) {
@@ -1898,9 +2210,46 @@ function initApp() {
     }
 
     const mode = document.body.getAttribute('data-mode') || courseMode;
+
+    // MIGRAÇÃO E DESCONTAMINAÇÃO DO SRS PARA KANJI N3, N2 E N1 (Requisito 5)
+    try {
+        const rawGenDeck = localStorage.getItem('ja_srs_deck');
+        if (rawGenDeck) {
+            const parsedGen = JSON.parse(rawGenDeck);
+            if (Array.isArray(parsedGen)) {
+                const temKanjiAdv = parsedGen.some(c => c && c.id && (
+                    c.id.startsWith('kanji_n3') ||
+                    c.id.startsWith('kanji_n2') ||
+                    c.id.startsWith('kanji_n1')
+                ));
+                if (temKanjiAdv) {
+                    const deckFiltrado = parsedGen.filter(c => !(c && c.id && (
+                        c.id.startsWith('kanji_n3') ||
+                        c.id.startsWith('kanji_n2') ||
+                        c.id.startsWith('kanji_n1')
+                    )));
+                    if (deckFiltrado.length === 0) {
+                        localStorage.removeItem('ja_srs_deck');
+                    } else {
+                        localStorage.setItem('ja_srs_deck', JSON.stringify(deckFiltrado));
+                    }
+                }
+            }
+        }
+    } catch (e) {
+        console.warn("Aviso na migração/descontaminação do SRS:", e);
+    }
+
+    // Força a reconstrução/sincronização isolada dos baralhos de N3, N2 e N1
+    ['kanji_n3', 'kanji_n2', 'kanji_n1'].forEach(kLvl => {
+        sincronizarBaralhoSRS(kLvl);
+    });
+
     if (mode) {
         atualizarBadgeSRS(mode);
     }
+
+    inicializarAuthObserverFirebase();
 
     console.log("🚀 Japão Academy Inicializado | Nível Ativo:", nivelAtivo, "| Módulos Concluídos:", progressoGlobal.modulosConcluidos.length, "/ 105");
 }
@@ -1924,8 +2273,11 @@ function getDeckKeySRS(tipo) {
     const t = tipo.toLowerCase();
     if (t === 'hiragana') return 'ja_srs_hiragana_deck';
     if (t === 'katakana') return 'ja_srs_katakana_deck';
-    if (t === 'kanji') return 'ja_srs_kanji_deck';
-    if (t === 'kanji_n4') return 'ja_srs_kanji_n4_deck';
+    if (t === 'kanji' || t === 'kanji_n5' || t === 'n5') return 'ja_srs_kanji_deck';
+    if (t === 'kanji_n4' || t === 'n4') return 'ja_srs_kanji_n4_deck';
+    if (t === 'kanji_n3' || t === 'n3') return 'ja_srs_kanji_n3_deck';
+    if (t === 'kanji_n2' || t === 'n2') return 'ja_srs_kanji_n2_deck';
+    if (t === 'kanji_n1' || t === 'n1') return 'ja_srs_kanji_n1_deck';
     if (t === 'a2') return 'ja_srs_a2_deck';
     if (t === 'b1') return 'ja_srs_b1_deck';
     if (t === 'b2') return 'ja_srs_b2_deck';
@@ -2221,18 +2573,24 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                 }
             });
         }
-    } else if (t === 'kanji_n4') {
-        if (typeof kanjiN4Data !== 'undefined') {
+    } else if (['kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1'].includes(t)) {
+        let datasetKanji = null;
+        if (t === 'kanji_n4' && typeof kanjiN4Data !== 'undefined') datasetKanji = kanjiN4Data;
+        else if (t === 'kanji_n3' && typeof kanjiN3Data !== 'undefined') datasetKanji = kanjiN3Data;
+        else if (t === 'kanji_n2' && typeof kanjiN2Data !== 'undefined') datasetKanji = kanjiN2Data;
+        else if (t === 'kanji_n1' && typeof kanjiN1Data !== 'undefined') datasetKanji = kanjiN1Data;
+
+        if (datasetKanji) {
             const tamOrig = deck.length;
-            deck = deck.filter(card => eModuloAprendido(card.modIdx, 'kanji_n4'));
+            deck = deck.filter(card => eModuloAprendido(card.modIdx, t));
             if (deck.length !== tamOrig) alterado = true;
 
-            kanjiN4Data.forEach((mod, modIdx) => {
-                if (eModuloAprendido(modIdx, 'kanji_n4')) {
+            datasetKanji.forEach((mod, modIdx) => {
+                if (eModuloAprendido(modIdx, t)) {
                     modulosConcluidosNomes.push(mod.title || `Módulo ${mod.module || (modIdx + 1)}`);
                     if (mod.kanjis && Array.isArray(mod.kanjis)) {
                         mod.kanjis.forEach(k => {
-                            const cardId = `kanji_n4_${k.character}`;
+                            const cardId = `${t}_${k.character}`;
                             if (!deck.some(d => d.id === cardId)) {
                                 deck.push({
                                     id: cardId,
@@ -2279,11 +2637,15 @@ function atualizarBadgeSRS(tipo) {
         tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
     }
     let labelExibicao = 'A1';
-    if (tipo === 'kanji_n4' || tipo === 'n4') labelExibicao = 'Kanji N4';
-    else if (tipo === 'kanji' || tipo === 'n5') labelExibicao = 'Kanji N5';
+    if (tipo === 'kanji_n5' || tipo === 'kanji' || tipo === 'n5') labelExibicao = 'Kanji N5';
+    else if (tipo === 'kanji_n4' || tipo === 'n4') labelExibicao = 'Kanji N4';
+    else if (tipo === 'kanji_n3' || tipo === 'n3') labelExibicao = 'Kanji N3';
+    else if (tipo === 'kanji_n2' || tipo === 'n2') labelExibicao = 'Kanji N2';
+    else if (tipo === 'kanji_n1' || tipo === 'n1') labelExibicao = 'Kanji N1';
     else if (tipo === 'hiragana') labelExibicao = 'Hiragana';
     else if (tipo === 'katakana') labelExibicao = 'Katakana';
-    else labelExibicao = tipo.toUpperCase();
+    else if (tipo && tipo.startsWith('kanji_n')) labelExibicao = 'Kanji ' + tipo.replace('kanji_', '').toUpperCase();
+    else labelExibicao = tipo ? tipo.toUpperCase() : 'A1';
 
     const fullDeck = sincronizarBaralhoSRS(tipo);
     const agora = Date.now();
@@ -2298,8 +2660,8 @@ function atualizarBadgeSRS(tipo) {
         deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
     }
 
-    const pendentes = srsModoFiltro === 'todos' 
-        ? deckFiltrado.filter(c => c.dueDate <= agora) 
+    const pendentes = srsModoFiltro === 'todos'
+        ? deckFiltrado.filter(c => c.dueDate <= agora)
         : deckFiltrado;
 
     const badge = document.getElementById('srs-badge-count');
@@ -2461,8 +2823,16 @@ function renderizarCardSRS() {
                 </div>
             `;
         }
+        let kanjiHeaderLabel = 'Kanji N5';
+        if (srsTipoAtivo === 'kanji_n4' || (cardData.id && cardData.id.startsWith('kanji_n4'))) kanjiHeaderLabel = 'Kanji N4';
+        else if (srsTipoAtivo === 'kanji_n3' || (cardData.id && cardData.id.startsWith('kanji_n3'))) kanjiHeaderLabel = 'Kanji N3';
+        else if (srsTipoAtivo === 'kanji_n2' || (cardData.id && cardData.id.startsWith('kanji_n2'))) kanjiHeaderLabel = 'Kanji N2';
+        else if (srsTipoAtivo === 'kanji_n1' || (cardData.id && cardData.id.startsWith('kanji_n1'))) kanjiHeaderLabel = 'Kanji N1';
+        else if (srsTipoAtivo === 'kanji_n5' || (cardData.id && cardData.id.startsWith('kanji_n5'))) kanjiHeaderLabel = 'Kanji N5';
+        else if (srsTipoAtivo && srsTipoAtivo.startsWith('kanji_n')) kanjiHeaderLabel = 'Kanji ' + srsTipoAtivo.replace('kanji_', '').toUpperCase();
+
         frenteHTML = `
-            <div class="srs-card-type" style="color: #b45309;">🏯 KANJI N5 • ${cardData.modTitle}</div>
+            <div class="srs-card-type" style="color: #b45309;">🏯 ${kanjiHeaderLabel} • ${cardData.modTitle}</div>
             <div class="srs-kanji kana-text">${cardData.character}</div>
             <button onclick="speakKana('${cardData.character}')" class="srs-audio-btn">🔊 Pronúncia</button>
             <p style="color: var(--text-muted); margin-top: 1rem;">Quais são as leituras (Kun/On) e o significado deste Kanji?</p>
@@ -2796,7 +3166,7 @@ function sincronizarOpcoesModal() {
 
 function aplicarOpcoesLeituraNaInterface() {
     const opts = getOpcoesLeitura();
-    
+
     document.body.classList.toggle('hide-kanji', !opts.kanji);
     document.body.classList.toggle('hide-kana', !opts.kana);
     document.body.classList.toggle('hide-furigana', !opts.furigana);
@@ -2851,6 +3221,9 @@ function resetarProgressoCurso() {
         progress_katakana: [],
         progress_kanji: [],
         progress_kanji_n4: [],
+        progress_kanji_n3: [],
+        progress_kanji_n2: [],
+        progress_kanji_n1: [],
         xpTotal: 0,
         nivelAtual: "A1",
         b2_certified: false,
@@ -2879,6 +3252,9 @@ function resetarProgressoCurso() {
     localStorage.removeItem('ja_srs_katakana_deck');
     localStorage.removeItem('ja_srs_kanji_deck');
     localStorage.removeItem('ja_srs_kanji_n4_deck');
+    localStorage.removeItem('ja_srs_kanji_n3_deck');
+    localStorage.removeItem('ja_srs_kanji_n2_deck');
+    localStorage.removeItem('ja_srs_kanji_n1_deck');
 
     // Reset de Gamificação (XP, Nível, Ofensiva e Conquistas)
     localStorage.removeItem('ja_user_stats');
@@ -3317,7 +3693,7 @@ function renderizarEtapa() {
                 <div style="background: #fffbeb; border: 2px solid #f59e0b; padding: 20px; border-radius: 12px; max-width: 450px; margin: 20px auto; box-shadow: var(--shadow);">
                     <div style="font-size: 0.85rem; color: #92400e; text-transform: uppercase; font-weight: bold;">Status de Formatura</div>
                     <div style="font-size: 1.5rem; font-weight: bold; color: #d97706; margin: 6px 0;">100% CONCLUÍDO • CERTIFICADO LIBERADO</div>
-                    <div style="font-size: 0.9rem; color: var(--text-muted);">Pontuação no Simulado: ${progressoGlobal.b2_score || 30}/30 (${Math.round(((progressoGlobal.b2_score || 30)/30)*100)}%)</div>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">Pontuação no Simulado: ${progressoGlobal.b2_score || 30}/30 (${Math.round(((progressoGlobal.b2_score || 30) / 30) * 100)}%)</div>
                 </div>
                 <button onclick="abrirModalCertificado()" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4); margin-top: 10px;">
                     🎓 Gerar Certificado de Fluência B2
@@ -3666,7 +4042,7 @@ function alternarVelocidadeAudio(btnElement) {
     velocidadeAudioAtual = (velocidadeAudioAtual === 1.0) ? 0.6 : 1.0;
     const isSlow = (velocidadeAudioAtual === 0.6);
     mostrarToast(isSlow ? '🐢 <strong>Modo Áudio Lento (0.6x) Ativado!</strong>' : '⚡ <strong>Modo Áudio Normal (1.0x) Ativado!</strong>');
-    
+
     document.querySelectorAll('.btn-speed-toggle').forEach(btn => {
         btn.innerText = isSlow ? '🐢 Lento (0.6x)' : '⚡ Normal (1.0x)';
         btn.classList.toggle('speed-slow', isSlow);
@@ -3904,6 +4280,54 @@ const CATALOGO_CONQUISTAS = [
         desc: 'Concluiu todos os módulos do Kanji N5.'
     },
     {
+        id: 'ach_kanji_n4',
+        title: 'Guardião do N4',
+        icon: '🟡',
+        desc: 'Concluiu todos os módulos do Kanji N4.'
+    },
+    {
+        id: 'ach_kanji_n3',
+        title: 'Mestre do N3',
+        icon: '🟠',
+        desc: 'Concluiu todos os módulos do Kanji N3.'
+    },
+    {
+        id: 'ach_kanji_n2',
+        title: 'Estrategista N2',
+        icon: '🔴',
+        desc: 'Concluiu todos os módulos do Kanji N2.'
+    },
+    {
+        id: 'ach_kanji_n1',
+        title: 'Lenda do N1 (Tatsujin)',
+        icon: '🟣',
+        desc: 'Concluiu todos os módulos do Kanji N1.'
+    },
+    {
+        id: 'ach_level_a1',
+        title: 'Explorador do A1',
+        icon: '📘',
+        desc: 'Concluiu todos os módulos do Nível A1.'
+    },
+    {
+        id: 'ach_level_a2',
+        title: 'Viajante do A2',
+        icon: '📗',
+        desc: 'Concluiu todos os módulos do Nível A2.'
+    },
+    {
+        id: 'ach_level_b1',
+        title: 'Fluente do B1',
+        icon: '📙',
+        desc: 'Concluiu todos os módulos do Nível B1.'
+    },
+    {
+        id: 'ach_level_b2',
+        title: 'Mestre do B2',
+        icon: '📕',
+        desc: 'Concluiu todos os módulos e o Simulado do Nível B2.'
+    },
+    {
         id: 'ach_srs_10',
         title: 'Memória de Aço',
         icon: '🧠',
@@ -3960,7 +4384,11 @@ function checarConquistasGerais() {
     const totalModuloConcluidos = (progressoGlobal.modulosConcluidos || []).length +
         (progressoGlobal.progress_hiragana || []).length +
         (progressoGlobal.progress_katakana || []).length +
-        (progressoGlobal.progress_kanji || []).length;
+        (progressoGlobal.progress_kanji || []).length +
+        (progressoGlobal.progress_kanji_n4 || []).length +
+        (progressoGlobal.progress_kanji_n3 || []).length +
+        (progressoGlobal.progress_kanji_n2 || []).length +
+        (progressoGlobal.progress_kanji_n1 || []).length;
 
     if (totalModuloConcluidos >= 1) checarEConcederConquista('ach_first_step');
 
@@ -3972,6 +4400,24 @@ function checarConquistasGerais() {
 
     const totalKanjiN5 = (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data.length : 10);
     if ((progressoGlobal.progress_kanji || []).length >= totalKanjiN5) checarEConcederConquista('ach_kanji_n5');
+
+    const totalKanjiN4 = (typeof kanjiN4Data !== 'undefined' ? kanjiN4Data.length : 15);
+    if ((progressoGlobal.progress_kanji_n4 || []).length >= totalKanjiN4) checarEConcederConquista('ach_kanji_n4');
+
+    const totalKanjiN3 = (typeof kanjiN3Data !== 'undefined' ? kanjiN3Data.length : 19);
+    if ((progressoGlobal.progress_kanji_n3 || []).length >= totalKanjiN3) checarEConcederConquista('ach_kanji_n3');
+
+    const totalKanjiN2 = (typeof kanjiN2Data !== 'undefined' ? kanjiN2Data.length : 21);
+    if ((progressoGlobal.progress_kanji_n2 || []).length >= totalKanjiN2) checarEConcederConquista('ach_kanji_n2');
+
+    const totalKanjiN1 = (typeof kanjiN1Data !== 'undefined' ? kanjiN1Data.length : 25);
+    if ((progressoGlobal.progress_kanji_n1 || []).length >= totalKanjiN1) checarEConcederConquista('ach_kanji_n1');
+
+    const cursos = getTodosOsCursos();
+    if (cursos.A1 && cursos.A1.length > 0 && cursos.A1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_a1');
+    if (cursos.A2 && cursos.A2.length > 0 && cursos.A2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_a2');
+    if (cursos.B1 && cursos.B1.length > 0 && cursos.B1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_b1');
+    if (cursos.B2 && cursos.B2.length > 0 && cursos.B2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_b2');
 
     const totalSRS = parseInt(localStorage.getItem('ja_srs_reviews_count')) || 0;
     if (totalSRS >= 10) checarEConcederConquista('ach_srs_10');
@@ -4050,7 +4496,30 @@ function garantirElementosCabecalhoEModal() {
             group.appendChild(btnConfig);
         }
 
-        // 5. Botão de Tema Escuro/Claro (em todo o site)
+        // 5. Botão de Autenticação / Perfil Firebase
+        let btnAuth = document.getElementById('btn-auth-hdr');
+        if (!btnAuth) {
+            btnAuth = document.createElement('button');
+            btnAuth.id = 'btn-auth-hdr';
+            btnAuth.className = 'btn-auth-header';
+            group.appendChild(btnAuth);
+        }
+
+        const fb = window.jaFirebase;
+        const user = fb && fb.auth ? fb.auth.currentUser : null;
+
+        if (user) {
+            const displayName = user.displayName || user.email.split('@')[0] || 'Estudante';
+            btnAuth.title = `Conectado como ${user.email}`;
+            btnAuth.innerHTML = `👤 ${displayName} <span onclick="event.stopPropagation(); fazerLogout();" style="margin-left:6px; opacity:0.85; font-size:0.8rem;" title="Sair da Conta">🚪 Sair</span>`;
+            btnAuth.onclick = () => { };
+        } else {
+            btnAuth.title = 'Entrar ou Criar Conta';
+            btnAuth.innerHTML = `🔐 Entrar / Cadastrar`;
+            btnAuth.onclick = () => abrirModalAuth('login');
+        }
+
+        // 6. Botão de Tema Escuro/Claro (em todo o site)
         let btnTema = header.querySelector('.theme-btn');
         if (!btnTema) {
             btnTema = document.createElement('button');
@@ -4063,12 +4532,13 @@ function garantirElementosCabecalhoEModal() {
             group.appendChild(btnTema);
         }
 
-        // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Tema]
+        // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Auth] [Tema]
         const elXp = document.getElementById('xp-profile-widget-container');
         const elStreak = document.getElementById('streak-badge-header');
         const elConq = document.getElementById('btn-conquistas-hdr');
         const elDict = document.getElementById('btn-dicionario-hdr');
         const elCfg = document.getElementById('btn-config-curso');
+        const elAuth = document.getElementById('btn-auth-hdr');
         const elTema = header.querySelector('.theme-btn');
 
         if (elXp) group.appendChild(elXp);
@@ -4076,9 +4546,70 @@ function garantirElementosCabecalhoEModal() {
         if (elConq) group.appendChild(elConq);
         if (elDict) group.appendChild(elDict);
         if (elCfg) group.appendChild(elCfg);
+        if (elAuth) group.appendChild(elAuth);
         if (elTema) group.appendChild(elTema);
 
         atualizarHeaderXP();
+    }
+
+    if (!document.getElementById('modal-auth')) {
+        const modalAuthDiv = document.createElement('div');
+        modalAuthDiv.id = 'modal-auth';
+        modalAuthDiv.className = 'modal-overlay';
+        modalAuthDiv.style.display = 'none';
+        modalAuthDiv.onclick = fecharModalAuthAoClicarFora;
+        modalAuthDiv.innerHTML = `
+            <div class="modal-box modal-auth-box">
+                <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
+                    <h2 id="modal-auth-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0; font-size:1.3rem;">🔐 Autenticação Japão Academy</h2>
+                    <button onclick="fecharModalAuth()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                </div>
+
+                <div class="auth-tabs-row" style="display:flex; gap:0.5rem; margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.6rem;">
+                    <button class="auth-tab-btn active" id="tab-auth-login" onclick="alternarAbaAuth('login')">🔑 Fazer Login</button>
+                    <button class="auth-tab-btn" id="tab-auth-cadastro" onclick="alternarAbaAuth('cadastro')">✨ Criar Conta</button>
+                </div>
+
+                <!-- FORM DE LOGIN -->
+                <form id="form-auth-login" onsubmit="executarLoginEmail(event)" style="display:block;">
+                    <div style="margin-bottom:1rem; text-align:left;">
+                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
+                        <input type="email" id="auth-login-email" class="auth-input" placeholder="seu@email.com" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
+                    </div>
+                    <div style="margin-bottom:1.2rem; text-align:left;">
+                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
+                        <input type="password" id="auth-login-password" class="auth-input" placeholder="••••••••" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
+                    </div>
+                    <button type="submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:var(--current-primary); color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Entrar na Conta</button>
+                </form>
+
+                <!-- FORM DE CADASTRO -->
+                <form id="form-auth-cadastro" onsubmit="executarCadastroEmail(event)" style="display:none;">
+                    <div style="margin-bottom:1rem; text-align:left;">
+                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Nome</label>
+                        <input type="text" id="auth-reg-name" class="auth-input" placeholder="Seu nome ou apelido" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
+                    </div>
+                    <div style="margin-bottom:1rem; text-align:left;">
+                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
+                        <input type="email" id="auth-reg-email" class="auth-input" placeholder="seu@email.com" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
+                    </div>
+                    <div style="margin-bottom:1.2rem; text-align:left;">
+                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
+                        <input type="password" id="auth-reg-password" class="auth-input" placeholder="Mínimo 6 caracteres" required minlength="6" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
+                    </div>
+                    <button type="submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:#22c55e; color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Criar Nova Conta</button>
+                </form>
+
+                <div style="margin: 1.2rem 0; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+                    — ou continue com —
+                </div>
+
+                <button type="button" onclick="executarLoginGoogle()" style="width:100%; padding:0.75rem; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-weight:bold; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.6rem; transition: background 0.2s ease;">
+                    <span style="font-size:1.1rem;">🔴</span> Entrar com o Google
+                </button>
+            </div>
+        `;
+        document.body.appendChild(modalAuthDiv);
     }
 
     if (!document.getElementById('modal-conquistas')) {
@@ -4168,6 +4699,21 @@ function garantirElementosCabecalhoEModal() {
                     <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
                     <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
                 </div>
+                <div id="dict-subfilters-kanji" class="dict-subfilters-row" style="display: none; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="dict-subfilter-pill active" data-sub="tudo" onclick="selecionarSubNivelKanji('tudo')">Todos (N5-N1)</button>
+                    <button class="dict-subfilter-pill" data-sub="N5" onclick="selecionarSubNivelKanji('N5')">🟢 N5</button>
+                    <button class="dict-subfilter-pill" data-sub="N4" onclick="selecionarSubNivelKanji('N4')">🟡 N4</button>
+                    <button class="dict-subfilter-pill" data-sub="N3" onclick="selecionarSubNivelKanji('N3')">🟠 N3</button>
+                    <button class="dict-subfilter-pill" data-sub="N2" onclick="selecionarSubNivelKanji('N2')">🔴 N2</button>
+                    <button class="dict-subfilter-pill" data-sub="N1" onclick="selecionarSubNivelKanji('N1')">🟣 N1</button>
+                </div>
+                <div id="dict-subfilters-vocab" class="dict-subfilters-row" style="display: none; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
+                    <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🔵 A1</button>
+                    <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟢 A2</button>
+                    <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟡 B1</button>
+                    <button class="dict-subfilter-pill-vocab" data-sub-vocab="B2" onclick="selecionarSubNivelVocab('B2')">🔴 B2</button>
+                </div>
                 <div id="dict-results-counter" style="font-size:0.82rem; color:var(--text-muted); font-weight:600; margin-bottom:1rem;">
                     Carregando glossário...
                 </div>
@@ -4237,6 +4783,9 @@ function renderizarMuralConquistas() {
 let glossarioUniversalCache = null;
 let dictDebounceTimer = null;
 let dictCategoriaAtiva = 'tudo';
+let dictSubNivelKanji = 'tudo';
+let dictSubNivelVocab = 'tudo';
+let dictLimiteExibicao = 100;
 
 function carregarTodosOsDatasets(callback) {
     const scripts = [
@@ -4246,6 +4795,9 @@ function carregarTodosOsDatasets(callback) {
         { check: () => typeof CURSO_B2_DADOS !== 'undefined', src: 'data_curso_b2.js' },
         { check: () => typeof kanjiN5Data !== 'undefined', src: 'data_kanji_n5.js' },
         { check: () => typeof kanjiN4Data !== 'undefined', src: 'data_kanji_n4.js' },
+        { check: () => typeof kanjiN3Data !== 'undefined', src: 'data_kanji_n3.js' },
+        { check: () => typeof kanjiN2Data !== 'undefined', src: 'data_kanji_n2.js' },
+        { check: () => typeof kanjiN1Data !== 'undefined', src: 'data_kanji_n1.js' },
         { check: () => typeof RAW_H !== 'undefined', src: 'data_hiragana.js' },
         { check: () => typeof RAW_K !== 'undefined', src: 'data_katakana.js' }
     ];
@@ -4317,49 +4869,37 @@ function compilarGlossarioUniversal() {
         });
     });
 
-    // 2. CURSO KANJI N5
-    if (typeof kanjiN5Data !== 'undefined' && Array.isArray(kanjiN5Data)) {
-        kanjiN5Data.forEach(mod => {
-            if (mod.kanjis && Array.isArray(mod.kanjis)) {
-                mod.kanjis.forEach(item => {
-                    lista.push({
-                        type: 'kanji',
-                        character: item.character || '',
-                        meaning: item.meaning || '',
-                        kunyomi: item.kunyomi || '',
-                        onyomi: item.onyomi || '',
-                        mnemonic: item.mnemonic || '',
-                        examples: item.examples || [],
-                        module: mod.title || 'Kanji N5',
-                        level: 'N5',
-                        origin: 'Kanji N5'
-                    });
-                });
-            }
-        });
-    }
+    // 2. CURSO KANJI N5, N4, N3, N2, N1
+    const kanjiLevelsData = [
+        { data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, lvl: 'N5' },
+        { data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, lvl: 'N4' },
+        { data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, lvl: 'N3' },
+        { data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, lvl: 'N2' },
+        { data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, lvl: 'N1' }
+    ];
 
-    // 2b. CURSO KANJI N4
-    if (typeof kanjiN4Data !== 'undefined' && Array.isArray(kanjiN4Data)) {
-        kanjiN4Data.forEach(mod => {
-            if (mod.kanjis && Array.isArray(mod.kanjis)) {
-                mod.kanjis.forEach(item => {
-                    lista.push({
-                        type: 'kanji',
-                        character: item.character || '',
-                        meaning: item.meaning || '',
-                        kunyomi: item.kunyomi || '',
-                        onyomi: item.onyomi || '',
-                        mnemonic: item.mnemonic || '',
-                        examples: item.examples || [],
-                        module: mod.title || 'Kanji N4',
-                        level: 'N4',
-                        origin: 'Kanji N4'
+    kanjiLevelsData.forEach(kLvl => {
+        if (kLvl.data && Array.isArray(kLvl.data)) {
+            kLvl.data.forEach(mod => {
+                if (mod.kanjis && Array.isArray(mod.kanjis)) {
+                    mod.kanjis.forEach(item => {
+                        lista.push({
+                            type: 'kanji',
+                            character: item.character || '',
+                            meaning: item.meaning || '',
+                            kunyomi: item.kunyomi || '',
+                            onyomi: item.onyomi || '',
+                            mnemonic: item.mnemonic || '',
+                            examples: item.examples || [],
+                            module: mod.title || `Kanji ${kLvl.lvl}`,
+                            level: kLvl.lvl,
+                            origin: `Kanji ${kLvl.lvl}`
+                        });
                     });
-                });
-            }
-        });
-    }
+                }
+            });
+        }
+    });
 
     // 3. CURSO HIRAGANA (CARACTERES E VOCABULÁRIO)
     if (typeof HIRA_COURSE_DATA !== 'undefined' && Array.isArray(HIRA_COURSE_DATA)) {
@@ -4483,20 +5023,81 @@ function normalizarTexto(txt) {
 }
 
 function filtrarGlossarioDebounced(query) {
+    dictLimiteExibicao = 100;
     clearTimeout(dictDebounceTimer);
     dictDebounceTimer = setTimeout(() => {
         renderizarResultadosDicionario(query);
     }, 180);
 }
 
-function selecionarCategoriaDicionario(cat) {
-    dictCategoriaAtiva = cat;
-    document.querySelectorAll('.dict-filter-pill').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+function selecionarSubNivelKanji(sub) {
+    dictSubNivelKanji = sub;
+    dictLimiteExibicao = 100;
+    document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-sub') === sub);
     });
     const input = document.getElementById('dict-search-input');
     const query = input ? input.value : '';
     renderizarResultadosDicionario(query);
+}
+
+function selecionarSubNivelVocab(sub) {
+    dictSubNivelVocab = sub;
+    dictLimiteExibicao = 100;
+    document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === sub);
+    });
+    const input = document.getElementById('dict-search-input');
+    const query = input ? input.value : '';
+    renderizarResultadosDicionario(query);
+}
+
+function selecionarCategoriaDicionario(cat) {
+    dictCategoriaAtiva = cat;
+    dictLimiteExibicao = 100;
+    document.querySelectorAll('.dict-filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
+    });
+
+    const subKanji = document.getElementById('dict-subfilters-kanji');
+    const subVocab = document.getElementById('dict-subfilters-vocab');
+
+    if (cat === 'kanji') {
+        if (subKanji) subKanji.style.display = 'flex';
+        if (subVocab) subVocab.style.display = 'none';
+        dictSubNivelVocab = 'tudo';
+        document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === 'tudo');
+        });
+    } else if (cat === 'vocab') {
+        if (subKanji) subKanji.style.display = 'none';
+        if (subVocab) subVocab.style.display = 'flex';
+        dictSubNivelKanji = 'tudo';
+        document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-sub') === 'tudo');
+        });
+    } else {
+        if (subKanji) subKanji.style.display = 'none';
+        if (subVocab) subVocab.style.display = 'none';
+        dictSubNivelKanji = 'tudo';
+        dictSubNivelVocab = 'tudo';
+        document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-sub') === 'tudo');
+        });
+        document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === 'tudo');
+        });
+    }
+
+    const input = document.getElementById('dict-search-input');
+    const query = input ? input.value : '';
+    renderizarResultadosDicionario(query);
+}
+
+function carregarMaisItensDicionario() {
+    dictLimiteExibicao += 100;
+    const input = document.getElementById('dict-search-input');
+    renderizarResultadosDicionario(input ? input.value : '');
 }
 
 function abrirModalDicionario() {
@@ -4539,27 +5140,35 @@ function renderizarResultadosDicionario(queryStr = '') {
             if (item.type !== dictCategoriaAtiva) return false;
         }
 
+        if (dictCategoriaAtiva === 'kanji' && dictSubNivelKanji !== 'tudo') {
+            if (item.level !== dictSubNivelKanji) return false;
+        }
+
+        if (dictCategoriaAtiva === 'vocab' && dictSubNivelVocab !== 'tudo') {
+            if (item.level !== dictSubNivelVocab) return false;
+        }
+
         if (!q) return true;
 
         if (item.type === 'hiragana' || item.type === 'katakana' || item.type === 'kana') {
             return normalizarTexto(item.character).includes(q) ||
-                   normalizarTexto(item.romaji).includes(q) ||
-                   normalizarTexto(item.mnemonic).includes(q) ||
-                   normalizarTexto(item.stroke).includes(q) ||
-                   normalizarTexto(item.module).includes(q);
+                normalizarTexto(item.romaji).includes(q) ||
+                normalizarTexto(item.mnemonic).includes(q) ||
+                normalizarTexto(item.stroke).includes(q) ||
+                normalizarTexto(item.module).includes(q);
         }
         if (item.type === 'vocab') {
             return normalizarTexto(item.term).includes(q) ||
-                   normalizarTexto(item.romaji).includes(q) ||
-                   normalizarTexto(item.translation).includes(q) ||
-                   normalizarTexto(item.module).includes(q);
+                normalizarTexto(item.romaji).includes(q) ||
+                normalizarTexto(item.translation).includes(q) ||
+                normalizarTexto(item.module).includes(q);
         }
         if (item.type === 'grammar') {
             return normalizarTexto(item.title).includes(q) ||
-                   normalizarTexto(item.rule).includes(q) ||
-                   normalizarTexto(item.formula).includes(q) ||
-                   normalizarTexto(item.example).includes(q) ||
-                   normalizarTexto(item.module).includes(q);
+                normalizarTexto(item.rule).includes(q) ||
+                normalizarTexto(item.formula).includes(q) ||
+                normalizarTexto(item.example).includes(q) ||
+                normalizarTexto(item.module).includes(q);
         }
         if (item.type === 'kanji') {
             const inExamples = (item.examples || []).some(ex =>
@@ -4569,11 +5178,11 @@ function renderizarResultadosDicionario(queryStr = '') {
                 normalizarTexto(ex.sentenceMeaning).includes(q)
             );
             return normalizarTexto(item.character).includes(q) ||
-                   normalizarTexto(item.meaning).includes(q) ||
-                   normalizarTexto(item.kunyomi).includes(q) ||
-                   normalizarTexto(item.onyomi).includes(q) ||
-                   normalizarTexto(item.mnemonic).includes(q) ||
-                   inExamples;
+                normalizarTexto(item.meaning).includes(q) ||
+                normalizarTexto(item.kunyomi).includes(q) ||
+                normalizarTexto(item.onyomi).includes(q) ||
+                normalizarTexto(item.mnemonic).includes(q) ||
+                inExamples;
         }
 
         return false;
@@ -4594,7 +5203,7 @@ function renderizarResultadosDicionario(queryStr = '') {
         return;
     }
 
-    const visiveis = filtrados.slice(0, 100);
+    const visiveis = filtrados.slice(0, dictLimiteExibicao);
 
     let html = '';
     visiveis.forEach((item, idx) => {
@@ -4735,6 +5344,16 @@ function renderizarResultadosDicionario(queryStr = '') {
         }
     });
 
+    if (filtrados.length > dictLimiteExibicao) {
+        html += `
+            <div style="grid-column: 1 / -1; text-align: center; margin-top: 1.5rem; margin-bottom: 2rem;">
+                <button onclick="carregarMaisItensDicionario()" class="btn-load-more-dict">
+                    Carregar mais itens (${filtrados.length - dictLimiteExibicao} restantes) ⬇️
+                </button>
+            </div>
+        `;
+    }
+
     container.innerHTML = html;
     inicializarTodosOsCanvases();
 }
@@ -4760,7 +5379,7 @@ function obterStatsUsuario() {
     const raw = localStorage.getItem('ja_user_stats');
     let stats = { xp: 0, level: 1, streak: 1 };
     if (raw) {
-        try { stats = Object.assign(stats, JSON.parse(raw)); } catch (e) {}
+        try { stats = Object.assign(stats, JSON.parse(raw)); } catch (e) { }
     }
     return stats;
 }

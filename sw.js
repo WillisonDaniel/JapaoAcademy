@@ -1,4 +1,4 @@
-const CACHE_NAME = 'japao-academy-v1';
+const CACHE_NAME = 'japao-academy-v2';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -9,16 +9,24 @@ const ASSETS_TO_CACHE = [
     './kanji.html',
     './kanji_n5.html',
     './kanji_n4.html',
+    './kanji_n3.html',
+    './kanji_n2.html',
+    './kanji_n1.html',
     './minigame.html',
     './dicionario.html',
     './style.css',
     './app.js',
+    './firebase-init.js',
+    './manifest.json',
     './data_curso_a1.js',
     './data_curso_a2.js',
     './data_curso_b1.js',
     './data_curso_b2.js',
     './data_kanji_n5.js',
     './data_kanji_n4.js',
+    './data_kanji_n3.js',
+    './data_kanji_n2.js',
+    './data_kanji_n1.js',
     './data_hiragana.js',
     './data_katakana.js',
     './favicon.png',
@@ -28,26 +36,30 @@ const ASSETS_TO_CACHE = [
     'https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap'
 ];
 
-// Instalação do Service Worker & Pre-cache dos recursos estáticos
-self.addEventListener('install', (e) => {
-    e.waitUntil(
+// 1. Instalação do Service Worker & Pre-cache dos recursos estáticos
+self.addEventListener('install', (event) => {
+    event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            console.log('[Service Worker] Pré-carregando arquivos para suporte offline...');
-            return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
-                console.warn('[Service Worker] Alguns arquivos falharam no cache inicial:', err);
-            });
+            console.log('⚡ [Service Worker] Pré-carregando arquivos para suporte offline...');
+            return Promise.all(
+                ASSETS_TO_CACHE.map((asset) => {
+                    return cache.add(asset).catch((err) => {
+                        console.warn(`[Service Worker] Falha ao cachear recurso: ${asset}`, err);
+                    });
+                })
+            );
         }).then(() => self.skipWaiting())
     );
 });
 
-// Ativação do Service Worker & Limpeza de Caches Antigos
-self.addEventListener('activate', (e) => {
-    e.waitUntil(
+// 2. Ativação do Service Worker & Limpeza de Caches Antigos
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
         caches.keys().then((keys) => {
             return Promise.all(
                 keys.map((key) => {
                     if (key !== CACHE_NAME) {
-                        console.log('[Service Worker] Removendo cache antigo:', key);
+                        console.log('🧹 [Service Worker] Removendo cache antigo:', key);
                         return caches.delete(key);
                     }
                 })
@@ -56,17 +68,18 @@ self.addEventListener('activate', (e) => {
     );
 });
 
-// Estratégia: Cache First with Network Fallback
-self.addEventListener('fetch', (e) => {
-    if (e.request.method !== 'GET') return;
+// 3. Estratégia de Fetch: Cache First com Network Fallback e Atualização Dinâmica
+self.addEventListener('fetch', (event) => {
+    if (event.request.method !== 'GET') return;
 
-    e.respondWith(
-        caches.match(e.request).then((cachedResponse) => {
+    event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
             if (cachedResponse) {
-                fetch(e.request).then((networkResponse) => {
+                // Tenta revalidar em segundo plano sem bloquear a resposta do cache
+                fetch(event.request).then((networkResponse) => {
                     if (networkResponse && networkResponse.status === 200) {
                         caches.open(CACHE_NAME).then((cache) => {
-                            cache.put(e.request, networkResponse.clone());
+                            cache.put(event.request, networkResponse.clone());
                         });
                     }
                 }).catch(() => { });
@@ -74,20 +87,21 @@ self.addEventListener('fetch', (e) => {
                 return cachedResponse;
             }
 
-            return fetch(e.request).then((networkResponse) => {
-                if (!networkResponse || networkResponse.status !== 200) {
+            return fetch(event.request).then((networkResponse) => {
+                if (!networkResponse || networkResponse.status !== 200 || networkResponse.type === 'opaque') {
                     return networkResponse;
                 }
 
                 const responseToCache = networkResponse.clone();
                 caches.open(CACHE_NAME).then((cache) => {
-                    cache.put(e.request, responseToCache);
+                    cache.put(event.request, responseToCache);
                 });
 
                 return networkResponse;
             }).catch(() => {
-                if (e.request.headers.get('accept') && e.request.headers.get('accept').includes('text/html')) {
-                    return caches.match('./index.html');
+                // Fallback defensivo para navegação HTML offline
+                if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
+                    return caches.match('./index.html') || caches.match('./');
                 }
             });
         })
