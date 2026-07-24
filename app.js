@@ -1780,10 +1780,13 @@ async function fazerLogout() {
         await fb.signOut(fb.auth);
         mostrarToast(`👋 <strong>Sessão Encerrada.</strong> Você deslogou do Japão Academy.`);
         playBeep('click');
+        garantirElementosCabecalhoEModal();
+        atualizarUIProgresso();
     } catch (err) {
         console.warn("⚠️ Erro ao deslogar:", err);
     }
 }
+window.fazerLogout = fazerLogout;
 
 function abrirModalAuth(aba = 'login') {
     garantirElementosCabecalhoEModal();
@@ -4509,10 +4512,10 @@ function garantirElementosCabecalhoEModal() {
         const user = fb && fb.auth ? fb.auth.currentUser : null;
 
         if (user) {
-            const displayName = user.displayName || user.email.split('@')[0] || 'Estudante';
-            btnAuth.title = `Conectado como ${user.email}`;
-            btnAuth.innerHTML = `👤 ${displayName} <span onclick="event.stopPropagation(); fazerLogout();" style="margin-left:6px; opacity:0.85; font-size:0.8rem;" title="Sair da Conta">🚪 Sair</span>`;
-            btnAuth.onclick = () => { };
+            const displayName = user.displayName || (user.email ? user.email.split('@')[0] : 'Estudante');
+            btnAuth.title = `Conectado como ${user.email || displayName}`;
+            btnAuth.innerHTML = `👤 ${displayName} <button type="button" class="btn-logout-secundario" onclick="event.stopPropagation(); fazerLogout();" style="margin-left:8px; background:transparent; border:1px solid rgba(239, 68, 68, 0.4); color:#ef4444; border-radius:12px; padding:2px 8px; font-size:0.78rem; cursor:pointer; font-weight:600; transition:all 0.2s;" title="Sair da Conta" onmouseover="this.style.background='rgba(239, 68, 68, 0.12)'" onmouseout="this.style.background='transparent'">🚪 Sair</button>`;
+            btnAuth.onclick = null;
         } else {
             btnAuth.title = 'Entrar ou Criar Conta';
             btnAuth.innerHTML = `🔐 Entrar / Cadastrar`;
