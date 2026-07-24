@@ -1788,6 +1788,100 @@ async function fazerLogout() {
 }
 window.fazerLogout = fazerLogout;
 
+async function salvarProgressoNaNuvem() {
+    const fb = window.jaFirebase;
+    const user = fb && fb.auth ? fb.auth.currentUser : null;
+
+    if (!user || !fb || !fb.db || !fb.doc || !fb.setDoc) {
+        mostrarToast("⚠️ Você precisa estar logado para salvar seu progresso na nuvem.");
+        if (typeof abrirModalAuth === 'function') abrirModalAuth('login');
+        return;
+    }
+
+    try {
+        const backupObj = {
+            progressoGlobal: JSON.parse(localStorage.getItem('japao_academy_progress') || (typeof progressoGlobal !== 'undefined' ? JSON.stringify(progressoGlobal) : '{}')),
+            userStats: JSON.parse(localStorage.getItem('ja_user_stats') || '{}'),
+            streakData: JSON.parse(localStorage.getItem('ja_streak_data') || '{}'),
+            achievements: JSON.parse(localStorage.getItem('ja_unlocked_achievements') || '[]'),
+            favoritos: JSON.parse(localStorage.getItem('ja_favoritos_deck') || '[]'),
+            cadernoErros: JSON.parse(localStorage.getItem('ja_caderno_erros') || '[]'),
+            nomeUsuario: localStorage.getItem('ja_nome_usuario') || (typeof nomeUsuario !== 'undefined' ? nomeUsuario : ''),
+            updatedAt: new Date().toISOString()
+        };
+
+        const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
+        await fb.setDoc(docRef, backupObj, { merge: true });
+
+        mostrarToast("☁️ Progresso e estatísticas salvos na nuvem com sucesso!");
+        if (typeof playBeep === 'function') playBeep('success');
+    } catch (err) {
+        console.error("⚠️ Erro ao salvar progresso na nuvem:", err);
+        mostrarToast(`❌ <strong>Erro ao salvar na nuvem:</strong> ${err.message || 'Falha na conexão.'}`);
+    }
+}
+
+async function carregarProgressoDaNuvem() {
+    const fb = window.jaFirebase;
+    const user = fb && fb.auth ? fb.auth.currentUser : null;
+
+    if (!user || !fb || !fb.db || !fb.doc || !fb.getDoc) {
+        mostrarToast("⚠️ Você precisa estar logado para restaurar seu progresso da nuvem.");
+        if (typeof abrirModalAuth === 'function') abrirModalAuth('login');
+        return;
+    }
+
+    try {
+        const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
+        const docSnap = await fb.getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const dadosNuvem = docSnap.data() || {};
+
+            if (dadosNuvem.progressoGlobal) {
+                localStorage.setItem('japao_academy_progress', JSON.stringify(dadosNuvem.progressoGlobal));
+                if (typeof progressoGlobal !== 'undefined') progressoGlobal = dadosNuvem.progressoGlobal;
+            }
+            if (dadosNuvem.userStats) {
+                localStorage.setItem('ja_user_stats', JSON.stringify(dadosNuvem.userStats));
+            }
+            if (dadosNuvem.streakData) {
+                localStorage.setItem('ja_streak_data', JSON.stringify(dadosNuvem.streakData));
+            }
+            if (dadosNuvem.achievements) {
+                localStorage.setItem('ja_unlocked_achievements', JSON.stringify(dadosNuvem.achievements));
+            }
+            if (dadosNuvem.favoritos) {
+                localStorage.setItem('ja_favoritos_deck', JSON.stringify(dadosNuvem.favoritos));
+            }
+            if (dadosNuvem.cadernoErros) {
+                localStorage.setItem('ja_caderno_erros', JSON.stringify(dadosNuvem.cadernoErros));
+            }
+            if (dadosNuvem.nomeUsuario) {
+                localStorage.setItem('ja_nome_usuario', dadosNuvem.nomeUsuario);
+                if (typeof nomeUsuario !== 'undefined') nomeUsuario = dadosNuvem.nomeUsuario;
+            }
+
+            if (typeof carregarProgressoGlobal === 'function') carregarProgressoGlobal();
+            if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+            if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
+            if (typeof atualizarHeaderStreak === 'function') atualizarHeaderStreak();
+            if (typeof renderizarMuralConquistas === 'function') renderizarMuralConquistas();
+
+            mostrarToast("📥 Progresso restaurado da nuvem com sucesso!");
+            if (typeof playBeep === 'function') playBeep('success');
+        } else {
+            mostrarToast("ℹ️ Nenhum backup encontrado na nuvem para esta conta.");
+        }
+    } catch (err) {
+        console.error("⚠️ Erro ao restaurar progresso da nuvem:", err);
+        mostrarToast(`❌ <strong>Erro ao restaurar da nuvem:</strong> ${err.message || 'Falha na conexão.'}`);
+    }
+}
+
+window.salvarProgressoNaNuvem = salvarProgressoNaNuvem;
+window.carregarProgressoDaNuvem = carregarProgressoDaNuvem;
+
 function abrirModalAuth(aba = 'login') {
     garantirElementosCabecalhoEModal();
     const modal = document.getElementById('modal-auth');
@@ -4671,6 +4765,15 @@ function garantirElementosCabecalhoEModal() {
                         <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
                         <span>Ativar Romaji</span>
                     </label>
+                </div>
+                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:1.2rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+                    <span style="font-weight:bold; font-size:0.95rem; color:var(--text-main);">☁️ Sincronização na Nuvem:</span>
+                    <button type="button" onclick="salvarProgressoNaNuvem()" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                        📤 Salvar Dados Locais na Nuvem
+                    </button>
+                    <button type="button" onclick="carregarProgressoDaNuvem()" style="width: 100%; padding: 0.65rem; background: rgba(59, 130, 246, 0.15); color: var(--current-primary, #3b82f6); border: 1px solid var(--current-primary, #3b82f6); border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                        📥 Baixar / Restaurar Dados da Nuvem
+                    </button>
                 </div>
                 <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
                 <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
