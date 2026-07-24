@@ -649,50 +649,7 @@
         </div>
     </main>
 
-    <!-- MODAL DE OPÇÕES DO CURSO -->
-    <div id="modal-opcoes" class="modal-overlay" style="display: none;"
-        onclick="if(event.target === this) fecharOpcoesCurso()">
-        <div class="modal-box">
-            <h3>⚙️ Configurações do Curso</h3>
 
-            <!-- NOVO CAMPO: NOME DO ALUNO -->
-            <div class="modal-option" style="flex-direction: column; align-items: flex-start; gap: 6px;">
-                <span>Seu Nome / Apelido (Para os diálogos):</span>
-                <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)"
-                    placeholder="Ex: Carlos, Ana, Kenji..."
-                    style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
-            </div>
-
-            <div class="modal-option">
-                <span>Desbloquear Todos os Módulos</span>
-                <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)"
-                    style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
-            </div>
-            <div class="modal-option" style="flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 1.2rem;">
-                <span style="font-weight: bold; font-size: 0.95rem;">Opções de Exibição de Leitura:</span>
-                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
-                    <input type="checkbox" id="chk-opt-kanji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                    <span>Ativar Kanji</span>
-                </label>
-                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
-                    <input type="checkbox" id="chk-opt-kana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                    <span>Ativar Kana</span>
-                </label>
-                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
-                    <input type="checkbox" id="chk-opt-furigana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                    <span>Ativar Furigana</span>
-                </label>
-                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
-                    <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                    <span>Ativar Romaji</span>
-                </label>
-            </div>
-            <button onclick="resetarProgressoCurso()"
-                style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar
-                Progresso</button>
-            <button class="fechar-modal" onclick="fecharOpcoesCurso()">Salvar e Fechar</button>
-        </div>
-    </div>
 
     <!-- MODAL DO CERTIFICADO B2 -->
     <div id="modal-certificado" class="modal-cert-overlay" style="display: none;">

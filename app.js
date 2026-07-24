@@ -4730,57 +4730,58 @@ function garantirElementosCabecalhoEModal() {
         document.body.appendChild(modalDiv);
     }
 
-    if (!document.getElementById('modal-opcoes')) {
-        const modalOp = document.createElement('div');
+    let modalOp = document.getElementById('modal-opcoes');
+    if (!modalOp) {
+        modalOp = document.createElement('div');
         modalOp.id = 'modal-opcoes';
         modalOp.className = 'modal-overlay';
         modalOp.style.display = 'none';
-        modalOp.onclick = function (e) { if (e.target === this) fecharOpcoesCurso(); };
-        modalOp.innerHTML = `
-            <div class="modal-box">
-                <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
-                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
-                    <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
-                    <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
-                </div>
-                <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
-                    <span>Desbloquear Todos os Módulos</span>
-                    <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
-                </div>
-                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:1.2rem; font-weight:600;">
-                    <span style="font-size:0.95rem; color:var(--text-main);">Opções de Exibição de Leitura:</span>
-                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
-                        <input type="checkbox" id="chk-opt-kanji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                        <span>Ativar Kanji</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
-                        <input type="checkbox" id="chk-opt-kana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                        <span>Ativar Kana</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
-                        <input type="checkbox" id="chk-opt-furigana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                        <span>Ativar Furigana</span>
-                    </label>
-                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
-                        <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
-                        <span>Ativar Romaji</span>
-                    </label>
-                </div>
-                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:1.2rem; border-top:1px solid var(--border-color); padding-top:1rem;">
-                    <span style="font-weight:bold; font-size:0.95rem; color:var(--text-main);">☁️ Sincronização na Nuvem:</span>
-                    <button type="button" onclick="salvarProgressoNaNuvem()" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
-                        📤 Salvar Dados Locais na Nuvem
-                    </button>
-                    <button type="button" onclick="carregarProgressoDaNuvem()" style="width: 100%; padding: 0.65rem; background: rgba(59, 130, 246, 0.15); color: var(--current-primary, #3b82f6); border: 1px solid var(--current-primary, #3b82f6); border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
-                        📥 Baixar / Restaurar Dados da Nuvem
-                    </button>
-                </div>
-                <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
-                <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
-            </div>
-        `;
         document.body.appendChild(modalOp);
     }
+    modalOp.onclick = function (e) { if (e.target === this) fecharOpcoesCurso(); };
+    modalOp.innerHTML = `
+        <div class="modal-box">
+            <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
+            <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
+                <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
+                <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
+            </div>
+            <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
+                <span>Desbloquear Todos os Módulos</span>
+                <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
+            </div>
+            <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:1.2rem; font-weight:600;">
+                <span style="font-size:0.95rem; color:var(--text-main);">Opções de Exibição de Leitura:</span>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                    <input type="checkbox" id="chk-opt-kanji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Kanji</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                    <input type="checkbox" id="chk-opt-kana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Kana</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                    <input type="checkbox" id="chk-opt-furigana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Furigana</span>
+                </label>
+                <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                    <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Romaji</span>
+                </label>
+            </div>
+            <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:1.2rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+                <span style="font-weight:bold; font-size:0.95rem; color:var(--text-main);">☁️ Sincronização na Nuvem:</span>
+                <button type="button" onclick="salvarProgressoNaNuvem()" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                    📤 Salvar Dados Locais na Nuvem
+                </button>
+                <button type="button" onclick="carregarProgressoDaNuvem()" style="width: 100%; padding: 0.65rem; background: rgba(59, 130, 246, 0.15); color: var(--current-primary, #3b82f6); border: 1px solid var(--current-primary, #3b82f6); border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                    📥 Baixar / Restaurar Dados da Nuvem
+                </button>
+            </div>
+            <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
+            <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
+        </div>
+    `;
 
     if (!document.getElementById('modal-dicionario')) {
         const modalDict = document.createElement('div');
