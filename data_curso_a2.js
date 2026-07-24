@@ -1,4 +1,4 @@
-// ==========================================
+﻿// ==========================================
 // BANCO DE DADOS DO CURSO DE JAPONÊS - NÍVEL A2 (COMUNICAÇÃO DO DIA A DIA)
 // ==========================================
 
@@ -27,6 +27,19 @@ const MODULO_A2_01 = {
         { question: "3. Qual é a expressão para 'Escovar os dentes'?", options: [{ label: "は を みがきます (Ha o migakimasu)", isCorrect: true }, { label: "シャワー を あびます", isCorrect: false }, { label: "お茶 を のみます", isCorrect: false }] },
         { question: "4. Complete a frase para 'Dormir às 11 horas': 11-ji ___ nemasu.", options: [{ label: "に (ni)", isCorrect: true }, { label: "を (o)", isCorrect: false }, { label: "で (de)", isCorrect: false }] },
         { question: "5. Qual frase indica 'Tomar banho de chuveiro'?", options: [{ label: "シャワー を あびます", isCorrect: true }, { label: "みず を のみます", isCorrect: false }, { label: "ほん を よみます", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "まいあさ 7じ に おきます",
+            translation: "Acordo todas as manhãs às 7 horas.",
+            chunks: ["まいあさ", "7じ", "に", "おきます"]
+        },
+        {
+            sentenceJp: "ねる まえ に は を みがきます",
+            translation: "Escovo os dentes antes de ir para a cama.",
+            chunks: ["ねる", "まえ", "に", "は", "を", "みがきます"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Um colega de trabalho pergunta sobre seus horários matinais.", npcName: "Kenji", npcMessage: "[Seu Nome]-san, maasa nan-ji ni okimasu ka? (A que horas você acorda de manhã?)", options: [{ text: "6-ji ni okimasu! (Acordo às 6 horas!)", feedback: "Excelente resposta natural!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Respondeu que não e vai dormir, contradição!", isCorrect: false }, { text: "Arigatou gozaimasu!", feedback: "Agradeceu em vez de dizer o horário.", isCorrect: false }] },
@@ -62,6 +75,19 @@ const MODULO_A2_02 = {
         { question: "4. Traduza: 'Itsumo ocha o nomimasu'", options: [{ label: "Sempre bebo chá", isCorrect: true }, { label: "Nunca bebo chá", isCorrect: false }, { label: "Às vezes bebo chá", isCorrect: false }] },
         { question: "5. Escolha a frase para 'Nunca assisto TV':", options: [{ label: "Zenzen terebi o mimasen", isCorrect: true }, { label: "Itsumo terebi o mimasu", isCorrect: false }, { label: "Tokidoki terebi o mimasu", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "しゅうまつ は たいてい うち で やすみます",
+            translation: "Geralmente me descanso em casa no fim de semana.",
+            chunks: ["しゅうまつ", "は", "たいてい", "うち", "で", "やすみます"]
+        },
+        {
+            sentenceJp: "たまに ともだち と おちゃ を のみます",
+            translation: "De vez em quando tomo chá com amigos.",
+            chunks: ["たまに", "ともだち", "と", "おちゃ", "を", "のみます"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Conversando sobre hábitos no café da manhã.", npcName: "Yumi", npcMessage: "[Seu Nome]-san, asa itsumo kohii o nomimasu ka? (Você sempre bebe café de manhã?)", options: [{ text: "Hai, itsumo nomimasu! (Sim, sempre bebo!)", feedback: "Ótimo uso de itsumo!", isCorrect: true }, { text: "Zenzen nomimasu.", feedback: "Erro: zenzen exige verbo negativo!", isCorrect: false }, { text: "Iie, nemasu.", feedback: "Fora de contexto.", isCorrect: false }] },
         { scenario: "Situação 2: Perguntando sobre esportes.", npcName: "Yumi", npcMessage: "Tokidoki suportsusimasu ka? (Você faz esportes às vezes?)", options: [{ text: "Tamani shimasu. (Faço raramente.)", feedback: "Perfeito!", isCorrect: true }, { text: "Konnichiwa!", feedback: "Cumprimentou em vez de responder.", isCorrect: false }, { text: "Hai, zenzen shimasu.", feedback: "Erro gramatical com zenzen.", isCorrect: false }] },
@@ -95,6 +121,19 @@ const MODULO_A2_03 = {
         { question: "3. Qual é a expressão para 'Jogar videogame'?", options: [{ label: "ゲーム を します (Geemu o shimasu)", isCorrect: true }, { label: "スポーツ を します", isCorrect: false }, { label: "ほん を よみます", isCorrect: false }] },
         { question: "4. Traduza: 'Shuumatsu nani o shimasu ka?'", options: [{ label: "O que você faz no fim de semana?", isCorrect: true }, { label: "O que você comeu hoje?", isCorrect: false }, { label: "Onde você mora?", isCorrect: false }] },
         { question: "5. Como responder 'Assisto animes'?", options: [{ label: "Anime o mimasu", isCorrect: true }, { label: "Anime o nomimasu", isCorrect: false }, { label: "Anime o ikimasu", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は すし が だいすき です",
+            translation: "Eu adoro sushi.",
+            chunks: ["わたし", "は", "すし", "が", "だいすき", "です"]
+        },
+        {
+            sentenceJp: "からい たべもの は ちょっと にがて です",
+            translation: "Comida apimentada é um pouco difícil para mim.",
+            chunks: ["からい", "たべもの", "は", "ちょっと", "にがて", "です"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Na cafeteria, um amigo pergunta dos seus planos de fim de semana.", npcName: "Sora", npcMessage: "[Seu Nome]-san, shuumatsu nani o shimasu ka? (O que você faz no fim de semana?)", options: [{ text: "Geemu o shimasu! (Jogo videogame!)", feedback: "Resposta natural e precisa!", isCorrect: true }, { text: "Gakkou ni ikimasu.", feedback: "Iria para a escola no fim de semana?", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação fora de contexto.", isCorrect: false }] },
@@ -130,6 +169,19 @@ const MODULO_A2_04 = {
         { question: "4. Como negar 'Atarashii' (Novo)?", options: [{ label: "Atarashikunai desu", isCorrect: true }, { label: "Atarashii desu", isCorrect: false }, { label: "Atarashii ja arimasen", isCorrect: false }] },
         { question: "5. Traduza: 'Kono heya wa ookii desu'", options: [{ label: "Este quarto é grande", isCorrect: true }, { label: "Este quarto é pequeno", isCorrect: false }, { label: "Este quarto é novo", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "みず を ふたつ おねがいします",
+            translation: "Dois copos de água, por favor.",
+            chunks: ["みず", "を", "ふたつ", "おねがいします"]
+        },
+        {
+            sentenceJp: "メニュー を みせて ください",
+            translation: "Por favor, me mostre o cardápio.",
+            chunks: ["メニュー", "を", "みせて", "ください"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Provando um prato típico num restaurante em Tokyo.", npcName: "Garçom", npcMessage: "Ramen wa ikaga desu ka? (O que achou do ramen?)", options: [{ text: "Totemo oishii desu! (É muito gostoso!)", feedback: "Excelente elogio ao chefe!", isCorrect: true }, { text: "Chiisai desu.", feedback: "Dizer que é pequeno não responde ao sabor.", isCorrect: false }, { text: "Gomen nasai!", feedback: "Pediu desculpas sem motivo.", isCorrect: false }] },
         { scenario: "Situação 2: Comentando sobre o seu novo celular com um amigo.", npcName: "Takuya", npcMessage: "Atarashii sumaho desu ka? (É um celular novo?)", options: [{ text: "Hai, atarashii desu! (Sim, é novo!)", feedback: "Perfeito!", isCorrect: true }, { text: "Iie, oishii desu.", feedback: "Disse que o celular é gostoso!", isCorrect: false }, { text: "Sayounara!", feedback: "Despediu-se do nada.", isCorrect: false }] },
@@ -163,6 +215,19 @@ const MODULO_A2_05 = {
         { question: "3. O que significa 'Shinsetsu na hito'?", options: [{ label: "Pessoa gentil", isCorrect: true }, { label: "Pessoa famosa", isCorrect: false }, { label: "Pessoa quieta", isCorrect: false }] },
         { question: "4. Onde a partícula 'na' deve ser colocada?", options: [{ label: "Entre o adjetivo e o substantivo que ele modifica", isCorrect: true }, { label: "No final absoluto da frase", isCorrect: false }, { label: "Antes do sujeito", isCorrect: false }] },
         { question: "5. Traduza: 'Kyoto wa yuumei na machi desu'", options: [{ label: "Kyoto é uma cidade famosa", isCorrect: true }, { label: "Kyoto é uma cidade calmo", isCorrect: false }, { label: "Kyoto é uma cidade pequena", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "この ほん は いくら です か",
+            translation: "Quanto custa este livro?",
+            chunks: ["この", "ほん", "は", "いくら", "です", "か"]
+        },
+        {
+            sentenceJp: "ぜんぶ で 3000えん です",
+            translation: "Ao todo são 3000 ienes.",
+            chunks: ["ぜんぶ", "で", "3000えん", "です"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Um amigo pergunta sobre o bairro onde você está hospedado.", npcName: "Hana", npcMessage: "[Seu Nome]-san, soko wa shizuka na machi desu ka? (Aí é uma cidade/bairro calmo?)", options: [{ text: "Iie, nigiyaka desu! (Não, é movimentado!)", feedback: "Ótimo contraste de adjetivos!", isCorrect: true }, { text: "Hai, oishii desu.", feedback: "Disse que o bairro é gostoso.", isCorrect: false }, { text: "Ohayou!", feedback: "Saudação fora de hora.", isCorrect: false }] },
@@ -198,6 +263,19 @@ const MODULO_A2_06 = {
         { question: "4. Qual palavra indica 'Ontem'?", options: [{ label: "きのう (Kinou)", isCorrect: true }, { label: "きょう (Kyou)", isCorrect: false }, { label: "あした (Ashita)", isCorrect: false }] },
         { question: "5. Escolha a frase correta para 'Não assisti TV ontem':", options: [{ label: "Kinou terebi o mimasen deshita", isCorrect: true }, { label: "Kinou terebi o mimasen", isCorrect: false }, { label: "Kinou terebi o mimashita", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "えき は どこ に あります か",
+            translation: "Onde fica a estação?",
+            chunks: ["えき", "は", "どこ", "に", "あります", "か"]
+        },
+        {
+            sentenceJp: "ぎんこう の となり に あります",
+            translation: "Fica ao lado do banco.",
+            chunks: ["ぎんこう", "の", "となり", "に", "あります"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Segunda-feira de manhã na empresa. Um colega pergunta do fim de semana.", npcName: "Daiki", npcMessage: "[Seu Nome]-san, kinou nani o shimashita ka? (O que você fez ontem?)", options: [{ text: "Tokyo ni ikimashita! (Fui para Tokyo!)", feedback: "Perfeito! Usou o passado ikimashita!", isCorrect: true }, { text: "Tokyo ni ikimasu.", feedback: "Disse 'vou para Tokyo' no presente.", isCorrect: false }, { text: "Konbanwa!", feedback: "Saudação noturna de manhã.", isCorrect: false }] },
         { scenario: "Situação 2: Perguntando sobre o jantar da noite anterior.", npcName: "Daiki", npcMessage: "Kinou ramen o tabemashita ka? (Ontem você comeu ramen?)", options: [{ text: "Iie, tabemasen deshita. (Não, não comi.)", feedback: "Excelente uso do passado negativo!", isCorrect: true }, { text: "Hai, tabemasen.", feedback: "Misturou 'sim' com 'não como'.", isCorrect: false }, { text: "Oishii desu!", feedback: "Resposta no presente.", isCorrect: false }] },
@@ -231,6 +309,19 @@ const MODULO_A2_07 = {
         { question: "3. Traduza: 'Kinou wa atsukatta desu'", options: [{ label: "Ontem estava quente", isCorrect: true }, { label: "Hoje está quente", isCorrect: false }, { label: "Ontem estava frio", isCorrect: false }] },
         { question: "4. Qual é o passado de 'Oishii' (Gostoso)?", options: [{ label: "Oishikatta desu", isCorrect: true }, { label: "Oishii deshita", isCorrect: false }, { label: "Oishii mashita", isCorrect: false }] },
         { question: "5. Escolha a frase para 'A viagem foi divertida':", options: [{ label: "Ryokou wa tanoshikatta desu", isCorrect: true }, { label: "Ryokou wa tanoshii desu", isCorrect: false }, { label: "Ryokou wa tanoshii deshita", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "でんしゃ で とうきょう へ いきます",
+            translation: "Vou para Tóquio de trem.",
+            chunks: ["でんしゃ", "で", "とうきょう", "へ", "いきます"]
+        },
+        {
+            sentenceJp: "バス を のりかえます",
+            translation: "Vou fazer baldeação de ônibus.",
+            chunks: ["バス", "を", "のりかえます"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Você voltou de uma viagem a Kyoto e conversa com um amigo.", npcName: "Naoki", npcMessage: "Kyoto no ryokou wa dou deshita ka? (Como foi a viagem a Kyoto?)", options: [{ text: "Totemo tanoshikatta desu! (Foi muito divertida!)", feedback: "Excelente uso de tanoshikatta!", isCorrect: true }, { text: "Tanoshii deshita.", feedback: "Erro: adjetivos -i não usam deshita!", isCorrect: false }, { text: "Iie, tabemashita.", feedback: "Disse 'não, comi'.", isCorrect: false }] },
@@ -266,6 +357,19 @@ const MODULO_A2_08 = {
         { question: "4. Qual partícula indica companhia ('com')?", options: [{ label: "と (to)", isCorrect: true }, { label: "へ (he)", isCorrect: false }, { label: "を (o)", isCorrect: false }] },
         { question: "5. Escolha a resposta para 'Com quem você foi?':", options: [{ label: "Tomodachi to ikimashita", isCorrect: true }, { label: "Kyoto ni ikimashita", isCorrect: false }, { label: "Densha de ikimashita", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "うち から えき まで 15ふん かかります",
+            translation: "Leva 15 minutos da minha casa até a estação.",
+            chunks: ["うち", "から", "えき", "まで", "15ふん", "かかります"]
+        },
+        {
+            sentenceJp: "あるいて 5ふん で つきます",
+            translation: "Chega em 5 minutos a pé.",
+            chunks: ["あるいて", "5ふん", "で", "つきます"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Conversando com um colega no trabalho após o feriado.", npcName: "Ren", npcMessage: "[Seu Nome]-san, yasumi ni doko ni ikimashita ka? (Para onde você foi no feriado?)", options: [{ text: "Kyoto ni ikimashita! (Fui para Kyoto!)", feedback: "Perfeito!", isCorrect: true }, { text: "Nemasu.", feedback: "Disse que dorme.", isCorrect: false }, { text: "Arigatou!", feedback: "Agradeceu sem responder.", isCorrect: false }] },
         { scenario: "Situação 2: O colega pergunta com quem você viajou.", npcName: "Ren", npcMessage: "Dare to ikimashita ka? (Com quem você foi?)", options: [{ text: "Kazoku to ikimashita. (Fui com minha família.)", feedback: "Excelente uso da partícula to!", isCorrect: true }, { text: "Hitori ni ikimashita.", feedback: "Uso incorreto da partícula com hitori.", isCorrect: false }, { text: "Konnichiwa!", feedback: "Saudação fora de hora.", isCorrect: false }] },
@@ -299,6 +403,19 @@ const MODULO_A2_09 = {
         { question: "3. Qual palavra significa 'Habilidoso / Bom em algo'?", options: [{ label: "じょうず (Jouzu)", isCorrect: true }, { label: "へた (Heta)", isCorrect: false }, { label: "きらい (Kirai)", isCorrect: false }] },
         { question: "4. Como dizer com humildade 'Sou ruim em futebol'?", options: [{ label: "Sakkaraa ga heta desu", isCorrect: true }, { label: "Sakkaraa ga jouzu desu", isCorrect: false }, { label: "Sakkaraa ga kirai desu", isCorrect: false }] },
         { question: "5. Traduza: 'Nihongo ga suki desu'", options: [{ label: "Gosto do idioma japonês", isCorrect: true }, { label: "Falo japonês muito bem", isCorrect: false }, { label: "Estudo japonês ontem", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "いっしょ に おちゃ を のみませんか",
+            translation: "Gostaria de tomar um chá juntos?",
+            chunks: ["いっしょ", "に", "おちゃ", "を", "のみませんか"]
+        },
+        {
+            sentenceJp: "ぜひ いきましょう",
+            translation: "Com certeza, vamos!",
+            chunks: ["ぜひ", "いきましょう"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Um amigo japonês te pergunta sobre comida.", npcName: "Kaito", npcMessage: "[Seu Nome]-san, Nihon no tabemono ga suki desu ka? (Você gosta de comida japonesa?)", options: [{ text: "Daisuki desu! Sushi ga suki desu! (Adoro! Gosto de sushi!)", feedback: "Resposta super animada e correta!", isCorrect: true }, { text: "Iie, jouzu desu.", feedback: "Disse 'não, sou habilidoso'.", isCorrect: false }, { text: "Sayounara!", feedback: "Despediu-se do nada.", isCorrect: false }] },
@@ -334,6 +451,19 @@ const MODULO_A2_10 = {
         { question: "4. O que a expressão 'Hou ga' indica na resposta?", options: [{ label: "A opção preferida / que ganha a comparação", isCorrect: true }, { label: "A opção descartada", isCorrect: false }, { label: "Uma pergunta incerta", isCorrect: false }] },
         { question: "5. Como responder 'Prefiro café' entre chá e café?", options: [{ label: "Kohii no hou ga suki desu", isCorrect: true }, { label: "Kohii yori suki desu", isCorrect: false }, { label: "Ocha no hou ga suki desu", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ここに なまえ を かいて ください",
+            translation: "Por favor, escreva seu nome aqui.",
+            chunks: ["ここに", "なまえ", "を", "かいて", "ください"]
+        },
+        {
+            sentenceJp: "ドア を あけて ください",
+            translation: "Por favor, abra a porta.",
+            chunks: ["ドア", "を", "あけて", "ください"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Escolhendo um meio de transporte com o guia de viagem.", npcName: "Guia Sakamoto", npcMessage: "Shinkansen to basu, dochira ga ii desu ka? (Trem-bala ou ônibus, qual é melhor?)", options: [{ text: "Shinkansen no hou ga hayai desu! (O trem-bala é mais rápido!)", feedback: "Excelente escolha e uso de hou ga!", isCorrect: true }, { text: "Basu wa oishii desu.", feedback: "Disse que o ônibus é gostoso.", isCorrect: false }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }] },
         { scenario: "Situação 2: Comparando o clima de duas cidades.", npcName: "Guia Sakamoto", npcMessage: "Tokyo to Hokkaido, dochira ga samui desu ka? (Tokyo ou Hokkaido, qual é mais frio?)", options: [{ text: "Hokkaido no hou ga samui desu. (Hokkaido é mais frio.)", feedback: "Perfeito!", isCorrect: true }, { text: "Tokyo wa oishii desu.", feedback: "Elogiou o sabor de Tokyo.", isCorrect: false }, { text: "Arigatou gozaimasu!", feedback: "Agradeceu em vez de responder.", isCorrect: false }] },
@@ -367,6 +497,19 @@ const MODULO_A2_11 = {
         { question: "3. Verbos do Grupo 3 (Irregulares): Qual a Forma TE de 'Kimasu' (Vir)?", options: [{ label: "きて (Kite)", isCorrect: true }, { label: "きてmasu", isCorrect: false }, { label: "きた", isCorrect: false }] },
         { question: "4. Qual a Forma TE da exceção 'Ikimasu' (Ir)?", options: [{ label: "いって (Itte)", isCorrect: true }, { label: "いきて", isCorrect: false }, { label: "いいた", isCorrect: false }] },
         { question: "5. Para que serve a Forma TE no japonês?", options: [{ label: "Conectar frases, fazer pedidos e expressar ações contínuas", isCorrect: true }, { label: "Apenas para o passado", isCorrect: false }, { label: "Apenas para o futuro distante", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "いま にほんご を べんきょう しています",
+            translation: "Estou estudando japonês agora.",
+            chunks: ["いま", "にほんご", "を", "べんきょう", "しています"]
+        },
+        {
+            sentenceJp: "ともだち と でんわ を しています",
+            translation: "Estou falando ao telefone com meu amigo.",
+            chunks: ["ともだち", "と", "でんわ", "を", "しています"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: O professor explica um exercício em sala de aula.", npcName: "Sensei Takahashi", npcMessage: "Minna-san, hon o mite kudasai. (Todos, por favor olhem o livro.)", options: [{ text: "Hai, mimasu! (Sim, vou olhar!)", feedback: "Entendeu a instrução perfeitamente!", isCorrect: true }, { text: "Iie, tabemasu.", feedback: "Disse que vai comer.", isCorrect: false }, { text: "Ohayou!", feedback: "Saudação inadequada.", isCorrect: false }] },
@@ -402,6 +545,19 @@ const MODULO_A2_12 = {
         { question: "4. Qual palavra significa 'Devagar'?", options: [{ label: "ゆっくり (Yukkuri)", isCorrect: true }, { label: "はやく (Hayaku)", isCorrect: false }, { label: "もっと (Motto)", isCorrect: false }] },
         { question: "5. Traduza: 'Chotto matte kudasai'", options: [{ label: "Por favor, espere um pouco", isCorrect: true }, { label: "Por favor, coma um pouco", isCorrect: false }, { label: "Por favor, olhe para cá", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ここで しゃしん を とっても いい です か",
+            translation: "Posso tirar foto aqui?",
+            chunks: ["ここで", "しゃしん", "を", "とっても", "いい", "です", "か"]
+        },
+        {
+            sentenceJp: "ここ に はいってはいけません",
+            translation: "Não se pode entrar aqui.",
+            chunks: ["ここ", "に", "はいってはいけません"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Você não entendeu o que o atendente da estação disse rapidamente.", npcName: "Atendente da Estação", npcMessage: "Kyuukou densha wa 3-ban sen kara shuppatsu shimasu! (O trem expresso parte da plataforma 3!)", options: [{ text: "Sumimasen, yukkuri hanashite kudasai. (Com licença, por favor fale devagar.)", feedback: "Frase salva-vidas perfeita!", isCorrect: true }, { text: "Arigatou, tabemasu!", feedback: "Disse que vai comer.", isCorrect: false }, { text: "Sayounara!", feedback: "Foi embora sem entender.", isCorrect: false }] },
         { scenario: "Situação 2: Na recepção do hotel preenchendo a ficha de check-in.", npcName: "Recepcionista", npcMessage: "Koko ni onamae to jusho o kaite kudasai. (Por favor, escreva seu nome e endereço aqui.)", options: [{ text: "Hai, wakarimashita! (Sim, entendi!)", feedback: "Excelente!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Recusou e disse que vai dormir.", isCorrect: false }, { text: "Doko desu ka?", feedback: "Perguntou onde fica.", isCorrect: false }] },
@@ -435,6 +591,19 @@ const MODULO_A2_13 = {
         { question: "3. Traduza: 'Ima nani o shite imasu ka?'", options: [{ label: "O que você está fazendo agora?", isCorrect: true }, { label: "O que você fez ontem?", isCorrect: false }, { label: "Para onde você vai?", isCorrect: false }] },
         { question: "4. Qual forma verbal é usada antes de 'imasu' para criar o gerúndio?", options: [{ label: "Forma TE", isCorrect: true }, { label: "Forma Masu", isCorrect: false }, { label: "Forma Nai", isCorrect: false }] },
         { question: "5. Escolha a resposta para 'Estou comendo ramen':", options: [{ label: "Ramen o tabete imasu", isCorrect: true }, { label: "Ramen o tabemasu", isCorrect: false }, { label: "Ramen o tabemashita", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "あさごはん を たべて がっこう へ いきます",
+            translation: "Tomo café da manhã e vou para a escola.",
+            chunks: ["あさごはん", "を", "たべて", "がっこう", "へ", "いきます"]
+        },
+        {
+            sentenceJp: "かさ を もって でかけます",
+            translation: "Levo o guarda-chuva e saio.",
+            chunks: ["かさ", "を", "もって", "でかけます"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Uma ligação telefônica de um amigo perguntando o que você está fazendo.", npcName: "Haruto", npcMessage: "Moshimoshi! [Seu Nome]-san, ima nani o shite imasu ka? (Alô! O que você está fazendo agora?)", options: [{ text: "Nihongo o benkyou shite imasu! (Estou estudando japonês!)", feedback: "Excelente resposta no gerúndio!", isCorrect: true }, { text: "Kinou benkyou shimashita.", feedback: "Respondeu no passado.", isCorrect: false }, { text: "Konbanwa!", feedback: "Iniciou saudação de chegada no telefone.", isCorrect: false }] },
@@ -470,6 +639,19 @@ const MODULO_A2_14 = {
         { question: "4. Traduza: 'Haitte mo ii desu ka?'", options: [{ label: "Posso entrar?", isCorrect: true }, { label: "Posso sair?", isCorrect: false }, { label: "Posso comer?", isCorrect: false }] },
         { question: "5. Qual particula vem após a Forma TE na estrutura de permissão?", options: [{ label: "も (mo)", isCorrect: true }, { label: "は (wa)", isCorrect: false }, { label: "を (o)", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きのう ともだち と えいが を みました",
+            translation: "Ontem assisti a um filme com meu amigo.",
+            chunks: ["きのう", "ともだち", "と", "えいが", "を", "みました"]
+        },
+        {
+            sentenceJp: "せんしゅう きょうと へ いきました",
+            translation: "Fui para Quioto semana passada.",
+            chunks: ["せんしゅう", "きょうと", "へ", "いきました"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Na entrada de um templo histórico em Kyoto.", npcName: "Monge / Guarda", npcMessage: "Irasshaimase. (Bem-vindo.)", options: [{ text: "Sumimasen, shashin o totte mo ii desu ka? (Com licença, posso tirar foto?)", feedback: "Educação impecável!", isCorrect: true }, { text: "Shashin o tabemasu ka?", feedback: "Disse 'posso comer a foto?'.", isCorrect: false }, { text: "Sayounara!", feedback: "Despediu-se na entrada.", isCorrect: false }] },
         { scenario: "Situação 2: O guarda responde à sua pergunta sobre a foto.", npcName: "Monge / Guarda", npcMessage: "Hai, ii desu yo! Douzo. (Sim, pode sim! Fique à vontade.)", options: [{ text: "Arigatou gozaimasu! (Muito obrigado!)", feedback: "Agradecimento gentil!", isCorrect: true }, { text: "Gomen nasai!", feedback: "Pediu desculpas sem precisar.", isCorrect: false }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }] },
@@ -503,6 +685,19 @@ const MODULO_A2_15 = {
         { question: "3. Qual é a palavra de sinalização para 'Proibido Fumar'?", options: [{ label: "きんえん (Kinen)", isCorrect: true }, { label: "いりぐち (Iriguchi)", isCorrect: false }, { label: "ふね (Fune)", isCorrect: false }] },
         { question: "4. Traduza: 'Tabako o sutte wa ikemasen'", options: [{ label: "Proibido fumar cigarro", isCorrect: true }, { label: "Por favor fume aqui", isCorrect: false }, { label: "Não compre cigarro", isCorrect: false }] },
         { question: "5. Na proibição com a Forma TE, como se pronuncia a partícula は?", options: [{ label: "WA", isCorrect: true }, { label: "HA", isCorrect: false }, { label: "WO", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "とうきょう は にぎやかな まち です",
+            translation: "Tóquio é uma cidade movimentada.",
+            chunks: ["とうきょう", "は", "にぎやかな", "まち", "です"]
+        },
+        {
+            sentenceJp: "この おてら は とても しずか です",
+            translation: "Este templo é muito silencioso.",
+            chunks: ["この", "おてら", "は", "とても", "しずか", "です"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Você saca a câmera num museu e o segurança se aproxima educadamente.", npcName: "Segurança do Museu", npcMessage: "Sumimasen, koko de shashin o totte wa ikemasen. (Com licença, não pode tirar fotos aqui.)", options: [{ text: "Ah, sumimasen! Wakarimashita. (Ah, desculpe! Entendi.)", feedback: "Reação perfeita e respeitosa!", isCorrect: true }, { text: "Hai, totte mo ii desu!", feedback: "Disse que pode tirar foto sim.", isCorrect: false }, { text: "Oishii desu!", feedback: "Fora de contexto.", isCorrect: false }] },
@@ -538,6 +733,19 @@ const MODULO_A2_16 = {
         { question: "4. Traduza: 'Kinou kaimono shite, eiga o mimashita'", options: [{ label: "Ontem fiz compras e assisti a um filme", isCorrect: true }, { label: "Hoje farei compras e assistirei a um filme", isCorrect: false }, { label: "Fui ao cinema sem fazer compras", isCorrect: false }] },
         { question: "5. Como fica a frase 'Acordar e tomar café':", options: [{ label: "Okite, kohii o nomimasu", isCorrect: true }, { label: "Okimasu, kohii o nomimasu", isCorrect: false }, { label: "Okimashita, kohii o nomimasu", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "しんかんせん は でんしゃ より はやい です",
+            translation: "O Shinkansen é mais rápido que o trem comum.",
+            chunks: ["しんかんせん", "は", "でんしゃ", "より", "はやい", "です"]
+        },
+        {
+            sentenceJp: "にほん は ブラジル より ちいさい です",
+            translation: "O Japão é menor que o Brasil.",
+            chunks: ["にほん", "は", "ブラジル", "より", "ちいさい", "です"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Perguntando sobre a sua rotina da noite anterior.", npcName: "Mio", npcMessage: "[Seu Nome]-san, kinou wa uchi ni kaette kara nani o shimashita ka? (Ontem depois de voltar para casa, o que fez?)", options: [{ text: "Gohan o tabete, terebi o mimashita! (Comi e assisti TV!)", feedback: "Excelente encadeamento na Forma TE!", isCorrect: true }, { text: "Iie, tabemasen.", feedback: "Disse que não comeu.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação incorreta.", isCorrect: false }] },
         { scenario: "Situação 2: Mio pergunta sobre os seus planos para o sábado.", npcName: "Mio", npcMessage: "Doyoubi wa nani o shimasu ka? (O que faz no sábado?)", options: [{ text: "Toshokan ni ikite/itte, hon o yomimasu. (Vou à biblioteca e leio livros.)", feedback: "Perfeito!", isCorrect: true }, { text: "Nemasu, nemasu, nemasu.", feedback: "Repetiu o mesmo verbo sem usar a Forma TE.", isCorrect: false }, { text: "Kore wa ikura desu ka?", feedback: "Perguntou o preço de algo.", isCorrect: false }] },
@@ -571,6 +779,19 @@ const MODULO_A2_17 = {
         { question: "3. Qual é o termo para passagem 'Somente ida'?", options: [{ label: "かたみち (Katamichi)", isCorrect: true }, { label: "おうふく (Oufuku)", isCorrect: false }, { label: "のりかえ (Norikae)", isCorrect: false }] },
         { question: "4. Traduza: 'Koko de norikae desu ka?'", options: [{ label: "A baldeação é aqui?", isCorrect: true }, { label: "O trem vai para onde?", isCorrect: false }, { label: "Quanto custa o bilhete?", isCorrect: false }] },
         { question: "5. Como pedir '2 bilhetes de ida'?", options: [{ label: "Katamichi kippu o ni-mai kudasai", isCorrect: true }, { label: "Oufuku kippu o ni-mai kudasai", isCorrect: false }, { label: "Norikae o ni-mai kudasai", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "にほん で ふじさん が いちばん たかい です",
+            translation: "O Monte Fuji é o mais alto do Japão.",
+            chunks: ["にほん", "で", "ふじさん", "が", "いちばん", "たかい", "です"]
+        },
+        {
+            sentenceJp: "スポーツ で サッカー が いちばん すき です",
+            translation: "Entre os esportes, o futebol é o que mais gosto.",
+            chunks: ["スポーツ", "で", "サッカー", "が", "いちばん", "すき", "です"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: No guichê de atendimento da JR na Estação de Shinjuku.", npcName: "Atendente JR", npcMessage: "Irasshaimase! Doko made desu ka? (Bem-vindo! Até onde vai?)", options: [{ text: "Kyoto-eki made katamichi kippu o ichi-mai kudasai. (Uma passagem de ida para a Estação de Kyoto, por favor.)", feedback: "Pedido perfeito e claríssimo!", isCorrect: true }, { text: "Kyoto wa oishii desu.", feedback: "Disse que Kyoto é gostosa.", isCorrect: false }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }] },
@@ -606,6 +827,19 @@ const MODULO_A2_18 = {
         { question: "4. Como pedir mais uma toalha na recepção?", options: [{ label: "Taoru o mo ichi-mai o-negai shimasu", isCorrect: true }, { label: "Taoru o tabete kudasai", isCorrect: false }, { label: "Taoru ni suwari-masu", isCorrect: false }] },
         { question: "5. Traduza: 'Choushoku wa nan-ji kara desu ka?'", options: [{ label: "A partir de que horas é o café da manhã?", isCorrect: true }, { label: "Onde fica o restaurante?", isCorrect: false }, { label: "Quanto custa o café da manhã?", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "にほん へ たび に いきたい です",
+            translation: "Quero ir viajar para o Japão.",
+            chunks: ["にほん", "へ", "たび", "に", "いきたい", "です"]
+        },
+        {
+            sentenceJp: "あたしい パソコン が ほしい です",
+            translation: "Quero um computador novo.",
+            chunks: ["あたしい", "パソコン", "が", "ほしい", "です"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Você chega ao balcão do hotel em Kyoto às 15h.", npcName: "Recepcionista de Hotel", npcMessage: "Irasshaimase! Konnichiwa. (Bem-vindo! Boa tarde.)", options: [{ text: "Konnichiwa. Yoyaku shita [Seu Nome] desu. Chekkuin o o-negai shimasu. (Boa tarde. Sou o [Seu Nome] que fez reserva. Check-in por favor.)", feedback: "Aresentação impecável!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Recusa sem sentido na recepção.", isCorrect: false }, { text: "Sayounara!", feedback: "Despedida no início do atendimento.", isCorrect: false }] },
         { scenario: "Situação 2: A recepcionista confirma a sua reserva e entrega a chave.", npcName: "Recepcionista de Hotel", npcMessage: "[Seu Nome]-sama, o-heya wa 402-gou shitsu desu. Kore wa kagi desu. (Sr. [Seu Nome], seu quarto é o 402. Aqui está a chave.)", options: [{ text: "Arigatou gozaimasu. Choushoku wa nan-ji kara desu ka? (Obrigado. A partir de que horas é o café?)", feedback: "Pergunta super relevante!", isCorrect: true }, { text: "Kagi wa oishii desu.", feedback: "Disse que a chave é gostosa.", isCorrect: false }, { text: "Gomen nasai!", feedback: "Pediu desculpas à toa.", isCorrect: false }] },
@@ -639,6 +873,19 @@ const MODULO_A2_19 = {
         { question: "3. Qual a palavra para 'Semáforo' em japonês?", options: [{ label: "しんごう (Shingou)", isCorrect: true }, { label: "こうさと (Kousaten)", isCorrect: false }, { label: "はし (Hashi)", isCorrect: false }] },
         { question: "4. Traduza: 'Migi ni magatte kudasai'", options: [{ label: "Por favor, vire à direita", isCorrect: true }, { label: "Por favor, vire à esquerda", isCorrect: false }, { label: "Por favor, pare no semáforo", isCorrect: false }] },
         { question: "5. Qual partícula indica a direção da virada (Migi/Hidari)?", options: [{ label: "に (ni)", isCorrect: true }, { label: "を (o)", isCorrect: false }, { label: "で (de)", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ともだち に プレゼント を あげました",
+            translation: "Dei um presente para o meu amigo.",
+            chunks: ["ともだち", "に", "プレゼント", "を", "あげました"]
+        },
+        {
+            sentenceJp: "せんせい に ほん を もらいました",
+            translation: "Recebi um livro do professor.",
+            chunks: ["せんせい", "に", "ほん", "を", "もらいました"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Você está procurando o Konbini e pede ajuda a um policial no Koban.", npcName: "Policial do Koban", npcMessage: "Sumimasen! Konbini wa doko desu ka? -> Konbini desu ka? Ano shingou o migi ni magatte kudasai. (O konbini? Vire à direita naquele semáforo.)", options: [{ text: "Shingou o migi desu ne. Arigatou gozaimasu! (No semáforo à direita, né. Obrigado!)", feedback: "Entendimento perfeito da orientação!", isCorrect: true }, { text: "Iie, tabemasen.", feedback: "Disse que não come.", isCorrect: false }, { text: "Ohayou!", feedback: "Saudação fora de hora.", isCorrect: false }] },
@@ -674,6 +921,19 @@ const MODULO_A2_20 = {
         { question: "4. Traduza: 'Ramen ga tabetai desu'", options: [{ label: "Quero comer ramen", isCorrect: true }, { label: "Comi ramen ontem", isCorrect: false }, { label: "Não gosto de ramen", isCorrect: false }] },
         { question: "5. Como negar o desejo ('Não quero ir')?", options: [{ label: "Ikitakunai desu", isCorrect: true }, { label: "Ikitai ja arimasen", isCorrect: false }, { label: "Ikitai masen", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "あたま が いたい です から くすり を のみます",
+            translation: "Estou com dor de cabeça, então vou tomar remédio.",
+            chunks: ["あたま", "が", "いたい", "です", "から", "くすり", "を", "のみます"]
+        },
+        {
+            sentenceJp: "ねつ が あります から やすみます",
+            translation: "Estou com febre, por isso vou descansar.",
+            chunks: ["ねつ", "が", "あります", "から", "やすみます"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Planejando as férias com um amigo japonês.", npcName: "Sota", npcMessage: "[Seu Nome]-san, Nihon de nani o shitai desu ka? (O que você quer fazer no Japão?)", options: [{ text: "Fuji-san ni ikitai desu! (Quero ir ao Monte Fuji!)", feedback: "Desejo expressado perfeitamente com ~tai!", isCorrect: true }, { text: "Fuji-san wa oishii desu.", feedback: "Disse que o Monte Fuji é gostoso.", isCorrect: false }, { text: "Gomen nasai!", feedback: "Pediu desculpas sem motivo.", isCorrect: false }] },
         { scenario: "Situação 2: Na hora do almoço escolhendo o cardápio.", npcName: "Sota", npcMessage: "Kyou no hirugohan wa nani ga tabetai desu ka? (O que quer comer no almoço hoje?)", options: [{ text: "Sushi ga tabetai desu! (Quero comer sushi!)", feedback: "Sensacional!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação matinal totalmente fora de hora.", isCorrect: false }] },
@@ -707,6 +967,19 @@ const MODULO_A2_21 = {
         { question: "3. O que significa a expressão 'to omoimasu' no final da frase?", options: [{ label: "Acho que... / Penso que...", isCorrect: true }, { label: "Com certeza...", isCorrect: false }, { label: "Não quero...", isCorrect: false }] },
         { question: "4. Como se diz 'Tempo ensolarado / limpo'?", options: [{ label: "はれ (Hare)", isCorrect: true }, { label: "くもり (Kumori)", isCorrect: false }, { label: "あめ (Ame)", isCorrect: false }] },
         { question: "5. Traduza: 'Kyou wa ii tenki desu'", options: [{ label: "Hoje o tempo está bom", isCorrect: true }, { label: "Hoje vai chover muito", isCorrect: false }, { label: "Hoje está muito frio", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きょう は はれ て いい てんき です",
+            translation: "Hoje está ensolarado e um tempo bom.",
+            chunks: ["きょう", "は", "はれ", "て", "いい", "てんき", "です"]
+        },
+        {
+            sentenceJp: "あした は あめ が ふる でしょう",
+            translation: "Amanhã provavelmente choverá.",
+            chunks: ["あした", "は", "あめ", "が", "ふる", "でしょう"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Olhando para o céu nublado de Tokyo de manhã.", npcName: "Hinata", npcMessage: "Kyou no tenki wa dou desu ka? (Como está o tempo hoje?)", options: [{ text: "Ame ga furu to omoimasu. (Acho que vai chover.)", feedback: "Excelente uso de 'to omoimasu'!", isCorrect: true }, { text: "Ame o tabemasu.", feedback: "Disse que come chuva.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação fora de assunto.", isCorrect: false }] },
@@ -742,6 +1015,19 @@ const MODULO_A2_22 = {
         { question: "4. O que significa 'Kaze' no contexto de saúde?", options: [{ label: "Resfriado / Gripe", isCorrect: true }, { label: "Remédio para dor", isCorrect: false }, { label: "Injeção", isCorrect: false }] },
         { question: "5. Como pedir 'Remédio por favor' na farmácia?", options: [{ label: "Kusuri o o-negai shimasu", isCorrect: true }, { label: "Kusuri o tabete imasu", isCorrect: false }, { label: "Kusuri o nomitai desu ka", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたしの しゅみ は おんがく を きく こと です",
+            translation: "Meu hobby é ouvir música.",
+            chunks: ["わたしの", "しゅみ", "は", "おんがく", "を", "きく", "こと", "です"]
+        },
+        {
+            sentenceJp: "しゃしん を とる こと が すき です",
+            translation: "Gosto de tirar fotos.",
+            chunks: ["しゃしん", "を", "とる", "こと", "が", "すき", "です"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Você entra numa farmácia (Drugstore) japonesa sem se sentir bem.", npcName: "Farmacêutico", npcMessage: "Dou shimashita ka? (O que aconteceu / O que está sentindo?)", options: [{ text: "Kino kara atama ga itai desu. Kusuri o o-negai shimasu. (Desde ontem estou com dor de cabeça. Remédio por favor.)", feedback: "Explicação clara e precisa!", isCorrect: true }, { text: "Atama ga oishii desu.", feedback: "Disse que a cabeça é gostosa.", isCorrect: false }, { text: "Sayounara!", feedback: "Foi embora sem comprar o remédio.", isCorrect: false }] },
         { scenario: "Situação 2: O médico examina e pergunta sobre febre.", npcName: "Médico", npcMessage: "Netsu ga arimasu ka? (Você está com febre?)", options: [{ text: "Hai, 38-do no netsu ga arimasu. (Sim, estou com 38 graus de febre.)", feedback: "Informação médica excelente!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }, { text: "Arigatou gozaimasu!", feedback: "Agradeceu sem responder à medição.", isCorrect: false }] },
@@ -775,6 +1061,19 @@ const MODULO_A2_23 = {
         { question: "3. Traduza: 'Uchi ni kaeranakereba narimasen'", options: [{ label: "Tenho que voltar para casa", isCorrect: true }, { label: "Quero ir para casa", isCorrect: false }, { label: "Não posso ir para casa", isCorrect: false }] },
         { question: "4. O que a estrutura ~nakereba narimasen expressa?", options: [{ label: "Uma obrigação / necessidade incontornável", isCorrect: true }, { label: "Um pedido educado de favor", isCorrect: false }, { label: "Uma permissão simples", isCorrect: false }] },
         { question: "5. Como fica a obrigação de 'Ir' (Ikimasu ➔ Ikanai):", options: [{ label: "Ikanakereba narimasen", isCorrect: true }, { label: "Ikite wa ikemasen", isCorrect: false }, { label: "Ikitai desu", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は にほんご を はなす こと が できます",
+            translation: "Eu consigo falar japonês.",
+            chunks: ["わたし", "は", "にほんご", "を", "はなす", "こと", "が", "できます"]
+        },
+        {
+            sentenceJp: "かんじ を よむ こと が できます か",
+            translation: "Você consegue ler kanji?",
+            chunks: ["かんじ", "を", "よむ", "こと", "が", "できます", "か"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Está ficando tarde num encontro de amigos e você precisa ir embora.", npcName: "Renan", npcMessage: "[Seu Nome]-san, mou kaerimasu ka? (Você já vai para casa?)", options: [{ text: "Hai, ashita shigoto ga arimasu kara, kaeranakereba narimasen. (Sim, como tenho trabalho amanhã, tenho que voltar.)", feedback: "Explicação lógica e correta!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Disse 'não, durmo'.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação matinal de noite.", isCorrect: false }] },
@@ -810,6 +1109,19 @@ const MODULO_A2_24 = {
         { question: "4. Traduza: 'Kusuri o nonda hou ga ii desu'", options: [{ label: "É melhor tomar remédio", isCorrect: true }, { label: "Tenho que tomar remédio", isCorrect: false }, { label: "Não posso tomar remédio", isCorrect: false }] },
         { question: "5. O que a partícula 'yo' no final da frase reforça no conselho?", options: [{ label: "Um tom amigável e empático de recomendação", isCorrect: true }, { label: "Uma dúvida", isCorrect: false }, { label: "Uma proibição severa", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "あした は はやく おきなければ なりません",
+            translation: "Amanhã preciso acordar cedo.",
+            chunks: ["あした", "は", "はやく", "おきなければ", "なりません"]
+        },
+        {
+            sentenceJp: "しゅくだい を しなければ なりません",
+            translation: "Preciso fazer a lição de casa.",
+            chunks: ["しゅくだい", "を", "しなければ", "なりません"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Seu amigo japonês parece muito cansado após o trabalho.", npcName: "Takashi", npcMessage: "Kyoo wa totemo tsukaremashita... (Hoje estou muito cansado...)", options: [{ text: "Konban wa motto yasunda hou ga ii desu yo. (É melhor você descansar mais esta noite.)", feedback: "Conselho empático e carinhoso!", isCorrect: true }, { text: "Motto tabete wa ikemasen.", feedback: "Disse que é proibido comer mais.", isCorrect: false }, { text: "Sayounara!", feedback: "Despedida seca.", isCorrect: false }] },
         { scenario: "Situação 2: O amigo reclama de febre alta.", npcName: "Takashi", npcMessage: "Netsu ga 38-do arimasu... (Estou com 38 graus de febre...)", options: [{ text: "Haaku byouin ni itta hou ga ii desu yo! (É melhor ir ao médico logo!)", feedback: "Conselho indispensável!", isCorrect: true }, { text: "Gakkou ni ikitai desu.", feedback: "Disse que quer ir à escola.", isCorrect: false }, { text: "Oishii desu!", feedback: "Fora do assunto.", isCorrect: false }] },
@@ -843,6 +1155,19 @@ const MODULO_A2_25 = {
         { question: "3. Qual é a ordem das ideias na frase comparada ao português?", options: [{ label: "Causa primeiro + Kara, depois a Consequência", isCorrect: true }, { label: "Consequência primeiro, depois Kara + Causa", isCorrect: false }, { label: "A ordem é exatamente idêntica ao português", isCorrect: false }] },
         { question: "4. Como explicar 'Não fui porque estava doente'?", options: [{ label: "Byouki deshita kara, ikimasen deshita", isCorrect: true }, { label: "Ikimasen deshita kara, byouki deshita", isCorrect: false }, { label: "Byouki kara ikimasu", isCorrect: false }] },
         { question: "5. Qual a diferença de tom entre 'Kara' e 'Node'?", options: [{ label: "Node é mais suave e educado; Kara é mais direto", isCorrect: true }, { label: "Kara é só para o passado; Node é para o futuro", isCorrect: false }, { label: "Não há diferença alguma", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "もっと やさい を たべた ほう が いい です",
+            translation: "É melhor comer mais verduras.",
+            chunks: ["もっと", "やさい", "を", "たべた", "ほう", "が", "いい", "です"]
+        },
+        {
+            sentenceJp: "きょう は はやく ねた ほう が いい です",
+            translation: "É melhor ir dormir cedo hoje.",
+            chunks: ["きょう", "は", "はやく", "ねた", "ほう", "が", "いい", "です"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: O professor pergunta por que você faltou à aula ontem.", npcName: "Sensei", npcMessage: "[Seu Nome]-san, kinou wa naze yasumimashita ka? (Por que você faltou ontem?)", options: [{ text: "Netsu ga arimashita kara, yasumimashita. (Porque eu estava com febre, faltei.)", feedback: "Explicação gramatical impecável!", isCorrect: true }, { text: "Kinou wa oishii desu kara.", feedback: "Disse 'porque ontem estava gostoso'.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação fora de contexto.", isCorrect: false }] },
@@ -878,6 +1203,19 @@ const MODULO_A2_26 = {
         { question: "4. Traduza a resposta entusiasta: 'Ii desu ne!'", options: [{ label: "Que boa ideia! / Vamos sim!", isCorrect: true }, { label: "Não posso ir", isCorrect: false }, { label: "Quanto custa?", isCorrect: false }] },
         { question: "5. Escolha o convite para 'Vamos almoçar juntos':", options: [{ label: "Issho ni hirugohan o tabemashou!", isCorrect: true }, { label: "Issho ni hirugohan o tabemasen", isCorrect: false }, { label: "Issho ni hirugohan o tabemashita", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "らいねん にほん に いこう と おもっています",
+            translation: "Pretendo ir ao Japão no ano que vem.",
+            chunks: ["らいねん", "にほん", "に", "いこう", "と", "おもっています"]
+        },
+        {
+            sentenceJp: "あたらしい くるま を かう つもり です",
+            translation: "Pretendo comprar um carro novo.",
+            chunks: ["あたらしい", "くるま", "を", "かう", "つもり", "です"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Sexta-feira no fim do expediente, convidando um colega para tomar café.", npcName: "Ren", npcMessage: "[Seu Nome]-san, issho ni kohii o nomimasen ka? (Não quer tomar um café comigo?)", options: [{ text: "Ii desu ne! Ikimashou! (Que boa ideia! Vamos sim!)", feedback: "Aceitação perfeita e animada!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Recusa seca dizendo que vai dormir.", isCorrect: false }, { text: "Kore wa ikura desu ka?", feedback: "Perguntou o preço do convite.", isCorrect: false }] },
         { scenario: "Situação 2: Propondo ir ao cinema no fim de semana.", npcName: "Ren", npcMessage: "Shuumatsu eiga o mimasen ka? (Que tal vermos um filme no fim de semana?)", options: [{ text: "Ii desu ne! Nani o mimasu ka? (Ótimo! O que vamos assistir?)", feedback: "Engajamento excelente no diálogo!", isCorrect: true }, { text: "Eiga wa oishii desu.", feedback: "Disse que o filme é gostoso.", isCorrect: false }, { text: "Gomen nasai, sayounara!", feedback: "Despediu-se de forma estranha.", isCorrect: false }] },
@@ -911,6 +1249,19 @@ const MODULO_A2_27 = {
         { question: "3. Por que se evita usar 'Iie' diretamente ao recusar um convite?", options: [{ label: "Por ser considerado muito duro e indelicado na etiqueta japonesa", isCorrect: true }, { label: "Porque é gramaticalmente errado", isCorrect: false }, { label: "Porque significa 'sim'", isCorrect: false }] },
         { question: "4. Traduza: 'Tsugi wa zehi!'", options: [{ label: "Na próxima com certeza!", isCorrect: true }, { label: "Nunca mais nos veremos", isCorrect: false }, { label: "Vamos agora mesmo", isCorrect: false }] },
         { question: "5. Qual palavra indica lamento ('É uma pena / Infelizmente')?", options: [{ label: "ざんねん (Zannen)", isCorrect: true }, { label: "たのしい (Tanoshii)", isCorrect: false }, { label: "うれしい (Ureshii)", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "だんだん さむく なって きました",
+            translation: "Está ficando gradualmente frio.",
+            chunks: ["だんだん", "さむく", "なって", "きました"]
+        },
+        {
+            sentenceJp: "にほんご が じょうず に なりました",
+            translation: "Ficou bom em japonês.",
+            chunks: ["にほんご", "が", "じょうず", "に", "なりました"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Um colega te convida para jantar hoje à noite, mas você já tem outro compromisso.", npcName: "Ken", npcMessage: "[Seu Nome]-san, konban issho ni gohan o tabemasen ka? (Não quer jantar comigo hoje à noite?)", options: [{ text: "Zannen desu ga, konban wa chotto... (Infelizmente, hoje à noite fica meio difícil...)", feedback: "Recusa perfeita dentro da etiqueta japonesa!", isCorrect: true }, { text: "Iie, kirai desu!", feedback: "Muito rude!", isCorrect: false }, { text: "Sayounara!", feedback: "Despedida seca.", isCorrect: false }] },
@@ -946,6 +1297,19 @@ const MODULO_A2_28 = {
         { question: "4. O que significa 'Omiyage' no Japão?", options: [{ label: "Lembrancinha / Souvenir trazido de viagem", isCorrect: true }, { label: "Comida estragada", isCorrect: false }, { label: "Troco em dinheiro", isCorrect: false }] },
         { question: "5. Se você RECEBEU algo de alguém, qual verbo pode usar?", options: [{ label: "もらう (Morau) / もらいました", isCorrect: true }, { label: "あげる (Ageru)", isCorrect: false }, { label: "いります (Irimasu)", isCorrect: false }] }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ちょっと あたま が いたい ん です",
+            translation: "É que estou com um pouco de dor de cabeça.",
+            chunks: ["ちょっと", "あたま", "が", "いたい", "ん", "です"]
+        },
+        {
+            sentenceJp: "バス が こなかった ん です",
+            translation: "É que o ônibus não veio.",
+            chunks: ["バス", "が", "こなかった", "ん", "です"]
+        }
+    ],
     stage4_dialog: [
         { scenario: "Situação 1: Você voltou do Japão e entrega um presente ao seu colega.", npcName: "Hiro", npcMessage: "Kore wa nan desu ka? (O que é isto?)", options: [{ text: "Nihon no omiyage desu. Hiro-san ni agemasu! (É uma lembrancinha do Japão. Estou te dando!)", feedback: "Uso perfeito de agemasu!", isCorrect: true }, { text: "Hiro-san ni kuremasu.", feedback: "Erro: kureru é para quando dão para mim!", isCorrect: false }, { text: "Sayounara!", feedback: "Despedida sem entrega.", isCorrect: false }] },
         { scenario: "Situação 2: Hiro fica super feliz com o presente.", npcName: "Hiro", npcMessage: "Wa! Arigatou gozaimasu! Ureshii desu! (Uau! Muito obrigado! Estou muito feliz!)", options: [{ text: "Dou itashimashite! (De nada!)", feedback: "Resposta de nada cortês e adequada!", isCorrect: true }, { text: "Gomen nasai!", feedback: "Pediu desculpas sem motivo.", isCorrect: false }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }] },
@@ -979,6 +1343,19 @@ const MODULO_A2_29 = {
         { question: "3. Qual forma verbal antecede a expressão 'tsumori desu'?", options: [{ label: "Forma Dicionário / Neutra", isCorrect: true }, { label: "Forma MASU", isCorrect: false }, { label: "Forma TE", isCorrect: false }] },
         { question: "4. Traduza: 'Nihongo o benkyou suru tsumori desu'", options: [{ label: "Pretendo estudar japonês", isCorrect: true }, { label: "Estudei japonês ano passado", isCorrect: false }, { label: "Não quero estudar japonês", isCorrect: false }] },
         { question: "5. Como negar uma intenção ('Não pretendo ir')?", options: [{ label: "Ikanai tsumori desu", isCorrect: true }, { label: "Iku tsumori ja arimasen", isCorrect: false }, { label: "Ikimasen tsumori desu", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "じかん が あったら いっしょ に いきましょう",
+            translation: "Se houver tempo, vamos juntos.",
+            chunks: ["じかん", "が", "あったら", "いっしょ", "に", "いきましょう"]
+        },
+        {
+            sentenceJp: "やすみ に なったら たび に いきます",
+            translation: "Quando chegar o feriado, irei viajar.",
+            chunks: ["やすみ", "に", "なったら", "たび", "に", "いきます"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: Conversando com o professor sobre seus planos de estudo.", npcName: "Sensei", npcMessage: "[Seu Nome]-san, raigetsu nani o suru tsumori desu ka? (O que pretende fazer mês que vem?)", options: [{ text: "JLPT N5 no testo o ukeru tsumori desu! (Pretendo prestar o exame JLPT N5!)", feedback: "Meta espetacular e perfeita gramaticalmente!", isCorrect: true }, { text: "Iie, nemasu.", feedback: "Disse que vai dormir.", isCorrect: false }, { text: "Ohayou gozaimasu!", feedback: "Saudação fora de hora.", isCorrect: false }] },
@@ -1037,6 +1414,19 @@ const MODULO_A2_30 = {
         { question: "28. Como dizer 'Recebi um livro do professor'?", options: [{ label: "Sensei ni hon o moraimashita", isCorrect: true }, { label: "Sensei ni hon o agemashita", isCorrect: false }, { label: "Sensei ni hon o kaimashita", isCorrect: false }] },
         { question: "29. Como pedir ao garçom 'Por favor, traga chá'?", options: [{ label: "O-cha o motte kite kudasai", isCorrect: true }, { label: "O-cha o motte ikite kudasai", isCorrect: false }, { label: "O-cha o nomina desu", isCorrect: false }] },
         { question: "30. Qual frase resume sua conquista A2?", options: [{ label: "Nihongo ga dandan jouzu ni narimashita! (Meu japonês melhorou muito!)", isCorrect: true }, { label: "Nihongo ga zenzen wakarimasen", isCorrect: false }, { label: "Nihongo o yameru tsumori desu", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "まいにち にほんご を れんしゅう して じょうず に なりました",
+            translation: "Pratiquei japonês todos os dias e fiquei bom.",
+            chunks: ["まいにち", "にほんご", "を", "れんしゅう", "して", "じょうず", "に", "なりました"]
+        },
+        {
+            sentenceJp: "これからも にほんご の べんきょう を つづけます",
+            translation: "Continuarei estudando japonês daqui para frente.",
+            chunks: ["これからも", "にほんご", "の", "べんきょう", "を", "つづけます"]
+        }
     ],
     stage4_dialog: [
         { scenario: "Situação 1: No balcão de informações turísticas em Kyoto organizando o roteiro.", npcName: "Agente de Turismo A2", npcMessage: "[Seu Nome]-san, konnichiwa! Kyoto de nani o shitai desu ka? (Boa tarde! O que quer fazer em Kyoto?)", options: [{ text: "Yuumei na o-dera ni ikitai desu! (Quero ir a um templo famoso!)", feedback: "Excelente expressão de desejo!", isCorrect: true }, { text: "O-dera wa oishii desu.", feedback: "Disse que o templo é gostoso.", isCorrect: false }, { text: "Sayounara!", feedback: "Despediu-se imediatamente.", isCorrect: false }] },

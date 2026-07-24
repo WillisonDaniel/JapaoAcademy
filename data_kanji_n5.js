@@ -13,6 +13,26 @@ const kanjiN5Data = [
             example: "これは漢字です。漢字は日本語の文字ではありません。中国語から来ました。",
             translation: "Isto é um kanji. Kanji não é um caractere japonês. Veio do chinês."
         },
+        readingText: {
+            title: "漢字の歴史と書き方 (História e Escrita dos Kanjis)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby>、<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えます。<ruby>漢字<rt>かんじ</rt></ruby>は<ruby>中国<rt>ちゅうごく</rt></ruby>から<ruby>来<rt>き</rt></ruby>ました。<ruby>正<rt>ただ</rt></ruby>しい<ruby>順番<rt>じゅんばん</rt></ruby>で<ruby>書<rt>か</rt></ruby>くことが<ruby>大切<rt>たいせつ</rt></ruby>です。",
+            romaji: "Watashi wa mainichi, kanji no imi o kangaemasu. Kanji wa Chuugoku kara kimashita. Tadashii junban de kaku koto ga taisetsu desu.",
+            translation: "Eu penso no significado dos ideogramas todos os dias. Os ideogramas vieram da China. É importante escrever na ordem correta dos traços.",
+            comprehensionQuiz: [
+                {
+                    q: "De onde vieram os kanjis segundo o texto?",
+                    options: ["China (中国)", "Japão (日本)", "Coreia (韓国)", "Índia (インド)"],
+                    a: "China (中国)",
+                    type: "choice"
+                },
+                {
+                    q: "O que é considerado importante (大切) na hora de escrever?",
+                    options: ["Escrever na ordem correta (正しい順番)", "Escrever rápido", "Usar caneta vermelha", "Desenhar sem olhar"],
+                    a: "Escrever na ordem correta (正しい順番)",
+                    type: "choice"
+                }
+            ]
+        },
         kanjis: [
             {
                 character: "漢",
@@ -144,42 +164,42 @@ const kanjiN5Data = [
         quiz: [
             { q: "Qual é o nome dado à leitura de origem chinesa dos ideogramas?", a: "onyomi", type: "romaji" },
             { q: "Qual é o nome dado à leitura de origem nativa japonesa dos ideogramas?", a: "kunyomi", type: "romaji" },
-            { 
-                q: "A leitura Kunyomi é geralmente usada quando o Kanji está isolado na frase?", 
-                options: ["sim", "nao"], 
-                a: "sim", 
-                type: "choice" 
+            {
+                q: "A leitura Kunyomi é geralmente usada quando o Kanji está isolado na frase?",
+                options: ["sim", "nao"],
+                a: "sim",
+                type: "choice"
             },
-            { 
-                q: "Como se chama o fenômeno fonético onde a consoante inicial muda para um som sonoro (ex: hito virando bito)?", 
-                options: ["Rendaku", "Okurigana", "Kakijun", "Jukugo"], 
-                a: "Rendaku", 
-                type: "choice" 
+            {
+                q: "Como se chama o fenômeno fonético onde a consoante inicial muda para um som sonoro (ex: hito virando bito)?",
+                options: ["Rendaku", "Okurigana", "Kakijun", "Jukugo"],
+                a: "Rendaku",
+                type: "choice"
             },
             { q: "Qual é o termo em romaji para a regra e ordem correta de escrita dos traços de um kanji?", a: "kakijun", type: "romaji" },
-            { 
-                q: "Como é chamada a raiz ou parte fundamental que ajuda a classificar e dar sentido a um Kanji?", 
-                options: ["Radical (Busshu)", "Okurigana", "Sufixo", "Vogal"], 
-                a: "Radical (Busshu)", 
-                type: "choice" 
+            {
+                q: "Como é chamada a raiz ou parte fundamental que ajuda a classificar e dar sentido a um Kanji?",
+                options: ["Radical (Busshu)", "Okurigana", "Sufixo", "Vogal"],
+                a: "Radical (Busshu)",
+                type: "choice"
             },
-            { 
-                q: "Em palavras compostas por dois ou mais kanjis juntos (Jukugo), qual leitura costuma ser a mais utilizada?", 
-                options: ["Onyomi", "Kunyomi", "Hiragana puro", "Nenhum"], 
-                a: "Onyomi", 
-                type: "choice" 
+            {
+                q: "Em palavras compostas por dois ou mais kanjis juntos (Jukugo), qual leitura costuma ser a mais utilizada?",
+                options: ["Onyomi", "Kunyomi", "Hiragana puro", "Nenhum"],
+                a: "Onyomi",
+                type: "choice"
             },
-            { 
-                q: "Nos dicionários de japonês, a leitura Onyomi costuma ser representada em qual silabário?", 
-                options: ["Katakana", "Hiragana", "Romaji", "漢字"], 
-                a: "Katakana", 
-                type: "choice" 
+            {
+                q: "Nos dicionários de japonês, a leitura Onyomi costuma ser representada em qual silabário?",
+                options: ["Katakana", "Hiragana", "Romaji", "漢字"],
+                a: "Katakana",
+                type: "choice"
             },
-            { 
-                q: "Nos dicionários, a leitura Kunyomi costuma ser representada em qual silabário?", 
-                options: ["Hiragana", "Katakana", "Romaji", "Inglês"], 
-                a: "Hiragana", 
-                type: "choice" 
+            {
+                q: "Nos dicionários, a leitura Kunyomi costuma ser representada em qual silabário?",
+                options: ["Hiragana", "Katakana", "Romaji", "Inglês"],
+                a: "Hiragana",
+                type: "choice"
             },
             { q: "O sistema de escrita japonês moderno é composto por três pilares: Hiragana, Katakana e...?", a: "kanji", type: "romaji" }
         ]
@@ -194,6 +214,26 @@ const kanjiN5Data = [
             explanation: "No japonês, números NÃO existem sozinhos com substantivos — precisam de CONTADORES específicos. Os mais essenciais do N5 são: 円 (en) para preços em iene; 個 (ko) para objetos pequenos/redondos; 本 (hon) para objetos cilíndricos longos (canetas, garrafas); 枚 (mai) para objetos planos (papéis, camisas). Para perguntar o preço: いくらですか？ (Ikura desu ka? = Quanto custa?)",
             example: "このペンは三本で五百円です。りんごが二個あります。",
             translation: "Estas três canetas custam quinhentos ienes. Há duas maçãs."
+        },
+        readingText: {
+            title: "デパートで買い物 (Compras na Loja de Departamentos)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby>、<ruby>百円<rt>ひゃくえん</rt></ruby>ショップで<ruby>本<rt>ほん</rt></ruby>を<ruby>一冊<rt>いっさつ</rt></ruby>と<ruby>ペン<rt>ぺん</rt></ruby>を<ruby>三本<rt>さんぼん</rt></ruby><ruby>買<rt>か</rt></ruby>いました。<ruby>全部<rt>ぜんぶ</rt></ruby>で<ruby>四百円<rt>よんひゃくえん</rt></ruby>でした。<ruby>千円<rt>せんえん</rt></ruby>を<ruby>払<rt>はら</rt></ruby>って、おつりを<ruby>六百円<rt>ろっぴゃくえん</rt></ruby><ruby>受<rt>う</rt></ruby>け<ruby>取<rt>と</rt></ruby>りました。",
+            romaji: "Watashi wa kinou, hyakuen shoppu de hon o issatsu to pen o sanbon kaimashita. Zenbu de yonhyakuen deshita. Sen'en o haratte, otsuri o roppyakuen uketorimashita.",
+            translation: "Ontem, comprei um livro e três canetas em uma loja de 100 ienes. Deu quatrocentos ienes no total. Paguei com mil ienes e recebi seiscentos ienes de troco.",
+            comprehensionQuiz: [
+                {
+                    q: "Quanto custaram as compras no total (全部)?",
+                    options: ["400 ienes (四百円)", "100 ienes (百円)", "600 ienes (六百円)", "1000 ienes (千円)"],
+                    a: "400 ienes (四百円)",
+                    type: "choice"
+                },
+                {
+                    q: "Quanto de troco a pessoa recebeu ao pagar com 1000 ienes?",
+                    options: ["600 ienes (六百円)", "500 ienes (五百円)", "300 ienes (三百円)", "400 ienes (四百円)"],
+                    a: "600 ienes (六百円)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -490,7 +530,7 @@ const kanjiN5Data = [
                     }
                 ]
             }
-            
+
         ],
         quiz: [
             { q: "Como se diz 'um' em romaji na leitura onyomi (一)?", a: "ichi", type: "romaji" },
@@ -505,7 +545,7 @@ const kanjiN5Data = [
             { q: "Como se diz 'oito' em romaji na leitura onyomi (八)?", options: ["hachi", "nana", "roku", "kyuu"], a: "hachi", type: "choice" }
         ]
     },
-    
+
     {
         module: 3,
         title: "Módulo 3: Tempo, Dias da Semana e Calendário",
@@ -515,6 +555,26 @@ const kanjiN5Data = [
             explanation: "Para indicar QUANDO algo acontece, use に após horas, dias e meses (ex: 月曜日に - na segunda-feira; 三時に - às três horas). Para expressar uma faixa de tempo, use から (kara = de/a partir de) e まで (made = até/antes de): 月曜日から金曜日まで trabalho. Para durações (quanto tempo dura), NÃO use に — use apenas o número com contador.",
             example: "水曜日の二時から四時まで日本語のクラスがあります。",
             translation: "Na quarta-feira, tenho aula de japonês das duas às quatro horas."
+        },
+        readingText: {
+            title: "一週間の予定 (A Agenda da Semana)",
+            japanese: "<ruby>月曜日<rt>げつようび</rt></ruby>から<ruby>金曜日<rt>きんようび</rt></ruby>まで<ruby>朝<rt>あさ</rt></ruby><ruby>九時<rt>くじ</rt></ruby>に<ruby>会社<rt>かいしゃ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<ruby>水曜日<rt>すいようび</rt></ruby>の<ruby>午後<rt>ごご</rt></ruby><ruby>七時<rt>しちじ</rt></ruby><ruby>半<rt>はん</rt></ruby>から<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。<ruby>土曜日<rt>どようび</rt></ruby>と<ruby>日曜日<rt>にちようび</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みです。",
+            romaji: "Getsuyoubi kara kinyoubi made asa kuji ni kaisha e ikimasu. Suiyoubi no gogo shichiji han kara nihongo o benkyou shimasu. Doyoubi to nichiyoubi wa yasumi desu.",
+            translation: "De segunda a sexta-feira, vou para a empresa às nove horas da manhã. Na quarta-feira, a partir das sete e meia da noite, estudo japonês. Sábado e domingo são folga.",
+            comprehensionQuiz: [
+                {
+                    q: "Em quais dias da semana a pessoa tem folga (休み)?",
+                    options: ["Sábado e Domingo (土曜日と日曜日)", "Segunda e Sexta", "Quarta-feira", "Todos os dias"],
+                    a: "Sábado e Domingo (土曜日と日曜日)",
+                    type: "choice"
+                },
+                {
+                    q: "A que horas começa a aula de japonês na quarta-feira?",
+                    options: ["19:30 (七時半)", "09:00 (九時)", "18:00 (六時)", "20:00 (八時)"],
+                    a: "19:30 (七時半)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -857,6 +917,26 @@ const kanjiN5Data = [
             example: "公園に大きい木があります。その木の下に白い犬がいます。",
             translation: "Há uma grande árvore no parque. Embaixo dessa árvore há um cachorro branco."
         },
+        readingText: {
+            title: "富士山と日本の自然 (O Monte Fuji e a Natureza do Japão)",
+            japanese: "<ruby>日本<rt>にほん</rt></ruby>には<ruby>高<rt>たか</rt></ruby>い<ruby>山<rt>やま</rt></ruby>と<ruby>美<rt>うつく</rt></ruby>しい<ruby>川<rt>かわ</rt></ruby>がたくさんあります。<ruby>一番<rt>いちばん</rt></ruby><ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>山<rt>やま</rt></ruby>は<ruby>富士山<rt>ふじさん</rt></ruby>です。<ruby>夏<rt>なつ</rt></ruby>に<ruby>空<rt>そら</rt></ruby>が<ruby>青<rt>あお</rt></ruby>い<ruby>日<rt>ひ</rt></ruby>、<ruby>山<rt>やま</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>から<ruby>太陽<rt>たいよう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることができます。",
+            romaji: "Nihon ni wa takai yama to utsukushii kawa ga takusan arimasu. Ichiban yuumei na yama wa Fujisan desu. Natsu ni sora ga aoi hi, yama no ue kara taiyou o miru koto ga dekimasu.",
+            translation: "No Japão há muitas montanhas altas e rios bonitos. A montanha mais famosa é o Monte Fuji. No verão, nos dias em que o céu está azul, é possível ver o sol de cima da montanha.",
+            comprehensionQuiz: [
+                {
+                    q: "Qual é a montanha mais famosa do Japão segundo o texto?",
+                    options: ["Monte Fuji (富士山)", "Monte Everest", "Monte Aso", "Monte Takao"],
+                    a: "Monte Fuji (富士山)",
+                    type: "choice"
+                },
+                {
+                    q: "De onde é possível ver o sol em dias de céu azul no verão?",
+                    options: ["Do topo da montanha (山の上)", "Do rio", "De dentro de casa", "Do mar"],
+                    a: "Do topo da montanha (山の上)",
+                    type: "choice"
+                }
+            ]
+        },
         kanjis: [
             {
                 character: "山",
@@ -1093,6 +1173,26 @@ const kanjiN5Data = [
             example: "本はテーブルの上にあります。猫はいすの下にいます。",
             translation: "O livro está em cima da mesa. O gato está embaixo da cadeira."
         },
+        readingText: {
+            title: "部屋の中の探し物 (Procurando Coisas no Quarto)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>の<ruby>中<rt>なか</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>と<ruby>眼鏡<rt>めがね</rt></ruby>があります。<ruby>椅子<rt>いす</rt></ruby>の<ruby>下<rt>した</rt></ruby>には<ruby>小<rt>ちい</rt></ruby>さい<ruby>猫<rt>ねこ</rt></ruby>がいます。<ruby>部屋<rt>へや</rt></ruby>の<ruby>外<rt>そと</rt></ruby>から<ruby>母<rt>はは</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえます。",
+            romaji: "Watashi no heya no naka o mimasu. Tsukue no ue ni hon to megane ga arimasu. Isu no shita ni wa chiisai neko ga imasu. Heya no soto kara haha no koe ga kikoemasu.",
+            translation: "Olho para o interior do meu quarto. Em cima da escrivaninha há livros e óculos. Embaixo da cadeira há um gato pequeno. Do lado de fora do quarto consigo ouvir a voz da minha mãe.",
+            comprehensionQuiz: [
+                {
+                    q: "O que está em cima da escrivaninha (机の上)?",
+                    options: ["Livros e óculos (本と眼鏡)", "Um gato pequeno", "A bolsa nova", "Comida"],
+                    a: "Livros e óculos (本と眼鏡)",
+                    type: "choice"
+                },
+                {
+                    q: "Onde está o gato pequeno (小さい猫)?",
+                    options: ["Embaixo da cadeira (椅子の下)", "Em cima da escrivaninha", "Fora do quarto", "Atrás da porta"],
+                    a: "Embaixo da cadeira (椅子の下)",
+                    type: "choice"
+                }
+            ]
+        },
         kanjis: [
             {
                 character: "上",
@@ -1316,7 +1416,7 @@ const kanjiN5Data = [
             { q: "Como se diz o lado 'esquerda' na leitura kunyomi em romaji (左)?", options: ["hidari", "migi", "soto", "naka"], a: "hidari", type: "choice" },
             { q: "Como se diz 'frente / antes' na leitura kunyomi em romaji (前)?", a: "mae", type: "romaji" },
             { q: "Como se diz 'atrás / parte traseira' em romaji (後ろ)?", a: "ushiro", type: "romaji" }
-        ]    
+        ]
     },
 
     {
@@ -1328,6 +1428,26 @@ const kanjiN5Data = [
             explanation: "A partícula の (no) é multifuncional no N5: (1) Indica POSSE como 'de': 私の本 = meu livro (lit. livro de mim); 田中さんの家族 = família do Sr. Tanaka. (2) Liga substantivos descrevendo o tipo: 女の人 = mulher (lit. pessoa do tipo mulher). (3) Substitui um substantivo já mencionado (pronome): この本は私のです = Este livro é meu. Note a diferença cultural: use vocabulário humilde para sua própria família (父 chichi) e respeitoso para a família alheia (お父さん otousan).",
             example: "これは私の家族の写真です。左が父で、右が母です。",
             translation: "Esta é uma foto da minha família. À esquerda é meu pai e à direita é minha mãe."
+        },
+        readingText: {
+            title: "私の家族と写真 (Minha Família e a Foto)",
+            japanese: "これは<ruby>私<rt>わたし</rt></ruby>の<ruby>家族<rt>かぞく</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby>です。<ruby>父<rt>ちち</rt></ruby>と<ruby>母<rt>はは</rt></ruby>、そして<ruby>子<rt>こ</rt></ruby>どもが<ruby>二人<rt>ふたり</rt></ruby>います。<ruby>男<rt>おとこ</rt></ruby>の<ruby>子<rt>こ</rt></ruby>は<ruby>手<rt>て</rt></ruby>を<ruby>挙<rt>あ</rt></ruby>げていて、<ruby>女<rt>おんな</rt></ruby>の<ruby>子<rt>こ</rt></ruby>は<ruby>口<rt>くち</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けて<ruby>笑<rt>わら</rt></ruby>っています。",
+            romaji: "Kore wa watashi no kazoku no shashin desu. Chichi to haha, soshite kodomo ga futari imasu. Otoko no ko wa te o agete ite, onna no ko wa kuchi o akete waratte imasu.",
+            translation: "Esta é uma foto da minha família. Há meu pai, minha mãe e duas crianças. O menino está levantando a mão e a menina está sorrindo com a boca aberta.",
+            comprehensionQuiz: [
+                {
+                    q: "Quantas crianças (子ども) aparecem na foto de família?",
+                    options: ["Duas pessoas (二人)", "Uma pessoa (一人)", "Três pessoas (三人)", "Quatro pessoas (四人)"],
+                    a: "Duas pessoas (二人)",
+                    type: "choice"
+                },
+                {
+                    q: "O que o menino (男の子) está fazendo na foto?",
+                    options: ["Levantando a mão (手を挙げている)", "Comendo um bolo", "Dormindo", "Correndo"],
+                    a: "Levantando a mão (手を挙げている)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -1560,7 +1680,7 @@ const kanjiN5Data = [
             { q: "Como se diz 'amigo' em romaji (友達)?", a: "tomodachi", type: "romaji" }
         ]
     },
-    
+
     {
         module: 7,
         title: "Módulo 7: Verbos de Ação e Movimento",
@@ -1570,6 +1690,26 @@ const kanjiN5Data = [
             explanation: "As três partículas de ação mais importantes do N5: を (o): marca o OBJETO DIRETO que recebe a ação → 本を読みます (leio o livro). へ ou に (e / ni): indica o DESTINO ou DIREÇÃO do movimento → 学校へ行きます (vou à escola). で (de): indica o LOCAL onde uma ação dinâmica acontece → 図書館で勉強します (estudo na biblioteca). ATENÇÃO: に para estado/existência, で para ação ativa. Forma do passado: -ます → -ました.",
             example: "図書館で日本語の本を読みました。来週、東京へ行きます。",
             translation: "Li um livro em japonês na biblioteca. Na semana que vem, vou a Tóquio."
+        },
+        readingText: {
+            title: "図書室での一日 (Um Dia na Sala de Leitura)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby>、<ruby>学校<rt>がっこう</rt></ruby>の<ruby>図書室<rt>としょしつ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。<ruby>友<rt>とも</rt></ruby>だちと<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで、<ruby>新<rt>あたら</rt></ruby>しい<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>書<rt>か</rt></ruby>きました。<ruby>昼<rt>ひる</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたあと、<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んで<ruby>帰<rt>かえ</rt></ruby>りました。",
+            romaji: "Watashi wa kinou, gakkou no toshoshitsu e ikimashita. Tomodachi to issho ni hon o yonde, atarashii kanji o kakimashita. Hirugohan o tabeta ato, mizu o nonde kaerimashita.",
+            translation: "Ontem fui à sala de leitura da escola. Junto com meu amigo, li um livro e escrevi novos kanjis. Depois de almoçar, bebi água e voltei para casa.",
+            comprehensionQuiz: [
+                {
+                    q: "Aonde a pessoa foi ontem (昨日)?",
+                    options: ["À sala de leitura da escola (学校の図書室)", "Ao parque", "Ao hospital", "À praia"],
+                    a: "À sala de leitura da escola (学校の図書室)",
+                    type: "choice"
+                },
+                {
+                    q: "O que a pessoa fez depois de almoçar (昼ご飯を食べたあと)?",
+                    options: ["Beteu água e voltou para casa (水を飲んで帰った)", "Comprou um livro", "Dormiu na escola", "Jogou futebol"],
+                    a: "Beteu água e voltou para casa (水を飲んで帰った)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -1797,7 +1937,7 @@ const kanjiN5Data = [
         ]
     },
 
-{
+    {
         module: 8,
         title: "Módulo 8: Adjetivos e Qualidades N5",
         description: "Deixe o seu japonês muito mais expressivo! Domine os pares de adjetivos opostos mais essenciais do N5 (grande/pequeno, novo/velho, alto/barato), as cores fundamentais e a regra de modificação de substantivos.",
@@ -1806,6 +1946,26 @@ const kanjiN5Data = [
             explanation: "O japonês tem dois tipos de adjetivos com regras distintas. ADJETIVOS-い (terminam em い): conectam direto ao substantivo → 大きいいえ (casa grande); negativa: 大きくない (não é grande); passado: 大きかった (era grande). ADJETIVOS-な (originalmente substantivos): precisam de な antes do substantivo → 有名な人 (pessoa famosa); negativa: 有名ではない; passado: 有名だった. Para comparações no N5: A は B より [Adjetivo] です (A é mais [adj] que B); A と B と どちらが [Adj] ですか (Qual dos dois, A ou B, é mais [adj]?).",
             example: "新しい車より古い自転車のほうが好きです。白い猫はとても小さくて可愛いです。",
             translation: "Prefiro a bicicleta velha ao carro novo. O gato branco é muito pequeno e fofo."
+        },
+        readingText: {
+            title: "新しい鞄と買い物 (A Bolsa Nova e as Compras)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>昨日<rt>きのう</rt></ruby>、<ruby>新<rt>あたら</rt></ruby>しい<ruby>赤<rt>あか</rt></ruby>い<ruby>鞄<rt>かばん</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。<ruby>前<rt>まえ</rt></ruby>の<ruby>鞄<rt>かばん</rt></ruby>は<ruby>古<rt>ふる</rt></ruby>くて<ruby>小<rt>ちい</rt></ruby>さかったです。<ruby>新<rt>あたら</rt></ruby>しい<ruby>鞄<rt>かばん</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きくて、とても<ruby>安<rt>やす</rt></ruby>かったです。<ruby>白<rt>しろ</rt></ruby>い<ruby>服<rt>ふく</rt></ruby>にも<ruby>合<rt>あ</rt></ruby>います。",
+            romaji: "Watashi wa kinou, atarashii akai kaban o kaimashita. Mae no kaban wa furukute chiisakatta desu. Atarashii kaban wa ookikute, totemo yasukatta desu. Shiroi fuku ni mo aimasu.",
+            translation: "Ontem comprei uma bolsa vermelha nova. A bolsa anterior era velha e pequena. A bolsa nova é grande e foi muito barata. Combina também com roupas brancas.",
+            comprehensionQuiz: [
+                {
+                    q: "Como era a bolsa antiga (前の鞄)?",
+                    options: ["Velha e pequena (古くて小さい)", "Nova e grande (新しくて大きい)", "Cara e vermelha (高くて赤い)", "Branca e comprida (白くて長い)"],
+                    a: "Velha e pequena (古くて小さい)",
+                    type: "choice"
+                },
+                {
+                    q: "Qual era a cor da nova bolsa comprada ontem (新しい鞄)?",
+                    options: ["Vermelha (赤い)", "Branca (白い)", "Azul (青い)", "Preta (黒い)"],
+                    a: "Vermelha (赤い)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -2042,6 +2202,26 @@ const kanjiN5Data = [
             explanation: "As palavras interrogativas do N5 são essenciais na vida cotidiana. Use: 何 (nani/nan = O quê) → 何を飲みますか (O que bebe?); どこ (doko = Onde) → 学校はどこですか (Onde é a escola?); いつ (itsu = Quando) → 試験はいつですか (Quando é a prova?); 誤 (dare = Quem) → あの人は誤ですか (Quem é aquela pessoa?); どの (dono = Qual) → どの本ですか (Qual livro?). NUNCA use ka (か) em afirmativas; ele SEMPRE indica pergunta.",
             example: "すみません、驅はどこですか？この魚は何ですか？いつから学校が始まりますか？",
             translation: "Com licença, onde é a estação? O que é esse peixe? Quando começa a escola?"
+        },
+        readingText: {
+            title: "東京の学生生活 (A Vida de Estudante em Tóquio)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby>、<ruby>朝<rt>あさ</rt></ruby><ruby>八時<rt>はちじ</rt></ruby>に<ruby>電車<rt>でんしゃ</rt></ruby>に乗って<ruby>学校<rt>がっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<ruby>学校<rt>がっこう</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くに<ruby>本屋<rt>ほんや</rt></ruby>と<ruby>大<rt>おお</rt></ruby>きい<ruby>店<rt>みせ</rt></ruby>があります。<ruby>放課後<rt>ほうかご</rt></ruby>、<ruby>駅<rt>えき</rt></ruby>の前で<ruby>友<rt>とも</rt></ruby>だちと<ruby>会<rt>あ</rt></ruby>って<ruby>日本語<rt>にほんご</rt></ruby>で<ruby>話<rt>はな</rt></ruby>します。",
+            romaji: "Watashi wa mainichi, asa hachiji ni densha ni notte gakkou e ikimasu. Gakkou no chikaku ni hon'ya to ookii mise ga arimasu. Houkago, eki no mae de tomodachi to atte nihongo de hanashimasu.",
+            translation: "Todos os dias, pego o trem às oito da manhã e vou para a escola. Perto da escola há uma livraria e uma loja grande. Depois da aula, me encontro com meus amigos na frente da estação e conversamos em japonês.",
+            comprehensionQuiz: [
+                {
+                    q: "Como a pessoa vai para a escola às 8h da manhã?",
+                    options: ["De trem (電車に乗って)", "A pé", "De carro", "De ônibus"],
+                    a: "De trem (電車に乗って)",
+                    type: "choice"
+                },
+                {
+                    q: "Onde a pessoa se encontra com os amigos depois da aula (放課後)?",
+                    options: ["Na frente da estação (駅の前)", "Na livraria", "Dentro da escola", "No parque"],
+                    a: "Na frente da estação (駅の前)",
+                    type: "choice"
+                }
+            ]
         },
         kanjis: [
             {
@@ -2300,6 +2480,26 @@ const kanjiN5Data = [
             example: "山田さんは魚料理が大妃きですが、肉がきらいです。寓海老山を一つください。",
             translation: "O Sr. Yamada adora peixe, mas não gosta de carne. Por favor, me dê um onigiride salmon."
         },
+        readingText: {
+            title: "和食レストランで夕食 (Jantar no Restaurante de Culinária Japonesa)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>夜<rt>よる</rt></ruby>、<ruby>友達<rt>ともだち</rt></ruby>と<ruby>和食<rt>わしょく</rt></ruby>の<ruby>店<rt>みせ</rt></ruby>で<ruby>新鮮<rt>しんせん</rt></ruby>な<ruby>魚<rt>さかな</rt></ruby>と<ruby>野<rt>や</rt></ruby><ruby>菜<rt>さい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べました。<ruby>美味<rt>おい</rt></ruby>しい<ruby>お茶<rt>ちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みながら、<ruby>色<rt>いろ</rt></ruby>々な<ruby>事<rt>こと</rt></ruby>を<ruby>話<rt>はな</rt></ruby>しました。<ruby>最後<rt>さいご</rt></ruby>に<ruby>果物<rt>くだもの</rt></ruby>を<ruby>買<rt>か</rt></ruby>って<ruby>帰<rt>かえ</rt></ruby>りました。",
+            romaji: "Watashi wa yoru, tomodachi to washoku no mise de shinsen na sakana to yasai o tabemashita. Oishii ocha o nominagara, iroiro na koto o hanashimashita. Saigo ni kudamono o katte kaerimashita.",
+            translation: "À noite, comi peixe fresco e vegetais com meus amigos em um restaurante de comida japonesa. Enquanto bebíamos um delicioso chá, conversamos sobre várias coisas. Por fim, compramos frutas e fomos para casa.",
+            comprehensionQuiz: [
+                {
+                    q: "O que eles comeram no restaurante de culinária japonesa (和食の店)?",
+                    options: ["Peixe fresco e vegetais (新鮮な魚と野菜)", "Carne e pão", "Apenas frutas", "Sopa instantânea"],
+                    a: "Peixe fresco e vegetais (新鮮な魚と野菜)",
+                    type: "choice"
+                },
+                {
+                    q: "O que eles compraram antes de voltar para casa (最後に)?",
+                    options: ["Frutas (果物)", "Saquê (お酒)", "Roupas", "Doces"],
+                    a: "Frutas (果物)",
+                    type: "choice"
+                }
+            ]
+        },
         kanjis: [
             {
                 character: "魚",
@@ -2504,6 +2704,26 @@ const kanjiN5Data = [
         title: "Módulo 11: Tabela Geral e Revisão N5",
         description: "A Tabela Periódica do JLPT N5! Consulte aqui todos os ideogramas dominados ao longo do curso, incluindo o bônus de culinária. Use este guia como referência rápida para revisar significados, leituras e conferir em qual módulo cada Kanji foi introduzido.",
         isReviewTable: true,
+        readingText: {
+            title: "N5漢字の復習とこれからの道 (Revisão dos Kanjis N5 e o Caminho Futuro)",
+            japanese: "<ruby>私<rt>わたし</rt></ruby>はN5の<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>百<rt>ひゃく</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>しました。<ruby>毎日<rt>まいにち</rt></ruby><ruby>新<rt>あたら</rt></ruby>しい<ruby>言葉<rt>ことば</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えるのは<ruby>楽<rt>たの</rt></ruby>しいです。<ruby>明日<rt>あした</rt></ruby>からN4の<ruby>勉強<rt>べんきょう</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めます。<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>って<ruby>沢山<rt>たくさん</rt></ruby><ruby>話<rt>はな</rt></ruby>したいです。",
+            romaji: "Watashi wa N5 no kanji o hyaku ijou benkyou shimashita. Mainichi atarashii kotoba o oboeru no wa tanoshii desu. Ashita kara N4 no benkyou o hajimemasu. Nihon e itte takusan hanashitai desu.",
+            translation: "Estudei mais de cem kanjis do nível N5. É divertido memorizar novas palavras todos os dias. A partir de amanhã, começarei a estudar para o N4. Quero ir ao Japão e conversar bastante.",
+            comprehensionQuiz: [
+                {
+                    q: "Quantos kanjis N5 a pessoa estudou segundo o texto de revisão?",
+                    options: ["Mais de 100 kanjis (百以上)", "Apenas 10 kanjis", "50 kanjis", "500 kanjis"],
+                    a: "Mais de 100 kanjis (百以上)",
+                    type: "choice"
+                },
+                {
+                    q: "O que a pessoa planeja começar a estudar a partir de amanhã (明日から)?",
+                    options: ["Estudar o N4 (N4の勉強)", "Estudar inglês", "Trabalhar em uma empresa", "Viajar sem estudar"],
+                    a: "Estudar o N4 (N4の勉強)",
+                    type: "choice"
+                }
+            ]
+        },
         kanjis: [
             // --- MÓDULO 2: NÚMEROS E MOEDA ---
             { character: "一", meaning: "Um", kunyomi: "ひと・つ (hitotsu)", onyomi: "イチ / イツ (ICHI / ITSU)", originModule: 2 },
@@ -2621,10 +2841,10 @@ const kanjiN5Data = [
         ]
     },
 
-        ]
-    
-    // Módulo 2 e seguintes podem ser adicionados aqui quando chegarmos neles!
-    // { module: 2, title: "Módulo 2: Tempo e Calendário", kanjis: [...] }
+]
+
+// Módulo 2 e seguintes podem ser adicionados aqui quando chegarmos neles!
+// { module: 2, title: "Módulo 2: Tempo e Calendário", kanjis: [...] }
 
 
 // Esporta globalmente ou para o app.js

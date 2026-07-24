@@ -262,10 +262,16 @@ function getCourseData(mode) {
         return (typeof HIRA_COURSE_DATA !== 'undefined' ? HIRA_COURSE_DATA : (typeof hiraganaData !== 'undefined' ? hiraganaData : null));
     } else if (mode === 'katakana') {
         return (typeof KATA_COURSE_DATA !== 'undefined' ? KATA_COURSE_DATA : (typeof katakanaData !== 'undefined' ? katakanaData : null));
-    } else if (mode === 'kanji') {
+    } else if (mode === 'kanji' || mode === 'kanji_n5') {
         return (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null);
     } else if (mode === 'kanji_n4') {
         return (typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null);
+    } else if (mode === 'kanji_n3') {
+        return (typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null);
+    } else if (mode === 'kanji_n2') {
+        return (typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null);
+    } else if (mode === 'kanji_n1') {
+        return (typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null);
     }
     return null;
 }
@@ -344,8 +350,11 @@ function toggleModuloConcluido(modIdx, mode) {
 
     if (t === 'hiragana') { progressKey = 'progress_hiragana'; labelCurso = 'Hiragana'; }
     else if (t === 'katakana') { progressKey = 'progress_katakana'; labelCurso = 'Katakana'; }
-    else if (t === 'kanji') { progressKey = 'progress_kanji'; labelCurso = 'Kanji N5'; }
+    else if (t === 'kanji' || t === 'kanji_n5') { progressKey = 'progress_kanji'; labelCurso = 'Kanji N5'; }
     else if (t === 'kanji_n4') { progressKey = 'progress_kanji_n4'; labelCurso = 'Kanji N4'; }
+    else if (t === 'kanji_n3') { progressKey = 'progress_kanji_n3'; labelCurso = 'Kanji N3'; }
+    else if (t === 'kanji_n2') { progressKey = 'progress_kanji_n2'; labelCurso = 'Kanji N2'; }
+    else if (t === 'kanji_n1') { progressKey = 'progress_kanji_n1'; labelCurso = 'Kanji N1'; }
     else return;
 
     if (!progressoGlobal[progressKey]) progressoGlobal[progressKey] = [];
@@ -354,26 +363,37 @@ function toggleModuloConcluido(modIdx, mode) {
     const modulesList = getCourseData(t);
     const modTitle = modulesList && modulesList[modIdx] ? (modulesList[modIdx].title || `Módulo ${modIdx + 1}`) : `Módulo ${modIdx + 1}`;
 
+    // Calcula XP proporcional por módulo
+    const totalModulos = modulesList ? modulesList.length : 1;
+    const XP_BUDGETS = { hiragana: 500, katakana: 500, kanji: 550, kanji_n4: 800 };
+    const xpTotalCurso = XP_BUDGETS[t] || 300;
+    const xpPorModulo = Math.max(1, Math.round(xpTotalCurso / totalModulos));
+
     if (idx === -1) {
+        // Marcar como concluído → ganhar XP
         progressoGlobal[progressKey].push(modIdx);
         salvarProgressoGlobal();
         const deck = sincronizarBaralhoSRS(t);
         atualizarBadgeSRS(t);
         playBeep('success');
+        adicionarXP(xpPorModulo, `Módulo de ${labelCurso} concluído`);
         mostrarToast(`✅ <strong>${modTitle}</strong> de ${labelCurso} concluído! <br><small>${deck.length} cards disponíveis no SRS.</small>`);
         registrarAtividadeDiaria();
     } else {
+        // Desmarcar → perder XP
         progressoGlobal[progressKey].splice(idx, 1);
         salvarProgressoGlobal();
         const deck = sincronizarBaralhoSRS(t);
         atualizarBadgeSRS(t);
         playBeep('error');
+        removerXP(xpPorModulo, `Módulo de ${labelCurso} desmarcado`);
         mostrarToast(`↩️ <strong>${modTitle}</strong> de ${labelCurso} desmarcado. <br><small>${deck.length} cards restantes no SRS.</small>`);
     }
 
     atualizarChecklistTabs(t);
     if (t === 'kanji') atualizarUIProgressoKanji();
 }
+
 
 function atualizarChecklistTabs(mode) {
     const wrappers = document.querySelectorAll('#tabContainer .tab-item-wrapper');
@@ -391,7 +411,7 @@ function atualizarChecklistTabs(mode) {
 function loadCourseModule(idx) {
     const mode = document.body.getAttribute('data-mode') || courseMode;
 
-    if (mode === 'kanji' || mode === 'kanji_n4') {
+    if (mode === 'kanji' || (mode && mode.startsWith('kanji_'))) {
         renderKanjiModule(idx);
         return;
     }
@@ -678,9 +698,14 @@ function renderKanjiModule(moduleIndex) {
 
             const canvasId = `canvas-kanji-${moduleIndex}-${index}`;
 
+            const dictItemId = `kanji_${moduleIndex}_${charVal}`;
             card.innerHTML = `
                 <div class="kanji-detail-grid">
-                    <div class="kanji-main-box">
+                    <div class="kanji-main-box" style="position: relative;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 6px;">
+                            <span></span>
+                            ${renderizarBotaoFavorito(dictItemId)}
+                        </div>
                         <div class="kanji-char">${charVal}</div>
                         <div class="kanji-meaning">${meaningVal}</div>
                         <button class="audio-btn" onclick="playKanjiAudio('${charVal}', event)" style="width:100%; margin-top:8px; padding: 8px;">🔊 Ouvir Kanji</button>
@@ -722,7 +747,75 @@ function renderKanjiModule(moduleIndex) {
 
     container.appendChild(gridDiv);
 
-    /// 3. EXERCÍCIOS DE FIXAÇÃO (Final da página)
+    // 3. LEITURA GUIADA EM CONTEXTO (Se houver no módulo - inserido ANTES da seção do quiz)
+    if (moduleData.readingText) {
+        const rtData = moduleData.readingText;
+        const boxId = `kanji-reading-box-${moduleIndex}`;
+
+        let compQuizHTML = '';
+        if (rtData.comprehensionQuiz && Array.isArray(rtData.comprehensionQuiz) && rtData.comprehensionQuiz.length > 0) {
+            const startIdx = (moduleData.quiz ? moduleData.quiz.length : 0) + 100;
+            const questionsHtml = rtData.comprehensionQuiz.map((q, i) => renderQuizQuestion(q, startIdx + i, 'kanji')).join('');
+            compQuizHTML = `
+                <div class="reading-comprehension-section">
+                    <h4 class="reading-comp-title">📝 Questões de Interpretação do Texto:</h4>
+                    ${questionsHtml}
+                </div>
+            `;
+        }
+
+        const readingDiv = document.createElement('div');
+        readingDiv.className = 'kanji-reading-box';
+        readingDiv.id = boxId;
+
+        readingDiv.innerHTML = `
+            <div class="reading-box-header">
+                <div class="reading-title-group">
+                    <span class="reading-icon">📖</span>
+                    <div>
+                        <h3 class="reading-box-title">Leitura Guiada: ${rtData.title || 'Texto em Contexto'}</h3>
+                        <small style="color: var(--text-muted);">Pratique a leitura contextual com ideogramas, furigana e áudio.</small>
+                    </div>
+                </div>
+                <div class="reading-controls">
+                    <button class="reading-btn btn-audio" title="Ouvir Texto em velocidade normal">🔊 Ouvir Texto</button>
+                    <button class="reading-btn btn-slow" title="Ouvir Texto em velocidade lenta">🐢 Lento</button>
+                    <button class="reading-btn btn-furigana" title="Alternar visibilidade do Furigana">👁️ Furigana ON/OFF</button>
+                    <button class="reading-btn btn-romaji" title="Alternar visibilidade do Romaji">🔤 Romaji ON/OFF</button>
+                </div>
+            </div>
+
+            <div class="reading-japanese-text kana-text">
+                ${rtData.japanese || ''}
+                ${rtData.romaji ? `<div class="reading-romaji-text">${rtData.romaji}</div>` : ''}
+            </div>
+
+            ${rtData.translation ? `
+                <details class="reading-translation-details">
+                    <summary class="reading-translation-summary">🇧🇷 Ver Tradução em Português</summary>
+                    <div class="reading-translation-content">
+                        "${rtData.translation}"
+                    </div>
+                </details>
+            ` : ''}
+
+            ${compQuizHTML}
+        `;
+
+        const btnAudio = readingDiv.querySelector('.btn-audio');
+        const btnSlow = readingDiv.querySelector('.btn-slow');
+        const btnFurigana = readingDiv.querySelector('.btn-furigana');
+        const btnRomaji = readingDiv.querySelector('.btn-romaji');
+
+        if (btnAudio) btnAudio.onclick = () => playReadingTextAudio(rtData.japanese, 1.0);
+        if (btnSlow) btnSlow.onclick = () => playReadingTextAudio(rtData.japanese, 0.65);
+        if (btnFurigana) btnFurigana.onclick = () => readingDiv.classList.toggle('hide-furigana');
+        if (btnRomaji) btnRomaji.onclick = () => readingDiv.classList.toggle('hide-romaji');
+
+        container.appendChild(readingDiv);
+    }
+
+    // 4. EXERCÍCIOS DE FIXAÇÃO (Final da página)
     if (moduleData.quiz && moduleData.quiz.length > 0) {
         // Usa a função renderQuizQuestion para alternar entre input e múltipla escolha automaticamente
         let quizHtml = moduleData.quiz.map((q, i) => renderQuizQuestion(q, i, 'kanji')).join('');
@@ -737,6 +830,22 @@ function renderKanjiModule(moduleIndex) {
     }
 
     inicializarTodosOsCanvases();
+}
+
+function playReadingTextAudio(htmlText, rate = 1.0) {
+    if (!('speechSynthesis' in window)) return;
+    const temp = document.createElement('div');
+    temp.innerHTML = htmlText;
+    temp.querySelectorAll('rt').forEach(rt => rt.remove());
+    const cleanText = (temp.textContent || temp.innerText || '').trim();
+
+    if (!cleanText) return;
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.lang = 'ja-JP';
+    utterance.rate = rate;
+    window.speechSynthesis.speak(utterance);
 }
 
 function playKanjiAudio(text, event) {
@@ -1234,6 +1343,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inicialização da Ofensiva Diária e Conquistas
     garantirElementosCabecalhoEModal();
+    aplicarOpcoesLeituraNaInterface();
+    sincronizarOpcoesModal();
     atualizarHeaderStreak();
     checarConquistasGerais();
 });
@@ -1821,6 +1932,105 @@ function getDeckKeySRS(tipo) {
     return 'ja_srs_deck';
 }
 
+// ==========================================
+// CADERNO DE ERROS E FAVORITOS (CUSTOM DECK)
+// ==========================================
+let srsModoFiltro = 'todos'; // 'todos' | 'favoritos' | 'erros'
+
+function getFavoritosDeck() {
+    try {
+        return JSON.parse(localStorage.getItem('ja_favoritos_deck')) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function salvarFavoritosDeck(favs) {
+    localStorage.setItem('ja_favoritos_deck', JSON.stringify(favs));
+}
+
+function getCadernoErros() {
+    try {
+        return JSON.parse(localStorage.getItem('ja_caderno_erros')) || [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function salvarCadernoErros(erros) {
+    localStorage.setItem('ja_caderno_erros', JSON.stringify(erros));
+}
+
+function eFavoritado(itemId) {
+    if (!itemId) return false;
+    const favs = getFavoritosDeck();
+    return favs.includes(String(itemId));
+}
+
+function toggleFavorito(itemId, btnElement) {
+    if (!itemId) return;
+    const strId = String(itemId);
+    let favs = getFavoritosDeck();
+    const idx = favs.indexOf(strId);
+    let agoraFavoritado = false;
+
+    if (idx >= 0) {
+        favs.splice(idx, 1);
+        agoraFavoritado = false;
+    } else {
+        favs.push(strId);
+        agoraFavoritado = true;
+    }
+
+    salvarFavoritosDeck(favs);
+
+    const btns = btnElement ? [btnElement] : document.querySelectorAll(`[data-fav-id="${strId}"]`);
+    btns.forEach(b => {
+        if (agoraFavoritado) {
+            b.classList.add('favoritado');
+            b.innerHTML = '⭐ Favorito';
+        } else {
+            b.classList.remove('favoritado');
+            b.innerHTML = '☆ Favoritar';
+        }
+    });
+
+    if (typeof srsTipoAtivo !== 'undefined') {
+        atualizarBadgeSRS(srsTipoAtivo);
+    }
+}
+
+function registrarErroSRS(itemId) {
+    if (!itemId) return;
+    const strId = String(itemId);
+    let erros = getCadernoErros();
+    if (!erros.includes(strId)) {
+        erros.push(strId);
+        salvarCadernoErros(erros);
+    }
+    if (typeof srsTipoAtivo !== 'undefined') {
+        atualizarBadgeSRS(srsTipoAtivo);
+    }
+}
+
+function renderizarBotaoFavorito(itemId, comLabel = true) {
+    if (!itemId) return '';
+    const isFav = eFavoritado(itemId);
+    const label = comLabel ? (isFav ? '⭐ Favorito' : '☆ Favoritar') : (isFav ? '⭐' : '☆');
+    const favClass = isFav ? 'btn-favoritar favoritado' : 'btn-favoritar';
+    return `<button class="${favClass}" data-fav-id="${itemId}" onclick="toggleFavorito('${itemId}', this)" title="Favoritar">${label}</button>`;
+}
+
+function selecionarModoSRS(modo, tipo) {
+    srsModoFiltro = modo || 'todos';
+
+    document.querySelectorAll('.btn-srs-tab').forEach(btn => btn.classList.remove('active'));
+    const activeTab = document.getElementById(`tab-srs-${modo}`);
+    if (activeTab) activeTab.classList.add('active');
+
+    atualizarBadgeSRS(tipo);
+}
+
 function carregarDeckSRS(tipo) {
     const key = getDeckKeySRS(tipo);
     return JSON.parse(localStorage.getItem(key)) || [];
@@ -2075,9 +2285,22 @@ function atualizarBadgeSRS(tipo) {
     else if (tipo === 'katakana') labelExibicao = 'Katakana';
     else labelExibicao = tipo.toUpperCase();
 
-    const deck = sincronizarBaralhoSRS(tipo);
+    const fullDeck = sincronizarBaralhoSRS(tipo);
     const agora = Date.now();
-    const pendentes = deck.filter(c => c.dueDate <= agora);
+
+    const favs = getFavoritosDeck();
+    const erros = getCadernoErros();
+
+    let deckFiltrado = fullDeck;
+    if (srsModoFiltro === 'favoritos') {
+        deckFiltrado = fullDeck.filter(c => favs.includes(String(c.id)) || (c.drop && favs.includes(String(c.drop.kanji || c.drop.romaji))));
+    } else if (srsModoFiltro === 'erros') {
+        deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
+    }
+
+    const pendentes = srsModoFiltro === 'todos' 
+        ? deckFiltrado.filter(c => c.dueDate <= agora) 
+        : deckFiltrado;
 
     const badge = document.getElementById('srs-badge-count');
     const desc = document.getElementById('srs-banner-desc');
@@ -2085,15 +2308,23 @@ function atualizarBadgeSRS(tipo) {
 
     if (badge) badge.innerText = pendentes.length;
     if (desc) {
-        if (deck.length === 0) {
-            desc.innerText = "Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!";
-            if (btn) btn.innerText = "Iniciar Revisão ➔";
-        } else if (pendentes.length === 0) {
-            desc.innerText = `✨ Suas revisões de hoje estão em dia! Pratique com seu baralho de ${labelExibicao} (${deck.length} cards liberados).`;
-            if (btn) btn.innerText = "Prática Livre do Baralho ➔";
+        if (srsModoFiltro === 'favoritos') {
+            desc.innerText = `⭐ Baralho de Favoritos: ${pendentes.length} card(s) favoritado(s) em ${labelExibicao}.`;
+            if (btn) btn.innerText = "Revisar Favoritos ➔";
+        } else if (srsModoFiltro === 'erros') {
+            desc.innerText = `❌ Caderno de Erros: ${pendentes.length} card(s) com registro de erro em ${labelExibicao}.`;
+            if (btn) btn.innerText = "Praticar Caderno de Erros ➔";
         } else {
-            desc.innerText = `🔥 Você tem ${pendentes.length} item(ns) de ${labelExibicao} aguardando revisão hoje!`;
-            if (btn) btn.innerText = "Iniciar Revisão ➔";
+            if (fullDeck.length === 0) {
+                desc.innerText = "Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!";
+                if (btn) btn.innerText = "Iniciar Revisão ➔";
+            } else if (pendentes.length === 0) {
+                desc.innerText = `✨ Suas revisões de hoje estão em dia! Pratique com seu baralho de ${labelExibicao} (${fullDeck.length} cards liberados).`;
+                if (btn) btn.innerText = "Prática Livre do Baralho ➔";
+            } else {
+                desc.innerText = `🔥 Você tem ${pendentes.length} item(ns) de ${labelExibicao} aguardando revisão hoje!`;
+                if (btn) btn.innerText = "Iniciar Revisão ➔";
+            }
         }
     }
 }
@@ -2105,17 +2336,34 @@ function iniciarSessaoSRS(tipo) {
     }
     srsTipoAtivo = tipo;
 
-    const deck = sincronizarBaralhoSRS(tipo);
-    if (deck.length === 0) {
+    const fullDeck = sincronizarBaralhoSRS(tipo);
+    if (fullDeck.length === 0 && srsModoFiltro === 'todos') {
         alert("Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!");
         return;
     }
 
     const agora = Date.now();
-    let pendentes = deck.filter(c => c.dueDate <= agora);
+    const favs = getFavoritosDeck();
+    const erros = getCadernoErros();
 
+    let deckFiltrado = fullDeck;
+    if (srsModoFiltro === 'favoritos') {
+        deckFiltrado = fullDeck.filter(c => favs.includes(String(c.id)) || (c.drop && favs.includes(String(c.drop.kanji || c.drop.romaji))));
+        if (deckFiltrado.length === 0) {
+            alert("Sua lista de Favoritos está vazia! Clique na estrela ⭐ nos cards para favoritar itens.");
+            return;
+        }
+    } else if (srsModoFiltro === 'erros') {
+        deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
+        if (deckFiltrado.length === 0) {
+            alert("Seu Caderno de Erros está limpo! Nenhum erro registrado neste baralho.");
+            return;
+        }
+    }
+
+    let pendentes = srsModoFiltro === 'todos' ? deckFiltrado.filter(c => c.dueDate <= agora) : deckFiltrado;
     if (pendentes.length === 0) {
-        pendentes = [...deck].sort(() => Math.random() - 0.5);
+        pendentes = [...deckFiltrado].sort(() => Math.random() - 0.5);
     } else {
         pendentes = [...pendentes].sort(() => Math.random() - 0.5);
     }
@@ -2307,6 +2555,7 @@ function processarAvaliacaoSRS(qualidade) {
             cardRef.interval = 1;
             cardRef.easeFactor = Math.max(1.3, cardRef.easeFactor - 0.2);
             srsErrosSessao++;
+            registrarErroSRS(cardData.id);
             playBeep('error');
         } else if (qualidade === 2) {
             cardRef.repetition += 1;
@@ -2371,9 +2620,193 @@ function renderizarConclusaoSRS() {
     if (painelAvaliacao) painelAvaliacao.style.display = 'none';
 }
 
+// ==========================================
+// FUNÇÃO AUXILIAR DE PROCESSAMENTO E EXIBIÇÃO DE JAPONÊS
+// ==========================================
+function formatarTextoJapones(item) {
+    const opts = getOpcoesLeitura(); // { kanji: bool, kana: bool, furigana: bool, romaji: bool }
+
+    let rawText = "";
+    let rawKana = "";
+    let rawRomaji = "";
+
+    if (typeof item === 'string') {
+        rawText = item.trim();
+    } else if (item && typeof item === 'object') {
+        // ATENÇÃO: O campo no dataset chama-se `kanji`, mas pode ser puramente Kana (ex: "おはようございます")!
+        rawText = (item.kanji || item.japanese || item.text || "").trim();
+        rawKana = (item.kana || item.reading || "").trim();
+        rawRomaji = (item.romaji || "").trim();
+    }
+
+    if (!rawText) {
+        return { htmlJapones: "", htmlRomaji: "", htmlCompleto: "", temKanji: false };
+    }
+
+    // Se já é HTML com tag <ruby>: ex <ruby>漢<rt>かん</rt></ruby>
+    if (rawText.includes('<ruby>')) {
+        let htmlJap = rawText;
+        if (!opts.furigana) {
+            htmlJap = htmlJap.replace(/<rt>.*?<\/rt>/gi, '');
+        }
+        if (!opts.kanji && opts.kana) {
+            htmlJap = rawText.replace(/<ruby>(.*?)<rt>(.*?)<\/rt><\/ruby>/gi, '$2');
+        } else if (!opts.kanji && !opts.kana) {
+            htmlJap = '';
+        }
+
+        let htmlRom = (opts.romaji && rawRomaji) ? `<span class="japanese-romaji-text">${rawRomaji}</span>` : "";
+        let htmlComp = htmlJap;
+        if (htmlRom) htmlComp += ` <small class="japanese-romaji-text">(${rawRomaji})</small>`;
+
+        return {
+            htmlJapones: htmlJap,
+            htmlRomaji: htmlRom,
+            htmlCompleto: htmlComp,
+            temKanji: true
+        };
+    }
+
+    // Extração de padrões como "ふつうけい (普通形)", "普通形 (ふつうけい)", "にほん (日本)" ou "こんにちは (Konnichiwa)"
+    let kanjiPart = rawText;
+    let kanaPart = rawKana;
+
+    const matchParentheses = rawText.match(/^([^\(（]+)[\(（]([^\)）]+)[\)）](.*)$/);
+    if (matchParentheses) {
+        const part1 = matchParentheses[1].trim();
+        const part2 = matchParentheses[2].trim();
+
+        const p1HasKanji = /[\u4e00-\u9faf]/.test(part1);
+        const p2HasKanji = /[\u4e00-\u9faf]/.test(part2);
+        const p1HasJapanese = /[\u3040-\u30ff]/.test(part1);
+        const p2HasJapanese = /[\u3040-\u30ff]/.test(part2);
+
+        if (p1HasKanji && p2HasJapanese && !p2HasKanji) {
+            kanjiPart = part1;
+            kanaPart = part2;
+        } else if (!p1HasKanji && p1HasJapanese && p2HasKanji) {
+            kanaPart = part1;
+            kanjiPart = part2;
+        } else if ((p1HasJapanese || p1HasKanji) && !p2HasJapanese && !p2HasKanji) {
+            kanjiPart = part1;
+            if (!rawRomaji) rawRomaji = part2;
+        }
+    }
+
+    // TESTE DE DETECÇÃO DE KANJI
+    const temKanji = /[\u4e00-\u9faf]/.test(kanjiPart);
+    let htmlJapones = "";
+
+    if (!temKanji) {
+        // CASO A: Texto é PURAMENTE KANA (não contém nenhum Kanji, ex: "おはようございます")
+        // IMPORTANTE: A opção ja_opt_kanji deve ser COMPLETAMENTE IGNORADA!
+        if (opts.kana) {
+            htmlJapones = `<span class="japanese-kana-text kana-text">${kanjiPart}</span>`;
+        } else {
+            htmlJapones = "";
+        }
+    } else {
+        // CASO B: Texto POSSUI KANJI (ex: "日本" com leitura "にほん" ou "文学" com "ぶんがく")
+        if (opts.kanji && opts.furigana) {
+            if (kanaPart) {
+                htmlJapones = `<ruby class="japanese-ruby-text">${kanjiPart}<rt>${kanaPart}</rt></ruby>`;
+            } else {
+                htmlJapones = `<span class="japanese-kanji-text">${kanjiPart}</span>`;
+            }
+        } else if (opts.kanji && !opts.furigana) {
+            htmlJapones = `<span class="japanese-kanji-text">${kanjiPart}</span>`;
+        } else if (!opts.kanji && opts.kana) {
+            htmlJapones = `<span class="japanese-kana-text kana-text">${kanaPart || kanjiPart}</span>`;
+        } else {
+            htmlJapones = "";
+        }
+    }
+
+    // CASO C: Linha de Romaji
+    let htmlRomaji = "";
+    if (opts.romaji && rawRomaji) {
+        htmlRomaji = `<span class="japanese-romaji-text">${rawRomaji}</span>`;
+    }
+
+    let htmlCompleto = "";
+    if (htmlJapones && htmlRomaji) {
+        htmlCompleto = `${htmlJapones} <small class="japanese-romaji-text">(${rawRomaji})</small>`;
+    } else if (htmlJapones) {
+        htmlCompleto = htmlJapones;
+    } else if (htmlRomaji) {
+        htmlCompleto = htmlRomaji;
+    }
+
+    return {
+        htmlJapones,
+        htmlRomaji,
+        htmlCompleto,
+        temKanji,
+        kanjiPart,
+        kanaPart,
+        rawRomaji
+    };
+}
+
+const processarExibicaoJapones = formatarTextoJapones;
+
+// ==========================================
+// GESTÃO DE CONFIGURAÇÕES DE LEITURA (KANJI, KANA, FURIGANA, ROMAJI)
+// ==========================================
+function getOpcoesLeitura() {
+    return {
+        kanji: localStorage.getItem('ja_opt_kanji') !== null ? localStorage.getItem('ja_opt_kanji') === 'true' : true,
+        kana: localStorage.getItem('ja_opt_kana') !== null ? localStorage.getItem('ja_opt_kana') === 'true' : true,
+        furigana: localStorage.getItem('ja_opt_furigana') !== null ? localStorage.getItem('ja_opt_furigana') === 'true' : true,
+        romaji: localStorage.getItem('ja_opt_romaji') !== null ? localStorage.getItem('ja_opt_romaji') === 'true' : false
+    };
+}
+
+function salvarOpcoesLeitura() {
+    const chkKanji = document.getElementById('chk-opt-kanji');
+    const chkKana = document.getElementById('chk-opt-kana');
+    const chkFurigana = document.getElementById('chk-opt-furigana');
+    const chkRomaji = document.getElementById('chk-opt-romaji');
+
+    if (chkKanji) localStorage.setItem('ja_opt_kanji', chkKanji.checked);
+    if (chkKana) localStorage.setItem('ja_opt_kana', chkKana.checked);
+    if (chkFurigana) localStorage.setItem('ja_opt_furigana', chkFurigana.checked);
+    if (chkRomaji) localStorage.setItem('ja_opt_romaji', chkRomaji.checked);
+
+    aplicarOpcoesLeituraNaInterface();
+
+    const playerAula = document.getElementById('player-aula');
+    if (playerAula && playerAula.style.display !== 'none') {
+        renderizarEtapa();
+    }
+}
+
+function sincronizarOpcoesModal() {
+    const opts = getOpcoesLeitura();
+    const chkKanji = document.getElementById('chk-opt-kanji');
+    const chkKana = document.getElementById('chk-opt-kana');
+    const chkFurigana = document.getElementById('chk-opt-furigana');
+    const chkRomaji = document.getElementById('chk-opt-romaji');
+
+    if (chkKanji) chkKanji.checked = opts.kanji;
+    if (chkKana) chkKana.checked = opts.kana;
+    if (chkFurigana) chkFurigana.checked = opts.furigana;
+    if (chkRomaji) chkRomaji.checked = opts.romaji;
+}
+
+function aplicarOpcoesLeituraNaInterface() {
+    const opts = getOpcoesLeitura();
+    
+    document.body.classList.toggle('hide-kanji', !opts.kanji);
+    document.body.classList.toggle('hide-kana', !opts.kana);
+    document.body.classList.toggle('hide-furigana', !opts.furigana);
+    document.body.classList.toggle('hide-romaji', !opts.romaji);
+}
+
 // Funções do Modal de Opções
 function abrirOpcoesCurso() {
     garantirElementosCabecalhoEModal();
+    sincronizarOpcoesModal();
     const modal = document.getElementById('modal-opcoes');
     if (modal) {
         atualizarUIProgresso();
@@ -2384,6 +2817,13 @@ function abrirOpcoesCurso() {
 function fecharOpcoesCurso() {
     const modal = document.getElementById('modal-opcoes');
     if (modal) modal.style.display = 'none';
+
+    aplicarOpcoesLeituraNaInterface();
+
+    const playerAula = document.getElementById('player-aula');
+    if (playerAula && playerAula.style.display !== 'none') {
+        renderizarEtapa();
+    }
 }
 
 function alternarDesbloqueio(ativo) {
@@ -2410,6 +2850,7 @@ function resetarProgressoCurso() {
         progress_hiragana: [],
         progress_katakana: [],
         progress_kanji: [],
+        progress_kanji_n4: [],
         xpTotal: 0,
         nivelAtual: "A1",
         b2_certified: false,
@@ -2437,6 +2878,7 @@ function resetarProgressoCurso() {
     localStorage.removeItem('ja_srs_hiragana_deck');
     localStorage.removeItem('ja_srs_katakana_deck');
     localStorage.removeItem('ja_srs_kanji_deck');
+    localStorage.removeItem('ja_srs_kanji_n4_deck');
 
     // Reset de Gamificação (XP, Nível, Ofensiva e Conquistas)
     localStorage.removeItem('ja_user_stats');
@@ -2560,6 +3002,110 @@ function fecharAula() {
     atualizarUIProgresso();
 }
 
+// ==========================================
+// COMPONENTE CONSTRUTOR DE FRASES (SENTENCE BUILDER)
+// ==========================================
+let sbStateMap = {};
+
+function inicializarSentenceBuilderState(exId, chunks) {
+    if (!sbStateMap[exId]) {
+        const shuffled = [...chunks].sort(() => Math.random() - 0.5);
+        sbStateMap[exId] = {
+            originalChunks: [...chunks],
+            shuffledChunks: shuffled,
+            selectedTarget: []
+        };
+    }
+}
+
+function renderizarBlocosSentenceBuilder(exId) {
+    const state = sbStateMap[exId];
+    if (!state) return;
+
+    const targetZone = document.getElementById(`sb-target-${exId}`);
+    const sourceZone = document.getElementById(`sb-source-${exId}`);
+
+    if (targetZone) {
+        if (state.selectedTarget.length === 0) {
+            targetZone.innerHTML = `<span class="sb-placeholder" style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">Clique nos blocos abaixo para construir a frase...</span>`;
+        } else {
+            targetZone.innerHTML = state.selectedTarget.map((chunk, idx) => `
+                <button class="sb-chip target-chip" onclick="removerBlocoSentenceBuilder('${exId}', ${idx})">${chunk}</button>
+            `).join('');
+        }
+    }
+
+    if (sourceZone) {
+        sourceZone.innerHTML = state.shuffledChunks.map((chunk, idx) => `
+            <button class="sb-chip source-chip" onclick="adicionarBlocoSentenceBuilder('${exId}', ${idx})">${chunk}</button>
+        `).join('');
+    }
+}
+
+function adicionarBlocoSentenceBuilder(exId, index) {
+    const state = sbStateMap[exId];
+    if (!state || index < 0 || index >= state.shuffledChunks.length) return;
+
+    const item = state.shuffledChunks.splice(index, 1)[0];
+    state.selectedTarget.push(item);
+    renderizarBlocosSentenceBuilder(exId);
+}
+
+function removerBlocoSentenceBuilder(exId, index) {
+    const state = sbStateMap[exId];
+    if (!state || index < 0 || index >= state.selectedTarget.length) return;
+
+    const item = state.selectedTarget.splice(index, 1)[0];
+    state.shuffledChunks.push(item);
+    renderizarBlocosSentenceBuilder(exId);
+}
+
+function resetarSentenceBuilder(exId) {
+    const state = sbStateMap[exId];
+    if (!state) return;
+
+    state.shuffledChunks = [...state.originalChunks].sort(() => Math.random() - 0.5);
+    state.selectedTarget = [];
+    renderizarBlocosSentenceBuilder(exId);
+
+    const fb = document.getElementById(`fb-sb-${exId}`);
+    if (fb) fb.innerHTML = '';
+    const box = document.getElementById(`box-sb-${exId}`);
+    if (box) {
+        box.style.borderColor = 'var(--border-color)';
+        box.style.boxShadow = 'var(--shadow)';
+    }
+}
+
+function verificarSentenceBuilder(exId) {
+    const state = sbStateMap[exId];
+    const fb = document.getElementById(`fb-sb-${exId}`);
+    const box = document.getElementById(`box-sb-${exId}`);
+    if (!state || !fb) return;
+
+    const fraseMontada = state.selectedTarget.join('');
+    const fraseCorreta = state.originalChunks.join('');
+
+    if (fraseMontada === fraseCorreta && state.selectedTarget.length === state.originalChunks.length) {
+        playBeep('success');
+        dispararConfeti({ particleCount: 50, spread: 60 });
+        adicionarXP(15, 'Construtor de Frases');
+        fb.innerHTML = `<span style="color: #22c55e;">✨ Perfeito! Frase montada corretamente: <strong>${fraseCorreta}</strong> (+15 XP)</span>`;
+        if (box) {
+            box.style.borderColor = '#22c55e';
+            box.style.boxShadow = '0 0 15px rgba(34, 197, 94, 0.3)';
+        }
+    } else {
+        playBeep('error');
+        fb.innerHTML = `<span style="color: #ef4444;">❌ Ordem incorreta. Clique nos blocos para ajustar ou em "Limpar"!</span>`;
+        if (box) {
+            box.classList.add('shake');
+            setTimeout(() => box.classList.remove('shake'), 600);
+        }
+        registrarErroSRS(exId);
+    }
+}
+
 // Renderização das 5 Etapas
 function renderizarEtapa() {
     const container = document.getElementById('conteudo-etapa');
@@ -2595,27 +3141,39 @@ function renderizarEtapa() {
         const drop = mod.stage2_drops[dropAtual];
         if (drop.type === 'vocab') {
             const icones = ['🌅', '☀️', '🌙', '⭐', '🗣️'];
+            const res = processarExibicaoJapones(drop);
+            const itemId = `${mod.id}_d_${dropAtual}`;
             container.innerHTML = `
-                <span style="font-size: 2.5rem;">${icones[dropAtual % icones.length] || '📖'}</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 450px; margin: 0 auto 0.5rem auto;">
+                    <span style="font-size: 2.5rem;">${icones[dropAtual % icones.length] || '📖'}</span>
+                    ${renderizarBotaoFavorito(itemId)}
+                </div>
                 <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">
                     Card de Vocabulário (${dropAtual + 1}/${mod.stage2_drops.length})
                 </div>
-                <h2 style="font-size: 2.5rem; margin: 0.5rem 0; color: var(--text-main);">${drop.kanji}</h2>
-                <p style="font-size: 1.2rem; color: #e63946; font-weight: bold;">${drop.romaji}</p>
+                <div class="jp-vocab-display-box" style="margin: 0.8rem 0;">
+                    ${res.htmlJapones ? `<h2 class="jp-vocab-title" style="font-size: 2.5rem; margin: 0.3rem 0; color: var(--text-main);">${res.htmlJapones}</h2>` : ''}
+                    ${res.htmlRomaji ? `<p class="drop-romaji vocab-romaji" style="font-size: 1.2rem; color: #e63946; font-weight: bold;">${res.htmlRomaji}</p>` : ''}
+                </div>
                 <p style="font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem;">${drop.translation}</p>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><small>💡 ${drop.timeContext}</small></p>
-                <button onclick="tocarAudio('${drop.romaji}')" style="margin-top: 0.8rem;">🔊 Pronúncia Nativa</button>
+                <button onclick="tocarAudio('${drop.romaji || drop.kanji}')" style="margin-top: 0.8rem;">🔊 Pronúncia Nativa</button>
             `;
         } else {
+            const resExample = processarExibicaoJapones(fNome(drop.example));
+            const itemId = `${mod.id}_d_${dropAtual}`;
             container.innerHTML = `
-                <span style="font-size: 2.5rem;">🧩</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 450px; margin: 0 auto 0.5rem auto;">
+                    <span style="font-size: 2.5rem;">🧩</span>
+                    ${renderizarBotaoFavorito(itemId)}
+                </div>
                 <div style="font-size: 0.85rem; color: #e63946; font-weight: bold; text-transform: uppercase;">💡 Pílula Gramatical</div>
                 <h3 style="margin: 0.5rem 0;">${fNome(drop.title)}</h3>
                 <p style="max-width: 500px; margin: 0 auto; color: var(--text-muted);">${fNome(drop.rule)}</p>
                 <div style="background: var(--bg-color); border: 2px solid var(--border-color); padding: 12px 20px; border-radius: 10px; margin: 15px auto; max-width: 350px; font-weight: bold; color: #e63946;">
                     <code>${fNome(drop.formula)}</code>
                 </div>
-                <p><small style="color: var(--text-muted);">Exemplo: ${fNome(drop.example)}</small></p>
+                <p><small style="color: var(--text-muted);">Exemplo: ${resExample.htmlCompleto || fNome(drop.example)}</small></p>
             `;
         }
         const btnAvancar = document.getElementById('btn-avancar');
@@ -2626,21 +3184,60 @@ function renderizarEtapa() {
         let praticasHTML = "";
 
         mod.stage3_practice.forEach((p, idx) => {
-            let opcoesHTML = p.options.map((opt) =>
-                `<button onclick="verificarRespostaPraticaMassa(${idx}, ${opt.isCorrect}, this)" class="btn-opcao-pratica" style="display:block; margin: 8px auto; width: 100%; max-width: 420px; text-align: left; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-weight: 600; cursor: pointer; transition: 0.2s;">
-                    ${fNome(opt.label)}
-                </button>`
-            ).join('');
+            const resQ = processarExibicaoJapones(fNome(p.question));
+            let opcoesHTML = p.options.map((opt) => {
+                const resOpt = processarExibicaoJapones(fNome(opt.label));
+                return `<button onclick="verificarRespostaPraticaMassa(${idx}, ${opt.isCorrect}, this)" class="btn-opcao-pratica" style="display:block; margin: 8px auto; width: 100%; max-width: 420px; text-align: left; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-weight: 600; cursor: pointer; transition: 0.2s;">
+                    ${resOpt.htmlCompleto || fNome(opt.label)}
+                </button>`;
+            }).join('');
 
             praticasHTML += `
                 <div class="box-pratica" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: left; box-shadow: var(--shadow); width: 100%; max-width: 500px;">
                     <span style="font-size: 0.8rem; color: #e63946; font-weight: bold; text-transform: uppercase;">Exercício ${idx + 1} de ${mod.stage3_practice.length}</span>
-                    <p style="margin: 8px 0 15px 0; font-weight: bold; font-size: 1.05rem; color: var(--text-main);">${fNome(p.question)}</p>
+                    <p style="margin: 8px 0 15px 0; font-weight: bold; font-size: 1.05rem; color: var(--text-main);">${resQ.htmlCompleto || fNome(p.question)}</p>
                     ${opcoesHTML}
                     <div id="fb-pratica-${idx}" style="margin-top: 10px; font-weight: bold; font-size: 0.95rem;"></div>
                 </div>
             `;
         });
+
+        let sentenceBuilderList = mod.stage3_5_sentenceBuilder || mod.sentenceBuilder;
+        let sentenceBuilderHTML = "";
+
+        if (sentenceBuilderList) {
+            const listArr = Array.isArray(sentenceBuilderList) ? sentenceBuilderList : [sentenceBuilderList];
+            listArr.forEach((sbItem, sbIdx) => {
+                const exId = `${mod.id}_sb_${sbIdx}`;
+                inicializarSentenceBuilderState(exId, sbItem.chunks);
+
+                sentenceBuilderHTML += `
+                    <div class="box-sentence-builder" id="box-sb-${exId}" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 25px; text-align: left; box-shadow: var(--shadow); width: 100%; max-width: 500px;">
+                        <span style="font-size: 0.8rem; color: #e63946; font-weight: bold; text-transform: uppercase;">🧱 Desafio de Estrutura ${sbIdx + 1}: Construtor de Frases</span>
+                        <p style="margin: 8px 0 4px 0; font-weight: bold; font-size: 1.05rem; color: var(--text-main);">Monte a frase em japonês que significa:</p>
+                        <p style="color: #e63946; font-style: italic; font-size: 1.05rem; font-weight: 600; margin-bottom: 15px;">"${sbItem.translation}"</p>
+
+                        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px;">Sua Frase (Clique nos blocos para adicionar/remover):</div>
+                        <div class="sb-target-box" id="sb-target-${exId}">
+                            <span class="sb-placeholder" style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">Clique nos blocos abaixo para construir a frase...</span>
+                        </div>
+
+                        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin: 15px 0 6px 0;">Banco de Palavras e Partículas:</div>
+                        <div class="sb-source-box" id="sb-source-${exId}"></div>
+
+                        <div style="display: flex; gap: 10px; margin-top: 15px;">
+                            <button onclick="verificarSentenceBuilder('${exId}')" style="flex: 2; padding: 10px; background: #e63946; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                                ✅ Verificar Frase
+                            </button>
+                            <button onclick="resetarSentenceBuilder('${exId}')" style="flex: 1; padding: 10px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 8px; font-weight: bold; cursor: pointer;">
+                                🧹 Limpar
+                            </button>
+                        </div>
+                        <div id="fb-sb-${exId}" style="margin-top: 12px; font-weight: bold; font-size: 0.95rem;"></div>
+                    </div>
+                `;
+            });
+        }
 
         container.innerHTML = `
             <span style="font-size: 2.5rem;">✏️</span>
@@ -2648,19 +3245,32 @@ function renderizarEtapa() {
             <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Resolva os desafios abaixo para consolidar sua memória:</p>
             <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
                 ${praticasHTML}
+                ${sentenceBuilderHTML}
             </div>
         `;
+
+        setTimeout(() => {
+            if (sentenceBuilderList) {
+                const listArr = Array.isArray(sentenceBuilderList) ? sentenceBuilderList : [sentenceBuilderList];
+                listArr.forEach((sbItem, sbIdx) => {
+                    const exId = `${mod.id}_sb_${sbIdx}`;
+                    renderizarBlocosSentenceBuilder(exId);
+                });
+            }
+        }, 50);
     }
     // ETAPA 4: DIÁLOGO EM MASSA
     else if (etapaAtual === 4) {
         let dialogosHTML = "";
 
         mod.stage4_dialog.forEach((d, idx) => {
-            let opcoesHTML = d.options.map((opt) =>
-                `<button onclick="verificarDialogoMassa(${idx}, '${opt.feedback}', ${opt.isCorrect}, this)" style="display:block; margin: 8px auto; width: 100%; max-width: 420px; text-align: left; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-weight: 600; cursor: pointer; transition: 0.2s;">
-                    💬 ${fNome(opt.text)}
-                </button>`
-            ).join('');
+            const resNpc = processarExibicaoJapones(fNome(d.npcMessage));
+            let opcoesHTML = d.options.map((opt) => {
+                const resOpt = processarExibicaoJapones(fNome(opt.text));
+                return `<button onclick="verificarDialogoMassa(${idx}, '${opt.feedback}', ${opt.isCorrect}, this)" style="display:block; margin: 8px auto; width: 100%; max-width: 420px; text-align: left; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main); font-weight: 600; cursor: pointer; transition: 0.2s;">
+                    💬 ${resOpt.htmlCompleto || fNome(opt.text)}
+                </button>`;
+            }).join('');
 
             dialogosHTML += `
                 <div class="box-dialogo" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 25px; text-align: left; box-shadow: var(--shadow); width: 100%; max-width: 500px;">
@@ -2668,7 +3278,7 @@ function renderizarEtapa() {
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">📍 ${fNome(d.scenario)}</p>
                     <div style="background: var(--bg-color); border-left: 4px solid #e63946; padding: 12px 16px; margin: 15px 0; border-radius: 0 8px 8px 0;">
                         <strong style="color: #e63946;">${fNome(d.npcName)}:</strong><br>
-                        <span style="font-size: 1.05rem; font-weight: 600; color: var(--text-main);">${fNome(d.npcMessage)}</span>
+                        <span style="font-size: 1.05rem; font-weight: 600; color: var(--text-main);">${resNpc.htmlCompleto || fNome(d.npcMessage)}</span>
                     </div>
                     <p style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">Sua resposta:</p>
                     ${opcoesHTML}
@@ -2773,6 +3383,8 @@ function renderizarEtapa() {
         sincronizarBaralhoSRS();
         registrarAtividadeDiaria();
     }
+
+    aplicarOpcoesLeituraNaInterface();
 }
 
 // ==========================================
@@ -3015,6 +3627,10 @@ function verificarRespostaPraticaMassa(idx, isCorrect, btnElement) {
         btnElement.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
         fb.innerHTML = "<span style='color: #ef4444;'>❌ Ops, resposta incorreta. Tente outra!</span>";
         playBeep('error');
+
+        const dadosCurso = getDadosCursoAtivo();
+        const mod = (dadosCurso && dadosCurso[moduloAtivoIndex]) ? dadosCurso[moduloAtivoIndex] : null;
+        if (mod) registrarErroSRS(`${mod.id}_p_${idx}`);
     }
 }
 
@@ -3035,6 +3651,10 @@ function verificarDialogoMassa(idx, feedback, isCorrect, btnElement) {
         btnElement.style.borderColor = '#ef4444';
         btnElement.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
         playBeep('error');
+
+        const dadosCurso = getDadosCursoAtivo();
+        const mod = (dadosCurso && dadosCurso[moduloAtivoIndex]) ? dadosCurso[moduloAtivoIndex] : null;
+        if (mod) registrarErroSRS(`${mod.id}_diag_${idx}`);
     }
     fb.innerHTML = `<span style="color: ${cor};">${fNome(feedback)}</span>`;
 }
@@ -3499,13 +4119,24 @@ function garantirElementosCabecalhoEModal() {
                     <span>Desbloquear Todos os Módulos</span>
                     <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
                 </div>
-                <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
-                    <span>Modo de Leitura</span>
-                    <select id="sel-leitura" style="padding: 0.4rem; border-radius: 6px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color);">
-                        <option value="kanji">Kanji + Furigana</option>
-                        <option value="kana">Apenas Kana</option>
-                        <option value="romaji">Romaji</option>
-                    </select>
+                <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:1.2rem; font-weight:600;">
+                    <span style="font-size:0.95rem; color:var(--text-main);">Opções de Exibição de Leitura:</span>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                        <input type="checkbox" id="chk-opt-kanji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                        <span>Ativar Kanji</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                        <input type="checkbox" id="chk-opt-kana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                        <span>Ativar Kana</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                        <input type="checkbox" id="chk-opt-furigana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                        <span>Ativar Furigana</span>
+                    </label>
+                    <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
+                        <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                        <span>Ativar Romaji</span>
+                    </label>
                 </div>
                 <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
                 <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
@@ -3982,7 +4613,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                 <div class="dict-card dict-card-kanji">
                     <div class="dict-card-header">
                         <span class="dict-tag tag-kanji">🔤 Kanji • ${item.level}</span>
-                        <span class="dict-origin">${item.origin}</span>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            ${renderizarBotaoFavorito(item.id || `dict_kanji_${item.character}`)}
+                            <span class="dict-origin">${item.origin}</span>
+                        </div>
                     </div>
                     <div class="dict-kanji-body">
                         <div class="dict-kanji-char">${item.character}</div>
@@ -4020,7 +4654,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                 <div class="dict-card dict-card-grammar">
                     <div class="dict-card-header">
                         <span class="dict-tag tag-grammar">💡 Gramática • ${item.level}</span>
-                        <span class="dict-origin">${item.module}</span>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            ${renderizarBotaoFavorito(item.id || `dict_g_${item.title}`)}
+                            <span class="dict-origin">${item.module}</span>
+                        </div>
                     </div>
                     <h3 class="dict-grammar-title">${fNome(item.title)}</h3>
                     <p class="dict-grammar-rule">${fNome(item.rule)}</p>
@@ -4033,7 +4670,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                 <div class="dict-card dict-card-vocab">
                     <div class="dict-card-header">
                         <span class="dict-tag tag-vocab">📚 Vocabulário • ${item.level}</span>
-                        <span class="dict-origin">${item.module}</span>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            ${renderizarBotaoFavorito(item.id || `dict_v_${item.term}`)}
+                            <span class="dict-origin">${item.module}</span>
+                        </div>
                     </div>
                     <div class="dict-vocab-body">
                         <div>
@@ -4060,7 +4700,10 @@ function renderizarResultadosDicionario(queryStr = '') {
                 <div class="dict-card ${cardClass}">
                     <div class="dict-card-header">
                         <span class="dict-tag ${tagClass}">${tagLabel}</span>
-                        <span class="dict-origin">${item.module}</span>
+                        <div style="display:flex; gap:8px; align-items:center;">
+                            ${renderizarBotaoFavorito(item.id || `dict_k_${item.character}`)}
+                            <span class="dict-origin">${item.module}</span>
+                        </div>
                     </div>
                     <div class="dict-vocab-body">
                         <div>
@@ -4190,6 +4833,28 @@ function adicionarXP(qtd, motivo = '') {
 
     atualizarHeaderXP();
 }
+
+function removerXP(qtd, motivo = '') {
+    if (!qtd || qtd <= 0) return;
+    const stats = obterStatsUsuario();
+    const prevRankInfo = calcularRank(stats.xp);
+
+    stats.xp = Math.max(0, stats.xp - qtd);
+    const newRankInfo = calcularRank(stats.xp);
+    stats.level = newRankInfo.currentRank.level;
+
+    salvarStatsUsuario(stats);
+
+    mostrarToast(`📉 <strong>-${qtd} XP</strong> ${motivo ? `<small>(${motivo})</small>` : ''}`);
+
+    if (newRankInfo.currentRank.level < prevRankInfo.currentRank.level) {
+        mostrarToast(`⬇️ <strong>Nível reduzido!</strong><br>Agora você está em: <strong>${newRankInfo.currentRank.name} (${newRankInfo.currentRank.kanji})</strong>`);
+    }
+
+    atualizarHeaderXP();
+}
+
+
 
 function atualizarHeaderXP() {
     const container = document.getElementById('xp-profile-widget-container');

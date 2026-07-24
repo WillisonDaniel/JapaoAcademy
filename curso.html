@@ -20,7 +20,7 @@
 
 <body data-mode="curso">
     <header>
-        <a href="index.html" class="btn-voltar">⬅ Voltar ao Menu</a>
+        <a href="index.html" class="home-btn">⬅ Menu Inicial</a>
         <h1>🎌 Curso de Japonês (CEFR)</h1>
         <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
     </header>
@@ -33,6 +33,11 @@
                 <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
                 <h3>Revisão Inteligente da Memória</h3>
                 <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros')">❌ Caderno de Erros</button>
+                </div>
             </div>
             <div class="srs-banner-action">
                 <div class="srs-badge-box">
@@ -663,14 +668,24 @@
                 <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)"
                     style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
             </div>
-            <div class="modal-option">
-                <span>Modo de Leitura</span>
-                <select id="sel-leitura"
-                    style="padding: 0.4rem; border-radius: 6px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color);">
-                    <option value="kanji">Kanji + Furigana</option>
-                    <option value="kana">Apenas Kana</option>
-                    <option value="romaji">Romaji</option>
-                </select>
+            <div class="modal-option" style="flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 1.2rem;">
+                <span style="font-weight: bold; font-size: 0.95rem;">Opções de Exibição de Leitura:</span>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
+                    <input type="checkbox" id="chk-opt-kanji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Kanji</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
+                    <input type="checkbox" id="chk-opt-kana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Kana</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
+                    <input type="checkbox" id="chk-opt-furigana" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Furigana</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
+                    <input type="checkbox" id="chk-opt-romaji" onchange="salvarOpcoesLeitura()" style="width: 18px; height: 18px; accent-color: #e63946; cursor: pointer;">
+                    <span>Ativar Romaji</span>
+                </label>
             </div>
             <button onclick="resetarProgressoCurso()"
                 style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar

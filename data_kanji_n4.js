@@ -13,6 +13,26 @@ const kanjiN4Data = [
       example: "友達と一緒に家族の写真を見ました。",
       translation: "Olhei as fotos da família junto com meu amigo."
     },
+    readingText: {
+      title: "家族との週末 (Fim de Semana com a Família)",
+      japanese: "<ruby>私<rt>わたし</rt></ruby>の<ruby>両親<rt>りょうしん</rt></ruby>はとても<ruby>親切<rt>しんせつ</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。<ruby>週末<rt>しゅうまつ</rt></ruby>に<ruby>家族<rt>かぞく</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>公園<rt>こうえん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。<ruby>お兄さん<rt>おにいさん</rt></ruby>は<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>大学<rt>だいがく</rt></ruby>で<ruby>勉強<rt>べんきょう</rt></ruby>しています。",
+      romaji: "Watashi no ryoushin wa totemo shinsetsu na hito desu. Shuumatsu ni kazoku to issho ni kouen e ikimasu. Oniisan wa Toukyou no daigaku de benkyou shite imasu.",
+      translation: "Meus pais são pessoas muito gentis. No fim de semana vou ao parque junto com a família. O meu irmão mais velho estuda em uma universidade em Tóquio.",
+      comprehensionQuiz: [
+        {
+          q: "Como são os pais (両親) da pessoa segundo o texto N4?",
+          options: ["Muito gentis (とても親切)", "Muito ocupados", "Muito rígidos", "Famosos"],
+          a: "Muito gentis (tanto親切)",
+          type: "choice"
+        },
+        {
+          q: "Onde o irmão mais velho (お兄さん) estuda?",
+          options: ["Universidade em Tóquio (東京の大学)", "Escola em Quioto", "No parque", "Em casa"],
+          a: "Universidade em Tóquio (東京の大学)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       {
         character: "親",
@@ -140,6 +160,26 @@ const kanjiN4Data = [
       example: "夏休みになると、海に行くために準備をします。",
       translation: "Quando chegam as férias de verão, me preparo para ir à praia."
     },
+    readingText: {
+      title: "日本の四季と生活 (As Quatro Estações do Japão e a Vida)",
+      japanese: "<ruby>日本<rt>にほん</rt></ruby>の<ruby>春<rt>はる</rt></ruby>には<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>きます。<ruby>夏<rt>なつ</rt></ruby>の<ruby>海<rt>うみ</rt></ruby>はとても<ruby>青<rt>あお</rt></ruby>くて<ruby>綺麗<rt>きれい</rt></ruby>です。<ruby>秋<rt>あき</rt></ruby>は<ruby>果物<rt>くだもの</rt></ruby>が<ruby>美味<rt>おい</rt></ruby>しくなり、<ruby>冬<rt>ふゆ</rt></ruby>は<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ります。<ruby>朝<rt>あさ</rt></ruby>から<ruby>夜<rt>よる</rt></ruby>まで<ruby>季節<rt>きせつ</rt></ruby>の<ruby>変化<rt>へんか</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しみます。",
+      romaji: "Nihon no haru ni wa sakura ga sakimasu. Natsu no umi wa totemo aokute kirei desu. Aki wa kudamono ga oishiku nari, fuyu wa yuki ga furimasu. Asa kara yoru made kisetsu no henka o tanoshimashu.",
+      translation: "Na primavera do Japão, as cerejeiras florescem. O mar no verão é muito azul e bonito. No outono as frutas ficam gostosas, e no inverno cai neve. Da manhã até a noite, aproveitamos a mudança das estações.",
+      comprehensionQuiz: [
+        {
+          q: "O que acontece na primavera do Japão (日本の春)?",
+          options: ["As cerejeiras florescem (桜が咲く)", "Cai muita neve", "As folhas secam", "O mar congela"],
+          a: "As cerejeiras florescem (桜が咲く)",
+          type: "choice"
+        },
+        {
+          q: "O que acontece no inverno (冬) segundo o texto?",
+          options: ["Cai neve (雪が降る)", "Faz muito calor", "As frutas amadurecem", "O céu fica vermelho"],
+          a: "Cai neve (雪が降る)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "春", meaning: "Primavera", kunyomi: "はる (haru)", onyomi: "シュン (SHUN)", mnemonic: "O sol (日) brilhando forte sob as plantas.", examples: [{ word: "春 (haru)", wordMeaning: "Primavera", sentence: "春には桜が咲きます。", sentenceMeaning: "Na primavera as cerejeiras florescem." }] },
       { character: "夏", meaning: "Verão", kunyomi: "なつ (natsu)", onyomi: "カ (KA)", mnemonic: "Pessoa dançando com pernas ágeis no calor.", examples: [{ word: "夏休み (natsuyasumi)", wordMeaning: "Férias de verão", sentence: "夏休みに海へ行きます。", sentenceMeaning: "Vou à praia nas férias de verão." }] },
@@ -174,6 +214,26 @@ const kanjiN4Data = [
       explanation: "Use a forma condicional N4 ～たら (Verbo no passado た + ら) para expressar condições na natureza e viagens ('Se for ao mar...'). Para comparações, use A は B より... (A é mais ... que B).",
       example: "海へ行ったら、山より広い景色が見られます。",
       translation: "Se você for ao mar, poderá ver uma paisagem mais ampla que a montanha."
+    },
+    readingText: {
+      title: "自然の旅と島々 (Viagem pela Natureza e Ilhas)",
+      japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>夏休み<rt>なつやすみ</rt></ruby>に<ruby>海<rt>うみ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くの<ruby>島<rt>しま</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。<ruby>島<rt>しま</rt></ruby>の<ruby>森<rt>もり</rt></ruby>や<ruby>林<rt>はやし</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>くと、<ruby>涼<rt>すず</rt></ruby>しい<ruby>風<rt>かぜ</rt></ruby>が<ruby>吹<rt>ふ</rt></ruby>きました。<ruby>静<rt>しず</rt></ruby>かな<ruby>池<rt>いけ</rt></ruby>には<ruby>魚<rt>さかな</rt></ruby>がいて、とても<ruby>美<rt>うつく</rt></ruby>しい<ruby>世界<rt>せかい</rt></ruby>でした。",
+      romaji: "Watashi wa natsuyasumi ni umi no chikaku no shima e ikimashita. Shima no mori ya hayashi o aruku to, suzushii kaze ga fukimashita. Shizuka na ike ni wa sakana ga ite, totemo utsukushii sekai deshita.",
+      translation: "Nas férias de verão fui para uma ilha perto do mar. Caminhando pelas florestas e bosques da ilha, sobrava um vento fresco. Na lagoa silenciosa havia peixes, era um mundo muito bonito.",
+      comprehensionQuiz: [
+        {
+          q: "Aonde a pessoa foi nas férias de verão (夏休み)?",
+          options: ["Para uma ilha perto do mar (海の近くの島)", "Para uma grande cidade", "Para uma universidade", "Para um hospital"],
+          a: "Para uma ilha perto do mar (海の近くの島)",
+          type: "choice"
+        },
+        {
+          q: "O que havia na lagoa silenciosa (静かな池)?",
+          options: ["Havia peixes (魚がいた)", "Havia barcos", "Havia um gato", "Havia pessoas nadando"],
+          a: "Havia peixes (魚がいた)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "地", meaning: "Terra / Solo", kunyomi: "ji / chi", onyomi: "チ (CHI)", mnemonic: "Terra (土) onde seres habitam.", examples: [{ word: "地下鉄 (chikatetsu)", wordMeaning: "Metrô", sentence: "地下鉄に乗ります。", sentenceMeaning: "Vou pegar o metrô." }] },
@@ -210,6 +270,26 @@ const kanjiN4Data = [
       example: "駅に向かって歩くと、東京タワーの近くに着きます。",
       translation: "Caminhando em direção à estação, você chega perto da Torre de Tóquio."
     },
+    readingText: {
+      title: "初めての街の道案内 (Orientação em uma Cidade Nova)",
+      japanese: "<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>駅<rt>えき</rt></ruby>を<ruby>出<rt>で</rt></ruby>て、<ruby>東<rt>ひがし</rt></ruby>の<ruby>方向<rt>ほうこう</rt></ruby>へ<ruby>向<rt>む</rt></ruby>かって<ruby>歩<rt>ある</rt></ruby>きました。<ruby>道<rt>みち</rt></ruby>の<ruby>右側<rt>みぎがわ</rt></ruby>に<ruby>大<rt>おお</rt></ruby>きい<ruby>建物<rt>たてもの</rt></ruby>が見えました。<ruby>目的地<rt>もくてきち</rt></ruby>は<ruby>駅<rt>えき</rt></ruby>からあまり<ruby>遠<rt>とお</rt></ruby>くなくて、とても<ruby>近<rt>ちか</rt></ruby>かったです。",
+      romaji: "Toukyou no eki o dete, higashi no houkou e mukatte arukimashita. Michi no migigawa ni ookii tatemono ga miemashita. Mokutekichi wa eki kara amari tookunakute, totemo chikakata desu.",
+      translation: "Saindo da estação de Tóquio, caminhei em direção ao leste. Do lado direito da rua avistei um prédio grande. O destino não era muito longe da estação, era bem perto.",
+      comprehensionQuiz: [
+        {
+          q: "Em qual direção (方向) a pessoa caminhou ao sair da estação?",
+          options: ["Direção Leste (東の方向)", "Direção Oeste (西)", "Direção Sul (南)", "Direção Norte (北)"],
+          a: "Direção Leste (東の方向)",
+          type: "choice"
+        },
+        {
+          q: "Onde ficava a grande construção (大きい建物)?",
+          options: ["Do lado direito da rua (道の右側)", "Atrás da estação", "Dentro do metrô", "Do lado esquerdo"],
+          a: "Do lado direito da rua (道の右側)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "方", meaning: "Direção", kunyomi: "かた (kata)", onyomi: "ホウ (HOU)", mnemonic: "Bússola apontando a direção.", examples: [{ word: "夕方 (yuugata)", wordMeaning: "Fim da tarde", sentence: "夕方に会いましょう。", sentenceMeaning: "Encontro no fim da tarde." }] },
       { character: "偏", meaning: "Inclinado", kunyomi: "katamuku", onyomi: "ヘン (HEN)", mnemonic: "Pessoa inclinada.", examples: [{ word: "偏見 (henken)", wordMeaning: "Preconceito", sentence: "偏見はありません。", sentenceMeaning: "Não há preconceito." }] },
@@ -244,6 +324,26 @@ const kanjiN4Data = [
       explanation: "A estrutura Verb(て) + もらう indica que se recebeu o favor de alguém fazer algo. A estrutura Verb(て) + ある expressa que um estado foi preparado conscientemente (ex: a porta está fechada de propósito).",
       example: "戸が閉めてあります。母に新しい部屋を作ってもらいました。",
       translation: "A porta foi deixada fechada. Recebi o favor da minha mãe de me fazer um novo quarto."
+    },
+    readingText: {
+      title: "休日の図書館と広場 (Biblioteca e Praça no Fim de Semana)",
+      japanese: "<ruby>土曜日<rt>どようび</rt></ruby>の<ruby>朝<rt>あさ</rt></ruby>、<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>て<ruby>図書館<rt>としょかん</rt></ruby>の<ruby>学習室<rt>がくしゅうしつ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。<ruby>部屋<rt>へや</rt></ruby>の<ruby>戸<rt>と</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けると、たくさんの<ruby>学生<rt>がくせい</rt></ruby>がいました。<ruby>勉強<rt>べんきょう</rt></ruby>のあと、<ruby>広場<rt>ひろば</rt></ruby>の<ruby>食料品店<rt>しょくりょうひんてん</rt></ruby>で<ruby>昼ご飯<rt>ひるごはん</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。",
+      romaji: "Doyoubi no asa, ie o dete toshokan no gakushuushitsu e ikimashita. Heya no to o akeru to, takusan no gakusei ga imashita. Benkyou no ato, hiroba no shokuryoohinten de hirugohan o kaimashita.",
+      translation: "Na manhã de sábado, saí de casa e fui para a sala de estudos da biblioteca. Ao abrir a porta da sala, havia muitos estudantes. Depois de estudar, comprei o almoço em uma mercearia na praça.",
+      comprehensionQuiz: [
+        {
+          q: "Aonde a pessoa foi na manhã de sábado (土曜日の朝)?",
+          options: ["Para a sala de estudos da biblioteca (図書館の学習室)", "Para o hospital", "Para o aeroporto", "Para o parque de diversões"],
+          a: "Para a sala de estudos da biblioteca (図書館の学習室)",
+          type: "choice"
+        },
+        {
+          q: "O que havia ao abrir a porta da sala (部屋の戸を開けると)?",
+          options: ["Havia muitos estudantes (たくさんの学生)", "Estava vazio", "Havia um cachorro", "Havia uma festa"],
+          a: "Havia muitos estudantes (たくさんの学生)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "家", meaning: "Casa", kunyomi: "いえ (ie) / うち", onyomi: "カ (KA)", mnemonic: "Teto cobrindo o lar.", examples: [{ word: "家族 (kazoku)", wordMeaning: "Família", sentence: "家へ帰ります。", sentenceMeaning: "Volto para casa." }] },
@@ -280,6 +380,26 @@ const kanjiN4Data = [
       example: "試験のために、毎日漢字を覚えるようにしなければなりません。",
       translation: "Para a prova, tenho que me esforçar para memorizar os kanjis todos os dias."
     },
+    readingText: {
+      title: "日本語の試験と練習 (A Prova de Japonês e o Treino)",
+      japanese: "<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>日本語<rt>にほんご</rt></ruby>の<ruby>試験<rt>しけん</rt></ruby>があるので、<ruby>毎日<rt>まいにち</rt></ruby><ruby>漢字<rt>かんじ</rt></ruby>を<ruby>練習<rt>れんしゅう</rt></ruby>しています。<ruby>先生<rt>せんせい</rt></ruby>が<ruby>正<rt>ただ</rt></ruby>しい<ruby>書<rt>か</rt></ruby>き<ruby>方<rt>かた</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてくれました。<ruby>質問<rt>しつもん</rt></ruby>の<ruby>答え<rt>こたえ</rt></ruby>をしっかり<ruby>考<rt>かんが</rt></ruby>えて<ruby>書<rt>か</rt></ruby>きます。",
+      romaji: "Raishuu, nihongo no shiken ga aru node, mainichi kanji o renshuu shite imasu. Sensei ga tadashii kakikata o oshiete kuremashita. Shitsumon no kotae o shikkari kangaete kakimasu.",
+      translation: "Como terei prova de japonês semana que vem, pratico kanjis todos os dias. O professor me ensinou a forma correta de escrever. Penso bem antes de escrever as respostas das perguntas.",
+      comprehensionQuiz: [
+        {
+          q: "Por que a pessoa está praticando kanji todos os dias (毎日漢字を練習)?",
+          options: ["Porque haverá prova na próxima semana (来週試験がある)", "Porque vai viajar hoje", "Porque é um passatempo", "Porque esqueceu os cadernos"],
+          a: "Porque haverá prova na próxima semana (来週試験がある)",
+          type: "choice"
+        },
+        {
+          q: "O que o professor ensinou (先生が教えてくれた)?",
+          options: ["A forma correta de escrever (正しい書き方)", "Como jogar futebol", "Receitas de culinária", "Desenhos de mangá"],
+          a: "A forma correta de escrever (正しい書き方)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "校", meaning: "Escola", kunyomi: "kou", onyomi: "コウ (KOU)", mnemonic: "Construção de madeira escolar.", examples: [{ word: "学校 (gakkou)", wordMeaning: "Escola", sentence: "学校に行きます。", sentenceMeaning: "Vou à escola." }] },
       { character: "漢", meaning: "Han / Kanji", kunyomi: "kan", onyomi: "カン (KAN)", mnemonic: "Rio da terra de Han.", examples: [{ word: "漢字 (kanji)", wordMeaning: "Kanji", sentence: "漢字を書きます。", sentenceMeaning: "Escrevo kanji." }] },
@@ -314,6 +434,26 @@ const kanjiN4Data = [
       explanation: "No N4, os verbos de ação ganham a forma potencial para indicar capacidade ou oportunidade física (ex: 運転できる - conseguir dirigir; 乗れる - conseguir embarcar).",
       example: "自転車に乗れますが、車は運転できません。",
       translation: "Consigo andar de bicicleta, mas não consigo dirigir carro."
+    },
+    readingText: {
+      title: "電車と自転車の通勤 (Comutação de Trem e Bicicleta)",
+      japanese: "<ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>家<rt>いえ</rt></ruby>から<ruby>駅<rt>えき</rt></ruby>まで<ruby>自転車<rt>じてんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>っていきます。<ruby>駅<rt>えき</rt></ruby>で<ruby>電車<rt>でんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>り<ruby>換<rt>か</rt></ruby>えて、<ruby>会社<rt>かいしゃ</rt></ruby>の前で<ruby>降<rt>お</rt></ruby>ります。<ruby>帰<rt>かえ</rt></ruby>りは<ruby>健康<rt>けんこう</rt></ruby>のために<ruby>歩<rt>ある</rt></ruby>いて<ruby>帰<rt>かえ</rt></ruby>ることもあります。",
+      romaji: "Maiasa, ie kara eki made jitensha ni notte ikimasu. Eki de densha ni norikaete, kaisha no mae de orimasu. Kaeri wa kenkou no tame ni aruite kaeru koto mo arimasu.",
+      translation: "Todas as manhãs vou de casa até a estação andando de bicicleta. Na estação troco de trem e desço em frente à empresa. Na volta, às vezes volto andando para a saúde.",
+      comprehensionQuiz: [
+        {
+          q: "Como a pessoa vai de casa até a estação todas as manhãs?",
+          options: ["De bicicleta (自転車に乗って)", "De ônibus", "De táxi", "A pé"],
+          a: "De bicicleta (自転車に乗って)",
+          type: "choice"
+        },
+        {
+          q: "Por que a pessoa às vezes volta a pé (歩いて帰る) para casa?",
+          options: ["Para a saúde (健康のために)", "Porque perdeu o trem", "Porque não tem dinheiro", "Porque a bicicleta quebrou"],
+          a: "Para a saúde (健康のために)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "走", meaning: "Correr", kunyomi: "はし・る (hashiru)", onyomi: "ソウ (SOU)", mnemonic: "Pessoa correndo.", examples: [{ word: "走る (hashiru)", wordMeaning: "Correr", sentence: "速く走ります。", sentenceMeaning: "Corro rápido." }] },
@@ -350,6 +490,26 @@ const kanjiN4Data = [
       example: "彼は明日新しい新聞を読むと言いました。",
       translation: "Ele disse que lerá o novo jornal amanhã."
     },
+    readingText: {
+      title: "ニュースと読書の時間 (Momento de Notícias e Leitura)",
+      japanese: "<ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>朝ご飯<rt>あさごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べながら<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。<ruby>ラジオ<rt>らじお</rt></ruby>から<ruby>明<rt>あか</rt></ruby>るい<ruby>声<rt>こえ</rt></ruby>と<ruby>楽<rt>たの</rt></ruby>しい<ruby>音楽<rt>おんがく</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえます。<ruby>知<rt>し</rt></ruby>らない<ruby>言葉<rt>ことば</rt></ruby>があったら、すぐに<ruby>辞書<rt>じしょ</rt></ruby>で<ruby>調<rt>しら</rt></ruby>べます。",
+      romaji: "Maiasa, asagohan o tabenagara shinbun o yomimasu. Rajio kara akarui koe to tanoshii ongaku ga kikoemasu. Shiranai kotoba ga attara, sugu ni jisho de shirabemasu.",
+      translation: "Todas as manhãs leio o jornal enquanto tomo o café da manhã. Do rádio dá para ouvir vozes alegres e música divertida. Quando há palavras que não sei, procuro imediatamente no dicionário.",
+      comprehensionQuiz: [
+        {
+          q: "O que a pessoa faz enquanto toma o café da manhã (朝ご飯を食べながら)?",
+          options: ["Lê o jornal (新聞を読む)", "Assiste à TV", "Dorme", "Conversa ao telefone"],
+          a: "Lê o jornal (新聞を読む)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa faz quando encontra palavras desconhecidas (知らない言葉)?",
+          options: ["Procura no dicionário (辞書で調べる)", "Pergunta ao vizinho", "Ignora", "Escreve uma carta"],
+          a: "Procura no dicionário (辞書で調べる)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "思", meaning: "Pensar", kunyomi: "おも・う (omou)", onyomi: "シ (SHI)", mnemonic: "Campo da mente no coração.", examples: [{ word: "思う (omou)", wordMeaning: "Achar / Pensar", sentence: "そう思います。", sentenceMeaning: "Acho que sim." }] },
       { character: "知", meaning: "Saber", kunyomi: "し・る (shiru)", onyomi: "チ (CHI)", mnemonic: "Flecha de sabedoria.", examples: [{ word: "知る (shiru)", wordMeaning: "Saber", sentence: "知っています。", sentenceMeaning: "Eu sei." }] },
@@ -384,6 +544,26 @@ const kanjiN4Data = [
       explanation: "No N4, adiciona-se ～すぎる (sugiru) à raiz de adjetivos/verbos para indicar 'demais / em excesso'. A partícula de conexão ～し permite listar múltiplos fatores simultâneos.",
       example: "この鞄は重すぎるし、値段も高いです。",
       translation: "Esta bolsa é pesada demais e o preço também é alto."
+    },
+    readingText: {
+      title: "重い荷物と広々とした部屋 (Mala Pesada e Quarto Amplo)",
+      japanese: "<ruby>旅<rt>たび</rt></ruby>の<ruby>荷物<rt>にもつ</rt></ruby>はとても<ruby>重<rt>おも</rt></ruby>かったですが、<ruby>ホテル<rt>ほてる</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>くて<ruby>明<rt>あか</rt></ruby>るかったです。<ruby>外<rt>そと</rt></ruby>が<ruby>暗<rt>くら</rt></ruby>くなったら、<ruby>近<rt>ちか</rt></ruby>くの<ruby>静<rt>しず</rt></ruby>かな<ruby>店<rt>みせ</rt></ruby>で<ruby>美味<rt>おい</rt></ruby>しい<ruby>夕飯<rt>ゆうはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べました。",
+      romaji: "Tabi no nimotsu wa totemo omokatta desu ga, hoteru no heya wa hirokute akarukatta desu. Soto ga kuraku nattara, chikaku no shizuka na mise de oishii yuuhan o tabemashita.",
+      translation: "A bagagem da viagem estava muito pesada, mas o quarto do hotel era amplo e iluminado. Quando ficou escuro lá fora, comi um jantar gostoso em uma loja silenciosa por perto.",
+      comprehensionQuiz: [
+        {
+          q: "Como era o quarto do hotel (ホテルの部屋)?",
+          options: ["Amplo e iluminado (広くて明るい)", "Pequeno e escuro", "Frio e barulhento", "Velho e caro"],
+          a: "Amplo e iluminado (広くて明るい)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa fez quando ficou escuro lá fora (外が暗くなったら)?",
+          options: ["Jantou numa loja silenciosa perto (近くの静かな店で夕飯を食べた)", "Voltou para a cidade", "Dormiu imediatamente", "Lava as roupas"],
+          a: "Jantou numa loja silenciosa perto (近くの静かな店で夕飯を食べた)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "強", meaning: "Forte", kunyomi: "つよ・い (tsuyoi)", onyomi: "キョウ (KYOU)", mnemonic: "Arco forte.", examples: [{ word: "強い (tsuyoi)", wordMeaning: "Forte", sentence: "強い人です。", sentenceMeaning: "É uma pessoa forte." }] },
@@ -420,6 +600,26 @@ const kanjiN4Data = [
       example: "ご案内しますので、店員にお聞きください。",
       translation: "Iremos orientá-lo, por favor pergunte ao atendente."
     },
+    readingText: {
+      title: "会社での仕事と街の生活 (O Trabalho na Empresa e a Vida na Cidade)",
+      japanese: "<ruby>私<rt>わたし</rt></ruby>は<ruby>東京<rt>とうきょう</rt></ruby>の<ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>会社員<rt>かいしゃいん</rt></ruby>として<ruby>働<rt>はたら</rt></ruby>いています。<ruby>同僚<rt>どうりょう</rt></ruby>と一緒に<ruby>新<rt>あたら</rt></ruby>しい<ruby>仕事<rt>しごと</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めています。<ruby>週末<rt>しゅうまつ</rt></ruby>は<ruby>賑<rt>にぎ</rt></ruby>やかな<ruby>町<rt>まち</rt></ruby>で<ruby>買<rt>かい</rt></ruby>い<ruby>物<rt>もの</rt></ruby>をして<ruby>リフレッシュ<rt>りふれっしゅ</rt></ruby>します。",
+      romaji: "Watashi wa Toukyou no kaisha de kaishain to shite hataraitemasu. Douryou to issho ni atarashii shigoto o susumetemasu. Shuumatsu wa nigiyaka na machi de kaimono o shite rifresshu shimasu.",
+      translation: "Trabalho como funcionário de uma empresa em Tóquio. Junto com meus colegas, dou andamento a novos trabalhos. No fim de semana, faço compras em um bairro movimentado para renovar as energias.",
+      comprehensionQuiz: [
+        {
+          q: "Onde a pessoa trabalha como funcionário de empresa (会社員)?",
+          options: ["Em uma empresa em Tóquio (東京の会社)", "Em um hospital no campo", "Em uma universidade", "Em uma farmácia"],
+          a: "Em uma empresa em Tóquio (東京の会社)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa faz nos fins de semana (週末)?",
+          options: ["Faz compras em um bairro movimentado (賑やかな町で買い物)", "Fica trabalhando na empresa", "Dorme o dia todo", "Viaja para fora do país"],
+          a: "Faz compras em um bairro movimentado (賑やかな町で買い物)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "社", meaning: "Empresa", kunyomi: "sha", onyomi: "シャ (SHA)", mnemonic: "Altar de terra.", examples: [{ word: "会社 (kaisha)", wordMeaning: "Empresa", sentence: "会社で働きます。", sentenceMeaning: "Trabalho na empresa." }] },
       { character: "員", meaning: "Membro", kunyomi: "in", onyomi: "イン (IN)", mnemonic: "Pessoa registrada.", examples: [{ word: "会社員 (kaishain)", wordMeaning: "Funcionário", sentence: "会社員です。", sentenceMeaning: "Sou funcionário de empresa." }] },
@@ -454,6 +654,26 @@ const kanjiN4Data = [
       explanation: "A estrutura ～はずです indica uma forte convicção ou expectativa lógica baseada em fatos ocorridos (ex: ter feito o pagamento ou enviado a ordem).",
       example: "お金を払ったから、商品は明日届くはずです。",
       translation: "Como já paguei o dinheiro, o produto deve chegar amanhã."
+    },
+    readingText: {
+      title: "家賃の支払いと新しい買い物 (Pagamento do Aluguel e Compras)",
+      japanese: "<ruby>毎月<rt>まいつき</rt></ruby><ruby>初<rt>はじめ</rt></ruby>めにアパートの<ruby>家賃<rt>やちん</rt></ruby>を<ruby>銀行<rt>ぎんこう</rt></ruby>で<ruby>払<rt>はら</rt></ruby>います。<ruby>今月<rt>こんげつ</rt></ruby>は<ruby>新<rt>あたら</rt></ruby>しい<ruby>本<rt>ほん</rt></ruby>を<ruby>借<rt>か</rt></ruby>りて、<ruby>友達<rt>ともだち</rt></ruby>に<ruby>好<rt>す</rt></ruby>きな<ruby>CD<rt>しーでぃー</rt></ruby>を<ruby>貸<rt>か</rt></ruby>してあげました。<ruby>必要<rt>ひつよう</rt></ruby>な<ruby>物<rt>もの</rt></ruby>だけを<ruby>買<rt>か</rt></ruby>うようにしています。",
+      romaji: "Maitsuki hajime ni apaato no yachin o ginkou de haraimasu. Kongetsu wa atarashii hon o karite, tomodachi ni suki na CD o kashite agemashita. Hitsuyou na mono dake o kau you ni shitemasu.",
+      translation: "No início de cada mês pago o aluguel do apartamento no banco. Este mês peguei um livro novo emprestado e emprestei um CD que gosto para um amigo. Tento comprar apenas o que é necessário.",
+      comprehensionQuiz: [
+        {
+          q: "Onde o aluguel do apartamento (アパートの家賃) é pago?",
+          options: ["No banco (銀行で)", "Na escola", "Na livraria", "No correio"],
+          a: "No banco (銀行で)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa tenta fazer em relação às compras (買い物)?",
+          options: ["Comprar apenas o necessário (必要な物だけを買う)", "Comprar tudo o que vê", "Não comprar nada", "Emprestar dinheiro para todos"],
+          a: "Comprar apenas o necessário (必要な物だけを買う)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "買", meaning: "Comprar", kunyomi: "か・う (kau)", onyomi: "バイ (BAI)", mnemonic: "Moedas concha para comprar.", examples: [{ word: "買い物 (kaimono)", wordMeaning: "Compras", sentence: "買い物します。", sentenceMeaning: "Faço compras." }] },
@@ -490,6 +710,26 @@ const kanjiN4Data = [
       example: "体が痛いときは、薬を飲んで寝たほうがいいです。",
       translation: "Quando o corpo doer, é melhor tomar remédio e dormir."
     },
+    readingText: {
+      title: "病院での診察と健康管理 (Consulta no Hospital e Cuidados de Saúde)",
+      japanese: "<ruby>昨日<rt>きのう</rt></ruby>から<ruby>頭<rt>あたま</rt></ruby>と<ruby>足<rt>あし</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>かったので、<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。<ruby>医者<rt>いしゃ</rt></ruby>に<ruby>診<rt>み</rt></ruby>てもらって、<ruby>薬<rt>くすり</rt></ruby>をもらいました。<ruby>暖<rt>あたた</rt></ruby>かいお<ruby>茶<rt>ちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>んで<ruby>寝<rt>ね</rt></ruby>たら、とても<ruby>安心<rt>あんしん</rt></ruby>しました。",
+      romaji: "Kinou kara atama to ashi ga itakatta node, byouin e ikimashita. Isha ni mitemoratte, kusuri o moraimashita. Atatakai ocha o nonde netara, totemo anshin shimashita.",
+      translation: "Como minha cabeça e meu pé estavam doendo desde ontem, fui ao hospital. Fui examinado pelo médico e recebi remédios. Depois de beber um chá quente e dormir, fiquei muito aliviado.",
+      comprehensionQuiz: [
+        {
+          q: "Por que a pessoa foi ao hospital (病院へ行った)?",
+          options: ["Porque a cabeça e o pé doíam (頭と足が痛かった)", "Para visitar um amigo", "Para comprar comida", "Para fazer exercícios"],
+          a: "Porque a cabeça e o pé doíam (頭と足が痛かった)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa fez para se sentir aliviada (安心した)?",
+          options: ["Beteu chá quente e dormiu (暖か茶を飲んで寝た)", "Foi passear", "Trabalhou até tarde", "Correu na praia"],
+          a: "Beteu chá quente e dormiu (暖か茶を飲んで寝た)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "体", meaning: "Corpo", kunyomi: "からだ (karada)", onyomi: "タイ (TAI)", mnemonic: "Pessoa e sua estrutura.", examples: [{ word: "身体 (karada)", wordMeaning: "Corpo", sentence: "体が丈夫です。", sentenceMeaning: "O corpo é forte." }] },
       { character: "頭", meaning: "Cabeça", kunyomi: "あたま (atama)", onyomi: "トウ (TOU)", mnemonic: "Topo do corpo.", examples: [{ word: "頭 (atama)", wordMeaning: "Cabeça", sentence: "頭が痛いです。", sentenceMeaning: "Dói a cabeça." }] },
@@ -524,6 +764,26 @@ const kanjiN4Data = [
       explanation: "Use a forma Verb(て) + みる para 'experimentar fazer algo (ex: provar uma comida)'. Adicione o sufixo ～やすい (fácil de) ou ～にくい (difícil de) à raiz verbal para descrever a facilidade de consumo ou manuseio.",
       example: "日本の魚料理を食べてみたら、とても食べやすかったです。",
       translation: "Quando experimentei comer o prato de peixe japonês, foi muito fácil de comer."
+    },
+    readingText: {
+      title: "日本料理を味わう夕食 (Jantar Saboreando Culinária Japonesa)",
+      japanese: "<ruby>夜<rt>よる</rt></ruby>、<ruby>家族<rt>かぞく</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>新鮮<rt>しんせん</rt></ruby>な<ruby>魚<rt>さかな</rt></ruby>と<ruby>牛肉<rt>ぎゅうにく</rt></ruby>の<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>りました。<ruby>温<rt>あたた</rt></ruby>かい<ruby>ご飯<rt>はん</rt></ruby>と<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>食<rt>た</rt></ruby>べると、とてもいい<ruby>味<rt>あじ</rt></ruby>でした。<ruby>食後<rt>しょくご</rt></ruby>に<ruby>皿<rt>さら</rt></ruby>や<ruby>道具<rt>どうぐ</rt></ruby>を<ruby>綺麗<rt>きれい</rt></ruby>に<ruby>洗<rt>あら</rt></ruby>いました。",
+      romaji: "Yoru, kazoku to issho ni shinsen na sakana to gyuuniku no ryouri o tsukurimashita. Atatakai gohan to issho ni taberu to, totemo ii aji deshita. Shokugo ni sara ya dougu o kirei ni araimashita.",
+      translation: "À noite, preparei pratos com peixe fresco e carne bovina junto com minha família. Quando comemos junto com arroz quentinho, o sabor ficou excelente. Após a refeição, lavei bem os pratos e utensílios.",
+      comprehensionQuiz: [
+        {
+          q: "Quais ingredientes foram usados no jantar em família?",
+          options: ["Peixe fresco e carne bovina (新鮮な魚と牛肉)", "Apenas vegetais", "Pão e queijo", "Frutas e doces"],
+          a: "Peixe fresco e carne bovina (新鮮な魚と牛肉)",
+          type: "choice"
+        },
+        {
+          q: "O que a pessoa fez após a refeição (食後)?",
+          options: ["Lavou bem os pratos e utensílios (皿や道具を綺麗に洗った)", "Foi dormir imediatamente", "Saiu para passear", "Assistiu a um filme"],
+          a: "Lavou bem os pratos e utensílios (皿や道具を綺麗に洗った)",
+          type: "choice"
+        }
+      ]
     },
     kanjis: [
       { character: "食", meaning: "Comer", kunyomi: "た・べる (taberu)", onyomi: "ショク (SHOKU)", mnemonic: "Comida na mesa.", examples: [{ word: "食事 (shokuji)", wordMeaning: "Refeição", sentence: "食事をします。", sentenceMeaning: "Faço refeição." }] },
@@ -560,6 +820,26 @@ const kanjiN4Data = [
       example: "皆が集まったので、来週の会議を水曜日にすることにしました。",
       translation: "Como todos se reuniram, decidimos marcar a reunião da próxima semana para a quarta-feira."
     },
+    readingText: {
+      title: "特別の集まりと新しいスタート (Encontro Especial e Novo Recomeço)",
+      japanese: "<ruby>今月<rt>こんげつ</rt></ruby>、<ruby>大学<rt>だいがく</rt></ruby>の<ruby>友達<rt>ともだち</rt></ruby>が<ruby>大勢<rt>おおぜい</rt></ruby><ruby>集<rt>あつ</rt></ruby>まって<ruby>特別<rt>とくべつ</rt></ruby>な<ruby>会<rt>かい</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>きました。<ruby>皆<rt>みんな</rt></ruby>で<ruby>同<rt>おな</rt></ruby>じ<ruby>思い出<rt>おもいで</rt></ruby>を<ruby>話<rt>はな</rt></ruby>しながら、<ruby>新<rt>あたら</rt></ruby>しい<ruby>生活<rt>せいかつ</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まるのを<ruby>祝<rt>いわ</rt></ruby>いました。<ruby>時間<rt>じかん</rt></ruby>に<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>って<ruby>良<rt>よ</rt></ruby>かったです。",
+      romaji: "Kongetsu, daigaku no tomodachi ga oozei atsumatte tokubetsu na kai o hirakimashita. Minna de onaji omoide o hanashinagara, atarashii seikatsu ga hajimaru no o iwaimashita. Jikan ni maniatte yokatta desu.",
+      translation: "Este mês, muitos amigos da faculdade se reuniram e realizaram um encontro especial. Enquanto conversávamos sobre as mesmas lembranças, comemoramos o início de uma nova fase da vida. Foi ótimo ter chegado a tempo.",
+      comprehensionQuiz: [
+        {
+          q: "Quem se reuniu para o encontro especial (特別な会)?",
+          options: ["Muitos amigos da universidade (大学の友達が大勢)", "Os vizinhos do bairro", "Os professores da escola primária", "Apenas a família"],
+          a: "Muitos amigos da universidade (大学の友達が大勢)",
+          type: "choice"
+        },
+        {
+          q: "O que eles comemoraram durante o encontro?",
+          options: ["O início de uma nova fase da vida (新しい生活が始まるの)", "Uma vitória esportiva", "A compra de um carro", "Um aniversário de casamento"],
+          a: "O início de uma nova fase da vida (新しい生活が始まるの)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "万", meaning: "Dez Mil", kunyomi: "man", onyomi: "マン (MAN)", mnemonic: "Dez mil expansivo.", examples: [{ word: "一万円 (ichiman'en)", wordMeaning: "10.000 ienes", sentence: "一万円札です。", sentenceMeaning: "Nota de 10 mil ienes." }] },
       { character: "億", meaning: "Cem Milhões", kunyomi: "oku", onyomi: "オク (OKU)", mnemonic: "Grande número.", examples: [{ word: "一億円 (ichioku'en)", wordMeaning: "100 milhões ienes", sentence: "一億円当たりました。", sentenceMeaning: "Ganhei 100 milhões." }] },
@@ -595,6 +875,26 @@ const kanjiN4Data = [
       example: "音楽を聞きながら勉強していたら、大事なことを忘れてしまいました。",
       translation: "Enquanto estudava ouvindo música, acabei esquecendo algo importante."
     },
+    readingText: {
+      title: "新しい生活とこれからの目標 (Nova Vida e Objetivos Futuros)",
+      japanese: "<ruby>毎日<rt>まいにち</rt></ruby><ruby>日本語<rt>にほんご</rt></ruby>の<ruby>ノート<rt>のーと</rt></ruby>を<ruby>作<rt>つく</rt></ruby>って、<ruby>大事<rt>だいじ</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えています。<ruby>忙<rt>いそが</rt></ruby>しい<ruby>時<rt>とき</rt></ruby>も<ruby>忘<rt>わす</rt></ruby>れないように、<ruby>手帳<rt>てちょう</rt></ruby>を<ruby>持<rt>も</rt></ruby>ち<ruby>歩<rt>ある</rt></ruby>いています。<ruby>将来<rt>しょうらい</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>の<ruby>支店<rt>してん</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>くのが<ruby>夢<rt>ゆめ</rt></ruby>です。",
+      romaji: "Mainichi nihongo no nooto o tsukutte, daiji na kotoba o oboetemasu. Isogashii toki mo wasurenai you ni, techou o mochiaruitemasu. Shourai, Nihon no shiten de hataraku no ga yume desu.",
+      translation: "Todos os dias crio cadernos de notas de japonês e memorizo palavras importantes. Para não esquecer mesmo quando estou ocupado, carrego uma agenda comigo. No futuro, meu sonho é trabalhar em uma filial no Japão.",
+      comprehensionQuiz: [
+        {
+          q: "O que a pessoa carrega consigo para não esquecer as coisas (忘れないように)?",
+          options: ["Uma agenda (手帳を持ち歩いている)", "Um dicionário grande", "Um computador", "Uma caneta especial"],
+          a: "Uma agenda (手帳を持ち歩いている)",
+          type: "choice"
+        },
+        {
+          q: "Qual é o sonho futuro da pessoa (将来の夢)?",
+          options: ["Trabalhar em uma filial no Japão (日本の支店で働くの)", "Comprar uma casa grande", "Ser professor de matemática", "Viajar pelo espaço"],
+          a: "Trabalhar em uma filial no Japão (日本の支店で働くの)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "作", meaning: "Fazer", kunyomi: "つく・る (tsukuru)", onyomi: "サク (SAKU)", mnemonic: "Criar com as mãos.", examples: [{ word: "作る (tsukuru)", wordMeaning: "Fazer / Criar", sentence: "料理を作ります。", sentenceMeaning: "Faço comida." }] },
       { character: "使", meaning: "Usar", kunyomi: "つか・う (tsukau)", onyomi: "シ (SHI)", mnemonic: "Usar ferramenta.", examples: [{ word: "使う (tsukau)", wordMeaning: "Usar", sentence: "ペンを使います。", sentenceMeaning: "Uso a caneta." }] },
@@ -625,6 +925,26 @@ const kanjiN4Data = [
     module: 16,
     title: "Módulo 16: Tabela Geral de Revisão N4",
     description: "Revisão completa e consulta rápida de todos os 150 ideogramas do nível JLPT N4.",
+    readingText: {
+      title: "N4漢字の完成と未来への飛躍 (Conclusão dos Kanjis N4 e Salto para o Futuro)",
+      japanese: "N4の<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>百五十<rt>ひゃくごじゅう</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>学習<rt>がくしゅう</rt></ruby>して、<ruby>長<rt>なが</rt></ruby>い<ruby>文章<rt>ぶんしょう</rt></ruby>も<ruby>読<rt>よ</rt></ruby>めるようになりました。<ruby>日常<rt>にちじょう</rt></ruby>の<ruby>会話<rt>かいわ</rt></ruby>や<ruby>読書<rt>どくしょ</rt></ruby>がもっと<ruby>楽<rt>たの</rt></ruby>しくなりました。<ruby>自分<rt>じぶん</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>に<ruby>向<rt>む</rt></ruby>かって、これからも<ruby>自信<rt>じしん</rt></ruby>を<ruby>持<rt>も</rt></ruby>つて<ruby>進<rt>すす</rt></ruby>みます。",
+      romaji: "N4 no kanji o hyakugojuu ijou gakushuu shite, nagai bunshou mo yomeru you ni narimashita. Nichijou no kaiwa ya dokusho ga motto tanoshiku narimashita. Jibun no yume ni mukatte, korekara mo jishin o motte susumimasu.",
+      translation: "Após estudar mais de 150 kanjis do N4, passei a conseguir ler textos longos. As conversas do dia a dia e a leitura ficaram ainda mais divertidas. Em direção ao meu sonho, continuarei avançando com confiança.",
+      comprehensionQuiz: [
+        {
+          q: "O que a pessoa passou a conseguir ler após estudar os kanjis N4?",
+          options: ["Textos longos (長い文章)", "Apenas palavras de duas letras", "Placas de trânsito", "Textos em inglês"],
+          a: "Textos longos (長い文章)",
+          type: "choice"
+        },
+        {
+          q: "Como a pessoa continuará avançando rumo ao seu sonho (自分の夢に向かって)?",
+          options: ["Com confiança (自信を持って進む)", "Com medo e dúvida", "Parando de estudar", "Voltando do início"],
+          a: "Com confiança (自信を持って進む)",
+          type: "choice"
+        }
+      ]
+    },
     kanjis: [
       { character: "親", meaning: "Pais / Parentes", kunyomi: "おや (oya)", onyomi: "シン" },
       { character: "族", meaning: "Família / Tribo", kunyomi: "zoku", onyomi: "ゾク" },

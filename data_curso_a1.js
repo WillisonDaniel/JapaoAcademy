@@ -1,4 +1,4 @@
-// ==========================================
+﻿// ==========================================
 // BANCO DE DADOS DO CURSO DE JAPONÊS - NÍVEL A1 (SEÇÃO 1 IMERSIVA)
 // ==========================================
 
@@ -64,6 +64,19 @@ const MODULO_A1_01 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "おはようございます",
+            translation: "Bom dia!",
+            chunks: ["おはようございます"]
+        },
+        {
+            sentenceJp: "わたし は カロス です",
+            translation: "Eu sou o Carlos.",
+            chunks: ["わたし", "は", "カロス", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está no elevador do hotel em Tóquio às 14:00 e um nativo simpático puxa assunto.",
@@ -163,6 +176,19 @@ const MODULO_A1_02 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "はじめまして タナカ です",
+            translation: "Prazer em conhecê-lo. Sou Tanaka.",
+            chunks: ["はじめまして", "タナカ", "です"]
+        },
+        {
+            sentenceJp: "よろしく おねがいします",
+            translation: "Conto com sua gentileza.",
+            chunks: ["よろしく", "おねがいします"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está em uma reunião na empresa e o diretor Tanaka se aproxima para trocar cartões.",
@@ -262,6 +288,19 @@ const MODULO_A1_03 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は ガクセイ です",
+            translation: "Eu sou estudante.",
+            chunks: ["わたし", "は", "ガクセイ", "です"]
+        },
+        {
+            sentenceJp: "マリアさん は ブラジルじん です",
+            translation: "A Sra. Maria é brasileira.",
+            chunks: ["マリアさん", "は", "ブラジルじん", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está saindo do metrô lotado em Tóquio e acidentalmente pisa de leve no pé de uma senhora.",
@@ -362,6 +401,19 @@ const MODULO_A1_04 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "これ は ほん です",
+            translation: "Isto é um livro.",
+            chunks: ["これ", "は", "ほん", "です"]
+        },
+        {
+            sentenceJp: "それ は なん です か",
+            translation: "O que é isso?",
+            chunks: ["それ", "は", "なん", "です", "か"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Sua aula de japonês acabou e você está se despedindo do seu colega de classe, Kenji, no portão da escola.",
@@ -461,6 +513,19 @@ const MODULO_A1_05 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "これ は わたし の カバン です",
+            translation: "Esta é a minha bolsa.",
+            chunks: ["これ", "は", "わたし", "の", "カバン", "です"]
+        },
+        {
+            sentenceJp: "あれ は だれ の カサ です か",
+            translation: "De quem é aquele guarda-chuva?",
+            chunks: ["あれ", "は", "だれ", "の", "カサ", "です", "か"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você encontra seu professor de japonês no corredor da universidade.",
@@ -565,6 +630,19 @@ const MODULO_A1_06 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "いま なんじ です か",
+            translation: "Que horas são agora?",
+            chunks: ["いま", "なんじ", "です", "か"]
+        },
+        {
+            sentenceJp: "いま 7じ はん です",
+            translation: "Agora são 7 horas e meia.",
+            chunks: ["いま", "7じ", "はん", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você passa pela imigração no Aeroporto de Narita e o oficial pergunta sua nacionalidade.",
@@ -665,6 +743,19 @@ const MODULO_A1_07 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きょう は なんようび です か",
+            translation: "Que dia da semana é hoje?",
+            chunks: ["きょう", "は", "なんようび", "です", "か"]
+        },
+        {
+            sentenceJp: "きょう は げつようび です",
+            translation: "Hoje é segunda-feira.",
+            chunks: ["きょう", "は", "げつようび", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está em uma festa de boas-vindas na universidade em Tóquio e se apresenta para uma colega.",
@@ -765,6 +856,19 @@ const MODULO_A1_08 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は まいにち べんきょう します",
+            translation: "Eu estudo todos os dias.",
+            chunks: ["わたし", "は", "まいにち", "べんきょう", "します"]
+        },
+        {
+            sentenceJp: "あした は はたらきません",
+            translation: "Amanhã não vou trabalhar.",
+            chunks: ["あした", "は", "はたらきません"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está na recepção de um hotel em Quioto e o atendente quer confirmar sua identidade e profissão.",
@@ -864,6 +968,19 @@ const MODULO_A1_09 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きのう ほん を よみました",
+            translation: "Ontem li um livro.",
+            chunks: ["きのう", "ほん", "を", "よみました"]
+        },
+        {
+            sentenceJp: "けさ おちゃ を のみました",
+            translation: "Hoje de manhã tomei chá.",
+            chunks: ["けさ", "おちゃ", "を", "のみました"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está jantando com a Sra. Suzuki, sua anfitriã no Japão, e ela pergunta sobre você.",
@@ -964,6 +1081,19 @@ const MODULO_A1_10 = {
         }
     ],
     // 3 DIÁLOGOS INTERATIVOS
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "どこ へ いきます か",
+            translation: "Aonde você vai?",
+            chunks: ["どこ", "へ", "いきます", "か"]
+        },
+        {
+            sentenceJp: "スーパー へ いきます",
+            translation: "Vou ao supermercado.",
+            chunks: ["スーパー", "へ", "いきます"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está conversando com um estudante brasileiro que conheceu em um café em Tóquio.",
@@ -1062,6 +1192,19 @@ const MODULO_A1_11 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "でんしゃ で がっこう へ いきます",
+            translation: "Vou para a escola de trem.",
+            chunks: ["でんしゃ", "で", "がっこう", "へ", "いきます"]
+        },
+        {
+            sentenceJp: "ともだち と うち へ かえります",
+            translation: "Volto para casa com meu amigo.",
+            chunks: ["ともだち", "と", "うち", "へ", "かえります"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está em uma loja de conveniência (Konbini) e aponta para um salgadinho na prateleira perto do atendente.",
@@ -1150,6 +1293,19 @@ const MODULO_A1_12 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "レストラン で ひるごはん を たべます",
+            translation: "Almoço no restaurante.",
+            chunks: ["レストラン", "で", "ひるごはん", "を", "たべます"]
+        },
+        {
+            sentenceJp: "こうえん で ほん を よみます",
+            translation: "Lerei um livro no parque.",
+            chunks: ["こうえん", "で", "ほん", "を", "よみます"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está descrevendo seu quarto para um amigo japonês.",
@@ -1210,6 +1366,19 @@ const MODULO_A1_13 = {
                 { label: "うち へ かえります (Uchi e kaerimasu)", isCorrect: true },
                 { label: "うち へ きます (Uchi e kimasu)", isCorrect: false }
             ]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "いっしょ に えいが を みませんか",
+            translation: "Gostaria de assistir a um filme juntos?",
+            chunks: ["いっしょ", "に", "えいが", "を", "みませんか"]
+        },
+        {
+            sentenceJp: "いいですね いきましょう",
+            translation: "Boa ideia, vamos!",
+            chunks: ["いいですね", "いきましょう"]
         }
     ],
     stage4_dialog: [
@@ -1274,6 +1443,19 @@ const MODULO_A1_14 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "はし で すし を たべます",
+            translation: "Como sushi com palzinhos (hashi).",
+            chunks: ["はし", "で", "すし", "を", "たべます"]
+        },
+        {
+            sentenceJp: "にほんご で てがみ を かきます",
+            translation: "Escrevo uma carta em japonês.",
+            chunks: ["にほんご", "で", "てがみ", "を", "かきます"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Seu colega pergunta como você vai para o trabalho todos os dias.",
@@ -1328,6 +1510,19 @@ const MODULO_A1_15 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ともだち に プレゼント を あげます",
+            translation: "Darei um presente ao amigo.",
+            chunks: ["ともだち", "に", "プレゼント", "を", "あげます"]
+        },
+        {
+            sentenceJp: "せんせい に ほん を もらいました",
+            translation: "Recebi um livro do professor.",
+            chunks: ["せんせい", "に", "ほん", "を", "もらいました"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você quer marcar um encontro com um amigo e pergunta quando ele está livre.",
@@ -1374,6 +1569,19 @@ const MODULO_A1_16 = {
             options: [{ label: "はち (Hachi)", isCorrect: true }, { label: "ろく (Roku)", isCorrect: false }, { label: "じゅう (Juu)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "とうきょう は おおきい まち です",
+            translation: "Tóquio é uma cidade grande.",
+            chunks: ["とうきょう", "は", "おおきい", "まち", "です"]
+        },
+        {
+            sentenceJp: "この おちゃ は とても あつい です",
+            translation: "Este chá está muito quente.",
+            chunks: ["この", "おちゃ", "は", "とても", "あつい", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está em uma loja e o vendedor pergunta quantos itens você quer.",
@@ -1418,6 +1626,19 @@ const MODULO_A1_17 = {
             options: [{ label: "さんぜん えん (Sanzen en)", isCorrect: true }, { label: "さんびゃく えん (Sanbyaku en)", isCorrect: false }, { label: "さんじゅう えん (Sanjuu en)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きょう は あまり さむくない です",
+            translation: "Hoje não está muito frio.",
+            chunks: ["きょう", "は", "あまり", "さむくない", "です"]
+        },
+        {
+            sentenceJp: "きのう の テスト は むずかしかっ た です",
+            translation: "O teste de ontem foi difícil.",
+            chunks: ["きのう", "の", "テスト", "は", "むずかしかっ", "た", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está em uma loja de lembrancinhas e aponta para um chaveiro.",
@@ -1459,6 +1680,19 @@ const MODULO_A1_18 = {
         {
             question: "2. O atendente pergunta 'Fukuro wa irimasu ka?'. O que ele quer saber?",
             options: [{ label: "Se você quer uma sacola.", isCorrect: true }, { label: "Se você vai pagar com cartão.", isCorrect: false }, { label: "Se você quer um desconto.", isCorrect: false }]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "この へや は しずか です",
+            translation: "Este quarto é silencioso.",
+            chunks: ["この", "へや", "は", "しずか", "です"]
+        },
+        {
+            sentenceJp: "きょうと は ゆうめい な まち です",
+            translation: "Quioto é uma cidade famosa.",
+            chunks: ["きょうと", "は", "ゆうめい", "な", "まち", "です"]
         }
     ],
     stage4_dialog: [
@@ -1507,6 +1741,19 @@ const MODULO_A1_19 = {
             options: [{ label: "おちゃ を のみます (Ocha o nomimasu)", isCorrect: true }, { label: "おちゃ が あります (Ocha ga arimasu)", isCorrect: false }, { label: "おちゃ です (Ocha desu)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は にほんの たべもの が すき です",
+            translation: "Eu gosto de comida japonesa.",
+            chunks: ["わたし", "は", "にほんの", "たべもの", "が", "すき", "です"]
+        },
+        {
+            sentenceJp: "スポーツ が あまり すきではありません",
+            translation: "Não gosto muito de esportes.",
+            chunks: ["スポーツ", "が", "あまり", "すきではありません"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Em um restaurante, o garçom pergunta o que você quer beber.",
@@ -1552,6 +1799,19 @@ const MODULO_A1_20 = {
             options: [{ label: "たかい (Takai)", isCorrect: true }, { label: "やすい (Yasui)", isCorrect: false }, { label: "おいしい (Oishii)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "つくえ の うえ に ほん が あります",
+            translation: "Há um livro em cima da mesa.",
+            chunks: ["つくえ", "の", "うえ", "に", "ほん", "が", "あります"]
+        },
+        {
+            sentenceJp: "にわ に いぬ が います",
+            translation: "Há um cachorro no jardim.",
+            chunks: ["にわ", "に", "いぬ", "が", "います"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você está comendo com um amigo japonês e prova o prato dele.",
@@ -1594,6 +1854,19 @@ const MODULO_A1_21 = {
         {
             question: "2. Como se diz 'São 2 e meia'?",
             options: [{ label: "にじ はん です (Ni-ji han desu)", isCorrect: true }, { label: "にふん です (Ni-fun desu)", isCorrect: false }, { label: "にじ です (Ni-ji desu)", isCorrect: false }]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "りんご を みっつ ください",
+            translation: "Três maçãs, por favor.",
+            chunks: ["りんご", "を", "みっつ", "ください"]
+        },
+        {
+            sentenceJp: "へや に がくせい が ごにん います",
+            translation: "Há 5 estudantes na sala.",
+            chunks: ["へや", "に", "がくせい", "が", "ごにん", "います"]
         }
     ],
     stage4_dialog: [
@@ -1643,6 +1916,19 @@ const MODULO_A1_22 = {
             options: [{ label: "どようび (Doyoubi)", isCorrect: true }, { label: "すいようび (Suiyoubi)", isCorrect: false }, { label: "げつようび (Getsuyoubi)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "きのう は あめ でした",
+            translation: "Ontem foi chuva (choveu).",
+            chunks: ["きのう", "は", "あめ", "でした"]
+        },
+        {
+            sentenceJp: "せんしゅう は ひま でした",
+            translation: "Semana passada eu estava livre.",
+            chunks: ["せんしゅう", "は", "ひま", "でした"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você quer marcar um encontro com um amigo e pergunta que dia da semana é a festa.",
@@ -1689,6 +1975,19 @@ const MODULO_A1_23 = {
             options: [{ label: "きのう (Kinou)", isCorrect: true }, { label: "あした (Ashita)", isCorrect: false }, { label: "あさ (Asa)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "うみ と やま と どちら が すき です か",
+            translation: "Entre praia e montanha, de qual você gosta mais?",
+            chunks: ["うみ", "と", "やま", "と", "どちら", "が", "すき", "です", "か"]
+        },
+        {
+            sentenceJp: "うみ の ほう が すき です",
+            translation: "Gosto mais da praia.",
+            chunks: ["うみ", "の", "ほう", "が", "すき", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Um colega de trabalho pergunta sobre seus planos para amanhã.",
@@ -1733,6 +2032,19 @@ const MODULO_A1_24 = {
             options: [{ label: "を (o)", isCorrect: true }, { label: "へ (e)", isCorrect: false }, { label: "で (de)", isCorrect: false }]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "1ねん で なつ が いちばん すき です",
+            translation: "No ano, o verão é a estação de que mais gosto.",
+            chunks: ["1ねん", "で", "なつ", "が", "いちばん", "すき", "です"]
+        },
+        {
+            sentenceJp: "にほん で ふじさん が いちばん たかい です",
+            translation: "O Monte Fuji é o mais alto do Japão.",
+            chunks: ["にほん", "で", "ふじさん", "が", "いちばん", "たかい", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Em um restaurante, o garçom pergunta o que você vai comer.",
@@ -1774,6 +2086,19 @@ const MODULO_A1_25 = {
         {
             question: "2. Seu amigo te chama para a festa dele. Ele pergunta se você...",
             options: [{ label: "きますか？ (Kimasu ka?)", isCorrect: true }, { label: "いきますか？ (Ikimasu ka?)", isCorrect: false }, { label: "かえりますか？ (Kaerimasu ka?)", isCorrect: false }]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし は あたらしい カメラ が ほしい です",
+            translation: "Eu quero uma câmera nova.",
+            chunks: ["わたし", "は", "あたらしい", "カメラ", "が", "ほしい", "です"]
+        },
+        {
+            sentenceJp: "にほん へ いきたい です",
+            translation: "Quero ir para o Japão.",
+            chunks: ["にほん", "へ", "いきたい", "です"]
         }
     ],
     stage4_dialog: [
@@ -1854,6 +2179,19 @@ const MODULO_A1_26 = {
                 { label: "Vou de táxi", isCorrect: false },
                 { label: "Vou de ônibus", isCorrect: false }
             ]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "ちょっと まって ください",
+            translation: "Espere um pouco, por favor.",
+            chunks: ["ちょっと", "まって", "ください"]
+        },
+        {
+            sentenceJp: "ここに なまえ を かいて ください",
+            translation: "Por favor, escreva seu nome aqui.",
+            chunks: ["ここに", "なまえ", "を", "かいて", "ください"]
         }
     ],
     stage4_dialog: [
@@ -1952,6 +2290,19 @@ const MODULO_A1_27 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "いま あめ が ふっています",
+            translation: "Está chovendo agora.",
+            chunks: ["いま", "あめ", "が", "ふっています"]
+        },
+        {
+            sentenceJp: "ミラーさん は でんわ を しています",
+            translation: "O Sr. Miller está ao telefone.",
+            chunks: ["ミラーさん", "は", "でんわ", "を", "しています"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você desembarcou em Akihabara e procura uma loja de conveniência na rua.",
@@ -2046,6 +2397,19 @@ const MODULO_A1_28 = {
                 { label: "つくえ に パソコン が います (Tsukue ni pasokon ga imasu)", isCorrect: false },
                 { label: "つくえ で パソコン です (Tsukue de pasokon desu)", isCorrect: false }
             ]
+        }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "しゃしん を とっても いい です か",
+            translation: "Posso tirar fotos?",
+            chunks: ["しゃしん", "を", "とっても", "いい", "です", "か"]
+        },
+        {
+            sentenceJp: "ここで たばこ を すってはいけません",
+            translation: "Não se pode fumar aqui.",
+            chunks: ["ここで", "たばこ", "を", "すってはいけません"]
         }
     ],
     stage4_dialog: [
@@ -2144,6 +2508,19 @@ const MODULO_A1_29 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "あさ おきて しんぶん を よみます",
+            translation: "Acordo de manhã e leio o jornal.",
+            chunks: ["あさ", "おきて", "しんぶん", "を", "よみます"]
+        },
+        {
+            sentenceJp: "シャワー を あびて がっこう へ いきます",
+            translation: "Tomo banho e vou para a escola.",
+            chunks: ["シャワー", "を", "あびて", "がっこう", "へ", "いきます"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você chega ao escritório procurando pelo diretor Tanaka.",
@@ -2240,6 +2617,19 @@ const MODULO_A1_30 = {
             ]
         }
     ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "くすり を のまなければ なりません",
+            translation: "Preciso tomar o remédio.",
+            chunks: ["くすり", "を", "のまなければ", "なりません"]
+        },
+        {
+            sentenceJp: "パスポート を みせなくても いい です",
+            translation: "Não precisa mostrar o passaporte.",
+            chunks: ["パスポート", "を", "みせなくても", "いい", "です"]
+        }
+    ],
     stage4_dialog: [
         {
             scenario: "Situação 1: Você conversa com um colega japonês sobre ramen.",
@@ -2325,6 +2715,19 @@ const MODULO_A1_31 = {
         { question: "28. Como dizer 'Compro no Konbini'?", options: [{ label: "Konbini de kaimasu", isCorrect: true }, { label: "Konbini ni kaimasu", isCorrect: false }, { label: "Konbini o kaimasu", isCorrect: false }] },
         { question: "29. Traduza: 'Watashi mo gakusei desu'", options: [{ label: "Eu também sou estudante", isCorrect: true }, { label: "Eu não sou estudante", isCorrect: false }, { label: "Aquele é o estudante", isCorrect: false }] },
         { question: "30. Qual palavra conectiva significa 'E / Além disso' entre frases?", options: [{ label: "Soshite (そして)", isCorrect: true }, { label: "Demo (でも)", isCorrect: false }, { label: "Karasu (から)", isCorrect: false }] }
+    ],
+        
+    stage3_5_sentenceBuilder: [
+        {
+            sentenceJp: "わたし の しゅみ は えいが を みる こと です",
+            translation: "Meu hobby é assistir a filmes.",
+            chunks: ["わたし", "の", "しゅみ", "は", "えいが", "を", "みる", "こと", "です"]
+        },
+        {
+            sentenceJp: "にほんご の べんきょう は とても たのしい です",
+            translation: "Estudar japonês é muito divertido.",
+            chunks: ["にほんご", "の", "べんきょう", "は", "とても", "たのしい", "です"]
+        }
     ],
     stage4_dialog: [
         {
