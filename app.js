@@ -2,6 +2,41 @@
 // JAPÃO ACADEMY - CORE SCRIPT (UNIFICADO)
 // ==========================================
 
+function escapeHTML(str) {
+    if (typeof str !== 'string') return '';
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+window.escapeHTML = escapeHTML;
+
+// Renderiza a estrutura visual de decomposição de radicais (Ex: 亻 [Pessoa] + 木 [Árvore])
+function renderizarRadicaisKanji(radicals) {
+    if (!radicals || !Array.isArray(radicals) || radicals.length === 0) return '';
+
+    const itensHTML = radicals.map(r => {
+        const charSeguro = typeof escapeHTML === 'function' ? escapeHTML(r.char || '') : (r.char || '');
+        const nomeSeguro = typeof escapeHTML === 'function' ? escapeHTML(r.name || '') : (r.name || '');
+        return `
+            <span class="radical-badge" title="${nomeSeguro}">
+                <span class="kana-text radical-char">${charSeguro}</span>
+                <span class="radical-name">${nomeSeguro}</span>
+            </span>
+        `;
+    }).join('<span class="radical-plus">+</span>');
+
+    return `
+        <div class="kanji-radicals-box">
+            <span class="radical-title">🧩 Radicais Formadores:</span>
+            <div class="radicals-list">${itensHTML}</div>
+        </div>
+    `;
+}
+window.renderizarRadicaisKanji = renderizarRadicaisKanji;
+
 // Verifica em qual página o usuário está através do atributo HTML
 const courseMode = document.body.getAttribute('data-mode');
 
@@ -326,6 +361,8 @@ function mostrarToast(mensagem, duracao = 3500) {
     if (!container) {
         container = document.createElement('div');
         container.id = 'toast-container';
+        container.setAttribute('role', 'alert');
+        container.setAttribute('aria-live', 'polite');
         document.body.appendChild(container);
     }
     const toast = document.createElement('div');
@@ -474,7 +511,7 @@ function loadCourseModule(idx) {
     }).join('');
 
     let vocabHtml = data.vocab.map(v => `<div class="vocab-card" style="grid-column: ${v.kana.length > 5 ? 'span 2' : 'span 1'};"><div class="vocab-kana kana-text" onclick="speakKana('${v.kana}')">${v.kana} 🔊</div><div class="vocab-romaji">${v.romaji}</div><div class="vocab-meaning">${v.meaning}</div></div>`).join('');
-    let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback"></span></div>`).join('');
+    let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback" role="status" aria-live="polite"></span></div>`).join('');
 
     display.innerHTML = `<h2 class="module-title">${data.title}</h2><p style="margin-bottom:2rem; color:var(--text-muted);">${data.desc}</p><h3 class="section-title">🔤 Caracteres/Regras</h3><div class="char-grid">${charsHtml}</div><h3 class="section-title">📚 Vocabulário Prático</h3><div class="vocab-grid">${vocabHtml}</div><div class="quiz-section"><h3 class="section-title" style="margin-top:0;">🧠 Exercícios</h3>${quizHtml}</div>`;
 
@@ -522,7 +559,7 @@ function renderQuizQuestion(q, i, mode = 'kanji') {
                     <span class="badge" style="background:rgba(168, 85, 247, 0.15); color:#a855f7; border:1px solid #a855f7; padding:4px 10px; border-radius:12px; font-size:0.8rem; font-weight:bold;">🔘 Múltipla Escolha</span>
                 </div>
                 <div class="quiz-options-group">${optionsHTML}</div>
-                <div id="cf_${i}" class="feedback" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
+                <div id="cf_${i}" class="feedback" role="status" aria-live="polite" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
             </div>
         `;
     } else {
@@ -536,7 +573,7 @@ function renderQuizQuestion(q, i, mode = 'kanji') {
                     <input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${safeAns}', '${q.type}')" placeholder="Sua resposta em hiragana, romaji ou português..." style="flex:1; min-width:200px; padding:12px; border-radius:10px; border:1.5px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-weight:600; outline:none; font-size:0.95rem;">
                     <button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${safeAns}', '${q.type}')" style="padding:12px 22px; background:var(--current-primary); color:white; border:none; border-radius:10px; font-weight:bold; cursor:pointer; font-size:0.95rem;">Verificar</button>
                 </div>
-                <div id="cf_${i}" class="feedback" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
+                <div id="cf_${i}" class="feedback" role="status" aria-live="polite" style="margin-top:10px; font-size:0.95rem; font-weight:bold;"></div>
             </div>
         `;
     }
@@ -748,6 +785,7 @@ function renderKanjiModule(moduleIndex) {
                             <div class="reading-val onyomi-val">${onVal}</div>
                         </div>
                         ${mnemonicHTML}
+                        ${renderizarRadicaisKanji(item.radicals || [{ char: "亻", name: "Pessoa" }, { char: "木", name: "Árvore" }])}
                         ${examplesHTML}
                     </div>
                 </div>
@@ -1407,7 +1445,7 @@ function renderQuizQuestion(questionObj, index) {
         html += `<input type="text" id="quiz-input-${index}" class="quiz-input" placeholder="Digite em romaji ou português..." onkeydown="if(event.key==='Enter') checkTextAnswer(${index}, '${questionObj.a}')">`;
         html += `<button class="quiz-btn" onclick="checkTextAnswer(${index}, '${questionObj.a}')">Responder</button>`;
         html += `</div>`;
-        html += `<span id="quiz-feedback-${index}" class="quiz-feedback-text"></span>`;
+        html += `<span id="quiz-feedback-${index}" class="quiz-feedback-text" role="status" aria-live="polite"></span>`;
     }
 
     html += `</div>`;
@@ -2233,7 +2271,8 @@ function calcularProgressoGlobal() {
 
 function fNome(texto) {
     if (!texto) return "";
-    return texto.replace(/\[\s*(Seu )?Nome\s*\]/gi, `<strong style="color: #e63946; text-decoration: underline;">${nomeUsuario}</strong>`);
+    const nomeSeguro = escapeHTML(nomeUsuario);
+    return texto.replace(/\[\s*(Seu )?Nome\s*\]/gi, `<strong style="color: #e63946; text-decoration: underline;">${nomeSeguro}</strong>`);
 }
 
 function atualizarNomeUsuario(valor) {
@@ -2707,6 +2746,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     kunyomi: k.kunyomi,
                                     onyomi: k.onyomi,
                                     mnemonic: k.mnemonic,
+                                    radicals: k.radicals || [],
                                     examples: k.examples || [],
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
                                 });
@@ -2746,6 +2786,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     kunyomi: k.kunyomi,
                                     onyomi: k.onyomi,
                                     mnemonic: k.mnemonic,
+                                    radicals: k.radicals || [],
                                     examples: k.examples || [],
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
                                 });
@@ -2988,6 +3029,7 @@ function renderizarCardSRS() {
                 <span style="background: rgba(34, 197, 94, 0.1); color: #16a34a; border: 1px solid #22c55e; padding: 4px 10px; border-radius: 6px;"><strong>Kun:</strong> ${cardData.kunyomi}</span>
                 <span style="background: rgba(59, 130, 246, 0.1); color: #2563eb; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 6px;"><strong>On:</strong> ${cardData.onyomi}</span>
             </div>
+            ${renderizarRadicaisKanji(cardData.radicals)}
             ${exHtml}
         `;
     } else {
@@ -3717,7 +3759,7 @@ function renderizarEtapa() {
                     <span style="font-size: 0.8rem; color: #e63946; font-weight: bold; text-transform: uppercase;">Exercício ${idx + 1} de ${mod.stage3_practice.length}</span>
                     <p style="margin: 8px 0 15px 0; font-weight: bold; font-size: 1.05rem; color: var(--text-main);">${resQ.htmlCompleto || fNome(p.question)}</p>
                     ${opcoesHTML}
-                    <div id="fb-pratica-${idx}" style="margin-top: 10px; font-weight: bold; font-size: 0.95rem;"></div>
+                    <div id="fb-pratica-${idx}" class="feedback" role="status" aria-live="polite" style="margin-top: 10px; font-weight: bold; font-size: 0.95rem;"></div>
                 </div>
             `;
         });
@@ -3753,7 +3795,7 @@ function renderizarEtapa() {
                                 🧹 Limpar
                             </button>
                         </div>
-                        <div id="fb-sb-${exId}" style="margin-top: 12px; font-weight: bold; font-size: 0.95rem;"></div>
+                        <div id="fb-sb-${exId}" class="feedback" role="status" aria-live="polite" style="margin-top: 12px; font-weight: bold; font-size: 0.95rem;"></div>
                     </div>
                 `;
             });
@@ -3802,7 +3844,7 @@ function renderizarEtapa() {
                     </div>
                     <p style="font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">Sua resposta:</p>
                     ${opcoesHTML}
-                    <div id="fb-dialogo-${idx}" style="margin-top: 12px; font-weight: bold; font-size: 0.95rem;"></div>
+                    <div id="fb-dialogo-${idx}" class="feedback" role="status" aria-live="polite" style="margin-top: 12px; font-weight: bold; font-size: 0.95rem;"></div>
                 </div>
             `;
         });
@@ -4375,7 +4417,58 @@ function registrarAtividadeDiaria() {
     atualizarHeaderStreak();
     checarConquistasGerais();
     salvarSilenciosamenteNaNuvem();
+    registrarHistoricoAtividade();
 }
+
+// Regista o histórico de ações do dia (Data no formato YYYY-MM-DD)
+function registrarHistoricoAtividade() {
+    const hoje = typeof getTodayDateString === 'function' ? getTodayDateString() : new Date().toISOString().split('T')[0];
+    let historico = {};
+    try {
+        historico = JSON.parse(localStorage.getItem('ja_activity_history')) || {};
+    } catch (e) { historico = {}; }
+
+    historico[hoje] = (historico[hoje] || 0) + 1;
+    localStorage.setItem('ja_activity_history', JSON.stringify(historico));
+
+    renderizarHeatmapEstudo();
+}
+window.registrarHistoricoAtividade = registrarHistoricoAtividade;
+
+// Renderiza o grid dos últimos 30 dias
+function renderizarHeatmapEstudo(containerId = 'heatmap-container') {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    let historico = {};
+    try { historico = JSON.parse(localStorage.getItem('ja_activity_history')) || {}; } catch (e) { }
+
+    const hoje = new Date();
+    let diasHtml = '';
+
+    for (let i = 29; i >= 0; i--) {
+        const d = new Date(hoje);
+        d.setDate(d.getDate() - i);
+        const dataStr = d.toISOString().split('T')[0];
+        const qtd = historico[dataStr] || 0;
+
+        let nivelClasse = 'lvl-0';
+        if (qtd >= 8) nivelClasse = 'lvl-3';
+        else if (qtd >= 4) nivelClasse = 'lvl-2';
+        else if (qtd >= 1) nivelClasse = 'lvl-1';
+
+        const dataFormatada = d.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+        diasHtml += `<div class="heatmap-day ${nivelClasse}" title="${dataFormatada}: ${qtd} atividade(s)"></div>`;
+    }
+
+    container.innerHTML = `
+        <div class="heatmap-wrapper">
+            <span class="heatmap-title">📊 Intensidade de Estudo (Últimos 30 Dias)</span>
+            <div class="heatmap-grid">${diasHtml}</div>
+        </div>
+    `;
+}
+window.renderizarHeatmapEstudo = renderizarHeatmapEstudo;
 
 function atualizarHeaderStreak() {
     garantirElementosCabecalhoEModal();
@@ -4598,12 +4691,13 @@ function garantirElementosCabecalhoEModal() {
 
         // 1. Badge da Ofensiva
         if (!document.getElementById('streak-badge-header')) {
-            const streakDiv = document.createElement('div');
-            streakDiv.id = 'streak-badge-header';
-            streakDiv.className = 'streak-badge';
-            streakDiv.title = 'Dias seguidos de estudo';
-            streakDiv.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
-            group.appendChild(streakDiv);
+            const streakBtn = document.createElement('button');
+            streakBtn.id = 'streak-badge-header';
+            streakBtn.className = 'streak-badge';
+            streakBtn.title = 'Clique para ver o histórico de estudo';
+            streakBtn.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
+            streakBtn.onclick = abrirModalOfensiva;
+            group.appendChild(streakBtn);
         }
 
         // 2. Botão de Conquistas
@@ -4693,8 +4787,30 @@ function garantirElementosCabecalhoEModal() {
         if (elCfg) group.appendChild(elCfg);
         if (elAuth) group.appendChild(elAuth);
         if (elTema) group.appendChild(elTema);
-
         atualizarHeaderXP();
+    }
+
+    if (!document.getElementById('modal-ofensiva')) {
+        const modalOfensivaDiv = document.createElement('div');
+        modalOfensivaDiv.id = 'modal-ofensiva';
+        modalOfensivaDiv.className = 'modal-overlay';
+        modalOfensivaDiv.style.display = 'none';
+        modalOfensivaDiv.onclick = function (e) { if (e.target === this) fecharModalOfensiva(); };
+        modalOfensivaDiv.innerHTML = `
+            <div class="modal-box modal-ofensiva-box">
+                <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
+                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🔥 Calendário de Ofensiva</h2>
+                    <button onclick="fecharModalOfensiva()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                </div>
+                <div style="text-align:center; margin-bottom: 1.2rem;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #fb923c;" id="modal-streak-display">🔥 0 Dias</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Estude diariamente para manter sua sequência ativa!</p>
+                </div>
+                <div id="heatmap-container-modal"></div>
+                <button onclick="fecharModalOfensiva()" class="fechar-modal" style="margin-top:1rem;">Fechar</button>
+            </div>
+        `;
+        document.body.appendChild(modalOfensivaDiv);
     }
 
     if (!document.getElementById('modal-auth')) {
@@ -4879,6 +4995,33 @@ function garantirElementosCabecalhoEModal() {
         document.body.appendChild(modalDict);
     }
 }
+
+function abrirModalOfensiva() {
+    garantirElementosCabecalhoEModal();
+    const modal = document.getElementById('modal-ofensiva');
+
+    let streakData = { count: 0 };
+    try {
+        const saved = localStorage.getItem('ja_streak_data');
+        if (saved) streakData = JSON.parse(saved);
+    } catch (e) { }
+
+    const disp = document.getElementById('modal-streak-display');
+    if (disp) disp.innerText = `🔥 ${streakData.count || 0} Dia(s) Seguido(s)`;
+
+    if (modal) {
+        modal.style.display = 'flex';
+        renderizarHeatmapEstudo('heatmap-container-modal');
+    }
+}
+
+function fecharModalOfensiva() {
+    const modal = document.getElementById('modal-ofensiva');
+    if (modal) modal.style.display = 'none';
+}
+
+window.abrirModalOfensiva = abrirModalOfensiva;
+window.fecharModalOfensiva = fecharModalOfensiva;
 
 function abrirModalConquistas() {
     garantirElementosCabecalhoEModal();
@@ -5397,6 +5540,7 @@ function renderizarResultadosDicionario(queryStr = '') {
                         </div>
                     </div>
                     ${item.mnemonic ? `<div class="dict-mnemonic"><strong>💡 Dica:</strong> ${item.mnemonic}</div>` : ''}
+                    ${renderizarRadicaisKanji(item.radicals)}
                     ${exHtml ? `<div class="dict-ex-box">${exHtml}</div>` : ''}
 
                     <!-- CANVAS DE ESCRITA NO DICIONÁRIO -->

@@ -1,6 +1,7 @@
 // ==========================================
-// JAPÃO ACADEMY - BANCO DE DADOS KANJI N1
+// JAPÃO ACADEMY - DADOS DO CURSO DATA KANJI_N1
 // ==========================================
+
 const kanjiN1Data = [
     {
         "module": 1,
@@ -60,6 +61,16 @@ const kanjiN1Data = [
                         "sentence": "Ancient tetsujin.",
                         "sentenceMeaning": "Sábio da antiguidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -80,6 +91,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Infidelidade",
                         "sentence": "Furin no scandal.",
                         "sentenceMeaning": "Escândalo de infidelidade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -102,6 +119,16 @@ const kanjiN1Data = [
                         "sentence": "Reikon no inori.",
                         "sentenceMeaning": "Oração pelas almas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雲",
+                        "name": "Nuvem"
+                    },
+                    {
+                        "char": "鬼",
+                        "name": "Demônio"
+                    }
                 ]
             },
             {
@@ -122,6 +149,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Olhar fixo / Contemplar",
                         "sentence": "Target o gyoushi.",
                         "sentenceMeaning": "Olhar fixamente o alvo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "冫",
+                        "name": "Gelo"
+                    },
+                    {
+                        "char": "水",
+                        "name": "Água"
                     }
                 ]
             },
@@ -144,6 +181,20 @@ const kanjiN1Data = [
                         "sentence": "Kakugo o kimeru.",
                         "sentenceMeaning": "Tomar uma determinação firme."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "五",
+                        "name": "Cinco"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -164,6 +215,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Procurar soluções às cegas",
                         "sentence": "Method no mosaku.",
                         "sentenceMeaning": "Buscar métodos às cegas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "索",
+                        "name": "Buscar"
                     }
                 ]
             },
@@ -186,6 +243,12 @@ const kanjiN1Data = [
                         "sentence": "Higaimousou ni nayamu.",
                         "sentenceMeaning": "Sofrer de paranoia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    }
                 ]
             },
             {
@@ -206,6 +269,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Espectro / Ilusão",
                         "sentence": "Genei o chasing.",
                         "sentenceMeaning": "Perseguir uma ilusão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "幻",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -228,6 +297,24 @@ const kanjiN1Data = [
                         "sentence": "Hito o madowasu.",
                         "sentenceMeaning": "Confundir as pessoas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -248,6 +335,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Melancolia profunda",
                         "sentence": "Aishuu no melody.",
                         "sentenceMeaning": "Melodia melancólica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -270,6 +363,16 @@ const kanjiN1Data = [
                         "sentence": "Shuuchishin ga arimasu.",
                         "sentenceMeaning": "Ter senso de pudor."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -290,6 +393,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Indignação justa",
                         "sentence": "Gifun o felt.",
                         "sentenceMeaning": "Sentir indignação justa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             },
@@ -312,6 +425,20 @@ const kanjiN1Data = [
                         "sentence": "Tsuukon no mistake.",
                         "sentenceMeaning": "Erro profundamente lamentável."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    }
                 ]
             },
             {
@@ -332,6 +459,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Respeito e admiração",
                         "sentence": "Keibo no spirit.",
                         "sentenceMeaning": "Espírito de admiração."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -354,6 +491,16 @@ const kanjiN1Data = [
                         "sentence": "Man'etsu no smile.",
                         "sentenceMeaning": "Sorriso de satisfação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -374,6 +521,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Contemplar o alto",
                         "sentence": "Sky o aogimiru.",
                         "sentenceMeaning": "Contemplar o céu."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -396,6 +557,20 @@ const kanjiN1Data = [
                         "sentence": "Suukou na goal.",
                         "sentenceMeaning": "Meta sublime."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "示",
+                        "name": "Espírito"
+                    }
                 ]
             },
             {
@@ -416,6 +591,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Dignidade",
                         "sentence": "Human no songen.",
                         "sentenceMeaning": "Dignidade humana."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
                     }
                 ]
             },
@@ -438,6 +619,16 @@ const kanjiN1Data = [
                         "sentence": "Keii o shimesu.",
                         "sentenceMeaning": "Demonstrar respeito."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -458,6 +649,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Altivez insolente",
                         "sentence": "Gougan na man.",
                         "sentenceMeaning": "Homem insolente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -480,6 +677,12 @@ const kanjiN1Data = [
                         "sentence": "Success o sonemu.",
                         "sentenceMeaning": "Invejar o sucesso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -500,6 +703,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Invejar",
                         "sentence": "Hito o netamu.",
                         "sentenceMeaning": "Invejar os outros."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "石",
+                        "name": "Pedra"
                     }
                 ]
             },
@@ -522,6 +735,12 @@ const kanjiN1Data = [
                         "sentence": "Besshi o stop.",
                         "sentenceMeaning": "Acabar com o menosprezo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "血",
+                        "name": "Sangue"
+                    }
                 ]
             },
             {
@@ -542,6 +761,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Subestimar / Desdenhar",
                         "sentence": "Enemy o anadoru.",
                         "sentenceMeaning": "Subestimar o inimigo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -564,6 +789,20 @@ const kanjiN1Data = [
                         "sentence": "Onnen ga tsuyoi.",
                         "sentenceMeaning": "Forte desejo de vingança."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "夕",
+                        "name": "Noite"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -584,6 +823,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ter piedade",
                         "sentence": "Poor o awaremu.",
                         "sentenceMeaning": "Ter piedade dos pobres."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "炎",
+                        "name": "Chama"
                     }
                 ]
             },
@@ -606,6 +855,20 @@ const kanjiN1Data = [
                         "sentence": "Hibin no sentiment.",
                         "sentenceMeaning": "Sentimento de compaixão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "文",
+                        "name": "Texto"
+                    }
                 ]
             },
             {
@@ -626,6 +889,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Frustrado",
                         "sentence": "Kuyashii tear.",
                         "sentenceMeaning": "Lágrimas de frustração."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -648,6 +917,20 @@ const kanjiN1Data = [
                         "sentence": "Doki o osetu.",
                         "sentenceMeaning": "Voz de raiva."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -668,6 +951,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Tremer de pavor",
                         "sentence": "Pavor ni odonoku.",
                         "sentenceMeaning": "Tremer de pavor."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -690,6 +979,16 @@ const kanjiN1Data = [
                         "sentence": "Protocol letter.",
                         "sentenceMeaning": "Carta protocolar de reverência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "皇",
+                        "name": "Imperador"
+                    }
                 ]
             },
             {
@@ -710,6 +1009,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Estar em pânico",
                         "sentence": "Awateru na.",
                         "sentenceMeaning": "Não entre em pânico!"
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "荒",
+                        "name": "Selvagem"
                     }
                 ]
             },
@@ -732,6 +1041,12 @@ const kanjiN1Data = [
                         "sentence": "Stupidity ni akireru.",
                         "sentenceMeaning": "Ficar estupefato com a estupidez."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "呆",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -752,6 +1067,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Carta de retratação",
                         "sentence": "Wabijou o send.",
                         "sentenceMeaning": "Enviar carta de retratação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
                     }
                 ]
             },
@@ -774,6 +1099,16 @@ const kanjiN1Data = [
                         "sentence": "Future no yuuryo.",
                         "sentenceMeaning": "Preocupação com o futuro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -794,6 +1129,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Lamentar a morte",
                         "sentence": "Death o itamu.",
                         "sentenceMeaning": "Lamentar a morte."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "早",
+                        "name": "Cedo"
                     }
                 ]
             },
@@ -816,6 +1165,12 @@ const kanjiN1Data = [
                         "sentence": "Fungai suru.",
                         "sentenceMeaning": "Ficar profundamente indignado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    }
                 ]
             },
             {
@@ -836,6 +1191,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Anseio por um ideal",
                         "sentence": "Ideal ni shoukei.",
                         "sentenceMeaning": "Ansiar pelo ideal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "童",
+                        "name": "Criança"
                     }
                 ]
             },
@@ -858,6 +1223,16 @@ const kanjiN1Data = [
                         "sentence": "Wazrawashii work.",
                         "sentenceMeaning": "Trabalho incômodo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    }
                 ]
             },
             {
@@ -878,6 +1253,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Debater-se de dor mental",
                         "sentence": "Pain ni modaeru.",
                         "sentenceMeaning": "Debater-se em dor mental."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -900,6 +1285,12 @@ const kanjiN1Data = [
                         "sentence": "Osoreiru desu.",
                         "sentenceMeaning": "Fico imensamente agradecido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -920,6 +1311,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Súplica fervorosa",
                         "sentence": "Kongan suru.",
                         "sentenceMeaning": "Suplicar fervorosamente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             }
@@ -1085,6 +1482,12 @@ const kanjiN1Data = [
                         "sentence": "Zazen o do.",
                         "sentenceMeaning": "Praticar Zazen."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
+                    }
                 ]
             },
             {
@@ -1105,6 +1508,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Sacerdote / Monge",
                         "sentence": "Souryo no robe.",
                         "sentenceMeaning": "Manto do sacerdote."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -1127,6 +1536,16 @@ const kanjiN1Data = [
                         "sentence": "Success kigan.",
                         "sentenceMeaning": "Oração pelo sucesso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
+                    },
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -1147,6 +1566,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Fantasma",
                         "sentence": "Yuurei story.",
                         "sentenceMeaning": "História de fantasma."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
                     }
                 ]
             },
@@ -1169,6 +1598,16 @@ const kanjiN1Data = [
                         "sentence": "Shikoku henro.",
                         "sentenceMeaning": "Peregrinação de Shikoku."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "戸",
+                        "name": "Porta"
+                    }
                 ]
             },
             {
@@ -1189,6 +1628,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Santidade / Sacro",
                         "sentence": "Shinsei na area.",
                         "sentenceMeaning": "Área sagrada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
                     }
                 ]
             },
@@ -1211,6 +1668,16 @@ const kanjiN1Data = [
                         "sentence": "Suisen no flower.",
                         "sentenceMeaning": "Flor de narciso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    }
                 ]
             },
             {
@@ -1231,6 +1698,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Santuário xintoísta local",
                         "sentence": "Shinshi no festival.",
                         "sentenceMeaning": "Festival do santuário local."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
+                    },
+                    {
+                        "char": "司",
+                        "name": "Administrar"
                     }
                 ]
             },
@@ -1253,6 +1730,16 @@ const kanjiN1Data = [
                         "sentence": "Anji no monk.",
                         "sentenceMeaning": "Mestre monge da cabana."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    }
                 ]
             },
             {
@@ -1273,6 +1760,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Templo ancestral dinástico",
                         "sentence": "Ancestral byou.",
                         "sentenceMeaning": "Templo ancestral dinástico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
                     }
                 ]
             },
@@ -1295,6 +1788,12 @@ const kanjiN1Data = [
                         "sentence": "Bonshou o ring.",
                         "sentenceMeaning": "Tocar o grande sino budista."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -1315,6 +1814,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Stupa / Pagode budista",
                         "sentence": "Ancient butsutou.",
                         "sentenceMeaning": "Pagode budista antigo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "合",
+                        "name": "Unir"
                     }
                 ]
             },
@@ -1337,6 +1850,16 @@ const kanjiN1Data = [
                         "sentence": "Keishou o ring.",
                         "sentenceMeaning": "Tocar o sino de alarme."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "童",
+                        "name": "Criança"
+                    }
                 ]
             },
             {
@@ -1357,6 +1880,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Advertir / Admoestar",
                         "sentence": "Error o imashimeru.",
                         "sentenceMeaning": "Admoestar sobre o erro."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
                     }
                 ]
             },
@@ -1379,6 +1912,16 @@ const kanjiN1Data = [
                         "sentence": "Houritsu no study.",
                         "sentenceMeaning": "Estudo do direito."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "聿",
+                        "name": "Pincel"
+                    }
                 ]
             },
             {
@@ -1399,6 +1942,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Etiqueta / Boas maneiras",
                         "sentence": "Reigi correct.",
                         "sentenceMeaning": "Boas maneiras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "義",
+                        "name": "Justiça"
                     }
                 ]
             },
@@ -1421,6 +1974,20 @@ const kanjiN1Data = [
                         "sentence": "Natsu-matsuri ni iku.",
                         "sentenceMeaning": "Ir ao festival de verão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "示",
+                        "name": "Espírito"
+                    }
                 ]
             },
             {
@@ -1441,6 +2008,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Consagração conjunta de divindades",
                         "sentence": "Goushi suru.",
                         "sentenceMeaning": "Consagrar divindades juntas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
                     }
                 ]
             },
@@ -1463,6 +2036,12 @@ const kanjiN1Data = [
                         "sentence": "Akuryou o harau.",
                         "sentenceMeaning": "Exorcizar o espírito maligno."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
+                    }
                 ]
             },
             {
@@ -1483,6 +2062,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ruína física / Decadência",
                         "sentence": "Rokku suru.",
                         "sentenceMeaning": "Cair em decadência física."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "白",
+                        "name": "Branco"
+                    },
+                    {
+                        "char": "鬼",
+                        "name": "Demônio"
                     }
                 ]
             },
@@ -1505,6 +2094,12 @@ const kanjiN1Data = [
                         "sentence": "Kyuuketsuki story.",
                         "sentenceMeaning": "História de vampiros."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "鬼",
+                        "name": "Demônio"
+                    }
                 ]
             },
             {
@@ -1525,6 +2120,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Magia / Bruxaria",
                         "sentence": "Mahou o tsukau.",
                         "sentenceMeaning": "Usar magia."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "麻",
+                        "name": "Cânhamo"
+                    },
+                    {
+                        "char": "鬼",
+                        "name": "Demônio"
                     }
                 ]
             },
@@ -1547,6 +2152,12 @@ const kanjiN1Data = [
                         "sentence": "Tatara-seru.",
                         "sentenceMeaning": "Ser amaldiçoado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "祟",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -1567,6 +2178,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Erradicação do mal / Purificação",
                         "sentence": "Evil no futsujo.",
                         "sentenceMeaning": "Erradicação do mal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
                     }
                 ]
             },
@@ -1589,6 +2206,16 @@ const kanjiN1Data = [
                         "sentence": "Jumon o chant.",
                         "sentenceMeaning": "Recitar o encantamento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "祝",
+                        "name": "Celebrar"
+                    }
                 ]
             },
             {
@@ -1609,6 +2236,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Magia de talismãs",
                         "sentence": "Fuju no technique.",
                         "sentenceMeaning": "Técnica de amuleto místico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "父",
+                        "name": "Pai"
                     }
                 ]
             },
@@ -1631,6 +2272,12 @@ const kanjiN1Data = [
                         "sentence": "Shukutou o give.",
                         "sentenceMeaning": "Conceder a bênção solene."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
+                    }
                 ]
             },
             {
@@ -1651,6 +2298,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Confessionário",
                         "sentence": "Zangeshitsu ni enter.",
                         "sentenceMeaning": "Entrar no confessionário."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -1673,6 +2326,20 @@ const kanjiN1Data = [
                         "sentence": "Nehan'e ceremony.",
                         "sentenceMeaning": "Cerimônia memorial de Nehan."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -1693,6 +2360,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Pintura do Nirvana de Buda",
                         "sentence": "Nehanzu o view.",
                         "sentenceMeaning": "Contemplar a pintura do Nirvana."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "槃",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -1715,6 +2388,16 @@ const kanjiN1Data = [
                         "sentence": "Kuyou o okonao.",
                         "sentenceMeaning": "Realizar o rito memorial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    }
                 ]
             },
             {
@@ -1735,6 +2418,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Serviço voluntário / Devoção",
                         "sentence": "Volunteer houshi.",
                         "sentenceMeaning": "Serviço comunitário voluntário."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -1757,6 +2446,12 @@ const kanjiN1Data = [
                         "sentence": "Church ni kenkin.",
                         "sentenceMeaning": "Fazer doação à igreja."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犬",
+                        "name": "Cão"
+                    }
                 ]
             },
             {
@@ -1777,6 +2472,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sutra / Oração budista",
                         "sentence": "Okyoku o chant.",
                         "sentenceMeaning": "Recitar os sutras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -1799,6 +2504,12 @@ const kanjiN1Data = [
                         "sentence": "Giten master.",
                         "sentenceMeaning": "Mestre dos ritos formais."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "典",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -1819,6 +2530,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Cântico de louvor budista",
                         "sentence": "Geju no song.",
                         "sentenceMeaning": "Cântico de louvor budista."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
                     }
                 ]
             },
@@ -1841,6 +2562,16 @@ const kanjiN1Data = [
                         "sentence": "Kyoukatsu case.",
                         "sentenceMeaning": "Caso de chantagem e intimidação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
+                    }
                 ]
             },
             {
@@ -1861,6 +2592,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Silêncio",
                         "sentence": "Chinmoku o break.",
                         "sentenceMeaning": "Quebrar o silêncio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "默",
+                        "name": "Silêncio"
                     }
                 ]
             },
@@ -1883,6 +2620,12 @@ const kanjiN1Data = [
                         "sentence": "Nature no kanshou.",
                         "sentenceMeaning": "Contemplação da natureza."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "見",
+                        "name": "Ver"
+                    }
                 ]
             },
             {
@@ -1903,6 +2646,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Luz radiante de iluminação",
                         "sentence": "Shoukou no altar.",
                         "sentenceMeaning": "Luz radiante no altar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "昭",
+                        "name": "Brilhante"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -1925,6 +2678,20 @@ const kanjiN1Data = [
                         "sentence": "Star ga kagayaku.",
                         "sentenceMeaning": "A estrela brilha intensamente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -1945,6 +2712,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Fresco / Vistoso",
                         "sentence": "Mizumizushii fruit.",
                         "sentenceMeaning": "Fruta fresca e vistosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
                     }
                 ]
             }
@@ -2110,6 +2883,20 @@ const kanjiN1Data = [
                         "sentence": "Iken judgment.",
                         "sentenceMeaning": "Decisão de inconstitucionalidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "害",
+                        "name": "Dano"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -2130,6 +2917,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Tratado",
                         "sentence": "International jouyaku.",
                         "sentenceMeaning": "Tratado internacional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -2152,6 +2945,16 @@ const kanjiN1Data = [
                         "sentence": "Hannin o kiso.",
                         "sentenceMeaning": "Denunciar o criminoso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    }
                 ]
             },
             {
@@ -2172,6 +2975,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Perdão especial",
                         "sentence": "Tokusha order.",
                         "sentenceMeaning": "Ordem de perdão especial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "赤",
+                        "name": "Vermelho"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -2194,6 +3007,12 @@ const kanjiN1Data = [
                         "sentence": "Keibatsu o ukeru.",
                         "sentenceMeaning": "Sofrer punição criminal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刑",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -2214,6 +3033,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Punição disciplinar",
                         "sentence": "Shobatsu o receive.",
                         "sentenceMeaning": "Receber punição."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
                     }
                 ]
             },
@@ -2236,6 +3069,20 @@ const kanjiN1Data = [
                         "sentence": "Shouso no report.",
                         "sentenceMeaning": "Relatório de vitória na causa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "厶",
+                        "name": "Privado"
+                    }
                 ]
             },
             {
@@ -2256,6 +3103,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Auditoria fiscal",
                         "sentence": "Kansa o do.",
                         "sentenceMeaning": "Realizar auditoria."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "血",
+                        "name": "Sangue"
                     }
                 ]
             },
@@ -2278,6 +3139,16 @@ const kanjiN1Data = [
                         "sentence": "Baishinin system.",
                         "sentenceMeaning": "Sistema de jurados."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "釆",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -2298,6 +3169,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Julgamento",
                         "sentence": "Saiban o okonao.",
                         "sentenceMeaning": "Realizar o julgamento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "半",
+                        "name": "Metade"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
                     }
                 ]
             },
@@ -2320,6 +3201,20 @@ const kanjiN1Data = [
                         "sentence": "Witness no shougen.",
                         "sentenceMeaning": "Depoimento da testemunha."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -2340,6 +3235,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Proteção",
                         "sentence": "Rights no hogo.",
                         "sentenceMeaning": "Proteção de direitos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -2362,6 +3275,12 @@ const kanjiN1Data = [
                         "sentence": "Text no shippitsu.",
                         "sentenceMeaning": "Redação do texto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "執",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -2382,6 +3301,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Opressão",
                         "sentence": "People no yokuatsu.",
                         "sentenceMeaning": "Opressão do povo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -2404,6 +3337,16 @@ const kanjiN1Data = [
                         "sentence": "Tax no koujo.",
                         "sentenceMeaning": "Dedução de imposto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "空",
+                        "name": "Céu"
+                    }
                 ]
             },
             {
@@ -2424,6 +3367,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Erradicação / Eliminação",
                         "sentence": "Evidence no massatsu.",
                         "sentenceMeaning": "Eliminação de evidências."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "末",
+                        "name": "Fim"
                     }
                 ]
             },
@@ -2446,6 +3399,12 @@ const kanjiN1Data = [
                         "sentence": "Road no koubai.",
                         "sentenceMeaning": "Aclive da estrada."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "厶",
+                        "name": "Privado"
+                    }
                 ]
             },
             {
@@ -2466,6 +3425,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Permanência no cargo",
                         "sentence": "Official no ryuunin.",
                         "sentenceMeaning": "Permanência do oficial no cargo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "田",
+                        "name": "Campo"
                     }
                 ]
             },
@@ -2488,6 +3457,16 @@ const kanjiN1Data = [
                         "sentence": "10-days kouryuu.",
                         "sentenceMeaning": "Detenção de 10 dias."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -2508,6 +3487,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ponderar o sentimento do outro",
                         "sentence": "Heart o kumu.",
                         "sentenceMeaning": "Ponderar o sentimento do outro."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
                     }
                 ]
             },
@@ -2530,6 +3515,16 @@ const kanjiN1Data = [
                         "sentence": "Contract no haki.",
                         "sentenceMeaning": "Anulação de contrato."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    }
                 ]
             },
             {
@@ -2550,6 +3545,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Devolução",
                         "sentence": "Book no henkyaku.",
                         "sentenceMeaning": "Devolução do livro."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -2572,6 +3573,12 @@ const kanjiN1Data = [
                         "sentence": "University jun-kyouju.",
                         "sentenceMeaning": "Professor associado da universidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "準",
+                        "name": "Padrão"
+                    }
                 ]
             },
             {
@@ -2592,6 +3599,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Consultar parecer",
                         "sentence": "Council ni hakaru.",
                         "sentenceMeaning": "Consultar o parecer do conselho."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "次",
+                        "name": "Próximo"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -2614,6 +3631,16 @@ const kanjiN1Data = [
                         "sentence": "Higaisha no support.",
                         "sentenceMeaning": "Apoio à vítima."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "衤",
+                        "name": "Vestimenta"
+                    },
+                    {
+                        "char": "皮",
+                        "name": "Pele"
+                    }
                 ]
             },
             {
@@ -2634,6 +3661,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Suspeita / Dúvida grave",
                         "sentence": "Corruption no giwaku.",
                         "sentenceMeaning": "Suspeita de corrupção."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -2656,6 +3701,12 @@ const kanjiN1Data = [
                         "sentence": "Fact no kyuumei.",
                         "sentenceMeaning": "Investigação rigorosa dos fatos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -2676,6 +3727,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Projétil / Bala de arma",
                         "sentence": "Dangan no speed.",
                         "sentenceMeaning": "Velocidade do projétil."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
                     }
                 ]
             },
@@ -2698,6 +3755,12 @@ const kanjiN1Data = [
                         "sentence": "Dangai-saiban o start.",
                         "sentenceMeaning": "Iniciar o julgamento de impeachment."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "力",
+                        "name": "Força"
+                    }
                 ]
             },
             {
@@ -2718,6 +3781,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Indenização por perdas e danos",
                         "sentence": "Songai-baishou claim.",
                         "sentenceMeaning": "Reclamação de indenização."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "丶",
+                        "name": "Ponto"
                     }
                 ]
             },
@@ -2740,6 +3813,16 @@ const kanjiN1Data = [
                         "sentence": "Mushou offer.",
                         "sentenceMeaning": "Oferta gratuita."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "賞",
+                        "name": "Prêmio"
+                    }
                 ]
             },
             {
@@ -2760,6 +3843,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Prisão com trabalhos forçados",
                         "sentence": "5-years choueki.",
                         "sentenceMeaning": "5 anos de prisão com trabalhos forçados."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "微",
+                        "name": "Sutil"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -2782,6 +3875,12 @@ const kanjiN1Data = [
                         "sentence": "Law no kitei.",
                         "sentenceMeaning": "Estipulação da lei."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "見",
+                        "name": "Ver"
+                    }
                 ]
             },
             {
@@ -2802,6 +3901,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Lei científica/natural",
                         "sentence": "Nature no housoku.",
                         "sentenceMeaning": "Lei da natureza."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
                     }
                 ]
             },
@@ -2824,6 +3933,12 @@ const kanjiN1Data = [
                         "sentence": "Seirei o issue.",
                         "sentenceMeaning": "Emitir decreto governamental."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -2844,6 +3959,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Rescrito imperial de educação",
                         "sentence": "Chokugo no reading.",
                         "sentenceMeaning": "Leitura do rescrito imperial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -2866,6 +3991,12 @@ const kanjiN1Data = [
                         "sentence": "Kenryoku no abuse.",
                         "sentenceMeaning": "Abuso de poder estatal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -2886,6 +4017,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Justiça",
                         "sentence": "Seigi no side.",
                         "sentenceMeaning": "Lado da justiça."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "羊",
+                        "name": "Ovelha"
+                    },
+                    {
+                        "char": "我",
+                        "name": "Eu"
                     }
                 ]
             },
@@ -2908,6 +4049,20 @@ const kanjiN1Data = [
                         "sentence": "School shokuin.",
                         "sentenceMeaning": "Servidor escolar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    },
+                    {
+                        "char": "音",
+                        "name": "Som"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    }
                 ]
             },
             {
@@ -2928,6 +4083,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Burocracia estatal",
                         "sentence": "Kanryou system.",
                         "sentenceMeaning": "Sistema burocrático estatal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
                     }
                 ]
             },
@@ -2950,6 +4111,16 @@ const kanjiN1Data = [
                         "sentence": "Keisatsusho ni go.",
                         "sentenceMeaning": "Ir à delegacia de polícia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "者",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -2970,6 +4141,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Autonomia / Autodisciplina",
                         "sentence": "Jiritsu-teki action.",
                         "sentenceMeaning": "Ação autônoma."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "聿",
+                        "name": "Pincel"
                     }
                 ]
             }
@@ -3135,6 +4316,12 @@ const kanjiN1Data = [
                         "sentence": "Zaigai houjin.",
                         "sentenceMeaning": "Compatriotas no exterior."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "邑",
+                        "name": "Cidade"
+                    }
                 ]
             },
             {
@@ -3155,6 +4342,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Liga internacional / Federação",
                         "sentence": "Kokusai renmei.",
                         "sentenceMeaning": "Liga internacional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "皿",
+                        "name": "Prato"
                     }
                 ]
             },
@@ -3177,6 +4370,16 @@ const kanjiN1Data = [
                         "sentence": "Ryouji-kan.",
                         "sentenceMeaning": "Consulado diplomático."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    },
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    }
                 ]
             },
             {
@@ -3197,6 +4400,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Violação de soberania",
                         "sentence": "Sovereignty no shingai.",
                         "sentenceMeaning": "Violação da soberania."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -3219,6 +4432,16 @@ const kanjiN1Data = [
                         "sentence": "Datou na plan.",
                         "sentenceMeaning": "Plano razoável."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "爪",
+                        "name": "Garra"
+                    },
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    }
                 ]
             },
             {
@@ -3239,6 +4462,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Residência diplomática a trabalho",
                         "sentence": "Chuuzai-in.",
                         "sentenceMeaning": "Expatriado a trabalho."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "馬",
+                        "name": "Cavalo"
+                    },
+                    {
+                        "char": "主",
+                        "name": "Senhor"
                     }
                 ]
             },
@@ -3261,6 +4494,16 @@ const kanjiN1Data = [
                         "sentence": "Peace tokushi.",
                         "sentenceMeaning": "Enviado especial de paz."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    }
                 ]
             },
             {
@@ -3281,6 +4524,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Consultas multilaterais",
                         "sentence": "Kyougi o okonao.",
                         "sentenceMeaning": "Realizar negociações."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "十",
+                        "name": "Dez / Cruz"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -3303,6 +4556,12 @@ const kanjiN1Data = [
                         "sentence": "Kiyaku o mamoru.",
                         "sentenceMeaning": "Respeitar o regulamento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -3323,6 +4582,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Extravio de documento",
                         "sentence": "Passport funshitsu.",
                         "sentenceMeaning": "Extravio do passaporte."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
                     }
                 ]
             },
@@ -3345,6 +4618,16 @@ const kanjiN1Data = [
                         "sentence": "War no kaihi.",
                         "sentenceMeaning": "Evitar a guerra."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    }
                 ]
             },
             {
@@ -3365,6 +4648,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Crise nacional",
                         "sentence": "Kokunan o overcome.",
                         "sentenceMeaning": "Superar a crise nacional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "難",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -3387,6 +4676,16 @@ const kanjiN1Data = [
                         "sentence": "Kyuuen team.",
                         "sentenceMeaning": "Equipe de socorro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -3407,6 +4706,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Tributo diplomático",
                         "sentence": "Mitsugimono o offer.",
                         "sentenceMeaning": "Oferecer tributos diplomáticos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "工",
+                        "name": "Trabalho"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             },
@@ -3429,6 +4738,12 @@ const kanjiN1Data = [
                         "sentence": "Fund ni kenkin.",
                         "sentenceMeaning": "Fazer doação ao fundo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犬",
+                        "name": "Cão"
+                    }
                 ]
             },
             {
@@ -3449,6 +4764,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Conquista da supremacia",
                         "sentence": "World seiha.",
                         "sentenceMeaning": "Conquista da supremacia mundial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "革",
+                        "name": "Couro"
+                    },
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
                     }
                 ]
             },
@@ -3471,6 +4800,20 @@ const kanjiN1Data = [
                         "sentence": "Movement o shoudou.",
                         "sentenceMeaning": "Liderar o movimento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
+                    }
                 ]
             },
             {
@@ -3491,6 +4834,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Espião / Agente secreto",
                         "sentence": "Kanchou o send.",
                         "sentenceMeaning": "Enviar o agente secreto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "片",
+                        "name": "Fatia"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -3513,6 +4866,16 @@ const kanjiN1Data = [
                         "sentence": "Secret chouhouin.",
                         "sentenceMeaning": "Agente secreto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -3533,6 +4896,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Países do Eixo / Pivô político",
                         "sentence": "Suujiku-koku.",
                         "sentenceMeaning": "Países do Eixo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
                     }
                 ]
             },
@@ -3555,6 +4928,16 @@ const kanjiN1Data = [
                         "sentence": "Naikaku approval.",
                         "sentenceMeaning": "Aprovação do gabinete."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "各",
+                        "name": "Cada"
+                    }
                 ]
             },
             {
@@ -3575,6 +4958,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Soberania / Governança estatal",
                         "sentence": "State no touchi.",
                         "sentenceMeaning": "Governança do Estado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "育",
+                        "name": "Criar"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
                     }
                 ]
             },
@@ -3597,6 +4994,12 @@ const kanjiN1Data = [
                         "sentence": "Seisai-soshi o do.",
                         "sentenceMeaning": "Aplicar medidas de sanção."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
+                    }
                 ]
             },
             {
@@ -3617,6 +5020,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Anexo / Envio conjunto",
                         "sentence": "Letter ni doufuu.",
                         "sentenceMeaning": "Anexo na carta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
                     }
                 ]
             },
@@ -3639,6 +5052,20 @@ const kanjiN1Data = [
                         "sentence": "Rensa reaction.",
                         "sentenceMeaning": "Reação em cadeia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -3659,6 +5086,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Revogação de declaração",
                         "sentence": "Statement no tekkai.",
                         "sentenceMeaning": "Revogação da declaração."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "徹",
+                        "name": "Atravessar"
                     }
                 ]
             },
@@ -3681,6 +5118,16 @@ const kanjiN1Data = [
                         "sentence": "Parachute kouka.",
                         "sentenceMeaning": "Salto de paraquedas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "夂",
+                        "name": "Seguir"
+                    }
                 ]
             },
             {
@@ -3701,6 +5148,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Inabalável / Indomável",
                         "sentence": "Fukutsu no spirit.",
                         "sentenceMeaning": "Espírito indomável."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "屈",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -3723,6 +5176,20 @@ const kanjiN1Data = [
                         "sentence": "Crisis no kokufuku.",
                         "sentenceMeaning": "Superação da crise."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -3743,6 +5210,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Uso combinado",
                         "sentence": "Two methods no heiyou.",
                         "sentenceMeaning": "Uso combinado de dois métodos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -3765,6 +5238,12 @@ const kanjiN1Data = [
                         "sentence": "Small country no heidon.",
                         "sentenceMeaning": "Anexação voraz do pequeno país."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -3785,6 +5264,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Divisão / Partição",
                         "sentence": "Territory no bunkatsu.",
                         "sentenceMeaning": "Partição de território."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "害",
+                        "name": "Dano"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
                     }
                 ]
             },
@@ -3807,6 +5296,12 @@ const kanjiN1Data = [
                         "sentence": "Negotiation de jouho.",
                         "sentenceMeaning": "Fazer concessão na negociação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -3827,6 +5322,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Transnacional",
                         "sentence": "Kakoku kigyou.",
                         "sentenceMeaning": "Empresa transnacional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "足",
+                        "name": "Pé"
+                    },
+                    {
+                        "char": "誇",
+                        "name": "Orgulho"
                     }
                 ]
             },
@@ -3849,6 +5354,12 @@ const kanjiN1Data = [
                         "sentence": "World kara no kakuzetsu.",
                         "sentenceMeaning": "Isolamento absoluto do mundo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    }
                 ]
             },
             {
@@ -3869,6 +5380,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Obstrução",
                         "sentence": "Peace no sogai.",
                         "sentenceMeaning": "Obstrução à paz."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
                     }
                 ]
             },
@@ -3891,6 +5408,16 @@ const kanjiN1Data = [
                         "sentence": "Fumikiri no shadanki.",
                         "sentenceMeaning": "Barreira do cruzamento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    }
                 ]
             },
             {
@@ -3911,6 +5438,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Contramedida",
                         "sentence": "Crisis taisaku.",
                         "sentenceMeaning": "Contramedida de crise."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
                     }
                 ]
             },
@@ -3933,6 +5466,16 @@ const kanjiN1Data = [
                         "sentence": "Military sanbou.",
                         "sentenceMeaning": "Estrategista militar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "某",
+                        "name": "Determinado"
+                    }
                 ]
             },
             {
@@ -3953,6 +5496,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Invasão",
                         "sentence": "Shinryaku o stop.",
                         "sentenceMeaning": "Parar a invasão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "田",
+                        "name": "Campo"
+                    },
+                    {
+                        "char": "各",
+                        "name": "Cada"
                     }
                 ]
             },
@@ -3975,6 +5528,16 @@ const kanjiN1Data = [
                         "sentence": "Ryoukoku no wakai.",
                         "sentenceMeaning": "Reconciliação dos dois países."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    }
                 ]
             },
             {
@@ -3995,6 +5558,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pacto de paz e amizade",
                         "sentence": "Waboku o musubu.",
                         "sentenceMeaning": "Formar pacto de paz e amizade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             }
@@ -4160,6 +5733,16 @@ const kanjiN1Data = [
                         "sentence": "Kahei economy.",
                         "sentenceMeaning": "Economia monetária."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    },
+                    {
+                        "char": "巾",
+                        "name": "Pano"
+                    }
                 ]
             },
             {
@@ -4180,6 +5763,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Concessão territorial histórica",
                         "sentence": "Foreign sokai.",
                         "sentenceMeaning": "Concessão territorial estrangeira."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "禾",
+                        "name": "Grão"
                     }
                 ]
             },
@@ -4202,6 +5791,12 @@ const kanjiN1Data = [
                         "sentence": "Economy no teitai.",
                         "sentenceMeaning": "Estagnação econômica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -4222,6 +5817,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Seção de Recursos Humanos",
                         "sentence": "Jinjika no staff.",
                         "sentenceMeaning": "Equipe da seção de RH."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "果",
+                        "name": "Fruta"
                     }
                 ]
             },
@@ -4244,6 +5849,20 @@ const kanjiN1Data = [
                         "sentence": "Geppu de harau.",
                         "sentenceMeaning": "Pagar em prestações mensais."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -4264,6 +5883,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Convocação militar obrigatória",
                         "sentence": "Chouhei system.",
                         "sentenceMeaning": "Serviço militar obrigatório."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "微",
+                        "name": "Sutil"
                     }
                 ]
             },
@@ -4286,6 +5911,12 @@ const kanjiN1Data = [
                         "sentence": "Shuushi balance.",
                         "sentenceMeaning": "Balanço de receitas e despesas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -4306,6 +5937,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Concessão de benefício público",
                         "sentence": "Pension no shikyuu.",
                         "sentenceMeaning": "Concessão de pensão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "十",
+                        "name": "Dez / Cruz"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -4328,6 +5969,20 @@ const kanjiN1Data = [
                         "sentence": "Yearly kesshan.",
                         "sentenceMeaning": "Balanço anual de contas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    }
                 ]
             },
             {
@@ -4348,6 +6003,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Inspeção / Exame",
                         "sentence": "Quality kensa.",
                         "sentenceMeaning": "Inspeção de qualidade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -4370,6 +6031,12 @@ const kanjiN1Data = [
                         "sentence": "Situation ni kangamiru.",
                         "sentenceMeaning": "Levar a situação em consideração."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -4390,6 +6057,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Cobrança formal de dívida fiscal",
                         "sentence": "Tokusoku-jou.",
                         "sentenceMeaning": "Notificação de cobrança de imposto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
                     }
                 ]
             },
@@ -4412,6 +6089,16 @@ const kanjiN1Data = [
                         "sentence": "Kishouchou report.",
                         "sentenceMeaning": "Relatório da Agência Meteorológica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    }
                 ]
             },
             {
@@ -4432,6 +6119,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Correios",
                         "sentence": "Yuubinkyoku de send.",
                         "sentenceMeaning": "Enviar nos correios."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
+                    },
+                    {
+                        "char": "乙",
+                        "name": "Curva"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -4454,6 +6155,16 @@ const kanjiN1Data = [
                         "sentence": "Kyuogohan no activity.",
                         "sentenceMeaning": "Atuação da equipe de socorro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "玉",
+                        "name": "Joia"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -4474,6 +6185,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Primeiro-Ministro",
                         "sentence": "Prime Minister.",
                         "sentenceMeaning": "Primeiro-Ministro do Japão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
                     }
                 ]
             },
@@ -4496,6 +6213,16 @@ const kanjiN1Data = [
                         "sentence": "German saishou.",
                         "sentenceMeaning": "Chanceler alemão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "辛",
+                        "name": "Espinho"
+                    }
                 ]
             },
             {
@@ -4516,6 +6243,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ministro das Relações Exteriores",
                         "sentence": "Gaishou speech.",
                         "sentenceMeaning": "Discurso do Ministro das Relações Exteriores."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
                     }
                 ]
             },
@@ -4538,6 +6275,12 @@ const kanjiN1Data = [
                         "sentence": "Office no douryou.",
                         "sentenceMeaning": "Colega de escritório."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -4558,6 +6301,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Servidor público municipal",
                         "sentence": "City riin.",
                         "sentenceMeaning": "Servidor público municipal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -4580,6 +6333,12 @@ const kanjiN1Data = [
                         "sentence": "Board yakuin.",
                         "sentenceMeaning": "Diretor do conselho."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "役",
+                        "name": "Função"
+                    }
                 ]
             },
             {
@@ -4600,6 +6359,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Servidor público",
                         "sentence": "Koumuin exam.",
                         "sentenceMeaning": "Exame para servidor público."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "矛",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -4622,6 +6395,12 @@ const kanjiN1Data = [
                         "sentence": "Sekinin o take.",
                         "sentenceMeaning": "Assumir a responsabilidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -4642,6 +6421,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vida",
                         "sentence": "Seimei protection.",
                         "sentenceMeaning": "Proteção da vida."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -4664,6 +6453,16 @@ const kanjiN1Data = [
                         "sentence": "Labor higyou.",
                         "sentenceMeaning": "Greve dos trabalhadores."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "能",
+                        "name": "Capacidade"
+                    }
                 ]
             },
             {
@@ -4684,6 +6483,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Licença / Carteira oficial",
                         "sentence": "Driver menkyo.",
                         "sentenceMeaning": "Carteira de motorista."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "免",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -4706,6 +6511,12 @@ const kanjiN1Data = [
                         "sentence": "Hosei yosan.",
                         "sentenceMeaning": "Orçamento suplementar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "衤",
+                        "name": "Vestimenta"
+                    }
                 ]
             },
             {
@@ -4726,6 +6537,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ajuda / Assistência financeira",
                         "sentence": "Financial enjo.",
                         "sentenceMeaning": "Assistência financeira."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -4748,6 +6565,12 @@ const kanjiN1Data = [
                         "sentence": "Public fujo.",
                         "sentenceMeaning": "Auxílio público de subsistência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -4768,6 +6591,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Remuneração / Salário civil",
                         "sentence": "Monthly kyuuyo.",
                         "sentenceMeaning": "Remuneração mensal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "合",
+                        "name": "Unir"
                     }
                 ]
             },
@@ -4790,6 +6623,12 @@ const kanjiN1Data = [
                         "sentence": "Policy no yuuwa.",
                         "sentenceMeaning": "Harmonização de políticas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "虫",
+                        "name": "Inseto"
+                    }
                 ]
             },
             {
@@ -4810,6 +6649,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Passivo / Dívidas estatais",
                         "sentence": "State no fusai.",
                         "sentenceMeaning": "Passivo estatal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "責",
+                        "name": "Responsabilidade"
                     }
                 ]
             },
@@ -4832,6 +6681,12 @@ const kanjiN1Data = [
                         "sentence": "Shouken company.",
                         "sentenceMeaning": "Corretora de valores mobiliários."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    }
                 ]
             },
             {
@@ -4852,6 +6707,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sem custos ao erário",
                         "sentence": "Mushou aid.",
                         "sentenceMeaning": "Ajuda sem custos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "賞",
+                        "name": "Prêmio"
                     }
                 ]
             },
@@ -4874,6 +6739,16 @@ const kanjiN1Data = [
                         "sentence": "Akaji-kokusai issue.",
                         "sentenceMeaning": "Emissão de títulos para déficit."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -4894,6 +6769,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Turnaround para superávit",
                         "sentence": "Budget no kurojika.",
                         "sentenceMeaning": "Conversão do orçamento em superávit."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "炎",
+                        "name": "Chama"
                     }
                 ]
             },
@@ -4916,6 +6797,16 @@ const kanjiN1Data = [
                         "sentence": "Boudai na debt.",
                         "sentenceMeaning": "Dívida colossal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -4936,6 +6827,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Redução de gastos",
                         "sentence": "Scale no shukushou.",
                         "sentenceMeaning": "Redução de escala de gastos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "宿",
+                        "name": "Hospedagem"
                     }
                 ]
             },
@@ -4958,6 +6859,16 @@ const kanjiN1Data = [
                         "sentence": "Security keibi.",
                         "sentenceMeaning": "Vigilância de segurança."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "敬",
+                        "name": "Respeitar"
+                    },
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -4978,6 +6889,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Reflexão / Auto-crítica",
                         "sentence": "Error no hansei.",
                         "sentenceMeaning": "Reflexão sobre os erros."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "生",
+                        "name": "Vida"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
                     }
                 ]
             },
@@ -5000,6 +6921,16 @@ const kanjiN1Data = [
                         "sentence": "National keikaku.",
                         "sentenceMeaning": "Plano nacional."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "十",
+                        "name": "Dez / Cruz"
+                    }
                 ]
             },
             {
@@ -5020,6 +6951,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Redução de impostos",
                         "sentence": "Tax genzei.",
                         "sentenceMeaning": "Redução de impostos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
                     }
                 ]
             }
@@ -5185,6 +7126,12 @@ const kanjiN1Data = [
                         "sentence": "Oil price no koutou.",
                         "sentenceMeaning": "Carestia do preço do petróleo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "馬",
+                        "name": "Cavalo"
+                    }
                 ]
             },
             {
@@ -5205,6 +7152,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Queda brusca de preços",
                         "sentence": "Price no kyuuhou.",
                         "sentenceMeaning": "Queda brusca de preços."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "鳥",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -5227,6 +7184,20 @@ const kanjiN1Data = [
                         "sentence": "Boutou suru.",
                         "sentenceMeaning": "Subir violentamente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "米",
+                        "name": "Arroz"
+                    }
                 ]
             },
             {
@@ -5247,6 +7218,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Especulação financeira",
                         "sentence": "Touki money.",
                         "sentenceMeaning": "Capital de especulação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -5269,6 +7250,16 @@ const kanjiN1Data = [
                         "sentence": "Kabunushi meeting.",
                         "sentenceMeaning": "Reunião de acionistas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "朱",
+                        "name": "Vermelho"
+                    }
                 ]
             },
             {
@@ -5289,6 +7280,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Conversão / Troca de moeda",
                         "sentence": "Currency no henkan.",
                         "sentenceMeaning": "Conversão de moeda."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
                     }
                 ]
             },
@@ -5311,6 +7312,12 @@ const kanjiN1Data = [
                         "sentence": "Market no henchou.",
                         "sentenceMeaning": "Desbalanço do mercado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -5331,6 +7338,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pairar / Flutuar",
                         "sentence": "Kenen ga tayou.",
                         "sentenceMeaning": "Pairar preocupação no mercado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -5353,6 +7370,20 @@ const kanjiN1Data = [
                         "sentence": "Fudou capital.",
                         "sentenceMeaning": "Capital volátil."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "爪",
+                        "name": "Garra"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    }
                 ]
             },
             {
@@ -5373,6 +7404,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Afundar / Cair",
                         "sentence": "Price ga shizumu.",
                         "sentenceMeaning": "Os preços afundam."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -5395,6 +7432,16 @@ const kanjiN1Data = [
                         "sentence": "Market no shindou.",
                         "sentenceMeaning": "Vibração do mercado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "辰",
+                        "name": "Dragão"
+                    }
                 ]
             },
             {
@@ -5415,6 +7462,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Amplitude de flutuação",
                         "sentence": "Shinpuku wide.",
                         "sentenceMeaning": "Amplitude ampla de flutuação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "巾",
+                        "name": "Pano"
                     }
                 ]
             },
@@ -5437,6 +7490,12 @@ const kanjiN1Data = [
                         "sentence": "Kinrisa trade.",
                         "sentenceMeaning": "Diferencial de taxas de juros."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "左",
+                        "name": "Esquerda"
+                    }
                 ]
             },
             {
@@ -5457,6 +7516,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Abundante / Fartura",
                         "sentence": "Houjun na resource.",
                         "sentenceMeaning": "Recursos abundantes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
                     }
                 ]
             },
@@ -5479,6 +7548,16 @@ const kanjiN1Data = [
                         "sentence": "Investment no katsubou.",
                         "sentenceMeaning": "Sede de investimentos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
+                    }
                 ]
             },
             {
@@ -5499,6 +7578,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Secar / Esgotar-se",
                         "sentence": "Fund ga kareru.",
                         "sentenceMeaning": "O fundo esgotou-se."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "古",
+                        "name": "Antigo"
                     }
                 ]
             },
@@ -5521,6 +7610,16 @@ const kanjiN1Data = [
                         "sentence": "Well ga kareru.",
                         "sentenceMeaning": "O poço secou."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "固",
+                        "name": "Sólido"
+                    }
                 ]
             },
             {
@@ -5541,6 +7640,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Planejamento / Projeto",
                         "sentence": "New kikaku.",
                         "sentenceMeaning": "Novo planejamento corporativo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -5563,6 +7672,12 @@ const kanjiN1Data = [
                         "sentence": "Asset no kounyuu.",
                         "sentenceMeaning": "Aquisição de ativos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -5583,6 +7698,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Incorporação / Anexação",
                         "sentence": "Business no heigou.",
                         "sentenceMeaning": "Incorporação de negócios."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -5605,6 +7726,20 @@ const kanjiN1Data = [
                         "sentence": "Asset no ryakudatsu.",
                         "sentenceMeaning": "Tomada ostensiva de ativos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -5625,6 +7760,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Posse de fatia de mercado",
                         "sentence": "Share no senyuu.",
                         "sentenceMeaning": "Posse de fatia de mercado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "卜",
+                        "name": "Adivinhação"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -5647,6 +7792,12 @@ const kanjiN1Data = [
                         "sentence": "Tandoku entry.",
                         "sentenceMeaning": "Entrada solo no mercado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    }
                 ]
             },
             {
@@ -5667,6 +7818,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Empresas concorrentes",
                         "sentence": "Kyougou company.",
                         "sentenceMeaning": "Empresa concorrente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
                     }
                 ]
             },
@@ -5689,6 +7846,12 @@ const kanjiN1Data = [
                         "sentence": "Labor sougi.",
                         "sentenceMeaning": "Disputa trabalhista."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -5709,6 +7872,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Canal de distribuição / Vendas",
                         "sentence": "Hanro o expand.",
                         "sentenceMeaning": "Expandir os canais de venda."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -5731,6 +7908,16 @@ const kanjiN1Data = [
                         "sentence": "Network kakuchou.",
                         "sentenceMeaning": "Ampliação da rede."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    }
                 ]
             },
             {
@@ -5751,6 +7938,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ganhos tributáveis",
                         "sentence": "Ekikin calculation.",
                         "sentenceMeaning": "Cálculo dos ganhos tributáveis."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "水",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "皿",
+                        "name": "Prato"
                     }
                 ]
             },
@@ -5773,6 +7970,16 @@ const kanjiN1Data = [
                         "sentence": "Soneki statement.",
                         "sentenceMeaning": "Demonstrativo de lucros e perdas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "員",
+                        "name": "Membro"
+                    }
                 ]
             },
             {
@@ -5793,6 +8000,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Excesso de oferta",
                         "sentence": "Kajou supply.",
                         "sentenceMeaning": "Excesso de oferta de produtos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "刂",
+                        "name": "Faca"
                     }
                 ]
             },
@@ -5815,6 +8028,16 @@ const kanjiN1Data = [
                         "sentence": "Fund no ketsubou.",
                         "sentenceMeaning": "Falta severa de fundos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "气",
+                        "name": "Vapor"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -5835,6 +8058,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Carência de recursos",
                         "sentence": "Resource ketsubou.",
                         "sentenceMeaning": "Carência de recursos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "乏",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -5857,6 +8086,16 @@ const kanjiN1Data = [
                         "sentence": "Capital no kakujuu.",
                         "sentenceMeaning": "Capitalização de fundos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "育",
+                        "name": "Criar"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -5877,6 +8116,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Gerar receita / Ganhar dinheiro",
                         "sentence": "Money o kasegu.",
                         "sentenceMeaning": "Gerar receitas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "豕",
+                        "name": "Porco"
                     }
                 ]
             },
@@ -5899,6 +8152,16 @@ const kanjiN1Data = [
                         "sentence": "Store ga moukaru.",
                         "sentenceMeaning": "A loja é muito lucrativa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "諸",
+                        "name": "Vários"
+                    }
                 ]
             },
             {
@@ -5919,6 +8182,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Vasto e indefinido",
                         "sentence": "Bakuzen na plan.",
                         "sentenceMeaning": "Plano vasto e indefinido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
                     }
                 ]
             },
@@ -5941,6 +8210,16 @@ const kanjiN1Data = [
                         "sentence": "Battery no chikuden.",
                         "sentenceMeaning": "Armazenamento de energia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "畜",
+                        "name": "Pecuária"
+                    }
                 ]
             },
             {
@@ -5961,6 +8240,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Reservas financeiras poupadas",
                         "sentence": "Chochiku o do.",
                         "sentenceMeaning": "Fazer reservas financeiras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "用",
+                        "name": "Usar"
                     }
                 ]
             },
@@ -5983,6 +8272,20 @@ const kanjiN1Data = [
                         "sentence": "Bank no kashitsuke.",
                         "sentenceMeaning": "Empréstimo concedido pelo banco."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "弋",
+                        "name": "Flecha"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -6003,6 +8306,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Terreno alugado",
                         "sentence": "Shakuchi contract.",
                         "sentenceMeaning": "Contrato de terreno alugado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
                     }
                 ]
             },
@@ -6025,6 +8334,20 @@ const kanjiN1Data = [
                         "sentence": "Bank no risoku.",
                         "sentenceMeaning": "Rendimento de juros do banco."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -6045,6 +8368,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ativos financeiros",
                         "sentence": "Shisan management.",
                         "sentenceMeaning": "Gestão de ativos financeiros."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "次",
+                        "name": "Próximo"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             }
@@ -6210,6 +8543,12 @@ const kanjiN1Data = [
                         "sentence": "Tankou worker.",
                         "sentenceMeaning": "Trabalhador de mina de carvão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -6230,6 +8569,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Trem a vapor",
                         "sentence": "Historic kisha.",
                         "sentenceMeaning": "Trem a vapor histórico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "气",
+                        "name": "Vapor"
                     }
                 ]
             },
@@ -6252,6 +8601,16 @@ const kanjiN1Data = [
                         "sentence": "Material no hannyuu.",
                         "sentenceMeaning": "Descarregamento de insumos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "般",
+                        "name": "Geral"
+                    }
                 ]
             },
             {
@@ -6272,6 +8631,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Acúmulo de insumos",
                         "sentence": "Resource no chikuseki.",
                         "sentenceMeaning": "Acúmulo de insumos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "畜",
+                        "name": "Pecuária"
                     }
                 ]
             },
@@ -6294,6 +8663,12 @@ const kanjiN1Data = [
                         "sentence": "Site no hakkutsu.",
                         "sentenceMeaning": "Escavação de sítio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -6314,6 +8689,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Mina de extração mineral",
                         "sentence": "Kouzan development.",
                         "sentenceMeaning": "Desenvolvimento de mina."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
                     }
                 ]
             },
@@ -6336,6 +8721,12 @@ const kanjiN1Data = [
                         "sentence": "Steel kouro.",
                         "sentenceMeaning": "Alto-forno da siderúrgica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "炉",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -6356,6 +8747,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Fusão de minérios",
                         "sentence": "High temperature youyuu.",
                         "sentenceMeaning": "Fusão em alta temperatura."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "谷",
+                        "name": "Vale"
                     }
                 ]
             },
@@ -6378,6 +8783,12 @@ const kanjiN1Data = [
                         "sentence": "Iron imono.",
                         "sentenceMeaning": "Peça de ferro fundido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -6398,6 +8809,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Forjamento e têmpera",
                         "sentence": "Steel no rensei.",
                         "sentenceMeaning": "Forjamento do aço."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -6420,6 +8845,16 @@ const kanjiN1Data = [
                         "sentence": "Hakurai goods.",
                         "sentenceMeaning": "Mercadorias importadas por navio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "白",
+                        "name": "Branco"
+                    }
                 ]
             },
             {
@@ -6440,6 +8875,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Escala portuária de navio",
                         "sentence": "Port ni kikou.",
                         "sentenceMeaning": "Fazer escala no porto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -6462,6 +8903,16 @@ const kanjiN1Data = [
                         "sentence": "Wangan highway.",
                         "sentenceMeaning": "Rodovia da orla marítima."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "弓",
+                        "name": "Arco"
+                    }
                 ]
             },
             {
@@ -6482,6 +8933,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Passadiço suspenso de carga",
                         "sentence": "Mountain sandou.",
                         "sentenceMeaning": "Passadiço suspenso na mina."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -6504,6 +8965,16 @@ const kanjiN1Data = [
                         "sentence": "Zousen industry.",
                         "sentenceMeaning": "Indústria de construção naval."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -6524,6 +8995,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Navio de guerra / Escoltar cargas",
                         "sentence": "Gunkan escort.",
                         "sentenceMeaning": "Escolta por navio de guerra."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
                     }
                 ]
             },
@@ -6546,6 +9023,24 @@ const kanjiN1Data = [
                         "sentence": "Port no keibeitei.",
                         "sentenceMeaning": "Barco de patrulha do porto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "廴",
+                        "name": "Passo Longo"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -6566,6 +9061,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Timoneiro / Piloto de embarcação",
                         "sentence": "Experienced dashu.",
                         "sentenceMeaning": "Timoneiro experiente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
                     }
                 ]
             },
@@ -6588,6 +9089,12 @@ const kanjiN1Data = [
                         "sentence": "Youhan suru.",
                         "sentenceMeaning": "Içar velas para partir."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "巾",
+                        "name": "Pano"
+                    }
                 ]
             },
             {
@@ -6608,6 +9115,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Pista pavimentada",
                         "sentence": "Highway hodou.",
                         "sentenceMeaning": "Pista pavimentada da rodovia."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
                     }
                 ]
             },
@@ -6630,6 +9143,16 @@ const kanjiN1Data = [
                         "sentence": "Tekki maintenance.",
                         "sentenceMeaning": "Manutenção dos trilhos de aço."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "九",
+                        "name": "Nove"
+                    }
                 ]
             },
             {
@@ -6650,6 +9173,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Vala / Canaleta de escoamento",
                         "sentence": "Roadside koukyo.",
                         "sentenceMeaning": "Vala lateral da rodovia."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -6672,6 +9201,12 @@ const kanjiN1Data = [
                         "sentence": "Koukyo system.",
                         "sentenceMeaning": "Sistema de canaletas de drenagem."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -6692,6 +9227,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Empilhamento / Acúmulo de carga",
                         "sentence": "Cargo no taiseki.",
                         "sentenceMeaning": "Empilhamento de carga."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -6714,6 +9259,20 @@ const kanjiN1Data = [
                         "sentence": "Factory kara no shukka.",
                         "sentenceMeaning": "Expedição a partir da fábrica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "可",
+                        "name": "Possível"
+                    }
                 ]
             },
             {
@@ -6734,6 +9293,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Descarregamento de carga",
                         "sentence": "Cargo no shaka.",
                         "sentenceMeaning": "Descarregamento de carga no pátio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -6756,6 +9321,12 @@ const kanjiN1Data = [
                         "sentence": "Engine no tousai.",
                         "sentenceMeaning": "Motor embarcado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    }
                 ]
             },
             {
@@ -6776,6 +9347,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Içamento de frete pelo guindaste",
                         "sentence": "Niage crane.",
                         "sentenceMeaning": "Guindaste de içamento de frete."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -6798,6 +9375,16 @@ const kanjiN1Data = [
                         "sentence": "Truck de rikusou.",
                         "sentenceMeaning": "Transporte terrestre via caminhão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -6818,6 +9405,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Distribuição logística",
                         "sentence": "Home haisou.",
                         "sentenceMeaning": "Distribuição logística domiciliar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "送",
+                        "name": "Enviar"
                     }
                 ]
             },
@@ -6840,6 +9433,16 @@ const kanjiN1Data = [
                         "sentence": "Energy no haikyuu.",
                         "sentenceMeaning": "Abastecimento de energia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "己",
+                        "name": "Si Mesmo"
+                    }
                 ]
             },
             {
@@ -6860,6 +9463,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Hub central de infraestrutura",
                         "sentence": "Transport no chuusuu.",
                         "sentenceMeaning": "Hub central de transporte."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
                     }
                 ]
             },
@@ -6882,6 +9495,16 @@ const kanjiN1Data = [
                         "sentence": "Car no yushutsu.",
                         "sentenceMeaning": "Exportação de automóveis."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    }
                 ]
             },
             {
@@ -6902,6 +9525,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Recarga de bateria de frota",
                         "sentence": "EV no juuden.",
                         "sentenceMeaning": "Recarga de veículos elétricos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "育",
+                        "name": "Criar"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
                     }
                 ]
             },
@@ -6924,6 +9557,24 @@ const kanjiN1Data = [
                         "sentence": "Stock no hoten.",
                         "sentenceMeaning": "Recomposição de estoque."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -6944,6 +9595,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Aço purificado por forno",
                         "sentence": "Rentetsu process.",
                         "sentenceMeaning": "Processo de purificação do aço."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -6966,6 +9631,12 @@ const kanjiN1Data = [
                         "sentence": "System no gakai.",
                         "sentenceMeaning": "Desmoronamento da estrutura."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "瓦",
+                        "name": "Telha"
+                    }
                 ]
             },
             {
@@ -6986,6 +9657,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Cabo de segurança / Linha da vida",
                         "sentence": "Worker no inochizuna.",
                         "sentenceMeaning": "Linha de vida do trabalhador."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
                     }
                 ]
             },
@@ -7008,6 +9693,12 @@ const kanjiN1Data = [
                         "sentence": "Cargo kensaku.",
                         "sentenceMeaning": "Rastreamento do lote de carga."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "索",
+                        "name": "Buscar"
+                    }
                 ]
             },
             {
@@ -7028,6 +9719,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Oleoduto / Gasoduto",
                         "sentence": "Oil souyukan.",
                         "sentenceMeaning": "Oleoduto de transporte."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "官",
+                        "name": "Oficial"
                     }
                 ]
             },
@@ -7050,6 +9751,20 @@ const kanjiN1Data = [
                         "sentence": "Refinery no jouryuutou.",
                         "sentenceMeaning": "Torre de destilação da refinaria."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "合",
+                        "name": "Unir"
+                    }
                 ]
             },
             {
@@ -7070,6 +9785,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Construção de ponte suspensa",
                         "sentence": "River no kakyou.",
                         "sentenceMeaning": "Construção de ponte sobre o rio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "加",
+                        "name": "Adicionar"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             }
@@ -7235,6 +9960,12 @@ const kanjiN1Data = [
                         "sentence": "Kakuyuugou reactor.",
                         "sentenceMeaning": "Reator de fusão nuclear."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "虫",
+                        "name": "Inseto"
+                    }
                 ]
             },
             {
@@ -7255,6 +9986,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Solidificação de composto líquido",
                         "sentence": "Liquid no gyouko.",
                         "sentenceMeaning": "Solidificação do líquido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "冫",
+                        "name": "Gelo"
+                    },
+                    {
+                        "char": "水",
+                        "name": "Água"
                     }
                 ]
             },
@@ -7277,6 +10018,20 @@ const kanjiN1Data = [
                         "sentence": "Neodymium jishaku.",
                         "sentenceMeaning": "Ímã de neodímio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -7297,6 +10052,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pólvora / Composto nitrado",
                         "sentence": "Shouyaku reaction.",
                         "sentenceMeaning": "Reação do composto nitrado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "肖",
+                        "name": "Semelhança"
                     }
                 ]
             },
@@ -7319,6 +10084,16 @@ const kanjiN1Data = [
                         "sentence": "Airborn biryuushi.",
                         "sentenceMeaning": "Micropartícula em suspensão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "米",
+                        "name": "Arroz"
+                    },
+                    {
+                        "char": "立",
+                        "name": "Em Pé"
+                    }
                 ]
             },
             {
@@ -7339,6 +10114,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Quanta / Partícula quântica",
                         "sentence": "Ryoushi mechanics.",
                         "sentenceMeaning": "Mecânica quântica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
                     }
                 ]
             },
@@ -7361,6 +10142,16 @@ const kanjiN1Data = [
                         "sentence": "Particle no shitsuryou.",
                         "sentenceMeaning": "Massa da partícula."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -7381,6 +10172,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Massa da matéria",
                         "sentence": "Shitsuryou preservation.",
                         "sentenceMeaning": "Conservação da massa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             },
@@ -7403,6 +10204,12 @@ const kanjiN1Data = [
                         "sentence": "Suiso gas.",
                         "sentenceMeaning": "Gás hidrogênio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -7423,6 +10230,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Elemento Oxigênio",
                         "sentence": "Sanso concentration.",
                         "sentenceMeaning": "Concentração de oxigênio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
                     }
                 ]
             },
@@ -7445,6 +10262,20 @@ const kanjiN1Data = [
                         "sentence": "High temp tanka.",
                         "sentenceMeaning": "Carbonização em alta temperatura."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -7465,6 +10296,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Asfixia por deslocamento de ar",
                         "sentence": "Gas de chissoku.",
                         "sentenceMeaning": "Asfixia por gás."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "穴",
+                        "name": "Buraco"
+                    },
+                    {
+                        "char": "至",
+                        "name": "Chegar"
                     }
                 ]
             },
@@ -7487,6 +10328,12 @@ const kanjiN1Data = [
                         "sentence": "Concentrated ryuusan.",
                         "sentenceMeaning": "Ácido sulfúrico concentrado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    }
                 ]
             },
             {
@@ -7507,6 +10354,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ácido nitroso / Nitrito",
                         "sentence": "Ashousan salt.",
                         "sentenceMeaning": "Sal de nitrito."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亜",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -7529,6 +10382,16 @@ const kanjiN1Data = [
                         "sentence": "Aen plating.",
                         "sentenceMeaning": "Galvanização com zinco."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -7549,6 +10412,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Liga de ouro e cobre",
                         "sentence": "Syakudou craft.",
                         "sentenceMeaning": "Liga tradicional de cobre."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "同",
+                        "name": "Mesmo"
                     }
                 ]
             },
@@ -7571,6 +10444,12 @@ const kanjiN1Data = [
                         "sentence": "Tetsubun test.",
                         "sentenceMeaning": "Teste de teor de ferro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "鉄",
+                        "name": "Ferro"
+                    }
                 ]
             },
             {
@@ -7591,6 +10470,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Aço-liga industrial",
                         "sentence": "Goukin-kou pipe.",
                         "sentenceMeaning": "Tubo de aço-liga."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
                     }
                 ]
             },
@@ -7613,6 +10506,16 @@ const kanjiN1Data = [
                         "sentence": "Organic kagoubutsu.",
                         "sentenceMeaning": "Composto químico orgânico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "合",
+                        "name": "Unir"
+                    }
                 ]
             },
             {
@@ -7633,6 +10536,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Reação de oxidação",
                         "sentence": "Metal sanka.",
                         "sentenceMeaning": "Oxidação do metal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
                     }
                 ]
             },
@@ -7655,6 +10568,12 @@ const kanjiN1Data = [
                         "sentence": "Internal ouryouku.",
                         "sentenceMeaning": "Tensão mecânica interna."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -7675,6 +10594,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ruptura / Fissura física",
                         "sentence": "Cell wall no rekkai.",
                         "sentenceMeaning": "Ruptura da parede celular."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    },
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
                     }
                 ]
             },
@@ -7697,6 +10626,12 @@ const kanjiN1Data = [
                         "sentence": "Wave no fukusou.",
                         "sentenceMeaning": "Convergência de ondas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    }
                 ]
             },
             {
@@ -7717,6 +10652,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Irradiação / Exposição a raios",
                         "sentence": "Laser no shousha.",
                         "sentenceMeaning": "Irradiação por laser."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "身",
+                        "name": "Corpo"
+                    },
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
                     }
                 ]
             },
@@ -7739,6 +10684,12 @@ const kanjiN1Data = [
                         "sentence": "Signal no suitai.",
                         "sentenceMeaning": "Atenuação do sinal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "衰",
+                        "name": "Declinar"
+                    }
                 ]
             },
             {
@@ -7759,6 +10710,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Movimento vorticoso",
                         "sentence": "Air no kadou.",
                         "sentenceMeaning": "Movimento vorticoso do ar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -7781,6 +10742,12 @@ const kanjiN1Data = [
                         "sentence": "Current no seiryuu.",
                         "sentenceMeaning": "Retificação de corrente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "水",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -7801,6 +10768,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pressão atmosférica",
                         "sentence": "Taikiatsu measure.",
                         "sentenceMeaning": "Medição da pressão atmosférica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -7823,6 +10800,16 @@ const kanjiN1Data = [
                         "sentence": "Boudai na energy.",
                         "sentenceMeaning": "Volume massivo de energia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -7843,6 +10830,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Condensação molecular",
                         "sentence": "Gyoushuku point.",
                         "sentenceMeaning": "Ponto de condensação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "宿",
+                        "name": "Hospedagem"
                     }
                 ]
             },
@@ -7865,6 +10862,16 @@ const kanjiN1Data = [
                         "sentence": "Elastic wairyouku.",
                         "sentenceMeaning": "Força de deformação elástica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -7885,6 +10892,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Frequência de oscilação de onda",
                         "sentence": "Radio shuuhasuu.",
                         "sentenceMeaning": "Frequência da onda de rádio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "辰",
+                        "name": "Dragão"
                     }
                 ]
             },
@@ -7907,6 +10924,16 @@ const kanjiN1Data = [
                         "sentence": "Light no hachou.",
                         "sentenceMeaning": "Comprimento de onda da luz."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "皮",
+                        "name": "Pele"
+                    }
                 ]
             },
             {
@@ -7927,6 +10954,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Extensão de propagação",
                         "sentence": "Wave no enchou.",
                         "sentenceMeaning": "Extensão da propagação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "長",
+                        "name": "Longo"
                     }
                 ]
             },
@@ -7949,6 +10982,16 @@ const kanjiN1Data = [
                         "sentence": "Kouhindo wave.",
                         "sentenceMeaning": "Onda de alta frequência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "水",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    }
                 ]
             },
             {
@@ -7969,6 +11012,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ligamento de elétrons",
                         "sentence": "Electron no sokubaku.",
                         "sentenceMeaning": "Ligamento dos elétrons."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "束",
+                        "name": "Feixe"
                     }
                 ]
             },
@@ -7991,6 +11040,16 @@ const kanjiN1Data = [
                         "sentence": "Molecular ketsubaku.",
                         "sentenceMeaning": "Ligamento molecular."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -8011,6 +11070,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Dissociação de partículas",
                         "sentence": "Particle kairi.",
                         "sentenceMeaning": "Dissociação de partículas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "離",
+                        "name": "Separar"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -8033,6 +11102,16 @@ const kanjiN1Data = [
                         "sentence": "Chemical bunseki.",
                         "sentenceMeaning": "Análise química."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -8053,6 +11132,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Contato de reagentes",
                         "sentence": "Reagent no sesshoku.",
                         "sentenceMeaning": "Contato dos reagentes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "角",
+                        "name": "Chifre"
                     }
                 ]
             },
@@ -8075,6 +11160,16 @@ const kanjiN1Data = [
                         "sentence": "Wave no baikai.",
                         "sentenceMeaning": "Meio de condução de ondas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "某",
+                        "name": "Determinado"
+                    }
                 ]
             },
             {
@@ -8095,6 +11190,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vapor saturado",
                         "sentence": "Houwa-jouki pressure.",
                         "sentenceMeaning": "Pressão de vapor saturado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "飠",
+                        "name": "Alimento"
+                    },
+                    {
+                        "char": "包",
+                        "name": "Embrulhar"
                     }
                 ]
             }
@@ -8260,6 +11365,16 @@ const kanjiN1Data = [
                         "sentence": "Fungal houshi.",
                         "sentenceMeaning": "Esporo fúngico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "包",
+                        "name": "Embrulhar"
+                    }
                 ]
             },
             {
@@ -8280,6 +11395,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Membrana celular",
                         "sentence": "Saiboumaku lipid.",
                         "sentenceMeaning": "Lípido da membrana celular."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
                     }
                 ]
             },
@@ -8302,6 +11427,20 @@ const kanjiN1Data = [
                         "sentence": "High temp sakkin.",
                         "sentenceMeaning": "Esterilização em alta temperatura."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "囗",
+                        "name": "Cercado"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    }
                 ]
             },
             {
@@ -8322,6 +11461,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Placenta fetal",
                         "sentence": "Placenta taiban.",
                         "sentenceMeaning": "Placenta fetal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "台",
+                        "name": "Plataforma"
                     }
                 ]
             },
@@ -8344,6 +11493,16 @@ const kanjiN1Data = [
                         "sentence": "Idenshi therapy.",
                         "sentenceMeaning": "Terapia gênica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -8364,6 +11523,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Contágio / Transmissão",
                         "sentence": "Infection no densen.",
                         "sentenceMeaning": "Transmissão da infecção."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
                     }
                 ]
             },
@@ -8386,6 +11555,12 @@ const kanjiN1Data = [
                         "sentence": "Densen disease.",
                         "sentenceMeaning": "Doença contagiosa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -8406,6 +11581,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Epidemiologia",
                         "sentence": "Ekigaku study.",
                         "sentenceMeaning": "Estudo epidemiológico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -8428,6 +11613,20 @@ const kanjiN1Data = [
                         "sentence": "Juushou patient.",
                         "sentenceMeaning": "Paciente em estado grave."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -8448,6 +11647,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Aceleração celular descontrolada",
                         "sentence": "Shissou cell.",
                         "sentenceMeaning": "Célula em aceleração descontrolada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
                     }
                 ]
             },
@@ -8470,6 +11675,12 @@ const kanjiN1Data = [
                         "sentence": "Kanbu biopsy.",
                         "sentenceMeaning": "Biópsia da região lesionada."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -8490,6 +11701,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Edema / Acúmulo de líquido tecidual",
                         "sentence": "Tissue fushu.",
                         "sentenceMeaning": "Edema tecidual."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
                     }
                 ]
             },
@@ -8512,6 +11737,12 @@ const kanjiN1Data = [
                         "sentence": "Malignant shuyou.",
                         "sentenceMeaning": "Massa tumoral maligna."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    }
                 ]
             },
             {
@@ -8532,6 +11763,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Colapso da estrutura celular",
                         "sentence": "Cellular houkai.",
                         "sentenceMeaning": "Colapso celular."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             },
@@ -8554,6 +11795,12 @@ const kanjiN1Data = [
                         "sentence": "Hatsugan risk.",
                         "sentenceMeaning": "Risco de carcinogênese."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    }
                 ]
             },
             {
@@ -8574,6 +11821,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Gêmeo embrionário",
                         "sentence": "Haiga culture.",
                         "sentenceMeaning": "Cultura embrionária."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -8596,6 +11853,12 @@ const kanjiN1Data = [
                         "sentence": "Sekizui nerve.",
                         "sentenceMeaning": "Nervo da medula espinhal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "骨",
+                        "name": "Osso"
+                    }
                 ]
             },
             {
@@ -8616,6 +11879,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Isquemia cerebral / AVC",
                         "sentence": "Noukousoku diagnosis.",
                         "sentenceMeaning": "Diagnóstico de isquemia cerebral."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
                     }
                 ]
             },
@@ -8638,6 +11911,16 @@ const kanjiN1Data = [
                         "sentence": "Shinkinkousoku patient.",
                         "sentenceMeaning": "Paciente com infarto do miocárdio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -8658,6 +11941,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Infarto / Embolia",
                         "sentence": "Embolism kousoku.",
                         "sentenceMeaning": "Embolia e infarto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -8680,6 +11969,16 @@ const kanjiN1Data = [
                         "sentence": "Daekisen secretion.",
                         "sentenceMeaning": "Secreção da glândula salivar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "泉",
+                        "name": "Fonte"
+                    }
                 ]
             },
             {
@@ -8700,6 +11999,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Glândula da saliva",
                         "sentence": "Daekisen inflammation.",
                         "sentenceMeaning": "Inflamação da glândula salivar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -8722,6 +12031,16 @@ const kanjiN1Data = [
                         "sentence": "Taieki balance.",
                         "sentenceMeaning": "Equilíbrio dos fluidos corporais."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "夜",
+                        "name": "Noite"
+                    }
                 ]
             },
             {
@@ -8742,6 +12061,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Miocárdio / Músculo cardíaco",
                         "sentence": "Shinkin cell.",
                         "sentenceMeaning": "Célula do miocárdio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -8764,6 +12097,12 @@ const kanjiN1Data = [
                         "sentence": "Kotsuzui cell.",
                         "sentenceMeaning": "Célula da medula óssea."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -8784,6 +12123,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Coluna vertebral / Vértebra",
                         "sentence": "Sekitsui column.",
                         "sentenceMeaning": "Coluna vertebral."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
                     }
                 ]
             },
@@ -8806,6 +12151,16 @@ const kanjiN1Data = [
                         "sentence": "Lumbar tsuikotsu.",
                         "sentenceMeaning": "Osso vertebral lombar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -8826,6 +12181,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Úlcera gástrica",
                         "sentence": "Ikaiyou treatment.",
                         "sentenceMeaning": "Tratamento de úlcera gástrica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "胃",
+                        "name": "Estômago"
                     }
                 ]
             },
@@ -8848,6 +12209,12 @@ const kanjiN1Data = [
                         "sentence": "Daichou polyp.",
                         "sentenceMeaning": "Pólipo do intestino grosso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -8868,6 +12235,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Hepatite / Inflamação hepática",
                         "sentence": "Viral kanen.",
                         "sentenceMeaning": "Hepatite viral."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "干",
+                        "name": "Escudo"
                     }
                 ]
             },
@@ -8890,6 +12267,20 @@ const kanjiN1Data = [
                         "sentence": "Tanjuu duct.",
                         "sentenceMeaning": "Duto de secreção biliar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -8910,6 +12301,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Cisto organelar / Vesícula",
                         "sentence": "Hounou structure.",
                         "sentenceMeaning": "Estrutura cística."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
                     }
                 ]
             },
@@ -8932,6 +12337,20 @@ const kanjiN1Data = [
                         "sentence": "Jinfuzen dialysis.",
                         "sentenceMeaning": "Diálise por insuficiência renal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -8952,6 +12371,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pancreatite",
                         "sentence": "Acute suien.",
                         "sentenceMeaning": "Pancreatite aguda."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
                     }
                 ]
             },
@@ -8974,6 +12403,16 @@ const kanjiN1Data = [
                         "sentence": "Bouken report.",
                         "sentenceMeaning": "Relatório de autópsia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "丶",
+                        "name": "Ponto"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -8994,6 +12433,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Desintoxicação hepática",
                         "sentence": "Hepatic gedoku.",
                         "sentenceMeaning": "Desintoxicação hepática."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "士",
+                        "name": "Samurai"
+                    },
+                    {
+                        "char": "毋",
+                        "name": "Não"
                     }
                 ]
             },
@@ -9016,6 +12465,16 @@ const kanjiN1Data = [
                         "sentence": "Hakike symptom.",
                         "sentenceMeaning": "Sintoma de náusea."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -9036,6 +12495,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Paralisia nervosa",
                         "sentence": "Sensory mahi.",
                         "sentenceMeaning": "Paralisia sensorial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
                     }
                 ]
             },
@@ -9058,6 +12523,16 @@ const kanjiN1Data = [
                         "sentence": "Limb no shibire.",
                         "sentenceMeaning": "Dormência nos membros."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "甲",
+                        "name": "Casco"
+                    }
                 ]
             },
             {
@@ -9078,6 +12553,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Compulsão comportamental",
                         "sentence": "Hekikou pattern.",
                         "sentenceMeaning": "Padrão compulsivo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
                     }
                 ]
             },
@@ -9100,6 +12585,20 @@ const kanjiN1Data = [
                         "sentence": "Soubu disinfection.",
                         "sentenceMeaning": "Desinfecção do sítio cirúrgico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "丶",
+                        "name": "Ponto"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    }
                 ]
             },
             {
@@ -9120,6 +12619,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Consolidação óssea / Fusão tecidual",
                         "sentence": "Bone yugou.",
                         "sentenceMeaning": "Consolidação óssea."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             }
@@ -9285,6 +12798,16 @@ const kanjiN1Data = [
                         "sentence": "Suisei-kidou calculation.",
                         "sentenceMeaning": "Cálculo da órbita cometária."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "生",
+                        "name": "Vida"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -9305,6 +12828,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Órbita de circun-navegação",
                         "sentence": "Satellite no shuukai-kidou.",
                         "sentenceMeaning": "Órbita de circun-navegação do satélite."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "九",
+                        "name": "Nove"
                     }
                 ]
             },
@@ -9327,6 +12860,16 @@ const kanjiN1Data = [
                         "sentence": "Spring no bansou.",
                         "sentenceMeaning": "Geada tardia de primavera."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "相",
+                        "name": "Mútuo"
+                    }
                 ]
             },
             {
@@ -9347,6 +12890,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Dissipação da névoa",
                         "sentence": "Fog no musan.",
                         "sentenceMeaning": "Dissipação do nevoeiro."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "矛",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -9369,6 +12930,12 @@ const kanjiN1Data = [
                         "sentence": "Shizukuishi area.",
                         "sentenceMeaning": "Região de Shizukuishi."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    }
                 ]
             },
             {
@@ -9389,6 +12956,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Danos por tempestade de granizo",
                         "sentence": "Hyougai damage.",
                         "sentenceMeaning": "Danos causados por granizo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "包",
+                        "name": "Embrulhar"
                     }
                 ]
             },
@@ -9411,6 +12988,24 @@ const kanjiN1Data = [
                         "sentence": "Shippuu-jinrai action.",
                         "sentenceMeaning": "Ação rápida como o trovão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "廴",
+                        "name": "Passo Longo"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -9431,6 +13026,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vendaval violento",
                         "sentence": "Boufuuarashi approach.",
                         "sentenceMeaning": "Aproximação de vendaval violento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "風",
+                        "name": "Vento"
                     }
                 ]
             },
@@ -9453,6 +13058,12 @@ const kanjiN1Data = [
                         "sentence": "Tatsumi-i direction.",
                         "sentenceMeaning": "Direção sudeste."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "巽",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -9473,6 +13084,16 @@ const kanjiN1Data = [
                         "wordMeaning": "No centro do ciclone",
                         "sentence": "Typhoon no kachuu.",
                         "sentenceMeaning": "No centro do tufão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -9495,6 +13116,12 @@ const kanjiN1Data = [
                         "sentence": "Takashio warning.",
                         "sentenceMeaning": "Alerta de maré alta."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -9515,6 +13142,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Hipocentro sísmico",
                         "sentence": "Shingen depth.",
                         "sentenceMeaning": "Profundidade do hipocentro sísmico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "辰",
+                        "name": "Dragão"
                     }
                 ]
             },
@@ -9537,6 +13174,16 @@ const kanjiN1Data = [
                         "sentence": "Gas no funshutsu.",
                         "sentenceMeaning": "Ejeção de gases vulcânicos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -9557,6 +13204,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Deslizamento em penhasco",
                         "sentence": "Gakekuzure risk.",
                         "sentenceMeaning": "Risco de deslizamento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
                     }
                 ]
             },
@@ -9579,6 +13236,16 @@ const kanjiN1Data = [
                         "sentence": "Strata no houkai.",
                         "sentenceMeaning": "Colapso das camadas geológicas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "鳥",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -9599,6 +13266,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Fusão de rochas magmáticas",
                         "sentence": "Rock no youyuu.",
                         "sentenceMeaning": "Fusão de rochas magmáticas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "谷",
+                        "name": "Vale"
                     }
                 ]
             },
@@ -9621,6 +13302,12 @@ const kanjiN1Data = [
                         "sentence": "Solid gamban.",
                         "sentenceMeaning": "Leito rochoso sólido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "岩",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -9641,6 +13328,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Placa tectônica",
                         "sentence": "Tectonic kouzou-ban.",
                         "sentenceMeaning": "Placa tectônica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "盤",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -9663,6 +13356,12 @@ const kanjiN1Data = [
                         "sentence": "Seisouken layer.",
                         "sentenceMeaning": "Camada da estratosfera."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "囗",
+                        "name": "Cercado"
+                    }
                 ]
             },
             {
@@ -9683,6 +13382,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Camada geológica / Estrato",
                         "sentence": "Chisou analysis.",
                         "sentenceMeaning": "Análise da camada geológica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
                     }
                 ]
             },
@@ -9705,6 +13410,16 @@ const kanjiN1Data = [
                         "sentence": "Kouido region.",
                         "sentenceMeaning": "Região de altas latitudes."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "囗",
+                        "name": "Cercado"
+                    }
                 ]
             },
             {
@@ -9725,6 +13440,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Latitude e longitude / Coordenadas",
                         "sentence": "Geographic keii.",
                         "sentenceMeaning": "Coordenadas geográficas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -9747,6 +13472,24 @@ const kanjiN1Data = [
                         "sentence": "Nankyoku continent.",
                         "sentenceMeaning": "Continente antártico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "二",
+                        "name": "Dois"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -9767,6 +13510,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Arco geométrico / Curva celestial",
                         "sentence": "Horizon no enko.",
                         "sentenceMeaning": "Arco do horizonte."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
+                    },
+                    {
+                        "char": "瓜",
+                        "name": "Melão"
                     }
                 ]
             },
@@ -9789,6 +13542,16 @@ const kanjiN1Data = [
                         "sentence": "Partial gesshoku.",
                         "sentenceMeaning": "Eclipse lunar parcial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "飠",
+                        "name": "Alimento"
+                    },
+                    {
+                        "char": "虫",
+                        "name": "Inseto"
+                    }
                 ]
             },
             {
@@ -9809,6 +13572,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Halo lunar",
                         "sentence": "Moon no tsukikasa.",
                         "sentenceMeaning": "Halo luminoso ao redor da lua."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "軍",
+                        "name": "Exército"
                     }
                 ]
             },
@@ -9831,6 +13604,16 @@ const kanjiN1Data = [
                         "sentence": "Akebono-iro cloud.",
                         "sentenceMeaning": "Nuvem com a cor da alvorada."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "署",
+                        "name": "Estação"
+                    }
                 ]
             },
             {
@@ -9851,6 +13634,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Estrela vespertina (Vênus)",
                         "sentence": "Venus yoiboshi.",
                         "sentenceMeaning": "Estrela vespertina Vênus."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "肖",
+                        "name": "Semelhança"
                     }
                 ]
             },
@@ -9873,6 +13666,20 @@ const kanjiN1Data = [
                         "sentence": "Koujou state.",
                         "sentenceMeaning": "Estado de constância."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "二",
+                        "name": "Dois"
+                    },
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    }
                 ]
             },
             {
@@ -9893,6 +13700,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Perturbação orbital",
                         "sentence": "Orbit no wakuran.",
                         "sentenceMeaning": "Perturbação da órbita."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -9915,6 +13740,12 @@ const kanjiN1Data = [
                         "sentence": "Jinkou-eisei orbit.",
                         "sentenceMeaning": "Órbita do satélite artificial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "行",
+                        "name": "Caminhar"
+                    }
                 ]
             },
             {
@@ -9935,6 +13766,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Nave espacial",
                         "sentence": "Manned uchuusen.",
                         "sentenceMeaning": "Nave espacial tripulada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "由",
+                        "name": "Motivo"
                     }
                 ]
             },
@@ -9957,6 +13798,16 @@ const kanjiN1Data = [
                         "sentence": "Bouyou space.",
                         "sentenceMeaning": "Espaço sem limites."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    }
                 ]
             },
             {
@@ -9977,6 +13828,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Indefinido / Vasto e vago",
                         "sentence": "Bakuzen space.",
                         "sentenceMeaning": "Espaço vasto e vago."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
                     }
                 ]
             },
@@ -9999,6 +13860,12 @@ const kanjiN1Data = [
                         "sentence": "Tropical kanki.",
                         "sentenceMeaning": "Estação seca tropical."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "乙",
+                        "name": "Curva"
+                    }
                 ]
             },
             {
@@ -10019,6 +13886,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Clima hiper-úmido",
                         "sentence": "Tashitsu climate.",
                         "sentenceMeaning": "Clima hiper-úmido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -10041,6 +13914,20 @@ const kanjiN1Data = [
                         "sentence": "Polar kokkan.",
                         "sentenceMeaning": "Frio polar extremo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "牛",
+                        "name": "Gado"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -10061,6 +13948,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Fúria de furacão / Tufão",
                         "sentence": "Typhoon no moui.",
                         "sentenceMeaning": "Fúria do tufão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "皿",
+                        "name": "Prato"
                     }
                 ]
             },
@@ -10083,6 +13984,12 @@ const kanjiN1Data = [
                         "sentence": "Hanyou model.",
                         "sentenceMeaning": "Modelo de aplicação ampla."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -10103,6 +14010,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Planície de inundação fluvial",
                         "sentence": "Hanrangen soil.",
                         "sentenceMeaning": "Solo da planície de inundação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -10125,6 +14038,12 @@ const kanjiN1Data = [
                         "sentence": "Water ranyou.",
                         "sentenceMeaning": "Uso excessivo de água."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -10145,6 +14064,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Cratera de impacto meteórico",
                         "sentence": "Inseki-ato crater.",
                         "sentenceMeaning": "Cratera de meteorito."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
                     }
                 ]
             }
@@ -10310,6 +14243,16 @@ const kanjiN1Data = [
                         "sentence": "Eitan no tone.",
                         "sentenceMeaning": "Tom de admiração poética."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "永",
+                        "name": "Eterno"
+                    }
                 ]
             },
             {
@@ -10330,6 +14273,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Gosto refinado / Elegância",
                         "sentence": "Gachi no garden.",
                         "sentenceMeaning": "Jardim de gosto refinado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "牙",
+                        "name": "Dente"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -10352,6 +14305,12 @@ const kanjiN1Data = [
                         "sentence": "Aishuu no melody.",
                         "sentenceMeaning": "Melodia de profunda melancolia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -10372,6 +14331,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Apreciação minuciosa / Exame poético",
                         "sentence": "Word no ginmi.",
                         "sentenceMeaning": "Apreciação minuciosa das palavras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
                     }
                 ]
             },
@@ -10394,6 +14363,16 @@ const kanjiN1Data = [
                         "sentence": "Prosaic jojutsu.",
                         "sentenceMeaning": "Narração em prosa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -10414,6 +14393,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Expressão lírica",
                         "sentence": "Jojou no painter.",
                         "sentenceMeaning": "Pintor de expressão lírica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -10436,6 +14421,20 @@ const kanjiN1Data = [
                         "sentence": "Poem no basshou.",
                         "sentenceMeaning": "Seleção de trechos do poema."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
+                    }
                 ]
             },
             {
@@ -10456,6 +14455,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ortografia / Composição de palavras",
                         "sentence": "Correct teiji.",
                         "sentenceMeaning": "Composição ortográfica correta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
                     }
                 ]
             },
@@ -10478,6 +14483,12 @@ const kanjiN1Data = [
                         "sentence": "Kushuu publishing.",
                         "sentenceMeaning": "Publicação de antologia de haikus."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -10498,6 +14509,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Obra de longa extensão / Romance",
                         "sentence": "Chouhen novel.",
                         "sentenceMeaning": "Romance de longa extensão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "戸",
+                        "name": "Porta"
                     }
                 ]
             },
@@ -10520,6 +14541,12 @@ const kanjiN1Data = [
                         "sentence": "Settsubun apology.",
                         "sentenceMeaning": "Desculpa pelo meu humilde texto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -10540,6 +14567,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Submissão de texto poético",
                         "sentence": "Magazine ni toukou.",
                         "sentenceMeaning": "Submeter texto à revista literária."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "高",
+                        "name": "Alto"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
                     }
                 ]
             },
@@ -10562,6 +14599,16 @@ const kanjiN1Data = [
                         "sentence": "Hitsuboku art.",
                         "sentenceMeaning": "Arte de pincel e nanquim."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "黒",
+                        "name": "Preto"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -10582,6 +14629,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pincel e tintoiro / Utensílios literários",
                         "sentence": "Hikken tools.",
                         "sentenceMeaning": "Utensílios do escritor clássico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "見",
+                        "name": "Ver"
                     }
                 ]
             },
@@ -10604,6 +14661,16 @@ const kanjiN1Data = [
                         "sentence": "Hissha no opinion.",
                         "sentenceMeaning": "A opinião do autor."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "聿",
+                        "name": "Pincel"
+                    }
                 ]
             },
             {
@@ -10624,6 +14691,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Vestígios do texto",
                         "sentence": "Text no konseki.",
                         "sentenceMeaning": "Vestígios do manuscrito."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "迹",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -10646,6 +14719,12 @@ const kanjiN1Data = [
                         "sentence": "Author no inkan.",
                         "sentenceMeaning": "Selo do autor."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -10666,6 +14745,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Rima / Esquema de rimas",
                         "sentence": "Ouin technique.",
                         "sentenceMeaning": "Técnica de rima poética."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "音",
+                        "name": "Som"
+                    },
+                    {
+                        "char": "員",
+                        "name": "Membro"
                     }
                 ]
             },
@@ -10688,6 +14777,16 @@ const kanjiN1Data = [
                         "sentence": "Beautiful senritsu.",
                         "sentenceMeaning": "Bela melodia poética."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "聿",
+                        "name": "Pincel"
+                    }
                 ]
             },
             {
@@ -10708,6 +14807,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Mestre da cabana poética",
                         "sentence": "Souan no anju.",
                         "sentenceMeaning": "Mestre da cabana poética."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "大",
+                        "name": "Grande"
                     }
                 ]
             },
@@ -10730,6 +14839,16 @@ const kanjiN1Data = [
                         "sentence": "Mountain inja.",
                         "sentenceMeaning": "Poeta eremita das montanhas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -10750,6 +14869,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Cuckoo / Símbolo da solidão poética",
                         "sentence": "Kankodori singing.",
                         "sentenceMeaning": "O canto da ave da solidão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -10772,6 +14901,16 @@ const kanjiN1Data = [
                         "sentence": "Temple no seijaku.",
                         "sentenceMeaning": "Silêncio solene do templo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -10792,6 +14931,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Escasso / Desolado",
                         "sentence": "Ryouryou star.",
                         "sentenceMeaning": "Estrelas escassas na noite."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
                     }
                 ]
             },
@@ -10814,6 +14967,12 @@ const kanjiN1Data = [
                         "sentence": "Genwaku phrase.",
                         "sentenceMeaning": "Frase de fascínio ilusório."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "幻",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -10834,6 +14993,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Mundo sombrio e misterioso",
                         "sentence": "Yuumei realm.",
                         "sentenceMeaning": "Reino misterioso e sombrio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
                     }
                 ]
             },
@@ -10856,6 +15025,12 @@ const kanjiN1Data = [
                         "sentence": "Youen beauty.",
                         "sentenceMeaning": "Beleza de fascínio sedutor."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艶",
+                        "name": "Brilho"
+                    }
                 ]
             },
             {
@@ -10876,6 +15051,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Coração angustiado",
                         "sentence": "Yuushin state.",
                         "sentenceMeaning": "Estado de coração angustiado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -10898,6 +15083,20 @@ const kanjiN1Data = [
                         "sentence": "Emotion no utsuseki.",
                         "sentenceMeaning": "Acúmulo de emoções no peito."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "缶",
+                        "name": "Lata"
+                    },
+                    {
+                        "char": "冖",
+                        "name": "Teto"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -10918,6 +15117,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Brotar da vegetação na poesia",
                         "sentence": "Spring housei.",
                         "sentenceMeaning": "Brotar da vegetação na primavera."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
                     }
                 ]
             },
@@ -10940,6 +15149,12 @@ const kanjiN1Data = [
                         "sentence": "Temple no kunkou.",
                         "sentenceMeaning": "Aroma de incenso do templo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    }
                 ]
             },
             {
@@ -10960,6 +15175,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Nobre reputação de poeta",
                         "sentence": "Kajin no houmei.",
                         "sentenceMeaning": "Nobre reputação do poeta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "方",
+                        "name": "Direção"
                     }
                 ]
             },
@@ -10982,6 +15207,12 @@ const kanjiN1Data = [
                         "sentence": "Hanka era.",
                         "sentenceMeaning": "Era de prosperidade literária."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    }
                 ]
             },
             {
@@ -11002,6 +15233,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Floração plena exuberante",
                         "sentence": "Sakura ranman.",
                         "sentenceMeaning": "Floração plena das cerejeiras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -11024,6 +15273,16 @@ const kanjiN1Data = [
                         "sentence": "Kenshoku style.",
                         "sentenceMeaning": "Estilo ornamentado e suntuoso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "旬",
+                        "name": "Época"
+                    }
                 ]
             },
             {
@@ -11044,6 +15303,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Trecho selecionado / Extrato",
                         "sentence": "Poem no bassui.",
                         "sentenceMeaning": "Extrato selecionado do poema."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "米",
+                        "name": "Arroz"
                     }
                 ]
             },
@@ -11066,6 +15331,20 @@ const kanjiN1Data = [
                         "sentence": "Samurai no jisei.",
                         "sentenceMeaning": "Poema de despedida do samurai."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "冂",
+                        "name": "Borda"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "辛",
+                        "name": "Espinho"
+                    }
                 ]
             },
             {
@@ -11086,6 +15365,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Tributo literário / Atribuição",
                         "sentence": "Fuka no tax.",
                         "sentenceMeaning": "Tributo atribuído."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -11108,6 +15401,16 @@ const kanjiN1Data = [
                         "sentence": "Hakanage beauty.",
                         "sentenceMeaning": "Beleza de aparência frágil e efêmera."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "夕",
+                        "name": "Noite"
+                    }
                 ]
             },
             {
@@ -11128,6 +15431,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Nostalgia poética",
                         "sentence": "Kyoushuu song.",
                         "sentenceMeaning": "Canção nostálgica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -11150,6 +15459,16 @@ const kanjiN1Data = [
                         "sentence": "Jojou poetry.",
                         "sentenceMeaning": "Poesia lírica de sentimentos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "攴",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -11170,6 +15489,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Composição e canto de Waka",
                         "sentence": "Temple no eika.",
                         "sentenceMeaning": "Canto de versos sagrados no templo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "永",
+                        "name": "Eterno"
                     }
                 ]
             }
@@ -11335,6 +15664,20 @@ const kanjiN1Data = [
                         "sentence": "Metal no choukin.",
                         "sentenceMeaning": "Gravura em metal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "用",
+                        "name": "Usar"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -11355,6 +15698,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Preto profundo como laca",
                         "sentence": "Shikkoku night.",
                         "sentenceMeaning": "Noite de um preto como laca."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -11377,6 +15726,12 @@ const kanjiN1Data = [
                         "sentence": "Product no ishou.",
                         "sentenceMeaning": "Design ornamental do produto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -11397,6 +15752,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Utensílio de cerâmica / Louça",
                         "sentence": "Kyoto no touki.",
                         "sentenceMeaning": "Louça de cerâmica de Kyoto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "包",
+                        "name": "Embrulhar"
+                    },
+                    {
+                        "char": "缶",
+                        "name": "Lata"
                     }
                 ]
             },
@@ -11419,6 +15788,20 @@ const kanjiN1Data = [
                         "sentence": "Traditional yougyou.",
                         "sentenceMeaning": "Indústria de cerâmica tradicional."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "穴",
+                        "name": "Buraco"
+                    },
+                    {
+                        "char": "羊",
+                        "name": "Ovelha"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -11439,6 +15822,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Arte da escultura e modelagem",
                         "sentence": "Chouso exhibition.",
                         "sentenceMeaning": "Exposição de escultura e modelagem."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "干",
+                        "name": "Escudo"
+                    },
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -11461,6 +15858,12 @@ const kanjiN1Data = [
                         "sentence": "Imono kettle.",
                         "sentenceMeaning": "Chaleira de fundição em ferro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -11481,6 +15884,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Marca de mestre / Grife artística",
                         "sentence": "High brand meigara.",
                         "sentenceMeaning": "Grife de prestígio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "名",
+                        "name": "Nome"
                     }
                 ]
             },
@@ -11503,6 +15916,12 @@ const kanjiN1Data = [
                         "sentence": "Stone choukoku.",
                         "sentenceMeaning": "Escultura em pedra."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -11523,6 +15942,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pavilhão de torre tradicional",
                         "sentence": "Golden roukaku.",
                         "sentenceMeaning": "Pavilhão de torre dourado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "女",
+                        "name": "Mulher"
                     }
                 ]
             },
@@ -11545,6 +15974,16 @@ const kanjiN1Data = [
                         "sentence": "Palace denkaku.",
                         "sentenceMeaning": "Complexo de palácios imperiais."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "各",
+                        "name": "Cada"
+                    }
                 ]
             },
             {
@@ -11565,6 +16004,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Salão da fama / Palácio monumental",
                         "sentence": "Art no dendou.",
                         "sentenceMeaning": "Palácio das belas artes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -11587,6 +16032,20 @@ const kanjiN1Data = [
                         "sentence": "Art garou.",
                         "sentenceMeaning": "Galeria de arte."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "良",
+                        "name": "Bom"
+                    },
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    }
                 ]
             },
             {
@@ -11607,6 +16066,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Majestoso / Imponente",
                         "sentence": "Doudou na structure.",
                         "sentenceMeaning": "Estrutura imponente e majestosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "向",
+                        "name": "Direção"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -11629,6 +16102,16 @@ const kanjiN1Data = [
                         "sentence": "Artist no angou.",
                         "sentenceMeaning": "Nome do ateliê do artista."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    }
                 ]
             },
             {
@@ -11649,6 +16132,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Jardim tradicional japonês",
                         "sentence": "Kyoto nihontei.",
                         "sentenceMeaning": "Jardim japonês em Kyoto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "廴",
+                        "name": "Passo Longo"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -11671,6 +16172,16 @@ const kanjiN1Data = [
                         "sentence": "Bamboo kakine.",
                         "sentenceMeaning": "Cerca de bambu."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "二",
+                        "name": "Dois"
+                    }
                 ]
             },
             {
@@ -11691,6 +16202,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Muro de pedras sobrepostas",
                         "sentence": "Castle no ishihei.",
                         "sentenceMeaning": "Muro de pedras do castelo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
                     }
                 ]
             },
@@ -11713,6 +16234,16 @@ const kanjiN1Data = [
                         "sentence": "Wooden shichuu.",
                         "sentenceMeaning": "Pilar de suporte de madeira."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "主",
+                        "name": "Senhor"
+                    }
                 ]
             },
             {
@@ -11733,6 +16264,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Viga de ponte arquitetônica",
                         "sentence": "Steel kyouryou.",
                         "sentenceMeaning": "Viga de ponte de aço."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "丶",
+                        "name": "Ponto"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -11755,6 +16304,16 @@ const kanjiN1Data = [
                         "sentence": "Wooden ketabashi.",
                         "sentenceMeaning": "Ponte de travessões de madeira."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "行",
+                        "name": "Caminhar"
+                    }
                 ]
             },
             {
@@ -11775,6 +16334,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Telhado de marquesa suspenso",
                         "sentence": "Entrance no hisashi-yane.",
                         "sentenceMeaning": "Telhado de marquise da entrada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "比",
+                        "name": "Comparar"
                     }
                 ]
             },
@@ -11797,6 +16366,20 @@ const kanjiN1Data = [
                         "sentence": "Roof no fukikae.",
                         "sentenceMeaning": "Troca do colmo do telhado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    }
                 ]
             },
             {
@@ -11817,6 +16400,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Cabana humilde de colmo",
                         "sentence": "Poet no bouoku.",
                         "sentenceMeaning": "Cabana humilde do poeta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "矛",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -11839,6 +16432,20 @@ const kanjiN1Data = [
                         "sentence": "Festival no kazarituke.",
                         "sentenceMeaning": "Adornos do festival."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "飠",
+                        "name": "Alimento"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "巾",
+                        "name": "Pano"
+                    }
                 ]
             },
             {
@@ -11859,6 +16466,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Acabamento de interiores",
                         "sentence": "Wood naisou.",
                         "sentenceMeaning": "Acabamento de interiores em madeira."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "士",
+                        "name": "Samurai"
+                    },
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
                     }
                 ]
             },
@@ -11881,6 +16498,12 @@ const kanjiN1Data = [
                         "sentence": "Frame wakugai.",
                         "sentenceMeaning": "Fora da moldura do quadro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -11901,6 +16524,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Linha de eixo simétrico da arquitetura",
                         "sentence": "Architecture no jikusen.",
                         "sentenceMeaning": "Linha de eixo da arquitetura."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "由",
+                        "name": "Motivo"
                     }
                 ]
             },
@@ -11923,6 +16556,24 @@ const kanjiN1Data = [
                         "sentence": "Woodblock hansuri.",
                         "sentenceMeaning": "Prensagem de gravura em madeira."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
+                    },
+                    {
+                        "char": "巾",
+                        "name": "Pano"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -11943,6 +16594,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Arte da gravura",
                         "sentence": "Japanese hanga.",
                         "sentenceMeaning": "Arte da gravura japonesa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "片",
+                        "name": "Fatia"
+                    },
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -11965,6 +16630,20 @@ const kanjiN1Data = [
                         "sentence": "Statue no saishiki.",
                         "sentenceMeaning": "Coloração de estátua de madeira."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "爪",
+                        "name": "Garra"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -11985,6 +16664,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Pintura e laqueação de superfícies",
                         "sentence": "Wood no tosou.",
                         "sentenceMeaning": "Laqueação da madeira."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -12007,6 +16700,16 @@ const kanjiN1Data = [
                         "sentence": "Craft no hakuoshi.",
                         "sentenceMeaning": "Aplicação de folha de ouro na arte."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "泊",
+                        "name": "Pernoitar"
+                    }
                 ]
             },
             {
@@ -12027,6 +16730,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Tecelagem em brocado de seda",
                         "sentence": "Traditional nishikiori.",
                         "sentenceMeaning": "Tecelagem tradicional de brocado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "白",
+                        "name": "Branco"
+                    },
+                    {
+                        "char": "巾",
+                        "name": "Pano"
                     }
                 ]
             },
@@ -12049,6 +16766,20 @@ const kanjiN1Data = [
                         "sentence": "Textile soshiki.",
                         "sentenceMeaning": "Trama do tecido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "音",
+                        "name": "Som"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    }
                 ]
             },
             {
@@ -12069,6 +16800,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Adorno ornamentado",
                         "sentence": "Kenshoku screen.",
                         "sentenceMeaning": "Painel ornamentado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "旬",
+                        "name": "Época"
                     }
                 ]
             },
@@ -12091,6 +16832,24 @@ const kanjiN1Data = [
                         "sentence": "Artistic ranman.",
                         "sentenceMeaning": "Plena vivacidade artística."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -12111,6 +16870,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Filosofia estética Wabi-Sabi",
                         "sentence": "Wabisabi aesthetic.",
                         "sentenceMeaning": "Estética Wabi-Sabi."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
                     }
                 ]
             },
@@ -12133,6 +16902,16 @@ const kanjiN1Data = [
                         "sentence": "Kanjaku garden.",
                         "sentenceMeaning": "Jardim de rústica serenidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -12153,6 +16932,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Gosto refinado sem ostentação",
                         "sentence": "Shibumi design.",
                         "sentenceMeaning": "Design de refinamento discreto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -12175,6 +16960,20 @@ const kanjiN1Data = [
                         "sentence": "Ikuta no craft.",
                         "sentenceMeaning": "Inumeráveis detalhes de artesanato."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    }
                 ]
             },
             {
@@ -12195,6 +16994,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Estrutura do edifício / Arranjo",
                         "sentence": "Building no kousei.",
                         "sentenceMeaning": "Estrutura do edifício."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             }
@@ -12360,6 +17165,16 @@ const kanjiN1Data = [
                         "sentence": "Point no kajoujaki.",
                         "sentenceMeaning": "Redação dos pontos em tópicos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "固",
+                        "name": "Sólido"
+                    }
                 ]
             },
             {
@@ -12380,6 +17195,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Capacidade e domínio vocabular",
                         "sentence": "Goiryoku no enhancement.",
                         "sentenceMeaning": "Aprimoramento do domínio vocabular."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "胃",
+                        "name": "Estômago"
                     }
                 ]
             },
@@ -12402,6 +17223,16 @@ const kanjiN1Data = [
                         "sentence": "Opinion no yugami.",
                         "sentenceMeaning": "Distorção da opinião."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -12422,6 +17253,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Prática abusiva / Mal costume",
                         "sentence": "Old akuhei.",
                         "sentenceMeaning": "Prática abusiva antiga."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
                     }
                 ]
             },
@@ -12444,6 +17285,16 @@ const kanjiN1Data = [
                         "sentence": "Literary hihyou.",
                         "sentenceMeaning": "Resenha crítica literária."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "比",
+                        "name": "Comparar"
+                    }
                 ]
             },
             {
@@ -12464,6 +17315,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Comentário crítico analítico",
                         "sentence": "Text no hyoushaku.",
                         "sentenceMeaning": "Comentário crítico do texto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -12486,6 +17347,16 @@ const kanjiN1Data = [
                         "sentence": "Journal ni kikou.",
                         "sentenceMeaning": "Contribuir com artigo para o jornal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "高",
+                        "name": "Alto"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    }
                 ]
             },
             {
@@ -12506,6 +17377,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Margem / Fora da coluna",
                         "sentence": "Rangai note.",
                         "sentenceMeaning": "Nota fora da coluna."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -12528,6 +17417,12 @@ const kanjiN1Data = [
                         "sentence": "Situation no gaikan.",
                         "sentenceMeaning": "Panorama geral da situação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -12548,6 +17443,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Teor principal / Sumário",
                         "sentence": "Speech no youshi.",
                         "sentenceMeaning": "Teor principal do discurso."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "甘",
+                        "name": "Doce"
                     }
                 ]
             },
@@ -12570,6 +17475,12 @@ const kanjiN1Data = [
                         "sentence": "Sekken o stating.",
                         "sentenceMeaning": "Expor minha humilde visão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -12590,6 +17501,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Encurralar com perguntas",
                         "sentence": "Minister o tsuitsumeru.",
                         "sentenceMeaning": "Encurralar o ministro com perguntas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "士",
+                        "name": "Samurai"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -12612,6 +17537,16 @@ const kanjiN1Data = [
                         "sentence": "Weakness no rotei.",
                         "sentenceMeaning": "Exposição de fraqueza."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "路",
+                        "name": "Estrada"
+                    }
                 ]
             },
             {
@@ -12632,6 +17567,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Entrega de documento / Apresentação",
                         "sentence": "Award no zoutei.",
                         "sentenceMeaning": "Apresentação do prêmio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -12654,6 +17603,12 @@ const kanjiN1Data = [
                         "sentence": "Book no kaitei.",
                         "sentenceMeaning": "Edição revisada do livro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -12674,6 +17629,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Erro conceitual e falácia",
                         "sentence": "Logic no sakugobyuu.",
                         "sentenceMeaning": "Falácia e erro de lógica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
                     }
                 ]
             },
@@ -12696,6 +17665,16 @@ const kanjiN1Data = [
                         "sentence": "Notice keiji.",
                         "sentenceMeaning": "Proclamação de aviso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
+                    }
                 ]
             },
             {
@@ -12716,6 +17695,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Transcrição e publicação de entrevista",
                         "sentence": "Interview no sairoku.",
                         "sentenceMeaning": "Transcrição e publicação de entrevista."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
                     }
                 ]
             },
@@ -12738,6 +17723,16 @@ const kanjiN1Data = [
                         "sentence": "Keishou o narasu.",
                         "sentenceMeaning": "Soar o alarme social."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "敬",
+                        "name": "Respeitar"
+                    },
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -12758,6 +17753,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sino do anoitecer",
                         "sentence": "Evening banshou.",
                         "sentenceMeaning": "Sino do anoitecer."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "童",
+                        "name": "Criança"
                     }
                 ]
             },
@@ -12780,6 +17785,12 @@ const kanjiN1Data = [
                         "sentence": "Truth no kyuumei.",
                         "sentenceMeaning": "Esclarecimento rigoroso da verdade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -12800,6 +17811,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Manifesto de acusação pública",
                         "sentence": "Kyuudanbun publication.",
                         "sentenceMeaning": "Publicação do manifesto de acusação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
                     }
                 ]
             },
@@ -12822,6 +17839,20 @@ const kanjiN1Data = [
                         "sentence": "Sengi meeting.",
                         "sentenceMeaning": "Deliberação de investigação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "入",
+                        "name": "Entrar"
+                    },
+                    {
+                        "char": "工",
+                        "name": "Trabalho"
+                    }
                 ]
             },
             {
@@ -12842,6 +17873,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Pesquisa de fontes e dados",
                         "sentence": "Data no kensaku.",
                         "sentenceMeaning": "Pesquisa de fontes de dados."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "索",
+                        "name": "Buscar"
                     }
                 ]
             },
@@ -12864,6 +17901,12 @@ const kanjiN1Data = [
                         "sentence": "Anthology senja.",
                         "sentenceMeaning": "Organizador da antologia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -12884,6 +17927,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Compilação de compêndio acadêmico",
                         "sentence": "Dictionary hensan.",
                         "sentenceMeaning": "Compilação de dicionário."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "戸",
+                        "name": "Porta"
                     }
                 ]
             },
@@ -12906,6 +17959,16 @@ const kanjiN1Data = [
                         "sentence": "Text sanshuu.",
                         "sentenceMeaning": "Revisão e compilação de textos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "算",
+                        "name": "Calcular"
+                    },
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -12926,6 +17989,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Impressão e circulação de jornal",
                         "sentence": "Daily satsukou.",
                         "sentenceMeaning": "Impressão e circulação diária."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
+                    },
+                    {
+                        "char": "巾",
+                        "name": "Pano"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
                     }
                 ]
             },
@@ -12948,6 +18029,16 @@ const kanjiN1Data = [
                         "sentence": "Gekkan magazine.",
                         "sentenceMeaning": "Revista de publicação mensal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "干",
+                        "name": "Escudo"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -12968,6 +18059,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Anúncio formal / Declaração",
                         "sentence": "Press happyou.",
                         "sentenceMeaning": "Declaração à imprensa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
+                    },
+                    {
+                        "char": "癶",
+                        "name": "Passos"
+                    },
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -12990,6 +18095,12 @@ const kanjiN1Data = [
                         "sentence": "Press de shakumei.",
                         "sentenceMeaning": "Justificativa coletiva à imprensa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "釆",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -13010,6 +18121,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Esclarecimento minucioso da verdade",
                         "sentence": "Truth kyuumei.",
                         "sentenceMeaning": "Esclarecimento minucioso da verdade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
                     }
                 ]
             },
@@ -13032,6 +18149,12 @@ const kanjiN1Data = [
                         "sentence": "Academic ronbun.",
                         "sentenceMeaning": "Tese acadêmica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    }
                 ]
             },
             {
@@ -13052,6 +18175,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Indiciamento / Processo judicial veiculado",
                         "sentence": "Sotsui notice.",
                         "sentenceMeaning": "Aviso de indiciamento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
                     }
                 ]
             },
@@ -13074,6 +18207,12 @@ const kanjiN1Data = [
                         "sentence": "News no tsoiseki.",
                         "sentenceMeaning": "Acompanhamento da notícia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    }
                 ]
             },
             {
@@ -13094,6 +18233,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Inquirição minuciosa de fatos",
                         "sentence": "Fact no tsuikyuu.",
                         "sentenceMeaning": "Inquirição minuciosa dos fatos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -13116,6 +18265,16 @@ const kanjiN1Data = [
                         "sentence": "Crime no kyousa.",
                         "sentenceMeaning": "Incitação ao crime."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -13136,6 +18295,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Exibição / Demonstração de dados",
                         "sentence": "Data hyouji.",
                         "sentenceMeaning": "Exibição de dados."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "示",
+                        "name": "Espírito"
                     }
                 ]
             },
@@ -13158,6 +18323,16 @@ const kanjiN1Data = [
                         "sentence": "Bakuron article.",
                         "sentenceMeaning": "Artigo de contestação e refutação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "馬",
+                        "name": "Cavalo"
+                    },
+                    {
+                        "char": "爻",
+                        "name": "Cruzado"
+                    }
                 ]
             },
             {
@@ -13178,6 +18353,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Obra publicada / Livro de autoria",
                         "sentence": "New chosho.",
                         "sentenceMeaning": "Novo livro publicado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "者",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -13200,6 +18385,16 @@ const kanjiN1Data = [
                         "sentence": "Prosaic jojutsu.",
                         "sentenceMeaning": "Narração prosaica de fatos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    }
                 ]
             },
             {
@@ -13220,6 +18415,20 @@ const kanjiN1Data = [
                         "wordMeaning": "História / Processo histórico",
                         "sentence": "Modern rekishi.",
                         "sentenceMeaning": "História moderna."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "丨",
+                        "name": "Vertical"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             }
@@ -13385,6 +18594,12 @@ const kanjiN1Data = [
                         "sentence": "Village no suibi.",
                         "sentenceMeaning": "Definhamento da comunidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "衰",
+                        "name": "Declinar"
+                    }
                 ]
             },
             {
@@ -13405,6 +18620,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Morte solitária em isolamento",
                         "sentence": "Koureisha no kodokushi.",
                         "sentenceMeaning": "Morte solitária de idosos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "瓜",
+                        "name": "Melão"
                     }
                 ]
             },
@@ -13427,6 +18652,16 @@ const kanjiN1Data = [
                         "sentence": "Infrastructure no mahou.",
                         "sentenceMeaning": "Desgaste da infraestrutura."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "麻",
+                        "name": "Cânhamo"
+                    },
+                    {
+                        "char": "手",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -13447,6 +18682,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Alienação social / Exclusão",
                         "sentence": "Human sogai.",
                         "sentenceMeaning": "Alienação humana na metrópole."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疋",
+                        "name": "Pé"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
                     }
                 ]
             },
@@ -13469,6 +18714,20 @@ const kanjiN1Data = [
                         "sentence": "Jinkou mitsudo.",
                         "sentenceMeaning": "Densidade demográfica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "必",
+                        "name": "Certamente"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    }
                 ]
             },
             {
@@ -13489,6 +18748,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Relocalização de infraestrutura",
                         "sentence": "Office no iten.",
                         "sentenceMeaning": "Relocalização do escritório."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "夕",
+                        "name": "Noite"
                     }
                 ]
             },
@@ -13511,6 +18780,16 @@ const kanjiN1Data = [
                         "sentence": "Kyoju right.",
                         "sentenceMeaning": "Direito de residência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "主",
+                        "name": "Senhor"
+                    }
                 ]
             },
             {
@@ -13531,6 +18810,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Permanecer fixo na residência",
                         "sentence": "Local ni isuwaru.",
                         "sentenceMeaning": "Permanecer fixo na localidade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "尸",
+                        "name": "Corpo"
+                    },
+                    {
+                        "char": "古",
+                        "name": "Antigo"
                     }
                 ]
             },
@@ -13553,6 +18842,16 @@ const kanjiN1Data = [
                         "sentence": "Kamitsu schedule.",
                         "sentenceMeaning": "Programação de superlotação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -13573,6 +18872,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Distribuição homogênea / Igualitária",
                         "sentence": "Kintou distribution.",
                         "sentenceMeaning": "Distribuição homogênea."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "二",
+                        "name": "Dois"
                     }
                 ]
             },
@@ -13595,6 +18904,16 @@ const kanjiN1Data = [
                         "sentence": "Urban henchou.",
                         "sentenceMeaning": "Ênfase desequilibrada no urbano."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "戸",
+                        "name": "Porta"
+                    }
                 ]
             },
             {
@@ -13615,6 +18934,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Minoria demográfica",
                         "sentence": "Shousuu group.",
                         "sentenceMeaning": "Grupo de minoria."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
                     }
                 ]
             },
@@ -13637,6 +18966,16 @@ const kanjiN1Data = [
                         "sentence": "Nenrei structure.",
                         "sentenceMeaning": "Estrutura por faixa etária."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -13657,6 +18996,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Velhice / Terceira idade",
                         "sentence": "Rourei pension.",
                         "sentenceMeaning": "Pensão de velhice."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "毛",
+                        "name": "Pelo"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
                     }
                 ]
             },
@@ -13679,6 +19028,24 @@ const kanjiN1Data = [
                         "sentence": "Mikon rate.",
                         "sentenceMeaning": "Taxa de pessoas solteiras."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "氏",
+                        "name": "Clã"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    }
                 ]
             },
             {
@@ -13699,6 +19066,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Parentesco por casamento",
                         "sentence": "Inshaku relation.",
                         "sentenceMeaning": "Relação de parentesco por casamento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "因",
+                        "name": "Causa"
                     }
                 ]
             },
@@ -13721,6 +19098,16 @@ const kanjiN1Data = [
                         "sentence": "Hoiku facility.",
                         "sentenceMeaning": "Creche de assistência infantil."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -13741,6 +19128,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Seguro / Previdência social",
                         "sentence": "Social hoken.",
                         "sentenceMeaning": "Previdência social."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "保",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -13763,6 +19156,12 @@ const kanjiN1Data = [
                         "sentence": "Social hujo.",
                         "sentenceMeaning": "Assistência social."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -13783,6 +19182,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Proteção especial / Cuidados",
                         "sentence": "Yougo home.",
                         "sentenceMeaning": "Asilo de proteção a idosos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "羊",
+                        "name": "Ovelha"
+                    },
+                    {
+                        "char": "食",
+                        "name": "Comida"
                     }
                 ]
             },
@@ -13805,6 +19214,24 @@ const kanjiN1Data = [
                         "sentence": "Kango-shi (看護師).",
                         "sentenceMeaning": "Profissional de enfermagem."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -13825,6 +19252,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Intermediação / Meio de apoio",
                         "sentence": "Social baikai.",
                         "sentenceMeaning": "Intermediação social."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -13847,6 +19284,16 @@ const kanjiN1Data = [
                         "sentence": "Kokuseki law.",
                         "sentenceMeaning": "Lei de nacionalidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "耒",
+                        "name": "Arado"
+                    }
                 ]
             },
             {
@@ -13867,6 +19314,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Transferência da capital urbana",
                         "sentence": "Capital no sento.",
                         "sentenceMeaning": "Transferência da capital."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -13889,6 +19346,16 @@ const kanjiN1Data = [
                         "sentence": "Tokyo kinkou.",
                         "sentenceMeaning": "Arredores de Tóquio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "交",
+                        "name": "Cruzamento"
+                    },
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    }
                 ]
             },
             {
@@ -13909,6 +19376,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Vias públicas urbanas",
                         "sentence": "Gaitou survey.",
                         "sentenceMeaning": "Pesquisa nas vias públicas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "行",
+                        "name": "Caminhar"
                     }
                 ]
             },
@@ -13931,6 +19404,12 @@ const kanjiN1Data = [
                         "sentence": "Commercial chiku.",
                         "sentenceMeaning": "Distrito comercial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "品",
+                        "name": "Artigo"
+                    }
                 ]
             },
             {
@@ -13951,6 +19430,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Zona / Área de abrangência",
                         "sentence": "Urban kuiki.",
                         "sentenceMeaning": "Zona de abrangência urbana."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -13973,6 +19466,16 @@ const kanjiN1Data = [
                         "sentence": "Boudai na population.",
                         "sentenceMeaning": "População de volume massivo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -13993,6 +19496,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Brotar contínuo de pessoas",
                         "sentence": "Crowd no yuushutsu.",
                         "sentenceMeaning": "Brotar contínuo da multidão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "用",
+                        "name": "Usar"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -14015,6 +19532,12 @@ const kanjiN1Data = [
                         "sentence": "Chihou kara no ryuushutsu.",
                         "sentenceMeaning": "Efluxo populacional do interior."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "水",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -14035,6 +19558,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vagabundagem / Migração sem rumo",
                         "sentence": "Hyouhaku life.",
                         "sentenceMeaning": "Vida de migração sem rumo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -14057,6 +19590,16 @@ const kanjiN1Data = [
                         "sentence": "Hotel shukuhaku.",
                         "sentenceMeaning": "Pernoite em hotel."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "白",
+                        "name": "Branco"
+                    }
                 ]
             },
             {
@@ -14077,6 +19620,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Desabamento de prédios abandonados",
                         "sentence": "Akiya no houraku.",
                         "sentenceMeaning": "Desabamento de casa abandonada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "鳥",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -14099,6 +19652,12 @@ const kanjiN1Data = [
                         "sentence": "Urban arete.",
                         "sentenceMeaning": "Terreno baldio urbano."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    }
                 ]
             },
             {
@@ -14119,6 +19678,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Abandono ilegal de imóveis",
                         "sentence": "Akiya no touki.",
                         "sentenceMeaning": "Abandono ilegal de imóvel."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
                     }
                 ]
             },
@@ -14141,6 +19710,16 @@ const kanjiN1Data = [
                         "sentence": "System no hizorobi.",
                         "sentenceMeaning": "Falha e ruptura no sistema."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "定",
+                        "name": "Fixar"
+                    }
                 ]
             },
             {
@@ -14161,6 +19740,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Tragédia social / Calamidade",
                         "sentence": "Social sanji.",
                         "sentenceMeaning": "Tragédia social."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -14183,6 +19768,16 @@ const kanjiN1Data = [
                         "sentence": "Economic konnan.",
                         "sentenceMeaning": "Adversidade econômica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "囗",
+                        "name": "Cercado"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -14203,6 +19798,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pessoa em indigência / Cidadão carente",
                         "sentence": "Konkyuusha support.",
                         "sentenceMeaning": "Apoio a pessoas em indigência."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "穴",
+                        "name": "Buraco"
+                    },
+                    {
+                        "char": "身",
+                        "name": "Corpo"
                     }
                 ]
             },
@@ -14225,6 +19830,12 @@ const kanjiN1Data = [
                         "sentence": "Akiya no kosuu.",
                         "sentenceMeaning": "Número de domicílios desocupados."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "戸",
+                        "name": "Porta"
+                    }
                 ]
             },
             {
@@ -14245,6 +19856,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Debilitação da economia local",
                         "sentence": "Local economy no suijaku.",
                         "sentenceMeaning": "Debilitação da economia local."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "衰",
+                        "name": "Declinar"
                     }
                 ]
             }
@@ -14410,6 +20027,16 @@ const kanjiN1Data = [
                         "sentence": "Academic henchou.",
                         "sentenceMeaning": "Ênfase desproporcional no acadêmico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "戸",
+                        "name": "Porta"
+                    }
                 ]
             },
             {
@@ -14430,6 +20057,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Chacina / Atrocidade de abuso",
                         "sentence": "Mass gyakusatsu.",
                         "sentenceMeaning": "Chacina de inocentes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "爪",
+                        "name": "Garra"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -14452,6 +20089,12 @@ const kanjiN1Data = [
                         "sentence": "Shisshi no me.",
                         "sentenceMeaning": "Olhar com inveja de ressentimento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -14472,6 +20115,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Prepotência inabalável",
                         "sentence": "Gougan na boss.",
                         "sentenceMeaning": "Chefe de prepotência inabalável."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -14494,6 +20143,20 @@ const kanjiN1Data = [
                         "sentence": "Jiman story.",
                         "sentenceMeaning": "História de orgulho excessivo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -14514,6 +20177,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ressentimento / Rancor velado",
                         "sentence": "Netami emotion.",
                         "sentenceMeaning": "Emoção de ressentimento velado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "石",
+                        "name": "Pedra"
                     }
                 ]
             },
@@ -14536,6 +20209,16 @@ const kanjiN1Data = [
                         "sentence": "Saigishin no koureisha.",
                         "sentenceMeaning": "Paranoia desconfiada do indivíduo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    },
+                    {
+                        "char": "生",
+                        "name": "Vida"
+                    }
                 ]
             },
             {
@@ -14556,6 +20239,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Desdém / Menosprezo preconceituoso",
                         "sentence": "Bubetsu no me.",
                         "sentenceMeaning": "Olhar de desprezo preconceituoso."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -14578,6 +20267,12 @@ const kanjiN1Data = [
                         "sentence": "Keibetsu tone.",
                         "sentenceMeaning": "Tom de desprezo desdenhoso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "血",
+                        "name": "Sangue"
+                    }
                 ]
             },
             {
@@ -14598,6 +20293,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Desconsideração / Negligência",
                         "sentence": "Safety no keishi.",
                         "sentenceMeaning": "Negligência com a segurança."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -14620,6 +20325,12 @@ const kanjiN1Data = [
                         "sentence": "Economic kakusa.",
                         "sentenceMeaning": "Desigualdade econômica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "左",
+                        "name": "Esquerda"
+                    }
                 ]
             },
             {
@@ -14640,6 +20351,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Sentimento de forte aversão e estigma",
                         "sentence": "Strong ken'okan.",
                         "sentenceMeaning": "Forte sentimento de repulsa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -14662,6 +20387,12 @@ const kanjiN1Data = [
                         "sentence": "Akui no rumor.",
                         "sentenceMeaning": "Boato de má-fé maliciosa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -14682,6 +20413,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Rancor / Sentimento de ódio",
                         "sentence": "Nikushimi clear.",
                         "sentenceMeaning": "Desfazer o sentimento de ódio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -14704,6 +20441,16 @@ const kanjiN1Data = [
                         "sentence": "Shuuchi feeling.",
                         "sentenceMeaning": "Sensação de constrangimento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -14724,6 +20471,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Sentimento de pudor patológico",
                         "sentence": "Shuuchishin loss.",
                         "sentenceMeaning": "Perda do sentimento de pudor."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "羊",
+                        "name": "Ovelha"
+                    },
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "鬼",
+                        "name": "Demônio"
                     }
                 ]
             },
@@ -14746,6 +20507,16 @@ const kanjiN1Data = [
                         "sentence": "Family no chijoku.",
                         "sentenceMeaning": "Deshonra da família."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辰",
+                        "name": "Dragão"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -14766,6 +20537,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Transtorno / Enfermidade mental",
                         "sentence": "Mental shikkan.",
                         "sentenceMeaning": "Transtorno mental."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -14788,6 +20565,16 @@ const kanjiN1Data = [
                         "sentence": "Hekikou behavior.",
                         "sentenceMeaning": "Comportamento compulsivo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    }
                 ]
             },
             {
@@ -14808,6 +20595,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Fanatismo dogmático",
                         "sentence": "Kyoushin follower.",
                         "sentenceMeaning": "Seguidor fanático."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -14830,6 +20627,12 @@ const kanjiN1Data = [
                         "sentence": "Dogmatic moushin.",
                         "sentenceMeaning": "Crença cega sem provas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    }
                 ]
             },
             {
@@ -14850,6 +20653,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Lamentação estéril / Reclamação",
                         "sentence": "Guchi o iu.",
                         "sentenceMeaning": "Fazer lamentações estéreis."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "疑",
+                        "name": "Dúvida"
                     }
                 ]
             },
@@ -14872,6 +20685,20 @@ const kanjiN1Data = [
                         "sentence": "Impulse yokusei.",
                         "sentenceMeaning": "Inibição do impulso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -14892,6 +20719,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Estado de melancolia profunda",
                         "sentence": "Yuuutsu day.",
                         "sentenceMeaning": "Dia de profunda melancolia."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "缶",
+                        "name": "Lata"
+                    },
+                    {
+                        "char": "冖",
+                        "name": "Teto"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
                     }
                 ]
             },
@@ -14914,6 +20755,20 @@ const kanjiN1Data = [
                         "sentence": "Souutsu-shou.",
                         "sentenceMeaning": "Transtorno bipolar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "足",
+                        "name": "Pé"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -14934,6 +20789,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Fobia específica (ex: fobia social)",
                         "sentence": "Social kyoufushou.",
                         "sentenceMeaning": "Fobia social."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "工",
+                        "name": "Trabalho"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -14956,6 +20821,12 @@ const kanjiN1Data = [
                         "sentence": "Kyoufushin o overcome.",
                         "sentenceMeaning": "Superar o sentimento de fobia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    }
                 ]
             },
             {
@@ -14976,6 +20847,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ameaça psicosocial",
                         "sentence": "Security no kyoui.",
                         "sentenceMeaning": "Ameaça à segurança."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "力",
+                        "name": "Força"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
                     }
                 ]
             },
@@ -14998,6 +20879,16 @@ const kanjiN1Data = [
                         "sentence": "Mental appaku.",
                         "sentenceMeaning": "Pressão psicológica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "白",
+                        "name": "Branco"
+                    }
                 ]
             },
             {
@@ -15018,6 +20909,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Transtorno / Deficiência comportamental",
                         "sentence": "Development shougai.",
                         "sentenceMeaning": "Transtorno do desenvolvimento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -15040,6 +20941,16 @@ const kanjiN1Data = [
                         "sentence": "Kodoku state.",
                         "sentenceMeaning": "Estado de desamparo e solidão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "瓜",
+                        "name": "Melão"
+                    }
                 ]
             },
             {
@@ -15060,6 +20971,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sensação de sufocamento social",
                         "sentence": "Social heisoku.",
                         "sentenceMeaning": "Sensação de sufocamento social."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "才",
+                        "name": "Talento"
                     }
                 ]
             },
@@ -15082,6 +21003,12 @@ const kanjiN1Data = [
                         "sentence": "Scene kara no tousou.",
                         "sentenceMeaning": "Fuga do local."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    }
                 ]
             },
             {
@@ -15102,6 +21029,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Busca de abrigo de emergência",
                         "sentence": "Hinan place.",
                         "sentenceMeaning": "Local de abrigo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
                     }
                 ]
             },
@@ -15124,6 +21061,24 @@ const kanjiN1Data = [
                         "sentence": "Meiwaku behavior.",
                         "sentenceMeaning": "Comportamento causador de transtorno."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -15144,6 +21099,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Obsessão rancorosa",
                         "sentence": "Revenge no shuunen.",
                         "sentenceMeaning": "Obsessão rancorosa de vingança."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "執",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -15166,6 +21127,16 @@ const kanjiN1Data = [
                         "sentence": "Mind no shouheki.",
                         "sentenceMeaning": "Barreira atitudinal de preconceito."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "章",
+                        "name": "Capítulo"
+                    }
                 ]
             },
             {
@@ -15186,6 +21157,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Transtorno de dependência / Adicção",
                         "sentence": "Game izonshou.",
                         "sentenceMeaning": "Transtorno de adicção em jogos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
                     }
                 ]
             },
@@ -15208,6 +21189,20 @@ const kanjiN1Data = [
                         "sentence": "Sonzoku risk.",
                         "sentenceMeaning": "Risco de subsistência do transtorno."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "才",
+                        "name": "Talento"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    }
                 ]
             },
             {
@@ -15228,6 +21223,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Fúria cega / Ira agressiva",
                         "sentence": "Funnu episode.",
                         "sentenceMeaning": "Episódio de fúria cega."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -15250,6 +21259,16 @@ const kanjiN1Data = [
                         "sentence": "Social injustice ni hungai.",
                         "sentenceMeaning": "Indignação perante a injustiça social."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -15270,6 +21289,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Impressão reflexiva",
                         "sentence": "Kansou report.",
                         "sentenceMeaning": "Relatório de impressões."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             }
@@ -15435,6 +21460,16 @@ const kanjiN1Data = [
                         "sentence": "Gashou care.",
                         "sentenceMeaning": "Cuidados de repouso em leito."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -15455,6 +21490,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Lenha e carvão / Combustível",
                         "sentence": "Shintan supply.",
                         "sentenceMeaning": "Suprimento de lenha e carvão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "斤",
+                        "name": "Machado"
                     }
                 ]
             },
@@ -15477,6 +21522,20 @@ const kanjiN1Data = [
                         "sentence": "Wine no shoumi.",
                         "sentenceMeaning": "Degustação do vinho."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "向",
+                        "name": "Direção"
+                    },
+                    {
+                        "char": "旨",
+                        "name": "Objetivo"
+                    }
                 ]
             },
             {
@@ -15497,6 +21556,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Coragem e determinação firme",
                         "sentence": "Strong tanryoku.",
                         "sentenceMeaning": "Firme coragem e determinação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "言",
+                        "name": "Palavra"
                     }
                 ]
             },
@@ -15519,6 +21592,16 @@ const kanjiN1Data = [
                         "sentence": "Koritsu-muen state.",
                         "sentenceMeaning": "Estado de isolamento sem ajuda."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "瓜",
+                        "name": "Melão"
+                    }
                 ]
             },
             {
@@ -15539,6 +21622,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Esforço e esmero máximo / Despesa",
                         "sentence": "Money o funmatsu.",
                         "sentenceMeaning": "Gastar com esmero máximo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "田",
+                        "name": "Campo"
                     }
                 ]
             },
@@ -15561,6 +21658,12 @@ const kanjiN1Data = [
                         "sentence": "Toushi o burn.",
                         "sentenceMeaning": "Queimar de espírito de luta."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "闘",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -15581,6 +21684,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Esmero sincero / Sentimento premente",
                         "sentence": "Setsujitsu na wish.",
                         "sentenceMeaning": "Desejo sincero e premente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
                     }
                 ]
             },
@@ -15603,6 +21712,16 @@ const kanjiN1Data = [
                         "sentence": "Stone no masa.",
                         "sentenceMeaning": "Polimento minucioso da pedra."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "差",
+                        "name": "Diferença"
+                    }
                 ]
             },
             {
@@ -15623,6 +21742,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Lapidação e aprimoramento espiritual",
                         "sentence": "Mind no takuma.",
                         "sentenceMeaning": "Aprimoramento da mente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
                     }
                 ]
             },
@@ -15645,6 +21770,16 @@ const kanjiN1Data = [
                         "sentence": "Lens no kenma.",
                         "sentenceMeaning": "Polimento de precisão da lente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "麻",
+                        "name": "Cânhamo"
+                    },
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    }
                 ]
             },
             {
@@ -15665,6 +21800,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Superfície espelhada cristalina",
                         "sentence": "Lake no kyoumen.",
                         "sentenceMeaning": "Superfície espelhada do lago."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "音",
+                        "name": "Som"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
                     }
                 ]
             },
@@ -15687,6 +21836,12 @@ const kanjiN1Data = [
                         "sentence": "Seishi state.",
                         "sentenceMeaning": "Estado de imobilidade e repouso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -15707,6 +21862,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Água purificada e cristalina",
                         "sentence": "Jousui plant.",
                         "sentenceMeaning": "Estação de purificação de água."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "水",
+                        "name": "Água"
                     }
                 ]
             },
@@ -15729,6 +21890,16 @@ const kanjiN1Data = [
                         "sentence": "Ikebana art.",
                         "sentenceMeaning": "Arte do arranjo floral Ikebana."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "化",
+                        "name": "Transformação"
+                    }
                 ]
             },
             {
@@ -15749,6 +21920,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Luar da noite",
                         "sentence": "Gekkou illumination.",
                         "sentenceMeaning": "Iluminação do luar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
                     }
                 ]
             },
@@ -15771,6 +21948,16 @@ const kanjiN1Data = [
                         "sentence": "Onwa character.",
                         "sentenceMeaning": "Temperamento moderado e caloroso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "皿",
+                        "name": "Prato"
+                    }
                 ]
             },
             {
@@ -15791,6 +21978,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Tradições e provérbios antigos",
                         "sentence": "Koji-seigo (故事成語).",
                         "sentenceMeaning": "Expressões idiomáticas de tradição histórica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "古",
+                        "name": "Antigo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -15813,6 +22010,12 @@ const kanjiN1Data = [
                         "sentence": "Shinshin writer.",
                         "sentenceMeaning": "Escritor promissor e inovador."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -15833,6 +22036,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Corrida veloz e impetuosa",
                         "sentence": "Shisshou speed.",
                         "sentenceMeaning": "Velocidade de corrida veloz."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
                     }
                 ]
             },
@@ -15855,6 +22064,12 @@ const kanjiN1Data = [
                         "sentence": "High fuurou.",
                         "sentenceMeaning": "Ondas altas provocadas pelo vento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "虫",
+                        "name": "Inseto"
+                    }
                 ]
             },
             {
@@ -15875,6 +22090,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Celeridade e presteza",
                         "sentence": "Jinsoku action.",
                         "sentenceMeaning": "Ação célere e de extrema presteza."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
                     }
                 ]
             },
@@ -15897,6 +22118,20 @@ const kanjiN1Data = [
                         "sentence": "Distant raimei.",
                         "sentenceMeaning": "Estrondo distante do trovão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "象",
+                        "name": "Elefante"
+                    },
+                    {
+                        "char": "形",
+                        "name": "Forma"
+                    }
                 ]
             },
             {
@@ -15917,6 +22152,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Profusão deslumbrante de talentos e flores",
                         "sentence": "Hyakka-ryouran era.",
                         "sentenceMeaning": "Era de profusão deslumbrante de talentos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "白",
+                        "name": "Branco"
                     }
                 ]
             },
@@ -15939,6 +22184,20 @@ const kanjiN1Data = [
                         "sentence": "Rigorous kunren.",
                         "sentenceMeaning": "Treinamento intensivo rigoroso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -15959,6 +22218,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Desabrochar exuberante em profusão",
                         "sentence": "Ryouran blooming.",
                         "sentenceMeaning": "Desabrochar exuberante."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
                     }
                 ]
             },
@@ -15981,6 +22246,20 @@ const kanjiN1Data = [
                         "sentence": "Sakura no ranman.",
                         "sentenceMeaning": "Floração plena radiante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "冂",
+                        "name": "Borda"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "乙",
+                        "name": "Curva"
+                    }
                 ]
             },
             {
@@ -16001,6 +22280,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Encontro único e irrepetível na vida",
                         "sentence": "Ichigo-ichie spirit.",
                         "sentenceMeaning": "Espírito de valorizar o encontro único."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -16023,6 +22308,12 @@ const kanjiN1Data = [
                         "sentence": "Japanese touken.",
                         "sentenceMeaning": "Espada japonesa tradicional."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    }
                 ]
             },
             {
@@ -16043,6 +22334,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Coexistência de duas metas",
                         "sentence": "Work and life no ryouritsu.",
                         "sentenceMeaning": "Coexistência entre trabalho e vida."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -16065,6 +22362,12 @@ const kanjiN1Data = [
                         "sentence": "Dantei opinion.",
                         "sentenceMeaning": "Afirmação categórica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -16085,6 +22388,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Reunião de pessoas",
                         "sentence": "Annual kaigou.",
                         "sentenceMeaning": "Reunião anual."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "会",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -16107,6 +22416,12 @@ const kanjiN1Data = [
                         "sentence": "Fixed kikan.",
                         "sentenceMeaning": "Período fixo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
+                    }
                 ]
             },
             {
@@ -16127,6 +22442,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Atendimento clínico à beira do leito",
                         "sentence": "Rinshou doctor.",
                         "sentenceMeaning": "Médico de atendimento clínico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
                     }
                 ]
             },
@@ -16149,6 +22478,24 @@ const kanjiN1Data = [
                         "sentence": "Change no keiki.",
                         "sentenceMeaning": "Gatilho para a mudança."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
+                    }
                 ]
             },
             {
@@ -16169,6 +22516,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Céu completamente limpo e ensolarado",
                         "sentence": "Kaisei day.",
                         "sentenceMeaning": "Dia de céu completamente limpo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "生",
+                        "name": "Vida"
                     }
                 ]
             },
@@ -16191,6 +22548,12 @@ const kanjiN1Data = [
                         "sentence": "Tentai observation.",
                         "sentenceMeaning": "Observação de corpos celestes."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "天",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -16211,6 +22574,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Volume de chuva precipitado",
                         "sentence": "High uryou.",
                         "sentenceMeaning": "Elevado volume de chuva."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
                     }
                 ]
             },
@@ -16233,6 +22602,16 @@ const kanjiN1Data = [
                         "sentence": "Staff kenshuu.",
                         "sentenceMeaning": "Treinamento de aperfeiçoamento da equipe."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "干",
+                        "name": "Escudo"
+                    }
                 ]
             },
             {
@@ -16253,6 +22632,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pesquisador dedicado ao saber",
                         "sentence": "Dedicated kensansha.",
                         "sentenceMeaning": "Pesquisador dedicado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             }
@@ -16418,6 +22807,12 @@ const kanjiN1Data = [
                         "sentence": "Hokosaki o turn.",
                         "sentenceMeaning": "Direcionar a ponta da lança da crítica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "矛",
+                        "name": "Lança"
+                    }
                 ]
             },
             {
@@ -16438,6 +22833,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Opor-se / Desafiar a autoridade",
                         "sentence": "Boss ni tatetsuku.",
                         "sentenceMeaning": "Desafiar a autoridade do chefe."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "盾",
+                        "name": "Escudo"
                     }
                 ]
             },
@@ -16460,6 +22861,16 @@ const kanjiN1Data = [
                         "sentence": "Duty ni haihan.",
                         "sentenceMeaning": "Oposição ao dever moral."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "北",
+                        "name": "Norte"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -16480,6 +22891,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Objeção / Refutação de tese",
                         "sentence": "Hanron o stating.",
                         "sentenceMeaning": "Apresentar uma objeção."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -16502,6 +22923,16 @@ const kanjiN1Data = [
                         "sentence": "Life no shiren.",
                         "sentenceMeaning": "Provação da vida."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "式",
+                        "name": "Cerimônia"
+                    }
                 ]
             },
             {
@@ -16522,6 +22953,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ação / Conduta prática",
                         "sentence": "Koudou power.",
                         "sentenceMeaning": "Poder de ação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
                     }
                 ]
             },
@@ -16544,6 +22981,12 @@ const kanjiN1Data = [
                         "sentence": "Logic no sakugo.",
                         "sentenceMeaning": "Erro de lógica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -16564,6 +23007,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Mal-entendido / Erro de interpretação",
                         "sentence": "Gokai o solve.",
                         "sentenceMeaning": "Esclarecer o mal-entendido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -16586,6 +23039,12 @@ const kanjiN1Data = [
                         "sentence": "Shichinan overcome.",
                         "sentenceMeaning": "Superar as sete adversidades."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "七",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -16606,6 +23065,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Queda / Tombamento",
                         "sentence": "Tentou prevention.",
                         "sentenceMeaning": "Prevenção de quedas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
                     }
                 ]
             },
@@ -16628,6 +23097,12 @@ const kanjiN1Data = [
                         "sentence": "Happou beauty.",
                         "sentenceMeaning": "Gentil em todas as direções."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -16648,6 +23123,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Reviravolta milagrosa da crise",
                         "sentence": "Kishi-kaisei home run.",
                         "sentenceMeaning": "Home run de reviravolta milagrosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "走",
+                        "name": "Correr"
                     }
                 ]
             },
@@ -16670,6 +23151,12 @@ const kanjiN1Data = [
                         "sentence": "Today ikou.",
                         "sentenceMeaning": "A partir de hoje."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "以",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -16690,6 +23177,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Estado de espírito interior",
                         "sentence": "Peaceful shinkyou.",
                         "sentenceMeaning": "Estado de espírito pacífico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -16712,6 +23205,16 @@ const kanjiN1Data = [
                         "sentence": "Shiryoku o exert.",
                         "sentenceMeaning": "Exercer esforço até o limite extremo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "歹",
+                        "name": "Morte"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    }
                 ]
             },
             {
@@ -16732,6 +23235,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Renascimento / Regeneração",
                         "sentence": "Regional saisei.",
                         "sentenceMeaning": "Regeneração regional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "生",
+                        "name": "Vida"
                     }
                 ]
             },
@@ -16754,6 +23263,16 @@ const kanjiN1Data = [
                         "sentence": "Victory no kanki.",
                         "sentenceMeaning": "Júbilo da vitória."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "豆",
+                        "name": "Feijão"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -16774,6 +23293,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Pêsames / Condolências solenes",
                         "sentence": "Aitou no intent.",
                         "sentenceMeaning": "Intenção de condolências solenes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -16796,6 +23325,12 @@ const kanjiN1Data = [
                         "sentence": "Rakkan view.",
                         "sentenceMeaning": "Visão otimista."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "楽",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -16816,6 +23351,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Ira e fúria profunda",
                         "sentence": "Funnu state.",
                         "sentenceMeaning": "Estado de ira profunda."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -16838,6 +23387,16 @@ const kanjiN1Data = [
                         "sentence": "Jakushou company.",
                         "sentenceMeaning": "Empresa pequena e vulnerável."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "象",
+                        "name": "Elefante"
+                    },
+                    {
+                        "char": "形",
+                        "name": "Forma"
+                    }
                 ]
             },
             {
@@ -16858,6 +23417,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Corpo físico",
                         "sentence": "Nikutai labor.",
                         "sentenceMeaning": "Trabalho corporal físico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
                     }
                 ]
             },
@@ -16880,6 +23445,20 @@ const kanjiN1Data = [
                         "sentence": "Kyoudai rival.",
                         "sentenceMeaning": "Rival formidável e poderoso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
+                    },
+                    {
+                        "char": "厶",
+                        "name": "Privado"
+                    },
+                    {
+                        "char": "虫",
+                        "name": "Inseto"
+                    }
                 ]
             },
             {
@@ -16900,6 +23479,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Erosão e consumo gradual",
                         "sentence": "Coast no shinshoku.",
                         "sentenceMeaning": "Erosão gradual da costa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "食",
+                        "name": "Comida"
                     }
                 ]
             },
@@ -16922,6 +23507,12 @@ const kanjiN1Data = [
                         "sentence": "Chourei-bokai management.",
                         "sentenceMeaning": "Gestão de decretos contraditórios."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    }
                 ]
             },
             {
@@ -16942,6 +23533,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Repetidas vezes / Reiteração",
                         "sentence": "Saisan warning.",
                         "sentenceMeaning": "Advertência feita repetidas vezes."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -16964,6 +23561,12 @@ const kanjiN1Data = [
                         "sentence": "Evening boshoku.",
                         "sentenceMeaning": "Tonalidades do anoitecer."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    }
                 ]
             },
             {
@@ -16984,6 +23587,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Quatro direções / Todos os lados",
                         "sentence": "Shihou view.",
                         "sentenceMeaning": "Visão para todas as direções."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "四",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -17006,6 +23615,12 @@ const kanjiN1Data = [
                         "sentence": "Strict meirei.",
                         "sentenceMeaning": "Ordem estrita formal."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -17026,6 +23641,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Reforma / Reestruturação",
                         "sentence": "System no kaikaku.",
                         "sentenceMeaning": "Reestruturação do sistema."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "己",
+                        "name": "Si Mesmo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -17048,6 +23673,12 @@ const kanjiN1Data = [
                         "sentence": "Keiba track.",
                         "sentenceMeaning": "Hipódromo de corrida de cavalos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "馬",
+                        "name": "Cavalo"
+                    }
                 ]
             },
             {
@@ -17068,6 +23699,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Otorrinolaringologia (Ouvidos e nariz)",
                         "sentence": "Jibi clinic.",
                         "sentenceMeaning": "Clínica de otorrinolaringologia."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
                     }
                 ]
             },
@@ -17090,6 +23727,16 @@ const kanjiN1Data = [
                         "sentence": "Touyou culture.",
                         "sentenceMeaning": "Cultura do Oriente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    }
                 ]
             },
             {
@@ -17110,6 +23757,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Independência / Autonomia",
                         "sentence": "State no dokuritsu.",
                         "sentenceMeaning": "Independência do Estado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
                     }
                 ]
             },
@@ -17132,6 +23785,20 @@ const kanjiN1Data = [
                         "sentence": "Study ni sennen.",
                         "sentenceMeaning": "Dedicação exclusiva aos estudos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "田",
+                        "name": "Campo"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -17152,6 +23819,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Honra / Dignidade pessoal",
                         "sentence": "Menboku o保つ.",
                         "sentenceMeaning": "Manter a honra pessoal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "面",
+                        "name": "Rosto"
                     }
                 ]
             },
@@ -17174,6 +23847,16 @@ const kanjiN1Data = [
                         "sentence": "Shinhi suru.",
                         "sentenceMeaning": "Erguer os braços entusiasticamente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    }
                 ]
             },
             {
@@ -17194,6 +23877,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Paciência / Controle do ego",
                         "sentence": "Pain no gaman.",
                         "sentenceMeaning": "Suportar a dor com paciência."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -17216,6 +23909,16 @@ const kanjiN1Data = [
                         "sentence": "Text no inyou.",
                         "sentenceMeaning": "Citação do texto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "弓",
+                        "name": "Arco"
+                    },
+                    {
+                        "char": "丨",
+                        "name": "Vertical"
+                    }
                 ]
             },
             {
@@ -17236,6 +23939,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Campos e vilas rurais",
                         "sentence": "Den'en scenery.",
                         "sentenceMeaning": "Cenário de campos rurais."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "田",
+                        "name": "Campo"
                     }
                 ]
             }
@@ -17401,6 +24110,20 @@ const kanjiN1Data = [
                         "sentence": "Tennou-heika no address.",
                         "sentenceMeaning": "Pronunciamento de Sua Majestade o Imperador."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "比",
+                        "name": "Comparar"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -17421,6 +24144,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Palácio Imperial",
                         "sentence": "Kyuuden reception.",
                         "sentenceMeaning": "Recepção no Palácio Imperial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -17443,6 +24172,16 @@ const kanjiN1Data = [
                         "sentence": "Onshi prize.",
                         "sentenceMeaning": "Prêmio imperial concedido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    },
+                    {
+                        "char": "易",
+                        "name": "Fácil"
+                    }
                 ]
             },
             {
@@ -17463,6 +24202,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Serviço dedicado / Voluntariado solene",
                         "sentence": "Public houshi.",
                         "sentenceMeaning": "Serviço dedicado ao bem público."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -17485,6 +24230,20 @@ const kanjiN1Data = [
                         "sentence": "Orchestra no ensou.",
                         "sentenceMeaning": "Execução musical de orquestra."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "十",
+                        "name": "Dez / Cruz"
+                    }
                 ]
             },
             {
@@ -17505,6 +24264,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Consulta formal de documentos de estado",
                         "sentence": "Archive no etsuran.",
                         "sentenceMeaning": "Consulta formal de arquivos históricos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "見",
+                        "name": "Ver"
                     }
                 ]
             },
@@ -17527,6 +24292,16 @@ const kanjiN1Data = [
                         "sentence": "Tea o meshiagaru.",
                         "sentenceMeaning": "Vossa Excelência servir-se do chá."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -17547,6 +24322,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Decreto / Palavra respeitável do soberano",
                         "sentence": "Heika no oose.",
                         "sentenceMeaning": "Decreto de Sua Majestade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -17569,6 +24358,12 @@ const kanjiN1Data = [
                         "sentence": "Letter no haikei.",
                         "sentenceMeaning": "Saudação formal na carta."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "拝",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -17589,6 +24384,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Aceitação formal de termos",
                         "sentence": "Proposal no shoudaku.",
                         "sentenceMeaning": "Aceitação formal da proposta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "手",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -17611,6 +24416,20 @@ const kanjiN1Data = [
                         "sentence": "Kenson no tone.",
                         "sentenceMeaning": "Tom de modéstia protocolar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -17631,6 +24450,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Inferioridade em comparação (Geralmente negativo)",
                         "sentence": "Sonshoku nai.",
                         "sentenceMeaning": "Sem qualquer inferioridade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    },
+                    {
+                        "char": "系",
+                        "name": "Sistema"
                     }
                 ]
             },
@@ -17653,6 +24486,12 @@ const kanjiN1Data = [
                         "sentence": "Public keihatsu.",
                         "sentenceMeaning": "Esclarecimento público."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -17673,6 +24512,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Recolhimento disciplinar / Cautela solene",
                         "sentence": "Self kinshin.",
                         "sentenceMeaning": "Recolhimento disciplinar autônomo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
                     }
                 ]
             },
@@ -17695,6 +24540,12 @@ const kanjiN1Data = [
                         "sentence": "State e no kenshin.",
                         "sentenceMeaning": "Dedicação solene ao Estado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犬",
+                        "name": "Cão"
+                    }
                 ]
             },
             {
@@ -17715,6 +24566,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Pagamento / Entrega formal de insumo",
                         "sentence": "Tax no nounyuu.",
                         "sentenceMeaning": "Pagamento formal de impostos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "冂",
+                        "name": "Borda"
+                    },
+                    {
+                        "char": "入",
+                        "name": "Entrar"
                     }
                 ]
             },
@@ -17737,6 +24602,16 @@ const kanjiN1Data = [
                         "sentence": "Policy no suishin.",
                         "sentenceMeaning": "Promoção de política de estado."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -17757,6 +24632,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Concessão de diretriz imperial",
                         "sentence": "Imperial suiji.",
                         "sentenceMeaning": "Concessão de diretriz imperial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -17779,6 +24660,20 @@ const kanjiN1Data = [
                         "sentence": "Social kihan.",
                         "sentenceMeaning": "Norma social ética."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    }
                 ]
             },
             {
@@ -17799,6 +24694,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Dádiva imperial concedida",
                         "sentence": "Onshi watch.",
                         "sentenceMeaning": "Relógio de dádiva imperial."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "因",
+                        "name": "Causa"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -17821,6 +24726,20 @@ const kanjiN1Data = [
                         "sentence": "Imperial keiai.",
                         "sentenceMeaning": "Afeto e amor imperial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "田",
+                        "name": "Campo"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -17841,6 +24760,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Imperador / Monarca de império",
                         "sentence": "Roman koutei.",
                         "sentenceMeaning": "Imperador romano."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "自",
+                        "name": "Próprio"
+                    },
+                    {
+                        "char": "王",
+                        "name": "Rei"
                     }
                 ]
             },
@@ -17863,6 +24792,12 @@ const kanjiN1Data = [
                         "sentence": "Koutei palace.",
                         "sentenceMeaning": "Palácio do soberano supremo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "帝",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -17883,6 +24818,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Imperatriz-Mãe",
                         "sentence": "Koutaigou palace.",
                         "sentenceMeaning": "Palácio da Imperatriz-Mãe."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
                     }
                 ]
             },
@@ -17905,6 +24850,16 @@ const kanjiN1Data = [
                         "sentence": "Koutaishi-hi visit.",
                         "sentenceMeaning": "Visita da Princesa Herdeira."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "己",
+                        "name": "Si Mesmo"
+                    }
                 ]
             },
             {
@@ -17925,6 +24880,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Presidente de rito / Patrono",
                         "sentence": "Event no shusai.",
                         "sentenceMeaning": "Patrono do evento de estado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "辛",
+                        "name": "Espinho"
                     }
                 ]
             },
@@ -17947,6 +24912,16 @@ const kanjiN1Data = [
                         "sentence": "Gaishou conference.",
                         "sentenceMeaning": "Conferência do Ministro das Relações Exteriores."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    }
                 ]
             },
             {
@@ -17967,6 +24942,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Boas maneiras e protocolo de respeito",
                         "sentence": "Strict reigi.",
                         "sentenceMeaning": "Estrito protocolo de respeito."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "義",
+                        "name": "Justiça"
                     }
                 ]
             },
@@ -17989,6 +24974,12 @@ const kanjiN1Data = [
                         "sentence": "Burei behavior.",
                         "sentenceMeaning": "Falta de decoro protocolar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "示",
+                        "name": "Espírito"
+                    }
                 ]
             },
             {
@@ -18009,6 +25000,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Moderação e decoro de atitude",
                         "sentence": "Settodo in speech.",
                         "sentenceMeaning": "Moderação e decoro nas palavras."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "竹",
+                        "name": "Bambu"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -18031,6 +25032,16 @@ const kanjiN1Data = [
                         "sentence": "Palace ni shikou.",
                         "sentenceMeaning": "Prestar audiência no Palácio."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "司",
+                        "name": "Administrar"
+                    }
                 ]
             },
             {
@@ -18051,6 +25062,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Estação do ano (Em saudações de cartas)",
                         "sentence": "Jikou no greeting.",
                         "sentenceMeaning": "Saudação formal referente à estação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
                     }
                 ]
             },
@@ -18073,6 +25094,16 @@ const kanjiN1Data = [
                         "sentence": "New Year kyouga.",
                         "sentenceMeaning": "Congratulações solenes de Ano Novo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -18093,6 +25124,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Adaptação e conformidade às regras",
                         "sentence": "Protocol ni junnou.",
                         "sentenceMeaning": "Conformidade ao protocolo de estado."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "川",
+                        "name": "Rio"
+                    },
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
                     }
                 ]
             },
@@ -18115,6 +25156,16 @@ const kanjiN1Data = [
                         "sentence": "Kyouga Shinnen (恭賀新年).",
                         "sentenceMeaning": "Feliz Ano Novo (Saudação formalíssima)."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "加",
+                        "name": "Adicionar"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -18135,6 +25186,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Longevidade e bênção de prosperidade",
                         "sentence": "Juhuku wish.",
                         "sentenceMeaning": "Desejo de longevidade e prosperidade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -18157,6 +25214,16 @@ const kanjiN1Data = [
                         "sentence": "Education chokugo.",
                         "sentenceMeaning": "Pronunciamento imperial sobre educação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -18177,6 +25244,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Santuário sagrado / Zona inviolável",
                         "sentence": "Palace seiiki.",
                         "sentenceMeaning": "Zona sagrada inviolável do Palácio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
                     }
                 ]
             },
@@ -18199,6 +25284,12 @@ const kanjiN1Data = [
                         "sentence": "Gift o choudai suru.",
                         "sentenceMeaning": "Receber o presente com imensa humildade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "異",
+                        "name": "Diferente"
+                    }
                 ]
             },
             {
@@ -18219,6 +25310,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Cume / Ponto culminante",
                         "sentence": "Mountain no choujou.",
                         "sentenceMeaning": "Cume da montanha."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
                     }
                 ]
             }
@@ -18384,6 +25481,16 @@ const kanjiN1Data = [
                         "sentence": "Hyouhaku no tabi.",
                         "sentenceMeaning": "Viagem de vida nômade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -18404,6 +25511,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Infiltração secreta",
                         "sentence": "Enemy base ni sennyuu.",
                         "sentenceMeaning": "Infiltração secreta na base."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "曰",
+                        "name": "Dizer"
                     }
                 ]
             },
@@ -18426,6 +25543,16 @@ const kanjiN1Data = [
                         "sentence": "Emotion o moteasobu.",
                         "sentenceMeaning": "Brincar com as emoções dos outros."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    }
                 ]
             },
             {
@@ -18446,6 +25573,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Indício / Brotar de ocorrência",
                         "sentence": "Spring no kizashi.",
                         "sentenceMeaning": "Indícios da chegada da primavera."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "兆",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -18468,6 +25601,12 @@ const kanjiN1Data = [
                         "sentence": "Sake no jouzou.",
                         "sentenceMeaning": "Fermentação do saquê."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    }
                 ]
             },
             {
@@ -18488,6 +25627,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Apresentação formal de presente",
                         "sentence": "Gift no zoutei.",
                         "sentenceMeaning": "Apresentação formal de presente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             },
@@ -18510,6 +25663,16 @@ const kanjiN1Data = [
                         "sentence": "Payment no saisoku.",
                         "sentenceMeaning": "Cobrança insistente do pagamento."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "足",
+                        "name": "Pé"
+                    }
                 ]
             },
             {
@@ -18530,6 +25693,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Instigação / Cobrança",
                         "sentence": "Saisoku letter.",
                         "sentenceMeaning": "Carta de cobrança."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -18552,6 +25729,20 @@ const kanjiN1Data = [
                         "sentence": "Rinshou trial.",
                         "sentenceMeaning": "Ensaio clínico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
+                    }
                 ]
             },
             {
@@ -18572,6 +25763,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Reclusão do mundo",
                         "sentence": "Inton life.",
                         "sentenceMeaning": "Vida de reclusão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -18594,6 +25795,16 @@ const kanjiN1Data = [
                         "sentence": "Radiation no shahei.",
                         "sentenceMeaning": "Blindagem contra radiação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -18614,6 +25825,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Interceptação / Blindagem",
                         "sentence": "Light no shahei.",
                         "sentenceMeaning": "Interceptação da luz."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "广",
+                        "name": "Edifício"
                     }
                 ]
             },
@@ -18636,6 +25857,16 @@ const kanjiN1Data = [
                         "sentence": "Hope ga fukuramu.",
                         "sentenceMeaning": "A esperança cresce."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
+                    }
                 ]
             },
             {
@@ -18656,6 +25887,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Condensação / Concentração",
                         "sentence": "Essence no gyoushuku.",
                         "sentenceMeaning": "Concentração da essência."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "宿",
+                        "name": "Hospedagem"
                     }
                 ]
             },
@@ -18678,6 +25919,16 @@ const kanjiN1Data = [
                         "sentence": "History no waikyoku.",
                         "sentenceMeaning": "Distorção da história."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -18698,6 +25949,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Erupção de fluido / Brotar",
                         "sentence": "Oil no yuushutsu.",
                         "sentenceMeaning": "Jorrar de petróleo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "用",
+                        "name": "Usar"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -18720,6 +25985,16 @@ const kanjiN1Data = [
                         "sentence": "Fluid no isshutsu.",
                         "sentenceMeaning": "Derramamento de fluido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "益",
+                        "name": "Benefício"
+                    }
                 ]
             },
             {
@@ -18740,6 +26015,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Abundância e fartura fértil",
                         "sentence": "Houjun na land.",
                         "sentenceMeaning": "Terra de fartura fértil."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
                     }
                 ]
             },
@@ -18762,6 +26047,16 @@ const kanjiN1Data = [
                         "sentence": "Fund no kokatsu.",
                         "sentenceMeaning": "Esgotamento de fundos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "古",
+                        "name": "Antigo"
+                    }
                 ]
             },
             {
@@ -18782,6 +26077,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Seca total da nascente",
                         "sentence": "Source no kokatsu.",
                         "sentenceMeaning": "Seca da nascente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "固",
+                        "name": "Sólido"
                     }
                 ]
             },
@@ -18804,6 +26109,16 @@ const kanjiN1Data = [
                         "sentence": "Era no houga.",
                         "sentenceMeaning": "Germinação de uma nova era."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "月",
+                        "name": "Lua / Mês / Carne"
+                    }
                 ]
             },
             {
@@ -18824,6 +26139,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Surgimento / Início de sentimento",
                         "sentence": "Love no mebae.",
                         "sentenceMeaning": "Surgimento do amor."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "牙",
+                        "name": "Dente"
                     }
                 ]
             },
@@ -18846,6 +26171,12 @@ const kanjiN1Data = [
                         "sentence": "Economy no teitai.",
                         "sentenceMeaning": "Estagnação da economia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -18866,6 +26197,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sedimentação de partículas no fundo",
                         "sentence": "Precipitate no chinden.",
                         "sentenceMeaning": "Sedimentação das partículas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "殳",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -18888,6 +26229,20 @@ const kanjiN1Data = [
                         "sentence": "Fudou vote.",
                         "sentenceMeaning": "Voto flutuante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "爪",
+                        "name": "Garra"
+                    },
+                    {
+                        "char": "子",
+                        "name": "Criança"
+                    }
                 ]
             },
             {
@@ -18908,6 +26263,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Naufrágio / Submersão de navio",
                         "sentence": "Ship no chinmotsu.",
                         "sentenceMeaning": "Naufrágio do navio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -18930,6 +26291,12 @@ const kanjiN1Data = [
                         "sentence": "Study ni bottou.",
                         "sentenceMeaning": "Imersão total nos estudos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "没",
+                        "name": "Afundar"
+                    }
                 ]
             },
             {
@@ -18950,6 +26317,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Extinção / Aniquilação total",
                         "sentence": "Species no shoumetsu.",
                         "sentenceMeaning": "Extinção da espécie."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "肖",
+                        "name": "Semelhança"
                     }
                 ]
             },
@@ -18972,6 +26349,20 @@ const kanjiN1Data = [
                         "sentence": "Emotional douyou.",
                         "sentenceMeaning": "Agitação emocional."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "缶",
+                        "name": "Lata"
+                    }
                 ]
             },
             {
@@ -18992,6 +26383,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Dança / Baile solene",
                         "sentence": "Butou-kai.",
                         "sentenceMeaning": "Baile de gala."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "舞",
+                        "name": "Dança"
                     }
                 ]
             },
@@ -19014,6 +26411,20 @@ const kanjiN1Data = [
                         "sentence": "Business no hiyaku.",
                         "sentenceMeaning": "Salto qualitativo nos negócios."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "足",
+                        "name": "Pé"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -19034,6 +26445,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Livre e desinibido / Indomável",
                         "sentence": "Honpou na style.",
                         "sentenceMeaning": "Estilo livre e indomável."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -19056,6 +26473,16 @@ const kanjiN1Data = [
                         "sentence": "Waves ni honrou.",
                         "sentenceMeaning": "Ser jogado pelas ondas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "番",
+                        "name": "Número"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    }
                 ]
             },
             {
@@ -19076,6 +26503,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Desvio / Inobservância da norma",
                         "sentence": "Norm kara no itsudatsu.",
                         "sentenceMeaning": "Desvio em relação à norma."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
                     }
                 ]
             },
@@ -19098,6 +26531,16 @@ const kanjiN1Data = [
                         "sentence": "Standard no itsudatsu.",
                         "sentenceMeaning": "Desprender-se do padrão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -19118,6 +26561,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Isolamento / Quarentena",
                         "sentence": "Quarantine kakuri.",
                         "sentenceMeaning": "Isolamento em quarentena."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
                     }
                 ]
             },
@@ -19140,6 +26589,16 @@ const kanjiN1Data = [
                         "sentence": "Ideal to reality no kairi.",
                         "sentenceMeaning": "Discrepância entre ideal e realidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "離",
+                        "name": "Separar"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    }
                 ]
             },
             {
@@ -19160,6 +26619,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Variação e oscilação de estado",
                         "sentence": "Price no hendou.",
                         "sentenceMeaning": "Variação dos preços."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "攴",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -19182,6 +26647,16 @@ const kanjiN1Data = [
                         "sentence": "Natural genshou.",
                         "sentenceMeaning": "Fenômeno natural."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
+                    },
+                    {
+                        "char": "見",
+                        "name": "Ver"
+                    }
                 ]
             },
             {
@@ -19202,6 +26677,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Eclosão / Ocorrência de evento",
                         "sentence": "Event no hassei.",
                         "sentenceMeaning": "Ocorrência do evento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "生",
+                        "name": "Vida"
                     }
                 ]
             }
@@ -19367,6 +26848,20 @@ const kanjiN1Data = [
                         "sentence": "Species no zetsumetsu.",
                         "sentenceMeaning": "Extinção da espécie."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -19387,6 +26882,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Inibição / Supressão de risco",
                         "sentence": "Inflation no yokusei.",
                         "sentenceMeaning": "Inibição da inflação."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -19409,6 +26918,16 @@ const kanjiN1Data = [
                         "sentence": "Freedom no sokubaku.",
                         "sentenceMeaning": "Restrição da liberdade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -19429,6 +26948,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Impedimento / Bloqueio de ação",
                         "sentence": "Invasion no soshi.",
                         "sentenceMeaning": "Bloqueio da invasão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
                     }
                 ]
             },
@@ -19451,6 +26976,12 @@ const kanjiN1Data = [
                         "sentence": "Enemy no funsai.",
                         "sentenceMeaning": "Esmagamento do inimigo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    }
                 ]
             },
             {
@@ -19471,6 +27002,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Destruição / Demolição",
                         "sentence": "Structure no hakai.",
                         "sentenceMeaning": "Destruição da estrutura."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "石",
+                        "name": "Pedra"
+                    },
+                    {
+                        "char": "皮",
+                        "name": "Pele"
                     }
                 ]
             },
@@ -19493,6 +27034,16 @@ const kanjiN1Data = [
                         "sentence": "System no houkai.",
                         "sentenceMeaning": "Colapso do sistema."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "衣",
+                        "name": "Roupa"
+                    }
                 ]
             },
             {
@@ -19513,6 +27064,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Invasão militar",
                         "sentence": "Military shinryaku.",
                         "sentenceMeaning": "Invasão militar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -19535,6 +27096,12 @@ const kanjiN1Data = [
                         "sentence": "Right no shinpan.",
                         "sentenceMeaning": "Violação de direitos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    }
                 ]
             },
             {
@@ -19555,6 +27122,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Saque ostensivo de bens",
                         "sentence": "Asset no ryakudatsu.",
                         "sentenceMeaning": "Saque de ativos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -19577,6 +27158,16 @@ const kanjiN1Data = [
                         "sentence": "Enemy no toubatsu.",
                         "sentenceMeaning": "Expedição de supressão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -19597,6 +27188,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Corte de árvores",
                         "sentence": "Trees no bassai.",
                         "sentenceMeaning": "Corte de árvores."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "戈",
+                        "name": "Lança"
                     }
                 ]
             },
@@ -19619,6 +27220,12 @@ const kanjiN1Data = [
                         "sentence": "Proposal no kyozetsu.",
                         "sentenceMeaning": "Rejeição categórica da proposta."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -19639,6 +27246,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Erradicação total",
                         "sentence": "Pest no konzetsu.",
                         "sentenceMeaning": "Erradicação total da praga."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -19661,6 +27282,16 @@ const kanjiN1Data = [
                         "sentence": "Zanshin idea.",
                         "sentenceMeaning": "Ideia cortante e inédita."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "車",
+                        "name": "Carro"
+                    },
+                    {
+                        "char": "斤",
+                        "name": "Machado"
+                    }
                 ]
             },
             {
@@ -19681,6 +27312,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Corte por cisalhamento",
                         "sentence": "Sendan stress.",
                         "sentenceMeaning": "Tensão por cisalhamento."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
                     }
                 ]
             },
@@ -19703,6 +27340,16 @@ const kanjiN1Data = [
                         "sentence": "Port no fuusa.",
                         "sentenceMeaning": "Bloqueio do porto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -19723,6 +27370,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Isolamento de país (Sakoku)",
                         "sentence": "Edo sakoku.",
                         "sentenceMeaning": "Isolamento no período Edo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
                     }
                 ]
             },
@@ -19745,6 +27406,16 @@ const kanjiN1Data = [
                         "sentence": "Parking kinshi.",
                         "sentenceMeaning": "Proibido estacionar."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "示",
+                        "name": "Espírito"
+                    }
                 ]
             },
             {
@@ -19765,6 +27436,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Sanção / Medida punitiva",
                         "sentence": "Economic seisai.",
                         "sentenceMeaning": "Sanções econômicas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "製",
+                        "name": "Fabricar"
                     }
                 ]
             },
@@ -19787,6 +27464,16 @@ const kanjiN1Data = [
                         "sentence": "Tax koujo.",
                         "sentenceMeaning": "Dedução de imposto."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "空",
+                        "name": "Céu"
+                    }
                 ]
             },
             {
@@ -19807,6 +27494,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Austeridade / Contenção de gastos",
                         "sentence": "Budget no kinshuku.",
                         "sentenceMeaning": "Austeridade orçamentária."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "臣",
+                        "name": "Ministro"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "糸",
+                        "name": "Fio"
                     }
                 ]
             },
@@ -19829,6 +27530,16 @@ const kanjiN1Data = [
                         "sentence": "Kyuuen team.",
                         "sentenceMeaning": "Equipe de socorro emergencial."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "求",
+                        "name": "Buscar"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -19849,6 +27560,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Amparo e assistência mútua",
                         "sentence": "Mutual hujo.",
                         "sentenceMeaning": "Assistência mútua."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -19871,6 +27588,16 @@ const kanjiN1Data = [
                         "sentence": "Disaster fukkou.",
                         "sentenceMeaning": "Reconstrução pós-desastre."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "夂",
+                        "name": "Seguir"
+                    }
                 ]
             },
             {
@@ -19891,6 +27618,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Revitalização e reconstrução",
                         "sentence": "Area no fukkou.",
                         "sentenceMeaning": "Reconstrução da área."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    },
+                    {
+                        "char": "同",
+                        "name": "Mesmo"
                     }
                 ]
             },
@@ -19913,6 +27650,20 @@ const kanjiN1Data = [
                         "sentence": "Future no souzou.",
                         "sentenceMeaning": "Criação do futuro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "丶",
+                        "name": "Ponto"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    }
                 ]
             },
             {
@@ -19933,6 +27684,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Cura completa / Regeneração",
                         "sentence": "Disease no chiyu.",
                         "sentenceMeaning": "Cura completa da doença."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "疒",
+                        "name": "Doença"
+                    },
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
                     }
                 ]
             },
@@ -19955,6 +27720,16 @@ const kanjiN1Data = [
                         "sentence": "Yuuwa policy.",
                         "sentenceMeaning": "Política de conciliação."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "有",
+                        "name": "Existir"
+                    }
                 ]
             },
             {
@@ -19975,6 +27750,24 @@ const kanjiN1Data = [
                         "wordMeaning": "Pacificação / Supressão da rebelião",
                         "sentence": "Rebellion no chinatsu.",
                         "sentenceMeaning": "Supressão da rebelião."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
                     }
                 ]
             },
@@ -19997,6 +27790,16 @@ const kanjiN1Data = [
                         "sentence": "Political yokuatsu.",
                         "sentenceMeaning": "Opressão política."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -20017,6 +27820,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Obediência / Submissão",
                         "sentence": "Order ni fukujuu.",
                         "sentenceMeaning": "Obediência às ordens."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "舟",
+                        "name": "Barco"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
                     }
                 ]
             },
@@ -20039,6 +27856,12 @@ const kanjiN1Data = [
                         "sentence": "Enemy ni kuppuku.",
                         "sentenceMeaning": "Capitulação perante o inimigo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "屈",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -20059,6 +27882,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Capitulação formal de guerra",
                         "sentence": "Koufuku document.",
                         "sentenceMeaning": "Documento de capitulação formal."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "夂",
+                        "name": "Seguir"
                     }
                 ]
             },
@@ -20081,6 +27914,16 @@ const kanjiN1Data = [
                         "sentence": "Yousha nai.",
                         "sentenceMeaning": "Sem qualquer clemência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "赤",
+                        "name": "Vermelho"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
+                    }
                 ]
             },
             {
@@ -20101,6 +27944,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Isenção formal de imposto/pena",
                         "sentence": "Tax no menjo.",
                         "sentenceMeaning": "Isenção formal de imposto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "免",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -20123,6 +27972,12 @@ const kanjiN1Data = [
                         "sentence": "Responsibility touhi.",
                         "sentenceMeaning": "Fuga da responsabilidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    }
                 ]
             },
             {
@@ -20143,6 +27998,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Evasão / Evasão de crise",
                         "sentence": "War no kaihi.",
                         "sentenceMeaning": "Evasão da guerra."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
                     }
                 ]
             },
@@ -20165,6 +28030,20 @@ const kanjiN1Data = [
                         "sentence": "Slaves no kaihou.",
                         "sentenceMeaning": "Emancipação dos escravos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "角",
+                        "name": "Chifre"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "牛",
+                        "name": "Gado"
+                    }
                 ]
             },
             {
@@ -20185,6 +28064,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Autonomia governamental",
                         "sentence": "Local jichi.",
                         "sentenceMeaning": "Autonomia governamental local."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "台",
+                        "name": "Plataforma"
                     }
                 ]
             }
@@ -20350,6 +28239,12 @@ const kanjiN1Data = [
                         "sentence": "Soaku product.",
                         "sentenceMeaning": "Produto grosseiro de má qualidade."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "米",
+                        "name": "Arroz"
+                    }
                 ]
             },
             {
@@ -20370,6 +28265,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Fluido / Sem atritos no processo",
                         "sentence": "Enkatsu operation.",
                         "sentenceMeaning": "Operação fluida sem atritos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "骨",
+                        "name": "Osso"
                     }
                 ]
             },
@@ -20392,6 +28297,16 @@ const kanjiN1Data = [
                         "sentence": "Houjun taste.",
                         "sentenceMeaning": "Sabor rico e abundante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "門",
+                        "name": "Portão"
+                    }
                 ]
             },
             {
@@ -20412,6 +28327,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vasto e indefinido como o mar",
                         "sentence": "Bouyou sea.",
                         "sentenceMeaning": "Mar vasto e indefinido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
                     }
                 ]
             },
@@ -20434,6 +28359,12 @@ const kanjiN1Data = [
                         "sentence": "Noumitsu time.",
                         "sentenceMeaning": "Tempo hiper-denso e rico."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -20454,6 +28385,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Desprovido de excessos / Leve",
                         "sentence": "Tanpaku taste.",
                         "sentenceMeaning": "Sabor leve e suave."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "炎",
+                        "name": "Chama"
                     }
                 ]
             },
@@ -20476,6 +28417,16 @@ const kanjiN1Data = [
                         "sentence": "Seichou air.",
                         "sentenceMeaning": "Ar puro e límpido."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "登",
+                        "name": "Subir"
+                    }
                 ]
             },
             {
@@ -20496,6 +28447,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Poluição / Impureza aquática",
                         "sentence": "Water no odaku.",
                         "sentenceMeaning": "Impureza e poluição da água."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -20518,6 +28475,16 @@ const kanjiN1Data = [
                         "sentence": "Eiri blade.",
                         "sentenceMeaning": "Lâmina afiada e cortante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    },
+                    {
+                        "char": "儿",
+                        "name": "Pernas"
+                    }
                 ]
             },
             {
@@ -20538,6 +28505,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Obtuso / Insensível a nuances",
                         "sentence": "Donkan person.",
                         "sentenceMeaning": "Pessoa insensível a nuances."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
                     }
                 ]
             },
@@ -20560,6 +28533,20 @@ const kanjiN1Data = [
                         "sentence": "High gousei.",
                         "sentenceMeaning": "Elevada rigidez de material."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "刂",
+                        "name": "Faca"
+                    }
                 ]
             },
             {
@@ -20580,6 +28567,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Flexível / Maleável em ideias",
                         "sentence": "Juunan thinking.",
                         "sentenceMeaning": "Pensamento flexível."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "矛",
+                        "name": "Lança"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -20602,6 +28599,16 @@ const kanjiN1Data = [
                         "sentence": "Kokkan region.",
                         "sentenceMeaning": "Região de frio extremo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
+                    }
                 ]
             },
             {
@@ -20622,6 +28629,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Onda de calor escaldante",
                         "sentence": "Kokusho alert.",
                         "sentenceMeaning": "Alerta de onda de calor escaldante."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "者",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -20644,6 +28661,20 @@ const kanjiN1Data = [
                         "sentence": "Air ga hazaku.",
                         "sentenceMeaning": "O ar seca completamente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "品",
+                        "name": "Artigo"
+                    },
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -20664,6 +28695,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Alta umidade abafada",
                         "sentence": "Tashitsu climate.",
                         "sentenceMeaning": "Clima de alta umidade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -20686,6 +28723,16 @@ const kanjiN1Data = [
                         "sentence": "Flower no houkou.",
                         "sentenceMeaning": "Fragrância da flor."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "方",
+                        "name": "Direção"
+                    }
                 ]
             },
             {
@@ -20706,6 +28753,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Odor fétido insuportável",
                         "sentence": "Akushuu emissions.",
                         "sentenceMeaning": "Emissões de odor fétido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "自",
+                        "name": "Próprio"
+                    },
+                    {
+                        "char": "犬",
+                        "name": "Cão"
                     }
                 ]
             },
@@ -20728,6 +28785,20 @@ const kanjiN1Data = [
                         "sentence": "Taenaru music.",
                         "sentenceMeaning": "Música sublime e harmoniosa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
+                    }
                 ]
             },
             {
@@ -20748,6 +28819,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Minucioso e de elevada precisão",
                         "sentence": "Seikou machine.",
                         "sentenceMeaning": "Máquina de minuciosa precisão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "工",
+                        "name": "Trabalho"
                     }
                 ]
             },
@@ -20770,6 +28847,12 @@ const kanjiN1Data = [
                         "sentence": "Setsuretsu work.",
                         "sentenceMeaning": "Trabalho tosco de qualidade inferior."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -20790,6 +28873,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Distorção de forma",
                         "sentence": "Form no waikyoku.",
                         "sentenceMeaning": "Distorção da forma."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
                     }
                 ]
             },
@@ -20812,6 +28905,12 @@ const kanjiN1Data = [
                         "sentence": "Suichoku line.",
                         "sentenceMeaning": "Linha perpendicular vertical."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "省",
+                        "name": "Refletir"
+                    }
                 ]
             },
             {
@@ -20832,6 +28931,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Relaxamento / Suavização de tensão",
                         "sentence": "Muscle no chikan.",
                         "sentenceMeaning": "Relaxamento dos músculos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "素",
+                        "name": "Elemento"
                     }
                 ]
             },
@@ -20854,6 +28959,20 @@ const kanjiN1Data = [
                         "sentence": "Kyuugeki change.",
                         "sentenceMeaning": "Mudança súbita e drástica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "人",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -20874,6 +28993,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Tenso / Atmosfera perigosa",
                         "sentence": "Kenaku atmosphere.",
                         "sentenceMeaning": "Atmosfera tensa e perigosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
                     }
                 ]
             },
@@ -20896,6 +29021,12 @@ const kanjiN1Data = [
                         "sentence": "Heion life.",
                         "sentenceMeaning": "Vida tranquila e plácida."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -20916,6 +29047,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Irregularidade / Relevos côncavos e convexos",
                         "sentence": "Outotsu road.",
                         "sentenceMeaning": "Estrada com irregularidades."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "穴",
+                        "name": "Buraco"
                     }
                 ]
             },
@@ -20938,6 +29075,12 @@ const kanjiN1Data = [
                         "sentence": "Outotsu texture.",
                         "sentenceMeaning": "Textura áspera com altos e baixos."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "凸",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -20958,6 +29101,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Hermético e minucioso de alta precisão",
                         "sentence": "Seimitsu instrument.",
                         "sentenceMeaning": "Instrumento de alta precisão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "必",
+                        "name": "Certamente"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
                     }
                 ]
             },
@@ -20980,6 +29137,16 @@ const kanjiN1Data = [
                         "sentence": "Social sogai.",
                         "sentenceMeaning": "Distanciamento social."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "疋",
+                        "name": "Pé"
+                    },
+                    {
+                        "char": "束",
+                        "name": "Feixe"
+                    }
                 ]
             },
             {
@@ -21000,6 +29167,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Sutil e delicado / Complexo",
                         "sentence": "Bimyou difference.",
                         "sentenceMeaning": "Diferença sutil e delicada."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -21022,6 +29199,12 @@ const kanjiN1Data = [
                         "sentence": "Kyogaku budget.",
                         "sentenceMeaning": "Orçamento financeiro monumental."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "巨",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -21042,6 +29225,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Graciosidade misteriosa e sutil",
                         "sentence": "Yuugen art.",
                         "sentenceMeaning": "Arte de graciosidade sutil e profunda."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "幺",
+                        "name": "Pequeno"
                     }
                 ]
             },
@@ -21064,6 +29257,12 @@ const kanjiN1Data = [
                         "sentence": "Kenzai problem.",
                         "sentenceMeaning": "Problema manifesto e visível."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "頁",
+                        "name": "Página / Cabeça"
+                    }
                 ]
             },
             {
@@ -21084,6 +29283,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Deserto árido e vasto",
                         "sentence": "Vast sabaku.",
                         "sentenceMeaning": "Vasto deserto árido."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
                     }
                 ]
             },
@@ -21106,6 +29315,12 @@ const kanjiN1Data = [
                         "sentence": "Ruain no sanjou.",
                         "sentenceMeaning": "Cenário trágico de ruína."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    }
                 ]
             },
             {
@@ -21126,6 +29341,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Ornamento deslumbrante",
                         "sentence": "Kenshoku style.",
                         "sentenceMeaning": "Estilo ornamentado deslumbrante."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "旬",
+                        "name": "Época"
                     }
                 ]
             },
@@ -21148,6 +29373,16 @@ const kanjiN1Data = [
                         "sentence": "Bokutotsu person.",
                         "sentenceMeaning": "Pessoa singela e franca."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "廾",
+                        "name": "Mãos Juntas"
+                    }
                 ]
             },
             {
@@ -21168,6 +29403,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Gosto elegante e poético",
                         "sentence": "Fuuga taste.",
                         "sentenceMeaning": "Gosto elegante e poético."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "牙",
+                        "name": "Dente"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             }
@@ -21333,6 +29578,12 @@ const kanjiN1Data = [
                         "sentence": "Bakushin na damage.",
                         "sentenceMeaning": "Dano extremamente grave."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    }
                 ]
             },
             {
@@ -21353,6 +29604,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Minúsculo / Quantidade irrisória",
                         "sentence": "Bishou element.",
                         "sentenceMeaning": "Elemento minúsculo irrisório."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -21375,6 +29636,16 @@ const kanjiN1Data = [
                         "sentence": "Yuuyuu na life.",
                         "sentenceMeaning": "Vida tranquila e sem pressa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -21395,6 +29666,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Heroico e feroz / Glorioso",
                         "sentence": "Souretsu na battle.",
                         "sentenceMeaning": "Batalha heroica e feroz."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -21417,6 +29694,16 @@ const kanjiN1Data = [
                         "sentence": "Kyoubou behavior.",
                         "sentenceMeaning": "Comportamento de violência desenfreada."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -21437,6 +29724,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Descontrole impetuoso / Disparada",
                         "sentence": "Vehicle no bousou.",
                         "sentenceMeaning": "Disparada descontrolada do veículo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "米",
+                        "name": "Arroz"
                     }
                 ]
             },
@@ -21459,6 +29760,16 @@ const kanjiN1Data = [
                         "sentence": "Jinjin na impact.",
                         "sentenceMeaning": "Impacto extremamente grave."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "甘",
+                        "name": "Doce"
+                    },
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    }
                 ]
             },
             {
@@ -21479,6 +29790,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Feroz e impiedoso / Severíssimo",
                         "sentence": "Karetsu na competition.",
                         "sentenceMeaning": "Competição feroz e impiedosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "可",
+                        "name": "Possível"
                     }
                 ]
             },
@@ -21501,6 +29822,20 @@ const kanjiN1Data = [
                         "sentence": "Kokusho summer.",
                         "sentenceMeaning": "Verão de calor extremo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "牛",
+                        "name": "Gado"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -21521,6 +29856,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Desolador / Miserável e sombrio",
                         "sentence": "Santan na state.",
                         "sentenceMeaning": "Estado desolador e sombrio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
                     }
                 ]
             },
@@ -21543,6 +29884,16 @@ const kanjiN1Data = [
                         "sentence": "Soukai feeling.",
                         "sentenceMeaning": "Sensação vigorosa e revigorante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "片",
+                        "name": "Fatia"
+                    },
+                    {
+                        "char": "士",
+                        "name": "Samurai"
+                    }
                 ]
             },
             {
@@ -21563,6 +29914,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Efusivo / Vigoroso em apetite ou curiosidade",
                         "sentence": "Curiosity ga ousei.",
                         "sentenceMeaning": "Curiosidade efusiva e vigorosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "成",
+                        "name": "Formar"
+                    },
+                    {
+                        "char": "皿",
+                        "name": "Prato"
                     }
                 ]
             },
@@ -21585,6 +29946,16 @@ const kanjiN1Data = [
                         "sentence": "Ouki spirit.",
                         "sentenceMeaning": "Espírito vigoroso e florescente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "王",
+                        "name": "Rei"
+                    }
                 ]
             },
             {
@@ -21605,6 +29976,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Vigoroso e magnânimo",
                         "sentence": "Goukai na laughter.",
                         "sentenceMeaning": "Gargalhada magnânima e vigorosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "高",
+                        "name": "Alto"
+                    },
+                    {
+                        "char": "豕",
+                        "name": "Porco"
                     }
                 ]
             },
@@ -21627,6 +30008,12 @@ const kanjiN1Data = [
                         "sentence": "Karei na dance.",
                         "sentenceMeaning": "Dança magnífica e deslumbrante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    }
                 ]
             },
             {
@@ -21647,6 +30034,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Belo / Limpo e formoso",
                         "sentence": "Kirei na flower.",
                         "sentenceMeaning": "Flor bela e formosa."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "麗",
+                        "name": "Belo"
+                    },
+                    {
+                        "char": "鹿",
+                        "name": "Cervo"
                     }
                 ]
             },
@@ -21669,6 +30066,16 @@ const kanjiN1Data = [
                         "sentence": "Sansan to降り注ぐ.",
                         "sentenceMeaning": "Verter resplendor ensolarado radiante."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    },
+                    {
+                        "char": "米",
+                        "name": "Arroz"
+                    }
                 ]
             },
             {
@@ -21689,6 +30096,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Assim sendo / Categórico",
                         "sentence": "Zenshitai state.",
                         "sentenceMeaning": "Estado categórico."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "犬",
+                        "name": "Cão"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -21711,6 +30132,20 @@ const kanjiN1Data = [
                         "sentence": "Youen no past.",
                         "sentenceMeaning": "Passado remotíssimo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "缶",
+                        "name": "Lata"
+                    }
                 ]
             },
             {
@@ -21731,6 +30166,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Raro / Pouquíssimos no horizonte",
                         "sentence": "Ryouryou na audience.",
                         "sentenceMeaning": "Pouquíssimos espectadores."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "羽",
+                        "name": "Pena"
+                    },
+                    {
+                        "char": "彡",
+                        "name": "Cabelo"
                     }
                 ]
             },
@@ -21753,6 +30202,24 @@ const kanjiN1Data = [
                         "sentence": "Byoubyou na exist.",
                         "sentenceMeaning": "Existência infinitamente pequena."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
+                    }
                 ]
             },
             {
@@ -21773,6 +30240,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Quantia insignificante / Mínimo",
                         "sentence": "Sashou na amount.",
                         "sentenceMeaning": "Quantia mínima e irrisória."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "二",
+                        "name": "Dois"
                     }
                 ]
             },
@@ -21795,6 +30276,20 @@ const kanjiN1Data = [
                         "sentence": "Daily no saji.",
                         "sentenceMeaning": "Trivialidades do dia a dia."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "王",
+                        "name": "Rei"
+                    },
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "貝",
+                        "name": "Dinheiro"
+                    }
                 ]
             },
             {
@@ -21815,6 +30310,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Quantidade escassa e irrisória",
                         "sentence": "Kinshou na difference.",
                         "sentenceMeaning": "Diferença escassa e irrisória."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -21837,6 +30338,20 @@ const kanjiN1Data = [
                         "sentence": "Zekka no view.",
                         "sentenceMeaning": "Vista de beleza suprema."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "刀",
+                        "name": "Espada"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -21857,6 +30372,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Sublime / O mais elevado no topo",
                         "sentence": "Shikou no art.",
                         "sentenceMeaning": "Arte sublime e no topo."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "至",
+                        "name": "Chegar"
                     }
                 ]
             },
@@ -21879,6 +30400,12 @@ const kanjiN1Data = [
                         "sentence": "Kouki na family.",
                         "sentenceMeaning": "Família nobre e sublime."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "高",
+                        "name": "Alto"
+                    }
                 ]
             },
             {
@@ -21899,6 +30426,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Veneração / Adoração sublime",
                         "sentence": "Hero no suuhai.",
                         "sentenceMeaning": "Adoração ao herói."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "示",
+                        "name": "Espírito"
                     }
                 ]
             },
@@ -21921,6 +30462,12 @@ const kanjiN1Data = [
                         "sentence": "Hikin na example.",
                         "sentenceMeaning": "Exemplo comum e corriqueiro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "甲",
+                        "name": "Casco"
+                    }
                 ]
             },
             {
@@ -21941,6 +30488,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Inferioridade de classe",
                         "sentence": "Rettou-kan (劣等感).",
                         "sentenceMeaning": "Complexo de inferioridade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "小",
+                        "name": "Pequeno"
+                    },
+                    {
+                        "char": "丿",
+                        "name": "Diagonal"
+                    },
+                    {
+                        "char": "力",
+                        "name": "Força"
                     }
                 ]
             },
@@ -21963,6 +30524,12 @@ const kanjiN1Data = [
                         "sentence": "Donkan na person.",
                         "sentenceMeaning": "Pessoa obtusa e insensível."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "金",
+                        "name": "Metal / Ouro"
+                    }
                 ]
             },
             {
@@ -21983,6 +30550,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ágil e rápido nos movimentos",
                         "sentence": "Binshou na action.",
                         "sentenceMeaning": "Ação ágil e rápida."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -22005,6 +30578,20 @@ const kanjiN1Data = [
                         "sentence": "Success no shoukei.",
                         "sentenceMeaning": "Atalho para o sucesso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    }
                 ]
             },
             {
@@ -22025,6 +30612,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Austero e rigoroso nas regras",
                         "sentence": "Genkaku na rule.",
                         "sentenceMeaning": "Regras austeras e rigorosas."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "厳",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -22047,6 +30640,16 @@ const kanjiN1Data = [
                         "sentence": "Genkaku system.",
                         "sentenceMeaning": "Sistema de norma estrita."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "各",
+                        "name": "Cada"
+                    }
                 ]
             },
             {
@@ -22067,6 +30670,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Austeridade severa",
                         "sentence": "Shungen na attitude.",
                         "sentenceMeaning": "Atitude de severa austeridade."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
                     }
                 ]
             },
@@ -22089,6 +30702,20 @@ const kanjiN1Data = [
                         "sentence": "Seisan na scene.",
                         "sentenceMeaning": "Cenário pavoroso de desastre."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "冫",
+                        "name": "Gelo"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    }
                 ]
             },
             {
@@ -22109,6 +30736,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Irrisório",
                         "sentence": "Bibitaru change.",
                         "sentenceMeaning": "Mudança irrisória."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -22131,6 +30768,12 @@ const kanjiN1Data = [
                         "sentence": "Mouretsu wind.",
                         "sentenceMeaning": "Vento feroz."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -22151,6 +30794,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Crueldade",
                         "sentence": "Zankoku war.",
                         "sentenceMeaning": "Guerra cruel."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "酉",
+                        "name": "Vaso"
+                    },
+                    {
+                        "char": "牛",
+                        "name": "Gado"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             }
@@ -22316,6 +30973,16 @@ const kanjiN1Data = [
                         "sentence": "Clear naokatsu fast.",
                         "sentenceMeaning": "Claro e ademais célere."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "八",
+                        "name": "Dividir"
+                    },
+                    {
+                        "char": "向",
+                        "name": "Direção"
+                    }
                 ]
             },
             {
@@ -22336,6 +31003,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ademais / Bem como",
                         "sentence": "Naokatsu precise.",
                         "sentenceMeaning": "E ademais preciso."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "且",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -22358,6 +31031,12 @@ const kanjiN1Data = [
                         "sentence": "Gaiyou report.",
                         "sentenceMeaning": "Relatório de panorama geral."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    }
                 ]
             },
             {
@@ -22378,6 +31057,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Imediatamente / Na hora",
                         "sentence": "Sokuza response.",
                         "sentenceMeaning": "Resposta imediata na hora."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -22400,6 +31085,12 @@ const kanjiN1Data = [
                         "sentence": "Daikou view.",
                         "sentenceMeaning": "Minha própria visão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "乃",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -22420,6 +31111,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Tradição / Origem histórica",
                         "sentence": "Koji-seigo.",
                         "sentenceMeaning": "Expressão de origem histórica."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "古",
+                        "name": "Antigo"
+                    },
+                    {
+                        "char": "攵",
+                        "name": "Ação"
                     }
                 ]
             },
@@ -22442,6 +31143,20 @@ const kanjiN1Data = [
                         "sentence": "Yokusei power.",
                         "sentenceMeaning": "Poder de contenção."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "扌",
+                        "name": "Mão"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
+                    }
                 ]
             },
             {
@@ -22462,6 +31177,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Notas explicativas de guia",
                         "sentence": "Book no hanrei.",
                         "sentenceMeaning": "Notas explicativas do livro."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "凡",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -22484,6 +31205,20 @@ const kanjiN1Data = [
                         "sentence": "Shourai vision.",
                         "sentenceMeaning": "Visão do futuro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "片",
+                        "name": "Fatia"
+                    },
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "寸",
+                        "name": "Medida"
+                    }
                 ]
             },
             {
@@ -22504,6 +31239,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Na época presente",
                         "sentence": "Houkon era.",
                         "sentenceMeaning": "Na época presente."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "方",
+                        "name": "Direção"
                     }
                 ]
             },
@@ -22526,6 +31267,20 @@ const kanjiN1Data = [
                         "sentence": "Gaisei hero.",
                         "sentenceMeaning": "Herói Incomparável no mundo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "大",
+                        "name": "Grande"
+                    },
+                    {
+                        "char": "血",
+                        "name": "Sangue"
+                    }
                 ]
             },
             {
@@ -22546,6 +31301,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Corajoso e ousado",
                         "sentence": "Yuukan soldier.",
                         "sentenceMeaning": "Soldado corajoso."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "古",
+                        "name": "Antigo"
                     }
                 ]
             },
@@ -22568,6 +31329,16 @@ const kanjiN1Data = [
                         "sentence": "Good kakkou.",
                         "sentenceMeaning": "Boa aparência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "忄",
+                        "name": "Mente"
+                    },
+                    {
+                        "char": "合",
+                        "name": "Unir"
+                    }
                 ]
             },
             {
@@ -22588,6 +31359,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Endereço de destino",
                         "sentence": "Letter no atesaki.",
                         "sentenceMeaning": "Endereço de destino da carta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "夕",
+                        "name": "Noite"
+                    },
+                    {
+                        "char": "卩",
+                        "name": "Selo"
                     }
                 ]
             },
@@ -22610,6 +31395,20 @@ const kanjiN1Data = [
                         "sentence": "Teinei style.",
                         "sentenceMeaning": "Estilo polido e atencioso."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    },
+                    {
+                        "char": "皿",
+                        "name": "Prato"
+                    }
                 ]
             },
             {
@@ -22630,6 +31429,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ainda mais",
                         "sentence": "Naosara hard.",
                         "sentenceMeaning": "Ainda mais difícil."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
                     }
                 ]
             },
@@ -22652,6 +31457,12 @@ const kanjiN1Data = [
                         "sentence": "Defeat no hisshi.",
                         "sentenceMeaning": "Derrota inevitável."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "必",
+                        "name": "Certamente"
+                    }
                 ]
             },
             {
@@ -22672,6 +31483,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Coincidência / Acaso",
                         "sentence": "Guuzen no encounter.",
                         "sentenceMeaning": "Encontro por acaso."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
                     }
                 ]
             },
@@ -22694,6 +31511,20 @@ const kanjiN1Data = [
                         "sentence": "Torou ni終わる.",
                         "sentenceMeaning": "Terminar em trabalho em vão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
+                    },
+                    {
+                        "char": "止",
+                        "name": "Parar"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    }
                 ]
             },
             {
@@ -22714,6 +31545,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Delírio sem fundamento",
                         "sentence": "Mousou story.",
                         "sentenceMeaning": "História de delírio."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
                     }
                 ]
             },
@@ -22736,6 +31573,16 @@ const kanjiN1Data = [
                         "sentence": "Kouan no life.",
                         "sentenceMeaning": "Vida de paz ilusória."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    }
                 ]
             },
             {
@@ -22756,6 +31603,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Em todas as direções / Livremente",
                         "sentence": "Juuou no movement.",
                         "sentenceMeaning": "Movimento em todas as direções."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
                     }
                 ]
             },
@@ -22778,6 +31631,12 @@ const kanjiN1Data = [
                         "sentence": "Katei on base.",
                         "sentenceMeaning": "Baseado em hipótese."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -22798,6 +31657,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Único e exclusivo",
                         "sentence": "Yuiitsu no chance.",
                         "sentenceMeaning": "Única e exclusiva chance."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "隹",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -22820,6 +31689,12 @@ const kanjiN1Data = [
                         "sentence": "Dokuritsu state.",
                         "sentenceMeaning": "Estado independente."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "犭",
+                        "name": "Animal"
+                    }
                 ]
             },
             {
@@ -22840,6 +31715,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Singular / Não composto",
                         "sentence": "Tan'itsu system.",
                         "sentenceMeaning": "Sistema singular."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "単",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -22862,6 +31743,20 @@ const kanjiN1Data = [
                         "sentence": "Law no tadashigaki.",
                         "sentenceMeaning": "Cláusula de ressalva da lei."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "日",
+                        "name": "Sol / Dia"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
+                    }
                 ]
             },
             {
@@ -22882,6 +31777,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Ocorre contudo que",
                         "sentence": "Saruni fact.",
                         "sentenceMeaning": "Ocorre contudo que o fato..."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "肉",
+                        "name": "Carne"
+                    },
+                    {
+                        "char": "犬",
+                        "name": "Cão"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
                     }
                 ]
             },
@@ -22904,6 +31813,16 @@ const kanjiN1Data = [
                         "sentence": "Danko refusal.",
                         "sentenceMeaning": "Recusa categórica e firme."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "囗",
+                        "name": "Cercado"
+                    },
+                    {
+                        "char": "古",
+                        "name": "Antigo"
+                    }
                 ]
             },
             {
@@ -22924,6 +31843,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Simples e autêntico",
                         "sentence": "Soboku design.",
                         "sentenceMeaning": "Design simples."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
                     }
                 ]
             },
@@ -22946,6 +31871,12 @@ const kanjiN1Data = [
                         "sentence": "Ganrai human.",
                         "sentenceMeaning": "Em essência humana."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "元",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -22966,6 +31897,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Originalmente / Em essência",
                         "sentence": "Honrai purpose.",
                         "sentenceMeaning": "Propósito em essência."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "一",
+                        "name": "Um"
                     }
                 ]
             },
@@ -22988,6 +31929,16 @@ const kanjiN1Data = [
                         "sentence": "Sougou evaluation.",
                         "sentenceMeaning": "Avaliação integrativa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    },
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -23008,6 +31959,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Abreviar / Resumir",
                         "sentence": "Name o ryakusu.",
                         "sentenceMeaning": "Abreviar o nome."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "田",
+                        "name": "Campo"
+                    },
+                    {
+                        "char": "各",
+                        "name": "Cada"
                     }
                 ]
             },
@@ -23030,6 +31991,16 @@ const kanjiN1Data = [
                         "sentence": "Shokun listen.",
                         "sentenceMeaning": "Senhores, escutem."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "言",
+                        "name": "Palavra"
+                    },
+                    {
+                        "char": "者",
+                        "name": "Pessoa"
+                    }
                 ]
             },
             {
@@ -23050,6 +32021,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Cada país / Diversas nações",
                         "sentence": "Kakkoku leader.",
                         "sentenceMeaning": "Líderes de cada país."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "夂",
+                        "name": "Seguir"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -23072,6 +32053,12 @@ const kanjiN1Data = [
                         "sentence": "Maikai success.",
                         "sentenceMeaning": "Sucesso a cada edição."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "毎",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -23092,6 +32079,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Em vários pontos / Por toda parte",
                         "sentence": "Zuisho in text.",
                         "sentenceMeaning": "Por toda parte no texto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "辶",
+                        "name": "Movimento"
                     }
                 ]
             },
@@ -23114,6 +32107,12 @@ const kanjiN1Data = [
                         "sentence": "Oukyuu care.",
                         "sentenceMeaning": "Atendimento de emergência."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "心",
+                        "name": "Coração"
+                    }
                 ]
             },
             {
@@ -23134,6 +32133,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Ao sul de / A partir do sul",
                         "sentence": "Kyushu inan.",
                         "sentenceMeaning": "Ao sul de Kyushu."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "以",
+                        "name": "Radical Principal"
                     }
                 ]
             }
@@ -23299,6 +32304,12 @@ const kanjiN1Data = [
                         "sentence": "Gifu castle.",
                         "sentenceMeaning": "Castelo de Gifu."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阜",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -23319,6 +32330,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Laguna de maré baixada",
                         "sentence": "Higata ecosystem.",
                         "sentenceMeaning": "Ecossistema da laguna."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
                     }
                 ]
             },
@@ -23341,6 +32358,16 @@ const kanjiN1Data = [
                         "sentence": "Literary saien.",
                         "sentenceMeaning": "Dama de notável talento literário."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "女",
+                        "name": "Mulher"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -23361,6 +32388,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Arbusto de espinhos",
                         "sentence": "Bara no michi.",
                         "sentenceMeaning": "Caminho de espinhos."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "次",
+                        "name": "Próximo"
                     }
                 ]
             },
@@ -23383,6 +32420,16 @@ const kanjiN1Data = [
                         "sentence": "Coastal saki.",
                         "sentenceMeaning": "Cabo marítimo costeiro."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "土",
+                        "name": "Terra"
+                    },
+                    {
+                        "char": "奇",
+                        "name": "Estranho"
+                    }
                 ]
             },
             {
@@ -23403,6 +32450,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Castanheira da Ásia",
                         "sentence": "Tochi tree.",
                         "sentenceMeaning": "Árvore castanheira asiática."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "万",
+                        "name": "Dez Mil"
                     }
                 ]
             },
@@ -23425,6 +32482,20 @@ const kanjiN1Data = [
                         "sentence": "Jiyou food.",
                         "sentenceMeaning": "Alimento de alto valor nutritivo."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "艹",
+                        "name": "Grama"
+                    },
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -23445,6 +32516,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Cervo selvagem",
                         "sentence": "Nara no shika.",
                         "sentenceMeaning": "Cervos de Nara."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "鹿",
+                        "name": "Cervo"
                     }
                 ]
             },
@@ -23467,6 +32544,12 @@ const kanjiN1Data = [
                         "sentence": "Shouji clinic.",
                         "sentenceMeaning": "Clínica pediátrica."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "児",
+                        "name": "Radical Principal"
+                    }
                 ]
             },
             {
@@ -23487,6 +32570,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Alto-mar / Mar aberto",
                         "sentence": "Okiai fishing.",
                         "sentenceMeaning": "Pesca em alto-mar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "丨",
+                        "name": "Vertical"
                     }
                 ]
             },
@@ -23509,6 +32606,12 @@ const kanjiN1Data = [
                         "sentence": "Joumon era.",
                         "sentenceMeaning": "Era Jomon na pré-história do Japão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "糸",
+                        "name": "Fio"
+                    }
                 ]
             },
             {
@@ -23529,6 +32632,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Pera asiática tradicional",
                         "sentence": "Nashi fruit.",
                         "sentenceMeaning": "Pera asiática tradicional."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
                     }
                 ]
             },
@@ -23551,6 +32660,20 @@ const kanjiN1Data = [
                         "sentence": "Hanshin area.",
                         "sentenceMeaning": "Região metropolitana de Osaka e Kobe."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "厂",
+                        "name": "Penhasco"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -23571,6 +32694,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Prefeitura de Shizuoka",
                         "sentence": "Shizuokaken tea.",
                         "sentenceMeaning": "Chá da prefeitura de Shizuoka."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "网",
+                        "name": "Rede"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
                     }
                 ]
             },
@@ -23593,6 +32726,16 @@ const kanjiN1Data = [
                         "sentence": "Nara park.",
                         "sentenceMeaning": "Parque de Nara."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "示",
+                        "name": "Espírito"
+                    }
                 ]
             },
             {
@@ -23613,6 +32756,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Encruzilhada da vida / Ponto decisivo",
                         "sentence": "Life no kiro.",
                         "sentenceMeaning": "Encruzilhada da vida."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "支",
+                        "name": "Ramo"
+                    },
+                    {
+                        "char": "邑",
+                        "name": "Cidade"
                     }
                 ]
             },
@@ -23635,6 +32788,16 @@ const kanjiN1Data = [
                         "sentence": "Kuma no habitat.",
                         "sentenceMeaning": "Habitat de ursos selvagens."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "能",
+                        "name": "Capacidade"
+                    },
+                    {
+                        "char": "火",
+                        "name": "Fogo"
+                    }
                 ]
             },
             {
@@ -23655,6 +32818,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Prefeitura de Miyazaki",
                         "sentence": "Miyazakiken palm.",
                         "sentenceMeaning": "Palmeiras de Miyazaki."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "宀",
+                        "name": "Teto / Casa"
+                    },
+                    {
+                        "char": "身",
+                        "name": "Corpo"
                     }
                 ]
             },
@@ -23677,6 +32850,16 @@ const kanjiN1Data = [
                         "sentence": "Miyazaki resort.",
                         "sentenceMeaning": "Resort de Miyazaki."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    },
+                    {
+                        "char": "奇",
+                        "name": "Estranho"
+                    }
                 ]
             },
             {
@@ -23697,6 +32880,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Silêncio plácido e calmaria",
                         "sentence": "Forest no seijaku.",
                         "sentenceMeaning": "Silêncio plácido da floresta."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "静",
+                        "name": "Calmo"
                     }
                 ]
             },
@@ -23719,6 +32908,20 @@ const kanjiN1Data = [
                         "sentence": "Kousui scent.",
                         "sentenceMeaning": "Aroma de perfume."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    },
+                    {
+                        "char": "雨",
+                        "name": "Chuva"
+                    },
+                    {
+                        "char": "甘",
+                        "name": "Doce"
+                    }
                 ]
             },
             {
@@ -23739,6 +32942,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Moral e ética",
                         "sentence": "Doutoku education.",
                         "sentenceMeaning": "Educação moral e ética."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "彳",
+                        "name": "Passo"
                     }
                 ]
             },
@@ -23761,6 +32970,16 @@ const kanjiN1Data = [
                         "sentence": "Ritou development.",
                         "sentenceMeaning": "Desenvolvimento de ilhas remotas."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "鳥",
+                        "name": "Pássaro"
+                    },
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    }
                 ]
             },
             {
@@ -23781,6 +33000,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Governador da prefeitura",
                         "sentence": "Prefectural chiji.",
                         "sentenceMeaning": "Governador da prefeitura."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "矢",
+                        "name": "Flecha"
+                    },
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -23803,6 +33032,12 @@ const kanjiN1Data = [
                         "sentence": "Fukuiken dinosaur museum.",
                         "sentenceMeaning": "Museu dos dinossauros de Fukui."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "礻",
+                        "name": "Altar"
+                    }
                 ]
             },
             {
@@ -23823,6 +33058,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Teto residencial",
                         "sentence": "Tenjou light.",
                         "sentenceMeaning": "Luz do teto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "井",
+                        "name": "Radical Principal"
                     }
                 ]
             },
@@ -23845,6 +33086,16 @@ const kanjiN1Data = [
                         "sentence": "Koudai na land.",
                         "sentenceMeaning": "Terra vasta e imensa."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "田",
+                        "name": "Campo"
+                    }
                 ]
             },
             {
@@ -23865,6 +33116,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Pássaro selvagem",
                         "sentence": "Yachou observation.",
                         "sentenceMeaning": "Observação de pássaros selvagens."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "鳥",
+                        "name": "Pássaro"
                     }
                 ]
             },
@@ -23887,6 +33144,16 @@ const kanjiN1Data = [
                         "sentence": "License no shutoku.",
                         "sentenceMeaning": "Obtenção de licença."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "耳",
+                        "name": "Orelha"
+                    },
+                    {
+                        "char": "又",
+                        "name": "Mão"
+                    }
                 ]
             },
             {
@@ -23907,6 +33174,20 @@ const kanjiN1Data = [
                         "wordMeaning": "Cerne / Fundamento raiz",
                         "sentence": "Konpon solution.",
                         "sentenceMeaning": "Solução de cerne."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "木",
+                        "name": "Árvore"
+                    },
+                    {
+                        "char": "目",
+                        "name": "Olho"
+                    },
+                    {
+                        "char": "匕",
+                        "name": "Colher"
                     }
                 ]
             },
@@ -23929,6 +33210,16 @@ const kanjiN1Data = [
                         "sentence": "Wafuu room.",
                         "sentenceMeaning": "Quarto em estilo tradicional japonês."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
+                    },
+                    {
+                        "char": "禾",
+                        "name": "Grão"
+                    }
                 ]
             },
             {
@@ -23949,6 +33240,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Poema curto tradicional Tanka",
                         "sentence": "Tanka poetry.",
                         "sentenceMeaning": "Poesia tradicional Tanka."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "可",
+                        "name": "Possível"
+                    },
+                    {
+                        "char": "欠",
+                        "name": "Falta"
                     }
                 ]
             },
@@ -23971,6 +33272,12 @@ const kanjiN1Data = [
                         "sentence": "Japan sanmyaku.",
                         "sentenceMeaning": "Cadeia de montanhas do Japão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "山",
+                        "name": "Montanha"
+                    }
                 ]
             },
             {
@@ -23991,6 +33298,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Entrada do porto marítimo",
                         "sentence": "Port no koukou.",
                         "sentenceMeaning": "Entrada do porto."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "口",
+                        "name": "Boca"
                     }
                 ]
             },
@@ -24013,6 +33326,12 @@ const kanjiN1Data = [
                         "sentence": "Kyuushuu area.",
                         "sentenceMeaning": "Região de Kyushu."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "州",
+                        "name": "Estado"
+                    }
                 ]
             },
             {
@@ -24033,6 +33352,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Capital do país",
                         "sentence": "Japan no shuto.",
                         "sentenceMeaning": "Capital do Japão."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "者",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "邑",
+                        "name": "Cidade"
                     }
                 ]
             },
@@ -24055,6 +33384,20 @@ const kanjiN1Data = [
                         "sentence": "Japan seifu.",
                         "sentenceMeaning": "Governo do Japão."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "广",
+                        "name": "Edifício"
+                    },
+                    {
+                        "char": "亻",
+                        "name": "Pessoa"
+                    },
+                    {
+                        "char": "父",
+                        "name": "Pai"
+                    }
                 ]
             },
             {
@@ -24075,6 +33418,12 @@ const kanjiN1Data = [
                         "wordMeaning": "Sede do Governo da Prefeitura",
                         "sentence": "Kenchou office.",
                         "sentenceMeaning": "Sede do governo da prefeitura."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "系",
+                        "name": "Sistema"
                     }
                 ]
             },
@@ -24097,6 +33446,12 @@ const kanjiN1Data = [
                         "sentence": "Kaigai travel.",
                         "sentenceMeaning": "Viagem ao exterior."
                     }
+                ],
+                "radicals": [
+                    {
+                        "char": "氵",
+                        "name": "Água"
+                    }
                 ]
             },
             {
@@ -24117,6 +33472,16 @@ const kanjiN1Data = [
                         "wordMeaning": "Interior do continente / Zona sem mar",
                         "sentence": "Nairiku area.",
                         "sentenceMeaning": "Região do interior sem acesso ao mar."
+                    }
+                ],
+                "radicals": [
+                    {
+                        "char": "阝",
+                        "name": "Cidade / Colina"
+                    },
+                    {
+                        "char": "土",
+                        "name": "Terra"
                     }
                 ]
             }
