@@ -1716,8 +1716,6 @@ async function sincronizarProgressoComFirestore(user) {
                 localStorage.setItem('ja_nome_usuario', dataRemote.nomeUsuario);
                 if (typeof nomeUsuario !== 'undefined') nomeUsuario = dataRemote.nomeUsuario;
             }
-
-            mostrarToast("☁️ Progresso sincronizado com a nuvem!");
         } else {
             salvarSilenciosamenteNaNuvem();
             console.log("☁️ Primeiro backup gravado com sucesso no Firestore!");
