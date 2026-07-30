@@ -5400,6 +5400,15 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
             playBeep('success');
             mostrarToast(`🎉 <strong>Pronúncia Correta!</strong> Ouvi: <em>"${bestTranscript}"</em> (+10 XP)`);
             adicionarXP(10, isEnglish ? 'Pronúncia Aprovada em Inglês' : 'Pronúncia Aprovada em Japonês');
+            if (isEnglish) {
+                const cur = (parseInt(localStorage.getItem('ja_en_voice_answers_count')) || 0) + 1;
+                localStorage.setItem('ja_en_voice_answers_count', cur.toString());
+                checarConquistasGerais();
+            } else {
+                const cur = (parseInt(localStorage.getItem('ja_voice_answers_count')) || 0) + 1;
+                localStorage.setItem('ja_voice_answers_count', cur.toString());
+                checarConquistasGerais();
+            }
             dispararConfeti({ particleCount: 40, spread: 50, origin: { y: 0.8 } });
         } else {
             playBeep('error');
@@ -5655,6 +5664,129 @@ const CATALOGO_CONQUISTAS = [
         title: 'Voz de Ouro',
         icon: '🗣️',
         desc: 'Acertou 10 respostas por voz no Minigame.'
+    },
+    // ==========================================
+    // CONQUISTAS EXCLUSIVAS DO CURSO DE INGLÊS
+    // ==========================================
+    {
+        id: 'ach_en_first_step',
+        title: 'First Step in English',
+        icon: '🗽',
+        desc: 'Concluiu o 1º Módulo do Curso de Inglês.'
+    },
+    {
+        id: 'ach_en_a1_master',
+        title: 'English Beginner (A1)',
+        icon: '🔵',
+        desc: 'Concluiu todos os módulos do Nível A1 de Inglês.'
+    },
+    {
+        id: 'ach_en_a2_master',
+        title: 'English Elementary (A2)',
+        icon: '🟢',
+        desc: 'Concluiu todos os módulos do Nível A2 de Inglês.'
+    },
+    {
+        id: 'ach_en_b1_master',
+        title: 'English Intermediate (B1)',
+        icon: '🟡',
+        desc: 'Concluiu todos os módulos do Nível B1 de Inglês.'
+    },
+    {
+        id: 'ach_en_b2_master',
+        title: 'English Upper-Int. (B2)',
+        icon: '🔴',
+        desc: 'Concluiu todos os módulos do Nível B2 de Inglês.'
+    },
+    {
+        id: 'ach_en_phrasal_5',
+        title: 'Phrasal Verbs Initiate',
+        icon: '⚡',
+        desc: 'Concluiu 5 módulos de Phrasal Verbs & Expressões.'
+    },
+    {
+        id: 'ach_en_phrasal_master',
+        title: 'Phrasal Verbs Master',
+        icon: '⚡',
+        desc: 'Concluiu todos os 28 módulos de Phrasal Verbs & Expressões.'
+    },
+    {
+        id: 'ach_en_voice_10',
+        title: 'Speaker Trainee',
+        icon: '🎙️',
+        desc: 'Acertou 10 treinos de pronúncia por voz em Inglês.'
+    },
+    {
+        id: 'ach_en_voice_hero',
+        title: 'Native Accent Master',
+        icon: '🗣️',
+        desc: 'Acertou 30 treinos de pronúncia por voz em Inglês.'
+    },
+    {
+        id: 'ach_en_quiz_ace',
+        title: 'Quiz Master EN',
+        icon: '🧠',
+        desc: 'Alcançou 100% de precisão em qualquer Quiz de Inglês.'
+    },
+    {
+        id: 'ach_en_quiz_10',
+        title: 'Quiz Enthusiast',
+        icon: '📚',
+        desc: 'Completou 10 Quizzes/Simulados de Inglês.'
+    },
+    {
+        id: 'ach_en_minigame_combo_10',
+        title: 'Minigame Combo King',
+        icon: '🎮',
+        desc: 'Alcançou um Combo 🔥 10 no Minigame de Inglês.'
+    },
+    {
+        id: 'ach_en_minigame_score_500',
+        title: 'Vocabulary Speed Demon',
+        icon: '🎯',
+        desc: 'Alcançou 500 pontos no Minigame de Vocabulário de Inglês.'
+    },
+    {
+        id: 'ach_en_dict_explorer',
+        title: 'Glossary Scholar',
+        icon: '📖',
+        desc: 'Consultou o Dicionário/Glossário de Inglês.'
+    },
+    {
+        id: 'ach_en_alphabet_soundboard',
+        title: 'Alphabet Soundboard Master',
+        icon: '🔤',
+        desc: 'Consultou a tabela interativa do Alfabeto Inglês (A-Z).'
+    },
+    {
+        id: 'ach_en_srs_reviewer',
+        title: 'English Flashcards Pro',
+        icon: '🧠',
+        desc: 'Completou 15 sessões de revisão SRS em Inglês.'
+    },
+    {
+        id: 'ach_en_idioms_lover',
+        title: 'Master of Idioms',
+        icon: '💬',
+        desc: 'Concluiu módulos de Expressões Acadêmicas e Paráfrases.'
+    },
+    {
+        id: 'ach_en_minimal_pairs',
+        title: 'Ears of Steel (IPA)',
+        icon: '🎧',
+        desc: 'Treinou a pronúncia no Guia de Fonética & IPA.'
+    },
+    {
+        id: 'ach_en_streak_14',
+        title: 'Fortnight Scholar (14 Days)',
+        icon: '🔥',
+        desc: 'Manteve 14 dias seguidos de ofensiva estudando Inglês.'
+    },
+    {
+        id: 'ach_en_capstone_certified',
+        title: 'B2 Capstone Certified',
+        icon: '🏆',
+        desc: 'Aprovado no Exame Final Capstone B2 de Inglês com Certificado.'
     }
 ];
 
@@ -5702,6 +5834,7 @@ function checarConquistasGerais() {
         (progressoGlobal.progress_kanji_n1 || []).length;
 
     if (totalModuloConcluidos >= 1) checarEConcederConquista('ach_first_step');
+    if (totalModuloConcluidos >= 1) checarEConcederConquista('ach_en_first_step');
 
     const totalHira = (typeof HIRA_COURSE_DATA !== 'undefined' ? HIRA_COURSE_DATA.length : 10);
     if ((progressoGlobal.progress_hiragana || []).length >= totalHira) checarEConcederConquista('ach_hira_master');
@@ -5725,10 +5858,40 @@ function checarConquistasGerais() {
     if ((progressoGlobal.progress_kanji_n1 || []).length >= totalKanjiN1) checarEConcederConquista('ach_kanji_n1');
 
     const cursos = getTodosOsCursos();
-    if (cursos.A1 && cursos.A1.length > 0 && cursos.A1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_a1');
-    if (cursos.A2 && cursos.A2.length > 0 && cursos.A2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_a2');
-    if (cursos.B1 && cursos.B1.length > 0 && cursos.B1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_b1');
-    if (cursos.B2 && cursos.B2.length > 0 && cursos.B2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) checarEConcederConquista('ach_level_b2');
+    if (cursos.A1 && cursos.A1.length > 0 && cursos.A1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) {
+        checarEConcederConquista('ach_level_a1');
+        checarEConcederConquista('ach_en_a1_master');
+    }
+    if (cursos.A2 && cursos.A2.length > 0 && cursos.A2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) {
+        checarEConcederConquista('ach_level_a2');
+        checarEConcederConquista('ach_en_a2_master');
+    }
+    if (cursos.B1 && cursos.B1.length > 0 && cursos.B1.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) {
+        checarEConcederConquista('ach_level_b1');
+        checarEConcederConquista('ach_en_b1_master');
+    }
+    if (cursos.B2 && cursos.B2.length > 0 && cursos.B2.every(m => progressoGlobal.modulosConcluidos.includes(m.id))) {
+        checarEConcederConquista('ach_level_b2');
+        checarEConcederConquista('ach_en_b2_master');
+    }
+
+    // Conquistas de Phrasal Verbs
+    const totalPV = (progressoGlobal.progress_phrasal_verbs || []).length;
+    if (totalPV >= 5) checarEConcederConquista('ach_en_phrasal_5');
+    if (totalPV >= 28) checarEConcederConquista('ach_en_phrasal_master');
+
+    // Conquistas de Voz em Inglês
+    const totalVozEN = parseInt(localStorage.getItem('ja_en_voice_answers_count')) || 0;
+    if (totalVozEN >= 10) checarEConcederConquista('ach_en_voice_10');
+    if (totalVozEN >= 30) checarEConcederConquista('ach_en_voice_hero');
+
+    // Quizzes em Inglês
+    const totalQuizzesEN = parseInt(localStorage.getItem('ja_en_quizzes_completed_count')) || 0;
+    if (totalQuizzesEN >= 10) checarEConcederConquista('ach_en_quiz_10');
+
+    // Flashcards SRS em Inglês
+    const totalSrsEN = parseInt(localStorage.getItem('ja_en_srs_reviews_count')) || 0;
+    if (totalSrsEN >= 15) checarEConcederConquista('ach_en_srs_reviewer');
 
     const totalSRS = parseInt(localStorage.getItem('ja_srs_reviews_count')) || 0;
     if (totalSRS >= 10) checarEConcederConquista('ach_srs_10');
@@ -5739,9 +5902,17 @@ function checarConquistasGerais() {
         if (s) streakData = JSON.parse(s);
     } catch (e) { }
     if ((streakData.count || 0) >= 7) checarEConcederConquista('ach_streak_7');
+    if ((streakData.count || 0) >= 14) checarEConcederConquista('ach_en_streak_14');
 
     const totalVoz = parseInt(localStorage.getItem('ja_voice_answers_count')) || 0;
     if (totalVoz >= 10) checarEConcederConquista('ach_voice_pro');
+}
+
+if (typeof window !== 'undefined') {
+    window.CATALOGO_CONQUISTAS = CATALOGO_CONQUISTAS;
+    window.checarConquistasGerais = checarConquistasGerais;
+    window.checarEConcederConquista = checarEConcederConquista;
+    window.obteConquistasDesbloqueadas = obteConquistasDesbloqueadas;
 }
 
 // AUTO-INJEÇÃO DE COMPONENTES DE CABEÇALHO E MODAL
@@ -6189,6 +6360,7 @@ const ENGLISH_ALPHABET_DATA = [
 if (typeof window !== 'undefined') window.ENGLISH_ALPHABET_DATA = ENGLISH_ALPHABET_DATA;
 
 function renderizarTabelaAlfabetoIngles() {
+    checarEConcederConquista('ach_en_alphabet_soundboard');
     const grid = document.getElementById('dict-alphabet-grid');
     if (!grid) return;
 
@@ -6657,6 +6829,8 @@ function fecharModalDicionario() {
 // Auto-inicialização automática quando estiver na página dedicada dicionario.html ou dicionario_ingles.html
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.includes('dicionario') || document.getElementById('dict-results-container')) {
+        const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US') || window.location.pathname.includes('ingles');
+        if (isEnglish) checarEConcederConquista('ach_en_dict_explorer');
         carregarTodosOsDatasets(() => {
             glossarioUniversalCache = null;
             selecionarCategoriaDicionario(dictCategoriaAtiva);
