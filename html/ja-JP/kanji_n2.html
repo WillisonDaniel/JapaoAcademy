@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso de Katakana - Japão Academy</title>
+    <title>Curso de Kanji N2 - Japão Academy</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="../../manifest.json">
     <meta name="theme-color" content="#1e1b4b">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,35 +19,40 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
     <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
 </head>
 
-<body data-mode="katakana">
+<body data-mode="kanji_n2">
     <header>
-        <a href="index.html" class="home-btn">⬅ Menu Inicial</a>
+        <a href="kanji.html" class="home-btn">⬅ Voltar ao Hub de Kanjis</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1 id="mainTitle">Curso de Katakana</h1>
-        <p id="mainDesc">Sons estrangeiros (Teoria, Vocabulário e Prática Completa).</p>
+        <h1 id="mainTitle">Curso de Kanji N2</h1>
+        <p id="mainDesc">Ideogramas avançados de negócios, ciência e sociedade com leitura temática N2.</p>
     </header>
 
     <div class="container">
-        <!-- BANNER DE REVISÃO SRS DE KATAKANA -->
-        <div class="banner-srs" style="border-color: rgba(2, 128, 144, 0.4);">
+        <!-- BANNER DE REVISÃO SRS DE KANJI N2 -->
+        <div class="banner-srs" style="border-color: rgba(180, 83, 9, 0.4);">
             <div class="srs-banner-info">
                 <span class="srs-badge-tag"
-                    style="background: rgba(2, 128, 144, 0.2); color: #00b4d8; border-color: #028090;">🌊 REPETIÇÃO
-                    ESPAÇADA (KATAKANA)</span>
+                    style="background: rgba(180, 83, 9, 0.2); color: #f59e0b; border-color: #b45309;">🏯 REPETIÇÃO
+                    ESPAÇADA (Kanji N2)</span>
                 <h3>Revisão Inteligente da Memória</h3>
                 <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos', 'kanji_n2')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos', 'kanji_n2')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros', 'kanji_n2')">❌ Caderno de Erros</button>
+                </div>
             </div>
             <div class="srs-banner-action">
                 <div class="srs-badge-box">
                     <span class="srs-counter-badge" id="srs-badge-count">0</span>
                     <small>pendentes</small>
                 </div>
-                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('katakana')" class="btn-srs-action"
-                    style="background: linear-gradient(135deg, #028090, #00a896);">
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('kanji_n2')" class="btn-srs-action"
+                    style="background: linear-gradient(135deg, #b45309, #d97706);">
                     Iniciar Revisão ➔
                 </button>
             </div>
@@ -94,9 +99,10 @@
         </main>
     </div>
 
-    <script src="data_katakana.js"></script>
-    <script type="module" src="firebase-init.js"></script>
-    <script src="app.js"></script>
+    <!-- Puxa os dados exclusivos do Kanji N2 e o script motor -->
+    <script src="../../database/ja-JP/data_kanji_n2.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
 </body>
 
 </html>

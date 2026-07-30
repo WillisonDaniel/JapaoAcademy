@@ -257,7 +257,8 @@ function speakKana(text) {
         window.speechSynthesis.cancel();
         const cleanText = text.split(' ')[0].trim();
         const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'ja-JP';
+        const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+        utterance.lang = isEnglish ? 'en-US' : 'ja-JP';
         utterance.rate = 0.9;
         window.speechSynthesis.speak(utterance);
     }
@@ -307,6 +308,8 @@ function getCourseData(mode) {
         return (typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null);
     } else if (mode === 'kanji_n1') {
         return (typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null);
+    } else if (mode === 'phrasal_verbs' || mode === 'phrasal') {
+        return (typeof PHRASAL_VERBS_DATA !== 'undefined' ? PHRASAL_VERBS_DATA : null);
     }
     return null;
 }
@@ -330,7 +333,7 @@ function renderCourseTabs() {
 
         const btn = document.createElement('button');
         btn.className = `tab-btn ${index === 0 ? 'active' : ''}`;
-        btn.textContent = `Módulo ${mod.module || (index + 1)}`;
+        btn.textContent = mod.level ? `Mod ${mod.module || (index + 1)} [${mod.level}]` : `Módulo ${mod.module || (index + 1)}`;
         btn.onclick = () => {
             document.querySelectorAll('#tabContainer .tab-btn').forEach(t => t.classList.remove('active'));
             btn.classList.add('active');
@@ -392,6 +395,7 @@ function toggleModuloConcluido(modIdx, mode) {
     else if (t === 'kanji_n3') { progressKey = 'progress_kanji_n3'; labelCurso = 'Kanji N3'; }
     else if (t === 'kanji_n2') { progressKey = 'progress_kanji_n2'; labelCurso = 'Kanji N2'; }
     else if (t === 'kanji_n1') { progressKey = 'progress_kanji_n1'; labelCurso = 'Kanji N1'; }
+    else if (t === 'phrasal_verbs' || t === 'phrasal') { progressKey = 'progress_phrasal_verbs'; labelCurso = 'Phrasal Verbs & Expressões'; }
     else return;
 
     if (!progressoGlobal[progressKey]) progressoGlobal[progressKey] = [];
@@ -429,10 +433,19 @@ function toggleModuloConcluido(modIdx, mode) {
 
     atualizarChecklistTabs(t);
     if (t === 'kanji') atualizarUIProgressoKanji();
+    if (t === 'phrasal_verbs' || t === 'phrasal') {
+        atualizarDropdownPhrasalVerbs();
+        renderPhrasalVerbsModule(modIdx);
+    }
 }
 
 
 function atualizarChecklistTabs(mode) {
+    const t = mode ? mode.toLowerCase() : '';
+    if (t === 'phrasal_verbs' || t === 'phrasal') {
+        atualizarDropdownPhrasalVerbs();
+        return;
+    }
     const wrappers = document.querySelectorAll('#tabContainer .tab-item-wrapper');
     wrappers.forEach(wrapper => {
         const modIdx = parseInt(wrapper.getAttribute('data-mod-index'));
@@ -450,6 +463,11 @@ function loadCourseModule(idx) {
 
     if (mode === 'kanji' || (mode && mode.startsWith('kanji_'))) {
         renderKanjiModule(idx);
+        return;
+    }
+
+    if (mode === 'phrasal_verbs' || mode === 'phrasal') {
+        renderPhrasalVerbsModule(idx);
         return;
     }
 
@@ -604,6 +622,807 @@ function verificarQuizEscolha(idx, respostaCorreta, respostaSelecionada, btnEl) 
         if (feed) feed.innerHTML = `<span style="color: #ef4444;">❌ Resposta incorreta. Correto: <strong>${respostaCorreta}</strong></span>`;
         playBeep('error');
     }
+}
+
+// ==========================================
+// CONTROLE DE NAVEGAÇÃO DE PHRASAL VERBS (NÍVEL + DROPDOWN)
+// ==========================================
+let pvNivelAtivo = 'A1';
+
+function filtrarNivelPhrasalVerbs(nivel, btnEl) {
+    if (!nivel) nivel = 'A1';
+    pvNivelAtivo = nivel.toUpperCase();
+
+    // Atualiza botões de nível
+    document.querySelectorAll('.pv-level-btn').forEach(btn => {
+        const isMatch = btn.getAttribute('data-level') === pvNivelAtivo;
+        btn.classList.toggle('active', isMatch);
+    });
+
+    const select = document.getElementById('pvModuleSelect');
+    if (!select) return;
+
+    const dataBase = getCourseData('phrasal_verbs');
+    if (!dataBase || !Array.isArray(dataBase)) return;
+
+    select.innerHTML = '';
+    let primeiroGlobalIndex = -1;
+
+    dataBase.forEach((mod, idx) => {
+        if (mod.level === pvNivelAtivo) {
+            if (primeiroGlobalIndex === -1) primeiroGlobalIndex = idx;
+            const isCompleted = eModuloAprendido(idx, 'phrasal_verbs');
+            const option = document.createElement('option');
+            option.value = idx;
+            option.textContent = `${isCompleted ? '✅' : '📖'} Módulo ${mod.module}: ${mod.title.replace(/^Module \d+:\s*/, '')}`;
+            select.appendChild(option);
+        }
+    });
+
+    if (primeiroGlobalIndex !== -1) {
+        select.value = primeiroGlobalIndex;
+        loadCourseModule(primeiroGlobalIndex);
+    }
+}
+
+function selecionarModuloDropdown(indexGlobal) {
+    const idx = parseInt(indexGlobal, 10);
+    if (isNaN(idx)) return;
+    loadCourseModule(idx);
+}
+
+function atualizarDropdownPhrasalVerbs() {
+    const select = document.getElementById('pvModuleSelect');
+    if (!select) return;
+
+    const dataBase = getCourseData('phrasal_verbs');
+    if (!dataBase || !Array.isArray(dataBase)) return;
+
+    const currentVal = parseInt(select.value, 10);
+
+    select.innerHTML = '';
+    dataBase.forEach((mod, idx) => {
+        if (mod.level === pvNivelAtivo) {
+            const isCompleted = eModuloAprendido(idx, 'phrasal_verbs');
+            const option = document.createElement('option');
+            option.value = idx;
+            option.textContent = `${isCompleted ? '✅' : '📖'} Módulo ${mod.module}: ${mod.title.replace(/^Module \d+:\s*/, '')}`;
+            select.appendChild(option);
+        }
+    });
+
+    if (!isNaN(currentVal)) {
+        select.value = currentVal;
+    }
+}
+
+// ==========================================
+// RENDERIZAÇÃO DO MÓDULO DE PHRASAL VERBS & EXPRESSÕES
+// ==========================================
+function renderPhrasalVerbsModule(moduleIndex) {
+    const container = document.getElementById('moduleDisplay');
+    const mode = document.body.getAttribute('data-mode') || courseMode;
+    const dataBase = getCourseData(mode) || (typeof PHRASAL_VERBS_DATA !== 'undefined' ? PHRASAL_VERBS_DATA : null);
+    if (!container || !dataBase) return;
+
+    const moduleData = dataBase[moduleIndex];
+    if (!moduleData) return;
+
+    container.innerHTML = '';
+
+    // Sincroniza o nível ativo e o dropdown
+    if (moduleData.level && moduleData.level !== pvNivelAtivo) {
+        pvNivelAtivo = moduleData.level;
+        document.querySelectorAll('.pv-level-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-level') === pvNivelAtivo);
+        });
+        atualizarDropdownPhrasalVerbs();
+    }
+    const select = document.getElementById('pvModuleSelect');
+    if (select) select.value = moduleIndex;
+
+    const isCompleted = eModuloAprendido(moduleIndex, 'phrasal_verbs');
+
+    // 1. Cabeçalho do Módulo
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'module-header';
+    headerDiv.style.marginBottom = '24px';
+
+    const levelBadgeColors = {
+        'A1': 'background: rgba(2, 128, 144, 0.15); color: #028090; border: 1px solid #028090;',
+        'A2': 'background: rgba(34, 197, 94, 0.15); color: #16a34a; border: 1px solid #16a34a;',
+        'B1': 'background: rgba(234, 179, 8, 0.15); color: #ca8a04; border: 1px solid #ca8a04;',
+        'B2': 'background: rgba(239, 68, 68, 0.15); color: #dc2626; border: 1px solid #dc2626;'
+    };
+    const bColor = levelBadgeColors[moduleData.level] || levelBadgeColors['A1'];
+
+    headerDiv.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:8px;">
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                <span class="badge" style="${bColor} font-weight:bold; padding:4px 12px; border-radius:12px; font-size:0.9rem;">
+                    🎯 Nível ${moduleData.level}
+                </span>
+                <span style="font-size:0.9rem; color:var(--text-muted); font-weight:600;">Módulo ${moduleData.module} de ${dataBase.length}</span>
+            </div>
+            <button onclick="toggleModuloConcluido(${moduleIndex}, 'phrasal_verbs')" class="btn-secundario" style="padding:6px 14px; font-size:0.88rem; font-weight:600; border-radius:10px; cursor:pointer;">
+                ${isCompleted ? '✅ Módulo Concluído' : '⚪ Marcar como Concluído'}
+            </button>
+        </div>
+        <h2 class="module-title" style="font-size:1.8rem; margin:6px 0 10px 0; color:var(--text-main); font-family:'Fredoka', sans-serif;">${moduleData.title}</h2>
+        <p style="color:var(--text-muted); font-size:1rem; line-height:1.5; margin:0;">${moduleData.description}</p>
+    `;
+    container.appendChild(headerDiv);
+
+    // 2. Lista de Cards dos Items
+    if (moduleData.items && Array.isArray(moduleData.items)) {
+        const itemsTitle = document.createElement('h3');
+        itemsTitle.className = 'section-title';
+        itemsTitle.style.marginTop = '20px';
+        itemsTitle.innerHTML = '⚡ Phrasal Verbs & Expressões do Módulo';
+        container.appendChild(itemsTitle);
+
+        moduleData.items.forEach((item, idx) => {
+            const card = document.createElement('div');
+            card.className = 'phrasal-card-layout';
+
+            const safeVerb = (item.verb || '').replace(/'/g, "\\'");
+            const safeType = item.breakdown ? item.breakdown.type : 'Phrasal Verb';
+            const safeRoot = item.breakdown ? item.breakdown.root : '';
+            const safeParticle = item.breakdown ? item.breakdown.particle : '';
+            const btnMicId = `btn-mic-pv-card-${moduleIndex}-${idx}`;
+
+            let examplesHtml = '';
+            if (item.examples && Array.isArray(item.examples)) {
+                examplesHtml = item.examples.map((ex, exIdx) => {
+                    const safeSent = (ex.sentence || '').replace(/'/g, "\\'");
+                    const exMicId = `btn-mic-pv-ex-${moduleIndex}-${idx}-${exIdx}`;
+                    return `
+                        <li style="margin-bottom:8px;">
+                            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                                <span style="font-weight:600; color:var(--text-main); font-size:0.95rem;">${ex.sentence}</span>
+                                <button class="audio-btn" onclick="speakKana('${safeSent}')" style="font-size:0.8rem; padding:2px 8px; border-radius:6px;" title="Ouvir pronunciar">🔊</button>
+                                <button class="btn-mic" id="${exMicId}" onclick="gravarEPronunciar('${safeSent}', '${exMicId}')" style="font-size:0.75rem; padding:2px 8px; border-radius:6px; background:rgba(37, 99, 235, 0.1); color:#2563eb; border:1px solid #2563eb; font-weight:600; cursor:pointer; transition:all 0.2s;" title="Treinar Pronúncia do Exemplo">🎙️ Treinar</button>
+                            </div>
+                            <small style="color:var(--text-muted); font-size:0.88rem; display:block; margin-top:2px;">${ex.translation}</small>
+                        </li>
+                    `;
+                }).join('');
+            }
+
+            card.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
+                    <div>
+                        <div class="phrasal-verb-title" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                            <span>${item.verb}</span>
+                            <button class="audio-btn" onclick="speakKana('${safeVerb}')" style="font-size:0.9rem; padding:4px 10px; border-radius:8px;" title="Ouvir pronunciar">🔊</button>
+                            <button class="btn-mic" id="${btnMicId}" onclick="gravarEPronunciar('${safeVerb}', '${btnMicId}')" style="font-size:0.85rem; padding:4px 12px; border-radius:8px; background:#2563eb; color:#fff; border:none; font-weight:bold; cursor:pointer; display:inline-flex; align-items:center; gap:4px; box-shadow:0 2px 6px rgba(37,99,235,0.3);" title="Treinar Pronúncia do Phrasal Verb">🎙️ Treinar Pronúncia</button>
+                        </div>
+                        <div class="phrasal-meaning">📌 ${item.meaning}</div>
+                    </div>
+                    <span class="particle-badge" style="font-size:0.85rem;">🏷️ ${safeType}</span>
+                </div>
+
+                <div class="particles-breakdown">
+                    <strong>🧩 Decomposição:</strong> Raiz: <em>${safeRoot}</em> + Partícula: <em>${safeParticle}</em>
+                </div>
+
+                <p style="margin:12px 0; color:var(--text-main); font-size:0.95rem; line-height:1.5;">
+                    💡 <strong>Explicação:</strong> ${item.explanation}
+                </p>
+
+                <div class="examples-box" style="background:var(--bg-color); border:1px solid var(--border-color); border-radius:12px; padding:14px; margin-top:12px;">
+                    <strong style="color:var(--phrasal-primary, var(--current-primary)); font-size:0.92rem; display:block; margin-bottom:8px;">📝 Exemplos de Uso Prático:</strong>
+                    <ul style="margin:0; padding-left:18px; line-height:1.6;">
+                        ${examplesHtml}
+                    </ul>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 3. Quiz Section
+    if (moduleData.quiz && Array.isArray(moduleData.quiz)) {
+        const quizContainer = document.createElement('div');
+        quizContainer.className = 'quiz-section';
+        quizContainer.style.marginTop = '32px';
+
+        let quizHtml = `<h3 class="section-title" style="margin-bottom:16px;">🧠 Exercícios de Fixação de Phrasal Verbs</h3>`;
+        quizHtml += moduleData.quiz.map((q, i) => renderQuizQuestion(q, i, 'phrasal_verbs')).join('');
+        quizContainer.innerHTML = quizHtml;
+        container.appendChild(quizContainer);
+    }
+}
+
+// ==========================================
+// RENDERIZAÇÃO DO GUIA DE PRONÚNCIA & FONÉTICA (EN-US - A1 a B2)
+// ==========================================
+const PTBR_VICIO_TOPICS = [
+    'p_a1_epenthesis_elimination',
+    'p_a2_th_sound_mastery',
+    'p_b1_dark_l_sound',
+    'p_b1_flap_t_glottal_stop',
+    'p_a1_vowels_cat_cut',
+    'p_a2_silent_letters_reductions'
+];
+
+function renderPronunciaModule(nivelFiltro = 'A1', searchQuery = '', vicioTopicId = 'all') {
+    const container = document.getElementById('pronunciaDisplay');
+    if (!container) return;
+
+    const dataBase = typeof PRONUNCIATION_DATA !== 'undefined' ? PRONUNCIATION_DATA : [];
+    if (!dataBase || dataBase.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);">Conteúdo de fonética sendo carregado...</div>`;
+        return;
+    }
+
+    container.innerHTML = '';
+    const query = searchQuery.trim().toLowerCase();
+
+    dataBase.forEach(secData => {
+        if (vicioTopicId === 'all' && nivelFiltro !== 'all' && secData.level !== nivelFiltro) return;
+
+        const filteredTopics = secData.topics.filter(t => {
+            if (vicioTopicId !== 'all') {
+                return t.id === vicioTopicId;
+            }
+            if (!query) return true;
+            return t.title.toLowerCase().includes(query) ||
+                   t.description.toLowerCase().includes(query) ||
+                   t.ipaSymbol.toLowerCase().includes(query) ||
+                   (t.minimalPairs && t.minimalPairs.some(p => p.word1.toLowerCase().includes(query) || p.word2.toLowerCase().includes(query)));
+        });
+
+        if (filteredTopics.length === 0) return;
+
+        const secBox = document.createElement('div');
+        secBox.className = 'pronuncia-section-box';
+        secBox.style.cssText = 'background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow);';
+
+        let topicsHtml = filteredTopics.map((t, topicIdx) => {
+            const isPTBRFocus = PTBR_VICIO_TOPICS.includes(t.id);
+            const ptbrBadge = isPTBRFocus ? `<span class="badge" style="background:rgba(234, 179, 8, 0.15); color:#d97706; border:1px solid #d97706; font-weight:bold; padding:4px 10px; border-radius:10px;">🇧🇷 Foco PT-BR</span>` : '';
+
+            let pairsHtml = '';
+            if (t.minimalPairs && Array.isArray(t.minimalPairs)) {
+                pairsHtml = `
+                    <div style="margin-top:16px; background:var(--bg-color); border:1px solid var(--border-color); border-radius:12px; padding:14px;">
+                        <strong style="color:#028090; font-size:0.95rem; display:block; margin-bottom:10px;">⚖️ Pares Mínimos & Treino de Fala:</strong>
+                        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px;">
+                            ${t.minimalPairs.map((p, pIdx) => {
+                                const btn1Id = `stt-btn-${t.id}-${pIdx}-1`;
+                                const fb1Id = `stt-fb-${t.id}-${pIdx}-1`;
+                                const btn2Id = `stt-btn-${t.id}-${pIdx}-2`;
+                                const fb2Id = `stt-fb-${t.id}-${pIdx}-2`;
+                                const safeW1 = p.word1.replace(/'/g, "\\'");
+                                const safeW2 = p.word2.replace(/'/g, "\\'");
+
+                                return `
+                                    <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:10px; padding:12px;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                                            <div>
+                                                <div style="font-weight:bold; font-size:1.1rem; color:var(--text-main);">${p.word1} <small style="color:#028090; font-weight:normal;">${p.ipa1}</small></div>
+                                                <small style="color:var(--text-muted);">${p.meaning1}</small>
+                                            </div>
+                                            <div style="display:flex; gap:6px;">
+                                                <button class="audio-btn" onclick="speakKana('${safeW1}')" style="font-size:1.1rem; padding:6px 10px; border-radius:8px;" title="Ouvir ${p.word1}">🔊</button>
+                                                <button id="${btn1Id}" class="stt-btn" onclick="testarPronunciaVoz('${safeW1}', '${btn1Id}', '${fb1Id}')" title="Praticar pronúncia de ${p.word1}">🎙️ Praticar</button>
+                                            </div>
+                                        </div>
+                                        <div id="${fb1Id}" style="margin-top:6px; display:none; border-top:1px dashed var(--border-color); padding-top:4px;"></div>
+                                    </div>
+                                    <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:10px; padding:12px;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                                            <div>
+                                                <div style="font-weight:bold; font-size:1.1rem; color:var(--text-main);">${p.word2} <small style="color:#028090; font-weight:normal;">${p.ipa2}</small></div>
+                                                <small style="color:var(--text-muted);">${p.meaning2}</small>
+                                            </div>
+                                            <div style="display:flex; gap:6px;">
+                                                <button class="audio-btn" onclick="speakKana('${safeW2}')" style="font-size:1.1rem; padding:6px 10px; border-radius:8px;" title="Ouvir ${p.word2}">🔊</button>
+                                                <button id="${btn2Id}" class="stt-btn" onclick="testarPronunciaVoz('${safeW2}', '${btn2Id}', '${fb2Id}')" title="Praticar pronúncia de ${p.word2}">🎙️ Praticar</button>
+                                            </div>
+                                        </div>
+                                        <div id="${fb2Id}" style="margin-top:6px; display:none; border-top:1px dashed var(--border-color); padding-top:4px;"></div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            let rulesHtml = (t.rules || []).map(r => `<li style="margin-bottom:6px; color:var(--text-main); font-size:0.95rem;">📌 ${r}</li>`).join('');
+
+            let quizHtml = '';
+            if (t.quiz && Array.isArray(t.quiz)) {
+                quizHtml = `
+                    <div style="margin-top:16px; border-top:1px dashed var(--border-color); padding-top:14px;">
+                        <strong style="color:#a855f7; font-size:0.95rem; display:block; margin-bottom:10px;">🧠 Teste de Fixação Fonética:</strong>
+                        ${t.quiz.map((q, qIdx) => renderQuizQuestion(q, topicIdx * 10 + qIdx, 'pronuncia')).join('')}
+                    </div>
+                `;
+            }
+
+            return `
+                <div style="margin-bottom:24px; border-bottom:1px solid var(--border-color); padding-bottom:20px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:8px;">
+                        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                            <h4 style="font-size:1.3rem; margin:0; color:var(--text-main); font-family:'Fredoka', sans-serif;">${t.title}</h4>
+                            ${ptbrBadge}
+                        </div>
+                        <span class="badge" style="background:rgba(2, 128, 144, 0.15); color:#028090; border:1px solid #028090; font-weight:bold; padding:4px 10px; border-radius:10px;">${t.ipaSymbol}</span>
+                    </div>
+                    <p style="color:var(--text-muted); font-size:0.98rem; margin:6px 0 12px 0;">${t.description}</p>
+                    <ul style="margin:0; padding-left:18px; list-style:none;">${rulesHtml}</ul>
+                    ${pairsHtml}
+                    ${quizHtml}
+                </div>
+            `;
+        }).join('');
+
+        secBox.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+                <h3 style="font-size:1.5rem; color:#028090; margin:0; font-family:'Fredoka', sans-serif;">${secData.sectionTitle}</h3>
+                <span class="badge" style="background:rgba(168, 85, 247, 0.15); color:#a855f7; border:1px solid #a855f7; font-weight:bold; padding:4px 12px; border-radius:12px;">${secData.levelBadge}</span>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.98rem; margin-bottom:20px;">${secData.description}</p>
+            ${topicsHtml}
+        `;
+        container.appendChild(secBox);
+    });
+}
+
+function filtrarNivelPronuncia(lvl, btn) {
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    document.querySelectorAll('.vicio-tag-btn').forEach(b => b.classList.remove('active'));
+    const clearBtn = document.querySelector('.vicio-tag-btn.clear-btn');
+    if (clearBtn) clearBtn.classList.add('active');
+
+    const input = document.getElementById('pronunciaSearchInput');
+    const query = input ? input.value : '';
+    renderPronunciaModule(lvl, query, 'all');
+}
+
+function filtrarVicioPTBR(topicId, btn) {
+    if (btn && btn.parentElement) {
+        document.querySelectorAll('.vicio-tag-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    
+    if (topicId !== 'all') {
+        document.querySelectorAll('.pv-level-selector .pv-level-btn').forEach(b => b.classList.remove('active'));
+    } else {
+        document.querySelectorAll('.pv-level-selector .pv-level-btn').forEach(b => b.classList.remove('active'));
+        const a1Btn = document.querySelector('.pv-level-selector .pv-level-btn[data-level="A1"]');
+        if (a1Btn) a1Btn.classList.add('active');
+    }
+
+    const input = document.getElementById('pronunciaSearchInput');
+    if (input) input.value = '';
+
+    renderPronunciaModule(topicId === 'all' ? 'A1' : 'all', '', topicId);
+}
+
+function filtrarPronunciaPorSearch(query) {
+    const activeBtn = document.querySelector('.pv-level-selector .pv-level-btn.active');
+    const lvl = activeBtn ? activeBtn.getAttribute('data-level') : 'A1';
+    const activeVicio = document.querySelector('.vicio-tag-btn.active:not(.clear-btn)');
+    const vicioId = activeVicio ? activeVicio.getAttribute('data-topic-id') : 'all';
+    renderPronunciaModule(vicioId !== 'all' ? 'all' : lvl, query, vicioId);
+}
+
+// ==========================================
+// RECONHECIMENTO DE VOZ (SPEECH RECOGNITION)
+// ==========================================
+function testarPronunciaVoz(targetWord, btnId, feedbackId) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const btn = document.getElementById(btnId);
+    const fb = document.getElementById(feedbackId);
+
+    if (!SpeechRecognition) {
+        mostrarToast('⚠️ <strong>Navegador sem Suporte:</strong> O reconhecimento de voz exige o Google Chrome, Edge ou Safari.');
+        if (fb) {
+            fb.style.display = 'block';
+            fb.innerHTML = `<span style="color:#ef4444; font-size:0.88rem;">⚠️ Seu navegador não suporta reconhecimento de voz. Recomendamos o Google Chrome ou Edge.</span>`;
+        }
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    if (btn) {
+        btn.classList.add('listening');
+        btn.innerHTML = 'Ouvindo... 🔴';
+    }
+    if (fb) {
+        fb.style.display = 'block';
+        fb.innerHTML = `<span style="color:var(--text-muted); font-size:0.88rem;">🎙️ Fale agora em inglês...</span>`;
+    }
+
+    recognition.onresult = (event) => {
+        const transcript = (event.results && event.results[0] && event.results[0][0] && event.results[0][0].transcript) ? event.results[0][0].transcript : '';
+        const cleanTarget = targetWord.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim();
+        const cleanTrans = transcript.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim();
+
+        const isMatch = cleanTrans === cleanTarget || cleanTrans.includes(cleanTarget) || cleanTarget.includes(cleanTrans);
+
+        if (isMatch) {
+            if (fb) {
+                fb.innerHTML = `<span style="color:#22c55e; font-weight:bold; font-size:0.9rem;">🟢 Perfeito! Reconhecido: "${transcript}"</span>`;
+            }
+            playBeep('success');
+            adicionarXP(10, 'Treino de Pronúncia em Inglês');
+            mostrarToast(`✨ <strong>Excelente Pronúncia!</strong> Ouvimos perfeitamente <strong>"${transcript}"</strong>!`);
+        } else {
+            if (fb) {
+                fb.innerHTML = `<span style="color:#ef4444; font-weight:bold; font-size:0.9rem;">🔴 Quase lá! Ouvimos: "${transcript}". Tente novamente.</span>`;
+            }
+            playBeep('error');
+        }
+    };
+
+    recognition.onerror = (event) => {
+        console.warn('Speech recognition error:', event.error);
+        if (fb) {
+            fb.innerHTML = `<span style="color:#ef4444; font-size:0.88rem;">⚠️ Não ouvimos com clareza (${event.error}). Fale mais perto do microfone.</span>`;
+        }
+    };
+
+    recognition.onend = () => {
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Praticar';
+        }
+    };
+
+    try {
+        recognition.start();
+    } catch (err) {
+        console.error('Speech recognition start error:', err);
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Praticar';
+        }
+    }
+}
+
+// ==========================================
+// MODO QUIZ INTERATIVO DE PRONÚNCIA (GAMEPLAY & ASSESSMENTS)
+// ==========================================
+let pronunciaQuizState = {
+    mode: 'select',
+    level: 'all',
+    questions: [],
+    currentIndex: 0,
+    score: 0,
+    answered: false
+};
+
+function obterQuestoesPronuncia(levelFilter = 'all') {
+    const dataBase = typeof PRONUNCIATION_DATA !== 'undefined' ? PRONUNCIATION_DATA : [];
+    let allQs = [];
+
+    dataBase.forEach(secData => {
+        if (levelFilter !== 'all' && secData.level !== levelFilter) return;
+
+        (secData.topics || []).forEach(t => {
+            if (t.quiz && Array.isArray(t.quiz)) {
+                t.quiz.forEach(q => {
+                    const shuffledOptions = q.options && Array.isArray(q.options)
+                        ? [...q.options].sort(() => Math.random() - 0.5)
+                        : (q.options || []);
+                    allQs.push({
+                        ...q,
+                        options: shuffledOptions,
+                        level: secData.level,
+                        levelBadge: secData.levelBadge,
+                        topicTitle: t.title
+                    });
+                });
+            }
+        });
+    });
+
+    return allQs;
+}
+
+function obterHighScoresPronuncia() {
+    try {
+        const raw = localStorage.getItem('pronuncia_quiz_highscores');
+        return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+        return {};
+    }
+}
+
+function salvarHighScorePronuncia(level, pct) {
+    try {
+        const current = obterHighScoresPronuncia();
+        const prev = current[level] || 0;
+        if (pct > prev) {
+            current[level] = pct;
+            localStorage.setItem('pronuncia_quiz_highscores', JSON.stringify(current));
+        }
+    } catch (e) {
+        console.warn('Erro ao salvar high score no localStorage', e);
+    }
+}
+
+function abrirModoQuizPronuncia(mode = 'select', level = 'A1', btn = null) {
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    const container = document.getElementById('pronunciaDisplay');
+    if (!container) return;
+
+    if (mode === 'select') {
+        renderQuizSelectionHub(container);
+        return;
+    }
+
+    if (mode === 'start') {
+        let qs = obterQuestoesPronuncia(level);
+        if (level === 'all') {
+            qs = qs.sort(() => Math.random() - 0.5).slice(0, 10);
+        }
+
+        if (!qs || qs.length === 0) {
+            container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);">Nenhuma questão encontrada para este nível no momento.</div>`;
+            return;
+        }
+
+        pronunciaQuizState = {
+            mode: 'quiz',
+            level: level,
+            questions: qs,
+            currentIndex: 0,
+            score: 0,
+            answered: false
+        };
+
+        renderPronunciaQuizQuestion();
+    }
+}
+
+function renderQuizSelectionHub(container) {
+    const highScores = obterHighScoresPronuncia();
+    const levels = [
+        { id: 'A1', name: 'Desafio Nível A1', badge: '🔵 Level A1', desc: 'Sons Vocálicos, H aspirado/mudo, Números e Consoantes Finais.' },
+        { id: 'A2', name: 'Desafio Nível A2', badge: '🟢 Level A2', desc: 'Sufixo -ED do Passado, Plurais -S, Som TH e Vogal Schwa.' },
+        { id: 'B1', name: 'Desafio Nível B1', badge: '🟡 Level B1', desc: 'Connected Speech I, Flap T, Word Stress e Homófonos.' },
+        { id: 'B2', name: 'Desafio Nível B2', badge: '🔴 Level B2', desc: 'Assimilação, Elisão, Entonação, Diftongos e Marcas Globais.' }
+    ];
+
+    let cardsHtml = levels.map(lvl => {
+        const qs = obterQuestoesPronuncia(lvl.id);
+        const hs = highScores[lvl.id] !== undefined ? `${highScores[lvl.id]}%` : 'Sem registro';
+        const isPassed = (highScores[lvl.id] || 0) >= 80;
+        const checkBadge = isPassed ? `<span style="background:rgba(34, 197, 94, 0.15); color:#22c55e; border:1px solid #22c55e; padding:3px 8px; border-radius:8px; font-weight:bold; font-size:0.85rem;">✅ Domínio Aprovado (${hs})</span>` : (highScores[lvl.id] ? `<span style="background:rgba(234, 179, 8, 0.15); color:#d97706; border:1px solid #d97706; padding:3px 8px; border-radius:8px; font-weight:bold; font-size:0.85rem;">Recorde: ${hs}</span>` : '');
+
+        return `
+            <div class="quiz-select-card" onclick="abrirModoQuizPronuncia('start', '${lvl.id}')">
+                <div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <span class="badge" style="background:rgba(168, 85, 247, 0.15); color:#a855f7; border:1px solid #a855f7; font-weight:bold; padding:4px 10px; border-radius:10px;">${lvl.badge}</span>
+                        ${checkBadge}
+                    </div>
+                    <h3 style="font-size:1.3rem; margin:0 0 8px 0; color:var(--text-main); font-family:'Fredoka', sans-serif;">${lvl.name}</h3>
+                    <p style="color:var(--text-muted); font-size:0.92rem; margin:0 0 14px 0;">${lvl.desc}</p>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--border-color); padding-top:12px; margin-top:12px;">
+                    <small style="color:var(--text-muted); font-weight:bold;">📝 ${qs.length} questões</small>
+                    <span style="color:#a855f7; font-weight:bold; font-size:0.95rem;">Iniciar Desafio ➔</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = `
+        <div style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+                <div>
+                    <h2 style="font-size:1.6rem; color:#a855f7; margin:0 0 6px 0; font-family:'Fredoka', sans-serif;">🧠 Modo Quiz / Avaliação de Pronúncia</h2>
+                    <p style="color:var(--text-muted); margin:0; font-size:0.98rem;">Escolha um nível específico para testar sua evolução ou faça o simulado rápido misturado.</p>
+                </div>
+                <button onclick="abrirModoQuizPronuncia('start', 'all')" style="background:linear-gradient(135deg, #a855f7, #7c3aed); color:#fff; border:none; padding:12px 20px; border-radius:12px; font-weight:bold; font-size:1rem; cursor:pointer; box-shadow:0 4px 12px rgba(168, 85, 247, 0.3);">
+                    ⚡ Quiz Rápido Geral (10 Questões Mistas)
+                </button>
+            </div>
+            
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:20px;">
+                ${cardsHtml}
+            </div>
+        </div>
+    `;
+}
+
+function renderPronunciaQuizQuestion() {
+    const container = document.getElementById('pronunciaDisplay');
+    if (!container) return;
+
+    const { questions, currentIndex, answered } = pronunciaQuizState;
+    const currentQ = questions[currentIndex];
+    if (!currentQ) {
+        finalizarQuizPronuncia();
+        return;
+    }
+
+    const total = questions.length;
+    const pctProgress = Math.round(((currentIndex + 1) / total) * 100);
+
+    const optionsHtml = currentQ.options.map((opt, optIdx) => {
+        return `
+            <button id="quiz-opt-${optIdx}" class="quiz-opt-btn" onclick="responderQuizPronuncia('${opt.replace(/'/g, "\\'")}', this)" ${answered ? 'disabled' : ''}>
+                <span>${opt}</span>
+                <span class="opt-icon" style="font-weight:bold;"></span>
+            </button>
+        `;
+    }).join('');
+
+    container.innerHTML = `
+        <div style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; margin-bottom:28px; box-shadow:var(--shadow); max-width:800px; margin-left:auto; margin-right:auto;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+                <span class="badge" style="background:rgba(168, 85, 247, 0.15); color:#a855f7; border:1px solid #a855f7; font-weight:bold; padding:4px 12px; border-radius:10px;">
+                    ${currentQ.levelBadge || '🧠 Quiz de Pronúncia'}
+                </span>
+                <span style="font-weight:bold; color:var(--text-muted); font-size:0.95rem;">
+                    Pergunta ${currentIndex + 1} de ${total}
+                </span>
+            </div>
+
+            <div style="width:100%; background:var(--bg-color); height:8px; border-radius:10px; overflow:hidden; margin-bottom:20px; border:1px solid var(--border-color);">
+                <div style="width:${pctProgress}%; background:linear-gradient(90deg, #028090, #a855f7); height:100%; transition:width 0.3s ease;"></div>
+            </div>
+
+            <small style="color:#028090; font-weight:bold; display:block; margin-bottom:6px;">📌 Tópico: ${currentQ.topicTitle || 'Fonética'}</small>
+            <h3 style="font-size:1.35rem; color:var(--text-main); margin:0 0 20px 0; font-family:'Fredoka', sans-serif; line-height:1.4;">
+                ${currentQ.q}
+            </h3>
+
+            <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+                ${optionsHtml}
+            </div>
+
+            <div id="quiz-explanation-panel" class="quiz-explanation-box" style="display:none; background:var(--bg-color); border:1px solid var(--border-color); border-radius:12px; padding:16px; margin-bottom:20px;">
+                <strong id="quiz-feedback-title" style="font-size:1rem; display:block; margin-bottom:6px;"></strong>
+                <p style="margin:0; color:var(--text-main); font-size:0.95rem; line-height:1.5;">💡 <strong>Explicação:</strong> ${currentQ.explanation}</p>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border-color); padding-top:16px;">
+                <button onclick="abrirModoQuizPronuncia('select')" style="background:transparent; color:var(--text-muted); border:1px solid var(--border-color); padding:8px 16px; border-radius:10px; font-weight:bold; cursor:pointer;">
+                    ⬅ Cancelar Quiz
+                </button>
+                <button id="btn-quiz-next" onclick="proximaPerguntaQuizPronuncia()" style="display:none; background:#a855f7; color:#fff; border:none; padding:10px 22px; border-radius:10px; font-weight:bold; font-size:1rem; cursor:pointer; box-shadow:0 4px 12px rgba(168, 85, 247, 0.3);">
+                    ${currentIndex + 1 === total ? 'Ver Resultado Final 🏁' : 'Próxima Pergunta ➔'}
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+function responderQuizPronuncia(selectedOpt, btnEl) {
+    if (pronunciaQuizState.answered) return;
+
+    pronunciaQuizState.answered = true;
+    const { questions, currentIndex } = pronunciaQuizState;
+    const currentQ = questions[currentIndex];
+    const isCorrect = selectedOpt === currentQ.a;
+
+    const optButtons = document.querySelectorAll('.quiz-opt-btn');
+    optButtons.forEach(b => {
+        b.disabled = true;
+        const optText = b.querySelector('span').innerText.trim();
+        if (optText === currentQ.a) {
+            b.classList.add('correct');
+            b.querySelector('.opt-icon').innerHTML = '🟢';
+        }
+    });
+
+    if (isCorrect) {
+        pronunciaQuizState.score++;
+        btnEl.classList.add('correct');
+        playBeep('success');
+        adicionarXP(10, 'Acerto no Quiz de Pronúncia');
+    } else {
+        btnEl.classList.add('wrong');
+        btnEl.querySelector('.opt-icon').innerHTML = '🔴';
+        playBeep('error');
+    }
+
+    const expPanel = document.getElementById('quiz-explanation-panel');
+    const fbTitle = document.getElementById('quiz-feedback-title');
+    const nextBtn = document.getElementById('btn-quiz-next');
+
+    if (expPanel && fbTitle) {
+        expPanel.style.display = 'block';
+        if (isCorrect) {
+            fbTitle.style.color = '#22c55e';
+            fbTitle.innerHTML = '✨ Resposta Correta!';
+        } else {
+            fbTitle.style.color = '#ef4444';
+            fbTitle.innerHTML = '❌ Resposta Incorreta.';
+        }
+    }
+
+    if (nextBtn) {
+        nextBtn.style.display = 'block';
+    }
+}
+
+function proximaPerguntaQuizPronuncia() {
+    pronunciaQuizState.currentIndex++;
+    pronunciaQuizState.answered = false;
+
+    if (pronunciaQuizState.currentIndex >= pronunciaQuizState.questions.length) {
+        finalizarQuizPronuncia();
+    } else {
+        renderPronunciaQuizQuestion();
+    }
+}
+
+function finalizarQuizPronuncia() {
+    const container = document.getElementById('pronunciaDisplay');
+    if (!container) return;
+
+    const { score, questions, level } = pronunciaQuizState;
+    const total = questions.length;
+    const pct = Math.round((score / total) * 100);
+
+    salvarHighScorePronuncia(level, pct);
+
+    let trophy = '🏆';
+    let msg = 'Excelente! Domínio nativo da regra!';
+    let color = '#22c55e';
+
+    if (pct < 70) {
+        trophy = '📚';
+        msg = 'Vale a pena revisar os módulos deste nível.';
+        color = '#ef4444';
+    } else if (pct < 90) {
+        trophy = '👍';
+        msg = 'Muito bom! Poucos detalhes a ajustar.';
+        color = '#f59e0b';
+    }
+
+    container.innerHTML = `
+        <div style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:32px 24px; text-align:center; max-width:650px; margin:0 auto; box-shadow:var(--shadow);">
+            <div style="font-size:3.5rem; margin-bottom:12px;">${trophy}</div>
+            <h2 style="font-size:1.8rem; color:${color}; margin:0 0 8px 0; font-family:'Fredoka', sans-serif;">${msg}</h2>
+            <p style="color:var(--text-muted); font-size:1rem; margin-bottom:24px;">Você concluiu o teste de pronúncia com sucesso.</p>
+
+            <div style="background:var(--bg-color); border:1px solid var(--border-color); border-radius:14px; padding:20px; margin-bottom:24px; display:flex; justify-content:space-around; align-items:center;">
+                <div>
+                    <span style="font-size:0.9rem; color:var(--text-muted); display:block;">Acertos</span>
+                    <strong style="font-size:1.8rem; color:var(--text-main);">${score} / ${total}</strong>
+                </div>
+                <div style="border-left:1px solid var(--border-color); height:40px;"></div>
+                <div>
+                    <span style="font-size:0.9rem; color:var(--text-muted); display:block;">Aproveitamento</span>
+                    <strong style="font-size:1.8rem; color:${color};">${pct}%</strong>
+                </div>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+                <button onclick="abrirModoQuizPronuncia('start', '${level}')" style="background:#a855f7; color:#fff; border:none; padding:12px 20px; border-radius:10px; font-weight:bold; cursor:pointer; font-size:1rem;">
+                    🔄 Refazer Quiz
+                </button>
+                <button onclick="abrirModoQuizPronuncia('select')" style="background:var(--bg-color); color:var(--text-main); border:1px solid var(--border-color); padding:12px 20px; border-radius:10px; font-weight:bold; cursor:pointer; font-size:1rem;">
+                    ⚡ Outro Nível
+                </button>
+                <button onclick="filtrarNivelPronuncia('A1', document.querySelector('.pv-level-selector .pv-level-btn'))" style="background:transparent; color:var(--text-muted); border:1px solid var(--border-color); padding:12px 20px; border-radius:10px; font-weight:bold; cursor:pointer; font-size:1rem;">
+                    ⬅ Voltar ao Guia
+                </button>
+            </div>
+        </div>
+    `;
 }
 
 // ==========================================
@@ -785,7 +1604,7 @@ function renderKanjiModule(moduleIndex) {
                             <div class="reading-val onyomi-val">${onVal}</div>
                         </div>
                         ${mnemonicHTML}
-                        ${renderizarRadicaisKanji(item.radicals || [{ char: "亻", name: "Pessoa" }, { char: "木", name: "Árvore" }])}
+                        ${renderizarRadicaisKanji(item.radicals)}
                         ${examplesHTML}
                     </div>
                 </div>
@@ -895,7 +1714,8 @@ function playReadingTextAudio(htmlText, rate = 1.0) {
 
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = 'ja-JP';
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+    utterance.lang = isEnglish ? 'en-US' : 'ja-JP';
     utterance.rate = rate;
     window.speechSynthesis.speak(utterance);
 }
@@ -907,7 +1727,8 @@ function playKanjiAudio(text, event) {
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'ja-JP';
+        const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+        utterance.lang = isEnglish ? 'en-US' : 'ja-JP';
         utterance.rate = 0.85;
         window.speechSynthesis.speak(utterance);
     }
@@ -924,28 +1745,77 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 let recognition = null;
 if (SpeechRecognition) {
     recognition = new SpeechRecognition();
-    recognition.lang = 'ja-JP'; recognition.interimResults = false; recognition.maxAlternatives = 10;
+    const isEnglishMode = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+    recognition.lang = isEnglishMode ? 'en-US' : 'ja-JP'; recognition.interimResults = false; recognition.maxAlternatives = 10;
     recognition.onresult = (event) => {
-        document.getElementById('g-mic-btn').classList.remove('listening');
+        const btn = document.getElementById('g-mic-btn');
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Falar Agora';
+        }
         let transcripts = [];
         for (let i = 0; i < event.results[0].length; i++) transcripts.push(event.results[0][i].transcript.trim());
         checkSpeechAnswer(transcripts);
     };
     recognition.onerror = (e) => {
-        document.getElementById('g-mic-btn').classList.remove('listening');
+        const btn = document.getElementById('g-mic-btn');
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Falar Agora';
+        }
         if (e.error === 'not-allowed') alert("Acesso ao microfone negado!");
         gProc = false;
     };
-    recognition.onend = () => { document.getElementById('g-mic-btn').classList.remove('listening'); if (!gProc) gProc = false; }
+    recognition.onend = () => {
+        const btn = document.getElementById('g-mic-btn');
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Falar Agora';
+        }
+        if (!gProc) gProc = false;
+    };
+}
+
+function isEnglishMinigame() {
+    if (typeof document !== 'undefined' && document.body) {
+        if (document.body.getAttribute('data-lang') === 'english') return true;
+    }
+    if (typeof window !== 'undefined' && window.location) {
+        return window.location.pathname.includes('/en-US/') || window.location.pathname.includes('minigame_ingles.html');
+    }
+    return false;
+}
+
+function normalizeStringMatch(str) {
+    if (!str) return "";
+    return str.normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .replace(/[^a-zA-Z0-9\s]/g, "")
+              .trim()
+              .toLowerCase();
+}
+
+function formatMinigameLives(lives) {
+    if (isInfiniteLives) return "♾️";
+    if (typeof lives === 'string' && lives.includes('♾️')) return "♾️";
+    const n = parseInt(lives);
+    if (isNaN(n) || n <= 0) return "💔";
+    return Array(n).fill("❤️").join(" ");
 }
 
 function initGameScreen() {
-    globalHighScore = parseInt(localStorage.getItem('ja_highScore')) || 0;
-    globalMaxCombo = parseInt(localStorage.getItem('ja_maxCombo')) || 0;
+    if (isEnglishMinigame()) {
+        globalHighScore = parseInt(localStorage.getItem('en_highScore')) || 0;
+        globalMaxCombo = parseInt(localStorage.getItem('en_maxCombo')) || 0;
+    } else {
+        globalHighScore = parseInt(localStorage.getItem('ja_highScore')) || 0;
+        globalMaxCombo = parseInt(localStorage.getItem('ja_maxCombo')) || 0;
+    }
+
     const hsElem = document.getElementById('menu-high-score');
     const mcElem = document.getElementById('menu-max-combo');
     if (hsElem) hsElem.textContent = globalHighScore;
-    if (mcElem) mcElem.textContent = globalMaxCombo;
+    if (mcElem) mcElem.textContent = isEnglishMinigame() ? `🔥 ${globalMaxCombo}x` : `${globalMaxCombo}x`;
 
     document.querySelectorAll('.script-lbl').forEach(lbl => {
         lbl.onclick = () => {
@@ -965,8 +1835,15 @@ function initGameScreen() {
 
     const gameInput = document.getElementById('g-ans-input');
     if (gameInput) {
+        gameInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                checkTypingAnswer();
+            }
+        });
+
         gameInput.addEventListener('input', function () {
-            if (!gCard) return;
+            if (!gCard || isEnglishMinigame()) return;
             let text = this.value;
             const map = gCard.s === 'H' ? (typeof ROMAJI_HIRA_MAP !== 'undefined' ? ROMAJI_HIRA_MAP : {}) : (typeof ROMAJI_KATA_MAP !== 'undefined' ? ROMAJI_KATA_MAP : {});
             const sokuon = gCard.s === 'H' ? 'っ$1' : 'ッ$1'; const nFinal = gCard.s === 'H' ? 'ん$1' : 'ン$1';
@@ -989,8 +1866,15 @@ function showGameTab(tab) {
     document.getElementById('game-play-screen').style.display = 'none';
     document.getElementById('game-over-screen').style.display = 'none';
     if (tab === 'menu') {
-        document.getElementById('menu-high-score').textContent = globalHighScore;
-        document.getElementById('menu-max-combo').textContent = globalMaxCombo;
+        if (isEnglishMinigame()) {
+            const hs = parseInt(localStorage.getItem('en_highScore')) || 0;
+            const mc = parseInt(localStorage.getItem('en_maxCombo')) || 0;
+            document.getElementById('menu-high-score').textContent = hs;
+            document.getElementById('menu-max-combo').textContent = `🔥 ${mc}x`;
+        } else {
+            document.getElementById('menu-high-score').textContent = globalHighScore;
+            document.getElementById('menu-max-combo').textContent = globalMaxCombo;
+        }
         document.getElementById('game-menu-screen').style.display = 'block';
     } else if (tab === 'play') {
         document.getElementById('game-play-screen').style.display = 'block';
@@ -1000,8 +1884,15 @@ function showGameTab(tab) {
 }
 
 function exitGame() {
-    if (!isInfiniteLives && gScore > globalHighScore) { globalHighScore = gScore; localStorage.setItem('ja_highScore', globalHighScore); }
-    if (!isInfiniteLives && gMaxStreak > globalMaxCombo) { globalMaxCombo = gMaxStreak; localStorage.setItem('ja_maxCombo', globalMaxCombo); }
+    if (isEnglishMinigame()) {
+        const enHs = parseInt(localStorage.getItem('en_highScore')) || 0;
+        const enMc = parseInt(localStorage.getItem('en_maxCombo')) || 0;
+        if (!isInfiniteLives && gScore > enHs) { localStorage.setItem('en_highScore', gScore); }
+        if (!isInfiniteLives && gMaxStreak > enMc) { localStorage.setItem('en_maxCombo', gMaxStreak); }
+    } else {
+        if (!isInfiniteLives && gScore > globalHighScore) { globalHighScore = gScore; localStorage.setItem('ja_highScore', globalHighScore); }
+        if (!isInfiniteLives && gMaxStreak > globalMaxCombo) { globalMaxCombo = gMaxStreak; localStorage.setItem('ja_maxCombo', globalMaxCombo); }
+    }
     showGameTab('menu');
 }
 
@@ -1014,94 +1905,118 @@ function shuffleArray(arr) {
 }
 
 function startGame() {
-    const mode = document.querySelector('input[name="script_mode"]:checked').value;
-    inputMode = document.querySelector('input[name="input_mode"]:checked').value;
-    isInfiniteLives = document.getElementById('g-infinite-lives').checked;
+    const isEn = isEnglishMinigame();
+    const modeEl = document.querySelector('input[name="script_mode"]:checked');
+    const mode = modeEl ? modeEl.value : 'all';
 
-    const checkedMods = Array.from(document.querySelectorAll('.cat-cb:checked')).map(c => c.value).filter(val => val.startsWith('mod'));
-    const checkedWords = Array.from(document.querySelectorAll('.cat-cb:checked')).map(c => c.value).filter(val => val.startsWith('words_'));
+    const inputModeEl = document.querySelector('input[name="input_mode"]:checked');
+    inputMode = inputModeEl ? inputModeEl.value : 'typing';
+    isInfiniteLives = document.getElementById('g-infinite-lives') ? document.getElementById('g-infinite-lives').checked : false;
 
-    if (!checkedMods.length && !checkedWords.length) return alert('Selecione pelo menos uma categoria!');
+    const checkedBoxes = Array.from(document.querySelectorAll('.cat-cb:checked')).map(c => c.value);
+
+    if (!checkedBoxes.length) return alert('Selecione pelo menos uma categoria!');
 
     playBeep('success');
-
-    let allowedHiraChars = new Set();
-    let allowedKataChars = new Set();
-    const modsToUse = checkedMods.length > 0 ? checkedMods : ['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6'];
-
-    modsToUse.forEach(mod => {
-        if (typeof RAW_H !== 'undefined' && RAW_H[mod]) { RAW_H[mod].forEach(i => { Array.from(i.k).forEach(ch => allowedHiraChars.add(ch)); }); }
-        if (typeof RAW_K !== 'undefined' && RAW_K[mod]) { RAW_K[mod].forEach(i => { Array.from(i.k).forEach(ch => allowedKataChars.add(ch)); }); }
-    });
-
     gPool = [];
-    checkedMods.forEach(cat => {
-        let modNum = parseInt(cat.replace('mod', ''));
 
-        // Carrega Hiragana
-        if ((mode === 'hiragana' || mode === 'both' || mode === 'all') && typeof RAW_H !== 'undefined' && RAW_H[cat]) {
-            RAW_H[cat].forEach(i => gPool.push({ ...i, s: 'H', c: CAT_NAMES[cat] || cat.toUpperCase() }));
-        }
-        // Carrega Katakana
-        if ((mode === 'katakana' || mode === 'both' || mode === 'all') && typeof RAW_K !== 'undefined' && RAW_K[cat]) {
-            RAW_K[cat].forEach(i => gPool.push({ ...i, s: 'K', c: CAT_NAMES[cat] || cat.toUpperCase() }));
-        }
-        // Carrega Kanjis de acordo com o modo selecionado (kanji_n5, kanji_n4, kanji_n3, kanji_n2, kanji_n1, kanji_all, kanji ou all)
-        const isKanjiMode = mode.startsWith('kanji') || mode === 'kanji' || mode === 'all';
-        if (isKanjiMode) {
-            const allKanjiDatasets = [
-                { id: 'kanji_n5', data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, tag: 'Kanji N5' },
-                { id: 'kanji_n4', data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, tag: 'Kanji N4' },
-                { id: 'kanji_n3', data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, tag: 'Kanji N3' },
-                { id: 'kanji_n2', data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, tag: 'Kanji N2' },
-                { id: 'kanji_n1', data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, tag: 'Kanji N1' }
-            ];
+    if (isEn) {
+        const dataBase = typeof MINIGAME_ENGLISH_DATA !== 'undefined' ? MINIGAME_ENGLISH_DATA : null;
 
-            let activeKanjiDatasets = [];
-            if (mode === 'kanji_n5') {
-                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n5');
-            } else if (mode === 'kanji_n4') {
-                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n4');
-            } else if (mode === 'kanji_n3') {
-                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n3');
-            } else if (mode === 'kanji_n2') {
-                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n2');
-            } else if (mode === 'kanji_n1') {
-                activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === 'kanji_n1');
+        checkedBoxes.forEach(levelKey => {
+            if (dataBase && dataBase[levelKey] && Array.isArray(dataBase[levelKey])) {
+                dataBase[levelKey].forEach(item => {
+                    gPool.push({ ...item, s: 'EN', c: item.c || `Nível ${levelKey}` });
+                });
             } else {
-                // 'kanji_all', 'kanji' ou 'all'
-                activeKanjiDatasets = allKanjiDatasets;
+                const courseArrName = `CURSO_ENGLISH_${levelKey}_DADOS`;
+                const courseArr = typeof window !== 'undefined' ? window[courseArrName] : null;
+                if (courseArr && Array.isArray(courseArr)) {
+                    courseArr.forEach(m => {
+                        (m.stage2_drops || []).forEach(d => {
+                            if (d.kanji && d.translation) {
+                                const k = d.kanji.split('/')[0].trim();
+                                gPool.push({
+                                    k: k,
+                                    r: d.romaji || '',
+                                    m: d.translation,
+                                    s: 'EN',
+                                    c: `Nível ${levelKey}`,
+                                    a: d.translation.split(/[\/,;]/).map(s => s.trim().toLowerCase())
+                                });
+                            }
+                        });
+                    });
+                }
+            }
+        });
+    } else {
+        const checkedMods = checkedBoxes.filter(val => val.startsWith('mod'));
+        const checkedWords = checkedBoxes.filter(val => val.startsWith('words_'));
+
+        let allowedHiraChars = new Set();
+        let allowedKataChars = new Set();
+        const modsToUse = checkedMods.length > 0 ? checkedMods : ['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6'];
+
+        modsToUse.forEach(mod => {
+            if (typeof RAW_H !== 'undefined' && RAW_H[mod]) { RAW_H[mod].forEach(i => { Array.from(i.k).forEach(ch => allowedHiraChars.add(ch)); }); }
+            if (typeof RAW_K !== 'undefined' && RAW_K[mod]) { RAW_K[mod].forEach(i => { Array.from(i.k).forEach(ch => allowedKataChars.add(ch)); }); }
+        });
+
+        checkedMods.forEach(cat => {
+            let modNum = parseInt(cat.replace('mod', ''));
+
+            if ((mode === 'hiragana' || mode === 'both' || mode === 'all') && typeof RAW_H !== 'undefined' && RAW_H[cat]) {
+                RAW_H[cat].forEach(i => gPool.push({ ...i, s: 'H', c: CAT_NAMES[cat] || cat.toUpperCase() }));
+            }
+            if ((mode === 'katakana' || mode === 'both' || mode === 'all') && typeof RAW_K !== 'undefined' && RAW_K[cat]) {
+                RAW_K[cat].forEach(i => gPool.push({ ...i, s: 'K', c: CAT_NAMES[cat] || cat.toUpperCase() }));
             }
 
-            activeKanjiDatasets.forEach(ds => {
-                if (ds.data) {
-                    let kMod = ds.data.find(m => m.module === modNum);
-                    if (kMod && kMod.kanjis && !kMod.isReviewTable) {
-                        kMod.kanjis.forEach(item => {
-                            let reading = getKanjiReading(item);
-                            gPool.push({
-                                k: item.character || item.kanji,
-                                r: reading,
-                                m: item.meaning,
-                                s: 'N', // Identificador para Kanji
-                                c: `${ds.tag} • Mód ${modNum}`
-                            });
-                        });
-                    }
-                }
-            });
-        }
-    });
+            const isKanjiMode = mode.startsWith('kanji') || mode === 'kanji' || mode === 'all';
+            if (isKanjiMode) {
+                const allKanjiDatasets = [
+                    { id: 'kanji_n5', data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, tag: 'Kanji N5' },
+                    { id: 'kanji_n4', data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, tag: 'Kanji N4' },
+                    { id: 'kanji_n3', data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, tag: 'Kanji N3' },
+                    { id: 'kanji_n2', data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, tag: 'Kanji N2' },
+                    { id: 'kanji_n1', data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, tag: 'Kanji N1' }
+                ];
 
-    // Vocabulário avançado/médio (caso selecionado)
-    checkedWords.forEach(cat => {
-        if ((mode === 'hiragana' || mode === 'both' || mode === 'all') && typeof RAW_H !== 'undefined' && RAW_H[cat]) {
-            RAW_H[cat].forEach(w => { if (Array.from(w.k).every(ch => allowedHiraChars.has(ch))) gPool.push({ ...w, s: 'H', c: CAT_NAMES[cat] || cat.toUpperCase() }); });
-        }
-        if ((mode === 'katakana' || mode === 'both' || mode === 'all') && typeof RAW_K !== 'undefined' && RAW_K[cat]) {
-            RAW_K[cat].forEach(w => { if (Array.from(w.k).every(ch => allowedKataChars.has(ch))) gPool.push({ ...w, s: 'K', c: CAT_NAMES[cat] || cat.toUpperCase() }); });
-        }
-    });
+                let activeKanjiDatasets = allKanjiDatasets;
+                if (mode.startsWith('kanji_n')) {
+                    activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === mode);
+                }
+
+                activeKanjiDatasets.forEach(ds => {
+                    if (ds.data) {
+                        let kMod = ds.data.find(m => m.module === modNum);
+                        if (kMod && kMod.kanjis && !kMod.isReviewTable) {
+                            kMod.kanjis.forEach(item => {
+                                let reading = getKanjiReading(item);
+                                gPool.push({
+                                    k: item.character || item.kanji,
+                                    r: reading,
+                                    m: item.meaning,
+                                    s: 'N',
+                                    c: `${ds.tag} • Mód ${modNum}`
+                                });
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        checkedWords.forEach(cat => {
+            if ((mode === 'hiragana' || mode === 'both' || mode === 'all') && typeof RAW_H !== 'undefined' && RAW_H[cat]) {
+                RAW_H[cat].forEach(w => { if (Array.from(w.k).every(ch => allowedHiraChars.has(ch))) gPool.push({ ...w, s: 'H', c: CAT_NAMES[cat] || cat.toUpperCase() }); });
+            }
+            if ((mode === 'katakana' || mode === 'both' || mode === 'all') && typeof RAW_K !== 'undefined' && RAW_K[cat]) {
+                RAW_K[cat].forEach(w => { if (Array.from(w.k).every(ch => allowedKataChars.has(ch))) gPool.push({ ...w, s: 'K', c: CAT_NAMES[cat] || cat.toUpperCase() }); });
+            }
+        });
+    }
 
     if (!gPool.length) return alert('Nenhum item encontrado para os filtros selecionados.');
 
@@ -1136,18 +2051,34 @@ function nextGameCard() {
     gCard = gPlayQueue.shift(); gLastPicked = gCard.k;
 
     document.getElementById('g-score').textContent = gScore;
-    document.getElementById('g-lives').textContent = gLives;
-    document.getElementById('g-combo').textContent = (isInfiniteLives ? '-' : gStreak + 'x');
-    document.getElementById('g-badge').textContent = gCard.s === 'H' ? `HIRAGANA - ${gCard.c}` : gCard.s === 'K' ? `KATAKANA - ${gCard.c}` : `KANJI - ${gCard.c}`;
+    document.getElementById('g-lives').textContent = formatMinigameLives(gLives);
+    document.getElementById('g-combo').textContent = (isInfiniteLives ? '🔥 -' : `🔥 ${gStreak}x`);
+
+    if (isEnglishMinigame()) {
+        document.getElementById('g-badge').innerHTML = `🇬🇧 INGLÊS - ${gCard.c || 'Nível'}`;
+    } else {
+        document.getElementById('g-badge').textContent = gCard.s === 'H' ? `HIRAGANA - ${gCard.c}` : gCard.s === 'K' ? `KATAKANA - ${gCard.c}` : `KANJI - ${gCard.c}`;
+    }
 
     const charDiv = document.getElementById('g-big-kana');
     charDiv.textContent = gCard.k;
-    charDiv.style.fontSize = gCard.k.length > 4 ? '3.5rem' : gCard.k.length > 2 ? '4.5rem' : '7.5rem';
+    charDiv.style.fontSize = gCard.k.length > 15 ? '2.3rem' : gCard.k.length > 8 ? '3.2rem' : gCard.k.length > 4 ? '4.2rem' : '6.5rem';
 
     const input = document.getElementById('g-ans-input');
-    input.value = ''; if (inputMode === 'typing') input.focus();
+    input.value = '';
+    if (isEnglishMinigame()) {
+        input.placeholder = "Digite a tradução em português...";
+    } else {
+        input.placeholder = "Digite em romaji ou português...";
+    }
+
+    if (inputMode === 'typing') input.focus();
     document.getElementById('g-feedback').style.opacity = '0';
     document.getElementById('g-card-main').className = 'g-card-area';
+
+    if (isEnglishMinigame() && gCard.k) {
+        speakKana(gCard.k);
+    }
 }
 
 function processGameResult(isCorrect, heardText = "") {
@@ -1155,7 +2086,9 @@ function processGameResult(isCorrect, heardText = "") {
     const meaningText = gCard.m ? ` ➔ ${gCard.m}` : ""; let isVoice = document.getElementById('g-mic-btn').style.display !== 'none';
 
     if (isCorrect) {
-        playBeep('success'); speakKana(gCard.k);
+        playBeep('success');
+        if (!isEnglishMinigame()) speakKana(gCard.k);
+
         if (!isInfiniteLives) { gStreak++; if (gStreak > gMaxStreak) gMaxStreak = gStreak; gScore += 10 + Math.floor(gStreak / 5); }
         else { gStreak = 0; gScore += 10; }
 
@@ -1168,19 +2101,26 @@ function processGameResult(isCorrect, heardText = "") {
 
         card.classList.add('pop', 'glow-success');
         let heardHtml = (isVoice && heardText) ? `<div style="font-size:0.85rem; color:#15803d; font-weight:normal; margin-top:6px; text-transform:none;">🗣️ Você disse: "${heardText}"</div>` : "";
-        feed.innerHTML = `✨ Perfeito! (${gCard.r})${meaningText} ${heardHtml}`; feed.style.color = '#22c55e'; feed.style.opacity = '1';
+        feed.innerHTML = `✨ Perfeito! (${gCard.r || ''})${meaningText} ${heardHtml}`; feed.style.color = '#22c55e'; feed.style.opacity = '1';
         setTimeout(nextGameCard, 1200);
     } else {
         playBeep('error'); gStreak = 0; if (!isInfiniteLives) gLives--;
         card.classList.add('shake', 'glow-error');
         let heardHtml = (isVoice && heardText) ? `<div style="font-size:0.85rem; color:#b91c1c; font-weight:normal; margin-top:6px; text-transform:none;">🗣️ Microfone ouviu: "${heardText}"</div>` : "";
-        feed.innerHTML = `❌ Era: ${gCard.k} (${gCard.r})${meaningText} ${heardHtml}`; feed.style.color = '#ef4444'; feed.style.opacity = '1';
-        document.getElementById('g-lives').textContent = gLives;
+        feed.innerHTML = `❌ Era: ${gCard.k} (${gCard.r || ''})${meaningText} ${heardHtml}`; feed.style.color = '#ef4444'; feed.style.opacity = '1';
+        document.getElementById('g-lives').textContent = formatMinigameLives(gLives);
 
         if (!isInfiniteLives && gLives <= 0) {
-            if (gScore > globalHighScore) { globalHighScore = gScore; localStorage.setItem('ja_highScore', globalHighScore); }
-            if (gMaxStreak > globalMaxCombo) { globalMaxCombo = gMaxStreak; localStorage.setItem('ja_maxCombo', globalMaxCombo); }
-            setTimeout(() => { showGameTab('over'); document.getElementById('g-final-score').textContent = gScore; document.getElementById('g-final-combo').textContent = gMaxStreak + 'x'; }, 2000);
+            if (isEnglishMinigame()) {
+                const enHs = parseInt(localStorage.getItem('en_highScore')) || 0;
+                const enMc = parseInt(localStorage.getItem('en_maxCombo')) || 0;
+                if (gScore > enHs) localStorage.setItem('en_highScore', gScore);
+                if (gMaxStreak > enMc) localStorage.setItem('en_maxCombo', gMaxStreak);
+            } else {
+                if (gScore > globalHighScore) { globalHighScore = gScore; localStorage.setItem('ja_highScore', globalHighScore); }
+                if (gMaxStreak > globalMaxCombo) { globalMaxCombo = gMaxStreak; localStorage.setItem('ja_maxCombo', globalMaxCombo); }
+            }
+            setTimeout(() => { showGameTab('over'); document.getElementById('g-final-score').textContent = gScore; document.getElementById('g-final-combo').textContent = '🔥 ' + gMaxStreak + 'x'; }, 2000);
         } else {
             setTimeout(() => { card.classList.remove('shake', 'glow-error'); if (inputMode === 'typing') document.getElementById('g-ans-input').focus(); document.getElementById('g-ans-input').value = ''; gProc = false; }, 2000);
         }
@@ -1190,14 +2130,38 @@ function processGameResult(isCorrect, heardText = "") {
 function checkTypingAnswer() {
     if (gProc) return;
     const input = document.getElementById('g-ans-input'); let ans = input.value.trim(); if (!ans) return; gProc = true;
-    const isCorrect = ans === gCard.k || ans.toLowerCase() === gCard.r.toLowerCase() || (typeof wanakana !== 'undefined' && wanakana.toRomaji(ans) === gCard.r.toLowerCase());
-    processGameResult(isCorrect);
+
+    if (isEnglishMinigame()) {
+        const normAns = normalizeStringMatch(ans);
+        const normMainM = normalizeStringMatch(gCard.m);
+        const variations = (gCard.a || []).map(normalizeStringMatch);
+        const slashes = (gCard.m || '').split(/[\/,;]/).map(normalizeStringMatch);
+
+        const allValid = [normMainM, ...variations, ...slashes].filter(Boolean);
+
+        let isCorrect = allValid.some(v => v === normAns || (normAns.length >= 3 && (v.includes(normAns) || normAns.includes(v))));
+        processGameResult(isCorrect);
+    } else {
+        const isCorrect = ans === gCard.k || ans.toLowerCase() === gCard.r.toLowerCase() || (typeof wanakana !== 'undefined' && wanakana.toRomaji(ans) === gCard.r.toLowerCase());
+        processGameResult(isCorrect);
+    }
 }
 
 function startListening() {
     if (gProc) return;
     if (!recognition) return alert("Seu navegador não suporta reconhecimento de voz.");
-    document.getElementById('g-mic-btn').classList.add('listening');
+    const btn = document.getElementById('g-mic-btn');
+    if (btn) {
+        btn.classList.add('listening');
+        btn.innerHTML = '🔴 Ouvindo... (Fale agora)';
+    }
+
+    if (isEnglishMinigame()) {
+        recognition.lang = 'en-US';
+    } else {
+        recognition.lang = 'ja-JP';
+    }
+
     try { recognition.start(); } catch (e) { }
 }
 
@@ -1212,10 +2176,8 @@ function cleanJapaneseText(text) {
 function normalizePhonetic(text) {
     if (!text) return "";
 
-    // 1. Limpeza estrita de pontuação japonesa e ocidental ANTES do Wanakana
     let clean = cleanJapaneseText(text);
 
-    // 2. Fallback de letra isolada do alfabeto ocidental (ex: "B." / "B" -> "bi")
     if (ALPHABET_LETTER_MAP[clean]) {
         let mapped = ALPHABET_LETTER_MAP[clean];
         clean = Array.isArray(mapped) ? mapped[0] : mapped;
@@ -1223,22 +2185,16 @@ function normalizePhonetic(text) {
 
     clean = clean.toLowerCase();
 
-    // 3. Substituição de V inicial por B (ex: 'vo' -> 'bo', 'va' -> 'ba')
     if (/^v[aeiou]/i.test(clean)) {
         clean = 'b' + clean.slice(1);
     }
 
-    // 4. Desduplicação de vogais finais repetidas (ex: 'booo' -> 'bo', 'neee' -> 'ne')
     clean = clean.replace(/([aeiou])\1+$/g, "$1");
 
-    // 5. Conversão para Romaji via Wanakana
     let romaji = (typeof wanakana !== 'undefined') ? wanakana.toRomaji(clean) : clean;
     romaji = romaji.toLowerCase();
-
-    // 6. Limpeza estrita DEPOIS do Wanakana (garante remoção de pontos/espaços residuais)
     romaji = romaji.replace(/[^a-z0-9]/g, "").trim();
 
-    // 7. Normalização de vogais longas equivalentes
     romaji = romaji
         .replace(/ou/g, "o")
         .replace(/oo/g, "o")
@@ -1248,7 +2204,6 @@ function normalizePhonetic(text) {
         .replace(/ii/g, "i")
         .replace(/aa/g, "a");
 
-    // 8. Desduplicação final de vogais no romaji
     romaji = romaji.replace(/([aeiou])\1+$/g, "$1");
 
     return romaji;
@@ -1279,7 +2234,31 @@ function checkSpeechAnswer(transcripts) {
     let isCorrect = false;
     let heardText = transcripts[0] || "...";
 
-    // Resposta esperada convertida para Romaji limpo (Moeda Única de Comparação)
+    if (isEnglishMinigame()) {
+        const normTargetEng = normalizeStringMatch(gCard.k);
+        const normTargetPt = normalizeStringMatch(gCard.m);
+        const variationsPt = (gCard.a || []).map(normalizeStringMatch);
+
+        for (let t of transcripts) {
+            const normHeard = normalizeStringMatch(t);
+            console.log(`🎤 [EN Speech] Microfone ouviu: "${t}" -> Norm: "${normHeard}" | Target EN: "${normTargetEng}" | Target PT: "${normTargetPt}"`);
+
+            if (
+                normHeard === normTargetEng ||
+                normHeard === normTargetPt ||
+                variationsPt.includes(normHeard) ||
+                (normHeard.length >= 3 && normTargetEng.includes(normHeard)) ||
+                (normHeard.length >= 3 && normHeard.includes(normTargetEng))
+            ) {
+                isCorrect = true;
+                heardText = t;
+                break;
+            }
+        }
+        processGameResult(isCorrect, heardText);
+        return;
+    }
+
     let rawExpectedKana = cleanJapaneseText(gCard.k);
     let expectedRomaji = normalizePhonetic(gCard.r || gCard.k);
 
@@ -1288,27 +2267,19 @@ function checkSpeechAnswer(transcripts) {
     const isSingleSyllable = expectedRomaji.length <= 4 && (KANAI_SINGLE_SYLLABLE_MAP[expectedRomaji] || expectedRomaji.length <= 3);
 
     for (let t of transcripts) {
-        // 1. Limpeza Estrita de Entrada (Sanitization Japonesa & Ocidental)
         let rawClean = cleanJapaneseText(t);
 
-        // 2. Mapeamento Fallback de Letras Ocidentais Isoladas
         let alphabetFallbackRomajis = ALPHABET_LETTER_MAP[rawClean] || [];
         if (typeof alphabetFallbackRomajis === 'string') alphabetFallbackRomajis = [alphabetFallbackRomajis];
 
-        // 3. Normalização Universal para Romaji (Moeda Única)
         let romajiConvertido = normalizePhonetic(t);
 
         console.log(`🎤 Microfone ouviu: "${t}" -> Limpo: "${rawClean}" -> Romaji: "${romajiConvertido}" -> Esperado: "${expectedRomaji}"`);
 
-        // Trata vogais isoladas (ex: "ha" para "a")
         if (/^[aeiou]$/.test(expectedRomaji) && romajiConvertido === `h${expectedRomaji}`) {
             romajiConvertido = expectedRomaji;
         }
 
-        // ==========================================
-        // CRITÉRIO 1: COMPARAÇÃO DE MOEDA ÚNICA (ROMAJI <-> ROMAJI)
-        // Katakana (ゼ。) <-> Hiragana (ぜ) -> ze === ze!
-        // ==========================================
         if (
             romajiConvertido === expectedRomaji ||
             alphabetFallbackRomajis.includes(expectedRomaji)
@@ -1318,18 +2289,12 @@ function checkSpeechAnswer(transcripts) {
             break;
         }
 
-        // ==========================================
-        // CRITÉRIO 2: EQUIVALÊNCIA DIRETA DE KANA LIMPO
-        // ==========================================
         if (rawClean === rawExpectedKana || (gCard.a && gCard.a.includes(rawClean))) {
             isCorrect = true;
             heardText = t;
             break;
         }
 
-        // ==========================================
-        // CRITÉRIO 3: HOMÓFONOS E KANJIS MAPEADOS
-        // ==========================================
         const homophoneList = KANJI_HOMOPHONE_MAP[expectedRomaji] || [];
         if (
             homophoneList.includes(rawClean) ||
@@ -1340,10 +2305,6 @@ function checkSpeechAnswer(transcripts) {
             break;
         }
 
-        // ==========================================
-        // CRITÉRIO 4: TOLERÂNCIA DAKUON / HANDAKUON
-        // (ex: 'go' para 'gu', 'be' para 'bi', 'ze' para 'zo')
-        // ==========================================
         let inSameDakuonFamily = DAKUON_FAMILIES.some(family =>
             family.includes(expectedRomaji) && (family.includes(romajiConvertido) || alphabetFallbackRomajis.some(r => family.includes(r)))
         );
@@ -1353,7 +2314,6 @@ function checkSpeechAnswer(transcripts) {
             break;
         }
 
-        // Prefixo para 1 sílaba (ex: "nii" para "ni")
         if (isSingleSyllable) {
             if (romajiConvertido.startsWith(expectedRomaji) || rawClean.startsWith(rawExpectedKana)) {
                 isCorrect = true;
@@ -1420,6 +2380,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (mode === 'game') {
         document.documentElement.style.setProperty('--current-primary', 'var(--game-primary)');
         initGameScreen();
+    } else if (mode === 'pronuncia') {
+        document.documentElement.style.setProperty('--current-primary', '#028090');
+        if (document.getElementById('pronunciaDisplay')) {
+            renderPronunciaModule('A1');
+        }
     }
 
     // Inicialização da Ofensiva Diária e Conquistas
@@ -1434,16 +2399,20 @@ function renderQuizQuestion(questionObj, index) {
     let html = `<div class="quiz-question">`;
     html += `<p><strong>Questão ${index + 1}:</strong> ${questionObj.q}</p>`;
 
-    if (questionObj.type === "choice") {
-        questionObj.options.forEach(option => {
-            html += `<button class="quiz-option-btn" onclick="checkAnswer(this, '${option}', '${questionObj.a}')">${option}</button>`;
+    if (questionObj.type === "choice" || (questionObj.options && Array.isArray(questionObj.options) && questionObj.options.length > 0)) {
+        const safeAns = (questionObj.a || '').replace(/'/g, "\\'");
+        const shuffledOpts = [...questionObj.options].sort(() => Math.random() - 0.5);
+        shuffledOpts.forEach(option => {
+            const safeOpt = option.replace(/'/g, "\\'");
+            html += `<button class="quiz-option-btn" onclick="checkAnswer(this, '${safeOpt}', '${safeAns}')">${option}</button>`;
         });
 
     } else {
         // Renderiza input e botão de texto modernos lado a lado
+        const safeAns = (questionObj.a || '').replace(/'/g, "\\'");
         html += `<div class="quiz-input-group">`;
-        html += `<input type="text" id="quiz-input-${index}" class="quiz-input" placeholder="Digite em romaji ou português..." onkeydown="if(event.key==='Enter') checkTextAnswer(${index}, '${questionObj.a}')">`;
-        html += `<button class="quiz-btn" onclick="checkTextAnswer(${index}, '${questionObj.a}')">Responder</button>`;
+        html += `<input type="text" id="quiz-input-${index}" class="quiz-input" placeholder="Digite em romaji ou português..." onkeydown="if(event.key==='Enter') checkTextAnswer(${index}, '${safeAns}')">`;
+        html += `<button class="quiz-btn" onclick="checkTextAnswer(${index}, '${safeAns}')">Responder</button>`;
         html += `</div>`;
         html += `<span id="quiz-feedback-${index}" class="quiz-feedback-text" role="status" aria-live="polite"></span>`;
     }
@@ -1532,6 +2501,15 @@ let dropAtual = 0;
 
 // ESTRUTURA UNIFICADA DOS 4 NÍVEIS DO CURSO (105 MÓDULOS NO TOTAL)
 function getTodosOsCursos() {
+    const isEnglish = document.body && document.body.getAttribute('data-lang') === 'english';
+    if (isEnglish) {
+        return {
+            A1: (typeof CURSO_ENGLISH_A1_DADOS !== 'undefined') ? CURSO_ENGLISH_A1_DADOS : ((typeof CURSO_A1_DADOS !== 'undefined') ? CURSO_A1_DADOS : []),
+            A2: (typeof CURSO_ENGLISH_A2_DADOS !== 'undefined') ? CURSO_ENGLISH_A2_DADOS : ((typeof CURSO_A2_DADOS !== 'undefined') ? CURSO_A2_DADOS : []),
+            B1: (typeof CURSO_ENGLISH_B1_DADOS !== 'undefined') ? CURSO_ENGLISH_B1_DADOS : ((typeof CURSO_B1_DADOS !== 'undefined') ? CURSO_B1_DADOS : []),
+            B2: (typeof CURSO_ENGLISH_B2_DADOS !== 'undefined') ? CURSO_ENGLISH_B2_DADOS : ((typeof CURSO_B2_DADOS !== 'undefined') ? CURSO_B2_DADOS : [])
+        };
+    }
     return {
         A1: (typeof CURSO_A1_DADOS !== 'undefined') ? CURSO_A1_DADOS : [],
         A2: (typeof CURSO_A2_DADOS !== 'undefined') ? CURSO_A2_DADOS : [],
@@ -1613,6 +2591,7 @@ function carregarProgressoGlobal() {
     if (!Array.isArray(res.progress_kanji_n3)) res.progress_kanji_n3 = [];
     if (!Array.isArray(res.progress_kanji_n2)) res.progress_kanji_n2 = [];
     if (!Array.isArray(res.progress_kanji_n1)) res.progress_kanji_n1 = [];
+    if (!Array.isArray(res.progress_phrasal_verbs)) res.progress_phrasal_verbs = [];
     res.progress_curso_principal = res.modulosConcluidos;
 
     // Sincroniza leitura dedicada do japao_academy_kanji_progress
@@ -2196,6 +3175,9 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     if (t === 'kanji_n1' || t === 'n1') {
         return (progressoGlobal.progress_kanji_n1 || []).includes(modIdx);
     }
+    if (t === 'phrasal_verbs' || t === 'phrasal') {
+        return (progressoGlobal.progress_phrasal_verbs || []).includes(modIdx);
+    }
 
     const cursos = getTodosOsCursos();
     const lvlKey = t.toUpperCase();
@@ -2387,12 +3369,14 @@ function initApp() {
     calcularProgressoGlobal();
     atualizarUIProgresso();
 
-    if (document.getElementById('tabContainer')) {
+    const mode = document.body.getAttribute('data-mode') || courseMode;
+
+    if (mode === 'phrasal_verbs' || mode === 'phrasal') {
+        filtrarNivelPhrasalVerbs('A1');
+    } else if (document.getElementById('tabContainer')) {
         renderCourseTabs();
         loadCourseModule(0);
     }
-
-    const mode = document.body.getAttribute('data-mode') || courseMode;
 
     // MIGRAÇÃO E DESCONTAMINAÇÃO DO SRS PARA KANJI N3, N2 E N1 (Requisito 5)
     try {
@@ -2461,6 +3445,7 @@ function getDeckKeySRS(tipo) {
     if (t === 'kanji_n3' || t === 'n3') return 'ja_srs_kanji_n3_deck';
     if (t === 'kanji_n2' || t === 'n2') return 'ja_srs_kanji_n2_deck';
     if (t === 'kanji_n1' || t === 'n1') return 'ja_srs_kanji_n1_deck';
+    if (t === 'phrasal_verbs' || t === 'phrasal') return 'en_srs_phrasal_verbs_deck';
     if (t === 'a2') return 'ja_srs_a2_deck';
     if (t === 'b1') return 'ja_srs_b1_deck';
     if (t === 'b2') return 'ja_srs_b2_deck';
@@ -2797,6 +3782,35 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                 }
             });
         }
+    } else if (t === 'phrasal_verbs' || t === 'phrasal') {
+        if (typeof PHRASAL_VERBS_DATA !== 'undefined') {
+            const tamOrig = deck.length;
+            deck = deck.filter(card => eModuloAprendido(card.modIdx, 'phrasal_verbs'));
+            if (deck.length !== tamOrig) alterado = true;
+
+            PHRASAL_VERBS_DATA.forEach((mod, modIdx) => {
+                if (eModuloAprendido(modIdx, 'phrasal_verbs')) {
+                    modulosConcluidosNomes.push(mod.title || `Módulo ${mod.module || (modIdx + 1)}`);
+                    if (mod.items && Array.isArray(mod.items)) {
+                        mod.items.forEach((item, itemIdx) => {
+                            const cardId = `pv_${mod.module || (modIdx + 1)}_${item.id || itemIdx}`;
+                            if (!deck.some(d => d.id === cardId)) {
+                                deck.push({
+                                    id: cardId,
+                                    modIdx: modIdx,
+                                    modTitle: mod.title || `Módulo ${mod.module || (modIdx + 1)}`,
+                                    dropType: 'phrasal_verb',
+                                    level: mod.level || 'A1',
+                                    item: item,
+                                    repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
+                                });
+                                alterado = true;
+                            }
+                        });
+                    }
+                }
+            });
+        }
     }
 
     if (alterado) {
@@ -2829,6 +3843,7 @@ function atualizarBadgeSRS(tipo) {
     else if (tipo === 'kanji_n1' || tipo === 'n1') labelExibicao = 'Kanji N1';
     else if (tipo === 'hiragana') labelExibicao = 'Hiragana';
     else if (tipo === 'katakana') labelExibicao = 'Katakana';
+    else if (tipo === 'phrasal_verbs' || tipo === 'phrasal') labelExibicao = 'Phrasal Verbs & Expressões';
     else if (tipo && tipo.startsWith('kanji_n')) labelExibicao = 'Kanji ' + tipo.replace('kanji_', '').toUpperCase();
     else labelExibicao = tipo ? tipo.toUpperCase() : 'A1';
 
@@ -3032,14 +4047,49 @@ function renderizarCardSRS() {
             ${renderizarRadicaisKanji(cardData.radicals)}
             ${exHtml}
         `;
+    } else if (cardData.dropType === 'phrasal_verb') {
+        const item = cardData.item || {};
+        const safeVerb = (item.verb || '').replace(/'/g, "\\'");
+        const breakdown = item.breakdown || {};
+        const ex = item.examples && item.examples[0] ? item.examples[0] : null;
+        const safeSent = ex ? (ex.sentence || '').replace(/'/g, "\\'") : '';
+
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #028090;">⚡ PHRASAL VERB • ${fNome(cardData.modTitle)}</div>
+            <div class="srs-kanji" style="font-size: 2.5rem; color: #028090; font-family: 'Fredoka', sans-serif;">${item.verb}</div>
+            <button onclick="speakKana('${safeVerb}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Qual é o significado, decomposição e aplicação deste verb/idiom?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #028090;">✨ Resposta Revelada</div>
+            <div class="srs-translation" style="color: var(--text-main); font-size: 1.35rem; font-weight: bold; margin-bottom: 0.6rem;">📌 ${item.meaning}</div>
+            <div style="background: rgba(2, 128, 144, 0.08); border-left: 4px solid #028090; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0; text-align: left; font-size: 0.88rem;">
+                <strong>🧩 Decomposição:</strong> Raiz: <em>${breakdown.root || ''}</em> + Partícula: <em>${breakdown.particle || ''}</em> (${breakdown.type || ''})
+            </div>
+            <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: 10px; margin-top: 10px; text-align: left;">
+                <strong style="color: #028090; font-size: 0.88rem;">💡 Explicação:</strong>
+                <p style="font-size: 0.9rem; margin: 4px 0 8px 0; color: var(--text-main);">${item.explanation || ''}</p>
+                ${ex ? `
+                    <div style="border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 8px;">
+                        <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-main);">${ex.sentence}</span>
+                        <button onclick="speakKana('${safeSent}')" style="font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer; margin-left: 6px;">🔊</button>
+                        <br><small style="color: var(--text-muted);">${ex.translation}</small>
+                    </div>
+                ` : ''}
+            </div>
+        `;
     } else {
         const drop = cardData.drop || {};
         const nivelLabel = (cardData.level || (srsTipoAtivo ? srsTipoAtivo.toUpperCase() : 'A1'));
         if (drop.type === 'vocab') {
+            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+            const srsTextAudio = isEngSrs ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
+            const cleanSrsParam = String(srsTextAudio).replace(/\//g, ' ').replace(/'/g, "\\'");
+
             frenteHTML = `
                 <div class="srs-card-type">📖 Vocabulário ${nivelLabel} • ${fNome(cardData.modTitle)}</div>
                 <div class="srs-kanji">${drop.kanji}</div>
-                <button onclick="tocarAudio('${drop.romaji}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
+                <button onclick="tocarAudio('${cleanSrsParam}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
                 <p style="color: var(--text-muted); margin-top: 1rem;">Tente lembrar da pronúncia e da tradução!</p>
             `;
             versoHTML = `
@@ -3085,9 +4135,14 @@ function revelarRespostaSRS() {
 
     const cardData = srsSessaoCards[srsIndexAtivo];
     if (cardData) {
-        if (cardData.char) speakKana(cardData.char);
+        if (cardData.item && cardData.item.verb) speakKana(cardData.item.verb);
+        else if (cardData.char) speakKana(cardData.char);
         else if (cardData.character) speakKana(cardData.character);
-        else if (cardData.drop && cardData.drop.romaji) tocarAudio(cardData.drop.romaji);
+        else if (cardData.drop) {
+            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+            const targetTxt = isEngSrs ? (cardData.drop.kanji || cardData.drop.romaji) : (cardData.drop.romaji || cardData.drop.kanji);
+            if (targetTxt) tocarAudio(targetTxt);
+        }
     }
 
     const btnRevelar = document.getElementById('btn-revelar-srs');
@@ -3705,6 +4760,10 @@ function renderizarEtapa() {
             const icones = ['🌅', '☀️', '🌙', '⭐', '🗣️'];
             const res = processarExibicaoJapones(drop);
             const itemId = `${mod.id}_d_${dropAtual}`;
+            const isEngPage = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+            const rawAudioText = isEngPage ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
+            const cleanAudioParam = String(rawAudioText).replace(/'/g, "\\'");
+
             container.innerHTML = `
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 450px; margin: 0 auto 0.5rem auto;">
                     <span style="font-size: 2.5rem;">${icones[dropAtual % icones.length] || '📖'}</span>
@@ -3719,7 +4778,7 @@ function renderizarEtapa() {
                 </div>
                 <p style="font-size: 1.1rem; font-weight: 600; margin-top: 0.5rem;">${drop.translation}</p>
                 <p style="font-size: 0.9rem; color: var(--text-muted);"><small>💡 ${drop.timeContext}</small></p>
-                <button onclick="tocarAudio('${drop.romaji || drop.kanji}')" style="margin-top: 0.8rem;">🔊 Pronúncia Nativa</button>
+                <button onclick="tocarAudio('${cleanAudioParam}')" style="margin-top: 0.8rem;">🔊 Pronúncia Nativa</button>
             `;
         } else {
             const resExample = processarExibicaoJapones(fNome(drop.example));
@@ -4239,8 +5298,21 @@ function tocarAudio(texto, rateOverride = null) {
     if (!texto) return;
     if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(texto);
-        u.lang = 'ja-JP';
+
+        // Ignorar e remover rigorosamente todas as barras '/' (slashes) e símbolos fonéticos problemáticos
+        let textoLimpo = String(texto)
+            .replace(/\//g, ' ')
+            .replace(/\\/g, ' ')
+            .replace(/[\/\\|]/g, ' ')
+            .replace(/\.{2,}/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        if (!textoLimpo) return;
+
+        const u = new SpeechSynthesisUtterance(textoLimpo);
+        const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+        u.lang = isEnglish ? 'en-US' : 'ja-JP';
         u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
         window.speechSynthesis.speak(u);
     }
@@ -4269,8 +5341,9 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
         return;
     }
 
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
     const recognition = new SpeechRecognition();
-    recognition.lang = 'ja-JP';
+    recognition.lang = isEnglish ? 'en-US' : 'ja-JP';
     recognition.interimResults = false;
     recognition.maxAlternatives = 3;
 
@@ -4280,7 +5353,7 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
         btnEl.classList.add('recording-active');
         btnEl.innerHTML = '🔴 Escutando... Fale!';
     }
-    mostrarToast('🎙️ <strong>Escutando em Japonês...</strong> Fale em voz alta!');
+    mostrarToast(isEnglish ? '🎙️ <strong>Listening in English...</strong> Speak out loud!' : '🎙️ <strong>Escutando em Japonês...</strong> Fale em voz alta!');
     playBeep('click');
 
     recognition.onresult = (e) => {
@@ -4326,7 +5399,7 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
         if (matchScore >= 0.70) {
             playBeep('success');
             mostrarToast(`🎉 <strong>Pronúncia Correta!</strong> Ouvi: <em>"${bestTranscript}"</em> (+10 XP)`);
-            adicionarXP(10, 'Pronúncia Aprovada em Japonês');
+            adicionarXP(10, isEnglish ? 'Pronúncia Aprovada em Inglês' : 'Pronúncia Aprovada em Japonês');
             dispararConfeti({ particleCount: 40, spread: 50, origin: { y: 0.8 } });
         } else {
             playBeep('error');
@@ -4903,17 +5976,10 @@ function garantirElementosCabecalhoEModal() {
         document.body.appendChild(modalOp);
     }
     modalOp.onclick = function (e) { if (e.target === this) fecharOpcoesCurso(); };
-    modalOp.innerHTML = `
-        <div class="modal-box">
-            <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
-            <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
-                <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
-                <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
-            </div>
-            <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
-                <span>Desbloquear Todos os Módulos</span>
-                <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
-            </div>
+
+    const isEnglishMode = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US') || window.location.pathname.includes('ingles');
+
+    const readingOptionsHtml = isEnglishMode ? '' : `
             <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:1.2rem; font-weight:600;">
                 <span style="font-size:0.95rem; color:var(--text-main);">Opções de Exibição de Leitura:</span>
                 <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
@@ -4933,6 +5999,20 @@ function garantirElementosCabecalhoEModal() {
                     <span>Ativar Romaji</span>
                 </label>
             </div>
+    `;
+
+    modalOp.innerHTML = `
+        <div class="modal-box">
+            <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
+            <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
+                <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
+                <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
+            </div>
+            <div class="modal-option" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
+                <span>Desbloquear Todos os Módulos</span>
+                <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
+            </div>
+            ${readingOptionsHtml}
             <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:1.2rem; border-top:1px solid var(--border-color); padding-top:1rem;">
                 <span style="font-weight:bold; font-size:0.95rem; color:var(--text-main);">☁️ Sincronização na Nuvem:</span>
                 <button type="button" onclick="salvarProgressoNaNuvem()" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
@@ -5078,6 +6158,56 @@ function renderizarMuralConquistas() {
 // MECANISMO E INTERFACE DO DICIONÁRIO UNIVERSAL
 // ==========================================
 
+const ENGLISH_ALPHABET_DATA = [
+    { letter: "A a", name: "ei", ipa: "/eɪ/", example: "Apple" },
+    { letter: "B b", name: "bee", ipa: "/biː/", example: "Book" },
+    { letter: "C c", name: "cee", ipa: "/siː/", example: "Cat" },
+    { letter: "D d", name: "dee", ipa: "/diː/", example: "Dog" },
+    { letter: "E e", name: "ee", ipa: "/iː/", example: "Elephant" },
+    { letter: "F f", name: "ef", ipa: "/ɛf/", example: "Fish" },
+    { letter: "G g", name: "jee", ipa: "/dʒiː/", example: "Goat" },
+    { letter: "H h", name: "aitch", ipa: "/eɪtʃ/", example: "House" },
+    { letter: "I i", name: "ai", ipa: "/aɪ/", example: "Ice" },
+    { letter: "J j", name: "jay", ipa: "/dʒeɪ/", example: "Juice" },
+    { letter: "K k", name: "kay", ipa: "/keɪ/", example: "Key" },
+    { letter: "L l", name: "el", ipa: "/ɛl/", example: "Lion" },
+    { letter: "M m", name: "em", ipa: "/ɛm/", example: "Milk" },
+    { letter: "N n", name: "en", ipa: "/ɛn/", example: "Nest" },
+    { letter: "O o", name: "oh", ipa: "/oʊ/", example: "Orange" },
+    { letter: "P p", name: "pee", ipa: "/piː/", example: "Pen" },
+    { letter: "Q q", name: "cue", ipa: "/kjuː/", example: "Queen" },
+    { letter: "R r", name: "ar", ipa: "/ɑːr/", example: "Red" },
+    { letter: "S s", name: "es", ipa: "/ɛs/", example: "Sun" },
+    { letter: "T t", name: "tee", ipa: "/tiː/", example: "Tea" },
+    { letter: "U u", name: "you", ipa: "/juː/", example: "Umbrella" },
+    { letter: "V v", name: "vee", ipa: "/viː/", example: "Van" },
+    { letter: "W w", name: "double-you", ipa: "/ˈdʌbəl.juː/", example: "Water" },
+    { letter: "X x", name: "ex", ipa: "/ɛks/", example: "Xylophone" },
+    { letter: "Y y", name: "wy", ipa: "/waɪ/", example: "Yellow" },
+    { letter: "Z z", name: "zee", ipa: "/ziː/", example: "Zebra" }
+];
+if (typeof window !== 'undefined') window.ENGLISH_ALPHABET_DATA = ENGLISH_ALPHABET_DATA;
+
+function renderizarTabelaAlfabetoIngles() {
+    const grid = document.getElementById('dict-alphabet-grid');
+    if (!grid) return;
+
+    let html = ENGLISH_ALPHABET_DATA.map(item => {
+        const letterChar = item.letter.split(' ')[0];
+        const safeLetter = letterChar.replace(/'/g, "\\'");
+        return `
+            <div class="soundboard-tile" onclick="speakKana('${safeLetter}')" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:12px; padding:12px 8px; text-align:center; cursor:pointer; transition:all 0.2s ease; box-shadow:var(--shadow);">
+                <div style="font-size:1.6rem; font-weight:800; color:var(--text-main); font-family:'Fredoka', sans-serif;">${item.letter}</div>
+                <div style="font-weight:700; color:#1d4ed8; font-size:0.9rem; margin:2px 0;">[ ${item.name} ]</div>
+                <div style="font-size:0.78rem; color:#028090; font-weight:600;">${item.ipa}</div>
+                <small style="font-size:0.75rem; color:var(--text-muted); display:block; margin-top:4px;">📌 ${item.example}</small>
+            </div>
+        `;
+    }).join('');
+
+    grid.innerHTML = html;
+}
+
 let glossarioUniversalCache = null;
 let dictDebounceTimer = null;
 let dictCategoriaAtiva = 'tudo';
@@ -5086,29 +6216,40 @@ let dictSubNivelVocab = 'tudo';
 let dictLimiteExibicao = 100;
 
 function carregarTodosOsDatasets(callback) {
-    const scripts = [
-        { check: () => typeof CURSO_A1_DADOS !== 'undefined', src: 'data_curso_a1.js' },
-        { check: () => typeof CURSO_A2_DADOS !== 'undefined', src: 'data_curso_a2.js' },
-        { check: () => typeof CURSO_B1_DADOS !== 'undefined', src: 'data_curso_b1.js' },
-        { check: () => typeof CURSO_B2_DADOS !== 'undefined', src: 'data_curso_b2.js' },
-        { check: () => typeof kanjiN5Data !== 'undefined', src: 'data_kanji_n5.js' },
-        { check: () => typeof kanjiN4Data !== 'undefined', src: 'data_kanji_n4.js' },
-        { check: () => typeof kanjiN3Data !== 'undefined', src: 'data_kanji_n3.js' },
-        { check: () => typeof kanjiN2Data !== 'undefined', src: 'data_kanji_n2.js' },
-        { check: () => typeof kanjiN1Data !== 'undefined', src: 'data_kanji_n1.js' },
-        { check: () => typeof RAW_H !== 'undefined', src: 'data_hiragana.js' },
-        { check: () => typeof RAW_K !== 'undefined', src: 'data_katakana.js' }
+    const isSubfolder = window.location.pathname.includes('/html/');
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US') || window.location.pathname.includes('ingles');
+    const langFolder = isEnglish ? 'en-US/' : 'ja-JP/';
+    const prefix = isSubfolder ? '../../database/' + langFolder : 'database/' + langFolder;
+    const scripts = isEnglish ? [
+        { check: () => typeof CURSO_ENGLISH_A1_DADOS !== 'undefined', file: 'data_english_a1.js' },
+        { check: () => typeof CURSO_ENGLISH_A2_DADOS !== 'undefined', file: 'data_english_a2.js' },
+        { check: () => typeof CURSO_ENGLISH_B1_DADOS !== 'undefined', file: 'data_english_b1.js' },
+        { check: () => typeof CURSO_ENGLISH_B2_DADOS !== 'undefined', file: 'data_english_b2.js' },
+        { check: () => typeof PHRASAL_VERBS_DATA !== 'undefined', file: 'data_phrasal_verbs.js' },
+        { check: () => typeof PRONUNCIATION_DATA !== 'undefined', file: 'data_pronunciation.js' }
+    ] : [
+        { check: () => typeof CURSO_A1_DADOS !== 'undefined', file: 'data_curso_a1.js' },
+        { check: () => typeof CURSO_A2_DADOS !== 'undefined', file: 'data_curso_a2.js' },
+        { check: () => typeof CURSO_B1_DADOS !== 'undefined', file: 'data_curso_b1.js' },
+        { check: () => typeof CURSO_B2_DADOS !== 'undefined', file: 'data_curso_b2.js' },
+        { check: () => typeof kanjiN5Data !== 'undefined', file: 'data_kanji_n5.js' },
+        { check: () => typeof kanjiN4Data !== 'undefined', file: 'data_kanji_n4.js' },
+        { check: () => typeof kanjiN3Data !== 'undefined', file: 'data_kanji_n3.js' },
+        { check: () => typeof kanjiN2Data !== 'undefined', file: 'data_kanji_n2.js' },
+        { check: () => typeof kanjiN1Data !== 'undefined', file: 'data_kanji_n1.js' },
+        { check: () => typeof RAW_H !== 'undefined', file: 'data_hiragana.js' },
+        { check: () => typeof RAW_K !== 'undefined', file: 'data_katakana.js' }
     ];
 
     let pendentes = 0;
 
     scripts.forEach(s => {
         if (!s.check()) {
-            let existingScript = document.querySelector(`script[src="${s.src}"]`);
+            let existingScript = document.querySelector(`script[src*="${s.file}"]`);
             if (!existingScript) {
                 pendentes++;
                 const scriptEl = document.createElement('script');
-                scriptEl.src = s.src;
+                scriptEl.src = prefix + s.file;
                 scriptEl.onload = () => {
                     pendentes--;
                     if (pendentes === 0 && callback) callback();
@@ -5130,9 +6271,95 @@ function carregarTodosOsDatasets(callback) {
 function compilarGlossarioUniversal() {
     if (glossarioUniversalCache) return glossarioUniversalCache;
 
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') ||
+                      window.location.pathname.includes('en-US') ||
+                      window.location.pathname.includes('ingles');
+
     const lista = [];
 
-    // 1. CURSO PRINCIPAL (A1, A2, B1, B2)
+    if (isEnglish) {
+        // 1. CURSO PRINCIPAL DE INGLÊS (A1, A2, B1, B2)
+        ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+            const varName = `CURSO_ENGLISH_${lvl}_DADOS`;
+            const modulos = (typeof window !== 'undefined' && window[varName]) ? window[varName] : (typeof global !== 'undefined' ? global[varName] : null);
+            if (modulos && Array.isArray(modulos)) {
+                modulos.forEach(mod => {
+                    if (mod.stage2_drops && Array.isArray(mod.stage2_drops)) {
+                        mod.stage2_drops.forEach(drop => {
+                            if (drop.type === 'grammar_pill' || drop.formula || drop.rule) {
+                                lista.push({
+                                    type: 'grammar',
+                                    title: drop.title || drop.kanji || '',
+                                    rule: drop.rule || '',
+                                    formula: drop.formula || '',
+                                    example: drop.example || '',
+                                    module: mod.title || `Módulo ${mod.id}`,
+                                    level: lvl,
+                                    origin: `Curso ${lvl}`
+                                });
+                            } else if (drop.type === 'vocab' || drop.kanji || drop.translation) {
+                                lista.push({
+                                    type: 'vocab',
+                                    term: drop.kanji || drop.romaji || '',
+                                    romaji: drop.romaji || '',
+                                    translation: drop.translation || '',
+                                    context: drop.timeContext || '',
+                                    module: mod.title || `Módulo ${mod.id}`,
+                                    level: lvl,
+                                    origin: `Curso ${lvl}`
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        // 2. PHRASAL VERBS (PHRASAL_VERBS_DATA)
+        if (typeof PHRASAL_VERBS_DATA !== 'undefined' && Array.isArray(PHRASAL_VERBS_DATA)) {
+            PHRASAL_VERBS_DATA.forEach(mod => {
+                if (mod.items && Array.isArray(mod.items)) {
+                    mod.items.forEach(pv => {
+                        lista.push({
+                            type: 'phrasal',
+                            term: pv.verb || pv.term || '',
+                            meaning: pv.meaning || '',
+                            explanation: pv.explanation || '',
+                            breakdown: pv.breakdown || '',
+                            examples: pv.examples || [],
+                            module: mod.title || 'Phrasal Verbs',
+                            level: pv.level || mod.level || 'A1',
+                            origin: 'Phrasal Verbs'
+                        });
+                    });
+                }
+            });
+        }
+
+        // 3. FONÉTICA & PRONÚNCIA (PRONUNCIATION_DATA)
+        if (typeof PRONUNCIATION_DATA !== 'undefined' && Array.isArray(PRONUNCIATION_DATA)) {
+            PRONUNCIATION_DATA.forEach(secData => {
+                (secData.topics || []).forEach(t => {
+                    lista.push({
+                        type: 'phonetics',
+                        title: t.title || '',
+                        ipaSymbol: t.ipaSymbol || '',
+                        description: t.description || '',
+                        rules: t.rules || [],
+                        minimalPairs: t.minimalPairs || [],
+                        module: secData.sectionTitle || 'Fonética',
+                        level: secData.level || 'A1',
+                        origin: 'Guia de Pronúncia'
+                    });
+                });
+            });
+        }
+
+        glossarioUniversalCache = lista;
+        return lista;
+    }
+
+    // 1. CURSO PRINCIPAL JAPONÊS (A1, A2, B1, B2)
     const cursos = getTodosOsCursos();
     ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
         const modulos = cursos[lvl] || [];
@@ -5342,8 +6569,11 @@ function selecionarSubNivelKanji(sub) {
 function selecionarSubNivelVocab(sub) {
     dictSubNivelVocab = sub;
     dictLimiteExibicao = 100;
-    document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === sub);
+    document.querySelectorAll('.dict-subfilter-pill, .dict-subfilter-pill-vocab').forEach(btn => {
+        const val = btn.getAttribute('data-sub') || btn.getAttribute('data-sub-vocab');
+        if (val) {
+            btn.classList.toggle('active', val === sub);
+        }
     });
     const input = document.getElementById('dict-search-input');
     const query = input ? input.value : '';
@@ -5357,34 +6587,34 @@ function selecionarCategoriaDicionario(cat) {
         btn.classList.toggle('active', btn.getAttribute('data-cat') === cat);
     });
 
+    const alphaSec = document.getElementById('dict-alphabet-section');
+    if (alphaSec) {
+        if (cat === 'alphabet' || cat === 'tudo') {
+            alphaSec.style.display = 'block';
+            renderizarTabelaAlfabetoIngles();
+        } else {
+            alphaSec.style.display = 'none';
+        }
+    }
+
     const subKanji = document.getElementById('dict-subfilters-kanji');
-    const subVocab = document.getElementById('dict-subfilters-vocab');
+    const subLevel = document.getElementById('dict-subfilters-level') || document.getElementById('dict-subfilters-vocab');
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || 
+                      window.location.pathname.includes('en-US') || 
+                      window.location.pathname.includes('ingles');
 
     if (cat === 'kanji') {
         if (subKanji) subKanji.style.display = 'flex';
-        if (subVocab) subVocab.style.display = 'none';
-        dictSubNivelVocab = 'tudo';
-        document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === 'tudo');
-        });
-    } else if (cat === 'vocab') {
-        if (subKanji) subKanji.style.display = 'none';
-        if (subVocab) subVocab.style.display = 'flex';
-        dictSubNivelKanji = 'tudo';
-        document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-sub') === 'tudo');
-        });
+        if (subLevel) subLevel.style.display = 'none';
     } else {
         if (subKanji) subKanji.style.display = 'none';
-        if (subVocab) subVocab.style.display = 'none';
-        dictSubNivelKanji = 'tudo';
-        dictSubNivelVocab = 'tudo';
-        document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-sub') === 'tudo');
-        });
-        document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === 'tudo');
-        });
+        if (subLevel) {
+            if (isEnglish || ['tudo', 'vocab', 'phrasal', 'phonetics', 'grammar'].includes(cat)) {
+                subLevel.style.display = 'flex';
+            } else {
+                subLevel.style.display = 'none';
+            }
+        }
     }
 
     const input = document.getElementById('dict-search-input');
@@ -5399,9 +6629,21 @@ function carregarMaisItensDicionario() {
 }
 
 function abrirModalDicionario() {
-    if (!window.location.pathname.includes('dicionario.html')) {
-        window.location.href = 'dicionario.html';
-        return;
+    const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || 
+                      window.location.pathname.includes('en-US') || 
+                      window.location.pathname.includes('ingles');
+    const isSubfolder = window.location.pathname.includes('/html/');
+
+    if (isEnglish) {
+        if (!window.location.pathname.includes('dicionario_ingles.html')) {
+            window.location.href = isSubfolder ? 'dicionario_ingles.html' : 'html/en-US/dicionario_ingles.html';
+            return;
+        }
+    } else {
+        if (!window.location.pathname.includes('dicionario.html')) {
+            window.location.href = isSubfolder ? 'dicionario.html' : 'html/ja-JP/dicionario.html';
+            return;
+        }
     }
     const input = document.getElementById('dict-search-input');
     if (input) input.focus();
@@ -5412,14 +6654,13 @@ function fecharModalDicionario() {
     if (modal) modal.style.display = 'none';
 }
 
-// Auto-inicialização automática quando estiver na página dedicada dicionario.html
+// Auto-inicialização automática quando estiver na página dedicada dicionario.html ou dicionario_ingles.html
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.location.pathname.includes('dicionario.html') || document.getElementById('dict-results-container')) {
+    if (window.location.pathname.includes('dicionario') || document.getElementById('dict-results-container')) {
         carregarTodosOsDatasets(() => {
             glossarioUniversalCache = null;
+            selecionarCategoriaDicionario(dictCategoriaAtiva);
             const input = document.getElementById('dict-search-input');
-            const query = input ? input.value : '';
-            renderizarResultadosDicionario(query);
             if (input) setTimeout(() => input.focus(), 100);
         });
     }
@@ -5442,12 +6683,28 @@ function renderizarResultadosDicionario(queryStr = '') {
             if (item.level !== dictSubNivelKanji) return false;
         }
 
-        if (dictCategoriaAtiva === 'vocab' && dictSubNivelVocab !== 'tudo') {
-            if (item.level !== dictSubNivelVocab) return false;
+        if (dictSubNivelVocab !== 'tudo') {
+            if (!item.level || item.level.toUpperCase() !== dictSubNivelVocab.toUpperCase()) {
+                return false;
+            }
         }
 
         if (!q) return true;
 
+        if (item.type === 'phrasal') {
+            return normalizarTexto(item.term).includes(q) ||
+                normalizarTexto(item.meaning).includes(q) ||
+                normalizarTexto(item.explanation).includes(q) ||
+                normalizarTexto(item.breakdown).includes(q) ||
+                (item.examples || []).some(ex => normalizarTexto(ex).includes(q));
+        }
+        if (item.type === 'phonetics') {
+            return normalizarTexto(item.title).includes(q) ||
+                normalizarTexto(item.ipaSymbol).includes(q) ||
+                normalizarTexto(item.description).includes(q) ||
+                (item.rules || []).some(r => normalizarTexto(r).includes(q)) ||
+                (item.minimalPairs || []).some(mp => normalizarTexto(mp.p1 || mp.word1 || '').includes(q) || normalizarTexto(mp.p2 || mp.word2 || '').includes(q));
+        }
         if (item.type === 'hiragana' || item.type === 'katakana' || item.type === 'kana') {
             return normalizarTexto(item.character).includes(q) ||
                 normalizarTexto(item.romaji).includes(q) ||
@@ -5495,7 +6752,7 @@ function renderizarResultadosDicionario(queryStr = '') {
             <div style="text-align:center; padding: 2.5rem 1rem; color: var(--text-muted); grid-column: 1 / -1;">
                 <span style="font-size: 3rem;">🔍</span>
                 <h4 style="margin-top: 0.5rem; color: var(--text-main);">Nenhum resultado encontrado</h4>
-                <p style="font-size: 0.9rem;">Tente pesquisar com outro termo em português, romaji, kana ou kanji.</p>
+                <p style="font-size: 0.9rem;">Tente pesquisar com outro termo, tradução ou IPA.</p>
             </div>
         `;
         return;
@@ -5505,7 +6762,93 @@ function renderizarResultadosDicionario(queryStr = '') {
 
     let html = '';
     visiveis.forEach((item, idx) => {
-        if (item.type === 'kanji') {
+        const safeTerm = (item.term || item.character || '').replace(/'/g, "\\'");
+        if (item.type === 'phrasal') {
+            let exHtml = '';
+            if (item.examples && item.examples.length > 0) {
+                exHtml = item.examples.slice(0, 2).map(ex => {
+                    const sentenceStr = (typeof ex === 'object' && ex !== null) ? (ex.sentence || '') : String(ex || '');
+                    const translationStr = (typeof ex === 'object' && ex !== null && ex.translation) ? ` — ${ex.translation}` : '';
+                    const safeEx = sentenceStr.replace(/'/g, "\\'");
+                    return `
+                        <div class="dict-ex-item" style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
+                            <span>💬 <em>"${sentenceStr}"${translationStr}</em></span>
+                            <button class="audio-btn dict-audio-btn" onclick="speakKana('${safeEx}')" style="font-size:0.75rem; padding:2px 6px;" title="Ouvir Exemplo">🔊</button>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            let breakdownStr = '';
+            if (typeof item.breakdown === 'object' && item.breakdown !== null) {
+                breakdownStr = `${item.breakdown.root || ''} + ${item.breakdown.particle || ''} (${item.breakdown.type || 'Phrasal Verb'})`;
+            } else if (typeof item.breakdown === 'string') {
+                breakdownStr = item.breakdown;
+            }
+
+            html += `
+                <div class="dict-card dict-card-phrasal" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:14px; padding:18px; box-shadow:var(--shadow);">
+                    <div class="dict-card-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <span class="dict-tag tag-phrasal" style="background:rgba(245, 158, 11, 0.15); color:#d97706; border:1px solid #d97706; font-weight:bold; padding:4px 10px; border-radius:8px; font-size:0.82rem;">⚡ Phrasal Verb • ${item.level}</span>
+                        <span class="dict-origin" style="font-size:0.78rem; color:var(--text-muted); font-weight:bold;">${item.origin}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px;">
+                        <div>
+                            <h3 style="font-family:'Fredoka', sans-serif; font-size:1.4rem; color:var(--text-main); margin:0 0 4px 0;">${item.term}</h3>
+                            <div style="font-weight:700; color:#2563eb; font-size:0.95rem;">${item.meaning}</div>
+                        </div>
+                        <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-end;">
+                            <button class="audio-btn dict-audio-btn" onclick="speakKana('${safeTerm}')" title="Ouvir Phrasal Verb">🔊</button>
+                            <button class="btn-mic" id="btn-mic-pv-${idx}" onclick="gravarEPronunciar('${safeTerm}', 'btn-mic-pv-${idx}')" title="Treinar Pronúncia">🎙️ Treinar</button>
+                        </div>
+                    </div>
+                    ${breakdownStr ? `<div style="font-size:0.82rem; background:rgba(37, 99, 235, 0.08); padding:6px 10px; border-radius:6px; color:#1d4ed8; font-weight:600; margin-bottom:8px;">🧩 Decomposição: ${breakdownStr}</div>` : ''}
+                    ${item.explanation ? `<p style="font-size:0.88rem; color:var(--text-main); margin:0 0 10px 0; line-height:1.4;">${item.explanation}</p>` : ''}
+                    ${exHtml ? `<div class="dict-ex-box" style="background:var(--bg-color); padding:8px; border-radius:8px;">${exHtml}</div>` : ''}
+                </div>
+            `;
+        } else if (item.type === 'phonetics') {
+            let rulesHtml = '';
+            if (item.rules && item.rules.length > 0) {
+                rulesHtml = `<ul style="font-size:0.85rem; color:var(--text-main); margin:6px 0 10px 18px; padding:0;">` +
+                    item.rules.map(r => `<li>${r}</li>`).join('') + `</ul>`;
+            }
+
+            let pairsHtml = '';
+            if (item.minimalPairs && item.minimalPairs.length > 0) {
+                pairsHtml = `<div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:8px;">` +
+                    item.minimalPairs.slice(0, 4).map((mp) => {
+                        const w1 = mp.p1 || mp.word1 || '';
+                        const w2 = mp.p2 || mp.word2 || '';
+                        const safeW1 = w1.replace(/'/g, "\\'");
+                        const safeW2 = w2.replace(/'/g, "\\'");
+                        return `
+                            <div style="background:var(--bg-color); padding:6px 8px; border-radius:6px; font-size:0.82rem; display:flex; justify-content:space-between; align-items:center;">
+                                <span><strong>${w1}</strong> vs <strong>${w2}</strong></span>
+                                <div style="display:flex; gap:4px;">
+                                    <button class="audio-btn" onclick="speakKana('${safeW1}')" style="font-size:0.75rem; padding:1px 5px;">🔊</button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('') + `</div>`;
+            }
+
+            html += `
+                <div class="dict-card dict-card-phonetics" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:14px; padding:18px; box-shadow:var(--shadow);">
+                    <div class="dict-card-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <span class="dict-tag tag-phonetics" style="background:rgba(236, 72, 153, 0.15); color:#db2777; border:1px solid #db2777; font-weight:bold; padding:4px 10px; border-radius:8px; font-size:0.82rem;">🎙️ Fonética • ${item.level}</span>
+                        <span class="dict-origin" style="font-size:0.78rem; color:var(--text-muted); font-weight:bold;">${item.origin}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <h3 style="font-family:'Fredoka', sans-serif; font-size:1.3rem; color:var(--text-main); margin:0;">${item.title}</h3>
+                        ${item.ipaSymbol ? `<span style="font-weight:bold; background:#db2777; color:white; padding:3px 10px; border-radius:12px; font-size:0.9rem;">${item.ipaSymbol}</span>` : ''}
+                    </div>
+                    <p style="font-size:0.88rem; color:var(--text-main); margin:0 0 8px 0;">${item.description}</p>
+                    ${rulesHtml}
+                    ${pairsHtml}
+                </div>
+            `;
+        } else if (item.type === 'kanji') {
             let exHtml = '';
             if (item.examples && item.examples.length > 0) {
                 exHtml = item.examples.slice(0, 2).map(ex => `

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Estilos personalizados mantendo as cores temáticas do curso de Inglês (Azul Imperial) */
+        .course-btn.english-main {
+            background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .course-btn.english-main:hover {
+            border-color: #60a5fa;
+            box-shadow: 0 15px 25px rgba(29, 78, 216, 0.4), 0 0 15px rgba(96, 165, 250, 0.3);
+        }
+
+        .course-btn.phrasal {
+            background: linear-gradient(135deg, #028090, #155e75);
+            color: #ffffff;
+        }
+
+        .course-btn.phonics {
+            background: linear-gradient(135deg, #e63946, #b91c1c);
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body data-mode="curso">
+    <header>
+        <a href="index.html" class="home-btn">⬅ Idiomas</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">🗽 Inglês Academy</h1>
+        <p id="mainDesc">A plataforma completa para dominar a conversação, vocabulário e pronúncia do idioma inglês.</p>
+    </header>
+
+    <div class="container">
+        <div id="main-menu">
+
+            <!-- CURSO PRINCIPAL A1 - B2 -->
+            <a href="html/en-US/curso_ingles.html" class="course-btn english-main">
+                <span>💬</span> Curso de Inglês
+                <p>Do Básico ao Avançado (A1, A2, B1, B2)</p>
+            </a>
+
+            <!-- PHRASAL VERBS E EXPRESSÕES -->
+            <a href="html/en-US/phrasal_verbs.html" class="course-btn phrasal">
+                <span>⚡</span> Phrasal Verbs & Expressões
+                <p>Domine os verbos compostos e gírias essenciais do dia a dia</p>
+            </a>
+
+            <!-- FONÉTICA E PRONÚNCIA -->
+            <a href="html/en-US/pronuncia_ingles.html" class="course-btn phonics">
+                <span>🎙️</span> Guia de Pronúncia & Fonética
+                <p>Treine a fala com o microfone e entenda os sons do IPA</p>
+            </a>
+
+            <!-- MINIGAME DE ESCUTA E DIGITAÇÃO -->
+            <a href="html/en-US/minigame_ingles.html" class="course-btn game">
+                <span>🎮</span> Word Master Pro
+                <p>Minigame Oficial de Escuta, Digitação e Velocidade</p>
+            </a>
+
+            <!-- DICIONÁRIO E GLOSSÁRIO DE INGLÊS -->
+            <a href="html/en-US/dicionario_ingles.html" class="course-btn dict">
+                <span>📖</span> Dicionário & Glossário
+                <p>Busca Universal de Vocabulário, Gramática e Exemplo de Frases</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Scripts de Dados do Curso de Inglês -->
+    <script src="database/en-US/data_english_a1.js"></script>
+    <script src="database/en-US/data_english_a2.js"></script>
+    <script src="database/en-US/data_english_b1.js"></script>
+    <script src="database/en-US/data_english_b2.js"></script>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Master Pro - Inglês Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="game" data-lang="english">
+    <header>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Inglês</a>
+        <h1 id="mainTitle">🎮 Word Master Pro</h1>
+        <p id="mainDesc">Treine sua escuta, digitação e agilidade de vocabulário em tempo real.</p>
+    </header>
+
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+        <!-- 1. TELA DE MENU / CONFIGURAÇÃO DO JOGO -->
+        <div id="game-menu-screen" class="game-card-screen" style="display: block;">
+            <div
+                style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); text-align: center;">
+
+                <!-- Placar de Recordes -->
+                <div
+                    style="display: flex; justify-content: space-around; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; margin-bottom: 24px;">
+                    <div>
+                        <span
+                            style="font-size: 0.85rem; color: var(--text-muted); display: block; font-weight: bold;">🏆
+                            Recorde de Pontos</span>
+                        <strong id="menu-high-score" style="font-size: 1.8rem; color: #fbbf24;">0</strong>
+                    </div>
+                    <div style="border-left: 1px solid var(--border-color);"></div>
+                    <div>
+                        <span
+                            style="font-size: 0.85rem; color: var(--text-muted); display: block; font-weight: bold;">🔥
+                            Maior Combo</span>
+                        <strong id="menu-max-combo" style="font-size: 1.8rem; color: #ef4444;">0x</strong>
+                    </div>
+                </div>
+
+                <!-- Configuração de Modo e Filtros -->
+                <h3
+                    style="font-family: 'Fredoka', sans-serif; color: var(--text-main); margin-bottom: 16px; text-align: left;">
+                    ⚙️ Configurações da Partida</h3>
+
+                <!-- Modo de Entrada (Digitação vs Voz) -->
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label
+                        style="font-size: 0.9rem; font-weight: bold; color: var(--text-main); display: block; margin-bottom: 8px;">Modo
+                        de Resposta:</label>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <label class="mode-lbl active"
+                            style="flex: 1; min-width: 140px; padding: 12px; border: 2px solid var(--border-color); border-radius: 10px; cursor: pointer; text-align: center; font-weight: bold;">
+                            <input type="radio" name="input_mode" value="typing" checked style="display:none;">
+                            ⌨️ Digitação
+                        </label>
+                        <label class="mode-lbl"
+                            style="flex: 1; min-width: 140px; padding: 12px; border: 2px solid var(--border-color); border-radius: 10px; cursor: pointer; text-align: center; font-weight: bold;">
+                            <input type="radio" name="input_mode" value="voice" style="display:none;">
+                            🎙️ Voz (Microfone)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- FILTROS POR NÍVEIS CEFR (A1, A2, B1, B2) -->
+                <div style="margin-bottom: 24px; text-align: left;">
+                    <label
+                        style="font-size: 0.9rem; font-weight: bold; color: var(--text-main); display: block; margin-bottom: 8px;">Selecione
+                        os Níveis do Vocabulário:</label>
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; background: var(--bg-color); padding: 14px; border-radius: 10px; border: 1px solid var(--border-color);">
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: bold; cursor: pointer; color: #1d4ed8;">
+                            <input type="checkbox" class="cat-cb" value="A1" checked
+                                style="width: 18px; height: 18px; accent-color: #1d4ed8;"> 🔵 Nível A1
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: bold; cursor: pointer; color: #16a34a;">
+                            <input type="checkbox" class="cat-cb" value="A2" checked
+                                style="width: 18px; height: 18px; accent-color: #16a34a;"> 🟢 Nível A2
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: bold; cursor: pointer; color: #ca8a04;">
+                            <input type="checkbox" class="cat-cb" value="B1"
+                                style="width: 18px; height: 18px; accent-color: #ca8a04;"> 🟡 Nível B1
+                        </label>
+                        <label
+                            style="display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: bold; cursor: pointer; color: #dc2626;">
+                            <input type="checkbox" class="cat-cb" value="B2"
+                                style="width: 18px; height: 18px; accent-color: #dc2626;"> 🔴 Nível B2
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Oculto para compatibilidade interna do app.js -->
+                <input type="radio" name="script_mode" value="all" checked style="display:none;">
+
+                <!-- Opção de Vidas Infinitas -->
+                <div style="margin-bottom: 24px; text-align: left; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="g-infinite-lives"
+                        style="width: 18px; height: 18px; accent-color: var(--current-primary); cursor: pointer;">
+                    <label for="g-infinite-lives" style="font-weight: bold; cursor: pointer;">♾️ Modo Treino (Vidas
+                        Infinitas)</label>
+                </div>
+
+                <!-- Botão Iniciar -->
+                <button onclick="startGame()"
+                    style="width: 100%; padding: 14px; background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(29, 78, 216, 0.4);">
+                    🚀 Iniciar Partida
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 2. TELA DE GAMEPLAY / DUELO DE PALAVRAS -->
+        <div id="game-play-screen" class="game-card-screen" style="display: none;">
+            <div id="g-card-main" class="g-card-area"
+                style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); text-align: center; position: relative;">
+
+                <!-- HUD de Status (Pontos, Vidas, Combo) -->
+                <div class="hud-status-bar"
+                    style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 24px; gap: 12px;">
+                    <div style="text-align: left;">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">PONTOS</span>
+                        <div id="g-score" style="font-size: 1.5rem; font-weight: 800; color: #22c55e; font-family: 'Fredoka', sans-serif;">0</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <span id="g-badge" class="badge-pill"
+                            style="background: linear-gradient(135deg, rgba(29, 78, 216, 0.12), rgba(168, 85, 247, 0.15)); color: #1d4ed8; border: 1.5px solid rgba(29, 78, 216, 0.3); font-weight: 700; padding: 6px 16px; border-radius: 20px; font-size: 0.88rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;">
+                            🇬🇧 INGLÊS - NÍVEL A1
+                        </span>
+                    </div>
+                    <div style="display: flex; gap: 18px; justify-content: flex-end; align-items: center;">
+                        <div style="text-align: right;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">VIDAS</span>
+                            <div id="g-lives" style="font-size: 1.3rem; font-weight: bold;">❤️ ❤️ ❤️</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">COMBO</span>
+                            <div id="g-combo" style="font-size: 1.3rem; font-weight: 800; color: #f97316; font-family: 'Fredoka', sans-serif;">🔥 0x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exibição Central do Item/Palavra -->
+                <div
+                    style="min-height: 140px; display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                    <div id="g-big-kana"
+                        style="font-size: 4rem; font-weight: bold; color: var(--text-main); font-family: 'Fredoka', sans-serif;">
+                        ---</div>
+                </div>
+
+                <!-- Área de Entrada de Resposta -->
+                <div style="margin-bottom: 16px;">
+                    <!-- Input de Digitação -->
+                    <input type="text" id="g-ans-input" autocomplete="off"
+                        placeholder="Digite a tradução em português..."
+                        style="width: 100%; max-width: 400px; padding: 14px; font-size: 1.2rem; font-weight: bold; text-align: center; border-radius: 12px; border: 2px solid var(--border-color); background: var(--bg-color); color: var(--text-main); outline: none;">
+
+                    <!-- Botão de Microfone (para modo voz) -->
+                    <button id="g-mic-btn" onclick="startListening()"
+                        style="display: none; margin: 0 auto; padding: 14px 28px; border-radius: 50px; background: #ef4444; color: white; border: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);">
+                        🎙️ Falar Agora
+                    </button>
+                </div>
+
+                <!-- Dica / Instrução -->
+                <p id="g-hint-text" style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;"></p>
+
+                <!-- Painel de Feedback da Resposta -->
+                <div id="g-feedback" role="status" aria-live="polite"
+                    style="opacity: 0; min-height: 28px; font-weight: bold; font-size: 1.05rem; transition: opacity 0.2s ease;">
+                </div>
+
+                <!-- Botão de Sair/Desistir -->
+                <button onclick="exitGame()"
+                    style="background: transparent; border: none; color: var(--text-muted); font-weight: bold; cursor: pointer; margin-top: 16px; text-decoration: underline;">
+                    ⬅ Voltar ao Menu
+                </button>
+            </div>
+        </div>
+
+        <!-- 3. TELA DE GAME OVER / RESULTADO FINAL -->
+        <div id="game-over-screen" class="game-card-screen" style="display: none;">
+            <div
+                style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 32px 24px; text-align: center; box-shadow: var(--shadow);">
+                <div style="font-size: 4rem; margin-bottom: 12px;">🏁</div>
+                <h2 style="font-family: 'Fredoka', sans-serif; color: #ef4444; margin-bottom: 8px;">Fim de Jogo!</h2>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Sua partida foi finalizada. Confira seu
+                    desempenho:</p>
+
+                <div
+                    style="display: flex; justify-content: space-around; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Pontuação
+                            Final</span>
+                        <strong id="g-final-score" style="font-size: 2rem; color: #fbbf24;">0</strong>
+                    </div>
+                    <div style="border-left: 1px solid var(--border-color);"></div>
+                    <div>
+                        <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Maior Combo</span>
+                        <strong id="g-final-combo" style="font-size: 2rem; color: #22c55e;">0x</strong>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="startGame()"
+                        style="padding: 12px 24px; background: var(--current-primary, #1d4ed8); color: white; border: none; border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                        🔄 Jogar Novamente
+                    </button>
+                    <button onclick="showGameTab('menu')"
+                        style="padding: 12px 24px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); border-radius: 10px; font-weight: bold; font-size: 1rem; cursor: pointer;">
+                        ⚙️ Alterar Opções
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CARREGAMENTO DOS BANCOS DE DADOS DE INGLÊS (A1 A B2) -->
+    <script src="../../database/en-US/data_english_a1.js"></script>
+    <script src="../../database/en-US/data_english_a2.js"></script>
+    <script src="../../database/en-US/data_english_b1.js"></script>
+    <script src="../../database/en-US/data_english_b2.js"></script>
+    <script src="../../database/en-US/data_minigame_ingles.js"></script>
+
+    <!-- FIREBASE E SCRIPT PRINCIPAL DA APLICAÇÃO -->
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário & Glossário - Inglês Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body data-mode="pronuncia" data-lang="english">
+    <header>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Inglês</a>
+        <h1 id="mainTitle">📖 Dicionário & Glossário de Inglês</h1>
+        <p id="mainDesc">Consulte o alfabeto, vocabulário, phrasal verbs, regras gramaticais e treine sua pronúncia.</p>
+    </header>
+
+    <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px;">
+        
+        <!-- Barra de Pesquisa -->
+        <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
+            <input type="text" id="dict-search-input" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em inglês, tradução em português, IPA ou phrasal verb..." style="width:100%; padding:0.9rem 1.2rem; border-radius:12px; background:var(--card-bg); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
+        </div>
+
+        <!-- Filtros por Categoria -->
+        <div class="dict-filters-row" style="display:flex; gap:0.5rem; margin-bottom:0.8rem; flex-wrap:wrap;">
+            <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">🌐 Tudo</button>
+            <button class="dict-filter-pill" data-cat="alphabet" onclick="selecionarCategoriaDicionario('alphabet')">🔤 Alfabeto A-Z</button>
+            <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário</button>
+            <button class="dict-filter-pill" data-cat="phrasal" onclick="selecionarCategoriaDicionario('phrasal')">⚡ Phrasal Verbs</button>
+            <button class="dict-filter-pill" data-cat="phonetics" onclick="selecionarCategoriaDicionario('phonetics')">🎙️ Fonética & IPA</button>
+            <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática</button>
+        </div>
+
+        <!-- Subfiltros por Nível CEFR -->
+        <div id="dict-subfilters-level" class="dict-subfilters-row" style="display: flex; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
+            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🔵 Nível A1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟢 Nível A2</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟡 Nível B1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B2" onclick="selecionarSubNivelVocab('B2')">🔴 Nível B2</button>
+        </div>
+
+        <!-- SEÇÃO ESPECIAL DA TABELA DO ALFABETO INGLÊS (A-Z) -->
+        <div id="dict-alphabet-section" style="display: none; margin-bottom: 2rem;">
+            <h3 style="font-family: 'Fredoka', sans-serif; color: var(--text-main); margin-bottom: 0.5rem; text-align: center;">🔤 Alfabeto do Inglês (English Alphabet)</h3>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.2rem;">Clique em qualquer letra para ouvir a pronúncia nativa e seu nome fonético.</p>
+            <div id="dict-alphabet-grid" class="soundboard-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 12px;"></div>
+        </div>
+
+        <!-- Contador de Resultados -->
+        <div id="dict-results-counter" style="font-size:0.88rem; color:var(--text-muted); font-weight:600; margin-bottom:1rem;">
+            Carregando glossário de inglês...
+        </div>
+
+        <!-- Grid de Resultados de Busca -->
+        <div id="dict-results-container" class="grid-dict-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;"></div>
+
+    </div>
+
+    <!-- CARREGAMENTO DE BANCOS DE DADOS DE INGLÊS -->
+    <script src="../../database/en-US/data_english_a1.js"></script>
+    <script src="../../database/en-US/data_english_a2.js"></script>
+    <script src="../../database/en-US/data_english_b1.js"></script>
+    <script src="../../database/en-US/data_english_b2.js"></script>
+    <script src="../../database/en-US/data_phrasal_verbs.js"></script>
+    <script src="../../database/en-US/data_pronunciation.js"></script>
+
+    <!-- FIREBASE E MOTOR DA APLICAÇÃO -->
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

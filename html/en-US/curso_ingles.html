@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglês Academy - Curso Completo</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="curso" data-lang="english">
+    <header>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
+        <h1>💬 Curso de Inglês (CEFR)</h1>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <!-- TELA 1: HUB DE NÍVEIS DO INGLÊS -->
+    <main id="hub-niveis" class="container">
+        <!-- BANNER DE REVISÃO SRS -->
+        <div class="banner-srs">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
+                <h3>Smart Memory Review</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão em inglês...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS()" class="btn-srs-action">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <h2>Hub de Proficiência em Inglês</h2>
+
+        <!-- DASHBOARD DE PROGRESSO GLOBAL -->
+        <div id="dashboard-progresso-global" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 25px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <strong style="font-size: 1.1rem; color: var(--text-main);">📈 Progresso Geral em Inglês</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Trilha Guiada em 4 Níveis (A1 ➔ A2 ➔ B1 ➔ B2)</div>
+                </div>
+                <div style="text-align: right;">
+                    <span id="progresso-global-percent" style="font-size: 1.4rem; font-weight: bold; color: #22c55e;">0%</span>
+                    <div id="progresso-global-xp" style="font-weight: bold; color: #fbbf24; font-size: 0.9rem;">0 XP</div>
+                </div>
+            </div>
+            <div style="background: var(--bg-color); height: 10px; border-radius: 5px; overflow: hidden; border: 1px solid var(--border-color);">
+                <div id="progresso-global-bar" style="background: linear-gradient(90deg, #2563eb, #22c55e); width: 0%; height: 100%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <button id="btn-ver-certificado-hub" onclick="abrirModalCertificado()" style="display: none; background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: #fff; border: none; padding: 14px 24px; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; margin-bottom: 20px; width: 100%; box-shadow: var(--shadow);">
+            🎓 Ver Meu Certificado de Fluência B2 (English)
+        </button>
+
+        <div class="grid-niveis">
+            <div class="card-nivel" id="card-nivel-a1" onclick="abrirTrilha('A1')">
+                <span class="tag" id="tag-nivel-a1" style="background: #22c55e; color: #fff;">BEGINNER</span>
+                <h3>Nível A1</h3>
+                <p>Iniciante • Saudações, Frases Básicas & Cotidiano</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-a2" onclick="abrirTrilha('A2')">
+                <span class="tag" id="tag-nivel-a2" style="background: #2563eb; color: #fff;">ELEMENTARY</span>
+                <h3>Nível A2</h3>
+                <p>Elementar • Rotina, Viagens & Diálogos Reais</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-b1" onclick="abrirTrilha('B1')">
+                <span class="tag" id="tag-nivel-b1" style="background: #028090; color: #fff;">INTERMEDIATE</span>
+                <h3>Nível B1</h3>
+                <p>Intermediário • Opiniões, Passado & Conectores</p>
+            </div>
+            <div class="card-nivel" id="card-nivel-b2" onclick="abrirTrilha('B2')">
+                <span class="tag" id="tag-nivel-b2" style="background: #b45309; color: #fff;">UPPER-INTERMEDIATE</span>
+                <h3>Nível B2</h3>
+                <p>Avançado • Business, Debates & Fluência Total</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A1 (INGLÊS - 30 MÓDULOS) -->
+    <main id="trilha-a1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A1 - English Beginners</h2>
+
+        <!-- SEÇÃO 1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: First Steps & Introductions</h3>
+            <div id="lista-modulos-secao1">
+                <button class="btn-modulo" id="mod-0-btn" onclick="iniciarModulo(0, 'A1')">
+                    🔓 Módulo 1: Greetings & Basic Courtesy
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-1-btn" onclick="iniciarModulo(1, 'A1')" disabled>
+                    🔒 Módulo 2: Introducing Yourself & Verb 'To Be'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-2-btn" onclick="iniciarModulo(2, 'A1')" disabled>
+                    🔒 Módulo 3: Personal Pronouns & Countries
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-3-btn" onclick="iniciarModulo(3, 'A1')" disabled>
+                    🔒 Módulo 4: Jobs & Professions
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-4-btn" onclick="iniciarModulo(4, 'A1')" disabled>
+                    🔒 Módulo 5: Alphabet, Spelling & Phone Numbers
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Family, People & Descriptions</h3>
+            <div id="lista-modulos-secao2">
+                <button class="btn-modulo bloqueado" id="mod-5-btn" onclick="iniciarModulo(5, 'A1')" disabled>
+                    🔒 Módulo 6: Family Members & Possessive 's
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-6-btn" onclick="iniciarModulo(6, 'A1')" disabled>
+                    🔒 Módulo 7: Numbers & Age (1 to 100)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-7-btn" onclick="iniciarModulo(7, 'A1')" disabled>
+                    🔒 Módulo 8: Possessive Adjectives (My, Your, His, Her...)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-8-btn" onclick="iniciarModulo(8, 'A1')" disabled>
+                    🔒 Módulo 9: Describing People (Adjectives)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-9-btn" onclick="iniciarModulo(9, 'A1')" disabled>
+                    🔒 Módulo 10: Feelings & Emotions
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Objects, Places & Location</h3>
+            <div id="lista-modulos-secao3">
+                <button class="btn-modulo bloqueado" id="mod-10-btn" onclick="iniciarModulo(10, 'A1')" disabled>
+                    🔒 Módulo 11: Demonstratives (This, That, These, Those)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-11-btn" onclick="iniciarModulo(11, 'A1')" disabled>
+                    🔒 Módulo 12: Everyday Objects & Belongings
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-12-btn" onclick="iniciarModulo(12, 'A1')" disabled>
+                    🔒 Módulo 13: There is / There are (Existence)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-13-btn" onclick="iniciarModulo(13, 'A1')" disabled>
+                    🔒 Módulo 14: Rooms & Furniture in the House
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-14-btn" onclick="iniciarModulo(14, 'A1')" disabled>
+                    🔒 Módulo 15: Prepositions of Place (In, On, Under, Next to)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Daily Routine & Present Simple</h3>
+            <div id="lista-modulos-secao4">
+                <button class="btn-modulo bloqueado" id="mod-15-btn" onclick="iniciarModulo(15, 'A1')" disabled>
+                    🔒 Módulo 16: Telling the Time
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-16-btn" onclick="iniciarModulo(16, 'A1')" disabled>
+                    🔒 Módulo 17: Days of the Week & Months
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-17-btn" onclick="iniciarModulo(17, 'A1')" disabled>
+                    🔒 Módulo 18: Daily Habits & Present Simple I
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-18-btn" onclick="iniciarModulo(18, 'A1')" disabled>
+                    🔒 Módulo 19: Present Simple II (He/She/It -s)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-19-btn" onclick="iniciarModulo(19, 'A1')" disabled>
+                    🔒 Módulo 20: Adverbs of Frequency (Always, Sometimes, Never)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Food, Drinks & Shopping</h3>
+            <div id="lista-modulos-secao5">
+                <button class="btn-modulo bloqueado" id="mod-20-btn" onclick="iniciarModulo(20, 'A1')" disabled>
+                    🔒 Módulo 21: Food & Drinks Vocabulary
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-21-btn" onclick="iniciarModulo(21, 'A1')" disabled>
+                    🔒 Módulo 22: Expressing Likes & Dislikes (Like / Hate)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-22-btn" onclick="iniciarModulo(22, 'A1')" disabled>
+                    🔒 Módulo 23: Asking for Prices & Money (How much?)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-23-btn" onclick="iniciarModulo(23, 'A1')" disabled>
+                    🔒 Módulo 24: Ordering in a Restaurant (Can I have...?)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-24-btn" onclick="iniciarModulo(24, 'A1')" disabled>
+                    🔒 Módulo 25: Countable & Uncountable Nouns (Some / Any)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Places in the City, Travel & Final Challenge</h3>
+            <div id="lista-modulos-secao6">
+                <button class="btn-modulo bloqueado" id="mod-25-btn" onclick="iniciarModulo(25, 'A1')" disabled>
+                    🔒 Módulo 26: Places in the City
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-26-btn" onclick="iniciarModulo(26, 'A1')" disabled>
+                    🔒 Módulo 27: Means of Transportation & 'By'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-27-btn" onclick="iniciarModulo(27, 'A1')" disabled>
+                    🔒 Módulo 28: Asking for Directions
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-28-btn" onclick="iniciarModulo(28, 'A1')" disabled>
+                    🔒 Módulo 29: Abilities & Requests (Can / Can't)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-29-btn" onclick="iniciarModulo(29, 'A1')" disabled>
+                    🔒 Módulo 30: 🏆 A1 Final Challenge: The Airport & Hotel Simulation
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA TRILHA NÍVEL A2 -->
+    <main id="trilha-a2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A2 - Elementary English</h2>
+
+        <!-- SEÇÃO 1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Daily Life, Habits & Frequency</h3>
+            <div id="lista-modulos-a2-secao1">
+                <button class="btn-modulo" id="mod-a2-0-btn" onclick="iniciarModulo(0, 'A2')">
+                    🔓 Módulo 1: Everyday Routines & Present Simple Review
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-1-btn" onclick="iniciarModulo(1, 'A2')" disabled>
+                    🔒 Módulo 2: Adverbs & Expressions of Frequency
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-2-btn" onclick="iniciarModulo(2, 'A2')" disabled>
+                    🔒 Módulo 3: Free Time & Hobbies
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-3-btn" onclick="iniciarModulo(3, 'A2')" disabled>
+                    🔒 Módulo 4: Jobs, Workplace & Daily Tasks
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-4-btn" onclick="iniciarModulo(4, 'A2')" disabled>
+                    🔒 Módulo 5: Habits & Free Time Grammar Review
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Past Experiences & Stories</h3>
+            <div id="lista-modulos-a2-secao2">
+                <button class="btn-modulo bloqueado" id="mod-a2-5-btn" onclick="iniciarModulo(5, 'A2')" disabled>
+                    🔒 Módulo 6: Regular Verbs in Past Simple (-ed)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-6-btn" onclick="iniciarModulo(6, 'A2')" disabled>
+                    🔒 Módulo 7: Irregular Verbs in Past Simple
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-7-btn" onclick="iniciarModulo(7, 'A2')" disabled>
+                    🔒 Módulo 8: Past Simple Questions & Negatives
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-8-btn" onclick="iniciarModulo(8, 'A2')" disabled>
+                    🔒 Módulo 9: Travel Memories & Vacations
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-9-btn" onclick="iniciarModulo(9, 'A2')" disabled>
+                    🔒 Módulo 10: Past Continuous vs. Past Simple
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Comparisons, Preferences & Opinions</h3>
+            <div id="lista-modulos-a2-secao3">
+                <button class="btn-modulo bloqueado" id="mod-a2-10-btn" onclick="iniciarModulo(10, 'A2')" disabled>
+                    🔒 Módulo 11: Comparative Adjectives
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-11-btn" onclick="iniciarModulo(11, 'A2')" disabled>
+                    🔒 Módulo 12: Superlative Adjectives
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-12-btn" onclick="iniciarModulo(12, 'A2')" disabled>
+                    🔒 Módulo 13: Expressing Opinions & Agreement
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-13-btn" onclick="iniciarModulo(13, 'A2')" disabled>
+                    🔒 Módulo 14: Preferences with 'Prefer' & 'Would Rather'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-14-btn" onclick="iniciarModulo(14, 'A2')" disabled>
+                    🔒 Módulo 15: Making Choices & Justifications
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Travel, Hotels & Getting Around</h3>
+            <div id="lista-modulos-a2-secao4">
+                <button class="btn-modulo bloqueado" id="mod-a2-15-btn" onclick="iniciarModulo(15, 'A2')" disabled>
+                    🔒 Módulo 16: At the Airport & Security
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-16-btn" onclick="iniciarModulo(16, 'A2')" disabled>
+                    🔒 Módulo 17: Checking into a Hotel & Requests
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-17-btn" onclick="iniciarModulo(17, 'A2')" disabled>
+                    🔒 Módulo 18: Buying Tickets & Transportation
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-18-btn" onclick="iniciarModulo(18, 'A2')" disabled>
+                    🔒 Módulo 19: Giving & Asking for Detailed Directions
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-19-btn" onclick="iniciarModulo(19, 'A2')" disabled>
+                    🔒 Módulo 20: Travel Emergencies & Lost Items
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Health, Advice & Modals of Obligation</h3>
+            <div id="lista-modulos-a2-secao5">
+                <button class="btn-modulo bloqueado" id="mod-a2-20-btn" onclick="iniciarModulo(20, 'A2')" disabled>
+                    🔒 Módulo 21: Symptoms, Illness & At the Pharmacy
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-21-btn" onclick="iniciarModulo(21, 'A2')" disabled>
+                    🔒 Módulo 22: Obligation & Necessity (Have to / Don't have to)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-22-btn" onclick="iniciarModulo(22, 'A2')" disabled>
+                    🔒 Módulo 23: Prohibitions & Rules (Must not / Can't)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-23-btn" onclick="iniciarModulo(23, 'A2')" disabled>
+                    🔒 Módulo 24: Giving Advice with 'Should'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-24-btn" onclick="iniciarModulo(24, 'A2')" disabled>
+                    🔒 Módulo 25: Expressing Reasons & Explanations
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Future Plans, Social Invitations & Final Challenge</h3>
+            <div id="lista-modulos-a2-secao6">
+                <button class="btn-modulo bloqueado" id="mod-a2-25-btn" onclick="iniciarModulo(25, 'A2')" disabled>
+                    🔒 Módulo 26: Future Intentions with 'Be Going To'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-26-btn" onclick="iniciarModulo(26, 'A2')" disabled>
+                    🔒 Módulo 27: Making & Responding to Invitations
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-27-btn" onclick="iniciarModulo(27, 'A2')" disabled>
+                    🔒 Módulo 28: Polite Refusals & Excuses
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-28-btn" onclick="iniciarModulo(28, 'A2')" disabled>
+                    🔒 Módulo 29: Giving & Receiving Gifts
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-a2-29-btn" onclick="iniciarModulo(29, 'A2')" disabled>
+                    🔒 Módulo 30: 🏆 A2 Final Challenge: The Complete Travel & Social Simulation
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA TRILHA NÍVEL B1 -->
+    <main id="trilha-b1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B1 - Intermediate English</h2>
+
+        <!-- SEÇÃO 1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Informal English, Connected Speech & Fluency</h3>
+            <div id="lista-modulos-b1-secao1">
+                <button class="btn-modulo" id="mod-b1-0-btn" onclick="iniciarModulo(0, 'B1')">
+                    🔓 Módulo 1: Informal Speech & Reduced Forms
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-1-btn" onclick="iniciarModulo(1, 'B1')" disabled>
+                    🔒 Módulo 2: Connected Speech & Linking Sounds
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-2-btn" onclick="iniciarModulo(2, 'B1')" disabled>
+                    🔒 Módulo 3: Expressing Opinions & Thoughts
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-3-btn" onclick="iniciarModulo(3, 'B1')" disabled>
+                    🔒 Módulo 4: Expressing Doubts & Uncertainty
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Life Experiences, Causes & Unforeseen Events</h3>
+            <div id="lista-modulos-b1-secao2">
+                <button class="btn-modulo bloqueado" id="mod-b1-4-btn" onclick="iniciarModulo(4, 'B1')" disabled>
+                    🔒 Módulo 5: Life Experiences with 'Present Perfect'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-5-btn" onclick="iniciarModulo(5, 'B1')" disabled>
+                    🔒 Módulo 6: Present Perfect vs. Past Simple
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-6-btn" onclick="iniciarModulo(6, 'B1')" disabled>
+                    🔒 Módulo 7: Explaining Reasons & Consequences
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-7-btn" onclick="iniciarModulo(7, 'B1')" disabled>
+                    🔒 Módulo 8: Regrets, Accidents & Mistakes
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Hypotheses, Conditions & Life Changes</h3>
+            <div id="lista-modulos-b1-secao3">
+                <button class="btn-modulo bloqueado" id="mod-b1-8-btn" onclick="iniciarModulo(8, 'B1')" disabled>
+                    🔒 Módulo 9: First Conditional (Real Possibilities)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-9-btn" onclick="iniciarModulo(9, 'B1')" disabled>
+                    🔒 Módulo 10: Second Conditional (Hypothetical Situations)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-10-btn" onclick="iniciarModulo(10, 'B1')" disabled>
+                    🔒 Módulo 11: Expressing Changes & Habits ('Used to' & 'Get used to')
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-11-btn" onclick="iniciarModulo(11, 'B1')" disabled>
+                    🔒 Módulo 12: Trying & Experiencing New Things
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Phrasal Verbs & Human Relationships</h3>
+            <div id="lista-modulos-b1-secao4">
+                <button class="btn-modulo bloqueado" id="mod-b1-12-btn" onclick="iniciarModulo(12, 'B1')" disabled>
+                    🔒 Módulo 13: Essential Phrasal Verbs I (Daily Actions)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-13-btn" onclick="iniciarModulo(13, 'B1')" disabled>
+                    🔒 Módulo 14: Essential Phrasal Verbs II (Relationships)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-14-btn" onclick="iniciarModulo(14, 'B1')" disabled>
+                    🔒 Módulo 15: Asking for & Offering Favors
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-15-btn" onclick="iniciarModulo(15, 'B1')" disabled>
+                    🔒 Módulo 16: Reporting What Others Said (Reported Speech)
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Work, Professional Life & Formal Etiquette</h3>
+            <div id="lista-modulos-b1-secao5">
+                <button class="btn-modulo bloqueado" id="mod-b1-16-btn" onclick="iniciarModulo(16, 'B1')" disabled>
+                    🔒 Módulo 17: Polite Business English (Modal Verbs)
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-17-btn" onclick="iniciarModulo(17, 'B1')" disabled>
+                    🔒 Módulo 18: Professional Emails & Formal Communication
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-18-btn" onclick="iniciarModulo(18, 'B1')" disabled>
+                    🔒 Módulo 19: Job Interviews & Professional Pitch
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-19-btn" onclick="iniciarModulo(19, 'B1')" disabled>
+                    🔒 Módulo 20: Meetings, Agreement & Disagreement
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Culture, Media & B1 Final Challenge</h3>
+            <div id="lista-modulos-b1-secao6">
+                <button class="btn-modulo bloqueado" id="mod-b1-20-btn" onclick="iniciarModulo(20, 'B1')" disabled>
+                    🔒 Módulo 21: Describing Appearances & Sensations
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-21-btn" onclick="iniciarModulo(21, 'B1')" disabled>
+                    🔒 Módulo 22: Understanding News & Public Announcements
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-22-btn" onclick="iniciarModulo(22, 'B1')" disabled>
+                    🔒 Módulo 23: Cultural Idioms & Slang in Context
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b1-23-btn" onclick="iniciarModulo(23, 'B1')" disabled>
+                    🔒 Módulo 24: 🏆 B1 Final Challenge: Independence & Autonomy Simulation
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA TRILHA NÍVEL B2 -->
+    <main id="trilha-b2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B2 - Upper-Intermediate & Business</h2>
+
+        <!-- SEÇÃO 1 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Advanced Nuances & Emotion Expression</h3>
+            <div id="lista-modulos-b2-secao1">
+                <button class="btn-modulo" id="mod-b2-0-btn" onclick="iniciarModulo(0, 'B2')">
+                    🔓 Módulo 1: Expectations & Disappointments
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-1-btn" onclick="iniciarModulo(1, 'B2')" disabled>
+                    🔒 Módulo 2: Advanced Nuances of 'Only' & 'Barely'
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-2-btn" onclick="iniciarModulo(2, 'B2')" disabled>
+                    🔒 Módulo 3: Subtle Criticism & Contradictions
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-3-btn" onclick="iniciarModulo(3, 'B2')" disabled>
+                    🔒 Módulo 4: Figurative Language & Idioms
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Executive Business & Corporate Etiquette</h3>
+            <div id="lista-modulos-b2-secao2">
+                <button class="btn-modulo bloqueado" id="mod-b2-4-btn" onclick="iniciarModulo(4, 'B2')" disabled>
+                    🔒 Módulo 5: Advanced Executive English & Leadership
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-5-btn" onclick="iniciarModulo(5, 'B2')" disabled>
+                    🔒 Módulo 6: Corporate Emails & Reports
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-6-btn" onclick="iniciarModulo(6, 'B2')" disabled>
+                    🔒 Módulo 7: Negotiations & Polite Disagreement
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-7-btn" onclick="iniciarModulo(7, 'B2')" disabled>
+                    🔒 Módulo 8: Business Presentations & Executive Pitches
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Media Analysis, News & Current Affairs</h3>
+            <div id="lista-modulos-b2-secao3">
+                <button class="btn-modulo bloqueado" id="mod-b2-8-btn" onclick="iniciarModulo(8, 'B2')" disabled>
+                    🔒 Módulo 9: Journalistic English & News Analysis
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-9-btn" onclick="iniciarModulo(9, 'B2')" disabled>
+                    🔒 Módulo 10: Public Notices, Documents & Bureaucracy
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-10-btn" onclick="iniciarModulo(10, 'B2')" disabled>
+                    🔒 Módulo 11: Media, Movies & Informal Slang without Subtitles
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-11-btn" onclick="iniciarModulo(11, 'B2')" disabled>
+                    🔒 Módulo 12: Social & Environmental Issues
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Argumentation, Debates & Academic Texts</h3>
+            <div id="lista-modulos-b2-secao4">
+                <button class="btn-modulo bloqueado" id="mod-b2-12-btn" onclick="iniciarModulo(12, 'B2')" disabled>
+                    🔒 Módulo 13: Academic Connectors & Text Cohesion
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-13-btn" onclick="iniciarModulo(13, 'B2')" disabled>
+                    🔒 Módulo 14: Defending Thesis & Points of View
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-14-btn" onclick="iniciarModulo(14, 'B2')" disabled>
+                    🔒 Módulo 15: Literary Analysis & Reading Native Texts
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-15-btn" onclick="iniciarModulo(15, 'B2')" disabled>
+                    🔒 Módulo 16: Advanced Cause, Effect & Catalysts
+                </button>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Total Immersion & Mastery</h3>
+            <div id="lista-modulos-b2-secao5">
+                <button class="btn-modulo bloqueado" id="mod-b2-16-btn" onclick="iniciarModulo(16, 'B2')" disabled>
+                    🔒 Módulo 17: Global English Dialects & Accents
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-17-btn" onclick="iniciarModulo(17, 'B2')" disabled>
+                    🔒 Módulo 18: Onomatopoeia, Sound Effects & Vivid Descriptions
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-18-btn" onclick="iniciarModulo(18, 'B2')" disabled>
+                    🔒 Módulo 19: Cultural Etiquette & Philosophical Concepts
+                </button>
+                <button class="btn-modulo bloqueado" id="mod-b2-19-btn" onclick="iniciarModulo(19, 'B2')" disabled>
+                    🔒 Módulo 20: 🏆 The Great B2 Final Challenge: Capstone Project & Fluency Assessment
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 3: REPRODUTOR DE AULAS DE 5 ETAPAS -->
+    <main id="player-aula" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="etapa-titulo">Etapa 1 de 5</span>
+            <button onclick="fecharAula()">✖ Sair</button>
+        </div>
+        <div id="conteudo-etapa"></div>
+        <div class="botoes-acao">
+            <button id="btn-voltar-etapa" onclick="voltarEtapa()" style="display: none;">⬅ Voltar</button>
+            <button id="btn-avancar" onclick="avancarEtapa()">Avançar ➔</button>
+        </div>
+    </main>
+
+    <!-- TELA 4: PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL DO CERTIFICADO B2 (INGLÊS) -->
+    <div id="modal-certificado" class="modal-cert-overlay" style="display: none;">
+        <div class="modal-cert-container">
+            <div class="modal-cert-actions">
+                <button class="btn-cert-action print-btn" onclick="imprimirCertificado()">🖨️ Baixar / Imprimir Certificado (PDF)</button>
+                <button class="btn-cert-action close-btn" onclick="fecharModalCertificado()">✖️ Fechar</button>
+            </div>
+            
+            <div id="certificado-card">
+                <div class="cert-border-outer" style="border-color: #2563eb;">
+                    <div class="cert-border-inner" style="border-color: #3b82f6;">
+                        <div class="cert-header">
+                            <img src="favicon.png" alt="Idiomas Academy Logo" class="cert-logo-img">
+                            <div class="cert-brand-title" style="color: #1e3a8a;">IDIOMAS ACADEMY</div>
+                            <div class="cert-brand-subtitle">ENGLISH LANGUAGE PROFICIENCY PROGRAM</div>
+                        </div>
+
+                        <div class="cert-main-title">CERTIFICATE OF COMPLETION & PROFICIENCY</div>
+                        <div class="cert-level-subtitle" style="color: #2563eb;">UPPER-INTERMEDIATE LEVEL B2 (CEFR)</div>
+
+                        <div class="cert-body-text">
+                            Certificamos que <strong id="cert-nome-aluno" class="cert-student-name" style="color: #1d4ed8;">Estudante</strong> concluiu com êxito a trilha completa de aprendizado de Inglês (Níveis A1, A2, B1 e B2) da plataforma Idiomas Academy, demonstrando domínio em conversação, gramática, escrita profissional e escuta nativa.
+                        </div>
+
+                        <div class="cert-meta-grid" style="background: #eff6ff; border-color: #3b82f6;">
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label" style="color: #1e40af;">🕒 CARGA HORÁRIA</span>
+                                <strong class="cert-meta-val">120 Horas-Aula</strong>
+                            </div>
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label" style="color: #1e40af;">📅 DATA DE EMISSÃO</span>
+                                <strong class="cert-meta-val" id="cert-data">--/--/----</strong>
+                            </div>
+                            <div class="cert-meta-box">
+                                <span class="cert-meta-label" style="color: #1e40af;">🔑 CÓDIGO DE AUTENTICIDADE</span>
+                                <strong class="cert-meta-val" id="cert-hash">EA-B2-000000</strong>
+                            </div>
+                        </div>
+
+                        <div class="cert-footer">
+                            <div class="cert-signature-box">
+                                <div class="cert-signature-line"></div>
+                                <small>Academic Coordination<br>Idiomas Academy</small>
+                            </div>
+                            <div class="cert-stamp" style="border-color: #2563eb; background: rgba(37, 99, 235, 0.05);">
+                                <div class="cert-stamp-inner" style="color: #2563eb;">
+                                    <span>🌐 ENGLISH</span>
+                                    <small>VERIFIED PROFICIENCY</small>
+                                </div>
+                            </div>
+                            <div class="cert-signature-box">
+                                <div class="cert-signature-line"></div>
+                                <small>Education Direction<br>Idiomas Academy</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARREGAMENTO DOS BANCOS DE DADOS DE INGLÊS -->
+    <script src="../../database/en-US/data_english_a1.js"></script>
+    <script src="../../database/en-US/data_english_a2.js"></script>
+    <script src="../../database/en-US/data_english_b1.js"></script>
+    <script src="../../database/en-US/data_english_b2.js"></script>
+    
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

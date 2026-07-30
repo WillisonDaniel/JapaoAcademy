@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japão Academy</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-btn">⬅ Idiomas</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">Japão Academy</h1>
+        <p id="mainDesc">A plataforma definitiva e completa para dominar o idioma japonês.</p>
+    </header>
+
+    <div class="container">
+        <div id="main-menu">
+            <a href="html/ja-JP/curso.html" class="course-btn japa">
+                <span>🎌</span> Curso de Japonês
+                <p>Iniciante ao Avançado (A1,A2,B1,B2)</p>
+            </a>
+            <a href="html/ja-JP/hiragana.html" class="course-btn hira">
+                <span>あ</span> Curso de Hiragana
+                <p>O alfabeto base (Teoria, Vocabulário e Prática Completa)</p>
+            </a>
+            
+            <a href="html/ja-JP/katakana.html" class="course-btn kata">
+                <span>ア</span> Curso de Katakana
+                <p>Sons estrangeiros (Teoria, Vocabulário e Prática Completa)</p>
+            </a>
+
+            <!-- NOVO BOTAO DO KANJI (N5 a N1) -->
+            <a href="html/ja-JP/kanji.html" class="course-btn kanji">
+                <span>漢</span> Curso de Kanjis (N5 a N1)
+                <p>Ideogramas e Vocabulário de Proficiência (N5 ao N1)</p>
+            </a>
+            
+            <a href="html/ja-JP/minigame.html" class="course-btn game">
+                <span>🎮</span> Kana Master Pro
+                <p>O Minigame Oficial de Fixação e Digitação</p>
+            </a>
+
+            <!-- BOTAO DO DICIONARIO E GLOSSARIO -->
+            <a href="html/ja-JP/dicionario.html" class="course-btn dict">
+                <span>📖</span> Dicionário & Glossário
+                <p>Busca Universal de Kanjis, Vocabulário e Gramática</p>
+            </a>
+        </div>
+    </div>
+
+    <script src="database/ja-JP/data_curso_a1.js"></script>
+    <script src="database/ja-JP/data_curso_a2.js"></script>
+    <script src="database/ja-JP/data_curso_b1.js"></script>
+    <script src="database/ja-JP/data_curso_b2.js"></script>
+    <script src="database/ja-JP/data_kanji_n5.js"></script>
+    <script src="database/ja-JP/data_hiragana.js"></script>
+    <script src="database/ja-JP/data_katakana.js"></script>
+    <script type="module" src="firebase-init.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

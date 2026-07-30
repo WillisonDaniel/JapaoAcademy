@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="english" data-mode="pronuncia">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Pronúncia & Fonética | Japão Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- CSS Global e Fontes -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="pronuncia" data-lang="english">
+
+    <!-- CABEÇALHO PADRÃO DO HUB -->
+    <header>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1>🎙️ Guia de Pronúncia & Fonética</h1>
+        <p>Aprenda a falar inglês com clareza e naturalidade. Domine sons que não existem em português, entenda os segredos do <em>Connected Speech</em> e perca o medo de falar!</p>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <!-- BANNER HERO DE APRESENTAÇÃO -->
+    <main class="course-container">
+        <div class="hero-pronuncia-banner" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow);">
+            <div class="hero-content">
+                <span class="badge badge-accent" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid #a855f7; padding: 4px 12px; border-radius: 12px; font-weight: bold;">🎙️ Master Native Phonetics</span>
+                <h1 class="page-title" style="font-size: 1.8rem; margin: 12px 0 8px 0; color: var(--text-main); font-family: 'Fredoka', sans-serif;">Guia Prático de Pronúncia & Fonética</h1>
+                <p class="page-subtitle" style="color: var(--text-muted); font-size: 1rem; line-height: 1.5; margin: 0;">
+                    Aprenda a falar inglês com clareza e naturalidade. Domine sons que não existem em português, entenda os segredos do <em>Connected Speech</em> e treine sua fala!
+                </p>
+            </div>
+        </div>
+
+        <!-- NAVEGAÇÃO DE NÍVEIS CEFR (TAB SYSTEM) -->
+        <nav class="pv-level-selector" aria-label="Níveis de Pronúncia" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+            <button class="pv-level-btn active" data-level="A1" onclick="filtrarNivelPronuncia('A1', this)">
+                🔵 Level A1 (Beginner)
+            </button>
+            <button class="pv-level-btn" data-level="A2" onclick="filtrarNivelPronuncia('A2', this)">
+                🟢 Level A2 (Elementary)
+            </button>
+            <button class="pv-level-btn" data-level="B1" onclick="filtrarNivelPronuncia('B1', this)">
+                🟡 Level B1 (Intermediate)
+            </button>
+            <button class="pv-level-btn" data-level="B2" onclick="filtrarNivelPronuncia('B2', this)">
+                🔴 Level B2 (Upper-Intermediate)
+            </button>
+            <button class="pv-level-btn quiz-tab-btn" data-level="quiz" onclick="abrirModoQuizPronuncia('select', 'A1', this)" style="background: rgba(168, 85, 247, 0.12); color: #a855f7; border-color: #a855f7; font-weight: bold;">
+                🧠 Modo Quiz / Testar Conhecimento
+            </button>
+        </nav>
+
+        <!-- BARRA DE PESQUISA & FILTRO DE CONTEÚDO -->
+        <div class="search-pronuncia-bar" style="margin-bottom: 16px;">
+            <input type="text" id="pronunciaSearchInput"
+                placeholder="🔍 Pesquise por um som, regra ou palavra (Ex: TH, Water, Sheep/Ship)..."
+                oninput="filtrarPronunciaPorSearch(this.value)"
+                style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 2px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-size: 1rem; font-weight: 600; outline: none;">
+        </div>
+
+        <!-- BARRA DE ATALHOS: VÍCIOS DO PT-BR -->
+        <div class="ptbr-vicios-bar" style="margin-bottom: 24px; background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+                <strong style="color: #028090; font-size: 0.95rem; font-family: 'Fredoka', sans-serif;">🇧🇷 Atalhos: Vícios do PT-BR</strong>
+                <button class="vicio-tag-btn clear-btn active" onclick="filtrarVicioPTBR('all', this)" style="background: rgba(2, 128, 144, 0.12); color: #028090; border: 1px solid #028090; border-radius: 20px; padding: 4px 12px; font-size: 0.85rem; font-weight: bold; cursor: pointer;">
+                    ✨ Exibir Todos
+                </button>
+            </div>
+            <div class="vicios-pills-container" style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <button class="vicio-tag-btn" data-topic-id="p_a1_epenthesis_elimination" onclick="filtrarVicioPTBR('p_a1_epenthesis_elimination', this)">
+                    🚫 Trava Consoante Final (Epêntese do 'I')
+                </button>
+                <button class="vicio-tag-btn" data-topic-id="p_a2_th_sound_mastery" onclick="filtrarVicioPTBR('p_a2_th_sound_mastery', this)">
+                    👅 Som do TH (Sem 'F' ou 'S')
+                </button>
+                <button class="vicio-tag-btn" data-topic-id="p_b1_dark_l_sound" onclick="filtrarVicioPTBR('p_b1_dark_l_sound', this)">
+                    🥤 Dark L (L não é 'U')
+                </button>
+                <button class="vicio-tag-btn" data-topic-id="p_b1_flap_t_glottal_stop" onclick="filtrarVicioPTBR('p_b1_flap_t_glottal_stop', this)">
+                    💧 Flap T / D (Som de 'R' brando)
+                </button>
+                <button class="vicio-tag-btn" data-topic-id="p_a1_vowels_cat_cut" onclick="filtrarVicioPTBR('p_a1_vowels_cat_cut', this)">
+                    🐱 Cat vs Cut (/æ/ vs /ʌ/)
+                </button>
+                <button class="vicio-tag-btn" data-topic-id="p_a2_silent_letters_reductions" onclick="filtrarVicioPTBR('p_a2_silent_letters_reductions', this)">
+                    🤫 Letras Mudas (Silent Letters)
+                </button>
+            </div>
+        </div>
+
+        <!-- CONTAINER ONDE O APP.JS RENDERIZARÁ OS CARDS E EXERCÍCIOS -->
+        <div id="pronunciaDisplay" class="pronuncia-display-grid">
+            <!-- Renderizado dinamicamente via app.js -->
+        </div>
+    </main>
+
+    <!-- FOOTER DA APLICAÇÃO -->
+    <footer class="footer">
+        <p>&copy; 2026 Japão Academy — Hub de Idiomas. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- BANCO DE DADOS E CORE SCRIPT UNIFICADO -->
+    <script src="../../database/en-US/data_pronunciation.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

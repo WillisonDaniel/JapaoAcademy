@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrasal Verbs & Idioms - Inglês Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Estilos dedicados ao módulo de Phrasal Verbs & Expressões */
+        :root {
+            --phrasal-primary: #028090;
+            --phrasal-dark: #155e75;
+        }
+
+        .phrasal-card-layout {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .phrasal-verb-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--phrasal-primary);
+            margin-bottom: 4px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .phrasal-meaning {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .particles-breakdown {
+            background: rgba(2, 128, 144, 0.08);
+            border-left: 4px solid var(--phrasal-primary);
+            padding: 10px 14px;
+            border-radius: 0 10px 10px 0;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .dark-theme .particles-breakdown {
+            background: rgba(2, 128, 144, 0.18);
+        }
+
+        .particle-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: var(--phrasal-primary);
+        }
+    </style>
+</head>
+
+<body data-mode="phrasal_verbs" data-lang="english">
+    <header>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1>⚡ Phrasal Verbs & Expressões</h1>
+        <p>Domine os verbos compostos, gírias e expressões idiomáticas mais usadas pelos nativos.</p>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <div class="container" id="study-area">
+        <!-- BANNER DE REVISÃO SRS DE PHRASAL VERBS -->
+        <div class="banner-srs"
+            style="background: linear-gradient(135deg, #028090, #155e75); border-color: rgba(6, 182, 212, 0.3);">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag"
+                    style="background: rgba(255, 255, 255, 0.2); color: #e0f2fe; border-color: #38bdf8;">🧠 REPETIÇÃO
+                    ESPAÇADA (SRS)</span>
+                <h3>Phrasal Verbs Memory Review</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos"
+                        onclick="selecionarModoSRS('todos', 'phrasal_verbs')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos"
+                        onclick="selecionarModoSRS('favoritos', 'phrasal_verbs')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros"
+                        onclick="selecionarModoSRS('erros', 'phrasal_verbs')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('phrasal_verbs')" class="btn-srs-action"
+                    style="background: linear-gradient(135deg, #0ea5e9, #028090);">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <!-- SELETOR DE NÍVEIS E MENU DROPDOWN DE MÓDULOS -->
+        <div class="pv-navigation-bar">
+            <!-- Abas Superiores de Níveis CEFR -->
+            <div class="pv-level-tabs">
+                <button class="pv-level-btn active" data-level="A1" onclick="filtrarNivelPhrasalVerbs('A1', this)">🔵 Level A1 (Beginner)</button>
+                <button class="pv-level-btn" data-level="A2" onclick="filtrarNivelPhrasalVerbs('A2', this)">🟢 Level A2 (Elementary)</button>
+                <button class="pv-level-btn" data-level="B1" onclick="filtrarNivelPhrasalVerbs('B1', this)">🟡 Level B1 (Intermediate)</button>
+                <button class="pv-level-btn" data-level="B2" onclick="filtrarNivelPhrasalVerbs('B2', this)">🔴 Level B2 (Advanced)</button>
+            </div>
+
+            <!-- Dropdown Seletor de Módulos do Nível Ativo -->
+            <div class="pv-select-wrapper">
+                <label for="pvModuleSelect"><strong>📌 Selecione o Módulo:</strong></label>
+                <select id="pvModuleSelect" class="pv-module-dropdown" onchange="selecionarModuloDropdown(this.value)">
+                    <!-- Opções preenchidas dinamicamente pelo JavaScript -->
+                </select>
+            </div>
+        </div>
+
+        <!-- ÁREA EXIBIDORA DOS CARDS / MÓDULOS -->
+        <div id="moduleDisplay">
+            <!-- Conteúdo carregado dinamicamente -->
+        </div>
+    </div>
+
+    <!-- PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- BANCO DE DADOS DE PHRASAL VERBS E ENGINE -->
+    <script src="../../database/en-US/data_phrasal_verbs.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

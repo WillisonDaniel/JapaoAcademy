@@ -3739,3 +3739,240 @@ rt {
     font-weight: bold;
     font-size: 0.85rem;
 }
+
+/* NAVEGAÇÃO DE PHRASAL VERBS LIMPA E MODERNA */
+.pv-navigation-bar {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 18px 24px;
+    margin: 20px 0 25px 0;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pv-level-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pv-level-btn {
+    background: var(--bg-color);
+    border: 1.5px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pv-level-btn:hover {
+    border-color: var(--phrasal-primary, #028090);
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.pv-level-btn.active {
+    background: var(--phrasal-primary, #028090);
+    color: #ffffff;
+    border-color: var(--phrasal-primary, #028090);
+    box-shadow: 0 4px 12px rgba(2, 128, 144, 0.3);
+}
+
+.pv-select-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.pv-module-dropdown {
+    background: var(--bg-color);
+    color: var(--text-main);
+    border: 2px solid var(--phrasal-primary, #028090);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    min-width: 280px;
+    max-width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   ESTILOS PARA ATALHOS DE VÍCIOS PT-BR & SPEECH RECOGNITION
+   ========================================== */
+.vicio-tag-btn {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vicio-tag-btn:hover {
+    border-color: #028090;
+    color: #028090;
+    transform: translateY(-1px);
+}
+
+.vicio-tag-btn.active {
+    background: rgba(2, 128, 144, 0.15);
+    color: #028090;
+    border-color: #028090;
+    box-shadow: 0 2px 8px rgba(2, 128, 144, 0.25);
+}
+
+.stt-btn {
+    background: var(--bg-color);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stt-btn:hover {
+    border-color: #a855f7;
+    color: #a855f7;
+    background: rgba(168, 85, 247, 0.08);
+}
+
+.stt-btn.listening {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    animation: pulseMic 1.2s infinite alternate;
+}
+
+@keyframes pulseMic {
+    0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+        transform: scale(1.03);
+    }
+}
+
+/* ==========================================
+   ESTILOS DO MODO QUIZ INTERATIVO (PRONÚNCIA)
+   ========================================== */
+.quiz-select-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quiz-select-card:hover {
+    border-color: #a855f7;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.2);
+}
+
+.quiz-opt-btn {
+    width: 100%;
+    text-align: left;
+    background: var(--bg-color);
+    color: var(--text-main);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz-opt-btn:hover:not(:disabled) {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.06);
+    transform: translateX(3px);
+}
+
+.quiz-opt-btn.correct {
+    background: rgba(34, 197, 94, 0.15) !important;
+    border-color: #22c55e !important;
+    color: #22c55e !important;
+    font-weight: bold;
+}
+
+.quiz-opt-btn.wrong {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+.quiz-explanation-box {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ESTILOS DE MODO DE RESPOSTA DO MINIGAME */
+.mode-lbl {
+    transition: all 0.2s ease;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-main);
+}
+
+.mode-lbl.active {
+    border-color: #1d4ed8 !important;
+    background: rgba(29, 78, 216, 0.12) !important;
+    color: #1d4ed8 !important;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.25);
+    font-weight: 700;
+}
+
+/* ==========================================
+   FEEDBACK VISUAL DO MICROFONE (SPEECH RECOGNITION)
+   ========================================== */
+#g-mic-btn {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#g-mic-btn.listening {
+    background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+    color: #ffffff !important;
+    animation: pulseMicGame 1.2s infinite alternate ease-in-out;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6), 0 8px 25px rgba(239, 68, 68, 0.5) !important;
+}
+
+@keyframes pulseMicGame {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), 0 4px 15px rgba(239, 68, 68, 0.4);
+    }
+    100% {
+        transform: scale(1.06);
+        box-shadow: 0 0 0 16px rgba(239, 68, 68, 0), 0 10px 30px rgba(239, 68, 68, 0.6);
+    }
+}
