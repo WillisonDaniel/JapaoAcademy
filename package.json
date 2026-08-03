@@ -4,7 +4,8 @@
   "private": true,
   "description": "Suite de regressao local da Japao Academy",
   "scripts": {
-    "test": "node tests/regression.cjs",
-    "test:regression": "node tests/regression.cjs"
+    "test": "node tests/regression.cjs && node tests/integration.cjs",
+    "test:regression": "node tests/regression.cjs",
+    "test:integration": "node tests/integration.cjs"
   }
 }
