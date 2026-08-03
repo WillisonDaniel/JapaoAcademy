@@ -142,9 +142,11 @@ function atualizarBadgeSRS(tipo) {
 
     let deckFiltrado = fullDeck;
     if (srsModoFiltro === 'favoritos') {
-        deckFiltrado = fullDeck.filter(c => favs.includes(String(c.id)) || (c.drop && favs.includes(String(c.drop.kanji || c.drop.romaji))));
+        const favoritosIds = new Set(favs);
+        deckFiltrado = fullDeck.filter(c => favoritosIds.has(String(c.id)) || (c.drop && favoritosIds.has(String(c.drop.kanji || c.drop.romaji))));
     } else if (srsModoFiltro === 'erros') {
-        deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
+        const errosIds = new Set(erros);
+        deckFiltrado = fullDeck.filter(c => errosIds.has(String(c.id)) || (c.drop && errosIds.has(String(c.drop.kanji || c.drop.romaji))));
     }
 
     const pendentes = srsModoFiltro === 'todos'
@@ -157,9 +159,10 @@ function atualizarBadgeSRS(tipo) {
 
     const playerSRS = typeof document !== 'undefined' ? document.getElementById('player-srs') : null;
     const estaEmRevisao = playerSRS && playerSRS.style.display !== 'none' && playerSRS.style.display !== '';
-    const temSessaoAtiva = estaEmRevisao && typeof AppState !== 'undefined' && AppState.srs && Array.isArray(AppState.srs.activeDeck) && AppState.srs.activeDeck.length > 0;
+    const appSrs = typeof AppState !== 'undefined' ? AppState.srs : null;
+    const temSessaoAtiva = estaEmRevisao && appSrs && Array.isArray(appSrs.activeDeck) && appSrs.activeDeck.length > 0;
     const totalPendentesExibicao = temSessaoAtiva
-        ? Math.max(0, AppState.srs.activeDeck.length - (typeof AppState.srs.currentIndex === 'number' ? AppState.srs.currentIndex : 0))
+        ? Math.max(0, appSrs.activeDeck.length - (typeof appSrs.currentIndex === 'number' ? appSrs.currentIndex : 0))
         : pendentes.length;
 
     if (badge) badge.innerText = totalPendentesExibicao;

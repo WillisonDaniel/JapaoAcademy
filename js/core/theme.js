@@ -58,7 +58,6 @@ function setupSmoothTransitions() {
 }
 
 function initializeTheme() {
-    console.log("[BOOT] initializeTheme");
     applySavedTheme();
     setupSmoothTransitions();
 }

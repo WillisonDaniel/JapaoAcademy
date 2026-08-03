@@ -675,7 +675,6 @@ function checkSpeechAnswer(transcripts) {
 }
 
 function initializeGame() {
-    console.log("[BOOT] initializeGame");
     document.documentElement.style.setProperty('--current-primary', 'var(--game-primary)');
     if (typeof initGameScreen === 'function') initGameScreen();
 }

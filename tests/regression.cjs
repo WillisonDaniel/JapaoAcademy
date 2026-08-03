@@ -227,6 +227,159 @@ test('mutadores do AppState sincronizam estado e pontes legadas', () => {
     assert.ok(!state.user.progressoGlobal.progress_kanji_n4.includes(2));
 });
 
+test('persistencia otimizada preserva opcoes e formatos legados', () => {
+    let reads = 0;
+    const storage = createStorage({
+        ja_opt_kanji: 'false',
+        ja_opt_kana: 'true',
+        ja_opt_furigana: 'false',
+        ja_opt_romaji: 'true'
+    });
+    const originalGetItem = storage.getItem;
+    storage.getItem = key => {
+        reads++;
+        return originalGetItem(key);
+    };
+    const courses = {
+        A1: [{ id: 'a1_mod_01' }, { id: 'a1_mod_02' }],
+        A2: [{ id: 'a2_mod_01' }, { id: 'a2_mod_02' }],
+        B1: [{ id: 'b1_mod_01' }, { id: 'b1_mod_02' }],
+        B2: [{ id: 'b2_mod_01' }, { id: 'b2_mod_02' }]
+    };
+    const context = createContext({
+        localStorage: storage,
+        getTodosOsCursos: () => courses,
+        progressoGlobal: {
+            modulosConcluidos: ['a1_mod_02', 'a2_mod_01', 'b2_mod_02'],
+            modulosDesbloqueados: ['a1_mod_01', 'a2_mod_02', 'b1_mod_02'],
+            progress_kanji: [0, 2]
+        }
+    });
+    runFile(context, 'js/core/storage.js');
+
+    assert.deepEqual(JSON.parse(JSON.stringify(context.getOpcoesLeitura())), {
+        kanji: false,
+        kana: true,
+        furigana: false,
+        romaji: true
+    });
+    assert.equal(reads, 4, 'cada opcao deve ser lida uma unica vez');
+
+    context.salvarProgressoGlobal();
+    assert.deepEqual(JSON.parse(storage.getItem('ja_modulos_concluidos')), [1]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_progresso_a1')), [0]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_modulos_concluidos_a2')), [0]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_progresso_a2')), [0, 1]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_modulos_concluidos_b1')), []);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_progresso_b1')), [0, 1]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_modulos_concluidos_b2')), [1]);
+    assert.deepEqual(JSON.parse(storage.getItem('ja_progresso_b2')), [0]);
+});
+
+test('favoritos, caderno de erros e badge SRS permanecem integrados', () => {
+    const elements = {
+        'srs-badge-count': {},
+        'srs-banner-desc': {},
+        'btn-iniciar-srs': {},
+        'player-srs': { style: { display: 'none' } }
+    };
+    const context = createContext({
+        document: {
+            body: { getAttribute: () => 'curso' },
+            getElementById: id => elements[id] || null,
+            querySelectorAll: () => []
+        }
+    });
+    runFile(context, 'js/core/state.js');
+    runFile(context, 'js/srs/deck.js');
+
+    context.salvarFavoritosDeck(['favorito-1']);
+    context.salvarCadernoErros(['erro-1']);
+    assert.equal(context.eFavoritado('favorito-1'), true);
+    assert.deepEqual(Array.from(context.getCadernoErros()), ['erro-1']);
+
+    context.localStorage.setItem('ja_srs_deck', JSON.stringify([
+        { id: 'card-1', dueDate: Date.now() - 1000 }
+    ]));
+    context.atualizarBadgeSRS('a1');
+    assert.equal(elements['srs-badge-count'].innerText, 1);
+    assert.match(elements['srs-banner-desc'].innerText, /1 item/);
+});
+
+test('sincronizacao do deck SRS evita duplicatas e preserva cards', () => {
+    const course = [{
+        id: 'a1_mod_01',
+        title: 'Modulo de teste',
+        drops: [
+            { type: 'vocab', kanji: '一', romaji: 'ichi' },
+            { type: 'vocab', kanji: '二', romaji: 'ni' }
+        ]
+    }];
+    let storedDeck = [{
+        id: 'a1_mod_01_d_0',
+        modId: 'a1_mod_01',
+        modIdx: 0,
+        interval: 3,
+        easeFactor: 2.5,
+        dueDate: 123
+    }];
+    let saves = 0;
+    const context = createContext({
+        getCourseData: () => course,
+        normalizeModule: module => module,
+        eModuloAprendido: () => true,
+        carregarDeckSRS: () => storedDeck,
+        salvarDeckSRS: (_type, deck) => {
+            storedDeck = deck;
+            saves++;
+        }
+    });
+    runFile(context, 'js/srs/engine.js');
+
+    const firstSync = context.sincronizarBaralhoSRS('a1');
+    assert.equal(firstSync.length, 2);
+    assert.equal(new Set(firstSync.map(card => card.id)).size, 2);
+    assert.equal(firstSync[0].interval, 3, 'card existente foi alterado');
+    assert.equal(saves, 1);
+
+    const secondSync = context.sincronizarBaralhoSRS('a1');
+    assert.equal(secondSync.length, 2);
+    assert.equal(saves, 1, 'deck sem mudancas foi salvo novamente');
+});
+
+test('compilacao do dicionario japones mantem o glossario completo', () => {
+    const context = createContext({
+        document: {
+            body: { getAttribute: () => 'japanese', classList: { contains: () => true } },
+            getElementById: () => null,
+            querySelectorAll: () => []
+        },
+        location: { pathname: '/html/ja-JP/dicionario.html' }
+    });
+    const datasetFiles = [
+        'database/ja-JP/data_curso_a1.js',
+        'database/ja-JP/data_curso_a2.js',
+        'database/ja-JP/data_curso_b1.js',
+        'database/ja-JP/data_curso_b2.js',
+        'database/ja-JP/data_hiragana.js',
+        'database/ja-JP/data_katakana.js',
+        'database/ja-JP/data_kanji_n5.js',
+        'database/ja-JP/data_kanji_n4.js',
+        'database/ja-JP/data_kanji_n3.js',
+        'database/ja-JP/data_kanji_n2.js',
+        'database/ja-JP/data_kanji_n1.js'
+    ];
+    datasetFiles.forEach(file => runFile(context, file));
+    runFile(context, 'js/course/moduleNormalizer.js');
+    runFile(context, 'js/core/state.js');
+    runFile(context, 'js/core/dictionary.js');
+    context.compilarGlossarioUniversal();
+
+    const glossary = context.AppState.dictionary.universalGlossary;
+    assert.equal(glossary.length, 3271);
+    assert.ok(glossary.every(item => item.primary && item.primary.trim()), 'ha entradas sem termo principal');
+});
+
 test('algoritmo SRS atualiza intervalo, facilidade e indice', () => {
     const outcomes = {
         1: { interval: 1, easeFactor: 2.3 },

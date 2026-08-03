@@ -310,7 +310,6 @@ function playKanjiAudio(text, event) {
 }
 
 function initializeKanji(mode) {
-    console.log("[BOOT] initializeKanji (mode: " + mode + ")");
     let primaryColor = 'var(--hira-primary)';
 
     if (mode === 'katakana') primaryColor = 'var(--kata-primary)';

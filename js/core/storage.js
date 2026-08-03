@@ -76,27 +76,34 @@ function salvarProgressoGlobal() {
     if (typeof progressoGlobal !== 'undefined') {
         localStorage.setItem('japao_academy_progress', JSON.stringify(progressoGlobal));
         const cursos = typeof getTodosOsCursos === 'function' ? getTodosOsCursos() : {};
+        const concluidos = new Set(progressoGlobal.modulosConcluidos || []);
+        const desbloqueados = new Set(progressoGlobal.modulosDesbloqueados || []);
+        const obterIndicesLegados = modulos => {
+            const concIdx = [];
+            const desbIdx = [];
+            modulos.forEach((modulo, index) => {
+                if (concluidos.has(modulo.id)) concIdx.push(index);
+                if (desbloqueados.has(modulo.id) || index === 0) desbIdx.push(index);
+            });
+            return { concIdx, desbIdx };
+        };
         if (cursos.A1) {
-            const concIdx = cursos.A1.map((m, i) => progressoGlobal.modulosConcluidos.includes(m.id) ? i : -1).filter(i => i !== -1);
-            const desbIdx = cursos.A1.map((m, i) => (progressoGlobal.modulosDesbloqueados.includes(m.id) || i === 0) ? i : -1).filter(i => i !== -1);
+            const { concIdx, desbIdx } = obterIndicesLegados(cursos.A1);
             localStorage.setItem('ja_modulos_concluidos', JSON.stringify(concIdx));
             localStorage.setItem('ja_progresso_a1', JSON.stringify(desbIdx));
         }
         if (cursos.A2) {
-            const concIdx = cursos.A2.map((m, i) => progressoGlobal.modulosConcluidos.includes(m.id) ? i : -1).filter(i => i !== -1);
-            const desbIdx = cursos.A2.map((m, i) => (progressoGlobal.modulosDesbloqueados.includes(m.id) || i === 0) ? i : -1).filter(i => i !== -1);
+            const { concIdx, desbIdx } = obterIndicesLegados(cursos.A2);
             localStorage.setItem('ja_modulos_concluidos_a2', JSON.stringify(concIdx));
             localStorage.setItem('ja_progresso_a2', JSON.stringify(desbIdx));
         }
         if (cursos.B1) {
-            const concIdx = cursos.B1.map((m, i) => progressoGlobal.modulosConcluidos.includes(m.id) ? i : -1).filter(i => i !== -1);
-            const desbIdx = cursos.B1.map((m, i) => (progressoGlobal.modulosDesbloqueados.includes(m.id) || i === 0) ? i : -1).filter(i => i !== -1);
+            const { concIdx, desbIdx } = obterIndicesLegados(cursos.B1);
             localStorage.setItem('ja_modulos_concluidos_b1', JSON.stringify(concIdx));
             localStorage.setItem('ja_progresso_b1', JSON.stringify(desbIdx));
         }
         if (cursos.B2) {
-            const concIdx = cursos.B2.map((m, i) => progressoGlobal.modulosConcluidos.includes(m.id) ? i : -1).filter(i => i !== -1);
-            const desbIdx = cursos.B2.map((m, i) => (progressoGlobal.modulosDesbloqueados.includes(m.id) || i === 0) ? i : -1).filter(i => i !== -1);
+            const { concIdx, desbIdx } = obterIndicesLegados(cursos.B2);
             localStorage.setItem('ja_modulos_concluidos_b2', JSON.stringify(concIdx));
             localStorage.setItem('ja_progresso_b2', JSON.stringify(desbIdx));
         }
@@ -319,11 +326,15 @@ async function carregarProgressoDaNuvem() {
 }
 
 function getOpcoesLeitura() {
+    const kanji = localStorage.getItem('ja_opt_kanji');
+    const kana = localStorage.getItem('ja_opt_kana');
+    const furigana = localStorage.getItem('ja_opt_furigana');
+    const romaji = localStorage.getItem('ja_opt_romaji');
     return {
-        kanji: localStorage.getItem('ja_opt_kanji') !== null ? localStorage.getItem('ja_opt_kanji') === 'true' : true,
-        kana: localStorage.getItem('ja_opt_kana') !== null ? localStorage.getItem('ja_opt_kana') === 'true' : true,
-        furigana: localStorage.getItem('ja_opt_furigana') !== null ? localStorage.getItem('ja_opt_furigana') === 'true' : true,
-        romaji: localStorage.getItem('ja_opt_romaji') !== null ? localStorage.getItem('ja_opt_romaji') === 'true' : false
+        kanji: kanji !== null ? kanji === 'true' : true,
+        kana: kana !== null ? kana === 'true' : true,
+        furigana: furigana !== null ? furigana === 'true' : true,
+        romaji: romaji !== null ? romaji === 'true' : false
     };
 }
 

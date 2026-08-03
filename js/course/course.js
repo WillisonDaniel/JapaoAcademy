@@ -95,7 +95,6 @@ function courseConvert(input) {
 }
 
 function initializeCourse(mode) {
-    console.log("[BOOT] initializeCourse (mode: " + mode + ")");
     document.documentElement.style.setProperty('--current-primary', 'var(--japa-primary)');
     if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
 }

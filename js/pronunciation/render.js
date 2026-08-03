@@ -179,7 +179,6 @@ function filtrarPronunciaPorSearch(query) {
 }
 
 function initializePronunciation() {
-    console.log("[BOOT] initializePronunciation");
     document.documentElement.style.setProperty('--current-primary', '#028090');
     if (document.getElementById('pronunciaDisplay') && typeof renderPronunciaModule === 'function') {
         renderPronunciaModule('A1');

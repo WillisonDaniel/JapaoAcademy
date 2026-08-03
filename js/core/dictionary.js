@@ -17,7 +17,6 @@ function carregarTodosOsDatasets(callback) {
 }
 
 function compilarGlossarioUniversal() {
-    console.log("[BOOT] initializeDictionary (compilarGlossarioUniversal)");
     glossarioUniversalData = [];
 
     const isEnglishMode = (typeof document !== 'undefined' && document.body && (
@@ -546,7 +545,8 @@ function renderizarResultadosDicionario(queryStr = '') {
     }
 
     let query = (queryStr || '').trim().toLowerCase();
-    const universalData = (typeof AppState !== 'undefined' && AppState.dictionary && Array.isArray(AppState.dictionary.universalGlossary)) ? AppState.dictionary.universalGlossary : glossarioUniversalData;
+    const appDictionary = typeof AppState !== 'undefined' ? AppState.dictionary : null;
+    const universalData = (appDictionary && Array.isArray(appDictionary.universalGlossary)) ? appDictionary.universalGlossary : glossarioUniversalData;
 
     const resFiltrado = universalData.filter(item => {
         if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) return false;

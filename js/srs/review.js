@@ -22,13 +22,15 @@ function iniciarSessaoSRS(tipo) {
 
     let deckFiltrado = fullDeck;
     if (modoFiltro === 'favoritos') {
-        deckFiltrado = fullDeck.filter(c => favs.includes(String(c.id)) || (c.drop && favs.includes(String(c.drop.kanji || c.drop.romaji))));
+        const favoritosIds = new Set(favs);
+        deckFiltrado = fullDeck.filter(c => favoritosIds.has(String(c.id)) || (c.drop && favoritosIds.has(String(c.drop.kanji || c.drop.romaji))));
         if (deckFiltrado.length === 0) {
             alert("Sua lista de Favoritos está vazia! Clique na estrela ⭐ nos cards para favoritar itens.");
             return;
         }
     } else if (modoFiltro === 'erros') {
-        deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
+        const errosIds = new Set(erros);
+        deckFiltrado = fullDeck.filter(c => errosIds.has(String(c.id)) || (c.drop && errosIds.has(String(c.drop.kanji || c.drop.romaji))));
         if (deckFiltrado.length === 0) {
             alert("Seu Caderno de Erros está limpo! Nenhum erro registrado neste baralho.");
             return;
@@ -77,8 +79,9 @@ function fecharSessaoSRS() {
 
 function renderizarCardSRS() {
     const container = document.getElementById('conteudo-card-srs');
-    const sessaoCards = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.activeDeck) ? AppState.srs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
-    const indexAtivo = (typeof AppState !== 'undefined' && AppState.srs && typeof AppState.srs.currentIndex === 'number') ? AppState.srs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
+    const appSrs = typeof AppState !== 'undefined' ? AppState.srs : null;
+    const sessaoCards = (appSrs && appSrs.activeDeck) ? appSrs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
+    const indexAtivo = (appSrs && typeof appSrs.currentIndex === 'number') ? appSrs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
 
     if (!container || sessaoCards.length === 0) return;
 
@@ -252,8 +255,9 @@ function revelarRespostaSRS() {
     const verso = document.querySelector('.srs-card-verso');
     if (verso) verso.style.display = 'block';
 
-    const sessaoCards = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.activeDeck) ? AppState.srs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
-    const indexAtivo = (typeof AppState !== 'undefined' && AppState.srs && typeof AppState.srs.currentIndex === 'number') ? AppState.srs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
+    const appSrs = typeof AppState !== 'undefined' ? AppState.srs : null;
+    const sessaoCards = (appSrs && appSrs.activeDeck) ? appSrs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
+    const indexAtivo = (appSrs && typeof appSrs.currentIndex === 'number') ? appSrs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
     const cardData = sessaoCards[indexAtivo];
     if (cardData) {
         if (cardData.item && cardData.item.verb && typeof speakKana === 'function') speakKana(cardData.item.verb);

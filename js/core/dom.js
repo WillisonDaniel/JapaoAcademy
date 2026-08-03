@@ -39,30 +39,33 @@ function garantirElementosCabecalhoEModal() {
             header.appendChild(group);
         }
         // 0. Widget de XP e Nível do Perfil
-        if (!document.getElementById('xp-profile-widget-container')) {
-            const xpDiv = document.createElement('div');
-            xpDiv.id = 'xp-profile-widget-container';
-            group.appendChild(xpDiv);
+        let elXp = document.getElementById('xp-profile-widget-container');
+        if (!elXp) {
+            elXp = document.createElement('div');
+            elXp.id = 'xp-profile-widget-container';
+            group.appendChild(elXp);
         }
         // 1. Badge da Ofensiva
-        if (!document.getElementById('streak-badge-header')) {
-            const streakBtn = document.createElement('button');
-            streakBtn.id = 'streak-badge-header';
-            streakBtn.className = 'streak-badge';
-            streakBtn.title = 'Clique para ver o histórico de estudo';
-            streakBtn.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
-            streakBtn.onclick = typeof abrirModalOfensiva === 'function' ? abrirModalOfensiva : null;
-            group.appendChild(streakBtn);
+        let elStreak = document.getElementById('streak-badge-header');
+        if (!elStreak) {
+            elStreak = document.createElement('button');
+            elStreak.id = 'streak-badge-header';
+            elStreak.className = 'streak-badge';
+            elStreak.title = 'Clique para ver o histórico de estudo';
+            elStreak.innerHTML = `🔥 <span id="streak-count">0</span> Dias`;
+            elStreak.onclick = typeof abrirModalOfensiva === 'function' ? abrirModalOfensiva : null;
+            group.appendChild(elStreak);
         }
         // 2. Botão de Conquistas
-        if (!document.getElementById('btn-conquistas-hdr')) {
-            const btnAc = document.createElement('button');
-            btnAc.id = 'btn-conquistas-hdr';
-            btnAc.className = 'btn-conquistas-header';
-            btnAc.title = 'Mural de Conquistas';
-            btnAc.innerHTML = `🏆 Conquistas`;
-            btnAc.onclick = typeof abrirModalConquistas === 'function' ? abrirModalConquistas : null;
-            group.appendChild(btnAc);
+        let elConq = document.getElementById('btn-conquistas-hdr');
+        if (!elConq) {
+            elConq = document.createElement('button');
+            elConq.id = 'btn-conquistas-hdr';
+            elConq.className = 'btn-conquistas-header';
+            elConq.title = 'Mural de Conquistas';
+            elConq.innerHTML = `🏆 Conquistas`;
+            elConq.onclick = typeof abrirModalConquistas === 'function' ? abrirModalConquistas : null;
+            group.appendChild(elConq);
         }
         // 3. Botão de Dicionário & Glossário (Redireciona para o Dicionário de Japonês ou Inglês)
         let btnDict = document.getElementById('btn-dicionario-hdr');
@@ -121,20 +124,13 @@ function garantirElementosCabecalhoEModal() {
             group.appendChild(btnTema);
         }
         // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Auth] [Tema]
-        const elXp = document.getElementById('xp-profile-widget-container');
-        const elStreak = document.getElementById('streak-badge-header');
-        const elConq = document.getElementById('btn-conquistas-hdr');
-        const elDict = document.getElementById('btn-dicionario-hdr');
-        const elCfg = document.getElementById('btn-config-curso');
-        const elAuth = document.getElementById('btn-auth-hdr');
-        const elTema = header.querySelector('.theme-btn');
         if (elXp) group.appendChild(elXp);
         if (elStreak) group.appendChild(elStreak);
         if (elConq) group.appendChild(elConq);
-        if (elDict) group.appendChild(elDict);
-        if (elCfg) group.appendChild(elCfg);
-        if (elAuth) group.appendChild(elAuth);
-        if (elTema) group.appendChild(elTema);
+        if (btnDict) group.appendChild(btnDict);
+        if (btnConfig) group.appendChild(btnConfig);
+        if (btnAuth) group.appendChild(btnAuth);
+        if (btnTema) group.appendChild(btnTema);
 
         if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
     }

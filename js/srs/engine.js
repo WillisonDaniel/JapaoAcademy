@@ -31,6 +31,15 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
     let deck = typeof carregarDeckSRS === 'function' ? carregarDeckSRS(t) : [];
     let alterado = false;
     let modulosConcluidosNomes = [];
+    let deckIds = null;
+    const adicionarCardSeNovo = (cardId, criarCard) => {
+        if (!deckIds) deckIds = new Set(deck.map(card => card.id));
+        if (deckIds.has(cardId)) return false;
+        deck.push(criarCard());
+        deckIds.add(cardId);
+        alterado = true;
+        return true;
+    };
 
     const isSpecialCourse = ['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs', 'phrasal'].includes(t);
 
@@ -71,9 +80,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                 if (module.drops && Array.isArray(module.drops)) {
                     module.drops.forEach((drop, dropIdx) => {
                         const cardId = `${module.id}_d_${dropIdx}`;
-                        const jaExiste = deck.some(c => c.id === cardId);
-                        if (!jaExiste) {
-                            deck.push({
+                        adicionarCardSeNovo(cardId, () => ({
                                 id: cardId,
                                 modId: module.id,
                                 modIdx: modIdx,
@@ -84,9 +91,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                 interval: 0,
                                 easeFactor: 2.5,
                                 dueDate: Date.now()
-                            });
-                            alterado = true;
-                        }
+                            }));
                     });
                 }
             }
@@ -104,8 +109,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                     if (mod.chars && Array.isArray(mod.chars)) {
                         mod.chars.forEach(c => {
                             const cardId = `hira_c_${c.char}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title,
@@ -114,16 +118,13 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     romaji: c.romaji,
                                     mnemonic: c.mnemonic,
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                     if (mod.vocab && Array.isArray(mod.vocab)) {
                         mod.vocab.forEach(v => {
                             const cardId = `hira_v_${v.kana}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title,
@@ -132,9 +133,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     romaji: v.romaji,
                                     meaning: v.meaning,
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                 }
@@ -153,8 +152,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                     if (mod.chars && Array.isArray(mod.chars)) {
                         mod.chars.forEach(c => {
                             const cardId = `kata_c_${c.char}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title,
@@ -163,16 +161,13 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     romaji: c.romaji,
                                     mnemonic: c.mnemonic,
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                     if (mod.vocab && Array.isArray(mod.vocab)) {
                         mod.vocab.forEach(v => {
                             const cardId = `kata_v_${v.kana}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title,
@@ -181,9 +176,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     romaji: v.romaji,
                                     meaning: v.meaning,
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                 }
@@ -201,8 +194,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                     if (mod.kanjis && Array.isArray(mod.kanjis)) {
                         mod.kanjis.forEach(k => {
                             const cardId = `kanji_${k.character}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title || `Módulo ${mod.module || (modIdx + 1)}`,
@@ -215,9 +207,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     radicals: k.radicals || [],
                                     examples: k.examples || [],
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                 }
@@ -241,8 +231,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                     if (mod.kanjis && Array.isArray(mod.kanjis)) {
                         mod.kanjis.forEach(k => {
                             const cardId = `${t}_${k.character}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title || `Módulo ${mod.module || (modIdx + 1)}`,
@@ -255,9 +244,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     radicals: k.radicals || [],
                                     examples: k.examples || [],
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                 }
@@ -275,8 +262,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                     if (mod.items && Array.isArray(mod.items)) {
                         mod.items.forEach((item, itemIdx) => {
                             const cardId = `pv_${mod.module || (modIdx + 1)}_${item.id || itemIdx}`;
-                            if (!deck.some(d => d.id === cardId)) {
-                                deck.push({
+                            adicionarCardSeNovo(cardId, () => ({
                                     id: cardId,
                                     modIdx: modIdx,
                                     modTitle: mod.title || `Módulo ${mod.module || (modIdx + 1)}`,
@@ -284,9 +270,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                     level: mod.level || 'A1',
                                     item: item,
                                     repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
-                                });
-                                alterado = true;
-                            }
+                                }));
                         });
                     }
                 }
@@ -357,7 +341,6 @@ function processarAvaliacaoSRS(qualidade) {
 }
 
 function initializeSRS(mode) {
-    console.log("[BOOT] initializeSRS (mode: " + mode + ")");
     if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(mode);
 }
 
