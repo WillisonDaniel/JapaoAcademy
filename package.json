@@ -1,0 +1,10 @@
+{
+  "name": "japao-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Suite de regressao local da Japao Academy",
+  "scripts": {
+    "test": "node tests/regression.cjs",
+    "test:regression": "node tests/regression.cjs"
+  }
+}
