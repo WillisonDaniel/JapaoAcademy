@@ -49,7 +49,9 @@
             <button class="dict-subfilter-pill" data-sub="N1" onclick="selecionarSubNivelKanji('N1')">🟣 N1</button>
         </div>
         <div id="dict-subfilters-vocab" class="dict-subfilters-row" style="display: none; margin-bottom: 1rem; gap: 0.4rem; justify-content: center; flex-wrap: wrap;">
-            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
+            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="Hiragana" onclick="selecionarSubNivelVocab('Hiragana')">🌸 Hiragana</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="Katakana" onclick="selecionarSubNivelVocab('Katakana')">⚡ Katakana</button>
             <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🔵 A1</button>
             <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟢 A2</button>
             <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟡 B1</button>
@@ -74,6 +76,35 @@
     <script src="../../database/ja-JP/data_hiragana.js"></script>
     <script src="../../database/ja-JP/data_katakana.js"></script>
     <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script>
+    <script src="../../js/core/dictionary.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/course/tabs.js"></script>
+    <script src="../../js/course/course.js"></script>
+    <script src="../../js/course/quiz.js"></script>
+    <script src="../../js/phrasal/navigation.js"></script>
+    <script src="../../js/phrasal/render.js"></script>
+    <script src="../../js/pronunciation/render.js"></script>
+    <script src="../../js/pronunciation/speech-recognition.js"></script>
+    <script src="../../js/pronunciation/quiz.js"></script>
+    <script src="../../js/kanji/kanji-render.js"></script>
+    <script src="../../js/kanji/kanji-canvas.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/game/minigames.js"></script>
+    <script src="../../js/srs/engine.js"></script>
+    <script src="../../js/srs/deck.js"></script>
+    <script src="../../js/srs/review.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
     <script src="../../app.js"></script>
 </body>
 </html>

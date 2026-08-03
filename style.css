@@ -1452,51 +1452,70 @@ body.dark-mode .grid-badge {
 }
 
 .secao-trilha {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius);
-    padding: 1.8rem;
+    background: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 16px;
+    padding: 1.5rem 1.8rem;
     margin-top: 1.5rem;
-    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
 .secao-trilha h3 {
     font-family: 'Fredoka', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #e63946;
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed var(--border-color, #e5e7eb);
+    padding-bottom: 0.6rem;
 }
 
 .btn-modulo {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
     width: 100%;
-    padding: 1rem 1.5rem;
-    margin-bottom: 0.8rem;
-    background: var(--bg-color);
-    border: 2px solid var(--border-color);
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.75rem;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    color: var(--text-main);
-    cursor: pointer;
     text-align: left;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-.btn-modulo:not(.bloqueado):hover {
-    border-color: #e63946;
-    background: rgba(230, 57, 70, 0.05);
-    transform: translateX(5px);
+/* Módulo Concluído - Borda Verde e Fundo Verde Claro */
+.btn-modulo.concluido {
+    border: 2px solid #22c55e !important;
+    background: rgba(34, 197, 94, 0.07) !important;
+    color: var(--text-main, #15803d) !important;
+}
+.btn-modulo.concluido:hover {
+    background: rgba(34, 197, 94, 0.14) !important;
+    transform: translateX(4px);
 }
 
+/* Módulo Desbloqueado / Atual - Borda Laranja e Fundo Amarelo/Laranja Claro */
+.btn-modulo:not(.bloqueado):not(.concluido) {
+    border: 2px solid #f59e0b !important;
+    background: rgba(245, 158, 11, 0.08) !important;
+    color: var(--text-main, #b45309) !important;
+}
+.btn-modulo:not(.bloqueado):not(.concluido):hover {
+    background: rgba(245, 158, 11, 0.16) !important;
+    transform: translateX(4px);
+}
+
+/* Módulo Bloqueado - Borda Tracejada Cinza e Fundo Mudo */
 .btn-modulo.bloqueado {
-    opacity: 0.6;
+    border: 1px dashed #d1d5db !important;
+    background: rgba(243, 244, 246, 0.6) !important;
+    color: #9ca3af !important;
+    opacity: 0.85;
     cursor: not-allowed;
-    border-style: dashed;
 }
 
 /* Reprodutor de Aulas */
@@ -2322,12 +2341,13 @@ body.dark-mode .grid-badge {
 .xp-profile-widget {
     background: rgba(245, 158, 11, 0.12);
     border: 1.5px solid #f59e0b;
-    border-radius: 16px;
-    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    padding: 0 0.8rem;
+    height: 38px;
     display: inline-flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 170px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
     box-shadow: 0 2px 10px rgba(245, 158, 11, 0.2);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -2340,18 +2360,11 @@ body.dark-mode .grid-badge {
     border-color: #fbbf24;
 }
 
-.xp-widget-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.76rem;
-    font-weight: 700;
-}
-
 .xp-rank-tag {
-    color: #f59e0b;
+    color: #fbbf24;
     white-space: nowrap;
+    font-size: 0.82rem;
+    font-weight: 700;
 }
 
 .dark-theme .xp-rank-tag {
@@ -2360,28 +2373,31 @@ body.dark-mode .grid-badge {
 
 .xp-val-text {
     color: #f59e0b;
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 800;
+    white-space: nowrap;
 }
 
 .xp-bar-bg {
-    width: 100%;
+    width: 50px;
     height: 6px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 999px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .dark-theme .xp-bar-bg {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .xp-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    background: linear-gradient(90deg, #f59e0b, #e63946);
     border-radius: 999px;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.4s ease;
 }
+
 
 .streak-badge {
     display: inline-flex;
@@ -3975,4 +3991,73 @@ rt {
         transform: scale(1.06);
         box-shadow: 0 0 0 16px rgba(239, 68, 68, 0), 0 10px 30px rgba(239, 68, 68, 0.6);
     }
+}
+
+/* ==========================================
+   WIDGET DE XP, NÍVEL E CARGO (HEADER REDESIGNED - IMAGEM 2)
+   ========================================== */
+.xp-profile-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    background: rgba(30, 27, 50, 0.95);
+    border: 1.5px solid #eab308;
+    border-radius: 20px;
+    padding: 5px 14px 6px 14px;
+    min-width: 200px;
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.5), 0 0 4px rgba(234, 179, 8, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Fredoka', 'Outfit', sans-serif;
+    user-select: none;
+}
+
+.xp-profile-widget:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.8), 0 0 8px rgba(250, 204, 21, 0.6);
+    border-color: #facc15;
+    background: rgba(38, 34, 62, 0.98);
+}
+
+.xp-widget-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+}
+
+.xp-rank-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    color: #eab308;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.xp-val-text {
+    font-weight: 700;
+    color: #eab308;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.xp-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1px;
+}
+
+.xp-bar-fill {
+    height: 100%;
+    background: #eab308;
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 6px rgba(234, 179, 8, 0.6);
 }

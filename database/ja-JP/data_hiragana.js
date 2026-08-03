@@ -60,3 +60,5 @@ const HIRA_COURSE_DATA = [
         sections: [{ title: "Básicos (Módulos 1 a 3)", cols: 5, items: [...RAW_H.mod1, ...RAW_H.mod2, ...RAW_H.mod3] },{ title: "Dakuon / Sonoros (Módulo 4)", cols: 5, items: RAW_H.mod4 },{ title: "Handakuon (Módulo 5)", cols: 5, items: RAW_H.mod5 },{ title: "Yōon / Junções (Módulo 6)", cols: 3, items: RAW_H.mod6 }]
     }
 ];
+
+if (typeof window !== 'undefined') { window.RAW_H = RAW_H; window.HIRA_COURSE_DATA = HIRA_COURSE_DATA; }

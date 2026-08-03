@@ -1,0 +1,323 @@
+// ======================================
+// MÓDULO SRS - SESSÃO DE REVISÃO E INTERFACE
+// ======================================
+
+function iniciarSessaoSRS(tipo) {
+    if (!tipo) {
+        const mode = document.body.getAttribute('data-mode') || 'curso';
+        tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
+    }
+    srsTipoAtivo = tipo;
+
+    const modoFiltro = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.filter) ? AppState.srs.filter : (typeof srsModoFiltro !== 'undefined' ? srsModoFiltro : 'todos');
+    const fullDeck = typeof sincronizarBaralhoSRS === 'function' ? sincronizarBaralhoSRS(tipo) : (typeof carregarDeckSRS === 'function' ? carregarDeckSRS(tipo) : []);
+    if (fullDeck.length === 0 && modoFiltro === 'todos') {
+        alert("Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!");
+        return;
+    }
+
+    const agora = Date.now();
+    const favs = typeof getFavoritosDeck === 'function' ? getFavoritosDeck() : [];
+    const erros = typeof getCadernoErros === 'function' ? getCadernoErros() : [];
+
+    let deckFiltrado = fullDeck;
+    if (modoFiltro === 'favoritos') {
+        deckFiltrado = fullDeck.filter(c => favs.includes(String(c.id)) || (c.drop && favs.includes(String(c.drop.kanji || c.drop.romaji))));
+        if (deckFiltrado.length === 0) {
+            alert("Sua lista de Favoritos está vazia! Clique na estrela ⭐ nos cards para favoritar itens.");
+            return;
+        }
+    } else if (modoFiltro === 'erros') {
+        deckFiltrado = fullDeck.filter(c => erros.includes(String(c.id)) || (c.drop && erros.includes(String(c.drop.kanji || c.drop.romaji))));
+        if (deckFiltrado.length === 0) {
+            alert("Seu Caderno de Erros está limpo! Nenhum erro registrado neste baralho.");
+            return;
+        }
+    }
+
+    let pendentes = modoFiltro === 'todos' ? deckFiltrado.filter(c => c.dueDate <= agora) : deckFiltrado;
+    if (pendentes.length === 0) {
+        pendentes = [...deckFiltrado].sort(() => Math.random() - 0.5);
+    } else {
+        pendentes = [...pendentes].sort(() => Math.random() - 0.5);
+    }
+
+    AppState.setSRSDeck(pendentes);
+    AppState.setSRSIndex(0);
+    srsAcertosSessao = 0;
+    srsErrosSessao = 0;
+
+    const hub = document.getElementById('hub-niveis') || document.getElementById('hub-cursos');
+    const trilha = document.getElementById('trilha-a1');
+    const studyArea = document.getElementById('study-area');
+    const playerAula = document.getElementById('player-aula');
+    const playerSRS = document.getElementById('player-srs');
+
+    if (hub) hub.style.display = 'none';
+    if (trilha) trilha.style.display = 'none';
+    if (studyArea) studyArea.style.display = 'none';
+    if (playerAula) playerAula.style.display = 'none';
+    if (playerSRS) playerSRS.style.display = 'block';
+
+    renderizarCardSRS();
+}
+
+function fecharSessaoSRS() {
+    const playerSRS = document.getElementById('player-srs');
+    const hub = document.getElementById('hub-niveis') || document.getElementById('hub-cursos');
+    const studyArea = document.getElementById('study-area');
+
+    if (playerSRS) playerSRS.style.display = 'none';
+    if (hub) hub.style.display = 'block';
+    if (studyArea) studyArea.style.display = 'block';
+
+    if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+    if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(srsTipoAtivo);
+}
+
+function renderizarCardSRS() {
+    const container = document.getElementById('conteudo-card-srs');
+    const sessaoCards = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.activeDeck) ? AppState.srs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
+    const indexAtivo = (typeof AppState !== 'undefined' && AppState.srs && typeof AppState.srs.currentIndex === 'number') ? AppState.srs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
+
+    if (!container || sessaoCards.length === 0) return;
+
+    if (indexAtivo >= sessaoCards.length) {
+        renderizarConclusaoSRS();
+        return;
+    }
+
+    AppState.setSRSReveal(false);
+    const cardData = sessaoCards[indexAtivo];
+
+    const elemTitulo = document.getElementById('srs-etapa-titulo');
+    if (elemTitulo) elemTitulo.innerText = `Revisão SRS (${indexAtivo + 1} de ${sessaoCards.length})`;
+
+    let frenteHTML = "";
+    let versoHTML = "";
+    const speakKanaLocal = typeof speakKana === 'function' ? speakKana : (() => {});
+    const tocarAudioLocal = typeof tocarAudio === 'function' ? tocarAudio : (() => {});
+    const fNomeLocal = typeof fNome === 'function' ? fNome : (t => t);
+    const renderRadicaisKanjiLocal = typeof renderizarRadicaisKanji === 'function' ? renderizarRadicaisKanji : (() => '');
+
+    if (cardData.dropType === 'hira_char' || cardData.dropType === 'kata_char') {
+        const modalidade = cardData.dropType.startsWith('hira') ? 'HIRAGANA' : 'KATAKANA';
+        const cor = cardData.dropType.startsWith('hira') ? '#d90429' : '#028090';
+        frenteHTML = `
+            <div class="srs-card-type" style="color: ${cor};">🔤 ${modalidade} • ${cardData.modTitle}</div>
+            <div class="srs-kanji kana-text">${cardData.char}</div>
+            <button onclick="speakKana('${cardData.char}')" class="srs-audio-btn">🔊 Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Qual é a leitura e a dica mnemônica deste Kana?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: ${cor};">✨ Leitura e Mnemônica</div>
+            <div class="srs-romaji">${cardData.romaji}</div>
+            <div style="background: var(--bg-color); border: 1px dashed var(--border-color); padding: 12px; border-radius: 10px; margin-top: 10px; text-align: left; font-size: 0.95rem;">
+                <strong>💡 Dica:</strong> ${cardData.mnemonic}
+            </div>
+        `;
+    } else if (cardData.dropType === 'hira_vocab' || cardData.dropType === 'kata_vocab') {
+        const modalidade = cardData.dropType.startsWith('hira') ? 'HIRAGANA' : 'KATAKANA';
+        const cor = cardData.dropType.startsWith('hira') ? '#d90429' : '#028090';
+        frenteHTML = `
+            <div class="srs-card-type" style="color: ${cor};">📚 VOCABULÁRIO • ${cardData.modTitle}</div>
+            <div class="srs-kanji kana-text" style="font-size: 3rem;">${cardData.char}</div>
+            <button onclick="speakKana('${cardData.char}')" class="srs-audio-btn">🔊 Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Tente lembrar da pronúncia (romaji) e tradução!</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: ${cor};">✨ Resposta Revelada</div>
+            <div class="srs-romaji">${cardData.romaji}</div>
+            <div class="srs-translation">${cardData.meaning}</div>
+        `;
+    } else if (cardData.dropType === 'kanji') {
+        let exHtml = "";
+        if (cardData.examples && cardData.examples.length > 0) {
+            const ex = cardData.examples[0];
+            exHtml = `
+                <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 10px; border-radius: 8px; margin-top: 10px; text-align: left;">
+                    <div style="font-weight: bold; color: #b45309;">Exemplo: ${ex.word}</div>
+                    <div style="font-size: 0.85rem; color: var(--text-main);">${ex.wordMeaning}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 4px;">"${ex.sentence}"</div>
+                </div>
+            `;
+        }
+        let kanjiHeaderLabel = 'Kanji N5';
+        if (srsTipoAtivo === 'kanji_n4' || (cardData.id && cardData.id.startsWith('kanji_n4'))) kanjiHeaderLabel = 'Kanji N4';
+        else if (srsTipoAtivo === 'kanji_n3' || (cardData.id && cardData.id.startsWith('kanji_n3'))) kanjiHeaderLabel = 'Kanji N3';
+        else if (srsTipoAtivo === 'kanji_n2' || (cardData.id && cardData.id.startsWith('kanji_n2'))) kanjiHeaderLabel = 'Kanji N2';
+        else if (srsTipoAtivo === 'kanji_n1' || (cardData.id && cardData.id.startsWith('kanji_n1'))) kanjiHeaderLabel = 'Kanji N1';
+        else if (srsTipoAtivo === 'kanji_n5' || (cardData.id && cardData.id.startsWith('kanji_n5'))) kanjiHeaderLabel = 'Kanji N5';
+        else if (srsTipoAtivo && srsTipoAtivo.startsWith('kanji_n')) kanjiHeaderLabel = 'Kanji ' + srsTipoAtivo.replace('kanji_', '').toUpperCase();
+
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #b45309;">🏯 ${kanjiHeaderLabel} • ${cardData.modTitle}</div>
+            <div class="srs-kanji kana-text">${cardData.character}</div>
+            <button onclick="speakKana('${cardData.character}')" class="srs-audio-btn">🔊 Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Quais são as leituras (Kun/On) e o significado deste Kanji?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #b45309;">✨ Ideograma Revelado</div>
+            <div class="srs-translation" style="color: #b45309; font-size: 1.4rem; margin-bottom: 0.8rem;">${cardData.meaning}</div>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 10px; font-size: 0.9rem;">
+                <span style="background: rgba(34, 197, 94, 0.1); color: #16a34a; border: 1px solid #22c55e; padding: 4px 10px; border-radius: 6px;"><strong>Kun:</strong> ${cardData.kunyomi}</span>
+                <span style="background: rgba(59, 130, 246, 0.1); color: #2563eb; border: 1px solid #3b82f6; padding: 4px 10px; border-radius: 6px;"><strong>On:</strong> ${cardData.onyomi}</span>
+            </div>
+            ${renderRadicaisKanjiLocal(cardData.radicals)}
+            ${exHtml}
+        `;
+    } else if (cardData.dropType === 'phrasal_verb') {
+        const item = cardData.item || {};
+        const safeVerb = (item.verb || '').replace(/'/g, "\\'");
+        const breakdown = item.breakdown || {};
+        const ex = item.examples && item.examples[0] ? item.examples[0] : null;
+        const safeSent = ex ? (ex.sentence || '').replace(/'/g, "\\'") : '';
+
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #028090;">⚡ PHRASAL VERB • ${fNomeLocal(cardData.modTitle)}</div>
+            <div class="srs-kanji" style="font-size: 2.5rem; color: #028090; font-family: 'Fredoka', sans-serif;">${item.verb}</div>
+            <button onclick="speakKana('${safeVerb}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Qual é o significado, decomposição e aplicação deste verb/idiom?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #028090;">✨ Resposta Revelada</div>
+            <div class="srs-translation" style="color: var(--text-main); font-size: 1.35rem; font-weight: bold; margin-bottom: 0.6rem;">📌 ${item.meaning}</div>
+            <div style="background: rgba(2, 128, 144, 0.08); border-left: 4px solid #028090; padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 8px 0; text-align: left; font-size: 0.88rem;">
+                <strong>🧩 Decomposição:</strong> Raiz: <em>${breakdown.root || ''}</em> + Partícula: <em>${breakdown.particle || ''}</em> (${breakdown.type || ''})
+            </div>
+            <div style="background: var(--bg-color); border: 1px solid var(--border-color); padding: 10px 14px; border-radius: 10px; margin-top: 10px; text-align: left;">
+                <strong style="color: #028090; font-size: 0.88rem;">💡 Explicação:</strong>
+                <p style="font-size: 0.9rem; margin: 4px 0 8px 0; color: var(--text-main);">${item.explanation || ''}</p>
+                ${ex ? `
+                    <div style="border-top: 1px dashed var(--border-color); padding-top: 8px; margin-top: 8px;">
+                        <span style="font-weight: 600; font-size: 0.9rem; color: var(--text-main);">${ex.sentence}</span>
+                        <button onclick="speakKana('${safeSent}')" style="font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer; margin-left: 6px;">🔊</button>
+                        <br><small style="color: var(--text-muted);">${ex.translation}</small>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    } else {
+        const drop = cardData.drop || {};
+        const nivelLabel = (cardData.level || (srsTipoAtivo ? srsTipoAtivo.toUpperCase() : 'A1'));
+        if (drop.type === 'vocab') {
+            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+            const srsTextAudio = isEngSrs ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
+            const cleanSrsParam = String(srsTextAudio).replace(/\//g, ' ').replace(/'/g, "\\'");
+
+            frenteHTML = `
+                <div class="srs-card-type">📖 Vocabulário ${nivelLabel} • ${fNomeLocal(cardData.modTitle)}</div>
+                <div class="srs-kanji">${drop.kanji}</div>
+                <button onclick="tocarAudio('${cleanSrsParam}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Tente lembrar da pronúncia e da tradução!</p>
+            `;
+            versoHTML = `
+                <div class="srs-card-type">✨ Resposta Revelada</div>
+                <div class="srs-romaji">${drop.romaji}</div>
+                <div class="srs-translation">${drop.translation}</div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.8rem;">💡 ${drop.timeContext || ''}</p>
+            `;
+        } else {
+            frenteHTML = `
+                <div class="srs-card-type" style="color: #e63946;">💡 Pílula Gramatical ${nivelLabel} • ${fNomeLocal(cardData.modTitle)}</div>
+                <h3 style="font-size: 1.5rem; margin: 1rem 0;">${fNomeLocal(drop.title)}</h3>
+                <p style="color: var(--text-muted);">Qual é a regra e a fórmula desta pílula gramatical?</p>
+            `;
+            versoHTML = `
+                <div class="srs-card-type" style="color: #e63946;">✨ Regra Gramatical</div>
+                <p style="font-weight: 600; margin-bottom: 0.8rem;">${fNomeLocal(drop.rule)}</p>
+                <div style="background: var(--bg-color); border: 2px solid var(--border-color); padding: 10px 15px; border-radius: 8px; font-weight: bold; color: #e63946; margin: 10px 0;">
+                    <code>${fNomeLocal(drop.formula)}</code>
+                </div>
+                <p><small style="color: var(--text-muted);">Exemplo: ${fNomeLocal(drop.example)}</small></p>
+            `;
+        }
+    }
+
+    container.innerHTML = `
+        <div class="srs-card-box ${srsCardRevelado ? 'revelado' : ''}" id="box-flashcard">
+            <div class="srs-card-frente">${frenteHTML}</div>
+            <div class="srs-card-verso" style="display: ${srsCardRevelado ? 'block' : 'none'};">${versoHTML}</div>
+        </div>
+    `;
+
+    const btnRevelar = document.getElementById('btn-revelar-srs');
+    const painelAvaliacao = document.getElementById('painel-avaliacao-srs');
+    if (btnRevelar) btnRevelar.style.display = 'block';
+    if (painelAvaliacao) painelAvaliacao.style.display = 'none';
+}
+
+function revelarRespostaSRS() {
+    AppState.setSRSReveal(true);
+    const verso = document.querySelector('.srs-card-verso');
+    if (verso) verso.style.display = 'block';
+
+    const sessaoCards = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.activeDeck) ? AppState.srs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
+    const indexAtivo = (typeof AppState !== 'undefined' && AppState.srs && typeof AppState.srs.currentIndex === 'number') ? AppState.srs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
+    const cardData = sessaoCards[indexAtivo];
+    if (cardData) {
+        if (cardData.item && cardData.item.verb && typeof speakKana === 'function') speakKana(cardData.item.verb);
+        else if (cardData.char && typeof speakKana === 'function') speakKana(cardData.char);
+        else if (cardData.character && typeof speakKana === 'function') speakKana(cardData.character);
+        else if (cardData.drop && typeof tocarAudio === 'function') {
+            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
+            const targetTxt = isEngSrs ? (cardData.drop.kanji || cardData.drop.romaji) : (cardData.drop.romaji || cardData.drop.kanji);
+            if (targetTxt) tocarAudio(targetTxt);
+        }
+    }
+
+    const btnRevelar = document.getElementById('btn-revelar-srs');
+    const painelAvaliacao = document.getElementById('painel-avaliacao-srs');
+    if (btnRevelar) btnRevelar.style.display = 'none';
+    if (painelAvaliacao) painelAvaliacao.style.display = 'grid';
+}
+
+function renderizarConclusaoSRS() {
+    const container = document.getElementById('conteudo-card-srs');
+    const xpGanho = (srsAcertosSessao * 5) + (srsSessaoCards.length * 2);
+
+    const srsCount = (parseInt(localStorage.getItem('ja_srs_reviews_count')) || 0) + 1;
+    localStorage.setItem('ja_srs_reviews_count', srsCount);
+
+    if (typeof registrarAtividadeDiaria === 'function') registrarAtividadeDiaria();
+    if (typeof adicionarXP === 'function') adicionarXP(xpGanho, 'Revisão SRS Concluída');
+
+    const nome = typeof nomeUsuario !== 'undefined' ? nomeUsuario : 'Estudante';
+
+    if (container) {
+        container.innerHTML = `
+            <span style="font-size: 4rem; animation: pop 0.5s;">🧠</span>
+            <h2 style="color: #22c55e;">Sessão de Revisão Concluída!</h2>
+            <p style="font-size: 1.1rem; color: var(--text-muted);">Parabéns, <strong>${nome}</strong>! Você fortaleceu sua memória de longo prazo.</p>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin: 1.5rem 0;">
+                <div style="background: var(--bg-color); border: 2px solid var(--border-color); padding: 12px 20px; border-radius: 10px;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Cards Revisados</div>
+                    <div style="font-size: 1.8rem; font-weight: bold; color: var(--text-main);">${srsSessaoCards.length}</div>
+                </div>
+                <div style="background: var(--bg-color); border: 2px solid var(--border-color); padding: 12px 20px; border-radius: 10px;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">XP Adquirido</div>
+                    <div style="font-size: 1.8rem; font-weight: bold; color: #fbbf24;">+${xpGanho} XP</div>
+                </div>
+            </div>
+
+            <button onclick="fecharSessaoSRS()" style="background: linear-gradient(135deg, #22c55e, #15803d); color: white; border: none; padding: 0.8rem 2rem; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer;">
+                Concluir e Voltar ao Hub ➔
+            </button>
+        `;
+    }
+
+    const btnRevelar = document.getElementById('btn-revelar-srs');
+    const painelAvaliacao = document.getElementById('painel-avaliacao-srs');
+    if (btnRevelar) btnRevelar.style.display = 'none';
+    if (painelAvaliacao) painelAvaliacao.style.display = 'none';
+}
+
+// Exposição explícita no objeto window
+if (typeof window !== 'undefined') {
+    window.iniciarSessaoSRS = iniciarSessaoSRS;
+    window.fecharSessaoSRS = fecharSessaoSRS;
+    window.renderizarCardSRS = renderizarCardSRS;
+    window.revelarRespostaSRS = revelarRespostaSRS;
+    window.renderizarConclusaoSRS = renderizarConclusaoSRS;
+}

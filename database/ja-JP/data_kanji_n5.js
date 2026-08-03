@@ -5927,3 +5927,5 @@ const kanjiN5Data = [
         ]
     }
 ];
+
+if (typeof window !== 'undefined') { window.kanjiN5Data = kanjiN5Data; }

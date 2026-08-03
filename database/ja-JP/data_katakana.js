@@ -60,3 +60,5 @@ const KATA_COURSE_DATA = [
         sections: [{ title: "Básicos (Módulos 1 a 3)", cols: 5, items: [...RAW_K.mod1, ...RAW_K.mod2, ...RAW_K.mod3] },{ title: "Dakuon / Sonoros (Módulo 4)", cols: 5, items: RAW_K.mod4 },{ title: "Handakuon (Módulo 5)", cols: 5, items: RAW_K.mod5 },{ title: "Yōon e Estrangeiros (Módulo 6)", cols: 5, items: RAW_K.mod6 }]
     }
 ];
+
+if (typeof window !== 'undefined') { window.RAW_K = RAW_K; window.KATA_COURSE_DATA = KATA_COURSE_DATA; }
