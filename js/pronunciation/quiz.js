@@ -82,7 +82,18 @@ function abrirModoQuizPronuncia(mode = 'select', level = 'A1', btn = null) {
         }
 
         if (!qs || qs.length === 0) {
-            container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);">Nenhuma questão encontrada para este nível no momento.</div>`;
+            if (typeof aplicarEstadoVazioUX === 'function') {
+                aplicarEstadoVazioUX(container, {
+                    icon: '📝',
+                    title: 'Nenhuma questão disponível',
+                    description: 'Não há questões cadastradas para este nível no momento.',
+                    recommendation: 'Escolha outro nível para continuar o treino.',
+                    actionLabel: 'Escolher outro nível',
+                    action: "abrirModoQuizPronuncia('select')"
+                });
+            } else {
+                container.textContent = 'Nenhuma questão encontrada para este nível no momento.';
+            }
             return;
         }
 
@@ -94,6 +105,10 @@ function abrirModoQuizPronuncia(mode = 'select', level = 'A1', btn = null) {
             score: 0,
             answered: false
         };
+
+        if (typeof iniciarSessaoEstudo === 'function') {
+            iniciarSessaoEstudo({ language: 'en-US', activityType: 'quiz', contentId: `pronunciation-${String(level).toLowerCase()}` });
+        }
 
         renderPronunciaQuizQuestion();
     }
@@ -284,6 +299,9 @@ function finalizarQuizPronuncia() {
     const pct = Math.round((score / total) * 100);
 
     salvarHighScorePronuncia(level, pct);
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('completion', { activityCountDelta: total, contentId: `pronunciation-${String(level).toLowerCase()}` });
+    }
 
     let trophy = '🏆';
     let msg = 'Excelente! Domínio nativo da regra!';

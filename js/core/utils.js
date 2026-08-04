@@ -74,7 +74,7 @@ function renderQuizQuestion(questionObj, index) {
 
     } else {
         html += `<div class="quiz-input-group">`;
-        html += `<input type="text" id="quiz-input-${index}" class="quiz-input" placeholder="Digite em romaji ou português..." onkeydown="if(event.key==='Enter') checkTextAnswer(${index}, '${safeAns}')">`;
+        html += `<input type="text" id="quiz-input-${index}" class="quiz-input" aria-label="Resposta da questão ${index + 1}" placeholder="Digite em romaji ou português..." onkeydown="if(event.key==='Enter') checkTextAnswer(${index}, '${safeAns}')">`;
         html += `<button class="quiz-btn" onclick="checkTextAnswer(${index}, '${safeAns}')">Responder</button>`;
         html += `</div>`;
         html += `<span id="quiz-feedback-${index}" class="quiz-feedback-text" role="status" aria-live="polite"></span>`;

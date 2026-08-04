@@ -11,6 +11,7 @@ function renderKanjiModule(moduleIndex) {
     const moduleData = dataBase[moduleIndex];
     if (!moduleData) return;
 
+    container.setAttribute('aria-busy', 'true');
     container.innerHTML = '';
 
     // 1. CABEÇALHO DO MÓDULO (Topo)
@@ -276,6 +277,8 @@ function renderKanjiModule(moduleIndex) {
     }
 
     if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases();
+    container.setAttribute('aria-busy', 'false');
+    container.setAttribute('aria-label', 'Conteúdo do módulo');
 }
 
 function playReadingTextAudio(htmlText, rate = 1.0) {

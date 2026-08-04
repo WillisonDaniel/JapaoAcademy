@@ -26,6 +26,7 @@ function loadCourseModule(idx) {
     });
     const display = document.getElementById('moduleDisplay');
     if (!display) return;
+    display.setAttribute('aria-busy', 'true');
 
     if (data.isReferenceTable) {
         let html = `<h2 class="module-title">${data.title}</h2><p style="margin-bottom:2rem; color:var(--text-muted);">${data.desc}</p>`;
@@ -35,6 +36,8 @@ function loadCourseModule(idx) {
             html += `<h3 class="section-title">${sec.title}</h3><div class="${sec.cols === 5 ? 'soundboard-grid-5' : 'soundboard-grid-3'}">${itemsHtml}</div>`;
         });
         display.innerHTML = html;
+        display.setAttribute('aria-busy', 'false');
+        display.setAttribute('aria-label', 'Conteúdo do módulo');
         return;
     }
 
@@ -73,11 +76,13 @@ function loadCourseModule(idx) {
     }).join('');
 
     let vocabHtml = data.vocab.map(v => `<div class="vocab-card" style="grid-column: ${v.kana.length > 5 ? 'span 2' : 'span 1'};"><div class="vocab-kana kana-text" onclick="speakKana('${v.kana}')">${v.kana} 🔊</div><div class="vocab-romaji">${v.romaji}</div><div class="vocab-meaning">${v.meaning}</div></div>`).join('');
-    let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback" role="status" aria-live="polite"></span></div>`).join('');
+    let quizHtml = data.quiz.map((q, i) => `<div class="question-block"><div class="question-text"><span>${i + 1}. ${q.q}</span><span class="badge ${q.type === 'kana' ? 'kana' : 'romaji'}">${q.type === 'kana' ? (mode === 'hiragana' ? '✨ Vira Hiragana' : '✨ Vira Katakana') : '🔤 Romaji'}</span></div><input type="text" id="cq_${i}" class="quiz-input" aria-label="Resposta da questão ${i + 1}" ${q.type === 'kana' ? 'oninput="courseConvert(this)"' : ''} onkeydown="if(event.key==='Enter') checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')" placeholder="${q.type === 'kana' ? 'Digite em Romaji...' : 'Ex: ka'}"><button class="quiz-btn" onclick="checkCourseQuiz(${i}, '${q.a.replace(/'/g, "\\'")}', '${q.type}')">Verificar</button><span id="cf_${i}" class="feedback" role="status" aria-live="polite"></span></div>`).join('');
 
     display.innerHTML = `<h2 class="module-title">${data.title}</h2><p style="margin-bottom:2rem; color:var(--text-muted);">${data.desc}</p><h3 class="section-title">🔤 Caracteres/Regras</h3><div class="char-grid">${charsHtml}</div><h3 class="section-title">📚 Vocabulário Prático</h3><div class="vocab-grid">${vocabHtml}</div><div class="quiz-section"><h3 class="section-title" style="margin-top:0;">🧠 Exercícios</h3>${quizHtml}</div>`;
 
     if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases();
+    display.setAttribute('aria-busy', 'false');
+    display.setAttribute('aria-label', 'Conteúdo do módulo');
 }
 
 function courseConvert(input) {
@@ -368,6 +373,10 @@ function iniciarModulo(index, nivel = ((typeof AppState !== 'undefined' && AppSt
         if (el) el.style.display = 'none';
     });
     if (player) player.style.display = 'block';
+    if (typeof iniciarSessaoEstudo === 'function') {
+        const idioma = document.body.getAttribute('data-lang') === 'english' ? 'en-US' : 'ja-JP';
+        iniciarSessaoEstudo({ language: idioma, activityType: 'course', contentId: `${String(nivel).toLowerCase()}-${index + 1}` });
+    }
     if (typeof renderizarEtapa === 'function') renderizarEtapa();
     window.scrollTo(0, 0);
 }
@@ -381,6 +390,7 @@ function fecharAula() {
         if (el) el.style.display = (l === targetLvl) ? 'block' : 'none';
     });
     if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+    if (typeof finalizarSessaoEstudo === 'function') finalizarSessaoEstudo('exit');
 }
 
 
@@ -425,7 +435,16 @@ function renderizarEtapa() {
 
         if (totalDrops === 0) {
             console.warn(`[COURSE] Módulo ${module.id || modIdx} não possui cartões de vocabulário.`);
-            container.innerHTML = `<p style="text-align:center; padding: 2rem; color:var(--text-muted);">Nenhum cartão de vocabulário encontrado para este módulo.</p>`;
+            if (typeof aplicarEstadoVazioUX === 'function') {
+                aplicarEstadoVazioUX(container, {
+                    icon: '📭',
+                    title: 'Nenhum cartão de vocabulário',
+                    description: 'Este módulo não possui cartões disponíveis nesta etapa.',
+                    recommendation: 'Volte à trilha e escolha outro módulo para continuar estudando.'
+                });
+            } else {
+                container.textContent = 'Nenhum cartão de vocabulário encontrado para este módulo.';
+            }
             return;
         }
 
@@ -547,15 +566,25 @@ function renderizarEtapa() {
         let htmlQuiz = quizList.map((q, idx) => (typeof renderQuizQuestion === 'function' ? renderQuizQuestion(q, idx) : '')).join('');
         container.innerHTML = `<h3>🎯 Quiz Final do Módulo</h3>${htmlQuiz}`;
     }
+    if (container && typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(container);
 }
 
-function avancarEtapa() {
+function avancarEtapa(uxExecutarAgora = false) {
     const dadosCurso = typeof getDadosCursoAtivo === 'function' ? getDadosCursoAtivo() : [];
     const modIdx = (typeof AppState !== 'undefined' && AppState.course && typeof AppState.course.moduleIndex === 'number') ? AppState.course.moduleIndex : (typeof moduloAtivoIndex !== 'undefined' ? moduloAtivoIndex : 0);
     const mod = dadosCurso[modIdx];
     const totalDrops = obterDropsAtivosDoModulo(mod).length;
     const curEtapa = (typeof AppState !== 'undefined' && AppState.course && AppState.course.stage) ? AppState.course.stage : (typeof etapaAtual !== 'undefined' ? etapaAtual : 1);
     const curDrop = (typeof AppState !== 'undefined' && AppState.course && typeof AppState.course.dropIndex === 'number') ? AppState.course.dropIndex : (typeof dropAtual !== 'undefined' ? dropAtual : 0);
+    const botaoAvancar = typeof document !== 'undefined' ? document.getElementById('btn-avancar') : null;
+
+    if (curEtapa === 5 && !uxExecutarAgora && botaoAvancar && typeof iniciarEstadoBotao === 'function') {
+        if (!iniciarEstadoBotao(botaoAvancar, 'Concluindo módulo...')) return;
+        const continuarConclusao = () => avancarEtapa(true);
+        if (typeof requestAnimationFrame === 'function') requestAnimationFrame(continuarConclusao);
+        else continuarConclusao();
+        return;
+    }
 
     if (curEtapa === 1) {
         if (curDrop < totalDrops - 1) {
@@ -599,8 +628,12 @@ function avancarEtapa() {
             const motivoXP = `Conclusão do Módulo ${modNum}${modTitleText}`;
             if (typeof adicionarXP === 'function') adicionarXP(50, motivoXP);
         }
+        if (typeof finalizarSessaoEstudo === 'function') {
+            finalizarSessaoEstudo('completion', { activityCountDelta: 1, contentId: mod && mod.id ? mod.id : `module-${modIdx + 1}` });
+        }
         alert("🎉 Parabéns! Você concluiu este módulo!");
         fecharAula();
+        if (botaoAvancar && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoAvancar);
     }
 }
 function voltarEtapa() {

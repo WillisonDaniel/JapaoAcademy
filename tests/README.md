@@ -1,4 +1,4 @@
-# Etapa 24 - Testes de regressao automatizados
+# Testes automatizados - Etapas 22 a 29
 
 Esta pasta protege a base estavel validada nas Etapas 22 e 23.
 
@@ -16,14 +16,21 @@ Em terminais que nao bloqueiam o atalho do npm, tambem funciona:
 npm test
 ```
 
-## O que e verificado
+## O que é verificado
 
 - sintaxe de todos os arquivos JavaScript;
-- existencia das 19 paginas HTML e de suas referencias locais;
+- existencia das 21 paginas HTML e de suas referencias locais;
 - ordem de carregamento de `constants.js` e `state.js`;
 - estrutura, IDs e atividades dos oito cursos principais;
 - totais das bases de hiragana, katakana, kanji, phrasal verbs, pronuncia e minigame;
 - mutadores e pontes legadas do `AppState`;
+- sincronizacao automatica do progresso e XP apos login com Google;
+- dashboard global `Meu Progresso`: Japonês e Inglês agregados, acesso autenticado, primeiro acesso, meta diaria, atividade semanal, SRS, redirecionamentos e sincronizacao por usuario;
+- medicao de sessoes da Etapa 29: modelo v2, migracao v1, tempo ativo, pausa por pagina oculta ou inatividade, retomada, conclusao, descarte de sessoes curtas e temporizador unico;
+- retencao de 200 sessoes e 366 agregados diarios, idempotencia por ID e mesclagem local/remota sem soma dupla;
+- estatisticas avancadas da Etapa 29: periodos 7/30/90, filtros por idioma e atividade, formulas documentadas, dados parciais, distribuicoes textuais e divisao por zero;
+- graficos de aprendizado da Etapa 29: evolucao diaria por minutos, atividades ou revisoes, distribuicao por idioma ou atividade, SVG nativo, alternativas textuais e estados sem dados;
+- compatibilidade do dashboard com dados antigos, JSON corrompido, Firebase indisponivel, nomes potencialmente maliciosos e estados vazios;
 - atualizacao de intervalo, facilidade e indice do SRS;
 - correcoes criticas da Etapa 22, incluindo B2 modulo 12, Firebase, Service Worker e rolagem das aulas.
 

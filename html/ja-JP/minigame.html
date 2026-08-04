@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css?v=28f">
     <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
 </head>
 <body data-mode="game">
@@ -42,7 +42,7 @@
                         <span style="font-weight:bold; color:#f59e0b; font-size: 1.1rem;">🔥 Melhor Combo: <span id="menu-max-combo">0</span>x</span>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="g-setup-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div class="g-cat-box">
                             <div style="font-weight: bold; color: var(--game-primary); margin-bottom: 1rem; text-transform: uppercase;">🔠 1. Escolha o Alfabeto</div>
                             <div style="display: flex; flex-direction: column; gap: 0.6rem; max-height: 320px; overflow-y: auto; padding-right: 4px;">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
 
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div class="g-options-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
                         <div class="g-cat-box">
                             <div style="font-weight: bold; color: var(--hira-primary); margin-bottom: 1rem; text-transform: uppercase;">📚 Progresso (Módulos)</div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
@@ -119,7 +119,7 @@
                             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">🔊 Clique para ouvir</div>
                         </div>
                         
-                        <input type="text" id="g-ans-input" class="g-input" placeholder="ROMAJI" autocomplete="off" onkeydown="if(event.key === 'Enter') checkTypingAnswer()">
+                        <input type="text" id="g-ans-input" class="g-input" aria-label="Resposta do minigame" placeholder="ROMAJI" autocomplete="off" onkeydown="if(event.key === 'Enter') checkTypingAnswer()">
                         <button id="g-mic-btn" class="mic-btn" style="display:none;" onclick="startListening()">🎤 Falar</button>
                         <div id="g-feedback" style="min-height: 3rem; margin-top: 1rem; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px; transition: 0.2s; opacity: 0; text-align: center; display: flex; flex-direction: column; justify-content: center;">...</div>
                     </div>

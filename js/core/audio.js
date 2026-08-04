@@ -45,7 +45,13 @@ function alternarVelocidadeAudio(btnElement) {
 
 function tocarAudio(texto, rateOverride = null) {
     if (!texto) return;
-    if ('speechSynthesis' in window) {
+    if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        console.warn('[Áudio] Síntese de voz indisponível neste navegador.');
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('browser', 'Áudio indisponível');
+        else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não é compatível com este navegador.');
+        return;
+    }
+    try {
         window.speechSynthesis.cancel();
 
         // Ignorar e remover rigorosamente todas as barras '/' (slashes) e símbolos fonéticos problemáticos
@@ -63,7 +69,17 @@ function tocarAudio(texto, rateOverride = null) {
         const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
         u.lang = isEnglish ? 'en-US' : 'ja-JP';
         u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
+        u.onerror = event => {
+            if (event && (event.error === 'interrupted' || event.error === 'canceled')) return;
+            console.warn('[Áudio] Falha na síntese de voz:', event && event.error ? event.error : event);
+            if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('audio', 'Falha ao reproduzir o áudio');
+            else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não pôde ser reproduzido. Tente novamente.');
+        };
         window.speechSynthesis.speak(u);
+    } catch (erro) {
+        console.warn('[Áudio] Erro ao iniciar a síntese de voz:', erro);
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('audio', 'Falha ao reproduzir o áudio');
+        else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não pôde ser reproduzido. Tente novamente.');
     }
 }
 

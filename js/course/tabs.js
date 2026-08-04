@@ -39,6 +39,8 @@ function renderCourseTabs() {
         wrapper.appendChild(checkBtn);
         tabsContainer.appendChild(wrapper);
     });
+    tabsContainer.setAttribute('aria-busy', 'false');
+    tabsContainer.setAttribute('aria-label', 'Módulos do curso');
 }
 
 function toggleModuloConcluido(modIdx, mode) {
@@ -80,6 +82,9 @@ function toggleModuloConcluido(modIdx, mode) {
         if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(t);
         if (typeof playBeep === 'function') playBeep('success');
         if (typeof adicionarXP === 'function') adicionarXP(xpPorModulo, `Módulo de ${labelCurso} concluído`);
+        if (typeof finalizarSessaoEstudo === 'function') {
+            finalizarSessaoEstudo('completion', { activityCountDelta: 1, contentId: `${t}-${modIdx + 1}` });
+        }
         if (typeof mostrarToast === 'function') mostrarToast(`✅ <strong>${modTitle}</strong> de ${labelCurso} concluído! <br><small>${deck.length} cards disponíveis no SRS.</small>`);
         if (typeof registrarAtividadeDiaria === 'function') registrarAtividadeDiaria();
     } else {

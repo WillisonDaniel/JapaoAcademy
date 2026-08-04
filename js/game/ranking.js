@@ -114,14 +114,28 @@ function abrirModalConquistas() {
     if (typeof garantirElementosCabecalhoEModal === 'function') {
         garantirElementosCabecalhoEModal();
     }
-    renderizarMuralConquistas();
     const modal = document.getElementById('modal-conquistas');
-    if (modal) modal.style.display = 'flex';
+    const grid = document.getElementById('grid-conquistas');
+    if (grid) {
+        grid.setAttribute('aria-busy', 'true');
+        grid.innerHTML = `
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        `;
+    }
+    if (modal) {
+        if (typeof abrirModalAcessivel === 'function') abrirModalAcessivel(modal, document.activeElement, '.fechar-modal');
+        else modal.style.display = 'flex';
+    }
+    const concluirRenderizacao = () => renderizarMuralConquistas();
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(concluirRenderizacao);
+    else concluirRenderizacao();
 }
 
 function fecharModalConquistas() {
     const modal = document.getElementById('modal-conquistas');
-    if (modal) modal.style.display = 'none';
+    if (typeof fecharModalAcessivel === 'function') fecharModalAcessivel(modal);
+    else if (modal) modal.style.display = 'none';
 }
 
 function renderizarMuralConquistas() {
@@ -130,6 +144,16 @@ function renderizarMuralConquistas() {
 
     const unlocked = obteConquistasDesbloqueadas();
     let html = '';
+
+    if (Object.keys(unlocked).length === 0 && typeof criarEstadoVazioUX === 'function') {
+        html += criarEstadoVazioUX({
+            compact: true,
+            icon: '🏆',
+            title: 'Nenhuma conquista desbloqueada',
+            description: 'Suas conquistas aparecerão aqui conforme você estuda.',
+            recommendation: 'Conclua sua primeira aula para iniciar a coleção.'
+        });
+    }
 
     CATALOGO_CONQUISTAS.forEach(c => {
         const isUnlocked = !!unlocked[c.id];
@@ -161,6 +185,9 @@ function renderizarMuralConquistas() {
     });
 
     grid.innerHTML = html;
+    if (typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(grid);
+    grid.setAttribute('aria-busy', 'false');
+    grid.setAttribute('aria-label', 'Conquistas disponíveis');
 }
 
 // Exposição explícita no objeto window

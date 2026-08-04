@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css?v=28f">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 
@@ -31,7 +31,7 @@
     <!-- TELA 1: HUB DE NÍVEIS DO INGLÊS -->
     <main id="hub-niveis" class="container">
         <!-- BANNER DE REVISÃO SRS -->
-        <div class="banner-srs">
+        <div class="banner-srs" aria-busy="true">
             <div class="srs-banner-info">
                 <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
                 <h3>Smart Memory Review</h3>
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <button id="btn-ver-certificado-hub" onclick="abrirModalCertificado()" style="display: none; background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: #fff; border: none; padding: 14px 24px; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; margin-bottom: 20px; width: 100%; box-shadow: var(--shadow);">
+        <button id="btn-ver-certificado-hub" onclick="abrirModalCertificado(this)" style="display: none; background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: #fff; border: none; padding: 14px 24px; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; margin-bottom: 20px; width: 100%; box-shadow: var(--shadow);">
             🎓 Ver Meu Certificado de Fluência B2 (English)
         </button>
 
@@ -646,8 +646,8 @@
     </main>
 
     <!-- MODAL DO CERTIFICADO B2 (INGLÊS) -->
-    <div id="modal-certificado" class="modal-cert-overlay" style="display: none;">
-        <div class="modal-cert-container">
+    <div id="modal-certificado" class="modal-cert-overlay" role="dialog" aria-modal="true" aria-label="Certificado de conclusão" style="display: none;">
+        <div class="modal-cert-container" tabindex="-1">
             <div class="modal-cert-actions">
                 <button class="btn-cert-action print-btn" onclick="imprimirCertificado()">🖨️ Baixar / Imprimir Certificado (PDF)</button>
                 <button class="btn-cert-action close-btn" onclick="fecharModalCertificado()">✖️ Fechar</button>

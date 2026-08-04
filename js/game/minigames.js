@@ -30,7 +30,13 @@ if (SpeechRecognition) {
             btn.classList.remove('listening');
             btn.innerHTML = '🎙️ Falar Agora';
         }
-        if (e.error === 'not-allowed') alert("Acesso ao microfone negado!");
+        console.warn('Erro de reconhecimento de voz no minigame:', e.error);
+        if (e.error !== 'aborted') {
+            const mensagem = typeof obterMensagemErroReconhecimentoVoz === 'function'
+                ? obterMensagemErroReconhecimentoVoz(e.error)
+                : 'Verifique a permissão do microfone e tente novamente.';
+            if (typeof mostrarToast === 'function') mostrarToast(`⚠️ <strong>Microfone indisponível</strong><br><small>${mensagem}</small>`);
+        }
         gProc = false;
     };
     recognition.onend = () => {
@@ -181,7 +187,10 @@ function startGame() {
 
     const checkedBoxes = Array.from(document.querySelectorAll('.cat-cb:checked')).map(c => c.value);
 
-    if (!checkedBoxes.length) return alert('Selecione pelo menos uma categoria!');
+    if (!checkedBoxes.length) {
+        if (typeof mostrarToast === 'function') mostrarToast('ℹ️ <strong>Nenhuma categoria selecionada</strong><br><small>Escolha ao menos uma categoria para iniciar a partida.</small>');
+        return;
+    }
 
     if (typeof playBeep === 'function') playBeep('success');
     gPool = [];
@@ -285,7 +294,10 @@ function startGame() {
         });
     }
 
-    if (!gPool.length) return alert('Nenhum item encontrado para os filtros selecionados.');
+    if (!gPool.length) {
+        if (typeof mostrarToast === 'function') mostrarToast('🔍 <strong>Nenhum item disponível</strong><br><small>Altere os filtros ou selecione outra categoria para jogar.</small>');
+        return;
+    }
 
     gPlayQueue = []; gLastPicked = "";
     gScore = 0; gStreak = 0; gMaxStreak = 0; gLives = isInfiniteLives ? "♾️" : 3;
@@ -471,7 +483,11 @@ function checkTypingAnswer() {
 
 function startListening() {
     if (gProc) return;
-    if (!recognition) return alert("Seu navegador não suporta reconhecimento de voz.");
+    if (!recognition) {
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('browser', 'Reconhecimento de voz indisponível');
+        else if (typeof mostrarToast === 'function') mostrarToast('⚠️ Seu navegador não suporta reconhecimento de voz.');
+        return;
+    }
     const btn = document.getElementById('g-mic-btn');
     if (btn) {
         btn.classList.add('listening');
@@ -484,7 +500,16 @@ function startListening() {
         recognition.lang = 'ja-JP';
     }
 
-    try { recognition.start(); } catch (e) { }
+    try {
+        recognition.start();
+    } catch (e) {
+        console.error('Falha ao iniciar o reconhecimento de voz no minigame:', e);
+        if (btn) {
+            btn.classList.remove('listening');
+            btn.innerHTML = '🎙️ Falar Agora';
+        }
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('voice', 'Não foi possível iniciar o microfone');
+    }
 }
 
 function cleanJapaneseText(text) {

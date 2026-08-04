@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function onDOMContentLoaded() {
             console.warn("⚠️ Função initializeApp() não encontrada. Verifique se js/core/bootstrap.js foi incluído.");
         }
 
+        processarRevisaoSolicitadaPeloDashboard();
+
         // 2. Registro de leitores de teclado e navegação de acessibilidade
         registrarAtalhosDeTecladoGlobais();
 
@@ -62,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function onDOMContentLoaded() {
 
     } catch (err) {
         console.error("❌ [Japão Academy] Falha crítica no bootstrap da aplicação:", err);
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('dataset', 'Não foi possível carregar a aplicação');
+        else if (typeof mostrarToast === 'function') mostrarToast('⚠️ Não foi possível carregar todo o conteúdo. Atualize a página para tentar novamente.');
     }
 });
 
@@ -98,19 +102,40 @@ function registrarAtalhosDeTecladoGlobais() {
  */
 function registrarObservadorDeConectividade() {
     window.addEventListener("online", function() {
+        if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('syncing');
         if (typeof mostrarToast === 'function') {
             mostrarToast("🟢 Conexão restabelecida! Sincronizando com a nuvem...");
         }
         if (typeof salvarSilenciosamenteNaNuvem === 'function') {
             salvarSilenciosamenteNaNuvem();
+        } else if (typeof atualizarIndicadorSincronizacao === 'function') {
+            atualizarIndicadorSincronizacao('local');
         }
     });
 
     window.addEventListener("offline", function() {
+        if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('offline');
         if (typeof mostrarToast === 'function') {
             mostrarToast("📡 Modo Offline ativado. Seus dados estão salvos localmente!");
         }
     });
+}
+
+function processarRevisaoSolicitadaPeloDashboard() {
+    if (typeof window === 'undefined' || !window.location || typeof URLSearchParams === 'undefined') return;
+    const parametros = new URLSearchParams(window.location.search || '');
+    const tipo = parametros.get('iniciar_srs');
+    const tiposPermitidos = new Set(['a1', 'a2', 'b1', 'b2', 'hiragana', 'katakana', 'kanji', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs']);
+    if (!tipo || !tiposPermitidos.has(tipo) || typeof iniciarSessaoSRS !== 'function') return;
+
+    parametros.delete('iniciar_srs');
+    if (window.history && typeof window.history.replaceState === 'function') {
+        const consulta = parametros.toString();
+        window.history.replaceState({}, '', `${window.location.pathname}${consulta ? `?${consulta}` : ''}${window.location.hash || ''}`);
+    }
+    const iniciar = () => iniciarSessaoSRS(tipo);
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(iniciar);
+    else setTimeout(iniciar, 0);
 }
 
 // ============================================================================
@@ -119,6 +144,7 @@ function registrarObservadorDeConectividade() {
 
 if (typeof window !== 'undefined') {
     window.JAPAO_ACADEMY_BOOTSTRAP_READY = true;
+    window.processarRevisaoSolicitadaPeloDashboard = processarRevisaoSolicitadaPeloDashboard;
 
     /**
      * Retorna um relatório completo de telemetria e estado dos módulos ativados.

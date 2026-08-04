@@ -11,6 +11,7 @@ function renderPhrasalVerbsModule(moduleIndex) {
     const moduleData = dataBase[moduleIndex];
     if (!moduleData) return;
 
+    container.setAttribute('aria-busy', 'true');
     container.innerHTML = '';
 
     if (moduleData.level && moduleData.level !== pvNivelAtivo) {
@@ -134,6 +135,8 @@ function renderPhrasalVerbsModule(moduleIndex) {
         quizContainer.innerHTML = quizHtml;
         container.appendChild(quizContainer);
     }
+    container.setAttribute('aria-busy', 'false');
+    container.setAttribute('aria-label', 'Conteúdo do módulo');
 }
 
 // Exposição explícita no objeto window

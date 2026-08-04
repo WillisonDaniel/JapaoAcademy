@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- CSS Global e Fontes -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css?v=28f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -68,7 +68,7 @@
 
         <!-- BARRA DE PESQUISA & FILTRO DE CONTEÚDO -->
         <div class="search-pronuncia-bar" style="margin-bottom: 16px;">
-            <input type="text" id="pronunciaSearchInput"
+            <input type="text" id="pronunciaSearchInput" aria-label="Pesquisar conteúdo de pronúncia"
                 placeholder="🔍 Pesquise por um som, regra ou palavra (Ex: TH, Water, Sheep/Ship)..."
                 oninput="filtrarPronunciaPorSearch(this.value)"
                 style="width: 100%; padding: 14px 18px; border-radius: 12px; border: 2px solid var(--border-color); background: var(--card-bg); color: var(--text-main); font-size: 1rem; font-weight: 600; outline: none;">

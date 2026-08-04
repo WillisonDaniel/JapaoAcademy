@@ -293,6 +293,10 @@ function processarAvaliacaoSRS(qualidade) {
     const cardData = sessaoCards[indexAtivo];
     if (!cardData) return;
 
+    if (typeof atualizarSessaoEstudo === 'function') {
+        atualizarSessaoEstudo({ activityCountDelta: 1, contentId: String(cardData.id || '') });
+    }
+
     let deck = typeof carregarDeckSRS === 'function' ? carregarDeckSRS(srsTipoAtivo) : [];
     const cardRef = deck.find(c => c.id === cardData.id);
     const agora = Date.now();

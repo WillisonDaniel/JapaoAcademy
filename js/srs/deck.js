@@ -91,9 +91,15 @@ function renderizarBotaoFavorito(itemId, comLabel = true) {
 function selecionarModoSRS(modo, tipo) {
     AppState.setSRSFilter(modo || 'todos');
 
-    document.querySelectorAll('.btn-srs-tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.btn-srs-tab').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+    });
     const activeTab = document.getElementById(`tab-srs-${modo}`);
-    if (activeTab) activeTab.classList.add('active');
+    if (activeTab) {
+        activeTab.classList.add('active');
+        activeTab.setAttribute('aria-pressed', 'true');
+    }
 
     if (typeof atualizarBadgeSRS === 'function') {
         atualizarBadgeSRS(tipo);
@@ -140,22 +146,27 @@ function atualizarBadgeSRS(tipo) {
     const favs = getFavoritosDeck();
     const erros = getCadernoErros();
 
+    const modoFiltroAtual = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.filter)
+        ? AppState.srs.filter
+        : srsModoFiltro;
+
     let deckFiltrado = fullDeck;
-    if (srsModoFiltro === 'favoritos') {
+    if (modoFiltroAtual === 'favoritos') {
         const favoritosIds = new Set(favs);
         deckFiltrado = fullDeck.filter(c => favoritosIds.has(String(c.id)) || (c.drop && favoritosIds.has(String(c.drop.kanji || c.drop.romaji))));
-    } else if (srsModoFiltro === 'erros') {
+    } else if (modoFiltroAtual === 'erros') {
         const errosIds = new Set(erros);
         deckFiltrado = fullDeck.filter(c => errosIds.has(String(c.id)) || (c.drop && errosIds.has(String(c.drop.kanji || c.drop.romaji))));
     }
 
-    const pendentes = srsModoFiltro === 'todos'
+    const pendentes = modoFiltroAtual === 'todos'
         ? deckFiltrado.filter(c => c.dueDate <= agora)
         : deckFiltrado;
 
     const badge = document.getElementById('srs-badge-count');
     const desc = document.getElementById('srs-banner-desc');
     const btn = document.getElementById('btn-iniciar-srs');
+    const banner = desc && typeof desc.closest === 'function' ? desc.closest('.banner-srs') : null;
 
     const playerSRS = typeof document !== 'undefined' ? document.getElementById('player-srs') : null;
     const estaEmRevisao = playerSRS && playerSRS.style.display !== 'none' && playerSRS.style.display !== '';
@@ -166,26 +177,77 @@ function atualizarBadgeSRS(tipo) {
         : pendentes.length;
 
     if (badge) badge.innerText = totalPendentesExibicao;
+    if (btn) {
+        if (btn.style) btn.style.display = '';
+        btn.disabled = false;
+    }
     if (desc) {
-        if (srsModoFiltro === 'favoritos') {
-            desc.innerText = `⭐ Baralho de Favoritos: ${pendentes.length} card(s) favoritado(s) em ${labelExibicao}.`;
-            if (btn) btn.innerText = "Revisar Favoritos ➔";
-        } else if (srsModoFiltro === 'erros') {
-            desc.innerText = `❌ Caderno de Erros: ${pendentes.length} card(s) com registro de erro em ${labelExibicao}.`;
-            if (btn) btn.innerText = "Praticar Caderno de Erros ➔";
+        if (modoFiltroAtual === 'favoritos') {
+            if (pendentes.length === 0 && typeof aplicarEstadoVazioUX === 'function') {
+                aplicarEstadoVazioUX(desc, {
+                    compact: true,
+                    icon: '⭐',
+                    title: 'Nenhum favorito neste baralho',
+                    description: 'Sua lista de favoritos ainda está vazia para este curso.',
+                    recommendation: 'Use a estrela nos cards e no dicionário para guardar itens aqui.'
+                });
+                if (btn && btn.style) btn.style.display = 'none';
+            } else {
+                if (typeof limparEstadoVazioUX === 'function') limparEstadoVazioUX(desc);
+                desc.innerText = `⭐ Baralho de Favoritos: ${pendentes.length} card(s) favoritado(s) em ${labelExibicao}.`;
+                if (btn) btn.innerText = "Revisar Favoritos ➔";
+            }
+        } else if (modoFiltroAtual === 'erros') {
+            if (pendentes.length === 0 && typeof aplicarEstadoVazioUX === 'function') {
+                aplicarEstadoVazioUX(desc, {
+                    compact: true,
+                    icon: '✅',
+                    title: 'Caderno de erros vazio',
+                    description: 'Nenhum erro foi registrado neste baralho.',
+                    recommendation: 'Continue praticando; os itens difíceis aparecerão aqui automaticamente.'
+                });
+                if (btn && btn.style) btn.style.display = 'none';
+            } else {
+                if (typeof limparEstadoVazioUX === 'function') limparEstadoVazioUX(desc);
+                desc.innerText = `❌ Caderno de Erros: ${pendentes.length} card(s) com registro de erro em ${labelExibicao}.`;
+                if (btn) btn.innerText = "Praticar Caderno de Erros ➔";
+            }
         } else {
             if (fullDeck.length === 0) {
-                desc.innerText = "Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!";
-                if (btn) btn.innerText = "Iniciar Revisão ➔";
+                if (typeof aplicarEstadoVazioUX === 'function') {
+                    aplicarEstadoVazioUX(desc, {
+                        compact: true,
+                        icon: '📚',
+                        title: 'Nenhuma revisão disponível',
+                        description: 'Seu baralho será criado conforme você avança no curso.',
+                        recommendation: 'Conclua o Módulo 1 para liberar os primeiros cards.'
+                    });
+                } else {
+                    desc.innerText = "Conclua o Módulo 1 para liberar seus primeiros cards de revisão.";
+                }
+                if (btn && btn.style) btn.style.display = 'none';
             } else if (pendentes.length === 0) {
-                desc.innerText = `✨ Suas revisões de hoje estão em dia! Pratique com seu baralho de ${labelExibicao} (${fullDeck.length} cards liberados).`;
+                if (typeof aplicarEstadoVazioUX === 'function') {
+                    aplicarEstadoVazioUX(desc, {
+                        compact: true,
+                        icon: '✨',
+                        title: 'Nenhuma revisão pendente',
+                        description: 'Você está em dia com seus estudos.',
+                        recommendation: `Volte amanhã ou pratique livremente com ${fullDeck.length} cards de ${labelExibicao}.`
+                    });
+                } else {
+                    desc.innerText = `Suas revisões estão em dia. Você pode praticar livremente com ${fullDeck.length} cards.`;
+                }
                 if (btn) btn.innerText = "Prática Livre do Baralho ➔";
             } else {
+                if (typeof limparEstadoVazioUX === 'function') limparEstadoVazioUX(desc);
                 desc.innerText = `🔥 Você tem ${pendentes.length} item(ns) de ${labelExibicao} aguardando revisão hoje!`;
                 if (btn) btn.innerText = "Iniciar Revisão ➔";
             }
         }
     }
+    if (banner) banner.setAttribute('aria-busy', 'false');
+    if (desc && typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(desc);
 }
 
 // Exposição explícita no objeto window

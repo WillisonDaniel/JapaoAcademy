@@ -91,16 +91,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 50, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 52, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('19 paginas HTML e referencias locais validas', () => {
+test('21 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 19, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 21, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -118,8 +118,115 @@ test('19 paginas HTML e referencias locais validas', () => {
     assert.deepEqual(missing, [], `referencias inexistentes:\n${missing.join('\n')}`);
 });
 
+test('skeletons da Etapa 28B preservam o contrato acessivel', () => {
+    const style = read('style.css');
+    assert.match(style, /\.dict-skeleton-card\s*\{/);
+    assert.match(style, /#moduleDisplay\[aria-busy="true"\]/);
+    assert.match(style, /prefers-reduced-motion:\s*reduce/);
+
+    const dictionaries = [
+        read('html/ja-JP/dicionario.html'),
+        read('html/en-US/dicionario_ingles.html')
+    ];
+    dictionaries.forEach(html => {
+        assert.match(html, /id="dict-results-container"[^>]*aria-busy="true"/);
+        assert.match(html, /class="dict-skeleton-card"[^>]*aria-hidden="true"/);
+    });
+
+    const srsPages = walk(ROOT, '.html').filter(page => fs.readFileSync(page, 'utf8').includes('class="banner-srs"'));
+    assert.equal(srsPages.length, 11, 'quantidade inesperada de paginas com painel SRS');
+    srsPages.forEach(page => {
+        const html = fs.readFileSync(page, 'utf8');
+        assert.match(html, /class="banner-srs"[^>]*aria-busy="true"/, `${path.relative(ROOT, page)} sem estado inicial do SRS`);
+    });
+
+    assert.match(read('js/core/dictionary.js'), /container\.setAttribute\('aria-busy', 'false'\)/);
+    assert.match(read('js/srs/deck.js'), /banner\.setAttribute\('aria-busy', 'false'\)/);
+});
+
+test('feedback da Etapa 28C preserva botoes e sincronizacao', () => {
+    const toast = read('js/core/toast.js');
+    const dom = read('js/core/dom.js');
+    const events = read('js/core/events.js');
+    const storage = read('js/core/storage.js');
+    const review = read('js/srs/review.js');
+    const course = read('js/course/course.js');
+    const css = read('style.css');
+
+    assert.match(toast, /async function executarComFeedbackBotao\s*\(/);
+    assert.match(toast, /finally\s*\{\s*restaurarEstadoBotao\(botao\)/);
+    assert.match(toast, /botao\.setAttribute\('aria-busy',\s*'true'\)/);
+    assert.match(toast, /botao\.setAttribute\('aria-busy',\s*'false'\)/);
+    for (const estado of ['local', 'syncing', 'synced', 'error', 'offline']) {
+        assert.match(toast, new RegExp(`\\b${estado}:`), `estado ${estado} ausente`);
+    }
+
+    assert.match(dom, /syncStatus\.id\s*=\s*'sync-status-indicator'/);
+    assert.match(dom, /syncStatus\.setAttribute\('role',\s*'status'\)/);
+    assert.match(dom, /btn-auth-login-submit/);
+    assert.match(dom, /btn-cloud-save/);
+    assert.match(dom, /btn-reset-progress/);
+
+    assert.match(events, /pending:\s*'Entrando\.\.\.'/);
+    assert.match(events, /pending:\s*'Criando conta\.\.\.'/);
+    assert.match(events, /pending:\s*'Conectando\.\.\.'/);
+    assert.match(events, /pending:\s*'Salvando\.\.\.'/);
+    assert.match(events, /pending:\s*'Carregando\.\.\.'/);
+    assert.match(storage, /atualizarIndicadorSincronizacao\('syncing'\)/);
+    assert.match(review, /Preparando revisão\.\.\./);
+    assert.match(course, /Concluindo módulo\.\.\./);
+
+    assert.match(css, /\.sync-status-indicator/);
+    assert.match(css, /button\.ux-button-loading/);
+    assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+});
+
+test('estados vazios e erros da Etapa 28D seguem o contrato seguro', () => {
+    const toast = read('js/core/toast.js');
+    const srsDeck = read('js/srs/deck.js');
+    const srsReview = read('js/srs/review.js');
+    const dictionary = read('js/core/dictionary.js');
+    const ranking = read('js/game/ranking.js');
+    const dom = read('js/core/dom.js');
+    const storage = read('js/core/storage.js');
+    const audio = read('js/core/audio.js');
+    const speech = read('js/pronunciation/speech-recognition.js');
+    const css = read('style.css');
+
+    assert.match(toast, /function criarEstadoVazioUX\s*\(/);
+    assert.match(toast, /function aplicarEstadoVazioUX\s*\(/);
+    assert.match(toast, /function mostrarErroRecuperavelUX\s*\(/);
+    assert.match(toast, /container\.setAttribute\('aria-live'/);
+    assert.match(css, /\.ux-empty-state/);
+    assert.match(css, /\.ux-empty-state-error/);
+
+    const estadosObrigatorios = [
+        [srsDeck, 'Nenhuma revisão pendente'],
+        [srsDeck, 'Nenhum favorito neste baralho'],
+        [srsDeck, 'Caderno de erros vazio'],
+        [dictionary, 'Nenhum resultado encontrado'],
+        [ranking, 'Nenhuma conquista desbloqueada'],
+        [dom, 'Nenhuma atividade recente'],
+        [storage, 'Nenhum progresso salvo na nuvem']
+    ];
+    for (const [fonte, titulo] of estadosObrigatorios) {
+        assert.ok(fonte.includes(titulo), `estado vazio ausente: ${titulo}`);
+    }
+
+    assert.doesNotMatch(srsReview, /alert\s*\(/);
+    assert.match(dictionary, /actionLabel:\s*'Limpar busca e filtros'/);
+    assert.match(storage, /mostrarErroRecuperavelUX\('save'/);
+    assert.match(storage, /mostrarErroRecuperavelUX\('load'/);
+    assert.doesNotMatch(storage, /mostrarToast\s*\(`[^`]*\$\{err\.message/);
+    assert.match(audio, /u\.onerror\s*=/);
+    assert.match(speech, /function obterMensagemErroReconhecimentoVoz\s*\(/);
+    assert.match(speech, /'not-allowed':\s*'O acesso ao microfone foi bloqueado/);
+});
+
 test('AppState e carregado depois das constantes em todas as paginas', () => {
     for (const page of walk(ROOT, '.html')) {
+        const relative = path.relative(ROOT, page).replace(/\\/g, '/');
+        if (relative === 'html/ja-JP/meu-progresso.html') continue;
         const html = fs.readFileSync(page, 'utf8');
         const constants = html.indexOf('js/core/constants.js');
         const state = html.indexOf('js/core/state.js');
@@ -412,6 +519,270 @@ test('algoritmo SRS atualiza intervalo, facilidade e indice', () => {
         assert.equal(context.AppState.srs.currentIndex, 1, `qualidade ${quality}: indice nao avancou`);
         assert.ok(card.dueDate > Date.now(), `qualidade ${quality}: vencimento nao foi atualizado`);
     }
+});
+
+test('transicoes e acessibilidade da Etapa 28E permanecem padronizadas', () => {
+    const style = read('style.css');
+    assert.match(style, /:where\(a, button, input, select, textarea, \[tabindex\]\):focus-visible/);
+    assert.match(style, /\.ux-content-enter-active\s*\{[\s\S]*?opacity:\s*1;[\s\S]*?transform:\s*translateY\(0\)/);
+    assert.match(style, /@media \(prefers-reduced-motion:\s*reduce\)/);
+    assert.match(style, /\.toast-error\s*\{\s*border-left-color:/);
+    assert.match(style, /\.toast-close/);
+
+    const toast = read('js/core/toast.js');
+    assert.match(toast, /const UX_TOAST_MAX_VISIBLE = 3/);
+    assert.match(toast, /uxToastQueue\.some\(item => item\.signature === signature\)/);
+    assert.match(toast, /role', item\.type === 'error' \? 'alert' : 'status'/);
+    assert.match(toast, /aria-label="Fechar notifica/);
+    assert.match(toast, /matchMedia\('\(prefers-reduced-motion: reduce\)'\)/);
+
+    const dom = read('js/core/dom.js');
+    assert.match(dom, /function prepararModalAcessivel/);
+    assert.match(dom, /modal\.setAttribute\('aria-modal', 'true'\)/);
+    assert.match(dom, /event\.key !== 'Tab'/);
+    assert.match(dom, /uxModalTriggers\.get\(modal\)/);
+    assert.match(dom, /event\.key === 'ArrowRight'/);
+    assert.match(dom, /<label for="auth-login-email"/);
+    assert.match(dom, /<label for="auth-reg-password"/);
+    assert.match(dom, /role="tablist"/);
+
+    const certificatePages = [
+        read('html/ja-JP/curso.html'),
+        read('html/en-US/curso_ingles.html')
+    ];
+    certificatePages.forEach(html => {
+        assert.match(html, /id="modal-certificado"[^>]*role="dialog"[^>]*aria-modal="true"/);
+    });
+
+    const labelledInputs = [
+        ['html/ja-JP/dicionario.html', 'Pesquisar no dicionário japonês'],
+        ['html/en-US/dicionario_ingles.html', 'Pesquisar no dicionário inglês'],
+        ['html/en-US/pronuncia_ingles.html', 'Pesquisar conteúdo de pronúncia'],
+        ['html/ja-JP/minigame.html', 'Resposta do minigame'],
+        ['html/en-US/minigame_ingles.html', 'Resposta do minigame']
+    ];
+    labelledInputs.forEach(([file, label]) => {
+        assert.ok(read(file).includes(`aria-label="${label}"`), `${file} sem nome acessivel`);
+    });
+
+    const dictionary = read('js/core/dictionary.js');
+    assert.match(dictionary, /setAttribute\('aria-pressed', ativo \? 'true' : 'false'\)/);
+});
+
+test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
+    const style = read('style.css');
+    assert.match(style, /\.g-setup-grid,\s*\n\s*\.g-options-grid\s*\{\s*\n\s*grid-template-columns:\s*minmax\(0, 1fr\) !important;/);
+    assert.match(style, /\.kanji-card-layout,\s*[\s\S]*?\.kanji-info-box\s*\{\s*\n\s*min-width:\s*0;/);
+    assert.match(style, /\.kanji-main-box \.audio-btn\s*\{\s*\n\s*white-space:\s*normal;/);
+
+    const japaneseMinigame = read('html/ja-JP/minigame.html');
+    assert.match(japaneseMinigame, /class="g-setup-grid"/);
+    assert.match(japaneseMinigame, /class="g-options-grid"/);
+
+    const pages = walk(ROOT, '.html');
+    assert.equal(pages.length, 21);
+    pages.forEach(page => {
+        const html = fs.readFileSync(page, 'utf8');
+        const relative = path.relative(ROOT, page).replace(/\\/g, '/');
+        if (relative === 'meu-progresso.html' || relative === 'html/ja-JP/meu-progresso.html') {
+            assert.match(html, /style\.css\?v=29h/, `${relative} sem cache visual 29 global`);
+        } else {
+            assert.match(html, /style\.css\?v=28f/, `${relative} sem cache visual 28F`);
+        }
+    });
+
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v15'/);
+});
+
+test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
+    const html = read('meu-progresso.html');
+    const legacyRedirect = read('html/ja-JP/meu-progresso.html');
+    const dashboard = read('js/dashboard/meu-progresso.js');
+    const storage = read('js/core/storage.js');
+    const dom = read('js/core/dom.js');
+    const app = read('app.js');
+    const css = read('style.css');
+    const serviceWorker = read('sw.js');
+
+    assert.match(html, /data-mode="dashboard"/);
+    assert.match(html, /data-lang="all"/);
+    assert.match(html, /Meu Progresso - Idiomas Academy/);
+    assert.match(html, /id="dashboard-languages-grid"/);
+    assert.match(html, /database\/ja-JP\/data_curso_a1\.js/);
+    assert.match(html, /database\/en-US\/data_english_a1\.js/);
+    assert.match(html, /id="dashboard-signed-out"[^>]*hidden/);
+    assert.match(html, /id="dashboard-first-access"[^>]*hidden/);
+    assert.match(html, /id="dashboard-goal-bar"[^>]*role="progressbar"/);
+    assert.match(html, /id="dashboard-course-progress"[^>]*role="progressbar"/);
+    assert.match(html, /id="dashboard-weekly-summary"[^>]*aria-label=/);
+    assert.match(html, /option value="15">15 minutos/);
+    assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
+
+    assert.match(storage, /const DASHBOARD_DATA_VERSION = 2/);
+    assert.match(storage, /ja_dashboard_data_\$\{uidSeguro\}/);
+    assert.match(storage, /dashboardData:\s*carregarDadosDashboard|backup\.dashboardData\s*=\s*carregarDadosDashboard/);
+    assert.match(storage, /DASHBOARD_DAILY_GOALS = \[10, 15, 20, 30, 45, 60\]/);
+    assert.match(storage, /await sincronizarProgressoComFirestore\(userCred\.user\)/);
+    assert.match(storage, /function escaparTextoAuth\s*\(/);
+    assert.match(storage, /const nomeSeguro = escaparTextoAuth/);
+    assert.ok((storage.match(/irParaMeuProgresso\(\);/g) || []).length >= 3, 'login e cadastro nao redirecionam ao dashboard');
+
+    assert.match(dashboard, /dias\.some\(item => item\.minutes > 0\)/);
+    assert.match(dashboard, /metric:\s*usarMinutos \? 'minutes' : 'activities'/);
+    assert.match(dashboard, /const DASHBOARD_LANGUAGE_REGISTRY = \[/);
+    assert.match(dashboard, /id: 'japanese'/);
+    assert.match(dashboard, /id: 'english'/);
+    assert.match(dashboard, /function obterResumoIdiomaDashboard\s*\(/);
+    assert.match(dashboard, /function renderizarIdiomasDashboard\s*\(/);
+    assert.match(dashboard, /mensagem\.textContent/);
+    assert.match(dashboard, /saudacao\.textContent/);
+    assert.doesNotMatch(dom, /btnAuth\.innerHTML\s*=\s*`[^`]*\$\{displayName\}/);
+    assert.match(dom, /btnProgress\.textContent = '📊 Meu Progresso'/);
+    assert.match(app, /processarRevisaoSolicitadaPeloDashboard/);
+    assert.match(app, /parametros\.delete\('iniciar_srs'\)/);
+
+    assert.match(css, /\.dashboard-page:not\(\.dashboard-authenticated\) #xp-profile-widget-container/);
+    assert.match(css, /@media \(max-width: 480px\)/);
+    assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
+    assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/meu-progresso\.html'\)/);
+    assert.match(serviceWorker, /'\.\/meu-progresso\.html'/);
+    assert.match(serviceWorker, /js\/dashboard\/meu-progresso\.js/);
+});
+
+test('medicao de sessoes da Etapa 29 usa API central e retencao limitada', () => {
+    const storage = read('js/core/storage.js');
+    const sessions = read('js/core/study-session.js');
+    const events = read('js/core/events.js');
+    const serviceWorker = read('sw.js');
+    const course = read('js/course/course.js');
+    const tabs = read('js/course/tabs.js');
+    const srsEngine = read('js/srs/engine.js');
+    const srsReview = read('js/srs/review.js');
+    const pronunciation = read('js/pronunciation/quiz.js');
+
+    assert.match(storage, /DASHBOARD_SESSION_LIMIT = 200/);
+    assert.match(storage, /DASHBOARD_DAILY_RETENTION_DAYS = 366/);
+    assert.match(storage, /DASHBOARD_SESSION_MIN_ACTIVE_SECONDS = 15/);
+    assert.match(storage, /function registrarSessaoDashboard\s*\(/);
+    assert.match(storage, /function mesclarDadosDashboard\s*\(/);
+    assert.match(storage, /mesclarDadosDashboard\(dadosLocais, dadosNuvem\.dashboardData\)/);
+    assert.match(sessions, /const INACTIVITY_MS = 2 \* 60 \* 1000/);
+    assert.match(sessions, /visibilitychange/);
+    assert.match(sessions, /pagehide/);
+    assert.match(sessions, /function criarControladorSessaoEstudo\s*\(/);
+    assert.match(sessions, /global\.iniciarSessaoEstudo/);
+    assert.match(sessions, /global\.finalizarSessaoEstudo/);
+    assert.match(sessions, /data-study-session-ready/);
+    assert.match(events, /new URL\('study-session\.js\?v=29f2', document\.currentScript\.src\)/);
+    assert.match(serviceWorker, /'\.\/js\/core\/study-session\.js'/);
+    assert.match(course, /iniciarSessaoEstudo\(\{ language: idioma, activityType: 'course'/);
+    assert.match(course, /finalizarSessaoEstudo\('completion'/);
+    assert.match(tabs, /finalizarSessaoEstudo\('completion'/);
+    assert.match(srsEngine, /atualizarSessaoEstudo\(\{ activityCountDelta: 1/);
+    assert.match(srsReview, /activityType: 'srs'/);
+    assert.match(pronunciation, /activityType: 'quiz'/);
+});
+
+test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade', () => {
+    const html = read('meu-progresso.html');
+    const dashboard = read('js/dashboard/meu-progresso.js');
+    const css = read('style.css');
+    const serviceWorker = read('sw.js');
+
+    assert.match(html, /id="dashboard-statistics-card"/);
+    assert.match(html, /id="dashboard-filter-period"/);
+    assert.match(html, /option value="7">7 dias/);
+    assert.match(html, /option value="30" selected>30 dias/);
+    assert.match(html, /option value="90">90 dias/);
+    assert.match(html, /id="dashboard-filter-language"/);
+    assert.match(html, /id="dashboard-filter-activity"/);
+    assert.match(html, /id="dashboard-statistics-status"[^>]*aria-live="polite"/);
+    assert.match(html, /id="dashboard-stat-accuracy">Dados insuficientes/);
+    assert.match(html, /id="dashboard-language-distribution"/);
+    assert.match(html, /id="dashboard-activity-distribution"/);
+    assert.match(html, /meu-progresso\.js\?v=29e/);
+    assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
+
+    assert.match(dashboard, /function calcularEstatisticasDashboard\s*\(/);
+    assert.match(dashboard, /function criarLinhasDiariasEstatisticasDashboard\s*\(/);
+    assert.match(dashboard, /accuracy:\s*\{ value: null, available: false \}/);
+    assert.match(dashboard, /Dias que alcançaram a meta ÷ dias medidos elegíveis/);
+    assert.match(dashboard, /filtro\.addEventListener\('change'/);
+    assert.match(dashboard, /renderizarGraficosDashboard\(estatisticas\)/);
+    assert.match(css, /\.dashboard-advanced-stats-grid/);
+    assert.match(css, /\.dashboard-statistics-filters/);
+    assert.match(css, /\.dashboard-distributions-grid/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v15'/);
+    assert.match(serviceWorker, /meu-progresso\.js\?v=29e/);
+});
+
+test('graficos de aprendizado da Etapa 29 usam dados reais e alternativa acessivel', () => {
+    const html = read('meu-progresso.html');
+    const dashboard = read('js/dashboard/meu-progresso.js');
+    const css = read('style.css');
+
+    assert.match(html, /id="dashboard-evolution-metric"/);
+    assert.match(html, /option value="minutes">Minutos estudados/);
+    assert.match(html, /option value="activities">Atividades concluídas/);
+    assert.match(html, /option value="reviews">Revisões realizadas/);
+    assert.match(html, /id="dashboard-weekly-chart"[^>]*role="img"/);
+    assert.match(html, /id="dashboard-weekly-summary"[^>]*dashboard-sr-chart-summary/);
+    assert.match(html, /id="dashboard-review-chart-empty"/);
+    assert.match(html, /histórico de acertos e erros começará a ser registrado na Fase 5/);
+    assert.match(html, /id="dashboard-distribution-dimension"/);
+    assert.match(html, /id="dashboard-distribution-chart-summary"[^>]*aria-label=/);
+    assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
+
+    assert.match(dashboard, /function criarDadosGraficoEvolucaoDashboard\s*\(/);
+    assert.match(dashboard, /function criarDadosGraficoDistribuicaoDashboard\s*\(/);
+    assert.match(dashboard, /function renderizarGraficoEvolucaoDashboard\s*\(/);
+    assert.match(dashboard, /function renderizarGraficoDistribuicaoDashboard\s*\(/);
+    assert.match(dashboard, /document\.createElementNS\('http:\/\/www\.w3\.org\/2000\/svg'/);
+    assert.match(dashboard, /renderizarGraficoRevisoesDashboard\(\)/);
+    assert.match(dashboard, /container\.hidden = true/);
+    assert.match(dashboard, /item\.textContent = `\$\{ponto\.date\}:/);
+    assert.match(dashboard, /if \(weeklyCard\) weeklyCard\.hidden = false/);
+
+    assert.match(css, /\.dashboard-charts-grid/);
+    assert.match(css, /\.dashboard-chart-line/);
+    assert.match(css, /\.dashboard-distribution-chart-bar/);
+    assert.match(css, /\.dashboard-sr-chart-summary/);
+    assert.match(css, /@media \(max-width: 800px\)[\s\S]*?\.dashboard-charts-grid/);
+    assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
+});
+
+test('calendario de estudos da Etapa 29 preserva datas locais e navegacao acessivel', () => {
+    const html = read('meu-progresso.html');
+    const dashboard = read('js/dashboard/meu-progresso.js');
+    const css = read('style.css');
+    const storage = read('js/core/storage.js');
+
+    assert.match(html, /id="dashboard-calendar-card"/);
+    assert.match(html, /id="dashboard-calendar-previous"[^>]*aria-label="Mostrar mês anterior"/);
+    assert.match(html, /id="dashboard-calendar-next"[^>]*aria-label="Mostrar próximo mês"/);
+    assert.match(html, /id="dashboard-calendar-month"[^>]*aria-live="polite"/);
+    assert.match(html, /id="dashboard-calendar-grid"[^>]*role="grid"/);
+    assert.match(html, /id="dashboard-calendar-empty"[^>]*hidden/);
+    assert.match(html, /id="dashboard-calendar-day-summary"[^>]*aria-live="polite"[^>]*tabindex="-1"/);
+    assert.match(html, /id="dashboard-calendar-day-results">Dados insuficientes/);
+
+    assert.match(dashboard, /function criarResumoDiaCalendarioDashboard\s*\(/);
+    assert.match(dashboard, /function criarDadosCalendarioDashboard\s*\(/);
+    assert.match(dashboard, /function renderizarCalendarioDashboard\s*\(/);
+    assert.match(dashboard, /function navegarTecladoCalendarioDashboard\s*\(/);
+    assert.match(dashboard, /ArrowLeft:\s*-1, ArrowRight:\s*1, ArrowUp:\s*-7, ArrowDown:\s*7/);
+    assert.match(dashboard, /botao\.disabled = dia\.isFuture/);
+    assert.match(dashboard, /botao\.setAttribute\('aria-label', criarRotuloDiaCalendarioDashboard/);
+    assert.match(dashboard, /meta\.classList\.toggle\('is-complete', dia\.goalMet\)/);
+    assert.match(dashboard, /accuracy:\s*\{ available: false, correct: null, errors: null \}/);
+    assert.doesNotMatch(storage, /DASHBOARD_DATA_VERSION = 3/);
+
+    assert.match(css, /\.dashboard-calendar-grid/);
+    assert.match(css, /grid-template-columns:\s*repeat\(7, minmax\(0, 1fr\)\)/);
+    assert.match(css, /\.dashboard-calendar-day-button\.is-today/);
+    assert.match(css, /\.dashboard-calendar-day-button\.is-goal-met/);
+    assert.match(css, /\.dashboard-calendar-day-button\.intensity-4/);
+    assert.match(css, /@media \(max-width: 480px\)[\s\S]*?\.dashboard-calendar-day-button/);
 });
 
 test('regressoes corrigidas na Etapa 22 permanecem protegidas', () => {

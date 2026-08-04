@@ -2,7 +2,15 @@
 // MÓDULO SRS - SESSÃO DE REVISÃO E INTERFACE
 // ======================================
 
-function iniciarSessaoSRS(tipo) {
+function iniciarSessaoSRS(tipo, uxExecutarAgora = false) {
+    const botaoInicio = typeof document !== 'undefined' ? document.getElementById('btn-iniciar-srs') : null;
+    if (!uxExecutarAgora && botaoInicio && typeof iniciarEstadoBotao === 'function') {
+        if (!iniciarEstadoBotao(botaoInicio, 'Preparando revisão...')) return;
+        const continuarInicio = () => iniciarSessaoSRS(tipo, true);
+        if (typeof requestAnimationFrame === 'function') requestAnimationFrame(continuarInicio);
+        else continuarInicio();
+        return;
+    }
     if (!tipo) {
         const mode = document.body.getAttribute('data-mode') || 'curso';
         tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
@@ -12,7 +20,9 @@ function iniciarSessaoSRS(tipo) {
     const modoFiltro = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.filter) ? AppState.srs.filter : (typeof srsModoFiltro !== 'undefined' ? srsModoFiltro : 'todos');
     const fullDeck = typeof sincronizarBaralhoSRS === 'function' ? sincronizarBaralhoSRS(tipo) : (typeof carregarDeckSRS === 'function' ? carregarDeckSRS(tipo) : []);
     if (fullDeck.length === 0 && modoFiltro === 'todos') {
-        alert("Você ainda não concluiu nenhum módulo deste curso. Conclua pelo menos o Módulo 1 para liberar seus primeiros cards de revisão!");
+        if (typeof mostrarToast === 'function') mostrarToast("📚 <strong>Nenhuma revisão disponível</strong><br><small>Conclua o Módulo 1 para liberar seus primeiros cards.</small>");
+        if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(tipo);
+        if (botaoInicio && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoInicio);
         return;
     }
 
@@ -25,14 +35,18 @@ function iniciarSessaoSRS(tipo) {
         const favoritosIds = new Set(favs);
         deckFiltrado = fullDeck.filter(c => favoritosIds.has(String(c.id)) || (c.drop && favoritosIds.has(String(c.drop.kanji || c.drop.romaji))));
         if (deckFiltrado.length === 0) {
-            alert("Sua lista de Favoritos está vazia! Clique na estrela ⭐ nos cards para favoritar itens.");
+            if (typeof mostrarToast === 'function') mostrarToast("⭐ <strong>Nenhum favorito neste baralho</strong><br><small>Use a estrela nos cards para guardar itens aqui.</small>");
+            if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(tipo);
+            if (botaoInicio && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoInicio);
             return;
         }
     } else if (modoFiltro === 'erros') {
         const errosIds = new Set(erros);
         deckFiltrado = fullDeck.filter(c => errosIds.has(String(c.id)) || (c.drop && errosIds.has(String(c.drop.kanji || c.drop.romaji))));
         if (deckFiltrado.length === 0) {
-            alert("Seu Caderno de Erros está limpo! Nenhum erro registrado neste baralho.");
+            if (typeof mostrarToast === 'function') mostrarToast("✅ <strong>Caderno de erros vazio</strong><br><small>Continue praticando; os itens difíceis aparecerão aqui automaticamente.</small>");
+            if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(tipo);
+            if (botaoInicio && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoInicio);
             return;
         }
     }
@@ -61,10 +75,17 @@ function iniciarSessaoSRS(tipo) {
     if (playerAula) playerAula.style.display = 'none';
     if (playerSRS) playerSRS.style.display = 'block';
 
+    if (typeof iniciarSessaoEstudo === 'function') {
+        const idioma = document.body.getAttribute('data-lang') === 'english' || window.location.pathname.includes('en-US') ? 'en-US' : 'ja-JP';
+        iniciarSessaoEstudo({ language: idioma, activityType: 'srs', contentId: String(tipo) });
+    }
+
     renderizarCardSRS();
+    if (botaoInicio && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoInicio);
 }
 
 function fecharSessaoSRS() {
+    if (typeof finalizarSessaoEstudo === 'function') finalizarSessaoEstudo('exit');
     const playerSRS = document.getElementById('player-srs');
     const hub = document.getElementById('hub-niveis') || document.getElementById('hub-cursos');
     const studyArea = document.getElementById('study-area');
@@ -243,6 +264,7 @@ function renderizarCardSRS() {
             <div class="srs-card-verso" style="display: ${srsCardRevelado ? 'block' : 'none'};">${versoHTML}</div>
         </div>
     `;
+    if (typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(container);
 
     const btnRevelar = document.getElementById('btn-revelar-srs');
     const painelAvaliacao = document.getElementById('painel-avaliacao-srs');
@@ -253,7 +275,10 @@ function renderizarCardSRS() {
 function revelarRespostaSRS() {
     AppState.setSRSReveal(true);
     const verso = document.querySelector('.srs-card-verso');
-    if (verso) verso.style.display = 'block';
+    if (verso) {
+        verso.style.display = 'block';
+        if (typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(verso);
+    }
 
     const appSrs = typeof AppState !== 'undefined' ? AppState.srs : null;
     const sessaoCards = (appSrs && appSrs.activeDeck) ? appSrs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
@@ -285,6 +310,9 @@ function renderizarConclusaoSRS() {
 
     if (typeof registrarAtividadeDiaria === 'function') registrarAtividadeDiaria();
     if (typeof adicionarXP === 'function') adicionarXP(xpGanho, 'Revisão SRS Concluída');
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('completion', { contentId: String(srsTipoAtivo || 'srs') });
+    }
 
     const nome = typeof nomeUsuario !== 'undefined' ? nomeUsuario : 'Estudante';
 

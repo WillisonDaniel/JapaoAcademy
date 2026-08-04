@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../style.css?v=28f">
 </head>
 
 <body data-mode="pronuncia" data-lang="english">
@@ -31,7 +31,7 @@
         
         <!-- Barra de Pesquisa -->
         <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
-            <input type="text" id="dict-search-input" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em inglês, tradução em português, IPA ou phrasal verb..." style="width:100%; padding:0.9rem 1.2rem; border-radius:12px; background:var(--card-bg); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
+            <input type="text" id="dict-search-input" aria-label="Pesquisar no dicionário inglês" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em inglês, tradução em português, IPA ou phrasal verb..." style="width:100%; padding:0.9rem 1.2rem; border-radius:12px; background:var(--card-bg); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
         </div>
 
         <!-- Filtros por Categoria -->
@@ -66,7 +66,11 @@
         </div>
 
         <!-- Grid de Resultados de Busca -->
-        <div id="dict-results-container" class="grid-dict-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;"></div>
+        <div id="dict-results-container" class="grid-dict-results" aria-busy="true" aria-label="Carregando dicionário" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
 
     </div>
 

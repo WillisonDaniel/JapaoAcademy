@@ -17,6 +17,8 @@ function carregarTodosOsDatasets(callback) {
 }
 
 function compilarGlossarioUniversal() {
+    const resultsContainer = typeof document !== 'undefined' ? document.getElementById('dict-results-container') : null;
+    if (resultsContainer) resultsContainer.setAttribute('aria-busy', 'true');
     glossarioUniversalData = [];
 
     const isEnglishMode = (typeof document !== 'undefined' && document.body && (
@@ -529,6 +531,16 @@ function renderizarResultadosDicionario(queryStr = '') {
     const container = document.getElementById('dict-results-container');
     const counter = document.getElementById('dict-results-counter');
     const alphabetSection = document.getElementById('dict-alphabet-section');
+    if (container) container.setAttribute('aria-busy', 'true');
+    document.querySelectorAll('.dict-filter-pill').forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-cat') === categoriaAtivaDict ? 'true' : 'false');
+    });
+    document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-sub') === subNivelKanjiDict ? 'true' : 'false');
+    });
+    document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.getAttribute('data-sub-vocab') === subNivelVocabDict ? 'true' : 'false');
+    });
 
     const isEnglishMode = (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'english' ||
@@ -537,7 +549,8 @@ function renderizarResultadosDicionario(queryStr = '') {
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('ingles'))
     ));
 
-    const showAlphabetGrid = isEnglishMode && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet');
+    const temBuscaAtiva = String(queryStr || '').trim().length > 0;
+    const showAlphabetGrid = isEnglishMode && !temBuscaAtiva && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet');
 
     if (alphabetSection) {
         alphabetSection.style.display = showAlphabetGrid ? 'block' : 'none';
@@ -547,6 +560,24 @@ function renderizarResultadosDicionario(queryStr = '') {
     let query = (queryStr || '').trim().toLowerCase();
     const appDictionary = typeof AppState !== 'undefined' ? AppState.dictionary : null;
     const universalData = (appDictionary && Array.isArray(appDictionary.universalGlossary)) ? appDictionary.universalGlossary : glossarioUniversalData;
+
+    if (!Array.isArray(universalData) || universalData.length === 0) {
+        console.error('[Dicionário] Nenhum dataset válido ficou disponível para renderização.');
+        if (counter) counter.textContent = 'Conteúdo indisponível';
+        if (container && typeof aplicarEstadoVazioUX === 'function') {
+            aplicarEstadoVazioUX(container, {
+                type: 'error',
+                icon: '⚠️',
+                title: 'Não foi possível carregar o dicionário',
+                description: typeof obterMensagemErroUX === 'function' ? obterMensagemErroUX('dataset') : 'O conteúdo não está disponível agora.',
+                recommendation: 'Atualize a página para tentar carregar os dados novamente.',
+                actionLabel: 'Tentar novamente',
+                action: 'window.location.reload()'
+            });
+            container.setAttribute('aria-busy', 'false');
+        }
+        return;
+    }
 
     const resFiltrado = universalData.filter(item => {
         if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) return false;
@@ -576,16 +607,26 @@ function renderizarResultadosDicionario(queryStr = '') {
 
     if (counter) {
         counter.innerHTML = `Mostrando <strong>${glossarioFiltradoData.length}</strong> item(ns) encontrado(s)`;
+        counter.setAttribute('aria-live', 'polite');
     }
 
     if (!container) return;
 
     if (glossarioFiltradoData.length === 0) {
-        container.innerHTML = `
-            <div style="grid-column: 1/-1; text-align:center; padding: 3rem 1rem; color: var(--text-muted);">
-                🔍 Nenhum resultado encontrado para a busca.
-            </div>
-        `;
+        if (typeof aplicarEstadoVazioUX === 'function') {
+            aplicarEstadoVazioUX(container, {
+                icon: '🔍',
+                title: 'Nenhum resultado encontrado',
+                description: query ? `Não encontramos correspondências para “${queryStr.trim()}”.` : 'Os filtros selecionados não possuem itens correspondentes.',
+                recommendation: 'Tente outro termo ou limpe os filtros para ver todo o conteúdo.',
+                actionLabel: 'Limpar busca e filtros',
+                action: 'limparPesquisaDicionarioUX()'
+            });
+        } else {
+            container.textContent = 'Nenhum resultado encontrado. Tente outro termo ou limpe os filtros.';
+        }
+        container.setAttribute('aria-busy', 'false');
+        container.setAttribute('aria-label', 'Resultados do dicionário');
         return;
     }
 
@@ -602,11 +643,38 @@ function renderizarResultadosDicionario(queryStr = '') {
         `;
     }
 
+    if (typeof limparEstadoVazioUX === 'function') limparEstadoVazioUX(container);
     container.innerHTML = htmlCards;
+    if (typeof animarEntradaConteudoUX === 'function') animarEntradaConteudoUX(container);
 
     if (typeof inicializarTodosOsCanvases === 'function') {
         inicializarTodosOsCanvases();
     }
+    container.setAttribute('aria-busy', 'false');
+    container.setAttribute('aria-label', 'Resultados do dicionário');
+}
+
+function limparPesquisaDicionarioUX() {
+    categoriaAtivaDict = 'tudo';
+    subNivelKanjiDict = 'tudo';
+    subNivelVocabDict = 'tudo';
+    const campo = document.getElementById('dict-search-input');
+    if (campo) campo.value = '';
+    document.querySelectorAll('.dict-filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-cat') === 'tudo');
+    });
+    document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-sub') === 'tudo');
+    });
+    document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-sub-vocab') === 'tudo');
+    });
+    const subKanji = document.getElementById('dict-subfilters-kanji');
+    const subVocab = document.getElementById('dict-subfilters-vocab') || document.getElementById('dict-subfilters-level');
+    if (subKanji) subKanji.style.display = 'none';
+    if (subVocab) subVocab.style.display = 'flex';
+    renderizarResultadosDicionario('');
+    if (campo && typeof campo.focus === 'function') campo.focus();
 }
 
 function carregarMaisItensDicionario() {
@@ -644,8 +712,9 @@ function carregarMaisItensDicionario() {
 function selecionarCategoriaDicionario(cat) {
     categoriaAtivaDict = cat;
     document.querySelectorAll('.dict-filter-pill').forEach(btn => {
-        if (btn.getAttribute('data-cat') === cat) btn.classList.add('active');
-        else btn.classList.remove('active');
+        const ativo = btn.getAttribute('data-cat') === cat;
+        btn.classList.toggle('active', ativo);
+        btn.setAttribute('aria-pressed', ativo ? 'true' : 'false');
     });
 
     const subKanji = document.getElementById('dict-subfilters-kanji');
@@ -659,8 +728,9 @@ function selecionarCategoriaDicionario(cat) {
 function selecionarSubNivelKanji(sub) {
     subNivelKanjiDict = sub;
     document.querySelectorAll('.dict-subfilter-pill').forEach(btn => {
-        if (btn.getAttribute('data-sub') === sub) btn.classList.add('active');
-        else btn.classList.remove('active');
+        const ativo = btn.getAttribute('data-sub') === sub;
+        btn.classList.toggle('active', ativo);
+        btn.setAttribute('aria-pressed', ativo ? 'true' : 'false');
     });
     renderizarResultadosDicionario(document.getElementById('dict-search-input')?.value || '');
 }
@@ -668,8 +738,9 @@ function selecionarSubNivelKanji(sub) {
 function selecionarSubNivelVocab(sub) {
     subNivelVocabDict = sub;
     document.querySelectorAll('.dict-subfilter-pill-vocab').forEach(btn => {
-        if (btn.getAttribute('data-sub-vocab') === sub) btn.classList.add('active');
-        else btn.classList.remove('active');
+        const ativo = btn.getAttribute('data-sub-vocab') === sub;
+        btn.classList.toggle('active', ativo);
+        btn.setAttribute('aria-pressed', ativo ? 'true' : 'false');
     });
     renderizarResultadosDicionario(document.getElementById('dict-search-input')?.value || '');
 }
@@ -690,7 +761,8 @@ function abrirModalDicionario() {
 
 function fecharModalDicionario() {
     const modalDict = document.getElementById('modal-dicionario');
-    if (modalDict) modalDict.style.display = 'none';
+    if (typeof fecharModalAcessivel === 'function') fecharModalAcessivel(modalDict);
+    else if (modalDict) modalDict.style.display = 'none';
 }
 
 function renderizarTabelaAlfabetoIngles() {
@@ -740,6 +812,7 @@ if (typeof window !== 'undefined') {
     window.carregarTodosOsDatasets = carregarTodosOsDatasets;
     window.compilarGlossarioUniversal = compilarGlossarioUniversal;
     window.renderizarResultadosDicionario = renderizarResultadosDicionario;
+    window.limparPesquisaDicionarioUX = limparPesquisaDicionarioUX;
     window.carregarMaisItensDicionario = carregarMaisItensDicionario;
     window.selecionarCategoriaDicionario = selecionarCategoriaDicionario;
     window.selecionarSubNivelKanji = selecionarSubNivelKanji;

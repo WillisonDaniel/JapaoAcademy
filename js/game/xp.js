@@ -70,6 +70,9 @@ function abrirModalNiveisECargos() {
         modal = document.createElement('div');
         modal.id = 'modal-cargos-niveis';
         modal.className = 'modal-overlay';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-label', 'Níveis e cargos do perfil');
         modal.style.cssText = 'position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.75); display:flex; align-items:center; justify-content:center; z-index:99999; backdrop-filter:blur(4px); padding:1rem;';
         modal.onclick = function(e) { if (e.target === this) fecharModalCargosNiveis(); };
         document.body.appendChild(modal);
@@ -99,7 +102,7 @@ function abrirModalNiveisECargos() {
                 <h3 style="margin:0; color:#eab308; font-size:1.3rem; display:flex; align-items:center; gap:8px;">
                     <span>🏆</span> Níveis e Cargos do Perfil
                 </h3>
-                <button onclick="fecharModalCargosNiveis()" style="background:none; border:none; color:var(--text-muted, #a1a1aa); font-size:1.5rem; cursor:pointer;">✕</button>
+                <button aria-label="Fechar níveis e cargos" onclick="fecharModalCargosNiveis()" style="background:none; border:none; color:var(--text-muted, #a1a1aa); font-size:1.5rem; cursor:pointer;">✕</button>
             </div>
 
             <div style="background:rgba(234,179,8,0.1); border:1px solid #eab308; border-radius:14px; padding:1rem; text-align:center; margin-bottom:1.2rem;">
@@ -128,12 +131,14 @@ function abrirModalNiveisECargos() {
         </div>
     `;
 
-    modal.style.display = 'flex';
+    if (typeof abrirModalAcessivel === 'function') abrirModalAcessivel(modal, document.activeElement, 'button');
+    else modal.style.display = 'flex';
 }
 
 function fecharModalCargosNiveis() {
     const modal = document.getElementById('modal-cargos-niveis');
-    if (modal) modal.style.display = 'none';
+    if (typeof fecharModalAcessivel === 'function') fecharModalAcessivel(modal);
+    else if (modal) modal.style.display = 'none';
 }
 
 function adicionarXP(pontos, motivo = '') {
@@ -233,13 +238,22 @@ function removerXP(pontos, motivo = '') {
 }
 
 function getTodayDateString() {
-    return new Date().toISOString().split('T')[0];
+    if (typeof obterDataLocalDashboard === 'function') return obterDataLocalDashboard();
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    return `${ano}-${mes}-${dia}`;
 }
 
 function getYesterdayDateString() {
     const d = new Date();
     d.setDate(d.getDate() - 1);
-    return d.toISOString().split('T')[0];
+    if (typeof obterDataLocalDashboard === 'function') return obterDataLocalDashboard(d);
+    const ano = d.getFullYear();
+    const mes = String(d.getMonth() + 1).padStart(2, '0');
+    const dia = String(d.getDate()).padStart(2, '0');
+    return `${ano}-${mes}-${dia}`;
 }
 
 function registrarAtividadeDiaria() {
@@ -272,6 +286,7 @@ function registrarHistoricoAtividade() {
         const saved = localStorage.getItem('ja_activity_history');
         if (saved) historico = JSON.parse(saved);
     } catch (e) { historico = {}; }
+    if (typeof registrarAtividadeDashboard === 'function') registrarAtividadeDashboard(hoje, 1);
     historico[hoje] = (historico[hoje] || 0) + 1;
     localStorage.setItem('ja_activity_history', JSON.stringify(historico));
     if (typeof renderizarHeatmapEstudo === 'function') renderizarHeatmapEstudo();

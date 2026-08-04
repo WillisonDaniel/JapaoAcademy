@@ -17,12 +17,24 @@ function renderPronunciaModule(nivelFiltro = 'A1', searchQuery = '', vicioTopicI
 
     const dataBase = typeof PRONUNCIATION_DATA !== 'undefined' ? PRONUNCIATION_DATA : [];
     if (!dataBase || dataBase.length === 0) {
-        container.innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-muted);">Conteúdo de fonética sendo carregado...</div>`;
+        console.error('[Pronúncia] Dataset de fonética ausente ou vazio.');
+        if (typeof aplicarEstadoVazioUX === 'function') {
+            aplicarEstadoVazioUX(container, {
+                type: 'error',
+                icon: '⚠️',
+                title: 'Conteúdo de pronúncia indisponível',
+                description: typeof obterMensagemErroUX === 'function' ? obterMensagemErroUX('dataset') : 'O conteúdo não pôde ser carregado.',
+                recommendation: 'Atualize a página para tentar novamente.',
+                actionLabel: 'Tentar novamente',
+                action: 'window.location.reload()'
+            });
+        }
         return;
     }
 
     container.innerHTML = '';
     const query = searchQuery.trim().toLowerCase();
+    let totalTopicosRenderizados = 0;
 
     dataBase.forEach(secData => {
         if (vicioTopicId === 'all' && nivelFiltro !== 'all' && secData.level !== nivelFiltro) return;
@@ -39,6 +51,7 @@ function renderPronunciaModule(nivelFiltro = 'A1', searchQuery = '', vicioTopicI
         });
 
         if (filteredTopics.length === 0) return;
+        totalTopicosRenderizados += filteredTopics.length;
 
         const secBox = document.createElement('div');
         secBox.className = 'pronuncia-section-box';
@@ -135,6 +148,30 @@ function renderPronunciaModule(nivelFiltro = 'A1', searchQuery = '', vicioTopicI
         `;
         container.appendChild(secBox);
     });
+
+    if (totalTopicosRenderizados === 0 && typeof aplicarEstadoVazioUX === 'function') {
+        aplicarEstadoVazioUX(container, {
+            icon: '🔍',
+            title: 'Nenhum conteúdo encontrado',
+            description: query ? `Não encontramos tópicos para “${searchQuery.trim()}”.` : 'Não há tópicos para os filtros selecionados.',
+            recommendation: 'Limpe a busca e volte ao nível A1 para ver todos os tópicos iniciais.',
+            actionLabel: 'Limpar filtros',
+            action: 'limparFiltrosPronunciaUX()'
+        });
+    }
+}
+
+function limparFiltrosPronunciaUX() {
+    const input = document.getElementById('pronunciaSearchInput');
+    if (input) input.value = '';
+    document.querySelectorAll('.pv-level-selector .pv-level-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-level') === 'A1');
+    });
+    document.querySelectorAll('.vicio-tag-btn').forEach(btn => btn.classList.remove('active'));
+    const clearBtn = document.querySelector('.vicio-tag-btn.clear-btn');
+    if (clearBtn) clearBtn.classList.add('active');
+    renderPronunciaModule('A1', '', 'all');
+    if (input && typeof input.focus === 'function') input.focus();
 }
 function filtrarNivelPronuncia(lvl, btn) {
     if (btn && btn.parentElement) {
@@ -190,6 +227,7 @@ function initializePronunciation() {
 if (typeof window !== 'undefined') {
     window.PTBR_VICIO_TOPICS = PTBR_VICIO_TOPICS;
     window.renderPronunciaModule = renderPronunciaModule;
+    window.limparFiltrosPronunciaUX = limparFiltrosPronunciaUX;
     window.filtrarNivelPronuncia = filtrarNivelPronuncia;
     window.filtrarVicioPTBR = filtrarVicioPTBR;
     window.filtrarPronunciaPorSearch = filtrarPronunciaPorSearch;

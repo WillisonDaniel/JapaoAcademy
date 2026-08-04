@@ -1,4 +1,4 @@
-const CACHE_NAME = 'japao-academy-v2';
+const CACHE_NAME = 'idiomas-academy-v15';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -11,6 +11,8 @@ const ASSETS_TO_CACHE = [
     './database/en-US/data_english_b1.js',
     './database/en-US/data_english_b2.js',
     './html/ja-JP/curso.html',
+    './html/ja-JP/meu-progresso.html',
+    './meu-progresso.html',
     './html/ja-JP/hiragana.html',
     './html/ja-JP/katakana.html',
     './html/ja-JP/kanji.html',
@@ -23,6 +25,8 @@ const ASSETS_TO_CACHE = [
     './html/ja-JP/dicionario.html',
     './style.css',
     './app.js',
+    './js/core/study-session.js',
+    './js/dashboard/meu-progresso.js?v=29e',
     './firebase-init.js',
     './manifest.json',
     './database/ja-JP/data_curso_a1.js',

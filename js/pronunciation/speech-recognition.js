@@ -4,6 +4,18 @@
 
 let activeRecognitionInstance = null;
 
+function obterMensagemErroReconhecimentoVoz(codigo) {
+    const mensagens = {
+        'no-speech': 'Não detectamos sua voz. Fale mais perto do microfone e tente novamente.',
+        'not-allowed': 'O acesso ao microfone foi bloqueado. Autorize o microfone nas configurações do navegador.',
+        'service-not-allowed': 'O reconhecimento de voz está bloqueado neste navegador.',
+        'audio-capture': 'Nenhum microfone disponível foi encontrado. Verifique o dispositivo de entrada.',
+        'network': 'A conexão falhou durante o reconhecimento. Verifique a internet e tente novamente.',
+        'language-not-supported': 'O idioma selecionado não é suportado pelo reconhecimento de voz deste navegador.'
+    };
+    return mensagens[codigo] || 'Não foi possível reconhecer sua voz. Verifique o microfone e tente novamente.';
+}
+
 function testarPronunciaVoz(targetWord, btnId, feedbackId) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const btn = document.getElementById(btnId);
@@ -56,8 +68,9 @@ function testarPronunciaVoz(targetWord, btnId, feedbackId) {
 
     recognition.onerror = (event) => {
         console.warn('Speech recognition error:', event.error);
+        const mensagemAmigavel = obterMensagemErroReconhecimentoVoz(event.error);
         if (fb) {
-            fb.innerHTML = `<span style="color:#ef4444; font-size:0.88rem;">⚠️ Não ouvimos com clareza (${event.error}). Fale mais perto do microfone.</span>`;
+            fb.innerHTML = `<span style="color:#ef4444; font-size:0.88rem;">⚠️ ${mensagemAmigavel}</span>`;
         }
     };
 
@@ -72,6 +85,8 @@ function testarPronunciaVoz(targetWord, btnId, feedbackId) {
         recognition.start();
     } catch (err) {
         console.error('Speech recognition start error:', err);
+        if (fb) fb.innerHTML = `<span style="color:#ef4444; font-size:0.88rem;">⚠️ ${obterMensagemErroReconhecimentoVoz('start-failed')}</span>`;
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('voice', 'Não foi possível iniciar o microfone');
         if (btn) {
             btn.classList.remove('listening');
             btn.innerHTML = '🎙️ Praticar';
@@ -180,8 +195,10 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
             btnEl.classList.remove('recording-active');
             btnEl.innerHTML = '🎙️ Treinar Pronúncia';
         }
-        if (e.error !== 'no-speech' && e.error !== 'aborted') {
-            if (typeof mostrarToast === 'function') mostrarToast(`⚠️ <strong>Erro no Microfone:</strong> ${e.error}. Verifique se concedeu permissão.`);
+        console.warn('Erro no reconhecimento de voz:', e.error);
+        if (e.error !== 'aborted') {
+            const mensagemAmigavel = obterMensagemErroReconhecimentoVoz(e.error);
+            if (typeof mostrarToast === 'function') mostrarToast(`⚠️ <strong>Não foi possível reconhecer sua voz</strong><br><small>${mensagemAmigavel}</small>`);
         }
     };
 
@@ -196,17 +213,20 @@ function gravarEPronunciar(textoEsperado, btnElementId) {
     try {
         recognition.start();
     } catch (err) {
+        console.error('Falha ao iniciar o reconhecimento de voz:', err);
         activeRecognitionInstance = null;
         if (btnEl) {
             btnEl.classList.remove('recording-active');
             btnEl.innerHTML = '🎙️ Treinar Pronúncia';
         }
+        if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('voice', 'Não foi possível iniciar o microfone');
     }
 }
 
 // Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
     window.activeRecognitionInstance = activeRecognitionInstance;
+    window.obterMensagemErroReconhecimentoVoz = obterMensagemErroReconhecimentoVoz;
     window.testarPronunciaVoz = testarPronunciaVoz;
     window.gravarEPronunciar = gravarEPronunciar;
 }

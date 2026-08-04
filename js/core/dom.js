@@ -2,17 +2,87 @@
 // MÓDULO CORE - MANIPULAÇÃO DE DOM E MODAIS
 // ======================================
 
+const uxModalTriggers = new WeakMap();
+
+function prepararModalAcessivel(modal, rotulo) {
+    if (!modal) return;
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    if (!modal.getAttribute('aria-labelledby') && rotulo) modal.setAttribute('aria-label', rotulo);
+    const caixa = modal.querySelector('.modal-box, .modal-cert-container');
+    if (caixa && !caixa.hasAttribute('tabindex')) caixa.setAttribute('tabindex', '-1');
+    if (modal.dataset.uxDialogReady === 'true') return;
+    modal.dataset.uxDialogReady = 'true';
+    modal.addEventListener('keydown', event => {
+        if (event.key !== 'Tab') return;
+        const focaveis = Array.from(modal.querySelectorAll('button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'))
+            .filter(elemento => elemento.offsetParent !== null);
+        if (focaveis.length === 0) {
+            event.preventDefault();
+            if (caixa) caixa.focus();
+            return;
+        }
+        const primeiro = focaveis[0];
+        const ultimo = focaveis[focaveis.length - 1];
+        if (event.shiftKey && document.activeElement === primeiro) {
+            event.preventDefault();
+            ultimo.focus();
+        } else if (!event.shiftKey && document.activeElement === ultimo) {
+            event.preventDefault();
+            primeiro.focus();
+        }
+    });
+}
+
+function abrirModalAcessivel(modal, acionador, focoInicial) {
+    if (!modal) return;
+    prepararModalAcessivel(modal, modal.getAttribute('aria-label') || 'Janela de diálogo');
+    const origem = acionador || document.activeElement;
+    if (origem && origem !== document.body && !modal.contains(origem)) uxModalTriggers.set(modal, origem);
+    modal.style.display = 'flex';
+    modal.classList.add('ux-modal-visible');
+    const focar = () => {
+        const alvo = (focoInicial && modal.querySelector(focoInicial)) || modal.querySelector('input:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])') || modal.querySelector('.modal-box, .modal-cert-container');
+        if (alvo && typeof alvo.focus === 'function') alvo.focus();
+    };
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(focar);
+    else focar();
+}
+
+function fecharModalAcessivel(modal) {
+    if (!modal || modal.style.display === 'none') return;
+    modal.classList.remove('ux-modal-visible');
+    modal.style.display = 'none';
+    const origem = uxModalTriggers.get(modal);
+    uxModalTriggers.delete(modal);
+    if (origem && document.contains(origem) && typeof origem.focus === 'function') origem.focus();
+}
+
 function renderizarHeatmapEstudo(containerId = 'heatmap-container') {
     const container = document.getElementById(containerId);
     if (!container) return;
     let historico = {};
     try { historico = JSON.parse(localStorage.getItem('ja_activity_history')) || {}; } catch (e) { }
+    const temAtividade = Object.values(historico).some(valor => Number(valor) > 0);
+    if (!temAtividade && typeof aplicarEstadoVazioUX === 'function') {
+        aplicarEstadoVazioUX(container, {
+            compact: true,
+            icon: '📅',
+            title: 'Nenhuma atividade recente',
+            description: 'Seu calendário será preenchido quando você concluir atividades.',
+            recommendation: 'Estude um módulo ou faça uma revisão para registrar o primeiro dia.'
+        });
+        return;
+    }
+    if (typeof limparEstadoVazioUX === 'function') limparEstadoVazioUX(container);
     const hoje = new Date();
     let diasHtml = '';
     for (let i = 29; i >= 0; i--) {
         const d = new Date(hoje);
         d.setDate(d.getDate() - i);
-        const dataStr = d.toISOString().split('T')[0];
+        const dataStr = typeof obterDataLocalDashboard === 'function'
+            ? obterDataLocalDashboard(d)
+            : `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
         const qtd = historico[dataStr] || 0;
         let nivelClasse = 'lvl-0';
         if (qtd >= 8) nivelClasse = 'lvl-3';
@@ -44,6 +114,19 @@ function garantirElementosCabecalhoEModal() {
             elXp = document.createElement('div');
             elXp.id = 'xp-profile-widget-container';
             group.appendChild(elXp);
+        }
+        let syncStatus = document.getElementById('sync-status-indicator');
+        if (!syncStatus) {
+            syncStatus = document.createElement('span');
+            syncStatus.id = 'sync-status-indicator';
+            syncStatus.className = 'sync-status-indicator sync-status-local';
+            syncStatus.setAttribute('role', 'status');
+            syncStatus.setAttribute('aria-live', 'polite');
+            syncStatus.setAttribute('aria-atomic', 'true');
+            group.appendChild(syncStatus);
+        }
+        if (typeof atualizarIndicadorSincronizacao === 'function') {
+            atualizarIndicadorSincronizacao((typeof window !== 'undefined' && window.uxSyncState) ? window.uxSyncState : 'local');
         }
         // 1. Badge da Ofensiva
         let elStreak = document.getElementById('streak-badge-header');
@@ -80,6 +163,18 @@ function garantirElementosCabecalhoEModal() {
         btnDict.onclick = typeof redirecionarParaDicionario === 'function' ? redirecionarParaDicionario : null;
 
         // 4. Botão de Opções / Configurações (em todo o site)
+        let btnProgress = document.getElementById('btn-meu-progresso-hdr');
+        if (!btnProgress) {
+            btnProgress = document.createElement('button');
+            btnProgress.id = 'btn-meu-progresso-hdr';
+            btnProgress.className = 'btn-progress-header';
+            btnProgress.textContent = '📊 Meu Progresso';
+            btnProgress.title = 'Abrir Meu Progresso';
+            btnProgress.onclick = typeof irParaMeuProgresso === 'function' ? irParaMeuProgresso : null;
+            btnProgress.hidden = true;
+            group.appendChild(btnProgress);
+        }
+
         let btnConfig = document.getElementById('btn-config-curso');
         if (!btnConfig) {
             btnConfig = document.createElement('button');
@@ -99,17 +194,32 @@ function garantirElementosCabecalhoEModal() {
             btnAuth.className = 'btn-auth-header';
             group.appendChild(btnAuth);
         }
+        let btnLogout = document.getElementById('btn-logout-hdr');
+        if (!btnLogout) {
+            btnLogout = document.createElement('button');
+            btnLogout.id = 'btn-logout-hdr';
+            btnLogout.className = 'btn-logout-header';
+            btnLogout.textContent = '🚪 Sair';
+            btnLogout.title = 'Sair da conta';
+            btnLogout.onclick = () => { if (typeof fazerLogout === 'function') fazerLogout(); };
+            btnLogout.hidden = true;
+            group.appendChild(btnLogout);
+        }
         const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
         const user = fb && fb.auth ? fb.auth.currentUser : null;
         if (user) {
             const displayName = user.displayName || (user.email ? user.email.split('@')[0] : 'Estudante');
             btnAuth.title = `Conectado como ${user.email || displayName}`;
-            btnAuth.innerHTML = `👤 ${displayName} <button type="button" class="btn-logout-secundario" onclick="event.stopPropagation(); if(typeof fazerLogout==='function') fazerLogout();" style="margin-left:8px; background:transparent; border:1px solid rgba(239, 68, 68, 0.4); color:#ef4444; border-radius:12px; padding:2px 8px; font-size:0.78rem; cursor:pointer; font-weight:600; transition:all 0.2s;" title="Sair da Conta" onmouseover="this.style.background='rgba(239, 68, 68, 0.12)'" onmouseout="this.style.background='transparent'">🚪 Sair</button>`;
-            btnAuth.onclick = null;
+            btnAuth.textContent = `👤 ${displayName}`;
+            btnAuth.onclick = typeof irParaMeuProgresso === 'function' ? irParaMeuProgresso : null;
+            btnProgress.hidden = false;
+            btnLogout.hidden = false;
         } else {
             btnAuth.title = 'Entrar ou Criar Conta';
-            btnAuth.innerHTML = `🔐 Entrar / Cadastrar`;
-            btnAuth.onclick = () => { if (typeof abrirModalAuth === 'function') abrirModalAuth('login'); };
+            btnAuth.textContent = '🔐 Entrar / Cadastrar';
+            btnAuth.onclick = () => { if (typeof abrirModalAuth === 'function') abrirModalAuth('login', btnAuth); };
+            btnProgress.hidden = true;
+            btnLogout.hidden = true;
         }
         // 6. Botão de Tema Escuro/Claro (em todo o site)
         let btnTema = header.querySelector('.theme-btn');
@@ -125,11 +235,14 @@ function garantirElementosCabecalhoEModal() {
         }
         // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Auth] [Tema]
         if (elXp) group.appendChild(elXp);
+        if (syncStatus) group.appendChild(syncStatus);
         if (elStreak) group.appendChild(elStreak);
         if (elConq) group.appendChild(elConq);
         if (btnDict) group.appendChild(btnDict);
+        if (btnProgress) group.appendChild(btnProgress);
         if (btnConfig) group.appendChild(btnConfig);
         if (btnAuth) group.appendChild(btnAuth);
+        if (btnLogout) group.appendChild(btnLogout);
         if (btnTema) group.appendChild(btnTema);
 
         if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
@@ -144,8 +257,8 @@ function garantirElementosCabecalhoEModal() {
         modalOfensivaDiv.innerHTML = `
             <div class="modal-box modal-ofensiva-box">
                 <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
-                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🔥 Calendário de Ofensiva</h2>
-                    <button onclick="fecharModalOfensiva()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                    <h2 id="modal-ofensiva-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🔥 Calendário de Ofensiva</h2>
+                    <button aria-label="Fechar calendário de ofensiva" onclick="fecharModalOfensiva()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
                 </div>
                 <div style="text-align:center; margin-bottom: 1.2rem;">
                     <div style="font-size: 2.5rem; font-weight: bold; color: #fb923c;" id="modal-streak-display">🔥 0 Dias</div>
@@ -167,45 +280,45 @@ function garantirElementosCabecalhoEModal() {
         modalAuthDiv.innerHTML = `
             <div class="modal-box modal-auth-box">
                 <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
-                    <h2 id="modal-auth-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0; font-size:1.3rem;">🔐 Autenticação Japão Academy</h2>
-                    <button onclick="fecharModalAuth()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                    <h2 id="modal-auth-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0; font-size:1.3rem;">🔐 Autenticação Idiomas Academy</h2>
+                    <button aria-label="Fechar autenticação" onclick="fecharModalAuth()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
                 </div>
-                <div class="auth-tabs-row" style="display:flex; gap:0.5rem; margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.6rem;">
-                    <button class="auth-tab-btn active" id="tab-auth-login" onclick="alternarAbaAuth('login')">🔑 Fazer Login</button>
-                    <button class="auth-tab-btn" id="tab-auth-cadastro" onclick="alternarAbaAuth('cadastro')">✨ Criar Conta</button>
+                <div class="auth-tabs-row" role="tablist" aria-label="Opções de autenticação" style="display:flex; gap:0.5rem; margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.6rem;">
+                    <button type="button" role="tab" aria-selected="true" aria-controls="form-auth-login" class="auth-tab-btn active" id="tab-auth-login" onclick="alternarAbaAuth('login')">🔑 Fazer Login</button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="form-auth-cadastro" class="auth-tab-btn" id="tab-auth-cadastro" onclick="alternarAbaAuth('cadastro')">✨ Criar Conta</button>
                 </div>
                 <!-- FORM DE LOGIN -->
-                <form id="form-auth-login" onsubmit="executarLoginEmail(event)" style="display:block;">
+                <form id="form-auth-login" role="tabpanel" aria-labelledby="tab-auth-login" onsubmit="executarLoginEmail(event)" style="display:block;">
                     <div style="margin-bottom:1rem; text-align:left;">
-                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
+                        <label for="auth-login-email" style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
                         <input type="email" id="auth-login-email" class="auth-input" placeholder="seu@email.com" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
                     </div>
                     <div style="margin-bottom:1.2rem; text-align:left;">
-                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
+                        <label for="auth-login-password" style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
                         <input type="password" id="auth-login-password" class="auth-input" placeholder="••••••••" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
                     </div>
-                    <button type="submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:var(--current-primary); color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Entrar na Conta</button>
+                    <button type="submit" id="btn-auth-login-submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:var(--current-primary); color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Entrar na Conta</button>
                 </form>
                 <!-- FORM DE CADASTRO -->
-                <form id="form-auth-cadastro" onsubmit="executarCadastroEmail(event)" style="display:none;">
+                <form id="form-auth-cadastro" role="tabpanel" aria-labelledby="tab-auth-cadastro" onsubmit="executarCadastroEmail(event)" style="display:none;">
                     <div style="margin-bottom:1rem; text-align:left;">
-                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Nome</label>
+                        <label for="auth-reg-name" style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Nome</label>
                         <input type="text" id="auth-reg-name" class="auth-input" placeholder="Seu nome ou apelido" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
                     </div>
                     <div style="margin-bottom:1rem; text-align:left;">
-                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
+                        <label for="auth-reg-email" style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">E-mail</label>
                         <input type="email" id="auth-reg-email" class="auth-input" placeholder="seu@email.com" required style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
                     </div>
                     <div style="margin-bottom:1.2rem; text-align:left;">
-                        <label style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
+                        <label for="auth-reg-password" style="display:block; font-size:0.85rem; font-weight:bold; margin-bottom:0.3rem; color:var(--text-main);">Senha</label>
                         <input type="password" id="auth-reg-password" class="auth-input" placeholder="Mínimo 6 caracteres" required minlength="6" style="width:100%; padding:0.75rem; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-size:0.95rem;">
                     </div>
-                    <button type="submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:#22c55e; color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Criar Nova Conta</button>
+                    <button type="submit" id="btn-auth-register-submit" class="btn-auth-submit" style="width:100%; padding:0.8rem; border-radius:10px; border:none; background:#22c55e; color:#fff; font-weight:bold; font-size:1rem; cursor:pointer;">Criar Nova Conta</button>
                 </form>
                 <div style="margin: 1.2rem 0; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
                     — ou continue com —
                 </div>
-                <button type="button" onclick="executarLoginGoogle()" style="width:100%; padding:0.75rem; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-weight:bold; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.6rem; transition: background 0.2s ease;">
+                <button type="button" id="btn-auth-google" onclick="executarLoginGoogle(this)" style="width:100%; padding:0.75rem; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); font-weight:bold; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.6rem; transition: background 0.2s ease;">
                     <span style="font-size:1.1rem;">🔴</span> Entrar com o Google
                 </button>
             </div>
@@ -221,8 +334,8 @@ function garantirElementosCabecalhoEModal() {
         modalDiv.innerHTML = `
             <div class="modal-box modal-conquistas-box">
                 <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:0.8rem;">
-                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🏆 Mural de Conquistas</h2>
-                    <button onclick="fecharModalConquistas()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                    <h2 id="modal-conquistas-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">🏆 Mural de Conquistas</h2>
+                    <button aria-label="Fechar mural de conquistas" onclick="fecharModalConquistas()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.8rem;">
                     Desbloqueie medalhas exclusivas completando suas metas diárias e lições!
@@ -270,31 +383,33 @@ function garantirElementosCabecalhoEModal() {
 
     modalOp.innerHTML = `
         <div class="modal-box">
-            <h3 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
+            <h3 id="modal-opcoes-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin-bottom:1.2rem; border-bottom:1px solid var(--border-color); padding-bottom:0.5rem;">⚙️ Configurações do Curso</h3>
             <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-bottom:1.2rem;">
-                <span style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</span>
+                <label for="input-nome-usuario" style="font-weight:600;">Seu Nome / Apelido (Para os diálogos):</label>
                 <input type="text" id="input-nome-usuario" oninput="atualizarNomeUsuario(this.value)" placeholder="Ex: Carlos, Ana, Kenji..." style="width: 100%; padding: 0.6rem; border-radius: 8px; background: var(--bg-color); color: var(--text-main); border: 1px solid var(--border-color); font-weight: bold; outline: none;">
             </div>
             <div class="modal-option" style="display:flex; flex-direction:row; justify-content:space-between; align-items:center; margin-bottom:1.2rem; font-weight:600;">
-                <span>Desbloquear Todos os Módulos</span>
+                <label for="check-desbloquear">Desbloquear Todos os Módulos</label>
                 <input type="checkbox" id="check-desbloquear" onchange="alternarDesbloqueio(this.checked)" style="width: 20px; height: 20px; accent-color: #e63946; cursor: pointer;">
             </div>
             ${readingOptionsHtml}
             <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:1.2rem; border-top:1px solid var(--border-color); padding-top:1rem;">
                 <span style="font-weight:bold; font-size:0.95rem; color:var(--text-main);">☁️ Sincronização na Nuvem:</span>
-                <button type="button" onclick="salvarProgressoNaNuvem()" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                <button type="button" id="btn-cloud-save" onclick="executarSalvarNuvem(this)" style="width: 100%; padding: 0.65rem; background: var(--current-primary, #3b82f6); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
                     📤 Salvar Dados Locais na Nuvem
                 </button>
-                <button type="button" onclick="carregarProgressoDaNuvem()" style="width: 100%; padding: 0.65rem; background: rgba(59, 130, 246, 0.15); color: var(--current-primary, #3b82f6); border: 1px solid var(--current-primary, #3b82f6); border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                <button type="button" id="btn-cloud-load" onclick="executarCarregarNuvem(this)" style="width: 100%; padding: 0.65rem; background: rgba(59, 130, 246, 0.15); color: var(--current-primary, #3b82f6); border: 1px solid var(--current-primary, #3b82f6); border-radius: 8px; font-weight: bold; cursor: pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
                     📥 Baixar / Restaurar Dados da Nuvem
                 </button>
+                <div id="cloud-empty-state" hidden></div>
             </div>
-            <button onclick="resetarProgressoCurso()" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
+            <button id="btn-reset-progress" onclick="resetarProgressoCurso(this)" style="width: 100%; padding: 0.6rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid #ef4444; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 0.5rem;">Resetar Progresso</button>
             <button class="fechar-modal" onclick="fecharOpcoesCurso()" style="width: 100%; margin-top: 1rem; padding: 0.8rem; background: #e63946; color: white; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;">Salvar e Fechar</button>
         </div>
     `;
 
-    if (!document.getElementById('modal-dicionario')) {
+    const paginaDicionarioDedicada = !!document.getElementById('dict-results-container');
+    if (!paginaDicionarioDedicada && !document.getElementById('modal-dicionario')) {
         const modalDict = document.createElement('div');
         modalDict.id = 'modal-dicionario';
         modalDict.className = 'modal-overlay';
@@ -303,11 +418,11 @@ function garantirElementosCabecalhoEModal() {
         modalDict.innerHTML = `
             <div class="modal-box modal-dict-box">
                 <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-color); padding-bottom:0.8rem; margin-bottom:1rem;">
-                    <h2 style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">📖 Dicionário & Glossário Universal</h2>
-                    <button onclick="fecharModalDicionario()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
+                    <h2 id="modal-dicionario-title" style="font-family:'Fredoka',sans-serif; color:var(--text-main); margin:0;">📖 Dicionário & Glossário Universal</h2>
+                    <button aria-label="Fechar dicionário" onclick="fecharModalDicionario()" style="background:transparent; border:none; color:var(--text-muted); font-size:1.4rem; cursor:pointer; font-weight:bold;">✖</button>
                 </div>
                 <div class="dict-search-wrapper" style="margin-bottom: 1rem;">
-                    <input type="text" id="dict-search-input" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em português, romaji, kana ou kanji..." style="width:100%; padding:0.8rem 1.2rem; border-radius:12px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
+                    <input type="text" id="dict-search-input" aria-label="Pesquisar no dicionário" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em português, romaji, kana ou kanji..." style="width:100%; padding:0.8rem 1.2rem; border-radius:12px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
                 </div>
                 <div class="dict-filters-row" style="display:flex; gap:0.5rem; margin-bottom:0.8rem; flex-wrap:wrap;">
                     <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">Tudo</button>
@@ -337,12 +452,47 @@ function garantirElementosCabecalhoEModal() {
                 <div id="dict-results-counter" style="font-size:0.82rem; color:var(--text-muted); font-weight:600; margin-bottom:1rem;">
                     Carregando glossário...
                 </div>
-                <div id="dict-results-container" class="grid-dict-results"></div>
+                <div id="dict-results-container" class="grid-dict-results" aria-busy="true" aria-label="Carregando dicionário">
+                    <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                    <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                    <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+                </div>
                 <button onclick="fecharModalDicionario()" class="fechar-modal" style="margin-top:1rem;">Fechar Dicionário</button>
             </div>
         `;
         document.body.appendChild(modalDict);
     }
+
+    const configuracoesDialogos = [
+        ['modal-ofensiva', 'modal-ofensiva-title', 'Calendário de ofensiva'],
+        ['modal-auth', 'modal-auth-title', 'Autenticação'],
+        ['modal-conquistas', 'modal-conquistas-title', 'Mural de conquistas'],
+        ['modal-opcoes', 'modal-opcoes-title', 'Configurações do curso'],
+        ['modal-dicionario', 'modal-dicionario-title', 'Dicionário']
+    ];
+    configuracoesDialogos.forEach(([id, tituloId, rotulo]) => {
+        const dialogo = document.getElementById(id);
+        if (!dialogo) return;
+        if (document.getElementById(tituloId)) dialogo.setAttribute('aria-labelledby', tituloId);
+        prepararModalAcessivel(dialogo, rotulo);
+    });
+
+    const abasAuth = Array.from(document.querySelectorAll('#modal-auth [role="tab"]'));
+    abasAuth.forEach((aba, indice) => {
+        if (aba.dataset.uxKeyboardReady === 'true') return;
+        aba.dataset.uxKeyboardReady = 'true';
+        aba.addEventListener('keydown', event => {
+            let proximoIndice = null;
+            if (event.key === 'ArrowRight') proximoIndice = (indice + 1) % abasAuth.length;
+            else if (event.key === 'ArrowLeft') proximoIndice = (indice - 1 + abasAuth.length) % abasAuth.length;
+            else if (event.key === 'Home') proximoIndice = 0;
+            else if (event.key === 'End') proximoIndice = abasAuth.length - 1;
+            if (proximoIndice == null) return;
+            event.preventDefault();
+            abasAuth[proximoIndice].focus();
+            abasAuth[proximoIndice].click();
+        });
+    });
 }
 
 function abrirModalOfensiva() {
@@ -356,28 +506,28 @@ function abrirModalOfensiva() {
     const disp = document.getElementById('modal-streak-display');
     if (disp) disp.innerText = `🔥 ${streakData.count || 0} Dia(s) Seguido(s)`;
     if (modal) {
-        modal.style.display = 'flex';
+        abrirModalAcessivel(modal, document.activeElement, '.fechar-modal');
         renderizarHeatmapEstudo('heatmap-container-modal');
     }
 }
 
 function fecharModalOfensiva() {
     const modal = document.getElementById('modal-ofensiva');
-    if (modal) modal.style.display = 'none';
+    fecharModalAcessivel(modal);
 }
 
-function abrirModalAuth(aba = 'login') {
+function abrirModalAuth(aba = 'login', acionador) {
     garantirElementosCabecalhoEModal();
     const modal = document.getElementById('modal-auth');
     if (modal) {
         if (typeof alternarAbaAuth === 'function') alternarAbaAuth(aba);
-        modal.style.display = 'flex';
+        abrirModalAcessivel(modal, acionador || document.activeElement, aba === 'cadastro' ? '#auth-reg-name' : '#auth-login-email');
     }
 }
 
 function fecharModalAuth() {
     const modal = document.getElementById('modal-auth');
-    if (modal) modal.style.display = 'none';
+    fecharModalAcessivel(modal);
 }
 
 function fecharModalAuthAoClicarFora(e) {
@@ -394,19 +544,27 @@ function alternarAbaAuth(aba) {
     if (aba === 'login') {
         if (tabLogin) tabLogin.classList.add('active');
         if (tabCad) tabCad.classList.remove('active');
+        if (tabLogin) tabLogin.setAttribute('aria-selected', 'true');
+        if (tabCad) tabCad.setAttribute('aria-selected', 'false');
         if (formLogin) formLogin.style.display = 'block';
         if (formCad) formCad.style.display = 'none';
     } else {
         if (tabCad) tabCad.classList.add('active');
         if (tabLogin) tabLogin.classList.remove('active');
+        if (tabCad) tabCad.setAttribute('aria-selected', 'true');
+        if (tabLogin) tabLogin.setAttribute('aria-selected', 'false');
         if (formCad) formCad.style.display = 'block';
         if (formLogin) formLogin.style.display = 'none';
     }
 }
 
-function abrirModalCertificado() {
+function abrirModalCertificado(botao) {
     const modal = document.getElementById('modal-certificado');
     if (!modal) return;
+    const botaoOrigem = botao || document.getElementById('btn-ver-certificado-hub');
+    const temFeedback = botaoOrigem && typeof iniciarEstadoBotao === 'function'
+        ? iniciarEstadoBotao(botaoOrigem, 'Gerando certificado...')
+        : false;
     const elNome = document.getElementById('cert-nome-aluno');
     const elData = document.getElementById('cert-data');
     const elHash = document.getElementById('cert-hash');
@@ -421,12 +579,18 @@ function abrirModalCertificado() {
         }
         elHash.innerText = prog.cert_hash;
     }
-    modal.style.display = 'flex';
+    const exibirCertificado = () => {
+        prepararModalAcessivel(modal, 'Certificado de conclusão');
+        abrirModalAcessivel(modal, botaoOrigem, '.close-btn');
+        if (temFeedback && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botaoOrigem);
+    };
+    if (temFeedback && typeof requestAnimationFrame === 'function') requestAnimationFrame(exibirCertificado);
+    else exibirCertificado();
 }
 
 function fecharModalCertificado() {
     const modal = document.getElementById('modal-certificado');
-    if (modal) modal.style.display = 'none';
+    fecharModalAcessivel(modal);
 }
 
 function imprimirCertificado() {
@@ -438,7 +602,7 @@ function imprimirCertificado() {
 function abrirOpcoesCurso() {
     garantirElementosCabecalhoEModal();
     const modalOp = document.getElementById('modal-opcoes') || document.getElementById('modal-opcoes-curso');
-    if (modalOp) modalOp.style.display = 'flex';
+    if (modalOp) abrirModalAcessivel(modalOp, document.activeElement, '#input-nome-usuario');
     const check = document.getElementById('check-desbloquear');
     if (check) check.checked = typeof modoDesbloqueado !== 'undefined' ? modoDesbloqueado : false;
     const inputNome = document.getElementById('input-nome-usuario');
@@ -448,7 +612,7 @@ function abrirOpcoesCurso() {
 
 function fecharOpcoesCurso() {
     const modalOp = document.getElementById('modal-opcoes') || document.getElementById('modal-opcoes-curso');
-    if (modalOp) modalOp.style.display = 'none';
+    fecharModalAcessivel(modalOp);
 }
 
 
@@ -462,8 +626,14 @@ function alternarDesbloqueio(ativo) {
     }
 }
 
-function resetarProgressoCurso() {
-    if (!confirm('⚠️ Tem certeza que deseja resetar TODO o seu progresso no Japão Academy? Esta ação é irreversível!')) return;
+function resetarProgressoCurso(botao) {
+    if (!confirm('⚠️ Tem certeza que deseja resetar TODO o seu progresso no Idiomas Academy? Esta ação é irreversível!')) return;
+
+    const temFeedback = botao && typeof iniciarEstadoBotao === 'function'
+        ? iniciarEstadoBotao(botao, 'Resetando...')
+        : false;
+    const executarReset = () => {
+        try {
 
     const keysToRemove = [
         'japao_academy_progress',
@@ -534,6 +704,12 @@ function resetarProgressoCurso() {
 
     alert('🔄 Progresso resetado com sucesso!');
     window.location.reload();
+        } finally {
+            if (temFeedback && typeof restaurarEstadoBotao === 'function') restaurarEstadoBotao(botao);
+        }
+    };
+    if (temFeedback && typeof requestAnimationFrame === 'function') requestAnimationFrame(executarReset);
+    else executarReset();
 }
 
 function redirecionarParaDicionario() {
@@ -577,6 +753,9 @@ function redirecionarParaDicionario() {
 // Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
     window.renderizarHeatmapEstudo = renderizarHeatmapEstudo;
+    window.prepararModalAcessivel = prepararModalAcessivel;
+    window.abrirModalAcessivel = abrirModalAcessivel;
+    window.fecharModalAcessivel = fecharModalAcessivel;
     window.garantirElementosCabecalhoEModal = garantirElementosCabecalhoEModal;
     window.abrirModalOfensiva = abrirModalOfensiva;
     window.fecharModalOfensiva = fecharModalOfensiva;
