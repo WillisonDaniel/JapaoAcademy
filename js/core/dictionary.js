@@ -702,9 +702,12 @@ function buildDictCardHtml(item, cardIndex = 0) {
 
                 <!-- Line 2: Favoritar Button + Module Title -->
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
-                    <button onclick="toggleFavoritoDict('${audioWord}')" style="background:#fffbeb; border:1px solid #fde68a; color:#d97706; padding:4px 12px; border-radius:10px; font-weight:700; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:4px;">
-                        ⭐ Favoritar
-                    </button>
+                    ${(() => {
+                        const eFav = typeof isWordFavorited === 'function' && isWordFavorited(item.primary || item.audio);
+                        const btnFavText = eFav ? '⭐ Favoritado' : '☆ Favoritar';
+                        const btnFavStyle = eFav ? 'background:#fef3c7; border:1.5px solid #f59e0b; color:#d97706;' : 'background:var(--bg-color); border:1.5px solid var(--border-color); color:var(--text-muted);';
+                        return `<button onclick="toggleFavoritoDict('${audioWord}')" style="${btnFavStyle} padding:4px 12px; border-radius:10px; font-weight:700; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:4px;">${btnFavText}</button>`;
+                    })()}
                     ${item.module ? `<span style="font-size:0.82rem; color:var(--text-muted, #64748b); font-weight:600; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.module}</span>` : ''}
                 </div>
 
@@ -980,8 +983,10 @@ function renderizarResultadosDicionario(queryStr = '') {
     }
 
     const resFiltrado = universalData.filter(item => {
-        if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) return false;
-        if (categoriaAtivaDict !== 'tudo' && item.cat !== categoriaAtivaDict) return false;
+        if (categoriaAtivaDict === 'favoritos') {
+            if (typeof isWordFavorited === 'function' && !isWordFavorited(item.primary) && !isWordFavorited(item.audio)) return false;
+        } else if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) return false;
+        else if (categoriaAtivaDict !== 'tudo' && item.cat !== categoriaAtivaDict) return false;
 
         if (item.cat === 'kanji' && subNivelKanjiDict !== 'tudo' && item.level !== subNivelKanjiDict) return false;
 
@@ -1014,7 +1019,15 @@ function renderizarResultadosDicionario(queryStr = '') {
     if (!container) return;
 
     if (glossarioFiltradoData.length === 0) {
-        if (typeof aplicarEstadoVazioUX === 'function') {
+        if (categoriaAtivaDict === 'favoritos') {
+            container.innerHTML = `
+                <div style="grid-column:1/-1; text-align:center; padding:40px 20px; background:var(--card-bg); border:2px dashed #f59e0b; border-radius:20px; margin:20px 0;">
+                    <div style="font-size:3rem; margin-bottom:12px;">⭐</div>
+                    <h3 style="font-family:'Fredoka', sans-serif; color:#d97706; font-size:1.5rem; margin-bottom:8px;">Seu Caderno de Favoritos está vazio</h3>
+                    <p style="color:var(--text-muted); font-size:1rem; max-width:480px; margin:0 auto 16px auto;">Clique no botão de estrela <strong>(⭐ Favoritar)</strong> em qualquer card de vocabulário, falsos cognatos ou heterotónicos para guardar seus termos preferidos aqui!</p>
+                </div>
+            `;
+        } else if (typeof aplicarEstadoVazioUX === 'function') {
             aplicarEstadoVazioUX(container, {
                 icon: '🔍',
                 title: 'Nenhum resultado encontrado',
@@ -1033,6 +1046,20 @@ function renderizarResultadosDicionario(queryStr = '') {
 
     const visiveis = glossarioFiltradoData.slice(0, ITENS_POR_PAGINA_DICT);
     let htmlCards = visiveis.map((item, idx) => buildDictCardHtml(item, idx)).join('');
+
+    if (categoriaAtivaDict === 'favoritos') {
+        const favsCount = resFiltrado.length;
+        const bannerHtml = `
+            <div style="grid-column: 1/-1; background:rgba(245, 158, 11, 0.12); border:2px solid #f59e0b; border-radius:16px; padding:18px 22px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                <div>
+                    <h3 style="margin:0; font-family:'Fredoka', sans-serif; color:#d97706; font-size:1.25rem;">⭐ Caderno de Favoritos (${favsCount} itens salvos)</h3>
+                    <p style="margin:4px 0 0 0; font-size:0.9rem; color:var(--text-main);">Seus termos e vocabulários marcados para revisão e prática focada.</p>
+                </div>
+                ${favsCount > 0 ? `<button onclick="abrirPraticaFavoritosModal()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#ffffff; border:none; padding:10px 22px; border-radius:12px; font-weight:700; font-family:'Fredoka', sans-serif; font-size:1rem; cursor:pointer; box-shadow:0 4px 12px rgba(217, 119, 6, 0.3);">⚡ Praticar Favoritos (Quiz)</button>` : ''}
+            </div>
+        `;
+        htmlCards = bannerHtml + htmlCards;
+    }
 
     if (glossarioFiltradoData.length > ITENS_POR_PAGINA_DICT) {
         htmlCards += `
@@ -1234,22 +1261,157 @@ function renderizarTabelaRegionalismosEspanhol(queryStr = '') {
     `).join('');
 }
 
-function toggleFavoritoDict(word) {
+function obterFavoritosEspanhol() {
+    let favs = [];
+    try {
+        favs = JSON.parse(localStorage.getItem('user_favorite_words_es') || '[]');
+    } catch(e) { favs = []; }
+
+    try {
+        const deckFavs = JSON.parse(localStorage.getItem('ja_favoritos_deck') || '[]');
+        deckFavs.forEach(itemStr => {
+            if (typeof itemStr === 'string' && !favs.some(f => (f.primary || f.word || f) === itemStr)) {
+                favs.push({ primary: itemStr, secondary: 'Item Favoritado', audio: itemStr });
+            }
+        });
+    } catch(e) {}
+
+    return favs;
+}
+
+function isWordFavorited(word) {
+    if (!word) return false;
+    const favs = obterFavoritosEspanhol();
+    return favs.some(f => (f.primary || f.word || f) === word);
+}
+
+function toggleFavoritoDict(word, objData = null) {
     if (!word) return;
     let favs = [];
     try {
-        favs = JSON.parse(localStorage.getItem('ja_favoritos_deck') || '[]');
+        favs = JSON.parse(localStorage.getItem('user_favorite_words_es') || '[]');
     } catch(e) { favs = []; }
 
-    const index = favs.indexOf(word);
-    if (index > -1) {
-        favs.splice(index, 1);
+    let deckFavs = [];
+    try {
+        deckFavs = JSON.parse(localStorage.getItem('ja_favoritos_deck') || '[]');
+    } catch(e) { deckFavs = []; }
+
+    const idx = favs.findIndex(f => (f.primary || f.word || f) === word);
+
+    if (idx > -1) {
+        favs.splice(idx, 1);
+        const deckIdx = deckFavs.indexOf(word);
+        if (deckIdx > -1) deckFavs.splice(deckIdx, 1);
         if (typeof mostrarToast === 'function') mostrarToast(`⭐ Item <strong>${word}</strong> removido dos favoritos!`);
     } else {
-        favs.push(word);
+        const newObj = objData ? objData : { primary: word, secondary: 'Vocabulário Favoritado', audio: word };
+        favs.push(newObj);
+        if (!deckFavs.includes(word)) deckFavs.push(word);
         if (typeof mostrarToast === 'function') mostrarToast(`⭐ Item <strong>${word}</strong> adicionado aos favoritos!`);
     }
-    localStorage.setItem('ja_favoritos_deck', JSON.stringify(favs));
+
+    try {
+        localStorage.setItem('user_favorite_words_es', JSON.stringify(favs));
+        localStorage.setItem('ja_favoritos_deck', JSON.stringify(deckFavs));
+    } catch(e) {}
+
+    renderizarResultadosDicionario('');
+}
+
+let praticaFavState = { index: 0, items: [], acertos: 0 };
+
+function abrirPraticaFavoritosModal() {
+    const rawFavs = obterFavoritosEspanhol();
+    const allItems = (typeof glossarioUniversalData !== 'undefined' && Array.isArray(glossarioUniversalData)) ? glossarioUniversalData : [];
+    
+    // Buscar itens correspondentes completos do dicionário
+    const favItems = [];
+    rawFavs.forEach(f => {
+        const wordKey = f.primary || f.word || f;
+        const match = allItems.find(i => i.primary === wordKey || i.audio === wordKey) || f;
+        favItems.push(match);
+    });
+
+    if (favItems.length === 0) {
+        if (typeof mostrarToast === 'function') mostrarToast('⭐ Seu Caderno de Favoritos está vazio!');
+        return;
+    }
+
+    praticaFavState = { index: 0, items: favItems, acertos: 0 };
+
+    let modalHtml = `
+        <div id="modalPraticaFavOverlay" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(15, 23, 42, 0.75); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; z-index:9999; padding:20px;">
+            <div style="background:var(--card-bg, #ffffff); border:2px solid #f59e0b; border-radius:24px; max-width:540px; width:100%; padding:28px; box-shadow:0 20px 25px -5px rgba(0,0,0,0.3); text-align:center; position:relative;">
+                <button onclick="fecharPraticarFavoritosModal()" style="position:absolute; top:18px; right:18px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text-muted);">✖</button>
+                <div style="font-size:0.85rem; font-weight:700; color:#d97706; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">⚡ Arena de Prática de Favoritos</div>
+                <div id="praticaFavBody"></div>
+            </div>
+        </div>
+    `;
+
+    const oldModal = document.getElementById('modalPraticaFavOverlay');
+    if (oldModal) oldModal.remove();
+
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    renderizarQuestaoPraticaFav();
+}
+
+function fecharPraticarFavoritosModal() {
+    const oldModal = document.getElementById('modalPraticaFavOverlay');
+    if (oldModal) oldModal.remove();
+}
+
+function renderizarQuestaoPraticaFav() {
+    const body = document.getElementById('praticaFavBody');
+    if (!body) return;
+
+    if (praticaFavState.index >= praticaFavState.items.length) {
+        body.innerHTML = `
+            <div style="font-size:3.5rem; margin-bottom:12px;">🏆</div>
+            <h2 style="font-family:'Fredoka', sans-serif; color:#d97706; font-size:1.8rem; margin-bottom:8px;">Treino de Favoritos Concluído!</h2>
+            <p style="font-size:1.1rem; color:var(--text-main); margin-bottom:20px;">Você revisou todos os <strong>${praticaFavState.items.length}</strong> itens favoritados do seu caderno!</p>
+            <button onclick="fecharPraticarFavoritosModal()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; border:none; padding:12px 28px; border-radius:14px; font-weight:700; font-family:'Fredoka', sans-serif; font-size:1.1rem; cursor:pointer;">Concluir Treino ✨</button>
+        `;
+        if (typeof canvasConfetti === 'function') canvasConfetti();
+        return;
+    }
+
+    const current = praticaFavState.items[praticaFavState.index];
+    const total = praticaFavState.items.length;
+    const currentNum = praticaFavState.index + 1;
+    const primaryText = current.primary || current.word || 'Palavra';
+    const descText = current.secondary || current.desc || current.translation || 'Significado';
+
+    body.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-size:0.9rem; font-weight:700; color:var(--text-muted);">
+            <span>Item ${currentNum} de ${total}</span>
+            <span style="color:#d97706;">⭐ Favoritos</span>
+        </div>
+
+        <div style="background:rgba(245, 158, 11, 0.08); border:1.5px solid #fde68a; border-radius:18px; padding:24px; margin-bottom:20px;">
+            <div style="font-size:2rem; font-weight:bold; color:#d97706; font-family:'Fredoka', sans-serif; margin-bottom:10px;">
+                ${primaryText}
+                <button onclick="speakKana('${primaryText.replace(/'/g, "\\'")}')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; margin-left:6px;" title="Ouvir">🔊</button>
+            </div>
+            <div style="font-size:1.1rem; font-weight:600; color:var(--text-main); margin-bottom:12px;">${descText}</div>
+            ${current.warning ? `<div style="font-size:0.88rem; background:#ecfdf5; color:#065f46; border:1px solid #a7f3d0; padding:8px 12px; border-radius:10px; font-weight:600;">📌 ${current.warning}</div>` : ''}
+        </div>
+
+        <div style="display:flex; gap:12px; justify-content:center;">
+            <button onclick="proximaQuestaoPraticaFav(true)" style="flex:1; background:#10b981; color:#fff; border:none; padding:12px 18px; border-radius:14px; font-weight:700; font-family:'Fredoka', sans-serif; font-size:1.05rem; cursor:pointer; box-shadow:0 4px 10px rgba(16,185,129,0.25);">✅ Lembrei Fácil</button>
+            <button onclick="proximaQuestaoPraticaFav(false)" style="flex:1; background:#f59e0b; color:#fff; border:none; padding:12px 18px; border-radius:14px; font-weight:700; font-family:'Fredoka', sans-serif; font-size:1.05rem; cursor:pointer; box-shadow:0 4px 10px rgba(245,158,11,0.25);">🔄 Preciso Treinar Mais</button>
+        </div>
+    `;
+}
+
+function proximaQuestaoPraticaFav(lembrei) {
+    if (lembrei) {
+        praticaFavState.acertos++;
+        if (typeof playBeep === 'function') playBeep('success');
+    }
+    praticaFavState.index++;
+    renderizarQuestaoPraticaFav();
 }
 
 function treinarItemDict(word) {
@@ -1270,13 +1432,17 @@ if (typeof window !== 'undefined') {
     window.carregarMaisItensDicionario = carregarMaisItensDicionario;
     window.selecionarCategoriaDicionario = selecionarCategoriaDicionario;
     window.selecionarSubNivelKanji = selecionarSubNivelKanji;
-    window.selecionarSubNivelVocab = selecionarSubNivelVocab;
     window.filtrarGlossarioDebounced = filtrarGlossarioDebounced;
     window.abrirModalDicionario = abrirModalDicionario;
     window.fecharModalDicionario = fecharModalDicionario;
     window.renderizarTabelaAlfabetoIngles = renderizarTabelaAlfabetoIngles;
     window.renderizarTabelaAlfabetoEspanhol = renderizarTabelaAlfabetoEspanhol;
     window.renderizarTabelaRegionalismosEspanhol = renderizarTabelaRegionalismosEspanhol;
+    window.obterFavoritosEspanhol = obterFavoritosEspanhol;
+    window.isWordFavorited = isWordFavorited;
     window.toggleFavoritoDict = toggleFavoritoDict;
+    window.abrirPraticaFavoritosModal = abrirPraticaFavoritosModal;
+    window.fecharPraticarFavoritosModal = fecharPraticarFavoritosModal;
+    window.proximaQuestaoPraticaFav = proximaQuestaoPraticaFav;
     window.treinarItemDict = treinarItemDict;
 }

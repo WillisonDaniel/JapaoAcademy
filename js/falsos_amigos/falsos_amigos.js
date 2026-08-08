@@ -659,6 +659,273 @@ function voltarEtapaFA() {
     }
 }
 
+// ======================================
+// MINIGAME ARCADE: PEGADINHA OU REAL? (3s)
+// ======================================
+
+const BANCO_PEGADINHAS_3S = [
+    { word: "Embarazada", statement: "Significa 'Grávida'", isTrue: true, realMeaning: "Grávida", falseMeaning: "Embaraçada / Com vergonha" },
+    { word: "Embarazada", statement: "Significa 'Com vergonha ou embaraçada'", isTrue: false, realMeaning: "Grávida", falseMeaning: "Embaraçada / Com vergonha" },
+    { word: "Polvo", statement: "Significa 'Pó ou Poeira'", isTrue: true, realMeaning: "Pó ou Poeira", falseMeaning: "Polvo (animal marinho)" },
+    { word: "Polvo", statement: "Significa 'Polvo (o animal marinho)'", isTrue: false, realMeaning: "Pó ou Poeira (Polvo é 'pulpo')", falseMeaning: "Polvo (animal marinho)" },
+    { word: "Exquisito", statement: "Significa 'Saboroso ou Delicioso'", isTrue: true, realMeaning: "Saboroso / Delicioso", falseMeaning: "Esquisito / Estranho" },
+    { word: "Exquisito", statement: "Significa 'Esquisito ou Estranho'", isTrue: false, realMeaning: "Saboroso / Delicioso", falseMeaning: "Esquisito / Estranho" },
+    { word: "Cena", statement: "Significa 'Jantar (refeição da noite)'", isTrue: true, realMeaning: "Jantar", falseMeaning: "Cena de filme" },
+    { word: "Cena", statement: "Significa 'Cena de filme ou teatro'", isTrue: false, realMeaning: "Jantar (Cena de filme é 'escena')", falseMeaning: "Cena de filme" },
+    { word: "Propina", statement: "Significa 'Gorjeta (dinheiro extra)'", isTrue: true, realMeaning: "Gorjeta", falseMeaning: "Suborno ilícito" },
+    { word: "Propina", statement: "Significa 'Suborno ilegal'", isTrue: false, realMeaning: "Gorjeta (Suborno é 'soborno')", falseMeaning: "Suborno ilícito" },
+    { word: "Largo", statement: "Significa 'Longo / Comprido'", isTrue: true, realMeaning: "Longo / Comprido", falseMeaning: "Largo / Ancho" },
+    { word: "Largo", statement: "Significa 'Largo (de largura grande)'", isTrue: false, realMeaning: "Longo (Largo de largura é 'ancho')", falseMeaning: "Largo de largura" },
+    { word: "Presunto", statement: "Significa 'Suposto / Presumível'", isTrue: true, realMeaning: "Suposto / Presumível", falseMeaning: "Presunto de comer" },
+    { word: "Presunto", statement: "Significa 'Presunto de comer (frio)'", isTrue: false, realMeaning: "Suposto (Presunto de comer é 'jamón')", falseMeaning: "Presunto de comer" },
+    { word: "Vaso", statement: "Significa 'Copo de beber'", isTrue: true, realMeaning: "Copo de beber", falseMeaning: "Vaso de flor" },
+    { word: "Vaso", statement: "Significa 'Vaso de planta ou flor'", isTrue: false, realMeaning: "Copo (Vaso de flor é 'florero')", falseMeaning: "Vaso de planta" },
+    { word: "Goma", statement: "Significa 'Borracha de apagar / Pneu'", isTrue: true, realMeaning: "Borracha / Pneu", falseMeaning: "Goma de colar" },
+    { word: "Goma", statement: "Significa 'Cola de bastão escolar'", isTrue: false, realMeaning: "Borracha / Pneu (Cola é 'pegamento')", falseMeaning: "Cola de bastão" },
+    { word: "Oficina", statement: "Significa 'Escritório de trabalho'", isTrue: true, realMeaning: "Escritório", falseMeaning: "Oficina mecânica" },
+    { word: "Oficina", statement: "Significa 'Oficina mecânica de carros'", isTrue: false, realMeaning: "Escritório (Oficina mecânica é 'taller')", falseMeaning: "Oficina mecânica" },
+    { word: "Apellido", statement: "Significa 'Sobrenome da família'", isTrue: true, realMeaning: "Sobrenome", falseMeaning: "Apelido carinhoso" },
+    { word: "Apellido", statement: "Significa 'Apelido carinhoso'", isTrue: false, realMeaning: "Sobrenome (Apelido é 'apodo')", falseMeaning: "Apelido carinhoso" },
+    { word: "Brincando", statement: "Significa 'Saltando ou pulando'", isTrue: true, realMeaning: "Saltando / Pulando", falseMeaning: "Brincando de jogo" },
+    { word: "Brincando", statement: "Significa 'Brincando de jogo divertido'", isTrue: false, realMeaning: "Saltando (Brincando é 'jugando')", falseMeaning: "Brincando de jogo" },
+    { word: "Pastel", statement: "Significa 'Bolo de aniversário'", isTrue: true, realMeaning: "Bolo", falseMeaning: "Pastel frito de feira" },
+    { word: "Pastel", statement: "Significa 'Pastel frito de feira'", isTrue: false, realMeaning: "Bolo de aniversário", falseMeaning: "Pastel frito" },
+    { word: "Taza", statement: "Significa 'Xícara de tomar café'", isTrue: true, realMeaning: "Xícara de tomar café", falseMeaning: "Taça de vinho de vidro" },
+    { word: "Taza", statement: "Significa 'Taça de vidro para vinho'", isTrue: false, realMeaning: "Xícara de café (Taça de vinho é 'copa')", falseMeaning: "Taça de vinho" },
+    { word: "Copa", statement: "Significa 'Taça de vinho / Copa do Mundo'", isTrue: true, realMeaning: "Taça de vinho", falseMeaning: "Copa da casa (cozinha)" },
+    { word: "Copa", statement: "Significa 'Cozinha ou copa da casa'", isTrue: false, realMeaning: "Taça de vinho (Copa de casa é 'cocina')", falseMeaning: "Copa da casa" },
+    { word: "Cadera", statement: "Significa 'Quadril do corpo'", isTrue: true, realMeaning: "Quadril", falseMeaning: "Cadeira de sentar" },
+    { word: "Cadera", statement: "Significa 'Cadeira para sentar'", isTrue: false, realMeaning: "Quadril (Cadeira é 'silla')", falseMeaning: "Cadeira de sentar" },
+    { word: "Silla", statement: "Significa 'Cadeira para sentar'", isTrue: true, realMeaning: "Cadeira de sentar", falseMeaning: "Sela de cavalo" }
+];
+
+let pegadinhaState = {
+    ativo: false,
+    emCooldown: false,
+    vidas: 3,
+    pontos: 0,
+    combo: 1,
+    highScore: 0,
+    timer: null,
+    tempoMaxMs: 5000,
+    tempoRestanteMs: 5000,
+    questaoAtual: null,
+    questoesFiltro: []
+};
+
+function alternarModoFA(modo) {
+    const hubNiveis = document.getElementById('hub-niveis');
+    const arenaArcade = document.getElementById('arena-arcade-pegadinha');
+    const btnTrilha = document.getElementById('btn-fa-mode-trilha');
+    const btnArcade = document.getElementById('btn-fa-mode-arcade');
+
+    if (modo === 'arcade') {
+        if (hubNiveis) hubNiveis.style.display = 'none';
+        if (arenaArcade) arenaArcade.style.display = 'block';
+        if (btnTrilha) btnTrilha.classList.remove('active');
+        if (btnArcade) btnArcade.classList.add('active');
+        iniciarMinigamePegadinha();
+    } else {
+        if (hubNiveis) hubNiveis.style.display = 'block';
+        if (arenaArcade) arenaArcade.style.display = 'none';
+        if (btnTrilha) btnTrilha.classList.add('active');
+        if (btnArcade) btnArcade.classList.remove('active');
+        encerrarTimerPegadinha();
+    }
+}
+
+function setArcadeButtonsDisabled(disabled) {
+    const btns = document.querySelectorAll('#arena-arcade-pegadinha button');
+    btns.forEach(btn => {
+        if (btn) {
+            btn.disabled = disabled;
+            btn.style.opacity = disabled ? '0.6' : '1';
+            btn.style.pointerEvents = disabled ? 'none' : 'auto';
+        }
+    });
+}
+
+function iniciarMinigamePegadinha() {
+    try {
+        pegadinhaState.highScore = parseInt(localStorage.getItem('espanhol_pegadinha_highscore') || '0', 10);
+    } catch(e) { pegadinhaState.highScore = 0; }
+
+    pegadinhaState.ativo = true;
+    pegadinhaState.emCooldown = false;
+    pegadinhaState.vidas = 3;
+    pegadinhaState.pontos = 0;
+    pegadinhaState.combo = 1;
+    pegadinhaState.questoesFiltro = [...BANCO_PEGADINHAS_3S].sort(() => Math.random() - 0.5);
+
+    atualizarHUDPegadinha();
+    proximaRodadaPegadinha();
+}
+
+function atualizarHUDPegadinha() {
+    const elVidas = document.getElementById('arcade-vidas-display');
+    const elPontos = document.getElementById('arcade-pontos-display');
+    const elCombo = document.getElementById('arcade-combo-badge');
+    const elHS = document.getElementById('arcade-highscore-display');
+
+    if (elVidas) {
+        let coracoes = '';
+        for (let i = 0; i < 3; i++) {
+            coracoes += (i < pegadinhaState.vidas) ? '❤️' : '🖤';
+        }
+        elVidas.innerHTML = coracoes;
+    }
+
+    if (elPontos) elPontos.textContent = pegadinhaState.pontos;
+    if (elCombo) elCombo.textContent = `COMBO x${pegadinhaState.combo}`;
+    if (elHS) elHS.textContent = pegadinhaState.highScore;
+}
+
+function proximaRodadaPegadinha() {
+    encerrarTimerPegadinha();
+    pegadinhaState.emCooldown = false;
+
+    if (pegadinhaState.vidas <= 0) {
+        gameOverPegadinha();
+        return;
+    }
+
+    if (pegadinhaState.questoesFiltro.length === 0) {
+        pegadinhaState.questoesFiltro = [...BANCO_PEGADINHAS_3S].sort(() => Math.random() - 0.5);
+    }
+
+    const questao = pegadinhaState.questoesFiltro.pop();
+    pegadinhaState.questaoAtual = questao;
+
+    // Garantir que a estrutura visual do card de pergunta é restaurada ao reiniciar o jogo
+    const card = document.getElementById('arcade-question-card');
+    if (card) {
+        card.innerHTML = `
+            <span style="background: #fffbeb; color: #d97706; border: 1px solid #fde68a; font-weight: 700; padding: 4px 14px; border-radius: 16px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 12px;">⚡ Flashcard Rápido (5 Segundos)</span>
+            <h2 id="arcade-word-display" style="font-size: 2.2rem; font-family: 'Fredoka', sans-serif; color: #d97706; margin: 0 0 10px 0;">--</h2>
+            <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-main);">
+                Afirmativa: <span id="arcade-statement-display" style="color: #2563eb; font-weight: 700;">"--"</span>
+            </div>
+        `;
+    }
+
+    setArcadeButtonsDisabled(false);
+
+    const elWord = document.getElementById('arcade-word-display');
+    const elStmt = document.getElementById('arcade-statement-display');
+
+    if (elWord) elWord.textContent = questao.word;
+    if (elStmt) elStmt.textContent = `"${questao.statement}"`;
+
+    if (typeof speakKana === 'function') speakKana(questao.word);
+
+    // Iniciar temporizador de 5.0s (5000ms)
+    pegadinhaState.tempoRestanteMs = 5000;
+    const bar = document.getElementById('arcade-timer-bar');
+    if (bar) bar.style.width = '100%';
+
+    const startTime = Date.now();
+    pegadinhaState.timer = setInterval(() => {
+        const decorrido = Date.now() - startTime;
+        pegadinhaState.tempoRestanteMs = Math.max(0, 5000 - decorrido);
+        const pct = (pegadinhaState.tempoRestanteMs / 5000) * 100;
+        if (bar) bar.style.width = `${pct}%`;
+
+        if (pegadinhaState.tempoRestanteMs <= 0) {
+            encerrarTimerPegadinha();
+            tempoEsgotadoPegadinha();
+        }
+    }, 50);
+}
+
+function encerrarTimerPegadinha() {
+    if (pegadinhaState.timer) {
+        clearInterval(pegadinhaState.timer);
+        pegadinhaState.timer = null;
+    }
+}
+
+function responderPegadinha(respostaUsuario) {
+    if (!pegadinhaState.ativo || !pegadinhaState.questaoAtual || pegadinhaState.emCooldown) return;
+    pegadinhaState.emCooldown = true;
+    encerrarTimerPegadinha();
+    setArcadeButtonsDisabled(true);
+
+    const q = pegadinhaState.questaoAtual;
+    const correto = (respostaUsuario === q.isTrue);
+
+    if (correto) {
+        if (typeof playBeep === 'function') playBeep('success');
+        pegadinhaState.pontos += (10 * pegadinhaState.combo);
+        pegadinhaState.combo++;
+        
+        if (pegadinhaState.pontos > pegadinhaState.highScore) {
+            pegadinhaState.highScore = pegadinhaState.pontos;
+            try { localStorage.setItem('espanhol_pegadinha_highscore', String(pegadinhaState.highScore)); } catch(e) {}
+        }
+
+        if (typeof mostrarToast === 'function') {
+            mostrarToast(`⚡ <strong>ACERTOU!</strong> +${10 * (pegadinhaState.combo - 1)} PTS!`);
+        }
+    } else {
+        if (typeof playBeep === 'function') playBeep('error');
+        pegadinhaState.vidas--;
+        pegadinhaState.combo = 1;
+        
+        if (typeof mostrarToast === 'function') {
+            mostrarToast(`❌ <strong>ERRADO!</strong> ${q.word} ➔ Significado real: <strong>${q.realMeaning}</strong>`);
+        }
+    }
+
+    atualizarHUDPegadinha();
+    setTimeout(() => {
+        proximaRodadaPegadinha();
+    }, 1000); // Cooldown exato de 1.0s para evitar spam
+}
+
+function tempoEsgotadoPegadinha() {
+    if (typeof playBeep === 'function') playBeep('error');
+    pegadinhaState.emCooldown = true;
+    setArcadeButtonsDisabled(true);
+
+    const q = pegadinhaState.questaoAtual;
+    pegadinhaState.vidas--;
+    pegadinhaState.combo = 1;
+    atualizarHUDPegadinha();
+
+    if (typeof mostrarToast === 'function') {
+        mostrarToast(`⏱️ <strong>TEMPO ESGOTADO!</strong> ${q ? q.word + ' ➔ ' + q.realMeaning : ''}`);
+    }
+
+    setTimeout(() => {
+        proximaRodadaPegadinha();
+    }, 1000);
+}
+
+function gameOverPegadinha() {
+    pegadinhaState.ativo = false;
+    encerrarTimerPegadinha();
+
+    const xpGanha = Math.round(pegadinhaState.pontos / 2);
+    if (xpGanha > 0 && typeof adicionarXP === 'function') {
+        adicionarXP(xpGanha, 'Minigame Pegadinha ou Real 3s');
+    }
+
+    const isRecorde = (pegadinhaState.pontos >= pegadinhaState.highScore && pegadinhaState.pontos > 0);
+
+    const card = document.getElementById('arcade-question-card');
+    if (card) {
+        card.innerHTML = `
+            <div style="font-size:3.5rem; margin-bottom:12px;">🎮</div>
+            <h2 style="font-family:'Fredoka', sans-serif; color:#ef4444; font-size:1.8rem; margin-bottom:8px;">GAME OVER!</h2>
+            <p style="font-size:1.1rem; color:var(--text-main); margin-bottom:16px;">Sua pontuação final: <strong>${pegadinhaState.pontos} PONTOS</strong> (+${xpGanha} XP)</p>
+            ${isRecorde ? `<div style="background:#fef3c7; color:#d97706; border:1px solid #fde68a; padding:8px 16px; border-radius:14px; font-weight:bold; display:inline-block; margin-bottom:20px;">🏆 NOVO RECORDE PESSOAL!</div>` : ''}
+            <div>
+                <button onclick="iniciarMinigamePegadinha()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#fff; border:none; padding:14px 28px; border-radius:16px; font-weight:700; font-family:'Fredoka', sans-serif; font-size:1.1rem; cursor:pointer; box-shadow:0 4px 12px rgba(217,119,6,0.3);">🔄 Jogar Novamente</button>
+            </div>
+        `;
+    }
+}
+
 // Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
     window.abrirTrilhaFA = abrirTrilhaFA;
@@ -674,4 +941,8 @@ if (typeof window !== 'undefined') {
     window.verificarSentenceFA = verificarSentenceFA;
     window.responderQuizFinalFA = responderQuizFinalFA;
     window.concluirModuloFinalFA = concluirModuloFinalFA;
+    window.alternarModoFA = alternarModoFA;
+    window.iniciarMinigamePegadinha = iniciarMinigamePegadinha;
+    window.responderPegadinha = responderPegadinha;
 }
+

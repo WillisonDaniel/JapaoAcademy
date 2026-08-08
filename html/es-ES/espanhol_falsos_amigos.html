@@ -435,6 +435,51 @@
             </div>
         </div>
 
+        <!-- SELETOR DE MODO (TRILHA VS ARCADE 5S) -->
+        <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+            <button id="btn-fa-mode-trilha" class="btn-srs-tab active" style="font-size: 0.95rem; padding: 10px 22px; border-radius: 20px; font-weight: bold; cursor: pointer;" onclick="alternarModoFA('trilha')">📖 Trilha de Módulos (A1-B2)</button>
+            <button id="btn-fa-mode-arcade" class="btn-srs-tab" style="font-size: 0.95rem; padding: 10px 22px; border-radius: 20px; font-weight: bold; cursor: pointer; background: rgba(245, 158, 11, 0.15); border-color: #f59e0b; color: #d97706;" onclick="alternarModoFA('arcade')">⏱️ Minigame: Pegadinha ou Real? (5s)</button>
+        </div>
+
+        <!-- TELA ARENA ARCADE: PEGADINHA OU REAL? (5S) -->
+        <section id="arena-arcade-pegadinha" style="display: none; background: var(--card-bg, #ffffff); border: 2px solid #f59e0b; border-radius: 24px; padding: 28px; box-shadow: 0 10px 25px rgba(217, 119, 6, 0.15); text-align: center; position: relative; margin-bottom: 24px;">
+            <!-- Header do Minigame (Vidas, Pontos, Combo, High Score) -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1.5px dashed var(--border-color); padding-bottom: 16px;">
+                <div id="arcade-vidas-display" style="font-size: 1.4rem;">❤️❤️❤️</div>
+                <div style="font-family: 'Fredoka', sans-serif; font-weight: 700; color: #d97706; font-size: 1.2rem;">
+                    PONTOS: <span id="arcade-pontos-display" style="font-size: 1.4rem; color: var(--text-main);">0</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span id="arcade-combo-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-weight: 700; padding: 4px 12px; border-radius: 14px; font-size: 0.85rem;">COMBO x1</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">🏆 Recorde: <strong id="arcade-highscore-display">0</strong></span>
+                </div>
+            </div>
+
+            <!-- Timer Regressivo (5s) -->
+            <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 10px; overflow: hidden; margin-bottom: 24px;">
+                <div id="arcade-timer-bar" style="width: 100%; height: 100%; background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444); transition: width 0.1s linear;"></div>
+            </div>
+
+            <!-- Question Card -->
+            <div id="arcade-question-card" style="background: rgba(245, 158, 11, 0.06); border: 2px solid #fde68a; border-radius: 20px; padding: 28px; margin-bottom: 28px; min-height: 180px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <span style="background: #fffbeb; color: #d97706; border: 1px solid #fde68a; font-weight: 700; padding: 4px 14px; border-radius: 16px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 12px;">⚡ Flashcard Rápido (5 Segundos)</span>
+                <h2 id="arcade-word-display" style="font-size: 2.2rem; font-family: 'Fredoka', sans-serif; color: #d97706; margin: 0 0 10px 0;">EMBARAZADA</h2>
+                <div style="font-size: 1.25rem; font-weight: 600; color: var(--text-main);">
+                    Afirmativa: <span id="arcade-statement-display" style="color: #2563eb; font-weight: 700;">"Significa Grávida"</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 520px; margin: 0 auto;">
+                <button onclick="responderPegadinha(true)" style="background: linear-gradient(135deg, #10b981, #059669); color: #ffffff; border: none; padding: 18px; border-radius: 18px; font-size: 1.2rem; font-weight: 700; font-family: 'Fredoka', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3); transition: transform 0.1s ease;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    🟢 É VERDADE
+                </button>
+                <button onclick="responderPegadinha(false)" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: #ffffff; border: none; padding: 18px; border-radius: 18px; font-size: 1.2rem; font-weight: 700; font-family: 'Fredoka', sans-serif; cursor: pointer; box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3); transition: transform 0.1s ease;" onmousedown="this.style.transform='scale(0.96)'" onmouseup="this.style.transform='scale(1)'">
+                    🔴 É PEGADINHA
+                </button>
+            </div>
+        </section>
+
         <!-- TELA 1: HUB DE NÍVEIS (A1, A2, B1, B2) -->
         <main id="hub-niveis" class="container" style="display: block;">
             <div class="fa-hub-card">
