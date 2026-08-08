@@ -21,6 +21,13 @@ function compilarGlossarioUniversal() {
     if (resultsContainer) resultsContainer.setAttribute('aria-busy', 'true');
     glossarioUniversalData = [];
 
+    const isSpanishMode = (typeof document !== 'undefined' && document.body && (
+        document.body.getAttribute('data-lang') === 'spanish' ||
+        document.body.getAttribute('data-mode') === 'espanhol' ||
+        document.body.getAttribute('data-mode') === 'spanish' ||
+        (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('espanhol'))
+    ));
+
     const isEnglishMode = (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'english' ||
         document.body.getAttribute('data-mode') === 'pronuncia' ||
@@ -28,7 +35,268 @@ function compilarGlossarioUniversal() {
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('ingles'))
     ));
 
-    if (isEnglishMode) {
+    if (isSpanishMode) {
+        // Mode Spanish: Alphabet (27 Letras), Falsos Cognatos, Heterotónicos, Regionalismos, Vocabularies A1-B2 & Grammars A1-B2
+        const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : (typeof window !== 'undefined' ? (window.DICIONARIO_ESPANHOL_DADOS || window.DADOS_ESPANHOL_DICIONARIO) : null));
+
+        if (dictData) {
+            if (Array.isArray(dictData.alfabeto)) {
+                dictData.alfabeto.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'alphabet',
+                        catLabel: 'ALFABETO',
+                        primary: item.letter,
+                        secondary: item.name ? `[ ${item.name} ] ${item.phonetic || ''}` : '',
+                        desc: `Exemplo: ${item.example || ''} (${item.translation || ''})`,
+                        audio: item.example || item.letter,
+                        level: 'A1',
+                        module: 'Abecedario del Español'
+                    });
+                });
+            }
+
+            const faTrilhaData = (typeof DADOS_ESPANHOL_FALSOS_AMIGOS_TRILHA !== 'undefined')
+                ? DADOS_ESPANHOL_FALSOS_AMIGOS_TRILHA
+                : (typeof window !== 'undefined' ? window.DADOS_ESPANHOL_FALSOS_AMIGOS_TRILHA : null);
+
+            if (Array.isArray(faTrilhaData) && faTrilhaData.length > 0) {
+                faTrilhaData.forEach(mod => {
+                    const drops = mod.stage2_drops || [];
+                    drops.forEach(item => {
+                        const word = item.word || item.title || '';
+                        if (!word) return;
+                        glossarioUniversalData.push({
+                            cat: 'falsos',
+                            catLabel: 'FALSO COGNATO',
+                            primary: word,
+                            secondary: item.realMeaning || item.rule || '',
+                            warning: item.warning || item.formula || '',
+                            desc: item.translation || item.example || '',
+                            context: item.example ? `Ex: "${item.example}"` : '',
+                            audio: item.audio || word,
+                            level: mod.level || 'A1',
+                            module: mod.title || 'Falsos Cognatos Traiçoeiros'
+                        });
+                    });
+                });
+            } else {
+                const falsosArr = dictData.falsosCognatos || dictData.falsosAmigos || [];
+                if (Array.isArray(falsosArr)) {
+                    falsosArr.forEach(item => {
+                        glossarioUniversalData.push({
+                            cat: 'falsos',
+                            catLabel: 'FALSO COGNATO',
+                            primary: item.word || item.term || '',
+                            secondary: item.realMeaning || item.real_meaning || '',
+                            warning: item.warning || (item.falseMeaning ? `NÃO é ${item.falseMeaning}` : ''),
+                            desc: item.translation || '',
+                            context: item.example ? `Ex: "${item.example}"` : '',
+                            audio: item.audio || item.word || item.term || '',
+                            level: 'A1-B2',
+                            module: 'Falsos Cognatos Traiçoeiros'
+                        });
+                    });
+                }
+            }
+
+            const fonRecursosData = (typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined')
+                ? FONETICA_RECURSOS_ESPANHOL_DADOS
+                : (typeof window !== 'undefined' ? window.FONETICA_RECURSOS_ESPANHOL_DADOS : null);
+
+            // 1. Fonética & Pronúncia
+            if (fonRecursosData && Array.isArray(fonRecursosData.fonetica)) {
+                fonRecursosData.fonetica.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'fonetica',
+                        catLabel: 'FONÉTICA & PRONÚNCIA',
+                        primary: item.title,
+                        secondary: item.summary,
+                        warning: item.rule,
+                        desc: item.examples ? item.examples.map(e => `${e.es} (${e.pt})`).join(', ') : '',
+                        audio: item.examples && item.examples.length > 0 ? item.examples[0].audio : item.title,
+                        examples: item.examples || [],
+                        level: item.level || 'A1',
+                        module: 'Guia de Fonética Hispânica'
+                    });
+                });
+            }
+
+            // 2. Heterotónicos
+            const heterotonicosArr = (fonRecursosData && Array.isArray(fonRecursosData.heterotonicos) && fonRecursosData.heterotonicos.length > 0)
+                ? fonRecursosData.heterotonicos
+                : (dictData.heterotonicos || []);
+
+            if (Array.isArray(heterotonicosArr)) {
+                heterotonicosArr.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'heterotonicos',
+                        catLabel: 'HETEROTÓNICO',
+                        primary: item.word,
+                        secondary: `PT: ${item.ptStress} ➔ ES: ${item.esStress}`,
+                        desc: item.translation || '',
+                        context: item.example ? `Ex: "${item.example}"` : '',
+                        audio: item.audio || item.word,
+                        level: 'A1-B2',
+                        module: 'Sílabas Tónicas Diferentes'
+                    });
+                });
+            }
+
+            // 3. Regionalismos
+            const regionalismosArr = (fonRecursosData && Array.isArray(fonRecursosData.regionalismos) && fonRecursosData.regionalismos.length > 0)
+                ? fonRecursosData.regionalismos
+                : (dictData.regionalismos || []);
+
+            if (Array.isArray(regionalismosArr)) {
+                regionalismosArr.forEach(item => {
+                    const concepto = item.concepto || item.concept || '';
+                    const esp = item.espanha || item.es || item.spain || '';
+                    const mex = item.mexico || item.mx || '';
+                    const arg = item.argentina || item.ar || '';
+                    const col = item.colombia || item.co || '';
+                    const chi = item.chile || item.cl || '';
+                    const ot = item.outros || item.otros || '';
+                    glossarioUniversalData.push({
+                        cat: 'regionalismos',
+                        catLabel: 'REGIONALISMO',
+                        primary: concepto,
+                        secondary: `🇪🇸 ${esp} | 🇲🇽 ${mex} | 🇦🇷 ${arg} | 🇨🇴 ${col} ${chi ? '| 🇨🇱 ' + chi : ''}`,
+                        desc: ot ? `Outros: ${ot}` : '',
+                        audio: esp || concepto,
+                        level: 'A1-B2',
+                        module: 'Variação Linguística Hispânica'
+                    });
+                });
+            }
+
+            // 4. Acentuação Gráfica & Tilde Diacrítica
+            if (fonRecursosData && Array.isArray(fonRecursosData.acentuacao)) {
+                fonRecursosData.acentuacao.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'acentuacao',
+                        catLabel: 'ACENTUAÇÃO & TILDE',
+                        primary: item.title,
+                        secondary: item.summary,
+                        warning: item.rule,
+                        desc: item.examples ? item.examples.map(e => `${e.es} (${e.pt})`).join(' | ') : '',
+                        audio: item.examples && item.examples.length > 0 ? item.examples[0].audio : item.title,
+                        examples: item.examples || [],
+                        level: 'A1-B2',
+                        module: 'Guia Mestre de Acentuação'
+                    });
+                });
+            }
+
+            // 5. Sotaques & Dialetos Regionais
+            if (fonRecursosData && Array.isArray(fonRecursosData.sotaques)) {
+                fonRecursosData.sotaques.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'sotaques',
+                        catLabel: 'SOTAQUES REGIONAIS',
+                        primary: `${item.region ? item.region + ' — ' : ''}${item.title}`,
+                        secondary: item.summary,
+                        warning: item.rule,
+                        desc: item.examples ? item.examples.map(e => `${e.es} (${e.pt})`).join(' | ') : '',
+                        audio: item.examples && item.examples.length > 0 ? item.examples[0].audio : item.title,
+                        examples: item.examples || [],
+                        level: 'A1-B2',
+                        module: 'Variedades Dialetais do Espanhol'
+                    });
+                });
+            }
+
+            // 6. Prosódia & Fala Nativa
+            if (fonRecursosData && Array.isArray(fonRecursosData.prosodia)) {
+                fonRecursosData.prosodia.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'prosodia',
+                        catLabel: 'PROSÓDIA & FALA NATIVA',
+                        primary: item.title,
+                        secondary: item.summary,
+                        warning: item.rule,
+                        desc: item.examples ? item.examples.map(e => `${e.es} (${e.pt})`).join(' | ') : '',
+                        audio: item.examples && item.examples.length > 0 ? item.examples[0].audio : item.title,
+                        examples: item.examples || [],
+                        level: 'A1-B2',
+                        module: 'Prosódia e Fluência Nativa'
+                    });
+                });
+            }
+
+            if (Array.isArray(dictData.vocabulario)) {
+                dictData.vocabulario.forEach(v => {
+                    glossarioUniversalData.push({
+                        cat: 'vocab',
+                        catLabel: 'VOCABULÁRIO',
+                        primary: v.word,
+                        secondary: v.meaning,
+                        desc: v.example || '',
+                        audio: v.audio || v.word,
+                        level: v.level || 'A1',
+                        module: 'Glossário de Espanhol'
+                    });
+                });
+            }
+
+            if (Array.isArray(dictData.gramatica)) {
+                dictData.gramatica.forEach(g => {
+                    glossarioUniversalData.push({
+                        cat: 'grammar',
+                        catLabel: 'GRAMÁTICA',
+                        primary: g.title,
+                        secondary: g.formula || '',
+                        desc: g.rule || '',
+                        context: g.example ? `Ex: "${g.example}"` : '',
+                        audio: g.title,
+                        level: g.level || 'A1',
+                        module: 'Biblioteca Gramatical'
+                    });
+                });
+            }
+        }
+
+        ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+            let courseArr = null;
+            if (lvl === 'A1') courseArr = typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined' ? CURSO_ESPANHOL_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A1_DADOS : null);
+            else if (lvl === 'A2') courseArr = typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined' ? CURSO_ESPANHOL_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A2_DADOS : null);
+            else if (lvl === 'B1') courseArr = typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined' ? CURSO_ESPANHOL_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_B1_DADOS : null);
+            else if (lvl === 'B2') courseArr = typeof CURSO_ESPANHOL_B2_DADOS !== 'undefined' ? CURSO_ESPANHOL_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_B2_DADOS : null);
+
+            if (Array.isArray(courseArr)) {
+                courseArr.forEach(rawMod => {
+                    const module = typeof normalizeModule === 'function' ? normalizeModule(rawMod) : rawMod;
+                    const drops = module.drops || module.stage2_drops || module.stage1_drops || [];
+                    drops.forEach(drop => {
+                        if (drop.type === 'grammar_pill' || drop.rule || drop.formula) {
+                            glossarioUniversalData.push({
+                                cat: 'grammar',
+                                catLabel: 'GRAMÁTICA',
+                                primary: drop.title || drop.word || drop.Spanish || '',
+                                secondary: drop.formula || '',
+                                desc: drop.rule || drop.translation || drop.Portuguese || '',
+                                context: drop.example || '',
+                                audio: drop.title || drop.example || '',
+                                level: lvl,
+                                module: module.title
+                            });
+                        } else if (drop.Spanish || drop.word || drop.translation) {
+                            glossarioUniversalData.push({
+                                cat: 'vocab',
+                                catLabel: 'VOCABULÁRIO',
+                                primary: drop.Spanish || drop.word || '',
+                                secondary: drop.Portuguese || drop.translation || drop.meaning || '',
+                                desc: drop.timeContext || drop.example || '',
+                                context: drop.example ? `Ex: "${drop.example}"` : '',
+                                audio: drop.Audio || drop.Spanish || drop.word || '',
+                                level: lvl,
+                                module: module.title
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    } else if (isEnglishMode) {
         // Mode English: Alphabet, Vocabulary, Phrasal Verbs, Phonetics, Grammar
         const alphabetData = typeof ENGLISH_ALPHABET_DATA !== 'undefined' ? ENGLISH_ALPHABET_DATA : (typeof window !== 'undefined' ? window.ENGLISH_ALPHABET_DATA : null);
         if (Array.isArray(alphabetData)) {
@@ -372,6 +640,36 @@ function buildDictCardHtml(item, cardIndex = 0) {
         catBorder = '#fecdd3';
         catText = '#dc2626';
         leftBorderColor = '#dc2626';
+    } else if (item.cat === 'falsos') {
+        catBg = '#fef2f2';
+        catBorder = '#fecdd3';
+        catText = '#dc2626';
+        leftBorderColor = '#ef4444';
+    } else if (item.cat === 'heterotonicos') {
+        catBg = '#faf5ff';
+        catBorder = '#e9d5ff';
+        catText = '#7e22ce';
+        leftBorderColor = '#a855f7';
+    } else if (item.cat === 'regionalismos') {
+        catBg = '#f0fdf4';
+        catBorder = '#99f6e4';
+        catText = '#0d9488';
+        leftBorderColor = '#0284c7';
+    } else if (item.cat === 'acentuacao') {
+        catBg = '#fff1f2';
+        catBorder = '#fecdd3';
+        catText = '#e11d48';
+        leftBorderColor = '#e11d48';
+    } else if (item.cat === 'sotaques') {
+        catBg = '#f0f9ff';
+        catBorder = '#bae6fd';
+        catText = '#0284c7';
+        leftBorderColor = '#0284c7';
+    } else if (item.cat === 'prosodia') {
+        catBg = '#f5f3ff';
+        catBorder = '#ddd6fe';
+        catText = '#8b5cf6';
+        leftBorderColor = '#8b5cf6';
     }
 
     const baseLabel = item.catLabel || (item.cat ? item.cat.toUpperCase() : 'GERAL');
@@ -379,6 +677,10 @@ function buildDictCardHtml(item, cardIndex = 0) {
     if (item.level && item.cat !== 'alphabet' && item.cat !== 'hiragana' && item.cat !== 'katakana') {
         badgeLabel = `${baseLabel} • ${item.level.toUpperCase()}`;
     }
+    const isFonetica = (item.cat === 'fonetica' || item.cat === 'acentuacao' || item.cat === 'sotaques' || item.cat === 'prosodia');
+    const isFalso = (item.cat === 'falsos');
+    const isHeterotonico = (item.cat === 'heterotonicos');
+    const isRegionalismo = (item.cat === 'regionalismos');
     const isKana = (item.cat === 'hiragana' || item.cat === 'katakana');
     const isKanji = (item.cat === 'kanji');
     const isGrammar = (item.cat === 'grammar');
@@ -394,7 +696,7 @@ function buildDictCardHtml(item, cardIndex = 0) {
                 <!-- Line 1: Badge Tag Pill -->
                 <div style="margin-bottom:10px;">
                     <span style="background:${catBg}; color:${catText}; border:1px solid ${catBorder}; padding:4px 12px; border-radius:16px; font-size:0.75rem; font-weight:700; text-transform:uppercase; display:inline-block;">
-                        ${item.cat === 'hiragana' ? '🌸' : item.cat === 'katakana' ? '⚡' : item.cat === 'kanji' ? '🗺️' : item.cat === 'grammar' ? '💡' : '📚'} ${badgeLabel}
+                        ${item.cat === 'hiragana' ? '🌸' : item.cat === 'katakana' ? '⚡' : item.cat === 'kanji' ? '🗺️' : item.cat === 'grammar' ? '💡' : item.cat === 'falsos' ? '⚠️' : item.cat === 'fonetica' ? '🎙️' : item.cat === 'heterotonicos' ? '🗣️' : item.cat === 'regionalismos' ? '🌍' : item.cat === 'acentuacao' ? '✍️' : item.cat === 'sotaques' ? '🎙️' : item.cat === 'prosodia' ? '🎭' : '📚'} ${badgeLabel}
                     </span>
                 </div>
 
@@ -407,7 +709,88 @@ function buildDictCardHtml(item, cardIndex = 0) {
                 </div>
 
                 <!-- Line 3: Main Character / Word + Audio Speaker + Romaji + Treinar Button -->
-                ${isGrammar ? `
+                ${isFonetica ? `
+                    <div style="margin-bottom:6px;">
+                        <div style="font-size:1.4rem; font-weight:bold; color:#0d9488; line-height:1.2; font-family:'Fredoka', sans-serif; margin-bottom:8px;">
+                            ${item.primary}
+                        </div>
+                        ${item.secondary ? `<div style="font-size:0.95rem; font-weight:600; color:var(--text-main, #334155); margin-bottom:10px; line-height:1.4;">${item.secondary}</div>` : ''}
+                        ${item.warning ? `
+                            <div style="padding:10px 14px; background:#ecfdf5; border:1px solid #a7f3d0; border-radius:10px; font-size:0.88rem; color:#065f46; font-weight:600; margin-bottom:12px; line-height:1.4;">
+                                📌 <strong>Regra:</strong> ${item.warning}
+                            </div>
+                        ` : ''}
+                        
+                        <div style="font-size:0.88rem; font-weight:700; color:#0d9488; margin-bottom:8px; display:flex; align-items:center; gap:4px;">
+                            <span>🔊 Exemplos de Pronúncia:</span>
+                        </div>
+                        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                            ${(item.examples && item.examples.length > 0) ? item.examples.map(ex => `
+                                <span style="background:var(--card-bg, #ffffff); border:1.5px solid #99f6e4; color:#0d9488; padding:5px 12px; border-radius:12px; font-size:0.88rem; font-weight:700; display:inline-flex; align-items:center; gap:6px; box-shadow:0 2px 4px rgba(0,0,0,0.03);">
+                                    <span>${ex.es}</span>
+                                    <span style="color:var(--text-muted, #64748b); font-weight:500; font-size:0.8rem;">(${ex.pt})</span>
+                                    <button onclick="speakKana('${(ex.audio || ex.es).replace(/'/g, "\\'")}')" style="background:#ccfbf1; border:none; color:#0f766e; border-radius:6px; padding:2px 6px; cursor:pointer; font-size:0.8rem;" title="Ouvir pronúncia">🔊</button>
+                                </span>
+                            `).join('') : (item.desc ? `<div style="font-size:0.88rem; color:#0d9488; font-weight:600;">📌 ${item.desc}</div>` : '')}
+                        </div>
+                    </div>
+                ` : isFalso ? `
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                        <div>
+                            <div style="display:flex; align-items:baseline; gap:8px;">
+                                <div style="font-size:1.6rem; font-weight:bold; color:#dc2626; line-height:1.1; font-family:'Fredoka', sans-serif;">
+                                    ${item.primary}
+                                </div>
+                                ${item.audio ? `<button onclick="speakKana('${audioWord}')" style="background:none; border:none; color:#64748b; font-size:1.1rem; cursor:pointer; padding:0 2px;" title="Ouvir áudio">🔊</button>` : ''}
+                            </div>
+                            <div style="font-size:0.98rem; font-weight:700; color:#059669; margin-top:6px;">
+                                ✅ Significado Real: ${item.secondary}
+                            </div>
+                            ${item.warning ? `
+                                <div style="margin-top:6px; padding:6px 12px; background:#fef2f2; border:1px solid #fecdd3; border-radius:8px; font-size:0.85rem; color:#dc2626; font-weight:700;">
+                                    ⚠️ ${item.warning}
+                                </div>
+                            ` : ''}
+                            ${item.desc ? `<div style="font-size:0.88rem; color:var(--text-muted, #64748b); margin-top:4px;">${item.desc}</div>` : ''}
+                        </div>
+                        <button onclick="treinarItemDict('${audioWord}')" style="background:#fff1f2; border:1px solid #fecdd3; color:#e11d48; padding:5px 14px; border-radius:20px; font-weight:700; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:4px; margin-top:4px;">
+                            🎴 Treinar
+                        </button>
+                    </div>
+                ` : isHeterotonico ? `
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                        <div>
+                            <div style="display:flex; align-items:baseline; gap:8px;">
+                                <div style="font-size:1.6rem; font-weight:bold; color:#7e22ce; line-height:1.1; font-family:'Fredoka', sans-serif;">
+                                    ${item.primary}
+                                </div>
+                                ${item.audio ? `<button onclick="speakKana('${audioWord}')" style="background:none; border:none; color:#64748b; font-size:1.1rem; cursor:pointer; padding:0 2px;" title="Ouvir áudio">🔊</button>` : ''}
+                            </div>
+                            <div style="margin-top:8px; padding:8px 12px; background:#faf5ff; border:1px solid #e9d5ff; border-radius:10px; font-size:0.88rem; color:#7e22ce; font-weight:700;">
+                                🎯 Sílaba Tônica: ${item.secondary}
+                            </div>
+                            ${item.desc ? `<div style="font-size:0.88rem; color:var(--text-muted, #64748b); margin-top:6px;">${item.desc}</div>` : ''}
+                        </div>
+                        <button onclick="treinarItemDict('${audioWord}')" style="background:#fff1f2; border:1px solid #fecdd3; color:#e11d48; padding:5px 14px; border-radius:20px; font-weight:700; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:4px; margin-top:4px;">
+                            🎴 Treinar
+                        </button>
+                    </div>
+                ` : isRegionalismo ? `
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:6px;">
+                        <div>
+                            <div style="font-size:1.4rem; font-weight:bold; color:var(--text-main, #0f172a); margin-bottom:4px; font-family:'Fredoka', sans-serif;">
+                                ${item.primary}
+                            </div>
+                            <div style="font-size:0.9rem; font-weight:600; color:#0d9488; line-height:1.4; margin-top:4px;">
+                                ${item.secondary}
+                            </div>
+                            ${item.desc ? `<div style="font-size:0.85rem; color:var(--text-muted, #64748b); margin-top:4px;">${item.desc}</div>` : ''}
+                        </div>
+                        <button onclick="treinarItemDict('${audioWord}')" style="background:#fff1f2; border:1px solid #fecdd3; color:#e11d48; padding:5px 14px; border-radius:20px; font-weight:700; font-size:0.8rem; cursor:pointer; display:flex; align-items:center; gap:4px; margin-top:4px;">
+                            🎴 Treinar
+                        </button>
+                    </div>
+                ` : isGrammar ? `
                     <div style="font-size:1.3rem; font-weight:bold; color:#dc2626; line-height:1.3; margin-bottom:8px; font-family:'Fredoka', sans-serif;">
                         ${item.primary}
                     </div>
@@ -542,6 +925,13 @@ function renderizarResultadosDicionario(queryStr = '') {
         btn.setAttribute('aria-pressed', btn.getAttribute('data-sub-vocab') === subNivelVocabDict ? 'true' : 'false');
     });
 
+    const isSpanishMode = (typeof document !== 'undefined' && document.body && (
+        document.body.getAttribute('data-lang') === 'spanish' ||
+        document.body.getAttribute('data-mode') === 'espanhol' ||
+        document.body.getAttribute('data-mode') === 'spanish' ||
+        (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('espanhol'))
+    ));
+
     const isEnglishMode = (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'english' ||
         document.body.getAttribute('data-mode') === 'pronuncia' ||
@@ -550,11 +940,21 @@ function renderizarResultadosDicionario(queryStr = '') {
     ));
 
     const temBuscaAtiva = String(queryStr || '').trim().length > 0;
-    const showAlphabetGrid = isEnglishMode && !temBuscaAtiva && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet');
+    const showAlphabetGrid = (isEnglishMode || isSpanishMode) && !temBuscaAtiva && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet');
 
     if (alphabetSection) {
         alphabetSection.style.display = showAlphabetGrid ? 'block' : 'none';
-        if (showAlphabetGrid) renderizarTabelaAlfabetoIngles();
+        if (showAlphabetGrid) {
+            if (isSpanishMode) renderizarTabelaAlfabetoEspanhol();
+            else renderizarTabelaAlfabetoIngles();
+        }
+    }
+
+    const regionalismosSection = document.getElementById('dict-regionalismos-section');
+    const showRegionalismosTable = isSpanishMode && (categoriaAtivaDict === 'regionalismos' || (categoriaAtivaDict === 'tudo' && temBuscaAtiva));
+    if (regionalismosSection) {
+        regionalismosSection.style.display = showRegionalismosTable ? 'block' : 'none';
+        if (showRegionalismosTable) renderizarTabelaRegionalismosEspanhol(queryStr);
     }
 
     let query = (queryStr || '').trim().toLowerCase();
@@ -595,7 +995,8 @@ function renderizarResultadosDicionario(queryStr = '') {
         const d = (item.desc || '').toLowerCase();
         const c = (item.context || '').toLowerCase();
         const m = (item.module || '').toLowerCase();
-        return p.includes(query) || s.includes(query) || d.includes(query) || c.includes(query) || m.includes(query);
+        const w = (item.warning || '').toLowerCase();
+        return p.includes(query) || s.includes(query) || d.includes(query) || c.includes(query) || m.includes(query) || w.includes(query);
     });
 
     glossarioFiltradoData = resFiltrado;
@@ -720,7 +1121,7 @@ function selecionarCategoriaDicionario(cat) {
     const subKanji = document.getElementById('dict-subfilters-kanji');
     const subVocab = document.getElementById('dict-subfilters-vocab') || document.getElementById('dict-subfilters-level');
     if (subKanji) subKanji.style.display = (cat === 'kanji') ? 'flex' : 'none';
-    if (subVocab) subVocab.style.display = (cat === 'vocab' || cat === 'grammar' || cat === 'phrasal' || cat === 'phonetics' || cat === 'tudo') ? 'flex' : 'none';
+    if (subVocab) subVocab.style.display = (cat === 'vocab' || cat === 'grammar' || cat === 'phrasal' || cat === 'phonetics' || cat === 'fonetica' || cat === 'falsos' || cat === 'heterotonicos' || cat === 'regionalismos' || cat === 'tudo') ? 'flex' : 'none';
 
     renderizarResultadosDicionario(document.getElementById('dict-search-input')?.value || '');
 }
@@ -780,6 +1181,59 @@ function renderizarTabelaAlfabetoIngles() {
     `).join('');
 }
 
+function renderizarTabelaAlfabetoEspanhol() {
+    const grid = document.getElementById('dict-alphabet-grid');
+    const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : null);
+    if (!grid || !dictData || !Array.isArray(dictData.alfabeto)) return;
+    grid.innerHTML = dictData.alfabeto.map(item => `
+        <button class="sound-card" onclick="speakKana('${(item.example || item.letter).replace(/'/g, "\\'")}')" style="background:var(--card-bg, #ffffff); border:1.5px solid var(--border-color, #e2e8f0); border-radius:16px; padding:14px 8px; text-align:center; cursor:pointer; transition:all 0.2s ease; box-shadow:0 2px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
+            <div style="font-size:1.6rem; font-weight:700; color:var(--text-main, #0f172a); font-family:'Fredoka', sans-serif;">${item.letter}</div>
+            <div style="font-size:0.92rem; color:#0d9488; font-weight:700; font-family:'Fredoka', sans-serif;">[ ${item.name} ]</div>
+            <div style="font-size:0.83rem; color:#0284c7; font-weight:600;">${item.phonetic}</div>
+            <div style="font-size:0.8rem; color:var(--text-muted, #475569); font-weight:600; margin-top:2px;">📌 ${item.example} (${item.translation})</div>
+        </button>
+    `).join('');
+}
+
+function renderizarTabelaRegionalismosEspanhol(queryStr = '') {
+    const tbody = document.getElementById('dict-regionalismos-tbody');
+    const fonRecursosData = (typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined')
+        ? FONETICA_RECURSOS_ESPANHOL_DADOS
+        : (typeof window !== 'undefined' ? window.FONETICA_RECURSOS_ESPANHOL_DADOS : null);
+    const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : null);
+
+    const regArray = (fonRecursosData && Array.isArray(fonRecursosData.regionalismos) && fonRecursosData.regionalismos.length > 0)
+        ? fonRecursosData.regionalismos
+        : (dictData && Array.isArray(dictData.regionalismos) ? dictData.regionalismos : []);
+
+    if (!tbody || regArray.length === 0) return;
+
+    const query = (queryStr || '').trim().toLowerCase();
+    const list = regArray.filter(r => {
+        if (!query) return true;
+        const c = (r.concepto || r.concept || '').toLowerCase();
+        const es = (r.espanha || r.es || r.spain || '').toLowerCase();
+        const mx = (r.mexico || r.mx || '').toLowerCase();
+        const ar = (r.argentina || r.ar || '').toLowerCase();
+        const co = (r.colombia || r.co || '').toLowerCase();
+        const chi = (r.chile || r.cl || '').toLowerCase();
+        const ot = (r.outros || r.otros || '').toLowerCase();
+        return c.includes(query) || es.includes(query) || mx.includes(query) || ar.includes(query) || co.includes(query) || chi.includes(query) || ot.includes(query);
+    });
+
+    tbody.innerHTML = list.map(r => `
+        <tr style="border-bottom: 1px solid var(--border-color, #e2e8f0); transition: background 0.2s;">
+            <td style="padding: 12px 16px; font-weight: 700; color: var(--text-main, #0f172a);">${r.concepto || r.concept || ''}</td>
+            <td style="padding: 12px 16px; font-weight: 600; color: #ef4444;">🇪🇸 ${r.espanha || r.es || r.spain || '-'}</td>
+            <td style="padding: 12px 16px; font-weight: 600; color: #22c55e;">🇲🇽 ${r.mexico || r.mx || '-'}</td>
+            <td style="padding: 12px 16px; font-weight: 600; color: #3b82f6;">🇦🇷 ${r.argentina || r.ar || '-'}</td>
+            <td style="padding: 12px 16px; font-weight: 600; color: #f59e0b;">🇨🇴 ${r.colombia || r.co || '-'}</td>
+            <td style="padding: 12px 16px; font-weight: 600; color: #e11d48;">🇨🇱 ${r.chile || r.cl || '-'}</td>
+            <td style="padding: 12px 16px; font-size: 0.85rem; color: var(--text-muted, #64748b);">${r.outros || r.otros || '-'}</td>
+        </tr>
+    `).join('');
+}
+
 function toggleFavoritoDict(word) {
     if (!word) return;
     let favs = [];
@@ -821,6 +1275,8 @@ if (typeof window !== 'undefined') {
     window.abrirModalDicionario = abrirModalDicionario;
     window.fecharModalDicionario = fecharModalDicionario;
     window.renderizarTabelaAlfabetoIngles = renderizarTabelaAlfabetoIngles;
+    window.renderizarTabelaAlfabetoEspanhol = renderizarTabelaAlfabetoEspanhol;
+    window.renderizarTabelaRegionalismosEspanhol = renderizarTabelaRegionalismosEspanhol;
     window.toggleFavoritoDict = toggleFavoritoDict;
     window.treinarItemDict = treinarItemDict;
 }

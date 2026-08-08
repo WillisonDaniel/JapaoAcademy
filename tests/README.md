@@ -30,6 +30,9 @@ npm test
 - retencao de 200 sessoes e 366 agregados diarios, idempotencia por ID e mesclagem local/remota sem soma dupla;
 - estatisticas avancadas da Etapa 29: periodos 7/30/90, filtros por idioma e atividade, formulas documentadas, dados parciais, distribuicoes textuais e divisao por zero;
 - graficos de aprendizado da Etapa 29: evolucao diaria por minutos, atividades ou revisoes, distribuicao por idioma ou atividade, SVG nativo, alternativas textuais e estados sem dados;
+- calendario de estudos da Etapa 29: navegacao mensal, resumo por dia com tempo ativo, sessoes, atividades, idiomas e precisao SRS (acertos/erros);
+- historico de revisoes SRS da Etapa 29: modelo v3, registro de ate 500 tentativas por usuario, deduplicacao por ID, filtros de periodo/idioma/resultado e paginacao;
+- insights personalizados locais da Etapa 29: motor deterministico por regras locais sem IA, maximo de 3 cards prioritarios com acoes diretas;
 - compatibilidade do dashboard com dados antigos, JSON corrompido, Firebase indisponivel, nomes potencialmente maliciosos e estados vazios;
 - atualizacao de intervalo, facilidade e indice do SRS;
 - correcoes criticas da Etapa 22, incluindo B2 modulo 12, Firebase, Service Worker e rolagem das aulas.

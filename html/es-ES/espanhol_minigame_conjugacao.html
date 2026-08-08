@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol Academy - Arcade de Conjugação Rápida ⚡</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            background: var(--bg-color, #f8fafc);
+            color: var(--text-main, #0f172a);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .arcade-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        .arcade-card-conj {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.08));
+            margin-top: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* TELA DE SELEÇÃO DE MODOS */
+        .arcade-title-box {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .arcade-title-box h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            color: #e11d48;
+            margin-bottom: 8px;
+        }
+
+        .arcade-title-box p {
+            color: var(--text-muted, #64748b);
+            font-size: 1rem;
+        }
+
+        .mode-select-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .mode-select-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mode-select-card {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            border-radius: 16px;
+            padding: 18px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .mode-select-card:hover {
+            border-color: #f43f5e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(244, 63, 94, 0.15);
+        }
+
+        .mode-select-card.selected {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .mode-select-card .mode-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .mode-select-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main, #0f172a);
+            margin-bottom: 4px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .mode-select-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted, #64748b);
+            line-height: 1.3;
+        }
+
+        .mode-badge-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            text-transform: uppercase;
+        }
+
+        .tag-green { background: #065f46; color: #34d399; }
+        .tag-yellow { background: #78350f; color: #fbbf24; }
+        .tag-purple { background: #581c87; color: #c084fc; }
+        .tag-red { background: #881337; color: #fda4af; }
+
+        /* TOGGLE DE VIDAS INFINITAS */
+        .infinite-lives-toggle-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--bg-color, #f1f5f9);
+            border: 1px solid var(--border-color, #cbd5e1);
+            padding: 12px 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main, #0f172a);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .infinite-lives-toggle-box:hover {
+            border-color: #10b981;
+        }
+
+        .infinite-lives-toggle-box input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #10b981;
+            cursor: pointer;
+        }
+
+        .btn-start-arcade {
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            color: #fff;
+            border: none;
+            border-radius: 16px;
+            padding: 16px 36px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.3);
+        }
+
+        .btn-start-arcade:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(225, 29, 72, 0.5);
+        }
+
+        /* STATUS DA ARENA */
+        .arcade-header-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-color, #f1f5f9);
+            padding: 12px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color, #cbd5e1);
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--text-main, #0f172a);
+        }
+
+        .pulse-combo {
+            animation: pulseGlow 0.6s infinite alternate;
+            color: #f59e0b !important;
+        }
+
+        @keyframes pulseGlow {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        /* INPUT MODE SELECTOR (CLIQUE vs VOZ) */
+        .input-mode-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .btn-toggle-input {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            color: var(--text-muted, #64748b);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-toggle-input.active {
+            border-color: #3b82f6;
+            color: #2563eb;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        /* TIMING BAR */
+        .timer-bar-container {
+            background: var(--bg-color, #f1f5f9);
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color, #cbd5e1);
+        }
+
+        .timer-bar-fill {
+            height: 100%;
+            width: 100%;
+            transition: width 0.05s linear;
+        }
+
+        /* BOSS ENCOUNTER BADGE */
+        .boss-badge {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            animation: bossFlash 0.8s infinite alternate;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+        }
+
+        @keyframes bossFlash {
+            from { opacity: 0.8; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.05); }
+        }
+
+        .verb-challenge-box {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .verb-challenge-box.boss-mode-active {
+            border-color: #d97706;
+            background: rgba(217, 119, 6, 0.1);
+            box-shadow: inset 0 0 30px rgba(217, 119, 6, 0.15), 0 0 20px rgba(217, 119, 6, 0.25);
+        }
+
+        .verb-pronoun {
+            color: #0284c7;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .verb-infinitive {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            color: #e11d48;
+            margin: 8px 0;
+        }
+
+        .boss-mode-active .verb-infinitive {
+            color: #d97706;
+        }
+
+        .verb-tense {
+            font-size: 0.85rem;
+            background: var(--card-bg, #ffffff);
+            color: var(--text-main, #0f172a);
+            border: 1px solid var(--border-color, #cbd5e1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        /* RESPOSTAS EM GRID */
+        .conj-options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 480px) {
+            .conj-options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .conj-btn {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            color: var(--text-main, #0f172a);
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .conj-btn:hover {
+            border-color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .conj-btn.btn-boss:hover {
+            border-color: #d97706;
+            background: rgba(217, 119, 6, 0.15);
+        }
+
+        /* MODAL DE FEEDBACK EDUCATIVO */
+        .feedback-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .feedback-modal-card {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid #ef4444;
+            border-radius: 20px;
+            padding: 24px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: modalPop 0.3s ease-out;
+            color: var(--text-main, #0f172a);
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .feedback-ans-box {
+            background: var(--bg-color, #f1f5f9);
+            border-radius: 12px;
+            padding: 14px;
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .btn-continue-modal {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        /* RECONHECIMENTO DE VOZ */
+        .mic-trigger-btn {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .mic-trigger-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body data-mode="spanish" data-lang="spanish">
+    <header>
+        <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
+        <h1>⚡ Arcade de Conjugação Rápida</h1>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+    </header>
+
+    <main class="arcade-container">
+        <!-- TELA 1: SELEÇÃO DE MODOS -->
+        <div id="arcade-mode-selection" class="arcade-card-conj">
+            <div class="arcade-title-box">
+                <h2>⚡ Arena de Conjugação Verbal</h2>
+                <p>Escolha um modo de treino ou encare a Sobrevivência com Chefões Irregulares!</p>
+            </div>
+
+            <div class="mode-select-grid">
+                <div class="mode-select-card" data-modo="presente" onclick="selecionarModoJogo('presente')">
+                    <span class="mode-badge-tag tag-green">A1-A2</span>
+                    <div class="mode-icon">🟢</div>
+                    <h3>Presente do Indicativo</h3>
+                    <p>Ideal para iniciantes automatizarem a conjugação regular e ditongada.</p>
+                </div>
+
+                <div class="mode-select-card" data-modo="preteritos" onclick="selecionarModoJogo('preteritos')">
+                    <span class="mode-badge-tag tag-yellow">A2-B1</span>
+                    <div class="mode-icon">🟡</div>
+                    <h3>Pretéritos & Passado</h3>
+                    <p>Domine o contraste entre Pretérito Indefinido e Imperfecto.</p>
+                </div>
+
+                <div class="mode-select-card" data-modo="subjuntivo_imperativo" onclick="selecionarModoJogo('subjuntivo_imperativo')">
+                    <span class="mode-badge-tag tag-purple">B1-B2</span>
+                    <div class="mode-icon">🟣</div>
+                    <h3>Subjuntivo & Imperativo</h3>
+                    <p>Para estudantes avançados dominarem hipóteses e ordens diretas.</p>
+                </div>
+
+                <div class="mode-select-card selected" data-modo="sobrevivencia" onclick="selecionarModoJogo('sobrevivencia')">
+                    <span class="mode-badge-tag tag-red">ARCADE</span>
+                    <div class="mode-icon">⚡</div>
+                    <h3>Modo Sobrevivência</h3>
+                    <p>Mistura total com velocidade progressiva e Chefões Irregulares (Bosses)!</p>
+                </div>
+            </div>
+
+            <!-- TOGGLE OPTION: VIDAS INFINITAS -->
+            <label class="infinite-lives-toggle-box">
+                <input type="checkbox" id="chk-vidas-infinitas" onchange="alternarVidasInfinitas(this.checked)">
+                <span>♾️ Ativar Vidas Infinitas (Treino Livre Sem Fim)</span>
+            </label>
+
+            <div style="margin-bottom: 20px; color: var(--text-muted, #64748b); font-weight: 600;">
+                🏆 Recorde Pessoal: <strong id="arcade-high-score" style="color: #d97706; font-size: 1.2rem;">0</strong> pts
+            </div>
+
+            <button onclick="iniciarArcadeConjugacao()" class="btn-start-arcade">ENTRAR NA ARENA 🚀</button>
+        </div>
+
+        <!-- TELA 2: ARENA DE JOGO -->
+        <div id="arcade-game-container" class="arcade-card-conj" style="display: none;">
+            <div class="input-mode-toggle">
+                <button id="btn-mode-click" class="btn-toggle-input active" onclick="alternarModoInput('click')">🖱️ Modo Clique</button>
+                <button id="btn-mode-voice" class="btn-toggle-input" onclick="alternarModoInput('voice')">🎙️ Modo Voz (es-ES)</button>
+            </div>
+
+            <div class="arcade-header-status">
+                <span>Vidas: <strong id="arcade-lives" style="color: #ef4444;">❤️❤️❤️</strong></span>
+                <span>Combo: <strong id="arcade-combo" style="color: #d97706;">x1</strong></span>
+                <span>Pontos: <strong id="arcade-score" style="color: #10b981;">0</strong></span>
+            </div>
+
+            <div class="timer-bar-container">
+                <div id="arcade-timer-bar" class="timer-bar-fill"></div>
+            </div>
+
+            <div id="boss-encounter-badge" class="boss-badge" style="display: none;">
+                🚨 BOSS ENCOUNTER! VERBO IRREGULAR LENDÁRIO (+20 XP & ❤️ +1)
+            </div>
+
+            <div id="verb-challenge-box" class="verb-challenge-box">
+                <span id="arcade-pronoun" class="verb-pronoun">YO</span>
+                <div id="arcade-infinitive" class="verb-infinitive">HABLAR</div>
+                <span id="arcade-tense" class="verb-tense">Presente de Indicativo</span>
+            </div>
+
+            <!-- MODO VOZ DISPLAY -->
+            <div id="voice-input-container" style="display: none; margin-bottom: 20px;">
+                <button onclick="escutarVozUsuario()" class="mic-trigger-btn">🎙️ Falar Conjugação</button>
+                <div id="voice-status-msg" style="font-size: 0.9rem; margin-top: 8px; font-weight: 600;">Clique para falar em espanhol</div>
+            </div>
+
+            <div id="arcade-options" class="conj-options-grid"></div>
+        </div>
+
+        <!-- TELA 3: FEEDBACK MODAL DE ERRO -->
+        <div id="arcade-feedback-modal" class="feedback-modal-overlay" style="display: none;">
+            <div class="feedback-modal-card">
+                <h3 style="color: #ef4444; font-size: 1.5rem; margin-bottom: 8px; font-family: 'Fredoka', sans-serif;">❌ Resposta Incorreta!</h3>
+
+                <div class="feedback-ans-box">
+                    <div style="color: var(--text-muted, #64748b); font-size: 0.88rem; margin-bottom: 4px;">Sua escolha / fala:</div>
+                    <div id="feedback-user-ans" style="color: #ef4444; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px;">-</div>
+
+                    <div style="color: var(--text-muted, #64748b); font-size: 0.88rem; margin-bottom: 4px;">✅ Conjugação correta:</div>
+                    <div id="feedback-correct-ans" style="color: #10b981; font-weight: 700; font-size: 1.3rem;">-</div>
+                </div>
+
+                <div style="background: rgba(245, 158, 11, 0.15); border-left: 4px solid #d97706; padding: 12px; border-radius: 8px; text-align: left; font-size: 0.9rem; color: var(--text-main, #0f172a); margin-bottom: 16px;">
+                    <strong>💡 Dica Rápida:</strong> <span id="feedback-tip-text">Atenção às irregularidades e terminações.</span>
+                </div>
+
+                <button onclick="fecharFeedbackEContinuar()" class="btn-continue-modal">Continuar ➔</button>
+            </div>
+        </div>
+
+        <!-- TELA 4: GAME OVER -->
+        <div id="arcade-game-over" class="arcade-card-conj" style="display: none;">
+            <h2 style="color: #e11d48; font-size: 2.2rem; font-family: 'Fredoka', sans-serif;">🎮 Fim da Partida!</h2>
+            <div id="new-record-msg" style="color: #d97706; font-weight: 800; font-size: 1.3rem; margin: 10px 0; display: none;">
+                🎉 NOVO RECORDE PESSOAL! 🏆
+            </div>
+            <p style="font-size: 1.25rem; margin: 15px 0;">Sua pontuação total: <strong id="final-score" style="color: #10b981; font-size: 1.8rem;">0</strong> pts</p>
+
+            <div style="display: flex; gap: 12px; justify-content: center; margin-top: 20px;">
+                <button onclick="iniciarArcadeConjugacao()" class="btn-start-arcade" style="flex: 1;">Jogar Novamente 🔄</button>
+                <button onclick="voltarMenuModos()" class="btn-toggle-input" style="padding: 16px 24px; font-size: 1.1rem;">Menu 🏠</button>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../database/es-ES/data_espanhol_fonetica_recursos.js"></script>
+    <script src="../../js/minigame/minigame_conjugacao.js"></script>
+</body>
+
+</html>

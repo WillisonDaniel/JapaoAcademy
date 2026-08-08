@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol Academy - Curso Completo</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="curso" data-lang="spanish">
+    <header>
+        <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
+        <h1>💃 Curso de Espanhol (CEFR)</h1>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <!-- TELA 1: HUB DE NÍVEIS DO ESPANHOL -->
+    <main id="hub-niveis" class="container">
+        <!-- BANNER DE REVISÃO SRS -->
+        <div class="banner-srs" aria-busy="true">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
+                <h3>Smart Memory Review</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão em espanhol...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS()" class="btn-srs-action">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <h2>Hub de Proficiência em Espanhol</h2>
+
+        <!-- DASHBOARD DE PROGRESSO GLOBAL -->
+        <div id="dashboard-progresso-global" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 25px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="margin: 0; font-size: 1.1rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                    <span>📊</span> Progresso Geral do Curso
+                </h3>
+                <span id="txt-progresso-porcentagem" style="font-weight: 700; color: #ff5722; font-size: 1.1rem;">0% Concluído</span>
+            </div>
+            <div style="background: var(--border-color); height: 12px; border-radius: 6px; overflow: hidden; position: relative;">
+                <div id="bar-progresso-global" style="background: linear-gradient(90deg, #ff5722, #ffc107); height: 100%; width: 0%; transition: width 0.5s ease; border-radius: 6px;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);">
+                <span id="txt-progresso-modulos">0 de 108 Módulos Concluídos</span>
+                <span>Metodologia CEFR A1–B2</span>
+            </div>
+        </div>
+
+        <!-- CARDS DOS 4 NÍVEIS CEFR -->
+        <div class="grid-niveis">
+            <div class="card-nivel" id="card-nivel-a1" onclick="abrirTrilha('A1')">
+                <span class="tag" style="background: #22c55e; color: #fff;">A1 • BEGINNER</span>
+                <h3>Iniciante - Sobrevivência</h3>
+                <p>30 Módulos • Saudações, Compras e Frases Essenciais</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-a1">0 / 30 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-a2" onclick="abrirTrilha('A2')">
+                <span class="tag" style="background: #2563eb; color: #fff;">A2 • ELEMENTARY</span>
+                <h3>Básico+ - Cotidiano</h3>
+                <p>30 Módulos • Passado, Viagens e Hábitos</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-a2">0 / 30 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b1" onclick="abrirTrilha('B1')">
+                <span class="tag" style="background: #ff5722; color: #fff;">B1 • INTERMEDIATE</span>
+                <h3>Intermediário - Autonomia</h3>
+                <p>24 Módulos • Subjuntivo, Desejos e E-mails Formais</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-b1">0 / 24 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b2" onclick="abrirTrilha('B2')">
+                <span class="tag" style="background: #e11d48; color: #fff;">B2 • ADVANCED</span>
+                <h3>Avançado - Fluência</h3>
+                <p>24 Módulos • Condicionais, Negociações e Mídia Nativa</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-b2">0 / 24 Módulos</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A1 (30 MÓDULOS) -->
+    <main id="trilha-a1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A1 - Espanhol de Sobrevivência</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Primeiros Cumprimentos & Apresentação</h3>
+            <div id="lista-modulos-secao1">
+                <button class="btn-modulo" id="mod-0-btn" onclick="iniciarModulo(0, 'A1')">🔓 Módulo 1: Saludos y Despedidas</button>
+                <button class="btn-modulo" id="mod-1-btn" onclick="iniciarModulo(1, 'A1')">🔓 Módulo 2: Presentaciones Personales</button>
+                <button class="btn-modulo" id="mod-2-btn" onclick="iniciarModulo(2, 'A1')">🔓 Módulo 3: Las Palabras Mágicas</button>
+                <button class="btn-modulo" id="mod-3-btn" onclick="iniciarModulo(3, 'A1')">🔓 Módulo 4: ¿Sí o No? y Afirmaciones</button>
+                <button class="btn-modulo" id="mod-4-btn" onclick="iniciarModulo(4, 'A1')">🔓 Módulo 5: Personas y Pronombres Sujeto</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Identidade, Origem & Ser vs. Estar</h3>
+            <div>
+                <button class="btn-modulo" id="mod-5-btn" onclick="iniciarModulo(5, 'A1')">🔓 Módulo 6: Países y Nacionalidades</button>
+                <button class="btn-modulo" id="mod-6-btn" onclick="iniciarModulo(6, 'A1')">🔓 Módulo 7: Profesiones y Trabajos I</button>
+                <button class="btn-modulo" id="mod-7-btn" onclick="iniciarModulo(7, 'A1')">🔓 Módulo 8: Ser vs. Estar I</button>
+                <button class="btn-modulo" id="mod-8-btn" onclick="iniciarModulo(8, 'A1')">🔓 Módulo 9: La Arte de Preguntar</button>
+                <button class="btn-modulo" id="mod-9-btn" onclick="iniciarModulo(9, 'A1')">🔓 Módulo 10: Números 1 a 30 y la Edad</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Objetos, Lugares & Posesivos</h3>
+            <div>
+                <button class="btn-modulo" id="mod-10-btn" onclick="iniciarModulo(10, 'A1')">🔓 Módulo 11: Demonstrativos (Esto, Eso, Aquello)</button>
+                <button class="btn-modulo" id="mod-11-btn" onclick="iniciarModulo(11, 'A1')">🔓 Módulo 12: Kit de Sobrevivencia Pessoal</button>
+                <button class="btn-modulo" id="mod-12-btn" onclick="iniciarModulo(12, 'A1')">🔓 Módulo 13: Lugares Esenciales de la Ciudad</button>
+                <button class="btn-modulo" id="mod-13-btn" onclick="iniciarModulo(13, 'A1')">🔓 Módulo 14: La Casa y la Habitación</button>
+                <button class="btn-modulo" id="mod-14-btn" onclick="iniciarModulo(14, 'A1')">🔓 Módulo 15: Posesivos Básicos</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Compras, Restaurante & Alimentação</h3>
+            <div>
+                <button class="btn-modulo" id="mod-15-btn" onclick="iniciarModulo(15, 'A1')">🔓 Módulo 16: En el Restaurante</button>
+                <button class="btn-modulo" id="mod-16-btn" onclick="iniciarModulo(16, 'A1')">🔓 Módulo 17: Comida y Bebida I</button>
+                <button class="btn-modulo" id="mod-17-btn" onclick="iniciarModulo(17, 'A1')">🔓 Módulo 18: Sabores y Gustos</button>
+                <button class="btn-modulo" id="mod-18-btn" onclick="iniciarModulo(18, 'A1')">🔓 Módulo 19: Compras y Precios</button>
+                <button class="btn-modulo" id="mod-19-btn" onclick="iniciarModulo(19, 'A1')">🔓 Módulo 20: En la Tienda y Supermercado</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Horas, Rutina & Frequência</h3>
+            <div>
+                <button class="btn-modulo" id="mod-20-btn" onclick="iniciarModulo(20, 'A1')">🔓 Módulo 21: ¿Qué hora es?</button>
+                <button class="btn-modulo" id="mod-21-btn" onclick="iniciarModulo(21, 'A1')">🔓 Módulo 22: Días de la Semana y Meses</button>
+                <button class="btn-modulo" id="mod-22-btn" onclick="iniciarModulo(22, 'A1')">🔓 Módulo 23: Momentos del Día y Frecuencia</button>
+                <button class="btn-modulo" id="mod-23-btn" onclick="iniciarModulo(23, 'A1')">🔓 Módulo 24: Verbos de Rutina I</button>
+                <button class="btn-modulo" id="mod-24-btn" onclick="iniciarModulo(24, 'A1')">🔓 Módulo 25: Verbos de Movimiento</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Deslocamento, Clima & Falsos Amigos</h3>
+            <div>
+                <button class="btn-modulo" id="mod-25-btn" onclick="iniciarModulo(25, 'A1')">🔓 Módulo 26: Medios de Transporte</button>
+                <button class="btn-modulo" id="mod-26-btn" onclick="iniciarModulo(26, 'A1')">🔓 Módulo 27: Perdido en la Ciudad</button>
+                <button class="btn-modulo" id="mod-27-btn" onclick="iniciarModulo(27, 'A1')">🔓 Módulo 28: El Tiempo Climático</button>
+                <button class="btn-modulo" id="mod-28-btn" onclick="iniciarModulo(28, 'A1')">🔓 Módulo 29: Introducción a los Falsos Amigos</button>
+                <button class="btn-modulo" id="mod-29-btn" onclick="iniciarModulo(29, 'A1')">🔓 Módulo 30: Desafío Final A1: Simulación de Viaje</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A2 (30 MÓDULOS) -->
+    <main id="trilha-a2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A2 - Espanhol Cotidiano & Passado</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Pretérito Indefinido & Viagens</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'A2')">🔓 Módulo 1: Verbos Regulares no Passado (Indefinido)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'A2')">🔓 Módulo 2: Verbos Irregulares Clássicos (Fui, Tuve, Hice)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'A2')">🔓 Módulo 3: Marcadores Temporais do Passado</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'A2')">🔓 Módulo 4: Relatando o Fim de Semana / Viagem</button>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'A2')">🔓 Módulo 5: Biografias e Marcos da Vida</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Imperfecto, Infância & Comparação</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'A2')">🔓 Módulo 6: Como as Coisas Eram (Imperfecto)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'A2')">🔓 Módulo 7: Infância e Hábitos Antigos</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'A2')">🔓 Módulo 8: Indefinido vs. Imperfecto</button>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'A2')">🔓 Módulo 9: Pretérito Perfecto (Haber + Participio)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'A2')">🔓 Módulo 10: Comparando Épocas e Mudanças</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Preferências, Descrição & Conselhos</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'A2')">🔓 Módulo 11: El Verbo Gustar y Similares</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'A2')">🔓 Módulo 12: Adjetivos para Descrever Pessoas e Lugares</button>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'A2')">🔓 Módulo 13: Comparativos y Superlativos</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'A2')">🔓 Módulo 14: Expressando Desejos e Intenções</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'A2')">🔓 Módulo 15: Pedindo e Dando Conselhos Leves</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Saúde, Hotel & Compras Avançadas</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'A2')">🔓 Módulo 16: Partes del Cuerpo Humano</button>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'A2')">🔓 Módulo 17: En el Médico / En la Farmacia</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'A2')">🔓 Módulo 18: Estada em Hotéis e Hostales</button>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'A2')">🔓 Módulo 19: Compras de Roupas e Calçados</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'A2')">🔓 Módulo 20: Pronombres de Objeto Directo e Indirecto I</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Convites, Futuro Próximo & Rutina Completa</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'A2')">🔓 Módulo 21: Hacer y Aceptar Invitaciones</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'A2')">🔓 Módulo 22: Rejeitar Convites com Polidez</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'A2')">🔓 Módulo 23: Futuro Próximo (Ir a + Infinitivo)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'A2')">🔓 Módulo 24: Verbos Reflexivos da Rutina Completa</button>
+                <button class="btn-modulo" onclick="iniciarModulo(24, 'A2')">🔓 Módulo 25: Descrever Clima e Estações Avançado</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Aeroporto, Reclamações & Simulação</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(25, 'A2')">🔓 Módulo 26: Resolver Imprevistos e Reclamações</button>
+                <button class="btn-modulo" onclick="iniciarModulo(26, 'A2')">🔓 Módulo 27: En el Aeropuerto y Aduana</button>
+                <button class="btn-modulo" onclick="iniciarModulo(27, 'A2')">🔓 Módulo 28: Pronúncia e Variações Dialetais I</button>
+                <button class="btn-modulo" onclick="iniciarModulo(28, 'A2')">🔓 Módulo 29: Revisão Geral A2</button>
+                <button class="btn-modulo" onclick="iniciarModulo(29, 'A2')">🔓 Módulo 30: Desafío Final A2: Simulación Completa de Férias</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL B1 (24 MÓDULOS) -->
+    <main id="trilha-b1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B1 - Espanhol de Autonomia & Subjuntivo</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: O Modo Subjuntivo & Expressão de Emoções</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'B1')">🔓 Módulo 1: O Que é o Subjuntivo e Como Formar</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'B1')">🔓 Módulo 2: Expressando Desejos e Esperanças</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'B1')">🔓 Módulo 3: Expressando Dúvidas e Incertezas</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'B1')">🔓 Módulo 4: Valorativa e Julgamentos Impessoais</button>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'B1')">🔓 Módulo 5: Recomendações e Conselhos com Subjuntivo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'B1')">🔓 Módulo 6: Expressando Sentimentos e Emoções</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Imperativo, Futuro & Condicional</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'B1')">🔓 Módulo 7: Imperativo Afirmativo e Negativo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'B1')">🔓 Módulo 8: Colocação de Pronomes com Imperativo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'B1')">🔓 Módulo 9: Futuro Simple de Indicativo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'B1')">🔓 Módulo 10: Previsões e Hipóteses sobre o Presente</button>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'B1')">🔓 Módulo 11: O Modo Condicional Simple</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'B1')">🔓 Módulo 12: Dar Conselhos Hipotéticos</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Argumentação, E-mails Formais & Trabalho</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'B1')">🔓 Módulo 13: Estilo Indirecto (Relatar fala dos outros)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'B1')">🔓 Módulo 14: Conectores de Argumentação</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'B1')">🔓 Módulo 15: Aunque + Indicativo vs. Subjuntivo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'B1')">🔓 Módulo 16: Descrever Filmes, Livros e Séries</button>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'B1')">🔓 Módulo 17: Redação de E-mails Formais</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'B1')">🔓 Módulo 18: Entrevistas de Trabajo en Español</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Pluscuamperfecto, Cultura & Variações</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'B1')">🔓 Módulo 19: Llamadas Telefónicas y Videoconferencias</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'B1')">🔓 Módulo 20: Pretérito Pluscuamperfecto</button>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'B1')">🔓 Módulo 21: Variações América Latina vs. Espanha</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'B1')">🔓 Módulo 22: Expressões Idiomáticas Hispânicas I</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'B1')">🔓 Módulo 23: Pretérito Imperfecto de Subjuntivo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'B1')">🔓 Módulo 24: Desafío Final B1: Debate Simulado e Apresentação</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL B2 (24 MÓDULOS) -->
+    <main id="trilha-b2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B2 - Espanhol Avançado & Fluência</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Condicionais Irreais & Negociação</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'B2')">🔓 Módulo 1: Condicionais Irreais do Passado</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'B2')">🔓 Módulo 2: Orações Relativas com Subjuntivo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'B2')">🔓 Módulo 3: Subjuntivo em Orações Temporais e Modais</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'B2')">🔓 Módulo 4: Usos Avançados de Se (Se involuntário)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'B2')">🔓 Módulo 5: Negociación y Resolución de Conflictos</button>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'B2')">🔓 Módulo 6: Presentaciones Ejecutivas y Discursos</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Linguagem Corporativa & Noticiário</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'B2')">🔓 Módulo 7: Lenguaje Jurídico y Burocrático Básico</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'B2')">🔓 Módulo 8: Redacción de Informes y Textos Académicos</button>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'B2')">🔓 Módulo 9: Análisis de Noticias y Periódicos</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'B2')">🔓 Módulo 10: Comprensión de Podcasts y Radio Nativa</button>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'B2')">🔓 Módulo 11: Cine, Series y Música Hispanoamericana</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'B2')">🔓 Módulo 12: Debates sobre Temas Sociales y Tecnología</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Literatura, Ironia & Refranes</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'B2')">🔓 Módulo 13: Literatura Hispânica</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'B2')">🔓 Módulo 14: Comprensión del Humor, Ironía y Sarcasmo</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'B2')">🔓 Módulo 15: Refranes y Proverbios Populares</button>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'B2')">🔓 Módulo 16: Conectores de Matiz Avanzados</button>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'B2')">🔓 Módulo 17: El Valor de las Preposiciones Complejas</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'B2')">🔓 Módulo 18: Estilo Directo e Indirecto Avanzado en Noticiero</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Nuances de Ser/Estar & Exame Integrado</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'B2')">🔓 Módulo 19: Cambios de Significado según Ser/Estar</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'B2')">🔓 Módulo 20: El Subjuntivo en Frases Hechas</button>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'B2')">🔓 Módulo 21: Simulación de Entrevista en Medios / Conferencia</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'B2')">🔓 Módulo 22: Redacción Creativa y Ensayo Personal</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'B2')">🔓 Módulo 23: Repaso General de Maestría B2</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'B2')">🔓 Módulo 24: Desafío Final B2: Examen Integrado de Fluidez</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 3: PLAYER DE AULAS DE 5 ETAPAS (PADRONIZADO) -->
+    <main id="player-aula" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="etapa-titulo">Etapa 1 de 5</span>
+            <button onclick="fecharAula()">✖ Sair</button>
+        </div>
+        <div id="conteudo-etapa"></div>
+        <div class="botoes-acao">
+            <button id="btn-voltar-etapa" onclick="voltarEtapa()" style="display: none;">⬅ Voltar</button>
+            <button id="btn-avancar" onclick="avancarEtapa()">Avançar ➔</button>
+        </div>
+    </main>
+
+    <!-- TELA 4: PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../database/es-ES/data_espanhol_a1.js"></script>
+    <script src="../../database/es-ES/data_espanhol_a2.js"></script>
+    <script src="../../database/es-ES/data_espanhol_b1.js"></script>
+    <script src="../../database/es-ES/data_espanhol_b2.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/dictionary.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script>
+    <script src="../../js/course/tabs.js"></script>
+    <script src="../../js/course/course.js"></script>
+    <script src="../../js/course/quiz.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/srs/engine.js"></script>
+    <script src="../../js/srs/deck.js"></script>
+    <script src="../../js/srs/review.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

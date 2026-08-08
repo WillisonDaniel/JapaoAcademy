@@ -4,7 +4,11 @@
 Plataforma mobile-first e data-driven para aprendizado do idioma japonês, englobando o Curso Principal (CEFR A1) e Módulos de Fixação/Alfabetização (Hiragana, Katakana, Kanji N5 e Minigame com reconhecimento de voz/digitação).
 
 ## 🧱 Arquitetura de Arquivos
-- `index.html`: Portal de entrada e navegação principal da plataforma.
+- `index.html`: Dashboard principal da plataforma ("Meu Progresso", metas diárias, calendário e estatísticas).
+- `hub_idiomas.html`: Portal de seleção de idiomas (Japonês / Inglês / Espanhol).
+- `hub_espanhol.html` & `espanhol_curso.html`: Portal e player do curso de Espanhol (CEFR A1 a B2 - 108 módulos).
+- `espanhol_falsos_amigos.html` & `espanhol_minigame_conjugacao.html`: Arena de Quiz de Falsos Cognatos e Arcade de Conjugação Rápida.
+- `espanhol_dicionario.html` & `data_espanhol_dicionario.js`: Dicionário Interativo, Heterotónicos e Regionalismos por país.
 - `curso.html` & `data_curso_a1.js`: Trilha principal de conversação A1 (módulos pedagógicos em 5 etapas) e seu banco de dados centralizado.
 - `hiragana.html` & `data_hiragana.js`: Módulo de aprendizado de Hiragana e tabela fonética.
 - `katakana.html` & `data_katakana.js`: Módulo de aprendizado de Katakana.

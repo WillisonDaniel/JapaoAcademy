@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha de Falsos Cognatos (A1 a B2) - Espanhol Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --fa-primary: #d97706;
+            --fa-dark: #b45309;
+        }
+
+        .fa-hub-card {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: var(--shadow, 0 4px 6px -1px rgba(0,0,0,0.05));
+            margin-bottom: 24px;
+            transition: all 0.2s ease;
+        }
+
+        .fa-niveis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .card-nivel-fa {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-nivel-fa:hover {
+            transform: translateY(-4px);
+            border-color: var(--fa-primary);
+            box-shadow: 0 10px 15px -3px rgba(217, 119, 6, 0.15);
+        }
+
+        .card-nivel-fa.selected-level {
+            border-color: var(--fa-primary);
+            background: rgba(217, 119, 6, 0.05);
+        }
+
+        .card-nivel-fa .tag {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-family: 'Fredoka', sans-serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-favoritar-dict {
+            background: #fffbeb;
+            border: 1.5px solid #fde68a;
+            color: #d97706;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            transition: all 0.2s ease;
+        }
+
+        .btn-favoritar-dict:hover {
+            background: #fef3c7;
+            transform: translateY(-1px);
+        }
+
+        .dark-theme .btn-favoritar-dict {
+            background: rgba(217, 119, 6, 0.15);
+            border-color: rgba(253, 230, 138, 0.3);
+            color: #fde68a;
+        }
+
+        .navegacao-aula {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        #btn-fa-voltar-etapa {
+            border-radius: 25px;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        #btn-fa-avancar {
+            margin-left: auto;
+            background: linear-gradient(135deg, var(--fa-primary, #d97706), var(--fa-dark, #b45309));
+            color: #ffffff;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        #btn-fa-avancar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(217, 119, 6, 0.35);
+        }
+
+        #btn-fa-avancar.btn-finalizar-modulo {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+            color: #ffffff !important;
+        }
+
+        #btn-fa-avancar.btn-finalizar-modulo:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+        }
+
+        .btn-verificar-frase {
+            background: linear-gradient(135deg, #0d9488, #0f766e);
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-verificar-frase:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.35);
+        }
+
+        .btn-sb-limpar {
+            background: var(--card-bg, #ffffff);
+            border: 1.5px solid var(--border-color, #cbd5e1);
+            color: var(--text-muted, #64748b);
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-sb-limpar:hover {
+            border-color: #dc2626;
+            color: #dc2626;
+        }
+
+        .btn-secundario-hub {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            color: var(--text-main);
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secundario-hub:hover {
+            border-color: var(--fa-primary, #d97706);
+            color: var(--fa-primary, #d97706);
+            transform: translateY(-2px);
+        }
+
+        .btn-modulo-fa {
+            width: 100%;
+            background: var(--card-bg, #ffffff);
+            border: 1.5px solid var(--border-color, #e2e8f0);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-main);
+        }
+
+        .btn-modulo-fa:hover {
+            border-color: var(--fa-primary);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-modulo-fa.mod-done {
+            border-left: 5px solid #10b981;
+        }
+
+        .btn-modulo-fa.mod-open {
+            border-left: 5px solid #3b82f6;
+        }
+
+        .fa-stage-card {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .fa-badge-warning {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecdd3;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .fa-badge-xp {
+            background: #fef3c7;
+            color: #d97706;
+            border: 1px solid #fde68a;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .fa-box-real-meaning {
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            text-align: left;
+        }
+
+        .fa-box-alert-warning {
+            background: #fef2f2;
+            border: 1px solid #fecdd3;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            text-align: left;
+        }
+
+        .fa-box-example {
+            background: #f0fdf4;
+            border: 1px solid #99f6e4;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 14px 0;
+            text-align: left;
+        }
+
+        .fa-opt-btn, .fa-quiz-opt-btn {
+            background: var(--bg-color);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .fa-opt-btn:hover, .fa-quiz-opt-btn:hover {
+            border-color: var(--fa-primary);
+            transform: translateX(4px);
+        }
+
+        .fa-dialog-container {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .fa-dialog-bubble {
+            background: var(--bg-color);
+            border: 1.5px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px 18px;
+            max-width: 85%;
+        }
+
+        .fa-dialog-bubble.left {
+            align-self: flex-start;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .fa-dialog-bubble.right {
+            align-self: flex-end;
+            border-right: 4px solid #10b981;
+            background: #ecfdf5;
+        }
+
+        .dark-theme .fa-dialog-bubble.right {
+            background: rgba(16, 185, 129, 0.15);
+        }
+
+        .fa-word-chip {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .fa-word-chip:hover {
+            border-color: var(--fa-primary);
+            background: rgba(217, 119, 6, 0.1);
+        }
+
+        .fa-word-chip.selected {
+            background: #0d9488;
+            color: #ffffff;
+            border-color: #0f766e;
+        }
+
+        .btn-audio-guide {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            color: #d97706;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-audio-guide:hover {
+            background: #fef3c7;
+        }
+    </style>
+</head>
+
+<body data-mode="falsos_amigos" data-lang="spanish">
+    <header>
+        <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1>🚨 Falsos Cognatos de Espanhol (A1 a B2)</h1>
+        <p>Domine os 16 Módulos Anti-Portunhol, evite armadilhas e comunique-se com proficiência nativa.</p>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <div class="container" id="study-area">
+        <!-- BANNER DE REVISÃO SRS DE FALSOS COGNATOS -->
+        <div class="banner-srs" aria-busy="true"
+            style="background: linear-gradient(135deg, #d97706, #b45309); border-color: rgba(217, 119, 6, 0.3);">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag"
+                    style="background: rgba(255, 255, 255, 0.2); color: #fef3c7; border-color: #fde68a;">🧠 REPETIÇÃO
+                    ESPAÇADA (SRS)</span>
+                <h3>Falsos Amigos Memory Review</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos"
+                        onclick="selecionarModoSRS('todos', 'falsos_amigos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos"
+                        onclick="selecionarModoSRS('favoritos', 'falsos_amigos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros"
+                        onclick="selecionarModoSRS('erros', 'falsos_amigos')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>pendentes</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('falsos_amigos')" class="btn-srs-action"
+                    style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <!-- TELA 1: HUB DE NÍVEIS (A1, A2, B1, B2) -->
+        <main id="hub-niveis" class="container" style="display: block;">
+            <div class="fa-hub-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                    <h2 style="font-size: 1.4rem; color: var(--text-main); margin: 0; font-family: 'Fredoka', sans-serif;">
+                        🏆 Trilha Gamificada Anti-Portunhol
+                    </h2>
+                    <span id="fa-hub-progresso-texto" style="font-size: 0.95rem; color: var(--text-muted);">
+                        Progresso: <strong>0 de 16 Módulos</strong> (0%)
+                    </span>
+                </div>
+                <div style="width: 100%; height: 12px; background: var(--bg-color); border-radius: 10px; overflow: hidden; border: 1px solid var(--border-color);">
+                    <div id="fa-hub-progresso-barra" style="width: 0%; height: 100%; background: linear-gradient(90deg, #d97706, #10b981); transition: width 0.4s ease;"></div>
+                </div>
+            </div>
+
+            <div class="fa-niveis-grid">
+                <div class="card-nivel-fa selected-level" id="card-nivel-fa-a1" onclick="abrirTrilhaFA('A1')">
+                    <span class="tag" style="background: #10b981; color: #fff;">A1 • SOBREVIVÊNCIA</span>
+                    <h3 style="margin: 8px 0 4px 0; font-family: 'Fredoka', sans-serif;">Nível A1</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Módulos 1 a 4 • Restaurante, Corpo, Cidade & Adjetivos I</p>
+                    <div style="margin-top: 12px; font-weight: bold; font-size: 0.88rem; color: #10b981;" id="prog-fa-a1">0 / 4 Módulos Concluídos</div>
+                </div>
+
+                <div class="card-nivel-fa" id="card-nivel-fa-a2" onclick="abrirTrilhaFA('A2')">
+                    <span class="tag" style="background: #2563eb; color: #fff;">A2 • DIA A DIA</span>
+                    <h3 style="margin: 8px 0 4px 0; font-family: 'Fredoka', sans-serif;">Nível A2</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Módulos 5 a 8 • Trabalho, Tempo, Roupas & Sentimentos</p>
+                    <div style="margin-top: 12px; font-weight: bold; font-size: 0.88rem; color: #2563eb;" id="prog-fa-a2">0 / 4 Módulos Concluídos</div>
+                </div>
+
+                <div class="card-nivel-fa" id="card-nivel-fa-b1" onclick="abrirTrilhaFA('B1')">
+                    <span class="tag" style="background: #ff5722; color: #fff;">B1 • INTERMEDIÁRIO</span>
+                    <h3 style="margin: 8px 0 4px 0; font-family: 'Fredoka', sans-serif;">Nível B1</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Módulos 9 a 12 • Corporativo, Saúde, Adjetivos II & Verbos</p>
+                    <div style="margin-top: 12px; font-weight: bold; font-size: 0.88rem; color: #ff5722;" id="prog-fa-b1">0 / 4 Módulos Concluídos</div>
+                </div>
+
+                <div class="card-nivel-fa" id="card-nivel-fa-b2" onclick="abrirTrilhaFA('B2')">
+                    <span class="tag" style="background: #e11d48; color: #fff;">B2 • AVANÇADO</span>
+                    <h3 style="margin: 8px 0 4px 0; font-family: 'Fredoka', sans-serif;">Nível B2</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Módulos 13 a 16 • Direito, Nuances, Humor & Desafio Final</p>
+                    <div style="margin-top: 12px; font-weight: bold; font-size: 0.88rem; color: #e11d48;" id="prog-fa-b2">0 / 4 Módulos Concluídos</div>
+                </div>
+            </div>
+
+            <!-- TRILHAS DE MÓDULOS DE CADA NÍVEL -->
+            <div id="trilha-fa-a1" class="secao-trilha fa-stage-card" style="display: none; text-align: left;">
+                <h3 style="font-family: 'Fredoka', sans-serif; color: #10b981; margin-bottom: 18px; font-size: 1.3rem;">📂 Nível A1: Falsos Cognatos de Sobrevivência</h3>
+                <div id="lista-modulos-fa-a1"></div>
+            </div>
+
+            <div id="trilha-fa-a2" class="secao-trilha fa-stage-card" style="display: none; text-align: left;">
+                <h3 style="font-family: 'Fredoka', sans-serif; color: #2563eb; margin-bottom: 18px; font-size: 1.3rem;">📂 Nível A2: Falsos Cognatos do Dia a Dia</h3>
+                <div id="lista-modulos-fa-a2"></div>
+            </div>
+
+            <div id="trilha-fa-b1" class="secao-trilha fa-stage-card" style="display: none; text-align: left;">
+                <h3 style="font-family: 'Fredoka', sans-serif; color: #ff5722; margin-bottom: 18px; font-size: 1.3rem;">📂 Nível B1: Falsos Cognatos Sociais & Profissionais</h3>
+                <div id="lista-modulos-fa-b1"></div>
+            </div>
+
+            <div id="trilha-fa-b2" class="secao-trilha fa-stage-card" style="display: none; text-align: left;">
+                <h3 style="font-family: 'Fredoka', sans-serif; color: #e11d48; margin-bottom: 18px; font-size: 1.3rem;">📂 Nível B2: Falsos Cognatos Avançados & Nuances</h3>
+                <div id="lista-modulos-fa-b2"></div>
+            </div>
+        </main>
+
+        <!-- TELA 2: PLAYER PEDAGÓGICO DE 5 ESTÁGIOS (OCULTO POR PADRÃO) -->
+        <main id="player-aula" class="container" style="display: none;">
+            <div class="barra-progresso">
+                <span id="fa-etapa-titulo">Etapa 1 de 5: Contexto & Alerta</span>
+                <button onclick="fecharAulaFA()">✖ Sair do Módulo</button>
+            </div>
+
+            <div id="conteudo-etapa-fa" aria-busy="true">
+                <!-- Conteúdo renderizado dinamicamente pelo falsos_amigos.js -->
+            </div>
+
+            <div class="navegacao-aula">
+                <button id="btn-fa-voltar-etapa" onclick="voltarEtapaFA()" class="btn-secundario">⬅ Voltar</button>
+                <button id="btn-fa-avancar" onclick="avançarEtapaFA()" class="btn-primario">Avançar ➔</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPTS E BANCO DE DADOS -->
+    <script src="../../database/es-ES/data_espanhol_falsos_amigos.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/dictionary.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/course/tabs.js"></script>
+    <script src="../../js/course/course.js"></script>
+    <script src="../../js/course/quiz.js"></script>
+    <script src="../../js/falsos_amigos/falsos_amigos.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/game/minigames.js"></script>
+    <script src="../../js/srs/engine.js"></script>
+    <script src="../../js/srs/deck.js"></script>
+    <script src="../../js/srs/review.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

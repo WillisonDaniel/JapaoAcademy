@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonética, Verbos & Recursos de Espanhol | Japão Academy</title>
+
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="../../style.css?v=28f">
+
+    <style>
+        :root {
+            --fon-primary: #0d9488;
+            --fon-dark: #0f766e;
+        }
+
+        .fon-tabs-nav {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .btn-fon-tab {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #e2e8f0);
+            color: var(--text-main);
+            padding: 14px 22px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-fon-tab:hover {
+            border-color: var(--fon-primary);
+            transform: translateY(-2px);
+        }
+
+        .btn-fon-tab.active-tab {
+            background: linear-gradient(135deg, var(--fon-primary), var(--fon-dark));
+            color: #ffffff;
+            border-color: var(--fon-primary);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+        }
+
+        .fon-lvl-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-fon-lvl {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-fon-lvl.selected-lvl {
+            background: #0d9488;
+            color: #ffffff;
+            border-color: #0f766e;
+        }
+
+        .fon-example-chip {
+            background: var(--card-bg);
+            border: 1.5px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .fon-search-input {
+            width: 100%;
+            max-width: 450px;
+            padding: 12px 18px;
+            border-radius: 25px;
+            border: 2px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+            margin-bottom: 16px;
+        }
+
+        .fon-search-input:focus {
+            border-color: var(--fon-primary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+        }
+
+        .grid-heterotonicos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .het-card {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+        }
+
+        .het-card:hover {
+            transform: translateY(-3px);
+            border-color: #d97706;
+        }
+
+        .fa-quiz-opt-btn {
+            background: var(--card-bg, #ffffff);
+            border: 2px solid var(--border-color, #cbd5e1);
+            color: var(--text-main);
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .fa-quiz-opt-btn:hover {
+            border-color: var(--fon-primary);
+            transform: translateX(4px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-audio-mini {
+            background: #f0fdf4;
+            border: 1px solid #99f6e4;
+            border-radius: 8px;
+            padding: 3px 8px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 6px;
+        }
+
+        .btn-audio-micro {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.75rem;
+            margin-left: 4px;
+        }
+
+        .selected-verb-filter {
+            background: #0d9488 !important;
+            color: #ffffff !important;
+            border-color: #0f766e !important;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .dict-table td, .dict-table th {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+
+<body data-mode="fonetica" data-lang="spanish">
+    <header>
+        <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1>🎙️ Fonética, Verbos & Recursos de Espanhol</h1>
+        <p>Domine a pronúncia autêntica, a conjugação de verbos, heterotónicos e as variações regionais por país.</p>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <div class="container" id="study-area">
+        <!-- NAVEGAÇÃO DE ABAS UNIFICADAS -->
+        <nav class="fon-tabs-nav">
+            <button id="tab-btn-fonetica" class="btn-fon-tab active-tab" onclick="alternarAbaFonetica('fonetica')">
+                🎙️ Fonética & Pronúncia
+            </button>
+            <button id="tab-btn-verbos" class="btn-fon-tab" onclick="alternarAbaFonetica('verbos')">
+                ⚡ Conjugador de Verbos
+            </button>
+            <button id="tab-btn-heterotonicos" class="btn-fon-tab" onclick="alternarAbaFonetica('heterotonicos')">
+                🎯 Guia Mestre de Heterotônicos
+            </button>
+            <button id="tab-btn-regionalismos" class="btn-fon-tab" onclick="alternarAbaFonetica('regionalismos')">
+                🌍 Regionalismos por País
+            </button>
+            <button id="tab-btn-acentuacao" class="btn-fon-tab" onclick="alternarAbaFonetica('acentuacao')">
+                ✍️ Acentuação & Tilde
+            </button>
+            <button id="tab-btn-sotaques" class="btn-fon-tab" onclick="alternarAbaFonetica('sotaques')">
+                🎙️ Sotaques Regionais
+            </button>
+            <button id="tab-btn-prosodia" class="btn-fon-tab" onclick="alternarAbaFonetica('prosodia')">
+                🎭 Prosódia & Fala Nativa
+            </button>
+        </nav>
+
+        <!-- ABA 1: FONÉTICA & PRONÚNCIA -->
+        <section id="sec-tab-fonetica" style="display: block;">
+            <div class="fon-lvl-selector">
+                <button id="btn-lvl-fon-a1" class="btn-fon-lvl selected-lvl" onclick="selecionarNivelFonetica('A1')">🟢 Nível A1</button>
+                <button id="btn-lvl-fon-a2" class="btn-fon-lvl" onclick="selecionarNivelFonetica('A2')">🟡 Nível A2</button>
+                <button id="btn-lvl-fon-b1" class="btn-fon-lvl" onclick="selecionarNivelFonetica('B1')">🟠 Nível B1</button>
+                <button id="btn-lvl-fon-b2" class="btn-fon-lvl" onclick="selecionarNivelFonetica('B2')">🔴 Nível B2</button>
+            </div>
+            <div id="fonetica-cards-container"></div>
+        </section>
+
+        <!-- ABA 2: CONJUGADOR & TABELA DE VERBOS -->
+        <section id="sec-tab-verbos" style="display: none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+                <input type="text" class="fon-search-input" placeholder="🔍 Buscar verbo ou tradução (ex: hablar, comer, ser)..." oninput="buscarVerbosInput(this.value)">
+                
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <button id="btn-verb-type-todos" class="btn-fon-lvl selected-verb-filter" onclick="filtrarTipoVerbo('todos')">Todos</button>
+                    <button id="btn-verb-type-regular" class="btn-fon-lvl" onclick="filtrarTipoVerbo('regular')">Regulares</button>
+                    <button id="btn-verb-type-irregular" class="btn-fon-lvl" onclick="filtrarTipoVerbo('irregular')">Irregulares</button>
+                    <button id="btn-verb-type-stem-changing" class="btn-fon-lvl" onclick="filtrarTipoVerbo('stem-changing')">Troca Vocálica</button>
+                </div>
+            </div>
+            <div id="verbos-table-container"></div>
+        </section>
+
+        <!-- ABA 3: GUIA MESTRE DE HETEROTÓNICOS -->
+        <section id="sec-tab-heterotonicos" style="display: none;">
+            <input type="text" class="fon-search-input" placeholder="🔍 Pesquisar heterotónico (ex: elogio, nivel, síntoma)..." oninput="buscarHeterotonicosInput(this.value)">
+            <div id="heterotonicos-grid-container" class="grid-heterotonicos"></div>
+        </section>
+
+        <!-- ABA 4: REGIONALISMOS & VARIAÇÕES POR PAÍS -->
+        <section id="sec-tab-regionalismos" style="display: none;">
+            <input type="text" class="fon-search-input" placeholder="🔍 Pesquisar conceito ou país (ex: ônibus, carro, Espanha)..." oninput="buscarRegionalismosInput(this.value)">
+            <div id="regionalismos-table-container"></div>
+        </section>
+
+        <!-- ABA 5: ACENTUAÇÃO GRÁFICA & TILDE DIACRÍTICA -->
+        <section id="sec-tab-acentuacao" style="display: none;">
+            <div id="acentuacao-cards-container"></div>
+        </section>
+
+        <!-- ABA 6: GUIA DE SOTAQUES & DIALETOS -->
+        <section id="sec-tab-sotaques" style="display: none;">
+            <div id="sotaques-cards-container"></div>
+        </section>
+
+        <!-- ABA 7: PROSÓDIA & FALA NATIVA -->
+        <section id="sec-tab-prosodia" style="display: none;">
+            <div id="prosodia-cards-container"></div>
+        </section>
+    </div>
+
+    <!-- CARREGAMENTO DE BANCOS DE DADOS DE ESPANHOL -->
+    <script src="../../database/es-ES/data_espanhol_fonetica_recursos.js"></script>
+
+    <!-- FIREBASE E MOTOR DA APLICAÇÃO -->
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/fonetica/fonetica.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,21 @@
-const CACHE_NAME = 'idiomas-academy-v15';
+const CACHE_NAME = 'idiomas-academy-v18';
 
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
+    './hub_idiomas.html',
     './hub_japones.html',
     './hub_ingles.html',
+    './hub_espanhol.html',
+    './html/es-ES/espanhol_curso.html',
+    './html/es-ES/espanhol_falsos_amigos.html',
+    './html/es-ES/espanhol_minigame_conjugacao.html',
+    './html/es-ES/espanhol_dicionario.html',
+    './database/es-ES/data_espanhol_a1.js',
+    './database/es-ES/data_espanhol_a2.js',
+    './database/es-ES/data_espanhol_b1.js',
+    './database/es-ES/data_espanhol_b2.js',
+    './database/es-ES/data_espanhol_dicionario.js',
     './html/en-US/curso_ingles.html',
     './database/en-US/data_english_a1.js',
     './database/en-US/data_english_a2.js',

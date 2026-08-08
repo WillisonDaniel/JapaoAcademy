@@ -137,6 +137,7 @@ function atualizarBadgeSRS(tipo) {
     else if (tipo === 'hiragana') labelExibicao = 'Hiragana';
     else if (tipo === 'katakana') labelExibicao = 'Katakana';
     else if (tipo === 'phrasal_verbs' || tipo === 'phrasal') labelExibicao = 'Phrasal Verbs & Expressões';
+    else if (tipo === 'falsos_amigos' || tipo === 'falsos') labelExibicao = 'Falsos Cognatos de Espanhol';
     else if (tipo && tipo.startsWith('kanji_n')) labelExibicao = 'Kanji ' + tipo.replace('kanji_', '').toUpperCase();
     else labelExibicao = tipo ? tipo.toUpperCase() : 'A1';
 

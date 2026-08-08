@@ -218,13 +218,44 @@ test('troca entre niveis e cursos mantem estado coerente', () => {
             CURSO_ENGLISH_A1_DADOS: [{ id: 'en-a1' }],
             CURSO_ENGLISH_A2_DADOS: [{ id: 'en-a2' }],
             CURSO_ENGLISH_B1_DADOS: [{ id: 'en-b1' }],
-            CURSO_ENGLISH_B2_DADOS: [{ id: 'en-b2' }]
+            CURSO_ENGLISH_B2_DADOS: [{ id: 'en-b2' }],
+            CURSO_ESPANHOL_A1_DADOS: [{ id: 'es-a1' }],
+            CURSO_ESPANHOL_A2_DADOS: [{ id: 'es-a2' }],
+            CURSO_ESPANHOL_B1_DADOS: [{ id: 'es-b1' }],
+            CURSO_ESPANHOL_B2_DADOS: [{ id: 'es-b2' }]
         }
     });
     runFile(languageSession, 'js/core/utils.js');
-    assert.equal(languageSession.getTodosOsCursos().A1[0].id, 'ja-a1');
     languageSession.document.setLanguage('english');
     assert.equal(languageSession.getTodosOsCursos().A1[0].id, 'en-a1');
+    languageSession.document.setLanguage('spanish');
+    assert.equal(languageSession.getTodosOsCursos().A1[0].id, 'es-a1');
+});
+
+test('progresso de desbloqueio de modulos permanece isolado por idioma', () => {
+    const storage = createStorage();
+    const session = loadCoreSession(storage, {
+        globals: {
+            CURSO_A1_DADOS: [{ id: 'a1_mod_01' }, { id: 'a1_mod_02' }],
+            CURSO_ENGLISH_A1_DADOS: [{ id: 'en_a1_mod_01' }, { id: 'en_a1_mod_02' }],
+            CURSO_ESPANHOL_A1_DADOS: [{ id: 'es_a1_mod_1' }, { id: 'es_a1_mod_2' }]
+        }
+    });
+    runFile(session, 'js/course/course.js');
+
+    // Concluir Módulo 1 em Japonês
+    session.document.setLanguage('ja-JP');
+    session.AppState.markModuleCompleted('a1_mod_01', 'A1');
+    session.AppState.unlockNextModule('A1', 0);
+
+    assert.equal(session.eModuloDesbloqueado('a1_mod_02', 'A1', 1), true, 'Japonês Modulo 2 desbloqueado');
+
+    // Módulos 2 de Inglês e Espanhol devem continuar BLOQUEADOS
+    session.document.setLanguage('english');
+    assert.equal(session.eModuloDesbloqueado('en_a1_mod_02', 'A1', 1), false, 'Inglês Modulo 2 bloqueado');
+
+    session.document.setLanguage('spanish');
+    assert.equal(session.eModuloDesbloqueado('es_a1_mod_2', 'A1', 1), false, 'Espanhol Modulo 2 bloqueado');
 });
 
 test('reload restaura persistentes e reinicia estado transitorio', () => {
@@ -326,7 +357,11 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
             CURSO_ENGLISH_A1_DADOS: sampleEnglishCourses.A1,
             CURSO_ENGLISH_A2_DADOS: sampleEnglishCourses.A2,
             CURSO_ENGLISH_B1_DADOS: sampleEnglishCourses.B1,
-            CURSO_ENGLISH_B2_DADOS: sampleEnglishCourses.B2
+            CURSO_ENGLISH_B2_DADOS: sampleEnglishCourses.B2,
+            CURSO_ESPANHOL_A1_DADOS: [{ id: 'es-a1-1' }],
+            CURSO_ESPANHOL_A2_DADOS: [{ id: 'es-a2-1' }],
+            CURSO_ESPANHOL_B1_DADOS: [{ id: 'es-b1-1' }],
+            CURSO_ESPANHOL_B2_DADOS: [{ id: 'es-b2-1' }]
         }
     });
     session.AppState.setProgress(JSON.parse(storage.getItem('japao_academy_progress')));
@@ -342,11 +377,12 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
     assert.equal(geral.xp, 350);
     assert.equal(geral.concluidos, 2);
     assert.equal(geral.modulosExtras, 3);
-    assert.equal(geral.idiomasDisponiveis, 2);
+    assert.equal(geral.idiomasDisponiveis, 3);
     assert.equal(geral.idiomas[0].label, 'Japonês');
     assert.equal(geral.idiomas[0].concluidos, 1);
     assert.equal(geral.idiomas[1].label, 'Inglês');
     assert.equal(geral.idiomas[1].concluidos, 1);
+    assert.equal(geral.idiomas[2].label, 'Espanhol');
     assert.equal(srs.pendentes, 1);
     assert.equal(srs.tipoPrioritario, 'a1');
     assert.equal(serie.metric, 'activities');
@@ -575,7 +611,8 @@ test('dashboard migra v1, registra sessoes idempotentes e limita retencao', () =
     });
     const session = loadCoreSession(storage, { getTodosOsCursos: () => sampleCourses });
     const migrated = session.carregarDadosDashboard(uid);
-    assert.equal(migrated.version, 2);
+    assert.equal(migrated.version, 3);
+    assert.ok(Array.isArray(migrated.srsHistory));
     assert.equal(migrated.dailyGoalMinutes, 30);
     assert.equal(migrated.studySecondsByDate['2026-08-03'], 150);
     assert.equal(migrated.firstAccessDate, '2026-01-01');
@@ -788,7 +825,7 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
     const resultadoLogin = await loginPromise;
 
     assert.equal(resultadoLogin.success, true);
-    assert.equal(session.location.href, '../../meu-progresso.html');
+    assert.equal(session.location.href, '../../index.html');
     assert.deepEqual(plain(JSON.parse(storage.getItem('japao_academy_progress')).progress_hiragana), [0, 1, 2, 3, 4, 5, 6, 7]);
     assert.equal(storage.getItem('ja_user_xp'), '504');
     assert.equal(session.AppState.user.xp, 504);
@@ -888,7 +925,7 @@ testAsync('login por email e cadastro direcionam ao dashboard sem loop', async (
     });
     const login = await loginSession.fazerLoginEmailSenha('aluno@example.com', 'segredo');
     assert.equal(login.success, true);
-    assert.equal(loginSession.location.href, '../../meu-progresso.html');
+    assert.equal(loginSession.location.href, '../../index.html');
 
     const cadastroFirebase = criarFirebase({ cadastro: true });
     const cadastroSession = loadCoreSession(createStorage(), {
@@ -898,9 +935,56 @@ testAsync('login por email e cadastro direcionam ao dashboard sem loop', async (
     const cadastro = await cadastroSession.fazerCadastroEmailSenha('novo@example.com', 'segredo', 'Novo Aluno');
     assert.equal(cadastro.success, true);
     assert.equal(cadastro.user.displayName, 'Novo Aluno');
-    assert.equal(cadastroSession.location.href, '../../meu-progresso.html');
-    cadastroSession.location.pathname = '/meu-progresso.html';
+    assert.equal(cadastroSession.location.href, '../../index.html');
+    cadastroSession.location.pathname = '/index.html';
     assert.equal(cadastroSession.irParaMeuProgresso(), false, 'dashboard redirecionou para si mesmo');
+});
+
+test('fluxo completo de integracao do SRS com historico, taxa de acertos e insights locais', () => {
+    const uid = 'srs-integration-user';
+    const storage = createStorage();
+    const session = loadCoreSession(storage, { getTodosOsCursos: () => sampleCourses });
+    runFile(session, 'js/dashboard/meu-progresso.js');
+
+    const tentativaCorrect = {
+        id: 'att-1',
+        timestamp: '2026-08-04T10:00:00.000Z',
+        date: '2026-08-04',
+        userId: uid,
+        language: 'ja-JP',
+        deckType: 'a1',
+        cardId: 'c1',
+        contentLabel: 'Konnichiwa',
+        quality: 3,
+        result: 'correct'
+    };
+    const tentativaError = {
+        id: 'att-2',
+        timestamp: '2026-08-04T10:05:00.000Z',
+        date: '2026-08-04',
+        userId: uid,
+        language: 'ja-JP',
+        deckType: 'a1',
+        cardId: 'c2',
+        contentLabel: 'Arigatou',
+        quality: 1,
+        result: 'error'
+    };
+
+    session.registrarTentativaSRS(tentativaCorrect, uid);
+    session.registrarTentativaSRS(tentativaError, uid);
+
+    const dados = session.carregarDadosDashboard(uid);
+    assert.equal(dados.srsHistory.length, 2);
+
+    const stats = session.calcularEstatisticasDashboard(dados, { period: 30 }, new Date(2026, 7, 4, 12));
+    assert.equal(stats.accuracy.available, true);
+    assert.equal(stats.accuracy.correct, 1);
+    assert.equal(stats.accuracy.errors, 1);
+    assert.equal(stats.accuracy.value, 50);
+
+    const insights = session.calcularInsightsDashboard(dados, stats, { count: 5 });
+    assert.ok(insights.length <= 3, 'insights excedem o limite maximo de 3');
 });
 
 (async () => {

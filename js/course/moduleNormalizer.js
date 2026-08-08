@@ -43,9 +43,9 @@ function normalizeModule(rawModule) {
         return {
             ...item,
             type: item.type || 'vocab',
-            kanji: item.kanji || item.word || item.english || '',
-            romaji: item.romaji || item.ipa || '',
-            translation: item.translation || item.meaning || item.portuguese || ''
+            kanji: item.kanji || item.word || item.english || item.spanish || item.Spanish || item.texto || '',
+            romaji: item.romaji || item.ipa || item.pronunciation || '',
+            translation: item.translation || item.meaning || item.portuguese || item.Portuguese || ''
         };
     });
 
@@ -115,14 +115,16 @@ function normalizeModule(rawModule) {
     const rawSB = rawModule.sentenceBuilder || rawModule.stage3_5_sentenceBuilder || rawModule.stage4_sentence_builder || [];
     const sentenceBuilder = (Array.isArray(rawSB) ? rawSB : []).map(item => {
         if (!item || typeof item !== 'object') return item;
-        const sentenceEn = item.sentenceEn || item.sentenceJp || item.target || '';
-        const translation = item.translation || item.target || '';
-        const chunks = Array.isArray(item.chunks) ? item.chunks : [];
+        const sentenceEn = item.sentenceEn || item.sentenceJp || item.sentenceEs || item.target || '';
+        const translation = item.translation || item.target || item.portuguese || item.Portuguese || '';
+        const chunks = (Array.isArray(item.chunks) && item.chunks.length > 0) ? item.chunks : ((Array.isArray(item.words) && item.words.length > 0) ? item.words : []);
         return {
             ...item,
             sentenceEn,
+            sentenceEs: item.sentenceEs || sentenceEn,
             translation,
-            chunks
+            chunks,
+            words: chunks
         };
     });
 

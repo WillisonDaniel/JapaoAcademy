@@ -99,6 +99,33 @@ body[data-mode="game"] {
     --current-primary: var(--game-primary);
 }
 
+body[data-mode="spanish"],
+body[data-mode="espanhol"] {
+    --current-primary: #ff5722;
+}
+
+.course-btn.spanish {
+    background: linear-gradient(135deg, #ff5722, #e64a19);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.course-btn.spanish:hover {
+    border-color: #ffc107;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(255, 87, 34, 0.4), 0 0 15px rgba(255, 193, 7, 0.3);
+}
+
+.course-btn.falsos-amigos {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: #ffffff;
+}
+
+.course-btn.conjugacao {
+    background: linear-gradient(135deg, #e11d48, #9f1239);
+    color: #ffffff;
+}
+
 /* TRANSIÇÕES DE PÁGINA */
 @keyframes fadeInPage {
     from {
@@ -5658,3 +5685,150 @@ rt {
         transition: none;
     }
 }
+
+/* ==========================================
+   ESTILOS DO HISTÓRICO DE REVISÕES SRS
+   ========================================== */
+.dashboard-history-container {
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.dashboard-history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.dashboard-history-item {
+    display: grid;
+    grid-template-columns: minmax(130px, 1.2fr) minmax(120px, 1fr) minmax(90px, 0.8fr) minmax(80px, 0.6fr) minmax(110px, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    border-radius: 10px;
+    font-size: 0.88rem;
+}
+
+.dashboard-history-item strong {
+    font-weight: 700;
+    color: var(--text-main, #e2e8f0);
+}
+
+.dashboard-history-item small {
+    color: var(--text-muted, #94a3b8);
+    font-size: 0.78rem;
+}
+
+.dashboard-history-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.dashboard-history-tag.is-correct {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.dashboard-history-tag.is-error {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dashboard-history-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================
+   ESTILOS DOS INSIGHTS PERSONALIZADOS
+   ========================================== */
+.dashboard-insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dashboard-insight-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-insight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-insight-card.priority-urgent {
+    border-color: rgba(239, 68, 68, 0.4);
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.dashboard-insight-card.priority-goal {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.dashboard-insight-card.priority-positive {
+    border-color: rgba(34, 197, 94, 0.4);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.dashboard-insight-card.priority-trend,
+.dashboard-insight-card.priority-consistency {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(255, 255, 255, 0.02));
+}
+
+.dashboard-insight-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.dashboard-insight-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.dashboard-insight-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-main, #f8fafc);
+}
+
+.dashboard-insight-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted, #cbd5e1);
+    margin: 0;
+}
+
+.dashboard-insight-action {
+    margin-top: auto;
+    align-self: flex-start;
+}
+

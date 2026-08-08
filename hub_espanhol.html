@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espanhol Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="spanish" data-lang="spanish">
+    <header>
+        <a href="hub_idiomas.html" class="home-btn">⬅ Idiomas</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">💃 Espanhol Academy</h1>
+        <p id="mainDesc">Sua jornada imersiva do nível básico ao avançado (A1 a B2), Falsos Amigos e Conjugação.</p>
+    </header>
+
+    <div class="container">
+        <div id="main-menu">
+
+            <!-- CURSO PRINCIPAL A1 - B2 -->
+            <a href="html/es-ES/espanhol_curso.html" class="course-btn spanish">
+                <span>📚</span>
+                Curso de Espanhol (A1 a B2)
+                <p>108 Módulos com diálogos, gramática prática, áudio nativo e quiz</p>
+            </a>
+
+            <!-- FALSOS AMIGOS (QUIZ COGNATOS) -->
+            <a href="html/es-ES/espanhol_falsos_amigos.html" class="course-btn falsos-amigos">
+                <span>🚨</span>
+                Falsos Amigos (Cognatos)
+                <p>Evite os deslizes mais comuns entre Português e Espanhol</p>
+            </a>
+
+            <!-- FONÉTICA, VERBOS & RECURSOS UNIFICADOS -->
+            <a href="html/es-ES/espanhol_fonetica.html" class="course-btn" style="background: linear-gradient(135deg, #4f46e5, #3730a3); border: 2px solid #6366f1; color: #ffffff; box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);">
+                <span>🎙️</span>
+                Fonética, Verbos & Recursos
+                <p style="color: #e0e7ff; opacity: 0.95;">Guia de pronúncia A1-B2, conjugador completo de verbos, heterotónicos e regionalismos</p>
+            </a>
+
+            <!-- MINIGAME DE CONJUGAÇÃO RÁPIDA -->
+            <a href="html/es-ES/espanhol_minigame_conjugacao.html" class="course-btn conjugacao">
+                <span>⚡</span>
+                Arcade de Conjugação Rápida
+                <p>Treine a velocidade de conjugação verbal no relógio</p>
+            </a>
+
+            <!-- DICIONÁRIO INTERATIVO & REGIONALISMOS -->
+            <a href="html/es-ES/espanhol_dicionario.html" class="course-btn dict">
+                <span>📖</span>
+                Dicionário & Regionalismos
+                <p>Guia visual de Falsos Amigos, Heterotónicos e gírias por país</p>
+            </a>
+
+        </div>
+    </div>
+
+    <script src="database/es-ES/data_espanhol_a1.js"></script>
+    <script src="database/es-ES/data_espanhol_a2.js"></script>
+    <script src="database/es-ES/data_espanhol_b1.js"></script>
+    <script src="database/es-ES/data_espanhol_b2.js"></script>
+    <script src="database/es-ES/data_espanhol_dicionario.js"></script>
+    <script type="module" src="firebase-init.js"></script>
+    <script src="js/core/config.js"></script>
+    <script src="js/core/constants.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/audio.js"></script>
+    <script src="js/core/toast.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/dom.js"></script>
+    <script src="js/core/events.js"></script>
+    <script src="js/game/xp.js"></script>
+    <script src="js/game/ranking.js"></script>
+    <script src="js/core/bootstrap.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

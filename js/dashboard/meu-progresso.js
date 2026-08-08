@@ -47,12 +47,28 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         }),
         extraLabel: 'módulo(s) de Phrasal Verbs',
         extraProgressKeys: ['progress_phrasal_verbs']
+    },
+    {
+        id: 'spanish',
+        label: 'Espanhol',
+        icon: '💃',
+        hubPage: 'hub_espanhol.html',
+        coursePage: 'html/es-ES/espanhol_curso.html',
+        getCourses: () => ({
+            A1: (typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined') ? CURSO_ESPANHOL_A1_DADOS : [],
+            A2: (typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined') ? CURSO_ESPANHOL_A2_DADOS : [],
+            B1: (typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined') ? CURSO_ESPANHOL_B1_DADOS : [],
+            B2: (typeof CURSO_ESPANHOL_B2_DADOS !== 'undefined') ? CURSO_ESPANHOL_B2_DADOS : []
+        }),
+        extraLabel: 'módulo(s) de Falsos Amigos',
+        extraProgressKeys: ['progress_espanhol_falsos_amigos']
     }
 ];
 
 const DASHBOARD_LANGUAGE_LABELS = {
     'ja-JP': 'Japonês',
     'en-US': 'Inglês',
+    'es-ES': 'Espanhol',
     unknown: 'Idioma não identificado'
 };
 
@@ -258,9 +274,20 @@ function criarResumoDiaCalendarioDashboard(dados = {}, chave = '', hoje = new Da
         Number(dados.activityByDate && dados.activityByDate[chave]) || 0
     );
     const sessionCount = Math.max(0, Number(agregado.sessionCount) || 0, sessoes.length);
-    const reviews = sessoes
+    const reviewsSessao = sessoes
         .filter(sessao => sessao.activityType === 'srs')
         .reduce((total, sessao) => total + Math.max(0, Number(sessao.activityCount) || 0), 0);
+
+    const srsDoDia = (Array.isArray(dados.srsHistory) ? dados.srsHistory : []).filter(item => item && item.date === chave);
+    let correct = srsDoDia.filter(item => item.result === 'correct').length;
+    let errors = srsDoDia.filter(item => item.result === 'error').length;
+    if (correct === 0 && errors === 0) {
+        correct = Math.max(0, Number(agregado.correctCount) || 0);
+        errors = Math.max(0, Number(agregado.errorCount) || 0);
+    }
+    const hasAccuracy = (correct + errors) > 0;
+    const totalReviews = Math.max(reviewsSessao, correct + errors, Number(agregado.reviews) || 0);
+
     const idiomas = new Set();
     Object.entries(agregado.languages && typeof agregado.languages === 'object' ? agregado.languages : {}).forEach(([idioma, valor]) => {
         if (Number(valor) > 0) idiomas.add(idioma);
@@ -271,21 +298,21 @@ function criarResumoDiaCalendarioDashboard(dados = {}, chave = '', hoje = new Da
     const metaMinutos = [10, 15, 20, 30, 45, 60].includes(Number(dados.dailyGoalMinutes)) ? Number(dados.dailyGoalMinutes) : 15;
     const data = criarDataDashboard(chave);
     const hojeLocal = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate(), 12, 0, 0, 0);
-    const hasActivity = activeSeconds > 0 || activities > 0 || sessionCount > 0;
+    const hasActivity = activeSeconds > 0 || activities > 0 || sessionCount > 0 || totalReviews > 0;
     return {
         date: chave,
         day: data.getDate(),
         activeSeconds,
         activities,
         sessionCount,
-        reviews,
+        reviews: totalReviews,
         languages: Array.from(idiomas).sort(),
         goalMinutes: metaMinutos,
         goalMet: activeSeconds >= metaMinutos * 60 && activeSeconds > 0,
         hasActivity,
         isFuture: data > hojeLocal,
         isToday: chave === criarChaveDataDashboard(hojeLocal),
-        accuracy: { available: false, correct: null, errors: null }
+        accuracy: { available: hasAccuracy, correct: hasAccuracy ? correct : null, errors: hasAccuracy ? errors : null }
     };
 }
 
@@ -338,6 +365,7 @@ function criarLinhasDiariasEstatisticasDashboard(dados = {}, dias = 30, filtros 
     const filtrosNormalizados = normalizarFiltrosEstatisticasDashboard(filtros);
     const chaves = criarChavesPeriodoDashboard(dias, hoje);
     const sessoes = Array.isArray(dados.sessions) ? dados.sessions : [];
+    const srsHistorico = Array.isArray(dados.srsHistory) ? dados.srsHistory : [];
     const semFiltroDetalhado = filtrosNormalizados.language === 'all' && filtrosNormalizados.activity === 'all';
     const linhas = chaves.map(chave => {
         const agregado = dados.dailyAggregates && dados.dailyAggregates[chave] && typeof dados.dailyAggregates[chave] === 'object'
@@ -359,10 +387,20 @@ function criarLinhasDiariasEstatisticasDashboard(dados = {}, dias = 30, filtros 
         const xpEarned = semFiltroDetalhado
             ? Math.max(0, Number(agregado.xpEarned) || 0)
             : sessoesDoDia.reduce((total, sessao) => total + Math.max(0, Number(sessao.xpEarned) || 0), 0);
-        const reviews = sessoesDoDia
+        const reviewsSessao = sessoesDoDia
             .filter(sessao => sessao.activityType === 'srs')
             .reduce((total, sessao) => total + Math.max(0, Number(sessao.activityCount) || 0), 0);
-        return { date: chave, activeSeconds, activities, sessionCount, xpEarned, reviews, aggregate: agregado, sessions: sessoesDoDia };
+
+        const srsTentativasDia = srsHistorico.filter(item => item && item.date === chave && (filtrosNormalizados.language === 'all' || item.language === filtrosNormalizados.language));
+        let correctCount = srsTentativasDia.filter(item => item.result === 'correct').length;
+        let errorCount = srsTentativasDia.filter(item => item.result === 'error').length;
+        if (correctCount === 0 && errorCount === 0 && semFiltroDetalhado) {
+            correctCount = Math.max(0, Number(agregado.correctCount) || 0);
+            errorCount = Math.max(0, Number(agregado.errorCount) || 0);
+        }
+        const reviews = Math.max(reviewsSessao, correctCount + errorCount, semFiltroDetalhado ? (Number(agregado.reviews) || 0) : 0);
+
+        return { date: chave, activeSeconds, activities, sessionCount, xpEarned, reviews, correctCount, errorCount, aggregate: agregado, sessions: sessoesDoDia };
     });
     return { filtros: filtrosNormalizados, linhas };
 }
@@ -471,6 +509,12 @@ function calcularEstatisticasDashboard(dados = {}, filtros = {}, hoje = new Date
         : 0;
     const distribuicaoIdiomas = criarDistribuicaoEstatisticasDashboard(dados, periodo.linhas, filtrosNormalizados, 'language');
     const distribuicaoAtividades = criarDistribuicaoEstatisticasDashboard(dados, periodo.linhas, filtrosNormalizados, 'activity');
+
+    const totalCorrect = somar(periodo.linhas, 'correctCount');
+    const totalErrors = somar(periodo.linhas, 'errorCount');
+    const totalEvaluated = totalCorrect + totalErrors;
+    const accuracyValue = totalEvaluated > 0 ? (totalCorrect / totalEvaluated) * 100 : null;
+
     return {
         filters: filtrosNormalizados,
         firstMeasuredDate: primeiraDataMedida,
@@ -482,7 +526,7 @@ function calcularEstatisticasDashboard(dados = {}, filtros = {}, hoje = new Date
         activities: somar(periodo.linhas, 'activities'),
         sessions: somar(periodo.linhas, 'sessionCount'),
         reviews: somar(periodo.linhas, 'reviews'),
-        accuracy: { value: null, available: false },
+        accuracy: { value: accuracyValue, available: totalEvaluated > 0, correct: totalCorrect, errors: totalErrors, total: totalEvaluated },
         goalsReached: { value: metasAlcancadas, available: tempoDisponivel, eligibleDays: diasElegiveis },
         goalRate: { value: diasElegiveis > 0 ? (metasAlcancadas / diasElegiveis) * 100 : 0, available: diasElegiveis > 0 },
         bestStreak: Math.max(sequenciaCalculada, sequenciaPersistida),
@@ -606,19 +650,117 @@ function renderizarGraficoEvolucaoDashboard(estatisticas = {}) {
     return resultado;
 }
 
-function renderizarGraficoRevisoesDashboard() {
+function renderizarGraficoRevisoesDashboard(estatisticas = {}) {
     const container = document.getElementById('dashboard-review-chart');
     const alternativa = document.getElementById('dashboard-review-chart-summary');
     const estadoVazio = document.getElementById('dashboard-review-chart-empty');
-    if (container) {
-        container.replaceChildren();
+    if (!container || !alternativa || !estadoVazio) return null;
+
+    const linhas = Array.isArray(estatisticas.rows) ? estatisticas.rows : [];
+    const totalEvaluated = linhas.reduce((t, l) => t + (l.correctCount || 0) + (l.errorCount || 0), 0);
+
+    container.replaceChildren();
+    alternativa.replaceChildren();
+
+    if (totalEvaluated <= 0) {
         container.hidden = true;
-    }
-    if (alternativa) {
-        alternativa.replaceChildren();
         alternativa.hidden = true;
+        estadoVazio.hidden = false;
+        return { hasData: false };
     }
-    if (estadoVazio) estadoVazio.hidden = false;
+
+    estadoVazio.hidden = true;
+    container.hidden = false;
+    alternativa.hidden = false;
+
+    const pontos = linhas.map(l => ({
+        date: l.date,
+        label: criarDataDashboard(l.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }),
+        correct: l.correctCount || 0,
+        errors: l.errorCount || 0,
+        total: (l.correctCount || 0) + (l.errorCount || 0)
+    }));
+
+    const maxVal = Math.max(1, ...pontos.map(p => p.total));
+
+    const largura = 900;
+    const altura = 280;
+    const margem = { topo: 24, direita: 18, base: 46, esquerda: 52 };
+    const larguraUtil = largura - margem.esquerda - margem.direita;
+    const alturaUtil = altura - margem.topo - margem.base;
+    const divisorX = Math.max(1, pontos.length - 1);
+    const svg = criarElementoSVGDashboard('svg', {
+        viewBox: `0 0 ${largura} ${altura}`,
+        'aria-hidden': 'true',
+        focusable: 'false'
+    });
+
+    for (let i = 0; i <= 4; i += 1) {
+        const y = margem.topo + (alturaUtil * i / 4);
+        const val = maxVal * (1 - i / 4);
+        svg.appendChild(criarElementoSVGDashboard('line', {
+            x1: margem.esquerda, y1: y, x2: largura - margem.direita, y2: y, class: 'dashboard-chart-grid-line'
+        }));
+        const rotulo = criarElementoSVGDashboard('text', {
+            x: margem.esquerda - 8, y: y + 4, class: 'dashboard-chart-axis-label', 'text-anchor': 'end'
+        });
+        rotulo.textContent = formatarNumeroEstatisticaDashboard(val, 0);
+        svg.appendChild(rotulo);
+    }
+
+    const coordsCorrect = pontos.map((p, idx) => ({
+        x: margem.esquerda + (larguraUtil * idx / divisorX),
+        y: margem.topo + alturaUtil - (p.correct / maxVal) * alturaUtil
+    }));
+    const coordsError = pontos.map((p, idx) => ({
+        x: margem.esquerda + (larguraUtil * idx / divisorX),
+        y: margem.topo + alturaUtil - (p.errors / maxVal) * alturaUtil
+    }));
+
+    svg.appendChild(criarElementoSVGDashboard('polyline', {
+        points: coordsCorrect.map(p => `${p.x},${p.y}`).join(' '),
+        stroke: '#4ade80', 'stroke-width': 2, fill: 'none'
+    }));
+
+    svg.appendChild(criarElementoSVGDashboard('polyline', {
+        points: coordsError.map(p => `${p.x},${p.y}`).join(' '),
+        stroke: '#f87171', 'stroke-width': 2, 'stroke-dasharray': '4,4', fill: 'none'
+    }));
+
+    pontos.forEach((ponto, idx) => {
+        const x = margem.esquerda + (larguraUtil * idx / divisorX);
+        if (ponto.correct > 0) {
+            const circleCorrect = criarElementoSVGDashboard('circle', {
+                cx: x, cy: coordsCorrect[idx].y, r: 4, fill: '#4ade80'
+            });
+            const t = criarElementoSVGDashboard('title');
+            t.textContent = `${ponto.label}: ${ponto.correct} acerto(s)`;
+            circleCorrect.appendChild(t);
+            svg.appendChild(circleCorrect);
+        }
+        if (ponto.errors > 0) {
+            const circleError = criarElementoSVGDashboard('circle', {
+                cx: x, cy: coordsError[idx].y, r: 4, fill: '#f87171'
+            });
+            const t = criarElementoSVGDashboard('title');
+            t.textContent = `${ponto.label}: ${ponto.errors} erro(s)`;
+            circleError.appendChild(t);
+            svg.appendChild(circleError);
+        }
+    });
+
+    container.setAttribute('aria-label', `Desempenho de revisões SRS no período: ${totalEvaluated} respostas avaliadas.`);
+    container.appendChild(svg);
+
+    pontos.forEach(p => {
+        if (p.total > 0) {
+            const item = document.createElement('li');
+            item.textContent = `${p.date}: ${p.correct} acerto(s), ${p.errors} erro(s)`;
+            alternativa.appendChild(item);
+        }
+    });
+
+    return { hasData: true };
 }
 
 function criarDadosGraficoDistribuicaoDashboard(estatisticas = {}, dimensao = 'language') {
@@ -1138,6 +1280,293 @@ function definirVisibilidadeDadosPessoaisDashboard(autenticado) {
     document.body.classList.toggle('dashboard-authenticated', autenticado);
 }
 
+let dashboardHistoryOffset = 10;
+
+function renderizarHistoricoSRSDashboard(dados = dashboardDadosAtuais) {
+    const lista = document.getElementById('dashboard-srs-history-list');
+    const vazio = document.getElementById('dashboard-srs-history-empty');
+    const status = document.getElementById('dashboard-srs-history-status');
+    const carregarMais = document.getElementById('dashboard-history-load-more');
+    if (!lista || !vazio) return;
+
+    const filtroPeriodo = document.getElementById('dashboard-history-filter-period');
+    const filtroIdioma = document.getElementById('dashboard-history-filter-language');
+    const filtroResultado = document.getElementById('dashboard-history-filter-result');
+
+    const periodo = filtroPeriodo ? filtroPeriodo.value : '30';
+    const idioma = filtroIdioma ? filtroIdioma.value : 'all';
+    const resultado = filtroResultado ? filtroResultado.value : 'all';
+
+    const historico = Array.isArray(dados && dados.srsHistory) ? dados.srsHistory : [];
+    const hoje = new Date();
+    const limiteData = periodo !== 'all' ? new Date(hoje.setDate(hoje.getDate() - Number(periodo))) : null;
+
+    const filtrados = historico.filter(item => {
+        if (!item) return false;
+        if (limiteData && new Date(item.timestamp || item.date) < limiteData) return false;
+        if (idioma !== 'all' && item.language !== idioma) return false;
+        if (resultado !== 'all' && item.result !== resultado) return false;
+        return true;
+    }).sort((a, b) => String(b.timestamp || '').localeCompare(String(a.timestamp || '')));
+
+    lista.replaceChildren();
+
+    if (status) {
+        status.textContent = `Exibindo ${Math.min(dashboardHistoryOffset, filtrados.length)} de ${filtrados.length} revisão(ões) encontrada(s).`;
+    }
+
+    if (filtrados.length === 0) {
+        vazio.hidden = false;
+        if (carregarMais) carregarMais.hidden = true;
+        return;
+    }
+
+    vazio.hidden = true;
+    const exibidos = filtrados.slice(0, dashboardHistoryOffset);
+
+    exibidos.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'dashboard-history-item';
+
+        const colData = document.createElement('div');
+        const dataStr = item.timestamp
+            ? new Date(item.timestamp).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+            : item.date;
+        colData.innerHTML = `<strong>${dataStr}</strong>`;
+
+        const colConteudo = document.createElement('div');
+        colConteudo.textContent = item.contentLabel || 'Card SRS';
+
+        const colDeck = document.createElement('div');
+        const rotuloIdioma = DASHBOARD_LANGUAGE_LABELS[item.language] || item.language;
+        colDeck.textContent = `${rotuloIdioma} (${item.deckType})`;
+
+        const colTag = document.createElement('div');
+        const tag = document.createElement('span');
+        tag.className = `dashboard-history-tag ${item.result === 'correct' ? 'is-correct' : 'is-error'}`;
+        tag.textContent = item.result === 'correct' ? 'Acerto' : 'Erro';
+        colTag.appendChild(tag);
+
+        const colIntervalo = document.createElement('div');
+        const proxStr = item.nextDueDate
+            ? new Date(item.nextDueDate).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' })
+            : '—';
+        colIntervalo.textContent = `Próx: ${proxStr}`;
+
+        li.append(colData, colConteudo, colDeck, colTag, colIntervalo);
+        lista.appendChild(li);
+    });
+
+    if (carregarMais) {
+        carregarMais.hidden = filtrados.length <= dashboardHistoryOffset;
+    }
+}
+
+function calcularInsightsDashboard(dados = dashboardDadosAtuais, estatisticas = {}, streak = dashboardStreakAtual) {
+    if (!dados) return [];
+    const diasComDados = (Array.isArray(dados.sessions) && dados.sessions.length > 0)
+        || Object.keys(dados.dailyAggregates || {}).length > 0
+        || Object.keys(dados.studySecondsByDate || {}).length > 0;
+
+    const seteDias = criarLinhasDiariasEstatisticasDashboard(dados, 7).linhas;
+    const diasAtivos7 = seteDias.filter(l => l.activeSeconds > 0 || l.activities > 0).length;
+
+    if (!diasComDados || (estatisticas.activeDays && estatisticas.activeDays < 3 && diasAtivos7 < 3)) {
+        return [{
+            id: 'insufficient',
+            order: 0,
+            priorityClass: 'priority-goal',
+            icon: '🌱',
+            title: 'Continuando sua jornada',
+            text: 'Você precisa de pelo menos 3 dias ativos para liberar análises personalizadas. Continue estudando!',
+            actionLabel: 'Explorar idiomas',
+            actionHref: 'hub_idiomas.html'
+        }];
+    }
+
+    const candidatos = [];
+    const resumoSRS = obterResumoSRSDashboard();
+
+    // 1. SRS urgente
+    if (resumoSRS.pendentes > 0) {
+        candidatos.push({
+            id: 'srs_due',
+            order: 1,
+            priorityClass: 'priority-urgent',
+            icon: '⏰',
+            title: 'Revisões pendentes',
+            text: `Você possui ${resumoSRS.pendentes} card(s) pendente(s). Mantenha o SRS em dia para reforçar o aprendizado.`,
+            actionLabel: 'Revisar agora',
+            actionPage: resumoSRS.paginaPrioritaria,
+            actionType: resumoSRS.tipoPrioritario
+        });
+    }
+
+    // 2. Meta diária
+    const metaHoje = dados.dailyGoalMinutes || 15;
+    const hojeLinha = seteDias.at(-1) || { activeSeconds: 0 };
+    const minHoje = hojeLinha.activeSeconds / 60;
+    if (minHoje >= metaHoje) {
+        candidatos.push({
+            id: 'goal_met',
+            order: 2,
+            priorityClass: 'priority-positive',
+            icon: '🎯',
+            title: 'Meta diária alcançada',
+            text: `Parabéns! Você já concluiu sua meta de ${metaHoje} minutos hoje.`,
+            actionLabel: 'Continuar curso',
+            actionHref: 'html/ja-JP/curso.html'
+        });
+    } else if (minHoje > 0) {
+        const faltam = Math.max(0, Math.round((metaHoje - minHoje) * 10) / 10);
+        candidatos.push({
+            id: 'goal_progress',
+            order: 2,
+            priorityClass: 'priority-goal',
+            icon: '⏳',
+            title: 'Meta em andamento',
+            text: `Faltam apenas ${faltam} min para você cumprir a meta diária de ${metaHoje} minutos.`,
+            actionLabel: 'Estudar agora',
+            actionHref: 'html/ja-JP/curso.html'
+        });
+    }
+
+    // 3. Dificuldade recorrente
+    const srsHistorico = Array.isArray(dados.srsHistory) ? dados.srsHistory : [];
+    const porDeck = {};
+    srsHistorico.forEach(item => {
+        if (!item || !item.deckType) return;
+        porDeck[item.deckType] = porDeck[item.deckType] || { total: 0, errors: 0 };
+        porDeck[item.deckType].total += 1;
+        if (item.result === 'error') porDeck[item.deckType].errors += 1;
+    });
+
+    Object.entries(porDeck).forEach(([deck, info]) => {
+        if (info.total >= 10 && (info.errors / info.total) >= 0.3) {
+            candidatos.push({
+                id: `diff_${deck}`,
+                order: 3,
+                priorityClass: 'priority-urgent',
+                icon: '⚠️',
+                title: 'Atenção recorrente',
+                text: `Dificuldade identificada nas revisões de ${deck}: ${info.errors} erro(s) em ${info.total} tentativas.`,
+                actionLabel: 'Revisar agora',
+                actionPage: 'html/ja-JP/curso.html',
+                actionType: deck
+            });
+        }
+    });
+
+    // 4. Tendência
+    const quatorzeDias = criarLinhasDiariasEstatisticasDashboard(dados, 14).linhas;
+    const min7Atual = seteDias.reduce((t, l) => t + (l.activeSeconds / 60), 0);
+    const min7Anterior = quatorzeDias.slice(0, 7).reduce((t, l) => t + (l.activeSeconds / 60), 0);
+
+    if (min7Anterior > 0) {
+        let textoTendencia = 'estável';
+        if (min7Atual >= min7Anterior * 1.15) textoTendencia = 'aumento no tempo de estudo';
+        else if (min7Atual <= min7Anterior * 0.85) textoTendencia = 'redução no tempo de estudo';
+
+        candidatos.push({
+            id: 'trend',
+            order: 4,
+            priorityClass: 'priority-trend',
+            icon: '📈',
+            title: 'Tendência de estudos',
+            text: `Nos últimos 7 dias você estudou ${formatarNumeroEstatisticaDashboard(min7Atual)} min vs ${formatarNumeroEstatisticaDashboard(min7Anterior)} min nos 7 dias anteriores (${textoTendencia}).`
+        });
+    }
+
+    // 5. Consistência
+    if (diasAtivos7 > 0) {
+        candidatos.push({
+            id: 'consistency',
+            order: 5,
+            priorityClass: 'priority-consistency',
+            icon: '🔥',
+            title: 'Ritmo semanal',
+            text: `Você esteve ativo em ${diasAtivos7} dos últimos 7 dias. ${diasAtivos7 >= 5 ? 'Excelente consistência!' : 'Continue estudando regularmente.'}`
+        });
+    }
+
+    // 6. Mensagem positiva / Maior sequência
+    const maiorSeq = estatisticas.bestStreak || streak.count || 0;
+    if (maiorSeq > 0) {
+        candidatos.push({
+            id: 'positive',
+            order: 6,
+            priorityClass: 'priority-positive',
+            icon: '🌟',
+            title: 'Sequência em destaque',
+            text: `Sua maior sequência registrada é de ${maiorSeq} dia(s) consecutivos de estudo.`
+        });
+    }
+
+    candidatos.sort((a, b) => a.order - b.order);
+    return candidatos.slice(0, 3);
+}
+
+function renderizarInsightsDashboard(dados = dashboardDadosAtuais, estatisticas = {}, streak = dashboardStreakAtual) {
+    const grid = document.getElementById('dashboard-insights-grid');
+    const vazio = document.getElementById('dashboard-insights-empty');
+    if (!grid || !vazio) return;
+
+    grid.replaceChildren();
+    const insights = calcularInsightsDashboard(dados, estatisticas, streak);
+
+    if (insights.length === 0) {
+        vazio.hidden = false;
+        return;
+    }
+
+    vazio.hidden = true;
+    insights.forEach(item => {
+        const card = document.createElement('article');
+        card.className = `dashboard-insight-card ${item.priorityClass || ''}`;
+
+        const header = document.createElement('div');
+        header.className = 'dashboard-insight-header';
+
+        const icon = document.createElement('span');
+        icon.className = 'dashboard-insight-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = item.icon || '💡';
+
+        const title = document.createElement('h3');
+        title.className = 'dashboard-insight-title';
+        title.textContent = item.title;
+
+        header.append(icon, title);
+
+        const text = document.createElement('p');
+        text.className = 'dashboard-insight-text';
+        text.textContent = item.text;
+
+        card.append(header, text);
+
+        if (item.actionLabel) {
+            let actionBtn;
+            if (item.actionHref) {
+                actionBtn = document.createElement('a');
+                actionBtn.className = 'dashboard-primary-button dashboard-insight-action';
+                actionBtn.href = item.actionHref;
+                actionBtn.textContent = item.actionLabel;
+            } else if (item.actionType && item.actionPage) {
+                actionBtn = document.createElement('button');
+                actionBtn.type = 'button';
+                actionBtn.className = 'dashboard-primary-button dashboard-insight-action';
+                actionBtn.textContent = item.actionLabel;
+                actionBtn.dataset.reviewType = item.actionType;
+                actionBtn.dataset.reviewPage = item.actionPage;
+                actionBtn.addEventListener('click', iniciarRevisaoPeloDashboard);
+            }
+            if (actionBtn) card.appendChild(actionBtn);
+        }
+
+        grid.appendChild(card);
+    });
+}
+
 function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso = false) {
     const carregando = document.getElementById('dashboard-loading');
     const apresentacao = document.getElementById('dashboard-signed-out');
@@ -1178,8 +1607,10 @@ function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso 
     atualizarSRSDashboard(resumoSRS);
     atualizarResumoGeralDashboard(resumo);
     atualizarOpcoesAtividadeDashboard(dados);
-    renderizarEstatisticasDashboard(dados, streak);
+    const estatisticas = renderizarEstatisticasDashboard(dados, streak);
     renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
+    renderizarHistoricoSRSDashboard(dados);
+    renderizarInsightsDashboard(dados, estatisticas, streak);
 
     const temAtividade = Object.values(dados.activityByDate || {}).some(valor => Number(valor) > 0)
         || Object.values(dados.studySecondsByDate || {}).some(valor => Number(valor) > 0)
@@ -1237,6 +1668,20 @@ function inicializarMeuProgresso() {
             renderizarGraficosDashboard(estatisticas);
         });
     });
+    ['dashboard-history-filter-period', 'dashboard-history-filter-language', 'dashboard-history-filter-result'].forEach(id => {
+        const filtro = document.getElementById(id);
+        if (!filtro || filtro.dataset.dashboardReady === 'true') return;
+        filtro.dataset.dashboardReady = 'true';
+        filtro.addEventListener('change', () => renderizarHistoricoSRSDashboard());
+    });
+    const carregarMais = document.getElementById('dashboard-history-load-more');
+    if (carregarMais && carregarMais.dataset.dashboardReady !== 'true') {
+        carregarMais.dataset.dashboardReady = 'true';
+        carregarMais.addEventListener('click', () => {
+            dashboardHistoryOffset += 10;
+            renderizarHistoricoSRSDashboard();
+        });
+    }
     const calendarioAnterior = document.getElementById('dashboard-calendar-previous');
     if (calendarioAnterior && calendarioAnterior.dataset.dashboardReady !== 'true') {
         calendarioAnterior.dataset.dashboardReady = 'true';
@@ -1274,10 +1719,15 @@ if (typeof window !== 'undefined') {
     window.renderizarCalendarioDashboard = renderizarCalendarioDashboard;
     window.moverMesCalendarioDashboard = moverMesCalendarioDashboard;
     window.renderizarEstatisticasDashboard = renderizarEstatisticasDashboard;
+    window.renderizarHistoricoSRSDashboard = renderizarHistoricoSRSDashboard;
+    window.calcularInsightsDashboard = calcularInsightsDashboard;
+    window.renderizarInsightsDashboard = renderizarInsightsDashboard;
     window.renderizarMeuProgresso = renderizarMeuProgresso;
     window.inicializarMeuProgresso = inicializarMeuProgresso;
-    window.addEventListener('ja:auth-state-changed', event => {
-        renderizarMeuProgresso(event.detail ? event.detail.user : null, true);
-    });
-    window.addEventListener('DOMContentLoaded', inicializarMeuProgresso);
+    if (typeof window.addEventListener === 'function') {
+        window.addEventListener('ja:auth-state-changed', event => {
+            renderizarMeuProgresso(event.detail ? event.detail.user : null, true);
+        });
+        window.addEventListener('DOMContentLoaded', inicializarMeuProgresso);
+    }
 }

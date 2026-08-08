@@ -149,13 +149,26 @@ function getKanjiReading(item) {
 }
 
 function getTodosOsCursos() {
-    const isEnglish = typeof document !== 'undefined' && document.body && document.body.getAttribute('data-lang') === 'english';
+    const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
+    const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
+
+    const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
+    const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+
+    if (isSpanish) {
+        return {
+            A1: (typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined') ? CURSO_ESPANHOL_A1_DADOS : [],
+            A2: (typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined') ? CURSO_ESPANHOL_A2_DADOS : [],
+            B1: (typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined') ? CURSO_ESPANHOL_B1_DADOS : [],
+            B2: (typeof CURSO_ESPANHOL_B2_DADOS !== 'undefined') ? CURSO_ESPANHOL_B2_DADOS : []
+        };
+    }
     if (isEnglish) {
         return {
-            A1: (typeof CURSO_ENGLISH_A1_DADOS !== 'undefined') ? CURSO_ENGLISH_A1_DADOS : ((typeof CURSO_A1_DADOS !== 'undefined') ? CURSO_A1_DADOS : []),
-            A2: (typeof CURSO_ENGLISH_A2_DADOS !== 'undefined') ? CURSO_ENGLISH_A2_DADOS : ((typeof CURSO_A2_DADOS !== 'undefined') ? CURSO_A2_DADOS : []),
-            B1: (typeof CURSO_ENGLISH_B1_DADOS !== 'undefined') ? CURSO_ENGLISH_B1_DADOS : ((typeof CURSO_B1_DADOS !== 'undefined') ? CURSO_B1_DADOS : []),
-            B2: (typeof CURSO_ENGLISH_B2_DADOS !== 'undefined') ? CURSO_ENGLISH_B2_DADOS : ((typeof CURSO_B2_DADOS !== 'undefined') ? CURSO_B2_DADOS : [])
+            A1: (typeof CURSO_ENGLISH_A1_DADOS !== 'undefined') ? CURSO_ENGLISH_A1_DADOS : [],
+            A2: (typeof CURSO_ENGLISH_A2_DADOS !== 'undefined') ? CURSO_ENGLISH_A2_DADOS : [],
+            B1: (typeof CURSO_ENGLISH_B1_DADOS !== 'undefined') ? CURSO_ENGLISH_B1_DADOS : [],
+            B2: (typeof CURSO_ENGLISH_B2_DADOS !== 'undefined') ? CURSO_ENGLISH_B2_DADOS : []
         };
     }
     return {
@@ -197,7 +210,9 @@ function getDadosCursoAtivo() {
     }
 
     const cursos = getTodosOsCursos();
-    const lvl = (typeof nivelAtivo !== 'undefined' && nivelAtivo) ? nivelAtivo.toUpperCase() : 'A1';
+    const lvl = (typeof AppState !== 'undefined' && AppState.course && AppState.course.level)
+        ? AppState.course.level.toUpperCase()
+        : ((typeof nivelAtivo !== 'undefined' && nivelAtivo) ? nivelAtivo.toUpperCase() : 'A1');
     return cursos[lvl] || cursos.A1 || [];
 }
 
@@ -217,9 +232,9 @@ function formatarTextoJapones(item) {
     if (typeof item === 'string') {
         rawText = item.trim();
     } else if (item && typeof item === 'object') {
-        rawText = (item.kanji || item.japanese || item.text || "").trim();
+        rawText = (item.kanji || item.word || item.english || item.spanish || item.Spanish || item.texto || item.japanese || item.text || "").trim();
         rawKana = (item.kana || item.reading || "").trim();
-        rawRomaji = (item.romaji || "").trim();
+        rawRomaji = (item.romaji || item.ipa || item.pronunciation || "").trim();
     }
 
     if (!rawText) {

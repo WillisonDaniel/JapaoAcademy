@@ -302,13 +302,66 @@ Concluída em 2026-08-03. O resumo semanal foi ampliado para uma seção de grá
 8. `tests/README.md`
 9. `tests/ETAPA_29_DASHBOARD_MEU_PROGRESSO.md`
 
-## Funcionalidades ainda adiadas
+## Fase 4, 5 e 6 avançadas — Calendário, Histórico SRS e Insights Locais
 
-- calendário mensal;
-- histórico detalhado de respostas e revisões;
-- taxa histórica de acertos;
-- insights determinísticos locais;
-- previsões, insights por IA, ranking social e notificações push permanecem fora do escopo.
+Concluídas em 2026-08-04. O modelo de dados foi atualizado para a **versão 3**, integrando retenção detalhada de revisões SRS (até 500 tentativas por usuário), histórico diário de acertos/erros, calendário interativo completo, gráfico de desempenho de revisões SRS e motor local de insights determinísticos.
+
+### Modelo base de dados (versão 3)
+
+```text
+{
+  version: 3,
+  dailyGoalMinutes: 15,
+  preferenceUpdatedAt: timestamp,
+  firstAccessDate: "YYYY-MM-DD" | null,
+  activityByDate: { "YYYY-MM-DD": quantidade },
+  studySecondsByDate: { "YYYY-MM-DD": segundos },
+  studyMinutesByDate: { "YYYY-MM-DD": minutos },
+  dailyAggregates: {
+    "YYYY-MM-DD": {
+      sessionCount, activeSeconds, activities, xpEarned, reviews,
+      correctCount, errorCount, languages: {}, activityTypes: {}
+    }
+  },
+  lifetimeTotals: { sessionCount, activeSeconds, activities, xpEarned, reviews, correctCount, errorCount },
+  sessions: [ ... max 200 entradas ... ],
+  srsHistory: [
+    { id, timestamp, date, userId, language, deckType, cardId, contentLabel, quality, result, previousInterval, newInterval, nextDueDate }
+    ... max 500 entradas ...
+  ],
+  updatedAt: timestamp
+}
+```
+
+### Funcionalidades implementadas
+
+1. **Calendário Mensal de Estudos (Fase 4):**
+   - Grade mensal acessível com navegação por teclado (`Setas`, `Home`, `End`).
+   - Resumo por dia selecionado contendo minutos ativos, quantidade de sessões, atividades concluídas, idiomas praticados e taxa de acertos SRS (acertos/erros).
+   - Intensidade visual (níveis 0 a 4) calculada com base no tempo/atividade real do dia.
+   - Suporte completo a temas claro/escuro e layout responsivo mobile/desktop.
+
+2. **Histórico e Desempenho SRS (Fase 5):**
+   - Instrumentação transparente do `processarAvaliacaoSRS` para registrar tentativas sem alterar a lógica SM-2.
+   - Deduplicação determinística por ID único de tentativa.
+   - Tabela/lista de histórico de revisões com filtros (Período: 7, 30, 90 dias, Todos; Idioma: Todos, Japonês, Inglês; Resultado: Todos, Acertos, Erros) e paginação ("Carregar mais").
+   - Cálculo real da taxa de acertos em estatísticas (`#dashboard-stat-accuracy`).
+   - Renderização do gráfico de revisões SRS em SVG com séries de acertos e erros e sumarização acessível.
+
+3. **Insights Personalizados Locais (Fase 6):**
+   - Motor determinístico local executado sem chamadas a serviços externos ou IA.
+   - Máximo de 3 insights exibidos simultaneamente, priorizados rigorosamente:
+     1. `urgent`: Revisões SRS pendentes ou dificuldade recorrente em deck (>30% de erro em 10+ tentativas).
+     2. `goal`: Progresso ou conclusão da meta diária.
+     3. `trend`: Comparativo de minutos nos últimos 7 dias vs 7 dias anteriores.
+     4. `consistency`: Dias ativos nos últimos 7 dias.
+     5. `positive`: Sequência máxima registrada.
+   - Botões de ação direta ("Revisar agora", "Continuar curso", "Estudar agora").
+
+### Validação da Etapa 29 Completa
+
+- Baseline final: **24/24 grupos de testes de regressão** e **16/16 cenários de teste de integração** aprovados via `npm.cmd test`.
+- Validação visual e acessibilidade testadas e aprovadas no navegador.
 
 ## Validação
 

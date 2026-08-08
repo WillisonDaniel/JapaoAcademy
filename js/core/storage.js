@@ -142,9 +142,10 @@ function salvarProgressoGlobal() {
     salvarSilenciosamenteNaNuvem();
 }
 
-const DASHBOARD_DATA_VERSION = 2;
+const DASHBOARD_DATA_VERSION = 3;
 const DASHBOARD_DAILY_GOALS = [10, 15, 20, 30, 45, 60];
 const DASHBOARD_SESSION_LIMIT = 200;
+const DASHBOARD_SRS_HISTORY_LIMIT = 500;
 const DASHBOARD_DAILY_RETENTION_DAYS = 366;
 const DASHBOARD_SESSION_MIN_ACTIVE_SECONDS = 15;
 const DASHBOARD_ACTIVITY_TYPES = new Set([
@@ -206,6 +207,50 @@ function normalizarDataHoraDashboard(valor) {
     return Number.isFinite(data.getTime()) ? data.toISOString() : null;
 }
 
+function normalizarTentativaSRS(tentativa) {
+    if (!tentativa || typeof tentativa !== 'object') return null;
+    const id = String(tentativa.id || '').trim().slice(0, 120);
+    if (!id) return null;
+    const timestamp = normalizarDataHoraDashboard(tentativa.timestamp || tentativa.date);
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(tentativa.date || '')
+        ? tentativa.date
+        : (timestamp ? obterDataLocalDashboard(new Date(timestamp)) : null);
+    const quality = Math.min(4, Math.max(1, parseInt(tentativa.quality, 10) || 1));
+    const result = ['correct', 'error'].includes(tentativa.result)
+        ? tentativa.result
+        : (quality === 1 ? 'error' : 'correct');
+    const labelOriginal = String(tentativa.contentLabel || '').replace(/<[^>]*>/g, '').trim().slice(0, 160);
+    return {
+        id,
+        timestamp: timestamp || new Date().toISOString(),
+        date: date || obterDataLocalDashboard(),
+        userId: String(tentativa.userId || '').slice(0, 128),
+        language: /^[-A-Za-z]{2,12}$/.test(tentativa.language || '') ? tentativa.language : 'ja-JP',
+        deckType: String(tentativa.deckType || 'a1').slice(0, 40),
+        cardId: String(tentativa.cardId || '').slice(0, 160),
+        contentLabel: labelOriginal || 'Card SRS',
+        quality,
+        result,
+        previousInterval: Math.max(0, Math.round(Number(tentativa.previousInterval) || 0)),
+        newInterval: Math.max(0, Math.round(Number(tentativa.newInterval) || 0)),
+        nextDueDate: Math.max(0, Math.round(Number(tentativa.nextDueDate) || 0)),
+        sessionId: String(tentativa.sessionId || '').slice(0, 120)
+    };
+}
+
+function normalizarHistoricoSRSDashboard(historico) {
+    if (!Array.isArray(historico)) return [];
+    const porId = new Map();
+    historico.forEach(item => {
+        const normalizada = normalizarTentativaSRS(item);
+        if (!normalizada) return;
+        porId.set(normalizada.id, normalizada);
+    });
+    return Array.from(porId.values())
+        .sort((a, b) => String(a.timestamp || '').localeCompare(String(b.timestamp || '')))
+        .slice(-DASHBOARD_SRS_HISTORY_LIMIT);
+}
+
 function normalizarSessaoDashboard(sessao) {
     if (!sessao || typeof sessao !== 'object') return null;
     const id = String(sessao.id || '').trim().slice(0, 120);
@@ -251,6 +296,9 @@ function normalizarSessoesDashboard(sessoes) {
 
 function normalizarAgregadoDiarioDashboard(agregado) {
     const origem = agregado && typeof agregado === 'object' && !Array.isArray(agregado) ? agregado : {};
+    const reviews = Math.max(0, Math.round(Number(origem.reviews) || 0));
+    const correctCount = Math.max(0, Math.round(Number(origem.correctCount) || 0));
+    const errorCount = Math.max(0, Math.round(Number(origem.errorCount) || 0));
     return {
         sessionIds: Array.from(new Set(Array.isArray(origem.sessionIds) ? origem.sessionIds.map(id => String(id).slice(0, 120)).filter(Boolean) : [])).slice(-DASHBOARD_SESSION_LIMIT),
         activeSeconds: Math.max(0, Math.round(Number(origem.activeSeconds) || 0)),
@@ -258,6 +306,9 @@ function normalizarAgregadoDiarioDashboard(agregado) {
         interactions: Math.max(0, Math.round(Number(origem.interactions) || 0)),
         xpEarned: Math.max(0, Math.round(Number(origem.xpEarned) || 0)),
         sessionCount: Math.max(0, Math.round(Number(origem.sessionCount) || 0)),
+        reviews: Math.max(reviews, correctCount + errorCount),
+        correctCount,
+        errorCount,
         languages: normalizarMapaDistribuicaoDashboard(origem.languages),
         activityTypes: normalizarMapaDistribuicaoDashboard(origem.activityTypes),
         updatedAt: normalizarDataHoraDashboard(origem.updatedAt)
@@ -297,6 +348,7 @@ function criarDadosDashboardPadrao() {
         dailyAggregates: {},
         lifetimeTotals: criarTotaisAcumuladosDashboard(),
         sessions: [],
+        srsHistory: [],
         updatedAt: null
     };
 }
@@ -322,6 +374,7 @@ function normalizarDadosDashboard(dados) {
         agregados[data] = agregado;
     });
     const sessoes = normalizarSessoesDashboard(dados.sessions);
+    const srsHistorico = normalizarHistoricoSRSDashboard(dados.srsHistory);
     const totais = criarTotaisAcumuladosDashboard(dados.lifetimeTotals);
     const somaAgregados = Object.values(agregados).reduce((acumulado, agregado) => ({
         activeSeconds: acumulado.activeSeconds + agregado.activeSeconds,
@@ -342,9 +395,10 @@ function normalizarDadosDashboard(dados) {
         dailyAggregates: agregados,
         lifetimeTotals: totais,
         sessions: sessoes,
+        srsHistory: srsHistorico,
         updatedAt: normalizarDataHoraDashboard(dados.updatedAt)
     };
-    if (versaoOrigem < 2) normalizados.updatedAt = normalizados.updatedAt || new Date().toISOString();
+    if (versaoOrigem < 3) normalizados.updatedAt = normalizados.updatedAt || new Date().toISOString();
     return normalizados;
 }
 
@@ -407,6 +461,28 @@ function registrarSessaoDashboard(sessao, uid, sincronizar = true) {
     return salvarDadosDashboard(dados, uidSeguro, sincronizar);
 }
 
+function registrarTentativaSRS(tentativa, uid, sincronizar = true) {
+    const uidSeguro = obterUidDashboard(uid);
+    if (!uidSeguro) return false;
+    const normalizada = normalizarTentativaSRS({ ...tentativa, userId: uidSeguro });
+    if (!normalizada) return false;
+    const dados = carregarDadosDashboard(uidSeguro);
+    if (dados.srsHistory.some(item => item.id === normalizada.id)) return dados;
+    dados.srsHistory = normalizarHistoricoSRSDashboard([...dados.srsHistory, normalizada]);
+    const data = normalizada.date || obterDataLocalDashboard();
+    const agregado = normalizarAgregadoDiarioDashboard(dados.dailyAggregates[data]);
+    if (normalizada.result === 'correct') {
+        agregado.correctCount += 1;
+    } else {
+        agregado.errorCount += 1;
+    }
+    agregado.reviews = Math.max(agregado.reviews, agregado.correctCount + agregado.errorCount);
+    agregado.updatedAt = normalizada.timestamp || new Date().toISOString();
+    dados.dailyAggregates[data] = agregado;
+    dados.updatedAt = normalizada.timestamp || new Date().toISOString();
+    return salvarDadosDashboard(dados, uidSeguro, sincronizar);
+}
+
 function mesclarDadosDashboard(local, remoto) {
     const dadosLocal = normalizarDadosDashboard(local);
     const dadosRemotos = normalizarDadosDashboard(remoto);
@@ -460,6 +536,9 @@ function mesclarDadosDashboard(local, remoto) {
             interactions: unidoConhecido.interactions + Math.max(0, localDia.interactions - localConhecido.interactions, remotoDia.interactions - remotoConhecido.interactions),
             xpEarned: unidoConhecido.xpEarned + Math.max(0, localDia.xpEarned - localConhecido.xpEarned, remotoDia.xpEarned - remotoConhecido.xpEarned),
             sessionCount: unidoConhecido.sessionCount + Math.max(0, localDia.sessionCount - localConhecido.sessionCount, remotoDia.sessionCount - remotoConhecido.sessionCount),
+            reviews: Math.max(localDia.reviews, remotoDia.reviews),
+            correctCount: Math.max(localDia.correctCount, remotoDia.correctCount),
+            errorCount: Math.max(localDia.errorCount, remotoDia.errorCount),
             languages: Object.fromEntries(Array.from(chavesIdioma).map(chave => [
                 chave,
                 (unidoConhecido.languages[chave] || 0) + Math.max(0,
@@ -479,6 +558,7 @@ function mesclarDadosDashboard(local, remoto) {
         mesclado.studySecondsByDate[data] = Math.max(Number(dadosLocal.studySecondsByDate[data]) || 0, Number(dadosRemotos.studySecondsByDate[data]) || 0, base.activeSeconds);
     });
     mesclado.sessions = sessoes;
+    mesclado.srsHistory = normalizarHistoricoSRSDashboard([...dadosLocal.srsHistory, ...dadosRemotos.srsHistory]);
     const totaisMinimos = criarTotaisAcumuladosDashboard({
         activeSeconds: Math.max(dadosLocal.lifetimeTotals.activeSeconds, dadosRemotos.lifetimeTotals.activeSeconds),
         sessions: Math.max(dadosLocal.lifetimeTotals.sessions, dadosRemotos.lifetimeTotals.sessions),
@@ -732,13 +812,14 @@ function obterCaminhoMeuProgresso() {
     const pathname = (typeof window !== 'undefined' && window.location && window.location.pathname)
         ? window.location.pathname.replace(/\\/g, '/')
         : '';
-    if (pathname.includes('/html/')) return '../../meu-progresso.html';
-    return 'meu-progresso.html';
+    if (pathname.includes('/html/')) return '../../index.html';
+    return 'index.html';
 }
 
 function irParaMeuProgresso() {
     if (typeof window === 'undefined' || !window.location) return false;
-    if (/\/meu-progresso\.html$/i.test(window.location.pathname || '')) return false;
+    const path = (window.location.pathname || '').replace(/\\/g, '/');
+    if (/\/meu-progresso\.html$/i.test(path) || /\/index\.html$/i.test(path) || /\/$/i.test(path)) return false;
     window.location.href = obterCaminhoMeuProgresso();
     return true;
 }
@@ -941,7 +1022,10 @@ if (typeof window !== 'undefined') {
     window.carregarDadosDashboard = carregarDadosDashboard;
     window.salvarDadosDashboard = salvarDadosDashboard;
     window.normalizarDadosDashboard = normalizarDadosDashboard;
+    window.normalizarTentativaSRS = normalizarTentativaSRS;
+    window.normalizarHistoricoSRSDashboard = normalizarHistoricoSRSDashboard;
     window.registrarSessaoDashboard = registrarSessaoDashboard;
+    window.registrarTentativaSRS = registrarTentativaSRS;
     window.mesclarDadosDashboard = mesclarDadosDashboard;
     window.definirMetaDiariaDashboard = definirMetaDiariaDashboard;
     window.registrarPrimeiroAcessoDashboard = registrarPrimeiroAcessoDashboard;

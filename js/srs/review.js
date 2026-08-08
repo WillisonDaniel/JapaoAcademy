@@ -221,6 +221,41 @@ function renderizarCardSRS() {
                 ` : ''}
             </div>
         `;
+    } else if (cardData.dropType === 'false_friend_card') {
+        const item = cardData.item || {};
+        const word = item.word || item.title || '';
+        const realMeaning = item.realMeaning || item.rule || '';
+        const warning = item.warning || item.formula || '';
+        const example = item.example || '';
+        const translation = item.translation || '';
+        const safeWord = word.replace(/'/g, "\\'");
+        const safeEx = example.replace(/'/g, "\\'");
+
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #d97706;">⚠️ FALSO COGNATO • ${fNomeLocal(cardData.modTitle)}</div>
+            <div class="srs-kanji" style="font-size: 2.5rem; color: #dc2626; font-family: 'Fredoka', sans-serif;">${word}</div>
+            <button onclick="speakKana('${safeWord}')" class="srs-audio-btn">🔊 Ouvir Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Qual é o significado REAL dessa palavra em espanhol e qual o erro comum a evitar?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #d97706;">✨ Resposta Revelada</div>
+            <div class="srs-translation" style="color: #059669; font-size: 1.35rem; font-weight: bold; margin-bottom: 0.6rem;">✅ Significado Real: ${realMeaning}</div>
+            ${warning ? `
+                <div style="background: #fef2f2; border: 1px solid #fecdd3; padding: 10px 14px; border-radius: 10px; margin: 8px 0; text-align: left; font-size: 0.95rem; color: #dc2626; font-weight: bold;">
+                    🔴 ${warning}
+                </div>
+            ` : ''}
+            ${example ? `
+                <div style="background: #f0fdf4; border: 1px solid #99f6e4; padding: 10px 14px; border-radius: 10px; margin-top: 10px; text-align: left;">
+                    <strong style="color: #0d9488; font-size: 0.88rem;">📌 Exemplo:</strong>
+                    <div style="font-size: 1.05rem; font-weight: bold; color: #0d9488; margin-top: 4px;">
+                        "${example}"
+                        <button onclick="speakKana('${safeEx}')" style="font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; border: 1px solid #99f6e4; background: #ffffff; cursor: pointer; margin-left: 6px;">🔊</button>
+                    </div>
+                    ${translation ? `<small style="color: var(--text-muted);">${translation}</small>` : ''}
+                </div>
+            ` : ''}
+        `;
     } else {
         const drop = cardData.drop || {};
         const nivelLabel = (cardData.level || (srsTipoAtivo ? srsTipoAtivo.toUpperCase() : 'A1'));

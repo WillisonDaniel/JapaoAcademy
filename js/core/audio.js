@@ -66,8 +66,11 @@ function tocarAudio(texto, rateOverride = null) {
         if (!textoLimpo) return;
 
         const u = new SpeechSynthesisUtterance(textoLimpo);
-        const isEnglish = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
-        u.lang = isEnglish ? 'en-US' : 'ja-JP';
+        const bodyLang = document.body ? document.body.getAttribute('data-lang') : '';
+        const path = window.location ? window.location.pathname.toLowerCase() : '';
+        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
+        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('en-us') || path.includes('ingles');
+        u.lang = isSpanish ? 'es-ES' : (isEnglish ? 'en-US' : 'ja-JP');
         u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
         u.onerror = event => {
             if (event && (event.error === 'interrupted' || event.error === 'canceled')) return;

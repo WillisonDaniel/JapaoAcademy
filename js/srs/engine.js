@@ -20,6 +20,7 @@ function getDeckKeySRS(tipo) {
     if (t === 'kanji_n2' || t === 'n2') return 'ja_srs_kanji_n2_deck';
     if (t === 'kanji_n1' || t === 'n1') return 'ja_srs_kanji_n1_deck';
     if (t === 'phrasal_verbs' || t === 'phrasal') return 'en_srs_phrasal_verbs_deck';
+    if (t === 'falsos_amigos' || t === 'falsos') return 'es_srs_falsos_amigos_deck';
     if (t === 'a2') return 'ja_srs_a2_deck';
     if (t === 'b1') return 'ja_srs_b1_deck';
     if (t === 'b2') return 'ja_srs_b2_deck';
@@ -41,7 +42,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
         return true;
     };
 
-    const isSpecialCourse = ['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs', 'phrasal'].includes(t);
+    const isSpecialCourse = ['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs', 'phrasal', 'falsos_amigos', 'falsos'].includes(t);
 
     let dadosCurso = null;
     if (!isSpecialCourse) {
@@ -276,6 +277,32 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                 }
             });
         }
+    } else if (t === 'falsos_amigos' || t === 'falsos') {
+        const faData = typeof DADOS_ESPANHOL_FALSOS_AMIGOS_TRILHA !== 'undefined' ? DADOS_ESPANHOL_FALSOS_AMIGOS_TRILHA : [];
+        if (Array.isArray(faData) && faData.length > 0) {
+            const tamOrig = deck.length;
+            deck = deck.filter(card => eModAprendidoLocal(card.modIdx, 'falsos_amigos'));
+            if (deck.length !== tamOrig) alterado = true;
+
+            faData.forEach((mod, modIdx) => {
+                if (eModAprendidoLocal(modIdx, 'falsos_amigos')) {
+                    modulosConcluidosNomes.push(mod.title || `Módulo ${modIdx + 1}`);
+                    const drops = mod.stage2_drops || [];
+                    drops.forEach((item, itemIdx) => {
+                        const cardId = `fa_${mod.id}_${itemIdx}`;
+                        adicionarCardSeNovo(cardId, () => ({
+                            id: cardId,
+                            modIdx: modIdx,
+                            modTitle: mod.title || `Módulo ${modIdx + 1}`,
+                            dropType: 'false_friend_card',
+                            level: mod.level || 'A1',
+                            item: item,
+                            repetition: 0, interval: 0, easeFactor: 2.5, dueDate: Date.now()
+                        }));
+                    });
+                }
+            });
+        }
     }
 
     if (alterado && typeof salvarDeckSRS === 'function') {
@@ -301,6 +328,7 @@ function processarAvaliacaoSRS(qualidade) {
     const cardRef = deck.find(c => c.id === cardData.id);
     const agora = Date.now();
     const UM_DIA_MS = 86400000;
+    const intervaloAnterior = cardRef ? Math.max(0, Number(cardRef.interval) || 0) : 0;
 
     if (cardRef) {
         if (qualidade === 1) {
@@ -331,6 +359,38 @@ function processarAvaliacaoSRS(qualidade) {
 
         cardRef.dueDate = agora + (cardRef.interval * UM_DIA_MS);
         if (typeof salvarDeckSRS === 'function') salvarDeckSRS(srsTipoAtivo, deck);
+    }
+
+    let contentLabel = 'Card SRS';
+    if (cardData) {
+        if (cardData.drop && cardData.drop.kanji) contentLabel = cardData.drop.kanji;
+        else if (cardData.character) contentLabel = cardData.character;
+        else if (cardData.char) contentLabel = cardData.char;
+        else if (cardData.modTitle) contentLabel = cardData.modTitle;
+        else if (cardData.item && cardData.item.phrase) contentLabel = cardData.item.phrase;
+        else if (cardData.id) contentLabel = String(cardData.id);
+    }
+    const idioma = srsTipoAtivo === 'phrasal_verbs' ? 'en-US' : 'ja-JP';
+    const novoIntervalo = cardRef ? Math.max(0, Number(cardRef.interval) || 0) : 0;
+    const proximaRevisao = cardRef ? Number(cardRef.dueDate) || (agora + UM_DIA_MS) : (agora + UM_DIA_MS);
+    const sessaoId = (typeof window !== 'undefined' && window.estudoSessaoAtiva) ? window.estudoSessaoAtiva.id : '';
+
+    if (typeof registrarTentativaSRS === 'function') {
+        registrarTentativaSRS({
+            id: `srs_${agora}_${Math.random().toString(36).slice(2, 9)}`,
+            timestamp: new Date(agora).toISOString(),
+            date: typeof obterDataLocalDashboard === 'function' ? obterDataLocalDashboard(new Date(agora)) : new Date(agora).toISOString().slice(0, 10),
+            language: idioma,
+            deckType: srsTipoAtivo,
+            cardId: String(cardData.id || ''),
+            contentLabel: String(contentLabel).replace(/<[^>]*>/g, '').trim(),
+            quality: qualidade,
+            result: qualidade === 1 ? 'error' : 'correct',
+            previousInterval: intervaloAnterior,
+            newInterval: novoIntervalo,
+            nextDueDate: proximaRevisao,
+            sessionId: sessaoId
+        });
     }
 
     if (typeof AppState !== 'undefined' && typeof AppState.setSRSIndex === 'function') {

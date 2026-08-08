@@ -215,19 +215,33 @@ function getCourseData(mode) {
     if (m === 'pronuncia' || m === 'pronunciation') {
         return typeof PRONUNCIATION_TOPICS !== 'undefined' ? PRONUNCIATION_TOPICS : (typeof window !== 'undefined' && window.PRONUNCIATION_TOPICS ? window.PRONUNCIATION_TOPICS : null);
     }
-    if (m === 'curso' || m === 'japa') {
-        const isEnglish = typeof document !== 'undefined' && document.body && document.body.getAttribute('data-lang') === 'english';
-        const lvl = typeof nivelAtivo !== 'undefined' ? String(nivelAtivo).toUpperCase() : 'A1';
-        if (isEnglish) {
-            if (lvl === 'A1') return typeof CURSO_ENGLISH_A1_DADOS !== 'undefined' ? CURSO_ENGLISH_A1_DADOS : null;
-            if (lvl === 'A2') return typeof CURSO_ENGLISH_A2_DADOS !== 'undefined' ? CURSO_ENGLISH_A2_DADOS : null;
-            if (lvl === 'B1') return typeof CURSO_ENGLISH_B1_DADOS !== 'undefined' ? CURSO_ENGLISH_B1_DADOS : null;
-            if (lvl === 'B2') return typeof CURSO_ENGLISH_B2_DADOS !== 'undefined' ? CURSO_ENGLISH_B2_DADOS : null;
+    if (m === 'curso' || m === 'japa' || m === 'spanish' || m === 'ingles' || m === 'english' || m === 'a1' || m === 'a2' || m === 'b1' || m === 'b2') {
+        const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
+        const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
+        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
+        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+
+        const lvl = (typeof AppState !== 'undefined' && AppState.course && AppState.course.level)
+            ? String(AppState.course.level).toUpperCase()
+            : ((typeof mode === 'string' && ['A1','A2','B1','B2'].includes(mode.toUpperCase()))
+                ? mode.toUpperCase()
+                : ((typeof nivelAtivo !== 'undefined' && nivelAtivo) ? String(nivelAtivo).toUpperCase() : 'A1'));
+
+        if (isSpanish) {
+            if (lvl === 'A1') return typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined' ? CURSO_ESPANHOL_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A1_DADOS : null);
+            if (lvl === 'A2') return typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined' ? CURSO_ESPANHOL_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A2_DADOS : null);
+            if (lvl === 'B1') return typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined' ? CURSO_ESPANHOL_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_B1_DADOS : null);
+            if (lvl === 'B2') return typeof CURSO_ESPANHOL_B2_DADOS !== 'undefined' ? CURSO_ESPANHOL_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_B2_DADOS : null);
+        } else if (isEnglish) {
+            if (lvl === 'A1') return typeof CURSO_ENGLISH_A1_DADOS !== 'undefined' ? CURSO_ENGLISH_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ENGLISH_A1_DADOS : null);
+            if (lvl === 'A2') return typeof CURSO_ENGLISH_A2_DADOS !== 'undefined' ? CURSO_ENGLISH_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ENGLISH_A2_DADOS : null);
+            if (lvl === 'B1') return typeof CURSO_ENGLISH_B1_DADOS !== 'undefined' ? CURSO_ENGLISH_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ENGLISH_B1_DADOS : null);
+            if (lvl === 'B2') return typeof CURSO_ENGLISH_B2_DADOS !== 'undefined' ? CURSO_ENGLISH_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ENGLISH_B2_DADOS : null);
         } else {
-            if (lvl === 'A1') return typeof CURSO_A1_DADOS !== 'undefined' ? CURSO_A1_DADOS : null;
-            if (lvl === 'A2') return typeof CURSO_A2_DADOS !== 'undefined' ? CURSO_A2_DADOS : null;
-            if (lvl === 'B1') return typeof CURSO_B1_DADOS !== 'undefined' ? CURSO_B1_DADOS : null;
-            if (lvl === 'B2') return typeof CURSO_B2_DADOS !== 'undefined' ? CURSO_B2_DADOS : null;
+            if (lvl === 'A1') return typeof CURSO_A1_DADOS !== 'undefined' ? CURSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_A1_DADOS : null);
+            if (lvl === 'A2') return typeof CURSO_A2_DADOS !== 'undefined' ? CURSO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_A2_DADOS : null);
+            if (lvl === 'B1') return typeof CURSO_B1_DADOS !== 'undefined' ? CURSO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_B1_DADOS : null);
+            if (lvl === 'B2') return typeof CURSO_B2_DADOS !== 'undefined' ? CURSO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_B2_DADOS : null);
         }
     }
     return null;

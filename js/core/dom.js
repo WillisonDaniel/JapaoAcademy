@@ -718,6 +718,15 @@ function redirecionarParaDicionario() {
     const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
     const bodyMode = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-mode') || '') : '';
 
+    const isSpanish = (
+        bodyLang === 'spanish' ||
+        bodyLang === 'es-es' ||
+        bodyMode === 'spanish' ||
+        bodyMode === 'espanhol' ||
+        pathname.includes('espanhol') ||
+        pathname.includes('es-es')
+    );
+
     const isEnglish = (
         bodyLang === 'english' ||
         bodyMode === 'pronuncia' ||
@@ -729,9 +738,18 @@ function redirecionarParaDicionario() {
 
     const inHtmlSubfolder = pathname.includes('/html/');
     const inEnSubfolder = pathname.includes('/en-us/');
+    const inEsSubfolder = pathname.includes('/es-es/');
     const inJaSubfolder = pathname.includes('/ja-jp/');
 
-    if (isEnglish) {
+    if (isSpanish) {
+        if (inEsSubfolder) {
+            window.location.href = 'espanhol_dicionario.html';
+        } else if (inHtmlSubfolder) {
+            window.location.href = '../es-ES/espanhol_dicionario.html';
+        } else {
+            window.location.href = 'html/es-ES/espanhol_dicionario.html';
+        }
+    } else if (isEnglish) {
         if (inEnSubfolder) {
             window.location.href = 'dicionario_ingles.html';
         } else if (inHtmlSubfolder) {

@@ -164,9 +164,12 @@ function verificarSentenceBuilder(exId) {
     const fb = document.getElementById(`fb-sb-${exId}`);
     const box = document.getElementById(`box-sb-${exId}`);
     if (!state || !fb) return;
-    const fraseMontada = state.selectedTarget.join('');
-    const fraseCorreta = state.originalChunks.join('');
-    if (fraseMontada === fraseCorreta && state.selectedTarget.length === state.originalChunks.length) {
+    const fraseMontada = state.selectedTarget.join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+    const fraseCorreta = state.originalChunks.join(' ').replace(/\s+/g, ' ').trim().toLowerCase();
+    const fraseMontadaNoSpace = state.selectedTarget.join('').replace(/\s+/g, '').toLowerCase();
+    const fraseCorretaNoSpace = state.originalChunks.join('').replace(/\s+/g, '').toLowerCase();
+
+    if ((fraseMontada === fraseCorreta || fraseMontadaNoSpace === fraseCorretaNoSpace) && state.selectedTarget.length === state.originalChunks.length) {
         if (typeof playBeep === 'function') playBeep('success');
         if (typeof dispararConfeti === 'function') dispararConfeti({ particleCount: 50, spread: 60 });
         if (typeof adicionarXP === 'function') adicionarXP(15, 'Construtor de Frases');

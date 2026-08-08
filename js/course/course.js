@@ -180,11 +180,14 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     // 2. Checagem de IDs resolvidos de módulo (ex: targetId, fallbackId)
     const numIdx = typeof modIdx === 'number' ? modIdx : (!isNaN(parseInt(modIdx, 10)) ? parseInt(modIdx, 10) : null);
     if (numIdx !== null) {
-        const isEnglish = (typeof document !== 'undefined' && document.body && document.body.getAttribute('data-lang') === 'english') ||
-                          (typeof window !== 'undefined' && window.location && (window.location.pathname.includes('ingles') || window.location.pathname.includes('en-US')));
+        const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
+        const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
+        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
+        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+
         const list = typeof getCourseData === 'function' ? getCourseData(key) : null;
         const targetId = (list && list[numIdx] && list[numIdx].id) ? list[numIdx].id : null;
-        const fallbackId = isEnglish ? `en_${key}_mod_${String(numIdx + 1).padStart(2, '0')}` : `${key}_mod_${String(numIdx + 1).padStart(2, '0')}`;
+        const fallbackId = isSpanish ? `es_${key}_mod_${numIdx + 1}` : (isEnglish ? `en_${key}_mod_${String(numIdx + 1).padStart(2, '0')}` : `${key}_mod_${String(numIdx + 1).padStart(2, '0')}`);
 
         if (targetId && arrayConcluidos.includes(targetId)) return true;
         if (fallbackId && arrayConcluidos.includes(fallbackId)) return true;
@@ -465,12 +468,12 @@ function renderizarEtapa() {
                     </div>
                 `;
             } else {
-                const processado = typeof formatarTextoJapones === 'function' ? formatarTextoJapones(drop) : { htmlJapones: drop.kanji || drop.word || drop.english || '', htmlRomaji: drop.romaji || drop.ipa || '' };
-                const mainContent = drop.kanji || drop.word || drop.english || processado.htmlJapones || '';
+                const processado = typeof formatarTextoJapones === 'function' ? formatarTextoJapones(drop) : { htmlJapones: drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || '', htmlRomaji: drop.romaji || drop.ipa || '' };
+                const mainContent = drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || processado.htmlJapones || '';
                 const subContent = drop.romaji || drop.ipa || processado.htmlRomaji || '';
-                const translation = drop.translation || drop.portuguese || '';
+                const translation = drop.translation || drop.portuguese || drop.Portuguese || '';
                 const timeCtx = drop.timeContext ? `<div style="margin-top:10px; font-size:0.9rem; color:var(--text-muted);">💡 ${typeof fNome === 'function' ? fNome(drop.timeContext) : drop.timeContext}</div>` : '';
-                const speakWord = (drop.kanji || drop.word || drop.english || drop.romaji || '').replace(/'/g, "\\'");
+                const speakWord = (drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || drop.romaji || '').replace(/'/g, "\\'");
 
                 container.innerHTML = `
                     <div class="flashcard-drop" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; text-align:center; box-shadow:var(--shadow);">
@@ -535,11 +538,12 @@ function renderizarEtapa() {
         container.innerHTML = `<h3>💬 Diálogo da Aula</h3>${htmlDiag}`;
     } else if (curEtapa === 4) {
         if (indicadorEtapa) indicadorEtapa.innerText = `Etapa 4 de 5: Construtor de Frases`;
-        const sentenceExs = module.sentenceBuilder;
+        const sentenceExs = Array.isArray(module.sentenceBuilder) ? module.sentenceBuilder : [];
         let htmlSB = sentenceExs.map((ex, idx) => {
             const exId = `sb_${module.id}_${idx}`;
-            const targetSentence = ex.translation || '';
-            if (typeof inicializarSentenceBuilderState === 'function') inicializarSentenceBuilderState(exId, ex.chunks || []);
+            const targetSentence = ex.translation || ex.target || ex.portuguese || ex.Portuguese || '';
+            const chunksList = (Array.isArray(ex.chunks) && ex.chunks.length > 0) ? ex.chunks : ((Array.isArray(ex.words) && ex.words.length > 0) ? ex.words : []);
+            if (typeof inicializarSentenceBuilderState === 'function') inicializarSentenceBuilderState(exId, chunksList);
             return `
                 <div id="box-sb-${exId}" class="sb-box" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:14px; padding:18px; margin-bottom:16px;">
                     <div style="font-weight:bold; margin-bottom:8px;">Traduza: "${targetSentence}"</div>
