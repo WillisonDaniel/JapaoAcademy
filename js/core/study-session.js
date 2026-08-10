@@ -18,7 +18,8 @@
             'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'japanese': 'ja-JP', 'japones': 'ja-JP',
             'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
             'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
-            'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU'
+            'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU',
+            'it': 'it-IT', 'it-it': 'it-IT', 'italian': 'it-IT', 'italiano': 'it-IT'
         };
         const chave = String(valor || '').trim().toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/_/g, '-');
@@ -36,6 +37,7 @@
         if (caminho.includes('/en-us/')) return 'en-US';
         if (caminho.includes('/es-es/')) return 'es-ES';
         if (caminho.includes('/ru-ru/')) return 'ru-RU';
+        if (caminho.includes('/it-it/')) return 'it-IT';
         return 'ja-JP';
     }
 

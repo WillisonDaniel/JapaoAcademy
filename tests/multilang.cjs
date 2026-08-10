@@ -301,6 +301,8 @@ test('sessoes e historico persistem codigos canonicos', () => {
         minActiveSeconds: 0
     });
     assert.equal(controller.iniciar({ language: 'russian', activityType: 'course', contentId: 'ru-a1' }).language, 'ru-RU');
+    controller.finalizar('switch');
+    assert.equal(controller.iniciar({ language: 'italiano', activityType: 'course', contentId: 'it-a1' }).language, 'it-IT');
 
     const storageContext = createContext();
     runFile(storageContext, 'js/core/storage.js');
@@ -312,22 +314,48 @@ test('sessoes e historico persistem codigos canonicos', () => {
     assert.equal(phrasal.language, 'en-US');
 });
 
-test('dashboard reconhece quatro idiomas, datasets e filtros', () => {
+test('dashboard reconhece cinco idiomas, datasets e filtros', () => {
     const context = createContext({ language: 'all', mode: 'dashboard' });
     runFile(context, 'js/dashboard/meu-progresso.js');
     const russianFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'ru-RU', period: 30, activity: 'all' }));
     const spanishFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'es-ES', period: 30, activity: 'all' }));
+    const italianFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'it-IT', period: 30, activity: 'all' }));
     assert.equal(russianFilter.language, 'ru-RU');
     assert.equal(spanishFilter.language, 'es-ES');
+    assert.equal(italianFilter.language, 'it-IT');
     vm.runInContext('globalThis.__languageIds = DASHBOARD_LANGUAGE_REGISTRY.map(item => item.id)', context);
-    assert.deepEqual(plain(context.__languageIds), ['japanese', 'english', 'spanish', 'russian']);
+    assert.deepEqual(plain(context.__languageIds), ['japanese', 'english', 'spanish', 'russian', 'italian']);
 
     for (const page of ['index.html', 'meu-progresso.html']) {
         const html = read(page);
-        for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU']) assert.match(html, new RegExp(`value="${code}"`));
+        for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT']) assert.match(html, new RegExp(`value="${code}"`));
         assert.match(html, /js\/core\/course-index\.js/);
-        assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
+        assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU|it-IT)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     }
+    assert.match(read('js/dashboard/meu-progresso.js'), /key: 'it_srs_a1_deck'/);
+    assert.doesNotMatch(read('js/dashboard/meu-progresso.js'), /key: 'it_srs_(?:a2|b1|b2)_deck'/);
+});
+
+test('curso italiano limita o piloto ao A1 e isola indice, decks e progresso', () => {
+    const context = createContext({ language: 'italian', pathname: '/html/it-IT/italiano_curso.html' });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_a1.js');
+    runFile(context, 'js/srs/engine.js');
+    assert.equal(context.getCurrentLanguageCode(), 'it-IT');
+    assert.equal(context.getCourseModuleIds('it-IT', 'A1').length, 30);
+    assert.equal(context.getCourseModuleIds('it-IT', 'A2').length, 0);
+    assert.equal(context.getCourseModuleLanguage('it_a1_mod_17_card_2'), 'it-IT');
+    assert.equal(context.getCourseData('italiano').length, 30);
+    assert.equal(context.getDeckKeySRS('a1'), 'it_srs_a1_deck');
+    assert.equal(context.getDeckKeySRS('a2'), 'it_srs_a2_deck');
+
+    const html = read('html/it-IT/italiano_curso.html');
+    for (const level of ['a2', 'b1', 'b2']) {
+        assert.match(html, new RegExp(`id="card-nivel-${level}"[^>]*aria-disabled="true"`));
+        assert.doesNotMatch(html, new RegExp(`id="card-nivel-${level}"[^>]*onclick=`));
+    }
+    assert.doesNotMatch(html, /Ativar (?:Kanji|Kana|Furigana|Romaji)/);
 });
 
 test('Falsos Amigos usa AppState central e curso russo usa nivel SRS ativo', () => {
