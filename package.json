@@ -4,9 +4,11 @@
   "private": true,
   "description": "Suite de regressao local da Idiomas Academy",
   "scripts": {
-    "test": "node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
+    "test": "node tests/course-index.cjs && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
     "test:regression": "node tests/regression.cjs",
     "test:integration": "node tests/integration.cjs",
-    "test:multilang": "node tests/multilang.cjs"
+    "test:multilang": "node tests/multilang.cjs",
+    "index:courses": "node tests/course-index.cjs --write",
+    "index:courses:check": "node tests/course-index.cjs"
   }
 }

@@ -213,8 +213,8 @@ test('dashboard reconhece quatro idiomas, datasets e filtros', () => {
     for (const page of ['index.html', 'meu-progresso.html']) {
         const html = read(page);
         for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU']) assert.match(html, new RegExp(`value="${code}"`));
-        assert.match(html, /database\/es-ES\/data_espanhol_b2\.js/);
-        assert.match(html, /database\/ru-RU\/data_curso_russo_b2\.js/);
+        assert.match(html, /js\/core\/course-index\.js/);
+        assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     }
 });
 
@@ -245,7 +245,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v19/);
+    assert.match(serviceWorker, /idiomas-academy-v20/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [

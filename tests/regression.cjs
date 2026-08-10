@@ -91,7 +91,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 69, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 70, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -602,7 +602,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v19'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v20'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -619,8 +619,8 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.match(html, /data-lang="all"/);
     assert.match(html, /Meu Progresso - Idiomas Academy/);
     assert.match(html, /id="dashboard-languages-grid"/);
-    assert.match(html, /database\/ja-JP\/data_curso_a1\.js/);
-    assert.match(html, /database\/en-US\/data_english_a1\.js/);
+    assert.match(html, /js\/core\/course-index\.js/);
+    assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     assert.match(html, /id="dashboard-signed-out"[^>]*hidden/);
     assert.match(html, /id="dashboard-first-access"[^>]*hidden/);
     assert.match(html, /id="dashboard-goal-bar"[^>]*role="progressbar"/);
@@ -711,7 +711,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(html, /id="dashboard-stat-accuracy">Dados insuficientes/);
     assert.match(html, /id="dashboard-language-distribution"/);
     assert.match(html, /id="dashboard-activity-distribution"/);
-    assert.match(html, /meu-progresso\.js\?v=30/);
+    assert.match(html, /meu-progresso\.js\?v=31/);
     assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
 
     assert.match(dashboard, /function calcularEstatisticasDashboard\s*\(/);
@@ -723,8 +723,8 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v19'/);
-    assert.match(serviceWorker, /meu-progresso\.js\?v=30/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v20'/);
+    assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
 test('graficos de aprendizado da Etapa 29 usam dados reais e alternativa acessivel', () => {

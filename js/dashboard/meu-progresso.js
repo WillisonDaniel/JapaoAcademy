@@ -38,7 +38,8 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         icon: '🎌',
         hubPage: 'hub_japones.html',
         coursePage: 'html/ja-JP/curso.html',
-        getCourses: () => ({
+        languageCode: 'ja-JP',
+        getFallbackCourses: () => ({
             A1: (typeof CURSO_A1_DADOS !== 'undefined') ? CURSO_A1_DADOS : [],
             A2: (typeof CURSO_A2_DADOS !== 'undefined') ? CURSO_A2_DADOS : [],
             B1: (typeof CURSO_B1_DADOS !== 'undefined') ? CURSO_B1_DADOS : [],
@@ -53,7 +54,8 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         icon: '🗽',
         hubPage: 'hub_ingles.html',
         coursePage: 'html/en-US/curso_ingles.html',
-        getCourses: () => ({
+        languageCode: 'en-US',
+        getFallbackCourses: () => ({
             A1: (typeof CURSO_ENGLISH_A1_DADOS !== 'undefined') ? CURSO_ENGLISH_A1_DADOS : [],
             A2: (typeof CURSO_ENGLISH_A2_DADOS !== 'undefined') ? CURSO_ENGLISH_A2_DADOS : [],
             B1: (typeof CURSO_ENGLISH_B1_DADOS !== 'undefined') ? CURSO_ENGLISH_B1_DADOS : [],
@@ -68,7 +70,8 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         icon: '💃',
         hubPage: 'hub_espanhol.html',
         coursePage: 'html/es-ES/espanhol_curso.html',
-        getCourses: () => ({
+        languageCode: 'es-ES',
+        getFallbackCourses: () => ({
             A1: (typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined') ? CURSO_ESPANHOL_A1_DADOS : [],
             A2: (typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined') ? CURSO_ESPANHOL_A2_DADOS : [],
             B1: (typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined') ? CURSO_ESPANHOL_B1_DADOS : [],
@@ -83,7 +86,8 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         icon: '🪆',
         hubPage: 'hub_russo.html',
         coursePage: 'html/ru-RU/russo_curso.html',
-        getCourses: () => ({
+        languageCode: 'ru-RU',
+        getFallbackCourses: () => ({
             A1: (typeof CURSO_RUSSO_A1_DADOS !== 'undefined') ? CURSO_RUSSO_A1_DADOS : [],
             A2: (typeof CURSO_RUSSO_A2_DADOS !== 'undefined') ? CURSO_RUSSO_A2_DADOS : [],
             B1: (typeof CURSO_RUSSO_B1_DADOS !== 'undefined') ? CURSO_RUSSO_B1_DADOS : [],
@@ -156,13 +160,20 @@ function obterProgressoDashboard() {
 }
 
 function obterResumoIdiomaDashboard(configuracao, progresso, concluidosSalvos) {
-    const cursos = configuracao.getCourses();
+    const cursosFallback = typeof configuracao.getFallbackCourses === 'function'
+        ? configuracao.getFallbackCourses()
+        : {};
     const idsConhecidos = new Set();
     ['A1', 'A2', 'B1', 'B2'].forEach(nivel => {
-        const modulos = Array.isArray(cursos[nivel]) ? cursos[nivel] : [];
-        modulos.forEach(modulo => {
-            if (modulo && modulo.id) idsConhecidos.add(String(modulo.id));
-        });
+        const idsIndexados = typeof getCourseModuleIds === 'function'
+            ? getCourseModuleIds(configuracao.languageCode, nivel)
+            : [];
+        if (idsIndexados.length > 0) {
+            idsIndexados.forEach(id => idsConhecidos.add(String(id)));
+            return;
+        }
+        const modulos = Array.isArray(cursosFallback[nivel]) ? cursosFallback[nivel] : [];
+        modulos.forEach(modulo => { if (modulo && modulo.id) idsConhecidos.add(String(modulo.id)); });
     });
     const concluidos = Array.from(idsConhecidos).filter(id => concluidosSalvos.has(id)).length;
     const extrasPersistidos = configuracao.extraProgressKeys.reduce((total, chave) => {

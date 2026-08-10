@@ -1,4 +1,4 @@
-const CACHE_NAME = 'idiomas-academy-v19';
+const CACHE_NAME = 'idiomas-academy-v20';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -49,6 +49,7 @@ const ASSETS_TO_CACHE = [
     './app.js',
     './js/core/config.js',
     './js/core/constants.js',
+    './js/core/course-index.js',
     './js/core/state.js',
     './js/core/utils.js',
     './js/core/theme.js',
@@ -71,7 +72,7 @@ const ASSETS_TO_CACHE = [
     './js/core/dictionary.js',
     './js/kanji/kanji-canvas.js',
     './js/minigame/minigame_russo.js',
-    './js/dashboard/meu-progresso.js?v=30',
+    './js/dashboard/meu-progresso.js?v=31',
     './firebase-init.js',
     './manifest.json',
     './database/ja-JP/data_curso_a1.js',
