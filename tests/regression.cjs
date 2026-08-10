@@ -607,6 +607,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     const html = read('index.html');
+    const dashboardPage = read('meu-progresso.html');
     const legacyRedirect = read('html/ja-JP/meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const storage = read('js/core/storage.js');
@@ -696,6 +697,7 @@ test('medicao de sessoes da Etapa 29 usa API central e retencao limitada', () =>
 
 test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade', () => {
     const html = read('index.html');
+    const dashboardPage = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
     const serviceWorker = read('sw.js');
@@ -717,6 +719,10 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(dashboard, /function calcularEstatisticasDashboard\s*\(/);
     assert.match(dashboard, /function criarLinhasDiariasEstatisticasDashboard\s*\(/);
     assert.match(dashboard, /accuracy:\s*\{ value: accuracyValue, available:/);
+    assert.match(dashboard, /renderizarGraficoRevisoesDashboard\(estatisticas\)/);
+    assert.match(dashboard, /estatisticas\.accuracy\.available[\s\S]*?estatisticas\.accuracy\.value/);
+    assert.doesNotMatch(dashboard, /Acertos e erros histÃ³ricos serÃ£o registrados na Fase 5/);
+    assert.doesNotMatch(`${html}\n${dashboardPage}`, /Fase 5/);
     assert.match(dashboard, /Dias que alcançaram a meta ÷ dias medidos elegíveis/);
     assert.match(dashboard, /filtro\.addEventListener\('change'/);
     assert.match(dashboard, /renderizarGraficosDashboard\(estatisticas\)/);
@@ -797,6 +803,7 @@ test('historico de revisoes SRS da Etapa 29 registra tentativas e deduplica por 
     const storage = read('js/core/storage.js');
     const engine = read('js/srs/engine.js');
     const html = read('index.html');
+    const dashboardPage = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
 
     assert.match(storage, /DASHBOARD_SRS_HISTORY_LIMIT = 500/);
@@ -806,16 +813,21 @@ test('historico de revisoes SRS da Etapa 29 registra tentativas e deduplica por 
     assert.match(engine, /registrarTentativaSRS\(\{/);
     assert.match(html, /id="dashboard-srs-history-card"/);
     assert.match(html, /id="dashboard-srs-history-list"/);
+    assert.match(dashboardPage, /id="dashboard-srs-history-card"/);
+    assert.match(dashboardPage, /id="dashboard-srs-history-list"/);
     assert.match(dashboard, /function renderizarHistoricoSRSDashboard/);
 });
 
 test('insights personalizados locais da Etapa 29 sao deterministicos e limitados a tres', () => {
     const html = read('index.html');
+    const dashboardPage = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
 
     assert.match(html, /id="dashboard-insights-card"/);
     assert.match(html, /id="dashboard-insights-grid"/);
+    assert.match(dashboardPage, /id="dashboard-insights-card"/);
+    assert.match(dashboardPage, /id="dashboard-insights-grid"/);
     assert.match(dashboard, /function calcularInsightsDashboard/);
     assert.match(dashboard, /function renderizarInsightsDashboard/);
     assert.match(dashboard, /candidatos\.slice\(0, 3\)/);

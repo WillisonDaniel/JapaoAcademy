@@ -156,7 +156,7 @@
                     <div class="dashboard-stat"><span>Atividades concluídas</span><strong id="dashboard-stat-activities">0</strong><small id="dashboard-stat-activities-note"></small></div>
                     <div class="dashboard-stat"><span>Sessões realizadas</span><strong id="dashboard-stat-sessions">0</strong><small id="dashboard-stat-sessions-note"></small></div>
                     <div class="dashboard-stat"><span>Revisões respondidas</span><strong id="dashboard-stat-reviews">0</strong><small id="dashboard-stat-reviews-note"></small></div>
-                    <div class="dashboard-stat"><span>Taxa de acertos SRS</span><strong id="dashboard-stat-accuracy">Dados insuficientes</strong><small id="dashboard-stat-accuracy-note">O histórico de resultados será registrado na Fase 5.</small></div>
+                    <div class="dashboard-stat"><span>Taxa de acertos SRS</span><strong id="dashboard-stat-accuracy">Dados insuficientes</strong><small id="dashboard-stat-accuracy-note">Nenhum resultado SRS registrado no período.</small></div>
                     <div class="dashboard-stat"><span>Metas alcançadas</span><strong id="dashboard-stat-goals">Dados insuficientes</strong><small id="dashboard-stat-goals-note"></small></div>
                     <div class="dashboard-stat"><span>Cumprimento da meta</span><strong id="dashboard-stat-goal-rate">Dados insuficientes</strong><small id="dashboard-stat-goal-rate-note"></small></div>
                     <div class="dashboard-stat"><span>Maior sequência conhecida</span><strong id="dashboard-stat-best-streak">0 dias</strong><small id="dashboard-stat-best-streak-note"></small></div>
@@ -215,7 +215,7 @@
                         </div>
                         <div id="dashboard-review-chart-empty" class="dashboard-inline-empty">
                             <strong>Dados insuficientes</strong>
-                            <span>O histórico de acertos e erros começará a ser registrado na Fase 5.</span>
+                            <span>Conclua revisões SRS para visualizar acertos e erros no período.</span>
                         </div>
                         <div id="dashboard-review-chart" class="dashboard-review-chart" role="img" hidden></div>
                         <ul id="dashboard-review-chart-summary" class="dashboard-chart-summary dashboard-sr-chart-summary" hidden aria-label="Alternativa textual do desempenho das revisões"></ul>
@@ -285,6 +285,67 @@
                         <div><dt>Acertos e erros</dt><dd id="dashboard-calendar-day-results">Dados insuficientes</dd></div>
                     </dl>
                 </section>
+            </section>
+
+            <section id="dashboard-srs-history-card" class="dashboard-card dashboard-wide-card" aria-labelledby="dashboard-srs-history-title">
+                <div class="dashboard-card-heading dashboard-statistics-heading">
+                    <div>
+                        <span class="dashboard-eyebrow">Repetição espaçada</span>
+                        <h2 id="dashboard-srs-history-title">Histórico de revisões</h2>
+                    </div>
+                    <div class="dashboard-statistics-filters" aria-label="Filtros do histórico de revisões">
+                        <label for="dashboard-history-filter-period">Período
+                            <select id="dashboard-history-filter-period">
+                                <option value="7">7 dias</option>
+                                <option value="30" selected>30 dias</option>
+                                <option value="90">90 dias</option>
+                                <option value="all">Todos</option>
+                            </select>
+                        </label>
+                        <label for="dashboard-history-filter-language">Idioma
+                            <select id="dashboard-history-filter-language">
+                                <option value="all">Todos</option>
+                                <option value="ja-JP">Japonês</option>
+                                <option value="en-US">Inglês</option>
+                                <option value="es-ES">Espanhol</option>
+                                <option value="ru-RU">Russo</option>
+                            </select>
+                        </label>
+                        <label for="dashboard-history-filter-result">Resultado
+                            <select id="dashboard-history-filter-result">
+                                <option value="all">Todos</option>
+                                <option value="correct">Acertos</option>
+                                <option value="error">Erros</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <p id="dashboard-srs-history-status" class="dashboard-card-note" role="status" aria-live="polite">Exibindo histórico de revisões recentes.</p>
+                <div id="dashboard-srs-history-empty" class="dashboard-inline-empty" hidden>
+                    <strong>Nenhuma revisão registrada</strong>
+                    <span>Conclua uma sessão SRS para visualizar seu histórico de respostas aqui.</span>
+                </div>
+                <div id="dashboard-srs-history-container" class="dashboard-history-container">
+                    <ul id="dashboard-srs-history-list" class="dashboard-history-list" aria-label="Lista de tentativas recentes de revisão"></ul>
+                </div>
+                <div class="dashboard-history-actions">
+                    <button type="button" id="dashboard-history-load-more" class="dashboard-secondary-button" hidden>Carregar mais</button>
+                </div>
+            </section>
+
+            <section id="dashboard-insights-card" class="dashboard-card dashboard-wide-card" aria-labelledby="dashboard-insights-title">
+                <div class="dashboard-card-heading">
+                    <div>
+                        <span class="dashboard-eyebrow">Análise local determinística</span>
+                        <h2 id="dashboard-insights-title">Insights de aprendizado</h2>
+                        <p class="dashboard-card-note">Recomendações e tendências calculadas no navegador com base na sua rotina real.</p>
+                    </div>
+                </div>
+                <div id="dashboard-insights-empty" class="dashboard-inline-empty" hidden>
+                    <strong>Ainda não há dados suficientes</strong>
+                    <span>Estude por pelo menos 3 dias para liberar análises personalizadas.</span>
+                </div>
+                <div id="dashboard-insights-grid" class="dashboard-insights-grid"></div>
             </section>
 
             <section id="dashboard-summary-card" class="dashboard-card dashboard-wide-card" aria-labelledby="dashboard-summary-title">

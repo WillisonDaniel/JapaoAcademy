@@ -884,7 +884,7 @@ function renderizarGraficosDashboard(estatisticas = {}) {
         evolution: renderizarGraficoEvolucaoDashboard(estatisticas),
         distribution: renderizarGraficoDistribuicaoDashboard(estatisticas)
     };
-    renderizarGraficoRevisoesDashboard();
+    renderizarGraficoRevisoesDashboard(estatisticas);
     return resultados;
 }
 
@@ -1163,7 +1163,11 @@ function renderizarEstatisticasDashboard(dados = dashboardDadosAtuais, streak = 
     definirValorEstatisticaDashboard('dashboard-stat-activities', formatarNumeroEstatisticaDashboard(estatisticas.activities, 0), 'Inclui registros legados compatíveis quando não há filtro específico.');
     definirValorEstatisticaDashboard('dashboard-stat-sessions', formatarNumeroEstatisticaDashboard(estatisticas.sessions, 0), 'Sessões válidas com interação e pelo menos 15 segundos.');
     definirValorEstatisticaDashboard('dashboard-stat-reviews', formatarNumeroEstatisticaDashboard(estatisticas.reviews, 0), 'Baseado nas sessões SRS detalhadas disponíveis.');
-    definirValorEstatisticaDashboard('dashboard-stat-accuracy', 'Dados insuficientes', 'Acertos e erros históricos serão registrados na Fase 5.');
+    definirValorEstatisticaDashboard('dashboard-stat-accuracy', estatisticas.accuracy.available
+        ? `${formatarNumeroEstatisticaDashboard(estatisticas.accuracy.value, 0)}%`
+        : 'Dados insuficientes', estatisticas.accuracy.available
+        ? `${estatisticas.accuracy.correct} acerto(s) e ${estatisticas.accuracy.errors} erro(s) no período filtrado.`
+        : 'Nenhum resultado SRS registrado no período filtrado.');
     definirValorEstatisticaDashboard('dashboard-stat-goals', estatisticas.goalsReached.available
         ? `${estatisticas.goalsReached.value} dia(s)`
         : 'Dados insuficientes', estatisticas.goalsReached.available

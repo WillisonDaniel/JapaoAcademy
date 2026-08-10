@@ -4,7 +4,8 @@ const http = require('node:http');
 const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
-const PORT = Math.max(1, Number(process.env.IDIOMAS_QA_PORT) || 4173);
+const PORT_ARGUMENT = process.argv.find(argument => argument.startsWith('--port='));
+const PORT = Math.max(1, Number(PORT_ARGUMENT && PORT_ARGUMENT.split('=')[1]) || Number(process.env.IDIOMAS_QA_PORT) || 4173);
 const CHECK_MODE = process.argv.includes('--check');
 
 const MIME_TYPES = {
@@ -127,7 +128,8 @@ if (CHECK_MODE) {
 } else {
     const server = http.createServer((request, response) => {
         const url = new URL(request.url, `http://${request.headers.host || `127.0.0.1:${PORT}`}`);
-        const absolute = resolveFile(url.pathname);
+        const isQaDashboard = url.pathname.endsWith('/qa-dashboard.html');
+        const absolute = resolveFile(isQaDashboard ? '/meu-progresso.html' : url.pathname);
         if (!absolute) {
             response.writeHead(403).end('Forbidden');
             return;
@@ -138,7 +140,7 @@ if (CHECK_MODE) {
                 return;
             }
             let body = content;
-            if (url.pathname.endsWith('/meu-progresso.html') && url.searchParams.get('qa-dashboard') === '1') {
+            if (isQaDashboard) {
                 body = Buffer.from(transformDashboard(content.toString('utf8')), 'utf8');
             }
             response.writeHead(200, {
@@ -149,6 +151,6 @@ if (CHECK_MODE) {
         });
     });
     server.listen(PORT, '127.0.0.1', () => {
-        console.log(`QA Dashboard disponível em http://127.0.0.1:${PORT}/meu-progresso.html?qa-dashboard=1`);
+        console.log(`QA Dashboard disponível em http://127.0.0.1:${PORT}/qa-dashboard.html`);
     });
 }
