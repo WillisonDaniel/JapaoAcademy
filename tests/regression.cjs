@@ -98,9 +98,9 @@ test('sintaxe dos arquivos JavaScript', () => {
     }
 });
 
-test('33 paginas HTML e referencias locais validas', () => {
+test('34 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 33, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 34, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -745,7 +745,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 33);
+    assert.equal(pages.length, 34);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');

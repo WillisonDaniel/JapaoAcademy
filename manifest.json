@@ -1,7 +1,7 @@
 {
   "name": "Idiomas Academy",
   "short_name": "Idiomas Academy",
-  "description": "Plataforma de estudos de japonês, inglês, espanhol e russo.",
+  "description": "Plataforma de estudos de japonês, inglês, espanhol, russo e italiano.",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait-primary",

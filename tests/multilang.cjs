@@ -83,12 +83,13 @@ function plain(value) {
     return JSON.parse(JSON.stringify(value));
 }
 
-test('autoridade central normaliza os quatro idiomas e rejeita valor explicito desconhecido', () => {
+test('autoridade central normaliza os cinco idiomas e rejeita valor explicito desconhecido', () => {
     const cases = [
         ['japanese', '/html/ja-JP/curso.html', 'ja-JP'],
         ['english', '/html/en-US/curso_ingles.html', 'en-US'],
         ['spanish', '/html/es-ES/espanhol_curso.html', 'es-ES'],
-        ['russian', '/html/ru-RU/russo_curso.html', 'ru-RU']
+        ['russian', '/html/ru-RU/russo_curso.html', 'ru-RU'],
+        ['italiano', '/hub_italiano.html', 'it-IT']
     ];
     cases.forEach(([language, pathname, expected]) => {
         const context = createContext({ language, pathname });
@@ -103,17 +104,18 @@ test('autoridade central normaliza os quatro idiomas e rejeita valor explicito d
     assert.equal(unknown.getCurrentLanguageCode(), null);
 });
 
-test('SRS produz 16 chaves independentes e preserva decks especiais', () => {
+test('SRS produz 20 chaves independentes e preserva decks especiais', () => {
     const context = createContext({ language: 'japanese' });
     runFile(context, 'js/core/constants.js');
     runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
-    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU'];
+    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT'];
     const levels = ['a1', 'a2', 'b1', 'b2'];
     const keys = languages.flatMap(language => levels.map(level => context.getDeckKeySRS(level, language)));
-    assert.equal(new Set(keys).size, 16);
+    assert.equal(new Set(keys).size, 20);
     assert.equal(context.getDeckKeySRS('a1', 'ja-JP'), 'ja_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('b2', 'ru-RU'), 'ru_srs_b2_deck');
+    assert.equal(context.getDeckKeySRS('a1', 'it-IT'), 'it_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('cirilico'), 'ru_srs_cirilico_deck');
     assert.equal(context.getDeckKeySRS('falsos_amigos'), 'es_srs_falsos_amigos_deck');
     assert.equal(context.getDeckKeySRS('phrasal_verbs'), 'en_srs_phrasal_verbs_deck');
@@ -418,7 +420,8 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         ['hub_japones.html', 'Japonês'],
         ['hub_ingles.html', 'Inglês'],
         ['hub_espanhol.html', 'Espanhol'],
-        ['hub_russo.html', 'Russo']
+        ['hub_russo.html', 'Russo'],
+        ['hub_italiano.html', 'Italiano']
     ]) {
         const hub = read(file);
         assert.match(hub, new RegExp(`<title>${language} \\| Idiomas Academy<\\/title>`));
@@ -454,7 +457,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
 });
 
 test('hubs e imagens principais respeitam o orçamento leve', () => {
-    const hubs = ['hub_idiomas.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html'];
+    const hubs = ['hub_idiomas.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html', 'hub_italiano.html'];
     hubs.forEach(file => {
         const html = read(file);
         const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))

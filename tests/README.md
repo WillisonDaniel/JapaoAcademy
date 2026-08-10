@@ -19,7 +19,7 @@ npm test
 ## O que é verificado
 
 - sintaxe de todos os arquivos JavaScript;
-- existência das 33 páginas HTML e de suas referências locais;
+- existência das 34 páginas HTML e de suas referências locais;
 - ordem de carregamento de `constants.js` e `state.js`;
 - estrutura, IDs e atividades dos 16 datasets A1–B2 dos quatro idiomas;
 - totais das bases de hiragana, katakana, kanji, phrasal verbs, pronuncia e minigame;

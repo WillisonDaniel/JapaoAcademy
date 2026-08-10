@@ -6,14 +6,16 @@ const LANGUAGE_CONFIG = Object.freeze({
     'ja-JP': Object.freeze({ code: 'ja-JP', id: 'japanese', prefix: 'ja', label: 'Japonês', speechCode: 'ja-JP' }),
     'en-US': Object.freeze({ code: 'en-US', id: 'english', prefix: 'en', label: 'Inglês', speechCode: 'en-US' }),
     'es-ES': Object.freeze({ code: 'es-ES', id: 'spanish', prefix: 'es', label: 'Espanhol', speechCode: 'es-ES' }),
-    'ru-RU': Object.freeze({ code: 'ru-RU', id: 'russian', prefix: 'ru', label: 'Russo', speechCode: 'ru-RU' })
+    'ru-RU': Object.freeze({ code: 'ru-RU', id: 'russian', prefix: 'ru', label: 'Russo', speechCode: 'ru-RU' }),
+    'it-IT': Object.freeze({ code: 'it-IT', id: 'italian', prefix: 'it', label: 'Italiano', speechCode: 'it-IT' })
 });
 
 const LANGUAGE_ALIASES = Object.freeze({
     'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'jp': 'ja-JP', 'japanese': 'ja-JP', 'japan': 'ja-JP', 'japones': 'ja-JP', 'japa': 'ja-JP',
     'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
     'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
-    'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU', 'cirilico': 'ru-RU', 'cyrillic': 'ru-RU'
+    'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU', 'cirilico': 'ru-RU', 'cyrillic': 'ru-RU',
+    'it': 'it-IT', 'it-it': 'it-IT', 'italian': 'it-IT', 'italiano': 'it-IT'
 });
 
 function normalizeLanguage(value) {
@@ -58,6 +60,7 @@ function getCurrentLanguageCode() {
     if (/\/(?:en-us)(?:\/|$)|ingles|english/.test(path)) return 'en-US';
     if (/\/(?:es-es)(?:\/|$)|espanhol|spanish/.test(path)) return 'es-ES';
     if (/\/(?:ru-ru)(?:\/|$)|russo|russian/.test(path)) return 'ru-RU';
+    if (/\/(?:it-it)(?:\/|$)|italiano|italian/.test(path)) return 'it-IT';
     if (/\/(?:ja-jp)(?:\/|$)|japones|japanese/.test(path)) return 'ja-JP';
 
     return 'ja-JP';

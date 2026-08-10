@@ -66,13 +66,9 @@ function tocarAudio(texto, rateOverride = null) {
         if (!textoLimpo) return;
 
         const u = new SpeechSynthesisUtterance(textoLimpo);
-        const bodyLang = document.body ? document.body.getAttribute('data-lang') : '';
-        const path = window.location ? window.location.pathname.toLowerCase() : '';
-        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
-        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
-        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
-
-        u.lang = isRussian ? 'ru-RU' : (isSpanish ? 'es-ES' : (isEnglish ? 'en-US' : 'ja-JP'));
+        const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : null;
+        const languageConfig = typeof getLanguageConfig === 'function' ? getLanguageConfig(languageCode) : null;
+        if (languageConfig && languageConfig.speechCode) u.lang = languageConfig.speechCode;
         u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
         u.onerror = event => {
             if (event && (event.error === 'interrupted' || event.error === 'canceled')) return;
