@@ -96,6 +96,20 @@ const DICTIONARIES = [
             return vm.runInContext('CASOS_GRAMATICAIS_RUSSO', context);
         },
         supplementGlobal: 'RUSSIAN_DICTIONARY_CASES'
+    },
+    {
+        code: 'it-IT',
+        language: 'italian',
+        mode: 'italiano',
+        pathname: '/html/it-IT/italiano_dicionario.html',
+        globalName: 'ITALIAN_DICTIONARY_INDEX',
+        output: 'database/it-IT/data_dicionario_index.js',
+        expectedCount: 358,
+        minimumCount: 250,
+        datasets: [
+            'database/it-IT/data_curso_italiano_a1.js',
+            'database/it-IT/data_italiano_dicionario.js'
+        ]
     }
 ];
 
@@ -142,6 +156,9 @@ function buildDictionary(config) {
     const glossary = JSON.parse(JSON.stringify(context.AppState.dictionary.universalGlossary));
     if (config.expectedCount !== null) {
         assert.equal(glossary.length, config.expectedCount, `${config.code}: quantidade inesperada de entradas`);
+    }
+    if (config.minimumCount) {
+        assert.ok(glossary.length >= config.minimumCount, `${config.code}: mínimo de ${config.minimumCount} entradas não atingido`);
     }
     assert.ok(glossary.length > 0, `${config.code}: indice vazio`);
     assert.ok(glossary.every(item => item && typeof item.primary === 'string' && item.primary.trim()), `${config.code}: ha entrada sem termo principal`);

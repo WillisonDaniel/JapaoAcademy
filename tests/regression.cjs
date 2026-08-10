@@ -91,16 +91,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 76, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 78, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('35 paginas HTML e referencias locais validas', () => {
+test('36 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 35, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 36, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -569,7 +569,7 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
     );
 });
 
-test('indices leves de ingles, espanhol e russo preservam os glossarios compilados', () => {
+test('indices leves de ingles, espanhol, russo e italiano preservam os glossarios compilados', () => {
     const dictionaries = [
         {
             code: 'en-US',
@@ -618,6 +618,18 @@ test('indices leves de ingles, espanhol e russo preservam os glossarios compilad
                 'database/ru-RU/data_curso_russo_b1.js',
                 'database/ru-RU/data_curso_russo_b2.js',
                 'database/ru-RU/data_russo_dicionario.js'
+            ]
+        },
+        {
+            code: 'it-IT',
+            language: 'italian',
+            mode: 'italiano',
+            pathname: '/html/it-IT/italiano_dicionario.html',
+            index: 'database/it-IT/data_dicionario_index.js',
+            count: 358,
+            datasets: [
+                'database/it-IT/data_curso_italiano_a1.js',
+                'database/it-IT/data_italiano_dicionario.js'
             ]
         }
     ];
@@ -746,7 +758,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 35);
+    assert.equal(pages.length, 36);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');

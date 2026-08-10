@@ -20,30 +20,43 @@ function compilarGlossarioUniversal() {
     const resultsContainer = typeof document !== 'undefined' ? document.getElementById('dict-results-container') : null;
     if (resultsContainer) resultsContainer.setAttribute('aria-busy', 'true');
     glossarioUniversalData = [];
+    const currentLanguageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : null;
 
-    const isSpanishMode = (typeof document !== 'undefined' && document.body && (
+    const isSpanishMode = currentLanguageCode === 'es-ES' || (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'spanish' ||
         document.body.getAttribute('data-mode') === 'espanhol' ||
         document.body.getAttribute('data-mode') === 'spanish' ||
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('espanhol'))
     ));
 
-    const isEnglishMode = (typeof document !== 'undefined' && document.body && (
+    const isEnglishMode = currentLanguageCode === 'en-US' || (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'english' ||
         document.body.getAttribute('data-mode') === 'pronuncia' ||
         document.body.getAttribute('data-mode') === 'phrasal' ||
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('ingles'))
     ));
 
-    const isRussianMode = (typeof document !== 'undefined' && document.body && (
+    const isRussianMode = currentLanguageCode === 'ru-RU' || (typeof document !== 'undefined' && document.body && (
         document.body.getAttribute('data-lang') === 'russian' ||
         document.body.getAttribute('data-mode') === 'russian' ||
         document.body.getAttribute('data-mode') === 'russo' ||
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
     ));
 
+    const isItalianMode = currentLanguageCode === 'it-IT' || (typeof document !== 'undefined' && document.body && (
+        document.body.getAttribute('data-lang') === 'italian' ||
+        document.body.getAttribute('data-lang') === 'it-IT' ||
+        document.body.getAttribute('data-mode') === 'italian' ||
+        document.body.getAttribute('data-mode') === 'italiano' ||
+        (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('italiano'))
+    ));
+
     let precompiledDictionaryIndex = null;
-    if (isSpanishMode) {
+    if (isItalianMode) {
+        precompiledDictionaryIndex = typeof ITALIAN_DICTIONARY_INDEX !== 'undefined'
+            ? ITALIAN_DICTIONARY_INDEX
+            : (typeof window !== 'undefined' ? window.ITALIAN_DICTIONARY_INDEX : null);
+    } else if (isSpanishMode) {
         precompiledDictionaryIndex = typeof SPANISH_DICTIONARY_INDEX !== 'undefined'
             ? SPANISH_DICTIONARY_INDEX
             : (typeof window !== 'undefined' ? window.SPANISH_DICTIONARY_INDEX : null);
@@ -72,7 +85,58 @@ function compilarGlossarioUniversal() {
         return;
     }
 
-    if (isSpanishMode) {
+    if (isItalianMode) {
+        const italianData = typeof DICIONARIO_ITALIANO_DADOS !== 'undefined'
+            ? DICIONARIO_ITALIANO_DADOS
+            : (typeof window !== 'undefined' ? window.DICIONARIO_ITALIANO_DADOS : null);
+
+        if (italianData) {
+            (italianData.alphabet || []).forEach(item => glossarioUniversalData.push({
+                cat: 'alphabet',
+                catLabel: item.foreign ? 'ALFABETO — ESTRANGEIRISMOS' : 'ALFABETO',
+                primary: item.letter,
+                secondary: `[ ${item.name} ] ${item.pronunciation || ''}`,
+                desc: `Exemplo: ${item.example} — ${item.translation}${item.foreign ? '. Letra usada principalmente em estrangeirismos.' : ''}`,
+                audio: item.example || item.letter.split(' ')[0],
+                level: 'A1',
+                module: 'Alfabeto italiano'
+            }));
+            (italianData.vocabulary || []).forEach(item => glossarioUniversalData.push({
+                cat: 'vocab', catLabel: 'VOCABULÁRIO', primary: item.word,
+                secondary: item.translation, desc: item.category || '', audio: item.word,
+                level: item.level || 'A1', module: item.category || 'Vocabulário essencial'
+            }));
+            (italianData.grammar || []).forEach(item => glossarioUniversalData.push({
+                cat: 'grammar', catLabel: 'GRAMÁTICA', primary: item.title,
+                secondary: item.formula || '', desc: item.rule || '',
+                context: item.example ? `Exemplo: “${item.example}”` : '', audio: item.example || item.title,
+                level: item.level || 'A1', module: item.category || 'Gramática A1'
+            }));
+        }
+
+        const italianCourse = typeof CURSO_ITALIANO_A1_DADOS !== 'undefined'
+            ? CURSO_ITALIANO_A1_DADOS
+            : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
+        if (Array.isArray(italianCourse)) {
+            italianCourse.forEach(rawMod => {
+                const module = typeof normalizeModule === 'function' ? normalizeModule(rawMod) : rawMod;
+                (module.drops || module.stage2_drops || []).forEach(drop => {
+                    const isGrammar = drop.type === 'grammar_pill' || drop.rule || drop.formula;
+                    const primary = isGrammar ? (drop.title || drop.word || '') : (drop.word || '');
+                    if (!primary || glossarioUniversalData.some(item => item.primary === primary)) return;
+                    glossarioUniversalData.push(isGrammar ? {
+                        cat: 'grammar', catLabel: 'GRAMÁTICA', primary,
+                        secondary: drop.formula || '', desc: drop.rule || '', context: drop.example || '',
+                        audio: drop.example || primary, level: 'A1', module: module.title
+                    } : {
+                        cat: 'vocab', catLabel: 'VOCABULÁRIO', primary,
+                        secondary: drop.translation || '', desc: drop.dica || drop.tip || '',
+                        audio: drop.audio || primary, level: 'A1', module: module.title
+                    });
+                });
+            });
+        }
+    } else if (isSpanishMode) {
         // Mode Spanish: Alphabet (27 Letras), Falsos Cognatos, Heterotónicos, Regionalismos, Vocabularies A1-B2 & Grammars A1-B2
         const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : (typeof window !== 'undefined' ? (window.DICIONARIO_ESPANHOL_DADOS || window.DADOS_ESPANHOL_DICIONARIO) : null));
 

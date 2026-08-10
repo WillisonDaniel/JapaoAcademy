@@ -646,7 +646,7 @@ test('dicionário japonês usa índice pré-compilado equivalente e leve', () =>
     assert.match(read('package.json'), /"index:dictionary:check"/);
 });
 
-test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recursos auxiliares', () => {
+test('dicionarios de ingles, espanhol, russo e italiano usam indices leves sem perder recursos auxiliares', () => {
     const pages = [
         {
             file: 'html/en-US/dicionario_ingles.html',
@@ -667,7 +667,16 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
             locale: 'ru-RU',
             maxScripts: 18,
             maxBytes: 620 * 1024,
-            forbiddenData: /database\/ru-RU\/(?:data_curso_russo_|data_russo_cirilico|data_russo_dicionario)/
+            forbiddenData: /database\/ru-RU\/(?:data_curso_russo_|data_russo_cirilico|data_russo_dicionario)/,
+            precached: true
+        },
+        {
+            file: 'html/it-IT/italiano_dicionario.html',
+            locale: 'it-IT',
+            maxScripts: 21,
+            maxBytes: 620 * 1024,
+            forbiddenData: /database\/it-IT\/(?:data_curso_italiano_|data_italiano_dicionario)/,
+            precached: false
         }
     ];
 
@@ -687,7 +696,9 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
         assert.doesNotMatch(html, page.forbiddenData);
         assert.doesNotMatch(html, /js\/course\/(?:moduleNormalizer|tabs|course|quiz)\.js/);
         assert.doesNotMatch(html, /js\/(?:phrasal|pronunciation|minigame)\//);
-        assert.match(read('sw.js'), new RegExp(`database/${page.locale}/data_dicionario_index\\.js`));
+        const indexPattern = new RegExp(`database/${page.locale}/data_dicionario_index\\.js`);
+        if (page.precached === false) assert.doesNotMatch(read('sw.js'), indexPattern);
+        else assert.match(read('sw.js'), indexPattern);
     });
 
     assert.match(read('database/es-ES/data_dicionario_index.js'), /SPANISH_DICTIONARY_TABLES/);
@@ -695,6 +706,8 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
     assert.match(read('js/core/dictionary.js'), /ENGLISH_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /SPANISH_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /RUSSIAN_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /ITALIAN_DICTIONARY_INDEX/);
+    assert.ok(JSON.parse(read('database/it-IT/data_dicionario_index.js').match(/Object\.freeze\((\[.*\])\);/)[1]).length >= 250);
 });
 
 test('minigame japonês usa conjunto leve e equivalente de Kanji', () => {
