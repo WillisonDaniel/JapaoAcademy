@@ -125,7 +125,11 @@ function processarRevisaoSolicitadaPeloDashboard() {
     if (typeof window === 'undefined' || !window.location || typeof URLSearchParams === 'undefined') return;
     const parametros = new URLSearchParams(window.location.search || '');
     const tipo = parametros.get('iniciar_srs');
-    const tiposPermitidos = new Set(['a1', 'a2', 'b1', 'b2', 'hiragana', 'katakana', 'kanji', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs']);
+    const tiposPermitidos = new Set([
+        'a1', 'a2', 'b1', 'b2',
+        'hiragana', 'katakana', 'kanji', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1',
+        'phrasal_verbs', 'falsos_amigos', 'cirilico'
+    ]);
     if (!tipo || !tiposPermitidos.has(tipo) || typeof iniciarSessaoSRS !== 'function') return;
 
     parametros.delete('iniciar_srs');

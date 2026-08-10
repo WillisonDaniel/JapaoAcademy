@@ -896,6 +896,58 @@ testAsync('meta e atividade do dashboard persistem por usuario e sincronizam sem
     assert.deepEqual(plain(JSON.parse(storage.getItem('ja_favoritos_deck'))), ['favorito-nuvem']);
 });
 
+testAsync('sincronizacao conserva progresso e XP locais quando a nuvem esta desatualizada', async () => {
+    const uid = 'merge-progress-user';
+    const progressoLegado = JSON.stringify({ xp: 25, modulosConcluidos: ['legado'] });
+    const storage = createStorage({
+        ja_user_xp: '850',
+        ja_progresso_global: progressoLegado,
+        japao_academy_progress: JSON.stringify({
+            nivelAtual: 'A2',
+            modulosConcluidos: ['a1_mod_01', 'en_a1_mod_01'],
+            modulosDesbloqueados: ['a1_mod_02', 'en_a1_mod_02'],
+            progress_kanji: [0, 2]
+        })
+    });
+    const backups = [];
+    const firebase = {
+        auth: { currentUser: { uid } },
+        db: {},
+        doc: (...partes) => partes.join('/'),
+        setDoc: async (ref, dados) => { backups.push({ ref, dados }); },
+        getDoc: async () => ({
+            exists: () => true,
+            data: () => ({
+                progressoGlobal: {
+                    nivelAtual: 'B1',
+                    modulosConcluidos: ['a1_mod_01', 'ru_a1_mod_01'],
+                    modulosDesbloqueados: ['a1_mod_02', 'ru_a1_mod_02'],
+                    progress_kanji: [1, 2]
+                },
+                xpTotal: 400
+            })
+        })
+    };
+    const session = loadCoreSession(storage, {
+        getTodosOsCursos: () => sampleCourses,
+        globals: { jaFirebase: firebase }
+    });
+
+    await session.sincronizarProgressoComFirestore({ uid });
+
+    const progresso = JSON.parse(storage.getItem('japao_academy_progress'));
+    assert.deepEqual(progresso.modulosConcluidos.sort(), ['a1_mod_01', 'en_a1_mod_01', 'ru_a1_mod_01']);
+    assert.deepEqual(progresso.modulosDesbloqueados.sort(), ['a1_mod_02', 'en_a1_mod_02', 'ru_a1_mod_02']);
+    assert.deepEqual(progresso.progress_kanji.sort(), [0, 1, 2]);
+    assert.equal(progresso.nivelAtual, 'B1');
+    assert.equal(storage.getItem('ja_user_xp'), '850');
+    assert.equal(session.AppState.user.xp, 850);
+    assert.equal(storage.getItem('ja_progresso_global'), progressoLegado);
+    assert.ok(backups.length > 0, 'resultado mesclado nao foi devolvido para a nuvem');
+    assert.deepEqual(backups.at(-1).dados.progressoGlobal.modulosConcluidos.sort(), progresso.modulosConcluidos.sort());
+    assert.equal(backups.at(-1).dados.xpTotal, 850);
+});
+
 testAsync('login por email e cadastro direcionam ao dashboard sem loop', async () => {
     const criarFirebase = ({ cadastro = false } = {}) => {
         const user = { uid: cadastro ? 'new-user' : 'email-user', email: 'aluno@example.com', displayName: cadastro ? null : 'Aluno' };

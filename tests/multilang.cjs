@@ -331,11 +331,44 @@ test('dashboard reconhece quatro idiomas, datasets e filtros', () => {
 test('Falsos Amigos usa AppState central e curso russo usa nivel SRS ativo', () => {
     const falseFriends = read('js/falsos_amigos/falsos_amigos.js');
     const russianCourse = read('html/ru-RU/russo_curso.html');
+    const app = read('app.js');
     assert.match(falseFriends, /AppState\.user\.progressoGlobal/);
     assert.match(falseFriends, /AppState\.markModuleCompleted\(modId, faNivelAtivo\)/);
     assert.doesNotMatch(falseFriends, /localStorage\.setItem\('ja_progresso_global'/);
     assert.match(russianCourse, /onclick="iniciarSessaoSRS\(\)"/);
     assert.doesNotMatch(russianCourse, /iniciarSessaoSRS\('a1'\)/);
+    assert.match(app, /tiposPermitidos[^;]+falsos_amigos/s);
+    assert.match(app, /tiposPermitidos[^;]+cirilico/s);
+});
+
+test('Dashboard inicia revisoes especiais solicitadas pela URL', () => {
+    for (const tipo of ['falsos_amigos', 'cirilico']) {
+        const chamadas = [];
+        const location = {
+            pathname: tipo === 'cirilico' ? '/html/ru-RU/russo_alfabeto.html' : '/html/es-ES/espanhol_falsos_amigos.html',
+            search: `?iniciar_srs=${tipo}`,
+            hash: ''
+        };
+        const document = {
+            body: { getAttribute: () => null },
+            addEventListener() {}
+        };
+        const context = createContext({
+            document: false,
+            globals: {
+                document,
+                location,
+                URLSearchParams,
+                history: { replaceState() {} },
+                addEventListener() {},
+                requestAnimationFrame(callback) { callback(); },
+                iniciarSessaoSRS(valor) { chamadas.push(valor); }
+            }
+        });
+        runFile(context, 'app.js');
+        context.processarRevisaoSolicitadaPeloDashboard();
+        assert.deepEqual(chamadas, [tipo]);
+    }
 });
 
 test('XP sincroniza imediatamente pelo AppState sem reescrever progresso legado', () => {
@@ -362,6 +395,7 @@ test('XP sincroniza imediatamente pelo AppState sem reescrever progresso legado'
     assert.equal(setCalls, 2);
     assert.equal(storage.getItem('ja_progresso_global'), legacyProgress);
     assert.doesNotMatch(read('js/game/xp.js'), /localStorage\.setItem\('ja_progresso_global'/);
+    assert.doesNotMatch(read('js/core/storage.js'), /localStorage\.setItem\('ja_progresso_global'/);
 });
 
 test('XP mantem fallback moderno quando o AppState nao esta disponivel', () => {

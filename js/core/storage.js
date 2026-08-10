@@ -734,21 +734,79 @@ function obterXPDoBackup(dadosNuvem) {
     return Math.max(0, ...candidatosLegados);
 }
 
-function aplicarDadosDoBackup(dadosNuvem, uid) {
-    if (dadosNuvem.progressoGlobal) {
-        localStorage.setItem('japao_academy_progress', JSON.stringify(dadosNuvem.progressoGlobal));
-        if (typeof AppState !== 'undefined' && typeof AppState.setProgress === 'function') AppState.setProgress(dadosNuvem.progressoGlobal);
+function mesclarListasProgresso(local = [], remoto = []) {
+    const resultado = [];
+    const vistos = new Set();
+    [...(Array.isArray(remoto) ? remoto : []), ...(Array.isArray(local) ? local : [])].forEach(item => {
+        let assinatura;
+        try {
+            assinatura = item && typeof item === 'object' ? JSON.stringify(item) : `${typeof item}:${String(item)}`;
+        } catch (e) {
+            assinatura = `${typeof item}:${String(item)}`;
+        }
+        if (vistos.has(assinatura)) return;
+        vistos.add(assinatura);
+        resultado.push(item);
+    });
+    return resultado;
+}
+
+function mesclarProgressoGlobal(local, remoto) {
+    const progressoLocal = local && typeof local === 'object' && !Array.isArray(local) ? local : {};
+    const progressoRemoto = remoto && typeof remoto === 'object' && !Array.isArray(remoto) ? remoto : {};
+    const mesclado = { ...progressoRemoto, ...progressoLocal };
+    const chaves = new Set([...Object.keys(progressoRemoto), ...Object.keys(progressoLocal)]);
+
+    chaves.forEach(chave => {
+        if (Array.isArray(progressoRemoto[chave]) || Array.isArray(progressoLocal[chave])) {
+            mesclado[chave] = mesclarListasProgresso(progressoLocal[chave], progressoRemoto[chave]);
+        }
+    });
+
+    mesclado.modulosConcluidos = mesclarListasProgresso(
+        progressoLocal.modulosConcluidos,
+        progressoRemoto.modulosConcluidos
+    );
+    mesclado.modulosDesbloqueados = mesclarListasProgresso(
+        progressoLocal.modulosDesbloqueados,
+        progressoRemoto.modulosDesbloqueados
+    );
+
+    const ordemNiveis = ['A1', 'A2', 'B1', 'B2'];
+    const nivelLocal = String(progressoLocal.nivelAtual || '').toUpperCase();
+    const nivelRemoto = String(progressoRemoto.nivelAtual || '').toUpperCase();
+    const indiceLocal = ordemNiveis.indexOf(nivelLocal);
+    const indiceRemoto = ordemNiveis.indexOf(nivelRemoto);
+    mesclado.nivelAtual = ordemNiveis[Math.max(0, indiceLocal, indiceRemoto)];
+
+    const xpLegadoLocal = Math.max(0, Number(progressoLocal.xpTotal) || 0, Number(progressoLocal.xp) || 0);
+    const xpLegadoRemoto = Math.max(0, Number(progressoRemoto.xpTotal) || 0, Number(progressoRemoto.xp) || 0);
+    if (xpLegadoLocal > 0 || xpLegadoRemoto > 0) mesclado.xpTotal = Math.max(xpLegadoLocal, xpLegadoRemoto);
+    mesclado.progress_curso_principal = mesclado.modulosConcluidos;
+    return mesclado;
+}
+
+function lerProgressoLocalParaMesclagem() {
+    try {
+        const salvo = JSON.parse(localStorage.getItem('japao_academy_progress') || '{}');
+        return salvo && typeof salvo === 'object' && !Array.isArray(salvo) ? salvo : {};
+    } catch (e) {
+        return {};
     }
+}
+
+function aplicarDadosDoBackup(dadosNuvem, uid) {
+    const progressoRemoto = dadosNuvem && dadosNuvem.progressoGlobal ? dadosNuvem.progressoGlobal : {};
+    const progressoRemotoNormalizado = mesclarProgressoGlobal({}, progressoRemoto);
+    const progressoMesclado = mesclarProgressoGlobal(lerProgressoLocalParaMesclagem(), progressoRemoto);
+    localStorage.setItem('japao_academy_progress', JSON.stringify(progressoMesclado));
+    if (typeof AppState !== 'undefined' && typeof AppState.setProgress === 'function') AppState.setProgress(progressoMesclado);
 
     const xpNuvem = obterXPDoBackup(dadosNuvem);
-    if (typeof AppState !== 'undefined' && typeof AppState.setXP === 'function') AppState.setXP(xpNuvem);
-    else localStorage.setItem('ja_user_xp', xpNuvem.toString());
-
-    try {
-        const progressoLegado = JSON.parse(localStorage.getItem('ja_progresso_global') || '{}');
-        progressoLegado.xp = xpNuvem;
-        localStorage.setItem('ja_progresso_global', JSON.stringify(progressoLegado));
-    } catch (e) { }
+    const xpLocal = obterXPAtualParaBackup();
+    const xpMesclado = Math.max(xpLocal, xpNuvem);
+    if (typeof AppState !== 'undefined' && typeof AppState.setXP === 'function') AppState.setXP(xpMesclado);
+    else localStorage.setItem('ja_user_xp', xpMesclado.toString());
 
     if (dadosNuvem.userStats) localStorage.setItem('ja_user_stats', JSON.stringify(dadosNuvem.userStats));
     if (dadosNuvem.streakData) localStorage.setItem('ja_streak_data', JSON.stringify(dadosNuvem.streakData));
@@ -763,6 +821,11 @@ function aplicarDadosDoBackup(dadosNuvem, uid) {
         const dadosLocais = carregarDadosDashboard(uid);
         salvarDadosDashboard(mesclarDadosDashboard(dadosLocais, dadosNuvem.dashboardData), uid, false);
     }
+
+    return {
+        progressoAlterado: JSON.stringify(progressoMesclado) !== JSON.stringify(progressoRemotoNormalizado),
+        xpAlterado: xpMesclado > xpNuvem
+    };
 }
 
 async function salvarSilenciosamenteNaNuvem() {
@@ -806,11 +869,14 @@ async function sincronizarProgressoComFirestore(user) {
             const docSnap = await fb.getDoc(docRef);
             if (docSnap.exists()) {
                 const dadosNuvem = docSnap.data() || {};
-                aplicarDadosDoBackup(dadosNuvem, user.uid);
+                const resultadoMesclagem = aplicarDadosDoBackup(dadosNuvem, user.uid);
                 if (typeof carregarProgressoGlobal === 'function') carregarProgressoGlobal();
                 if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
                 if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
                 if (typeof atualizarHeaderStreak === 'function') atualizarHeaderStreak();
+                if (resultadoMesclagem && (resultadoMesclagem.progressoAlterado || resultadoMesclagem.xpAlterado)) {
+                    await salvarSilenciosamenteNaNuvem();
+                }
                 if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('synced');
                 return true;
             }
@@ -1003,12 +1069,15 @@ async function carregarProgressoDaNuvem() {
         if (docSnap.exists()) {
             atualizarEstadoBackupNuvemUX(false);
             const dadosNuvem = docSnap.data() || {};
-            aplicarDadosDoBackup(dadosNuvem, user.uid);
+            const resultadoMesclagem = aplicarDadosDoBackup(dadosNuvem, user.uid);
             if (typeof carregarProgressoGlobal === 'function') carregarProgressoGlobal();
             if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
             if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
             if (typeof atualizarHeaderStreak === 'function') atualizarHeaderStreak();
             if (typeof renderizarMuralConquistas === 'function') renderizarMuralConquistas();
+            if (resultadoMesclagem && (resultadoMesclagem.progressoAlterado || resultadoMesclagem.xpAlterado)) {
+                await salvarSilenciosamenteNaNuvem();
+            }
             if (typeof mostrarToast === 'function') mostrarToast("📥 Progresso restaurado da nuvem com sucesso!");
             if (typeof playBeep === 'function') playBeep('success');
         } else {
@@ -1076,6 +1145,7 @@ if (typeof window !== 'undefined') {
     window.definirMetaDiariaDashboard = definirMetaDiariaDashboard;
     window.registrarPrimeiroAcessoDashboard = registrarPrimeiroAcessoDashboard;
     window.registrarAtividadeDashboard = registrarAtividadeDashboard;
+    window.mesclarProgressoGlobal = mesclarProgressoGlobal;
     window.salvarSilenciosamenteNaNuvem = salvarSilenciosamenteNaNuvem;
     window.atualizarEstadoBackupNuvemUX = atualizarEstadoBackupNuvemUX;
     window.sincronizarProgressoComFirestore = sincronizarProgressoComFirestore;
