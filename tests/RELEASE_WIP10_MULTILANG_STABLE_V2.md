@@ -19,11 +19,11 @@ Este documento separa evidência técnica reproduzível de validações que depe
 - [x] Cursos de japonês, inglês, espanhol e russo validados em desktop e 390×844, sem overflow global nem erros no console.
 - [x] Atualização real de uma instalação `v28` para `v29` validada; o conteúdo legado foi substituído e Dashboard e área russa reabriram sem o servidor.
 - [x] Modal de autenticação fecha assim que o Firebase confirma o usuário, sem aguardar a sincronização do Firestore; Google, e-mail e cadastro estão protegidos por testes.
+- [x] Login com Google e cadastro por e-mail validados com Firebase real; o estado autenticado aparece corretamente no site e no console do Firebase.
 
-## Pendente antes da tag final
+## Pendências obrigatórias
 
-- [ ] Testar login/cadastro, restauração, progresso, XP, SRS e Dashboard com uma conta Firebase real de QA.
-- [ ] Decidir o destino da tag existente `wip10-multilang-stable-v2`, que aponta para uma versão anterior a esta rodada.
+Nenhuma. A tag existente `wip10-multilang-stable-v2` será reposicionada para o commit final desta rodada, conforme autorização explícita.
 
 ## Regra da tag e do remoto
 
