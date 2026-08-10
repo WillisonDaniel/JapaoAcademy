@@ -855,6 +855,12 @@ async function salvarSilenciosamenteNaNuvem() {
 
 let sincronizacaoFirestoreAtiva = null;
 
+function confirmarAutenticacaoVisual(user) {
+    if (!user) return;
+    if (typeof garantirElementosCabecalhoEModal === 'function') garantirElementosCabecalhoEModal();
+    if (typeof fecharModalAuth === 'function') fecharModalAuth();
+}
+
 async function sincronizarProgressoComFirestore(user) {
     const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
     if (!fb || !fb.db || !user) return false;
@@ -906,6 +912,7 @@ function inicializarAuthObserverFirebase() {
     fb.onAuthStateChanged(fb.auth, async (user) => {
         if (typeof garantirElementosCabecalhoEModal === 'function') garantirElementosCabecalhoEModal();
         if (user) {
+            confirmarAutenticacaoVisual(user);
             await sincronizarProgressoComFirestore(user);
         } else {
             if (typeof atualizarIndicadorSincronizacao === 'function') {
@@ -948,6 +955,7 @@ async function fazerLoginEmailSenha(email, senha) {
     if (!fb || !fb.auth || !fb.signInWithEmailAndPassword) return { success: false, error: 'Firebase não carregado.' };
     try {
         const userCred = await fb.signInWithEmailAndPassword(fb.auth, email, senha);
+        confirmarAutenticacaoVisual(userCred.user);
         await sincronizarProgressoComFirestore(userCred.user);
         const nomeSeguro = escaparTextoAuth(userCred.user.displayName || userCred.user.email || 'Estudante');
         if (typeof mostrarToast === 'function') mostrarToast(`🚀 <strong>Bem-vindo de volta!</strong> Olá, ${nomeSeguro}!`);
@@ -975,6 +983,7 @@ async function fazerCadastroEmailSenha(email, senha, nome) {
             localStorage.setItem('ja_nome_usuario', nome);
             if (typeof nomeUsuario !== 'undefined') nomeUsuario = nome;
         }
+        confirmarAutenticacaoVisual(userCred.user);
         await sincronizarProgressoComFirestore(userCred.user);
         const nomeSeguro = escaparTextoAuth(nome || 'Estudante');
         if (typeof mostrarToast === 'function') mostrarToast(`✨ <strong>Conta criada com sucesso!</strong> Seja bem-vindo(a), ${nomeSeguro}!`);
@@ -996,6 +1005,7 @@ async function fazerLoginGoogle() {
     try {
         const provider = new fb.GoogleAuthProvider();
         const userCred = await fb.signInWithPopup(fb.auth, provider);
+        confirmarAutenticacaoVisual(userCred.user);
         await sincronizarProgressoComFirestore(userCred.user);
         const nomeSeguro = escaparTextoAuth(userCred.user.displayName || 'Estudante');
         if (typeof mostrarToast === 'function') mostrarToast(`🚀 <strong>Autenticado com o Google!</strong> Olá, ${nomeSeguro}!`);
@@ -1149,6 +1159,7 @@ if (typeof window !== 'undefined') {
     window.salvarSilenciosamenteNaNuvem = salvarSilenciosamenteNaNuvem;
     window.atualizarEstadoBackupNuvemUX = atualizarEstadoBackupNuvemUX;
     window.sincronizarProgressoComFirestore = sincronizarProgressoComFirestore;
+    window.confirmarAutenticacaoVisual = confirmarAutenticacaoVisual;
     window.inicializarAuthObserverFirebase = inicializarAuthObserverFirebase;
     window.obterCaminhoMeuProgresso = obterCaminhoMeuProgresso;
     window.irParaMeuProgresso = irParaMeuProgresso;

@@ -527,6 +527,11 @@ function abrirModalAuth(aba = 'login', acionador) {
 
 function fecharModalAuth() {
     const modal = document.getElementById('modal-auth');
+    if (typeof restaurarEstadoBotao === 'function') {
+        ['btn-auth-login-submit', 'btn-auth-register-submit', 'btn-auth-google'].forEach(id => {
+            restaurarEstadoBotao(document.getElementById(id));
+        });
+    }
     fecharModalAcessivel(modal);
 }
 

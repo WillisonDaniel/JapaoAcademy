@@ -242,7 +242,7 @@ async function executarComFeedbackBotao(botao, textos, acao) {
     try {
         const resultado = await acao();
         const sucesso = resultado !== false && !(resultado && resultado.success === false);
-        if (sucesso && labels.success) {
+        if (sucesso && labels.success && uxButtonStates.has(botao)) {
             botao.textContent = labels.success;
             botao.setAttribute('aria-busy', 'false');
             botao.classList.remove('ux-button-loading');

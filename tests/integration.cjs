@@ -794,6 +794,7 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
     });
     const user = { uid: 'google-user', displayName: 'Teste Google' };
     let liberarLeitura;
+    let modalAuthFechado = 0;
     const leituraNuvem = new Promise(resolve => { liberarLeitura = resolve; });
     const backupsEnviados = [];
     const firebase = {
@@ -809,6 +810,8 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
         getTodosOsCursos: () => sampleCourses,
         globals: {
             jaFirebase: firebase,
+            fecharModalAuth: () => { modalAuthFechado++; },
+            garantirElementosCabecalhoEModal: () => {},
             getCourseData: mode => mode === 'hiragana' ? new Array(8).fill({}) : null
         }
     });
@@ -820,7 +823,9 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
     });
     await Promise.resolve();
     await Promise.resolve();
+    await new Promise(resolve => setImmediate(resolve));
     assert.equal(loginFinalizado, false, 'login Google nao aguardou a leitura do Firestore');
+    assert.equal(modalAuthFechado, 1, 'modal permaneceu aberto depois que o Google confirmou o usuario');
     assert.equal(storage.getItem('ja_user_xp'), '0', 'login terminou de restaurar antes da resposta do Firestore');
 
     liberarLeitura({
@@ -840,6 +845,84 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
     await session.salvarSilenciosamenteNaNuvem();
     assert.equal(backupsEnviados.length, 1);
     assert.equal(backupsEnviados[0].dados.xpTotal, 725);
+});
+
+testAsync('observador de autenticacao fecha o modal antes da sincronizacao terminar', async () => {
+    const user = { uid: 'observer-user', displayName: 'Observer' };
+    let callbackAuth;
+    let liberarLeitura;
+    let modalAuthFechado = 0;
+    const leituraNuvem = new Promise(resolve => { liberarLeitura = resolve; });
+    const firebase = {
+        auth: { currentUser: user },
+        db: {},
+        doc: (...partes) => partes.join('/'),
+        getDoc: () => leituraNuvem,
+        setDoc: async () => {},
+        onAuthStateChanged: (_auth, callback) => { callbackAuth = callback; }
+    };
+    const session = loadCoreSession(createStorage(), {
+        getTodosOsCursos: () => sampleCourses,
+        globals: {
+            jaFirebase: firebase,
+            fecharModalAuth: () => { modalAuthFechado++; },
+            garantirElementosCabecalhoEModal: () => {}
+        }
+    });
+
+    session.inicializarAuthObserverFirebase();
+    assert.equal(typeof callbackAuth, 'function', 'observer do Firebase nao foi registrado');
+    let observerFinalizado = false;
+    const observerPromise = callbackAuth(user).then(() => { observerFinalizado = true; });
+    await Promise.resolve();
+    await Promise.resolve();
+
+    assert.equal(modalAuthFechado, 1, 'observer nao fechou o modal ao confirmar o usuario');
+    assert.equal(observerFinalizado, false, 'observer nao aguardou a sincronizacao em segundo plano');
+
+    liberarLeitura({ exists: () => false, data: () => ({}) });
+    await observerPromise;
+    assert.equal(observerFinalizado, true);
+});
+
+testAsync('cadastro fecha o modal enquanto o Firestore sincroniza em segundo plano', async () => {
+    const user = { uid: 'visual-register-user', email: 'novo@example.com', displayName: null };
+    let liberarLeitura;
+    let modalAuthFechado = 0;
+    const leituraNuvem = new Promise(resolve => { liberarLeitura = resolve; });
+    const firebase = {
+        auth: { currentUser: user },
+        db: {},
+        doc: (...partes) => partes.join('/'),
+        getDoc: () => leituraNuvem,
+        setDoc: async () => {},
+        createUserWithEmailAndPassword: async () => ({ user }),
+        updateProfile: async (target, profile) => { target.displayName = profile.displayName; }
+    };
+    const session = loadCoreSession(createStorage(), {
+        getTodosOsCursos: () => sampleCourses,
+        globals: {
+            jaFirebase: firebase,
+            fecharModalAuth: () => { modalAuthFechado++; },
+            garantirElementosCabecalhoEModal: () => {}
+        }
+    });
+
+    let cadastroFinalizado = false;
+    const cadastroPromise = session.fazerCadastroEmailSenha('novo@example.com', 'segredo', 'Novo Aluno')
+        .then(resultado => { cadastroFinalizado = true; return resultado; });
+    await Promise.resolve();
+    await Promise.resolve();
+    await Promise.resolve();
+    await new Promise(resolve => setImmediate(resolve));
+
+    assert.equal(modalAuthFechado, 1, 'cadastro manteve o modal aberto depois de criar o usuario');
+    assert.equal(cadastroFinalizado, false, 'cadastro nao manteve a sincronizacao em segundo plano');
+
+    liberarLeitura({ exists: () => false, data: () => ({}) });
+    const resultado = await cadastroPromise;
+    assert.equal(resultado.success, true);
+    assert.equal(resultado.user.displayName, 'Novo Aluno');
 });
 
 testAsync('meta e atividade do dashboard persistem por usuario e sincronizam sem perda', async () => {

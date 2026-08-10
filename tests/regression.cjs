@@ -155,6 +155,7 @@ test('feedback da Etapa 28C preserva botoes e sincronizacao', () => {
 
     assert.match(toast, /async function executarComFeedbackBotao\s*\(/);
     assert.match(toast, /finally\s*\{\s*restaurarEstadoBotao\(botao\)/);
+    assert.match(toast, /labels\.success\s*&&\s*uxButtonStates\.has\(botao\)/);
     assert.match(toast, /botao\.setAttribute\('aria-busy',\s*'true'\)/);
     assert.match(toast, /botao\.setAttribute\('aria-busy',\s*'false'\)/);
     for (const estado of ['local', 'syncing', 'synced', 'error', 'offline']) {
@@ -164,6 +165,7 @@ test('feedback da Etapa 28C preserva botoes e sincronizacao', () => {
     assert.match(dom, /syncStatus\.id\s*=\s*'sync-status-indicator'/);
     assert.match(dom, /syncStatus\.setAttribute\('role',\s*'status'\)/);
     assert.match(dom, /btn-auth-login-submit/);
+    assert.match(dom, /\['btn-auth-login-submit', 'btn-auth-register-submit', 'btn-auth-google'\]/);
     assert.match(dom, /btn-cloud-save/);
     assert.match(dom, /btn-reset-progress/);
 
@@ -754,7 +756,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v29'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v30'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -881,7 +883,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v29'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v30'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
