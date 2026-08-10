@@ -107,9 +107,24 @@ function escapeCell(value) {
     return String(value).replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>').trim();
 }
 
+function groupReviewDecisions(occurrences) {
+    const groups = new Map();
+    occurrences.forEach(item => {
+        const key = [item.severity, item.file, item.module, item.value].join('\u0000');
+        if (!groups.has(key)) {
+            groups.set(key, { ...item, fields: [], reasons: [] });
+        }
+        const group = groups.get(key);
+        if (!group.fields.includes(item.field)) group.fields.push(item.field);
+        if (!group.reasons.includes(item.reason)) group.reasons.push(item.reason);
+    });
+    return [...groups.values()];
+}
+
 function renderReport(occurrences) {
     const errors = occurrences.filter(item => item.severity === 'erro').length;
     const reviews = occurrences.filter(item => item.severity === 'revisão').length;
+    const decisions = groupReviewDecisions(occurrences);
     const lines = [
         '# Ocorrências da auditoria editorial russa',
         '',
@@ -117,15 +132,33 @@ function renderReport(occurrences) {
         '',
         `- Erros técnicos bloqueadores: ${errors}`,
         `- Ocorrências para revisão humana: ${reviews}`,
+        `- Decisões editoriais únicas: ${decisions.length}`,
         `- Total registrado: ${occurrences.length}`,
         '',
         '## Allowlist documentada de nomes próprios e marcas',
         '',
         LATIN_PROPER_NAME_ALLOWLIST.map(value => `\`${value}\``).join(', '),
         '',
-        '## Ocorrências',
+        '## Checklist consolidado para o revisor',
+        '',
+        'Cada linha reúne repetições do mesmo valor em `sentence`, `audio`, `tokens` ou diálogos. O revisor deve marcar a decisão e aplicar a correção de forma consistente em todos os campos listados.',
         ''
     ];
+    if (decisions.length === 0) {
+        lines.push('Nenhuma decisão editorial pendente.', '');
+    } else {
+        lines.push('| Status | Arquivo | Módulo | Motivo(s) | Campos afetados | Valor |');
+        lines.push('|---|---|---|---|---:|---|');
+        decisions.forEach(item => lines.push(
+            `| ☐ Pendente | ${escapeCell(item.file)} | ${escapeCell(item.module)} | ` +
+            `${escapeCell(item.reasons.join('; '))} | ${item.fields.length} | ${escapeCell(item.value)} |`
+        ));
+        lines.push('');
+    }
+    lines.push(
+        '## Ocorrências',
+        ''
+    );
     if (occurrences.length === 0) {
         lines.push('Nenhuma ocorrência técnica ou editorial foi encontrada.', '');
     } else {
