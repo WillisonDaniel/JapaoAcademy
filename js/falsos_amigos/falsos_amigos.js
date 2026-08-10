@@ -35,11 +35,16 @@ function getModulosFalsosAmigos() {
  */
 function getModulosFAConcluidos() {
     let concluidos = [];
-    if (typeof AppState !== 'undefined' && AppState.user && Array.isArray(AppState.user.modulosConcluidos)) {
-        concluidos = AppState.user.modulosConcluidos;
+    const progressoEstado = typeof AppState !== 'undefined' && AppState.user
+        ? AppState.user.progressoGlobal
+        : null;
+    if (progressoEstado && Array.isArray(progressoEstado.modulosConcluidos)) {
+        concluidos = progressoEstado.modulosConcluidos;
     } else {
         try {
-            const prog = JSON.parse(localStorage.getItem('ja_progresso_global') || '{}');
+            const salvoAtual = localStorage.getItem('japao_academy_progress');
+            const salvoLegado = localStorage.getItem('ja_progresso_global');
+            const prog = JSON.parse(salvoAtual || salvoLegado || '{}');
             concluidos = prog.modulosConcluidos || [];
         } catch (e) {
             concluidos = [];
@@ -581,17 +586,12 @@ function responderQuizFinalFA(btn, qIdx, isCorrect, explanation) {
 function concluirModuloFinalFA() {
     const modId = faModuloAtivo.id;
 
-    // Adiciona ao AppState ou localStorage
-    if (typeof AppState !== 'undefined' && typeof AppState.markModuleComplete === 'function') {
-        AppState.markModuleComplete(modId);
-    } else {
-        try {
-            let prog = JSON.parse(localStorage.getItem('ja_progresso_global') || '{}');
-            if (!Array.isArray(prog.modulosConcluidos)) prog.modulosConcluidos = [];
-            if (!prog.modulosConcluidos.includes(modId)) prog.modulosConcluidos.push(modId);
-            localStorage.setItem('ja_progresso_global', JSON.stringify(prog));
-        } catch (e) { }
+    if (typeof AppState === 'undefined' || typeof AppState.markModuleCompleted !== 'function') {
+        console.error('AppState indisponível: o módulo de Falsos Amigos não pôde ser concluído com segurança.');
+        if (typeof mostrarToast === 'function') mostrarToast('Não foi possível salvar o progresso. Recarregue a página e tente novamente.');
+        return;
     }
+    AppState.markModuleCompleted(modId, faNivelAtivo);
 
     // Adiciona XP (+50 XP)
     if (typeof adicionarXP === 'function') {
@@ -945,4 +945,3 @@ if (typeof window !== 'undefined') {
     window.iniciarMinigamePegadinha = iniciarMinigamePegadinha;
     window.responderPegadinha = responderPegadinha;
 }
-

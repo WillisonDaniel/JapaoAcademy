@@ -157,7 +157,7 @@ CURSO_RUSSO_B1_DADOS.push(
             { sentence: 'Он пишет письмо синей ручкой.', translation: 'Ele escreve a carta com uma caneta azul.', tokens: ['Он', 'пишет', 'письмо', 'синей', 'ручкой.'], audio: 'Он пишет письмо синей ручкой.' }
         ],
         [
-            { speaker: 'Dmitry', text: 'С кем ты ideшь в театр?', translation: 'Com quem você vai ao teatro?', audio: 'С кем ты идёшь в театр?' },
+            { speaker: 'Dmitry', text: 'С кем ты идёшь в театр?', translation: 'Com quem você vai ao teatro?', audio: 'С кем ты идёшь в театр?' },
             { speaker: 'Elena', text: 'Я иду в театр с моей сестрой.', translation: 'Eu vou ao teatro com a minha irmã.', audio: 'Я иду в театр с моей сестрой.' }
         ],
         [

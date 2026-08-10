@@ -149,12 +149,10 @@ function getKanjiReading(item) {
 }
 
 function getTodosOsCursos() {
-    const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
-    const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
-
-    const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
-    const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
-    const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
+    const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+    const isSpanish = languageCode === 'es-ES';
+    const isEnglish = languageCode === 'en-US';
+    const isRussian = languageCode === 'ru-RU';
 
     if (isRussian) {
         return {

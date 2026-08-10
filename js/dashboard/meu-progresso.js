@@ -3,10 +3,22 @@
 // ======================================
 
 const DASHBOARD_SRS_SOURCES = [
-    { type: 'a1', key: 'ja_srs_deck', page: 'html/ja-JP/curso.html' },
+    { type: 'a1', key: 'ja_srs_a1_deck', page: 'html/ja-JP/curso.html' },
     { type: 'a2', key: 'ja_srs_a2_deck', page: 'html/ja-JP/curso.html' },
     { type: 'b1', key: 'ja_srs_b1_deck', page: 'html/ja-JP/curso.html' },
     { type: 'b2', key: 'ja_srs_b2_deck', page: 'html/ja-JP/curso.html' },
+    { type: 'a1', key: 'en_srs_a1_deck', page: 'html/en-US/curso_ingles.html' },
+    { type: 'a2', key: 'en_srs_a2_deck', page: 'html/en-US/curso_ingles.html' },
+    { type: 'b1', key: 'en_srs_b1_deck', page: 'html/en-US/curso_ingles.html' },
+    { type: 'b2', key: 'en_srs_b2_deck', page: 'html/en-US/curso_ingles.html' },
+    { type: 'a1', key: 'es_srs_a1_deck', page: 'html/es-ES/espanhol_curso.html' },
+    { type: 'a2', key: 'es_srs_a2_deck', page: 'html/es-ES/espanhol_curso.html' },
+    { type: 'b1', key: 'es_srs_b1_deck', page: 'html/es-ES/espanhol_curso.html' },
+    { type: 'b2', key: 'es_srs_b2_deck', page: 'html/es-ES/espanhol_curso.html' },
+    { type: 'a1', key: 'ru_srs_a1_deck', page: 'html/ru-RU/russo_curso.html' },
+    { type: 'a2', key: 'ru_srs_a2_deck', page: 'html/ru-RU/russo_curso.html' },
+    { type: 'b1', key: 'ru_srs_b1_deck', page: 'html/ru-RU/russo_curso.html' },
+    { type: 'b2', key: 'ru_srs_b2_deck', page: 'html/ru-RU/russo_curso.html' },
     { type: 'hiragana', key: 'ja_srs_hiragana_deck', page: 'html/ja-JP/hiragana.html' },
     { type: 'katakana', key: 'ja_srs_katakana_deck', page: 'html/ja-JP/katakana.html' },
     { type: 'kanji', key: 'ja_srs_kanji_deck', page: 'html/ja-JP/kanji_n5.html' },
@@ -14,7 +26,9 @@ const DASHBOARD_SRS_SOURCES = [
     { type: 'kanji_n3', key: 'ja_srs_kanji_n3_deck', page: 'html/ja-JP/kanji_n3.html' },
     { type: 'kanji_n2', key: 'ja_srs_kanji_n2_deck', page: 'html/ja-JP/kanji_n2.html' },
     { type: 'kanji_n1', key: 'ja_srs_kanji_n1_deck', page: 'html/ja-JP/kanji_n1.html' },
-    { type: 'phrasal_verbs', key: 'en_srs_phrasal_verbs_deck', page: 'html/en-US/phrasal_verbs.html' }
+    { type: 'phrasal_verbs', key: 'en_srs_phrasal_verbs_deck', page: 'html/en-US/phrasal_verbs.html' },
+    { type: 'falsos_amigos', key: 'es_srs_falsos_amigos_deck', page: 'html/es-ES/espanhol_falsos_amigos.html' },
+    { type: 'cirilico', key: 'ru_srs_cirilico_deck', page: 'html/ru-RU/russo_alfabeto.html' }
 ];
 
 const DASHBOARD_LANGUAGE_REGISTRY = [
@@ -62,6 +76,27 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
         }),
         extraLabel: 'módulo(s) de Falsos Amigos',
         extraProgressKeys: ['progress_espanhol_falsos_amigos']
+    },
+    {
+        id: 'russian',
+        label: 'Russo',
+        icon: '🪆',
+        hubPage: 'hub_russo.html',
+        coursePage: 'html/ru-RU/russo_curso.html',
+        getCourses: () => ({
+            A1: (typeof CURSO_RUSSO_A1_DADOS !== 'undefined') ? CURSO_RUSSO_A1_DADOS : [],
+            A2: (typeof CURSO_RUSSO_A2_DADOS !== 'undefined') ? CURSO_RUSSO_A2_DADOS : [],
+            B1: (typeof CURSO_RUSSO_B1_DADOS !== 'undefined') ? CURSO_RUSSO_B1_DADOS : [],
+            B2: (typeof CURSO_RUSSO_B2_DADOS !== 'undefined') ? CURSO_RUSSO_B2_DADOS : []
+        }),
+        extraLabel: 'módulo(s) de Cirílico',
+        extraProgressKeys: [],
+        getExtraProgress: () => {
+            const modulos = typeof DADOS_RUSSO_CIRILICO !== 'undefined' && Array.isArray(DADOS_RUSSO_CIRILICO.modules)
+                ? DADOS_RUSSO_CIRILICO.modules
+                : [];
+            return modulos.filter(modulo => localStorage.getItem(`cyrillic_mod_done_${modulo.id}`) === 'true').length;
+        }
     }
 ];
 
@@ -69,6 +104,7 @@ const DASHBOARD_LANGUAGE_LABELS = {
     'ja-JP': 'Japonês',
     'en-US': 'Inglês',
     'es-ES': 'Espanhol',
+    'ru-RU': 'Russo',
     unknown: 'Idioma não identificado'
 };
 
@@ -129,10 +165,13 @@ function obterResumoIdiomaDashboard(configuracao, progresso, concluidosSalvos) {
         });
     });
     const concluidos = Array.from(idsConhecidos).filter(id => concluidosSalvos.has(id)).length;
-    const extrasConcluidos = configuracao.extraProgressKeys.reduce((total, chave) => {
+    const extrasPersistidos = configuracao.extraProgressKeys.reduce((total, chave) => {
         const valores = Array.isArray(progresso[chave]) ? progresso[chave] : [];
         return total + new Set(valores).size;
     }, 0);
+    const extrasConcluidos = typeof configuracao.getExtraProgress === 'function'
+        ? Math.max(0, Number(configuracao.getExtraProgress()) || 0)
+        : extrasPersistidos;
     const totalModulos = idsConhecidos.size;
     return {
         id: configuracao.id,
@@ -348,7 +387,7 @@ function criarDadosCalendarioDashboard(dados = {}, referencia, hoje = new Date()
 
 function normalizarFiltrosEstatisticasDashboard(filtros = {}) {
     const periodo = [7, 30, 90].includes(Number(filtros.period)) ? Number(filtros.period) : 30;
-    const idioma = ['all', 'ja-JP', 'en-US'].includes(filtros.language) ? filtros.language : 'all';
+    const idioma = ['all', 'ja-JP', 'en-US', 'es-ES', 'ru-RU'].includes(filtros.language) ? filtros.language : 'all';
     const atividade = filtros.activity === 'all' || Object.prototype.hasOwnProperty.call(DASHBOARD_ACTIVITY_LABELS, filtros.activity)
         ? (filtros.activity || 'all')
         : 'all';
@@ -1637,6 +1676,7 @@ function iniciarRevisaoPeloDashboard(event) {
 }
 
 function inicializarMeuProgresso() {
+    if (typeof migrarDecksSRSMultidioma === 'function') migrarDecksSRSMultidioma();
     const select = document.getElementById('dashboard-goal-select');
     if (select && select.dataset.dashboardReady !== 'true') {
         select.dataset.dashboardReady = 'true';

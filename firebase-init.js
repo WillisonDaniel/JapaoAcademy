@@ -1,5 +1,5 @@
 // ==========================================
-// JAPÃO ACADEMY - FIREBASE INITIALIZATION
+// IDIOMAS ACADEMY - FIREBASE INITIALIZATION
 // ==========================================
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -38,6 +38,6 @@ window.jaFirebase = {
     getDoc
 };
 
-console.log("🔥 Firebase inicializado com sucesso no Japão Academy!");
+console.log("🔥 Firebase inicializado com sucesso no Idiomas Academy!");
 
 

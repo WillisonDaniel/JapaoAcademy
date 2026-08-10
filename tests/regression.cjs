@@ -400,12 +400,15 @@ test('favoritos, caderno de erros e badge SRS permanecem integrados', () => {
     };
     const context = createContext({
         document: {
-            body: { getAttribute: () => 'curso' },
+            body: { getAttribute: name => name === 'data-mode' ? 'curso' : null },
             getElementById: id => elements[id] || null,
             querySelectorAll: () => []
-        }
+        },
+        location: { pathname: '/html/ja-JP/curso.html' }
     });
     runFile(context, 'js/core/state.js');
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/srs/engine.js');
     runFile(context, 'js/srs/deck.js');
 
     context.salvarFavoritosDeck(['favorito-1']);
@@ -413,8 +416,8 @@ test('favoritos, caderno de erros e badge SRS permanecem integrados', () => {
     assert.equal(context.eFavoritado('favorito-1'), true);
     assert.deepEqual(Array.from(context.getCadernoErros()), ['erro-1']);
 
-    context.localStorage.setItem('ja_srs_deck', JSON.stringify([
-        { id: 'card-1', dueDate: Date.now() - 1000 }
+    context.localStorage.setItem('ja_srs_a1_deck', JSON.stringify([
+        { id: 'a1_mod_01_d_0', modId: 'a1_mod_01', dueDate: Date.now() - 1000 }
     ]));
     context.atualizarBadgeSRS('a1');
     assert.equal(elements['srs-badge-count'].innerText, 1);
@@ -599,7 +602,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v18'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v19'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -626,7 +629,7 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.match(html, /option value="15">15 minutos/);
     assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
 
-    assert.match(storage, /const DASHBOARD_DATA_VERSION = 3/);
+    assert.match(storage, /const DASHBOARD_DATA_VERSION = 4/);
     assert.match(storage, /ja_dashboard_data_\$\{uidSeguro\}/);
     assert.match(storage, /dashboardData:\s*carregarDadosDashboard|backup\.dashboardData\s*=\s*carregarDadosDashboard/);
     assert.match(storage, /DASHBOARD_DAILY_GOALS = \[10, 15, 20, 30, 45, 60\]/);
@@ -708,7 +711,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(html, /id="dashboard-stat-accuracy">Dados insuficientes/);
     assert.match(html, /id="dashboard-language-distribution"/);
     assert.match(html, /id="dashboard-activity-distribution"/);
-    assert.match(html, /meu-progresso\.js\?v=29/);
+    assert.match(html, /meu-progresso\.js\?v=30/);
     assert.doesNotMatch(html, /chart\.js|highcharts|d3\.js/i);
 
     assert.match(dashboard, /function calcularEstatisticasDashboard\s*\(/);
@@ -720,8 +723,8 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v18'/);
-    assert.match(serviceWorker, /meu-progresso\.js\?v=29/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v19'/);
+    assert.match(serviceWorker, /meu-progresso\.js\?v=30/);
 });
 
 test('graficos de aprendizado da Etapa 29 usam dados reais e alternativa acessivel', () => {
@@ -780,7 +783,7 @@ test('calendario de estudos da Etapa 29 preserva datas locais e navegacao acessi
     assert.match(dashboard, /botao\.setAttribute\('aria-label', criarRotuloDiaCalendarioDashboard/);
     assert.match(dashboard, /meta\.classList\.toggle\('is-complete', dia\.goalMet\)/);
     assert.match(dashboard, /accuracy:\s*\{ available: hasAccuracy, correct: hasAccuracy \? correct : null, errors: hasAccuracy \? errors : null \}/);
-    assert.match(storage, /const DASHBOARD_DATA_VERSION = 3/);
+    assert.match(storage, /const DASHBOARD_DATA_VERSION = 4/);
 
     assert.match(css, /\.dashboard-calendar-grid/);
     assert.match(css, /grid-template-columns:\s*repeat\(7, minmax\(0, 1fr\)\)/);

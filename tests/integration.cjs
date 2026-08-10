@@ -225,6 +225,7 @@ test('troca entre niveis e cursos mantem estado coerente', () => {
             CURSO_ESPANHOL_B2_DADOS: [{ id: 'es-b2' }]
         }
     });
+    runFile(languageSession, 'js/core/constants.js');
     runFile(languageSession, 'js/core/utils.js');
     languageSession.document.setLanguage('english');
     assert.equal(languageSession.getTodosOsCursos().A1[0].id, 'en-a1');
@@ -335,7 +336,7 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
     const agora = Date.now();
     const storage = createStorage({
         ja_user_xp: '350',
-        ja_srs_deck: JSON.stringify([
+        ja_srs_a1_deck: JSON.stringify([
             { id: 'due', dueDate: agora - 1000 },
             { id: 'future', dueDate: agora + 60000 }
         ]),
@@ -361,7 +362,11 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
             CURSO_ESPANHOL_A1_DADOS: [{ id: 'es-a1-1' }],
             CURSO_ESPANHOL_A2_DADOS: [{ id: 'es-a2-1' }],
             CURSO_ESPANHOL_B1_DADOS: [{ id: 'es-b1-1' }],
-            CURSO_ESPANHOL_B2_DADOS: [{ id: 'es-b2-1' }]
+            CURSO_ESPANHOL_B2_DADOS: [{ id: 'es-b2-1' }],
+            CURSO_RUSSO_A1_DADOS: [{ id: 'ru-a1-1' }],
+            CURSO_RUSSO_A2_DADOS: [{ id: 'ru-a2-1' }],
+            CURSO_RUSSO_B1_DADOS: [{ id: 'ru-b1-1' }],
+            CURSO_RUSSO_B2_DADOS: [{ id: 'ru-b2-1' }]
         }
     });
     session.AppState.setProgress(JSON.parse(storage.getItem('japao_academy_progress')));
@@ -377,7 +382,7 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
     assert.equal(geral.xp, 350);
     assert.equal(geral.concluidos, 2);
     assert.equal(geral.modulosExtras, 3);
-    assert.equal(geral.idiomasDisponiveis, 3);
+    assert.equal(geral.idiomasDisponiveis, 4);
     assert.equal(geral.idiomas[0].label, 'Japonês');
     assert.equal(geral.idiomas[0].concluidos, 1);
     assert.equal(geral.idiomas[1].label, 'Inglês');
@@ -611,7 +616,7 @@ test('dashboard migra v1, registra sessoes idempotentes e limita retencao', () =
     });
     const session = loadCoreSession(storage, { getTodosOsCursos: () => sampleCourses });
     const migrated = session.carregarDadosDashboard(uid);
-    assert.equal(migrated.version, 3);
+    assert.equal(migrated.version, 4);
     assert.ok(Array.isArray(migrated.srsHistory));
     assert.equal(migrated.dailyGoalMinutes, 30);
     assert.equal(migrated.studySecondsByDate['2026-08-03'], 150);

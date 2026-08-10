@@ -106,14 +106,25 @@ function selecionarModoSRS(modo, tipo) {
     }
 }
 
-function carregarDeckSRS(tipo) {
-    const key = typeof getDeckKeySRS === 'function' ? getDeckKeySRS(tipo) : 'ja_srs_deck';
-    return JSON.parse(localStorage.getItem(key)) || [];
+function carregarDeckSRS(tipo, language) {
+    if (typeof migrarDecksSRSMultidioma === 'function') migrarDecksSRSMultidioma();
+    const key = typeof getDeckKeySRS === 'function' ? getDeckKeySRS(tipo, language) : null;
+    if (!key) return [];
+    try {
+        const deck = JSON.parse(localStorage.getItem(key) || '[]');
+        return Array.isArray(deck) ? deck : [];
+    } catch (e) {
+        console.warn(`Deck SRS inválido ignorado: ${key}`, e);
+        return [];
+    }
 }
 
-function salvarDeckSRS(tipo, deck) {
-    const key = typeof getDeckKeySRS === 'function' ? getDeckKeySRS(tipo) : 'ja_srs_deck';
+function salvarDeckSRS(tipo, deck, language) {
+    if (typeof migrarDecksSRSMultidioma === 'function') migrarDecksSRSMultidioma();
+    const key = typeof getDeckKeySRS === 'function' ? getDeckKeySRS(tipo, language) : null;
+    if (!key) return false;
     localStorage.setItem(key, JSON.stringify(deck));
+    return true;
 }
 
 function obterCardsParaRevisarHoje(tipo) {

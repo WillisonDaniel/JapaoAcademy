@@ -1,8 +1,8 @@
 // ============================================================================
-// JAPÃO ACADEMY — SISTEMA UNIFICADO DE INICIALIZAÇÃO & BOOTSTRAP (ENTRYPOINT)
+// IDIOMAS ACADEMY — SISTEMA UNIFICADO DE INICIALIZAÇÃO & BOOTSTRAP (ENTRYPOINT)
 // ============================================================================
 /**
- * @fileoverview Arquivo Ponto de Entrada (Entrypoint) Principal do Japão Academy.
+ * @fileoverview Arquivo Ponto de Entrada (Entrypoint) Principal do Idiomas Academy.
  * @description Refatorado na Fase 2 para servir exclusivamente como orquestrador
  * de bootstrap, mapeamento de eventos globais e distribuição de chamadas entre
  * os módulos modularizados do sistema.
@@ -30,7 +30,7 @@
  *    - js/srs/*               : Algoritmo de Repetição Espaçada (SM-2)
  * ----------------------------------------------------------------------------
  * @version 2.5.0
- * @author Senior Software Architect - Japão Academy
+ * @author Senior Software Architect - Idiomas Academy
  */
 
 // ============================================================================
@@ -42,7 +42,7 @@
  * Disparado quando a estrutura do DOM está totalmente carregada e pronta.
  */
 document.addEventListener("DOMContentLoaded", function onDOMContentLoaded() {
-    console.log("⚡ [Japão Academy] DOM carregado. Iniciando bootstrap dos módulos...");
+    console.log("⚡ [Idiomas Academy] DOM carregado. Iniciando bootstrap dos módulos...");
 
     try {
         // 1. Invoca o orquestrador unificado de bootstrap
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function onDOMContentLoaded() {
         registrarObservadorDeConectividade();
 
     } catch (err) {
-        console.error("❌ [Japão Academy] Falha crítica no bootstrap da aplicação:", err);
+        console.error("❌ [Idiomas Academy] Falha crítica no bootstrap da aplicação:", err);
         if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('dataset', 'Não foi possível carregar a aplicação');
         else if (typeof mostrarToast === 'function') mostrarToast('⚠️ Não foi possível carregar todo o conteúdo. Atualize a página para tentar novamente.');
     }
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function onDOMContentLoaded() {
  * Listener Secundário para recursos pesados (Imagens, Canvas e WebFonts).
  */
 window.addEventListener("load", function onWindowLoad() {
-    console.log("✨ [Japão Academy] Todos os recursos estáticos e fontes carregados com sucesso.");
+    console.log("✨ [Idiomas Academy] Todos os recursos estáticos e fontes carregados com sucesso.");
 });
 
 // ============================================================================

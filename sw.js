@@ -1,4 +1,4 @@
-const CACHE_NAME = 'idiomas-academy-v18';
+const CACHE_NAME = 'idiomas-academy-v19';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -7,6 +7,17 @@ const ASSETS_TO_CACHE = [
     './hub_japones.html',
     './hub_ingles.html',
     './hub_espanhol.html',
+    './hub_russo.html',
+    './html/ru-RU/russo_curso.html',
+    './html/ru-RU/russo_alfabeto.html',
+    './html/ru-RU/russo_dicionario.html',
+    './html/ru-RU/russo_minigame.html',
+    './database/ru-RU/data_curso_russo_a1.js',
+    './database/ru-RU/data_curso_russo_a2.js',
+    './database/ru-RU/data_curso_russo_b1.js',
+    './database/ru-RU/data_curso_russo_b2.js',
+    './database/ru-RU/data_russo_cirilico.js',
+    './database/ru-RU/data_russo_dicionario.js',
     './html/es-ES/espanhol_curso.html',
     './html/es-ES/espanhol_falsos_amigos.html',
     './html/es-ES/espanhol_minigame_conjugacao.html',
@@ -36,8 +47,31 @@ const ASSETS_TO_CACHE = [
     './html/ja-JP/dicionario.html',
     './style.css',
     './app.js',
+    './js/core/config.js',
+    './js/core/constants.js',
+    './js/core/state.js',
+    './js/core/utils.js',
+    './js/core/theme.js',
+    './js/core/audio.js',
+    './js/core/toast.js',
+    './js/core/storage.js',
+    './js/core/dom.js',
+    './js/core/events.js',
+    './js/core/bootstrap.js',
     './js/core/study-session.js',
-    './js/dashboard/meu-progresso.js?v=29e',
+    './js/course/moduleNormalizer.js',
+    './js/course/tabs.js',
+    './js/course/course.js',
+    './js/course/quiz.js',
+    './js/srs/deck.js',
+    './js/srs/engine.js',
+    './js/srs/review.js',
+    './js/game/xp.js',
+    './js/game/ranking.js',
+    './js/core/dictionary.js',
+    './js/kanji/kanji-canvas.js',
+    './js/minigame/minigame_russo.js',
+    './js/dashboard/meu-progresso.js?v=30',
     './firebase-init.js',
     './manifest.json',
     './database/ja-JP/data_curso_a1.js',
@@ -52,7 +86,10 @@ const ASSETS_TO_CACHE = [
     './database/ja-JP/data_hiragana.js',
     './database/ja-JP/data_katakana.js',
     './favicon.png',
-    './logo.png',
+    './logo.png'
+];
+
+const OPTIONAL_REMOTE_ASSETS = [
     'https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js',
     'https://unpkg.com/wanakana@5.3.1/wanakana.min.js',
     'https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap'
@@ -63,13 +100,13 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log('⚡ [Service Worker] Pré-carregando arquivos para suporte offline...');
-            return Promise.all(
-                ASSETS_TO_CACHE.map((asset) => {
+            return cache.addAll(ASSETS_TO_CACHE).then(() => Promise.all(
+                OPTIONAL_REMOTE_ASSETS.map((asset) => {
                     return cache.add(asset).catch((err) => {
-                        console.warn(`[Service Worker] Falha ao cachear recurso: ${asset}`, err);
+                        console.warn(`[Service Worker] Recurso remoto opcional indisponível: ${asset}`, err);
                     });
                 })
-            );
+            ));
         }).then(() => self.skipWaiting())
     );
 });
@@ -95,7 +132,7 @@ self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
 
     event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
+        caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
             if (cachedResponse) {
                 // Tenta revalidar em segundo plano sem bloquear a resposta do cache
                 fetch(event.request).then((networkResponse) => {

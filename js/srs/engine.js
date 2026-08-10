@@ -9,7 +9,37 @@ let srsCardRevelado = false;
 let srsAcertosSessao = 0;
 let srsErrosSessao = 0;
 
-function getDeckKeySRS(tipo) {
+const SRS_STANDARD_LEVELS = new Set(['a1', 'a2', 'b1', 'b2']);
+const SRS_LEGACY_DECK_KEYS = Object.freeze({
+    a1: 'ja_srs_deck',
+    a2: 'ja_srs_a2_deck',
+    b1: 'ja_srs_b1_deck',
+    b2: 'ja_srs_b2_deck'
+});
+const SRS_MIGRATION_MARKER_KEY = 'srs_multilang_migration_v1';
+const SRS_MIGRATION_BACKUP_KEY = 'srs_multilang_legacy_backup_v1';
+const SRS_MIGRATION_UNRESOLVED_KEY = 'srs_multilang_unresolved_v1';
+
+function obterIdiomaDeckSRS(tipo, card) {
+    const t = String(tipo || '').toLowerCase();
+    if (['phrasal_verbs', 'phrasal'].includes(t)) return 'en-US';
+    if (['falsos_amigos', 'falsos'].includes(t)) return 'es-ES';
+    if (['cirilico', 'cyrillic', 'russo_cirilico'].includes(t)) return 'ru-RU';
+    if (['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'n5', 'n4', 'n3', 'n2', 'n1'].includes(t)) return 'ja-JP';
+
+    const explicit = card && typeof normalizeLanguage === 'function'
+        ? normalizeLanguage(card.language || card.languageCode || card.lang)
+        : null;
+    const identity = String(card && `${card.modId || ''} ${card.id || ''}` || '').toLowerCase();
+    if (/\bru_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ru-RU';
+    if (/\bes_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'es-ES';
+    if (/\ben_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'en-US';
+    if (/\b(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ja-JP';
+    if (explicit) return explicit;
+    return null;
+}
+
+function getDeckKeySRS(tipo, language) {
     if (!tipo) tipo = (typeof nivelAtivo !== 'undefined' && nivelAtivo) ? nivelAtivo.toLowerCase() : 'a1';
     const t = tipo.toLowerCase();
     if (t === 'hiragana') return 'ja_srs_hiragana_deck';
@@ -22,15 +52,114 @@ function getDeckKeySRS(tipo) {
     if (t === 'cirilico' || t === 'cyrillic' || t === 'russo_cirilico') return 'ru_srs_cirilico_deck';
     if (t === 'phrasal_verbs' || t === 'phrasal') return 'en_srs_phrasal_verbs_deck';
     if (t === 'falsos_amigos' || t === 'falsos') return 'es_srs_falsos_amigos_deck';
-    if (t === 'a2') return 'ja_srs_a2_deck';
-    if (t === 'b1') return 'ja_srs_b1_deck';
-    if (t === 'b2') return 'ja_srs_b2_deck';
-    return 'ja_srs_deck';
+    if (!SRS_STANDARD_LEVELS.has(t)) return null;
+
+    const languageCode = language == null
+        ? (typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP')
+        : (typeof normalizeLanguage === 'function' ? normalizeLanguage(language) : null);
+    const config = typeof getLanguageConfig === 'function' ? getLanguageConfig(languageCode) : null;
+    return config ? `${config.prefix}_srs_${t}_deck` : null;
+}
+
+function obterVersaoCardSRS(card) {
+    if (!card || typeof card !== 'object') return 0;
+    const datas = [card.updatedAt, card.lastReviewedAt, card.reviewedAt]
+        .map(value => value ? new Date(value).getTime() : 0)
+        .filter(Number.isFinite);
+    return Math.max(0, Number(card.dueDate) || 0, ...datas);
+}
+
+function mesclarCardMigradoSRS(deck, card) {
+    const id = card && card.id != null ? String(card.id) : '';
+    if (!id) {
+        deck.push(card);
+        return;
+    }
+    const index = deck.findIndex(item => item && String(item.id) === id);
+    if (index === -1) {
+        deck.push(card);
+        return;
+    }
+    if (obterVersaoCardSRS(card) >= obterVersaoCardSRS(deck[index])) deck[index] = card;
+}
+
+function migrarDecksSRSMultidioma() {
+    if (typeof localStorage === 'undefined') return false;
+    if (localStorage.getItem(SRS_MIGRATION_MARKER_KEY) === 'true') return true;
+
+    let rawSources = {};
+    Object.values(SRS_LEGACY_DECK_KEYS).forEach(key => { rawSources[key] = localStorage.getItem(key); });
+
+    try {
+        const backupExistente = localStorage.getItem(SRS_MIGRATION_BACKUP_KEY);
+        if (backupExistente) {
+            const backup = JSON.parse(backupExistente);
+            if (backup && backup.sources && typeof backup.sources === 'object') rawSources = backup.sources;
+        } else {
+            localStorage.setItem(SRS_MIGRATION_BACKUP_KEY, JSON.stringify({
+                createdAt: new Date().toISOString(),
+                sources: rawSources
+            }));
+        }
+
+        const destinations = {};
+        ['ja-JP', 'en-US', 'es-ES', 'ru-RU'].forEach(languageCode => {
+            SRS_STANDARD_LEVELS.forEach(level => {
+                const key = getDeckKeySRS(level, languageCode);
+                const isLegacySource = Object.values(SRS_LEGACY_DECK_KEYS).includes(key);
+                let existing = [];
+                if (!isLegacySource) {
+                    try {
+                        const parsed = JSON.parse(localStorage.getItem(key) || '[]');
+                        existing = Array.isArray(parsed) ? parsed : [];
+                    } catch (e) { }
+                }
+                destinations[key] = existing;
+            });
+        });
+
+        const unresolved = [];
+        Object.entries(SRS_LEGACY_DECK_KEYS).forEach(([level, sourceKey]) => {
+            const raw = rawSources[sourceKey];
+            if (!raw) return;
+            let cards;
+            try {
+                cards = JSON.parse(raw);
+            } catch (error) {
+                unresolved.push({ sourceKey, level, reason: 'invalid-json', rawValue: raw });
+                return;
+            }
+            if (!Array.isArray(cards)) {
+                unresolved.push({ sourceKey, level, reason: 'not-an-array', rawValue: raw });
+                return;
+            }
+            cards.forEach(card => {
+                const languageCode = obterIdiomaDeckSRS(level, card);
+                const targetKey = languageCode ? getDeckKeySRS(level, languageCode) : null;
+                if (!targetKey) {
+                    unresolved.push({ sourceKey, level, reason: 'language-unresolved', card });
+                    return;
+                }
+                mesclarCardMigradoSRS(destinations[targetKey], { ...card, language: languageCode, level: String(card.level || level).toUpperCase() });
+            });
+        });
+
+        Object.entries(destinations).forEach(([key, deck]) => {
+            if (deck.length > 0 || localStorage.getItem(key) != null) localStorage.setItem(key, JSON.stringify(deck));
+        });
+        localStorage.setItem(SRS_MIGRATION_UNRESOLVED_KEY, JSON.stringify(unresolved));
+        localStorage.setItem(SRS_MIGRATION_MARKER_KEY, 'true');
+        return true;
+    } catch (error) {
+        console.warn('Não foi possível concluir a migração multidioma do SRS. O backup foi preservado.', error);
+        return false;
+    }
 }
 function sincronizarBaralhoSRS(tipo = 'a1') {
     if (!tipo) tipo = (typeof nivelAtivo !== 'undefined' && nivelAtivo) ? nivelAtivo.toLowerCase() : 'a1';
     const t = tipo.toLowerCase();
     let deck = typeof carregarDeckSRS === 'function' ? carregarDeckSRS(t) : [];
+    const idiomaDeck = obterIdiomaDeckSRS(t) || (typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP');
     let alterado = false;
     let modulosConcluidosNomes = [];
     let deckIds = null;
@@ -104,6 +233,10 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
     let dadosCurso = null;
     if (!isSpecialCourse) {
         dadosCurso = typeof getCourseData === 'function' ? getCourseData(t) : null;
+        if (!dadosCurso && typeof getTodosOsCursos === 'function') {
+            const cursos = getTodosOsCursos();
+            dadosCurso = cursos && cursos[t.toUpperCase()] ? cursos[t.toUpperCase()] : null;
+        }
         if (!dadosCurso) {
             const isEnglish = typeof document !== 'undefined' && document.body && document.body.getAttribute('data-lang') === 'english';
             if (isEnglish) {
@@ -144,6 +277,7 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
                                 modIdx: modIdx,
                                 modTitle: module.title,
                                 level: t.toUpperCase(),
+                                language: idiomaDeck,
                                 drop: drop,
                                 repetition: 0,
                                 interval: 0,
@@ -427,7 +561,9 @@ function processarAvaliacaoSRS(qualidade) {
         else if (cardData.item && cardData.item.phrase) contentLabel = cardData.item.phrase;
         else if (cardData.id) contentLabel = String(cardData.id);
     }
-    const idioma = srsTipoAtivo === 'phrasal_verbs' ? 'en-US' : 'ja-JP';
+    const idioma = obterIdiomaDeckSRS(srsTipoAtivo, cardData)
+        || (typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : null)
+        || 'unknown';
     const novoIntervalo = cardRef ? Math.max(0, Number(cardRef.interval) || 0) : 0;
     const proximaRevisao = cardRef ? Number(cardRef.dueDate) || (agora + UM_DIA_MS) : (agora + UM_DIA_MS);
     const sessaoId = (typeof window !== 'undefined' && window.estudoSessaoAtiva) ? window.estudoSessaoAtiva.id : '';
@@ -474,7 +610,9 @@ if (typeof window !== 'undefined') {
     window.srsCardRevelado = srsCardRevelado;
     window.srsAcertosSessao = srsAcertosSessao;
     window.srsErrosSessao = srsErrosSessao;
+    window.obterIdiomaDeckSRS = obterIdiomaDeckSRS;
     window.getDeckKeySRS = getDeckKeySRS;
+    window.migrarDecksSRSMultidioma = migrarDecksSRSMultidioma;
     window.sincronizarBaralhoSRS = sincronizarBaralhoSRS;
     window.processarAvaliacaoSRS = processarAvaliacaoSRS;
     window.initializeSRS = initializeSRS;

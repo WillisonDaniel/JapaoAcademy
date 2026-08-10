@@ -384,8 +384,8 @@ function iniciarModulo(index, nivel = ((typeof AppState !== 'undefined' && AppSt
     });
     if (player) player.style.display = 'block';
     if (typeof iniciarSessaoEstudo === 'function') {
-        const idioma = document.body.getAttribute('data-lang') === 'english' ? 'en-US' : 'ja-JP';
-        iniciarSessaoEstudo({ language: idioma, activityType: 'course', contentId: `${String(nivel).toLowerCase()}-${index + 1}` });
+        const idioma = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+        if (idioma) iniciarSessaoEstudo({ language: idioma, activityType: 'course', contentId: `${String(nivel).toLowerCase()}-${index + 1}` });
     }
     if (typeof renderizarEtapa === 'function') renderizarEtapa();
     window.scrollTo(0, 0);

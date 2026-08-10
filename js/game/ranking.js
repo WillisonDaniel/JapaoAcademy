@@ -4,7 +4,7 @@
 
 const CATALOGO_CONQUISTAS = [
     // 15 Conquistas Originais (Japonês & Gerais)
-    { id: 'ach_first_lesson', icon: '🐣', title: 'Primeiro Passo', desc: 'Concluiu a primeira aula no Japão Academy.' },
+    { id: 'ach_first_lesson', icon: '🐣', title: 'Primeiro Passo', desc: 'Concluiu a primeira aula no Idiomas Academy.' },
     { id: 'ach_hira_master', icon: '🌸', title: 'Mestre do Hiragana', desc: 'Concluiu todos os módulos de Hiragana.' },
     { id: 'ach_kata_master', icon: '⚡', title: 'Mestre do Katakana', desc: 'Concluiu todos os módulos de Katakana.' },
     { id: 'ach_kanji_initiate', icon: '🔤', title: 'Iniciante dos Kanjis', desc: 'Concluiu 5 módulos de Kanji N5.' },

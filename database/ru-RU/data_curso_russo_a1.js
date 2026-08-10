@@ -840,7 +840,7 @@ CURSO_RUSSO_A1_DADOS.push(
             { q: ' Como se diz "Olá" de forma formal?', options: ['Привет', 'Здравствуйте', 'Пока', 'Спасибо'], correctIndex: 1, explanation: 'Здравствуйте é a saudação formal.' },
             { q: ' O que significa "Спасибо"?', options: ['Por favor', 'Obrigado(a)', 'Tchau', 'Sim'], correctIndex: 1, explanation: 'Спасибо significa Obrigado(a).' },
             { q: ' Qual é a tradução de "Меня зовут"?', options: ['Meu nome é...', 'Eu sou de...', 'Eu moro em...', 'Onde fica...'], correctIndex: 0, explanation: 'Меня зовут = Meu nome é...' },
-            { q: ' Como se pergunta "Como você se chama?" de forma formal?', options: ['Как тебя зовут?', 'Как вас зовут?', 'Кто это?', 'Где você?'], correctIndex: 1, explanation: 'Как вас зовут? é a forma formal.' },
+            { q: ' Como se pergunta "Como você se chama?" de forma formal?', options: ['Как тебя зовут?', 'Как вас зовут?', 'Кто это?', 'Где вы?'], correctIndex: 1, explanation: 'Как вас зовут? é a forma formal.' },
             { q: ' O que significa "Очень приятно"?', options: ['Até logo', 'Muito prazer', 'Com licença', 'Desculpe'], correctIndex: 1, explanation: 'Очень приятно = Muito prazer.' },
             { q: ' Como se pergunta "De onde você é?"', options: ['Где ты?', 'Откуда ты?', 'Кто ты?', 'Как ты?'], correctIndex: 1, explanation: 'Откуда ты? = De onde você é?' },
             { q: ' Qual preposição indica origem "de"?', options: ['В', 'На', 'Из', 'К'], correctIndex: 2, explanation: 'Из indica origem (ex: из Бразилии).' },

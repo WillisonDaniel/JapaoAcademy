@@ -85,7 +85,8 @@ function initializeApp() {
 
     // Migração e descontaminação do SRS
     try {
-        const rawGenDeck = localStorage.getItem('ja_srs_deck');
+        if (typeof migrarDecksSRSMultidioma === 'function') migrarDecksSRSMultidioma();
+        const rawGenDeck = localStorage.getItem('ja_srs_a1_deck');
         if (rawGenDeck) {
             const parsedGen = JSON.parse(rawGenDeck);
             if (Array.isArray(parsedGen)) {
@@ -101,9 +102,9 @@ function initializeApp() {
                         c.id.startsWith('kanji_n1')
                     )));
                     if (deckFiltrado.length === 0) {
-                        localStorage.removeItem('ja_srs_deck');
+                        localStorage.removeItem('ja_srs_a1_deck');
                     } else {
-                        localStorage.setItem('ja_srs_deck', JSON.stringify(deckFiltrado));
+                        localStorage.setItem('ja_srs_a1_deck', JSON.stringify(deckFiltrado));
                     }
                 }
             }
@@ -130,7 +131,7 @@ function initializeApp() {
 
     const modulosLen = (typeof progressoGlobal !== 'undefined' && progressoGlobal.modulosConcluidos) ? progressoGlobal.modulosConcluidos.length : 0;
     const navNivel = typeof nivelAtivo !== 'undefined' ? nivelAtivo : 'A1';
-    console.log("🚀 Japão Academy Inicializado | Nível Ativo:", navNivel, "| Módulos Concluídos:", modulosLen, "/ 105");
+    console.log("🚀 Idiomas Academy inicializado | Nível ativo:", navNivel, "| Módulos concluídos:", modulosLen);
 }
 
 const initApp = initializeApp;

@@ -142,7 +142,7 @@ function salvarProgressoGlobal() {
     salvarSilenciosamenteNaNuvem();
 }
 
-const DASHBOARD_DATA_VERSION = 3;
+const DASHBOARD_DATA_VERSION = 4;
 const DASHBOARD_DAILY_GOALS = [10, 15, 20, 30, 45, 60];
 const DASHBOARD_SESSION_LIMIT = 200;
 const DASHBOARD_SRS_HISTORY_LIMIT = 500;
@@ -152,6 +152,24 @@ const DASHBOARD_ACTIVITY_TYPES = new Set([
     'course', 'quiz', 'srs', 'kanji', 'kana', 'dictionary',
     'pronunciation', 'phrasal-verbs', 'minigame'
 ]);
+
+function normalizarIdiomaDashboard(valor, contexto = {}) {
+    const identidade = String(`${contexto.deckType || ''} ${contexto.cardId || ''} ${contexto.contentId || ''}`).toLowerCase();
+    if (/\b(?:cirilico|cyrillic|russo_cirilico)\b|\bru_(?:a1|a2|b1|b2)_mod_/.test(identidade)) return 'ru-RU';
+    if (/\b(?:falsos_amigos|falsos)\b|\bes_(?:a1|a2|b1|b2)_mod_/.test(identidade)) return 'es-ES';
+    if (/\b(?:phrasal_verbs|phrasal)\b|\ben_(?:a1|a2|b1|b2)_mod_/.test(identidade)) return 'en-US';
+
+    if (typeof normalizeLanguage === 'function') return normalizeLanguage(valor) || 'unknown';
+    const aliases = {
+        'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'japanese': 'ja-JP', 'japones': 'ja-JP',
+        'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
+        'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
+        'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU'
+    };
+    const chave = String(valor || '').trim().toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/_/g, '-');
+    return aliases[chave] || 'unknown';
+}
 
 function obterDataLocalDashboard(data = new Date()) {
     const ano = data.getFullYear();
@@ -225,7 +243,7 @@ function normalizarTentativaSRS(tentativa) {
         timestamp: timestamp || new Date().toISOString(),
         date: date || obterDataLocalDashboard(),
         userId: String(tentativa.userId || '').slice(0, 128),
-        language: /^[-A-Za-z]{2,12}$/.test(tentativa.language || '') ? tentativa.language : 'ja-JP',
+        language: normalizarIdiomaDashboard(tentativa.language, tentativa),
         deckType: String(tentativa.deckType || 'a1').slice(0, 40),
         cardId: String(tentativa.cardId || '').slice(0, 160),
         contentLabel: labelOriginal || 'Card SRS',
@@ -268,7 +286,7 @@ function normalizarSessaoDashboard(sessao) {
         startedAt: inicio,
         endedAt: fim,
         activeSeconds: segundos,
-        language: /^[-A-Za-z]{2,12}$/.test(sessao.language || '') ? sessao.language : 'unknown',
+        language: normalizarIdiomaDashboard(sessao.language, sessao),
         activityType: DASHBOARD_ACTIVITY_TYPES.has(tipoInformado) ? tipoInformado : 'course',
         contentId: String(sessao.contentId || '').slice(0, 160),
         interactionCount: Math.max(0, Math.round(Number(sessao.interactionCount) || 0)),
@@ -374,6 +392,24 @@ function normalizarDadosDashboard(dados) {
         agregados[data] = agregado;
     });
     const sessoes = normalizarSessoesDashboard(dados.sessions);
+    const sessoesPorData = sessoes.reduce((mapa, sessao) => {
+        if (!sessao.date) return mapa;
+        if (!mapa[sessao.date]) mapa[sessao.date] = [];
+        mapa[sessao.date].push(sessao);
+        return mapa;
+    }, {});
+    Object.entries(sessoesPorData).forEach(([data, sessoesDoDia]) => {
+        const agregado = agregados[data];
+        if (!agregado || sessoesDoDia.some(sessao => sessao.language === 'unknown')) return;
+        const idsAgregados = new Set(agregado.sessionIds || []);
+        const coberturaCompleta = agregado.sessionCount === sessoesDoDia.length
+            && sessoesDoDia.every(sessao => idsAgregados.has(sessao.id));
+        if (!coberturaCompleta) return;
+        agregado.languages = sessoesDoDia.reduce((mapa, sessao) => {
+            mapa[sessao.language] = (mapa[sessao.language] || 0) + sessao.activeSeconds;
+            return mapa;
+        }, {});
+    });
     const srsHistorico = normalizarHistoricoSRSDashboard(dados.srsHistory);
     const totais = criarTotaisAcumuladosDashboard(dados.lifetimeTotals);
     const somaAgregados = Object.values(agregados).reduce((acumulado, agregado) => ({
@@ -407,7 +443,17 @@ function carregarDadosDashboard(uid) {
     if (!chave) return criarDadosDashboardPadrao();
     try {
         const salvo = localStorage.getItem(chave);
-        return salvo ? normalizarDadosDashboard(JSON.parse(salvo)) : criarDadosDashboardPadrao();
+        if (!salvo) return criarDadosDashboardPadrao();
+        const dadosOriginais = JSON.parse(salvo);
+        const versaoOrigem = Math.max(1, parseInt(dadosOriginais && dadosOriginais.version, 10) || 1);
+        const normalizados = normalizarDadosDashboard(dadosOriginais);
+        if (versaoOrigem < DASHBOARD_DATA_VERSION) {
+            const uidSeguro = encodeURIComponent(obterUidDashboard(uid));
+            const chaveBackup = `ja_dashboard_multilang_backup_${uidSeguro}`;
+            if (!localStorage.getItem(chaveBackup)) localStorage.setItem(chaveBackup, salvo);
+            localStorage.setItem(chave, JSON.stringify(normalizados));
+        }
+        return normalizados;
     } catch (e) {
         console.warn('Dados locais do dashboard estavam corrompidos e foram normalizados.', e);
         return criarDadosDashboardPadrao();

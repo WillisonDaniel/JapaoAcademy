@@ -28,7 +28,7 @@
         <section id="dashboard-signed-out" class="dashboard-signed-out" hidden aria-labelledby="dashboard-signed-out-title">
             <span class="dashboard-eyebrow">Área pessoal do Idiomas Academy</span>
             <h2 id="dashboard-signed-out-title">Acompanhe todos os seus idiomas</h2>
-            <p>Entre na sua conta para consultar metas, revisões, sequência e progresso em Japonês, Inglês e nos próximos idiomas da plataforma.</p>
+            <p>Entre na sua conta para consultar metas, revisões, sequência e progresso em Japonês, Inglês, Espanhol e Russo.</p>
             <div class="dashboard-actions">
                 <button type="button" class="dashboard-primary-button" onclick="abrirModalAuth('login', this)">Entrar</button>
                 <button type="button" class="dashboard-secondary-button" onclick="abrirModalAuth('cadastro', this)">Criar conta</button>
@@ -135,6 +135,8 @@
                                 <option value="all">Todos</option>
                                 <option value="ja-JP">Japonês</option>
                                 <option value="en-US">Inglês</option>
+                                <option value="es-ES">Espanhol</option>
+                                <option value="ru-RU">Russo</option>
                             </select>
                         </label>
                         <label for="dashboard-filter-activity">Atividade
@@ -305,6 +307,8 @@
                                 <option value="all">Todos</option>
                                 <option value="ja-JP">Japonês</option>
                                 <option value="en-US">Inglês</option>
+                                <option value="es-ES">Espanhol</option>
+                                <option value="ru-RU">Russo</option>
                             </select>
                         </label>
                         <label for="dashboard-history-filter-result">Resultado
@@ -372,11 +376,21 @@
     <script src="database/en-US/data_english_a2.js"></script>
     <script src="database/en-US/data_english_b1.js"></script>
     <script src="database/en-US/data_english_b2.js"></script>
+    <script src="database/es-ES/data_espanhol_a1.js"></script>
+    <script src="database/es-ES/data_espanhol_a2.js"></script>
+    <script src="database/es-ES/data_espanhol_b1.js"></script>
+    <script src="database/es-ES/data_espanhol_b2.js"></script>
+    <script src="database/ru-RU/data_curso_russo_a1.js"></script>
+    <script src="database/ru-RU/data_curso_russo_a2.js"></script>
+    <script src="database/ru-RU/data_curso_russo_b1.js"></script>
+    <script src="database/ru-RU/data_curso_russo_b2.js"></script>
+    <script src="database/ru-RU/data_russo_cirilico.js"></script>
     <script type="module" src="firebase-init.js"></script>
     <script src="js/core/config.js"></script>
     <script src="js/core/constants.js"></script>
     <script src="js/core/state.js"></script>
     <script src="js/core/utils.js"></script>
+    <script src="js/srs/engine.js"></script>
     <script src="js/core/theme.js"></script>
     <script src="js/core/audio.js"></script>
     <script src="js/core/toast.js"></script>
@@ -385,7 +399,7 @@
     <script src="js/core/events.js"></script>
     <script src="js/game/xp.js"></script>
     <script src="js/game/ranking.js"></script>
-    <script src="js/dashboard/meu-progresso.js?v=29i"></script>
+    <script src="js/dashboard/meu-progresso.js?v=30"></script>
     <script src="js/core/bootstrap.js"></script>
     <script src="app.js"></script>
 </body>

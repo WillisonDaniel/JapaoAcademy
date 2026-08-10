@@ -297,7 +297,7 @@ function submeterSimuladoB2() {
             <div style="background: #ecfdf5; border: 2px solid #10b981; padding: 20px; border-radius: 12px; max-width: 450px; margin: 20px auto; box-shadow: var(--shadow);">
                 <div style="font-size: 0.85rem; color: #047857; text-transform: uppercase; font-weight: bold;">Status de Formatura</div>
                 <div style="font-size: 1.5rem; font-weight: bold; color: #059669; margin: 6px 0;">100% CONCLUÍDO • CERTIFICADO LIBERADO</div>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Você concluiu toda a jornada de Japonês A1 ➔ B2 do ecossistema Japão Academy!</p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Você concluiu toda a jornada de Japonês A1 ➔ B2 do Idiomas Academy!</p>
             </div>
             <button onclick="abrirModalCertificado()" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4); margin-top: 10px;">
                 🎓 Gerar Certificado de Fluência B2
@@ -317,7 +317,7 @@ function submeterSimuladoB2() {
             <div style="background: #fef2f2; border: 2px solid #ef4444; padding: 18px; border-radius: 12px; max-width: 450px; margin: 20px auto; box-shadow: var(--shadow);">
                 <div style="font-size: 0.85rem; color: #991b1b; text-transform: uppercase; font-weight: bold;">Nota de Corte Não Atingida</div>
                 <p style="font-size: 0.95rem; color: #b91c1c; margin-top: 6px; line-height: 1.5;">
-                    Para obter a Certificação Oficial B2 do Japão Academy, é necessário acertar no mínimo <strong>24 de 30 questões (80%)</strong>.
+                    Para obter a Certificação Oficial B2 do Idiomas Academy, é necessário acertar no mínimo <strong>24 de 30 questões (80%)</strong>.
                 </p>
             </div>
             <button onclick="refazerSimuladoB2()" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border: none; padding: 12px 26px; border-radius: 12px; font-weight: bold; font-size: 1.05rem; cursor: pointer; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); margin-top: 10px;">

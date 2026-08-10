@@ -2,6 +2,67 @@
 // MÓDULO CORE - CONSTANTES E DICIONÁRIOS GLOBAIS
 // ======================================
 
+const LANGUAGE_CONFIG = Object.freeze({
+    'ja-JP': Object.freeze({ code: 'ja-JP', id: 'japanese', prefix: 'ja', label: 'Japonês', speechCode: 'ja-JP' }),
+    'en-US': Object.freeze({ code: 'en-US', id: 'english', prefix: 'en', label: 'Inglês', speechCode: 'en-US' }),
+    'es-ES': Object.freeze({ code: 'es-ES', id: 'spanish', prefix: 'es', label: 'Espanhol', speechCode: 'es-ES' }),
+    'ru-RU': Object.freeze({ code: 'ru-RU', id: 'russian', prefix: 'ru', label: 'Russo', speechCode: 'ru-RU' })
+});
+
+const LANGUAGE_ALIASES = Object.freeze({
+    'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'jp': 'ja-JP', 'japanese': 'ja-JP', 'japan': 'ja-JP', 'japones': 'ja-JP', 'japa': 'ja-JP',
+    'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
+    'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
+    'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU', 'cirilico': 'ru-RU', 'cyrillic': 'ru-RU'
+});
+
+function normalizeLanguage(value) {
+    if (value == null) return null;
+    const normalized = String(value).trim().toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/_/g, '-');
+    if (!normalized || normalized === 'all' || normalized === 'unknown' || normalized === 'none') return null;
+    return LANGUAGE_ALIASES[normalized] || null;
+}
+
+function getLanguageConfig(value) {
+    const code = normalizeLanguage(value);
+    return code ? LANGUAGE_CONFIG[code] : null;
+}
+
+function getCurrentLanguageCode() {
+    const body = typeof document !== 'undefined' ? document.body : null;
+    const root = typeof document !== 'undefined' ? document.documentElement : null;
+    const bodyLanguage = body && body.getAttribute ? body.getAttribute('data-lang') : '';
+    const rootLanguage = root && root.getAttribute ? root.getAttribute('data-lang') : '';
+
+    for (const explicitValue of [bodyLanguage, rootLanguage]) {
+        const explicitCode = normalizeLanguage(explicitValue);
+        if (explicitCode) return explicitCode;
+        if (explicitValue && String(explicitValue).trim().toLowerCase() === 'all') return null;
+        if (explicitValue && String(explicitValue).trim().toLowerCase() !== 'none') return null;
+    }
+
+    const stateLanguage = typeof AppState !== 'undefined' && AppState.ui ? AppState.ui.currentLanguage : null;
+    const normalizedState = normalizeLanguage(stateLanguage);
+    if (normalizedState) return normalizedState;
+
+    const mode = body && body.getAttribute ? body.getAttribute('data-mode') : '';
+    const normalizedMode = normalizeLanguage(mode);
+    if (normalizedMode) return normalizedMode;
+
+    const path = typeof window !== 'undefined' && window.location
+        ? String(window.location.pathname || '').toLowerCase()
+        : '';
+    if (/\/(?:en-us)(?:\/|$)|ingles|english/.test(path)) return 'en-US';
+    if (/\/(?:es-es)(?:\/|$)|espanhol|spanish/.test(path)) return 'es-ES';
+    if (/\/(?:ru-ru)(?:\/|$)|russo|russian/.test(path)) return 'ru-RU';
+    if (/\/(?:ja-jp)(?:\/|$)|japones|japanese/.test(path)) return 'ja-JP';
+
+    return 'ja-JP';
+}
+
 const CAT_NAMES = {
     mod1: "Módulo 1",
     mod2: "Módulo 2",
@@ -215,12 +276,11 @@ function getCourseData(mode) {
     if (m === 'pronuncia' || m === 'pronunciation') {
         return typeof PRONUNCIATION_TOPICS !== 'undefined' ? PRONUNCIATION_TOPICS : (typeof window !== 'undefined' && window.PRONUNCIATION_TOPICS ? window.PRONUNCIATION_TOPICS : null);
     }
-    if (m === 'curso' || m === 'japa' || m === 'spanish' || m === 'ingles' || m === 'english' || m === 'a1' || m === 'a2' || m === 'b1' || m === 'b2') {
-        const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
-        const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
-        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
-        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
-        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
+    if (m === 'curso' || m === 'japa' || m === 'spanish' || m === 'espanhol' || m === 'ingles' || m === 'english' || m === 'russian' || m === 'russo' || m === 'a1' || m === 'a2' || m === 'b1' || m === 'b2') {
+        const languageCode = normalizeLanguage(m) || getCurrentLanguageCode();
+        const isSpanish = languageCode === 'es-ES';
+        const isEnglish = languageCode === 'en-US';
+        const isRussian = languageCode === 'ru-RU';
 
         const lvl = (typeof AppState !== 'undefined' && AppState.course && AppState.course.level)
             ? String(AppState.course.level).toUpperCase()
@@ -254,6 +314,10 @@ function getCourseData(mode) {
 }
 // Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
+    window.LANGUAGE_CONFIG = LANGUAGE_CONFIG;
+    window.normalizeLanguage = normalizeLanguage;
+    window.getLanguageConfig = getLanguageConfig;
+    window.getCurrentLanguageCode = getCurrentLanguageCode;
     window.CAT_NAMES = CAT_NAMES;
     window.KANAI_SINGLE_SYLLABLE_MAP = KANAI_SINGLE_SYLLABLE_MAP;
     window.KANJI_HOMOPHONE_MAP = KANJI_HOMOPHONE_MAP;

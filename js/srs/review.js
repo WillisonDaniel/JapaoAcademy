@@ -13,9 +13,14 @@ function iniciarSessaoSRS(tipo, uxExecutarAgora = false) {
     }
     if (!tipo) {
         const mode = document.body.getAttribute('data-mode') || 'curso';
-        tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
+        const nivelAtual = typeof AppState !== 'undefined' && AppState.course && AppState.course.level
+            ? AppState.course.level
+            : (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo : 'a1');
+        tipo = ['curso', 'japa', 'russian', 'russo', 'spanish', 'espanhol'].includes(mode)
+            ? String(nivelAtual).toLowerCase()
+            : mode;
     }
-    srsTipoAtivo = tipo;
+    srsTipoAtivo = String(tipo).toLowerCase();
 
     const modoFiltro = (typeof AppState !== 'undefined' && AppState.srs && AppState.srs.filter) ? AppState.srs.filter : (typeof srsModoFiltro !== 'undefined' ? srsModoFiltro : 'todos');
     const fullDeck = typeof sincronizarBaralhoSRS === 'function' ? sincronizarBaralhoSRS(tipo) : (typeof carregarDeckSRS === 'function' ? carregarDeckSRS(tipo) : []);
@@ -82,8 +87,9 @@ function iniciarSessaoSRS(tipo, uxExecutarAgora = false) {
     if (playerSRS) playerSRS.style.display = 'block';
 
     if (typeof iniciarSessaoEstudo === 'function') {
-        const idioma = document.body.getAttribute('data-lang') === 'english' || window.location.pathname.includes('en-US') ? 'en-US' : 'ja-JP';
-        iniciarSessaoEstudo({ language: idioma, activityType: 'srs', contentId: String(tipo) });
+        const idioma = typeof obterIdiomaDeckSRS === 'function' ? obterIdiomaDeckSRS(tipo) : null;
+        const idiomaAtual = idioma || (typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP');
+        if (idiomaAtual) iniciarSessaoEstudo({ language: idiomaAtual, activityType: 'srs', contentId: String(tipo) });
     }
 
     renderizarCardSRS();
@@ -300,8 +306,8 @@ function renderizarCardSRS() {
         const drop = cardData.drop || {};
         const nivelLabel = (cardData.level || (srsTipoAtivo ? srsTipoAtivo.toUpperCase() : 'A1'));
         if (drop.type === 'vocab') {
-            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
-            const srsTextAudio = isEngSrs ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
+            const idiomaSRS = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+            const srsTextAudio = idiomaSRS !== 'ja-JP' ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
             const cleanSrsParam = String(srsTextAudio).replace(/\//g, ' ').replace(/'/g, "\\'");
 
             frenteHTML = `
@@ -364,8 +370,8 @@ function revelarRespostaSRS() {
         else if (cardData.char && typeof speakKana === 'function') speakKana(cardData.char);
         else if (cardData.character && typeof speakKana === 'function') speakKana(cardData.character);
         else if (cardData.drop && typeof tocarAudio === 'function') {
-            const isEngSrs = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US');
-            const targetTxt = isEngSrs ? (cardData.drop.kanji || cardData.drop.romaji) : (cardData.drop.romaji || cardData.drop.kanji);
+            const idiomaSRS = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+            const targetTxt = idiomaSRS !== 'ja-JP' ? (cardData.drop.kanji || cardData.drop.romaji) : (cardData.drop.romaji || cardData.drop.kanji);
             if (targetTxt) tocarAudio(targetTxt);
         }
     }

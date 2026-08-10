@@ -12,6 +12,33 @@
         'pronunciation', 'phrasal-verbs', 'minigame'
     ]);
 
+    function normalizarIdiomaSessao(valor) {
+        if (typeof global.normalizeLanguage === 'function') return global.normalizeLanguage(valor);
+        const aliases = {
+            'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'japanese': 'ja-JP', 'japones': 'ja-JP',
+            'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
+            'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
+            'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU'
+        };
+        const chave = String(valor || '').trim().toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/_/g, '-');
+        return aliases[chave] || null;
+    }
+
+    function obterIdiomaAtualSessao() {
+        if (typeof global.getCurrentLanguageCode === 'function') return global.getCurrentLanguageCode();
+        const caminho = String(global.location && global.location.pathname || '').toLowerCase();
+        const informado = global.document && global.document.body
+            ? global.document.body.getAttribute('data-lang')
+            : '';
+        const normalizado = normalizarIdiomaSessao(informado);
+        if (normalizado) return normalizado;
+        if (caminho.includes('/en-us/')) return 'en-US';
+        if (caminho.includes('/es-es/')) return 'es-ES';
+        if (caminho.includes('/ru-ru/')) return 'ru-RU';
+        return 'ja-JP';
+    }
+
     function gerarIdSessao() {
         if (global.crypto && typeof global.crypto.randomUUID === 'function') return global.crypto.randomUUID();
         return `study-${Date.now()}-${Math.random().toString(36).slice(2, 12)}`;
@@ -147,7 +174,8 @@
             if (!usuario || !usuario.uid) return false;
             const tipo = VALID_ACTIVITY_TYPES.has(contexto.activityType) ? contexto.activityType : null;
             if (!tipo) return false;
-            const idioma = String(contexto.language || 'unknown').slice(0, 12);
+            const idioma = normalizarIdiomaSessao(contexto.language);
+            if (!idioma) return false;
             const conteudo = String(contexto.contentId || '').slice(0, 160);
             if (sessaoAtiva) {
                 const mesmaAtividade = sessaoAtiva.activityType === tipo
@@ -215,8 +243,9 @@
     function obterContextoAtividade() {
         if (!global.location || !global.document || !global.document.body) return null;
         const caminho = String(global.location.pathname || '').toLowerCase();
-        if (/meu-progresso|\/index\.html$|\/hub_(japones|ingles)\.html$/.test(caminho)) return null;
-        const idioma = global.document.body.getAttribute('data-lang') === 'english' || caminho.includes('/en-us/') ? 'en-US' : 'ja-JP';
+        if (/meu-progresso|\/index\.html$|\/hub_(japones|ingles|espanhol|russo|idiomas)\.html$/.test(caminho)) return null;
+        const idioma = obterIdiomaAtualSessao();
+        if (!idioma) return null;
         let activityType = null;
         if (/dicionario/.test(caminho)) activityType = 'dictionary';
         else if (/pronuncia/.test(caminho)) activityType = 'pronunciation';

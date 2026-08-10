@@ -1,7 +1,7 @@
 {
-  "name": "Japão Academy",
-  "short_name": "Japão Academy",
-  "description": "A plataforma definitiva e completa para dominar o idioma japonês.",
+  "name": "Idiomas Academy",
+  "short_name": "Idiomas Academy",
+  "description": "Plataforma de estudos de japonês, inglês, espanhol e russo.",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait-primary",
