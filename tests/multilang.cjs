@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v26/);
+    assert.match(serviceWorker, /idiomas-academy-v27/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -510,6 +510,71 @@ test('hub de Kanji carrega somente os dados e módulos necessários', () => {
     assert.doesNotMatch(html, /js\/kanji\/kanji-canvas\.js/);
     assert.match(html, /js\/kanji\/kanji-render\.js/);
     assert.match(read('js/core/bootstrap.js'), /getElementById\('tabContainer'\)/);
+});
+
+test('cursos principais carregam apenas os motores comuns de aula e progresso', () => {
+    const courses = [
+        {
+            file: 'html/ja-JP/curso.html',
+            locale: 'ja-JP',
+            scripts: 27,
+            maxBytes: 1580 * 1024,
+            dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
+        },
+        {
+            file: 'html/en-US/curso_ingles.html',
+            locale: 'en-US',
+            scripts: 27,
+            maxBytes: 1050 * 1024,
+            dataPattern: /database\/en-US\/data_english_[a-b][1-2]\.js/
+        },
+        {
+            file: 'html/es-ES/espanhol_curso.html',
+            locale: 'es-ES',
+            scripts: 27,
+            maxBytes: 1610 * 1024,
+            dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
+        },
+        {
+            file: 'html/ru-RU/russo_curso.html',
+            locale: 'ru-RU',
+            scripts: 27,
+            maxBytes: 970 * 1024,
+            dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/
+        }
+    ];
+
+    courses.forEach(course => {
+        const html = read(course.file);
+        const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+            .map(match => match[1])
+            .filter(src => !/^https?:\/\//.test(src));
+        const bytesLocais = scriptsLocais.reduce((total, src) => {
+            const caminho = path.resolve(ROOT, path.dirname(course.file), src.split(/[?#]/)[0]);
+            return total + fs.statSync(caminho).size;
+        }, 0);
+
+        assert.equal(scriptsLocais.length, course.scripts, `${course.locale}: quantidade inesperada de scripts`);
+        assert.ok(bytesLocais <= course.maxBytes, `${course.locale}: ${Math.round(bytesLocais / 1024)} KB locais`);
+        assert.equal(scriptsLocais.filter(src => course.dataPattern.test(src)).length, 4, `${course.locale}: devem existir quatro datasets A1-B2`);
+        assert.match(html, /js\/course\/moduleNormalizer\.js/);
+        assert.ok(
+            html.indexOf('js/course/moduleNormalizer.js') < html.indexOf('js/course/course.js'),
+            `${course.locale}: o normalizador deve carregar antes do motor de aula`
+        );
+        assert.match(html, /js\/course\/tabs\.js/);
+        assert.match(html, /js\/course\/course\.js/);
+        assert.match(html, /js\/course\/quiz\.js/);
+        assert.match(html, /js\/game\/xp\.js/);
+        assert.match(html, /js\/game\/ranking\.js/);
+        assert.match(html, /js\/core\/course-index\.js/);
+        assert.match(html, /js\/srs\/(?:engine|deck|review)\.js/);
+        assert.doesNotMatch(html, /canvas-confetti/);
+        assert.doesNotMatch(html, /js\/core\/dictionary\.js/);
+        assert.doesNotMatch(html, /js\/(?:phrasal|pronunciation|minigame|kanji)\//);
+        assert.doesNotMatch(html, /js\/game\/minigames\.js/);
+        assert.match(read('sw.js'), new RegExp(course.file.replaceAll('/', '\\/')));
+    });
 });
 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
