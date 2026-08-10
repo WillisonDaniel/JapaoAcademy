@@ -1,4 +1,4 @@
-const CACHE_NAME = 'idiomas-academy-v27';
+const CACHE_NAME = 'idiomas-academy-v28';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -29,6 +29,8 @@ const ASSETS_TO_CACHE = [
     './database/es-ES/data_espanhol_b2.js',
     './database/es-ES/data_espanhol_dicionario.js',
     './database/es-ES/data_dicionario_index.js',
+    './database/es-ES/data_espanhol_falsos_amigos.js',
+    './database/es-ES/data_espanhol_fonetica_recursos.js',
     './html/en-US/curso_ingles.html',
     './database/en-US/data_english_a1.js',
     './database/en-US/data_english_a2.js',
@@ -72,8 +74,17 @@ const ASSETS_TO_CACHE = [
     './js/srs/review.js',
     './js/game/xp.js',
     './js/game/ranking.js',
+    './js/game/minigames.js',
     './js/core/dictionary.js',
     './js/kanji/kanji-canvas.js',
+    './js/kanji/kanji-render.js',
+    './js/phrasal/navigation.js',
+    './js/phrasal/render.js',
+    './js/pronunciation/render.js',
+    './js/pronunciation/speech-recognition.js',
+    './js/pronunciation/quiz.js',
+    './js/falsos_amigos/falsos_amigos.js',
+    './js/minigame/minigame_conjugacao.js',
     './js/minigame/minigame_russo.js',
     './js/dashboard/meu-progresso.js?v=31',
     './firebase-init.js',
