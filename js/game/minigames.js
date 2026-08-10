@@ -251,25 +251,31 @@ function startGame() {
 
             const isKanjiMode = mode.startsWith('kanji') || mode === 'kanji' || mode === 'all';
             if (isKanjiMode) {
-                const allKanjiDatasets = [
-                    { id: 'kanji_n5', data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, tag: 'Kanji N5' },
-                    { id: 'kanji_n4', data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, tag: 'Kanji N4' },
-                    { id: 'kanji_n3', data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, tag: 'Kanji N3' },
-                    { id: 'kanji_n2', data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, tag: 'Kanji N2' },
-                    { id: 'kanji_n1', data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, tag: 'Kanji N1' }
-                ];
+                const kanjiIndex = typeof JAPANESE_MINIGAME_KANJI_INDEX !== 'undefined'
+                    ? JAPANESE_MINIGAME_KANJI_INDEX
+                    : (typeof window !== 'undefined' ? window.JAPANESE_MINIGAME_KANJI_INDEX : null);
+                const allKanjiLevelIds = ['kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1'];
+                const activeKanjiLevelIds = mode.startsWith('kanji_n') ? allKanjiLevelIds.filter(id => id === mode) : allKanjiLevelIds;
 
-                let activeKanjiDatasets = allKanjiDatasets;
-                if (mode.startsWith('kanji_n')) {
-                    activeKanjiDatasets = allKanjiDatasets.filter(d => d.id === mode);
-                }
-
-                activeKanjiDatasets.forEach(ds => {
-                    if (ds.data) {
-                        let kMod = ds.data.find(m => m.module === modNum);
+                if (kanjiIndex) {
+                    activeKanjiLevelIds.forEach(levelId => {
+                        const cards = kanjiIndex[levelId] && kanjiIndex[levelId][modNum];
+                        if (Array.isArray(cards)) cards.forEach(card => gPool.push({ ...card }));
+                    });
+                } else {
+                    const allKanjiDatasets = [
+                        { id: 'kanji_n5', data: typeof kanjiN5Data !== 'undefined' ? kanjiN5Data : null, tag: 'Kanji N5' },
+                        { id: 'kanji_n4', data: typeof kanjiN4Data !== 'undefined' ? kanjiN4Data : null, tag: 'Kanji N4' },
+                        { id: 'kanji_n3', data: typeof kanjiN3Data !== 'undefined' ? kanjiN3Data : null, tag: 'Kanji N3' },
+                        { id: 'kanji_n2', data: typeof kanjiN2Data !== 'undefined' ? kanjiN2Data : null, tag: 'Kanji N2' },
+                        { id: 'kanji_n1', data: typeof kanjiN1Data !== 'undefined' ? kanjiN1Data : null, tag: 'Kanji N1' }
+                    ];
+                    allKanjiDatasets.filter(ds => activeKanjiLevelIds.includes(ds.id)).forEach(ds => {
+                        if (!ds.data) return;
+                        const kMod = ds.data.find(m => m.module === modNum);
                         if (kMod && kMod.kanjis && !kMod.isReviewTable) {
                             kMod.kanjis.forEach(item => {
-                                let reading = typeof getKanjiReading === 'function' ? getKanjiReading(item) : (item.kunyomi || item.onyomi || '');
+                                const reading = typeof getKanjiReading === 'function' ? getKanjiReading(item) : (item.kunyomi || item.onyomi || '');
                                 gPool.push({
                                     k: item.character || item.kanji,
                                     r: reading,
@@ -279,8 +285,8 @@ function startGame() {
                                 });
                             });
                         }
-                    }
-                });
+                    });
+                }
             }
         });
 

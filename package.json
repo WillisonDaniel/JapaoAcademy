@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suite de regressao local da Idiomas Academy",
   "scripts": {
-    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/russian-editorial-audit.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
+    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/russian-editorial-audit.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
     "test:regression": "node tests/regression.cjs",
     "test:integration": "node tests/integration.cjs",
     "test:multilang": "node tests/multilang.cjs",
@@ -12,6 +12,8 @@
     "index:courses:check": "node tests/course-index.cjs",
     "index:dictionary": "node tests/dictionary-index.cjs --write",
     "index:dictionary:check": "node tests/dictionary-index.cjs",
+    "index:minigame": "node tests/minigame-index.cjs --write",
+    "index:minigame:check": "node tests/minigame-index.cjs",
     "audit:russian": "node tests/russian-editorial-audit.cjs --write",
     "audit:russian:check": "node tests/russian-editorial-audit.cjs",
     "qa:dashboard": "node tests/dashboard-visual-server.cjs",

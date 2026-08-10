@@ -91,7 +91,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 71, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 72, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -302,6 +302,56 @@ test('bases especiais e minigame preservam os totais esperados', () => {
         assert.ok(Array.isArray(minigame[level]), `minigame ${level}: formato invalido`);
         assert.equal(minigame[level].length, count, `minigame ${level}: total alterado`);
     });
+});
+
+test('minigame japonês monta os mesmos pools a partir do índice leve', () => {
+    let selectedMode = 'kanji_n5';
+    const elements = new Map();
+    const element = () => ({
+        style: {},
+        classList: { add() {}, remove() {} },
+        focus() {},
+        textContent: '',
+        innerHTML: '',
+        value: '',
+        checked: false,
+        className: ''
+    });
+    [
+        'game-menu-screen', 'game-play-screen', 'game-over-screen', 'g-infinite-lives',
+        'g-ans-input', 'g-mic-btn', 'g-hint-text', 'g-score', 'g-lives', 'g-combo',
+        'g-badge', 'g-big-kana', 'g-feedback', 'g-card-main'
+    ].forEach(id => elements.set(id, element()));
+
+    const context = createContext({
+        document: {
+            body: { getAttribute: () => null },
+            getElementById: id => elements.get(id) || null,
+            querySelector: selector => {
+                if (selector === 'input[name="script_mode"]:checked') return { value: selectedMode };
+                if (selector === 'input[name="input_mode"]:checked') return { value: 'typing' };
+                return null;
+            },
+            querySelectorAll: selector => selector === '.cat-cb:checked' ? [{ value: 'mod1' }] : [],
+            addEventListener() {}
+        }
+    });
+    runFile(context, 'database/ja-JP/data_minigame_kanji_index.js');
+    runFile(context, 'js/game/minigames.js');
+
+    context.startGame();
+    const n5Pool = vm.runInContext('JSON.parse(JSON.stringify(gPool))', context);
+    const n5Expected = vm.runInContext('JSON.parse(JSON.stringify(JAPANESE_MINIGAME_KANJI_INDEX.kanji_n5[1]))', context);
+    assert.deepEqual(n5Pool, n5Expected);
+
+    selectedMode = 'kanji_all';
+    context.startGame();
+    const allPoolLength = vm.runInContext('gPool.length', context);
+    const allExpectedLength = vm.runInContext(
+        "Object.values(JAPANESE_MINIGAME_KANJI_INDEX).reduce((total, level) => total + level[1].length, 0)",
+        context
+    );
+    assert.equal(allPoolLength, allExpectedLength);
 });
 
 test('mutadores do AppState sincronizam estado e pontes legadas', () => {
@@ -620,7 +670,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v23'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v24'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -747,7 +797,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v23'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v24'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
