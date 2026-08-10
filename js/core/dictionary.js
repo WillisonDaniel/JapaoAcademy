@@ -42,6 +42,20 @@ function compilarGlossarioUniversal() {
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
     ));
 
+    const japaneseDictionaryIndex = typeof JAPANESE_DICTIONARY_INDEX !== 'undefined'
+        ? JAPANESE_DICTIONARY_INDEX
+        : (typeof window !== 'undefined' ? window.JAPANESE_DICTIONARY_INDEX : null);
+    if (!isSpanishMode && !isEnglishMode && !isRussianMode && Array.isArray(japaneseDictionaryIndex) && japaneseDictionaryIndex.length > 0) {
+        glossarioUniversalData = japaneseDictionaryIndex.slice();
+        if (typeof AppState !== 'undefined' && typeof AppState.setDictionaryCache === 'function') {
+            AppState.setDictionaryCache(glossarioUniversalData);
+        } else if (typeof window !== 'undefined') {
+            window.glossarioUniversalData = glossarioUniversalData;
+        }
+        renderizarResultadosDicionario('');
+        return;
+    }
+
     if (isSpanishMode) {
         // Mode Spanish: Alphabet (27 Letras), Falsos Cognatos, Heterotónicos, Regionalismos, Vocabularies A1-B2 & Grammars A1-B2
         const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : (typeof window !== 'undefined' ? (window.DICIONARIO_ESPANHOL_DADOS || window.DADOS_ESPANHOL_DICIONARIO) : null));

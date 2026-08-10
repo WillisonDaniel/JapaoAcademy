@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v22/);
+    assert.match(serviceWorker, /idiomas-academy-v23/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -510,6 +510,28 @@ test('hub de Kanji carrega somente os dados e módulos necessários', () => {
     assert.doesNotMatch(html, /js\/kanji\/kanji-canvas\.js/);
     assert.match(html, /js\/kanji\/kanji-render\.js/);
     assert.match(read('js/core/bootstrap.js'), /getElementById\('tabContainer'\)/);
+});
+
+test('dicionário japonês usa índice pré-compilado equivalente e leve', () => {
+    const file = 'html/ja-JP/dicionario.html';
+    const html = read(file);
+    const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+        .map(match => match[1])
+        .filter(src => !/^https?:\/\//.test(src));
+    const bytesLocais = scriptsLocais.reduce((total, src) => {
+        const caminho = path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0]);
+        return total + fs.statSync(caminho).size;
+    }, 0);
+
+    assert.ok(scriptsLocais.length <= 22, `${scriptsLocais.length} scripts locais no dicionário japonês`);
+    assert.ok(bytesLocais <= 1600 * 1024, `${Math.round(bytesLocais / 1024)} KB no dicionário japonês`);
+    assert.match(html, /database\/ja-JP\/data_dicionario_index\.js/);
+    assert.doesNotMatch(html, /database\/ja-JP\/(?:data_curso_|data_kanji_|data_hiragana|data_katakana)/);
+    assert.doesNotMatch(html, /js\/(?:course|phrasal|pronunciation|minigame)\//);
+    assert.doesNotMatch(html, /js\/kanji\/kanji-render\.js/);
+    assert.match(html, /js\/kanji\/kanji-canvas\.js/);
+    assert.match(read('sw.js'), /database\/ja-JP\/data_dicionario_index\.js/);
+    assert.match(read('package.json'), /"index:dictionary:check"/);
 });
 
 const failed = results.filter(result => !result.ok);

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'idiomas-academy-v22';
+const CACHE_NAME = 'idiomas-academy-v23';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -86,6 +86,7 @@ const ASSETS_TO_CACHE = [
     './database/ja-JP/data_kanji_n1.js',
     './database/ja-JP/data_hiragana.js',
     './database/ja-JP/data_katakana.js',
+    './database/ja-JP/data_dicionario_index.js',
     './favicon.png',
     './favicon-512.png',
     './logo.png'

@@ -91,7 +91,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 70, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 71, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -496,6 +496,24 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
     const glossary = context.AppState.dictionary.universalGlossary;
     assert.equal(glossary.length, 3271);
     assert.ok(glossary.every(item => item.primary && item.primary.trim()), 'ha entradas sem termo principal');
+
+    const indexedContext = createContext({
+        document: {
+            body: { getAttribute: name => name === 'data-lang' ? 'japanese' : (name === 'data-mode' ? 'dict' : null), classList: { contains: () => true } },
+            getElementById: () => null,
+            querySelectorAll: () => []
+        },
+        location: { pathname: '/html/ja-JP/dicionario.html' }
+    });
+    runFile(indexedContext, 'database/ja-JP/data_dicionario_index.js');
+    runFile(indexedContext, 'js/core/state.js');
+    runFile(indexedContext, 'js/core/dictionary.js');
+    indexedContext.compilarGlossarioUniversal();
+    assert.deepEqual(
+        JSON.parse(JSON.stringify(indexedContext.AppState.dictionary.universalGlossary)),
+        JSON.parse(JSON.stringify(glossary)),
+        'o índice leve diverge do glossário compilado a partir dos datasets'
+    );
 });
 
 test('algoritmo SRS atualiza intervalo, facilidade e indice', () => {
@@ -602,7 +620,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v22'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v23'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -729,7 +747,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v22'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v23'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
