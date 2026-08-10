@@ -22,6 +22,13 @@ function read(relativePath) {
     return fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
 }
 
+function listFiles(directory, extension) {
+    return fs.readdirSync(path.join(ROOT, directory), { withFileTypes: true }).flatMap(entry => {
+        const relative = path.join(directory, entry.name);
+        return entry.isDirectory() ? listFiles(relative, extension) : (entry.name.endsWith(extension) ? [relative] : []);
+    });
+}
+
 function createStorage(initial = {}) {
     const values = new Map(Object.entries(initial).map(([key, value]) => [key, String(value)]));
     return {
@@ -99,6 +106,7 @@ test('autoridade central normaliza os quatro idiomas e rejeita valor explicito d
 test('SRS produz 16 chaves independentes e preserva decks especiais', () => {
     const context = createContext({ language: 'japanese' });
     runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
     const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU'];
     const levels = ['a1', 'a2', 'b1', 'b2'];
@@ -109,6 +117,18 @@ test('SRS produz 16 chaves independentes e preserva decks especiais', () => {
     assert.equal(context.getDeckKeySRS('cirilico'), 'ru_srs_cirilico_deck');
     assert.equal(context.getDeckKeySRS('falsos_amigos'), 'es_srs_falsos_amigos_deck');
     assert.equal(context.getDeckKeySRS('phrasal_verbs'), 'en_srs_phrasal_verbs_deck');
+    assert.equal(context.obterIdiomaDeckSRS('cirilico', { language: 'ja-JP' }), 'ru-RU');
+});
+
+test('toda pagina que executa o SRS carrega antes o indice leve', () => {
+    const htmlFiles = listFiles('.', '.html');
+    htmlFiles.forEach(file => {
+        const html = read(file);
+        const enginePosition = html.indexOf('js/srs/engine.js');
+        if (enginePosition === -1) return;
+        const indexPosition = html.indexOf('js/core/course-index.js');
+        assert.ok(indexPosition >= 0 && indexPosition < enginePosition, `${file} deve carregar o indice antes do SRS`);
+    });
 });
 
 test('migracao SRS separa deck misto, preserva backup e e idempotente', () => {
@@ -122,6 +142,7 @@ test('migracao SRS separa deck misto, preserva backup e e idempotente', () => {
     const storage = createStorage({ ja_srs_deck: JSON.stringify(legacyCards) });
     const context = createContext({ language: 'japanese', storage });
     runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
 
     assert.equal(context.migrarDecksSRSMultidioma(), true);
@@ -129,9 +150,9 @@ test('migracao SRS separa deck misto, preserva backup e e idempotente', () => {
     assert.equal(JSON.parse(storage.getItem('en_srs_a1_deck')).length, 1);
     assert.equal(JSON.parse(storage.getItem('es_srs_a1_deck')).length, 1);
     assert.equal(JSON.parse(storage.getItem('ru_srs_a1_deck')).length, 1);
-    assert.equal(JSON.parse(storage.getItem('srs_multilang_unresolved_v1')).length, 1);
-    assert.equal(storage.getItem('srs_multilang_migration_v1'), 'true');
-    assert.ok(JSON.parse(storage.getItem('srs_multilang_legacy_backup_v1')).sources.ja_srs_deck);
+    assert.equal(JSON.parse(storage.getItem('srs_multilang_unresolved_v2')).length, 1);
+    assert.equal(storage.getItem('srs_multilang_migration_v2'), 'true');
+    assert.ok(JSON.parse(storage.getItem('srs_multilang_legacy_backup_v2')).legacySources.ja_srs_deck);
 
     const firstSnapshot = storage.snapshot();
     assert.equal(context.migrarDecksSRSMultidioma(), true);
@@ -142,12 +163,13 @@ test('migracao SRS preserva JSON invalido para recuperacao', () => {
     const storage = createStorage({ ja_srs_deck: '{json-invalido' });
     const context = createContext({ language: 'japanese', storage });
     runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
     assert.equal(context.migrarDecksSRSMultidioma(), true);
-    const unresolved = JSON.parse(storage.getItem('srs_multilang_unresolved_v1'));
+    const unresolved = JSON.parse(storage.getItem('srs_multilang_unresolved_v2'));
     assert.equal(unresolved[0].reason, 'invalid-json');
-    const backup = JSON.parse(storage.getItem('srs_multilang_legacy_backup_v1'));
-    assert.equal(backup.sources.ja_srs_deck, '{json-invalido');
+    const backup = JSON.parse(storage.getItem('srs_multilang_legacy_backup_v2'));
+    assert.equal(backup.legacySources.ja_srs_deck, '{json-invalido');
 });
 
 test('migracao SRS retoma escrita interrompida a partir do backup', () => {
@@ -165,16 +187,104 @@ test('migracao SRS retoma escrita interrompida a partir do backup', () => {
     };
     const context = createContext({ language: 'japanese', storage });
     runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
 
     assert.equal(context.migrarDecksSRSMultidioma(), false);
-    assert.equal(storage.getItem('srs_multilang_migration_v1'), null);
-    assert.ok(storage.getItem('srs_multilang_legacy_backup_v1'));
+    assert.equal(storage.getItem('srs_multilang_migration_v2'), null);
+    assert.ok(storage.getItem('srs_multilang_legacy_backup_v2'));
 
     falhar = false;
     assert.equal(context.migrarDecksSRSMultidioma(), true);
     assert.equal(JSON.parse(storage.getItem('ja_srs_a1_deck')).length, 1);
     assert.equal(JSON.parse(storage.getItem('en_srs_a1_deck')).length, 1);
+});
+
+test('migracao SRS v2 respeita metadado antes do indice e prefixo', () => {
+    const storage = createStorage({
+        ja_srs_deck: JSON.stringify([
+            { id: 'a1_mod_01_d_0', modId: 'a1_mod_01', language: 'ru-RU' }
+        ])
+    });
+    const context = createContext({ language: 'japanese', storage });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
+    runFile(context, 'js/srs/engine.js');
+
+    assert.equal(context.migrarDecksSRSMultidioma(), true);
+    assert.equal(storage.getItem('ja_srs_a1_deck'), null);
+    assert.equal(JSON.parse(storage.getItem('ru_srs_a1_deck'))[0].language, 'ru-RU');
+});
+
+test('migracao SRS v2 usa o indice antes dos prefixos conhecidos', () => {
+    const storage = createStorage({ ja_srs_deck: JSON.stringify([{ id: 'card-sem-prefixo', modId: 'modulo-indexado' }]) });
+    const context = createContext({
+        language: 'japanese',
+        storage,
+        globals: { getCourseModuleLanguage: identity => identity === 'modulo-indexado' ? 'es-ES' : null }
+    });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/srs/engine.js');
+
+    assert.equal(context.migrarDecksSRSMultidioma(), true);
+    assert.equal(JSON.parse(storage.getItem('es_srs_a1_deck'))[0].id, 'card-sem-prefixo');
+});
+
+test('migracao SRS v2 reprocessa artefatos v1 sem modifica-los', () => {
+    const v1Backup = JSON.stringify({
+        sources: { ja_srs_deck: JSON.stringify([{ id: 'en_a1_mod_01_d_0', modId: 'en_a1_mod_01', dueDate: 10 }]) }
+    });
+    const v1Unresolved = JSON.stringify([
+        { sourceKey: 'ja_srs_deck', level: 'a1', reason: 'language-unresolved', card: { id: 'ru_a1_mod_01_d_0', modId: 'ru_a1_mod_01' } },
+        { sourceKey: 'ja_srs_deck', level: 'a1', reason: 'language-unresolved', card: { id: 'ambiguo-v1' } }
+    ]);
+    const storage = createStorage({
+        srs_multilang_migration_v1: 'true',
+        srs_multilang_legacy_backup_v1: v1Backup,
+        srs_multilang_unresolved_v1: v1Unresolved
+    });
+    const context = createContext({ language: 'japanese', storage });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
+    runFile(context, 'js/srs/engine.js');
+
+    assert.equal(context.migrarDecksSRSMultidioma(), true);
+    assert.equal(JSON.parse(storage.getItem('en_srs_a1_deck')).length, 1);
+    assert.equal(JSON.parse(storage.getItem('ru_srs_a1_deck')).length, 1);
+    assert.equal(JSON.parse(storage.getItem('srs_multilang_unresolved_v2')).length, 1);
+    assert.equal(storage.getItem('srs_multilang_migration_v1'), 'true');
+    assert.equal(storage.getItem('srs_multilang_legacy_backup_v1'), v1Backup);
+    assert.equal(storage.getItem('srs_multilang_unresolved_v1'), v1Unresolved);
+});
+
+test('migracao SRS v2 preserva o cartao mais recente e isola os 16 decks', () => {
+    const languages = ['ja', 'en', 'es', 'ru'];
+    const levels = ['a1', 'a2', 'b1', 'b2'];
+    const initial = {};
+    for (const language of languages) for (const level of levels) {
+        initial[`${language}_srs_${level}_deck`] = JSON.stringify([{ id: `${language}-${level}-existente`, dueDate: 1 }]);
+    }
+    initial.ja_srs_deck = JSON.stringify([
+        { id: 'en-a1-existente', language: 'en-US', dueDate: 99 },
+        { id: 'novo-russo', language: 'ru-RU', dueDate: 2 }
+    ]);
+    const storage = createStorage(initial);
+    const context = createContext({ language: 'japanese', storage });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
+    runFile(context, 'js/srs/engine.js');
+
+    assert.equal(context.migrarDecksSRSMultidioma(), true);
+    const english = JSON.parse(storage.getItem('en_srs_a1_deck'));
+    assert.equal(english.length, 1);
+    assert.equal(english[0].dueDate, 99);
+    assert.equal(JSON.parse(storage.getItem('ru_srs_a1_deck')).length, 2);
+    for (const language of languages) for (const level of levels) {
+        const deck = JSON.parse(storage.getItem(`${language}_srs_${level}_deck`));
+        if (language === 'en' && level === 'a1') continue;
+        if (language === 'ru' && level === 'a1') continue;
+        assert.deepEqual(deck, [{ id: `${language}-${level}-existente`, dueDate: 1 }]);
+    }
 });
 
 test('sessoes e historico persistem codigos canonicos', () => {

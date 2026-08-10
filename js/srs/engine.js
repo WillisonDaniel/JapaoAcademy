@@ -16,9 +16,13 @@ const SRS_LEGACY_DECK_KEYS = Object.freeze({
     b1: 'ja_srs_b1_deck',
     b2: 'ja_srs_b2_deck'
 });
-const SRS_MIGRATION_MARKER_KEY = 'srs_multilang_migration_v1';
-const SRS_MIGRATION_BACKUP_KEY = 'srs_multilang_legacy_backup_v1';
-const SRS_MIGRATION_UNRESOLVED_KEY = 'srs_multilang_unresolved_v1';
+const SRS_MIGRATION_V1_MARKER_KEY = 'srs_multilang_migration_v1';
+const SRS_MIGRATION_V1_BACKUP_KEY = 'srs_multilang_legacy_backup_v1';
+const SRS_MIGRATION_V1_UNRESOLVED_KEY = 'srs_multilang_unresolved_v1';
+const SRS_MIGRATION_MARKER_KEY = 'srs_multilang_migration_v2';
+const SRS_MIGRATION_BACKUP_KEY = 'srs_multilang_legacy_backup_v2';
+const SRS_MIGRATION_UNRESOLVED_KEY = 'srs_multilang_unresolved_v2';
+const SRS_MIGRATION_LANGUAGES = Object.freeze(['ja-JP', 'en-US', 'es-ES', 'ru-RU']);
 
 function obterIdiomaDeckSRS(tipo, card) {
     const t = String(tipo || '').toLowerCase();
@@ -30,12 +34,18 @@ function obterIdiomaDeckSRS(tipo, card) {
     const explicit = card && typeof normalizeLanguage === 'function'
         ? normalizeLanguage(card.language || card.languageCode || card.lang)
         : null;
+    if (explicit) return explicit;
+
+    if (card && typeof getCourseModuleLanguage === 'function') {
+        const indexed = getCourseModuleLanguage(card.modId) || getCourseModuleLanguage(card.id);
+        if (indexed) return indexed;
+    }
+
     const identity = String(card && `${card.modId || ''} ${card.id || ''}` || '').toLowerCase();
     if (/\bru_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ru-RU';
     if (/\bes_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'es-ES';
     if (/\ben_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'en-US';
     if (/\b(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ja-JP';
-    if (explicit) return explicit;
     return null;
 }
 
@@ -87,65 +97,128 @@ function migrarDecksSRSMultidioma() {
     if (typeof localStorage === 'undefined') return false;
     if (localStorage.getItem(SRS_MIGRATION_MARKER_KEY) === 'true') return true;
 
-    let rawSources = {};
-    Object.values(SRS_LEGACY_DECK_KEYS).forEach(key => { rawSources[key] = localStorage.getItem(key); });
-
     try {
+        let snapshot;
         const backupExistente = localStorage.getItem(SRS_MIGRATION_BACKUP_KEY);
-        if (backupExistente) {
-            const backup = JSON.parse(backupExistente);
-            if (backup && backup.sources && typeof backup.sources === 'object') rawSources = backup.sources;
+        if (backupExistente != null) {
+            snapshot = JSON.parse(backupExistente);
+            if (!snapshot || snapshot.version !== 2 || !snapshot.legacySources || !snapshot.destinations) {
+                throw new Error('backup-v2-invalid');
+            }
         } else {
-            localStorage.setItem(SRS_MIGRATION_BACKUP_KEY, JSON.stringify({
+            const legacySources = {};
+            Object.values(SRS_LEGACY_DECK_KEYS).forEach(key => { legacySources[key] = localStorage.getItem(key); });
+
+            const v1BackupRaw = localStorage.getItem(SRS_MIGRATION_V1_BACKUP_KEY);
+
+            const destinations = {};
+            SRS_MIGRATION_LANGUAGES.forEach(languageCode => {
+                SRS_STANDARD_LEVELS.forEach(level => {
+                    const key = getDeckKeySRS(level, languageCode);
+                    destinations[key] = localStorage.getItem(key);
+                });
+            });
+
+            snapshot = {
+                version: 2,
                 createdAt: new Date().toISOString(),
-                sources: rawSources
-            }));
+                legacySources,
+                destinations,
+                v1: {
+                    marker: localStorage.getItem(SRS_MIGRATION_V1_MARKER_KEY),
+                    backupRaw: v1BackupRaw,
+                    unresolvedRaw: localStorage.getItem(SRS_MIGRATION_V1_UNRESOLVED_KEY)
+                }
+            };
+            localStorage.setItem(SRS_MIGRATION_BACKUP_KEY, JSON.stringify(snapshot));
         }
 
         const destinations = {};
-        ['ja-JP', 'en-US', 'es-ES', 'ru-RU'].forEach(languageCode => {
+        SRS_MIGRATION_LANGUAGES.forEach(languageCode => {
             SRS_STANDARD_LEVELS.forEach(level => {
                 const key = getDeckKeySRS(level, languageCode);
-                const isLegacySource = Object.values(SRS_LEGACY_DECK_KEYS).includes(key);
                 let existing = [];
-                if (!isLegacySource) {
-                    try {
-                        const parsed = JSON.parse(localStorage.getItem(key) || '[]');
-                        existing = Array.isArray(parsed) ? parsed : [];
-                    } catch (e) { }
+                const raw = snapshot.destinations[key];
+                if (raw != null) {
+                    const parsed = JSON.parse(raw);
+                    if (!Array.isArray(parsed)) throw new Error(`destination-not-array:${key}`);
+                    existing = parsed;
                 }
                 destinations[key] = existing;
             });
         });
 
         const unresolved = [];
-        Object.entries(SRS_LEGACY_DECK_KEYS).forEach(([level, sourceKey]) => {
-            const raw = rawSources[sourceKey];
+        const unresolvedSignatures = new Set();
+        const adicionarNaoResolvido = entry => {
+            const signature = JSON.stringify([
+                entry.sourceKey || '', entry.level || '', entry.reason || '',
+                entry.card && entry.card.id || '', entry.rawValue || ''
+            ]);
+            if (unresolvedSignatures.has(signature)) return;
+            unresolvedSignatures.add(signature);
+            unresolved.push(entry);
+        };
+        const migrarCard = (card, level, sourceKey) => {
+            const languageCode = obterIdiomaDeckSRS(level, card);
+            const targetKey = languageCode ? getDeckKeySRS(level, languageCode) : null;
+            if (!targetKey) {
+                adicionarNaoResolvido({ sourceKey, level, reason: 'language-unresolved', card });
+                return;
+            }
+            mesclarCardMigradoSRS(destinations[targetKey], {
+                ...card,
+                language: languageCode,
+                level: String(card.level || level).toUpperCase()
+            });
+        };
+
+        const processarFontesLegadas = (sources, origin) => Object.entries(SRS_LEGACY_DECK_KEYS).forEach(([level, sourceKey]) => {
+            const raw = sources && sources[sourceKey];
             if (!raw) return;
             let cards;
             try {
                 cards = JSON.parse(raw);
             } catch (error) {
-                unresolved.push({ sourceKey, level, reason: 'invalid-json', rawValue: raw });
+                adicionarNaoResolvido({ sourceKey, level, reason: 'invalid-json', rawValue: raw, origin });
                 return;
             }
             if (!Array.isArray(cards)) {
-                unresolved.push({ sourceKey, level, reason: 'not-an-array', rawValue: raw });
+                adicionarNaoResolvido({ sourceKey, level, reason: 'not-an-array', rawValue: raw, origin });
                 return;
             }
-            cards.forEach(card => {
-                const languageCode = obterIdiomaDeckSRS(level, card);
-                const targetKey = languageCode ? getDeckKeySRS(level, languageCode) : null;
-                if (!targetKey) {
-                    unresolved.push({ sourceKey, level, reason: 'language-unresolved', card });
-                    return;
-                }
-                mesclarCardMigradoSRS(destinations[targetKey], { ...card, language: languageCode, level: String(card.level || level).toUpperCase() });
-            });
+            cards.forEach(card => migrarCard(card, level, sourceKey));
         });
+        processarFontesLegadas(snapshot.legacySources, 'current');
+
+        if (snapshot.v1 && snapshot.v1.backupRaw) {
+            try {
+                const v1Backup = JSON.parse(snapshot.v1.backupRaw);
+                if (v1Backup && v1Backup.sources && typeof v1Backup.sources === 'object') {
+                    processarFontesLegadas(v1Backup.sources, 'v1-backup');
+                }
+            } catch (error) {
+                adicionarNaoResolvido({ sourceKey: SRS_MIGRATION_V1_BACKUP_KEY, reason: 'invalid-json', rawValue: snapshot.v1.backupRaw });
+            }
+        }
+
+        if (snapshot.v1 && snapshot.v1.unresolvedRaw) {
+            try {
+                const anteriores = JSON.parse(snapshot.v1.unresolvedRaw);
+                if (Array.isArray(anteriores)) anteriores.forEach(entry => {
+                    if (entry && entry.card && SRS_STANDARD_LEVELS.has(String(entry.level || '').toLowerCase())) {
+                        migrarCard(entry.card, String(entry.level).toLowerCase(), entry.sourceKey || 'v1-unresolved');
+                    } else if (entry) {
+                        adicionarNaoResolvido({ ...entry, migratedFrom: 'v1' });
+                    }
+                });
+            } catch (error) {
+                adicionarNaoResolvido({ sourceKey: SRS_MIGRATION_V1_UNRESOLVED_KEY, reason: 'invalid-json', rawValue: snapshot.v1.unresolvedRaw });
+            }
+        }
 
         Object.entries(destinations).forEach(([key, deck]) => {
-            if (deck.length > 0 || localStorage.getItem(key) != null) localStorage.setItem(key, JSON.stringify(deck));
+            if (deck.length > 0 || snapshot.destinations[key] != null) localStorage.setItem(key, JSON.stringify(deck));
         });
         localStorage.setItem(SRS_MIGRATION_UNRESOLVED_KEY, JSON.stringify(unresolved));
         localStorage.setItem(SRS_MIGRATION_MARKER_KEY, 'true');
