@@ -134,7 +134,7 @@ CURSO_RUSSO_A1_DADOS.push(
         'Em russo, "Это" funciona como um pronome demonstrativo universal para "Isto é / Este é / Esta é".',
         [
             { title: 'O Pronome Demonstrativo Это', rule: 'Em russo, "Это" funciona como pronome demonstrativo universal (Isto é / Este é / Esta é) sem mudar por gênero.', formula: 'Это + [Substantivo]', example: 'Это кот. Это книга.', exampleTranslation: 'Isto é um gato. Isto é um livro.' },
-            { title: 'Кто vs. Что', rule: 'Usa-se "Кто" exclusivamente para seres animados (pessoas e animais) e "Что" para objetos inanimados.', formula: 'Кто это? (Pessoas/Animais) / Что это? (Objetos)', example: 'Кто это? — Это врач. / Что это? — Isso é um livro.', exampleTranslation: 'Quem é este? — É um médico. / O que é isto? — É um livro.' }
+            { title: 'Кто vs. Что', rule: 'Usa-se "Кто" exclusivamente para seres animados (pessoas e animais) e "Что" para objetos inanimados.', formula: 'Кто это? (Pessoas/Animais) / Что это? (Objetos)', example: 'Кто это? — Это врач. / Что это? — Это книга.', exampleTranslation: 'Quem é este? — É um médico. / O que é isto? — É um livro.' }
         ],
         [
             { type: 'vocab', word: 'Кто', romaji: 'Kto', translation: 'Quem', audio: 'Кто', dica: 'Pronome interrogativo exclusivo para seres animados (pessoas e animais).' },
@@ -145,7 +145,7 @@ CURSO_RUSSO_A1_DADOS.push(
         ],
         [
             { sentence: 'Кто это? Это врач.', translation: 'Quem é este? É um médico.', tokens: ['Кто', 'это?', 'Это', 'врач.'], audio: 'Кто это? Это врач.' },
-            { sentence: 'Что это? Isso é um livro.', translation: 'O que é isto? É um livro.', tokens: ['Что', 'это?', 'Это', 'книга.'], audio: 'Что это? Это книга.' }
+            { sentence: 'Что это? Это книга.', translation: 'O que é isto? É um livro.', tokens: ['Что', 'это?', 'Это', 'книга.'], audio: 'Что это? Это книга.' }
         ],
         [
             { speaker: 'Boris', text: 'Маша, кто это?', translation: 'Masha, quem é este?', audio: 'Маша, кто это?' },
@@ -794,7 +794,7 @@ CURSO_RUSSO_A1_DADOS.push(
         ],
         [
             { sentence: 'Здравствуйте! Я говорю по-русски.', translation: 'Olá! Eu falo russo.', tokens: ['Здравствуйте!', 'Я', 'говорю', 'по-русски.'], audio: 'Здравствуйте! Я говорю по-русски.' },
-            { sentence: 'Я живу в Москве e работаю здесь.', translation: 'Eu moro em Moscou e trabalho aqui.', tokens: ['Я', 'живу', 'в', 'Москве', 'e', 'работаю', 'здесь.'], audio: 'Я живу в Москве e работаю здесь.' }
+            { sentence: 'Я живу в Москве и работаю здесь.', translation: 'Eu moro em Moscou e trabalho aqui.', tokens: ['Я', 'живу', 'в', 'Москве', 'и', 'работаю', 'здесь.'], audio: 'Я живу в Москве и работаю здесь.' }
         ],
         [
             { speaker: 'Professor', text: 'Вы готовы к тесту?', translation: 'Você está pronto para o teste?', audio: 'Вы готовы к тесту?' },

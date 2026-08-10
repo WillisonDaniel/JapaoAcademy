@@ -6,7 +6,11 @@ O curso russo está estruturalmente validado, mas ainda não deve ser anunciado 
 
 - Removida a mistura `Где você?` de uma alternativa do A1.
 - Corrigida a palavra híbrida `ideшь` para `идёшь` no B1.
-- Adicionada validação automática para misturas conhecidas de português/alfabeto latino em campos russos.
+- Corrigidas novas misturas técnicas encontradas em frases, diálogos, áudio e tokens de A1–B2.
+- Adicionada auditoria automática para tokens híbridos, português conhecido e tokens latinos isolados em campos russos.
+- O inventário reproduzível para revisão humana está em `tests/RUSSIAN_EDITORIAL_OCCURRENCES.md`.
+
+Execute `npm run audit:russian` para atualizar o relatório e `npm run audit:russian:check` para validar que não há erros técnicos bloqueadores nem divergência entre o relatório e os datasets.
 
 ## Revisão humana recomendada
 

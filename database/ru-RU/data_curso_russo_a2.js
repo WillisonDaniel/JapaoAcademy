@@ -640,7 +640,7 @@ CURSO_RUSSO_A2_DADOS.push(
             { type: 'vocab', word: 'Природа', romaji: 'Priroda', translation: 'Natureza', audio: 'Природа', dica: 'Substantivo feminino de meio ambiente.' }
         ],
         [
-            { sentence: 'Зимой в России идёт снег e очень холодно.', translation: 'No inverno na Rússia cai neve e faz muito frio.', tokens: ['Зимой', 'в', 'России', 'идёт', 'снег', 'e', 'очень', 'холодно.'], audio: 'Зимой в России идёт снег e очень холодно.' },
+            { sentence: 'Зимой в России идёт снег и очень холодно.', translation: 'No inverno na Rússia cai neve e faz muito frio.', tokens: ['Зимой', 'в', 'России', 'идёт', 'снег', 'и', 'очень', 'холодно.'], audio: 'Зимой в России идёт снег и очень холодно.' },
             { sentence: 'Летом мы обычно ездим на море.', translation: 'No verão nós geralmente vamos ao mar.', tokens: ['Летом', 'мы', 'обычно', 'ездим', 'на', 'море.'], audio: 'Летом мы обычно ездим на море.' }
         ],
         [

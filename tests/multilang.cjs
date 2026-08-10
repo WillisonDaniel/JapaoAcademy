@@ -376,6 +376,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const serviceWorker = read('sw.js');
     const manifest = JSON.parse(read('manifest.json'));
     const packageData = JSON.parse(read('package.json'));
+    const russianReport = read('tests/RUSSIAN_EDITORIAL_OCCURRENCES.md');
     assert.equal(manifest.name, 'Idiomas Academy');
     assert.equal(packageData.name, 'idiomas-academy');
     for (const [file, language] of [
@@ -405,6 +406,12 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         'database/ru-RU/data_curso_russo_b2.js'
     ].map(read).join('\n');
     assert.doesNotMatch(russianSources, /Где\s+(?:você|voce)|ide[\u0400-\u04FF]/i);
+    assert.match(russianReport, /Erros técnicos bloqueadores: 0/);
+    assert.match(russianReport, /Arquivo \| Módulo \| Caminho do campo \| Motivo \| Valor/);
+    assert.match(packageData.scripts['audit:russian'], /--write/);
+    assert.match(packageData.scripts['audit:russian:check'], /russian-editorial-audit\.cjs/);
+    assert.match(packageData.scripts['qa:dashboard'], /dashboard-visual-server\.cjs/);
+    assert.doesNotMatch(read('meu-progresso.html'), /data-dashboard-qa-fixture/);
     assert.match(read('tests/RUSSIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como linguisticamente certificado/i);
 });
 

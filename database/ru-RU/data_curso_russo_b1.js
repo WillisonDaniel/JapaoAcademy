@@ -338,7 +338,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { speaker: 'Passante', text: 'Как мне пройти к метро?', translation: 'Como faço para passar/chegar ao metrô?', audio: 'Как мне пройти к метро?' },
-            { speaker: 'Pedestre', text: 'Перейдите улицу e идите прямо.', translation: 'Atravesse a rua e vá direto.', audio: 'Перейдите улицу e идите прямо.' }
+            { speaker: 'Pedestre', text: 'Перейдите улицу и идите прямо.', translation: 'Atravesse a rua e vá direto.', audio: 'Перейдите улицу и идите прямо.' }
         ],
         [
             { q: 'Qual prefixo indica ENTRAR em um recinto?', options: ['Вы-', 'В-', 'Пере-', 'Про-'], correctIndex: 1, explanation: 'В- (ou во-) indica entrada.' },
@@ -586,7 +586,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { sentence: 'У меня есть пятилетний опыт работы в сфере IT.', translation: 'Eu tenho cinco anos de experiência profissional no setor de TI.', tokens: ['У', 'меня', 'есть', 'пятилетний', 'опыт', 'работы', 'в', 'сфере', 'IT.'], audio: 'У меня есть пятилетний опыт работы в сфере IT.' },
-            { sentence: 'Я ответственный сотрудник e умею работать в команде.', translation: 'Sou um funcionário responsável e sei trabalhar em equipe.', tokens: ['Я', 'ответственный', 'сотрудник', 'e', 'умею', 'работать', 'в', 'команде.'], audio: 'Я ответственный сотрудник e умею работать в команде.' }
+            { sentence: 'Я ответственный сотрудник и умею работать в команде.', translation: 'Sou um funcionário responsável e sei trabalhar em equipe.', tokens: ['Я', 'ответственный', 'сотрудник', 'и', 'умею', 'работать', 'в', 'команде.'], audio: 'Я ответственный сотрудник и умею работать в команде.' }
         ],
         [
             { speaker: 'Entrevistador', text: 'Расскажите о вашем опыте работы.', translation: 'Fale-nos sobre sua experiência de trabalho.', audio: 'Расскажите о вашем опыте работы.' },
@@ -806,7 +806,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { speaker: 'Entrevistador', text: 'Зачем вы учите русский язык?', translation: 'Para que você estuda a língua russa?', audio: 'Зачем вы учите русский язык?' },
-            { speaker: 'Estudante', text: 'Чтобы работать e жить в России.', translation: 'Para trabalhar e morar na Rússia.', audio: 'Чтобы работать e жить в России.' }
+            { speaker: 'Estudante', text: 'Чтобы работать и жить в России.', translation: 'Para trabalhar e morar na Rússia.', audio: 'Чтобы работать и жить в России.' }
         ],
         [
             { q: 'Qual conector é usado para expressar o PROPÓSITO ("para estudar") quando o sujeito é o mesmo?', options: ['Потому что', 'Чтобы (+ Infinitivo)', 'Так как', 'Поэтому'], correctIndex: 1, explanation: 'Чтобы + Infinitivo expressa propósito.' },
@@ -874,11 +874,11 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { sentence: 'Мы успешно повторили все 6 падежей русского языка.', translation: 'Nós revisamos com sucesso todos os 6 casos da língua russa.', tokens: ['Мы', 'успешно', 'повторили', 'все', '6', 'падежей', 'русского', 'языка.'], audio: 'Мы успешно повторили все 6 падежей русского языка.' },
-            { sentence: 'Теперь я свободно использую глаголы движения с prefixами.', translation: 'Agora eu uso livremente os verbos de movimento com prefixos.', tokens: ['Теперь', 'я', 'свободно', 'использую', 'глаголы', 'движения', 'с', 'prefixами.'], audio: 'Теперь я свободно использую глаголы движения с prefixами.' }
+            { sentence: 'Теперь я свободно использую глаголы движения с приставками.', translation: 'Agora eu uso livremente os verbos de movimento com prefixos.', tokens: ['Теперь', 'я', 'свободно', 'использую', 'глаголы', 'движения', 'с', 'приставками.'], audio: 'Теперь я свободно использую глаголы движения с приставками.' }
         ],
         [
             { speaker: 'Professor', text: 'Вы готовы к итоговому экзамену B1?', translation: 'Vocês estão prontos para o exame final B1?', audio: 'Вы готовы к итоговому экзамену B1?' },
-            { speaker: 'Estudante', text: 'Да, мы готовы к debate e apresentação!', translation: 'Sim, estamos prontos para o debate e apresentação!', audio: 'Да, мы готовы к debate e apresentação!' }
+            { speaker: 'Estudante', text: 'Да, мы готовы к дебатам и презентации!', translation: 'Sim, estamos prontos para o debate e apresentação!', audio: 'Да, мы готовы к дебатам и презентации!' }
         ],
         [
             { q: 'Quantos casos gramaticais existem no sistema da língua russa?', options: ['4 casos', '5 casos', '6 casos', '7 casos'], correctIndex: 2, explanation: 'A língua russa possui 6 casos gramaticais.' },
@@ -909,7 +909,7 @@ CURSO_RUSSO_B1_DADOS.push(
             { type: 'vocab', word: 'Поздравляем!', romaji: 'Pozdravlyayem!', translation: 'Parabéns!', audio: 'Поздравляем!', dica: 'Felicitação final pela fluência B1!' }
         ],
         [
-            { sentence: 'Мы успешно защитили проект e получили уровень B1!', translation: 'Nós defendemos o projeto com sucesso e conquistamos o Nível B1!', tokens: ['Мы', 'успешно', 'защитили', 'проект', 'e', 'получили', 'уровень', 'B1!'], audio: 'Мы успешно защитили проект e получили уровень B1!' },
+            { sentence: 'Мы успешно защитили проект и получили уровень B1!', translation: 'Nós defendemos o projeto com sucesso e conquistamos o Nível B1!', tokens: ['Мы', 'успешно', 'защитили', 'проект', 'и', 'получили', 'уровень', 'B1!'], audio: 'Мы успешно защитили проект и получили уровень B1!' },
             { sentence: 'Теперь я свободно говорю и пишу по-русски!', translation: 'Agora eu falo e escrevo em russo com autonomia e fluência!', tokens: ['Теперь', 'я', 'свободно', 'говорю', 'и', 'пишу', 'по-русски!'], audio: 'Теперь я свободно говорю и пишу по-русски!' }
         ],
         [
