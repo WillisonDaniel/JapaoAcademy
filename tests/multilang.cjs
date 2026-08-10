@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v20/);
+    assert.match(serviceWorker, /idiomas-academy-v21/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -447,6 +447,44 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     assert.match(packageData.scripts['qa:dashboard'], /dashboard-visual-server\.cjs/);
     assert.doesNotMatch(read('meu-progresso.html'), /data-dashboard-qa-fixture/);
     assert.match(read('tests/RUSSIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como linguisticamente certificado/i);
+});
+
+test('hubs e imagens principais respeitam o orçamento leve', () => {
+    const hubs = ['hub_idiomas.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html'];
+    hubs.forEach(file => {
+        const html = read(file);
+        const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+            .map(match => match[1])
+            .filter(src => !/^https?:\/\//.test(src));
+        assert.ok(scriptsLocais.length <= 15, `${file}: ${scriptsLocais.length} scripts locais`);
+        assert.match(html, /<body\b[^>]*\bdata-page="hub"/);
+        assert.doesNotMatch(html, /<script[^>]+src="database\//);
+        assert.doesNotMatch(html, /js\/(?:course|kanji|phrasal|pronunciation|minigame)\//);
+        assert.doesNotMatch(html, /js\/core\/(?:dictionary|course-index)\.js/);
+    });
+    assert.match(read('js/core/bootstrap.js'), /!isHubPage\s*&&[^\n]+normalizeModule/);
+    assert.match(read('js/core/events.js'), /getAttribute\('data-page'\) === 'hub'\) return/);
+
+    const dimensoesPng = file => {
+        const buffer = fs.readFileSync(path.join(ROOT, file));
+        assert.equal(buffer.toString('ascii', 1, 4), 'PNG', `${file}: PNG inválido`);
+        return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20), bytes: buffer.length };
+    };
+    const logo = dimensoesPng('logo.png');
+    const favicon192 = dimensoesPng('favicon.png');
+    const favicon512 = dimensoesPng('favicon-512.png');
+    assert.deepEqual([logo.width, logo.height], [1024, 1024]);
+    assert.deepEqual([favicon192.width, favicon192.height], [192, 192]);
+    assert.deepEqual([favicon512.width, favicon512.height], [512, 512]);
+    assert.ok(logo.bytes + favicon192.bytes + favicon512.bytes <= 1024 * 1024, 'imagens principais excedem 1 MB');
+
+    const manifest = JSON.parse(read('manifest.json'));
+    const serviceWorker = read('sw.js');
+    assert.equal(manifest.icons[0].src, 'favicon.png');
+    assert.equal(manifest.icons[0].sizes, '192x192');
+    assert.equal(manifest.icons[1].src, 'favicon-512.png');
+    assert.equal(manifest.icons[1].sizes, '512x512');
+    assert.match(serviceWorker, /'\.\/favicon-512\.png'/);
 });
 
 const failed = results.filter(result => !result.ok);

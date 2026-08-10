@@ -4,7 +4,11 @@
 
 function initializeApp() {
 
-    if (typeof window !== 'undefined' && typeof window.normalizeModule === 'undefined' && typeof document !== 'undefined') {
+    const isHubPage = typeof document !== 'undefined'
+        && document.body
+        && document.body.getAttribute('data-page') === 'hub';
+
+    if (!isHubPage && typeof window !== 'undefined' && typeof window.normalizeModule === 'undefined' && typeof document !== 'undefined') {
         const isSubdir = window.location.pathname.includes('/html/');
         const scriptPath = (isSubdir ? '../../' : '') + 'js/course/moduleNormalizer.js';
         const script = document.createElement('script');

@@ -91,6 +91,7 @@ const STUDY_SESSION_SCRIPT_URL = (typeof document !== 'undefined' && document.cu
 
 function carregarMedidorSessoesEstudo() {
     if (typeof document === 'undefined' || typeof window === 'undefined') return;
+    if (document.body && document.body.getAttribute('data-page') === 'hub') return;
     if (typeof window.inicializarMedicaoSessoesEstudo === 'function' || document.querySelector('script[data-study-session]')) return;
     const script = document.createElement('script');
     script.src = STUDY_SESSION_SCRIPT_URL;
