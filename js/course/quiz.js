@@ -275,6 +275,7 @@ function submeterSimuladoB2() {
     simuladoB2Submetido = true;
     const prog = typeof progressoGlobal !== 'undefined' ? progressoGlobal : {};
     const nome = typeof nomeUsuario !== 'undefined' ? nomeUsuario : 'Estudante';
+    const nomeSeguro = typeof escapeHTML === 'function' ? escapeHTML(String(nome)) : 'Estudante';
     if (acertos >= 24) {
         prog.b2_certified = true;
         prog.b2_score = acertos;
@@ -292,7 +293,7 @@ function submeterSimuladoB2() {
             <span style="font-size: 4rem; animation: pop 0.5s;">🏆🎓</span>
             <h2 style="color: #22c55e; font-size: 2rem;">APROVADO NO SIMULADO FINAL B2!</h2>
             <p style="font-size: 1.15rem; color: var(--text-main); margin-top: 10px;">
-                Parabéns, <strong>${nome}</strong>! Você atingiu <strong>${acertos}/30 acertos (${percent}%)</strong>!
+                Parabéns, <strong>${nomeSeguro}</strong>! Você atingiu <strong>${acertos}/30 acertos (${percent}%)</strong>!
             </p>
             <div style="background: #ecfdf5; border: 2px solid #10b981; padding: 20px; border-radius: 12px; max-width: 450px; margin: 20px auto; box-shadow: var(--shadow);">
                 <div style="font-size: 0.85rem; color: #047857; text-transform: uppercase; font-weight: bold;">Status de Formatura</div>

@@ -1,4 +1,5 @@
-const CACHE_NAME = 'idiomas-academy-v31';
+const CACHE_PREFIX = 'idiomas-academy-';
+const CACHE_NAME = 'idiomas-academy-v32';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -135,7 +136,7 @@ self.addEventListener('activate', (event) => {
         caches.keys().then((keys) => {
             return Promise.all(
                 keys.map((key) => {
-                    if (key !== CACHE_NAME) {
+                    if (key !== CACHE_NAME && key.startsWith(CACHE_PREFIX)) {
                         console.log('🧹 [Service Worker] Removendo cache antigo:', key);
                         return caches.delete(key);
                     }

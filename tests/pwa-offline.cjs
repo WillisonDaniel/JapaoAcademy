@@ -132,7 +132,8 @@ async function runLifecycleSimulation(assets, optionalAssets, listeners) {
     let activatePromise;
     runtime.listeners.activate({ waitUntil(value) { activatePromise = value; } });
     await activatePromise;
-    assert.deepEqual(deleted.sort(), ['idiomas-academy-v1', 'outro-cache']);
+    assert.deepEqual(deleted, ['idiomas-academy-v1']);
+    assert.equal(deleted.includes('outro-cache'), false, 'ativacao removeu cache de outra aplicacao');
     assert.equal(claimed, true, 'service worker nao assumiu as paginas abertas');
 }
 
@@ -170,7 +171,7 @@ async function main() {
 
     console.log(`\u2713 PWA: ${unique.size} recursos locais, ${(totalBytes / 1024 / 1024).toFixed(2)} MB`);
     console.log('\u2713 contrato offline: shell, Dashboard e area russa completos');
-    console.log('\u2713 instalacao tolera falhas remotas e ativacao remove apenas caches antigos');
+    console.log('\u2713 instalacao tolera falhas remotas e ativacao preserva caches de outras aplicacoes');
 }
 
 main().catch(error => {

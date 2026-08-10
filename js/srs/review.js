@@ -396,12 +396,13 @@ function renderizarConclusaoSRS() {
     }
 
     const nome = typeof nomeUsuario !== 'undefined' ? nomeUsuario : 'Estudante';
+    const nomeSeguro = typeof escapeHTML === 'function' ? escapeHTML(String(nome)) : 'Estudante';
 
     if (container) {
         container.innerHTML = `
             <span style="font-size: 4rem; animation: pop 0.5s;">🧠</span>
             <h2 style="color: #22c55e;">Sessão de Revisão Concluída!</h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted);">Parabéns, <strong>${nome}</strong>! Você fortaleceu sua memória de longo prazo.</p>
+            <p style="font-size: 1.1rem; color: var(--text-muted);">Parabéns, <strong>${nomeSeguro}</strong>! Você fortaleceu sua memória de longo prazo.</p>
 
             <div style="display: flex; gap: 15px; justify-content: center; margin: 1.5rem 0;">
                 <div style="background: var(--bg-color); border: 2px solid var(--border-color); padding: 12px 20px; border-radius: 10px;">

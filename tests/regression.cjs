@@ -756,7 +756,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v31'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v32'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -778,6 +778,8 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     assert.match(html, /id="dashboard-signed-out"[^>]*hidden/);
     assert.match(html, /id="dashboard-first-access"[^>]*hidden/);
+    assert.doesNotMatch(dashboardPage, /href="index\.html"/);
+    assert.equal((dashboardPage.match(/href="hub_idiomas\.html"/g) || []).length, 4);
     assert.match(html, /id="dashboard-goal-bar"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-course-progress"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-weekly-summary"[^>]*aria-label=/);
@@ -813,6 +815,17 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/index\.html'\)/);
     assert.match(serviceWorker, /'\.\/meu-progresso\.html'/);
     assert.match(serviceWorker, /js\/dashboard\/meu-progresso\.js/);
+});
+
+test('apelido do usuario permanece escapado em resultados HTML', () => {
+    const courseQuiz = read('js/course/quiz.js');
+    const srsReview = read('js/srs/review.js');
+
+    for (const source of [courseQuiz, srsReview]) {
+        assert.match(source, /const nomeSeguro = typeof escapeHTML === 'function' \? escapeHTML\(String\(nome\)\) : 'Estudante'/);
+        assert.match(source, /<strong>\$\{nomeSeguro\}<\/strong>/);
+        assert.doesNotMatch(source, /<strong>\$\{nome\}<\/strong>/);
+    }
 });
 
 test('medicao de sessoes da Etapa 29 usa API central e retencao limitada', () => {
@@ -883,7 +896,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v31'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v32'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 

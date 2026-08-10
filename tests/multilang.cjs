@@ -425,7 +425,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v31/);
+    assert.match(serviceWorker, /idiomas-academy-v32/);
     assert.match(dom, /const currentLanguageCode = typeof getCurrentLanguageCode === 'function'/);
     assert.match(dom, /const readingOptionsHtml = currentLanguageCode === 'ja-JP' \? `/);
     assert.doesNotMatch(dom, /const readingOptionsHtml = isEnglishMode \?/);
