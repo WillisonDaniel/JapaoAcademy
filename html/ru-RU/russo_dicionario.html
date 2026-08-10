@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário Cirílico & Glossário - Russo Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            background: var(--bg-color, #0f172a);
+            color: var(--text-main, #f8fafc);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dict-container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 24px 16px 40px 16px;
+        }
+
+        .dict-header-box {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .dict-title {
+            font-family: 'Outfit', 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0284c7, #6366f1, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .dark-theme .dict-title {
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dict-subtitle {
+            color: var(--text-muted, #64748b);
+            font-size: 0.95rem;
+        }
+
+        /* Barra de Pesquisa */
+        .dict-search-input-field {
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 16px;
+            background: var(--card-bg, #1e293b);
+            color: var(--text-main, #f8fafc);
+            border: 2px solid var(--border-color, #334155);
+            font-size: 1.05rem;
+            font-weight: 600;
+            outline: none;
+            box-shadow: var(--shadow, 0 4px 12px rgba(0,0,0,0.08));
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .dict-search-input-field:focus {
+            border-color: #0284c7;
+            box-shadow: 0 0 15px rgba(2, 132, 199, 0.25);
+        }
+
+        .dark-theme .dict-search-input-field:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+        }
+
+        /* Navegação Alfabética Cirílica */
+        .cyrillic-alpha-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin: 16px 0 20px 0;
+            padding: 12px;
+            background: var(--card-bg, #1e293b);
+            border: 1px solid var(--border-color, #334155);
+            border-radius: 16px;
+        }
+
+        .alpha-btn {
+            background: var(--bg-color, #0f172a);
+            border: 1px solid var(--border-color, #334155);
+            color: var(--text-main, #f8fafc);
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+
+        .alpha-btn:hover, .alpha-btn.active {
+            background: #0284c7;
+            color: #fff;
+            border-color: #0284c7;
+        }
+
+        .dark-theme .alpha-btn:hover, .dark-theme .alpha-btn.active {
+            background: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+
+        /* Botões de Alternância de Visão do Guia de Casos */
+        .casos-view-btn {
+            background: var(--bg-color, #0f172a);
+            border: 1.5px solid var(--border-color, #334155);
+            color: var(--text-main, #f8fafc);
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .casos-view-btn.active {
+            background: #0284c7;
+            color: #ffffff;
+            border-color: #0284c7;
+        }
+
+        .model-word-pill {
+            background: var(--bg-color, #0f172a);
+            border: 1.5px solid var(--border-color, #334155);
+            color: var(--text-main, #f8fafc);
+            padding: 8px 16px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .model-word-pill.active {
+            background: #6366f1;
+            color: #ffffff;
+            border-color: #6366f1;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Skeleton Card */
+        .dict-skeleton-card {
+            background: var(--card-bg, #1e293b);
+            border: 1px solid var(--border-color, #334155);
+            border-radius: 16px;
+            padding: 20px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            animation: pulseSkeleton 1.5s infinite;
+        }
+
+        .dict-skeleton-card span {
+            height: 16px;
+            background: var(--border-color, #334155);
+            border-radius: 6px;
+        }
+
+        @keyframes pulseSkeleton {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+
+<body data-mode="russian" data-lang="russian">
+
+    <header>
+        <a href="../../hub_russo.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+    </header>
+
+    <div class="dict-container">
+
+        <div class="dict-header-box">
+            <h1 class="dict-title">📖 Dicionário Cirílico & Glossário</h1>
+            <p class="dict-subtitle">Consulte o alfabeto de 33 letras, vocabulário A1-B2, os 6 Casos Gramaticais e treino motor no canvas!</p>
+        </div>
+
+        <!-- Campo de Busca Inteligente -->
+        <div class="dict-search-wrapper" style="margin-bottom: 16px;">
+            <input type="text" id="dict-search-input" class="dict-search-input-field" aria-label="Pesquisar no dicionário russo" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise em cirílico (Здравствуйте), português (Olá), romaji (Zdravstvuyte) ou caso gramatical...">
+        </div>
+
+        <!-- 3 Filtros Principais de Tipo + Favoritos + Guia dos 6 Casos -->
+        <div class="dict-filters-row" style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; justify-content:center;">
+            <button class="dict-filter-pill active" data-cat="tudo" onclick="selecionarCategoriaDicionario('tudo')">🌐 Tudo</button>
+            <button class="dict-filter-pill" data-cat="favoritos" onclick="selecionarCategoriaDicionario('favoritos')">⭐ Meus Favoritos</button>
+            <button class="dict-filter-pill" data-cat="alphabet" onclick="selecionarCategoriaDicionario('alphabet')">🔤 Alfabeto Cirílico (33 Letras)</button>
+            <button class="dict-filter-pill" data-cat="vocab" onclick="selecionarCategoriaDicionario('vocab')">📚 Vocabulário A1-B2</button>
+            <button class="dict-filter-pill" data-cat="grammar" onclick="selecionarCategoriaDicionario('grammar')">💡 Gramática & Resumo</button>
+            <button class="dict-filter-pill" id="btn-filtro-casos" data-cat="casos" onclick="alternarVisaoGuiaCasos()">🏛️ Guia dos 6 Casos Gramaticais</button>
+        </div>
+
+        <!-- CONTAINER INTERATIVO DO GUIA MESTRE DOS 6 CASOS GRAMATICAIS -->
+        <div id="guia-casos-interactive-container" style="display: none; background: var(--card-bg, #1e293b); border: 2px solid var(--border-color, #334155); border-radius: 20px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color, #334155); padding-bottom: 16px;">
+                <div>
+                    <h2 style="margin: 0; font-family: 'Outfit', 'Fredoka', sans-serif; font-size: 1.5rem; color: #38bdf8; display: flex; align-items: center; gap: 8px;">
+                        🏛️ Guia Mestre dos 6 Casos Gramaticais (Шесть падежей)
+                    </h2>
+                    <p style="margin: 4px 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
+                        Matriz oficial de terminações por gênero e simulador de declinação de palavras modelo com áudio nativo.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <button id="btn-visao-matriz" class="casos-view-btn active" onclick="mostrarVisaoCasos('matriz')">📊 Matriz de Sufixos</button>
+                    <button id="btn-visao-simulador" class="casos-view-btn" onclick="mostrarVisaoCasos('simulador')">⚡ Simulador de Palavras</button>
+                </div>
+            </div>
+
+            <!-- VISÃO 1: MATRIZ GERAL DE TERMINAÇÕES -->
+            <div id="visao-matriz-casos">
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; background: var(--card-bg, #1e293b); border-radius: 12px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: var(--bg-color, #0f172a); border-bottom: 2px solid var(--border-color, #334155);">
+                                <th style="padding: 14px 16px; color: var(--text-main);">Caso Gramatical</th>
+                                <th style="padding: 14px 16px; color: var(--text-main);">Pergunta Chave</th>
+                                <th style="padding: 14px 16px; color: var(--text-main);">Função Principal</th>
+                                <th style="padding: 14px 16px; color: #38bdf8;">Masculino</th>
+                                <th style="padding: 14px 16px; color: #f43f5e;">Feminino</th>
+                                <th style="padding: 14px 16px; color: #f59e0b;">Neutro</th>
+                                <th style="padding: 14px 16px; color: #a855f7;">Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabela-matriz-casos-body">
+                            <!-- Renderizado dinamicamente por JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- VISÃO 2: SIMULADOR DE DECLINAÇÃO DE PALAVRAS MODELO -->
+            <div id="visao-simulador-casos" style="display: none;">
+                <div style="margin-bottom: 20px; text-align: center;">
+                    <span style="font-weight: 700; font-size: 0.95rem; color: var(--text-muted); display: block; margin-bottom: 10px;">
+                        Escolha uma Palavra Modelo para Ver os 6 Casos Declinados:
+                    </span>
+                    <div id="palavras-modelo-selector" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                        <!-- Botões das palavras modelos renderizados dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Grid dos 6 Cards de Casos da Palavra Selecionada -->
+                <div id="cards-palavra-modelo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                    <!-- 6 Cards renderizados dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Subfiltros por Nível CEFR -->
+        <div id="dict-subfilters-level" class="dict-subfilters-row" style="display: flex; margin-bottom: 16px; gap: 6px; justify-content: center; flex-wrap: wrap;">
+            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🟢 Nível A1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟡 Nível A2</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟠 Nível B1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B2" onclick="selecionarSubNivelVocab('B2')">🔴 Nível B2</button>
+        </div>
+
+        <!-- Barra de Navegação Alfabética Cirílica (А a Я) -->
+        <div class="cyrillic-alpha-bar" id="cyrillic-alpha-nav">
+            <button class="alpha-btn active" onclick="filtrarPorInicialCirilica('tudo', this)">Todos</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('А', this)">А</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Б', this)">Б</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('В', this)">В</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Г', this)">Г</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Д', this)">Д</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Е', this)">Е</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ё', this)">Ё</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ж', this)">Ж</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('З', this)">З</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('И', this)">И</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Й', this)">Й</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('К', this)">К</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Л', this)">Л</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('М', this)">М</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Н', this)">Н</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('О', this)">О</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('П', this)">П</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Р', this)">Р</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('С', this)">С</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Т', this)">Т</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('У', this)">У</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ф', this)">Ф</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Х', this)">Х</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ц', this)">Ц</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ч', this)">Ч</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ш', this)">Ш</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Щ', this)">Щ</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Э', this)">Э</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Ю', this)">Ю</button>
+            <button class="alpha-btn" onclick="filtrarPorInicialCirilica('Я', this)">Я</button>
+        </div>
+
+        <!-- Contador de Resultados -->
+        <div id="dict-results-counter" style="font-size:0.9rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;">
+            ⚡ Carregando dicionário cirílico e glossário...
+        </div>
+
+        <!-- Grid de Resultados de Busca -->
+        <div id="dict-results-container" class="grid-dict-results" aria-busy="true" aria-label="Carregando dicionário" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="dict-skeleton-card" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+
+    </div>
+
+    <!-- CARREGAMENTO DOS DATASETS DE RUSSO -->
+    <script src="../../database/ru-RU/data_russo_cirilico.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_a1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_a2.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b2.js"></script>
+    <script src="../../database/ru-RU/data_russo_dicionario.js"></script>
+
+    <!-- FIREBASE E CORE -->
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script>
+    <script src="../../js/kanji/kanji-canvas.js"></script>
+    <script src="../../js/core/dictionary.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+
+    <script>
+        // FILTRAGEM POR INICIAL CIRÍLICA
+        let letraInicialFiltro = 'tudo';
+
+        function filtrarPorInicialCirilica(letra, btnEl) {
+            letraInicialFiltro = letra;
+            document.querySelectorAll('#cyrillic-alpha-nav .alpha-btn').forEach(b => b.classList.remove('active'));
+            if (btnEl) btnEl.classList.add('active');
+
+            const inputVal = (document.getElementById('dict-search-input')?.value || '').trim();
+            if (typeof renderizarResultadosDicionario === 'function') {
+                renderizarResultadosDicionario(inputVal);
+            }
+            if (typeof playBeep === 'function') playBeep('click');
+        }
+
+        window.filtroLetraInicialRusso = function(item) {
+            if (!letraInicialFiltro || letraInicialFiltro === 'tudo') return true;
+            if (!item || !item.primary) return false;
+            const cleanWord = item.primary.trim().toUpperCase();
+            return cleanWord.startsWith(letraInicialFiltro.toUpperCase());
+        };
+
+        // LÓGICA DO GUIA MESTRE DOS 6 CASOS GRAMATICAIS
+        let guiaCasosAberto = false;
+        let visaoCasosAtual = 'matriz';
+        let palavraModeloIndiceAtual = 0;
+
+        function alternarVisaoGuiaCasos() {
+            guiaCasosAberto = !guiaCasosAberto;
+            const container = document.getElementById('guia-casos-interactive-container');
+            const btnCasos = document.getElementById('btn-filtro-casos');
+
+            if (container) {
+                container.style.display = guiaCasosAberto ? 'block' : 'none';
+            }
+
+            if (btnCasos) {
+                btnCasos.classList.toggle('active', guiaCasosAberto);
+            }
+
+            if (guiaCasosAberto) {
+                renderizarMatrizCasos();
+                renderizarSimuladorPalavras(palavraModeloIndiceAtual);
+            }
+
+            if (typeof playBeep === 'function') playBeep('click');
+        }
+
+        function mostrarVisaoCasos(visao) {
+            visaoCasosAtual = visao;
+            const matrizEl = document.getElementById('visao-matriz-casos');
+            const simuladorEl = document.getElementById('visao-simulador-casos');
+            const btnMatriz = document.getElementById('btn-visao-matriz');
+            const btnSimulador = document.getElementById('btn-visao-simulador');
+
+            if (matrizEl) matrizEl.style.display = (visao === 'matriz') ? 'block' : 'none';
+            if (simuladorEl) simuladorEl.style.display = (visao === 'simulador') ? 'block' : 'none';
+            if (btnMatriz) btnMatriz.classList.toggle('active', visao === 'matriz');
+            if (btnSimulador) btnSimulador.classList.toggle('active', visao === 'simulador');
+
+            if (typeof playBeep === 'function') playBeep('click');
+        }
+
+        function renderizarMatrizCasos() {
+            const tbody = document.getElementById('tabela-matriz-casos-body');
+            if (!tbody) return;
+
+            const casosData = window.CASOS_GRAMATICAIS_RUSSO || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
+            if (!casosData || !Array.isArray(casosData.matrix)) return;
+
+            tbody.innerHTML = casosData.matrix.map(c => `
+                <tr style="border-bottom: 1px solid var(--border-color, #334155);">
+                    <td style="padding: 12px 16px; font-weight: 800; color: ${c.color};">${c.name}</td>
+                    <td style="padding: 12px 16px; font-weight: 700; color: var(--text-main);">${c.question}</td>
+                    <td style="padding: 12px 16px; color: var(--text-muted); font-size: 0.88rem;">${c.function}</td>
+                    <td style="padding: 12px 16px; font-weight: 700; color: #38bdf8;">${c.endings.masculine}</td>
+                    <td style="padding: 12px 16px; font-weight: 700; color: #f43f5e;">${c.endings.feminine}</td>
+                    <td style="padding: 12px 16px; font-weight: 700; color: #f59e0b;">${c.endings.neuter}</td>
+                    <td style="padding: 12px 16px; font-weight: 700; color: #a855f7;">${c.endings.plural}</td>
+                </tr>
+            `).join('');
+        }
+
+        function renderizarSimuladorPalavras(idx = 0) {
+            palavraModeloIndiceAtual = idx;
+            const selectorContainer = document.getElementById('palavras-modelo-selector');
+            const cardsGrid = document.getElementById('cards-palavra-modelo-grid');
+            if (!selectorContainer || !cardsGrid) return;
+
+            const casosData = window.CASOS_GRAMATICAIS_RUSSO || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
+            if (!casosData || !Array.isArray(casosData.modelWords)) return;
+
+            // Renderizar botões seletores
+            selectorContainer.innerHTML = casosData.modelWords.map((item, i) => `
+                <button class="model-word-pill ${i === idx ? 'active' : ''}" onclick="renderizarSimuladorPalavras(${i})">
+                    ${item.icon} ${item.word} (${item.translation})
+                </button>
+            `).join('');
+
+            // Renderizar 6 Cards de Casos da Palavra Selecionada
+            const selectedModel = casosData.modelWords[idx];
+            if (!selectedModel) return;
+
+            cardsGrid.innerHTML = selectedModel.cases.map(c => `
+                <div style="background: var(--bg-color, #0f172a); border: 1.5px solid var(--border-color, #334155); border-radius: 16px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 10px;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+                            <span style="font-weight: 800; font-size: 0.95rem; color: #38bdf8;">${c.case}</span>
+                            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">${c.question}</span>
+                        </div>
+                        <div style="font-size: 2rem; font-weight: 800; color: #f8fafc; font-family: 'Outfit', sans-serif; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                            <span>${c.form}</span>
+                            <button onclick="speakKana('${c.form}')" style="background: none; border: none; font-size: 1.1rem; cursor: pointer; color: #38bdf8;" title="Ouvir palavra">🔊</button>
+                        </div>
+                        <div style="font-size: 0.9rem; font-weight: 600; color: #10b981; margin-bottom: 8px;">
+                            💬 Frase: "${c.example}"
+                        </div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">
+                            🇧🇷 ${c.pt}
+                        </div>
+                    </div>
+                    <button onclick="speakKana('${c.audio.replace(/'/g, "\\'")}')" style="background: #0284c7; color: #ffffff; border: none; border-radius: 10px; padding: 8px 14px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 6px;">
+                        🔊 Ouvir Frase Completa
+                    </button>
+                </div>
+            `).join('');
+
+            if (typeof playBeep === 'function') playBeep('click');
+        }
+    </script>
+</body>
+
+</html>

@@ -221,6 +221,9 @@ if (!BROWSER_PATH) {
     ];
 
     const capturePages = [
+        { name: 'hub_idiomas', file: 'hub_idiomas.html' },
+        { name: 'hub_russo', file: 'hub_russo.html' },
+        { name: 'russo_alfabeto', file: 'html/ru-RU/russo_alfabeto.html' },
         { name: 'hub_espanhol', file: 'hub_espanhol.html' },
         { name: 'espanhol_curso', file: 'html/es-ES/espanhol_curso.html' },
         { name: 'espanhol_falsos_amigos', file: 'html/es-ES/espanhol_falsos_amigos.html' },

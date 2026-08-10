@@ -155,7 +155,12 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     const key = (nivel || 'a1').toLowerCase();
     const prog = typeof progressoGlobal !== 'undefined' ? progressoGlobal : {};
     let arrayConcluidos = [];
-    if (key === 'hiragana') arrayConcluidos = prog.progress_hiragana || [];
+    if (key === 'cirilico' || key === 'cyrillic' || key === 'russo_cirilico') {
+        const isDone = localStorage.getItem(`cyrillic_mod_done_${modIdx + 1}`) === 'true' || localStorage.getItem(`cyrillic_mod_done_${modIdx}`) === 'true';
+        if (isDone) return true;
+        arrayConcluidos = prog.progress_cyrillic || [];
+    }
+    else if (key === 'hiragana') arrayConcluidos = prog.progress_hiragana || [];
     else if (key === 'katakana') arrayConcluidos = prog.progress_katakana || [];
     else if (key === 'kanji' || key === 'kanji_n5') arrayConcluidos = prog.progress_kanji || [];
     else if (key === 'kanji_n4') arrayConcluidos = prog.progress_kanji_n4 || [];
@@ -184,10 +189,12 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
         const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
         const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
         const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
 
         const list = typeof getCourseData === 'function' ? getCourseData(key) : null;
         const targetId = (list && list[numIdx] && list[numIdx].id) ? list[numIdx].id : null;
-        const fallbackId = isSpanish ? `es_${key}_mod_${numIdx + 1}` : (isEnglish ? `en_${key}_mod_${String(numIdx + 1).padStart(2, '0')}` : `${key}_mod_${String(numIdx + 1).padStart(2, '0')}`);
+        const prefix = isRussian ? 'ru_' : (isSpanish ? 'es_' : (isEnglish ? 'en_' : ''));
+        const fallbackId = `${prefix}${key}_mod_${String(numIdx + 1).padStart(2, '0')}`;
 
         if (targetId && arrayConcluidos.includes(targetId)) return true;
         if (fallbackId && arrayConcluidos.includes(fallbackId)) return true;
@@ -456,13 +463,13 @@ function renderizarEtapa() {
             if (drop.type === 'grammar_pill') {
                 const pTitle = drop.title || 'Pílula Gramatical';
                 const pRule = drop.rule || drop.explanation || '';
-                const pFormula = drop.formula ? `<div style="margin-top:12px; padding:12px; background:rgba(59,130,246,0.1); border-left:4px solid var(--current-primary); border-radius:8px; font-weight:bold; font-family:monospace; color:var(--text-main);">💡 Fórmula: ${drop.formula}</div>` : '';
-                const pExample = drop.example ? `<div style="margin-top:10px; font-size:1.05rem; color:var(--text-main); font-style:italic; background:var(--bg-color); padding:10px; border-radius:8px;">💬 Exemplo: "${drop.example}"</div>` : '';
+                const pFormula = drop.formula ? `<div style="margin-top:14px; padding:12px 16px; background:rgba(59,130,246,0.08); border-left:4px solid var(--current-primary, #e63946); border-radius:8px; font-weight:bold; color:var(--text-main); font-size:1.05rem;">💡 <strong>Fórmula:</strong> ${drop.formula}</div>` : '';
+                const pExample = drop.example ? `<div style="margin-top:12px; font-size:1.05rem; color:var(--text-main); font-style:italic; background:var(--bg-color); padding:12px 16px; border-radius:8px; border:1px solid var(--border-color);">💬 <strong>Exemplo:</strong> "${drop.example}"</div>` : '';
 
                 container.innerHTML = `
-                    <div class="flashcard-drop grammar-pill-card" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; text-align:left; box-shadow:var(--shadow);">
-                        <div style="font-size:1.4rem; font-weight:bold; color:var(--current-primary); margin-bottom:12px;">💊 ${pTitle}</div>
-                        <div style="font-size:1.05rem; color:var(--text-main); line-height:1.6;">${pRule}</div>
+                    <div class="flashcard-drop grammar-pill-card" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; text-align:left; box-shadow:var(--shadow); max-width:700px; margin:0 auto;">
+                        <div style="font-size:1.4rem; font-weight:bold; color:var(--current-primary, #e63946); margin-bottom:12px;">💊 ${pTitle}</div>
+                        <div style="font-size:1.05rem; color:var(--text-main); line-height:1.6; margin-bottom:8px;">${pRule}</div>
                         ${pFormula}
                         ${pExample}
                     </div>
@@ -472,7 +479,8 @@ function renderizarEtapa() {
                 const mainContent = drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || processado.htmlJapones || '';
                 const subContent = drop.romaji || drop.ipa || processado.htmlRomaji || '';
                 const translation = drop.translation || drop.portuguese || drop.Portuguese || '';
-                const timeCtx = drop.timeContext ? `<div style="margin-top:10px; font-size:0.9rem; color:var(--text-muted);">💡 ${typeof fNome === 'function' ? fNome(drop.timeContext) : drop.timeContext}</div>` : '';
+                const rawTip = drop.dica || drop.example || drop.tip || drop.hint || drop.timeContext || (drop.exampleTranslation ? `Ex: ${drop.example} (${drop.exampleTranslation})` : '');
+                const timeCtx = rawTip ? `<div style="margin: 14px auto 0 auto; font-size:0.95rem; color:var(--text-muted); background:var(--bg-color); padding:10px 16px; border-radius:8px; display:block; border:1px solid var(--border-color); max-width:600px; width:fit-content; text-align:center;">💡 Dica: ${typeof fNome === 'function' ? fNome(rawTip) : rawTip}</div>` : '';
                 const speakWord = (drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || drop.romaji || '').replace(/'/g, "\\'");
 
                 container.innerHTML = `
@@ -481,7 +489,9 @@ function renderizarEtapa() {
                         <div style="font-size:1.2rem; color:var(--current-primary); font-weight:bold;">${subContent}</div>
                         <div style="font-size:1.1rem; color:var(--text-main); margin-top:8px;">${translation}</div>
                         ${timeCtx}
-                        <button class="audio-btn" onclick="speakKana('${speakWord}')" style="margin-top:16px; padding:10px 20px;">🔊 Ouvir Pronúncia</button>
+                        <div style="margin-top:16px; display:flex; justify-content:center;">
+                            <button class="audio-btn" onclick="speakKana('${speakWord}')" style="padding:10px 20px;">🔊 Ouvir Pronúncia</button>
+                        </div>
                     </div>
                 `;
             }
@@ -541,8 +551,12 @@ function renderizarEtapa() {
         const sentenceExs = Array.isArray(module.sentenceBuilder) ? module.sentenceBuilder : [];
         let htmlSB = sentenceExs.map((ex, idx) => {
             const exId = `sb_${module.id}_${idx}`;
-            const targetSentence = ex.translation || ex.target || ex.portuguese || ex.Portuguese || '';
-            const chunksList = (Array.isArray(ex.chunks) && ex.chunks.length > 0) ? ex.chunks : ((Array.isArray(ex.words) && ex.words.length > 0) ? ex.words : []);
+            const targetSentence = ex.translation || ex.target || ex.portuguese || ex.Portuguese || ex.sentenceEn || ex.sentenceEs || '';
+            let chunksList = (Array.isArray(ex.chunks) && ex.chunks.length > 0) ? ex.chunks : ((Array.isArray(ex.words) && ex.words.length > 0) ? ex.words : ((Array.isArray(ex.tokens) && ex.tokens.length > 0) ? ex.tokens : []));
+            if (!Array.isArray(chunksList) || chunksList.length === 0) {
+                const rawText = ex.sentence || ex.sentenceRu || ex.sentenceEn || ex.sentenceEs || ex.target || '';
+                if (rawText) chunksList = rawText.split(/\s+/).filter(Boolean);
+            }
             if (typeof inicializarSentenceBuilderState === 'function') inicializarSentenceBuilderState(exId, chunksList);
             return `
                 <div id="box-sb-${exId}" class="sb-box" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:14px; padding:18px; margin-bottom:16px;">

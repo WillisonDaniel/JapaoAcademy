@@ -13,6 +13,10 @@
     --kanji-primary: #b45309;
     --game-primary: #7e22ce;
 
+    --russo-primary: #4c1d95;
+    --russo-secondary: #1e3a8a;
+    --russo-gradient: linear-gradient(135deg, #4c1d95 0%, #1e3a8a 100%);
+
     --header-bg: linear-gradient(135deg, #1a1a2e, #16213e);
     --current-primary: var(--japa-primary);
 
@@ -251,6 +255,7 @@ header p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 0.5rem;
     text-decoration: none;
 }
@@ -317,6 +322,58 @@ header p {
     border-color: #fbbf24;
     transform: translateY(-5px);
     box-shadow: 0 15px 25px rgba(15, 23, 42, 0.5), 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+/* ==========================================
+   BOTÕES DO RUSSO ACADEMY (Русский Academy)
+========================================== */
+.course-btn.russian {
+    background: var(--russo-gradient);
+    color: #ffffff;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.course-btn.russian:hover {
+    border-color: #a78bfa;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(76, 29, 149, 0.5), 0 0 15px rgba(30, 58, 138, 0.4);
+}
+
+.course-btn.cyrillic {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #ffffff;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.course-btn.cyrillic:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(2, 132, 199, 0.4), 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+.course-btn.russo-arcade {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    color: #ffffff;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.course-btn.russo-arcade:hover {
+    border-color: #fbbf24;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(217, 119, 6, 0.4), 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+.course-btn.russo-dict {
+    background: linear-gradient(135deg, #4f46e5, #3730a3);
+    color: #ffffff;
+    border: 1px solid rgba(129, 140, 248, 0.3);
+
+}
+
+.course-btn.russo-dict:hover {
+    border-color: #818cf8;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(79, 70, 229, 0.4), 0 0 15px rgba(129, 140, 248, 0.3);
 }
 
 .tabs {
@@ -448,10 +505,21 @@ header p {
     flex: 1 1 auto;
 }
 
-.toast-success { border-left-color: #22c55e; }
-.toast-info { border-left-color: #38bdf8; }
-.toast-warning { border-left-color: #f59e0b; }
-.toast-error { border-left-color: #ef4444; }
+.toast-success {
+    border-left-color: #22c55e;
+}
+
+.toast-info {
+    border-left-color: #38bdf8;
+}
+
+.toast-warning {
+    border-left-color: #f59e0b;
+}
+
+.toast-error {
+    border-left-color: #ef4444;
+}
 
 .toast-close {
     flex: 0 0 auto;
@@ -639,6 +707,7 @@ header p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .ux-skeleton::after,
     .dict-skeleton-card::after,
     .banner-srs[aria-busy="true"] #srs-banner-desc::after,
@@ -848,6 +917,7 @@ button.ux-button-success {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .sync-status-syncing .sync-status-icon,
     button.ux-button-loading::before {
         animation: none;
@@ -1943,7 +2013,7 @@ body.dark-mode .grid-badge {
     padding: 1.5rem 1.8rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .secao-trilha h3 {
@@ -1978,6 +2048,7 @@ body.dark-mode .grid-badge {
     background: rgba(34, 197, 94, 0.07) !important;
     color: var(--text-main, #15803d) !important;
 }
+
 .btn-modulo.concluido:hover {
     background: rgba(34, 197, 94, 0.14) !important;
     transform: translateX(4px);
@@ -1989,6 +2060,7 @@ body.dark-mode .grid-badge {
     background: rgba(245, 158, 11, 0.08) !important;
     color: var(--text-main, #b45309) !important;
 }
+
 .btn-modulo:not(.bloqueado):not(.concluido):hover {
     background: rgba(245, 158, 11, 0.16) !important;
     transform: translateX(4px);
@@ -2172,6 +2244,7 @@ body.dark-mode .grid-badge {
         opacity: 0;
         transform: translateY(8px) scale(0.985);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -4151,6 +4224,7 @@ rt {
     margin: 15px 0;
     text-align: center;
 }
+
 .heatmap-title {
     font-size: 0.85rem;
     font-weight: bold;
@@ -4158,12 +4232,14 @@ rt {
     display: block;
     margin-bottom: 8px;
 }
+
 .heatmap-grid {
     display: flex;
     gap: 6px;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .heatmap-day {
     width: 16px;
     height: 16px;
@@ -4172,10 +4248,23 @@ rt {
     transition: transform 0.2s ease;
     cursor: pointer;
 }
-.heatmap-day:hover { transform: scale(1.25); }
-.heatmap-day.lvl-1 { background: rgba(34, 197, 94, 0.4); }
-.heatmap-day.lvl-2 { background: rgba(34, 197, 94, 0.75); }
-.heatmap-day.lvl-3 { background: #22c55e; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6); }
+
+.heatmap-day:hover {
+    transform: scale(1.25);
+}
+
+.heatmap-day.lvl-1 {
+    background: rgba(34, 197, 94, 0.4);
+}
+
+.heatmap-day.lvl-2 {
+    background: rgba(34, 197, 94, 0.75);
+}
+
+.heatmap-day.lvl-3 {
+    background: #22c55e;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
 
 /* ==========================================
    BOTÃO DE OFENSIVA E MODAL DE HISTÓRICO
@@ -4406,6 +4495,7 @@ rt {
         box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
         transform: scale(1);
     }
+
     100% {
         box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
         transform: scale(1.03);
@@ -4508,6 +4598,7 @@ rt {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7), 0 4px 15px rgba(239, 68, 68, 0.4);
     }
+
     100% {
         transform: scale(1.06);
         box-shadow: 0 0 0 16px rgba(239, 68, 68, 0), 0 10px 30px rgba(239, 68, 68, 0.6);
@@ -4767,7 +4858,7 @@ rt {
     border-radius: 13px;
 }
 
-.dashboard-streak-card > span {
+.dashboard-streak-card>span {
     font-size: 1.45rem;
 }
 
@@ -4875,7 +4966,7 @@ rt {
     margin-top: 16px;
 }
 
-.dashboard-language-actions > * {
+.dashboard-language-actions>* {
     flex: 1 1 150px;
 }
 
@@ -5520,6 +5611,7 @@ rt {
 }
 
 @media (max-width: 800px) {
+
     .dashboard-hero,
     .dashboard-first-access {
         grid-template-columns: 1fr;
@@ -5679,6 +5771,7 @@ rt {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .dashboard-progress-fill,
     .btn-progress-header,
     .btn-logout-header {
@@ -5831,4 +5924,3 @@ rt {
     margin-top: auto;
     align-self: flex-start;
 }
-

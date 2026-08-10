@@ -154,7 +154,16 @@ function getTodosOsCursos() {
 
     const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
     const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+    const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
 
+    if (isRussian) {
+        return {
+            A1: (typeof CURSO_RUSSO_A1_DADOS !== 'undefined') ? CURSO_RUSSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A1_DADOS : []),
+            A2: (typeof CURSO_RUSSO_A2_DADOS !== 'undefined') ? CURSO_RUSSO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A2_DADOS : []),
+            B1: (typeof CURSO_RUSSO_B1_DADOS !== 'undefined') ? CURSO_RUSSO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B1_DADOS : []),
+            B2: (typeof CURSO_RUSSO_B2_DADOS !== 'undefined') ? CURSO_RUSSO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B2_DADOS : [])
+        };
+    }
     if (isSpanish) {
         return {
             A1: (typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined') ? CURSO_ESPANHOL_A1_DADOS : [],

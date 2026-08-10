@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russo Academy (Русский Academy)</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="russian" data-lang="russian">
+    <header>
+        <a href="hub_idiomas.html" class="home-btn">⬅ Idiomas</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">🪆 Russo Academy</h1>
+        <p id="mainDesc">Sua jornada imersiva no Idioma Russo: do Alfabeto Cirílico aos níveis A1 a B2 com áudio nativo.
+        </p>
+    </header>
+
+    <div class="container">
+        <div id="main-menu">
+
+            <!-- 1. CURSO PRINCIPAL DE RUSSO (A1 a B2) -->
+            <a href="html/ru-RU/russo_curso.html" class="course-btn russian">
+                <span>📚</span>
+                Curso de Russo (A1 a B2)
+                <p>Do nível básico ao avançado (A1 a B2) com gramática, frases e áudio nativo</p>
+            </a>
+
+            <!-- 2. ALFABETO CIRÍLICO -->
+            <a href="html/ru-RU/russo_alfabeto.html" class="course-btn cyrillic">
+                <span>🔤</span>
+                Alfabeto Cirílico
+                <p>Domine as 33 letras cirílicas com treino de escrita interativo canvas e áudio nativo</p>
+            </a>
+
+            <!-- 3. MINIGAME CIRÍLICO ARCADE -->
+            <a href="html/ru-RU/russo_minigame.html" class="course-btn russo-arcade">
+                <span>⚡</span>
+                Minigame Cirílico Arcade
+                <p>Treine a velocidade de reconhecimento do alfabeto e vocabulário no relógio</p>
+            </a>
+
+            <!-- 4. DICIONÁRIO CIRÍLICO & GLOSSÁRIO -->
+            <a href="html/ru-RU/russo_dicionario.html" class="course-btn russian">
+                <span>📖</span>
+                Dicionário & Glossário Cirílico
+                <p>Consulta rápida de vocabulário, termos essenciais, regras de pronúncia e áudios</p>
+            </a>
+
+        </div>
+    </div>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script src="js/core/config.js"></script>
+    <script src="js/core/constants.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/audio.js"></script>
+    <script src="js/core/toast.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/dom.js"></script>
+    <script src="js/core/events.js"></script>
+    <script src="js/game/xp.js"></script>
+    <script src="js/game/ranking.js"></script>
+    <script src="js/core/bootstrap.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

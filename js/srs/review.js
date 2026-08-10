@@ -67,12 +67,18 @@ function iniciarSessaoSRS(tipo, uxExecutarAgora = false) {
     const trilha = document.getElementById('trilha-a1');
     const studyArea = document.getElementById('study-area');
     const playerAula = document.getElementById('player-aula');
+    const cyrContent = document.getElementById('cyrillic-content');
+    const cyrTabs = document.getElementById('tabContainer');
+    const cyrBanner = document.getElementById('srs-banner-container');
     const playerSRS = document.getElementById('player-srs');
 
     if (hub) hub.style.display = 'none';
     if (trilha) trilha.style.display = 'none';
     if (studyArea) studyArea.style.display = 'none';
     if (playerAula) playerAula.style.display = 'none';
+    if (cyrContent) cyrContent.style.display = 'none';
+    if (cyrTabs) cyrTabs.style.display = 'none';
+    if (cyrBanner) cyrBanner.style.display = 'none';
     if (playerSRS) playerSRS.style.display = 'block';
 
     if (typeof iniciarSessaoEstudo === 'function') {
@@ -89,13 +95,20 @@ function fecharSessaoSRS() {
     const playerSRS = document.getElementById('player-srs');
     const hub = document.getElementById('hub-niveis') || document.getElementById('hub-cursos');
     const studyArea = document.getElementById('study-area');
+    const cyrContent = document.getElementById('cyrillic-content');
+    const cyrTabs = document.getElementById('tabContainer');
+    const cyrBanner = document.getElementById('srs-banner-container');
 
     if (playerSRS) playerSRS.style.display = 'none';
     if (hub) hub.style.display = 'block';
     if (studyArea) studyArea.style.display = 'block';
+    if (cyrContent) cyrContent.style.display = 'block';
+    if (cyrTabs) cyrTabs.style.display = 'flex';
+    if (cyrBanner) cyrBanner.style.display = 'flex';
 
     if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
     if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(srsTipoAtivo);
+    if (typeof atualizarCountSRS === 'function') atualizarCountSRS();
 }
 
 function renderizarCardSRS() {
@@ -139,6 +152,33 @@ function renderizarCardSRS() {
             <div style="background: var(--bg-color); border: 1px dashed var(--border-color); padding: 12px; border-radius: 10px; margin-top: 10px; text-align: left; font-size: 0.95rem;">
                 <strong>💡 Dica:</strong> ${cardData.mnemonic}
             </div>
+        `;
+    } else if (cardData.dropType === 'cyr_char') {
+        const charOnly = (cardData.char || '').split(' ')[0];
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #7c3aed;">🔤 CIRÍLICO • ${cardData.modTitle || 'Alfabeto'}</div>
+            <div class="srs-kanji" style="font-size: 3.8rem; font-weight: 700;">${cardData.char}</div>
+            <button onclick="speakRussian('${charOnly}')" class="srs-audio-btn">🔊 Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Qual é a leitura e a dica mnemônica deste caractere?</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #7c3aed;">✨ Leitura e Mnemônica</div>
+            <div class="srs-romaji" style="font-size: 2rem; font-weight: 700; color: #a78bfa;">${cardData.romaji}</div>
+            <div style="background: var(--bg-color); border: 1px dashed var(--border-color); padding: 12px; border-radius: 10px; margin-top: 10px; text-align: left; font-size: 0.95rem;">
+                <strong>💡 Dica:</strong> ${cardData.mnemonic}
+            </div>
+        `;
+    } else if (cardData.dropType === 'cyr_vocab') {
+        frenteHTML = `
+            <div class="srs-card-type" style="color: #7c3aed;">📚 VOCABULÁRIO CIRÍLICO • ${cardData.modTitle || 'Alfabeto'}</div>
+            <div class="srs-kanji" style="font-size: 3rem; font-weight: 700;">${cardData.char}</div>
+            <button onclick="speakRussian('${cardData.char}')" class="srs-audio-btn">🔊 Pronúncia</button>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Tente lembrar da pronúncia e tradução!</p>
+        `;
+        versoHTML = `
+            <div class="srs-card-type" style="color: #7c3aed;">✨ Resposta Revelada</div>
+            <div class="srs-romaji" style="font-size: 1.8rem; font-weight: 700; color: #a78bfa;">${cardData.romaji}</div>
+            <div class="srs-translation" style="font-size: 1.2rem; margin-top: 6px;">${cardData.meaning}</div>
         `;
     } else if (cardData.dropType === 'hira_vocab' || cardData.dropType === 'kata_vocab') {
         const modalidade = cardData.dropType.startsWith('hira') ? 'HIRAGANA' : 'KATAKANA';

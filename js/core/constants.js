@@ -220,6 +220,7 @@ function getCourseData(mode) {
         const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
         const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
         const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
 
         const lvl = (typeof AppState !== 'undefined' && AppState.course && AppState.course.level)
             ? String(AppState.course.level).toUpperCase()
@@ -227,7 +228,12 @@ function getCourseData(mode) {
                 ? mode.toUpperCase()
                 : ((typeof nivelAtivo !== 'undefined' && nivelAtivo) ? String(nivelAtivo).toUpperCase() : 'A1'));
 
-        if (isSpanish) {
+        if (isRussian) {
+            if (lvl === 'A1') return typeof CURSO_RUSSO_A1_DADOS !== 'undefined' ? CURSO_RUSSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A1_DADOS : null);
+            if (lvl === 'A2') return typeof CURSO_RUSSO_A2_DADOS !== 'undefined' ? CURSO_RUSSO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A2_DADOS : null);
+            if (lvl === 'B1') return typeof CURSO_RUSSO_B1_DADOS !== 'undefined' ? CURSO_RUSSO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B1_DADOS : null);
+            if (lvl === 'B2') return typeof CURSO_RUSSO_B2_DADOS !== 'undefined' ? CURSO_RUSSO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B2_DADOS : null);
+        } else if (isSpanish) {
             if (lvl === 'A1') return typeof CURSO_ESPANHOL_A1_DADOS !== 'undefined' ? CURSO_ESPANHOL_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A1_DADOS : null);
             if (lvl === 'A2') return typeof CURSO_ESPANHOL_A2_DADOS !== 'undefined' ? CURSO_ESPANHOL_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_A2_DADOS : null);
             if (lvl === 'B1') return typeof CURSO_ESPANHOL_B1_DADOS !== 'undefined' ? CURSO_ESPANHOL_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ESPANHOL_B1_DADOS : null);

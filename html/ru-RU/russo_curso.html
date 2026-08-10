@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russo Academy - Curso Completo (CEFR)</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body data-mode="russian" data-lang="russian">
+    <header>
+        <a href="../../hub_russo.html" class="home-btn">⬅ Hub Russo</a>
+        <h1>🪆 Curso de Russo (CEFR)</h1>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <!-- TELA 1: HUB DE NÍVEIS DO RUSSO -->
+    <main id="hub-niveis" class="container">
+        <!-- BANNER DE REVISÃO SRS -->
+        <div class="banner-srs" aria-busy="true">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag">🔴 REPETIÇÃO ESPAÇADA (RUSSO)</span>
+                <h3>Revisão Inteligente da Memória</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão em russo...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box">
+                    <span class="srs-counter-badge" id="srs-badge-count">0</span>
+                    <small>PENDENTES</small>
+                </div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS('a1')" class="btn-srs-action">
+                    Iniciar Revisão ➔
+                </button>
+            </div>
+        </div>
+
+        <h2>Hub de Proficiência em Russo</h2>
+
+        <!-- DASHBOARD DE PROGRESSO GLOBAL -->
+        <div id="dashboard-progresso-global" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 12px; padding: 16px 20px; margin-bottom: 25px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="margin: 0; font-size: 1.1rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                    <span>📊</span> Progresso Geral do Curso de Russo
+                </h3>
+                <span id="txt-progresso-porcentagem" style="font-weight: 700; color: #3b82f6; font-size: 1.1rem;">0% Concluído</span>
+            </div>
+            <div style="background: var(--border-color); height: 12px; border-radius: 6px; overflow: hidden; position: relative;">
+                <div id="bar-progresso-global" style="background: linear-gradient(90deg, #1e88e5, #e53935); height: 100%; width: 0%; transition: width 0.5s ease; border-radius: 6px;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);">
+                <span id="txt-progresso-modulos">0 de 96 Módulos Concluídos</span>
+                <span>Metodologia CEFR A1–B2</span>
+            </div>
+        </div>
+
+        <!-- CARDS DOS 4 NÍVEIS CEFR -->
+        <div class="grid-niveis">
+            <div class="card-nivel" id="card-nivel-a1" onclick="abrirTrilha('A1')">
+                <span class="tag" style="background: #22c55e; color: #fff;">🟢 A1 • SOBREVIVÊNCIA</span>
+                <h3>Iniciante - Russo de Sobrevivência</h3>
+                <p>24 Módulos • Saudações, Apresentações, Família e Casos Nominativo e Preposicional</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-a1">0 / 24 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-a2" onclick="abrirTrilha('A2')">
+                <span class="tag" style="background: #2563eb; color: #fff;">🟡 A2 • COTIDIANO</span>
+                <h3>Básico+ - Comunicação Cotidiana</h3>
+                <p>24 Módulos • Passado, Futuro, Acusativo, Genitivo e Aspectos Verbais</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-a2">0 / 24 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b1" onclick="abrirTrilha('B1')">
+                <span class="tag" style="background: #ff5722; color: #fff;">🟠 B1 • AUTONOMIA</span>
+                <h3>Intermediário - Autonomia Gramatical</h3>
+                <p>24 Módulos • Os 6 Casos Gramaticais e Verbos de Movimento com Prefixo</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-b1">0 / 24 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b2" onclick="abrirTrilha('B2')">
+                <span class="tag" style="background: #e11d48; color: #fff;">🔴 B2 • FLUÊNCIA</span>
+                <h3>Avançado - Fluência e Mídia Nativa</h3>
+                <p>24 Módulos • Particípios, Gerúndios, Negociação Corporativa e Literatura Nativa</p>
+                <div style="margin-top: 10px; font-weight: bold; font-size: 0.9rem; color: var(--text-muted);" id="prog-b2">0 / 24 Módulos</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A1 (24 MÓDULOS HANDCRAFTED) -->
+    <main id="trilha-a1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A1 - Russo de Sobrevivência</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Saudações & Apresentações</h3>
+            <div id="lista-modulos-secao1">
+                <button class="btn-modulo" id="mod-0-btn" onclick="iniciarModulo(0, 'A1')">🔓 Módulo 1: Здравствуйте! (Saudações e Cortesia)</button>
+                <button class="btn-modulo" id="mod-1-btn" onclick="iniciarModulo(1, 'A1')">🔓 Módulo 2: Меня зовут... (Apresentações)</button>
+                <button class="btn-modulo" id="mod-2-btn" onclick="iniciarModulo(2, 'A1')">🔓 Módulo 3: Кто это? Что это? (Identificação)</button>
+                <button class="btn-modulo" id="mod-3-btn" onclick="iniciarModulo(3, 'A1')">🔓 Módulo 4: Я из Бразилии (Países e Origem)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Identidade, Família & Profissões</h3>
+            <div>
+                <button class="btn-modulo" id="mod-4-btn" onclick="iniciarModulo(4, 'A1')">🔓 Módulo 5: Моя семья (Família e Posesivos)</button>
+                <button class="btn-modulo" id="mod-5-btn" onclick="iniciarModulo(5, 'A1')">🔓 Módulo 6: Профессии (Profissões e Trabalho)</button>
+                <button class="btn-modulo" id="mod-6-btn" onclick="iniciarModulo(6, 'A1')">🔓 Módulo 7: Где ты живешь? (Preposicional I)</button>
+                <button class="btn-modulo" id="mod-7-btn" onclick="iniciarModulo(7, 'A1')">🔓 Módulo 8: Числа 1-20 (Números e Contagem)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Restaurante, Gastronomia & Metrô</h3>
+            <div>
+                <button class="btn-modulo" id="mod-8-btn" onclick="iniciarModulo(8, 'A1')">🔓 Módulo 9: В ресторане (Restaurante e Pedidos)</button>
+                <button class="btn-modulo" id="mod-9-btn" onclick="iniciarModulo(9, 'A1')">🔓 Módulo 10: Русская кухня (Comidas Típicas)</button>
+                <button class="btn-modulo" id="mod-10-btn" onclick="iniciarModulo(10, 'A1')">🔓 Módulo 11: В метро Москвы (Metrô de Moscou)</button>
+                <button class="btn-modulo" id="mod-11-btn" onclick="iniciarModulo(11, 'A1')">🔓 Módulo 12: Который час? (Horas e Tempo)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Horas, Rotina & Verbos</h3>
+            <div>
+                <button class="btn-modulo" id="mod-12-btn" onclick="iniciarModulo(12, 'A1')">🔓 Módulo 13: Дни недели и месяцы (Dias e Meses)</button>
+                <button class="btn-modulo" id="mod-13-btn" onclick="iniciarModulo(13, 'A1')">🔓 Módulo 14: Мой день (Rotina e 1ª Conjugação)</button>
+                <button class="btn-modulo" id="mod-14-btn" onclick="iniciarModulo(14, 'A1')">🔓 Módulo 15: Что ты делаешь? (2ª Conjugação)</button>
+                <button class="btn-modulo" id="mod-15-btn" onclick="iniciarModulo(15, 'A1')">🔓 Módulo 16: В магазине (Compras e Preços)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Compras, Clima & Hospedagem</h3>
+            <div>
+                <button class="btn-modulo" id="mod-16-btn" onclick="iniciarModulo(16, 'A1')">🔓 Módulo 17: Одежда и цвета (Roupas e Cores)</button>
+                <button class="btn-modulo" id="mod-17-btn" onclick="iniciarModulo(17, 'A1')">🔓 Módulo 18: Погода в России (O Clima)</button>
+                <button class="btn-modulo" id="mod-18-btn" onclick="iniciarModulo(18, 'A1')">🔓 Módulo 19: В отеле (Check-in e Hospedagem)</button>
+                <button class="btn-modulo" id="mod-19-btn" onclick="iniciarModulo(19, 'A1')">🔓 Módulo 20: Здоровье и аптека (Saúde e Farmácia)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Saúde, Direções & Desafio Final A1</h3>
+            <div>
+                <button class="btn-modulo" id="mod-20-btn" onclick="iniciarModulo(20, 'A1')">🔓 Módulo 21: Транспорт в городе (Transportes)</button>
+                <button class="btn-modulo" id="mod-21-btn" onclick="iniciarModulo(21, 'A1')">🔓 Módulo 22: Ориентация в городе (Direções)</button>
+                <button class="btn-modulo" id="mod-22-btn" onclick="iniciarModulo(22, 'A1')">🔓 Módulo 23: Revisão Geral A1</button>
+                <button class="btn-modulo" id="mod-23-btn" onclick="iniciarModulo(23, 'A1')">🔓 Módulo 24: Desafio Final A1: Aeroporto de Moscou</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL A2 (24 MÓDULOS HANDCRAFTED) -->
+    <main id="trilha-a2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A2 - Russo Cotidiano & Passado</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Tempos Verbais & Aspectos</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'A2')">🔓 Módulo 1: Прошлое (O Passado dos Verbos)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'A2')">🔓 Módulo 2: Будущее (O Futuro Simples e Composto)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'A2')">🔓 Módulo 3: Аспект глагола I (Imperfeito vs Perfeito)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'A2')">🔓 Módulo 4: Винительный падеж I (Caso Acusativo Inanimado)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Casos Gramaticais: Acusativo & Genitivo</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'A2')">🔓 Módulo 5: Винительный падеж II (Acusativo Animado)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'A2')">🔓 Módulo 6: Родительный падеж I (Posse e Ausência)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'A2')">🔓 Módulo 7: Родительный падеж II (Quantidade e Números)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'A2')">🔓 Módulo 8: Свободное время и хобби (Lazer e Hobbies)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Festas, Compras & Descrição</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'A2')">🔓 Módulo 9: Праздники в России (Festas Russas)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'A2')">🔓 Módulo 10: Покупки и сувениры (Matrioska e Lembrancinhas)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'A2')">🔓 Módulo 11: Описание людей (Descrição Física)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'A2')">🔓 Módulo 12: В квартире (A Dacha e Casas Russas)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Comunicação & Viagens</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'A2')">🔓 Módulo 13: Звонок по телефону (Ligações e Mensagens)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'A2')">🔓 Módulo 14: Приглашение и встречи (Convites e Encontros)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'A2')">🔓 Módulo 15: Путешествия по России (Transiberiana)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'A2')">🔓 Módulo 16: В театре и музее (Teatro Bolshoi e Hermitage)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Natureza, Redação & Urgências</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'A2')">🔓 Módulo 17: Природа и сезоны (Estações do Ano)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'A2')">🔓 Módulo 18: Письма и e-mail (Redação Informal)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'A2')">🔓 Módulo 19: Проблемы в поездке (Imprevistos e Ajuda)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'A2')">🔓 Módulo 20: Чувства и эмоции (Sentimentos e Emoções)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Esportes, História & Desafio Final A2</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'A2')">🔓 Módulo 21: Спорт и Здоровый образ жизни (Esportes)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'A2')">🔓 Módulo 22: История и Символы (Símbolos e História)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'A2')">🔓 Módulo 23: Revisão Geral A2</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'A2')">🔓 Módulo 24: Desafio Final A2: Viagem pela Rússia</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL B1 (24 MÓDULOS) -->
+    <main id="trilha-b1" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B1 - Russo de Autonomia & Os 6 Casos</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Casos Dativo & Instrumental</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'B1')">🔓 Módulo 1: Дательный падеж I (Caso Dativo - Objeto Indireto)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'B1')">🔓 Módulo 2: Дательный падеж II (Idade e Frases Impessoais)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'B1')">🔓 Módulo 3: Творительный падеж I (Caso Instrumental - Instrumento e Companhia)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'B1')">🔓 Módulo 4: Творительный падеж II (Profissão e Mudança de Estado)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Verbos de Movimento & Prefixos</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'B1')">🔓 Módulo 5: Глаголы движения I (Verbos de Movimento Sem Prefixo - Ir a pé)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'B1')">🔓 Módulo 6: Глаголы движения II (Verbos de Movimento Sem Prefixo - Ir de Transporte)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'B1')">🔓 Módulo 7: Глаголы движения III (Prefixos de Movimento: По-, При-, У-)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'B1')">🔓 Módulo 8: Глаголы движения IV (Prefixos de Movimento: В-, Вы-, Про-, Пере-)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Aspectos Verbais & Comparativos</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'B1')">🔓 Módulo 9: Аспект глагола II (Aspecto no Passado e Futuro)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'B1')">🔓 Módulo 10: Аспект глагола III (Aspecto no Imperativo e Infinitivo)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'B1')">🔓 Módulo 11: Сравнительная степень (Comparativos e Superlativos Avançados)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'B1')">🔓 Módulo 12: Условное наклонение (Modo Condicional e Hipóteses)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Discurso Indireto & Russo Profissional</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'B1')">🔓 Módulo 13: Косвенная речь (Discurso Indireto e Relatos)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'B1')">🔓 Módulo 14: Деловая переписка (E-mails Formais e Protocolo Corporativo)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'B1')">🔓 Módulo 15: Собеседование (Entrevistas de Emprego em Russo)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'B1')">🔓 Módulo 16: Сложные предлоги (Preposições Complexas dos Casos)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Cultura, Mídia & Conectores Avançados</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'B1')">🔓 Módulo 17: Русская литература I (Introdução aos Clássicos)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'B1')">🔓 Módulo 18: СМИ и новости (Leitura de Notícias em Russo)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'B1')">🔓 Módulo 19: Экология и общество (Meio Ambiente e Sociedade)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'B1')">🔓 Módulo 20: Выражение причины и следствия (Causa e Consequência)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Propósito, Expressões & Desafio B1</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'B1')">🔓 Módulo 21: Выражение цели (Orações Finais e Propósito)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'B1')">🔓 Módulo 22: Русский юмор и выражения (Humor Russo e Expressões)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'B1')">🔓 Módulo 23: Revisão Geral B1</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'B1')">🔓 Módulo 24: Desafio Final B1 (Debate Simulado e Apresentação de Projeto)</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 2: TRILHA DO NÍVEL B2 (24 MÓDULOS) -->
+    <main id="trilha-b2" class="container" style="display: none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B2 - Russo Avançado & Fluência</h2>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 1: Particípios & Gerúndios</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(0, 'B2')">🔓 Módulo 1: Причастие I (Particípios Ativos no Presente e Passado)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(1, 'B2')">🔓 Módulo 2: Причастие II (Particípios Passivos no Presente e Passado)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(2, 'B2')">🔓 Módulo 3: Краткие причастия (Particípios Curtos na Voz Passiva)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(3, 'B2')">🔓 Módulo 4: Деепричастие I (Gerúndios no Imperfeito - Ações Simultâneas)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 2: Gerúndios Perfeitos, Negócios & Direito</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(4, 'B2')">🔓 Módulo 5: Деепричастие II (Gerúndios no Perfeito - Ações Anteriores)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(5, 'B2')">🔓 Módulo 6: Переговоры и бизнес (Negociação Executiva e Resolução de Conflitos)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(6, 'B2')">🔓 Módulo 7: Юридический язык (Linguagem Jurídica e Burocrática Básica)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(7, 'B2')">🔓 Módulo 8: Экономика и финансы (Economia e Mercado)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 3: Imprensa, Podcasts, Cinema & Academia</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(8, 'B2')">🔓 Módulo 9: Анализ прессы (Análise de Periódicos Nativos - TASS, RIA Novosti)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(9, 'B2')">🔓 Módulo 10: Подкасты и радио (Compreensão de Podcasts Nativos em Velocidade Real)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(10, 'B2')">🔓 Módulo 11: Кино и сериалы (Cinema e Séries Russas sem Legendas)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(11, 'B2')">🔓 Módulo 12: Научные тексты (Redação Acadêmica e Científica)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 4: Literatura, Poesia, Diplomacia & IA</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(12, 'B2')">🔓 Módulo 13: Русская литература II (Dostoiévski e Tolstói)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(13, 'B2')">🔓 Módulo 14: Русская поэзия (Poesia Russa: Esenin, Akhmatova, Tsvetaeva)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(14, 'B2')">🔓 Módulo 15: Политика и международные отношения (Relações Internacionais)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(15, 'B2')">🔓 Módulo 16: Технологии и ИИ (Tecnologia e Inteligência Artificial)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 5: Sintaxe, Estilística, Expressões & Oratória</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(16, 'B2')">🔓 Módulo 17: Сложный синтаксис (Sintaxe Avançada e Períodos Compostos)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(17, 'B2')">🔓 Módulo 18: Стилистика русского языка (Estilística e Registros de Fala)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(18, 'B2')">🔓 Módulo 19: Идиоматика высокого уровня (Expressões Idiomáticas Avançadas)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(19, 'B2')">🔓 Módulo 20: Публичное выступление (Oratória e Discursos Públicos)</button>
+            </div>
+        </div>
+
+        <div class="secao-trilha">
+            <h3>📂 Seção 6: Entrevistas, Ensaios, TORFL & Desafio Final B2</h3>
+            <div>
+                <button class="btn-modulo" onclick="iniciarModulo(20, 'B2')">🔓 Módulo 21: Симуляция интервью (Simulação de Entrevista na Mídia Nativa)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(21, 'B2')">🔓 Módulo 22: Эссе и публицистика (Redação de Ensaios Pessoais)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(22, 'B2')">🔓 Módulo 23: Регламент и сертификация (Revisão Geral de Fluidez B2)</button>
+                <button class="btn-modulo" onclick="iniciarModulo(23, 'B2')">🔓 Módulo 24: Desafio Final B2: Exame Integrado de Fluidez e Certificação Interna</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- TELA 3: PLAYER DE AULAS DE 5 ETAPAS (PADRONIZADO) -->
+    <main id="player-aula" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="etapa-titulo">Etapa 1 de 5</span>
+            <button onclick="fecharAula()">✖ Sair</button>
+        </div>
+        <div id="conteudo-etapa"></div>
+        <div class="botoes-acao">
+            <button id="btn-voltar-etapa" onclick="voltarEtapa()" style="display: none;">⬅ Voltar</button>
+            <button id="btn-avancar" onclick="avancarEtapa()">Avançar ➔</button>
+        </div>
+    </main>
+
+    <!-- TELA 4: PLAYER DE REPETIÇÃO ESPAÇADA (SRS) -->
+    <main id="player-srs" class="container" style="display: none;">
+        <div class="barra-progresso">
+            <span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span>
+            <button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button>
+        </div>
+
+        <div id="conteudo-card-srs" class="srs-container-flex"></div>
+
+        <div class="srs-botoes-acao">
+            <button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">
+                Ver Resposta 👁️
+            </button>
+
+            <div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display: none;">
+                <button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">
+                    ❌ Errei
+                    <small>Revisar amanhã</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">
+                    🟡 Difícil
+                    <small>Aumento leve</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">
+                    🟢 Bom
+                    <small>Intervalo médio</small>
+                </button>
+                <button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">
+                    🌟 Fácil
+                    <small>Intervalo longo</small>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPTS CORE & CURSO -->
+    <script src="../../database/ru-RU/data_curso_russo_a1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_a2.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b2.js"></script>
+
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script>
+    <script src="../../js/course/tabs.js"></script>
+    <script src="../../js/course/course.js"></script>
+    <script src="../../js/course/quiz.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/srs/deck.js"></script>
+    <script src="../../js/srs/engine.js"></script>
+    <script src="../../js/srs/review.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+
+    <script>
+        function speakRussian(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const cleanText = text.split(' ')[0].split('(')[0].trim();
+                const msg = new SpeechSynthesisUtterance(cleanText);
+                msg.lang = 'ru-RU';
+                msg.rate = 0.85;
+                window.speechSynthesis.speak(msg);
+                if (typeof playBeep === 'function') playBeep('click');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initializeCourse === 'function') {
+                initializeCourse('russian');
+            }
+            if (typeof garantirElementosCabecalhoEModal === 'function') {
+                garantirElementosCabecalhoEModal();
+            }
+            if (typeof atualizarHeaderXP === 'function') {
+                atualizarHeaderXP();
+            }
+        });
+    </script>
+</body>
+
+</html>

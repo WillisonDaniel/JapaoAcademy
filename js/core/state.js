@@ -224,11 +224,12 @@ var AppState = {
             const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
             const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
             const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
+            const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
 
-            const prefix = isSpanish ? 'es_' : (isEnglish ? 'en_' : '');
-            const nextIdFallback = isSpanish
-                ? `${prefix}${lvl}_mod_${currentModIndex + 2}`
-                : `${prefix}${lvl}_mod_${String(currentModIndex + 2).padStart(2, '0')}`;
+            const prefix = isRussian ? 'ru_' : (isSpanish ? 'es_' : (isEnglish ? 'en_' : ''));
+            const nextIdFallback = (isSpanish || isRussian || isEnglish)
+                ? `${prefix}${lvl.toLowerCase()}_mod_${String(currentModIndex + 2).padStart(2, '0')}`
+                : `${lvl.toLowerCase()}_mod_${String(currentModIndex + 2).padStart(2, '0')}`;
 
             if (!prog.modulosDesbloqueados.includes(nextIdFallback)) {
                 prog.modulosDesbloqueados.push(nextIdFallback);

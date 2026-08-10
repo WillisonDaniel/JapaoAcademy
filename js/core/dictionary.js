@@ -35,6 +35,13 @@ function compilarGlossarioUniversal() {
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('ingles'))
     ));
 
+    const isRussianMode = (typeof document !== 'undefined' && document.body && (
+        document.body.getAttribute('data-lang') === 'russian' ||
+        document.body.getAttribute('data-mode') === 'russian' ||
+        document.body.getAttribute('data-mode') === 'russo' ||
+        (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
+    ));
+
     if (isSpanishMode) {
         // Mode Spanish: Alphabet (27 Letras), Falsos Cognatos, Heterotónicos, Regionalismos, Vocabularies A1-B2 & Grammars A1-B2
         const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : (typeof window !== 'undefined' ? (window.DICIONARIO_ESPANHOL_DADOS || window.DADOS_ESPANHOL_DICIONARIO) : null));
@@ -396,6 +403,128 @@ function compilarGlossarioUniversal() {
             });
         }
 
+    } else if (isRussianMode) {
+        // Mode Russian: Alphabet (33 Letras), Vocabulary (A1-B2), Grammar & 6 Cases
+        const ruDictData = typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO : (typeof DICIONARIO_RUSSO_DADOS !== 'undefined' ? DICIONARIO_RUSSO_DADOS : (typeof window !== 'undefined' ? (window.DADOS_RUSSO_DICIONARIO || window.DICIONARIO_RUSSO_DADOS) : null));
+
+        if (ruDictData) {
+            // 1. Alfabeto Cirílico
+            if (Array.isArray(ruDictData.alphabet)) {
+                ruDictData.alphabet.forEach(item => {
+                    glossarioUniversalData.push({
+                        cat: 'alphabet',
+                        catLabel: 'ALFABETO',
+                        primary: item.letter,
+                        secondary: `[ ${item.romaji} ] ${item.type || ''}`,
+                        desc: `${item.mnemonic || ''} — Exemplo: ${item.example || ''} (${item.translation || ''})`,
+                        audio: item.letter.split(' ')[0],
+                        level: 'A1',
+                        module: 'Alfabeto Cirílico (Кириллица)'
+                    });
+                });
+            }
+
+            // 2. Vocabulário Temático
+            if (Array.isArray(ruDictData.vocabulary)) {
+                ruDictData.vocabulary.forEach(v => {
+                    glossarioUniversalData.push({
+                        cat: 'vocab',
+                        catLabel: 'VOCABULÁRIO',
+                        primary: v.word,
+                        secondary: `[ ${v.romaji} ] — ${v.translation}`,
+                        desc: v.example ? `Exemplo: "${v.example}"` : '',
+                        audio: v.word,
+                        level: v.level || 'A1',
+                        module: v.category || 'Glossário Temático'
+                    });
+                });
+            }
+
+            // 3. Gramática & 6 Casos
+            if (Array.isArray(ruDictData.grammar)) {
+                ruDictData.grammar.forEach(g => {
+                    glossarioUniversalData.push({
+                        cat: 'grammar',
+                        catLabel: 'GRAMÁTICA',
+                        primary: g.title,
+                        secondary: g.formula || '',
+                        desc: g.rule || '',
+                        context: g.example ? `Exemplo: "${g.example}"` : '',
+                        audio: g.title.split(' ')[0],
+                        level: g.level || 'A1',
+                        module: g.category || 'Casos & Sintaxe'
+                    });
+                });
+            }
+        }
+
+        // Adicionar letras de DADOS_RUSSO_CIRILICO
+        const cirilicoData = typeof DADOS_RUSSO_CIRILICO !== 'undefined' ? DADOS_RUSSO_CIRILICO : (typeof window !== 'undefined' ? window.DADOS_RUSSO_CIRILICO : null);
+        if (cirilicoData && Array.isArray(cirilicoData.modules)) {
+            cirilicoData.modules.forEach(mod => {
+                (mod.chars || []).forEach(ch => {
+                    if (!glossarioUniversalData.some(i => i.primary === ch.char)) {
+                        glossarioUniversalData.push({
+                            cat: 'alphabet',
+                            catLabel: 'ALFABETO',
+                            primary: ch.char,
+                            secondary: `[ ${ch.romaji} ] ${ch.type || ''}`,
+                            desc: `${ch.mnemonic || ''}`,
+                            audio: ch.char.split(' ')[0],
+                            level: 'A1',
+                            module: mod.title
+                        });
+                    }
+                });
+            });
+        }
+
+        // Compilar vocabulários e pílulas gramaticais do curso A1 a B2
+        ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+            let courseArr = null;
+            if (lvl === 'A1') courseArr = typeof CURSO_RUSSO_A1_DADOS !== 'undefined' ? CURSO_RUSSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A1_DADOS : null);
+            else if (lvl === 'A2') courseArr = typeof CURSO_RUSSO_A2_DADOS !== 'undefined' ? CURSO_RUSSO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A2_DADOS : null);
+            else if (lvl === 'B1') courseArr = typeof CURSO_RUSSO_B1_DADOS !== 'undefined' ? CURSO_RUSSO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B1_DADOS : null);
+            else if (lvl === 'B2') courseArr = typeof CURSO_RUSSO_B2_DADOS !== 'undefined' ? CURSO_RUSSO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B2_DADOS : null);
+
+            if (Array.isArray(courseArr)) {
+                courseArr.forEach(rawMod => {
+                    const module = typeof normalizeModule === 'function' ? normalizeModule(rawMod) : rawMod;
+                    const drops = module.drops || module.stage2_drops || module.stage1_drops || [];
+                    drops.forEach(drop => {
+                        if (drop.type === 'grammar_pill' || drop.rule || drop.formula) {
+                            if (!glossarioUniversalData.some(i => i.primary === (drop.title || drop.word))) {
+                                glossarioUniversalData.push({
+                                    cat: 'grammar',
+                                    catLabel: 'GRAMÁTICA',
+                                    primary: drop.title || drop.word || '',
+                                    secondary: drop.formula || '',
+                                    desc: drop.rule || drop.translation || '',
+                                    context: drop.example ? `Ex: "${drop.example}"` : '',
+                                    audio: drop.title || drop.word || '',
+                                    level: lvl,
+                                    module: module.title
+                                });
+                            }
+                        } else if (drop.type === 'vocab' || drop.word || drop.translation) {
+                            const word = drop.word || drop.Russian || '';
+                            if (word && !glossarioUniversalData.some(i => i.primary === word)) {
+                                glossarioUniversalData.push({
+                                    cat: 'vocab',
+                                    catLabel: 'VOCABULÁRIO',
+                                    primary: word,
+                                    secondary: `[ ${drop.romaji || ''} ] — ${drop.translation || drop.meaning || ''}`,
+                                    desc: drop.example ? `Ex: "${drop.example}"` : '',
+                                    audio: drop.word || word,
+                                    level: lvl,
+                                    module: module.title
+                                });
+                            }
+                        }
+                    });
+                });
+            }
+        });
 
     } else {
         // Mode Japanese: HIRA/KATA Course Vocab, Course Vocab (A1-B2) & Grammar, then Kanji (N5-N1), Hiragana, Katakana
@@ -982,11 +1111,23 @@ function renderizarResultadosDicionario(queryStr = '') {
         return;
     }
 
+    const isRussianMode = (typeof document !== 'undefined' && document.body && (
+        document.body.getAttribute('data-lang') === 'russian' ||
+        document.body.getAttribute('data-mode') === 'russian' ||
+        document.body.getAttribute('data-mode') === 'russo' ||
+        (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
+    ));
+
     const resFiltrado = universalData.filter(item => {
+        if (typeof window !== 'undefined' && typeof window.filtroLetraInicialRusso === 'function') {
+            if (!window.filtroLetraInicialRusso(item)) return false;
+        }
+
         if (categoriaAtivaDict === 'favoritos') {
             if (typeof isWordFavorited === 'function' && !isWordFavorited(item.primary) && !isWordFavorited(item.audio)) return false;
-        } else if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) return false;
-        else if (categoriaAtivaDict !== 'tudo' && item.cat !== categoriaAtivaDict) return false;
+        } else if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) {
+            if (!isRussianMode) return false;
+        } else if (categoriaAtivaDict !== 'tudo' && item.cat !== categoriaAtivaDict) return false;
 
         if (item.cat === 'kanji' && subNivelKanjiDict !== 'tudo' && item.level !== subNivelKanjiDict) return false;
 

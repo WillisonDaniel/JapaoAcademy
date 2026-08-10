@@ -19,6 +19,7 @@ function getDeckKeySRS(tipo) {
     if (t === 'kanji_n3' || t === 'n3') return 'ja_srs_kanji_n3_deck';
     if (t === 'kanji_n2' || t === 'n2') return 'ja_srs_kanji_n2_deck';
     if (t === 'kanji_n1' || t === 'n1') return 'ja_srs_kanji_n1_deck';
+    if (t === 'cirilico' || t === 'cyrillic' || t === 'russo_cirilico') return 'ru_srs_cirilico_deck';
     if (t === 'phrasal_verbs' || t === 'phrasal') return 'en_srs_phrasal_verbs_deck';
     if (t === 'falsos_amigos' || t === 'falsos') return 'es_srs_falsos_amigos_deck';
     if (t === 'a2') return 'ja_srs_a2_deck';
@@ -42,7 +43,63 @@ function sincronizarBaralhoSRS(tipo = 'a1') {
         return true;
     };
 
-    const isSpecialCourse = ['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs', 'phrasal', 'falsos_amigos', 'falsos'].includes(t);
+    const isSpecialCourse = ['hiragana', 'katakana', 'kanji', 'kanji_n5', 'kanji_n4', 'kanji_n3', 'kanji_n2', 'kanji_n1', 'phrasal_verbs', 'phrasal', 'falsos_amigos', 'falsos', 'cirilico', 'cyrillic', 'russo_cirilico'].includes(t);
+
+    if (t === 'cirilico' || t === 'cyrillic' || t === 'russo_cirilico') {
+        if (typeof DADOS_RUSSO_CIRILICO !== 'undefined') {
+            const tamOrig = deck.length;
+            deck = deck.filter(card => {
+                const isDone = localStorage.getItem(`cyrillic_mod_done_${card.modId}`) === 'true';
+                return isDone;
+            });
+            if (deck.length !== tamOrig) alterado = true;
+
+            DADOS_RUSSO_CIRILICO.modules.forEach((mod) => {
+                const isDone = localStorage.getItem(`cyrillic_mod_done_${mod.id}`) === 'true';
+                if (isDone) {
+                    modulosConcluidosNomes.push(mod.title || `Módulo ${mod.id}`);
+                    if (mod.chars && Array.isArray(mod.chars)) {
+                        mod.chars.forEach((c, charIdx) => {
+                            const cardId = `cyr_c_${mod.id}_${charIdx}_${c.char.split(' ')[0]}`;
+                            adicionarCardSeNovo(cardId, () => ({
+                                id: cardId,
+                                modId: mod.id,
+                                modIdx: mod.id - 1,
+                                modTitle: mod.title,
+                                dropType: 'cyr_char',
+                                char: c.char,
+                                romaji: c.romaji,
+                                mnemonic: c.mnemonic,
+                                repetition: 0,
+                                interval: 0,
+                                easeFactor: 2.5,
+                                dueDate: Date.now()
+                            }));
+                        });
+                    }
+                    if (mod.vocab && Array.isArray(mod.vocab)) {
+                        mod.vocab.forEach((v, vIdx) => {
+                            const cardId = `cyr_v_${mod.id}_${vIdx}_${v.word}`;
+                            adicionarCardSeNovo(cardId, () => ({
+                                id: cardId,
+                                modId: mod.id,
+                                modIdx: mod.id - 1,
+                                modTitle: mod.title,
+                                dropType: 'cyr_vocab',
+                                char: v.word,
+                                romaji: v.romaji,
+                                meaning: v.meaning,
+                                repetition: 0,
+                                interval: 0,
+                                easeFactor: 2.5,
+                                dueDate: Date.now()
+                            }));
+                        });
+                    }
+                }
+            });
+        }
+    }
 
     let dadosCurso = null;
     if (!isSpecialCourse) {

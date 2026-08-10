@@ -91,8 +91,8 @@ function normalizeModule(rawModule) {
         };
     });
 
-    // 5. Dialog (stage4_dialog / stage3_dialogues -> dialog)
-    const rawDialog = rawModule.dialog || rawModule.stage4_dialog || rawModule.stage3_dialogues || rawModule.dialogues || [];
+    // 5. Dialog (stage4_dialog / stage3_dialogues / stage4_dialogue -> dialog)
+    const rawDialog = rawModule.dialog || rawModule.stage4_dialog || rawModule.stage4_dialogue || rawModule.stage3_dialogues || rawModule.dialogues || [];
     const dialog = (Array.isArray(rawDialog) ? rawDialog : []).map(item => {
         if (!item || typeof item !== 'object') return item;
         const speaker = item.speaker || item.npcName || 'Pessoa';
@@ -111,20 +111,25 @@ function normalizeModule(rawModule) {
         };
     });
 
-    // 6. SentenceBuilder (stage4_sentence_builder / stage3_5_sentenceBuilder -> sentenceBuilder)
-    const rawSB = rawModule.sentenceBuilder || rawModule.stage3_5_sentenceBuilder || rawModule.stage4_sentence_builder || [];
+    // 6. SentenceBuilder (stage4_sentence_builder / stage3_5_sentenceBuilder / stage3_sentences -> sentenceBuilder)
+    const rawSB = rawModule.sentenceBuilder || rawModule.stage3_5_sentenceBuilder || rawModule.stage3_sentences || rawModule.stage4_sentence_builder || [];
     const sentenceBuilder = (Array.isArray(rawSB) ? rawSB : []).map(item => {
         if (!item || typeof item !== 'object') return item;
         const sentenceEn = item.sentenceEn || item.sentenceJp || item.sentenceEs || item.target || '';
         const translation = item.translation || item.target || item.portuguese || item.Portuguese || '';
-        const chunks = (Array.isArray(item.chunks) && item.chunks.length > 0) ? item.chunks : ((Array.isArray(item.words) && item.words.length > 0) ? item.words : []);
+        let chunks = (Array.isArray(item.chunks) && item.chunks.length > 0) ? item.chunks : ((Array.isArray(item.words) && item.words.length > 0) ? item.words : ((Array.isArray(item.tokens) && item.tokens.length > 0) ? item.tokens : []));
+        if ((!Array.isArray(chunks) || chunks.length === 0) && (item.sentence || item.sentenceRu || item.sentenceEn || item.sentenceEs || item.target)) {
+            const rawText = item.sentence || item.sentenceRu || item.sentenceEn || item.sentenceEs || item.target || '';
+            chunks = rawText.split(/\s+/).filter(Boolean);
+        }
         return {
             ...item,
             sentenceEn,
             sentenceEs: item.sentenceEs || sentenceEn,
             translation,
             chunks,
-            words: chunks
+            words: chunks,
+            tokens: chunks
         };
     });
 

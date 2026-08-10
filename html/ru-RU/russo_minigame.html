@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minigame Cirílico Arcade - Russo Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            background: var(--bg-color, #0f172a);
+            color: var(--text-main, #f8fafc);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Arena Central Arcade */
+        .arcade-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 16px 40px 16px;
+            width: 100%;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        .arcade-box {
+            background: var(--card-bg, #1e293b);
+            border: 2px solid var(--border-color, #334155);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: var(--shadow, 0 8px 32px rgba(0,0,0,0.12));
+            transition: all 0.3s ease;
+        }
+
+        .arcade-title {
+            font-family: 'Outfit', 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, #0284c7, #6366f1, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .dark-theme .arcade-title {
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .arcade-subtitle {
+            text-align: center;
+            color: var(--text-muted, #64748b);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        /* Banner de Recorde */
+        .arcade-score-banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background: var(--bg-color, #f8fafc);
+            border: 1px solid var(--border-color, #cbd5e1);
+            border-radius: 16px;
+            padding: 12px 20px;
+            margin-bottom: 24px;
+        }
+
+        .score-pill {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .score-pill.high { color: #0284c7; }
+        .score-pill.combo { color: #d97706; }
+        .dark-theme .score-pill.high { color: #38bdf8; }
+        .dark-theme .score-pill.combo { color: #f59e0b; }
+
+        /* Grid de Seleção */
+        .setup-section-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0284c7;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dark-theme .setup-section-title {
+            color: #38bdf8;
+        }
+
+        .mode-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .opt-card {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            border-radius: 16px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .opt-card:hover {
+            border-color: #0284c7;
+            transform: translateY(-2px);
+        }
+
+        .dark-theme .opt-card:hover {
+            border-color: #38bdf8;
+        }
+
+        .opt-card.selected {
+            border-color: #0284c7;
+            background: rgba(2, 132, 199, 0.1);
+            box-shadow: 0 0 15px rgba(2, 132, 199, 0.2);
+        }
+
+        .dark-theme .opt-card.selected {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.15);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+        }
+
+        .opt-card-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            color: var(--text-main, #0f172a);
+        }
+
+        .opt-card-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted, #64748b);
+        }
+
+        .filter-select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            background: var(--bg-color, #f1f5f9);
+            border: 1px solid var(--border-color, #cbd5e1);
+            color: var(--text-main, #0f172a);
+            font-size: 0.95rem;
+            margin-top: 8px;
+            outline: none;
+        }
+
+        /* Botão Principal */
+        .btn-start-arcade {
+            width: 100%;
+            padding: 18px;
+            border-radius: 18px;
+            border: none;
+            background: linear-gradient(135deg, #0284c7, #6366f1);
+            color: #ffffff;
+            font-family: 'Outfit', 'Fredoka', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+            transition: all 0.2s ease;
+        }
+
+        .btn-start-arcade:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
+        }
+
+        /* HUD Bar do Jogo */
+        .hud-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: var(--bg-color, #f1f5f9);
+            border-radius: 16px;
+            padding: 12px 18px;
+            border: 1px solid var(--border-color, #cbd5e1);
+        }
+
+        .hud-item {
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .hud-lives { color: #ef4444; }
+        .hud-combo { color: #f59e0b; }
+        .hud-score { color: #0284c7; }
+
+        .dark-theme .hud-score { color: #38bdf8; }
+
+        /* Barra de Tempo Regressivo */
+        .timer-container {
+            width: 100%;
+            height: 10px;
+            background: var(--bg-color, #e2e8f0);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .timer-bar {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);
+            transition: width 0.1s linear;
+        }
+
+        /* Card da Pergunta Prompt */
+        .prompt-card {
+            background: var(--bg-color, #f8fafc);
+            border: 2px solid var(--border-color, #cbd5e1);
+            border-radius: 20px;
+            padding: 32px 20px;
+            text-align: center;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .prompt-main-text {
+            font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-main, #0f172a);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .prompt-sub-text {
+            font-size: 1rem;
+            color: var(--text-muted, #64748b);
+        }
+
+        .btn-audio-prompt {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(2, 132, 199, 0.1);
+            border: 1px solid #0284c7;
+            color: #0284c7;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .dark-theme .btn-audio-prompt {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-audio-prompt:hover {
+            transform: scale(1.1);
+            background: #0284c7;
+            color: #fff;
+        }
+
+        /* Múltipla Escolha Grid */
+        .mc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .mc-btn {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            border-radius: 16px;
+            padding: 18px 12px;
+            color: var(--text-main, #0f172a);
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-align: center;
+        }
+
+        .mc-btn:hover {
+            border-color: #0284c7;
+            background: var(--card-bg, #ffffff);
+            transform: translateY(-2px);
+        }
+
+        .dark-theme .mc-btn:hover {
+            border-color: #38bdf8;
+            background: #26334d;
+        }
+
+        .mc-btn.correct {
+            background: #10b981 !important;
+            border-color: #10b981 !important;
+            color: #fff !important;
+            animation: popSuccess 0.3s ease;
+        }
+
+        .mc-btn.wrong {
+            background: #ef4444 !important;
+            border-color: #ef4444 !important;
+            color: #fff !important;
+            animation: shakeError 0.3s ease;
+        }
+
+        /* Botões do Modo Pegadinha (VERDADE / PEGADINHA) */
+        .pegadinha-btn {
+            border-radius: 18px;
+            padding: 22px 14px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            font-family: 'Outfit', 'Fredoka', sans-serif;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .pegadinha-btn.btn-verdade {
+            background: #10b981;
+            border: 2px solid #059669;
+            color: #ffffff;
+        }
+
+        .pegadinha-btn.btn-verdade:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+
+        .pegadinha-btn.btn-pegadinha {
+            background: #ef4444;
+            border: 2px solid #dc2626;
+            color: #ffffff;
+        }
+
+        .pegadinha-btn.btn-pegadinha:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        /* Digitação + Teclado Virtual */
+        .typing-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .type-input-field {
+            width: 100%;
+            padding: 16px;
+            border-radius: 16px;
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            color: var(--text-main, #0f172a);
+            font-size: 1.2rem;
+            font-weight: 700;
+            outline: none;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /* Teclado Virtual Cirílico em Tela */
+        .cyrillic-keyboard {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: var(--bg-color, #0f172a);
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color, #334155);
+        }
+
+        .kbd-row {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .kbd-key {
+            background: var(--card-bg, #1e293b);
+            border: 1px solid var(--border-color, #334155);
+            color: var(--text-main, #f8fafc);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            flex: 1;
+            max-width: 44px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.1s ease;
+        }
+
+        .kbd-key:hover {
+            background: #0284c7;
+            color: #fff;
+        }
+
+        .dark-theme .kbd-key:hover {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .kbd-key:active {
+            transform: scale(0.92);
+        }
+
+        .kbd-key.wide {
+            max-width: 90px;
+            font-size: 0.9rem;
+            background: var(--border-color, #cbd5e1);
+        }
+
+        .kbd-key.submit-key {
+            max-width: 120px;
+            background: #10b981;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        /* Reconhecimento por Voz */
+        .voice-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-mic-big {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #f43f5e;
+            background: rgba(244, 63, 94, 0.15);
+            color: #f43f5e;
+            font-size: 2.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.3);
+        }
+
+        .btn-mic-big.listening {
+            animation: pulseMic 1.2s infinite;
+            background: #f43f5e;
+            color: #fff;
+        }
+
+        .voice-status {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-muted, #64748b);
+        }
+
+        .voice-transcript {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0284c7;
+            min-height: 40px;
+        }
+
+        .dark-theme .voice-transcript {
+            color: #38bdf8;
+        }
+
+        /* TELA DE RESULTADOS */
+        .results-box {
+            text-align: center;
+        }
+
+        .results-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .stat-card {
+            background: var(--bg-color, #f1f5f9);
+            border: 1px solid var(--border-color, #cbd5e1);
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0284c7;
+        }
+
+        .dark-theme .stat-num {
+            color: #38bdf8;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted, #64748b);
+            margin-top: 4px;
+        }
+
+        @keyframes popSuccess {
+            0% { transform: scale(0.95); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shakeError {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        @keyframes pulseMic {
+            0% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(244, 63, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+        }
+
+        @media (max-width: 600px) {
+            .mc-grid { grid-template-columns: 1fr; }
+            .prompt-main-text { font-size: 2.8rem; }
+            .kbd-key { font-size: 0.95rem; padding: 8px 0; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body data-mode="russian" data-lang="russian">
+
+    <header>
+        <a href="../../hub_russo.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+    </header>
+
+    <div class="arcade-container">
+        <div class="arcade-box">
+
+            <!-- 1. TELA DE CONFIGURAÇÃO DO JOGO -->
+            <div id="screen-config" style="display: block;">
+                <h2 class="arcade-title">⚡ Arena Cirílica Arcade</h2>
+                <p class="arcade-subtitle">Desafie sua velocidade de leitura, digitação e pronúncia no idioma russo!</p>
+
+                <!-- Recordes -->
+                <div class="arcade-score-banner">
+                    <span class="score-pill high">🏆 Recorde: <span id="cfg-high-score">0</span> pts</span>
+                    <span style="color: var(--border-color, #cbd5e1);">|</span>
+                    <span class="score-pill combo">🔥 Maior Combo: <span id="cfg-max-combo">0</span>x</span>
+                </div>
+
+                <!-- 1. MODO DE JOGO -->
+                <div class="setup-section-title">🎮 1. Escolha o Conteúdo do Treino</div>
+                <div class="mode-grid">
+                    <div class="opt-card selected" id="card-mode-letters" onclick="selectGameMode('letters')">
+                        <div class="opt-card-title">🔤 Modo 1: Apenas Letras Cirílicas</div>
+                        <div class="opt-card-desc">Foco no treino rápido das 33 letras cirílicas e seus sons nativos.</div>
+                    </div>
+                    <div class="opt-card" id="card-mode-vocab" onclick="selectGameMode('vocab')">
+                        <div class="opt-card-title">📚 Modo 2: Palavras da Trilha</div>
+                        <div class="opt-card-desc">Vocabulário dos módulos do curso (A1 a B2) com pronúncia real.</div>
+                    </div>
+                    <div class="opt-card" id="card-mode-pegadinha" onclick="selectGameMode('pegadinha')">
+                        <div class="opt-card-title">⚡ Modo 3: Pegadinha Cirílica (3s)</div>
+                        <div class="opt-card-desc">Reflexo ultra-rápido: 3 segundos para decidir entre VERDADE ou PEGADINHA!</div>
+                    </div>
+                </div>
+
+                <!-- SUB-FILTRO (ALFABETO OU TRILHA) -->
+                <div id="subfilter-letters-box" style="margin-bottom: 24px;">
+                    <div class="setup-section-title">📂 Filtro de Módulos do Alfabeto</div>
+                    <select id="filter-letters-select" class="filter-select">
+                        <option value="all">🌟 Todos os 6 Módulos (33 Letras Cirílicas)</option>
+                        <option value="1">Módulo 1: Amigos Verdadeiros (А, К, М, О, Т, В, Р, С, Х)</option>
+                        <option value="2">Módulo 2: Formas Gregas (Б, Г, Д, З, П, Ф)</option>
+                        <option value="3">Módulo 3: Sons Suaves & Vogais (И, Й, Л, П, Я)</option>
+                        <option value="4">Módulo 4: Chiantes & Especiais (Ж, Ч, Ш, Щ, Ц, Э)</option>
+                        <option value="5">Módulo 5: Sinais & Raridades (Ъ, Ы, Ь, Ё)</option>
+                    </select>
+                </div>
+
+                <div id="subfilter-vocab-box" style="display: none; margin-bottom: 24px;">
+                    <div class="setup-section-title">🎯 Filtro de Nível do Curso</div>
+                    <select id="filter-vocab-select" class="filter-select">
+                        <option value="all">🌈 Misto (A1 a B2 - Todos os Níveis)</option>
+                        <option value="A1">🟢 Nível A1: Primeiras Frases e Fundamentos</option>
+                        <option value="A2">🟡 Nível A2: Autonomia e Situações Reais</option>
+                        <option value="B1">🟠 Nível B1: Autonomia & Os 6 Casos Gramaticais</option>
+                        <option value="B2">🔴 Nível B2: Fluência Avançada & Notícias Nativas</option>
+                    </select>
+                </div>
+
+                <!-- 2. MODO DE RESPOSTA -->
+                <div id="setup-input-mode-section">
+                    <div class="setup-section-title">⌨️ 2. Escolha o Modo de Resposta</div>
+                    <div class="mode-grid">
+                        <div class="opt-card selected" id="card-input-mc" onclick="selectInputMode('mc')">
+                            <div class="opt-card-title">🔘 Múltipla Escolha</div>
+                            <div class="opt-card-desc">4 opções em cards com resposta rápida.</div>
+                        </div>
+                        <div class="opt-card" id="card-input-typing" onclick="selectInputMode('typing')">
+                            <div class="opt-card-title">⌨️ Digitação</div>
+                            <div class="opt-card-desc">Campo com teclado virtual cirílico na tela.</div>
+                        </div>
+                        <div class="opt-card" id="card-input-voice" onclick="selectInputMode('voice')">
+                            <div class="opt-card-title">🎙️ Pronúncia (Voz)</div>
+                            <div class="opt-card-desc">Fale a resposta usando voz ru-RU.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-start-arcade" onclick="startGame()">INICIAR ARENA 🚀</button>
+            </div>
+
+            <!-- 2. TELA DE JOGO ARCADE -->
+            <div id="screen-game" style="display: none;">
+
+                <!-- HUD Bar -->
+                <div class="hud-bar">
+                    <div class="hud-item hud-lives" id="game-lives">❤️❤️❤️</div>
+                    <div class="hud-item hud-combo" id="game-combo">🔥 x1</div>
+                    <div class="hud-item hud-score">⭐ <span id="game-score">0</span></div>
+                </div>
+
+                <!-- Barra do Relógio Regressivo -->
+                <div class="timer-container">
+                    <div class="timer-bar" id="timer-bar"></div>
+                </div>
+
+                <!-- Card da Questão Prompt -->
+                <div class="prompt-card">
+                    <button class="btn-audio-prompt" onclick="playCurrentAudio()" title="Ouvir Pronúncia">🔊</button>
+                    <div class="prompt-main-text" id="prompt-text">Ж ж</div>
+                    <div class="prompt-sub-text" id="prompt-sub">Qual é o som desta letra cirílica?</div>
+                </div>
+
+                <!-- Múltipla Escolha Container -->
+                <div id="mode-mc-container" class="mc-grid" style="display: grid;">
+                    <button class="mc-btn" onclick="checkAnswerMC(0)" id="mc-btn-0">A</button>
+                    <button class="mc-btn" onclick="checkAnswerMC(1)" id="mc-btn-1">B</button>
+                    <button class="mc-btn" onclick="checkAnswerMC(2)" id="mc-btn-2">C</button>
+                    <button class="mc-btn" onclick="checkAnswerMC(3)" id="mc-btn-3">D</button>
+                </div>
+
+                <!-- Digitação Container -->
+                <div id="mode-typing-container" class="typing-box" style="display: none;">
+                    <input type="text" id="type-input" class="type-input-field" placeholder="Digite em cirílico..." autocomplete="off">
+
+                    <!-- Teclado Virtual Cirílico Integrado -->
+                    <div class="cyrillic-keyboard">
+                        <div class="kbd-row">
+                            <button class="kbd-key" onclick="pressKbd('Й')">Й</button>
+                            <button class="kbd-key" onclick="pressKbd('Ц')">Ц</button>
+                            <button class="kbd-key" onclick="pressKbd('У')">У</button>
+                            <button class="kbd-key" onclick="pressKbd('К')">К</button>
+                            <button class="kbd-key" onclick="pressKbd('Е')">Е</button>
+                            <button class="kbd-key" onclick="pressKbd('Н')">Н</button>
+                            <button class="kbd-key" onclick="pressKbd('Г')">Г</button>
+                            <button class="kbd-key" onclick="pressKbd('Ш')">Ш</button>
+                            <button class="kbd-key" onclick="pressKbd('Щ')">Щ</button>
+                            <button class="kbd-key" onclick="pressKbd('З')">З</button>
+                            <button class="kbd-key" onclick="pressKbd('Х')">Х</button>
+                            <button class="kbd-key" onclick="pressKbd('Ъ')">Ъ</button>
+                        </div>
+                        <div class="kbd-row">
+                            <button class="kbd-key" onclick="pressKbd('Ф')">Ф</button>
+                            <button class="kbd-key" onclick="pressKbd('Ы')">Ы</button>
+                            <button class="kbd-key" onclick="pressKbd('В')">В</button>
+                            <button class="kbd-key" onclick="pressKbd('А')">А</button>
+                            <button class="kbd-key" onclick="pressKbd('П')">П</button>
+                            <button class="kbd-key" onclick="pressKbd('Р')">Р</button>
+                            <button class="kbd-key" onclick="pressKbd('О')">О</button>
+                            <button class="kbd-key" onclick="pressKbd('Л')">Л</button>
+                            <button class="kbd-key" onclick="pressKbd('Д')">Д</button>
+                            <button class="kbd-key" onclick="pressKbd('Ж')">Ж</button>
+                            <button class="kbd-key" onclick="pressKbd('Э')">Э</button>
+                        </div>
+                        <div class="kbd-row">
+                            <button class="kbd-key" onclick="pressKbd('Я')">Я</button>
+                            <button class="kbd-key" onclick="pressKbd('Ч')">Ч</button>
+                            <button class="kbd-key" onclick="pressKbd('С')">С</button>
+                            <button class="kbd-key" onclick="pressKbd('М')">М</button>
+                            <button class="kbd-key" onclick="pressKbd('И')">И</button>
+                            <button class="kbd-key" onclick="pressKbd('Т')">Т</button>
+                            <button class="kbd-key" onclick="pressKbd('Ь')">Ь</button>
+                            <button class="kbd-key" onclick="pressKbd('Б')">Б</button>
+                            <button class="kbd-key" onclick="pressKbd('Ю')">Ю</button>
+                            <button class="kbd-key wide" onclick="pressKbd('BACK')">⌫ Apagar</button>
+                            <button class="kbd-key wide" onclick="pressKbd('CLEAR')">🧹 Limpar</button>
+                            <button class="kbd-key submit-key" onclick="checkAnswerTyping()">↵ Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pronúncia / Voz Container -->
+                <div id="mode-voice-container" class="voice-box" style="display: none;">
+                    <button class="btn-mic-big" id="btn-mic" onclick="toggleVoiceRecognition()" title="Clique para falar">🎙️</button>
+                    <div class="voice-status" id="voice-status">Clique no microfone para falar em Russo</div>
+                    <div class="voice-transcript" id="voice-transcript">...</div>
+                    <button class="mc-btn" onclick="checkAnswerVoice()" style="max-width: 300px; margin-top: 10px;">✅ Validar Resposta de Voz</button>
+                </div>
+
+                <!-- Pegadinha Cirílica 3s Container -->
+                <div id="mode-pegadinha-container" style="display: none; flex-direction: column; gap: 16px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <button class="pegadinha-btn btn-verdade" onclick="checkAnswerPegadinha(true)">
+                            🟢 É VERDADE
+                        </button>
+                        <button class="pegadinha-btn btn-pegadinha" onclick="checkAnswerPegadinha(false)">
+                            🔴 É PEGADINHA
+                        </button>
+                    </div>
+                    <div id="pegadinha-feedback-banner" style="display: none; padding: 14px 18px; border-radius: 14px; font-weight: 700; font-size: 0.95rem; text-align: center; margin-top: 10px;"></div>
+                </div>
+
+            </div>
+
+            <!-- 3. TELA DE RESULTADOS DO JOGO -->
+            <div id="screen-results" class="results-box" style="display: none;">
+                <h2 class="results-title" id="results-title">🎉 Fim de Jogo!</h2>
+                <p style="color: var(--text-muted);">Sua partida na Arena Cirílica Arcade foi concluída.</p>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-num" id="res-score">0</div>
+                        <div class="stat-label">Pontuação Total</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num" id="res-combo">x1</div>
+                        <div class="stat-label">Maior Combo</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-num" id="res-xp">+0 XP</div>
+                        <div class="stat-label">Recompensa de XP</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-start-arcade" onclick="startGame()" style="max-width: 260px;">🔄 JOGAR NOVAMENTE</button>
+                    <button class="btn-start-arcade" onclick="showConfigScreen()" style="max-width: 260px; background: var(--bg-color); color: var(--text-main); border: 2px solid var(--border-color);">⚙️ CONFIGURAÇÕES</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SCRIPTS DOS DATASETS RUSSO -->
+    <script src="../../database/ru-RU/data_russo_cirilico.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_a1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_a2.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b1.js"></script>
+    <script src="../../database/ru-RU/data_curso_russo_b2.js"></script>
+
+    <!-- FIREBASE E CORE -->
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/minigame/minigame_russo.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>
