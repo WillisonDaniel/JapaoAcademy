@@ -279,11 +279,12 @@ function getCourseData(mode) {
     if (m === 'pronuncia' || m === 'pronunciation') {
         return typeof PRONUNCIATION_TOPICS !== 'undefined' ? PRONUNCIATION_TOPICS : (typeof window !== 'undefined' && window.PRONUNCIATION_TOPICS ? window.PRONUNCIATION_TOPICS : null);
     }
-    if (m === 'curso' || m === 'japa' || m === 'spanish' || m === 'espanhol' || m === 'ingles' || m === 'english' || m === 'russian' || m === 'russo' || m === 'a1' || m === 'a2' || m === 'b1' || m === 'b2') {
+    if (m === 'curso' || m === 'japa' || m === 'spanish' || m === 'espanhol' || m === 'ingles' || m === 'english' || m === 'russian' || m === 'russo' || m === 'italian' || m === 'italiano' || m === 'it-it' || m === 'a1' || m === 'a2' || m === 'b1' || m === 'b2') {
         const languageCode = normalizeLanguage(m) || getCurrentLanguageCode();
         const isSpanish = languageCode === 'es-ES';
         const isEnglish = languageCode === 'en-US';
         const isRussian = languageCode === 'ru-RU';
+        const isItalian = languageCode === 'it-IT';
 
         const lvl = (typeof AppState !== 'undefined' && AppState.course && AppState.course.level)
             ? String(AppState.course.level).toUpperCase()
@@ -291,7 +292,10 @@ function getCourseData(mode) {
                 ? mode.toUpperCase()
                 : ((typeof nivelAtivo !== 'undefined' && nivelAtivo) ? String(nivelAtivo).toUpperCase() : 'A1'));
 
-        if (isRussian) {
+        if (isItalian) {
+            if (lvl === 'A1') return typeof CURSO_ITALIANO_A1_DADOS !== 'undefined' ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
+            return null;
+        } else if (isRussian) {
             if (lvl === 'A1') return typeof CURSO_RUSSO_A1_DADOS !== 'undefined' ? CURSO_RUSSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A1_DADOS : null);
             if (lvl === 'A2') return typeof CURSO_RUSSO_A2_DADOS !== 'undefined' ? CURSO_RUSSO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A2_DADOS : null);
             if (lvl === 'B1') return typeof CURSO_RUSSO_B1_DADOS !== 'undefined' ? CURSO_RUSSO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_B1_DADOS : null);

@@ -91,16 +91,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 75, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 76, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('34 paginas HTML e referencias locais validas', () => {
+test('35 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 34, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 35, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -134,7 +134,7 @@ test('skeletons da Etapa 28B preservam o contrato acessivel', () => {
     });
 
     const srsPages = walk(ROOT, '.html').filter(page => fs.readFileSync(page, 'utf8').includes('class="banner-srs"'));
-    assert.equal(srsPages.length, 15, 'quantidade inesperada de paginas com painel SRS');
+    assert.equal(srsPages.length, 16, 'quantidade inesperada de paginas com painel SRS');
     srsPages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         assert.match(html, /class="banner-srs"[^>]*aria-busy="true"/, `${path.relative(ROOT, page)} sem estado inicial do SRS`);
@@ -237,7 +237,7 @@ test('AppState e carregado depois das constantes em todas as paginas', () => {
     }
 });
 
-test('estrutura dos doze cursos principais', () => {
+test('estrutura dos dezessete datasets de cursos principais', () => {
     const courses = [
         ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', 31, 'A1'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', 30, 'A2'],
@@ -254,7 +254,8 @@ test('estrutura dos doze cursos principais', () => {
         ['database/ru-RU/data_curso_russo_a1.js', 'CURSO_RUSSO_A1_DADOS', 24, 'A1'],
         ['database/ru-RU/data_curso_russo_a2.js', 'CURSO_RUSSO_A2_DADOS', 24, 'A2'],
         ['database/ru-RU/data_curso_russo_b1.js', 'CURSO_RUSSO_B1_DADOS', 24, 'B1'],
-        ['database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS', 24, 'B2']
+        ['database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS', 24, 'B2'],
+        ['database/it-IT/data_curso_italiano_a1.js', 'CURSO_ITALIANO_A1_DADOS', 30, 'A1']
     ];
 
     for (const [file, variable, expectedCount, level] of courses) {
@@ -745,7 +746,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 34);
+    assert.equal(pages.length, 35);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
