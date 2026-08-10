@@ -17,6 +17,9 @@ const REQUIRED_OFFLINE = [
     './hub_ingles.html',
     './hub_espanhol.html',
     './hub_russo.html',
+    './hub_italiano.html',
+    './html/it-IT/italiano_curso.html',
+    './database/it-IT/data_curso_italiano_a1.js',
     './meu-progresso.html',
     './html/ru-RU/russo_curso.html',
     './html/ru-RU/russo_alfabeto.html',
@@ -137,6 +140,44 @@ async function runLifecycleSimulation(assets, optionalAssets, listeners) {
     assert.equal(claimed, true, 'service worker nao assumiu as paginas abertas');
 }
 
+async function runItalianDictionaryCachingSimulation() {
+    const request = {
+        method: 'GET',
+        url: 'http://idiomas.local/html/it-IT/italiano_dicionario.html',
+        mode: 'navigate',
+        headers: { get: name => String(name).toLowerCase() === 'accept' ? 'text/html' : null }
+    };
+    const invokeFetch = async runtime => {
+        let responsePromise;
+        runtime.listeners.fetch({ request, respondWith(value) { responsePromise = value; } });
+        return responsePromise;
+    };
+
+    const cold = loadServiceWorker();
+    cold.context.caches.match = async () => null;
+    cold.context.fetch = async () => { throw new Error('offline'); };
+    const explanatory = await invokeFetch(cold);
+    assert.equal(explanatory.status, 503);
+    assert.match(await explanatory.text(), /Abra o dicionário online primeiro/);
+
+    const warm = loadServiceWorker();
+    let cachedResponse = null;
+    warm.context.caches.match = async () => cachedResponse ? cachedResponse.clone() : null;
+    warm.context.caches.open = async () => ({ async put(_request, response) { cachedResponse = response.clone(); } });
+    warm.context.fetch = async () => new Response('<h1>Dicionário italiano carregado</h1>', {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
+    const online = await invokeFetch(warm);
+    assert.match(await online.text(), /Dicionário italiano carregado/);
+    await new Promise(resolve => setImmediate(resolve));
+    assert.ok(cachedResponse, 'a primeira abertura online não armazenou o dicionário sob demanda');
+
+    warm.context.fetch = async () => { throw new Error('offline'); };
+    const offlineAfterWarmup = await invokeFetch(warm);
+    assert.match(await offlineAfterWarmup.text(), /Dicionário italiano carregado/);
+}
+
 async function main() {
     const { CACHE_NAME, ASSETS_TO_CACHE, OPTIONAL_REMOTE_ASSETS } = loadServiceWorker();
     const normalized = ASSETS_TO_CACHE.map(normalizeAsset);
@@ -168,10 +209,15 @@ async function main() {
         `dependencias locais de paginas precacheadas nao estao no cache:\n${missingDependencies.join('\n')}`);
 
     await runLifecycleSimulation(ASSETS_TO_CACHE, OPTIONAL_REMOTE_ASSETS);
+    await runItalianDictionaryCachingSimulation();
 
     console.log(`\u2713 PWA: ${unique.size} recursos locais, ${(totalBytes / 1024 / 1024).toFixed(2)} MB`);
-    console.log('\u2713 contrato offline: shell, Dashboard e area russa completos');
+    assert.equal(unique.has('./html/it-IT/italiano_dicionario.html'), false, 'a página do dicionário italiano deve usar cache sob demanda');
+    assert.equal(unique.has('./database/it-IT/data_dicionario_index.js'), false, 'o índice do dicionário italiano deve usar cache sob demanda');
+
+    console.log('\u2713 contrato offline: shell, Dashboard, area russa e Italiano A1 completos');
     console.log('\u2713 instalacao tolera falhas remotas e ativacao preserva caches de outras aplicacoes');
+    console.log('\u2713 dicionario italiano explica o primeiro acesso offline e funciona apos aquecimento online');
 }
 
 main().catch(error => {

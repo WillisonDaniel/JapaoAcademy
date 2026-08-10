@@ -104,6 +104,34 @@ test('autoridade central normaliza os cinco idiomas e rejeita valor explicito de
     assert.equal(unknown.getCurrentLanguageCode(), null);
 });
 
+test('audio italiano usa it-IT e apresenta fallback quando sintese nao existe', () => {
+    const spoken = [];
+    function Utterance(textValue) { this.text = textValue; }
+    const context = createContext({
+        language: 'italiano',
+        pathname: '/html/it-IT/italiano_curso.html',
+        globals: {
+            SpeechSynthesisUtterance: Utterance,
+            speechSynthesis: { cancel() {}, speak(value) { spoken.push(value); } }
+        }
+    });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/audio.js');
+    context.tocarAudio('Buongiorno');
+    assert.equal(spoken.length, 1);
+    assert.equal(spoken[0].lang, 'it-IT');
+
+    const messages = [];
+    const fallback = createContext({
+        language: 'italian',
+        globals: { mostrarErroRecuperavelUX(type, message) { messages.push([type, message]); } }
+    });
+    runFile(fallback, 'js/core/constants.js');
+    runFile(fallback, 'js/core/audio.js');
+    fallback.tocarAudio('Ciao');
+    assert.deepEqual(plain(messages), [['browser', 'Áudio indisponível']]);
+});
+
 test('SRS produz 20 chaves independentes e preserva decks especiais', () => {
     const context = createContext({ language: 'japanese' });
     runFile(context, 'js/core/constants.js');
@@ -341,12 +369,15 @@ test('curso italiano limita o piloto ao A1 e isola indice, decks e progresso', (
     runFile(context, 'js/core/constants.js');
     runFile(context, 'js/core/course-index.js');
     runFile(context, 'database/it-IT/data_curso_italiano_a1.js');
+    runFile(context, 'js/core/utils.js');
     runFile(context, 'js/srs/engine.js');
     assert.equal(context.getCurrentLanguageCode(), 'it-IT');
     assert.equal(context.getCourseModuleIds('it-IT', 'A1').length, 30);
     assert.equal(context.getCourseModuleIds('it-IT', 'A2').length, 0);
     assert.equal(context.getCourseModuleLanguage('it_a1_mod_17_card_2'), 'it-IT');
     assert.equal(context.getCourseData('italiano').length, 30);
+    assert.equal(context.getTodosOsCursos().A1.length, 30);
+    assert.deepEqual(plain(Object.keys(context.getTodosOsCursos()).filter(level => context.getTodosOsCursos()[level].length)), ['A1']);
     assert.equal(context.getDeckKeySRS('a1'), 'it_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('a2'), 'it_srs_a2_deck');
 
@@ -456,7 +487,10 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v32/);
+    assert.match(serviceWorker, /idiomas-academy-v33/);
+    assert.match(serviceWorker, /Abra o dicionário online primeiro/);
+    assert.match(serviceWorker, /italiano_dicionario\.html/);
+    assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
     assert.match(dom, /const currentLanguageCode = typeof getCurrentLanguageCode === 'function'/);
     assert.match(dom, /const readingOptionsHtml = currentLanguageCode === 'ja-JP' \? `/);
     assert.doesNotMatch(dom, /const readingOptionsHtml = isEnglishMode \?/);
@@ -482,6 +516,10 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     assert.match(packageData.scripts['qa:dashboard'], /dashboard-visual-server\.cjs/);
     assert.doesNotMatch(read('meu-progresso.html'), /data-dashboard-qa-fixture/);
     assert.match(read('tests/RUSSIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como linguisticamente certificado/i);
+    assert.match(read('tests/ITALIAN_EDITORIAL_OCCURRENCES.md'), /Erros técnicos bloqueadores: 0/);
+    assert.match(read('tests/ITALIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como certificado por falante nativo/i);
+    assert.match(packageData.scripts['audit:italian'], /--write/);
+    assert.match(packageData.scripts['audit:italian:check'], /italian-editorial-audit\.cjs/);
 });
 
 test('hubs e imagens principais respeitam o orçamento leve', () => {
@@ -575,7 +613,16 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             locale: 'ru-RU',
             scripts: 27,
             maxBytes: 970 * 1024,
-            dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/
+            dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
+            dataCount: 4
+        },
+        {
+            file: 'html/it-IT/italiano_curso.html',
+            locale: 'it-IT',
+            scripts: 24,
+            maxBytes: 750 * 1024,
+            dataPattern: /database\/it-IT\/data_curso_italiano_a1\.js/,
+            dataCount: 1
         }
     ];
 
@@ -591,7 +638,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
         assert.equal(scriptsLocais.length, course.scripts, `${course.locale}: quantidade inesperada de scripts`);
         assert.ok(bytesLocais <= course.maxBytes, `${course.locale}: ${Math.round(bytesLocais / 1024)} KB locais`);
-        assert.equal(scriptsLocais.filter(src => course.dataPattern.test(src)).length, 4, `${course.locale}: devem existir quatro datasets A1-B2`);
+        assert.equal(scriptsLocais.filter(src => course.dataPattern.test(src)).length, course.dataCount || 4, `${course.locale}: quantidade inesperada de datasets`);
         assert.match(html, /js\/course\/moduleNormalizer\.js/);
         assert.ok(
             html.indexOf('js/course/moduleNormalizer.js') < html.indexOf('js/course/course.js'),
@@ -735,6 +782,7 @@ test('dicionarios de ingles, espanhol, russo e italiano usam indices leves sem p
     assert.match(read('js/core/dictionary.js'), /SPANISH_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /RUSSIAN_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /ITALIAN_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /!isRussianMode && !isItalianMode/);
     assert.ok(JSON.parse(read('database/it-IT/data_dicionario_index.js').match(/Object\.freeze\((\[.*\])\);/)[1]).length >= 250);
 });
 

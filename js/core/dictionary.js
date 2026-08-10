@@ -1211,6 +1211,13 @@ function renderizarResultadosDicionario(queryStr = '') {
         document.body.getAttribute('data-mode') === 'russo' ||
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
     ));
+    const isItalianMode = (typeof getCurrentLanguageCode === 'function' && getCurrentLanguageCode() === 'it-IT') ||
+        (typeof document !== 'undefined' && document.body && (
+            document.body.getAttribute('data-lang') === 'italian' ||
+            document.body.getAttribute('data-lang') === 'it-IT' ||
+            document.body.getAttribute('data-mode') === 'italiano' ||
+            document.body.getAttribute('data-mode') === 'italian'
+        ));
 
     const resFiltrado = universalData.filter(item => {
         if (typeof window !== 'undefined' && typeof window.filtroLetraInicialRusso === 'function') {
@@ -1220,7 +1227,7 @@ function renderizarResultadosDicionario(queryStr = '') {
         if (categoriaAtivaDict === 'favoritos') {
             if (typeof isWordFavorited === 'function' && !isWordFavorited(item.primary) && !isWordFavorited(item.audio)) return false;
         } else if (item.cat === 'alphabet' && (categoriaAtivaDict === 'tudo' || categoriaAtivaDict === 'alphabet')) {
-            if (!isRussianMode) return false;
+            if (!isRussianMode && !isItalianMode) return false;
         } else if (categoriaAtivaDict !== 'tudo' && item.cat !== categoriaAtivaDict) return false;
 
         if (item.cat === 'kanji' && subNivelKanjiDict !== 'tudo' && item.level !== subNivelKanjiDict) return false;

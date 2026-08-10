@@ -25,7 +25,7 @@ npm test
 - totais das bases de hiragana, katakana, kanji, phrasal verbs, pronuncia e minigame;
 - mutadores e pontes legadas do `AppState`;
 - sincronizacao automatica do progresso e XP apos login com Google;
-- dashboard global `Meu Progresso`: Japonês, Inglês, Espanhol e Russo agregados ou filtrados, acesso autenticado, primeiro acesso, meta diária, atividade semanal, SRS, redirecionamentos e sincronização por usuário;
+- dashboard global `Meu Progresso`: Japonês, Inglês, Espanhol, Russo e Italiano agregados ou filtrados, acesso autenticado, primeiro acesso, meta diária, atividade semanal, SRS, redirecionamentos e sincronização por usuário;
 - medicao de sessoes da Etapa 29: modelo v2, migracao v1, tempo ativo, pausa por pagina oculta ou inatividade, retomada, conclusao, descarte de sessoes curtas e temporizador unico;
 - retencao de 200 sessoes e 366 agregados diarios, idempotencia por ID e mesclagem local/remota sem soma dupla;
 - estatisticas avancadas da Etapa 29: periodos 7/30/90, filtros por idioma e atividade, formulas documentadas, dados parciais, distribuicoes textuais e divisao por zero;
@@ -35,10 +35,10 @@ npm test
 - insights personalizados locais da Etapa 29: motor deterministico por regras locais sem IA, maximo de 3 cards prioritarios com acoes diretas;
 - compatibilidade do dashboard com dados antigos, JSON corrompido, Firebase indisponivel, nomes potencialmente maliciosos e estados vazios;
 - atualizacao de intervalo, facilidade e indice do SRS;
-- independência dos 16 decks SRS, migração multidioma v2 e preservação dos backups;
+- independência das 20 combinações de decks SRS; a migração v2 permanece congelada nos 16 decks dos quatro idiomas legados e preserva seus backups;
 - paridade dos índices leves de cursos, dicionários e minigame com os datasets completos;
-- auditoria editorial técnica russa e sincronização do relatório de revisão humana;
-- instalação do PWA, limite de 12 MB, dependências do precache, atualização de cache e contrato offline do shell, Dashboard e área russa;
+- auditorias editoriais técnicas russa e italiana, com relatórios sincronizados e limites de certificação documentados;
+- instalação do PWA, limite de 12 MB, dependências do precache, atualização de cache e contrato offline do shell, Dashboard, área russa e Italiano A1;
 - correcoes criticas da Etapa 22, incluindo B2 modulo 12, Firebase, Service Worker e rolagem das aulas.
 
 O processo termina com codigo diferente de zero se qualquer verificacao falhar, permitindo seu uso futuro em integracao continua.

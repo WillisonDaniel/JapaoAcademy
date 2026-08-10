@@ -153,6 +153,16 @@ function getTodosOsCursos() {
     const isSpanish = languageCode === 'es-ES';
     const isEnglish = languageCode === 'en-US';
     const isRussian = languageCode === 'ru-RU';
+    const isItalian = languageCode === 'it-IT';
+
+    if (isItalian) {
+        return {
+            A1: (typeof CURSO_ITALIANO_A1_DADOS !== 'undefined') ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : []),
+            A2: [],
+            B1: [],
+            B2: []
+        };
+    }
 
     if (isRussian) {
         return {
