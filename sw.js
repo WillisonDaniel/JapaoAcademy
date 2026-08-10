@@ -1,4 +1,4 @@
-const CACHE_NAME = 'idiomas-academy-v24';
+const CACHE_NAME = 'idiomas-academy-v25';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -18,6 +18,7 @@ const ASSETS_TO_CACHE = [
     './database/ru-RU/data_curso_russo_b2.js',
     './database/ru-RU/data_russo_cirilico.js',
     './database/ru-RU/data_russo_dicionario.js',
+    './database/ru-RU/data_dicionario_index.js',
     './html/es-ES/espanhol_curso.html',
     './html/es-ES/espanhol_falsos_amigos.html',
     './html/es-ES/espanhol_minigame_conjugacao.html',
@@ -27,11 +28,13 @@ const ASSETS_TO_CACHE = [
     './database/es-ES/data_espanhol_b1.js',
     './database/es-ES/data_espanhol_b2.js',
     './database/es-ES/data_espanhol_dicionario.js',
+    './database/es-ES/data_dicionario_index.js',
     './html/en-US/curso_ingles.html',
     './database/en-US/data_english_a1.js',
     './database/en-US/data_english_a2.js',
     './database/en-US/data_english_b1.js',
     './database/en-US/data_english_b2.js',
+    './database/en-US/data_dicionario_index.js',
     './html/ja-JP/curso.html',
     './html/ja-JP/meu-progresso.html',
     './meu-progresso.html',

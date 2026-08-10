@@ -91,7 +91,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 72, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 75, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -566,6 +566,90 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
     );
 });
 
+test('indices leves de ingles, espanhol e russo preservam os glossarios compilados', () => {
+    const dictionaries = [
+        {
+            code: 'en-US',
+            language: 'english',
+            mode: 'pronuncia',
+            pathname: '/html/en-US/dicionario_ingles.html',
+            index: 'database/en-US/data_dicionario_index.js',
+            count: 647,
+            datasets: [
+                'database/en-US/data_english_a1.js',
+                'database/en-US/data_english_a2.js',
+                'database/en-US/data_english_b1.js',
+                'database/en-US/data_english_b2.js',
+                'database/en-US/data_phrasal_verbs.js',
+                'database/en-US/data_pronunciation.js'
+            ]
+        },
+        {
+            code: 'es-ES',
+            language: 'spanish',
+            mode: 'espanhol',
+            pathname: '/html/es-ES/espanhol_dicionario.html',
+            index: 'database/es-ES/data_dicionario_index.js',
+            count: 1139,
+            datasets: [
+                'database/es-ES/data_espanhol_a1.js',
+                'database/es-ES/data_espanhol_a2.js',
+                'database/es-ES/data_espanhol_b1.js',
+                'database/es-ES/data_espanhol_b2.js',
+                'database/es-ES/data_espanhol_falsos_amigos.js',
+                'database/es-ES/data_espanhol_fonetica_recursos.js',
+                'database/es-ES/data_espanhol_dicionario.js'
+            ]
+        },
+        {
+            code: 'ru-RU',
+            language: 'russian',
+            mode: 'russo',
+            pathname: '/html/ru-RU/russo_dicionario.html',
+            index: 'database/ru-RU/data_dicionario_index.js',
+            count: 728,
+            datasets: [
+                'database/ru-RU/data_russo_cirilico.js',
+                'database/ru-RU/data_curso_russo_a1.js',
+                'database/ru-RU/data_curso_russo_a2.js',
+                'database/ru-RU/data_curso_russo_b1.js',
+                'database/ru-RU/data_curso_russo_b2.js',
+                'database/ru-RU/data_russo_dicionario.js'
+            ]
+        }
+    ];
+
+    dictionaries.forEach(config => {
+        const documentStub = {
+            body: {
+                getAttribute: name => name === 'data-lang' ? config.language : (name === 'data-mode' ? config.mode : null),
+                classList: { contains: () => true }
+            },
+            getElementById: () => null,
+            querySelectorAll: () => []
+        };
+        const sourceContext = createContext({ document: documentStub, location: { pathname: config.pathname } });
+        config.datasets.forEach(file => runFile(sourceContext, file));
+        runFile(sourceContext, 'js/course/moduleNormalizer.js');
+        runFile(sourceContext, 'js/core/state.js');
+        runFile(sourceContext, 'js/core/dictionary.js');
+        sourceContext.compilarGlossarioUniversal();
+        const sourceGlossary = JSON.parse(JSON.stringify(sourceContext.AppState.dictionary.universalGlossary));
+        assert.equal(sourceGlossary.length, config.count, `${config.code}: quantidade compilada inesperada`);
+
+        const indexedContext = createContext({ document: documentStub, location: { pathname: config.pathname } });
+        runFile(indexedContext, config.index);
+        runFile(indexedContext, 'js/core/state.js');
+        runFile(indexedContext, 'js/core/dictionary.js');
+        indexedContext.compilarGlossarioUniversal();
+        assert.deepEqual(
+            JSON.parse(JSON.stringify(indexedContext.AppState.dictionary.universalGlossary)),
+            sourceGlossary,
+            `${config.code}: indice leve diverge do glossario original`
+        );
+    });
+});
+
 test('algoritmo SRS atualiza intervalo, facilidade e indice', () => {
     const outcomes = {
         1: { interval: 1, easeFactor: 2.3 },
@@ -670,7 +754,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v24'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v25'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -797,7 +881,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v24'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v25'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 

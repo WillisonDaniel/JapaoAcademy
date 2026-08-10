@@ -337,12 +337,7 @@
     </div>
 
     <!-- CARREGAMENTO DOS DATASETS DE RUSSO -->
-    <script src="../../database/ru-RU/data_russo_cirilico.js"></script>
-    <script src="../../database/ru-RU/data_curso_russo_a1.js"></script>
-    <script src="../../database/ru-RU/data_curso_russo_a2.js"></script>
-    <script src="../../database/ru-RU/data_curso_russo_b1.js"></script>
-    <script src="../../database/ru-RU/data_curso_russo_b2.js"></script>
-    <script src="../../database/ru-RU/data_russo_dicionario.js"></script>
+    <script src="../../database/ru-RU/data_dicionario_index.js"></script>
 
     <!-- FIREBASE E CORE -->
     <script type="module" src="../../firebase-init.js"></script>
@@ -355,8 +350,6 @@
     <script src="../../js/core/toast.js"></script>
     <script src="../../js/core/storage.js"></script>
     <script src="../../js/core/dom.js"></script>
-    <script src="../../js/course/moduleNormalizer.js"></script>
-    <script src="../../js/kanji/kanji-canvas.js"></script>
     <script src="../../js/core/dictionary.js"></script>
     <script src="../../js/core/events.js"></script>
     <script src="../../js/game/xp.js"></script>
@@ -432,7 +425,7 @@
             const tbody = document.getElementById('tabela-matriz-casos-body');
             if (!tbody) return;
 
-            const casosData = window.CASOS_GRAMATICAIS_RUSSO || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
+            const casosData = window.CASOS_GRAMATICAIS_RUSSO || window.RUSSIAN_DICTIONARY_CASES || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
             if (!casosData || !Array.isArray(casosData.matrix)) return;
 
             tbody.innerHTML = casosData.matrix.map(c => `
@@ -454,7 +447,7 @@
             const cardsGrid = document.getElementById('cards-palavra-modelo-grid');
             if (!selectorContainer || !cardsGrid) return;
 
-            const casosData = window.CASOS_GRAMATICAIS_RUSSO || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
+            const casosData = window.CASOS_GRAMATICAIS_RUSSO || window.RUSSIAN_DICTIONARY_CASES || (typeof DADOS_RUSSO_DICIONARIO !== 'undefined' ? DADOS_RUSSO_DICIONARIO.casos : null);
             if (!casosData || !Array.isArray(casosData.modelWords)) return;
 
             // Renderizar botões seletores

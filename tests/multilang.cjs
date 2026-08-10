@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v24/);
+    assert.match(serviceWorker, /idiomas-academy-v25/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -532,6 +532,57 @@ test('dicionário japonês usa índice pré-compilado equivalente e leve', () =>
     assert.match(html, /js\/kanji\/kanji-canvas\.js/);
     assert.match(read('sw.js'), /database\/ja-JP\/data_dicionario_index\.js/);
     assert.match(read('package.json'), /"index:dictionary:check"/);
+});
+
+test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recursos auxiliares', () => {
+    const pages = [
+        {
+            file: 'html/en-US/dicionario_ingles.html',
+            locale: 'en-US',
+            maxScripts: 21,
+            maxBytes: 700 * 1024,
+            forbiddenData: /database\/en-US\/(?:data_english_|data_phrasal_verbs|data_pronunciation)/
+        },
+        {
+            file: 'html/es-ES/espanhol_dicionario.html',
+            locale: 'es-ES',
+            maxScripts: 19,
+            maxBytes: 850 * 1024,
+            forbiddenData: /database\/es-ES\/data_espanhol_/
+        },
+        {
+            file: 'html/ru-RU/russo_dicionario.html',
+            locale: 'ru-RU',
+            maxScripts: 18,
+            maxBytes: 620 * 1024,
+            forbiddenData: /database\/ru-RU\/(?:data_curso_russo_|data_russo_cirilico|data_russo_dicionario)/
+        }
+    ];
+
+    pages.forEach(page => {
+        const html = read(page.file);
+        const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+            .map(match => match[1])
+            .filter(src => !/^https?:\/\//.test(src));
+        const bytesLocais = scriptsLocais.reduce((total, src) => {
+            const caminho = path.resolve(ROOT, path.dirname(page.file), src.split(/[?#]/)[0]);
+            return total + fs.statSync(caminho).size;
+        }, 0);
+
+        assert.ok(scriptsLocais.length <= page.maxScripts, `${page.locale}: ${scriptsLocais.length} scripts locais`);
+        assert.ok(bytesLocais <= page.maxBytes, `${page.locale}: ${Math.round(bytesLocais / 1024)} KB locais`);
+        assert.match(html, new RegExp(`database/${page.locale}/data_dicionario_index\\.js`));
+        assert.doesNotMatch(html, page.forbiddenData);
+        assert.doesNotMatch(html, /js\/course\/(?:moduleNormalizer|tabs|course|quiz)\.js/);
+        assert.doesNotMatch(html, /js\/(?:phrasal|pronunciation|minigame)\//);
+        assert.match(read('sw.js'), new RegExp(`database/${page.locale}/data_dicionario_index\\.js`));
+    });
+
+    assert.match(read('database/es-ES/data_dicionario_index.js'), /SPANISH_DICTIONARY_TABLES/);
+    assert.match(read('database/ru-RU/data_dicionario_index.js'), /RUSSIAN_DICTIONARY_CASES/);
+    assert.match(read('js/core/dictionary.js'), /ENGLISH_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /SPANISH_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /RUSSIAN_DICTIONARY_INDEX/);
 });
 
 test('minigame japonês usa conjunto leve e equivalente de Kanji', () => {

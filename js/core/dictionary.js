@@ -42,11 +42,27 @@ function compilarGlossarioUniversal() {
         (typeof window !== 'undefined' && window.location && window.location.pathname && window.location.pathname.toLowerCase().includes('russo'))
     ));
 
-    const japaneseDictionaryIndex = typeof JAPANESE_DICTIONARY_INDEX !== 'undefined'
-        ? JAPANESE_DICTIONARY_INDEX
-        : (typeof window !== 'undefined' ? window.JAPANESE_DICTIONARY_INDEX : null);
-    if (!isSpanishMode && !isEnglishMode && !isRussianMode && Array.isArray(japaneseDictionaryIndex) && japaneseDictionaryIndex.length > 0) {
-        glossarioUniversalData = japaneseDictionaryIndex.slice();
+    let precompiledDictionaryIndex = null;
+    if (isSpanishMode) {
+        precompiledDictionaryIndex = typeof SPANISH_DICTIONARY_INDEX !== 'undefined'
+            ? SPANISH_DICTIONARY_INDEX
+            : (typeof window !== 'undefined' ? window.SPANISH_DICTIONARY_INDEX : null);
+    } else if (isEnglishMode) {
+        precompiledDictionaryIndex = typeof ENGLISH_DICTIONARY_INDEX !== 'undefined'
+            ? ENGLISH_DICTIONARY_INDEX
+            : (typeof window !== 'undefined' ? window.ENGLISH_DICTIONARY_INDEX : null);
+    } else if (isRussianMode) {
+        precompiledDictionaryIndex = typeof RUSSIAN_DICTIONARY_INDEX !== 'undefined'
+            ? RUSSIAN_DICTIONARY_INDEX
+            : (typeof window !== 'undefined' ? window.RUSSIAN_DICTIONARY_INDEX : null);
+    } else {
+        precompiledDictionaryIndex = typeof JAPANESE_DICTIONARY_INDEX !== 'undefined'
+            ? JAPANESE_DICTIONARY_INDEX
+            : (typeof window !== 'undefined' ? window.JAPANESE_DICTIONARY_INDEX : null);
+    }
+
+    if (Array.isArray(precompiledDictionaryIndex) && precompiledDictionaryIndex.length > 0) {
+        glossarioUniversalData = precompiledDictionaryIndex.slice();
         if (typeof AppState !== 'undefined' && typeof AppState.setDictionaryCache === 'function') {
             AppState.setDictionaryCache(glossarioUniversalData);
         } else if (typeof window !== 'undefined') {
@@ -1366,8 +1382,14 @@ function renderizarTabelaAlfabetoIngles() {
 function renderizarTabelaAlfabetoEspanhol() {
     const grid = document.getElementById('dict-alphabet-grid');
     const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : null);
-    if (!grid || !dictData || !Array.isArray(dictData.alfabeto)) return;
-    grid.innerHTML = dictData.alfabeto.map(item => `
+    const precompiledTables = typeof SPANISH_DICTIONARY_TABLES !== 'undefined'
+        ? SPANISH_DICTIONARY_TABLES
+        : (typeof window !== 'undefined' ? window.SPANISH_DICTIONARY_TABLES : null);
+    const alphabet = precompiledTables && Array.isArray(precompiledTables.alphabet)
+        ? precompiledTables.alphabet
+        : (dictData && Array.isArray(dictData.alfabeto) ? dictData.alfabeto : []);
+    if (!grid || alphabet.length === 0) return;
+    grid.innerHTML = alphabet.map(item => `
         <button class="sound-card" onclick="speakKana('${(item.example || item.letter).replace(/'/g, "\\'")}')" style="background:var(--card-bg, #ffffff); border:1.5px solid var(--border-color, #e2e8f0); border-radius:16px; padding:14px 8px; text-align:center; cursor:pointer; transition:all 0.2s ease; box-shadow:0 2px 4px rgba(0,0,0,0.04); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;">
             <div style="font-size:1.6rem; font-weight:700; color:var(--text-main, #0f172a); font-family:'Fredoka', sans-serif;">${item.letter}</div>
             <div style="font-size:0.92rem; color:#0d9488; font-weight:700; font-family:'Fredoka', sans-serif;">[ ${item.name} ]</div>
@@ -1383,8 +1405,13 @@ function renderizarTabelaRegionalismosEspanhol(queryStr = '') {
         ? FONETICA_RECURSOS_ESPANHOL_DADOS
         : (typeof window !== 'undefined' ? window.FONETICA_RECURSOS_ESPANHOL_DADOS : null);
     const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : null);
+    const precompiledTables = typeof SPANISH_DICTIONARY_TABLES !== 'undefined'
+        ? SPANISH_DICTIONARY_TABLES
+        : (typeof window !== 'undefined' ? window.SPANISH_DICTIONARY_TABLES : null);
 
-    const regArray = (fonRecursosData && Array.isArray(fonRecursosData.regionalismos) && fonRecursosData.regionalismos.length > 0)
+    const regArray = (precompiledTables && Array.isArray(precompiledTables.regionalismos) && precompiledTables.regionalismos.length > 0)
+        ? precompiledTables.regionalismos
+        : (fonRecursosData && Array.isArray(fonRecursosData.regionalismos) && fonRecursosData.regionalismos.length > 0)
         ? fonRecursosData.regionalismos
         : (dictData && Array.isArray(dictData.regionalismos) ? dictData.regionalismos : []);
 
