@@ -234,6 +234,17 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const packageData = JSON.parse(read('package.json'));
     assert.equal(manifest.name, 'Idiomas Academy');
     assert.equal(packageData.name, 'idiomas-academy');
+    for (const [file, language] of [
+        ['hub_japones.html', 'Japonês'],
+        ['hub_ingles.html', 'Inglês'],
+        ['hub_espanhol.html', 'Espanhol'],
+        ['hub_russo.html', 'Russo']
+    ]) {
+        const hub = read(file);
+        assert.match(hub, new RegExp(`<title>${language} \\| Idiomas Academy<\\/title>`));
+        assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
+        assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
+    }
     assert.match(serviceWorker, /idiomas-academy-v19/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
