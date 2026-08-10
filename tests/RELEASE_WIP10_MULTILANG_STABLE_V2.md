@@ -11,7 +11,7 @@ Este documento separa evidência técnica reproduzível de validações que depe
 - [x] Instalação limpa validada em origem local nova.
 - [x] Servidor desligado após a instalação; Dashboard, hub russo, curso russo, cirílico, dicionário russo e minigame russo abriram do cache.
 - [x] Páginas afetadas por dependências ausentes — Falsos Amigos, conjugação espanhola, hiragana, Kanji N5 e minigame japonês — revalidadas offline.
-- [x] Cache atualizado para `idiomas-academy-v30` após a correção visual da autenticação; ativação preserva o cache atual e remove caches antigos.
+- [x] Cache atualizado para `idiomas-academy-v31` após restringir as opções japonesas de leitura ao curso de japonês; ativação preserva o cache atual e remove caches antigos.
 - [x] Auditoria russa sem erros técnicos bloqueadores nem ocorrências pendentes.
 - [x] Revisão editorial integral dos 96 módulos russos A1–B2 concluída com apoio do dicionário e da gramática indicados para a rodada.
 - [x] Consistência entre frases, tokens, áudios, diálogos, vocabulário e quizzes russos protegida por teste permanente.

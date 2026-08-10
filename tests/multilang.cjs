@@ -408,6 +408,7 @@ test('XP mantem fallback moderno quando o AppState nao esta disponivel', () => {
 
 test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const serviceWorker = read('sw.js');
+    const dom = read('js/core/dom.js');
     const manifest = JSON.parse(read('manifest.json'));
     const packageData = JSON.parse(read('package.json'));
     const russianReport = read('tests/RUSSIAN_EDITORIAL_OCCURRENCES.md');
@@ -424,7 +425,10 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v30/);
+    assert.match(serviceWorker, /idiomas-academy-v31/);
+    assert.match(dom, /const currentLanguageCode = typeof getCurrentLanguageCode === 'function'/);
+    assert.match(dom, /const readingOptionsHtml = currentLanguageCode === 'ja-JP' \? `/);
+    assert.doesNotMatch(dom, /const readingOptionsHtml = isEnglishMode \?/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [

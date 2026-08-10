@@ -357,9 +357,10 @@ function garantirElementosCabecalhoEModal() {
     }
     modalOp.onclick = function (e) { if (e.target === this && typeof fecharOpcoesCurso === 'function') fecharOpcoesCurso(); };
 
-    const isEnglishMode = (document.body && document.body.getAttribute('data-lang') === 'english') || window.location.pathname.includes('en-US') || window.location.pathname.includes('ingles');
-
-    const readingOptionsHtml = isEnglishMode ? '' : `
+    const currentLanguageCode = typeof getCurrentLanguageCode === 'function'
+        ? getCurrentLanguageCode()
+        : null;
+    const readingOptionsHtml = currentLanguageCode === 'ja-JP' ? `
             <div class="modal-option" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:1.2rem; font-weight:600;">
                 <span style="font-size:0.95rem; color:var(--text-main);">Opções de Exibição de Leitura:</span>
                 <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:0.9rem;">
@@ -379,7 +380,7 @@ function garantirElementosCabecalhoEModal() {
                     <span>Ativar Romaji</span>
                 </label>
             </div>
-    `;
+    ` : '';
 
     modalOp.innerHTML = `
         <div class="modal-box">
