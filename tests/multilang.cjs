@@ -338,6 +338,40 @@ test('Falsos Amigos usa AppState central e curso russo usa nivel SRS ativo', () 
     assert.doesNotMatch(russianCourse, /iniciarSessaoSRS\('a1'\)/);
 });
 
+test('XP sincroniza imediatamente pelo AppState sem reescrever progresso legado', () => {
+    const legacyProgress = JSON.stringify({ xp: 5, modulosConcluidos: ['legado'] });
+    const storage = createStorage({ ja_user_xp: '100', ja_progresso_global: legacyProgress });
+    const context = createContext({ storage });
+    runFile(context, 'js/core/state.js');
+    context.syncAppStateMirror();
+
+    const originalSetXP = context.AppState.setXP.bind(context.AppState);
+    let setCalls = 0;
+    context.AppState.setXP = value => {
+        setCalls++;
+        return originalSetXP(value);
+    };
+    runFile(context, 'js/game/xp.js');
+
+    context.adicionarXP(50, 'teste');
+    assert.equal(context.AppState.user.xp, 150);
+    assert.equal(storage.getItem('ja_user_xp'), '150');
+    context.removerXP(20, 'teste');
+    assert.equal(context.AppState.user.xp, 130);
+    assert.equal(storage.getItem('ja_user_xp'), '130');
+    assert.equal(setCalls, 2);
+    assert.equal(storage.getItem('ja_progresso_global'), legacyProgress);
+    assert.doesNotMatch(read('js/game/xp.js'), /localStorage\.setItem\('ja_progresso_global'/);
+});
+
+test('XP mantem fallback moderno quando o AppState nao esta disponivel', () => {
+    const storage = createStorage({ ja_user_xp: '20' });
+    const context = createContext({ storage });
+    runFile(context, 'js/game/xp.js');
+    context.adicionarXP(5);
+    assert.equal(storage.getItem('ja_user_xp'), '25');
+});
+
 test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const serviceWorker = read('sw.js');
     const manifest = JSON.parse(read('manifest.json'));

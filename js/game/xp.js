@@ -26,22 +26,36 @@ function verificarSubidaNivel(xpAntigo, xpNovo) {
     };
 }
 
+function obterXPAtual() {
+    if (typeof AppState !== 'undefined' && AppState && AppState.runtime && AppState.runtime.initialized) {
+        const xpEstado = Number(AppState.user && AppState.user.xp);
+        if (Number.isFinite(xpEstado)) return Math.max(0, xpEstado);
+    }
+
+    try {
+        const rawXp = localStorage.getItem('ja_user_xp');
+        if (rawXp !== null) return Math.max(0, parseInt(rawXp, 10) || 0);
+        const progressoLegado = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
+        return Math.max(0, parseInt(progressoLegado.xp, 10) || 0);
+    } catch (e) {
+        return 0;
+    }
+}
+
+function definirXPAtual(xp) {
+    const valor = Math.max(0, parseInt(xp, 10) || 0);
+    if (typeof AppState !== 'undefined' && AppState && typeof AppState.setXP === 'function') {
+        return AppState.setXP(valor);
+    }
+    if (typeof localStorage !== 'undefined') localStorage.setItem('ja_user_xp', valor.toString());
+    return valor;
+}
+
 function atualizarHeaderXP() {
     const container = document.getElementById('xp-profile-widget-container');
     if (!container) return;
 
-    let xpTotal = 0;
-    try {
-        const rawXp = localStorage.getItem('ja_user_xp');
-        if (rawXp !== null) {
-            xpTotal = parseInt(rawXp, 10) || 0;
-        } else {
-            const prog = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
-            xpTotal = parseInt(prog.xp, 10) || 0;
-        }
-    } catch (e) {
-        xpTotal = 0;
-    }
+    const xpTotal = obterXPAtual();
 
     const nivelAtual = calcularNivel(xpTotal);
     const xpNoNivel = xpTotal % 100;
@@ -78,11 +92,7 @@ function abrirModalNiveisECargos() {
         document.body.appendChild(modal);
     }
 
-    let xpTotal = 0;
-    try {
-        const rawXp = localStorage.getItem('ja_user_xp');
-        xpTotal = rawXp !== null ? (parseInt(rawXp, 10) || 0) : 0;
-    } catch(e) {}
+    const xpTotal = obterXPAtual();
 
     const nivelAtual = calcularNivel(xpTotal);
     const cargoAtual = obterCargoPorNivel(nivelAtual);
@@ -145,27 +155,10 @@ function adicionarXP(pontos, motivo = '') {
     const p = parseInt(pontos, 10) || 0;
     if (p <= 0) return;
 
-    let xpAntigo = 0;
-    try {
-        const rawXp = localStorage.getItem('ja_user_xp');
-        if (rawXp !== null) {
-            xpAntigo = parseInt(rawXp, 10) || 0;
-        } else {
-            const prog = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
-            xpAntigo = parseInt(prog.xp, 10) || 0;
-        }
-    } catch (e) {
-        xpAntigo = 0;
-    }
+    const xpAntigo = obterXPAtual();
 
     const xpNovo = xpAntigo + p;
-    localStorage.setItem('ja_user_xp', xpNovo.toString());
-
-    try {
-        const prog = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
-        prog.xp = xpNovo;
-        localStorage.setItem('ja_progresso_global', JSON.stringify(prog));
-    } catch (e) { }
+    definirXPAtual(xpNovo);
 
     if (typeof mostrarToast === 'function') {
         const desc = motivo ? ` (${motivo})` : '';
@@ -203,27 +196,10 @@ function removerXP(pontos, motivo = '') {
     const p = parseInt(pontos, 10) || 0;
     if (p <= 0) return;
 
-    let xpAntigo = 0;
-    try {
-        const rawXp = localStorage.getItem('ja_user_xp');
-        if (rawXp !== null) {
-            xpAntigo = parseInt(rawXp, 10) || 0;
-        } else {
-            const prog = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
-            xpAntigo = parseInt(prog.xp, 10) || 0;
-        }
-    } catch (e) {
-        xpAntigo = 0;
-    }
+    const xpAntigo = obterXPAtual();
 
     const xpNovo = Math.max(0, xpAntigo - p);
-    localStorage.setItem('ja_user_xp', xpNovo.toString());
-
-    try {
-        const prog = JSON.parse(localStorage.getItem('ja_progresso_global')) || {};
-        prog.xp = xpNovo;
-        localStorage.setItem('ja_progresso_global', JSON.stringify(prog));
-    } catch (e) { }
+    definirXPAtual(xpNovo);
 
     if (typeof mostrarToast === 'function') {
         const desc = motivo ? ` (${motivo})` : '';
@@ -297,6 +273,7 @@ if (typeof window !== 'undefined') {
     window.calcularNivel = calcularNivel;
     window.obterCargoPorNivel = obterCargoPorNivel;
     window.verificarSubidaNivel = verificarSubidaNivel;
+    window.obterXPAtual = obterXPAtual;
     window.atualizarHeaderXP = atualizarHeaderXP;
     window.abrirModalNiveisECargos = abrirModalNiveisECargos;
     window.fecharModalCargosNiveis = fecharModalCargosNiveis;
