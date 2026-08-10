@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v25/);
+    assert.match(serviceWorker, /idiomas-academy-v26/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -510,6 +510,46 @@ test('hub de Kanji carrega somente os dados e módulos necessários', () => {
     assert.doesNotMatch(html, /js\/kanji\/kanji-canvas\.js/);
     assert.match(html, /js\/kanji\/kanji-render\.js/);
     assert.match(read('js/core/bootstrap.js'), /getElementById\('tabContainer'\)/);
+});
+
+test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
+    const budgets = {
+        n5: 700 * 1024,
+        n4: 715 * 1024,
+        n3: 965 * 1024,
+        n2: 1000 * 1024,
+        n1: 1770 * 1024
+    };
+
+    Object.entries(budgets).forEach(([level, maxBytes]) => {
+        const file = `html/ja-JP/kanji_${level}.html`;
+        const html = read(file);
+        const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+            .map(match => match[1])
+            .filter(src => !/^https?:\/\//.test(src));
+        const bytesLocais = scriptsLocais.reduce((total, src) => {
+            const caminho = path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0]);
+            return total + fs.statSync(caminho).size;
+        }, 0);
+
+        assert.equal(scriptsLocais.length, 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        assert.ok(bytesLocais <= maxBytes, `${level.toUpperCase()}: ${Math.round(bytesLocais / 1024)} KB locais`);
+        assert.deepEqual(
+            scriptsLocais.filter(src => /database\/ja-JP\/data_kanji_n\d\.js/.test(src)),
+            [`../../database/ja-JP/data_kanji_${level}.js`]
+        );
+        assert.match(html, /js\/course\/tabs\.js/);
+        assert.match(html, /js\/course\/course\.js/);
+        assert.match(html, /js\/course\/quiz\.js/);
+        assert.match(html, /js\/kanji\/kanji-render\.js/);
+        assert.match(html, /js\/kanji\/kanji-canvas\.js/);
+        assert.match(html, /js\/srs\/(?:engine|deck|review)\.js/);
+        assert.doesNotMatch(html, /wanakana/);
+        assert.doesNotMatch(html, /js\/core\/dictionary\.js/);
+        assert.doesNotMatch(html, /js\/(?:phrasal|pronunciation|minigame)\//);
+        assert.doesNotMatch(html, /js\/game\/minigames\.js/);
+        assert.match(read('sw.js'), new RegExp(`html/ja-JP/kanji_${level}\\.html`));
+    });
 });
 
 test('dicionário japonês usa índice pré-compilado equivalente e leve', () => {
