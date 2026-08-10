@@ -602,7 +602,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v21'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v22'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -729,7 +729,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v21'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v22'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 

@@ -424,7 +424,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v21/);
+    assert.match(serviceWorker, /idiomas-academy-v22/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -462,7 +462,7 @@ test('hubs e imagens principais respeitam o orçamento leve', () => {
         assert.doesNotMatch(html, /js\/(?:course|kanji|phrasal|pronunciation|minigame)\//);
         assert.doesNotMatch(html, /js\/core\/(?:dictionary|course-index)\.js/);
     });
-    assert.match(read('js/core/bootstrap.js'), /!isHubPage\s*&&[^\n]+normalizeModule/);
+    assert.match(read('js/core/bootstrap.js'), /shouldLoadModuleNormalizer\s*&&[^\n]+normalizeModule/);
     assert.match(read('js/core/events.js'), /getAttribute\('data-page'\) === 'hub'\) return/);
 
     const dimensoesPng = file => {
@@ -485,6 +485,31 @@ test('hubs e imagens principais respeitam o orçamento leve', () => {
     assert.equal(manifest.icons[1].src, 'favicon-512.png');
     assert.equal(manifest.icons[1].sizes, '512x512');
     assert.match(serviceWorker, /'\.\/favicon-512\.png'/);
+});
+
+test('hub de Kanji carrega somente os dados e módulos necessários', () => {
+    const file = 'html/ja-JP/kanji.html';
+    const html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+        .map(match => match[1]);
+    const scriptsLocais = scripts.filter(src => !/^https?:\/\//.test(src));
+    const bytesLocais = scriptsLocais.reduce((total, src) => {
+        const caminho = path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0]);
+        return total + fs.statSync(caminho).size;
+    }, 0);
+
+    assert.ok(scriptsLocais.length <= 21, `${scriptsLocais.length} scripts locais no hub de Kanji`);
+    assert.ok(bytesLocais <= 750 * 1024, `${Math.round(bytesLocais / 1024)} KB no hub de Kanji`);
+    assert.deepEqual(
+        scriptsLocais.filter(src => /database\/ja-JP\/data_kanji_n\d\.js/.test(src)),
+        ['../../database/ja-JP/data_kanji_n5.js']
+    );
+    assert.doesNotMatch(html, /wanakana/);
+    assert.doesNotMatch(html, /js\/(?:course|phrasal|pronunciation|minigame)\//);
+    assert.doesNotMatch(html, /js\/core\/dictionary\.js/);
+    assert.doesNotMatch(html, /js\/kanji\/kanji-canvas\.js/);
+    assert.match(html, /js\/kanji\/kanji-render\.js/);
+    assert.match(read('js/core/bootstrap.js'), /getElementById\('tabContainer'\)/);
 });
 
 const failed = results.filter(result => !result.ok);
