@@ -76,7 +76,7 @@ CURSO_RUSSO_B2_DADOS.push(
           },
           {
                     "title": "Particípio Ativo Passado (-вш-/-ш-)",
-                    "rule": "Derivado do tema do passado. Verbos terminados em vogal ganham -вш- (читавший, живший), e em consoante ganham -ш- (нёсший, пришедший).",
+                    "rule": "Forma-se a partir do tema do passado: o sufixo -вш- é frequente após tema vocálico (читавший, живший), enquanto -ш- aparece após certos temas consonantais; formas irregulares, como пришедший, devem ser aprendidas separadamente.",
                     "formula": "[Verbo Passado Masc] + вший / вшая / вшее / вшие",
                     "example": "Человек, живший в Москве ➔ A pessoa que viveu em Moscou",
                     "exampleTranslation": "A pessoa que morava em Moscou"
@@ -342,9 +342,9 @@ CURSO_RUSSO_B2_DADOS.push(
           },
           {
                     "speaker": "Olga",
-                    "text": "Да, оно написано директорам компании.",
-                    "translation": "Sim, ela foi escrita aos diretores da empresa.",
-                    "audio": "Да, оно написано директорам компании."
+                    "text": "Да, оно написано директором компании.",
+                    "translation": "Sim, ela foi escrita pelo diretor da empresa.",
+                    "audio": "Да, оно написано директором компании."
           }
 ],
         [
@@ -594,7 +594,7 @@ CURSO_RUSSO_B2_DADOS.push(
           {
                     "title": "Formação do Gerúndio Imperfeito (-а/-я)",
                     "rule": "Formado do tema do presente retirando a terminação da 3ª pessoa do plural e adicionando -я (ou -а após consoantes chiantes ж, ч, ш, щ).",
-                    "formula": "[3ª Plural Presente] - ut/at + я / а",
+                    "formula": "[3ª pessoa plural] sem -ут/-ют/-ат/-ят + -я/-а",
                     "example": "Читают ➔ Читая / Сидят ➔ Сидя / Слышат ➔ Слыша",
                     "exampleTranslation": "Lendo / Sentando / Ouvindo"
           },
@@ -603,7 +603,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "rule": "O gerúndio e o verbo principal DEVEM ser realizados rigorosamente pela MESMA pessoa/sujeito.",
                     "formula": "[Sujeito] + [Gerúndio] + [Verbo Principal]",
                     "example": "Слушая музыку, я отдыхаю.",
-                    "exampleTranslation": "Escutando música, eu me relaxo."
+                    "exampleTranslation": "Escutando música, eu relaxo."
           },
           {
                     "title": "Isolamento por Vírgulas (Деепричастный оборот)",
@@ -751,7 +751,7 @@ CURSO_RUSSO_B2_DADOS.push(
                               "-ем"
                     ],
                     "correctIndex": 1,
-                    "explanation": "Após chiantes usa-se -а: слыша, сидя."
+                    "explanation": "Após consoantes chiantes, aparece -а, como em слыша; outras formas, como сидя, seguem seu próprio tema."
           }
 ]
     )
@@ -773,11 +773,11 @@ CURSO_RUSSO_B2_DADOS.push(
                     "exampleTranslation": "Tendo lido / Tendo voltado"
           },
           {
-                    "title": "Verbos em Consoante (-ши)",
-                    "rule": "Verbos perfeitos cujo passado termina em consoante usam o sufixo -ши (принёс ➔ принёсши, пришёл ➔ придя/пришедши).",
-                    "formula": "[Passado em Consoante] + ши",
-                    "example": "Принёс ➔ Принёсши / Зашёл ➔ Зашедши",
-                    "exampleTranslation": "Tendo trazido / Tendo entrado"
+                    "title": "Formas Irregulares em -я",
+                    "rule": "Alguns verbos perfeitos, especialmente verbos de movimento em -ти, formam o gerúndio com -я e apresentam alteração de tema; essas formas devem ser aprendidas individualmente.",
+                    "formula": "Принести ➔ принеся / Прийти ➔ придя / Войти ➔ войдя",
+                    "example": "Принеся документы, он вошёл в кабинет.",
+                    "exampleTranslation": "Tendo trazido os documentos, ele entrou no escritório."
           },
           {
                     "title": "Relação de Causa e Antecedência Temporal",
@@ -895,7 +895,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "explanation": "Verbos reflexivos terminam em -вшись: вернувшись."
           },
           {
-                    "q": "Traduza: \"Узнав truth, он удивился.\"",
+                    "q": "Traduza: \"Узнав правду, он удивился.\"",
                     "options": [
                               "Buscando a verdade ele se surpreendeu",
                               "Ao saber da verdade, ele se surpreendeu",
@@ -940,7 +940,7 @@ CURSO_RUSSO_B2_DADOS.push(
         "Мы готовы обсудить условия взаимовыгодного сотрудничества.",
         [
           {
-                    "title": "Fórmulas Diplomáticas de Proposta Commercial",
+                    "title": "Fórmulas Diplomáticas de Proposta Comercial",
                     "rule": "Em negociações corporativas em russo, usam-se estruturas formais como \"Мы предлагаем рассмотреть...\" (Propomos considerar...) e \"Взаимовыгодное сотрудничество\" para criar ambiente propício ao acordo.",
                     "formula": "Мы предлагаем + [Infinitivo] / Взаимовыгодное + [Substantivo]",
                     "example": "Мы предлагаем рассмотреть новые условия договора.",
@@ -949,7 +949,7 @@ CURSO_RUSSO_B2_DADOS.push(
           {
                     "title": "Expressando Objeções com Polidez Corporativa",
                     "rule": "Para discordar sem gerar tensão, usa-se a atenuação \"К сожалению, мы не можем согласиться с...\" ou a antítese \"С одной стороны..., но с другой...\".",
-                    "formula": "К сожалению, + [Oraçao no Dativo/Instrumental]",
+                    "formula": "К сожалению, + [oração] / Согласиться с + [Instrumental]",
                     "example": "К сожалению, эти условия нам не подходят.",
                     "exampleTranslation": "Infelizmente estas condições não nos atendem."
           },
@@ -1113,7 +1113,7 @@ CURSO_RUSSO_B2_DADOS.push(
     criarModuloB2Handcrafted(
         "ru_b2_mod_07",
         "Módulo 7: Юридический язык (Linguagem Jurídica e Burocrática Básica)",
-        "Vocabulário de vistos, contratos de aluguel, cláusulas legais e direitos civil.",
+        "Vocabulário de vistos, contratos de aluguel, cláusulas legais e direitos civis.",
         "Interprete cláusulas contratuais e documentos oficiais em russo.",
         "Договор вступает в силу с момента его подписания.",
         [
@@ -1756,9 +1756,9 @@ CURSO_RUSSO_B2_DADOS.push(
         [
           {
                     "speaker": "Listener",
-                    "text": "Ты регулярно слушаешь этот weekly подкаст про культуру?",
+                    "text": "Ты регулярно слушаешь этот еженедельный подкаст про культуру?",
                     "translation": "Você escuta regularmente este podcast semanal sobre cultura?",
-                    "audio": "Ты регулярно слушаешь этот подкаст про культуру?"
+                    "audio": "Ты регулярно слушаешь этот еженедельный подкаст про культуру?"
           },
           {
                     "speaker": "Friend",
@@ -1921,7 +1921,7 @@ CURSO_RUSSO_B2_DADOS.push(
           },
           {
                     "sentence": "Щас досмотрю последнюю серию и обязательно скажу своё мнение.",
-                    "translation": "Jájá vou terminar de assistir o último episódio e com certeza darei minha opinião.",
+                    "translation": "Já já vou terminar de assistir ao último episódio e com certeza darei minha opinião.",
                     "tokens": [
                               "Щас",
                               "досмотрю",
@@ -1945,9 +1945,9 @@ CURSO_RUSSO_B2_DADOS.push(
           },
           {
                     "speaker": "Nina",
-                    "text": "Круто! Актеры сыграли просто потрясающе, не мог оторваться.",
+                    "text": "Круто! Актёры сыграли просто потрясающе, не могла оторваться.",
                     "translation": "Demais! Os atores atuaram de forma simplesmente fantástica, não consegui parar de ver.",
-                    "audio": "Круто! Актеры сыграли просто потрясающе, не мог оторваться."
+                    "audio": "Круто! Актёры сыграли просто потрясающе, не могла оторваться."
           }
 ],
         [
@@ -2055,7 +2055,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "romaji": "Tsel",
                     "translation": "Objetivo / Meta do estudo",
                     "audio": "Цель",
-                    "dica": "Feminino em -ль: mục tiêu."
+                    "dica": "Substantivo feminino terminado em -ль."
           },
           {
                     "type": "vocab",
@@ -2279,7 +2279,7 @@ CURSO_RUSSO_B2_DADOS.push(
                               "человеческой",
                               "души."
                     ],
-                    "audio": "Роман Достоевского исследует глубины человеческой души."
+                    "audio": "Роман Достоевского \"Преступление и наказание\" исследует глубины человеческой души."
           },
           {
                     "sentence": "Толстой мастерски показывает внутреннюю эволюцию своих главных героев.",
@@ -2601,7 +2601,7 @@ CURSO_RUSSO_B2_DADOS.push(
           {
                     "type": "vocab",
                     "word": "Суверенитет",
-                    "romaji": "Suverenite",
+                    "romaji": "Suverenitet",
                     "translation": "Soberania estatal",
                     "audio": "Суверенитет",
                     "dica": "Autonomia política."
@@ -2922,7 +2922,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "title": "Conjunção Subordinada Concessiva (Несмотря на то что...)",
                     "rule": "Expressa uma concessão formal (\"apesar de que / embora\"). A oração principal ocorre contrariando a expectativa da oração subordinada.",
                     "formula": "Несмотря на то что + [Oração 1], [Oração Principal 2]",
-                    "example": "Несмотря на то чтошёл дождь, мы пошли гулять.",
+                    "example": "Несмотря на то что шёл дождь, мы пошли гулять.",
                     "exampleTranslation": "Apesar de estar chovendo, fomos passear."
           },
           {
@@ -2933,10 +2933,10 @@ CURSO_RUSSO_B2_DADOS.push(
                     "exampleTranslation": "Em razão de o voo ter sido cancelado, ficamos."
           },
           {
-                    "title": "Conjunção Integrante de Propósito (С тем чтобы...)",
+                    "title": "Conjunção Integrante de Propósito (С тем, чтобы...)",
                     "rule": "Substitui \"Чтобы\" em registros de alta formalidade para indicar uma finalidade planejada com cuidado.",
-                    "formula": "С тем чтобы + [Infinitivo / Verbo no Passado]",
-                    "example": "Документы подписаны с тем чтобы ускорить проект.",
+                    "formula": "С тем, чтобы + [Infinitivo / Verbo na forma do passado]",
+                    "example": "Документы подписаны с тем, чтобы ускорить проект.",
                     "exampleTranslation": "Os documentos foram assinados com o intuito de acelerar o projeto."
           }
 ],
@@ -3066,12 +3066,12 @@ CURSO_RUSSO_B2_DADOS.push(
                     "q": "Qual conjunção substitui \"Чтобы\" em registros formais de propósito?",
                     "options": [
                               "Ввиду того что",
-                              "С тем чтобы...",
+                              "С тем, чтобы...",
                               "Следственно",
                               "Хотя"
                     ],
                     "correctIndex": 1,
-                    "explanation": "С тем чтобы... = com a finalidade de."
+                    "explanation": "С тем, чтобы... = com a finalidade de."
           },
           {
                     "q": "Qual a tradução de \"Следствие\" em análise sintática?",
@@ -3507,7 +3507,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "romaji": "Auditoriya",
                     "translation": "Auditório / Público ouvinte",
                     "audio": "Аудитория",
-                    "dica": "Pluptéia presencial ou online."
+                    "dica": "Plateia presencial ou online."
           },
           {
                     "type": "vocab",
@@ -3668,8 +3668,8 @@ CURSO_RUSSO_B2_DADOS.push(
                     "title": "Síntese de Posicionamento Pessoal (Подводя итог)",
                     "rule": "Encerra-se a resposta em entrevista sintetizando a postura pessoal com \"Подводя итог, хочу подчеркнуть...\" (Sumarizando, quero destacar...).",
                     "formula": "Подводя итог, хочу подчеркнуть, что...",
-                    "example": "Подводя итог, наша позиция неизменна.",
-                    "exampleTranslation": "Sumarizando, nossa posição é inalterável."
+                    "example": "Подводя итог, хочу подчеркнуть, что наша позиция неизменна.",
+                    "exampleTranslation": "Resumindo, quero enfatizar que nossa posição permanece inalterada."
           }
 ],
         [
@@ -3838,7 +3838,7 @@ CURSO_RUSSO_B2_DADOS.push(
                     "title": "Contraponto Argumentativo (С одной стороны..., с другой стороны...)",
                     "rule": "Em ensaios e artigos de opinião, pesa-se os prós e contras com a antítese \"С одной стороны...\" (Por um lado...) e \"С другой стороны...\" (Por outro lado...).",
                     "formula": "С одной стороны, ... но с другой стороны, ...",
-                    "example": "С одной стороны это плюсы, но с другой — минусы.",
+                    "example": "С одной стороны, это плюсы, но с другой — минусы.",
                     "exampleTranslation": "Por um lado são prós, por outro contras."
           },
           {
@@ -4016,8 +4016,8 @@ CURSO_RUSSO_B2_DADOS.push(
 CURSO_RUSSO_B2_DADOS.push(
     criarModuloB2Handcrafted(
         "ru_b2_mod_23",
-        "Módulo 23: Регламент и сертификация (Revisão Geral de Fluidez B2)",
-        "Consolidação dos tópicos de fluidez avançada (B2) e modelo de exames TORFL / ТРКИ-II.",
+        "Módulo 23: Регламент и сертификация (Revisão Geral B2)",
+        "Consolidação das competências de uso independente no nível B2 e do modelo de exames TORFL / ТРКИ-II.",
         "Revise gramática avançada, léxico e estruturas para a certificação oficial.",
         "Успешное прохождение теста ТРКИ-II подтверждает высокий уровень владения языком.",
         [
@@ -4036,11 +4036,11 @@ CURSO_RUSSO_B2_DADOS.push(
                     "exampleTranslation": "Tendo lido o texto, escreva um resumo."
           },
           {
-                    "title": "Свободное владение языком (Fluência Avançada B2)",
-                    "rule": "No nível B2, exige-se espontaneidade de fala, precisão de regência nos 6 casos e adequação ao registro de linguagem de cada situação social.",
-                    "formula": "Свободное владение + [Substantivo no Instrumental]",
-                    "example": "Он свободно владеет русский языком.",
-                    "exampleTranslation": "Ele domina fluentemente a língua russa."
+                    "title": "Уверенное владение языком (Competência B2)",
+                    "rule": "No nível B2, espera-se comunicação relativamente espontânea, precisão adequada de regência e capacidade de adaptar o registro à situação social.",
+                    "formula": "Владеть + [Substantivo no Instrumental]",
+                    "example": "Он уверенно владеет русским языком.",
+                    "exampleTranslation": "Ele tem domínio seguro da língua russa."
           }
 ],
         [
@@ -4087,20 +4087,22 @@ CURSO_RUSSO_B2_DADOS.push(
 ],
         [
           {
-                    "sentence": "Успешная сдача экзамена ТРКИ-2 подтверждает свободное владение русским языком.",
-                    "translation": "A aprovação no exame TORFL-II confirma o livre domínio do idioma russo.",
+                    "sentence": "Успешная сдача экзамена ТРКИ-2 подтверждает владение русским языком на уровне B2.",
+                    "translation": "A aprovação no exame TORFL-II confirma o domínio do idioma russo no nível B2.",
                     "tokens": [
                               "Успешная",
                               "сдача",
                               "экзамена",
                               "ТРКИ-2",
                               "подтверждает",
-                              "свободное",
                               "владение",
                               "русским",
-                              "языком."
+                              "языком",
+                              "на",
+                              "уровне",
+                              "B2."
                     ],
-                    "audio": "Успешная сдача экзамена ТРКИ-2 подтверждает свободное владение русским языком."
+                    "audio": "Успешная сдача экзамена ТРКИ-2 подтверждает владение русским языком на уровне B2."
           },
           {
                     "sentence": "Мы тщательно повторили все ключевые темы грамматики продвинутого уровня B2.",
@@ -4197,9 +4199,9 @@ CURSO_RUSSO_B2_DADOS.push(
 CURSO_RUSSO_B2_DADOS.push(
     criarModuloB2Handcrafted(
         "ru_b2_mod_24",
-        "Módulo 24: Desafio Final B2: Exame Integrado de Fluidez e Certificação Interna",
+        "Módulo 24: Desafio Final B2: Exame Integrado de Competências e Certificação Interna",
         "Exame abrangente do Nível B2 avaliando gramática avançada, estilo, vocabulário e compreensão cultural.",
-        "Complete com sucesso o Desafio Final de 30 questões e certifique sua fluência no Nível B2!",
+        "Complete com sucesso o Desafio Final de 30 questões e demonstre as competências trabalhadas no Nível B2!",
         "Поздравляем! Вы прошли весь курс русского языка от уровня А1 до B2!",
         [
           {
@@ -4210,16 +4212,16 @@ CURSO_RUSSO_B2_DADOS.push(
                     "exampleTranslation": "Você domina perfeitamente o idioma russo!"
           },
           {
-                    "title": "Fluência Nativa e Adequação Estilística",
+                    "title": "Autonomia Comunicativa e Adequação Estilística",
                     "rule": "Capacidade de alternar entre o estilo oficial-corporativo em documentos, acadêmico em relatórios e coloquial expressivo em conversas sociais.",
-                    "formula": "Adequação Estilística Total",
-                    "example": "Уровень B2 подтверждён полностью.",
-                    "exampleTranslation": "Nível B2 confirmado totalmente."
+                    "formula": "Adequação estilística em nível B2",
+                    "example": "Курс уровня B2 успешно завершён.",
+                    "exampleTranslation": "O curso de nível B2 foi concluído com sucesso."
           },
           {
                     "title": "Certificação Interna Idiomas Academy",
-                    "rule": "Conquista do certificado máximo de proficiência avançada em russo da plataforma com aprovação no Exame Integrado.",
-                    "formula": "Selo de Proficiência B2 Conquistado!",
+                    "rule": "Conquista do certificado interno de conclusão do percurso B2 da plataforma após aprovação no Exame Integrado.",
+                    "formula": "Certificado interno de conclusão B2",
                     "example": "Поздравляем с победой!",
                     "exampleTranslation": "Parabéns pela vitória!"
           }
@@ -4229,9 +4231,9 @@ CURSO_RUSSO_B2_DADOS.push(
                     "type": "vocab",
                     "word": "Сертификат",
                     "romaji": "Sertifikat",
-                    "translation": "Certificado de proficiência B2",
+                    "translation": "Certificado interno de conclusão B2",
                     "audio": "Сертификат",
-                    "dica": "Comprovante de nível."
+                    "dica": "Comprovante interno de conclusão do percurso."
           },
           {
                     "type": "vocab",
@@ -4245,9 +4247,9 @@ CURSO_RUSSO_B2_DADOS.push(
                     "type": "vocab",
                     "word": "Свобода",
                     "romaji": "Svoboda",
-                    "translation": "Liberdade / Fluência na fala",
+                    "translation": "Liberdade",
                     "audio": "Свобода",
-                    "dica": "Fala fluente sem barreiras."
+                    "dica": "Substantivo abstrato associado à independência."
           },
           {
                     "type": "vocab",
@@ -4288,33 +4290,33 @@ CURSO_RUSSO_B2_DADOS.push(
                     "audio": "Поздравляем вас с успешным завершением полного курса русского языка от A1 до B2!"
           },
           {
-                    "sentence": "Вы официально достигли продвинутого уровня свободного владения языком.",
-                    "translation": "Você atingiu oficialmente o nível avançado de livre domínio do idioma.",
+                    "sentence": "Вы успешно завершили курс русского языка уровня B2.",
+                    "translation": "Você concluiu com sucesso o curso de língua russa de nível B2.",
                     "tokens": [
                               "Вы",
-                              "официально",
-                              "достигли",
-                              "продвинутого",
+                              "успешно",
+                              "завершили",
+                              "курс",
+                              "русского",
+                              "языка",
                               "уровня",
-                              "свободного",
-                              "владения",
-                              "языком."
+                              "B2."
                     ],
-                    "audio": "Вы официально достигли продвинутого уровня свободного владения языком."
+                    "audio": "Вы успешно завершили курс русского языка уровня B2."
           }
 ],
         [
           {
                     "speaker": "Examiner",
-                    "text": "Поздравляю! Вы успешно сдали финальный интегральный экзамен уровня B2!",
+                    "text": "Поздравляю! Вы успешно сдали финальный комплексный экзамен уровня B2!",
                     "translation": "Parabéns! Você passou com sucesso no exame final integrado do nível B2!",
-                    "audio": "Поздравляю! Вы успешно сдали финальный интегральный экзамен уровня B2!"
+                    "audio": "Поздравляю! Вы успешно сдали финальный комплексный экзамен уровня B2!"
           },
           {
                     "speaker": "Student",
-                    "text": "Огромное спасибо! Это был замечательный путь к свободному владению русским языком!",
-                    "translation": "Muito obrigado! Foi uma jornada maravilhosa rumo à fluência no idioma russo!",
-                    "audio": "Огромное спасибо! Это был замечательный путь к свободному владению русским языком!"
+                    "text": "Огромное спасибо! Это был замечательный путь к уверенному владению русским языком!",
+                    "translation": "Muito obrigado! Foi uma jornada maravilhosa rumo a um domínio seguro do idioma russo!",
+                    "audio": "Огромное спасибо! Это был замечательный путь к уверенному владению русским языком!"
           }
 ],
         [

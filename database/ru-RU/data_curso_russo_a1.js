@@ -206,7 +206,7 @@ CURSO_RUSSO_A1_DADOS.push(
             { type: 'vocab', word: 'Папа', romaji: 'Papa', translation: 'Pai', audio: 'Папа', dica: 'Substantivo masculino com terminação em -a. Exige o possessivo "Мой папа".' },
             { type: 'vocab', word: 'Брат', romaji: 'Brat', translation: 'Irmão', audio: 'Брат', dica: 'Substantivo masculino. Exige o possessivo "Мой брат".' },
             { type: 'vocab', word: 'Сестра', romaji: 'Sestra', translation: 'Irmã', audio: 'Сестра', dica: 'Substantivo feminino. Exige o possessivo "Моя сестра".' },
-            { type: 'vocab', word: 'Семья', romaji: 'Semya', translation: 'Família', audio: 'Семья', dica: 'Palavra feminina terminada em soft sign (ь) + я.' }
+            { type: 'vocab', word: 'Семья', romaji: 'Semya', translation: 'Família', audio: 'Семья', dica: 'Palavra feminina terminada em -ья (sinal brando seguido de я).' }
         ],
         [
             { sentence: 'Это моя мама и мой папа.', translation: 'Esta é minha mãe e este é meu pai.', tokens: ['Это', 'моя', 'мама', 'и', 'мой', 'папа.'], audio: 'Это моя мама и мой папа.' },
@@ -264,7 +264,7 @@ CURSO_RUSSO_A1_DADOS.push(
         'Para indicar localização ("em"), os substantivos masculinos e femininos geralmente recebem a terminação -е (ex: Москва ➔ в Москве).',
         [
             { title: 'O Caso Preposicional (Localização)', rule: 'Para responder a "Где?" (Onde?), os substantivos masculinos e femininos geralmente recebem a terminação -е.', formula: 'В/НА + [Substantivo + е]', example: 'Москва ➔ в Москве / Город ➔ в городе', exampleTranslation: 'em Moscou / na cidade' },
-            { title: 'Diferença entre В e НА', rule: 'Usa-se В para cidades e espaços fechados e НА para ruas, praças e espaços abertos.', formula: 'В [Cidade/Prédio] / НА [Rua/Praça]', example: 'Я живу в Москве на улице Тверская.', exampleTranslation: 'Eu moro em Moscou na rua Tverskaya.' }
+            { title: 'Diferença entre В e НА', rule: 'Usa-se В para cidades e espaços fechados e НА para ruas, praças e espaços abertos.', formula: 'В [Cidade/Prédio] / НА [Rua/Praça]', example: 'Я живу в Москве на Тверской улице.', exampleTranslation: 'Eu moro em Moscou na rua Tverskaya.' }
         ],
         [
             { type: 'vocab', word: 'Где', romaji: 'Gde', translation: 'Onde', audio: 'Где', dica: 'Pergunta sobre localização estática ("Onde está/mora").' },
@@ -367,7 +367,7 @@ CURSO_RUSSO_A1_DADOS.push(
         [
             { type: 'vocab', word: 'Борщ', romaji: 'Borsch', translation: 'Borsch (Sopa de beterraba)', audio: 'Борщ', dica: 'Tradicional sopa russa servida quente com creme azedo (smetana).' },
             { type: 'vocab', word: 'Блины', romaji: 'Bliny', translation: 'Panquecas russas', audio: 'Блины', dica: 'Panquecas finas russas servidas doces ou salgadas.' },
-            { type: 'vocab', word: 'Пельмени', romaji: 'Pelmeni', translation: 'Massa recheada russa', audio: 'Пельмени', dica: 'Pequeños bolinhos de massa cozida recheados com carne.' },
+            { type: 'vocab', word: 'Пельмени', romaji: 'Pelmeni', translation: 'Massa recheada russa', audio: 'Пельмени', dica: 'Pequenos bolinhos de massa cozida recheados com carne.' },
             { type: 'vocab', word: 'Вкусный', romaji: 'Vkusny', translation: 'Saboroso / Gostoso', audio: 'Вкусный', dica: 'Adjetivo masculino para comida saborosa.' }
         ],
         [
@@ -488,11 +488,11 @@ CURSO_RUSSO_A1_DADOS.push(
     criarModuloA1Handcrafted(
         'ru_a1_mod_14',
         'Módulo 14: Мой день (Rotina e 1ª Conjugação)',
-        'Aprenda verbos da 1ª Conjugação (-ать) para descrever sua rotina diária.',
-        'Aprenda a conjugar verbos da 1ª Conjugação terminados em -ать (читать, делать, работать).',
+        'Aprenda verbos regulares da 1ª Conjugação, como читать, делать e работать, para descrever sua rotina diária.',
+        'Aprenda a conjugar verbos frequentes da 1ª Conjugação sem tratar a terminação -ать como regra absoluta.',
         'Na 1ª conjugação, as terminações no presente são: Я -ю, Ты -ешь, Он/Она -ет, Мы -ем, Вы -ете, Они -ют.',
         [
-            { title: '1ª Conjugação (-ать)', rule: 'Os verbos da 1ª conjugação em -ать seguem um padrão regular de terminações no presente.', formula: 'Я -ю, Ты -ешь, Он -ет, Мы -ем, Вы -ете, Они -ют', example: 'Я читаю книгу.', exampleTranslation: 'Eu leio um livro.' },
+            { title: '1ª Conjugação (padrão frequente em -ать)', rule: 'Muitos verbos regulares em -ать pertencem à 1ª conjugação e seguem este padrão; a terminação do infinitivo, isoladamente, não elimina as exceções.', formula: 'Я -ю, Ты -ешь, Он -ет, Мы -ем, Вы -ете, Они -ют', example: 'Я читаю книгу.', exampleTranslation: 'Eu leio um livro.' },
             { title: 'Perguntando a Ação Atual', rule: 'Para perguntar o que alguém está fazendo no momento.', formula: 'Что ты делаешь? (Informal) / Что вы делаете? (Formal)', example: 'Что ты делаешь? — Я работаю.', exampleTranslation: 'O que faz? — Trabalhando.' }
         ],
         [
@@ -520,11 +520,11 @@ CURSO_RUSSO_A1_DADOS.push(
     criarModuloA1Handcrafted(
         'ru_a1_mod_15',
         'Módulo 15: Что ты делаешь? (2ª Conjugação)',
-        'Aprenda verbos da 2ª Conjugação (-ить) como говорить, смотреть e жить.',
+        'Aprenda verbos frequentes da 2ª Conjugação, como говорить, смотреть e учить.',
         'Aprenda as terminações da 2ª conjugação em -ить (говорить, смотреть, учить).',
         'Verbos da 2ª conjugação recebem no presente: Я -ю/у, Ты -ишь, Он -ит, Мы -им, Вы -ите, Они -ят/ат.',
         [
-            { title: '2ª Conjugação (-ить)', rule: 'Os verbos da 2ª conjugação em -ить possuem terminações características no presente.', formula: 'Я -ю/у, Ты -ишь, Он -ит, Мы -им, Вы -ите, Они -ят/ат', example: 'Я говорю по-русски.', exampleTranslation: 'Eu falo russo.' },
+            { title: '2ª Conjugação (padrão frequente em -ить)', rule: 'Muitos verbos em -ить pertencem à 2ª conjugação e usam estas terminações; há exceções que devem ser aprendidas separadamente.', formula: 'Я -ю/у, Ты -ишь, Он -ит, Мы -им, Вы -ите, Они -ят/ат', example: 'Я говорю по-русски.', exampleTranslation: 'Eu falo russo.' },
             { title: 'Falar Idiomas (по-...)', rule: 'Ao usar o verbo "говорить", adiciona-se o prefixo "по-" ao idioma.', formula: 'Говорить + по-[idioma]', example: 'Вы говорите по-русски?', exampleTranslation: 'Você fala russo?' }
         ],
         [
@@ -654,7 +654,7 @@ CURSO_RUSSO_A1_DADOS.push(
         'Aprenda termos de hospedagem e pedidos com a expressão formal "Будьте добры...".',
         'A expressão "Будьте добры..." (Lit. "Seja tão bom...") é a forma mais cortês de pedir algo na recepção.',
         [
-            { title: 'Pedidos Polidos com Будьте добры', rule: 'A expressão mais cortês para solicitar atendimento em hotéis ou serviços.', formula: 'Будьте добры + [Pedido]', example: 'Будьте добры, мой ключ.', exampleTranslation: 'Tenha a gentileza, minha chave.' },
+            { title: 'Pedidos Polidos com Будьте добры', rule: 'A expressão introduz um pedido cortês e normalmente vem acompanhada de um verbo no imperativo.', formula: 'Будьте добры + [Verbo no imperativo] + [Pedido]', example: 'Будьте добры, дайте мне мой ключ.', exampleTranslation: 'Tenha a gentileza de me dar minha chave.' },
             { title: 'Vocabulário de Hotel', rule: 'Termos fundamentais para check-in e hospedagem.', formula: 'Номер (Quarto) / Ключ (Chave) / Бронь (Reserva)', example: 'У меня забронирован номер.', exampleTranslation: 'Eu tenho um quarto reservado.' }
         ],
         [
@@ -665,7 +665,7 @@ CURSO_RUSSO_A1_DADOS.push(
         ],
         [
             { sentence: 'Здравствуйте! У меня есть бронь.', translation: 'Olá! Eu tenho uma reserva.', tokens: ['Здравствуйте!', 'У', 'меня', 'есть', 'бронь.'], audio: 'Здравствуйте! У меня есть бронь.' },
-            { sentence: 'Будьте добры, мой ключ.', translation: 'Por favor, minha chave.', tokens: ['Будьте', 'добры,', 'мой', 'ключ.'], audio: 'Будьте добры, мой ключ.' }
+            { sentence: 'Будьте добры, дайте мне мой ключ.', translation: 'Tenha a gentileza de me dar minha chave.', tokens: ['Будьте', 'добры,', 'дайте', 'мне', 'мой', 'ключ.'], audio: 'Будьте добры, дайте мне мой ключ.' }
         ],
         [
             { speaker: 'Recepcionista', text: 'Здравствуйте! Ваша фамилия?', translation: 'Olá! Qual o seu sobrenome?', audio: 'Здравствуйте! Ваша фамилия?' },
@@ -718,7 +718,7 @@ CURSO_RUSSO_A1_DADOS.push(
         'Aprenda a dizer "ir de ônibus/táxi" usando a preposição На + Preposicional (на автобусе).',
         'Para indicar o meio de transporte utilizado, usa-se a preposição На no Caso Preposicional.',
         [
-            { title: 'Meios de Transporte com НА', rule: 'Para indicar o meio de transporte utilizado, usa-se Na no Preposicional.', formula: 'НА + [Transporte no Preposicional]', example: 'Я еду на автобусе.', exampleTranslation: 'Estou indo de ônibus.' },
+            { title: 'Meios de Transporte com НА', rule: 'Para indicar o meio de transporte utilizado, usa-se НА com o Caso Preposicional.', formula: 'НА + [Transporte no Preposicional]', example: 'Я еду на автобусе.', exampleTranslation: 'Estou indo de ônibus.' },
             { title: 'Verbo de Deslocamento Ехать', rule: 'Diferença entre deslocar-se a pé (идти) e por veículo (ехать).', formula: 'Я еду / Ты едешь / Он едет / Мы едем / Они едут', example: 'Мы едем в центр на такси.', exampleTranslation: 'Vamos ao centro de táxi.' }
         ],
         [

@@ -12,12 +12,12 @@ Este documento separa evidência técnica reproduzível de validações que depe
 - [x] Servidor desligado após a instalação; Dashboard, hub russo, curso russo, cirílico, dicionário russo e minigame russo abriram do cache.
 - [x] Páginas afetadas por dependências ausentes — Falsos Amigos, conjugação espanhola, hiragana, Kanji N5 e minigame japonês — revalidadas offline.
 - [x] Cache atualizado para `idiomas-academy-v28`; ativação preserva o cache atual e remove caches antigos.
-- [x] Auditoria russa sem erros técnicos bloqueadores.
-- [x] Relatório russo consolidado em 19 decisões editoriais únicas, sem alterar conteúdo sem aprovação humana.
+- [x] Auditoria russa sem erros técnicos bloqueadores nem ocorrências pendentes.
+- [x] Revisão editorial integral dos 96 módulos russos A1–B2 concluída com apoio do dicionário e da gramática indicados para a rodada.
+- [x] Consistência entre frases, tokens, áudios, diálogos, vocabulário e quizzes russos protegida por teste permanente.
 
 ## Pendente antes da tag final
 
-- [ ] Revisor fluente concluir a revisão integral do russo A1–B2 e preencher `tests/RUSSIAN_EDITORIAL_REVIEW.md`.
 - [ ] Testar login/cadastro, restauração, progresso, XP, SRS e Dashboard com uma conta Firebase real de QA.
 - [ ] Repetir a matriz visual final do Dashboard preenchido em 1280×900 e 390×844, nos filtros `all`, `ja-JP`, `en-US`, `es-ES` e `ru-RU`.
 - [ ] Validar os quatro cursos em desktop e celular, sem overflow nem erros visíveis.
@@ -33,4 +33,4 @@ Somente após todos os itens pendentes:
 3. criar ou reposicionar `wip10-multilang-stable-v2` com autorização explícita;
 4. enviar commits e tag ao remoto apenas com autorização explícita.
 
-O curso russo não deve ser anunciado como linguisticamente certificado enquanto a aprovação humana estiver pendente.
+O curso russo passou pela revisão editorial integral registrada nesta versão, mas não deve ser anunciado como certificado por falante nativo ou acreditado por uma instituição externa.

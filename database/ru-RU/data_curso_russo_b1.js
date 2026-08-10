@@ -103,9 +103,9 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 2: Дательный падеж II (Idade e Frases Impessoais)',
         'Aprenda a expressar idade e estados de necessidade (нужно, можно, нельзя) com o Caso Dativo.',
         'Domine estruturas impessoais em russo com o sujeito lógico no Dativo.',
-        'Мне 25 лет. Мне нужно заниматься e вам можно войти.',
+        'Мне 25 лет. Мне нужно заниматься, а вам можно войти.',
         [
-            { title: 'Expressando Idade com Dativo', rule: 'Em russo, para dizer a idade de alguém, coloca-se a pessoa no Caso Dativo + o número + лет/goda.', formula: '[Pessoa no Dativo] + [Número] + лет / года / год', example: 'Мне 25 лет. / Ему 3 года.', exampleTranslation: 'Eu tenho 25 anos. / Ele tem 3 anos.' },
+            { title: 'Expressando Idade com Dativo', rule: 'Em russo, para dizer a idade de alguém, coloca-se a pessoa no Caso Dativo + o número + год/года/лет.', formula: '[Pessoa no Dativo] + [Número] + год / года / лет', example: 'Мне 25 лет. / Ему 3 года.', exampleTranslation: 'Eu tenho 25 anos. / Ele tem 3 anos.' },
             { title: 'Necessidade Impessoal (Мне нужно)', rule: 'Para dizer que precisa de algo, usa-se a construção: [Dativo] + нужно / надо + [Infinitivo].', formula: 'Мне / Тебе / Ему + нужно + [Infinitivo]', example: 'Мне нужно купить хлеб.', exampleTranslation: 'Eu preciso comprar pão.' },
             { title: 'Permissão e Proibição (Можно / Нельзя)', rule: 'Usa-se Можно (é permitido / pode-se) e Нельзя (é proibido / não se pode) com o Dativo.', formula: 'Вам можно войти. / Здесь нельзя курить.', example: 'Você pode entrar. / Aqui é proibido fumar.', exampleTranslation: 'Pode entrar. / Proibido fumar aqui.' }
         ],
@@ -175,7 +175,7 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 4: Творительный падеж II (Profissão e Mudança de Estado)',
         'Aprenda a usar o Caso Instrumental com verbos de profissão e mudança de estado (Работать, Стать, Быть).',
         'Entenda a regência dos verbos que indicam papel profissional ou transformação.',
-        'Он работает инженером e хочет стать директором.',
+        'Он работает инженером и хочет стать директором.',
         [
             { title: 'Profissões com Работать + Instrumental', rule: 'Em russo, para dizer a profissão de alguém com o verbo Работать (trabalhar), o cargo/profissão entra obrigatoriamente no Caso Instrumental.', formula: 'Работать + [Profissão no Instrumental]', example: 'Работать врачом / Работать учителем / Работать инженером', exampleTranslation: 'Trabalhar como médico / professor / engenheiro' },
             { title: 'Mudança de Estado com Стать + Instrumental', rule: 'O verbo Стать (tornar-se) exige o Caso Instrumental.', formula: 'Стать + [Substantivo no Instrumental]', example: 'Он стал врачом.', exampleTranslation: 'Ele se tornou médico.' },
@@ -245,7 +245,7 @@ CURSO_RUSSO_B1_DADOS.push(
     criarModuloB1Handcrafted(
         'ru_b1_mod_06',
         'Módulo 6: Глаголы движения II (Verbos de Movimento Sem Prefixo - Ir de Transporte)',
-        'Diferencie os verbos de transporte sem prefixo: Еехать (unidirecional) vs. Ездить (multidirecional).',
+        'Diferencie os verbos de transporte sem prefixo: Ехать (unidirecional) vs. Ездить (multidirecional).',
         'Domine o uso dos verbos de transporte no presente, passado e futuro.',
         'Сейчас я еду в Москву, а летом я часто езжу на море.',
         [
@@ -287,7 +287,7 @@ CURSO_RUSSO_B1_DADOS.push(
         [
             { title: 'Prefixo По-: Partida / Início do Movimento', rule: 'O prefixo По- adicionado a um verbo de movimento indica o INÍCIO da viagem ou a decisão de partir.', formula: 'По- + [Verbo de Movimento]', example: 'Пойти (começar a ir a pé) / Поехать (partir de transporte)', exampleTranslation: 'Partir a pé / Partir de veículo' },
             { title: 'Prefixo При-: Chegada ao Destino', rule: 'O prefixo При- indica CHEGADA ou aproximação final ao local de destino.', formula: 'При- + [Verbo de Movimento]', example: 'Прийти (chegar a pé) / Приехать (chegar de transporte)', exampleTranslation: 'Chegar a pé / Chegar de veículo' },
-            { title: 'Prefixo У-: Partida Definitiva / Ausência', rule: 'O prefixo У- indica que o sujeito SAIS E FICOU AUSENTE do local.', formula: 'У- + [Verbo de Movimento]', example: 'Уйти (sair/ir embora a pé) / Уехать (viajar para fora/embora)', exampleTranslation: 'Ir embora a pé / Viajar para longe' }
+            { title: 'Prefixo У-: Partida / Ausência', rule: 'O prefixo У- indica que o sujeito saiu e ficou ausente do local de origem.', formula: 'У- + [Verbo de Movimento]', example: 'Уйти (sair/ir embora a pé) / Уехать (viajar para fora/embora)', exampleTranslation: 'Ir embora a pé / Viajar para longe' }
         ],
         [
             { type: 'vocab', word: 'Поехать', romaji: 'Poyekhat', translation: 'Partir de veículo / Viajar', audio: 'Поехать', dica: 'Prefixo По- (início da viagem).' },
@@ -319,7 +319,7 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 8: Глаголы движения IV (Prefixos de Movimento: В-, Вы-, Про-, Пере-)',
         'Domine os prefixos de movimento direcional: Entrar (В-), Sair (Вы-), Passar por (Про-) e Atravessar (Пере-).',
         'Aprenda a descrever trajetos complexos com prefixos espaciais.',
-        'Он вошёл в здание, вышел на улицу e перешёл дорогу.',
+        'Он вошёл в здание, вышел на улицу и перешёл дорогу.',
         [
             { title: 'Prefixos В- (Entrar) e Вы- (Sair)', rule: 'O prefixo В- indica ENTRAR em um espaço fechado (exige preposição В), enquanto Вы- indica SAIR de dentro (exige preposição Из).', formula: 'В- + [Verbo] + в / Вы- + [Verbo] + из', example: 'Войти в комнату / Выйти из комнаты', exampleTranslation: 'Entrar no quarto / Sair do quarto' },
             { title: 'Prefixo Про-: Passar por / Percorrer', rule: 'O prefixo Про- indica passar ao lado de algo, percorrer uma distância ou passar reto sem parar.', formula: 'Про- + [Verbo] + мимо / через', example: 'Пройти мимо дома / Проехать 100 километров', exampleTranslation: 'Passar ao lado da casa / Percorrer 100 km' },
@@ -355,10 +355,10 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 9: Аспект глагола II (Aspecto no Passado e Futuro)',
         'Aprofunde a distinção de aspecto verbal (Imperfeito vs Perfeito) no tempo passado e futuro.',
         'Diferencie ações habituais ou duradouras de realizações pontuais concluídas.',
-        'Я долго решал задачу e наконец решил её.',
+        'Я долго решал задачу и наконец решил её.',
         [
             { title: 'Passado: Processo (НСВ) vs. Conclusão (СВ)', rule: 'No passado, usa-se o Imperfeito (НСВ) para enfatizar o TEMPO GASTO ou a repetição, e o Perfeito (СВ) para celebrar o RESULTADO OBTIDO.', formula: 'Долго + [НСВ] ➔ Наконец + [СВ]', example: 'Я долго готовил ужин и приготовил его.', exampleTranslation: 'Cozinhei por muito tempo e (finalmente) preparei a janta.' },
-            { title: 'Futuro: Intenção Geral vs. Compromisso de Entrega', rule: 'No futuro, o Imperfeito (Буду делать) indica a intenção de estar fazendo a ação, enquanto o Perfeito (Сделаю) garante o resultado final.', formula: 'Буду делать (НСВ) vs Сделаю (СВ)', example: 'Завтра я буду читать. / Завтра я прочитаю эту статью.', exampleTranslation: 'Amanhã estarei lendo. / Amanhã lerei (e terminarei) este artigo.' },
+            { title: 'Futuro: Processo vs. Resultado Pretendido', rule: 'No futuro, o Imperfeito (Буду делать) apresenta processo, duração ou repetição, enquanto o Perfeito (Сделаю) apresenta uma ação futura delimitada e orientada ao resultado.', formula: 'Буду делать (НСВ) vs Сделаю (СВ)', example: 'Завтра я буду читать. / Завтра я прочитаю эту статью.', exampleTranslation: 'Amanhã estarei lendo. / Amanhã lerei este artigo até o fim.' },
             { title: 'Pares Verbais Essenciais B1', rule: 'Pares frequentes: Решать / Решить (resolver), Готовить / Приготовить (cozinhar), Покупать / Купить (comprar).', formula: '[Imperfeito] / [Perfeito]', example: 'Покупать / Купить', exampleTranslation: 'Comprar (processo) / Comprar (conclusão)' }
         ],
         [
@@ -378,7 +378,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { q: 'Qual verbo indica que o problema foi EFETIVAMENTE RESOLVIDO com sucesso?', options: ['Решать', 'Решить', 'Думать', 'Писать'], correctIndex: 1, explanation: 'Решить (СВ) foca na resolução concluída.' },
-            { q: 'Qual tempo futuro garante o RESULTADO final da ação (Futuro do Aspecto Perfeito)?', options: ['Futuro composto (Буду делать)', 'Futuro simples perfeito (Сделаю)', 'Presente', 'Passado'], correctIndex: 1, explanation: 'O Perfeito no futuro (ex: сделаю, прочитаю) garante o resultado.' },
+            { q: 'Qual forma futura apresenta a ação como delimitada e orientada ao resultado?', options: ['Futuro composto (Буду делать)', 'Futuro simples perfeito (Сделаю)', 'Presente', 'Passado'], correctIndex: 1, explanation: 'O aspecto perfeito no futuro apresenta uma ação delimitada, como сделаю ou прочитаю.' },
             { q: 'Qual palavra costuma acompanhar o aspecto Perfeito indicando desfecho?', options: ['Долго', 'Наконец', 'Всегда', 'Обычно'], correctIndex: 1, explanation: 'Наконец (finalmente) acompanha a conclusão (СВ).' },
             { q: 'Par perfeito do verbo "покупать" (comprar)?', options: ['Покупать', 'Купить', 'Продать', 'Брать'], correctIndex: 1, explanation: 'Покупать ➔ Купить.' },
             { q: 'Traduza: "Я приготовил обед."', options: ['Estou cozinhando o almoço', 'Preparei (e terminei) o almoço', 'Vou cozinhar o almoço', 'Não sei cozinhar'], correctIndex: 1, explanation: 'Приготовил indica almoço pronto.' }
@@ -465,7 +465,7 @@ CURSO_RUSSO_B1_DADOS.push(
         'Domine a estrutura do condicional russo (Если бы + verbo no passado + бы).',
         'Если бы у меня было время, я бы поехал в Сибирь.',
         [
-            { title: 'Estrutura Hipotética com Если бы', rule: 'Para dizer "Se eu tivesse... eu iria...", usa-se a partícula Бы após a conjunção Если, e os verbos de ambas as orações ficam no TEMPO PASSADO.', formula: 'Если бы + [Verbo no Passado] ..., [Verbo no Passado] + бы', example: 'Если бы я знал, я бы пришёл.', exampleTranslation: 'Se eu soubesse, eu teria vindo.' },
+            { title: 'Estrutura Hipotética com Если бы', rule: 'Para dizer "Se eu tivesse... eu iria...", usa-se a partícula Бы após a conjunção Если, e os verbos de ambas as orações ficam na forma do passado.', formula: 'Если бы + [Forma do passado] ..., [Forma do passado] + бы', example: 'Если бы я знал, я бы пришёл.', exampleTranslation: 'Se eu soubesse, eu viria.' },
             { title: 'Expressando Desejos Corteses с Я хотел бы', rule: 'Para expressar um desejo de forma muito educada ("Eu gostaria de..."), usa-se o verbo no passado + бы.', formula: 'Я хотел бы (M) / Я хотела бы (F) + [Infinitivo]', example: 'Я хотел бы заказать кофе.', exampleTranslation: 'Eu gostaria de pedir um café.' },
             { title: 'Invariabilidade da Partícula Бы', rule: 'A partícula Бы não flexiona jamais. Ela pode vir logo após o verbo no passado ou após os pronomes.', formula: 'Бы (sempre invariável)', example: 'Что бы ты сделал?', exampleTranslation: 'O que você faria?' }
         ],
@@ -499,10 +499,10 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 13: Косвенная речь (Discurso Indireto e Relatos)',
         'Aprenda a relatar o discurso alheio usando os conectores Что, Чтобы, Где e Как.',
         'Domine a transformação de discurso direto em discurso indireto.',
-        'Он сказал, что приедет завтра, e попросил, чтобы мы встретили его.',
+        'Он сказал, что приедет завтра, и попросил, чтобы мы встретили его.',
         [
             { title: 'Relatando Afirmações com Что', rule: 'Para relatar o que alguém disse (afirmação), usa-se a conjunção Что (que).', formula: '[Pessoa] сказал(а), что + [Oração]', example: 'Анна сказала, что она занята.', exampleTranslation: 'Anna disse que está ocupada.' },
-            { title: 'Relatando Pedidos e Ordens com Чтобы', rule: 'Para relatar um pedido ou ordem de outra pessoa, usa-se Чтобы + verbo no Infinitivo ou Passado.', formula: '[Pessoa] попросил(а), чтобы + [Oração]', example: 'Он попросил, чтобы я позвонил ему.', exampleTranslation: 'Ele pediu para eu ligar para ele.' },
+            { title: 'Relatando Pedidos e Ordens com Чтобы', rule: 'Com sujeitos diferentes, relata-se um pedido usando Чтобы + oração com o verbo na forma do passado; com o mesmo sujeito, é comum usar um infinitivo sem Чтобы.', formula: '[Pessoa] попросил(а), чтобы + [Sujeito] + [Forma do passado]', example: 'Он попросил, чтобы я позвонил ему.', exampleTranslation: 'Ele pediu para eu ligar para ele.' },
             { title: 'Perguntas Indiretas com Conectores', rule: 'Para relatar perguntas usa-se o conector interrogativo original (Где, Как, Когда) ou a partícula Ли.', formula: 'Он спросил, где / как / когда...', example: 'Иван спросил, где находится банк.', exampleTranslation: 'Ivan perguntou onde fica o banco.' }
         ],
         [
@@ -539,7 +539,7 @@ CURSO_RUSSO_B1_DADOS.push(
         [
             { title: 'Saudações Formais Corporativas', rule: 'Em correspondências comerciais usam-se "Уважаемый" (Prezado) + Nome/Cargo para homens, e "Уважаемая" para mulheres.', formula: 'Уважаемый господин / Уважаемая госпожа / Уважаемые коллеги', example: 'Уважаемый Александр Викторович!', exampleTranslation: 'Prezado Aleksandr Viktorovitch!' },
             { title: 'Fórmulas de Solicitação Profissional', rule: 'Para fazer pedidos formais usam-se estruturas como "Просим вас + [Infinitivo]" (Pedimos-lhe que...) ou "Будем признательны за..." (Ficaremos gratos por...).', formula: 'Просим вас [Infinitivo] / Будем признательны за [Acusativo]', example: 'Просим вас выслать счёт.', exampleTranslation: 'Pedimos-lhe que nos envie a fatura.' },
-            { title: 'Encerramento e Anexos', rule: 'Standard de encerramento: "С уважением" (Atenciosamente) e indicação de arquivos anexos com "В приложении" (Em anexo).', formula: 'С уважением, [Seu Nome] | В приложении: [Arquivo]', example: 'В приложении направляем договор.', exampleTranslation: 'Em anexo enviamos o contrato.' }
+            { title: 'Encerramento e Anexos', rule: 'Padrão de encerramento: "С уважением" (Atenciosamente) e indicação de arquivos anexos com "В приложении" (Em anexo).', formula: 'С уважением, [Seu Nome] | В приложении: [Arquivo]', example: 'В приложении направляем договор.', exampleTranslation: 'Em anexo enviamos o contrato.' }
         ],
         [
             { type: 'vocab', word: 'Уважаемый', romaji: 'Uvazhayemy', translation: 'Prezado(a) / Respeitável', audio: 'Уважаемый', dica: 'Saudação corporativa oficial.' },
@@ -550,7 +550,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { sentence: 'Уважаемые коллеги, просим вас подтвердить участие в конференции.', translation: 'Prezados colegas, pedimos que confirmem a participação na conferência.', tokens: ['Уважаемые', 'коллеги,', 'просим', 'вас', 'подтвердить', 'участие', 'в', 'конференции.'], audio: 'Уважаемые коллеги, просим вас подтвердить участие в конференции.' },
-            { sentence: 'В приложении к письму вы найдёте signed договор.', translation: 'Em anexo à carta os senhores encontrarão o contrato assinado.', tokens: ['В', 'приложении', 'к', 'письму', 'вы', 'найдёте', 'signed', 'договор.'], audio: 'В приложении к письму вы найдёте signed договор.' }
+            { sentence: 'В приложении к письму вы найдёте подписанный договор.', translation: 'Em anexo à carta os senhores encontrarão o contrato assinado.', tokens: ['В', 'приложении', 'к', 'письму', 'вы', 'найдёте', 'подписанный', 'договор.'], audio: 'В приложении к письму вы найдёте подписанный договор.' }
         ],
         [
             { speaker: 'Secretária', text: 'Вы получили наше письмо?', translation: 'O senhor recebeu nossa carta?', audio: 'Вы получили наше письмо?' },
@@ -571,7 +571,7 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 15: Собеседование (Entrevistas de Emprego em Russo)',
         'Aprenda a apresentar seu currículo (Резюме), competências e trajetória profissional em entrevistas.',
         'Domine o vocabulário de qualificações e verbos de realização corporativa.',
-        'У меня есть опыт работы в IT e я свободно говорю по-английски.',
+        'У меня есть опыт работы в ИТ, и я свободно говорю по-английски.',
         [
             { title: 'Apresentando Experiência (Опыт работы)', rule: 'Para falar da sua experiência anterior usa-se "У меня есть опыт работы в + [Área no Preposicional/Locativo]".', formula: 'У меня есть опыт работы в + [Área]', example: 'У меня есть опыт работы в маркетинге.', exampleTranslation: 'Tenho experiência profissional em marketing.' },
             { title: 'Fluência em Idiomas', rule: 'Usa-se "Свободно говорить по-..." para indicar fluência em línguas estrangeiras.', formula: 'Свободно говорить по-русски / по-английски', example: 'Я свободно говорю по-русски.', exampleTranslation: 'Falo russo fluentemente.' },
@@ -585,7 +585,7 @@ CURSO_RUSSO_B1_DADOS.push(
             { type: 'vocab', word: 'Должность', romaji: 'Dolzhnost', translation: 'Cargo / Função', audio: 'Должность', dica: 'Posto de trabalho na empresa.' }
         ],
         [
-            { sentence: 'У меня есть пятилетний опыт работы в сфере IT.', translation: 'Eu tenho cinco anos de experiência profissional no setor de TI.', tokens: ['У', 'меня', 'есть', 'пятилетний', 'опыт', 'работы', 'в', 'сфере', 'IT.'], audio: 'У меня есть пятилетний опыт работы в сфере IT.' },
+            { sentence: 'У меня есть пятилетний опыт работы в сфере ИТ.', translation: 'Eu tenho cinco anos de experiência profissional no setor de TI.', tokens: ['У', 'меня', 'есть', 'пятилетний', 'опыт', 'работы', 'в', 'сфере', 'ИТ.'], audio: 'У меня есть пятилетний опыт работы в сфере ИТ.' },
             { sentence: 'Я ответственный сотрудник и умею работать в команде.', translation: 'Sou um funcionário responsável e sei trabalhar em equipe.', tokens: ['Я', 'ответственный', 'сотрудник', 'и', 'умею', 'работать', 'в', 'команде.'], audio: 'Я ответственный сотрудник и умею работать в команде.' }
         ],
         [
@@ -614,7 +614,7 @@ CURSO_RUSSO_B1_DADOS.push(
             { title: 'Preposição Temporal Во время + Genitivo', rule: 'Significa "Durante" a realização de um evento.', formula: 'Во время + [Genitivo]', example: 'Во время концерта / Во время обеда', exampleTranslation: 'Durante o show / Durante o almoço' }
         ],
         [
-            { type: 'vocab', word: 'Из-за', romaji: 'Iz-za', translation: 'Por causa de (causa negativa + Genativo)', audio: 'Из-за', dica: 'Indica imprevisto ou problema.' },
+            { type: 'vocab', word: 'Из-за', romaji: 'Iz-za', translation: 'Por causa de (causa negativa + Genitivo)', audio: 'Из-за', dica: 'Indica imprevisto ou problema.' },
             { type: 'vocab', word: 'Благодаря', romaji: 'Blagodarya', translation: 'Graças a (causa positiva + Dativo)', audio: 'Благодаря', dica: 'Indica gratidão ou fator favorável.' },
             { type: 'vocab', word: 'Во время', romaji: 'Vo vremya', translation: 'Durante (+ Genitivo)', audio: 'Во время', dica: 'Preposição temporal.' },
             { type: 'vocab', word: 'Пробки', romaji: 'Probki', translation: 'Engarrafamento / Trânsito (genitivo)', audio: 'Пробки', dica: 'Causa clássica de atrasos.' },
@@ -687,7 +687,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { type: 'vocab', word: 'СМИ', romaji: 'SMI', translation: 'Imprensa / Mídia de massa', audio: 'СМИ', dica: 'Sigla de Средства Массовой Информации.' },
-            { type: 'vocab', word: 'Новости', romaji: 'Novosti', translation: 'Notícias', audio: 'Новости', dica: 'Informaçõess jornalísticas.' },
+            { type: 'vocab', word: 'Новости', romaji: 'Novosti', translation: 'Notícias', audio: 'Новости', dica: 'Informações jornalísticas.' },
             { type: 'vocab', word: 'Событие', romaji: 'Sobytiye', translation: 'Acontecimento / Evento', audio: 'Событие', dica: 'Fato noticioso.' },
             { type: 'vocab', word: 'Сообщается', romaji: 'Soobschayetsya', translation: 'Informa-se / É noticiado', audio: 'Сообщается', dica: 'Voz passiva jornalística.' },
             { type: 'vocab', word: 'Экономика', romaji: 'Ekonomika', translation: 'Economia', audio: 'Экономика', dica: 'Setor de finanças e produção.' }
@@ -715,7 +715,7 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 19: Экология и общество (Meio Ambiente e Sociedade)',
         'Aprenda a expressar opiniões estruturadas sobre meio ambiente e sociedade.',
         'Domine estruturas como Я считаю, что... e По моему мнению...',
-        'Я считаю, что мы должны защищать природу e экологию.',
+        'Я считаю, что мы должны защищать природу и окружающую среду.',
         [
             { title: 'Expressando Opinião: Я считаю, что...', rule: 'Para expressar um posicionamento forte e considerado, usa-se "Я считаю, что..." (Eu considero/acho que...).', formula: 'Я считаю, что + [Opinião]', example: 'Я считаю, что это важно.', exampleTranslation: 'Eu considero que isto é importante.' },
             { title: 'Expressando Ponto de Vista: По-моему', rule: 'Usa-se "По-моему" (Na minha opinião) ou "По моему мнению" para introduzir um ponto de vista.', formula: 'По-моему, / По моему мнению,', example: 'По-моему, природа в опасности.', exampleTranslation: 'Na minha opinião, a natureza está em perigo.' },
@@ -730,7 +730,7 @@ CURSO_RUSSO_B1_DADOS.push(
         ],
         [
             { sentence: 'Я считаю, что общество должно больше заботиться об экологии.', translation: 'Eu considero que a sociedade deve cuidar mais da ecologia.', tokens: ['Я', 'считаю,', 'что', 'общество', 'должно', 'больше', 'заботиться', 'об', 'экологии.'], audio: 'Я считаю, что общество должно больше заботиться об экологии.' },
-            { sentence: 'По-моему, защищать природу — это duty каждого человека.', translation: 'Na minha opinião, proteger a natureza é dever de cada pessoa.', tokens: ['По-моему,', 'защищать', 'природу', '—', 'это', 'duty', 'каждого', 'человека.'], audio: 'По-моему, защищать природу — это duty каждого человека.' }
+            { sentence: 'По-моему, защищать природу — это обязанность каждого человека.', translation: 'Na minha opinião, proteger a natureza é dever de cada pessoa.', tokens: ['По-моему,', 'защищать', 'природу', '—', 'это', 'обязанность', 'каждого', 'человека.'], audio: 'По-моему, защищать природу — это обязанность каждого человека.' }
         ],
         [
             { speaker: 'Ativista', text: 'Как вы относитесь к экологии?', translation: 'O que você pensa sobre a ecologia?', audio: 'Как вы относитесь к экологии?' },
@@ -787,9 +787,9 @@ CURSO_RUSSO_B1_DADOS.push(
         'Módulo 21: Выражение цели (Orações Finais e Propósito)',
         'Aprenda a expressar objetivos e propósitos com Para que / A fim de (Чтобы, Для того чтобы) e Para (+ Genitivo).',
         'Domine orações subordinadas finais e a preposição Для.',
-        'Я учу русский язык, чтобы работать в России, e покупаю книги для этого.',
+        'Я учу русский язык, чтобы работать в России, и покупаю для этого книги.',
         [
-            { title: 'Propósito com Чтобы + Infinitivo', rule: 'Quando o sujeito da oração principal e da subordinada é O MESMO, usa-se Чтобы seguido do verb no Infinitivo.', formula: '[Ação] +, чтобы + [Infinitivo]', example: 'Я приехал в Москву, чтобы учиться.', exampleTranslation: 'Vim a Moscou para estudar.' },
+            { title: 'Propósito com Чтобы + Infinitivo', rule: 'Quando o sujeito da oração principal e da subordinada é o mesmo, usa-se Чтобы seguido do verbo no infinitivo.', formula: '[Ação] +, чтобы + [Infinitivo]', example: 'Я приехал в Москву, чтобы учиться.', exampleTranslation: 'Vim a Moscou para estudar.' },
             { title: 'Estrutura Formal Для того чтобы', rule: 'Em contextos formais ou e-mails corporativos, usa-se a expressão "Для того чтобы" (A fim de que / Com a finalidade de).', formula: 'Для того чтобы + [Infinitivo / Subjuntivo]', example: 'Для того чтобы получить визу, нужно заполнить анкету.', exampleTranslation: 'A fim de obter o visto, é preciso preencher o formulário.' },
             { title: 'Preposição Для + Genitivo', rule: 'Para indicar a quem ou a que se destina algo ("para"), usa-se a preposição Для + Caso Genitivo.', formula: 'Для + [Genitivo]', example: 'Подарок для мамы / Учебник для студентов', exampleTranslation: 'Presente para a mãe / Livro para estudantes' }
         ],
@@ -821,7 +821,7 @@ CURSO_RUSSO_B1_DADOS.push(
     criarModuloB1Handcrafted(
         'ru_b1_mod_22',
         'Módulo 22: Русский юмор и выражения (Humor Russo e Expressões)',
-        'Conheça o humor russa e expressões idiomáticas clássicas do dia a dia.',
+        'Conheça o humor russo e expressões idiomáticas clássicas do dia a dia.',
         'Domine expressões populares como Ни пуха ни пера!, Делать из мухи слона e Дойти до ручки.',
         'Ни пуха ни пера! — К чёрту! Не делай из мухи слона.',
         [
@@ -834,7 +834,7 @@ CURSO_RUSSO_B1_DADOS.push(
             { type: 'vocab', word: 'К чёрту!', romaji: 'K chortu!', translation: 'Ao diabo! (resposta ritual a boa sorte)', audio: 'К чёрту!', dica: 'Resposta obrigatória a Ни пуха ни пера!' },
             { type: 'vocab', word: 'Из мухи слона', romaji: 'Iz mukhi slona', translation: 'Tempestade em copo d\'água (de mosca a elefante)', audio: 'Из мухи слона', dica: 'Exagerar um problema pequeno.' },
             { type: 'vocab', word: 'Дойти до ручки', romaji: 'Doyti do ruchki', translation: 'Chegar ao limite / exaustão total', audio: 'Дойти до ручки', dica: 'Estar no fundo do poço.' },
-            { type: 'vocab', word: 'Юмор', romaji: 'Yumor', translation: 'Humor', audio: 'Юмор', dica: 'Sensibilidade de espírito russa.' }
+            { type: 'vocab', word: 'Юмор', romaji: 'Yumor', translation: 'Humor', audio: 'Юмор', dica: 'Humor e sensibilidade cômica na cultura russa.' }
         ],
         [
             { sentence: 'Завтра у меня итоговый экзамен. — Ни пуха ни пера! — К чёрту!', translation: 'Amanhã tenho o exame final. — Boa sorte! — Valeu / Ao diabo!', tokens: ['Завтра', 'у', 'меня', 'итоговый', 'экзамен.', '—', 'Ни', 'пуха', 'ни', 'пера!', '—', 'К', 'чёрту!'], audio: 'Завтра у меня итоговый экзамен. — Ни пуха ни пера! — К чёрту!' },
@@ -899,7 +899,7 @@ CURSO_RUSSO_B1_DADOS.push(
         [
             { title: 'Certificação Interna Nível B1', rule: 'Ao concluir este teste com sucesso, você terá conquistado a Autonomia Gramatical Intermediária Superior (Nível B1).', formula: 'Autonomia Gramatical (Nível B1 Concluído)', example: 'Поздравляем с уровнем B1!', exampleTranslation: 'Parabéns pelo Nível B1!' },
             { title: 'Domínio dos 6 Casos e Verbos de Movimento', rule: 'Certificação em todos os 6 Casos Gramaticais, Verbos com Prefixo, Discurso Indireto e Sintaxe Complexa.', formula: 'Visão Geral do Nível B1 (Rumo ao Nível B2)', example: 'Вы отлично говорите по-русски!', exampleTranslation: 'Você fala russo muito bem!' },
-            { title: 'Debate e Apresentação de Projetos', rule: 'Capacidade de expor ideias com Я считаю, que... e defender pontos de vista corporativos e sociais.', formula: 'Debate & Fluência Autônoma', example: 'Я считаю, что этот проект успешный.', exampleTranslation: 'Considero que este projeto é bem-sucedido.' }
+            { title: 'Debate e Apresentação de Projetos', rule: 'Capacidade de expor ideias com Я считаю, что... e defender pontos de vista corporativos e sociais.', formula: 'Debate e autonomia comunicativa', example: 'Я считаю, что этот проект успешен.', exampleTranslation: 'Considero que este projeto é bem-sucedido.' }
         ],
         [
             { type: 'vocab', word: 'Экзамен', romaji: 'Ekzamen', translation: 'Exame / Teste de certificação', audio: 'Экзамен', dica: 'Desafio final B1.' },

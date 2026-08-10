@@ -36,6 +36,21 @@ const CYRILLIC = /\p{Script=Cyrillic}/u;
 const LATIN = /\p{Script=Latin}/u;
 const TOKEN_PATTERN = /[\p{L}\p{M}]+(?:[-'][\p{L}\p{M}]+)*/gu;
 
+// Códigos oficiais do Quadro Europeu Comum de Referência. São aceitos somente
+// quando A/B aparece imediatamente seguido de 1/2, nunca como letra isolada.
+const CEFR_CODE = /^[AB][12]$/;
+
+function isDocumentedTechnicalToken(value, match) {
+    const token = match[0];
+    const start = match.index;
+    const candidate = value.slice(start, start + 2);
+    const previous = value[start - 1] || '';
+    const next = value[start + 2] || '';
+    return token.length === 1 && CEFR_CODE.test(candidate) &&
+        !/[\p{L}\p{M}\p{N}]/u.test(previous) &&
+        !/[\p{L}\p{M}\p{N}]/u.test(next);
+}
+
 function loadModules(relativePath, variableName) {
     const source = fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
     const context = vm.createContext({ console: { log() {}, warn() {}, error() {} } });
@@ -51,10 +66,12 @@ function isTargetField(key, pathParts) {
 
 function inspectValue(value, metadata, occurrences) {
     if (typeof value !== 'string' || !value.trim()) return;
-    const tokens = value.match(TOKEN_PATTERN) || [];
+    const tokens = [...value.matchAll(TOKEN_PATTERN)];
     const reasons = new Map();
 
-    tokens.forEach(token => {
+    tokens.forEach(match => {
+        const token = match[0];
+        if (isDocumentedTechnicalToken(value, match)) return;
         const hasCyrillic = CYRILLIC.test(token);
         const hasLatin = LATIN.test(token);
         const normalized = token.toLocaleLowerCase('pt-BR');
@@ -128,7 +145,7 @@ function renderReport(occurrences) {
     const lines = [
         '# Ocorrências da auditoria editorial russa',
         '',
-        'Relatório técnico gerado por `npm run audit:russian`. Ele não substitui revisão linguística humana.',
+        'Relatório técnico gerado por `npm run audit:russian`. Ele complementa a revisão editorial integral documentada em `tests/RUSSIAN_EDITORIAL_REVIEW.md`.',
         '',
         `- Erros técnicos bloqueadores: ${errors}`,
         `- Ocorrências para revisão humana: ${reviews}`,
@@ -138,6 +155,10 @@ function renderReport(occurrences) {
         '## Allowlist documentada de nomes próprios e marcas',
         '',
         LATIN_PROPER_NAME_ALLOWLIST.map(value => `\`${value}\``).join(', '),
+        '',
+        '## Tokens técnicos documentados',
+        '',
+        '`A1`, `A2`, `B1` e `B2` são aceitos como códigos oficiais do CEFR/QECR. Letras `A` ou `B` isoladas continuam sendo auditadas.',
         '',
         '## Checklist consolidado para o revisor',
         '',
@@ -157,20 +178,20 @@ function renderReport(occurrences) {
     }
     lines.push(
         '## Ocorrências',
-        ''
+        '',
+        '| Severidade | Arquivo | Módulo | Caminho do campo | Motivo | Valor |',
+        '|---|---|---|---|---|---|'
     );
     if (occurrences.length === 0) {
-        lines.push('Nenhuma ocorrência técnica ou editorial foi encontrada.', '');
+        lines.push('| — | — | — | — | Nenhuma ocorrência técnica ou editorial encontrada | — |', '');
     } else {
-        lines.push('| Severidade | Arquivo | Módulo | Caminho do campo | Motivo | Valor |');
-        lines.push('|---|---|---|---|---|---|');
         occurrences.forEach(item => lines.push(
             `| ${escapeCell(item.severity)} | ${escapeCell(item.file)} | ${escapeCell(item.module)} | ` +
             `${escapeCell(item.field)} | ${escapeCell(item.reason)} | ${escapeCell(item.value)} |`
         ));
         lines.push('');
     }
-    lines.push('## Limite desta validação', '', 'A ausência de erros bloqueadores indica apenas consistência mecânica dos campos-alvo. O curso não deve ser anunciado como linguisticamente certificado até uma revisão completa por alguém fluente.', '');
+    lines.push('## Limite desta validação', '', 'A ausência de ocorrências indica consistência mecânica dos campos-alvo cobertos. A revisão editorial integral baseada nas fontes está registrada separadamente; ela não equivale a certificação por falante nativo nem a acreditação linguística externa.', '');
     return lines.join('\n');
 }
 

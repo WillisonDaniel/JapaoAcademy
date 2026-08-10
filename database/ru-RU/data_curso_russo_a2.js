@@ -69,7 +69,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Domine os sufixos do passado: -л (masculino), -ла (feminino), -ло (neutro) e -ли (plural).',
         'Вчера я читал книгу, а она смотрела фильм.',
         [
-            { title: 'Sufixos do Tempo Passado', rule: 'Em russo, o passado concorda em gênero e número com o sujeito, substituindo a terminação do infinitivo (-ть) pelos sufixos -л, -ла, -ло, -ли.', formula: 'Infinitivo sem -ть + -л (M) / -ла (F) / -ло (N) / -ли (Plur)', example: 'Он читал / Она читала / Они читали', exampleTranslation: 'Ele leu / Ela leu / Eles leram' },
+            { title: 'Sufixos do Tempo Passado', rule: 'Em verbos regulares terminados em -ть, o passado concorda em gênero e número com o sujeito e usa -л, -ла, -ло ou -ли; formas irregulares devem ser aprendidas separadamente.', formula: 'Tema sem -ть + -л (M) / -ла (F) / -ло (N) / -ли (Plur)', example: 'Он читал / Она читала / Они читали', exampleTranslation: 'Ele leu / Ela leu / Eles leram' },
             { title: 'Passado do Verbo Быть (Ser/Estar)', rule: 'O verbo ser/estar no passado flexiona normalmente: Был (M), Была (F), Было (N), Были (Plur).', formula: 'Был (M) / Была (F) / Было (N) / Были (Plural)', example: 'Вчера я был дома.', exampleTranslation: 'Ontem eu estava em casa.' }
         ],
         [
@@ -136,11 +136,11 @@ CURSO_RUSSO_A2_DADOS.push(
         'ru_a2_mod_03',
         'Módulo 3: Аспект глагола I (Imperfeito vs Perfeito)',
         'Compreenda a diferença fundamental entre o aspecto Imperfeito (НСВ) e Perfeito (СВ) nos verbos russos.',
-        'Diferencie o aspecto imperfeito (processo/hábito) do aspecto perfeito (resultado único e concluído).',
+        'Diferencie o aspecto imperfeito (processo, duração ou hábito) do aspecto perfeito (ação vista como um todo delimitado).',
         'Я долго читал книгу и наконец прочитал её.',
         [
             { title: 'Aspecto Imperfeito (НСВ)', rule: 'O aspecto imperfeito (НСВ) foca no PROCESSO da ação, na sua duração ou na repetição de um hábito.', formula: 'Verbo НСВ (процесс / повторение)', example: 'Я долго писал письмо.', exampleTranslation: 'Eu fiquei um longo tempo escrevendo a carta.' },
-            { title: 'Aspecto Perfeito (СВ)', rule: 'O aspecto perfeito (СВ) foca no RESULTADO único de uma ação totalmente concluída.', formula: 'Verbo СВ (результат / факт)', example: 'Я написал письмо.', exampleTranslation: 'Eu escrevi (e terminei) a carta.' }
+            { title: 'Aspecto Perfeito (СВ)', rule: 'O aspecto perfeito (СВ) apresenta a ação como um todo delimitado, frequentemente com foco no resultado ou na conclusão.', formula: 'Verbo СВ (результат / завершённость)', example: 'Я написал письмо.', exampleTranslation: 'Eu escrevi (e terminei) a carta.' }
         ],
         [
             { type: 'vocab', word: 'Делать', romaji: 'Delat', translation: 'Fazer (imperfeito/processo)', audio: 'Делать', dica: 'Foco na ação em andamento (НСВ).' },
@@ -151,7 +151,7 @@ CURSO_RUSSO_A2_DADOS.push(
         ],
         [
             { sentence: 'Я вчера долго писал письмо и наконец написал его.', translation: 'Ontem eu fiquei muito tempo escrevendo a carta e finalmente a escrevi.', tokens: ['Я', 'вчера', 'долго', 'писал', 'письмо', 'и', 'наконец', 'написал', 'его.'], audio: 'Я вчера долго писал письмо и наконец написал его.' },
-            { sentence: 'Он сделал домашнее задание.', translation: 'Ele fez (e concluiu) a lição de casa.', tokens: ['Он', 'сделать', 'домашнее', 'задание.'], audio: 'Он сделал домашнее задание.' }
+            { sentence: 'Он сделал домашнее задание.', translation: 'Ele fez (e concluiu) a lição de casa.', tokens: ['Он', 'сделал', 'домашнее', 'задание.'], audio: 'Он сделал домашнее задание.' }
         ],
         [
             { speaker: 'Professora', text: 'Ты прочитал книгу?', translation: 'Você leu (até o fim) o livro?', audio: 'Ты прочитал книгу?' },
@@ -242,7 +242,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Módulo 6: Родительный падеж I (Caso Genitivo - Posse e Ausência)',
         'Aprenda a expressar ausência, falta ou não posse de algo com a estrutura "У меня нет..." + Genitivo.',
         'Domine as terminações do Genitivo Singular (Masc/Neutro -а/-я, Fem -ы/-и) na ausência de coisas ou pessoas.',
-        'У меня нет времени e у него нет машины.',
+        'У меня нет времени, а у него нет машины.',
         [
             { title: 'Ausência com У меня нет...', rule: 'A negação de posse ou ausência total de algo é expressa pela estrutura "У меня нет" seguida do substantivo obrigatoriamente no Caso Genitivo.', formula: 'У [Genitivo de quem] нет + [Genitivo do que falta]', example: 'У меня нет машины. / У него нет времени.', exampleTranslation: 'Eu não tenho carro. / Ele não tem tempo.' },
             { title: 'Terminações do Genitivo Singular', rule: 'Substantivos masculinos/neutros ganham -а/-я. Femininos terminados em -а mudam para -ы (ou -и após г, к, х, ж, ч, ш, щ).', formula: 'Masc/Neutro: -а/-я | Fem: -ы/-и', example: 'Брат ➔ Брата / Машина ➔ Машины / Книга ➔ Книги', exampleTranslation: 'do irmão / do carro / do livro' }
@@ -365,7 +365,7 @@ CURSO_RUSSO_A2_DADOS.push(
         ],
         [
             { speaker: 'Marina', text: 'С Днём Рождения, Иван!', translation: 'Feliz Aniversário, Ivan!', audio: 'С Днём Рождения, Иван!' },
-            { speaker: 'Ivan', text: 'Большое спасибо! Вот твой подарок.', translation: 'Muito obrigado! Aqui está seu presente.', audio: 'Большое спасибо! Вот твой подарок.' }
+            { speaker: 'Ivan', text: 'Большое спасибо за подарок!', translation: 'Muito obrigado pelo presente!', audio: 'Большое спасибо за подарок!' }
         ],
         [
             { q: 'Qual preposição é usada nas felicitações ("Feliz Ano Novo!")?', options: ['В', 'На', 'С', 'Из'], correctIndex: 2, explanation: 'Felicitações usam С + Instrumental.' },
@@ -406,7 +406,7 @@ CURSO_RUSSO_A2_DADOS.push(
             { q: 'Qual é o comparativo de "дорогой" (caro)?', options: ['Дороже', 'Дешевле', 'Лучше', 'Хуже'], correctIndex: 0, explanation: 'Дорогой ➔ Дороже (mais caro).' },
             { q: 'Qual é o comparativo de "дешёвый" (barato)?', options: ['Дороже', 'Дешевле', 'Лучше', 'Быстрее'], correctIndex: 1, explanation: 'Дешёвый ➔ Дешевле (mais barato).' },
             { q: 'Qual palavra significa "do que" em comparações?', options: ['Как', 'Что', 'Чем', 'И'], correctIndex: 2, explanation: 'Чем = Do que.' },
-            { q: 'O que é uma "Матрёшка"?', options: ['Sopa russa', 'Boneca tradicional de madeira reinhada', 'Gorro de pele', 'Dança russa'], correctIndex: 1, explanation: 'Boneca de madeira russa.' },
+            { q: 'O que é uma "Матрёшка"?', options: ['Sopa russa', 'Boneca tradicional de madeira encaixada', 'Gorro de pele', 'Dança russa'], correctIndex: 1, explanation: 'Boneca de madeira russa.' },
             { q: 'Comparativo de "хороший" (bom)?', options: ['Хорошее', 'Лучше', 'Дороже', 'Меньше'], correctIndex: 1, explanation: 'Хороший ➔ Лучше (melhor).' }
         ]
     ),
@@ -454,7 +454,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Aprenda o vocabulário da casa e o uso do Caso Preposicional para localização de móveis e cômodos.',
         'Летом мы отдыхаем на даче.',
         [
-            { title: 'O Conceito Cultural da Дача', rule: 'A Дача é a tradicional casa de campo russa onde as famílias passam fins de semana e o verão cultivando hortas e fazendo banha (sauna russa).', formula: 'На даче (Na dacha)', example: 'Летом мы всегда ездим на дачу.', exampleTranslation: 'No verão nós sempre vamos para a dacha.' },
+            { title: 'O Conceito Cultural da Дача', rule: 'A Дача é a tradicional casa de campo russa onde as famílias passam fins de semana e o verão cultivando hortas e frequentando a bânia (баня, sauna russa).', formula: 'На даче (Na dacha)', example: 'Летом мы всегда ездим на дачу.', exampleTranslation: 'No verão nós sempre vamos para a dacha.' },
             { title: 'Cômodos e Móveis no Preposicional', rule: 'Para dizer em qual cômodo algo está, usa-se В/НА + Preposicional (-е).', formula: 'В комнате / На кухне / В спальне', example: 'Стол стоит в комнате.', exampleTranslation: 'A mesa está na sala.' }
         ],
         [
@@ -490,7 +490,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Алло! Слушаю. Можно Ивана к телефону?',
         [
             { title: 'Atendendo ao Telefone', rule: 'Ao atender uma chamada em russo, usam-se as expressões "Алло!" ou "Слушаю!" (Literalmente: "Estou ouvindo!").', formula: 'Алло! / Слушаю! / Да-да!', example: 'Алло! Здравствуйте, я слушаю.', exampleTranslation: 'Alô! Olá, estou ouvindo.' },
-            { title: 'Pedindo para Falar com Alguém', rule: 'Para solicitar a presença de alguém na linha, usa-se "Можно + [Nome no Acusativo/Genitivo] + к телефону?".', formula: 'Можно + [Nome] + к телефону?', example: 'Можно Анну к телефону?', exampleTranslation: 'Posso falar com a Anna?' }
+            { title: 'Pedindo para Falar com Alguém', rule: 'Para solicitar a presença de alguém na linha, usa-se "Можно + [Nome no Acusativo] + к телефону?".', formula: 'Можно + [Nome no Acusativo] + к телефону?', example: 'Можно Анну к телефону?', exampleTranslation: 'Posso falar com a Anna?' }
         ],
         [
             { type: 'vocab', word: 'Алло', romaji: 'Allo', translation: 'Alô', audio: 'Алло', dica: 'Saudação telefônica universal.' },
@@ -524,8 +524,8 @@ CURSO_RUSSO_A2_DADOS.push(
         'Domine o verbo Встречаться с + Instrumental (encontrar-se com alguém) e a partícula Давай (vamos).',
         'Давай встретимся в субботу в парке!',
         [
-            { title: 'Encontrar-se com Alguém (Встречаться с)', rule: 'O verbo reflexivo Встречаться (ou встретиться) exige a preposição С seguida do Caso Instrumental.', formula: 'Встречаться с + [Pessoa no Instrumental]', example: 'Я встречаюсь с другом.', exampleTranslation: 'Eu vou me encontrar com meu amigo.' },
-            { title: 'Fazendo Convites com Давай', rule: 'Usa-se "Давай" (informal) ou "Давайте" (formal) para convidar alguém a fazer algo.', formula: 'Давай / Давайте + [Ação no Infinitivo/Futuro]', example: 'Давай пойдём в кино!', exampleTranslation: 'Vamos ao cinema!' }
+            { title: 'Encontrar-se com Alguém (Встречаться с)', rule: 'O verbo reflexivo Встречаться (ou встретиться) exige a preposição С seguida do Caso Instrumental.', formula: 'Встречаться с + [Pessoa no Instrumental]', example: 'Я встречаюсь с другом.', exampleTranslation: 'Eu me encontro com um amigo.' },
+            { title: 'Fazendo Convites com Давай', rule: 'Usa-se "Давай" (informal) ou "Давайте" (formal) com um infinitivo imperfeito ou com a 1ª pessoa do plural de um verbo perfeito para propor uma ação conjunta.', formula: 'Давай читать / Давай пойдём', example: 'Давай пойдём в кино!', exampleTranslation: 'Vamos ao cinema!' }
         ],
         [
             { type: 'vocab', word: 'Давай', romaji: 'Davai', translation: 'Vamos! / Bora!', audio: 'Давай', dica: 'Expressão informal para propor algo ou se despedir amigavelmente.' },
@@ -592,7 +592,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Módulo 16: В театре и музее (Teatro Bolshoi e Hermitage)',
         'Aprenda o vocabulário cultural para visitar monumentos, o Teatro Bolshoi e o Museu Hermitage.',
         'Domine frases para comprar ingressos em bilheterias e perguntar sobre peças e exposições.',
-        'Мы купили билеты в Большой театр e в Эрмитаж.',
+        'Мы купили билеты в Большой театр и в Эрмитаж.',
         [
             { title: 'O Teatro Bolshoi e o Hermitage', rule: 'O Большой театр (Moscou) é o templo mundial do balé e ópera; o Эрмитаж (São Petersburgo) é um dos maiores museus de arte do planeta.', formula: 'В Большом театре / В Эрмитаже', example: 'Вчера мы были в Большом театре.', exampleTranslation: 'Ontem estávamos no Teatro Bolshoi.' },
             { title: 'Comprando Ingressos na Bilheteria (Касса)', rule: 'Para pedir ingressos usa-se "Дайте, пожалуйста, билеты на...".', formula: 'Билеты на + [Espetáculo/Dia no Acusativo]', example: 'Дайте два билета на балет.', exampleTranslation: 'Me dê dois ingressos para o balé.' }
@@ -610,7 +610,7 @@ CURSO_RUSSO_A2_DADOS.push(
         ],
         [
             { speaker: 'Visitante', text: 'Здравствуйте! Есть билеты на балет?', translation: 'Olá! Há ingressos para o balé?', audio: 'Здравствуйте! Есть билеты на балет?' },
-            { speaker: 'Bilheteiro', text: 'Да, есть dva билета.', translation: 'Sim, há dois ingressos.', audio: 'Да, есть два билета.' }
+            { speaker: 'Bilheteiro', text: 'Да, есть два билета.', translation: 'Sim, há dois ingressos.', audio: 'Да, есть два билета.' }
         ],
         [
             { q: 'Onde fica o famoso Teatro Bolshoi (Большой театр)?', options: ['São Petersburgo', 'Moscou', 'Kazan', 'Sochi'], correctIndex: 1, explanation: 'O Bolshoi fica em Moscou.' },
@@ -627,7 +627,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Módulo 17: Природа и сезоны (Natureza e Estações do Ano)',
         'Descreva as quatro estações do ano e use os advérbios temporais de estação no Caso Instrumental.',
         'Domine os advérbios de estação: Зимой (no inverno), Весной (na primavera), Летом (no verão) e Осенью (no outono).',
-        'Зимой идет снег, а летом тепло e солнечно.',
+        'Зимой идёт снег, а летом тепло и солнечно.',
         [
             { title: 'Advérbios de Estação (Caso Instrumental)', rule: 'Para responder a "Quando?" referente a uma estação do ano, usa-se a forma do Caso Instrumental do substantivo.', formula: 'Зима ➔ Зимой | Весна ➔ Весной | Лето ➔ Летом | Осень ➔ Осенью', example: 'Зимой очень холодно. Летом жарко.', exampleTranslation: 'No inverno é muito frio. No verão é quente.' },
             { title: 'As Quatro Estações na Rússia', rule: 'A Rússia vive transformações drásticas entre o inverno congelante (зима) e o verão ensolarado (лето).', formula: 'Зима (Inverno) / Весна (Primavera) / Лето (Verão) / Осень (Outono)', example: 'Весной природа красивая.', exampleTranslation: 'Na primavera a natureza é bonita.' }
@@ -679,7 +679,7 @@ CURSO_RUSSO_A2_DADOS.push(
             { sentence: 'Пишу тебе письмо из Санкт-Петербурга.', translation: 'Escrevo-lhe uma carta de São Petersburgo.', tokens: ['Пишу', 'тебе', 'письмо', 'из', 'Санкт-Петербурга.'], audio: 'Пишу тебе письмо из Санкт-Петербурга.' }
         ],
         [
-            { speaker: 'Remetente', text: 'Здравствуйте! С уважением, Иван.', translation: 'Olá! Atenciosamente, Ivan.', audio: 'Здравствуйте! С уважением, Иван.' },
+            { speaker: 'Remetente', text: 'Дорогая Анна! Пишу тебе из Москвы.', translation: 'Querida Anna! Escrevo para você de Moscou.', audio: 'Дорогая Анна! Пишу тебе из Москвы.' },
             { speaker: 'Destinatário', text: 'Спасибо за письмо!', translation: 'Obrigado pela carta!', audio: 'Спасибо за письмо!' }
         ],
         [
@@ -697,10 +697,10 @@ CURSO_RUSSO_A2_DADOS.push(
         'Módulo 19: Проблемы в поездке (Imprevistos e Ajuda)',
         'Aprenda a reagir a imprevistos de viagem e pedir socorro urgente em russo.',
         'Domine o Modo Imperativo de emergência (Помогите!, Скажите!) e vocabulário de urgência.',
-        'Помогите! Я потерял паспорт e багаж.',
+        'Помогите! Я потерял паспорт и багаж.',
         [
             { title: 'Imperativo de Emergência', rule: 'Para pedir ajuda urgente a desconhecidos ou autoridades, usa-se a forma do Imperativo no plural/formal terminada em -те / -ите.', formula: 'Помогите! (Ajude/Ajudem!) | Скажите! (Diga!) | Извините! (Desculpe!)', example: 'Помогите, пожалуйста!', exampleTranslation: 'Por favor, me ajudem!' },
-            { title: 'Expressando Perda de Objetos', rule: 'Usa-se o verbo Потерять (perder) no passado: Я потерял (Masc) / Я потеряла (Fem).', example: 'Я потерял паспорт e деньги.', exampleTranslation: 'Eu perdi o passaporte e o dinheiro.' }
+            { title: 'Expressando Perda de Objetos', rule: 'Usa-se o verbo Потерять (perder) no passado: Я потерял (Masc) / Я потеряла (Fem).', example: 'Я потерял паспорт и деньги.', exampleTranslation: 'Eu perdi o passaporte e o dinheiro.' }
         ],
         [
             { type: 'vocab', word: 'Помогите!', romaji: 'Pomogite!', translation: 'Socorro! / Me ajudem!', audio: 'Помогите!', dica: 'Imperativo de emergência essencial.' },
@@ -791,7 +791,7 @@ CURSO_RUSSO_A2_DADOS.push(
             { q: 'Qual preposição e caso usam-se para ESPORTES com o verbo играть?', options: ['В + Acusativo', 'На + Preposicional', 'С + Instrumental', 'Из + Genitivo'], correctIndex: 0, explanation: 'Esportes usam В + Acusativo (играть в футбол).' },
             { q: 'Qual preposição e caso usam-se para INSTRUMENTOS MUSICAIS com o verbo играть?', options: ['В + Acusativo', 'На + Preposicional', 'С + Instrumental', 'К + Dativo'], correctIndex: 1, explanation: 'Instrumentos usam На + Preposicional (играть на гитаре).' },
             { q: 'Como se diz "Jogar hóquei no gelo"?', options: ['Играть в хоккей', 'Играть на хоккее', 'Играть с хоккеем', 'Играть хоккей'], correctIndex: 0, explanation: 'Играть в хоккей.' },
-            { q: 'Как se diz "Tocar violão"?', options: ['Играть в гитару', 'Играть на гитаре', 'Играть гитару', 'Играть с гитарой'], correctIndex: 1, explanation: 'Играть на гитаре.' },
+            { q: 'Como se diz "Tocar violão"?', options: ['Играть в гитару', 'Играть на гитаре', 'Играть гитару', 'Играть с гитарой'], correctIndex: 1, explanation: 'Играть на гитаре.' },
             { q: 'Esporte nacional de inverno mais popular da Rússia?', options: ['Futebol', 'Hóquei no gelo (Хоккей)', 'Basquete', 'Vôlei'], correctIndex: 1, explanation: 'O hóquei no gelo é paixão nacional na Rússia.' }
         ]
     ),
@@ -815,7 +815,7 @@ CURSO_RUSSO_A2_DADOS.push(
             { type: 'vocab', word: 'Россия', romaji: 'Rossiya', translation: 'Rússia', audio: 'Россия', dica: 'Nome do país no Nominativo.' }
         ],
         [
-            { sentence: 'Москва имеет очень богатую историю.', translation: 'Moscou tem uma história muito rica.', tokens: ['Москва', 'имеет', 'очень', 'богатую', 'историю.'], audio: 'Москва имеет очень богатую историю.' },
+            { sentence: 'У Москвы очень богатая история.', translation: 'Moscou tem uma história muito rica.', tokens: ['У', 'Москвы', 'очень', 'богатая', 'история.'], audio: 'У Москвы очень богатая история.' },
             { sentence: 'Кремль — это древний символ России.', translation: 'O Kremlin é um antigo símbolo da Rússia.', tokens: ['Кремль', '—', 'это', 'древний', 'символ', 'России.'], audio: 'Кремль — это древний символ России.' }
         ],
         [
@@ -855,7 +855,7 @@ CURSO_RUSSO_A2_DADOS.push(
         ],
         [
             { speaker: 'Professor', text: 'Вы готовы к итоговому тесту А2?', translation: 'Vocês estão prontos para o teste final A2?', audio: 'Вы готовы к итоговому тесту А2?' },
-            { speaker: 'Aluno', text: 'Да, мы отлично повторили весь материал!', translation: 'Sim, nós revisamos perfeitamente todo o material!', audio: 'Да, мы отлично повторили весь материал!' }
+            { speaker: 'Aluno', text: 'Да, мы хорошо повторили весь материал!', translation: 'Sim, nós revisamos bem todo o material!', audio: 'Да, мы хорошо повторили весь материал!' }
         ],
         [
             { q: 'Qual sufixo indica o passado feminino singular?', options: ['-л', '-ла', '-ло', '-ли'], correctIndex: 1, explanation: 'Feminino usa sufixo -ла.' },
@@ -874,7 +874,7 @@ CURSO_RUSSO_A2_DADOS.push(
         'Responda às 30 questões do teste integrado de fluência cotidiana para conquistar seu certificado do Nível A2!',
         'Добро пожаловать на итоговый экзамен уровня А2!',
         [
-            { title: 'Certificação Interna Nível A2', rule: 'Ao concluir este teste integrado com sucesso, você terá domínios sólidos da gramática e conversação cotidiana do Nível A2.', formula: 'Comunicação Cotidiana (Nível A2 Concluído)', example: 'Поздравляем с успешным прохождением А2!', exampleTranslation: 'Parabéns pela conclusão com sucesso do A2!' },
+            { title: 'Certificação Interna Nível A2', rule: 'Ao concluir este teste integrado com sucesso, você terá domínio sólido da gramática e da conversação cotidiana trabalhadas no Nível A2.', formula: 'Comunicação Cotidiana (Nível A2 Concluído)', example: 'Поздравляем с успешным прохождением А2!', exampleTranslation: 'Parabéns pela conclusão com sucesso do A2!' },
             { title: 'Estruturas Fundamentais A2', rule: 'Passado (-л/-ла), Futuro (Буду+), Aspectos (НСВ/СВ), Acusativo, Genitivo, Instrumental e Expressões do Dia a Dia.', formula: 'Visão Geral do Nível A2 (Rumo ao Nível B1)', example: 'Я буду путешествовать по России.', exampleTranslation: 'Eu vou viajar pela Rússia.' }
         ],
         [
