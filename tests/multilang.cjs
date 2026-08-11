@@ -360,8 +360,9 @@ test('dashboard reconhece cinco idiomas, datasets e filtros', () => {
         assert.match(html, /js\/core\/course-index\.js/);
         assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU|it-IT)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     }
-    assert.match(read('js/dashboard/meu-progresso.js'), /key: 'it_srs_a1_deck'/);
-    assert.doesNotMatch(read('js/dashboard/meu-progresso.js'), /key: 'it_srs_(?:a2|b1|b2)_deck'/);
+    for (const key of ['it_srs_a1_deck', 'it_srs_a2_deck', 'it_srs_b1_deck', 'it_srs_b2_deck']) {
+        assert.match(read('js/dashboard/meu-progresso.js'), new RegExp(`key: '${key}'`));
+    }
 });
 
 test('curso italiano inclui A1, A2, B1 e B2 e isola indice, decks e progresso', () => {
