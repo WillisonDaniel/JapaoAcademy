@@ -4,3 +4,6 @@ const ITALIAN_DICTIONARY_INDEX = Object.freeze([{"cat":"alphabet","catLabel":"AL
 if (typeof window !== 'undefined') {
     window.ITALIAN_DICTIONARY_INDEX = ITALIAN_DICTIONARY_INDEX;
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { ITALIAN_DICTIONARY_INDEX };
+}

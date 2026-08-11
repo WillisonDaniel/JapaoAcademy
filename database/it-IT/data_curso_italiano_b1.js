@@ -2256,7 +2256,7 @@ const SFIDA_FINALE_QUIZ_B1 = [
         "options": [
             "studiate",
             "studierete",
-            "studiate",
+            "studiaste",
             "studiassi"
         ],
         "correctIndex": 0,

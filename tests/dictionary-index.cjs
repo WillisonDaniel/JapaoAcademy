@@ -187,6 +187,9 @@ function renderIndex(config, data) {
         output += `    window.${config.supplementGlobal} = ${config.supplementGlobal};\n`;
     }
     output += '}\n';
+    output += "if (typeof module !== 'undefined' && module.exports) {\n" +
+        `    module.exports = { ${config.globalName} };\n` +
+        '}\n';
     return output;
 }
 

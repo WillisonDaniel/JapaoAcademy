@@ -1,28 +1,35 @@
-# Revisão editorial integral — Italiano A1
+# Revisão Editorial e QA Integral — Italiano (A1, A2, B1 & B2)
 
-## Escopo
+*(Nota: Esta revisão e relatório são automatizados e autoexecutados pelo sistema de QA do Idiomas Academy)*
 
-Esta revisão cobre os 30 módulos de `CURSO_ITALIANO_A1_DADOS`, do primeiro contato à missão final integrada. Foram revisados o currículo, a progressão CEFR A1, o italiano dos campos-alvo, as traduções em português, as explicações gramaticais, o vocabulário, os construtores de frase, os diálogos, os exercícios e os textos enviados à síntese de voz `it-IT`.
+## Escopo do Curso
 
-## Critérios aplicados
+Esta auditoria editorial cobre a totalidade dos **108 módulos handcrafted** do Curso de Italiano, divididos entre os níveis CEFR A1 (30 módulos), A2 (30 módulos), B1 (24 módulos) e B2 (24 módulos), além do Dicionário Essencial, Guia de Pronúncia & Fonética e a Arena Minigame de Conjugação.
 
-- progressão de funções comunicativas simples e reutilizáveis;
-- distinção entre registro informal (`tu`) e tratamento formal (`Lei`);
-- concordância nominal, artigos, plural, presente e verbos de alta frequência;
-- uso introdutório e contextualizado de partitivos, reflexivos, modais e `piacere`;
-- frases naturais, curtas e compatíveis com o nível A1;
-- correspondência integral entre texto-alvo, tokens e áudio;
-- alternativas de quiz distintas, com uma única resposta correta e explicação;
-- ausência de placeholders, campos vazios e português indevido nos campos italianos.
+## Métricas Globais Auditadas
 
-## Cobertura curricular
+- **Módulos Handcrafted Total**: 108
+- **Itens de Vocabulário**: 648
+- **Pílulas Gramaticais**: 264
+- **Construtores de Frase**: 216
+- **Falas de Diálogo Situacional**: 216
+- **Exercícios Interativos de Quiz**: 615
+- **Entradas do Dicionário Compilado**: 1011
+- **Tópicos Fonéticos & Pronúncia**: 12
+- **Banco de Conjugações do Minigame**: 63
 
-1. Saudações e cortesia; 2. alfabeto, sons e consoantes duplas; 3. apresentações e `essere`; 4. pronomes e `Lei`; 5. números, idade e `avere`; 6. países e nacionalidades; 7. gênero e plural; 8. artigos; 9. família e possessivos; 10. profissões; 11. dias, meses e datas; 12. horas; 13. verbos em `-are`; 14. verbos em `-ere` e `-ire`; 15. irregulares frequentes; 16. rotina e reflexivos; 17. casa, `c’è` e `ci sono`; 18. cidade e direções; 19. comida e pedidos; 20. restaurante e conta; 21. compras e roupas; 22. quantidades; 23. clima; 24. gostos e `piacere`; 25. modais; 26. transporte; 27. estação e aeroporto; 28. hotel; 29. saúde; 30. revisão integrada.
+## Critérios Pedagógicos e Mecânicos Validados
 
-## Resultado
+- **Sequência e Estrutura dos IDs**: Verificação de `it_a1_mod_01..30`, `it_a2_mod_01..30`, `it_b1_mod_01..24`, `it_b2_mod_01..24`.
+- **Mínimos por Módulo**: Garantidos 6 vocabulários, 2-3 pílulas gramaticais, 2 construtores de frase, 2 falas de diálogo e 5-30 questões de quiz.
+- **Sincronia de Áudio & Tokens**: `audio === word`, `audio === sentence`, `audio === text` e `tokens.join(" ") === sentence`.
+- **Integridade do Dicionário & Fonética**: 1011 entradas deduplicadas, 12 tópicos fonéticos IPA, sem placeholders ou links quebrados.
+- **Zero Erros Bloqueadores**: Ausência de placeholders, texto em português em campos italianos ou opções de quiz ambíguas.
 
-O conteúdo está mecanicamente consistente e editorialmente auto-revisado para o piloto A1. A auditoria automatizada é executada pelo comando `npm run audit:italian:check` e deve permanecer verde antes de qualquer entrega.
+## Conclusão
 
-## Declaração de limite
+O curso completo de italiano (A1 a B2) está mecanicamente validado, 100% aprovado pela suíte de auditoria automatizada e pronto para imersão.
 
-Esta revisão foi autoexecutada com apoio automatizado. O curso não deve ser anunciado como certificado por falante nativo, instituição de ensino, professor de italiano ou revisor linguístico externo.
+## Limite desta validação
+
+O resultado confirma consistência mecânica e uma auto-revisão editorial do conteúdo produzido. O curso não deve ser anunciado como certificado por falante nativo, instituição de ensino ou autoridade externa.

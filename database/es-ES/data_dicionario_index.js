@@ -6,3 +6,6 @@ if (typeof window !== 'undefined') {
     window.SPANISH_DICTIONARY_INDEX = SPANISH_DICTIONARY_INDEX;
     window.SPANISH_DICTIONARY_TABLES = SPANISH_DICTIONARY_TABLES;
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { SPANISH_DICTIONARY_INDEX };
+}
