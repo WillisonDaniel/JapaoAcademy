@@ -82,8 +82,8 @@ function createFixtureScript() {
     localStorage.setItem('ja_streak_data', JSON.stringify({ count: 12, best: 18, lastActiveDate: dateKey(0) }));
     localStorage.setItem('japao_academy_progress', JSON.stringify({
         nivelAtual: 'B2',
-        modulosConcluidos: ['a1_mod_01', 'a1_mod_02', 'en_a1_mod_01', 'en_a1_mod_02', 'es_a1_mod_1', 'es_a1_mod_2', 'ru_a1_mod_01', 'ru_a1_mod_02', 'it_a1_mod_01', 'it_a1_mod_02'],
-        modulosDesbloqueados: ['a1_mod_03', 'en_a1_mod_03', 'es_a1_mod_3', 'ru_a1_mod_03', 'it_a1_mod_03']
+        modulosConcluidos: ['a1_mod_01', 'a1_mod_02', 'en_a1_mod_01', 'en_a1_mod_02', 'es_a1_mod_1', 'es_a1_mod_2', 'ru_a1_mod_01', 'ru_a1_mod_02', 'it_a1_mod_01', 'it_a1_mod_02', 'it_a2_mod_01', 'it_b1_mod_01', 'it_b2_mod_01'],
+        modulosDesbloqueados: ['a1_mod_03', 'en_a1_mod_03', 'es_a1_mod_3', 'ru_a1_mod_03', 'it_a1_mod_03', 'it_a2_mod_02', 'it_b1_mod_02', 'it_b2_mod_02']
     }));
     localStorage.setItem('ja_dashboard_data_qa-dashboard', JSON.stringify(dashboardData));
     localStorage.setItem('cyrillic_mod_done_1', 'true');
