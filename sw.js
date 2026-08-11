@@ -12,6 +12,8 @@ const ASSETS_TO_CACHE = [
     './hub_italiano.html',
     './html/it-IT/italiano_curso.html',
     './database/it-IT/data_curso_italiano_a1.js',
+    './database/it-IT/data_curso_italiano_a2.js',
+    './database/it-IT/data_curso_italiano_b1.js',
     './html/ru-RU/russo_curso.html',
     './html/ru-RU/russo_alfabeto.html',
     './html/ru-RU/russo_dicionario.html',

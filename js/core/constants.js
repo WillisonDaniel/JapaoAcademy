@@ -294,6 +294,8 @@ function getCourseData(mode) {
 
         if (isItalian) {
             if (lvl === 'A1') return typeof CURSO_ITALIANO_A1_DADOS !== 'undefined' ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
+            if (lvl === 'A2') return typeof CURSO_ITALIANO_A2_DADOS !== 'undefined' ? CURSO_ITALIANO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A2_DADOS : null);
+            if (lvl === 'B1') return typeof CURSO_ITALIANO_B1_DADOS !== 'undefined' ? CURSO_ITALIANO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B1_DADOS : null);
             return null;
         } else if (isRussian) {
             if (lvl === 'A1') return typeof CURSO_RUSSO_A1_DADOS !== 'undefined' ? CURSO_RUSSO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_RUSSO_A1_DADOS : null);

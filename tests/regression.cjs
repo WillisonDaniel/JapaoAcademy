@@ -91,7 +91,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 78, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 80, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -237,7 +237,7 @@ test('AppState e carregado depois das constantes em todas as paginas', () => {
     }
 });
 
-test('estrutura dos dezessete datasets de cursos principais', () => {
+test('estrutura dos dezenove datasets de cursos principais', () => {
     const courses = [
         ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', 31, 'A1'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', 30, 'A2'],
@@ -255,7 +255,9 @@ test('estrutura dos dezessete datasets de cursos principais', () => {
         ['database/ru-RU/data_curso_russo_a2.js', 'CURSO_RUSSO_A2_DADOS', 24, 'A2'],
         ['database/ru-RU/data_curso_russo_b1.js', 'CURSO_RUSSO_B1_DADOS', 24, 'B1'],
         ['database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS', 24, 'B2'],
-        ['database/it-IT/data_curso_italiano_a1.js', 'CURSO_ITALIANO_A1_DADOS', 30, 'A1']
+        ['database/it-IT/data_curso_italiano_a1.js', 'CURSO_ITALIANO_A1_DADOS', 30, 'A1'],
+        ['database/it-IT/data_curso_italiano_a2.js', 'CURSO_ITALIANO_A2_DADOS', 30, 'A2'],
+        ['database/it-IT/data_curso_italiano_b1.js', 'CURSO_ITALIANO_B1_DADOS', 24, 'B1']
     ];
 
     for (const [file, variable, expectedCount, level] of courses) {

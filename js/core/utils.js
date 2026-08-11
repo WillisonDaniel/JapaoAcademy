@@ -158,8 +158,8 @@ function getTodosOsCursos() {
     if (isItalian) {
         return {
             A1: (typeof CURSO_ITALIANO_A1_DADOS !== 'undefined') ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : []),
-            A2: [],
-            B1: [],
+            A2: (typeof CURSO_ITALIANO_A2_DADOS !== 'undefined') ? CURSO_ITALIANO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A2_DADOS : []),
+            B1: (typeof CURSO_ITALIANO_B1_DADOS !== 'undefined') ? CURSO_ITALIANO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B1_DADOS : []),
             B2: []
         };
     }

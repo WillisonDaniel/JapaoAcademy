@@ -364,25 +364,31 @@ test('dashboard reconhece cinco idiomas, datasets e filtros', () => {
     assert.doesNotMatch(read('js/dashboard/meu-progresso.js'), /key: 'it_srs_(?:a2|b1|b2)_deck'/);
 });
 
-test('curso italiano limita o piloto ao A1 e isola indice, decks e progresso', () => {
+test('curso italiano inclui A1, A2 e B1 e isola indice, decks e progresso', () => {
     const context = createContext({ language: 'italian', pathname: '/html/it-IT/italiano_curso.html' });
     runFile(context, 'js/core/constants.js');
     runFile(context, 'js/core/course-index.js');
     runFile(context, 'database/it-IT/data_curso_italiano_a1.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_a2.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_b1.js');
     runFile(context, 'js/core/utils.js');
     runFile(context, 'js/srs/engine.js');
     assert.equal(context.getCurrentLanguageCode(), 'it-IT');
     assert.equal(context.getCourseModuleIds('it-IT', 'A1').length, 30);
-    assert.equal(context.getCourseModuleIds('it-IT', 'A2').length, 0);
+    assert.equal(context.getCourseModuleIds('it-IT', 'A2').length, 30);
+    assert.equal(context.getCourseModuleIds('it-IT', 'B1').length, 24);
     assert.equal(context.getCourseModuleLanguage('it_a1_mod_17_card_2'), 'it-IT');
     assert.equal(context.getCourseData('italiano').length, 30);
     assert.equal(context.getTodosOsCursos().A1.length, 30);
-    assert.deepEqual(plain(Object.keys(context.getTodosOsCursos()).filter(level => context.getTodosOsCursos()[level].length)), ['A1']);
+    assert.equal(context.getTodosOsCursos().A2.length, 30);
+    assert.equal(context.getTodosOsCursos().B1.length, 24);
+    assert.deepEqual(plain(Object.keys(context.getTodosOsCursos()).filter(level => context.getTodosOsCursos()[level].length)), ['A1', 'A2', 'B1']);
     assert.equal(context.getDeckKeySRS('a1'), 'it_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('a2'), 'it_srs_a2_deck');
+    assert.equal(context.getDeckKeySRS('b1'), 'it_srs_b1_deck');
 
     const html = read('html/it-IT/italiano_curso.html');
-    for (const level of ['a2', 'b1', 'b2']) {
+    for (const level of ['b2']) {
         assert.match(html, new RegExp(`id="card-nivel-${level}"[^>]*aria-disabled="true"`));
         assert.doesNotMatch(html, new RegExp(`id="card-nivel-${level}"[^>]*onclick=`));
     }
@@ -619,10 +625,10 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
         {
             file: 'html/it-IT/italiano_curso.html',
             locale: 'it-IT',
-            scripts: 24,
-            maxBytes: 750 * 1024,
-            dataPattern: /database\/it-IT\/data_curso_italiano_a1\.js/,
-            dataCount: 1
+            scripts: 26,
+            maxBytes: 950 * 1024,
+            dataPattern: /database\/it-IT\/data_curso_italiano_[a-b][1-2]\.js/,
+            dataCount: 3
         }
     ];
 
