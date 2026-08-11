@@ -114,28 +114,33 @@ function compilarGlossarioUniversal() {
             }));
         }
 
-        const italianCourse = typeof CURSO_ITALIANO_A1_DADOS !== 'undefined'
-            ? CURSO_ITALIANO_A1_DADOS
-            : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
-        if (Array.isArray(italianCourse)) {
-            italianCourse.forEach(rawMod => {
-                const module = typeof normalizeModule === 'function' ? normalizeModule(rawMod) : rawMod;
-                (module.drops || module.stage2_drops || []).forEach(drop => {
-                    const isGrammar = drop.type === 'grammar_pill' || drop.rule || drop.formula;
-                    const primary = isGrammar ? (drop.title || drop.word || '') : (drop.word || '');
-                    if (!primary || glossarioUniversalData.some(item => item.primary === primary)) return;
-                    glossarioUniversalData.push(isGrammar ? {
-                        cat: 'grammar', catLabel: 'GRAMÁTICA', primary,
-                        secondary: drop.formula || '', desc: drop.rule || '', context: drop.example || '',
-                        audio: drop.example || primary, level: 'A1', module: module.title
-                    } : {
-                        cat: 'vocab', catLabel: 'VOCABULÁRIO', primary,
-                        secondary: drop.translation || '', desc: drop.dica || drop.tip || '',
-                        audio: drop.audio || primary, level: 'A1', module: module.title
+        ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
+            let courseArr = null;
+            if (lvl === 'A1') courseArr = typeof CURSO_ITALIANO_A1_DADOS !== 'undefined' ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
+            else if (lvl === 'A2') courseArr = typeof CURSO_ITALIANO_A2_DADOS !== 'undefined' ? CURSO_ITALIANO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A2_DADOS : null);
+            else if (lvl === 'B1') courseArr = typeof CURSO_ITALIANO_B1_DADOS !== 'undefined' ? CURSO_ITALIANO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B1_DADOS : null);
+            else if (lvl === 'B2') courseArr = typeof CURSO_ITALIANO_B2_DADOS !== 'undefined' ? CURSO_ITALIANO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B2_DADOS : null);
+
+            if (Array.isArray(courseArr)) {
+                courseArr.forEach(rawMod => {
+                    const module = typeof normalizeModule === 'function' ? normalizeModule(rawMod) : rawMod;
+                    (module.drops || module.stage2_drops || []).forEach(drop => {
+                        const isGrammar = drop.type === 'grammar_pill' || drop.rule || drop.formula;
+                        const primary = isGrammar ? (drop.title || drop.word || '') : (drop.word || '');
+                        if (!primary || glossarioUniversalData.some(item => item.primary === primary)) return;
+                        glossarioUniversalData.push(isGrammar ? {
+                            cat: 'grammar', catLabel: 'GRAMÁTICA', primary,
+                            secondary: drop.formula || '', desc: drop.rule || '', context: drop.example || '',
+                            audio: drop.example || primary, level: lvl, module: module.title
+                        } : {
+                            cat: 'vocab', catLabel: 'VOCABULÁRIO', primary,
+                            secondary: drop.translation || '', desc: drop.dica || drop.tip || '',
+                            audio: drop.audio || primary, level: lvl, module: module.title
+                        });
                     });
                 });
-            });
-        }
+            }
+        });
     } else if (isSpanishMode) {
         // Mode Spanish: Alphabet (27 Letras), Falsos Cognatos, Heterotónicos, Regionalismos, Vocabularies A1-B2 & Grammars A1-B2
         const dictData = typeof DICIONARIO_ESPANHOL_DADOS !== 'undefined' ? DICIONARIO_ESPANHOL_DADOS : (typeof DADOS_ESPANHOL_DICIONARIO !== 'undefined' ? DADOS_ESPANHOL_DICIONARIO : (typeof window !== 'undefined' ? (window.DICIONARIO_ESPANHOL_DADOS || window.DADOS_ESPANHOL_DICIONARIO) : null));

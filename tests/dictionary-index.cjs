@@ -104,10 +104,13 @@ const DICTIONARIES = [
         pathname: '/html/it-IT/italiano_dicionario.html',
         globalName: 'ITALIAN_DICTIONARY_INDEX',
         output: 'database/it-IT/data_dicionario_index.js',
-        expectedCount: 358,
+        expectedCount: 999,
         minimumCount: 250,
         datasets: [
             'database/it-IT/data_curso_italiano_a1.js',
+            'database/it-IT/data_curso_italiano_a2.js',
+            'database/it-IT/data_curso_italiano_b1.js',
+            'database/it-IT/data_curso_italiano_b2.js',
             'database/it-IT/data_italiano_dicionario.js'
         ]
     }

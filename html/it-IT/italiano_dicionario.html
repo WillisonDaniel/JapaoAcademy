@@ -19,7 +19,7 @@
     <header>
         <a href="../../hub_italiano.html" class="home-btn">⬅ Italiano</a>
         <h1>🇮🇹 Dicionário Essencial de Italiano</h1>
-        <p>Alfabeto, vocabulário e gramática do nível A1, com áudio em italiano.</p>
+        <p>Alfabeto, vocabulário e gramática dos níveis A1 a B2, com áudio em italiano.</p>
     </header>
     <main class="container" style="max-width:900px;margin:0 auto;padding:20px;">
         <div class="dict-search-wrapper" style="margin-bottom:1.2rem;">
@@ -33,8 +33,11 @@
             <button class="dict-filter-pill" data-cat="favoritos" onclick="selecionarCategoriaDicionario('favoritos')">⭐ Favoritos</button>
         </div>
         <div id="dict-subfilters-level" class="dict-subfilters-row" style="display:flex;margin-bottom:1rem;gap:.4rem;justify-content:center;flex-wrap:wrap;">
-            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todo o A1</button>
+            <button class="dict-subfilter-pill-vocab active" data-sub-vocab="tudo" onclick="selecionarSubNivelVocab('tudo')">Todos (A1-B2)</button>
             <button class="dict-subfilter-pill-vocab" data-sub-vocab="A1" onclick="selecionarSubNivelVocab('A1')">🟢 Nível A1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="A2" onclick="selecionarSubNivelVocab('A2')">🟡 Nível A2</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B1" onclick="selecionarSubNivelVocab('B1')">🟠 Nível B1</button>
+            <button class="dict-subfilter-pill-vocab" data-sub-vocab="B2" onclick="selecionarSubNivelVocab('B2')">🔴 Nível B2</button>
         </div>
         <div id="dict-results-counter" style="font-size:.88rem;color:var(--text-muted);font-weight:600;margin-bottom:1rem;">Carregando dicionário italiano...</div>
         <div id="dict-results-container" class="grid-dict-results" aria-busy="true" aria-label="Carregando dicionário" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">

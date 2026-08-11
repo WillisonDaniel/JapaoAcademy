@@ -756,7 +756,7 @@ test('dicionarios de ingles, espanhol, russo e italiano usam indices leves sem p
             file: 'html/it-IT/italiano_dicionario.html',
             locale: 'it-IT',
             maxScripts: 21,
-            maxBytes: 620 * 1024,
+            maxBytes: 750 * 1024,
             forbiddenData: /database\/it-IT\/(?:data_curso_italiano_|data_italiano_dicionario)/,
             precached: false
         }
