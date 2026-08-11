@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-lang="it-IT" data-mode="italiano">
+<html lang="pt-BR" data-mode="italiano" data-lang="it-IT">
 
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,12 @@
     <title>Arcade de Conjugação Italiana ⚡ | Idiomas Academy</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
     <link rel="manifest" href="../../manifest.json">
     <meta name="theme-color" content="#15803d">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
@@ -39,8 +43,10 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
 
+        /* TELA DE SELEÇÃO DE MODOS */
         .arcade-title-box {
             text-align: center;
             margin-bottom: 24px;
@@ -49,8 +55,13 @@
         .arcade-title-box h2 {
             font-family: 'Fredoka', sans-serif;
             font-size: 2.2rem;
-            color: #15803d;
+            color: #e11d48;
             margin-bottom: 8px;
+        }
+
+        .arcade-title-box p {
+            color: var(--text-muted, #64748b);
+            font-size: 1rem;
         }
 
         .mode-select-grid {
@@ -67,208 +78,342 @@
         }
 
         .mode-select-card {
-            background: var(--bg-main, #f1f5f9);
+            background: var(--bg-color, #f1f5f9);
             border: 2px solid var(--border-color, #cbd5e1);
-            border-radius: 18px;
-            padding: 20px;
-            cursor: pointer;
+            border-radius: 16px;
+            padding: 18px;
             text-align: left;
-            transition: all 0.2s ease;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
         }
 
         .mode-select-card:hover {
-            border-color: #15803d;
-            transform: translateY(-2px);
+            border-color: #10b981;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);
         }
 
         .mode-select-card.selected {
-            border-color: #15803d;
-            background: rgba(21, 128, 61, 0.08);
-            box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.2);
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.08);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .mode-select-card .mode-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .mode-select-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main, #0f172a);
+            margin-bottom: 4px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .mode-select-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted, #64748b);
+            line-height: 1.3;
+        }
+
+        .mode-badge-tag {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            text-transform: uppercase;
+        }
+
+        .tag-green { background: #065f46; color: #34d399; }
+        .tag-yellow { background: #78350f; color: #fbbf24; }
+        .tag-purple { background: #581c87; color: #c084fc; }
+        .tag-red { background: #881337; color: #fda4af; }
+
+        /* TOGGLE DE VIDAS INFINITAS */
+        .infinite-lives-toggle-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--bg-color, #f1f5f9);
+            border: 1px solid var(--border-color, #cbd5e1);
+            padding: 12px 20px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main, #0f172a);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .infinite-lives-toggle-box:hover {
+            border-color: #10b981;
+        }
+
+        .infinite-lives-toggle-box input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #10b981;
+            cursor: pointer;
         }
 
         .btn-start-arcade {
-            background: linear-gradient(135deg, #15803d, #166534);
-            color: #ffffff;
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            color: #fff;
             border: none;
             border-radius: 16px;
-            padding: 16px 32px;
-            font-size: 1.2rem;
+            padding: 16px 36px;
+            font-size: 1.25rem;
             font-weight: 700;
             font-family: 'Fredoka', sans-serif;
             cursor: pointer;
             width: 100%;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 8px 20px rgba(21, 128, 61, 0.3);
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.3);
         }
 
         .btn-start-arcade:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(21, 128, 61, 0.4);
+            box-shadow: 0 12px 30px rgba(225, 29, 72, 0.5);
         }
 
-        .hud-stats-bar {
+        /* STATUS DA ARENA */
+        .arcade-header-status {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            background: var(--bg-color, #f1f5f9);
+            padding: 12px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color, #cbd5e1);
+            margin-bottom: 20px;
             font-weight: 700;
-            font-size: 1.1rem;
-            flex-wrap: wrap;
-            gap: 10px;
+            color: var(--text-main, #0f172a);
         }
 
+        .pulse-combo {
+            animation: pulseGlow 0.6s infinite alternate;
+            color: #f59e0b !important;
+        }
+
+        @keyframes pulseGlow {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        /* INPUT MODE SELECTOR (CLIQUE vs VOZ) */
+        .input-mode-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .btn-toggle-input {
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
+            color: var(--text-muted, #64748b);
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-toggle-input.active {
+            border-color: #3b82f6;
+            color: #2563eb;
+            background: rgba(59, 130, 246, 0.15);
+        }
+
+        /* TIMING BAR */
         .timer-bar-container {
-            width: 100%;
-            height: 10px;
-            background: var(--border-color, #e2e8f0);
+            background: var(--bg-color, #f1f5f9);
+            height: 12px;
             border-radius: 6px;
             overflow: hidden;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color, #cbd5e1);
         }
 
         .timer-bar-fill {
             height: 100%;
             width: 100%;
-            background: linear-gradient(90deg, #10b981, #f59e0b, #ef4444);
-            transition: width 0.1s linear;
+            transition: width 0.05s linear;
+        }
+
+        /* BOSS ENCOUNTER BADGE */
+        .boss-badge {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 12px;
+            animation: bossFlash 0.8s infinite alternate;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);
+        }
+
+        @keyframes bossFlash {
+            from { opacity: 0.8; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.05); }
         }
 
         .verb-challenge-box {
-            background: var(--bg-main, #f8fafc);
-            border: 2px solid var(--border-color, #e2e8f0);
+            background: var(--bg-color, #f1f5f9);
+            border: 2px solid var(--border-color, #cbd5e1);
             border-radius: 20px;
             padding: 24px;
             margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .verb-challenge-box.boss-mode-active {
+            border-color: #d97706;
+            background: rgba(217, 119, 6, 0.1);
+            box-shadow: inset 0 0 30px rgba(217, 119, 6, 0.15), 0 0 20px rgba(217, 119, 6, 0.25);
         }
 
         .verb-pronoun {
-            display: inline-block;
-            background: rgba(21, 128, 61, 0.15);
-            color: #15803d;
-            border: 1px solid #15803d;
-            padding: 4px 14px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
+            color: #0284c7;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         .verb-infinitive {
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             font-family: 'Fredoka', sans-serif;
-            color: var(--text-main, #0f172a);
-            margin: 6px 0;
+            color: #e11d48;
+            margin: 8px 0;
+        }
+
+        .boss-mode-active .verb-infinitive {
+            color: #d97706;
         }
 
         .verb-tense {
-            color: var(--text-muted, #64748b);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            background: var(--card-bg, #ffffff);
+            color: var(--text-main, #0f172a);
+            border: 1px solid var(--border-color, #cbd5e1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
             font-weight: 600;
         }
 
+        /* RESPOSTAS EM GRID */
         .conj-options-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 480px) {
             .conj-options-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .conj-opt-btn {
-            background: var(--card-bg, #ffffff);
+        .conj-btn {
+            background: var(--bg-color, #f1f5f9);
             border: 2px solid var(--border-color, #cbd5e1);
-            border-radius: 16px;
-            padding: 16px;
-            font-size: 1.1rem;
-            font-weight: 700;
             color: var(--text-main, #0f172a);
+            padding: 16px;
+            border-radius: 14px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .conj-opt-btn:hover {
-            border-color: #15803d;
-            background: rgba(21, 128, 61, 0.05);
+        .conj-btn:hover {
+            border-color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
             transform: translateY(-2px);
         }
 
-        .boss-badge {
-            background: linear-gradient(135deg, #dc2626, #991b1b);
-            color: #ffffff;
-            padding: 8px 16px;
-            border-radius: 12px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
-            animation: pulse-boss 1s infinite alternate;
+        .conj-btn.btn-boss:hover {
+            border-color: #d97706;
+            background: rgba(217, 119, 6, 0.15);
         }
 
-        @keyframes pulse-boss {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.03); }
-        }
-
+        /* MODAL DE FEEDBACK EDUCATIVO */
         .feedback-modal-overlay {
             position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(6px);
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             z-index: 1000;
-            padding: 16px;
+            padding: 20px;
         }
 
         .feedback-modal-card {
             background: var(--card-bg, #ffffff);
-            border-radius: 24px;
+            border: 2px solid #ef4444;
+            border-radius: 20px;
             padding: 24px;
             max-width: 480px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .feedback-ans-box {
-            background: var(--bg-main, #f1f5f9);
-            border-radius: 16px;
+            background: var(--bg-color, #f1f5f9);
+            border-radius: 14px;
             padding: 16px;
             margin: 16px 0;
         }
 
         .btn-continue-modal {
-            background: #15803d;
+            background: #10b981;
             color: #ffffff;
             border: none;
             border-radius: 14px;
-            padding: 12px 28px;
+            padding: 14px 28px;
             font-weight: 700;
             font-size: 1rem;
+            font-family: 'Fredoka', sans-serif;
             cursor: pointer;
             width: 100%;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
         }
 
         .mic-trigger-btn {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: #ffffff;
             border: none;
-            border-radius: 16px;
-            padding: 14px 28px;
-            font-size: 1.1rem;
+            border-radius: 14px;
+            padding: 12px 24px;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .mic-trigger-btn:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -277,9 +422,8 @@
 
     <header>
         <a href="../../hub_italiano.html" class="home-btn">⬅ Menu do Italiano</a>
+        <h1>⚡ Arena de Conjugação Verbal</h1>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>⚡ Arena de Conjugação Italiana</h1>
-        <p>Treine conjugação verbal em tempo real no presente, passados, futuro, subjuntivo e imperativo (A1 a B2).</p>
     </header>
 
     <main class="arcade-container">
@@ -287,51 +431,63 @@
         <!-- TELA 1: SELEÇÃO DE MODOS -->
         <div id="arcade-mode-selection" class="arcade-card-conj">
             <div class="arcade-title-box">
-                <h2>⚡ Escolha o Modo de Treino</h2>
-                <p>Selecione um tempo verbal ou encare a arena de sobrevivência sem fim!</p>
+                <h2>⚡ Arena de Conjugação Verbal</h2>
+                <p>Escolha um modo de treino ou encare a Sobrevivência com Chefões Irregulares!</p>
             </div>
 
             <div class="mode-select-grid">
-                <div class="mode-select-card selected" data-modo="presente" onclick="selecionarModoJogo('presente')">
-                    <div style="font-size:1.5rem;margin-bottom:6px;">🟢 Presente Indicativo (A1)</div>
-                    <div style="color:var(--text-muted);font-size:0.88rem;">Essere, avere, andare, fare, potere, volere, dire...</div>
+                <div class="mode-select-card" data-modo="presente" onclick="selecionarModoJogo('presente')">
+                    <span class="mode-badge-tag tag-green">A1-A2</span>
+                    <div class="mode-icon">🟢</div>
+                    <h3>Presente do Indicativo</h3>
+                    <p>Ideal para iniciantes automatizarem a conjugação regular e irregular.</p>
                 </div>
 
                 <div class="mode-select-card" data-modo="preteritos" onclick="selecionarModoJogo('preteritos')">
-                    <div style="font-size:1.5rem;margin-bottom:6px;">🟡 Passato & Futuro (A2)</div>
-                    <div style="color:var(--text-muted);font-size:0.88rem;">Passato prossimo, imperfetto e futuro semplice.</div>
+                    <span class="mode-badge-tag tag-yellow">A2-B1</span>
+                    <div class="mode-icon">🟡</div>
+                    <h3>Pretéritos & Passado</h3>
+                    <p>Domine o contraste entre Passato Prossimo e Imperfetto.</p>
                 </div>
 
                 <div class="mode-select-card" data-modo="subjuntivo_imperativo" onclick="selecionarModoJogo('subjuntivo_imperativo')">
-                    <div style="font-size:1.5rem;margin-bottom:6px;">🟠 Congiuntivo & Imperativo (B1-B2)</div>
-                    <div style="color:var(--text-muted);font-size:0.88rem;">Condizionale, imperativo e congiuntivo presente/imperfetto.</div>
+                    <span class="mode-badge-tag tag-purple">B1-B2</span>
+                    <div class="mode-icon">🟣</div>
+                    <h3>Subjuntivo & Imperativo</h3>
+                    <p>Para estudantes avançados dominarem hipóteses e ordens diretas.</p>
                 </div>
 
-                <div class="mode-select-card" data-modo="sobrevivencia" onclick="selecionarModoJogo('sobrevivencia')">
-                    <div style="font-size:1.5rem;margin-bottom:6px;">🔥 Sobrevivência Total (A1-B2)</div>
-                    <div style="color:var(--text-muted);font-size:0.88rem;">Todos os tempos misturados com Chefões Irregulares a cada 10 acertos!</div>
+                <div class="mode-select-card selected" data-modo="sobrevivencia" onclick="selecionarModoJogo('sobrevivencia')">
+                    <span class="mode-badge-tag tag-red">ARCADE</span>
+                    <div class="mode-icon">⚡</div>
+                    <h3>Modo Sobrevivência</h3>
+                    <p>Mistura total com velocidade progressiva e Chefões Irregulares (Bosses)!</p>
                 </div>
             </div>
 
-            <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                <label style="font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
-                    <input type="checkbox" id="chk-vidas-infinitas" onchange="alternarVidasInfinitas(this.checked)" style="width: 18px; height: 18px;">
-                    ❤️ Modo Vidas Infinitas (Treino livre sem Game Over)
-                </label>
+            <!-- TOGGLE OPTION: VIDAS INFINITAS -->
+            <label class="infinite-lives-toggle-box">
+                <input type="checkbox" id="chk-vidas-infinitas" onchange="alternarVidasInfinitas(this.checked)">
+                <span>♾️ Ativar Vidas Infinitas (Treino Livre Sem Fim)</span>
+            </label>
+
+            <div style="margin-bottom: 20px; color: var(--text-muted, #64748b); font-weight: 600;">
+                🏆 Recorde Pessoal: <strong id="arcade-high-score" style="color: #d97706; font-size: 1.2rem;">0</strong> pts
             </div>
 
-            <button onclick="iniciarArcadeConjugacao()" class="btn-start-arcade">Começar Desafio 🚀</button>
-
-            <div style="margin-top: 16px; font-weight: 700; color: var(--text-muted);">
-                🏆 Seu Recorde Pessoal: <strong id="arcade-high-score" style="color: #15803d;">0</strong> pts
-            </div>
+            <button onclick="iniciarArcadeConjugacao()" class="btn-start-arcade">ENTRAR NA ARENA 🚀</button>
         </div>
 
-        <!-- TELA 2: ARENA GAMEPLAY -->
+        <!-- TELA 2: ARENA DE JOGO -->
         <div id="arcade-game-container" class="arcade-card-conj" style="display: none;">
-            <div class="hud-stats-bar">
-                <span id="arcade-lives">❤️❤️❤️</span>
-                <span id="arcade-combo" style="color: #f59e0b; font-family: 'Fredoka', sans-serif;">x1</span>
+            <div class="input-mode-toggle">
+                <button id="btn-mode-click" class="btn-toggle-input active" onclick="alternarModoInput('click')">🖱️ Modo Clique</button>
+                <button id="btn-mode-voice" class="btn-toggle-input" onclick="alternarModoInput('voice')">🎙️ Modo Voz (it-IT)</button>
+            </div>
+
+            <div class="arcade-header-status">
+                <span>Vidas: <strong id="arcade-lives" style="color: #ef4444;">❤️❤️❤️</strong></span>
+                <span>Combo: <strong id="arcade-combo" style="color: #d97706;">x1</strong></span>
                 <span>Pontos: <strong id="arcade-score" style="color: #10b981;">0</strong></span>
             </div>
 
