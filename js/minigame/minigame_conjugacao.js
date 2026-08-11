@@ -245,6 +245,28 @@ let arcadeState = {
 // ====================================================
 // 🎙️ 4. RECONHECIMENTO DE VOZ (WEB SPEECH API)
 // ====================================================
+function getMinigameLangCode() {
+    if (typeof document !== 'undefined' && document.body) {
+        const lang = document.body.getAttribute('data-lang');
+        const mode = document.body.getAttribute('data-mode');
+        if (lang === 'italian' || lang === 'it-IT' || mode === 'italiano' || mode === 'italian') {
+            return 'it-IT';
+        }
+    }
+    if (typeof window !== 'undefined' && window.location && window.location.pathname.toLowerCase().includes('italiano')) {
+        return 'it-IT';
+    }
+    return 'es-ES';
+}
+
+function getHighScoreKey() {
+    return getMinigameLangCode() === 'it-IT' ? 'italian_arcade_highscore' : 'espanhol_arcade_highscore';
+}
+
+function getVidasInfinitasKey() {
+    return getMinigameLangCode() === 'it-IT' ? 'italian_arcade_vidas_infinitas' : 'espanhol_arcade_vidas_infinitas';
+}
+
 function inicializarReconhecimentoVoz() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -252,14 +274,16 @@ function inicializarReconhecimentoVoz() {
     }
 
     try {
+        const langCode = getMinigameLangCode();
         arcadeState.recognition = new SpeechRecognition();
-        arcadeState.recognition.lang = 'es-ES';
+        arcadeState.recognition.lang = langCode;
         arcadeState.recognition.continuous = false;
         arcadeState.recognition.interimResults = true;
 
         arcadeState.recognition.onstart = () => {
             arcadeState.isListening = true;
-            atualizarStatusVozUI("🎙️ Ouvindo resposta em espanhol...", "var(--accent-color, #3b82f6)");
+            const langLabel = langCode === 'it-IT' ? 'italiano' : 'espanhol';
+            atualizarStatusVozUI(`🎙️ Ouvindo resposta em ${langLabel}...`, "var(--accent-color, #3b82f6)");
         };
 
         arcadeState.recognition.onresult = (event) => {
@@ -360,7 +384,7 @@ function alternarVidasInfinitas(val) {
     if (chk) chk.checked = arcadeState.vidasInfinitas;
 
     try {
-        localStorage.setItem('espanhol_arcade_vidas_infinitas', arcadeState.vidasInfinitas ? 'true' : 'false');
+        localStorage.setItem(getVidasInfinitasKey(), arcadeState.vidasInfinitas ? 'true' : 'false');
     } catch (e) { }
 
     atualizarPlacarArcade();
@@ -371,14 +395,14 @@ function alternarVidasInfinitas(val) {
 // ====================================================
 function carregarHighScoreArcade() {
     try {
-        const val = localStorage.getItem('espanhol_arcade_highscore');
+        const val = localStorage.getItem(getHighScoreKey());
         arcadeState.highScore = val ? parseInt(val, 10) : 0;
     } catch (e) {
         arcadeState.highScore = 0;
     }
 
     try {
-        const savedInf = localStorage.getItem('espanhol_arcade_vidas_infinitas');
+        const savedInf = localStorage.getItem(getVidasInfinitasKey());
         if (savedInf === 'true') {
             arcadeState.vidasInfinitas = true;
             const chk = document.getElementById('chk-vidas-infinitas');
@@ -437,9 +461,12 @@ function voltarMenuModos() {
 // 🎲 6. GERADOR DE QUESTÕES E LÓGICA DE BOSS BATTLES
 // ====================================================
 function obterBancoFiltrado() {
-    let pool = [...BANCO_ARCADE_VERBOS];
+    const isItalian = getMinigameLangCode() === 'it-IT';
+    let pool = isItalian
+        ? [...(typeof BANCO_ARCADE_VERBOS_ITALIANO !== 'undefined' ? BANCO_ARCADE_VERBOS_ITALIANO : BANCO_ARCADE_VERBOS)]
+        : [...BANCO_ARCADE_VERBOS];
 
-    if (typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined' && Array.isArray(FONETICA_RECURSOS_ESPANHOL_DADOS.verbos)) {
+    if (!isItalian && typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined' && Array.isArray(FONETICA_RECURSOS_ESPANHOL_DADOS.verbos)) {
         FONETICA_RECURSOS_ESPANHOL_DADOS.verbos.forEach(v => {
             if (v.conjugations) {
                 if (v.conjugations.presente) {
@@ -474,7 +501,10 @@ function proximoDesafioArcade() {
         containerBox.classList.add('boss-mode-active');
         if (bossAlert) bossAlert.style.display = 'block';
 
-        const bossPool = BANCO_BOSS_IRREGULARES;
+        const isItalian = getMinigameLangCode() === 'it-IT';
+        const bossPool = isItalian
+            ? (typeof BANCO_BOSS_IRREGULARES_ITALIANO !== 'undefined' ? BANCO_BOSS_IRREGULARES_ITALIANO : BANCO_BOSS_IRREGULARES)
+            : BANCO_BOSS_IRREGULARES;
         arcadeState.desafioAtual = bossPool[Math.floor(Math.random() * bossPool.length)];
     } else {
         containerBox.classList.remove('boss-mode-active');
@@ -658,8 +688,18 @@ function encerrarArcade() {
     let eNovoRecorde = false;
     if (arcadeState.pontos > arcadeState.highScore) {
         arcadeState.highScore = arcadeState.pontos;
-        try { localStorage.setItem('espanhol_arcade_highscore', arcadeState.highScore.toString()); } catch (e) { }
+        try { localStorage.setItem(getHighScoreKey(), arcadeState.highScore.toString()); } catch (e) { }
         eNovoRecorde = true;
+    }
+
+    if (typeof registrarSessaoEstudo === 'function') {
+        const langCode = getMinigameLangCode();
+        registrarSessaoEstudo({
+            languageCode: langCode,
+            activityType: 'minigame',
+            durationMinutes: 2,
+            itemCount: Math.floor(arcadeState.pontos / 10) || 1
+        });
     }
 
     if (recordMsgEl) {

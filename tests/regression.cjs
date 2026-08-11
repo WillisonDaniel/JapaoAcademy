@@ -91,16 +91,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 82, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 83, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('37 paginas HTML e referencias locais validas', () => {
+test('38 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 37, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 38, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -629,10 +629,14 @@ test('indices leves de ingles, espanhol, russo e italiano preservam os glossario
             mode: 'italiano',
             pathname: '/html/it-IT/italiano_dicionario.html',
             index: 'database/it-IT/data_dicionario_index.js',
-            count: 358,
+            count: 1011,
             datasets: [
                 'database/it-IT/data_curso_italiano_a1.js',
-                'database/it-IT/data_italiano_dicionario.js'
+                'database/it-IT/data_curso_italiano_a2.js',
+                'database/it-IT/data_curso_italiano_b1.js',
+                'database/it-IT/data_curso_italiano_b2.js',
+                'database/it-IT/data_italiano_dicionario.js',
+                'database/it-IT/data_italiano_fonetica_recursos.js'
             ]
         }
     ];
@@ -761,7 +765,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 37);
+    assert.equal(pages.length, 38);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
