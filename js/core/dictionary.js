@@ -114,6 +114,31 @@ function compilarGlossarioUniversal() {
             }));
         }
 
+        const fonRecursosData = (typeof FONETICA_ITALIANO_DADOS !== 'undefined')
+            ? FONETICA_ITALIANO_DADOS
+            : (typeof window !== 'undefined' ? window.FONETICA_ITALIANO_DADOS : null);
+
+        if (Array.isArray(fonRecursosData)) {
+            fonRecursosData.forEach(sec => {
+                if (Array.isArray(sec.topics)) {
+                    sec.topics.forEach(topic => {
+                        glossarioUniversalData.push({
+                            cat: 'fonetica',
+                            catLabel: 'FONÉTICA & PRONÚNCIA',
+                            primary: topic.title,
+                            secondary: topic.ipaSymbol || '',
+                            warning: topic.rule ? `💡 Regra: ${topic.rule}` : '',
+                            desc: topic.description || '',
+                            context: topic.examples ? topic.examples.map(e => `${e.it} (${e.pt})`).join(' | ') : '',
+                            audio: topic.examples && topic.examples.length > 0 ? topic.examples[0].audio : topic.title,
+                            level: sec.level || 'A1',
+                            module: 'Guia de Fonética & Pronúncia Italiana'
+                        });
+                    });
+                }
+            });
+        }
+
         ['A1', 'A2', 'B1', 'B2'].forEach(lvl => {
             let courseArr = null;
             if (lvl === 'A1') courseArr = typeof CURSO_ITALIANO_A1_DADOS !== 'undefined' ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : null);
