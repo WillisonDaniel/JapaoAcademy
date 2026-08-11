@@ -26,7 +26,8 @@ const SOURCES = [
     ['ru-RU', 'B2', 'database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS'],
     ['it-IT', 'A1', 'database/it-IT/data_curso_italiano_a1.js', 'CURSO_ITALIANO_A1_DADOS'],
     ['it-IT', 'A2', 'database/it-IT/data_curso_italiano_a2.js', 'CURSO_ITALIANO_A2_DADOS'],
-    ['it-IT', 'B1', 'database/it-IT/data_curso_italiano_b1.js', 'CURSO_ITALIANO_B1_DADOS']
+    ['it-IT', 'B1', 'database/it-IT/data_curso_italiano_b1.js', 'CURSO_ITALIANO_B1_DADOS'],
+    ['it-IT', 'B2', 'database/it-IT/data_curso_italiano_b2.js', 'CURSO_ITALIANO_B2_DADOS']
 ];
 
 function loadModules(relativePath, variableName) {
@@ -48,7 +49,7 @@ function buildIndex() {
         index[language][level] = ids;
         allIds.push(...ids);
     }
-    assert.equal(allIds.length, 497, 'o índice deve conter exatamente 497 módulos');
+    assert.equal(allIds.length, 521, 'o índice deve conter exatamente 521 módulos');
     assert.equal(new Set(allIds).size, allIds.length, 'IDs de módulos colidem entre idiomas');
     return index;
 }
@@ -95,5 +96,5 @@ if (WRITE_MODE) {
 } else {
     assert.ok(fs.existsSync(OUTPUT), 'índice de cursos ausente; execute npm run index:courses');
     assert.equal(fs.readFileSync(OUTPUT, 'utf8'), expected, 'índice de cursos desatualizado; execute npm run index:courses');
-    console.log('✓ índice leve contém 497 módulos e está sincronizado com os 19 datasets');
+    console.log('✓ índice leve contém 521 módulos e está sincronizado com os 20 datasets');
 }

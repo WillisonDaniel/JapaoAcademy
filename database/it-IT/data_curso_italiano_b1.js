@@ -117,20 +117,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Passato prossimo per azioni concluse",
-                "Il passato prossimo si usa per azioni puntuali, delimitate nel tempo e concluse nel passato.",
-                "avere/essere + participio passato",
+                "O passado próximo é usado para ações pontuais, delimitadas no tempo e concluídas no passado.",
+                "avere/essere + particípio passado",
                 "Nello stesso anno ha vinto il premio Nobel."
             ],
             [
                 "Imperfetto per descrizioni e abitudini",
-                "L'imperfetto si usa per descrivere stati d'animo, condizioni fisiche, ambientali e abitudini passate.",
-                "radice + avo/evo/ivo",
+                "O imperfeito é usado para descrever estados de espírito, condições físicas, ambientais e hábitos passados.",
+                "radical + avo/evo/ivo",
                 "Abitava a Roma ed era uno studente brillante."
             ],
             [
                 "Combinazione narrativa nei testi",
-                "In un racconto storico o biografico, l'imperfetto crea lo sfondo (sfondo) e il passato prossimo fa avanzare l'azione (eventi).",
-                "imperfetto (sfondo) + passato prossimo (evento)",
+                "Em uma narrativa histórica ou biográfica, o imperfeito cria o cenário de fundo e o passado próximo faz a ação avançar.",
+                "imperfeito (cenário) + passado próximo (evento)",
                 "Mentre lavorava in laboratorio, ha fatto una grande scoperta."
             ]
         ],
@@ -195,20 +195,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Formazione del futuro anteriore",
-                "Si forma con il futuro semplice di avere o essere + il participio passato del verbo.",
-                "avrò/sarò + participio passato",
+                "Forma-se com o futuro simples de avere ou essere + o particípio passado do verbo.",
+                "avrò/sarò + particípio passado",
                 "Appena sarò arrivato a casa, ti telefonerò."
             ],
             [
                 "Relazione temporale futuro anteriore vs futuro semplice",
-                "L'azione nel futuro anteriore avviene PRIMA dell'azione nel futuro semplice.",
-                "Futuro anteriore (1ª azione) ➔ Futuro semplice (2ª azione)",
+                "A ação no futuro anterior ocorre ANTES da ação no futuro simples.",
+                "Futuro anterior (1ª ação) ➔ Futuro simples (2ª ação)",
                 "Dopo che avrò sostenuto l'esame, andrò in vacanza."
             ],
             [
                 "Uso di congiunzioni temporali",
-                "Si usa spesso dopo espressioni come appena, dopo che, quando, non appena.",
-                "appena / dopo che + futuro anteriore",
+                "Usa-se frequentemente após expressões como appena, dopo che, quando, non appena.",
+                "appena / dopo che + futuro anterior",
                 "Appena avrò finito il lavoro, uscirò con gli amici."
             ]
         ],
@@ -273,20 +273,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Desinenze del condizionale semplice",
-                "Tutti i verbi condividono le desinenze: -erei, -eresti, -erebbe, -eremmo, -ereste, -erebbe. Verbi in -are cambiano a ➔ e.",
-                "radice + -erei, -eresti, -erebbe...",
+                "Todos os verbos compartilham as terminações: -erei, -eresti, -erebbe, -eremmo, -ereste, -errebbero. Verbos em -are mudam a ➔ e.",
+                "radical + -erei, -eresti, -erebbe...",
                 "parlare ➔ parlerei, prendere ➔ prenderei"
             ],
             [
                 "Uso per cortesia e desideri",
-                "Vorrei e potrei ammorbidiscono le richieste (Vorrei un caffè invece di Voglio un caffè).",
-                "Vorrei + nome / infinito",
+                "Vorrei e potrei suavizam pedidos (Vorrei un caffè em vez de Voglio un caffè).",
+                "Vorrei + nome / infinitivo",
                 "Vorrei prenotare un tavolo per due stasera."
             ],
             [
                 "Uso per consigli ed ipotesi",
-                "Dovresti / bisognerebbe si usano per dare consigli utili in modo gentile.",
-                "dovresti + infinito",
+                "Dovresti e bisognerebbe usam-se para dar conselhos úteis de modo gentil.",
+                "dovresti + infinitivo",
                 "Dovresti riposare di più se ti senti stanco."
             ]
         ],
@@ -351,20 +351,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Modifica della vocale i ➔ e",
-                "I pronomi mi, ti, ci, vi cambiano la i in e davanti a lo, la, li, le, ne: me lo, te la, ce li, ve ne.",
+                "Os pronomes mi, ti, ci, vi mudam a vogal i para e diante de lo, la, li, le, ne: me lo, te la, ce li, ve ne.",
                 "mi/ti/ci/vi ➔ me/te/ce/ve + lo/la/li/le/ne",
                 "Me lo puoi prestare per un giorno?"
             ],
             [
                 "Forma unica glielo, gliela, glieli, gliele, gliene",
-                "Per la 3ª persona (gli/le), i pronomi si uniscono con la e di collegamento in un'unica parola per maschile e femminile.",
+                "Para a 3ª pessoa (gli/le), os pronomes se unem com a vogal e de ligação em uma única palavra para masculino e feminino.",
                 "gli/le + lo/la/li/le/ne ➔ glielo/gliela/glieli/gliele/gliene",
                 "Marco ha chiesto il libro a Sara e lei glielo ha dato."
             ],
             [
                 "Accordo del participio passato con pronomi combinati",
-                "Nei tempi composti, il participio si accorda con l'oggetto diretto (lo, la, li, le).",
-                "pronome combinato + avere + participio accordato",
+                "Nos tempos compostos, o particípio concorda com o objeto direto (lo, la, li, le).",
+                "pronome combinado + avere + particípio concordado",
                 "Hai inviato la lettera a Maria? — Sì, gliel'ho inviata."
             ]
         ],
@@ -393,7 +393,7 @@ const MODULOS_ITALIANO_B1 = [
     },
     {
         "titulo": "La particella 'ci' (Luogo e verbi con ci)",
-        "contexto": "Utilizar o pronome advergial ci para substituir lugares (lá/ali) e em verbos pronominais frequentes (volerci, metterci, pensarci).",
+        "contexto": "Utilizar o pronome adverbial ci para substituir lugares (lá/ali) e em verbos pronominais frequentes (volerci, metterci, pensarci).",
         "vocabulario": [
             [
                 "ci vado",
@@ -429,19 +429,19 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Ci locativo (substituição de lugar)",
-                "Ci sostituisce un luogo precedentemente menzionato (a Roma ➔ ci vado, in ufficio ➔ ci sono).",
-                "ci + verbo di movimento/stato",
+                "O Ci substitui um lugar mencionado anteriormente (a Roma ➔ ci vado, in ufficio ➔ ci sono).",
+                "ci + verbo de movimento/estado",
                 "Sei stato a Firenze? — Sì, ci sono stato l'anno scorso."
             ],
             [
                 "Ci con verbi che reggono la preposizione A",
-                "Ci sostituisce a questo / a ciò con verbi come pensare a, credere a, riuscire a.",
+                "O Ci substitui a questo / a ciò com verbos como pensare a, credere a, riuscire a.",
                 "ci + pensare/credere/riuscire",
                 "Hai pensato alla proposta? — Sì, ci penso da ieri."
             ],
             [
                 "Differenza tra volerci e metterci",
-                "Volerci si usa in modo impersonale per la durata oggettiva (Ci vogliono tre ore); Metterci indica il tempo impiegato da un soggetto specifico (Io ci metto tre ore).",
+                "Volerci usa-se de modo impessoal para a duração objetiva (Ci vogliono tre ore); Metterci indica o tempo gasto por um sujeito específico (Io ci metto tre ore).",
                 "Ci vuole/vogliono vs ci metto/metti/mette",
                 "Quanto ci metti per andare al lavoro?"
             ]
@@ -507,19 +507,19 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Ne partitivo per quantità espresse",
-                "Ne sostituisce una parte di un insieme quando si specifica un numero o una quantità (molti, pochi, tre, un chilo).",
-                "ne + verbo + quantità",
+                "O Ne substitui uma parte de um conjunto quando se especifica um número ou quantidade (molti, pochi, tre, un chilo).",
+                "ne + verbo + quantidade",
                 "Quanti caffè bevi al giorno? — Ne bevo due."
             ],
             [
                 "Accordo del participio con Ne partitivo",
-                "Quando si usa ne con il passato prossimo, il participio passato si accorda con la quantità espressa.",
-                "ne + avere + participio accordato",
+                "Quando se usa ne com o passado próximo, o particípio passado concorda com a quantidade expressa.",
+                "ne + avere + particípio concordado",
                 "Quante mele hai comprato? — Ne ho comprate tre."
             ],
             [
                 "Ne per argomento (di + cosa/persona)",
-                "Ne sostituisce di questo / di ciò con verbi come parlare di, discutere di, sapere di.",
+                "O Ne substitui di questo / di ciò com verbos como parlare di, discutere di, sapere di.",
                 "ne + parlare/sapere/pensare",
                 "Che ne pensi di questo film? — Ne penso molto bene."
             ]
@@ -585,19 +585,19 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Che relativo invariabile",
-                "Che sostituisce un soggetto o complemento oggetto senza preposizione per persone, animali e cose.",
-                "nome + che + verbo",
+                "O Che substitui um sujeito ou complemento direto sem preposição para pessoas, animais e coisas.",
+                "substantivo + che + verbo",
                 "Il ragazzo che parla con Marco è mio cugino."
             ],
             [
                 "Cui preceduto da preposizione",
-                "Cui si usa per tutti i complementi indiretti preceduto dalle preposizioni a, di, in, da, con, su, per.",
-                "preposizione + cui",
+                "O Cui usa-se para todos os complementos indiretos precedido pelas preposições a, di, in, da, con, su, per.",
+                "preposição + cui",
                 "La città in cui abito è molto tranquilla. / L'amico di cui ti ho parlato."
             ],
             [
                 "Il quale / la quale (formale)",
-                "Il quale concorda in genere e numero ed evita ambiguità nelle frasi complesse.",
+                "Il quale concorda em gênero e número e evita ambiguidade nas frases complexas.",
                 "artigo + quale/quali",
                 "La professoressa della quale ti ho parlato è andata in pensione."
             ]
@@ -663,20 +663,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Posizione dei pronomi nell'imperativo diretto",
-                "Nell'imperativo informale (tu, noi, voi), i pronomi si uniscono alla fine del verbo formando un'unica parola (enclisi).",
+                "No imperativo informal (tu, noi, voi), os pronomes unem-se ao final do verbo formando uma única palavra (ênclise).",
                 "verbo imperativo + pronome",
                 "Prendi il libro ➔ Prendilo! / Ascoltate me ➔ Ascoltatemi!"
             ],
             [
                 "Raddoppiamento con verbi monosillabici",
-                "Con va', da', fa', sta', di', la consonante del pronome raddoppia (tranne con gli): dimmi, vacci, fammi, dillo, dille.",
-                "va'/da'/fa'/sta'/di' + pronome ➔ raddoppiamento",
+                "Com va', da', fa', sta', di', a consoante do pronome duplica-se (exceto com gli): dimmi, vacci, fammi, dillo, dille.",
+                "va'/da'/fa'/sta'/di' + pronome ➔ duplicação",
                 "Di' a me ➔ Dimmi! / Fa' a me ➔ Fammi un favore!"
             ],
             [
                 "Imperativo negativo informale (tu)",
-                "Si forma con non + infinito. Il pronome può stare prima del verbo staccato o unito all'infinito finale senza e.",
-                "non + pronome + infinito OR non + infinito+pronome",
+                "Forma-se com non + infinitivo. O pronome pode ficar antes do verbo separado ou unido ao infinitivo final sem e.",
+                "non + pronome + infinitivo OU non + infinitivo+pronome",
                 "Non farlo! / Non lo fare!"
             ]
         ],
@@ -741,20 +741,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Si impersonale con verbo alla 3ª persona singolare",
-                "Si usa SI + verbo alla 3ª persona singolare per indicare un soggetto generico (la gente, tutti).",
-                "si + verbo 3ª pers. singolare",
+                "Usa-se SI + verbo na 3ª pessoa do singular para indicar um sujeito genérico (as pessoas, todos).",
+                "si + verbo 3ª pers. singular",
                 "In Italia si mangia molta pasta e si beve il caffè espresso."
             ],
             [
                 "Si passante con oggetto plurale",
-                "Se il verbo è seguito da un sostantivo plurale, il verbo concorda al plurale (Si passante).",
-                "si + verbo 3ª pers. plurale + sostantivo plurale",
+                "Se o verbo for seguido por um substantivo plural, o verbo concorda no plural (Si passativante).",
+                "si + verbo 3ª pers. plural + substantivo plural",
                 "In quella trattoria si mangiano ottime lasagne."
             ],
             [
                 "Si impersonale con verbi riflessivi (ci si)",
-                "Con i verbi riflessivi, per evitare la ripetizione \"si si\", si usa la forma CI SI.",
-                "ci si + verbo riflessivo",
+                "Com os verbos reflexivos, para evitar a repetição \"si si\", usa-se a forma CI SI.",
+                "ci si + verbo reflexivo",
                 "La domenica ci si sveglia più tardi."
             ]
         ],
@@ -819,13 +819,13 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Uso del congiuntivo per opinioni e dubbi",
-                "Il congiuntivo si usa nelle frasi subordinate introdotte da che dopo verbi di opinione, dubbio e incertezza (pensare, credere, dubitare, non essere sicuro).",
-                "verbo di opinione + che + congiuntivo",
+                "O subjuntivo usa-se nas frases subordinadas introduzidas por che após verbos de opinião, dúvida e incerteza (pensare, credere, dubitare, non essere sicuro).",
+                "verbo de opinião + che + subjuntivo",
                 "Penso che Marco sia un ragazzo molto intelligente."
             ],
             [
                 "Desinenze del congiuntivo presente",
-                "Verbi in -are ➔ -i, -i, -i, -iamo, -iate, -ino. Verbi in -ere/-ire ➔ -a, -a, -a, -iamo, -iate, -ano.",
+                "Verbos em -are ➔ -i, -i, -i, -iamo, -iate, -ino. Verbos em -ere/-ire ➔ -a, -a, -a, -iamo, -iate, -ano.",
                 "-are ➔ -i | -ere/-ire ➔ -a",
                 "che io parli / che tu prenda / che lui parta"
             ],
@@ -897,20 +897,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Congiuntivo dopo verbi di sentimento e volontà",
-                "Si usa il congiuntivo dopo verbi che esprimono stati d'animo (sperare, temere, avere paura, desiderare, volere).",
-                "verbo di sentimento/volontà + che + congiuntivo",
+                "Usa-se o subjuntivo após verbos que expressam estados de espírito (sperare, temere, avere paura, desiderare, volere).",
+                "verbo de sentimento/vontade + che + subjuntivo",
                 "Spero che tu possa venire alla mia festa."
             ],
             [
                 "Congiuntivo dopo espressioni impersonali",
-                "Si usa il congiuntivo dopo è necessario che, è importante che, è bene che, sembra che, bisogna che.",
-                "è + aggettivo + che + congiuntivo",
+                "Usa-se o subjuntivo após è necessario che, è importante che, è bene che, sembra che, bisogna che.",
+                "è + adjetivo + che + subjuntivo",
                 "È importante che tutti studino la grammatica."
             ],
             [
                 "Regola dei soggetti diversi",
-                "Il congiuntivo si usa solo se i soggetti della frase principale e subordinata sono DIVERSI. Se il soggetto è lo stesso, si usa l'infinito.",
-                "Soggetti diversi ➔ che + congiuntivo | Stesso soggetto ➔ di + infinito",
+                "O subjuntivo usa-se apenas se os sujeitos da frase principal e subordinada forem DIFERENTES. Se o sujeito for o mesmo, usa-se o infinitivo.",
+                "Sujeitos diferentes ➔ che + subjuntivo | Mesmo sujeito ➔ di + infinitivo",
                 "Spero di venire (io/io) vs Spero che tu venga (io/tu)."
             ]
         ],
@@ -975,19 +975,19 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Connettivi di causa ed effetto (siccome, quindi, perché)",
-                "Siccome si usa all'inizio della frase (Siccome piove, resto a casa). Quindi esprime la conseguenza (Piove, quindi resto a casa).",
-                "Siccome [causa], [conseguenza] | [causa], quindi [conseguenza]",
+                "Siccome usa-se no início da frase (Siccome piove, resto a casa). Quindi expressa a consequência (Piove, quindi resto a casa).",
+                "Siccome [causa], [consequência] | [causa], quindi [consequência]",
                 "Siccome fa freddo, ho preso il cappotto."
             ],
             [
                 "Connettivi di contrasto e concessione (tuttavia, sebbene)",
-                "Tuttavia introduce un'opposizione con l'indicativo. Sebbene regge il congiuntivo.",
-                "tuttavia + indicativo | sebbene + congiuntivo",
+                "Tuttavia introduz uma oposição com o indicativo. Sebbene exige o subjuntivo.",
+                "tuttavia + indicativo | sebbene + subjuntivo",
                 "È un corso difficile, tuttavia è molto utile. / Sebbene sia stanco, continuo a studiare."
             ],
             [
                 "Connettivi di aggiunta e conferma (inoltre, infatti)",
-                "Inoltre aggiunge argomenti (Inoltre bisogna considerare...). Infatti conferma quanto detto prima.",
+                "Inoltre acrescenta argumentos (Inoltre bisogna considerare...). Infatti confirma o que foi dito antes.",
                 "inoltre / infatti + frase",
                 "Ha studiato molto, infatti ha superato l'esame con il massimo dei voti."
             ]
@@ -1053,20 +1053,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Uso del passato remoto nel racconto storico",
-                "Nelle narrazioni storiche formali e letterarie si incontra il passato remoto per azioni lontane e concluse.",
-                "radice + -ai/-ei/-ii",
+                "Nas narrativas históricas formais e literárias encontra-se o passado remoto para ações distantes e concluídas.",
+                "radical + -ai/-ei/-ii",
                 "Dante Alighieri nacque a Firenze nel 1265."
             ],
             [
                 "Articolazione cronologica del racconto",
-                "Strutturare la storia con marcatori temporali: inizialmente, in seguito, nel frattempo, infine.",
+                "Estruturar a história com marcadores temporais: inizialmente, in seguito, nel frattempo, infine.",
                 "inizialmente ➔ in seguito ➔ infine",
                 "Inizialmente ha studiato legge, in seguito si è dedicato alla pittura."
             ],
             [
                 "Coerenza verbale nella narrazione",
-                "Mantenere il tempo di riferimento nel racconto ed evitare salti temporali ingiustificati.",
-                "coerenza tra imperfetto e passato prossimo/remoto",
+                "Manter o tempo de referência no relato e evitar saltos temporais injustificados.",
+                "coerência entre imperfeito e passado próximo/remoto",
                 "Nel 1945 è finita la guerra e la città è stata ricostruita."
             ]
         ],
@@ -1131,20 +1131,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Espressioni di accordo e dissenso cortese",
-                "Concordare: Sono perfettamente d'accordo con te / Ha ragione. Discordare con cortesia: Capisco il tuo punto di vista, tuttavia non condivido la tua opinione.",
-                "accordo | dissenso cortese",
+                "Concordar: Sono perfettamente d'accordo con te / Ha ragione. Discordar com cortesia: Capisco il tuo punto di vista, tuttavia non condivido la tua opinione.",
+                "acordo | desacordo cortês",
                 "Sono d'accordo con la tua analisi, ma vorrei aggiungere un dettaglio."
             ],
             [
                 "Strutturare un intervento in un dibattito",
-                "In primo luogo... In secondo luogo... Bisogna considerare che... Per concludere...",
-                "organizzare le idee con connettivi",
+                "Organizar as ideias no debate usando conectores: In primo luogo... In secondo luogo... Bisogna considerare che... Per concludere...",
+                "organizar ideias com conectores",
                 "In primo luogo bisogna analizzare i costi del progetto."
             ],
             [
                 "Uso del congiuntivo nelle opinioni contrapposte",
-                "Quando si ribatte un'opinione altrui: Non penso che questa sia la soluzione migliore.",
-                "non credere/pensare + che + congiuntivo",
+                "Quando se contesta uma opinião alheia usa-se o subjuntivo: Non penso che questa sia la soluzione migliore.",
+                "non credere/pensare + che + subjuntivo",
                 "Non credo che questo provvedimento sia efficace."
             ]
         ],
@@ -1209,20 +1209,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Registro formale nelle interviste di lavoro",
-                "Usare sempre la forma di cortesia (Lei) con verbi al congiuntivo di cortesia o condizionale.",
-                "uso del Lei formale",
+                "Usar sempre a forma de cortesia (Lei) com verbos no subjuntivo de cortesia ou condicional.",
+                "uso do Lei formal",
                 "Le dispiacerebbe descrivere le Sue precedenti esperienze professionali?"
             ],
             [
                 "Espressioni nel Curriculum Vitae",
-                "Usare sostantivi di azione e verbi al passato per descrivere le mansioni svolte (gestione di, responsabilità di, coordinamento).",
-                "gestione / coordinamento / sviluppo",
+                "Usar substantivos de ação e verbos no passado para descrever as tarefas realizadas (gestione di, responsabilità di, coordinamento).",
+                "gestão / coordenação / desenvolvimento",
                 "Ho maturato un'esperienza pluriennale nel settore delle vendite."
             ],
             [
                 "Lessico dei contratti di lavoro",
-                "Distinguere tra tempo determinato (provisório) e indeterminato (estável), part-time e full-time.",
-                "tipologie contrattuali",
+                "Distinguição entre tempo determinado (provisório) e indeterminado (estável), part-time e full-time.",
+                "tipologias contratuais",
                 "Il candidato ha firmato un contratto a tempo indeterminato."
             ]
         ],
@@ -1287,20 +1287,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Espressioni del sistema universitario italiano",
-                "Usare dare un esame (prestar prova) vs superare un esame (passar na prova) e laurearsi in (graduar-se em).",
+                "Usar dare un esame (fazer prova) vs superare un esame (passar na prova) e laurearsi in (graduar-se em).",
                 "dare un esame / superare un esame / laurearsi in",
                 "Marco si è laureato in Economia con trenta e lode."
             ],
             [
                 "Voti e valutazioni in Italia",
-                "Nell'università italiana i voti vanno da 18 (minimo) a 30 e lode (massimo). Nelle scuole da 1 a 10.",
-                "voti da 18 a 30 e lode",
+                "Na universidade italiana as notas vão de 18 (mínimo) a 30 e lode (máximo). Nas escolas de 1 a 10.",
+                "notas de 18 a 30 e lode",
                 "Ha superato l'esame di diritto privato con ventotto."
             ],
             [
                 "Uso di espressioni di tempo negli studi",
                 "Frequentare l'università, fare un tirocinio, discutere la tesi.",
-                "frequentare / sostenere / discutere",
+                "frequentar / prestar / defender",
                 "Nel mese di luglio discuterà la tesi di laurea."
             ]
         ],
@@ -1365,20 +1365,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Il discorso indiretto nei media (Secondo quanto riferito...)",
-                "Nei giornali si usa spesso il discorso indiretto per riportare notizie e dichiarazioni.",
-                "secondo quanto dichiarato da / ha affermato che",
+                "Nos jornais usa-se frequentemente o discurso indireto para relatar notícias e declarações.",
+                "segundo o declarado por / afirmou que",
                 "Secondo la stampa locale, il sindaco ha firmato l'ordinanza."
             ],
             [
                 "Uso del condizionale di notizia non confermata (Condizionale giornalistico)",
-                "Il condizionale esprime notizie non ancora confermate ufficialmente dai media.",
-                "condizionale per notizie presunte",
+                "O condicional expressa notícias ainda não confirmadas oficialmente pela imprensa.",
+                "condicional para notícias presumidas",
                 "Secondo il telegiornale, l'accordo sarebbe stato già raggiunto."
             ],
             [
                 "Vocabolario dei generi di comunicazione",
-                "Distinguere tra cronaca rosa, cronaca nera, politica estera e cultura.",
-                "sezioni del giornale",
+                "Distinguição entre cronaca rosa, cronaca nera, politica estera e cultura.",
+                "seções do jornal",
                 "L'articolo è stato pubblicato nella sezione cultura e spettacoli."
             ]
         ],
@@ -1443,20 +1443,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Lessico speciale per la critica artistica e cinematografica",
-                "Usare aggettivi apprezzativi (emozionante, coinvolgente, straordinario) e verbi come rappresentare, narrare, interpretare.",
-                "aggettivi di giudizio critico",
+                "Usar adjetivos apreciativos (emozionante, coinvolgente, straordinario) e verbos como rappresentare, narrare, interpretare.",
+                "adjetivos de julgamento crítico",
                 "Questo film è un capolavoro straordinario del cinema neorealista."
             ],
             [
                 "La forma passiva con venire ed essere",
-                "Nelle descrizioni artistiche la forma passiva è frequentissima: L'opera viene conservata nel museo / È stata dipinta da da Vinci.",
-                "venire / essere + participio passato",
+                "Nas descrições artísticas a forma passiva é frequentíssima: L'opera viene conservata nel museo / È stata dipinta da da Vinci.",
+                "venire / essere + particípio passado",
                 "Il quadro è stato dipinto nel 1503 da Leonardo da Vinci."
             ],
             [
                 "Esprimere un giudizio su uno spettacolo",
-                "Consigliare o sconsigliare un film: Vi consiglio vivamente di vedere questo spettacolo.",
-                "consigliare di + infinito",
+                "Aconselhar ou desaconselhar um filme: Vi consiglio vivamente di vedere questo spettacolo.",
+                "aconselhar a + infinitivo",
                 "Vi consiglio di visitare la mostra di pittura contemporanea."
             ]
         ],
@@ -1521,20 +1521,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Compilare moduli e documenti ufficiali",
-                "Istruzioni burocratiche al participio o infinito: compilare in stampatello (preencher em letra de forma), allegare copia del documento.",
-                "compilare in stampatello / allegare",
+                "Instruções burocráticas no particípio ou infinitivo: compilare in stampatello (preencher em letra de forma), allegare copia del documento.",
+                "preencher em letra de forma / anexar",
                 "Si prega di compilare il modulo in stampatello leggibile."
             ],
             [
                 "Formulare un reclamo formale",
-                "Espressioni formali: Vorrei sporgere reclamo per... / Desidero segnalare un disservizio...",
-                "sporgere reclamo / segnalare",
+                "Expressões formais: Vorrei sporgere reclamo per... / Desidero segnalare un disservizio...",
+                "apresentar reclamação / assinalar falha",
                 "Vorrei sporgere reclamo per il ritardo del rimborso."
             ],
             [
                 "Uso della forma passiva e costrutti formali",
-                "La domanda deve essere presentata entro il 30 del mese.",
-                "dovere essere + participio",
+                "A solicitação deve ser apresentada dentro do prazo: La domanda deve essere presentata entro il 30 del mese.",
+                "dever ser + particípio",
                 "La documentazione richiesta deve essere allegata alla domanda."
             ]
         ],
@@ -1599,20 +1599,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Esprimere necessità ambientali",
-                "Usare espressioni come è fondamentale che, bisogna ridurre, è urgente proteggere.",
-                "è fondamentale che + congiuntivo",
+                "Usar expressões como è fondamentale che, bisogna ridurre, è urgente proteggere.",
+                "é fundamental que + subjuntivo",
                 "È fondamentale che si riduca l'uso della plastica monouso."
             ],
             [
                 "Lessico della tutela ambientale",
-                "Distinguere tra rifiuti organici, vetro, carta, plastica e indifferenziata.",
-                "tipologie di rifiuti",
+                "Distinguição entre resíduos orgânicos, vidro, papel, plástico e indiferenciado.",
+                "tipologias de resíduos",
                 "In questo comune la raccolta differenziata è obbligatoria per tutti."
             ],
             [
                 "Costrutti di causa-effetto nei problemi ecologici",
                 "A causa di, di conseguenza, porta a.",
-                "A causa del riscaldamento globale...",
+                "por causa de ➔ consequência",
                 "A causa dell'inquinamento molte specie animali sono a rischio."
             ]
         ],
@@ -1677,20 +1677,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Desentire tradizioni con verbi al presente e imperfetto",
-                "Spiegare le origini storiche delle feste regionali italiane.",
-                "si celebra / risale al / si svolge",
+                "Explicar as origens históricas das festas regionais italianas.",
+                "celebra-se / remonta a / realiza-se",
                 "La festa del Carnevale di Venezia risale al XII secolo."
             ],
             [
                 "Aggettivi di appartenenza regionale",
                 "Toscano, siciliano, napoletano, emiliano, veneto, sardo, lombardo.",
-                "aggettivi di origine regionale",
+                "adjetivos de origem regional",
                 "Abbiamo assaggiato le specialità della cucina emiliana durante la sagra."
             ],
             [
                 "Espressioni per descrivere eventi popolari",
-                "Avere luogo, svolgersi, attirare migliaia di visitatori.",
-                "svolgersi / attirare visitatori",
+                "Ter lugar, realizar-se, atrair milhares de visitantes.",
+                "realizar-se / atrair visitantes",
                 "Il Palio di Siena si svolge ogni anno in Piazza del Campo."
             ]
         ],
@@ -1755,20 +1755,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Esprimere dubbi e speranze sulla tecnologia",
-                "Usare il congiuntivo per valutare l'impatto delle nuove tecnologie.",
-                "temere che / sperare che + congiuntivo",
+                "Usar o subjuntivo para avaliar o impacto das novas tecnologias.",
+                "temer que / esperar que + subjuntivo",
                 "Temo che l'uso eccessivo dei social network riduca la concentrazione dei giovani."
             ],
             [
                 "Verbi del mondo digitale in italiano",
                 "Scaricare (baixar/fazer download), caricare (enviar/fazer upload), navigare in rete, proteggere i dati.",
-                "scaricare / navigare / proteggere",
+                "baixar / navegar / proteger",
                 "È importante scaricare solo applicazioni da fonti sicure."
             ],
             [
                 "Connettivi di sintesi e argomentazione tecnologica",
-                "Da un lato... dall'altro..., in conclusione.",
-                "da un lato / dall'altro",
+                "Por um lado... por outro lado..., em conclusão.",
+                "por um lado / por outro lado",
                 "Da un lato la tecnologia semplifica la vita, dall'altro crea dipendenza."
             ]
         ],
@@ -1833,20 +1833,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Sintesi del congiuntivo e condizionale",
-                "Ripasso dei verbi di opinione (penso che sia) e richieste cortesi (vorrei / potrei).",
-                "congiuntivo presente + condizionale semplice",
+                "Revisão dos verbos de opinião (penso che sia) e pedidos corteses (vorrei / potrei).",
+                "subjuntivo presente + condicional simples",
                 "Vorrei che tutti gli studenti partecipassero alla discussione."
             ],
             [
                 "Sintesi di ci, ne e pronomi combinati",
-                "Sostituzione avanzata di luoghi (ci vado), quantitativi (ne voglio tre) e combinati (glielo do).",
-                "ci / ne / pronomi combinati",
+                "Substituição avançada de lugares (ci vado), quantitativos (ne voglio tre) e combinados (glielo do).",
+                "ci / ne / pronomes combinados",
                 "Se hai bisogno del libro, glielo chiedo e te lo porto."
             ],
             [
                 "Sintesi dei connettivi e della forma impersonale",
-                "Uso di tuttavia, siccome, sebbene e si impersonale (si mangia / si vive).",
-                "connettivi testuali + si impersonale",
+                "Uso de tuttavia, siccome, sebbene e si impessoal (si mangia / si vive).",
+                "conectores textuais + si impessoal",
                 "Siccome in Italia si mangia bene, tutti i turisti ne sono entusiasti."
             ]
         ],
@@ -1911,20 +1911,20 @@ const MODULOS_ITALIANO_B1 = [
         "gramatica": [
             [
                 "Integrazione totale delle competenze B1",
-                "Il test finale verifica l'uso corretto del congiuntivo, condizionale, particelle pronominali, connettivi e registro formale.",
-                "sintesi grammaticale globale B1",
+                "O teste final verifica o uso correto do subjuntivo, condicional, partículas pronominais, conectores e registro formal.",
+                "síntese gramatical global B1",
                 "Penso che tu debba dirglielo appena sarai arrivato."
             ],
             [
                 "Strategie di risoluzione per le domande complesse",
-                "Prestare attenzione alle reggenze verbali con il congiuntivo, all'accordo del participio con ne/pronomi combinati e all'uso delle preposizioni con cui.",
-                "attenzione a congiuntivo, pronomi e accordo",
+                "Prestar atenção às regências verbais com o subjuntivo, à concordância do particípio com ne/pronomes combinados e ao uso das preposições com cui.",
+                "atenção a subjuntivo, pronomes e concordância",
                 "Gliel'ho detta ieri sera prima di uscire."
             ],
             [
                 "Conferma dell'autonomia comunicativa B1",
-                "Superando la prova si dimostra la capacità di comprendere e produrre testi articolati e sostenere dibattiti.",
-                "livello soglia B1 (CEFR)",
+                "Superando a prova demonstra-se a capacidade de compreender e produzir textos articulados e sustentar debates.",
+                "nível limite B1 (CEFR)",
                 "Ha superato la sfida finale con un punteggio eccellente!"
             ]
         ],
@@ -2047,8 +2047,8 @@ const SFIDA_FINALE_QUIZ_B1 = [
         "options": [
             "In Italia si mangiano molta pasta.",
             "In Italia si mangia molta pasta.",
-            "In Italia si mangiati molta pasta.",
-            "In Italia si mangiasse molta pasta."
+            "In Italia si mangiasse molta pasta.",
+            "In Italia si mangiati molta pasta."
         ],
         "correctIndex": 1,
         "explanation": "Si + verbo alla 3ª persona singolare con sostantivo singolare o di massa."

@@ -543,6 +543,32 @@ const COURSE_MODULE_INDEX = Object.freeze({
             "it_b1_mod_22",
             "it_b1_mod_23",
             "it_b1_mod_24"
+        ],
+        "B2": [
+            "it_b2_mod_01",
+            "it_b2_mod_02",
+            "it_b2_mod_03",
+            "it_b2_mod_04",
+            "it_b2_mod_05",
+            "it_b2_mod_06",
+            "it_b2_mod_07",
+            "it_b2_mod_08",
+            "it_b2_mod_09",
+            "it_b2_mod_10",
+            "it_b2_mod_11",
+            "it_b2_mod_12",
+            "it_b2_mod_13",
+            "it_b2_mod_14",
+            "it_b2_mod_15",
+            "it_b2_mod_16",
+            "it_b2_mod_17",
+            "it_b2_mod_18",
+            "it_b2_mod_19",
+            "it_b2_mod_20",
+            "it_b2_mod_21",
+            "it_b2_mod_22",
+            "it_b2_mod_23",
+            "it_b2_mod_24"
         ]
     }
 });
