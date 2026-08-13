@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'idiomas-academy-';
-const CACHE_NAME = 'idiomas-academy-v38';
+const CACHE_NAME = 'idiomas-academy-v39';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -65,6 +65,7 @@ const ASSETS_TO_CACHE = [
     './html/ja-JP/leitura.html',
     './html/ja-JP/gramatica.html',
     './html/ja-JP/escrita.html',
+    './html/ja-JP/jlpt.html',
     './style.css',
     './app.js',
     './js/core/config.js',
@@ -98,6 +99,7 @@ const ASSETS_TO_CACHE = [
     './js/japanese/reading.js',
     './js/japanese/grammar.js',
     './js/japanese/writing.js',
+    './js/japanese/jlpt.js',
     './js/phrasal/navigation.js',
     './js/phrasal/render.js',
     './js/pronunciation/render.js',
@@ -126,6 +128,7 @@ const ASSETS_TO_CACHE = [
     './database/ja-JP/data_leitura_index.js',
     './database/ja-JP/data_gramatica_index.js',
     './database/ja-JP/data_escrita_index.js',
+    './database/ja-JP/data_jlpt_pratica_index.js',
     './favicon.png',
     './favicon-512.png',
     './logo.png'
