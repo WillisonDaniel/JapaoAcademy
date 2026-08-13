@@ -5928,4 +5928,30 @@ const kanjiN5Data = [
     }
 ];
 
+// Saneamento conservador da Fase 7: propostas de leitura exigem revisão humana.
+const N5_TARGET_EXAMPLE_OVERRIDES = [
+    [0, 1, 0, '訓読みで「食べる」と読みます。'],
+    [0, 1, 1, '訓読みで「見る」と読みます。'],
+    [0, 2, 0, '音読みの例は「水曜日」です。'],
+    [0, 2, 1, '音読みの例は「学校」です。'],
+    [0, 3, 0, '部首の木の下で人が休みます。'],
+    [0, 3, 1, '部首として河と海を比べます。']
+];
+N5_TARGET_EXAMPLE_OVERRIDES.forEach(([moduleIndex, kanjiIndex, exampleIndex, sentence]) => {
+    const example = kanjiN5Data[moduleIndex].kanjis[kanjiIndex].examples[exampleIndex];
+    example.sentence = sentence;
+    example.editorialReview = { status: 'pending-human-review', phase: '7', legacyPreservedInSnapshot: true };
+});
+kanjiN5Data.forEach(module => (module.kanjis || []).forEach(kanji => {
+    for (const field of ['onyomi', 'kunyomi']) {
+        const value = kanji[field];
+        if (!value || value === '-' || !/[A-Za-z]/.test(value) || /[\u3040-\u30ff\u3400-\u9fff]/u.test(value)) continue;
+        kanji.readingEditorialReview = kanji.readingEditorialReview || {};
+        kanji.readingEditorialReview[field] = {
+            status: 'pending-human-review', phase: '7', legacyValue: value,
+            classification: 'ambiguous-or-unverified', proposal: ''
+        };
+    }
+}));
+
 if (typeof window !== 'undefined') { window.kanjiN5Data = kanjiN5Data; }

@@ -77,16 +77,15 @@
   "summary": {
     "bySeverity": {
       "blocking": 0,
-      "editorial": 258,
+      "editorial": 252,
       "allowed": 1
     },
     "byRule": {
-      "reading-latin-only": 94,
-      "kanji-example-missing-target": 7,
-      "reading-pending-human-review": 158
+      "reading-pending-human-review": 252,
+      "kanji-example-missing-target": 1
     },
     "byLevel": {
-      "N5": 12,
+      "N5": 6,
       "N4": 89,
       "N1": 158
     }
@@ -97,7 +96,7 @@
       "level": "N5",
       "moduleId": "1",
       "field": "kanjis[0].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kan (conceito histórico)"
     },
@@ -115,26 +114,8 @@
       "dataset": "database/ja-JP/data_kanji_n5.js",
       "level": "N5",
       "moduleId": "1",
-      "field": "kanjis[1].examples[0].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "リンゴを食べるのが好きです。(Ringo o taberu no ga suki desu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
-      "field": "kanjis[1].examples[1].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "映画館で映画を見ます。(Eigakan de eiga o mimasu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
       "field": "kanjis[2].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "oto / ne"
     },
@@ -142,26 +123,8 @@
       "dataset": "database/ja-JP/data_kanji_n5.js",
       "level": "N5",
       "moduleId": "1",
-      "field": "kanjis[2].examples[0].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "水曜日にテストがあります。(Suiyoubi ni tesuto ga arimasu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
-      "field": "kanjis[2].examples[1].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "学校で日本語を勉強します。(Gakkou de nihongo o benkyou shimasu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "부 / parte"
     },
@@ -169,26 +132,8 @@
       "dataset": "database/ja-JP/data_kanji_n5.js",
       "level": "N5",
       "moduleId": "1",
-      "field": "kanjis[3].examples[0].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "人が木の下で休みます。(Hito ga ki no shita de yasumimasu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
-      "field": "kanjis[3].examples[1].sentence",
-      "rule": "kanji-example-missing-target",
-      "severity": "editorial",
-      "sample": "美しい川の水を見ます。(Utsukushii kawa no mizu o mimasu)"
-    },
-    {
-      "dataset": "database/ja-JP/data_kanji_n5.js",
-      "level": "N5",
-      "moduleId": "1",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tadasu / masa"
     },
@@ -197,7 +142,7 @@
       "level": "N5",
       "moduleId": "1",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "onaji (mesmo)"
     },
@@ -206,7 +151,7 @@
       "level": "N4",
       "moduleId": "1",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "zoku (conceito)"
     },
@@ -215,7 +160,7 @@
       "level": "N4",
       "moduleId": "2",
       "field": "kanjis[8].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "you"
     },
@@ -224,7 +169,7 @@
       "level": "N4",
       "moduleId": "3",
       "field": "kanjis[0].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ji / chi"
     },
@@ -233,7 +178,7 @@
       "level": "N4",
       "moduleId": "3",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kai"
     },
@@ -242,7 +187,7 @@
       "level": "N4",
       "moduleId": "4",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "katamuku"
     },
@@ -251,7 +196,7 @@
       "level": "N4",
       "moduleId": "4",
       "field": "kanjis[2].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "gawa"
     },
@@ -260,7 +205,7 @@
       "level": "N4",
       "moduleId": "5",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "fusa"
     },
@@ -269,7 +214,7 @@
       "level": "N4",
       "moduleId": "5",
       "field": "kanjis[2].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "shitsu"
     },
@@ -278,7 +223,7 @@
       "level": "N4",
       "moduleId": "5",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "dou"
     },
@@ -287,7 +232,7 @@
       "level": "N4",
       "moduleId": "5",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "taku"
     },
@@ -296,7 +241,7 @@
       "level": "N4",
       "moduleId": "5",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kyoku"
     },
@@ -305,7 +250,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[0].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kou"
     },
@@ -314,7 +259,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kan"
     },
@@ -323,7 +268,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[2].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "fumi"
     },
@@ -332,7 +277,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ji"
     },
@@ -341,7 +286,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kou"
     },
@@ -350,7 +295,7 @@
       "level": "N4",
       "moduleId": "6",
       "field": "kanjis[9].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kokoromiru"
     },
@@ -359,7 +304,7 @@
       "level": "N4",
       "moduleId": "7",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "korogaru"
     },
@@ -368,7 +313,7 @@
       "level": "N4",
       "moduleId": "8",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kataru"
     },
@@ -377,7 +322,7 @@
       "level": "N4",
       "moduleId": "10",
       "field": "kanjis[0].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "sha"
     },
@@ -386,7 +331,7 @@
       "level": "N4",
       "moduleId": "10",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "in"
     },
@@ -395,7 +340,7 @@
       "level": "N4",
       "moduleId": "10",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "waza"
     },
@@ -404,7 +349,7 @@
       "level": "N4",
       "moduleId": "10",
       "field": "kanjis[8].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kan"
     },
@@ -413,7 +358,7 @@
       "level": "N4",
       "moduleId": "10",
       "field": "kanjis[9].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "in"
     },
@@ -422,7 +367,7 @@
       "level": "N4",
       "moduleId": "11",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kawaru / dai"
     },
@@ -431,7 +376,7 @@
       "level": "N4",
       "moduleId": "11",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ryou"
     },
@@ -440,7 +385,7 @@
       "level": "N4",
       "moduleId": "11",
       "field": "kanjis[6].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "chin"
     },
@@ -449,7 +394,7 @@
       "level": "N4",
       "moduleId": "12",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "yamai"
     },
@@ -458,7 +403,7 @@
       "level": "N4",
       "moduleId": "12",
       "field": "kanjis[6].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "in"
     },
@@ -467,7 +412,7 @@
       "level": "N4",
       "moduleId": "12",
       "field": "kanjis[9].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "i"
     },
@@ -476,7 +421,7 @@
       "level": "N4",
       "moduleId": "13",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "niku"
     },
@@ -485,7 +430,7 @@
       "level": "N4",
       "moduleId": "13",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "cha"
     },
@@ -494,7 +439,7 @@
       "level": "N4",
       "moduleId": "13",
       "field": "kanjis[7].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ri"
     },
@@ -503,7 +448,7 @@
       "level": "N4",
       "moduleId": "13",
       "field": "kanjis[8].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "gu"
     },
@@ -512,7 +457,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[0].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "man"
     },
@@ -521,7 +466,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "oku"
     },
@@ -530,7 +475,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[2].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tabi"
     },
@@ -539,7 +484,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[3].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "toku"
     },
@@ -548,7 +493,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "wakareru"
     },
@@ -557,7 +502,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[5].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "onaji"
     },
@@ -566,7 +511,7 @@
       "level": "N4",
       "moduleId": "14",
       "field": "kanjis[6].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "koto"
     },
@@ -575,7 +520,7 @@
       "level": "N4",
       "moduleId": "15",
       "field": "kanjis[4].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "sasaeru"
     },
@@ -584,7 +529,7 @@
       "level": "N4",
       "moduleId": "15",
       "field": "kanjis[9].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tomeru"
     },
@@ -593,7 +538,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[1].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "zoku"
     },
@@ -602,7 +547,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[18].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "you"
     },
@@ -611,7 +556,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[19].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "chi"
     },
@@ -620,7 +565,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[22].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kai"
     },
@@ -629,7 +574,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[37].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "shitsu"
     },
@@ -638,7 +583,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[38].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "dou"
     },
@@ -647,7 +592,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[39].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kyoku"
     },
@@ -656,7 +601,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[44].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kou"
     },
@@ -665,7 +610,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[45].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kan"
     },
@@ -674,7 +619,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[46].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ji"
     },
@@ -683,7 +628,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[51].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "shiken"
     },
@@ -692,7 +637,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[66].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "go"
     },
@@ -701,7 +646,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[82].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "sha"
     },
@@ -710,7 +655,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[83].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "in"
     },
@@ -719,7 +664,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[85].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "gyou"
     },
@@ -728,7 +673,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[90].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "byou"
     },
@@ -737,7 +682,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[91].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "in"
     },
@@ -746,7 +691,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[96].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "dai"
     },
@@ -755,7 +700,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[97].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ryou"
     },
@@ -764,7 +709,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[98].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "chin"
     },
@@ -773,7 +718,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[109].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "isha"
     },
@@ -782,7 +727,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[112].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "meshi"
     },
@@ -791,7 +736,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[113].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "niku"
     },
@@ -800,7 +745,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[115].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ocha"
     },
@@ -809,7 +754,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[116].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "aji"
     },
@@ -818,7 +763,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[117].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "ri"
     },
@@ -827,7 +772,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[118].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "gu"
     },
@@ -836,7 +781,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[120].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "man"
     },
@@ -845,7 +790,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[121].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "oku"
     },
@@ -854,7 +799,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[122].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tabi"
     },
@@ -863,7 +808,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[123].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "toku"
     },
@@ -872,7 +817,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[124].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "betsu"
     },
@@ -881,7 +826,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[125].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "onaji"
     },
@@ -890,7 +835,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[126].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "koto"
     },
@@ -899,7 +844,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[127].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "atsumaru"
     },
@@ -908,7 +853,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[128].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "au"
     },
@@ -917,7 +862,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[129].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "hajimaru"
     },
@@ -926,7 +871,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[130].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tsukuru"
     },
@@ -935,7 +880,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[131].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tsukau"
     },
@@ -944,7 +889,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[132].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "kiru"
     },
@@ -953,7 +898,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[133].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "okuru"
     },
@@ -962,7 +907,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[134].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "sasaeru"
     },
@@ -971,7 +916,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[135].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "oboeru"
     },
@@ -980,7 +925,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[136].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "wasureru"
     },
@@ -989,7 +934,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[137].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "motsu"
     },
@@ -998,7 +943,7 @@
       "level": "N4",
       "moduleId": "16",
       "field": "kanjis[138].kunyomi",
-      "rule": "reading-latin-only",
+      "rule": "reading-pending-human-review",
       "severity": "editorial",
       "sample": "tomeru"
     },

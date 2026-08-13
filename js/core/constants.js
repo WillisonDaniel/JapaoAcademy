@@ -248,6 +248,63 @@ const ENGLISH_ALPHABET_DATA = [
     { letter: "Z z", name: "zee", ipa: "/ziː/", example: "Zebra" }
 ];
 
+const JAPANESE_RESOURCE_REGISTRY = Object.freeze({
+    hiragana: Object.freeze({ id: 'hiragana', label: 'Hiragana', route: 'hiragana.html', deckType: 'hiragana', minigameMode: 'hiragana' }),
+    katakana: Object.freeze({ id: 'katakana', label: 'Katakana', route: 'katakana.html', deckType: 'katakana', minigameMode: 'katakana' }),
+    kanji_n5: Object.freeze({ id: 'kanji_n5', label: 'Kanji N5', route: 'kanji_n5.html', deckType: 'kanji', minigameMode: 'kanji_n5' }),
+    kanji_n4: Object.freeze({ id: 'kanji_n4', label: 'Kanji N4', route: 'kanji_n4.html', deckType: 'kanji_n4', minigameMode: 'kanji_n4' }),
+    kanji_n3: Object.freeze({ id: 'kanji_n3', label: 'Kanji N3', route: 'kanji_n3.html', deckType: 'kanji_n3', minigameMode: 'kanji_n3' }),
+    kanji_n2: Object.freeze({ id: 'kanji_n2', label: 'Kanji N2', route: 'kanji_n2.html', deckType: 'kanji_n2', minigameMode: 'kanji_n2' }),
+    kanji_n1: Object.freeze({ id: 'kanji_n1', label: 'Kanji N1', route: 'kanji_n1.html', deckType: 'kanji_n1', minigameMode: 'kanji_n1' })
+});
+
+function normalizeJapaneseResourceId(value) {
+    const id = String(value || '').trim().toLowerCase();
+    if (id === 'kanji' || id === 'n5') return 'kanji_n5';
+    if (/^n[1-4]$/.test(id)) return `kanji_${id}`;
+    return Object.prototype.hasOwnProperty.call(JAPANESE_RESOURCE_REGISTRY, id) ? id : null;
+}
+
+function getJapaneseResourceConfig(value) {
+    const id = normalizeJapaneseResourceId(value);
+    return id ? JAPANESE_RESOURCE_REGISTRY[id] : null;
+}
+
+if (typeof window !== 'undefined') {
+    window.JAPANESE_RESOURCE_REGISTRY = JAPANESE_RESOURCE_REGISTRY;
+    window.normalizeJapaneseResourceId = normalizeJapaneseResourceId;
+    window.getJapaneseResourceConfig = getJapaneseResourceConfig;
+}
+
+function getCadernoErros() {
+    try {
+        return JSON.parse(localStorage.getItem('ja_caderno_erros')) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function salvarCadernoErros(erros) {
+    localStorage.setItem('ja_caderno_erros', JSON.stringify(erros));
+}
+
+function registrarErroSRS(itemId) {
+    if (!itemId) return;
+    const strId = String(itemId);
+    const erros = getCadernoErros();
+    if (!erros.includes(strId)) {
+        erros.push(strId);
+        salvarCadernoErros(erros);
+    }
+    if (typeof srsTipoAtivo !== 'undefined' && typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(srsTipoAtivo);
+}
+
+if (typeof window !== 'undefined') {
+    window.getCadernoErros = getCadernoErros;
+    window.salvarCadernoErros = salvarCadernoErros;
+    window.registrarErroSRS = registrarErroSRS;
+}
+
 function getCourseData(mode) {
     if (!mode) return null;
     const m = String(mode).toLowerCase();

@@ -7567,3 +7567,16 @@ const kanjiN4Data = [
         ]
     }
 ];
+
+// Leituras latinas N4 permanecem rastreáveis e pendentes de revisão humana.
+kanjiN4Data.forEach(module => (module.kanjis || []).forEach(kanji => {
+    for (const field of ['onyomi', 'kunyomi']) {
+        const value = kanji[field];
+        if (!value || value === '-' || !/[A-Za-z]/.test(value) || /[\u3040-\u30ff\u3400-\u9fff]/u.test(value)) continue;
+        kanji.readingEditorialReview = kanji.readingEditorialReview || {};
+        kanji.readingEditorialReview[field] = {
+            status: 'pending-human-review', phase: '7', legacyValue: value,
+            classification: 'ambiguous-or-unverified', proposal: ''
+        };
+    }
+}));

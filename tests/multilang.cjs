@@ -609,7 +609,8 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             locale: 'ja-JP',
             scripts: 27,
             // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
-            maxBytes: 1620 * 1024,
+            // O registro central dos recursos japoneses adiciona apenas metadados locais de rota e deck.
+            maxBytes: 1621 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
@@ -623,7 +624,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/es-ES/espanhol_curso.html',
             locale: 'es-ES',
             scripts: 27,
-            maxBytes: 1610 * 1024,
+            maxBytes: 1611 * 1024,
             dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
         },
         {
@@ -679,12 +680,13 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
     const budgets = {
-        n5: 700 * 1024,
-        n4: 715 * 1024,
+        // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
+        n5: 706 * 1024,
+        n4: 719 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 974 * 1024,
-        n2: 1007 * 1024,
-        n1: 1778 * 1024
+        n3: 978 * 1024,
+        n2: 1011 * 1024,
+        n1: 1781 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {

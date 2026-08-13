@@ -311,6 +311,7 @@ function renderKanjiModule(moduleIndex) {
         container.appendChild(quizDiv);
     }
 
+    if (typeof renderJapaneseResourceActions === 'function') renderJapaneseResourceActions(container, mode, moduleIndex, dataBase.length);
     if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases();
     container.setAttribute('aria-busy', 'false');
     container.setAttribute('aria-label', 'Conteúdo do módulo');
@@ -347,6 +348,30 @@ function playKanjiAudio(text, event) {
     }
 }
 
+function renderJapaneseResourceActions(container, mode, moduleIndex, moduleCount) {
+    if (!container || !['hiragana', 'katakana'].includes(mode) || moduleIndex !== moduleCount - 1) return;
+    const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+    if (!resource) return;
+    const actions = document.createElement('section');
+    actions.className = 'japanese-resource-actions';
+    actions.setAttribute('aria-label', `Próximos passos de ${resource.label}`);
+    actions.style.cssText = 'margin-top:32px;padding:22px;border:1px solid var(--border-color);border-radius:16px;background:var(--card-bg);text-align:center;';
+    actions.innerHTML = `
+        <h3 style="margin:0 0 8px;">Continue praticando ${resource.label}</h3>
+        <p style="margin:0 0 16px;color:var(--text-muted);">Revise o conteúdo, pratique no minigame ou consulte os caracteres no dicionário.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+            <button type="button" class="btn-primary" data-resource-action="review">Revisar no SRS</button>
+            <button type="button" class="btn-secondary" data-resource-action="minigame">Praticar no minigame</button>
+            <button type="button" class="btn-secondary" data-resource-action="dictionary">Abrir no dicionário</button>
+        </div>`;
+    actions.querySelector('[data-resource-action="review"]').onclick = () => {
+        if (typeof iniciarSessaoSRS === 'function') iniciarSessaoSRS(resource.deckType);
+    };
+    actions.querySelector('[data-resource-action="minigame"]').onclick = () => { window.location.href = `minigame.html?mode=${resource.minigameMode}`; };
+    actions.querySelector('[data-resource-action="dictionary"]').onclick = () => { window.location.href = `dicionario.html?cat=${resource.id}`; };
+    container.appendChild(actions);
+}
+
 function initializeKanji(mode) {
     let primaryColor = 'var(--hira-primary)';
 
@@ -360,6 +385,10 @@ function initializeKanji(mode) {
         if (typeof loadCourseModule === 'function') loadCourseModule(0);
     }
     if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(mode);
+    if (typeof URLSearchParams !== 'undefined' && new URLSearchParams(window.location.search).get('review') === '1') {
+        const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+        if (resource && typeof iniciarSessaoSRS === 'function') setTimeout(() => iniciarSessaoSRS(resource.deckType), 0);
+    }
 }
 
 function eNivelKanjiDesbloqueado(nivelJLPT) {
@@ -454,6 +483,7 @@ if (typeof window !== 'undefined') {
     window.playReadingTextAudio = playReadingTextAudio;
     window.playKanjiAudio = playKanjiAudio;
     window.initializeKanji = initializeKanji;
+    window.renderJapaneseResourceActions = renderJapaneseResourceActions;
     window.eNivelKanjiDesbloqueado = eNivelKanjiDesbloqueado;
     window.abrirTrilhaKanji = abrirTrilhaKanji;
     window.calcularProgressoKanjiGlobal = calcularProgressoKanjiGlobal;
