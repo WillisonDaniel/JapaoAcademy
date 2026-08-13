@@ -1126,6 +1126,43 @@ test('integridade pedagogica japonesa da Fase 1 permanece protegida', () => {
     assert.doesNotMatch(courseQuiz, /Simulado Final de Proficiency B2|Certificado Oficial|Certificado de Fluência B2/);
 });
 
+test('auditoria editorial japonesa da Fase 2 permanece permanente e deterministica', () => {
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const packageJson = JSON.parse(read('package.json'));
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_EDITORIAL_REVIEW.md');
+
+    assert.equal(packageJson.scripts['audit:japanese'], 'node tests/japanese-editorial-audit.cjs --write');
+    assert.equal(packageJson.scripts['audit:japanese:check'], 'node tests/japanese-editorial-audit.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-editorial-audit\.cjs/);
+
+    for (const rule of [
+        'module-id-duplicate',
+        'audio-guide-no-japanese',
+        'dialogue-no-japanese',
+        'english-intrusion',
+        'reading-latin-only',
+        'kanji-example-no-japanese',
+        'kanji-example-missing-target',
+        'quiz-answer-invalid'
+    ]) {
+        assert.match(audit, new RegExp(`rule: '${rule}'`), `regra ausente: ${rule}`);
+    }
+    assert.match(audit, /function runRuleFixtures\(\)/);
+    assert.match(audit, /const ALLOWLIST = new Map\(\[/);
+    assert.doesNotMatch(audit, /ALLOWLIST.*(?:N1|N2|N3).*\*/s, 'allowlist ampla por nível não é permitida');
+
+    assert.equal(occurrences.schemaVersion, 1);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.ok(occurrences.summary.bySeverity.editorial > 0, 'backlog editorial japonês deve permanecer inventariado');
+    assert.equal(Object.values(occurrences.metrics.course).reduce((sum, item) => sum + item.modules, 0), 105);
+    assert.equal(Object.values(occurrences.metrics.kana).reduce((sum, item) => sum + item.modules, 0), 16);
+    assert.equal(Object.values(occurrences.metrics.kanji).reduce((sum, item) => sum + item.modules, 0), 92);
+    assert.equal(Object.values(occurrences.metrics.kanji).reduce((sum, item) => sum + item.entries, 0), 2215);
+    assert.match(review, /Bloqueadores técnicos: 0/);
+    assert.match(review, /não substitui revisão humana/i);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {
