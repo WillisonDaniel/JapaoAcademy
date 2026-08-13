@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Italiano A1–B2 | Idiomas Academy</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#15803d">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <style>
+        .italian-accent { --current-primary: #15803d; }
+        .card-nivel.em-breve { opacity: .62; cursor: not-allowed; filter: grayscale(.18); }
+        .card-nivel.em-breve:hover { transform: none; box-shadow: var(--shadow); }
+        .tag-em-breve { background: #64748b; color: #fff; }
+    </style>
+</head>
+<body data-mode="italian" data-lang="it-IT" class="italian-accent">
+    <header>
+        <a href="../../hub_italiano.html" class="home-btn">⬅ Menu do Italiano</a>
+        <h1>🇮🇹 Curso de Italiano (CEFR)</h1>
+        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+    </header>
+
+    <main id="hub-niveis" class="container">
+        <div class="banner-srs" aria-busy="true">
+            <div class="srs-banner-info">
+                <span class="srs-badge-tag">🧠 REPETIÇÃO ESPAÇADA (SRS)</span>
+                <h3>Revisão inteligente</h3>
+                <p id="srs-banner-desc">Carregando itens pendentes de revisão em italiano...</p>
+                <div class="srs-modos-filtro">
+                    <button class="btn-srs-tab active" id="tab-srs-todos" onclick="selecionarModoSRS('todos')">🟢 Pendentes</button>
+                    <button class="btn-srs-tab" id="tab-srs-favoritos" onclick="selecionarModoSRS('favoritos')">⭐ Favoritos</button>
+                    <button class="btn-srs-tab" id="tab-srs-erros" onclick="selecionarModoSRS('erros')">❌ Caderno de Erros</button>
+                </div>
+            </div>
+            <div class="srs-banner-action">
+                <div class="srs-badge-box"><span class="srs-counter-badge" id="srs-badge-count">0</span><small>pendentes</small></div>
+                <button id="btn-iniciar-srs" onclick="iniciarSessaoSRS()" class="btn-srs-action">Iniciar Revisão ➜</button>
+            </div>
+        </div>
+
+        <h2>Hub de Proficiência em Italiano</h2>
+        <div id="dashboard-progresso-global" style="background:var(--card-bg);border:2px solid var(--border-color);border-radius:12px;padding:16px 20px;margin-bottom:25px;box-shadow:var(--shadow);">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+                <h3 style="margin:0;font-size:1.1rem;">📊 Progresso do Italiano A1</h3>
+                <span id="txt-progresso-porcentagem" style="font-weight:700;color:#15803d;">0% Concluído</span>
+            </div>
+            <div style="background:var(--border-color);height:12px;border-radius:6px;overflow:hidden;"><div id="bar-progresso-global" style="background:linear-gradient(90deg,#15803d,#dc2626);height:100%;width:0%;transition:width .5s;"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:.85rem;color:var(--text-muted);"><span id="txt-progresso-modulos">0 de 30 Módulos Concluídos</span><span>CEFR A1</span></div>
+        </div>
+
+        <div class="grid-niveis">
+            <div class="card-nivel" id="card-nivel-a1" onclick="abrirTrilha('A1')" role="button" tabindex="0">
+                <span class="tag" style="background:#15803d;color:#fff;">A1 • INICIANTE</span><h3>Italiano de sobrevivência</h3><p>30 módulos • situações reais, vocabulário, gramática e áudio</p><div id="prog-a1" style="margin-top:10px;font-weight:bold;color:var(--text-muted);">0 / 30 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-a2" onclick="abrirTrilha('A2')" role="button" tabindex="0">
+                <span class="tag" style="background:#0284c7;color:#fff;">A2 • ELEMENTAR</span><h3>Italiano cotidiano</h3><p>30 módulos • passado próximo, futuro, pronomes, preposições e cultura</p><div id="prog-a2" style="margin-top:10px;font-weight:bold;color:var(--text-muted);">0 / 30 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b1" onclick="abrirTrilha('B1')" role="button" tabindex="0">
+                <span class="tag" style="background:#7c3aed;color:#fff;">B1 • INTERMEDIÁRIO</span><h3>Italiano intermediário</h3><p>24 módulos • subjuntivo, condicional, pronomes combinados e debate</p><div id="prog-b1" style="margin-top:10px;font-weight:bold;color:var(--text-muted);">0 / 24 Módulos</div>
+            </div>
+            <div class="card-nivel" id="card-nivel-b2" onclick="abrirTrilha('B2')" role="button" tabindex="0">
+                <span class="tag" style="background:#dc2626;color:#fff;">B2 • AVANÇADO</span><h3>Italiano avançado</h3><p>24 módulos • sintaxe complexa, voz passiva, período hipotético e oratória</p><div id="prog-b2" style="margin-top:10px;font-weight:bold;color:var(--text-muted);">0 / 24 Módulos</div>
+            </div>
+        </div>
+    </main>
+
+    <main id="trilha-a1" class="container" style="display:none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A1 — Italiano Essencial</h2>
+        <div class="secao-trilha"><h3>📂 Seção 1: Primeiros contatos</h3><div>
+            <button class="btn-modulo" id="mod-0-btn" onclick="iniciarModulo(0,'A1')">🔒 Módulo 1: Saluti e cortesia</button>
+            <button class="btn-modulo" id="mod-1-btn" onclick="iniciarModulo(1,'A1')">🔒 Módulo 2: Alfabeto, suoni e doppie</button>
+            <button class="btn-modulo" id="mod-2-btn" onclick="iniciarModulo(2,'A1')">🔒 Módulo 3: Presentazioni e verbo essere</button>
+            <button class="btn-modulo" id="mod-3-btn" onclick="iniciarModulo(3,'A1')">🔒 Módulo 4: Pronomi personali e Lei</button>
+            <button class="btn-modulo" id="mod-4-btn" onclick="iniciarModulo(4,'A1')">🔒 Módulo 5: Numeri, età e avere</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 2: Identidade e pessoas</h3><div>
+            <button class="btn-modulo" id="mod-5-btn" onclick="iniciarModulo(5,'A1')">🔒 Módulo 6: Paesi e nazionalità</button>
+            <button class="btn-modulo" id="mod-6-btn" onclick="iniciarModulo(6,'A1')">🔒 Módulo 7: Genere e plurale</button>
+            <button class="btn-modulo" id="mod-7-btn" onclick="iniciarModulo(7,'A1')">🔒 Módulo 8: Articoli</button>
+            <button class="btn-modulo" id="mod-8-btn" onclick="iniciarModulo(8,'A1')">🔒 Módulo 9: Famiglia e possessivi</button>
+            <button class="btn-modulo" id="mod-9-btn" onclick="iniciarModulo(9,'A1')">🔒 Módulo 10: Professioni</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 3: Tempo e ações</h3><div>
+            <button class="btn-modulo" id="mod-10-btn" onclick="iniciarModulo(10,'A1')">🔒 Módulo 11: Giorni, mesi e date</button>
+            <button class="btn-modulo" id="mod-11-btn" onclick="iniciarModulo(11,'A1')">🔒 Módulo 12: Ore e appuntamenti</button>
+            <button class="btn-modulo" id="mod-12-btn" onclick="iniciarModulo(12,'A1')">🔒 Módulo 13: Verbi in -are</button>
+            <button class="btn-modulo" id="mod-13-btn" onclick="iniciarModulo(13,'A1')">🔒 Módulo 14: Verbi in -ere e -ire</button>
+            <button class="btn-modulo" id="mod-14-btn" onclick="iniciarModulo(14,'A1')">🔒 Módulo 15: Verbi irregolari</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 4: Vida cotidiana</h3><div>
+            <button class="btn-modulo" id="mod-15-btn" onclick="iniciarModulo(15,'A1')">🔒 Módulo 16: Routine e riflessivi</button>
+            <button class="btn-modulo" id="mod-16-btn" onclick="iniciarModulo(16,'A1')">🔒 Módulo 17: Casa, c’è e ci sono</button>
+            <button class="btn-modulo" id="mod-17-btn" onclick="iniciarModulo(17,'A1')">🔒 Módulo 18: Città e indicazioni</button>
+            <button class="btn-modulo" id="mod-18-btn" onclick="iniciarModulo(18,'A1')">🔒 Módulo 19: Cibi e bevande</button>
+            <button class="btn-modulo" id="mod-19-btn" onclick="iniciarModulo(19,'A1')">🔒 Módulo 20: Ristorante e conto</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 5: Compras e preferências</h3><div>
+            <button class="btn-modulo" id="mod-20-btn" onclick="iniciarModulo(20,'A1')">🔒 Módulo 21: Vestiti, colori e taglie</button>
+            <button class="btn-modulo" id="mod-21-btn" onclick="iniciarModulo(21,'A1')">🔒 Módulo 22: Quantità e partitivi</button>
+            <button class="btn-modulo" id="mod-22-btn" onclick="iniciarModulo(22,'A1')">🔒 Módulo 23: Tempo e stagioni</button>
+            <button class="btn-modulo" id="mod-23-btn" onclick="iniciarModulo(23,'A1')">🔒 Módulo 24: Gusti, hobby e piacere</button>
+            <button class="btn-modulo" id="mod-24-btn" onclick="iniciarModulo(24,'A1')">🔒 Módulo 25: Potere, volere e dovere</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 6: Viagem e missão final</h3><div>
+            <button class="btn-modulo" id="mod-25-btn" onclick="iniciarModulo(25,'A1')">🔒 Módulo 26: Trasporti</button>
+            <button class="btn-modulo" id="mod-26-btn" onclick="iniciarModulo(26,'A1')">🔒 Módulo 27: Stazione e aeroporto</button>
+            <button class="btn-modulo" id="mod-27-btn" onclick="iniciarModulo(27,'A1')">🔒 Módulo 28: Albergo e prenotazioni</button>
+            <button class="btn-modulo" id="mod-28-btn" onclick="iniciarModulo(28,'A1')">🔒 Módulo 29: Corpo e salute</button>
+            <button class="btn-modulo" id="mod-29-btn" onclick="iniciarModulo(29,'A1')">🔒 Módulo 30: Missione finale A1</button>
+        </div></div>
+    </main>
+
+    <main id="trilha-a2" class="container" style="display:none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha A2 — Italiano Cotidiano</h2>
+        <div class="secao-trilha"><h3>📂 Seção 1: Passato Prossimo e Pronomi</h3><div>
+            <button class="btn-modulo" id="mod-0-btn-a2" onclick="iniciarModulo(0,'A2')">🔒 Módulo 1: Il passato prossimo con avere</button>
+            <button class="btn-modulo" id="mod-1-btn-a2" onclick="iniciarModulo(1,'A2')">🔒 Módulo 2: Il passato prossimo con essere</button>
+            <button class="btn-modulo" id="mod-2-btn-a2" onclick="iniciarModulo(2,'A2')">🔒 Módulo 3: Participi passati irregolari frequenti</button>
+            <button class="btn-modulo" id="mod-3-btn-a2" onclick="iniciarModulo(3,'A2')">🔒 Módulo 4: I pronomi diretti</button>
+            <button class="btn-modulo" id="mod-4-btn-a2" onclick="iniciarModulo(4,'A2')">🔒 Módulo 5: I pronomi diretti nei tempi composti</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 2: Pronomi e Futuro</h3><div>
+            <button class="btn-modulo" id="mod-5-btn-a2" onclick="iniciarModulo(5,'A2')">🔒 Módulo 6: I pronomi indiretti</button>
+            <button class="btn-modulo" id="mod-6-btn-a2" onclick="iniciarModulo(6,'A2')">🔒 Módulo 7: Il futuro semplice (Verbi regolari)</button>
+            <button class="btn-modulo" id="mod-7-btn-a2" onclick="iniciarModulo(7,'A2')">🔒 Módulo 8: Il futuro semplice (Verbi irregolari)</button>
+            <button class="btn-modulo" id="mod-8-btn-a2" onclick="iniciarModulo(8,'A2')">🔒 Módulo 9: L'imperfetto indicativo (Usi e forme)</button>
+            <button class="btn-modulo" id="mod-9-btn-a2" onclick="iniciarModulo(9,'A2')">🔒 Módulo 10: Passato prossimo vs. Imperfetto</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 3: Reflexivos e Preposições</h3><div>
+            <button class="btn-modulo" id="mod-10-btn-a2" onclick="iniciarModulo(10,'A2')">🔒 Módulo 11: I verbi riflessivi al passato</button>
+            <button class="btn-modulo" id="mod-11-btn-a2" onclick="iniciarModulo(11,'A2')">🔒 Módulo 12: Le preposizioni articolate I</button>
+            <button class="btn-modulo" id="mod-12-btn-a2" onclick="iniciarModulo(12,'A2')">🔒 Módulo 13: Le preposizioni articolate II</button>
+            <button class="btn-modulo" id="mod-13-btn-a2" onclick="iniciarModulo(13,'A2')">🔒 Módulo 14: I comparativi di maggioranza e minoranza</button>
+            <button class="btn-modulo" id="mod-14-btn-a2" onclick="iniciarModulo(14,'A2')">🔒 Módulo 15: Il superlativo relativo e assoluto</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 4: Vida na Itália e Serviços</h3><div>
+            <button class="btn-modulo" id="mod-15-btn-a2" onclick="iniciarModulo(15,'A2')">🔒 Módulo 16: I quantificatori e indefiniti</button>
+            <button class="btn-modulo" id="mod-16-btn-a2" onclick="iniciarModulo(16,'A2')">🔒 Módulo 17: In viaggio: Alla stazione e all'aeroporto</button>
+            <button class="btn-modulo" id="mod-17-btn-a2" onclick="iniciarModulo(17,'A2')">🔒 Módulo 18: In hotel e in vacanza</button>
+            <button class="btn-modulo" id="mod-18-btn-a2" onclick="iniciarModulo(18,'A2')">🔒 Módulo 19: Al ristorante e al bar (Livello A2)</button>
+            <button class="btn-modulo" id="mod-19-btn-a2" onclick="iniciarModulo(19,'A2')">🔒 Módulo 20: La casa e l'arredamento</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 5: Trabalho, Saúde e Social</h3><div>
+            <button class="btn-modulo" id="mod-20-btn-a2" onclick="iniciarModulo(20,'A2')">🔒 Módulo 21: Il lavoro e le professioni</button>
+            <button class="btn-modulo" id="mod-21-btn-a2" onclick="iniciarModulo(21,'A2')">🔒 Módulo 22: Salute e visite mediche</button>
+            <button class="btn-modulo" id="mod-22-btn-a2" onclick="iniciarModulo(22,'A2')">🔒 Módulo 23: Servizi in città</button>
+            <button class="btn-modulo" id="mod-23-btn-a2" onclick="iniciarModulo(23,'A2')">🔒 Módulo 24: Vita sociale e tempo libero</button>
+            <button class="btn-modulo" id="mod-24-btn-a2" onclick="iniciarModulo(24,'A2')">🔒 Módulo 25: Fare acquisti e vestiti</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 6: Relatos e Desafio Final</h3><div>
+            <button class="btn-modulo" id="mod-25-btn-a2" onclick="iniciarModulo(25,'A2')">🔒 Módulo 26: Espressioni di tempo nel passato e futuro</button>
+            <button class="btn-modulo" id="mod-26-btn-a2" onclick="iniciarModulo(26,'A2')">🔒 Módulo 27: Descrivere persone e luoghi nel passato</button>
+            <button class="btn-modulo" id="mod-27-btn-a2" onclick="iniciarModulo(27,'A2')">🔒 Módulo 28: Raccontare un'esperienza di viaggio</button>
+            <button class="btn-modulo" id="mod-28-btn-a2" onclick="iniciarModulo(28,'A2')">🔒 Módulo 29: Revisione generale A2</button>
+            <button class="btn-modulo" id="mod-29-btn-a2" onclick="iniciarModulo(29,'A2')">🔒 Módulo 30: Sfida Finale A2: La giornata ideale in Italia</button>
+        </div></div>
+    </main>
+
+    <main id="trilha-b1" class="container" style="display:none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B1 — Italiano Intermediário</h2>
+        <div class="secao-trilha"><h3>📂 Seção 1: Tempos Verbais e Pronomes Combinados</h3><div>
+            <button class="btn-modulo" id="mod-0-btn-b1" onclick="iniciarModulo(0,'B1')">🔒 Módulo 1: Contrasto passato prossimo e imperfetto</button>
+            <button class="btn-modulo" id="mod-1-btn-b1" onclick="iniciarModulo(1,'B1')">🔒 Módulo 2: Il futuro anteriore e le relazioni temporali</button>
+            <button class="btn-modulo" id="mod-2-btn-b1" onclick="iniciarModulo(2,'B1')">🔒 Módulo 3: Il condizionale semplice (Espressivo e cortese)</button>
+            <button class="btn-modulo" id="mod-3-btn-b1" onclick="iniciarModulo(3,'B1')">🔒 Módulo 4: I pronomi combinati</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 2: Partículas, Relativos e Imperativo</h3><div>
+            <button class="btn-modulo" id="mod-4-btn-b1" onclick="iniciarModulo(4,'B1')">🔒 Módulo 5: La particella 'ci' (Luogo e verbi con ci)</button>
+            <button class="btn-modulo" id="mod-5-btn-b1" onclick="iniciarModulo(5,'B1')">🔒 Módulo 6: La particella 'ne' (Partitivo e argomento)</button>
+            <button class="btn-modulo" id="mod-6-btn-b1" onclick="iniciarModulo(6,'B1')">🔒 Módulo 7: I pronomi relativi</button>
+            <button class="btn-modulo" id="mod-7-btn-b1" onclick="iniciarModulo(7,'B1')">🔒 Módulo 8: L'imperativo diretto con pronomi</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 3: Subjuntivo e Conectores</h3><div>
+            <button class="btn-modulo" id="mod-8-btn-b1" onclick="iniciarModulo(8,'B1')">🔒 Módulo 9: La forma impersonale con 'si'</button>
+            <button class="btn-modulo" id="mod-9-btn-b1" onclick="iniciarModulo(9,'B1')">🔒 Módulo 10: Il congiuntivo presente I (Opinioni e dubbi)</button>
+            <button class="btn-modulo" id="mod-10-btn-b1" onclick="iniciarModulo(10,'B1')">🔒 Módulo 11: Il congiuntivo presente II (Sentimenti e desideri)</button>
+            <button class="btn-modulo" id="mod-11-btn-b1" onclick="iniciarModulo(11,'B1')">🔒 Módulo 12: I connettivi testuali e l'argomentazione</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 4: Sociedade, Trabalho e Educação</h3><div>
+            <button class="btn-modulo" id="mod-12-btn-b1" onclick="iniciarModulo(12,'B1')">🔒 Módulo 13: Raccontare un evento storico o personale</button>
+            <button class="btn-modulo" id="mod-13-btn-b1" onclick="iniciarModulo(13,'B1')">🔒 Módulo 14: Esprimere opinioni e dibattere</button>
+            <button class="btn-modulo" id="mod-14-btn-b1" onclick="iniciarModulo(14,'B1')">🔒 Módulo 15: Il mondo del lavoro in Italia</button>
+            <button class="btn-modulo" id="mod-15-btn-b1" onclick="iniciarModulo(15,'B1')">🔒 Módulo 16: Università e sistema scolastico italiano</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 5: Cultura, Mídia e Burocracia</h3><div>
+            <button class="btn-modulo" id="mod-16-btn-b1" onclick="iniciarModulo(16,'B1')">🔒 Módulo 17: I media, i giornali e la TV italiana</button>
+            <button class="btn-modulo" id="mod-17-btn-b1" onclick="iniciarModulo(17,'B1')">🔒 Módulo 18: Arte, musica e cinema italiano</button>
+            <button class="btn-modulo" id="mod-18-btn-b1" onclick="iniciarModulo(18,'B1')">🔒 Módulo 19: I problemi quotidiani e la burocrazia</button>
+            <button class="btn-modulo" id="mod-19-btn-b1" onclick="iniciarModulo(19,'B1')">🔒 Módulo 20: Ambiente, sostenibilità e territorio</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 6: Tradições, Tecnologia e Desafio Final</h3><div>
+            <button class="btn-modulo" id="mod-20-btn-b1" onclick="iniciarModulo(20,'B1')">🔒 Módulo 21: Tradizioni regionali e feste popolari</button>
+            <button class="btn-modulo" id="mod-21-btn-b1" onclick="iniciarModulo(21,'B1')">🔒 Módulo 22: Tecnologia e vita digitale</button>
+            <button class="btn-modulo" id="mod-22-btn-b1" onclick="iniciarModulo(22,'B1')">🔒 Módulo 23: Revisione generale B1</button>
+            <button class="btn-modulo" id="mod-23-btn-b1" onclick="iniciarModulo(23,'B1')">🔒 Módulo 24: Sfida Finale B1: Presentazione e dibattito culturale</button>
+        </div></div>
+    </main>
+
+    <main id="trilha-b2" class="container" style="display:none;">
+        <button onclick="voltarAoHub()" class="btn-secundario">⬅ Voltar aos Níveis</button>
+        <h2>Trilha B2 — Italiano Avançado</h2>
+        <div class="secao-trilha"><h3>📂 Seção 1: Subjuntivo Avançado e Hipóteses</h3><div>
+            <button class="btn-modulo" id="mod-0-btn-b2" onclick="iniciarModulo(0,'B2')">🔒 Módulo 1: Il congiuntivo passato e imperfetto</button>
+            <button class="btn-modulo" id="mod-1-btn-b2" onclick="iniciarModulo(1,'B2')">🔒 Módulo 2: Il congiuntivo trapassato e la consecutio temporum</button>
+            <button class="btn-modulo" id="mod-2-btn-b2" onclick="iniciarModulo(2,'B2')">🔒 Módulo 3: Il periodo ipotetico I e II (Realtà e possibilità)</button>
+            <button class="btn-modulo" id="mod-3-btn-b2" onclick="iniciarModulo(3,'B2')">🔒 Módulo 4: Il periodo ipotetico III (Impossibilità nel passato)</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 2: Voz Passiva, Discurso e Formas Nominais</h3><div>
+            <button class="btn-modulo" id="mod-4-btn-b2" onclick="iniciarModulo(4,'B2')">🔒 Módulo 5: La forma passiva con 'essere' e 'venire'</button>
+            <button class="btn-modulo" id="mod-5-btn-b2" onclick="iniciarModulo(5,'B2')">🔒 Módulo 6: La forma passiva con 'andare' e 'si passivante'</button>
+            <button class="btn-modulo" id="mod-6-btn-b2" onclick="iniciarModulo(6,'B2')">🔒 Módulo 7: Il discorso indiretto nei tempi passati</button>
+            <button class="btn-modulo" id="mod-7-btn-b2" onclick="iniciarModulo(7,'B2')">🔒 Módulo 8: Gerundio, participio e infinito implicito</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 3: Registros, Conetores e Idiomas</h3><div>
+            <button class="btn-modulo" id="mod-8-btn-b2" onclick="iniciarModulo(8,'B2')">🔒 Módulo 9: Registro formale e informale nella comunicazione</button>
+            <button class="btn-modulo" id="mod-9-btn-b2" onclick="iniciarModulo(9,'B2')">🔒 Módulo 10: Coesione testuale e connettivi avanzati</button>
+            <button class="btn-modulo" id="mod-10-btn-b2" onclick="iniciarModulo(10,'B2')">🔒 Módulo 11: Espressioni idiomatiche e modi di dire italiani</button>
+            <button class="btn-modulo" id="mod-11-btn-b2" onclick="iniciarModulo(11,'B2')">🔒 Módulo 12: Argomentazione e negoziazione complessa</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 4: Economia, Direito, Ciência e Literatura</h3><div>
+            <button class="btn-modulo" id="mod-12-btn-b2" onclick="iniciarModulo(12,'B2')">🔒 Módulo 13: Economia, finanza e mercato italiano</button>
+            <button class="btn-modulo" id="mod-13-btn-b2" onclick="iniciarModulo(13,'B2')">🔒 Módulo 14: Diritto, istituzioni e politica in Italia</button>
+            <button class="btn-modulo" id="mod-14-btn-b2" onclick="iniciarModulo(14,'B2')">🔒 Módulo 15: Scienza, innovazione e ricerca</button>
+            <button class="btn-modulo" id="mod-15-btn-b2" onclick="iniciarModulo(15,'B2')">🔒 Módulo 16: Letteratura italiana contemporanea</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 5: Mídia, Artes, Moda e Filosofia</h3><div>
+            <button class="btn-modulo" id="mod-16-btn-b2" onclick="iniciarModulo(16,'B2')">🔒 Módulo 17: Il linguaggio dei media avanzato e giornalismo</button>
+            <button class="btn-modulo" id="mod-17-btn-b2" onclick="iniciarModulo(17,'B2')">🔒 Módulo 18: Cinema d'autore e teatro d'avanguardia</button>
+            <button class="btn-modulo" id="mod-18-btn-b2" onclick="iniciarModulo(18,'B2')">🔒 Módulo 19: Architettura, design e moda italiana</button>
+            <button class="btn-modulo" id="mod-19-btn-b2" onclick="iniciarModulo(19,'B2')">🔒 Módulo 20: Filosofia e storia delle idee in Italia</button>
+        </div></div>
+        <div class="secao-trilha"><h3>📂 Seção 6: Sociedade, Oratória e Exame de Domínio</h3><div>
+            <button class="btn-modulo" id="mod-20-btn-b2" onclick="iniciarModulo(20,'B2')">🔒 Módulo 21: Società italiana: cambiamenti e sfide</button>
+            <button class="btn-modulo" id="mod-21-btn-b2" onclick="iniciarModulo(21,'B2')">🔒 Módulo 22: Oratoria e presentazione pubblica</button>
+            <button class="btn-modulo" id="mod-22-btn-b2" onclick="iniciarModulo(22,'B2')">🔒 Módulo 23: Revisione generale B2 e sintassi complessa</button>
+            <button class="btn-modulo" id="mod-23-btn-b2" onclick="iniciarModulo(23,'B2')">🔒 Módulo 24: Sfida Finale B2: Esame integrato di padronanza</button>
+        </div></div>
+    </main>
+
+    <main id="player-aula" class="container" style="display:none;">
+        <div class="barra-progresso"><span id="etapa-titulo">Etapa 1 de 5</span><button onclick="fecharAula()">✖ Sair</button></div><div id="conteudo-etapa"></div><div class="botoes-acao"><button id="btn-voltar-etapa" onclick="voltarEtapa()" style="display:none;">⬅ Voltar</button><button id="btn-avancar" onclick="avancarEtapa()">Avançar ➜</button></div>
+    </main>
+    <main id="player-srs" class="container" style="display:none;">
+        <div class="barra-progresso"><span id="srs-etapa-titulo">Revisão SRS (1 de 1)</span><button onclick="fecharSessaoSRS()">✖ Sair da Revisão</button></div><div id="conteudo-card-srs" class="srs-container-flex"></div><div class="srs-botoes-acao"><button id="btn-revelar-srs" onclick="revelarRespostaSRS()" class="btn-srs-reveal">Ver Resposta 👁️</button><div id="painel-avaliacao-srs" class="grid-avaliacao-srs" style="display:none;"><button onclick="processarAvaliacaoSRS(1)" class="btn-srs-again">❌ Errei<small>Revisar amanhã</small></button><button onclick="processarAvaliacaoSRS(2)" class="btn-srs-hard">🟡 Difícil<small>Aumento leve</small></button><button onclick="processarAvaliacaoSRS(3)" class="btn-srs-good">🟢 Bom<small>Intervalo médio</small></button><button onclick="processarAvaliacaoSRS(4)" class="btn-srs-easy">🌟 Fácil<small>Intervalo longo</small></button></div></div>
+    </main>
+
+    <script src="../../database/it-IT/data_curso_italiano_a1.js"></script>
+    <script src="../../database/it-IT/data_curso_italiano_a2.js"></script>
+    <script src="../../database/it-IT/data_curso_italiano_b1.js"></script>
+    <script src="../../database/it-IT/data_curso_italiano_b2.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script><script src="../../js/core/constants.js"></script><script src="../../js/core/state.js"></script><script src="../../js/core/utils.js"></script><script src="../../js/core/theme.js"></script><script src="../../js/core/audio.js"></script><script src="../../js/core/toast.js"></script><script src="../../js/core/storage.js"></script><script src="../../js/core/dom.js"></script><script src="../../js/core/events.js"></script>
+    <script src="../../js/course/moduleNormalizer.js"></script><script src="../../js/course/tabs.js"></script><script src="../../js/course/course.js"></script><script src="../../js/course/quiz.js"></script><script src="../../js/game/xp.js"></script><script src="../../js/game/ranking.js"></script><script src="../../js/srs/deck.js"></script><script src="../../js/core/course-index.js"></script><script src="../../js/srs/engine.js"></script><script src="../../js/srs/review.js"></script><script src="../../js/core/bootstrap.js"></script><script src="../../app.js"></script>
+    <script>document.addEventListener('DOMContentLoaded',()=>{if(typeof AppState!=='undefined'&&typeof AppState.setLevel==='function')AppState.setLevel('A1');if(typeof initializeCourse==='function')initializeCourse('italian');if(typeof garantirElementosCabecalhoEModal==='function')garantirElementosCabecalhoEModal();if(typeof atualizarHeaderXP==='function')atualizarHeaderXP();});</script>
+</body>
+</html>

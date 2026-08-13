@@ -153,6 +153,16 @@ function getTodosOsCursos() {
     const isSpanish = languageCode === 'es-ES';
     const isEnglish = languageCode === 'en-US';
     const isRussian = languageCode === 'ru-RU';
+    const isItalian = languageCode === 'it-IT';
+
+    if (isItalian) {
+        return {
+            A1: (typeof CURSO_ITALIANO_A1_DADOS !== 'undefined') ? CURSO_ITALIANO_A1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A1_DADOS : []),
+            A2: (typeof CURSO_ITALIANO_A2_DADOS !== 'undefined') ? CURSO_ITALIANO_A2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_A2_DADOS : []),
+            B1: (typeof CURSO_ITALIANO_B1_DADOS !== 'undefined') ? CURSO_ITALIANO_B1_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B1_DADOS : []),
+            B2: (typeof CURSO_ITALIANO_B2_DADOS !== 'undefined') ? CURSO_ITALIANO_B2_DADOS : (typeof window !== 'undefined' ? window.CURSO_ITALIANO_B2_DADOS : [])
+        };
+    }
 
     if (isRussian) {
         return {

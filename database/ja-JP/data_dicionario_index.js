@@ -4,3 +4,6 @@ const JAPANESE_DICTIONARY_INDEX = Object.freeze([{"cat":"vocab","catLabel":"VOCA
 if (typeof window !== 'undefined') {
     window.JAPANESE_DICTIONARY_INDEX = JAPANESE_DICTIONARY_INDEX;
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { JAPANESE_DICTIONARY_INDEX };
+}

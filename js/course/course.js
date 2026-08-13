@@ -185,15 +185,12 @@ function eModuloAprendido(modIdx, nivel = 'a1') {
     // 2. Checagem de IDs resolvidos de módulo (ex: targetId, fallbackId)
     const numIdx = typeof modIdx === 'number' ? modIdx : (!isNaN(parseInt(modIdx, 10)) ? parseInt(modIdx, 10) : null);
     if (numIdx !== null) {
-        const bodyLang = (typeof document !== 'undefined' && document.body) ? (document.body.getAttribute('data-lang') || '') : '';
-        const path = (typeof window !== 'undefined' && window.location) ? window.location.pathname.toLowerCase() : '';
-        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
-        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
-        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
+        const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+        const languageConfig = typeof getLanguageConfig === 'function' ? getLanguageConfig(languageCode) : null;
 
         const list = typeof getCourseData === 'function' ? getCourseData(key) : null;
         const targetId = (list && list[numIdx] && list[numIdx].id) ? list[numIdx].id : null;
-        const prefix = isRussian ? 'ru_' : (isSpanish ? 'es_' : (isEnglish ? 'en_' : ''));
+        const prefix = languageConfig && languageConfig.prefix !== 'ja' ? `${languageConfig.prefix}_` : '';
         const fallbackId = `${prefix}${key}_mod_${String(numIdx + 1).padStart(2, '0')}`;
 
         if (targetId && arrayConcluidos.includes(targetId)) return true;

@@ -4,3 +4,6 @@ const ENGLISH_DICTIONARY_INDEX = Object.freeze([{"cat":"vocab","catLabel":"VOCAB
 if (typeof window !== 'undefined') {
     window.ENGLISH_DICTIONARY_INDEX = ENGLISH_DICTIONARY_INDEX;
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { ENGLISH_DICTIONARY_INDEX };
+}

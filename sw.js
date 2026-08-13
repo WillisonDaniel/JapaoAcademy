@@ -1,4 +1,5 @@
-const CACHE_NAME = 'idiomas-academy-v30';
+const CACHE_PREFIX = 'idiomas-academy-';
+const CACHE_NAME = 'idiomas-academy-v34';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -8,6 +9,16 @@ const ASSETS_TO_CACHE = [
     './hub_ingles.html',
     './hub_espanhol.html',
     './hub_russo.html',
+    './hub_italiano.html',
+    './html/it-IT/italiano_curso.html',
+    './html/it-IT/italiano_pronuncia.html',
+    './html/it-IT/italiano_minigame_conjugacao.html',
+    './database/it-IT/data_curso_italiano_a1.js',
+    './database/it-IT/data_curso_italiano_a2.js',
+    './database/it-IT/data_curso_italiano_b1.js',
+    './database/it-IT/data_curso_italiano_b2.js',
+    './database/it-IT/data_italiano_fonetica_recursos.js',
+    './database/it-IT/data_italiano_minigame_conjugacao.js',
     './html/ru-RU/russo_curso.html',
     './html/ru-RU/russo_alfabeto.html',
     './html/ru-RU/russo_dicionario.html',
@@ -135,7 +146,7 @@ self.addEventListener('activate', (event) => {
         caches.keys().then((keys) => {
             return Promise.all(
                 keys.map((key) => {
-                    if (key !== CACHE_NAME) {
+                    if (key !== CACHE_NAME && key.startsWith(CACHE_PREFIX)) {
                         console.log('🧹 [Service Worker] Removendo cache antigo:', key);
                         return caches.delete(key);
                     }
@@ -176,6 +187,13 @@ self.addEventListener('fetch', (event) => {
 
                 return networkResponse;
             }).catch(() => {
+                const requestUrl = new URL(event.request.url);
+                if (requestUrl.pathname.endsWith('/html/it-IT/italiano_dicionario.html')) {
+                    return new Response(
+                        '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dicionário italiano indisponível offline</title><body style="font-family:system-ui;max-width:42rem;margin:10vh auto;padding:1.5rem;line-height:1.6"><h1>📖 Abra o dicionário online primeiro</h1><p>O dicionário italiano é armazenado sob demanda. Conecte-se à internet, abra esta página uma vez e depois ela ficará disponível offline.</p><p><a href="../../hub_italiano.html">Voltar ao Italiano</a></p></body></html>',
+                        { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+                    );
+                }
                 // Fallback defensivo para navegação HTML offline
                 if (event.request.mode === 'navigate' || (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'))) {
                     return caches.match('./index.html') || caches.match('./');

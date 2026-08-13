@@ -43,7 +43,7 @@ function alternarVelocidadeAudio(btnElement) {
     });
 }
 
-function tocarAudio(texto, rateOverride = null) {
+function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null) {
     if (!texto) return;
     if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
         console.warn('[Áudio] Síntese de voz indisponível neste navegador.');
@@ -66,14 +66,25 @@ function tocarAudio(texto, rateOverride = null) {
         if (!textoLimpo) return;
 
         const u = new SpeechSynthesisUtterance(textoLimpo);
-        const bodyLang = document.body ? document.body.getAttribute('data-lang') : '';
-        const path = window.location ? window.location.pathname.toLowerCase() : '';
-        const isSpanish = bodyLang === 'spanish' || bodyLang === 'es-ES' || path.includes('espanhol') || path.includes('es-es');
-        const isEnglish = bodyLang === 'english' || bodyLang === 'en-US' || path.includes('ingles') || path.includes('en-us');
-        const isRussian = bodyLang === 'russian' || bodyLang === 'ru-RU' || path.includes('russo') || path.includes('ru-ru');
+        let targetSpeechCode = null;
+        let targetRate = velocidadeAudioAtual;
 
-        u.lang = isRussian ? 'ru-RU' : (isSpanish ? 'es-ES' : (isEnglish ? 'en-US' : 'ja-JP'));
-        u.rate = (rateOverride !== null) ? rateOverride : velocidadeAudioAtual;
+        if (typeof rateOrLangOverride === 'string') {
+            targetSpeechCode = rateOrLangOverride;
+            if (typeof rateOverride === 'number') targetRate = rateOverride;
+        } else if (typeof rateOrLangOverride === 'number') {
+            targetRate = rateOrLangOverride;
+        }
+
+        if (!targetSpeechCode) {
+            const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : null;
+            const languageConfig = typeof getLanguageConfig === 'function' ? getLanguageConfig(languageCode) : null;
+            if (languageConfig && languageConfig.speechCode) targetSpeechCode = languageConfig.speechCode;
+        }
+
+        if (targetSpeechCode) u.lang = targetSpeechCode;
+        u.rate = targetRate;
+
         u.onerror = event => {
             if (event && (event.error === 'interrupted' || event.error === 'canceled')) return;
             console.warn('[Áudio] Falha na síntese de voz:', event && event.error ? event.error : event);

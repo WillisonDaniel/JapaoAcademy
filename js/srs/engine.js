@@ -45,6 +45,7 @@ function obterIdiomaDeckSRS(tipo, card) {
     if (/\bru_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ru-RU';
     if (/\bes_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'es-ES';
     if (/\ben_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'en-US';
+    if (/\bit_(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'it-IT';
     if (/\b(?:a1|a2|b1|b2)_mod_/.test(identity)) return 'ja-JP';
     return null;
 }

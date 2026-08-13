@@ -1,0 +1,202 @@
+Plano de transferência — conclusão completa do Italiano A1–B2
+Resumo
+O piloto Italiano A1 já está concluído, testado e preservado na tag local wip11-italian-a1-stable. O Antigravity trabalhará diretamente em D:\Documentos\Japones\WIP, criando uma branch a partir dessa tag e completando o idioma com A2–B2, pronúncia, minigame de conjugação, expansão do dicionário, integração total e QA final.
+Nenhum commit ou tag deverá ser enviado ao remoto sem autorização. A main local está limpa e sete commits à frente de origin/main.
+Estado atual — já concluído
+Italiano registrado como quinto idioma canônico:código it-IT;
+prefixo persistente it;
+áudio it-IT;
+aliases it, it-it, italian e italiano.
+
+Hub italiano, cartão no seletor e navegação concluídos.
+Curso A1 com 30 módulos, IDs it_a1_mod_01 a it_a1_mod_30.
+A2–B2 aparecem desabilitados como “Em breve”.
+Dicionário com 358 entradas, 26 letras, busca, filtros, favoritos e áudio.
+SRS italiano isolado em it_srs_a1_deck.
+Sessões, histórico, progresso e Dashboard reconhecem it-IT.
+Índice leve atual:443 módulos;
+17 datasets;
+italiano contabilizado somente pelos 30 módulos A1.
+
+PWA idiomas-academy-v33:hub e A1 disponíveis imediatamente offline;
+dicionário disponível offline depois do primeiro acesso online;
+107 recursos e 10,30 MB de precache.
+
+Auditoria italiana automática sem bloqueadores.
+Testes atuais:27/27 regressões;
+20/20 integrações;
+26/26 cenários multidioma.
+
+Fechamento atual:commit 8fe7e94;
+tag local wip11-italian-a1-stable;
+relatório em tests/RELEASE_WIP11_ITALIAN_A1.md.
+
+Implementação restante
+1. Preparar a continuidade com segurança
+Confirmar que HEAD e wip11-italian-a1-stable apontam para 8fe7e94.
+Executar a suíte completa antes de modificar qualquer arquivo.
+Criar a branch local feature/italiano-completo a partir da tag.
+Não reestruturar a arquitetura, converter para ES Modules ou alterar regras compartilhadas sem necessidade.
+Manter commits separados por nível e subsistema.
+2. Produzir Italiano A2
+Criar CURSO_ITALIANO_A2_DADOS com 30 módulos, IDs it_a2_mod_01 a it_a2_mod_30.
+Manter o contrato estrutural do A1: contexto, missão, seis ou mais itens de vocabulário, duas explicações gramaticais, dois construtores de frase, diálogo, cinco ou mais exercícios, resposta única, explicações e áudio.
+Cobrir comunicação cotidiana ampliada:passato prossimo;
+auxiliares essere e avere;
+particípios regulares e irregulares;
+pronomes diretos e indiretos;
+comparativos e superlativos;
+futuro simples;
+imperfeito introdutório;
+verbos reflexivos no passado;
+preposições articuladas;
+quantificadores;
+viagens, trabalho, moradia, serviços, saúde e vida social.
+
+Liberar A2 somente depois de concluir o A1, preservando as regras atuais de desbloqueio.
+Integrar it_srs_a2_deck, sessões e progresso.
+3. Produzir Italiano B1
+Criar CURSO_ITALIANO_B1_DADOS com 24 módulos, IDs it_b1_mod_01 a it_b1_mod_24.
+Trabalhar autonomia comunicativa:contraste entre passato prossimo e imperfetto;
+futuro e condicional;
+pronomes combinados;
+partículas ci e ne;
+relativos;
+imperativo com pronomes;
+forma impessoal com si;
+congiuntivo presente;
+conectores e organização de argumentos;
+relatos, opiniões, trabalho, estudos, mídia, cultura e problemas cotidianos.
+
+Integrar it_srs_b1_deck, Dashboard e desbloqueio após A2.
+4. Produzir Italiano B2
+Criar CURSO_ITALIANO_B2_DADOS com 24 módulos, IDs it_b2_mod_01 a it_b2_mod_24.
+Cobrir comunicação avançada:tempos do subjuntivo;
+concordância e sequência verbal;
+período hipotético;
+voz passiva;
+discurso indireto;
+gerúndio e construções implícitas;
+registros formal e informal;
+coesão textual;
+expressões idiomáticas;
+argumentação, negociação, apresentações e textos complexos.
+
+Encerrar com missão integrada e avaliação B2.
+Integrar it_srs_b2_deck e desbloqueio após B1.
+5. Atualizar curso, índice e progresso
+Carregar os quatro datasets italianos na página do curso.
+Tornar A2–B2 interativos somente quando o nível anterior estiver concluído.
+Atualizar o índice para:521 módulos totais;
+20 datasets;
+108 módulos italianos.
+
+Fazer getCourseModuleIds() retornar:A1: 30;
+A2: 30;
+B1: 24;
+B2: 24.
+
+Fazer o Dashboard usar 108 módulos como denominador italiano.
+Preservar o progresso A1 existente e não recriar ou renomear IDs já publicados.
+Manter a migração SRS v2 congelada nos quatro idiomas antigos; os novos decks italianos já nascem canônicos.
+6. Expandir o dicionário
+Regenerar ITALIAN_DICTIONARY_INDEX usando A1–B2 e a base suplementar.
+Manter as 358 entradas existentes e mesclar as novas sem duplicações.
+Incluir busca por italiano, português, tema, nível e regra gramatical.
+Exibir corretamente os filtros A1, A2, B1 e B2.
+Preservar favoritos por identidade estável da entrada.
+Manter o dicionário fora do precache inicial e disponível offline após o primeiro acesso online.
+Fazer o modo --check falhar quando o índice estiver divergente dos quatro datasets.
+7. Criar área de pronúncia italiana
+Criar página própria acessível pelo hub.
+Cobrir:alfabeto e nomes das letras;
+vogais abertas e fechadas;
+c/ch, g/gh;
+sc, sch, gn e gl;
+z, s, qu e h;
+consoantes duplas;
+acento tônico;
+elisão e apóstrofo;
+ritmo, entonação e ligação entre palavras;
+diferenças regionais apenas quando relevantes, sem apresentar uma variante como erro.
+
+Organizar o conteúdo por A1–B2, com busca, exemplos e áudio it-IT.
+Exibir fallback claro quando o navegador não oferecer voz italiana.
+Não criar sistema de áudio paralelo; reutilizar o mecanismo compartilhado.
+8. Criar minigame de conjugação contextual
+Criar página e dataset próprios, integrados ao hub italiano.
+Oferecer rodadas rápidas por nível:A1: presente e verbos frequentes;
+A2: tempos passados e futuro;
+B1: condicional, imperativo e subjuntivo presente;
+B2: subjuntivo avançado, período hipotético e registro.
+
+Cada questão deverá apresentar sujeito, infinitivo, contexto e apenas uma resposta correta.
+Incluir modos de escolha, digitação e escuta quando houver síntese de voz.
+Registrar pontuação, sequência e melhor resultado em chaves italianas próprias.
+Registrar sessões como it-IT, sem conceder progresso de módulo ou alterar o SRS automaticamente.
+Reutilizar componentes visuais e persistência dos minigames existentes.
+9. Ampliar auditoria editorial
+Fazer audit:italian percorrer A1–B2, pronúncia, minigame e dicionário.
+Validar IDs, estrutura, nível, áudio, tokens, respostas únicas, duplicações e campos vazios.
+Detectar português em campos-alvo italianos, placeholders e divergências entre áudio e texto.
+Validar progressão pedagógica para impedir que conteúdo avançado apareça antes da introdução necessária.
+Atualizar os relatórios editorial e de ocorrências.
+Corrigir todos os bloqueadores automáticos.
+Manter explícito que a revisão é automatizada e autoexecutada, sem certificação por falante nativo.
+10. Atualizar PWA e QA
+Elevar a versão do cache somente no fechamento.
+Precachear hub, curso, datasets e recursos italianos enquanto o total permanecer abaixo de 12 MB.
+Se o total ultrapassar 12 MB:manter A1 e A2 no precache;
+armazenar B1, B2, pronúncia, minigame e dicionário sob demanda;
+apresentar mensagem explicativa antes do primeiro acesso online.
+
+Validar instalação limpa, atualização sobre v33 e remoção segura do cache antigo.
+Atualizar a fixture do Dashboard para incluir progresso e histórico italiano A1–B2.
+Validar em 1280×900 e 390×844:hub;
+curso e desbloqueios;
+lições;
+dicionário;
+pronúncia;
+minigame;
+Dashboard agregado e filtro italiano.
+
+Não declarar QA visual aprovado sem verificar overflow e console.
+Interfaces e critérios de aceitação
+Datasets:CURSO_ITALIANO_A1_DADOS;
+CURSO_ITALIANO_A2_DADOS;
+CURSO_ITALIANO_B1_DADOS;
+CURSO_ITALIANO_B2_DADOS.
+
+IDs:it_a1_mod_01..30;
+it_a2_mod_01..30;
+it_b1_mod_01..24;
+it_b2_mod_01..24.
+
+Decks: it_srs_a1_deck até it_srs_b2_deck.
+Todos os cartões, sessões e históricos novos devem usar it-IT.
+Trocar entre idiomas não pode modificar decks ou progresso de outro idioma.
+A2, B1 e B2 devem respeitar o desbloqueio sequencial.
+Os quatro níveis devem fornecer exatamente 108 módulos italianos e elevar o índice global para 521.
+Todos os índices gerados devem estar em paridade com suas fontes.
+Testes anteriores devem permanecer verdes, com novos testes adicionados para os níveis, dicionário, minigame, pronúncia, PWA e isolamento multidioma.
+Executar após cada etapa:npm.cmd test;
+git diff --check.
+
+Ao final, criar tag local wip11-italian-complete-stable, sem push.
+Sequência de commits sugerida
+feat: adiciona curso italiano A2
+feat: adiciona curso italiano B1
+feat: adiciona curso italiano B2
+feat: integra italiano completo ao indice SRS e dashboard
+feat: amplia dicionario italiano para A1 B2
+feat: adiciona guia de pronuncia italiana
+feat: adiciona minigame de conjugacao italiana
+test: amplia auditoria editorial e QA do italiano
+test: fecha PWA e estabilizacao do italiano completo
+Premissas
+O Antigravity trabalhará na mesma pasta local e terá acesso aos commits não publicados.
+O A1 atual é a baseline estável e não deverá ser refeito.
+O italiano completo terá 30 módulos A1, 30 A2, 24 B1 e 24 B2.
+“Paridade completa” inclui curso A1–B2, dicionário, pronúncia, minigame, SRS, Dashboard e offline controlado.
+Não serão adicionados pagamentos, IA externa, novas autenticações ou alterações arquiteturais.
+Nenhuma publicação remota será realizada sem autorização explícita.

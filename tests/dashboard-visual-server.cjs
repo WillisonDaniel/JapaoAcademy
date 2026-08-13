@@ -31,7 +31,7 @@ function createFixtureScript() {
         return \`${'${value.getFullYear()}'}-${'${String(value.getMonth() + 1).padStart(2, \'0\')}'}-${'${String(value.getDate()).padStart(2, \'0\')}'}\`;
     };
     const isoAt = (date, hour) => new Date(\`${'${date}'}T${'${String(hour).padStart(2, \'0\')}'}:00:00\`).toISOString();
-    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU'];
+    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT'];
     const activities = ['course', 'quiz', 'srs', 'minigame'];
     const sessions = [];
     const dailyAggregates = {};
@@ -82,14 +82,14 @@ function createFixtureScript() {
     localStorage.setItem('ja_streak_data', JSON.stringify({ count: 12, best: 18, lastActiveDate: dateKey(0) }));
     localStorage.setItem('japao_academy_progress', JSON.stringify({
         nivelAtual: 'B2',
-        modulosConcluidos: ['a1_mod_01', 'a1_mod_02', 'en_a1_mod_01', 'en_a1_mod_02', 'es_a1_mod_1', 'es_a1_mod_2', 'ru_a1_mod_01', 'ru_a1_mod_02'],
-        modulosDesbloqueados: ['a1_mod_03', 'en_a1_mod_03', 'es_a1_mod_3', 'ru_a1_mod_03']
+        modulosConcluidos: ['a1_mod_01', 'a1_mod_02', 'en_a1_mod_01', 'en_a1_mod_02', 'es_a1_mod_1', 'es_a1_mod_2', 'ru_a1_mod_01', 'ru_a1_mod_02', 'it_a1_mod_01', 'it_a1_mod_02', 'it_a2_mod_01', 'it_b1_mod_01', 'it_b2_mod_01'],
+        modulosDesbloqueados: ['a1_mod_03', 'en_a1_mod_03', 'es_a1_mod_3', 'ru_a1_mod_03', 'it_a1_mod_03', 'it_a2_mod_02', 'it_b1_mod_02', 'it_b2_mod_02']
     }));
     localStorage.setItem('ja_dashboard_data_qa-dashboard', JSON.stringify(dashboardData));
     localStorage.setItem('cyrillic_mod_done_1', 'true');
     localStorage.setItem('cyrillic_mod_done_2', 'true');
     const dueDate = Date.now() - 60000;
-    [['ja', 'ja-JP'], ['en', 'en-US'], ['es', 'es-ES'], ['ru', 'ru-RU']].forEach(([prefix, language]) => {
+    [['ja', 'ja-JP'], ['en', 'en-US'], ['es', 'es-ES'], ['ru', 'ru-RU'], ['it', 'it-IT']].forEach(([prefix, language]) => {
         localStorage.setItem(\`${'${prefix}'}_srs_a1_deck\`, JSON.stringify([{ id: \`qa-${'${prefix}'}-due\`, language, dueDate }]));
     });
 
@@ -122,7 +122,7 @@ if (CHECK_MODE) {
     const transformed = transformDashboard(fs.readFileSync(path.join(ROOT, 'meu-progresso.html'), 'utf8'));
     assert.match(transformed, /data-dashboard-qa-fixture/);
     assert.match(transformed, /ja_dashboard_data_qa-dashboard/);
-    assert.match(transformed, /\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]/);
+    assert.match(transformed, /\['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT'\]/);
     assert.doesNotMatch(transformed, /src="firebase-init\.js"/);
     console.log('✓ servidor de QA injeta autenticação e dados determinísticos sem alterar a página de produção');
 } else {

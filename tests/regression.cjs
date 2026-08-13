@@ -91,16 +91,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 75, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 83, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('33 paginas HTML e referencias locais validas', () => {
+test('38 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 33, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 38, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -134,7 +134,7 @@ test('skeletons da Etapa 28B preservam o contrato acessivel', () => {
     });
 
     const srsPages = walk(ROOT, '.html').filter(page => fs.readFileSync(page, 'utf8').includes('class="banner-srs"'));
-    assert.equal(srsPages.length, 15, 'quantidade inesperada de paginas com painel SRS');
+    assert.equal(srsPages.length, 16, 'quantidade inesperada de paginas com painel SRS');
     srsPages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         assert.match(html, /class="banner-srs"[^>]*aria-busy="true"/, `${path.relative(ROOT, page)} sem estado inicial do SRS`);
@@ -237,7 +237,7 @@ test('AppState e carregado depois das constantes em todas as paginas', () => {
     }
 });
 
-test('estrutura dos doze cursos principais', () => {
+test('estrutura dos vinte datasets de cursos principais', () => {
     const courses = [
         ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', 31, 'A1'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', 30, 'A2'],
@@ -254,7 +254,11 @@ test('estrutura dos doze cursos principais', () => {
         ['database/ru-RU/data_curso_russo_a1.js', 'CURSO_RUSSO_A1_DADOS', 24, 'A1'],
         ['database/ru-RU/data_curso_russo_a2.js', 'CURSO_RUSSO_A2_DADOS', 24, 'A2'],
         ['database/ru-RU/data_curso_russo_b1.js', 'CURSO_RUSSO_B1_DADOS', 24, 'B1'],
-        ['database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS', 24, 'B2']
+        ['database/ru-RU/data_curso_russo_b2.js', 'CURSO_RUSSO_B2_DADOS', 24, 'B2'],
+        ['database/it-IT/data_curso_italiano_a1.js', 'CURSO_ITALIANO_A1_DADOS', 30, 'A1'],
+        ['database/it-IT/data_curso_italiano_a2.js', 'CURSO_ITALIANO_A2_DADOS', 30, 'A2'],
+        ['database/it-IT/data_curso_italiano_b1.js', 'CURSO_ITALIANO_B1_DADOS', 24, 'B1'],
+        ['database/it-IT/data_curso_italiano_b2.js', 'CURSO_ITALIANO_B2_DADOS', 24, 'B2']
     ];
 
     for (const [file, variable, expectedCount, level] of courses) {
@@ -303,6 +307,14 @@ test('bases especiais e minigame preservam os totais esperados', () => {
     Object.entries(expected).forEach(([level, count]) => {
         assert.ok(Array.isArray(minigame[level]), `minigame ${level}: formato invalido`);
         assert.equal(minigame[level].length, count, `minigame ${level}: total alterado`);
+    });
+
+    const italianBosses = loadValue('database/it-IT/data_italiano_minigame_conjugacao.js', 'BANCO_BOSS_IRREGULARES_ITALIANO');
+    assert.equal(italianBosses.length, 10, 'total de chefões italianos');
+    italianBosses.forEach((item, index) => {
+        assert.equal(item.wrong.length, 3, `chefão italiano ${index}: total de distratores`);
+        assert.equal(item.wrong.includes(item.correct), false, `chefão italiano ${index}: resposta correta repetida`);
+        assert.equal(new Set([item.correct, ...item.wrong]).size, 4, `chefão italiano ${index}: alternativas não são únicas`);
     });
 });
 
@@ -568,7 +580,7 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
     );
 });
 
-test('indices leves de ingles, espanhol e russo preservam os glossarios compilados', () => {
+test('indices leves de ingles, espanhol, russo e italiano preservam os glossarios compilados', () => {
     const dictionaries = [
         {
             code: 'en-US',
@@ -617,6 +629,22 @@ test('indices leves de ingles, espanhol e russo preservam os glossarios compilad
                 'database/ru-RU/data_curso_russo_b1.js',
                 'database/ru-RU/data_curso_russo_b2.js',
                 'database/ru-RU/data_russo_dicionario.js'
+            ]
+        },
+        {
+            code: 'it-IT',
+            language: 'italian',
+            mode: 'italiano',
+            pathname: '/html/it-IT/italiano_dicionario.html',
+            index: 'database/it-IT/data_dicionario_index.js',
+            count: 1011,
+            datasets: [
+                'database/it-IT/data_curso_italiano_a1.js',
+                'database/it-IT/data_curso_italiano_a2.js',
+                'database/it-IT/data_curso_italiano_b1.js',
+                'database/it-IT/data_curso_italiano_b2.js',
+                'database/it-IT/data_italiano_dicionario.js',
+                'database/it-IT/data_italiano_fonetica_recursos.js'
             ]
         }
     ];
@@ -745,7 +773,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 33);
+    assert.equal(pages.length, 38);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
@@ -756,7 +784,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v30'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v34'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -778,6 +806,8 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     assert.match(html, /id="dashboard-signed-out"[^>]*hidden/);
     assert.match(html, /id="dashboard-first-access"[^>]*hidden/);
+    assert.doesNotMatch(dashboardPage, /href="index\.html"/);
+    assert.equal((dashboardPage.match(/href="hub_idiomas\.html"/g) || []).length, 4);
     assert.match(html, /id="dashboard-goal-bar"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-course-progress"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-weekly-summary"[^>]*aria-label=/);
@@ -813,6 +843,17 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/index\.html'\)/);
     assert.match(serviceWorker, /'\.\/meu-progresso\.html'/);
     assert.match(serviceWorker, /js\/dashboard\/meu-progresso\.js/);
+});
+
+test('apelido do usuario permanece escapado em resultados HTML', () => {
+    const courseQuiz = read('js/course/quiz.js');
+    const srsReview = read('js/srs/review.js');
+
+    for (const source of [courseQuiz, srsReview]) {
+        assert.match(source, /const nomeSeguro = typeof escapeHTML === 'function' \? escapeHTML\(String\(nome\)\) : 'Estudante'/);
+        assert.match(source, /<strong>\$\{nomeSeguro\}<\/strong>/);
+        assert.doesNotMatch(source, /<strong>\$\{nome\}<\/strong>/);
+    }
 });
 
 test('medicao de sessoes da Etapa 29 usa API central e retencao limitada', () => {
@@ -883,7 +924,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v30'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v34'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 

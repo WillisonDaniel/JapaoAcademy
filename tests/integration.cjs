@@ -366,7 +366,8 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
             CURSO_RUSSO_A1_DADOS: [{ id: 'ru-a1-1' }],
             CURSO_RUSSO_A2_DADOS: [{ id: 'ru-a2-1' }],
             CURSO_RUSSO_B1_DADOS: [{ id: 'ru-b1-1' }],
-            CURSO_RUSSO_B2_DADOS: [{ id: 'ru-b2-1' }]
+            CURSO_RUSSO_B2_DADOS: [{ id: 'ru-b2-1' }],
+            CURSO_ITALIANO_A1_DADOS: [{ id: 'it_a1_mod_01' }]
         }
     });
     session.AppState.setProgress(JSON.parse(storage.getItem('japao_academy_progress')));
@@ -382,12 +383,13 @@ test('dashboard calcula somente metricas reais e tolera armazenamento corrompido
     assert.equal(geral.xp, 350);
     assert.equal(geral.concluidos, 2);
     assert.equal(geral.modulosExtras, 3);
-    assert.equal(geral.idiomasDisponiveis, 4);
+    assert.equal(geral.idiomasDisponiveis, 5);
     assert.equal(geral.idiomas[0].label, 'Japonês');
     assert.equal(geral.idiomas[0].concluidos, 1);
     assert.equal(geral.idiomas[1].label, 'Inglês');
     assert.equal(geral.idiomas[1].concluidos, 1);
     assert.equal(geral.idiomas[2].label, 'Espanhol');
+    assert.equal(geral.idiomas[4].label, 'Italiano');
     assert.equal(srs.pendentes, 1);
     assert.equal(srs.tipoPrioritario, 'a1');
     assert.equal(serie.metric, 'activities');

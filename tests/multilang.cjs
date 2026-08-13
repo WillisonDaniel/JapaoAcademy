@@ -83,12 +83,13 @@ function plain(value) {
     return JSON.parse(JSON.stringify(value));
 }
 
-test('autoridade central normaliza os quatro idiomas e rejeita valor explicito desconhecido', () => {
+test('autoridade central normaliza os cinco idiomas e rejeita valor explicito desconhecido', () => {
     const cases = [
         ['japanese', '/html/ja-JP/curso.html', 'ja-JP'],
         ['english', '/html/en-US/curso_ingles.html', 'en-US'],
         ['spanish', '/html/es-ES/espanhol_curso.html', 'es-ES'],
-        ['russian', '/html/ru-RU/russo_curso.html', 'ru-RU']
+        ['russian', '/html/ru-RU/russo_curso.html', 'ru-RU'],
+        ['italiano', '/hub_italiano.html', 'it-IT']
     ];
     cases.forEach(([language, pathname, expected]) => {
         const context = createContext({ language, pathname });
@@ -103,17 +104,46 @@ test('autoridade central normaliza os quatro idiomas e rejeita valor explicito d
     assert.equal(unknown.getCurrentLanguageCode(), null);
 });
 
-test('SRS produz 16 chaves independentes e preserva decks especiais', () => {
+test('audio italiano usa it-IT e apresenta fallback quando sintese nao existe', () => {
+    const spoken = [];
+    function Utterance(textValue) { this.text = textValue; }
+    const context = createContext({
+        language: 'italiano',
+        pathname: '/html/it-IT/italiano_curso.html',
+        globals: {
+            SpeechSynthesisUtterance: Utterance,
+            speechSynthesis: { cancel() {}, speak(value) { spoken.push(value); } }
+        }
+    });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/audio.js');
+    context.tocarAudio('Buongiorno');
+    assert.equal(spoken.length, 1);
+    assert.equal(spoken[0].lang, 'it-IT');
+
+    const messages = [];
+    const fallback = createContext({
+        language: 'italian',
+        globals: { mostrarErroRecuperavelUX(type, message) { messages.push([type, message]); } }
+    });
+    runFile(fallback, 'js/core/constants.js');
+    runFile(fallback, 'js/core/audio.js');
+    fallback.tocarAudio('Ciao');
+    assert.deepEqual(plain(messages), [['browser', 'Áudio indisponível']]);
+});
+
+test('SRS produz 20 chaves independentes e preserva decks especiais', () => {
     const context = createContext({ language: 'japanese' });
     runFile(context, 'js/core/constants.js');
     runFile(context, 'js/core/course-index.js');
     runFile(context, 'js/srs/engine.js');
-    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU'];
+    const languages = ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT'];
     const levels = ['a1', 'a2', 'b1', 'b2'];
     const keys = languages.flatMap(language => levels.map(level => context.getDeckKeySRS(level, language)));
-    assert.equal(new Set(keys).size, 16);
+    assert.equal(new Set(keys).size, 20);
     assert.equal(context.getDeckKeySRS('a1', 'ja-JP'), 'ja_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('b2', 'ru-RU'), 'ru_srs_b2_deck');
+    assert.equal(context.getDeckKeySRS('a1', 'it-IT'), 'it_srs_a1_deck');
     assert.equal(context.getDeckKeySRS('cirilico'), 'ru_srs_cirilico_deck');
     assert.equal(context.getDeckKeySRS('falsos_amigos'), 'es_srs_falsos_amigos_deck');
     assert.equal(context.getDeckKeySRS('phrasal_verbs'), 'en_srs_phrasal_verbs_deck');
@@ -299,6 +329,8 @@ test('sessoes e historico persistem codigos canonicos', () => {
         minActiveSeconds: 0
     });
     assert.equal(controller.iniciar({ language: 'russian', activityType: 'course', contentId: 'ru-a1' }).language, 'ru-RU');
+    controller.finalizar('switch');
+    assert.equal(controller.iniciar({ language: 'italiano', activityType: 'course', contentId: 'it-a1' }).language, 'it-IT');
 
     const storageContext = createContext();
     runFile(storageContext, 'js/core/storage.js');
@@ -310,22 +342,68 @@ test('sessoes e historico persistem codigos canonicos', () => {
     assert.equal(phrasal.language, 'en-US');
 });
 
-test('dashboard reconhece quatro idiomas, datasets e filtros', () => {
+test('dashboard reconhece cinco idiomas, datasets e filtros', () => {
     const context = createContext({ language: 'all', mode: 'dashboard' });
     runFile(context, 'js/dashboard/meu-progresso.js');
     const russianFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'ru-RU', period: 30, activity: 'all' }));
     const spanishFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'es-ES', period: 30, activity: 'all' }));
+    const italianFilter = plain(context.normalizarFiltrosEstatisticasDashboard({ language: 'it-IT', period: 30, activity: 'all' }));
     assert.equal(russianFilter.language, 'ru-RU');
     assert.equal(spanishFilter.language, 'es-ES');
+    assert.equal(italianFilter.language, 'it-IT');
     vm.runInContext('globalThis.__languageIds = DASHBOARD_LANGUAGE_REGISTRY.map(item => item.id)', context);
-    assert.deepEqual(plain(context.__languageIds), ['japanese', 'english', 'spanish', 'russian']);
+    assert.deepEqual(plain(context.__languageIds), ['japanese', 'english', 'spanish', 'russian', 'italian']);
 
     for (const page of ['index.html', 'meu-progresso.html']) {
         const html = read(page);
-        for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU']) assert.match(html, new RegExp(`value="${code}"`));
+        for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT']) assert.match(html, new RegExp(`value="${code}"`));
         assert.match(html, /js\/core\/course-index\.js/);
-        assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
+        assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU|it-IT)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     }
+    for (const key of ['it_srs_a1_deck', 'it_srs_a2_deck', 'it_srs_b1_deck', 'it_srs_b2_deck']) {
+        assert.match(read('js/dashboard/meu-progresso.js'), new RegExp(`key: '${key}'`));
+    }
+});
+
+test('curso italiano inclui A1, A2, B1 e B2 e isola indice, decks e progresso', () => {
+    const context = createContext({ language: 'italian', pathname: '/html/it-IT/italiano_curso.html' });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/course-index.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_a1.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_a2.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_b1.js');
+    runFile(context, 'database/it-IT/data_curso_italiano_b2.js');
+    runFile(context, 'js/core/utils.js');
+    runFile(context, 'js/srs/engine.js');
+    assert.equal(context.getCurrentLanguageCode(), 'it-IT');
+    assert.equal(context.getCourseModuleIds('it-IT', 'A1').length, 30);
+    assert.equal(context.getCourseModuleIds('it-IT', 'A2').length, 30);
+    assert.equal(context.getCourseModuleIds('it-IT', 'B1').length, 24);
+    assert.equal(context.getCourseModuleIds('it-IT', 'B2').length, 24);
+    assert.equal(context.getCourseModuleLanguage('it_a1_mod_17_card_2'), 'it-IT');
+    assert.equal(context.getCourseData('italiano').length, 30);
+    assert.equal(context.getTodosOsCursos().A1.length, 30);
+    assert.equal(context.getTodosOsCursos().A2.length, 30);
+    assert.equal(context.getTodosOsCursos().B1.length, 24);
+    assert.equal(context.getTodosOsCursos().B2.length, 24);
+    assert.deepEqual(plain(Object.keys(context.getTodosOsCursos()).filter(level => context.getTodosOsCursos()[level].length)), ['A1', 'A2', 'B1', 'B2']);
+    assert.equal(context.getDeckKeySRS('a1'), 'it_srs_a1_deck');
+    assert.equal(context.getDeckKeySRS('a2'), 'it_srs_a2_deck');
+    assert.equal(context.getDeckKeySRS('b1'), 'it_srs_b1_deck');
+    assert.equal(context.getDeckKeySRS('b2'), 'it_srs_b2_deck');
+
+    const html = read('html/it-IT/italiano_curso.html');
+    assert.doesNotMatch(html, /Ativar (?:Kanji|Kana|Furigana|Romaji)/);
+
+    const minigameHtml = read('html/it-IT/italiano_minigame_conjugacao.html');
+    const minigameScript = read('js/minigame/minigame_conjugacao.js');
+    assert.match(minigameHtml, /id="btn-mode-typing"/);
+    assert.match(minigameHtml, /id="arcade-typing-input"/);
+    assert.match(minigameHtml, /js\/core\/study-session\.js/);
+    assert.match(minigameScript, /iniciarSessaoEstudo\(/);
+    assert.match(minigameScript, /atualizarSessaoEstudo\(/);
+    assert.match(minigameScript, /finalizarSessaoEstudo\(/);
+    assert.doesNotMatch(minigameScript, /registrarSessaoEstudo\(/);
 });
 
 test('Falsos Amigos usa AppState central e curso russo usa nivel SRS ativo', () => {
@@ -408,6 +486,7 @@ test('XP mantem fallback moderno quando o AppState nao esta disponivel', () => {
 
 test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const serviceWorker = read('sw.js');
+    const dom = read('js/core/dom.js');
     const manifest = JSON.parse(read('manifest.json'));
     const packageData = JSON.parse(read('package.json'));
     const russianReport = read('tests/RUSSIAN_EDITORIAL_OCCURRENCES.md');
@@ -417,14 +496,21 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         ['hub_japones.html', 'Japonês'],
         ['hub_ingles.html', 'Inglês'],
         ['hub_espanhol.html', 'Espanhol'],
-        ['hub_russo.html', 'Russo']
+        ['hub_russo.html', 'Russo'],
+        ['hub_italiano.html', 'Italiano']
     ]) {
         const hub = read(file);
         assert.match(hub, new RegExp(`<title>${language} \\| Idiomas Academy<\\/title>`));
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v30/);
+    assert.match(serviceWorker, /idiomas-academy-v34/);
+    assert.match(serviceWorker, /Abra o dicionário online primeiro/);
+    assert.match(serviceWorker, /italiano_dicionario\.html/);
+    assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
+    assert.match(dom, /const currentLanguageCode = typeof getCurrentLanguageCode === 'function'/);
+    assert.match(dom, /const readingOptionsHtml = currentLanguageCode === 'ja-JP' \? `/);
+    assert.doesNotMatch(dom, /const readingOptionsHtml = isEnglishMode \?/);
     assert.match(serviceWorker, /cache\.addAll\(ASSETS_TO_CACHE\)/);
     assert.match(serviceWorker, /ignoreSearch:\s*true/);
     for (const asset of [
@@ -447,10 +533,14 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     assert.match(packageData.scripts['qa:dashboard'], /dashboard-visual-server\.cjs/);
     assert.doesNotMatch(read('meu-progresso.html'), /data-dashboard-qa-fixture/);
     assert.match(read('tests/RUSSIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como linguisticamente certificado/i);
+    assert.match(read('tests/ITALIAN_EDITORIAL_OCCURRENCES.md'), /Erros técnicos bloqueadores: 0/);
+    assert.match(read('tests/ITALIAN_EDITORIAL_REVIEW.md'), /não deve ser anunciado como certificado por falante nativo/i);
+    assert.match(packageData.scripts['audit:italian'], /--write/);
+    assert.match(packageData.scripts['audit:italian:check'], /italian-editorial-audit\.cjs/);
 });
 
 test('hubs e imagens principais respeitam o orçamento leve', () => {
-    const hubs = ['hub_idiomas.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html'];
+    const hubs = ['hub_idiomas.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html', 'hub_italiano.html'];
     hubs.forEach(file => {
         const html = read(file);
         const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
@@ -540,7 +630,16 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             locale: 'ru-RU',
             scripts: 27,
             maxBytes: 970 * 1024,
-            dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/
+            dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
+            dataCount: 4
+        },
+        {
+            file: 'html/it-IT/italiano_curso.html',
+            locale: 'it-IT',
+            scripts: 27,
+            maxBytes: 1050 * 1024,
+            dataPattern: /database\/it-IT\/data_curso_italiano_[a-b][1-2]\.js/,
+            dataCount: 4
         }
     ];
 
@@ -556,7 +655,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
         assert.equal(scriptsLocais.length, course.scripts, `${course.locale}: quantidade inesperada de scripts`);
         assert.ok(bytesLocais <= course.maxBytes, `${course.locale}: ${Math.round(bytesLocais / 1024)} KB locais`);
-        assert.equal(scriptsLocais.filter(src => course.dataPattern.test(src)).length, 4, `${course.locale}: devem existir quatro datasets A1-B2`);
+        assert.equal(scriptsLocais.filter(src => course.dataPattern.test(src)).length, course.dataCount || 4, `${course.locale}: quantidade inesperada de datasets`);
         assert.match(html, /js\/course\/moduleNormalizer\.js/);
         assert.ok(
             html.indexOf('js/course/moduleNormalizer.js') < html.indexOf('js/course/course.js'),
@@ -639,7 +738,7 @@ test('dicionário japonês usa índice pré-compilado equivalente e leve', () =>
     assert.match(read('package.json'), /"index:dictionary:check"/);
 });
 
-test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recursos auxiliares', () => {
+test('dicionarios de ingles, espanhol, russo e italiano usam indices leves sem perder recursos auxiliares', () => {
     const pages = [
         {
             file: 'html/en-US/dicionario_ingles.html',
@@ -660,7 +759,16 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
             locale: 'ru-RU',
             maxScripts: 18,
             maxBytes: 620 * 1024,
-            forbiddenData: /database\/ru-RU\/(?:data_curso_russo_|data_russo_cirilico|data_russo_dicionario)/
+            forbiddenData: /database\/ru-RU\/(?:data_curso_russo_|data_russo_cirilico|data_russo_dicionario)/,
+            precached: true
+        },
+        {
+            file: 'html/it-IT/italiano_dicionario.html',
+            locale: 'it-IT',
+            maxScripts: 21,
+            maxBytes: 750 * 1024,
+            forbiddenData: /database\/it-IT\/(?:data_curso_italiano_|data_italiano_dicionario)/,
+            precached: false
         }
     ];
 
@@ -680,7 +788,9 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
         assert.doesNotMatch(html, page.forbiddenData);
         assert.doesNotMatch(html, /js\/course\/(?:moduleNormalizer|tabs|course|quiz)\.js/);
         assert.doesNotMatch(html, /js\/(?:phrasal|pronunciation|minigame)\//);
-        assert.match(read('sw.js'), new RegExp(`database/${page.locale}/data_dicionario_index\\.js`));
+        const indexPattern = new RegExp(`database/${page.locale}/data_dicionario_index\\.js`);
+        if (page.precached === false) assert.doesNotMatch(read('sw.js'), indexPattern);
+        else assert.match(read('sw.js'), indexPattern);
     });
 
     assert.match(read('database/es-ES/data_dicionario_index.js'), /SPANISH_DICTIONARY_TABLES/);
@@ -688,6 +798,9 @@ test('dicionarios de ingles, espanhol e russo usam indices leves sem perder recu
     assert.match(read('js/core/dictionary.js'), /ENGLISH_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /SPANISH_DICTIONARY_INDEX/);
     assert.match(read('js/core/dictionary.js'), /RUSSIAN_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /ITALIAN_DICTIONARY_INDEX/);
+    assert.match(read('js/core/dictionary.js'), /!isRussianMode && !isItalianMode/);
+    assert.ok(JSON.parse(read('database/it-IT/data_dicionario_index.js').match(/Object\.freeze\((\[.*\])\);/)[1]).length >= 250);
 });
 
 test('minigame japonês usa conjunto leve e equivalente de Kanji', () => {

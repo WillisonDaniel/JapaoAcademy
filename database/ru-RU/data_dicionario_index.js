@@ -6,3 +6,6 @@ if (typeof window !== 'undefined') {
     window.RUSSIAN_DICTIONARY_INDEX = RUSSIAN_DICTIONARY_INDEX;
     window.RUSSIAN_DICTIONARY_CASES = RUSSIAN_DICTIONARY_CASES;
 }
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { RUSSIAN_DICTIONARY_INDEX };
+}

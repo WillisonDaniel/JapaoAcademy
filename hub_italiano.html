@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italiano | Idiomas Academy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#008c45">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=28f">
+    <style>
+        .course-btn.italian { background: linear-gradient(135deg, #008c45, #ce2b37); color: #fff; }
+        .course-btn.italian-secondary { background: linear-gradient(135deg, #166534, #14532d); color: #fff; }
+        .course-btn.coming-soon { background: var(--card-bg); color: var(--text-muted); cursor: default; opacity: .78; border: 2px dashed var(--border-color); }
+    </style>
+</head>
+<body data-mode="italian" data-lang="italian" data-page="hub">
+    <header>
+        <a href="hub_idiomas.html" class="home-btn">⬅ Idiomas</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle">🇮🇹 Italiano</h1>
+        <p id="mainDesc">Seu percurso em italiano, do zero ao domínio da fluência avançada (A1, A2, B1 e B2).</p>
+    </header>
+    <div class="container">
+        <div id="main-menu">
+            <a class="course-btn italian" href="html/it-IT/italiano_curso.html">
+                <span>📚</span>
+                Curso Completo de Italiano (A1, A2, B1 & B2)
+                <p>108 módulos com diálogos, gramática, áudio, exercícios e revisão espaçada</p>
+            </a>
+            <a class="course-btn italian-secondary" href="html/it-IT/italiano_pronuncia.html" style="background: linear-gradient(135deg, #0d9488, #0f766e);">
+                <span>🎙️</span>
+                Guia de Pronúncia & Fonética
+                <p>Sons do italiano, vogais abertas/fechadas, le doppie e entonação</p>
+            </a>
+            <a class="course-btn italian-secondary" href="html/it-IT/italiano_minigame_conjugacao.html" style="background: linear-gradient(135deg, #e11d48, #be123c);">
+                <span>⚡</span>
+                Arcade de Conjugação Rápida
+                <p>Treine conjugação verbal em tempo real, modos rápidos e boss battles</p>
+            </a>
+            <a class="course-btn italian-secondary" href="html/it-IT/italiano_dicionario.html">
+                <span>📖</span>
+                Dicionário Essencial
+                <p>Vocabulário, gramática, fonética e alfabeto italiano (A1 a B2)</p>
+            </a>
+        </div>
+    </div>
+    <script type="module" src="firebase-init.js"></script>
+    <script src="js/core/config.js"></script>
+    <script src="js/core/constants.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/audio.js"></script>
+    <script src="js/core/toast.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/dom.js"></script>
+    <script src="js/core/events.js?v=32"></script>
+    <script src="js/game/xp.js"></script>
+    <script src="js/game/ranking.js"></script>
+    <script src="js/core/bootstrap.js?v=32"></script>
+    <script src="app.js"></script>
+</body>
+</html>

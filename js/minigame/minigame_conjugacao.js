@@ -225,7 +225,7 @@ const synth = new ArcadeAudioSynth();
 // ====================================================
 let arcadeState = {
     modo: 'sobrevivencia', // presente | preteritos | subjuntivo_imperativo | sobrevivencia
-    inputMode: 'click',    // click | voice
+    inputMode: 'click',    // click | typing | voice
     vidasInfinitas: false, // opção de Vidas Infinitas
     vidas: 3,
     pontos: 0,
@@ -245,6 +245,28 @@ let arcadeState = {
 // ====================================================
 // 🎙️ 4. RECONHECIMENTO DE VOZ (WEB SPEECH API)
 // ====================================================
+function getMinigameLangCode() {
+    if (typeof document !== 'undefined' && document.body) {
+        const lang = document.body.getAttribute('data-lang');
+        const mode = document.body.getAttribute('data-mode');
+        if (lang === 'italian' || lang === 'it-IT' || mode === 'italiano' || mode === 'italian') {
+            return 'it-IT';
+        }
+    }
+    if (typeof window !== 'undefined' && window.location && window.location.pathname.toLowerCase().includes('italiano')) {
+        return 'it-IT';
+    }
+    return 'es-ES';
+}
+
+function getHighScoreKey() {
+    return getMinigameLangCode() === 'it-IT' ? 'italian_arcade_highscore' : 'espanhol_arcade_highscore';
+}
+
+function getVidasInfinitasKey() {
+    return getMinigameLangCode() === 'it-IT' ? 'italian_arcade_vidas_infinitas' : 'espanhol_arcade_vidas_infinitas';
+}
+
 function inicializarReconhecimentoVoz() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -252,14 +274,16 @@ function inicializarReconhecimentoVoz() {
     }
 
     try {
+        const langCode = getMinigameLangCode();
         arcadeState.recognition = new SpeechRecognition();
-        arcadeState.recognition.lang = 'es-ES';
+        arcadeState.recognition.lang = langCode;
         arcadeState.recognition.continuous = false;
         arcadeState.recognition.interimResults = true;
 
         arcadeState.recognition.onstart = () => {
             arcadeState.isListening = true;
-            atualizarStatusVozUI("🎙️ Ouvindo resposta em espanhol...", "var(--accent-color, #3b82f6)");
+            const langLabel = langCode === 'it-IT' ? 'italiano' : 'espanhol';
+            atualizarStatusVozUI(`🎙️ Ouvindo resposta em ${langLabel}...`, "var(--accent-color, #3b82f6)");
         };
 
         arcadeState.recognition.onresult = (event) => {
@@ -299,24 +323,58 @@ function inicializarReconhecimentoVoz() {
 function alternarModoInput(mode) {
     arcadeState.inputMode = mode;
     const btnClick = document.getElementById('btn-mode-click');
+    const btnTyping = document.getElementById('btn-mode-typing');
     const btnVoice = document.getElementById('btn-mode-voice');
+    const typingBox = document.getElementById('typing-input-container');
     const voiceBox = document.getElementById('voice-input-container');
 
     if (mode === 'voice') {
         if (!inicializarReconhecimentoVoz()) {
             if (typeof mostrarToast === 'function') mostrarToast('Navegador não suporta Reconhecimento de Voz.', 'warning');
-            arcadeState.inputMode = 'click';
-            return;
+            return alternarModoInput('click');
         }
         if (btnClick) btnClick.classList.remove('active');
+        if (btnTyping) btnTyping.classList.remove('active');
         if (btnVoice) btnVoice.classList.add('active');
+        if (typingBox) typingBox.style.display = 'none';
         if (voiceBox) voiceBox.style.display = 'block';
+    } else if (mode === 'typing') {
+        pararReconhecimentoVoz();
+        if (btnClick) btnClick.classList.remove('active');
+        if (btnTyping) btnTyping.classList.add('active');
+        if (btnVoice) btnVoice.classList.remove('active');
+        if (voiceBox) voiceBox.style.display = 'none';
+        if (typingBox) typingBox.style.display = 'block';
+        const input = document.getElementById('arcade-typing-input');
+        if (input) input.focus();
     } else {
         pararReconhecimentoVoz();
         if (btnClick) btnClick.classList.add('active');
+        if (btnTyping) btnTyping.classList.remove('active');
         if (btnVoice) btnVoice.classList.remove('active');
+        if (typingBox) typingBox.style.display = 'none';
         if (voiceBox) voiceBox.style.display = 'none';
     }
+
+    const options = document.getElementById('arcade-options');
+    if (options) options.style.display = arcadeState.inputMode === 'click' ? '' : 'none';
+}
+
+function normalizarRespostaArcade(valor) {
+    return String(valor || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function responderArcadeDigitacao() {
+    const input = document.getElementById('arcade-typing-input');
+    if (!input || !arcadeState.desafioAtual) return;
+    const resposta = input.value.trim();
+    if (!resposta) {
+        if (typeof mostrarToast === 'function') mostrarToast('Digite uma conjugação antes de confirmar.', 'warning');
+        return;
+    }
+    const correta = normalizarRespostaArcade(resposta) === normalizarRespostaArcade(arcadeState.desafioAtual.correct);
+    input.value = '';
+    responderArcade(correta, resposta);
 }
 
 function escutarVozUsuario() {
@@ -360,7 +418,7 @@ function alternarVidasInfinitas(val) {
     if (chk) chk.checked = arcadeState.vidasInfinitas;
 
     try {
-        localStorage.setItem('espanhol_arcade_vidas_infinitas', arcadeState.vidasInfinitas ? 'true' : 'false');
+        localStorage.setItem(getVidasInfinitasKey(), arcadeState.vidasInfinitas ? 'true' : 'false');
     } catch (e) { }
 
     atualizarPlacarArcade();
@@ -371,14 +429,14 @@ function alternarVidasInfinitas(val) {
 // ====================================================
 function carregarHighScoreArcade() {
     try {
-        const val = localStorage.getItem('espanhol_arcade_highscore');
+        const val = localStorage.getItem(getHighScoreKey());
         arcadeState.highScore = val ? parseInt(val, 10) : 0;
     } catch (e) {
         arcadeState.highScore = 0;
     }
 
     try {
-        const savedInf = localStorage.getItem('espanhol_arcade_vidas_infinitas');
+        const savedInf = localStorage.getItem(getVidasInfinitasKey());
         if (savedInf === 'true') {
             arcadeState.vidasInfinitas = true;
             const chk = document.getElementById('chk-vidas-infinitas');
@@ -396,8 +454,10 @@ function selecionarModoJogo(modo) {
     cards.forEach(c => {
         if (c.getAttribute('data-modo') === modo) {
             c.classList.add('selected');
+            c.setAttribute('aria-pressed', 'true');
         } else {
             c.classList.remove('selected');
+            c.setAttribute('aria-pressed', 'false');
         }
     });
 }
@@ -418,6 +478,14 @@ function iniciarArcadeConjugacao() {
     document.getElementById('arcade-game-over').style.display = 'none';
     document.getElementById('arcade-feedback-modal').style.display = 'none';
 
+    if (typeof iniciarSessaoEstudo === 'function') {
+        iniciarSessaoEstudo({
+            language: getMinigameLangCode(),
+            activityType: 'minigame',
+            contentId: `conjugacao-${arcadeState.modo}`
+        });
+    }
+
     atualizarPlacarArcade();
     proximoDesafioArcade();
 }
@@ -430,6 +498,9 @@ function voltarMenuModos() {
     document.getElementById('arcade-game-container').style.display = 'none';
     document.getElementById('arcade-game-over').style.display = 'none';
     document.getElementById('arcade-feedback-modal').style.display = 'none';
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('exit', { contentId: `conjugacao-${arcadeState.modo}` });
+    }
     carregarHighScoreArcade();
 }
 
@@ -437,9 +508,12 @@ function voltarMenuModos() {
 // 🎲 6. GERADOR DE QUESTÕES E LÓGICA DE BOSS BATTLES
 // ====================================================
 function obterBancoFiltrado() {
-    let pool = [...BANCO_ARCADE_VERBOS];
+    const isItalian = getMinigameLangCode() === 'it-IT';
+    let pool = isItalian
+        ? [...(typeof BANCO_ARCADE_VERBOS_ITALIANO !== 'undefined' ? BANCO_ARCADE_VERBOS_ITALIANO : BANCO_ARCADE_VERBOS)]
+        : [...BANCO_ARCADE_VERBOS];
 
-    if (typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined' && Array.isArray(FONETICA_RECURSOS_ESPANHOL_DADOS.verbos)) {
+    if (!isItalian && typeof FONETICA_RECURSOS_ESPANHOL_DADOS !== 'undefined' && Array.isArray(FONETICA_RECURSOS_ESPANHOL_DADOS.verbos)) {
         FONETICA_RECURSOS_ESPANHOL_DADOS.verbos.forEach(v => {
             if (v.conjugations) {
                 if (v.conjugations.presente) {
@@ -474,7 +548,10 @@ function proximoDesafioArcade() {
         containerBox.classList.add('boss-mode-active');
         if (bossAlert) bossAlert.style.display = 'block';
 
-        const bossPool = BANCO_BOSS_IRREGULARES;
+        const isItalian = getMinigameLangCode() === 'it-IT';
+        const bossPool = isItalian
+            ? (typeof BANCO_BOSS_IRREGULARES_ITALIANO !== 'undefined' ? BANCO_BOSS_IRREGULARES_ITALIANO : BANCO_BOSS_IRREGULARES)
+            : BANCO_BOSS_IRREGULARES;
         arcadeState.desafioAtual = bossPool[Math.floor(Math.random() * bossPool.length)];
     } else {
         containerBox.classList.remove('boss-mode-active');
@@ -490,6 +567,7 @@ function proximoDesafioArcade() {
 
     const optionsContainer = document.getElementById('arcade-options');
     optionsContainer.innerHTML = '';
+    optionsContainer.style.display = arcadeState.inputMode === 'click' ? '' : 'none';
 
     const erradasDistintas = Array.from(new Set(arcadeState.desafioAtual.wrong)).filter(w => w !== arcadeState.desafioAtual.correct);
     const selecionadasErradas = erradasDistintas.sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -503,6 +581,14 @@ function proximoDesafioArcade() {
         btn.onclick = () => responderArcade(op === arcadeState.desafioAtual.correct, op);
         optionsContainer.appendChild(btn);
     });
+
+    const typingInput = document.getElementById('arcade-typing-input');
+    const typingBox = document.getElementById('typing-input-container');
+    if (typingBox) typingBox.style.display = arcadeState.inputMode === 'typing' ? 'block' : 'none';
+    if (typingInput) {
+        typingInput.value = '';
+        if (arcadeState.inputMode === 'typing') typingInput.focus();
+    }
 
     if (arcadeState.inputMode === 'voice') {
         escutarVozUsuario();
@@ -550,6 +636,14 @@ function iniciarTimerArcade() {
 function responderArcade(eCorreto, respostaEscolha) {
     clearInterval(arcadeState.timer);
     pararReconhecimentoVoz();
+    if (typeof atualizarSessaoEstudo === 'function') {
+        atualizarSessaoEstudo({
+            activityCountDelta: 1,
+            interactionCountDelta: 1,
+            relevantInteraction: true,
+            contentId: `conjugacao-${arcadeState.modo}`
+        });
+    }
 
     if (eCorreto) {
         synth.playCorrect();
@@ -658,8 +752,15 @@ function encerrarArcade() {
     let eNovoRecorde = false;
     if (arcadeState.pontos > arcadeState.highScore) {
         arcadeState.highScore = arcadeState.pontos;
-        try { localStorage.setItem('espanhol_arcade_highscore', arcadeState.highScore.toString()); } catch (e) { }
+        try { localStorage.setItem(getHighScoreKey(), arcadeState.highScore.toString()); } catch (e) { }
         eNovoRecorde = true;
+    }
+
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('completion', {
+            activityCountDelta: 0,
+            contentId: `conjugacao-${arcadeState.modo}`
+        });
     }
 
     if (recordMsgEl) {
@@ -682,6 +783,7 @@ if (typeof window !== 'undefined') {
     window.iniciarArcadeConjugacao = iniciarArcadeConjugacao;
     window.voltarMenuModos = voltarMenuModos;
     window.alternarModoInput = alternarModoInput;
+    window.responderArcadeDigitacao = responderArcadeDigitacao;
     window.escutarVozUsuario = escutarVozUsuario;
     window.fecharFeedbackEContinuar = fecharFeedbackEContinuar;
     window.alternarVidasInfinitas = alternarVidasInfinitas;

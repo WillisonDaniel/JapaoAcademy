@@ -19,6 +19,10 @@ const DASHBOARD_SRS_SOURCES = [
     { type: 'a2', key: 'ru_srs_a2_deck', page: 'html/ru-RU/russo_curso.html' },
     { type: 'b1', key: 'ru_srs_b1_deck', page: 'html/ru-RU/russo_curso.html' },
     { type: 'b2', key: 'ru_srs_b2_deck', page: 'html/ru-RU/russo_curso.html' },
+    { type: 'a1', key: 'it_srs_a1_deck', page: 'html/it-IT/italiano_curso.html' },
+    { type: 'a2', key: 'it_srs_a2_deck', page: 'html/it-IT/italiano_curso.html' },
+    { type: 'b1', key: 'it_srs_b1_deck', page: 'html/it-IT/italiano_curso.html' },
+    { type: 'b2', key: 'it_srs_b2_deck', page: 'html/it-IT/italiano_curso.html' },
     { type: 'hiragana', key: 'ja_srs_hiragana_deck', page: 'html/ja-JP/hiragana.html' },
     { type: 'katakana', key: 'ja_srs_katakana_deck', page: 'html/ja-JP/katakana.html' },
     { type: 'kanji', key: 'ja_srs_kanji_deck', page: 'html/ja-JP/kanji_n5.html' },
@@ -101,6 +105,22 @@ const DASHBOARD_LANGUAGE_REGISTRY = [
                 : [];
             return modulos.filter(modulo => localStorage.getItem(`cyrillic_mod_done_${modulo.id}`) === 'true').length;
         }
+    },
+    {
+        id: 'italian',
+        label: 'Italiano',
+        icon: '🇮🇹',
+        hubPage: 'hub_italiano.html',
+        coursePage: 'html/it-IT/italiano_curso.html',
+        languageCode: 'it-IT',
+        getFallbackCourses: () => ({
+            A1: (typeof CURSO_ITALIANO_A1_DADOS !== 'undefined') ? CURSO_ITALIANO_A1_DADOS : [],
+            A2: (typeof CURSO_ITALIANO_A2_DADOS !== 'undefined') ? CURSO_ITALIANO_A2_DADOS : [],
+            B1: (typeof CURSO_ITALIANO_B1_DADOS !== 'undefined') ? CURSO_ITALIANO_B1_DADOS : [],
+            B2: (typeof CURSO_ITALIANO_B2_DADOS !== 'undefined') ? CURSO_ITALIANO_B2_DADOS : []
+        }),
+        extraLabel: '',
+        extraProgressKeys: []
     }
 ];
 
@@ -109,6 +129,7 @@ const DASHBOARD_LANGUAGE_LABELS = {
     'en-US': 'Inglês',
     'es-ES': 'Espanhol',
     'ru-RU': 'Russo',
+    'it-IT': 'Italiano',
     unknown: 'Idioma não identificado'
 };
 
@@ -398,7 +419,7 @@ function criarDadosCalendarioDashboard(dados = {}, referencia, hoje = new Date()
 
 function normalizarFiltrosEstatisticasDashboard(filtros = {}) {
     const periodo = [7, 30, 90].includes(Number(filtros.period)) ? Number(filtros.period) : 30;
-    const idioma = ['all', 'ja-JP', 'en-US', 'es-ES', 'ru-RU'].includes(filtros.language) ? filtros.language : 'all';
+    const idioma = ['all', 'ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT'].includes(filtros.language) ? filtros.language : 'all';
     const atividade = filtros.activity === 'all' || Object.prototype.hasOwnProperty.call(DASHBOARD_ACTIVITY_LABELS, filtros.activity)
         ? (filtros.activity || 'all')
         : 'all';
