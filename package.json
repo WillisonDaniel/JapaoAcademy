@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suite de regressao local da Idiomas Academy",
   "scripts": {
-    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-editorial-audit.cjs && node tests/course-text-contract.cjs && node tests/kanji-n3-contract.cjs && node tests/kanji-n2-contract.cjs && node tests/kanji-n1-contract.cjs && node tests/japanese-resources-contract.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
+    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-listening-index.cjs && node tests/japanese-listening-contract.cjs && node tests/japanese-editorial-audit.cjs && node tests/course-text-contract.cjs && node tests/kanji-n3-contract.cjs && node tests/kanji-n2-contract.cjs && node tests/kanji-n1-contract.cjs && node tests/japanese-resources-contract.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
     "test:regression": "node tests/regression.cjs",
     "test:integration": "node tests/integration.cjs",
     "test:multilang": "node tests/multilang.cjs",
@@ -14,6 +14,8 @@
     "index:dictionary:check": "node tests/dictionary-index.cjs",
     "index:minigame": "node tests/minigame-index.cjs --write",
     "index:minigame:check": "node tests/minigame-index.cjs",
+    "index:listening": "node tests/japanese-listening-index.cjs --write",
+    "index:listening:check": "node tests/japanese-listening-index.cjs",
     "audit:russian": "node tests/russian-editorial-audit.cjs --write",
     "audit:russian:check": "node tests/russian-editorial-audit.cjs",
     "audit:russian:integral": "node tests/russian-integral-review.cjs",
@@ -26,6 +28,7 @@
     "test:japanese-kanji-n2": "node tests/kanji-n2-contract.cjs",
     "test:japanese-kanji-n1": "node tests/kanji-n1-contract.cjs",
     "test:japanese-resources": "node tests/japanese-resources-contract.cjs",
+    "test:japanese-listening": "node tests/japanese-listening-contract.cjs",
     "test:pwa": "node tests/pwa-offline.cjs",
     "qa:dashboard": "node tests/dashboard-visual-server.cjs",
     "qa:dashboard:check": "node tests/dashboard-visual-server.cjs --check"

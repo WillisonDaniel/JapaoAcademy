@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v34/);
+    assert.match(serviceWorker, /idiomas-academy-v35/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -610,7 +610,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             scripts: 27,
             // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
             // O registro central dos recursos japoneses adiciona apenas metadados locais de rota e deck.
-            maxBytes: 1621 * 1024,
+            maxBytes: 1623 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
@@ -624,14 +624,14 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/es-ES/espanhol_curso.html',
             locale: 'es-ES',
             scripts: 27,
-            maxBytes: 1611 * 1024,
+            maxBytes: 1612 * 1024,
             dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
         },
         {
             file: 'html/ru-RU/russo_curso.html',
             locale: 'ru-RU',
             scripts: 27,
-            maxBytes: 970 * 1024,
+            maxBytes: 971 * 1024,
             dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
             dataCount: 4
         },
@@ -681,12 +681,12 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
     const budgets = {
         // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
-        n5: 706 * 1024,
-        n4: 719 * 1024,
+        n5: 708 * 1024,
+        n4: 720 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 978 * 1024,
-        n2: 1011 * 1024,
-        n1: 1781 * 1024
+        n3: 979 * 1024,
+        n2: 1012 * 1024,
+        n1: 1783 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {
@@ -834,6 +834,24 @@ test('minigame japonês usa conjunto leve e equivalente de Kanji', () => {
     assert.match(read('js/game/minigames.js'), /JAPANESE_MINIGAME_KANJI_INDEX/);
     assert.match(read('sw.js'), /database\/ja-JP\/data_minigame_kanji_index\.js/);
     assert.match(read('package.json'), /"index:minigame:check"/);
+});
+
+test('escuta japonesa usa indice leve, voz local e nenhuma avaliacao artificial', () => {
+    const file = 'html/ja-JP/escuta.html';
+    const html = read(file);
+    const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+        .map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytesLocais = scriptsLocais.reduce((total, src) => {
+        const caminho = path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0]);
+        return total + fs.statSync(caminho).size;
+    }, 0);
+    assert.ok(scriptsLocais.length <= 18, `${scriptsLocais.length} scripts locais na escuta japonesa`);
+    assert.ok(bytesLocais <= 400 * 1024, `${Math.round(bytesLocais / 1024)} KB na escuta japonesa`);
+    assert.match(html, /database\/ja-JP\/data_escuta_index\.js/);
+    assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|js\/srs\//);
+    assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
+    assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+    assert.match(read('sw.js'), /html\/ja-JP\/escuta\.html/);
 });
 
 const failed = results.filter(result => !result.ok);

@@ -102,6 +102,21 @@ function courseConvert(input) {
 function initializeCourse(mode) {
     document.documentElement.style.setProperty('--current-primary', 'var(--japa-primary)');
     if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+    if (typeof URLSearchParams !== 'undefined' && typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search);
+        const requestedLevel = String(params.get('level') || '').toUpperCase();
+        const requestedModule = parseInt(params.get('module'), 10);
+        if (['A1', 'A2', 'B1', 'B2'].includes(requestedLevel) && Number.isInteger(requestedModule) && requestedModule >= 0) {
+            setTimeout(() => {
+                const courses = typeof getTodosOsCursos === 'function' ? getTodosOsCursos() : {};
+                const modules = courses[requestedLevel] || [];
+                const target = modules[requestedModule];
+                if (!target || typeof eNivelDesbloqueado !== 'function' || !eNivelDesbloqueado(requestedLevel)) return;
+                abrirTrilha(requestedLevel);
+                if (typeof eModuloDesbloqueado === 'function' && eModuloDesbloqueado(target.id, requestedLevel, requestedModule)) iniciarModulo(requestedModule, requestedLevel);
+            }, 0);
+        }
+    }
 }
 
 

@@ -92,16 +92,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 84, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 86, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('38 paginas HTML e referencias locais validas', () => {
+test('39 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 38, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 39, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -775,7 +775,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 38);
+    assert.equal(pages.length, 39);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
@@ -786,7 +786,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v34'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v35'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -926,7 +926,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v34'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v35'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1213,7 +1213,7 @@ test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
     assert.match(humanReview, /stage4_dialog\[0\]\.content/);
     assert.match(humanReview, /Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente/);
     assert.match(multilang, /Baseline recalibrado para os 151 contratos textuais A1\/A2 da Fase 3B/);
-    assert.match(multilang, /maxBytes: 1621 \* 1024/);
+    assert.match(multilang, /maxBytes: 1623 \* 1024/);
 });
 
 test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
@@ -1331,6 +1331,27 @@ test('recuperacao Kanji N1 da Fase 6 preserva leituras ambiguas como pendentes',
     assert.match(review, /ambiguous-or-foreign/);
     assert.equal(packageJson.scripts['test:japanese-kanji-n1'], 'node tests/kanji-n1-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/kanji-n1-contract\.cjs/);
+});
+
+test('consolidacao dos recursos japoneses da Fase 7 permanece integrada', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    const contract = read('tests/japanese-resources-contract.cjs');
+    assert.equal(packageJson.scripts['test:japanese-resources'], 'node tests/japanese-resources-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-resources-contract\.cjs/);
+    assert.match(contract, /registro central cobre os sete recursos japoneses/);
+    assert.match(contract, /snapshots estruturais N5 e N4/);
+    assert.match(read('tests/FASE_JAPONES_07_CONSOLIDACAO_RECURSOS.md'), /252 pendências editoriais/);
+});
+
+test('escuta, pronuncia e shadowing da Fase 8 permanecem transparentes', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    const contract = read('tests/japanese-listening-contract.cjs');
+    assert.equal(packageJson.scripts['test:japanese-listening'], 'node tests/japanese-listening-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-listening-(?:index|contract)\.cjs/);
+    assert.match(contract, /265/);
+    assert.match(read('html/ja-JP/escuta.html'), /não avalia pronúncia/);
+    assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
+    assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
 });
 
 const failed = results.filter(result => !result.ok);
