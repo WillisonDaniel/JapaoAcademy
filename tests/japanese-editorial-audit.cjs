@@ -9,6 +9,7 @@ const ROOT = path.resolve(__dirname, '..');
 const JSON_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_EDITORIAL_OCCURRENCES.json');
 const REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_EDITORIAL_REVIEW.md');
 const HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_A1_A2_HUMAN_REVIEW.md');
+const ADVANCED_HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_B1_B2_HUMAN_REVIEW.md');
 const WRITE_MODE = process.argv.includes('--write');
 const JAPANESE = /[\u3040-\u30ff\u3400-\u9fff]/u;
 const LATIN = /[A-Za-z]/;
@@ -84,6 +85,11 @@ function hasValidSpokenContent(content) {
     return Boolean(content && hasJapanese(content.displayText) && hasJapanese(content.audioText));
 }
 
+function hasCompleteTextContract(content) {
+    return Boolean(content && ['displayText', 'audioText', 'furigana', 'romaji', 'translation', 'scenario']
+        .every(field => Object.prototype.hasOwnProperty.call(content, field)));
+}
+
 function hasLatinOnly(value) {
     const text = String(value || '');
     return LATIN.test(text) && !hasJapanese(text);
@@ -137,7 +143,7 @@ function auditCourses(occurrences, metrics) {
             if (!moduleId) addOccurrence(occurrences, { ...metadata, field: 'id', rule: 'module-id-missing', severity: 'blocking', value: moduleId });
             ids.push(moduleId);
 
-            if ((spec.level === 'A1' || spec.level === 'A2') && (!module.editorialReview || module.editorialReview.status !== 'pending-human-review')) {
+            if (!module.editorialReview || module.editorialReview.status !== 'pending-human-review') {
                 addOccurrence(occurrences, { ...metadata, field: 'editorialReview.status', rule: 'editorial-review-status-invalid', severity: 'blocking', value: module.editorialReview });
             }
 
@@ -152,7 +158,7 @@ function auditCourses(occurrences, metrics) {
             const hasAudioContract = audioContract && typeof audioContract === 'object' && audioContract.displayText !== undefined;
             const auditedAudioGuide = hasAudioContract ? audioContract.displayText : audioGuide;
             metrics.course[spec.level].audioGuides++;
-            if ((spec.level === 'A1' || spec.level === 'A2') && !hasAudioContract) {
+            if (!hasAudioContract || !hasCompleteTextContract(audioContract)) {
                 addOccurrence(occurrences, { ...metadata, field: 'stage1_context.audio', rule: 'text-contract-missing', severity: 'blocking', value: audioContract });
             }
             if (hasAudioContract && /\[\s*(?:Seu\s+)?Nome\s*\]/i.test(String(audioContract.audioText || ''))) {
@@ -173,6 +179,9 @@ function auditCourses(occurrences, metrics) {
                     return;
                 }
                 const content = dialogue.content && typeof dialogue.content === 'object' ? dialogue.content : null;
+                if (content && !hasCompleteTextContract(content)) {
+                    addOccurrence(occurrences, { ...metadata, field: `${base}.content`, rule: 'text-contract-incomplete', severity: 'blocking', value: content });
+                }
                 const isScenarioOnly = isScenarioOnlyContent(content);
                 const auditedDialogue = content ? content.displayText : dialogue.npcMessage;
                 if (!isScenarioOnly && (content ? !hasValidSpokenContent(content) : !hasJapanese(auditedDialogue))) {
@@ -313,17 +322,19 @@ function runRuleFixtures() {
     assert.equal(hasValidSpokenContent({ displayText: 'Nihongo desu.', audioText: 'Nihongo desu.' }), false);
     assert.equal(isScenarioOnlyContent({ displayText: '', audioText: '', scenario: 'A pessoa aguarda.' }), true);
     assert.equal(isScenarioOnlyContent({ displayText: '', audioText: '', scenario: '' }), false);
+    assert.equal(hasCompleteTextContract({ displayText: '', audioText: '', furigana: '', romaji: '', translation: '', scenario: '' }), true);
+    assert.equal(hasCompleteTextContract({ displayText: '', audioText: '' }), false);
 }
 
-function renderA1A2HumanReview() {
+function renderCourseHumanReview(levels, title, phase) {
     const cell = value => String(value == null ? '' : value).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');
     const lines = [
-        '# Revisão humana — Japonês A1 e A2', '',
-        'Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a validação mecânica passou, mas a redação japonesa ainda requer revisão humana qualificada.', '',
+        `# ${title}`, '',
+        `Conteúdo criado na ${phase}. O status \`pending-human-review\` indica que a validação mecânica passou, mas a redação japonesa ainda requer revisão humana qualificada.`, '',
         '| Módulo | Campo | Japonês | Romaji | Tradução / cenário | Status |',
         '|---|---|---|---|---|---|'
     ];
-    for (const spec of COURSE_SPECS.filter(item => item.level === 'A1' || item.level === 'A2')) {
+    for (const spec of COURSE_SPECS.filter(item => levels.includes(item.level))) {
         const modules = loadValue(spec.file, spec.variable);
         modules.forEach(module => {
             const status = module.editorialReview && module.editorialReview.status;
@@ -406,21 +417,25 @@ function audit() {
 const payload = audit();
 const jsonReport = `${JSON.stringify(payload, null, 2)}\n`;
 const reviewReport = renderReview(payload);
-const humanReviewReport = renderA1A2HumanReview();
+const humanReviewReport = renderCourseHumanReview(['A1', 'A2'], 'Revisão humana — Japonês A1 e A2', 'Fase 3B');
+const advancedHumanReviewReport = renderCourseHumanReview(['B1', 'B2'], 'Revisão humana — Japonês B1 e B2', 'Fase 3C');
 const blockers = payload.summary.bySeverity.blocking;
 
 if (WRITE_MODE) {
     fs.writeFileSync(JSON_OUTPUT, jsonReport, 'utf8');
     fs.writeFileSync(REVIEW_OUTPUT, reviewReport, 'utf8');
     fs.writeFileSync(HUMAN_REVIEW_OUTPUT, humanReviewReport, 'utf8');
+    fs.writeFileSync(ADVANCED_HUMAN_REVIEW_OUTPUT, advancedHumanReviewReport, 'utf8');
     console.log(`Relatórios japoneses atualizados: ${path.relative(ROOT, JSON_OUTPUT)} e ${path.relative(ROOT, REVIEW_OUTPUT)} (${blockers} bloqueadores, ${payload.summary.bySeverity.editorial} editoriais)`);
 } else {
     assert.ok(fs.existsSync(JSON_OUTPUT), 'relatório JSON japonês ausente; execute npm run audit:japanese');
     assert.ok(fs.existsSync(REVIEW_OUTPUT), 'relatório Markdown japonês ausente; execute npm run audit:japanese');
     assert.ok(fs.existsSync(HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana A1/A2 ausente; execute npm run audit:japanese');
+    assert.ok(fs.existsSync(ADVANCED_HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana B1/B2 ausente; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(JSON_OUTPUT, 'utf8'), jsonReport, 'relatório JSON japonês desatualizado; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewReport, 'relatório Markdown japonês desatualizado; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(HUMAN_REVIEW_OUTPUT, 'utf8'), humanReviewReport, 'tabela de revisão humana A1/A2 desatualizada; execute npm run audit:japanese');
+    assert.equal(fs.readFileSync(ADVANCED_HUMAN_REVIEW_OUTPUT, 'utf8'), advancedHumanReviewReport, 'tabela de revisão humana B1/B2 desatualizada; execute npm run audit:japanese');
     assert.equal(blockers, 0, `auditoria japonesa encontrou ${blockers} bloqueador(es) técnico(s)`);
     console.log(`✓ auditoria japonesa: 105 módulos principais, 16 módulos Kana e 92 módulos Kanji; ${payload.summary.bySeverity.editorial} ocorrência(s) editorial(is) inventariada(s)`);
 }

@@ -6958,4 +6958,187 @@ const CURSO_B1_DADOS = [
     }
 ];
 
+// Contrato textual editorial da Fase 3C. Conteúdo pendente de revisão humana qualificada.
+const B1_EDITORIAL_AUDIO = [
+    ["ただいま！昨日、何した？", "Usar a forma casual em uma conversa cotidiana."],
+    ["何してるの？早く行かなきゃ！", "Reconhecer e usar contrações frequentes da fala casual."],
+    ["明日は雨が降ると思います。", "Relatar uma opinião, pensamento ou citação."],
+    ["明日は行けるかどうか分からない。", "Expressar dúvida ou possibilidade sem afirmar certeza."],
+    ["雨が降っているので、タクシーに乗りましょう。", "Explicar uma razão escolhendo ので ou から conforme o contexto."],
+    ["財布をなくしてしまいました！どうしよう！", "Expressar conclusão, acidente ou arrependimento com てしまう."],
+    ["先生に褒められました！", "Descrever uma ação recebida usando a voz passiva."],
+    ["雨に降られて、濡れてしまいました。", "Relatar uma situação incômoda com a passiva de adversidade."],
+    ["日本に行ったら、京都に行きたいです。", "Formular uma condição provável com たら ou と."],
+    ["安ければ買います。日本語なら、お任せください！", "Escolher entre ば e なら para expressar uma condição."],
+    ["日本語が話せるようになりました。", "Descrever mudança de capacidade ou decisão de hábito."],
+    ["納豆を食べてみました。富士山に登ったことがあります。", "Falar sobre uma tentativa ou experiência anterior."],
+    ["友達に英語を教えてあげた。田中さんが手伝ってくれた。", "Descrever um favor dado ou recebido com あげる e くれる."],
+    ["田中さんに日本語を教えてもらいました。", "Dizer que obteve um favor com てもらう."],
+    ["子供に勉強させます。この仕事をさせてください。", "Expressar obrigação ou permissão com a voz causativa."],
+    ["嫌いな野菜を食べさせられました。", "Relatar uma ação que alguém foi forçado a realizar."],
+    ["社長がいらっしゃいました。何を召し上がりますか。", "Reconhecer formas essenciais de linguagem respeitosa."],
+    ["私が参ります。田中と申します。", "Apresentar a própria ação com linguagem humilde básica."],
+    ["お世話になっております。お先に失礼します。", "Usar fórmulas básicas de e-mail e comunicação profissional."],
+    ["自己PRをさせていただきます。職務経歴について説明します。", "Fazer uma apresentação profissional breve e estruturada."],
+    ["この料理はおいしそうです。雨が降るみたいです。", "Descrever aparência ou impressão com そう e みたい."],
+    ["温泉では体を洗ってから入ります。ごみの分別が大切です。", "Explicar uma regra cotidiana ou prática de etiqueta no Japão."],
+    ["地震のお知らせです。新幹線は遅延しています。", "Compreender informações essenciais de um aviso público."],
+    ["おめでとうございます！B1コース修了です！", "Resolver uma situação guiada usando os recursos do B1."]
+];
+
+function separarDialogoLegadoB1(dialogue, displayText, audioText = displayText) {
+    const legacy = String(dialogue.npcMessage || "");
+    const translationStart = legacy.lastIndexOf(" (");
+    const hasTranslation = translationStart >= 0 && legacy.endsWith(")");
+    const romaji = hasTranslation ? legacy.slice(0, translationStart) : legacy;
+    const translation = hasTranslation ? legacy.slice(translationStart + 2, -1) : "";
+    return { displayText, audioText, furigana: "", romaji, translation, scenario: "" };
+}
+
+CURSO_B1_DADOS.forEach((module, index) => {
+    const [displayText, canDo] = B1_EDITORIAL_AUDIO[index];
+    module.stage1_context.audio = {
+        displayText,
+        audioText: displayText,
+        furigana: "",
+        romaji: module.stage1_context.audioGuide || "",
+        translation: "",
+        scenario: ""
+    };
+    module.canDo = canDo;
+    module.editorialReview = { status: "pending-human-review", phase: "3C" };
+});
+
+const B1_DIALOGUE_CONTRACT = {
+    b1_mod_01: [
+        ["[Seu Nome]君！昨日、何した？", "昨日、何した？"],
+        ["今日の昼、ラーメンを食べに行く？"],
+        ["このラーメン、めっちゃおいしくない？"]
+    ],
+    b1_mod_02: [
+        ["もしもし、[Seu Nome]！今、何してるの？", "もしもし、今、何してるの？"],
+        ["やばいよ！授業が始まる！早く行かなきゃ！"],
+        ["間に合った！よかった！"]
+    ],
+    b1_mod_03: [
+        ["[Seu Nome]さん、明日の天気、どう思いますか。", "明日の天気、どう思いますか。"],
+        ["駅の前の新しいレストラン、おいしいと思いますか。"],
+        ["いいですね！私も行きたいと思っていました！"]
+    ],
+    b1_mod_04: [
+        ["[Seu Nome]さん、週末のパーティー、来る？", "週末のパーティー、来る？"],
+        ["遅くなってもいいから、来ない？"],
+        ["わあ！待っているよ！"]
+    ],
+    b1_mod_05: [
+        ["[Seu Nome]さん、遅刻ですね。何がありましたか。", "遅刻ですね。何がありましたか。"],
+        ["そうですか。事故なら仕方がないですね。"],
+        ["では、会議を始めましょう。"]
+    ],
+    b1_mod_06: [
+        ["[Seu Nome]さん、どうしたの？顔色が悪いよ。", "どうしたの？顔色が悪いよ。"],
+        ["ええ？！交番に行こう！誰かが届けてくれているかも！"],
+        ["これですか。親切な方から届けられたものですよ。"]
+    ],
+    b1_mod_07: [
+        ["[Seu Nome]さん、今日の日本語の授業、どうだった？", "今日の日本語の授業、どうだった？"],
+        ["すごいじゃん！毎日勉強してるからね！"],
+        ["今度、一緒に勉強を教えてくれない？"]
+    ],
+    b1_mod_08: [
+        null,
+        ["大変だったね！このタオル、使って！"],
+        ["今、暖房をつけるね。風邪をひかないでね！"]
+    ],
+    b1_mod_09: [
+        ["[Seu Nome]さん、夏休みの予定は？", "夏休みの予定は？"],
+        null,
+        ["行けるといいね！お土産、待っているよ！"]
+    ],
+    b1_mod_10: [
+        ["[Seu Nome]さん、新しいパソコンが欲しいんだけど、どこがいいかな。", "新しいパソコンが欲しいんだけど、どこがいいかな。"],
+        ["秋葉原は安いですか。"],
+        ["一緒に行ってくれない？"]
+    ],
+    b1_mod_11: [
+        ["[Seu Nome]さん、最近、日本語が上手になりましたね！", "最近、日本語が上手になりましたね！"],
+        ["素晴らしい！毎日どれくらい勉強していますか。"],
+        ["この調子で頑張ってくださいね！"]
+    ],
+    b1_mod_12: [
+        ["[Seu Nome]さん、納豆を食べたことある？", "納豆を食べたことある？"],
+        ["どう？おいしい？"],
+        ["すごい！納豆が食べられたら、もう日本人だね！"]
+    ],
+    b1_mod_13: [
+        ["[Seu Nome]さん、パソコンの故障、直った？", "パソコンの故障、直った？"],
+        ["海斗君、優しいね！何かお礼した？"],
+        ["いい友達だね！"]
+    ],
+    b1_mod_14: [
+        ["[Seu Nome]さん、日本料理が上手ですね！どこで習ったの？", "日本料理が上手ですね！どこで習ったの？"],
+        ["大家さん、めっちゃ優しいね！"],
+        ["今度、料理でお礼をしないとね！"]
+    ],
+    b1_mod_15: [
+        ["[Seu Nome]さん、新しい企画のプレゼンテーション、誰がやる？", "新しい企画のプレゼンテーション、誰がやる？"],
+        null,
+        ["チームのメンバーにも手伝わせるからね。"]
+    ],
+    b1_mod_16: [
+        ["[Seu Nome]さん、昨日の飲み会、疲れたね！", "昨日の飲み会、疲れたね！"],
+        ["先輩たちの無理な振り、大変だよね。"],
+        null
+    ],
+    b1_mod_17: [
+        null,
+        ["では、それをいただこう。"],
+        ["おいしそうだね。"]
+    ],
+    b1_mod_18: [
+        ["小林社長はいらっしゃいますか。"],
+        ["では、伝言をお願いできるかな。"],
+        ["助かるよ。よろしく。"]
+    ],
+    b1_mod_19: [
+        null,
+        ["[Seu Nome]さん、今日の仕事は終了ですか。", "今日の仕事は終了ですか。"],
+        ["お疲れ様でした！気をつけて帰ってね！"]
+    ],
+    b1_mod_20: [
+        ["では、[Seu Nome]さん、自己PRをお願いいたします。", "では、自己PRをお願いいたします。"],
+        ["的確な説明ですね。厳しい日程のとき、どうしますか。"],
+        ["素晴らしいですね！結果は来週メールでお知らせいたします。"]
+    ],
+    b1_mod_21: [
+        ["[Seu Nome]さん、このパフェ、どう？", "このパフェ、どう？"],
+        ["この店の内装、映画のセットみたいじゃない？"],
+        ["じゃあ、食べよう！"]
+    ],
+    b1_mod_22: [
+        ["[Seu Nome]さん、温泉のマナーは大丈夫？", "温泉のマナーは大丈夫？"],
+        ["さすが！マナーがちゃんとしてるね！ゆっくりつかろう！"],
+        ["温泉の後は、冷たい牛乳だね！"]
+    ],
+    b1_mod_23: [
+        ["すみません、この電車はなぜ動かないんですか。"],
+        ["運行はいつ再開するか分かりますか。"],
+        ["助かりました！ありがとうございます！"]
+    ],
+    b1_mod_24: [
+        ["[Seu Nome]さん、この一年間の日本での仕事と生活、どうだったかな。", "この一年間の日本での仕事と生活、どうだったかな。"],
+        ["素晴らしい成長だね！会社の支えになってくれてありがとう！"],
+        ["おめでとうございます！[Seu Nome]さん、B1コース修了です！", "おめでとうございます！B1コース修了です！"]
+    ]
+};
+
+CURSO_B1_DADOS.forEach(module => {
+    const contracts = B1_DIALOGUE_CONTRACT[module.id] || [];
+    contracts.forEach((contract, index) => {
+        if (!contract || !module.stage4_dialog[index]) return;
+        const [displayText, audioText = displayText] = contract;
+        module.stage4_dialog[index].content = separarDialogoLegadoB1(module.stage4_dialog[index], displayText, audioText);
+    });
+});
+
 if (typeof window !== "undefined") { window.CURSO_B1_DADOS = CURSO_B1_DADOS; }

@@ -183,10 +183,12 @@ function stripEditorialFields(value) {
     return result;
 }
 
-run('migracao A1 e A2 preserva o snapshot estrutural anterior', () => {
+run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
         ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '52fd4f27dc2b2b8c404773a60f6ef4c9d7fbd4f49454c108a30346f05ad1afbc'],
-        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '7a6f6983da1c2e1771ffdcbbbe98e6e3bd89e57c9a9b90ab754d8adcc517b1bf']
+        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '7a6f6983da1c2e1771ffdcbbbe98e6e3bd89e57c9a9b90ab754d8adcc517b1bf'],
+        ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae'],
+        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2']
     ];
     fixtures.forEach(([file, variable, expected]) => {
         const structural = JSON.stringify(stripEditorialFields(loadDataset(file, variable)));
@@ -219,4 +221,30 @@ run('auditoria reduz a zero as ocorrencias alvo de A1 e A2', () => {
     assert.doesNotMatch(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| approved \|/i);
 });
 
-console.log('\n11/11 contratos textuais do player aprovados.');
+run('B1 e B2 possuem os 165 contratos editoriais previstos', () => {
+    const b1 = loadDataset('database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS');
+    const b2 = loadDataset('database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS');
+    const modules = [...b1, ...b2];
+    const audioContracts = modules.filter(module => module.stage1_context && module.stage1_context.audio).length;
+    const dialogueContracts = modules.flatMap(module => module.stage4_dialog || []).filter(dialogue => dialogue.content).length;
+    assert.equal(audioContracts, 44);
+    assert.equal(dialogueContracts, 121);
+    assert.equal(audioContracts + dialogueContracts, 165);
+    assert.equal(modules.filter(module => module.canDo).length, 44);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 44);
+    modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
+        if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
+    });
+});
+
+run('auditoria reduz a zero as ocorrencias alvo de B1 e B2', () => {
+    const report = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const target = report.occurrences.filter(item => ['B1', 'B2'].includes(item.level) && ['audio-guide-no-japanese', 'dialogue-no-japanese'].includes(item.rule));
+    assert.equal(target.length, 0);
+    assert.equal(report.summary.bySeverity.blocking, 0);
+    const humanReview = read('tests/JAPANESE_B1_B2_HUMAN_REVIEW.md');
+    assert.match(humanReview, /pending-human-review/);
+    assert.doesNotMatch(humanReview, /\| approved \|/i);
+});
+
+console.log('\n13/13 contratos textuais do player aprovados.');

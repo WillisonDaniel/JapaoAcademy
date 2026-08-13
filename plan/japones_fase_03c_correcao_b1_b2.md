@@ -84,6 +84,6 @@ Snapshots estruturais de entrada:
 ## Fechamento automático
 
 - Criar `tests/FASE_JAPONES_03C_CORRECAO_B1_B2.md`.
-- Criar o plano decision-complete da Fase 4 — Reestruturação pedagógica e prática comunicativa.
+- Criar o plano decision-complete da Fase 4 — Recuperação do Kanji N3.
 - Fazer commit exclusivo da Fase 3C.
 - Prosseguir automaticamente para a Fase 4 nas tarefas que não dependam da aprovação editorial humana.

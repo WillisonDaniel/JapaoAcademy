@@ -1214,6 +1214,33 @@ test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
     assert.match(multilang, /maxBytes: 1620 \* 1024/);
 });
 
+test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
+    const b1 = read('database/ja-JP/data_curso_b1.js');
+    const b2 = read('database/ja-JP/data_curso_b2.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const humanReview = read('tests/JAPANESE_B1_B2_HUMAN_REVIEW.md');
+    const contractTest = read('tests/course-text-contract.cjs');
+
+    assert.match(b1, /const B1_EDITORIAL_AUDIO = \[/);
+    assert.match(b1, /const B1_DIALOGUE_CONTRACT = \{/);
+    assert.match(b2, /const B2_EDITORIAL_AUDIO = \[/);
+    assert.match(b2, /const B2_DIALOGUE_CONTRACT = \{/);
+    assert.match(b1, /pending-human-review/);
+    assert.match(b2, /pending-human-review/);
+    assert.match(b2, /B2コースの修了証をお渡しいたします/);
+    assert.doesNotMatch(b2, /audioText:\s*"?\[Seu Nome\]/);
+    assert.match(audit, /function hasCompleteTextContract\(content\)/);
+    assert.match(audit, /ADVANCED_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => ['B1', 'B2'].includes(item.level)).length, 0);
+    assert.match(humanReview, /stage1_context\.audio/);
+    assert.match(humanReview, /stage4_dialog\[0\]\.content/);
+    assert.match(contractTest, /B1 e B2 possuem os 165 contratos editoriais previstos/);
+    assert.match(contractTest, /1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae/);
+    assert.match(contractTest, /91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

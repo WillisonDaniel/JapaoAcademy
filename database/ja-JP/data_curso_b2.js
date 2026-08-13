@@ -5627,4 +5627,163 @@ const CURSO_B2_DADOS = [
     }
 ];
 
+// Contrato textual editorial da Fase 3C. Conteúdo pendente de revisão humana qualificada.
+const B2_EDITORIAL_AUDIO = [
+    ["明日は雨が降ることになっている。", "Explicar uma regra, expectativa ou situação estabelecida."],
+    ["日本語だけでなく、漢字も勉強しています。これは一歩にすぎない。", "Distinguir maneiras avançadas de limitar ou ampliar uma afirmação."],
+    ["知らないくせに、話さないで。値段の割にはおいしい。", "Expressar uma avaliação crítica com nuance adequada ao contexto."],
+    ["目が回る忙しさ。顔が広いですね。", "Interpretar expressões idiomáticas japonesas em contexto."],
+    ["ご覧になりました。お目にかかれて光栄です。", "Reconhecer formas avançadas de respeito e humildade."],
+    ["この件について、起承転結でレポートを作成しました。", "Organizar um e-mail ou relatório profissional com clareza."],
+    ["申し訳ございませんが、この条件はお受けしかねます。", "Discordar ou recusar uma proposta com polidez profissional."],
+    ["今日はB2プロジェクトについて発表いたします。", "Apresentar uma proposta profissional de forma estruturada."],
+    ["経済の統計によると、景気が回復しています。", "Identificar informações principais em uma notícia."],
+    ["市役所の書類についてご案内いたします。", "Compreender instruções formais de um procedimento público."],
+    ["めっちゃ、ほんまにええやん！やばいですよ！", "Reconhecer marcas frequentes do dialeto de Kansai e da fala informal."],
+    ["高齢化社会と環境問題について考察します。", "Expor uma opinião fundamentada sobre um tema social."],
+    ["お金さえあれば、大丈夫。悪天候にもかかわらず、出発した。", "Conectar argumentos com estruturas acadêmicas avançadas."],
+    ["これは成功と言えるだろう。毎日の努力にほかならない。", "Defender uma conclusão usando evidências e modalização."],
+    ["心を打つ文学の世界。夏目漱石の作品を読む。", "Comentar tema e impressão de um trecho literário."],
+    ["調査の結果、新しい技術が生まれた。この出会いをきっかけに……。", "Relacionar causa, resultado e ponto de partida de um acontecimento."],
+    ["おおきに！好いとうよ！めんそーれ！", "Identificar diferenças básicas entre variedades regionais."],
+    ["わくわくしています。ぴかぴかに磨きました。", "Usar onomatopeias para descrever estado, som ou movimento."],
+    ["おもてなしの心と生きがいを大切にします。", "Explicar um conceito cultural japonês sem generalizações absolutas."],
+    ["おめでとうございます！すべてのレベル修了です！", "Integrar os recursos da trilha B2 em uma apresentação final guiada."]
+];
+
+function separarDialogoLegadoB2(dialogue, displayText, audioText = displayText, scenario = "") {
+    const legacy = String(dialogue.npcMessage || "");
+    const translationStart = legacy.lastIndexOf(" (");
+    const hasTranslation = translationStart >= 0 && legacy.endsWith(")");
+    const romaji = hasTranslation ? legacy.slice(0, translationStart) : legacy;
+    const translation = hasTranslation ? legacy.slice(translationStart + 2, -1) : "";
+    return { displayText, audioText, furigana: "", romaji, translation, scenario };
+}
+
+CURSO_B2_DADOS.forEach((module, index) => {
+    const [displayText, canDo] = B2_EDITORIAL_AUDIO[index];
+    module.stage1_context.audio = {
+        displayText,
+        audioText: displayText,
+        furigana: "",
+        romaji: module.stage1_context.audioGuide || "",
+        translation: "",
+        scenario: ""
+    };
+    module.canDo = canDo;
+    module.editorialReview = { status: "pending-human-review", phase: "3C" };
+});
+
+const B2_DIALOGUE_CONTRACT = {
+    b2_mod_01: [
+        ["[Seu Nome]さん、管理規則によると、ごみは朝八時前に出すことになっていますよ。", "管理規則によると、ごみは朝八時前に出すことになっていますよ。"],
+        null,
+        ["分かってくれて助かるよ。よろしく。"]
+    ],
+    b2_mod_02: [
+        ["[Seu Nome]さん、素晴らしい分析でした！", "素晴らしい分析でした！"],
+        ["チームだけでなく、会社全体の支援になりますよ。"],
+        ["今後の活動も期待しております。"]
+    ],
+    b2_mod_03: [
+        ["[Seu Nome]さん、あの新しい店、値段が高いね。", "あの新しい店、値段が高いね。"],
+        ["あの評論家、行ったことがないくせに、悪いことばかり書いているよ。"],
+        ["自分たちで行って確かめよう！"]
+    ],
+    b2_mod_04: [
+        ["[Seu Nome]さん、最近、仕事で目が回る忙しさだね……", "最近、仕事で目が回る忙しさだね……"],
+        ["佐藤部長は顔が広いから、誰か紹介してくれるかも！"],
+        null
+    ],
+    b2_mod_05: [
+        ["[Seu Nome]さん、最近の業績はいかがですか。", "最近の業績はいかがですか。"],
+        ["素晴らしいデータだ。この計画はすでにご存じだったのか。"],
+        ["今後の活動に期待しているよ。"]
+    ],
+    b2_mod_06: [
+        ["[Seu Nome]さん、B2プロジェクトのメールの下書き、できた？", "B2プロジェクトのメールの下書き、できた？"],
+        ["本題が明確で、素晴らしい文章だね！"],
+        ["よろしくお願いするよ！"]
+    ],
+    b2_mod_07: [
+        ["この値段から五十パーセント割引してくれないか。"],
+        ["ふむ……十パーセントの特典なら、悪くないね。"],
+        null
+    ],
+    b2_mod_08: [
+        ["", "", "役員たちは静かに発表の開始を待っている。"],
+        ["予算の統計について、少し説明してくれないか。"],
+        ["", "", "役員たちが発表に拍手を送っている。"]
+    ],
+    b2_mod_09: [
+        ["[Seu Nome]さん、今日のNHKニュース、見た？", "今日のNHKニュース、見た？"],
+        ["AIと技術の開発も、すごい成長だね。"],
+        ["賢い分析だ！毎日ニュースを確認しよう！"]
+    ],
+    b2_mod_10: [
+        ["いらっしゃいませ。本日はどのようなご用件ですか。"],
+        ["では、この書類にお名前と住所をご記入いただけますか。"],
+        ["確認いたしました。これで問題なく完了です。"]
+    ],
+    b2_mod_11: [
+        ["このコメディ、ほんまにめっちゃおもろいやろ？"],
+        null,
+        ["もちろんや！もう関西人と同じやん！"]
+    ],
+    b2_mod_12: [
+        ["[Seu Nome]さん、日本の高齢化社会についてどう考えますか。", "日本の高齢化社会についてどう考えますか。"],
+        ["環境問題とのバランスも大切ですね。"],
+        null
+    ],
+    b2_mod_13: [
+        ["[Seu Nome]さん、この論文の論理は明確だね。", "この論文の論理は明確だね。"],
+        ["厳しい条件にもかかわらず、結果を出したね。"],
+        ["素晴らしいです！学会に投稿しましょう！"]
+    ],
+    b2_mod_14: [
+        ["[Seu Nome]さん、このデータの考察をまとめてください。", "このデータの考察をまとめてください。"],
+        ["明確で価値の高い論旨だね。議論の組み立てが素晴らしいよ。"],
+        ["合格です！おめでとうございます！"]
+    ],
+    b2_mod_15: [
+        ["[Seu Nome]さん、夏目漱石の作品を読んだことある？", "夏目漱石の作品を読んだことある？"],
+        ["太宰治の作品も、文学的にとても深いよ。"],
+        ["来月の議論、楽しみにしているよ！"]
+    ],
+    b2_mod_16: [
+        ["[Seu Nome]さん、日本語の勉強を始めたきっかけは何ですか。", "日本語の勉強を始めたきっかけは何ですか。"],
+        ["毎日の努力の結果、今は自然に話せますね！"],
+        ["素晴らしい話です！聞いている皆さんの励みになりました！"]
+    ],
+    b2_mod_17: [
+        ["福岡のラーメン、好いとうと？"],
+        ["福岡の方言も知っとうと！すごかたい！"],
+        ["また福岡に来てね！"]
+    ],
+    b2_mod_18: [
+        ["[Seu Nome]さん、天気もいいし、遊園地日和だね！", "天気もいいし、遊園地日和だね！"],
+        ["楽しい！でも、もうお腹がぺこぺこになったね！"],
+        ["にこにこ笑って食べよう！"]
+    ],
+    b2_mod_19: [
+        ["[Seu Nome]さん、おもてなしとは、相手の心を思うことです。", "おもてなしとは、相手の心を思うことです。"],
+        ["[Seu Nome]さんの生きがいは何ですか。", "生きがいは何ですか。"],
+        ["どうぞ、わび・さびの味わいをお楽しみください。"]
+    ],
+    b2_mod_20: [
+        ["[Seu Nome]さん、おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！", "おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！"],
+        ["今後、日本語を使って何をしたいですか。"],
+        ["素晴らしいです！B2コースの修了証をお渡しいたします。おめでとうございます！"]
+    ]
+};
+
+CURSO_B2_DADOS.forEach(module => {
+    const contracts = B2_DIALOGUE_CONTRACT[module.id] || [];
+    contracts.forEach((contract, index) => {
+        if (!contract || !module.stage4_dialog[index]) return;
+        const [displayText, audioText = displayText, scenario = ""] = contract;
+        module.stage4_dialog[index].content = separarDialogoLegadoB2(module.stage4_dialog[index], displayText, audioText, scenario);
+    });
+});
+
 if (typeof window !== "undefined") { window.CURSO_B2_DADOS = CURSO_B2_DADOS; }

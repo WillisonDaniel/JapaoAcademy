@@ -5,9 +5,9 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 ## Resultado
 
 - Bloqueadores técnicos: 0
-- Ocorrências editoriais: 7688
+- Ocorrências editoriais: 7527
 - Exceções documentadas: 1
-- Total de ocorrências: 7689
+- Total de ocorrências: 7528
 
 ## Inventário validado
 
@@ -21,8 +21,6 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 
 | Nível | Ocorrências |
 |---|---:|
-| B1 | 89 |
-| B2 | 72 |
 | N1 | 4527 |
 | N2 | 1491 |
 | N3 | 1409 |
@@ -36,44 +34,42 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 | kanji-example-missing-target | 3449 |
 | kanji-example-no-japanese | 3382 |
 | reading-latin-only | 663 |
-| dialogue-no-japanese | 121 |
-| audio-guide-no-japanese | 40 |
 | english-intrusion | 34 |
 
 ## Amostras prioritárias
 
 | Severidade | Nível | Módulo | Regra | Campo | Amostra |
 |---|---|---|---|---|---|
-| editorial | B1 | b1_mod_01 | audio-guide-no-japanese | stage1_context.audioGuide | Tadaima! Kinou nani shita? |
-| editorial | B1 | b1_mod_01 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-kun! Kinou nani shita? (O que você fez ontem?) |
-| editorial | B1 | b1_mod_01 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Kyou no hiru, ramen tabe ni iku? (Bora comer ramen hoje no almoço?) |
-| editorial | B1 | b1_mod_01 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Kono ramen, mecha oishiku nai? (Esse ramen tá bom demais, né?) |
-| editorial | B1 | b1_mod_02 | audio-guide-no-japanese | stage1_context.audioGuide | Nani shiteru no? Hayaku ikanakya! |
-| editorial | B1 | b1_mod_02 | dialogue-no-japanese | stage4_dialog[0].npcMessage | Moshimoshi, [Seu Nome]! Ima nani shiteru no? (Alô! O que tá fazendo agora?) |
-| editorial | B1 | b1_mod_02 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Yabai yo! Jouka ga hajimaru! Hayaku ikanakya! (Caramba! A aula vai começar! Temos que ir rápido!) |
-| editorial | B1 | b1_mod_02 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Mani aotta! Yokatta-! (Deu tempo! Que bom!) |
-| editorial | B1 | b1_mod_03 | audio-guide-no-japanese | stage1_context.audioGuide | Ashita wa ame ga furu to omoimasu. |
-| editorial | B1 | b1_mod_03 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-san, ashita no tenki, dou omoimasu ka? (O que acha do tempo amanhã?) |
-| editorial | B1 | b1_mod_03 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Eki no mae no atarashii resutoran, oishii to omoimasu ka? (Acha que o novo restaurante em frente à estação é gostoso?) |
-| editorial | B1 | b1_mod_03 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Ii desu ne! Watashi mo ikitai to omotte imashita! (Boa! Eu também estava pensando em ir!) |
-| editorial | B1 | b1_mod_04 | audio-guide-no-japanese | stage1_context.audioGuide | Ashita wa ikeru ka dou ka wakaranai. |
-| editorial | B1 | b1_mod_04 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-san, shuumatsu no paatii, kuru? (Você vem para a festa no fim de semana?) |
-| editorial | B1 | b1_mod_04 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Oso-ku natte mo ii kara, korai? (Pode chegar mais tarde, não quer vir?) |
-| editorial | B1 | b1_mod_04 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Watta! Matte iru yo! (Massa! Fico te esperando!) |
-| editorial | B1 | b1_mod_05 | audio-guide-no-japanese | stage1_context.audioGuide | Ame ga fukatte iru node, takushi- ni norimashou. |
-| editorial | B1 | b1_mod_05 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-san, chokkou desu ne. Nani ga arimashita ka? (Atrasado, né. O que aconteceu?) |
-| editorial | B1 | b1_mod_05 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Sou desu ka. Jiko nara shikata ga nai desu ne. (Entendo. Se foi um acidente, não havia o que fazer.) |
-| editorial | B1 | b1_mod_05 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Dewa, kaigi o hajimemashou. (Bem, vamos começar a reunião.) |
-| editorial | B1 | b1_mod_06 | audio-guide-no-japanese | stage1_context.audioGuide | Saifu o tasukete shimaimashita! Doushiyou! |
-| editorial | B1 | b1_mod_06 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-san, doushitano? Kaoiro ga warui yo. (O que houve? Você tá com uma cara péssima.) |
-| editorial | B1 | b1_mod_06 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Eee?! Koban ni ikou! Dareda ga todokete kureteru kamo! (O quê?! Vamos ao posto de polícia! Alguém pode ter entregado!) |
-| editorial | B1 | b1_mod_06 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Kore desu ka? Shoushin de todokadareta mono desu yo. (É esta? Foi entregue por um bom cidadão.) |
-| editorial | B1 | b1_mod_07 | audio-guide-no-japanese | stage1_context.audioGuide | Sensei ni homeraremashita! |
-| editorial | B1 | b1_mod_07 | dialogue-no-japanese | stage4_dialog[0].npcMessage | [Seu Nome]-san, kyou no Nihongo no jugyou, dou datta? (Como foi a aula de japonês hoje?) |
-| editorial | B1 | b1_mod_07 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Sugoi ja n! Mainichi benkyou shiteru kara ne! (Incrível! É porque você estuda todo dia, né!) |
-| editorial | B1 | b1_mod_07 | dialogue-no-japanese | stage4_dialog[2].npcMessage | Kondo, issho ni benkyou oshiete kure nai? (Na próxima, não me ensina a estudar junto?) |
-| editorial | B1 | b1_mod_08 | audio-guide-no-japanese | stage1_context.audioGuide | Ame ni furarete, nurete shimaimashita. |
-| editorial | B1 | b1_mod_08 | dialogue-no-japanese | stage4_dialog[1].npcMessage | Taiken datta ne! Kono taoru, tsukatte! (Que sufoco! Usa esta toalha!) |
+| editorial | N5 | 1 | reading-latin-only | kanjis[0].kunyomi | kan (conceito histórico) |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[1].examples[0].sentence | リンゴを食べるのが好きです。(Ringo o taberu no ga suki desu) |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[1].examples[1].sentence | 映画館で映画を見ます。(Eigakan de eiga o mimasu) |
+| editorial | N5 | 1 | reading-latin-only | kanjis[2].kunyomi | oto / ne |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[2].examples[0].sentence | 水曜日にテストがあります。(Suiyoubi ni tesuto ga arimasu) |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[2].examples[1].sentence | 学校で日本語を勉強します。(Gakkou de nihongo o benkyou shimasu) |
+| editorial | N5 | 1 | reading-latin-only | kanjis[3].kunyomi | 부 / parte |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[3].examples[0].sentence | 人が木の下で休みます。(Hito ga ki no shita de yasumimasu) |
+| editorial | N5 | 1 | kanji-example-missing-target | kanjis[3].examples[1].sentence | 美しい川の水を見ます。(Utsukushii kawa no mizu o mimasu) |
+| editorial | N5 | 1 | reading-latin-only | kanjis[4].kunyomi | tadasu / masa |
+| editorial | N5 | 1 | reading-latin-only | kanjis[5].kunyomi | onaji (mesmo) |
+| editorial | N4 | 1 | reading-latin-only | kanjis[1].kunyomi | zoku (conceito) |
+| editorial | N4 | 2 | reading-latin-only | kanjis[8].kunyomi | you |
+| editorial | N4 | 3 | reading-latin-only | kanjis[0].kunyomi | ji / chi |
+| editorial | N4 | 3 | reading-latin-only | kanjis[3].kunyomi | kai |
+| editorial | N4 | 4 | reading-latin-only | kanjis[1].kunyomi | katamuku |
+| editorial | N4 | 4 | reading-latin-only | kanjis[2].kunyomi | gawa |
+| editorial | N4 | 5 | reading-latin-only | kanjis[1].kunyomi | fusa |
+| editorial | N4 | 5 | reading-latin-only | kanjis[2].kunyomi | shitsu |
+| editorial | N4 | 5 | reading-latin-only | kanjis[3].kunyomi | dou |
+| editorial | N4 | 5 | reading-latin-only | kanjis[4].kunyomi | taku |
+| editorial | N4 | 5 | reading-latin-only | kanjis[5].kunyomi | kyoku |
+| editorial | N4 | 6 | reading-latin-only | kanjis[0].kunyomi | kou |
+| editorial | N4 | 6 | reading-latin-only | kanjis[1].kunyomi | kan |
+| editorial | N4 | 6 | reading-latin-only | kanjis[2].kunyomi | fumi |
+| editorial | N4 | 6 | reading-latin-only | kanjis[3].kunyomi | ji |
+| editorial | N4 | 6 | reading-latin-only | kanjis[4].kunyomi | kou |
+| editorial | N4 | 6 | reading-latin-only | kanjis[9].kunyomi | kokoromiru |
+| editorial | N4 | 7 | reading-latin-only | kanjis[5].kunyomi | korogaru |
+| editorial | N4 | 8 | reading-latin-only | kanjis[4].kunyomi | kataru |
 
 ## Limite da validação
 
