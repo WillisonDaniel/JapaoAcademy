@@ -4907,6 +4907,39 @@ rt {
     gap: 16px;
 }
 
+.dashboard-japanese-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.dashboard-japanese-skill-card {
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px;
+    background: var(--bg-color);
+}
+
+.dashboard-japanese-skill-card h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.dashboard-japanese-skill-card dl {
+    display: grid;
+    gap: 7px;
+    margin: 0;
+}
+
+.dashboard-japanese-skill-card dl div {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dashboard-japanese-skill-card dt { color: var(--text-muted); }
+.dashboard-japanese-skill-card dd { margin: 0; font-weight: 700; text-align: right; }
+
 .dashboard-language-card {
     min-width: 0;
     padding: 20px;

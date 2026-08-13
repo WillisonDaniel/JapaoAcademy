@@ -786,7 +786,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v39'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v40'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -926,7 +926,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v39'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v40'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1388,6 +1388,15 @@ test('preparacao JLPT da Fase 12 permanece interna e nao oficial', () => {
     assert.match(read('tests/japanese-jlpt-contract.cjs'), /1060 questões explícitas/);
     assert.match(read('html/ja-JP/jlpt.html'), /não possui afiliação com o JLPT/);
     assert.doesNotMatch(read('js/japanese/jlpt.js'), /adicionarXP|processarAvaliacaoSRS|localStorage|fetch\(/);
+});
+
+test('hub e Dashboard da Fase 13 usam habilidades e sessoes reais', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-release-contract\.cjs/);
+    assert.match(read('hub_japones.html'), /data-skill-group="foundations"/);
+    assert.match(read('meu-progresso.html'), /dashboard-japanese-skills-grid/);
+    assert.match(read('js/dashboard/meu-progresso.js'), /criarResumoHabilidadesJaponesDashboard/);
 });
 
 const failed = results.filter(result => !result.ok);

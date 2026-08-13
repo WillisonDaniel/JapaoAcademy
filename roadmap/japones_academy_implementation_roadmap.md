@@ -8,6 +8,23 @@
 - Não incluir alterações preexistentes nos commits do roadmap.
 - Conteúdo linguístico que exigir julgamento humano permanece marcado como bloqueio editorial até revisão qualificada.
 
+## Estado de fechamento mecânico — 2026-08-13
+
+- [x] Fase 0 — baseline e inventário.
+- [x] Fase 1 — correções objetivas e transparência pedagógica.
+- [x] Fase 2 — auditoria editorial automatizada.
+- [x] Fases 3A–3C — contrato textual e correções A1–B2.
+- [x] Fases 4–6 — recuperação mecânica Kanji N3–N1.
+- [x] Fase 7 — consolidação de recursos.
+- [x] Fase 8 — escuta, pronúncia e shadowing.
+- [x] Fase 9 — biblioteca de leitura.
+- [x] Fase 10 — referência gramatical e formas.
+- [x] Fase 11 — produção escrita guiada.
+- [x] Fase 12 — preparação JLPT interna.
+- [x] Fase 13 — hub por habilidades, Dashboard real e auditoria de release.
+
+“Concluída” neste quadro significa implementação e validação mecânica local. Não significa aprovação editorial humana. O QA visual/console permanece pendente porque o navegador integrado não iniciou, conforme registrado no relatório da Fase 13.
+
 ## Fases
 
 0. Baseline e inventário.

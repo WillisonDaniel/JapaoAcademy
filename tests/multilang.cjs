@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v39/);
+    assert.match(serviceWorker, /idiomas-academy-v40/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -890,6 +890,15 @@ test('preparacao JLPT usa indice leve e nao mistura referencia com escala oficia
     assert.ok(scripts.length <= 17); assert.ok(bytes <= 900 * 1024, `${Math.round(bytes / 1024)} KB na preparação JLPT`);
     assert.match(html, /data_jlpt_pratica_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
     const source = read('js/japanese/jlpt.js'); assert.match(source, /selectJlptSession/); assert.doesNotMatch(source, /localStorage|sessionStorage|scaledScore|cefr/i);
+});
+
+test('hub japonês final permanece leve e Dashboard ignora sessoes de outros idiomas', () => {
+    const file = 'hub_japones.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 15); assert.ok(bytes <= 350 * 1024, `${Math.round(bytes / 1024)} KB no hub japonês final`);
+    assert.equal((html.match(/data-skill-group=/g) || []).length, 4); assert.match(html, /meu-progresso\.html/);
+    const dashboard = read('js/dashboard/meu-progresso.js'); assert.match(dashboard, /sessao\.language !== 'ja-JP'/); assert.doesNotMatch(dashboard.slice(dashboard.indexOf('const JAPANESE_SKILL_REGISTRY'), dashboard.indexOf('function formatarUltimaAtividadeHabilidadeJaponesa')), /dailyAggregates|localStorage/);
 });
 
 const failed = results.filter(result => !result.ok);

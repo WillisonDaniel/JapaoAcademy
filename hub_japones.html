@@ -4,103 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Japonês | Idiomas Academy</title>
-    
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
-
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1e1b4b">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=28f">
+    <style>
+        .skill-hub{max-width:1180px;margin:auto;padding:24px 16px 60px}.skill-hub-note{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);line-height:1.65}.skill-group{margin-top:28px}.skill-group h2{margin-bottom:4px}.skill-group>p{color:var(--text-muted);margin-top:0}.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px}.skill-grid .course-btn{margin:0;min-height:138px}.skill-grid .course-btn p{line-height:1.45}.skill-status{font-size:.92rem;color:var(--text-muted);margin-top:22px}@media(max-width:520px){.skill-grid{grid-template-columns:1fr}.skill-grid .course-btn{min-height:0}}
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 <body data-page="hub">
     <header>
         <a href="hub_idiomas.html" class="home-btn">⬅ Idiomas</a>
-        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button>
         <h1 id="mainTitle">Japonês</h1>
-        <p id="mainDesc">A plataforma definitiva e completa para dominar o idioma japonês.</p>
+        <p id="mainDesc">Escolha uma habilidade e continue seus estudos no seu ritmo.</p>
     </header>
 
-    <div class="container">
-        <div id="main-menu">
-            <a href="html/ja-JP/curso.html" class="course-btn japa">
-                <span>🎌</span> Curso de Japonês
-                <p>Iniciante ao Avançado (A1,A2,B1,B2)</p>
-            </a>
-            <a href="html/ja-JP/hiragana.html" class="course-btn hira">
-                <span>あ</span> Curso de Hiragana
-                <p>O alfabeto base (Teoria, Vocabulário e Prática Completa)</p>
-            </a>
-            
-            <a href="html/ja-JP/katakana.html" class="course-btn kata">
-                <span>ア</span> Curso de Katakana
-                <p>Sons estrangeiros (Teoria, Vocabulário e Prática Completa)</p>
-            </a>
+    <main class="skill-hub">
+        <div class="skill-hub-note"><strong>Transparência pedagógica:</strong> as trilhas Kanji usam níveis de referência JLPT e não constituem listas oficiais. Conteúdos marcados como pendentes continuam aguardando revisão editorial humana.</div>
 
-            <!-- NOVO BOTAO DO KANJI (N5 a N1) -->
-            <a href="html/ja-JP/kanji.html" class="course-btn kanji">
-                <span>漢</span> Curso de Kanjis (N5 a N1)
-                <p>Ideogramas e Vocabulário de Proficiência (N5 ao N1)</p>
-            </a>
-            
-            <a href="html/ja-JP/minigame.html" class="course-btn game">
-                <span>🎮</span> Kana Master Pro
-                <p>O Minigame Oficial de Fixação e Digitação</p>
-            </a>
+        <section class="skill-group" data-skill-group="foundations" aria-labelledby="skill-foundations-title">
+            <h2 id="skill-foundations-title">Fundamentos</h2><p>Curso principal, sistemas de escrita e referência gramatical.</p>
+            <div class="skill-grid">
+                <a href="html/ja-JP/curso.html" class="course-btn japa"><span>🎌</span> Curso de Japonês<p>105 módulos A1–B2 com progressão preservada.</p></a>
+                <a href="html/ja-JP/hiragana.html" class="course-btn hira"><span>あ</span> Hiragana<p>Teoria, vocabulário, prática e tabela completa.</p></a>
+                <a href="html/ja-JP/katakana.html" class="course-btn kata"><span>ア</span> Katakana<p>Sons estrangeiros, vocabulário e prática.</p></a>
+                <a href="html/ja-JP/kanji.html" class="course-btn kanji"><span>漢</span> Kanji N5–N1<p>Trilhas pedagógicas por níveis de referência JLPT.</p></a>
+                <a href="html/ja-JP/gramatica.html" class="course-btn japa"><span>文</span> Gramática e formas<p>194 referências e consulta de formas explicitamente registradas.</p></a>
+            </div>
+        </section>
 
-            <a href="html/ja-JP/escuta.html" class="course-btn japa">
-                <span>🎧</span> Escuta e Shadowing
-                <p>Ouça, revele e repita frases dos módulos A1–B2, sem notas artificiais</p>
-            </a>
+        <section class="skill-group" data-skill-group="comprehension" aria-labelledby="skill-comprehension-title">
+            <h2 id="skill-comprehension-title">Compreensão</h2><p>Escuta, leitura e consulta de vocabulário.</p>
+            <div class="skill-grid">
+                <a href="html/ja-JP/escuta.html" class="course-btn japa"><span>🎧</span> Escuta e shadowing<p>265 trechos A1–B2 com voz sintetizada e sem nota artificial.</p></a>
+                <a href="html/ja-JP/leitura.html" class="course-btn kanji"><span>📚</span> Biblioteca de leitura<p>91 textos das trilhas Kanji com apoios existentes.</p></a>
+                <a href="html/ja-JP/dicionario.html" class="course-btn dict"><span>📖</span> Dicionário e glossário<p>Busca local em Kanji, vocabulário e gramática.</p></a>
+            </div>
+        </section>
 
-            <a href="html/ja-JP/leitura.html" class="course-btn kanji">
-                <span>📚</span> Biblioteca de Leitura
-                <p>91 textos graduados das trilhas Kanji, com apoios e compreensão existente</p>
-            </a>
+        <section class="skill-group" data-skill-group="production" aria-labelledby="skill-production-title">
+            <h2 id="skill-production-title">Produção e prática</h2><p>Reconstrução escrita e treino de reconhecimento/digitação.</p>
+            <div class="skill-grid">
+                <a href="html/ja-JP/escrita.html" class="course-btn hira"><span>✍️</span> Escrita guiada<p>208 modelos A1–B2; seu texto não é salvo ou enviado.</p></a>
+                <a href="html/ja-JP/minigame.html" class="course-btn game"><span>🎮</span> Kana Master Pro<p>Prática local de fixação e digitação.</p></a>
+            </div>
+        </section>
 
-            <a href="html/ja-JP/gramatica.html" class="course-btn japa">
-                <span>文</span> Gramática e Formas
-                <p>194 referências rastreáveis e consulta de formas explicitamente registradas</p>
-            </a>
-
-            <a href="html/ja-JP/escrita.html" class="course-btn hira">
-                <span>✍️</span> Escrita Guiada
-                <p>208 modelos A1–B2 para ordenar, copiar e reconstruir com privacidade</p>
-            </a>
-
-            <a href="html/ja-JP/jlpt.html" class="course-btn kanji">
-                <span>🎯</span> Preparação JLPT
-                <p>1.060 questões existentes por nível de referência, sem escala ou afiliação oficial</p>
-            </a>
-
-            <!-- BOTAO DO DICIONARIO E GLOSSARIO -->
-            <a href="html/ja-JP/dicionario.html" class="course-btn dict">
-                <span>📖</span> Dicionário & Glossário
-                <p>Busca Universal de Kanjis, Vocabulário e Gramática</p>
-            </a>
-        </div>
-    </div>
+        <section class="skill-group" data-skill-group="tracking" aria-labelledby="skill-tracking-title">
+            <h2 id="skill-tracking-title">Acompanhamento</h2><p>Preparação interna e seu painel pessoal.</p>
+            <div class="skill-grid">
+                <a href="html/ja-JP/jlpt.html" class="course-btn kanji"><span>🎯</span> Preparação JLPT<p>1.060 questões existentes, sem escala ou afiliação oficial.</p></a>
+                <a href="meu-progresso.html" class="course-btn japa"><span>📊</span> Meu Progresso<p>Dashboard pessoal com atividade realmente registrada.</p></a>
+            </div>
+        </section>
+        <p class="skill-status">A presença de um recurso neste hub não substitui revisão editorial qualificada.</p>
+    </main>
 
     <script type="module" src="firebase-init.js"></script>
-    <script src="js/core/config.js"></script>
-    <script src="js/core/constants.js"></script>
-    <script src="js/core/state.js"></script>
-    <script src="js/core/utils.js"></script>
-    <script src="js/core/theme.js"></script>
-    <script src="js/core/audio.js"></script>
-    <script src="js/core/toast.js"></script>
-    <script src="js/core/storage.js"></script>
-    <script src="js/core/dom.js"></script>
-    <script src="js/core/events.js?v=32"></script>
-    <script src="js/game/xp.js"></script>
-    <script src="js/game/ranking.js"></script>
-    <script src="js/core/bootstrap.js?v=32"></script>
-    <script src="app.js"></script>
+    <script src="js/core/config.js"></script><script src="js/core/constants.js"></script><script src="js/core/state.js"></script><script src="js/core/utils.js"></script><script src="js/core/theme.js"></script><script src="js/core/audio.js"></script><script src="js/core/toast.js"></script><script src="js/core/storage.js"></script><script src="js/core/dom.js"></script><script src="js/core/events.js?v=32"></script><script src="js/game/xp.js"></script><script src="js/game/ranking.js"></script><script src="js/core/bootstrap.js?v=32"></script><script src="app.js"></script>
 </body>
 </html>
