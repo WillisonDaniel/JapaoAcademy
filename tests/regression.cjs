@@ -1163,6 +1163,30 @@ test('auditoria editorial japonesa da Fase 2 permanece permanente e deterministi
     assert.match(review, /não substitui revisão humana/i);
 });
 
+test('contrato textual japones da Fase 3A permanece separado e retrocompativel', () => {
+    const normalizer = read('js/course/moduleNormalizer.js');
+    const course = read('js/course/course.js');
+    const packageJson = JSON.parse(read('package.json'));
+    const contractTest = read('tests/course-text-contract.cjs');
+
+    assert.match(normalizer, /function normalizeTextContent\(rawContent, legacyFallbacks = \{\}\)/);
+    for (const field of ['displayText', 'audioText', 'furigana', 'romaji', 'translation', 'scenario']) {
+        assert.match(normalizer, new RegExp(`${field}:`), `campo textual ausente: ${field}`);
+    }
+    assert.match(normalizer, /audio: \{/);
+    assert.match(normalizer, /_contractExplicit/);
+    assert.match(normalizer, /normalized\.canDo = String\(canDo\)/);
+    assert.match(course, /data-course-audio-text/);
+    assert.match(course, /criarBotaoAudioCurso\(content\.audioText/);
+    assert.match(course, /course-dialogue-translation/);
+    assert.match(course, /course-dialogue-scenario/);
+    assert.doesNotMatch(course, /const speakWord = speechText/);
+    assert.doesNotMatch(course, /onclick="speakKana\('\$\{speakWord\}/);
+    assert.equal(packageJson.scripts['test:japanese-text'], 'node tests/course-text-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/course-text-contract\.cjs/);
+    assert.match(contractTest, /inventario japones permanece com 105 modulos/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suite de regressao local da Idiomas Academy",
   "scripts": {
-    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-editorial-audit.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
+    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-editorial-audit.cjs && node tests/course-text-contract.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
     "test:regression": "node tests/regression.cjs",
     "test:integration": "node tests/integration.cjs",
     "test:multilang": "node tests/multilang.cjs",
@@ -21,6 +21,7 @@
     "audit:italian:check": "node tests/italian-editorial-audit.cjs",
     "audit:japanese": "node tests/japanese-editorial-audit.cjs --write",
     "audit:japanese:check": "node tests/japanese-editorial-audit.cjs",
+    "test:japanese-text": "node tests/course-text-contract.cjs",
     "test:pwa": "node tests/pwa-offline.cjs",
     "qa:dashboard": "node tests/dashboard-visual-server.cjs",
     "qa:dashboard:check": "node tests/dashboard-visual-server.cjs --check"

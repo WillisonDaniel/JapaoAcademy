@@ -407,6 +407,72 @@ function obterDropsAtivosDoModulo(mod) {
     return module.drops || [];
 }
 
+function escaparTextoCurso(value) {
+    const text = String(value == null ? '' : value);
+    return typeof escapeHTML === 'function'
+        ? escapeHTML(text)
+        : text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
+
+function obterConteudoTextualCurso(entry, fallbacks = {}) {
+    const source = entry && typeof entry === 'object' ? entry : {};
+    const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+    if (source.content && typeof source.content === 'object' && (languageCode === 'ja-JP' || source.content._contractExplicit)) {
+        return source.content;
+    }
+    const compatibleFallbacks = languageCode === 'ja-JP' ? fallbacks : { ...fallbacks, scenario: '' };
+    if (typeof normalizeTextContent === 'function') return normalizeTextContent({}, compatibleFallbacks);
+    const displayText = compatibleFallbacks.displayText || '';
+    return {
+        displayText,
+        audioText: compatibleFallbacks.audioText || displayText,
+        furigana: compatibleFallbacks.furigana || '',
+        romaji: compatibleFallbacks.romaji || '',
+        translation: compatibleFallbacks.translation || '',
+        scenario: compatibleFallbacks.scenario || ''
+    };
+}
+
+function renderizarTextoPrincipalCurso(content) {
+    const data = content && typeof content === 'object' ? content : {};
+    const languageCode = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+    const displayText = escaparTextoCurso(data.displayText || '');
+    const furigana = escaparTextoCurso(data.furigana || '');
+    const romaji = escaparTextoCurso(data.romaji || '');
+
+    if (languageCode === 'ja-JP' && typeof formatarTextoJapones === 'function') {
+        const formatted = formatarTextoJapones({ kanji: displayText, kana: furigana, romaji });
+        return {
+            mainHtml: formatted.htmlJapones || displayText,
+            romajiHtml: formatted.htmlRomaji || ''
+        };
+    }
+
+    return { mainHtml: displayText, romajiHtml: romaji };
+}
+
+function renderizarTextoSeguroCurso(value) {
+    const safeText = escaparTextoCurso(value);
+    return typeof fNome === 'function' ? fNome(safeText) : safeText;
+}
+
+function criarBotaoAudioCurso(audioText, label, extraStyle = '') {
+    if (!audioText) return '';
+    const safeAudio = escaparTextoCurso(audioText);
+    const safeLabel = escaparTextoCurso(label || 'Ouvir pronúncia');
+    return `<button type="button" class="audio-btn course-text-audio" data-course-audio-text="${safeAudio}" style="${extraStyle}">🔊 ${safeLabel}</button>`;
+}
+
+function ativarBotoesAudioCurso(container) {
+    if (!container || typeof container.querySelectorAll !== 'function') return;
+    container.querySelectorAll('[data-course-audio-text]').forEach(button => {
+        button.addEventListener('click', () => {
+            const audioText = button.getAttribute('data-course-audio-text') || '';
+            if (audioText && typeof speakKana === 'function') speakKana(audioText);
+        });
+    });
+}
+
 function renderizarEtapa() {
     const container = document.getElementById('conteudo-etapa');
     const indicadorEtapa = document.getElementById('etapa-titulo') || document.getElementById('indicador-etapa');
@@ -472,13 +538,22 @@ function renderizarEtapa() {
                     </div>
                 `;
             } else {
-                const processado = typeof formatarTextoJapones === 'function' ? formatarTextoJapones(drop) : { htmlJapones: drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || '', htmlRomaji: drop.romaji || drop.ipa || '' };
-                const mainContent = drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || processado.htmlJapones || '';
-                const subContent = drop.romaji || drop.ipa || processado.htmlRomaji || '';
-                const translation = drop.translation || drop.portuguese || drop.Portuguese || '';
+                const legacyMain = drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || '';
+                const content = obterConteudoTextualCurso(drop, {
+                    displayText: legacyMain,
+                    audioText: legacyMain || drop.romaji || '',
+                    furigana: drop.furigana || drop.kana || drop.reading || '',
+                    romaji: drop.romaji || drop.ipa || '',
+                    translation: drop.translation || drop.portuguese || drop.Portuguese || '',
+                    scenario: drop.scenario || ''
+                });
+                const processado = renderizarTextoPrincipalCurso(content);
+                const mainContent = processado.mainHtml;
+                const subContent = processado.romajiHtml;
+                const translation = renderizarTextoSeguroCurso(content.translation || '');
                 const rawTip = drop.dica || drop.example || drop.tip || drop.hint || drop.timeContext || (drop.exampleTranslation ? `Ex: ${drop.example} (${drop.exampleTranslation})` : '');
-                const timeCtx = rawTip ? `<div style="margin: 14px auto 0 auto; font-size:0.95rem; color:var(--text-muted); background:var(--bg-color); padding:10px 16px; border-radius:8px; display:block; border:1px solid var(--border-color); max-width:600px; width:fit-content; text-align:center;">💡 Dica: ${typeof fNome === 'function' ? fNome(rawTip) : rawTip}</div>` : '';
-                const speakWord = (drop.kanji || drop.word || drop.english || drop.spanish || drop.Spanish || drop.texto || drop.romaji || '').replace(/'/g, "\\'");
+                const timeCtx = rawTip ? `<div style="margin: 14px auto 0 auto; font-size:0.95rem; color:var(--text-muted); background:var(--bg-color); padding:10px 16px; border-radius:8px; display:block; border:1px solid var(--border-color); max-width:600px; width:fit-content; text-align:center;">💡 Dica: ${renderizarTextoSeguroCurso(rawTip)}</div>` : '';
+                const audioButton = criarBotaoAudioCurso(content.audioText, 'Ouvir Pronúncia', 'padding:10px 20px;');
 
                 container.innerHTML = `
                     <div class="flashcard-drop" style="background:var(--card-bg); border:2px solid var(--border-color); border-radius:16px; padding:24px; text-align:center; box-shadow:var(--shadow);">
@@ -487,10 +562,11 @@ function renderizarEtapa() {
                         <div style="font-size:1.1rem; color:var(--text-main); margin-top:8px;">${translation}</div>
                         ${timeCtx}
                         <div style="margin-top:16px; display:flex; justify-content:center;">
-                            <button class="audio-btn" onclick="speakKana('${speakWord}')" style="padding:10px 20px;">🔊 Ouvir Pronúncia</button>
+                            ${audioButton}
                         </div>
                     </div>
                 `;
+                ativarBotoesAudioCurso(container);
             }
         }
     } else if (curEtapa === 2) {
@@ -516,9 +592,23 @@ function renderizarEtapa() {
         const dialogos = module.dialog;
         let htmlDiag = dialogos.map((d, idx) => {
             const speaker = d.speaker || d.npcName || 'Pessoa';
-            const speechText = d.text || d.npcMessage || '';
-            const subTranslation = d.translation || d.scenario || '';
-            const speakWord = speechText.replace(/'/g, "\\'");
+            const legacySpeech = d.text || d.npcMessage || '';
+            const content = obterConteudoTextualCurso(d, {
+                displayText: legacySpeech,
+                audioText: legacySpeech,
+                furigana: d.furigana || d.kana || d.reading || '',
+                romaji: d.romaji || '',
+                translation: d.translation || '',
+                scenario: d.scenario || ''
+            });
+            const processado = renderizarTextoPrincipalCurso(content);
+            const mainDialogueHtml = typeof fNome === 'function' ? fNome(processado.mainHtml) : processado.mainHtml;
+            const subTranslation = renderizarTextoSeguroCurso(content.translation || '');
+            const scenario = renderizarTextoSeguroCurso(content.scenario || '');
+            const scenarioHtml = scenario ? `<div class="course-dialogue-scenario" style="font-size:0.9rem; color:var(--text-muted); font-style:italic; margin-top:4px;">${scenario}</div>` : '';
+            const romajiHtml = processado.romajiHtml ? `<div class="course-dialogue-romaji" style="font-size:0.9rem; color:var(--current-primary);">${processado.romajiHtml}</div>` : '';
+            const translationHtml = subTranslation ? `<div class="course-dialogue-translation" style="font-size:0.9rem; color:var(--text-muted);">${subTranslation}</div>` : '';
+            const audioButton = criarBotaoAudioCurso(content.audioText, 'Ouvir linha', 'margin-top:8px; font-size:0.85rem; padding:6px 12px;');
 
             let optsHTML = '';
             if (Array.isArray(d.options) && d.options.length > 0) {
@@ -534,15 +624,18 @@ function renderizarEtapa() {
 
             return `
                 <div class="dialogo-line" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:12px; padding:16px; margin-bottom:14px; box-shadow:var(--shadow);">
-                    <div style="font-weight:bold; color:var(--current-primary); font-size:1.05rem;">🗣️ ${speaker}:</div>
-                    <div style="font-size:1.15rem; margin:6px 0; font-weight:600;">${typeof fNome === 'function' ? fNome(speechText) : speechText}</div>
-                    <div style="font-size:0.9rem; color:var(--text-muted);">${subTranslation}</div>
-                    <button class="audio-btn" onclick="speakKana('${speakWord}')" style="margin-top:8px; font-size:0.85rem; padding:6px 12px;">🔊 Ouvir Line</button>
+                    <div style="font-weight:bold; color:var(--current-primary); font-size:1.05rem;">🗣️ ${renderizarTextoSeguroCurso(speaker)}:</div>
+                    <div class="course-dialogue-main" style="font-size:1.15rem; margin:6px 0; font-weight:600;">${mainDialogueHtml}</div>
+                    ${romajiHtml}
+                    ${translationHtml}
+                    ${scenarioHtml}
+                    ${audioButton}
                     ${optsHTML}
                 </div>
             `;
         }).join('');
         container.innerHTML = `<h3>💬 Diálogo da Aula</h3>${htmlDiag}`;
+        ativarBotoesAudioCurso(container);
     } else if (curEtapa === 4) {
         if (indicadorEtapa) indicadorEtapa.innerText = `Etapa 4 de 5: Construtor de Frases`;
         const sentenceExs = Array.isArray(module.sentenceBuilder) ? module.sentenceBuilder : [];
