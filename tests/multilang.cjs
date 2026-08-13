@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v37/);
+    assert.match(serviceWorker, /idiomas-academy-v38/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -872,6 +872,15 @@ test('referencia gramatical japonesa usa indice leve e taxonomias independentes'
     assert.match(html, /data_gramatica_index\.js/); assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|data_kanji_n[1-5]\.js/);
     assert.match(html, /id="grammar-cefr"/); assert.match(html, /id="grammar-jlpt"/);
     assert.doesNotMatch(read('tests/japanese-grammar-index.cjs'), /cefrEquivalent|jlptEquivalent|jlptToCefr/i);
+});
+
+test('oficina de escrita japonesa usa modelos leves sem persistir texto livre', () => {
+    const file = 'html/ja-JP/escrita.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 525 * 1024, `${Math.round(bytes / 1024)} KB na oficina de escrita japonesa`);
+    assert.match(html, /data_escrita_index\.js/); assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js/);
+    const source = read('js/japanese/writing.js'); assert.match(source, /normalizeWritingComparison/); assert.doesNotMatch(source, /localStorage|sessionStorage|fetch\(|firebase/i);
 });
 
 const failed = results.filter(result => !result.ok);
