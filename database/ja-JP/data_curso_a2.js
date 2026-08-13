@@ -8868,4 +8868,210 @@ const CURSO_A2_DADOS = [
     }
 ];
 
+// Contrato textual editorial da Fase 3B. Conteúdo pendente de revisão humana qualificada.
+const A2_EDITORIAL_AUDIO = [
+    ["朝、起きます！", "Asa, okimasu!", "Acordo de manhã!", "Descrever horários e ações da rotina diária."],
+    ["いつも映画を見ます！", "Itsumo eiga o mimasu!", "Sempre assisto a filmes!", "Dizer com que frequência realiza uma atividade."],
+    ["週末、何をしますか。", "Shuumatsu, nani o shimasu ka.", "O que você faz no fim de semana?", "Falar sobre atividades de lazer e hobbies."],
+    ["このラーメンはおいしいです！", "Kono raamen wa oishii desu!", "Este ramen é saboroso!", "Descrever pessoas e coisas com adjetivos い."],
+    ["静かな町です！", "Shizuka na machi desu!", "É uma cidade tranquila!", "Descrever pessoas e lugares com adjetivos な."],
+    ["昨日、寿司を食べました！", "Kinou, sushi o tabemashita!", "Ontem, comi sushi!", "Relatar uma ação concluída no passado."],
+    ["昨日は暑かったです！", "Kinou wa atsukatta desu!", "Ontem estava quente!", "Descrever no passado usando adjetivos."],
+    ["どこに行きましたか。", "Doko ni ikimashita ka.", "Aonde você foi?", "Perguntar e responder aonde alguém foi."],
+    ["日本語が好きです！", "Nihongo ga suki desu!", "Gosto de japonês!", "Expressar gostos e habilidades pessoais."],
+    ["AはBより高いです！", "A wa B yori takai desu!", "A é mais caro que B!", "Comparar duas opções com より e どちら."],
+    ["て形の勉強をしましょう！", "Te-kei no benkyou o shimashou!", "Vamos estudar a forma て!", "Formar e usar a forma て em ações conectadas."],
+    ["ここに書いてください！", "Koko ni kaite kudasai!", "Escreva aqui, por favor!", "Fazer um pedido educado com てください."],
+    ["今、日本語を勉強しています！", "Ima, nihongo o benkyou shite imasu!", "Estou estudando japonês agora!", "Dizer o que alguém está fazendo agora."],
+    ["写真を撮ってもいいですか。", "Shashin o totte mo ii desu ka.", "Posso tirar uma foto?", "Pedir e conceder permissão com てもいいです."],
+    ["ここで写真を撮ってはいけません！", "Koko de shashin o totte wa ikemasen!", "Não é permitido tirar fotos aqui!", "Compreender e expressar uma proibição."],
+    ["家に帰って、ご飯を食べて、寝ます！", "Uchi ni kaette, gohan o tabete, nemasu!", "Volto para casa, janto e durmo!", "Conectar ações em sequência com a forma て."],
+    ["京都駅で乗り換えです！", "Kyouto-eki de norikae desu!", "A baldeação é na Estação de Kyoto!", "Comprar uma passagem e compreender uma baldeação."],
+    ["チェックインをお願いします！", "Chekkuin o onegai shimasu!", "Gostaria de fazer o check-in!", "Realizar interações básicas de entrada em uma hospedagem."],
+    ["右に曲がってください！", "Migi ni magatte kudasai!", "Vire à direita, por favor!", "Pedir e fornecer direções com etapas simples."],
+    ["日本に行きたいです！", "Nihon ni ikitai desu!", "Quero ir ao Japão!", "Expressar algo que deseja fazer."],
+    ["今日は雨が降っています！", "Kyou wa ame ga futte imasu!", "Hoje está chovendo!", "Descrever o clima e uma estação do ano."],
+    ["頭が痛いです！", "Atama ga itai desu!", "Minha cabeça dói!", "Descrever um sintoma e compreender uma orientação básica."],
+    ["薬を飲まなければなりません！", "Kusuri o nomanakereba narimasen!", "Preciso tomar o remédio!", "Expressar uma necessidade ou obrigação."],
+    ["もっと休んだほうがいいですよ！", "Motto yasunda hou ga ii desu yo!", "É melhor descansar mais!", "Dar um conselho leve com ほうがいい."],
+    ["雨が降っていますから、行きません！", "Ame ga futte imasu kara, ikimasen!", "Como está chovendo, não vou!", "Explicar uma decisão com から."],
+    ["一緒にコーヒーを飲みましょう！", "Issho ni koohii o nomimashou!", "Vamos tomar café juntos!", "Fazer um convite simples e cordial."],
+    ["すみません、ちょっと……", "Sumimasen, chotto...", "Desculpe, é um pouco difícil...", "Aceitar ou recusar um convite com delicadeza."],
+    ["あげる、もらう、くれる！", "Ageru, morau, kureru!", "Dar, receber e alguém dar para mim!", "Distinguir あげる, もらう e くれる."],
+    ["来年、日本に行くつもりです！", "Rainen, Nihon ni iku tsumori desu!", "Pretendo ir ao Japão no ano que vem!", "Expressar um plano ou intenção futura."],
+    ["A2コース修了です！", "A2 koosu shuuryou desu!", "O curso A2 foi concluído!", "Usar os recursos do A2 em uma simulação guiada."]
+];
+
+function criarConteudoEditorialA2(displayText, romaji, translation, audioText = displayText, scenario = "") {
+    return { displayText, audioText, furigana: "", romaji, translation, scenario };
+}
+
+CURSO_A2_DADOS.forEach((module, index) => {
+    const [displayText, romaji, translation, canDo] = A2_EDITORIAL_AUDIO[index];
+    module.stage1_context.audio = criarConteudoEditorialA2(displayText, romaji, translation);
+    module.canDo = canDo;
+    module.editorialReview = { status: "pending-human-review", phase: "3B" };
+});
+
+const A2_DIALOGUE_CONTRACT = {
+    a2_mod_01: [
+        ["[Seu Nome]さん、朝、何時に起きますか。", "[Seu Nome]-san, asa, nan-ji ni okimasu ka.", "A que horas você acorda de manhã?", "朝、何時に起きますか。"],
+        ["今晩、何時に寝ますか。", "Konban, nan-ji ni nemasu ka.", "A que horas vai dormir esta noite?"],
+        ["寝る前に歯を磨きますか。", "Neru mae ni ha o migakimasu ka.", "Você escova os dentes antes de dormir?"]
+    ],
+    a2_mod_02: [
+        ["[Seu Nome]さん、朝、いつもコーヒーを飲みますか。", "[Seu Nome]-san, asa, itsumo koohii o nomimasu ka.", "Você sempre bebe café de manhã?", "朝、いつもコーヒーを飲みますか。"],
+        ["時々スポーツをしますか。", "Tokidoki supootsu o shimasu ka.", "Você pratica esportes às vezes?"],
+        ["お酒を飲みますか。", "Osake o nomimasu ka.", "Você bebe bebida alcoólica?"]
+    ],
+    a2_mod_03: [
+        ["[Seu Nome]さん、週末、何をしますか。", "[Seu Nome]-san, shuumatsu, nani o shimasu ka.", "O que você faz no fim de semana?", "週末、何をしますか。"],
+        ["本を読みますか。", "Hon o yomimasu ka.", "Você lê livros?"],
+        ["[Seu Nome]さんの趣味は何ですか。", "[Seu Nome]-san no shumi wa nan desu ka.", "Qual é o seu hobby?", "趣味は何ですか。"]
+    ],
+    a2_mod_04: [
+        ["ラーメンはいかがですか。", "Raamen wa ikaga desu ka.", "O que achou do ramen?"],
+        ["新しいスマホですか。", "Atarashii sumaho desu ka.", "É um celular novo?"],
+        ["ホテルの部屋は大きいですか。", "Hoteru no heya wa ookii desu ka.", "O quarto do hotel é grande?"]
+    ],
+    a2_mod_05: [
+        ["[Seu Nome]さん、そこは静かな町ですか。", "[Seu Nome]-san, soko wa shizuka na machi desu ka.", "Aí é uma cidade tranquila?", "そこは静かな町ですか。"],
+        ["日本人は親切ですか。", "Nihonjin wa shinsetsu desu ka.", "Os japoneses são gentis?"],
+        ["浅草は有名ですか。", "Asakusa wa yuumei desu ka.", "Asakusa é famosa?"]
+    ],
+    a2_mod_06: [
+        ["[Seu Nome]さん、昨日、何をしましたか。", "[Seu Nome]-san, kinou, nani o shimashita ka.", "O que você fez ontem?", "昨日、何をしましたか。"],
+        ["昨日、ラーメンを食べましたか。", "Kinou, raamen o tabemashita ka.", "Ontem você comeu ramen?"],
+        ["昨日、日本語を勉強しましたか。", "Kinou, nihongo o benkyou shimashita ka.", "Estudou japonês ontem?"]
+    ],
+    a2_mod_07: [
+        ["京都の旅行はどうでしたか。", "Kyouto no ryokou wa dou deshita ka.", "Como foi a viagem a Kyoto?"],
+        ["昨日は寒かったですか。", "Kinou wa samukatta desu ka.", "Ontem estava frio?"],
+        ["テストは難しかったですか。", "Tesuto wa muzukashikatta desu ka.", "A prova foi difícil?"]
+    ],
+    a2_mod_08: [
+        ["[Seu Nome]さん、休みにどこへ行きましたか。", "[Seu Nome]-san, yasumi ni doko e ikimashita ka.", "Para onde você foi no feriado?", "休みにどこへ行きましたか。"],
+        ["誰と行きましたか。", "Dare to ikimashita ka.", "Com quem você foi?"],
+        ["一人で行きましたか。", "Hitori de ikimashita ka.", "Você foi sozinho?"]
+    ],
+    a2_mod_09: [
+        ["[Seu Nome]さん、日本の食べ物が好きですか。", "[Seu Nome]-san, Nihon no tabemono ga suki desu ka.", "Você gosta de comida japonesa?", "日本の食べ物が好きですか。"],
+        ["[Seu Nome]さんは日本語が上手ですね！", "[Seu Nome]-san wa nihongo ga jouzu desu ne!", "Você é muito bom em japonês!", "日本語が上手ですね！"],
+        ["スポーツが好きですか。", "Supootsu ga suki desu ka.", "Gosta de esportes?"]
+    ],
+    a2_mod_10: [
+        ["新幹線とバス、どちらがいいですか。", "Shinkansen to basu, dochira ga ii desu ka.", "Trem-bala ou ônibus, qual é melhor?"],
+        ["東京と北海道、どちらが寒いですか。", "Toukyou to Hokkaidou, dochira ga samui desu ka.", "Tokyo ou Hokkaido, qual é mais frio?"],
+        ["夏と冬、どちらが好きですか。", "Natsu to fuyu, dochira ga suki desu ka.", "Verão ou inverno, de qual gosta mais?"]
+    ],
+    a2_mod_11: [
+        ["皆さん、本を見てください。", "Minna-san, hon o mite kudasai.", "Todos, por favor, olhem o livro."],
+        ["ちょっと待ってください！", "Chotto matte kudasai!", "Por favor, espere um pouco!"],
+        ["どうぞ、入ってください！", "Douzo, haitte kudasai!", "Por favor, entre!"]
+    ],
+    a2_mod_12: [
+        ["急行電車は三番線から出発します！", "Kyuukou densha wa san-ban sen kara shuppatsu shimasu!", "O trem expresso parte da plataforma 3!"],
+        ["ここにお名前と住所を書いてください。", "Koko ni onamae to juusho o kaite kudasai.", "Por favor, escreva seu nome e endereço aqui."],
+        ["いらっしゃいませ！何をお探しですか。", "Irasshaimase! Nani o osagashi desu ka.", "Bem-vindo! O que procura?"]
+    ],
+    a2_mod_13: [
+        ["もしもし！[Seu Nome]さん、今、何をしていますか。", "Moshimoshi! [Seu Nome]-san, ima, nani o shite imasu ka.", "Alô! O que você está fazendo agora?", "もしもし！今、何をしていますか。"],
+        ["今、どこに住んでいますか。", "Ima, doko ni sunde imasu ka.", "Onde você está morando agora?"],
+        ["何を飲んでいますか。", "Nani o nonde imasu ka.", "O que está bebendo?"]
+    ],
+    a2_mod_14: [
+        ["いらっしゃいませ。", "Irasshaimase.", "Bem-vindo."],
+        ["はい、いいですよ！どうぞ。", "Hai, ii desu yo! Douzo.", "Sim, pode! Fique à vontade."],
+        ["こんにちは。", "Konnichiwa.", "Olá."]
+    ],
+    a2_mod_15: [
+        ["すみません、ここで写真を撮ってはいけません。", "Sumimasen, koko de shashin o totte wa ikemasen.", "Com licença, não pode tirar fotos aqui."],
+        ["ここは禁煙です。タバコを吸ってはいけません。", "Koko wa kin'en desu. Tabako o sutte wa ikemasen.", "Aqui é proibido fumar. Não pode fumar."],
+        ["ここに入ってはいけません。", "Koko ni haitte wa ikemasen.", "Não pode entrar aqui."]
+    ],
+    a2_mod_16: [
+        ["[Seu Nome]さん、昨日は家に帰ってから何をしましたか。", "[Seu Nome]-san, kinou wa uchi ni kaette kara nani o shimashita ka.", "Ontem, depois de voltar para casa, o que fez?", "昨日は家に帰ってから何をしましたか。"],
+        ["土曜日は何をしますか。", "Doyoubi wa nani o shimasu ka.", "O que faz no sábado?"],
+        ["今朝、何をしましたか。", "Kesa, nani o shimashita ka.", "O que fez hoje de manhã?"]
+    ],
+    a2_mod_17: [
+        ["いらっしゃいませ！どこまでですか。", "Irasshaimase! Doko made desu ka.", "Bem-vindo! Até onde vai?"],
+        ["はい、一万三千円です。", "Hai, ichi-man san-zen en desu.", "Sim, são 13.000 ienes."],
+        ["名古屋駅で乗り換えです。", "Nagoya-eki de norikae desu.", "A baldeação é na Estação de Nagoya."]
+    ],
+    a2_mod_18: [
+        ["いらっしゃいませ！こんにちは。", "Irasshaimase! Konnichiwa.", "Bem-vindo! Boa tarde."],
+        ["[Seu Nome]様、お部屋は四〇二号室です。これは鍵です。", "[Seu Nome]-sama, oheya wa yon-maru-ni gou-shitsu desu. Kore wa kagi desu.", "Sr. [Seu Nome], seu quarto é o 402. Aqui está a chave.", "お客様、お部屋は四〇二号室です。これは鍵です。"]
+    ],
+    a2_mod_19: [
+        ["すみません！コンビニはどこですか。コンビニですか。あの信号を右に曲がってください。", "Sumimasen! Konbini wa doko desu ka. Konbini desu ka. Ano shingou o migi ni magatte kudasai.", "Com licença! Onde fica a loja de conveniência? Vire à direita naquele semáforo."],
+        ["駅はどこですか。", "Eki wa doko desu ka.", "Onde fica a estação?"],
+        ["次の交差点をどちらに曲がりますか。", "Tsugi no kousaten o dochira ni magarimasu ka.", "No próximo cruzamento, vira para qual lado?"]
+    ],
+    a2_mod_20: [
+        ["[Seu Nome]さん、日本で何をしたいですか。", "[Seu Nome]-san, Nihon de nani o shitai desu ka.", "O que você quer fazer no Japão?", "日本で何をしたいですか。"],
+        ["今日の昼ご飯は何が食べたいですか。", "Kyou no hirugohan wa nani ga tabetai desu ka.", "O que quer comer no almoço hoje?"],
+        ["秋葉原で何を買いたいですか。", "Akihabara de nani o kaitai desu ka.", "O que quer comprar em Akihabara?"]
+    ],
+    a2_mod_21: [
+        ["今日の天気はどうですか。", "Kyou no tenki wa dou desu ka.", "Como está o tempo hoje?"],
+        null,
+        ["北海道の冬は寒いですか。", "Hokkaidou no fuyu wa samui desu ka.", "O inverno em Hokkaido é frio?"]
+    ],
+    a2_mod_22: [
+        ["どうしましたか。", "Dou shimashita ka.", "O que aconteceu? O que está sentindo?"],
+        ["熱がありますか。", "Netsu ga arimasu ka.", "Você está com febre?"],
+        ["この薬を一日三回飲んでください。", "Kono kusuri o ichi-nichi san-kai nonde kudasai.", "Tome este remédio três vezes ao dia."]
+    ],
+    a2_mod_23: [
+        ["[Seu Nome]さん、もう帰りますか。", "[Seu Nome]-san, mou kaerimasu ka.", "Você já vai para casa?", "もう帰りますか。"],
+        ["明日、映画に行きますか。", "Ashita, eiga ni ikimasu ka.", "Vamos ao cinema amanhã?"],
+        ["大丈夫ですか。顔色が悪いですよ。", "Daijoubu desu ka. Kaoiro ga warui desu yo.", "Tudo bem? Sua aparência não está boa."]
+    ],
+    a2_mod_24: [
+        ["今日はとても疲れました……", "Kyou wa totemo tsukaremashita...", "Hoje estou muito cansado..."],
+        ["熱が三十八度あります……", "Netsu ga sanjuu-hachi do arimasu...", "Estou com 38 graus de febre..."],
+        ["ありがとうございます。そうします。", "Arigatou gozaimasu. Sou shimasu.", "Obrigado. Farei isso."]
+    ],
+    a2_mod_25: [
+        ["[Seu Nome]さん、昨日はなぜ休みましたか。", "[Seu Nome]-san, kinou wa naze yasumimashita ka.", "Por que você faltou ontem?", "昨日はなぜ休みましたか。"],
+        ["ケーキを食べませんか。", "Keeki o tabemasen ka.", "Não vai comer o bolo?"],
+        ["なぜタクシーに乗りますか。", "Naze takushii ni norimasu ka.", "Por que vai pegar táxi?"]
+    ],
+    a2_mod_26: [
+        ["[Seu Nome]さん、一緒にコーヒーを飲みませんか。", "[Seu Nome]-san, issho ni koohii o nomimasen ka.", "Não quer tomar um café comigo?", "一緒にコーヒーを飲みませんか。"],
+        ["週末、映画を見ませんか。", "Shuumatsu, eiga o mimasen ka.", "Que tal vermos um filme no fim de semana?"],
+        ["一緒に駅まで歩きましょう！", "Issho ni eki made arukimashou!", "Vamos caminhar até a estação juntos!"]
+    ],
+    a2_mod_27: [
+        ["[Seu Nome]さん、今晩、一緒にご飯を食べませんか。", "[Seu Nome]-san, konban, issho ni gohan o tabemasen ka.", "Não quer jantar comigo hoje à noite?", "今晩、一緒にご飯を食べませんか。"],
+        ["そうですか。じゃあ、次はぜひ！", "Sou desu ka. Jaa, tsugi wa zehi!", "Entendi. Então, na próxima, com certeza!"],
+        ["週末、温泉に行きませんか。", "Shuumatsu, onsen ni ikimasen ka.", "Que tal irmos a uma fonte termal no fim de semana?"]
+    ],
+    a2_mod_28: [
+        ["これは何ですか。", "Kore wa nan desu ka.", "O que é isto?"],
+        ["わあ！ありがとうございます！うれしいです！", "Waa! Arigatou gozaimasu! Ureshii desu!", "Uau! Muito obrigado! Estou muito feliz!"],
+        ["このキーホルダーはどうしましたか。", "Kono kiihorudaa wa dou shimashita ka.", "Como conseguiu este chaveiro?"]
+    ],
+    a2_mod_29: [
+        ["[Seu Nome]さん、来月、何をするつもりですか。", "[Seu Nome]-san, raigetsu, nani o suru tsumori desu ka.", "O que pretende fazer mês que vem?", "来月、何をするつもりですか。"],
+        ["来年の休みはどこに行くつもりですか。", "Rainen no yasumi wa doko ni iku tsumori desu ka.", "Nas férias do ano que vem, onde pretende ir?"],
+        ["新しい車を買うつもりですか。", "Atarashii kuruma o kau tsumori desu ka.", "Pretende comprar um carro novo?"]
+    ],
+    a2_mod_30: [
+        ["[Seu Nome]さん、こんにちは！京都で何をしたいですか。", "[Seu Nome]-san, konnichiwa! Kyouto de nani o shitai desu ka.", "Boa tarde! O que quer fazer em Kyoto?", "こんにちは！京都で何をしたいですか。"],
+        ["バスと地下鉄、どちらがいいですか。", "Basu to chikatetsu, dochira ga ii desu ka.", "Ônibus ou metrô, qual é melhor?"],
+        ["素晴らしいです！[Seu Nome]さん、A2コース修了です！おめでとうございます！", "Subarashii desu! [Seu Nome]-san, A2 koosu shuuryou desu! Omedetou gozaimasu!", "Incrível! [Seu Nome], o curso A2 foi concluído! Parabéns!", "素晴らしいです！A2コース修了です！おめでとうございます！"]
+    ]
+};
+
+CURSO_A2_DADOS.forEach(module => {
+    const dialogueContracts = A2_DIALOGUE_CONTRACT[module.id] || [];
+    dialogueContracts.forEach((contract, index) => {
+        if (!contract || !module.stage4_dialog[index]) return;
+        const [displayText, romaji, translation, audioText = displayText, scenario = ""] = contract;
+        module.stage4_dialog[index].content = criarConteudoEditorialA2(displayText, romaji, translation, audioText, scenario);
+    });
+});
+
 if (typeof window !== "undefined") { window.CURSO_A2_DADOS = CURSO_A2_DADOS; }

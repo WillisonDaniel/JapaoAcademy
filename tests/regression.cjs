@@ -1187,6 +1187,33 @@ test('contrato textual japones da Fase 3A permanece separado e retrocompativel',
     assert.match(contractTest, /inventario japones permanece com 105 modulos/);
 });
 
+test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
+    const a1 = read('database/ja-JP/data_curso_a1.js');
+    const a2 = read('database/ja-JP/data_curso_a2.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const humanReview = read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md');
+    const multilang = read('tests/multilang.cjs');
+
+    assert.match(a1, /const A1_EDITORIAL_CONTRACT = \[/);
+    assert.match(a2, /const A2_EDITORIAL_AUDIO = \[/);
+    assert.match(a2, /const A2_DIALOGUE_CONTRACT = \{/);
+    assert.match(a1, /pending-human-review/);
+    assert.match(a2, /pending-human-review/);
+    assert.match(a2, /A2コース修了です/);
+    assert.doesNotMatch(a2, /audioText:\s*"?\[Seu Nome\]/);
+    assert.match(audit, /function isScenarioOnlyContent\(content\)/);
+    assert.match(audit, /audio-placeholder-invalid/);
+    assert.match(audit, /editorial-review-status-invalid/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => ['A1', 'A2'].includes(item.level)).length, 0);
+    assert.match(humanReview, /stage1_context\.audio/);
+    assert.match(humanReview, /stage4_dialog\[0\]\.content/);
+    assert.match(humanReview, /Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente/);
+    assert.match(multilang, /Baseline recalibrado para os 151 contratos textuais A1\/A2 da Fase 3B/);
+    assert.match(multilang, /maxBytes: 1620 \* 1024/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

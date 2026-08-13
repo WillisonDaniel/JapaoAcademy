@@ -608,7 +608,8 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/ja-JP/curso.html',
             locale: 'ja-JP',
             scripts: 27,
-            maxBytes: 1580 * 1024,
+            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
+            maxBytes: 1620 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {

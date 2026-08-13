@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
 const { normalizeModule, normalizeTextContent } = require('../js/course/moduleNormalizer.js');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -165,4 +166,57 @@ run('inventario japones permanece com 105 modulos', () => {
     assert.equal(Object.values(metrics.course).reduce((sum, item) => sum + item.modules, 0), 105);
 });
 
-console.log('\n8/8 contratos textuais do player aprovados.');
+function loadDataset(relativePath, variable) {
+    const context = vm.createContext({ console });
+    vm.runInContext(`${read(relativePath)}\nglobalThis.__value = ${variable};`, context, { filename: relativePath });
+    return JSON.parse(JSON.stringify(context.__value));
+}
+
+function stripEditorialFields(value) {
+    if (Array.isArray(value)) return value.map(stripEditorialFields);
+    if (!value || typeof value !== 'object') return value;
+    const result = {};
+    for (const [key, item] of Object.entries(value)) {
+        if (['audio', 'content', 'canDo', 'editorialReview'].includes(key)) continue;
+        result[key] = stripEditorialFields(item);
+    }
+    return result;
+}
+
+run('migracao A1 e A2 preserva o snapshot estrutural anterior', () => {
+    const fixtures = [
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '52fd4f27dc2b2b8c404773a60f6ef4c9d7fbd4f49454c108a30346f05ad1afbc'],
+        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '7a6f6983da1c2e1771ffdcbbbe98e6e3bd89e57c9a9b90ab754d8adcc517b1bf']
+    ];
+    fixtures.forEach(([file, variable, expected]) => {
+        const structural = JSON.stringify(stripEditorialFields(loadDataset(file, variable)));
+        assert.equal(crypto.createHash('sha256').update(structural).digest('hex'), expected, `${variable}: estrutura legada mudou`);
+    });
+});
+
+run('A1 e A2 possuem os 151 contratos editoriais previstos', () => {
+    const a1 = loadDataset('database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS');
+    const a2 = loadDataset('database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS');
+    const modules = [...a1, ...a2];
+    const audioContracts = modules.filter(module => module.stage1_context && module.stage1_context.audio).length;
+    const dialogueContracts = modules.flatMap(module => module.stage4_dialog || []).filter(dialogue => dialogue.content).length;
+    assert.equal(audioContracts, 61);
+    assert.equal(dialogueContracts, 90);
+    assert.equal(audioContracts + dialogueContracts, 151);
+    assert.equal(modules.filter(module => module.canDo).length, 61);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 61);
+    modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
+        if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
+    });
+});
+
+run('auditoria reduz a zero as ocorrencias alvo de A1 e A2', () => {
+    const report = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const target = report.occurrences.filter(item => ['A1', 'A2'].includes(item.level) && ['audio-guide-no-japanese', 'dialogue-no-japanese'].includes(item.rule));
+    assert.equal(target.length, 0);
+    assert.equal(report.summary.bySeverity.blocking, 0);
+    assert.match(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /pending-human-review/);
+    assert.doesNotMatch(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| approved \|/i);
+});
+
+console.log('\n11/11 contratos textuais do player aprovados.');
