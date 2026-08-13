@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#1e1b4b">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
-    <link rel="stylesheet" href="../../japanese-experience.css?v=42">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=43">
 </head>
 <body data-mode="listening" data-lang="japanese" class="japanese-experience jp-study-page jp-listening-page">
     <header>
@@ -32,12 +32,12 @@
         <section class="listening-card" aria-label="Exercício de escuta atual">
             <div class="listening-meta"><span id="listening-origin"></span><span id="listening-position"></span></div>
             <div class="listening-prompt"><p id="listening-instruction">Ouça antes de revelar o texto.</p><div id="listening-content" class="listening-hidden"><h2 id="listening-item-title" lang="ja"></h2><p id="listening-romaji"></p><p id="listening-translation"></p></div></div>
-            <div class="listening-actions"><button type="button" id="listen-normal">▶ Ouvir normal</button><button type="button" id="listen-slow">🐢 Ouvir devagar</button><button type="button" id="listen-reveal" class="secondary">Revelar texto</button><button type="button" id="shadowing-start" hidden>Iniciar shadowing</button><button type="button" id="listen-microphone" class="secondary" hidden>🎤 Transcrever minha repetição</button></div>
+            <div class="listening-actions"><button type="button" id="listen-normal" class="jp-action-primary">▶ Ouvir normal</button><button type="button" id="listen-slow" class="jp-action-secondary">🐢 Ouvir devagar</button><button type="button" id="listen-reveal" class="jp-action-tertiary">Revelar texto</button><button type="button" id="shadowing-start" class="jp-action-accent" hidden>Iniciar shadowing</button><button type="button" id="listen-microphone" class="jp-action-tertiary" hidden>🎤 Transcrever minha repetição</button></div>
             <div id="listening-status" class="listening-status" role="status" aria-live="polite"></div>
             <div id="listening-transcript" class="listening-transcript" hidden></div>
-            <div id="listening-self-review" class="listening-actions" hidden><button type="button" class="secondary" data-self-review="repeat">Quero repetir</button><button type="button" class="secondary" data-self-review="followed">Consegui acompanhar</button></div>
+            <div id="listening-self-review" class="listening-actions" hidden><button type="button" class="jp-action-secondary" data-self-review="repeat">Quero repetir</button><button type="button" class="jp-action-primary" data-self-review="followed">Consegui acompanhar</button></div>
             <div id="listening-editorial" class="listening-review" hidden>⚠️ Trecho pendente de revisão editorial humana. A presença nesta prática não constitui aprovação linguística.</div>
-            <div class="listening-source-wrap"><a id="listening-source-link" class="listening-link" href="curso.html">Abrir módulo de origem</a></div>
+            <div class="listening-source-wrap"><a id="listening-source-link" class="listening-link jp-action-tertiary" href="curso.html">Abrir módulo de origem</a></div>
             <div class="listening-footer"><button type="button" id="listening-previous">← Anterior</button><button type="button" id="listening-next">Próximo →</button></div>
         </section>
     </main>

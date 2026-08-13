@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#1e1b4b">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
-    <link rel="stylesheet" href="../../japanese-experience.css?v=42">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=43">
 </head>
 <body data-mode="reading" data-lang="japanese" class="japanese-experience jp-study-page jp-reading-page">
     <header><a href="../../hub_japones.html" class="home-btn">⬅ Japonês</a><button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button><h1>📚 Biblioteca de leitura</h1><p>Textos reais das trilhas Kanji, organizados por nível de referência.</p></header>
@@ -25,7 +25,7 @@
             <div class="reading-toolbar" aria-label="Apoios de leitura"><button type="button" data-reading-toggle="furigana">Furigana</button><button type="button" data-reading-toggle="romaji">Romaji</button><button type="button" data-reading-toggle="translation">Tradução</button><button type="button" id="reading-focus">Modo foco</button></div>
             <div id="reading-japanese" class="reading-text" lang="ja"></div><div id="reading-romaji" class="reading-support" hidden></div><div id="reading-translation" class="reading-support" hidden></div>
             <div id="reading-editorial" class="reading-editorial" hidden>⚠️ Texto pendente de revisão editorial humana. A publicação nesta biblioteca não constitui aprovação linguística.</div>
-            <div class="reading-actions"><button type="button" id="reading-audio">🔊 Ouvir</button><button type="button" id="reading-audio-slow">🐢 Ouvir devagar</button><a id="reading-source" href="kanji.html">Abrir módulo de origem</a><a href="dicionario.html">Abrir dicionário</a><button type="button" id="reading-back">Voltar à biblioteca</button></div>
+            <div class="reading-actions"><button type="button" id="reading-audio" class="jp-action-primary">🔊 Ouvir</button><button type="button" id="reading-audio-slow" class="jp-action-secondary">🐢 Ouvir devagar</button><a id="reading-source" class="jp-action-tertiary" href="kanji.html">Abrir módulo de origem</a><a class="jp-action-tertiary" href="dicionario.html">Abrir dicionário</a><button type="button" id="reading-back" class="jp-action-secondary">Voltar à biblioteca</button></div>
             <section id="reading-questions" class="reading-questions" aria-label="Compreensão"><h2>Compreensão</h2><div id="reading-question-list"></div><p id="reading-feedback" role="status" aria-live="polite"></p></section>
             <div class="reading-nav"><button type="button" id="reading-previous">← Leitura anterior</button><button type="button" id="reading-next">Próxima leitura →</button></div>
         </article>

@@ -37,7 +37,7 @@ function renderReadingQuestions(item) {
         const block = document.createElement('div'); block.className = 'reading-question';
         const title = document.createElement('p'); title.textContent = `${questionIndex + 1}. ${question.question}`; block.appendChild(title);
         const options = document.createElement('div'); options.className = 'reading-options';
-        question.options.forEach((option, optionIndex) => { const button = document.createElement('button'); button.type = 'button'; button.textContent = option; button.addEventListener('click', () => { const correct = optionIndex === question.answerIndex; readingEl('reading-feedback').textContent = correct ? 'Resposta correta segundo o exercício original.' : 'Resposta diferente da indicada no exercício original.'; registerReadingActivity(item, `question-${questionIndex}`); }); options.appendChild(button); });
+        question.options.forEach((option, optionIndex) => { const button = document.createElement('button'); button.type = 'button'; button.textContent = option; button.addEventListener('click', () => { const correct = optionIndex === question.answerIndex; options.querySelectorAll('button').forEach(candidate => { candidate.removeAttribute('data-answer-state'); candidate.setAttribute('aria-pressed', 'false'); }); button.dataset.answerState = correct ? 'correct' : 'incorrect'; button.setAttribute('aria-pressed', 'true'); readingEl('reading-feedback').textContent = correct ? 'Resposta correta segundo o exercício original.' : 'Resposta diferente da indicada no exercício original.'; registerReadingActivity(item, `question-${questionIndex}`); }); options.appendChild(button); });
         block.appendChild(options); container.appendChild(block);
     });
 }
