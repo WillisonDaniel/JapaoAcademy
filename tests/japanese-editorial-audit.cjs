@@ -12,6 +12,7 @@ const HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_A1_A2_HUMAN_REVIE
 const ADVANCED_HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_B1_B2_HUMAN_REVIEW.md');
 const N3_HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_KANJI_N3_HUMAN_REVIEW.md');
 const N2_HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_KANJI_N2_HUMAN_REVIEW.md');
+const N1_HUMAN_REVIEW_OUTPUT = path.join(ROOT, 'tests', 'JAPANESE_KANJI_N1_HUMAN_REVIEW.md');
 const WRITE_MODE = process.argv.includes('--write');
 const JAPANESE = /[\u3040-\u30ff\u3400-\u9fff]/u;
 const LATIN = /[A-Za-z]/;
@@ -49,7 +50,7 @@ function loadValue(relativePath, variable) {
     context.window = context;
     context.globalThis = context;
     vm.createContext(context);
-    if (/data_kanji_n[23]\.js$/.test(relativePath)) {
+    if (/data_kanji_n[123]\.js$/.test(relativePath)) {
         vm.runInContext(read('js/kanji/romaji-draft.js'), context, { filename: 'js/kanji/romaji-draft.js' });
     }
     vm.runInContext(`${read(relativePath)}\nglobalThis.__auditValue = ${variable};`, context, { filename: relativePath });
@@ -267,7 +268,7 @@ function auditKanji(occurrences, metrics) {
             if (!module.title || !module.description) {
                 addOccurrence(occurrences, { ...metadata, field: 'title/description', rule: 'required-field-missing', severity: 'blocking', value: module });
             }
-            const contractedLevel = spec.level === 'N3' || spec.level === 'N2';
+            const contractedLevel = ['N3', 'N2', 'N1'].includes(spec.level);
             if (contractedLevel && (!module.editorialReview || module.editorialReview.status !== 'pending-human-review')) {
                 addOccurrence(occurrences, { ...metadata, field: 'editorialReview.status', rule: 'editorial-review-status-invalid', severity: 'blocking', value: module.editorialReview });
             }
@@ -292,7 +293,13 @@ function auditKanji(occurrences, metrics) {
                     } else {
                         levelMetrics.readingFields++;
                         if (hasLatinOnly(reading) && reading !== '-') {
-                            addOccurrence(occurrences, { ...metadata, field: `${base}.${readingField}`, rule: 'reading-latin-only', severity: 'editorial', value: reading });
+                            const review = kanji.readingEditorialReview && kanji.readingEditorialReview[readingField];
+                            const contractedPending = spec.level === 'N1' && review && review.status === 'pending-human-review' && review.legacyValue === reading;
+                            if (contractedPending) {
+                                addOccurrence(occurrences, { ...metadata, field: `${base}.${readingField}`, rule: 'reading-pending-human-review', severity: 'editorial', value: reading });
+                            } else {
+                                addOccurrence(occurrences, { ...metadata, field: `${base}.${readingField}`, rule: 'reading-latin-only', severity: 'editorial', value: reading });
+                            }
                         }
                     }
                 }
@@ -391,6 +398,11 @@ function renderKanjiHumanReview(level, phase, file, variable) {
             lines.push(`| ${cell(module.module)} | grammar.content | — | — | ${cell(module.grammar.content.displayText)} | ${cell(module.grammar.content.romaji)} | ${cell(module.grammar.content.translation)} | pending-human-review |`);
         }
         (module.kanjis || []).forEach((kanji, kanjiIndex) => {
+            for (const readingField of ['onyomi', 'kunyomi']) {
+                const readingReview = kanji.readingEditorialReview && kanji.readingEditorialReview[readingField];
+                if (!readingReview) continue;
+                lines.push(`| ${cell(module.module)} | kanjis[${kanjiIndex}].${readingField} | ${cell(kanji.character)} | leitura: ${cell(readingReview.classification)} | ${cell(kanji[readingField])} | ${cell(readingReview.legacyValue)} | proposta: ${cell(readingReview.proposal)} | ${cell(readingReview.status)} |`);
+            }
             (kanji.examples || []).forEach((example, exampleIndex) => {
                 const status = example.editorialReview && example.editorialReview.status;
                 lines.push(`| ${cell(module.module)} | kanjis[${kanjiIndex}].examples[${exampleIndex}].content | ${cell(kanji.character)} | ${cell(example.word)} | ${cell(example.content && example.content.displayText)} | ${cell(example.content && example.content.romaji)} | ${cell(example.content && example.content.translation)} | ${cell(status)} |`);
@@ -471,6 +483,7 @@ const humanReviewReport = renderCourseHumanReview(['A1', 'A2'], 'Revisão humana
 const advancedHumanReviewReport = renderCourseHumanReview(['B1', 'B2'], 'Revisão humana — Japonês B1 e B2', 'Fase 3C');
 const n3HumanReviewReport = renderKanjiHumanReview('N3', 4, 'database/ja-JP/data_kanji_n3.js', 'kanjiN3Data');
 const n2HumanReviewReport = renderKanjiHumanReview('N2', 5, 'database/ja-JP/data_kanji_n2.js', 'kanjiN2Data');
+const n1HumanReviewReport = renderKanjiHumanReview('N1', 6, 'database/ja-JP/data_kanji_n1.js', 'kanjiN1Data');
 const blockers = payload.summary.bySeverity.blocking;
 
 if (WRITE_MODE) {
@@ -480,6 +493,7 @@ if (WRITE_MODE) {
     fs.writeFileSync(ADVANCED_HUMAN_REVIEW_OUTPUT, advancedHumanReviewReport, 'utf8');
     fs.writeFileSync(N3_HUMAN_REVIEW_OUTPUT, n3HumanReviewReport, 'utf8');
     fs.writeFileSync(N2_HUMAN_REVIEW_OUTPUT, n2HumanReviewReport, 'utf8');
+    fs.writeFileSync(N1_HUMAN_REVIEW_OUTPUT, n1HumanReviewReport, 'utf8');
     console.log(`Relatórios japoneses atualizados: ${path.relative(ROOT, JSON_OUTPUT)} e ${path.relative(ROOT, REVIEW_OUTPUT)} (${blockers} bloqueadores, ${payload.summary.bySeverity.editorial} editoriais)`);
 } else {
     assert.ok(fs.existsSync(JSON_OUTPUT), 'relatório JSON japonês ausente; execute npm run audit:japanese');
@@ -488,12 +502,14 @@ if (WRITE_MODE) {
     assert.ok(fs.existsSync(ADVANCED_HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana B1/B2 ausente; execute npm run audit:japanese');
     assert.ok(fs.existsSync(N3_HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana Kanji N3 ausente; execute npm run audit:japanese');
     assert.ok(fs.existsSync(N2_HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana Kanji N2 ausente; execute npm run audit:japanese');
+    assert.ok(fs.existsSync(N1_HUMAN_REVIEW_OUTPUT), 'tabela de revisão humana Kanji N1 ausente; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(JSON_OUTPUT, 'utf8'), jsonReport, 'relatório JSON japonês desatualizado; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewReport, 'relatório Markdown japonês desatualizado; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(HUMAN_REVIEW_OUTPUT, 'utf8'), humanReviewReport, 'tabela de revisão humana A1/A2 desatualizada; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(ADVANCED_HUMAN_REVIEW_OUTPUT, 'utf8'), advancedHumanReviewReport, 'tabela de revisão humana B1/B2 desatualizada; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(N3_HUMAN_REVIEW_OUTPUT, 'utf8'), n3HumanReviewReport, 'tabela de revisão humana Kanji N3 desatualizada; execute npm run audit:japanese');
     assert.equal(fs.readFileSync(N2_HUMAN_REVIEW_OUTPUT, 'utf8'), n2HumanReviewReport, 'tabela de revisão humana Kanji N2 desatualizada; execute npm run audit:japanese');
+    assert.equal(fs.readFileSync(N1_HUMAN_REVIEW_OUTPUT, 'utf8'), n1HumanReviewReport, 'tabela de revisão humana Kanji N1 desatualizada; execute npm run audit:japanese');
     assert.equal(blockers, 0, `auditoria japonesa encontrou ${blockers} bloqueador(es) técnico(s)`);
     console.log(`✓ auditoria japonesa: 105 módulos principais, 16 módulos Kana e 92 módulos Kanji; ${payload.summary.bySeverity.editorial} ocorrência(s) editorial(is) inventariada(s)`);
 }

@@ -33733,3 +33733,66 @@ const kanjiN1Data = [
         ]
     }
 ];
+
+// Rascunhos editoriais da Fase 6; nenhum resultado recebe aprovação automática.
+const N1_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    study: '勉強', ancient: '古代', decision: '判断', target: '目標', method: '方法', melody: '旋律',
+    strategy: '戦略', loss: '損失', research: '研究', report: '報告書', project: '企画', system: '制度',
+    business: '事業', management: '経営', company: '会社', office: '事務所', service: 'サービス',
+    data: 'データ', test: '試験', team: 'チーム', news: 'ニュース', result: '結果', plan: '計画',
+    future: '未来', culture: '文化', society: '社会', history: '歴史', nature: '自然', world: '世界'
+};
+
+if (typeof KanjiRomajiDraft === 'undefined') {
+    throw new Error('KanjiRomajiDraft deve carregar antes do dataset Kanji N1.');
+}
+KanjiRomajiDraft.apply(kanjiN1Data, {
+    phase: 6,
+    replacements: N1_ROMAJI_EDITORIAL_REPLACEMENTS,
+    overrides: [
+        [0, 30, 1, '惶恐の書状。'],
+        [1, 9, 1, '祖先の廟。'],
+        [1, 19, 1, '落魄する。'],
+        [2, 6, 1, '訴訟の勝訴報告。'],
+        [4, 6, 0, '国の歳入を収める。'],
+        [4, 15, 1, '総理大臣。'],
+        [5, 18, 0, '会社が設備を購入する。'],
+        [5, 22, 0, '独占禁止法。'],
+        [6, 41, 1, '川に架橋する。'],
+        [7, 18, 1, '有機化合物。'],
+        [7, 31, 1, '電波の周波数振動。'],
+        [9, 6, 1, '雷霆のような疾風迅雷の行動。'],
+        [10, 10, 1, '拙文への謝罪。'],
+        [12, 10, 0, '拙文への謝罪。'],
+        [14, 41, 1, '感慨の報告。'],
+        [15, 24, 0, '百戦錬磨の熟練者。'],
+        [16, 12, 0, '以心伝心の関係。'],
+        [16, 13, 0, '以心伝心の絆。'],
+        [21, 19, 1, '廖姓の観客は少ない。'],
+        [22, 5, 0, '故に、勝った。'],
+        [23, 3, 0, '茨城県の水戸。'],
+        [23, 26, 0, '廣島ドーム。']
+    ]
+});
+
+function n1HiraganaParaKatakana(text) {
+    return String(text || '').replace(/[ぁ-ゖ]/g, character => String.fromCharCode(character.charCodeAt(0) + 0x60));
+}
+
+kanjiN1Data.forEach(module => (module.kanjis || []).forEach(kanji => {
+    for (const field of ['onyomi', 'kunyomi']) {
+        const legacyValue = kanji[field];
+        if (!legacyValue || legacyValue === '-' || !/[A-Za-z]/.test(legacyValue) || /[\u3040-\u30ff\u3400-\u9fff]/u.test(legacyValue)) continue;
+        const safeOnyomi = field === 'onyomi' && legacyValue.match(/^([A-Z]+) \(\1\)$/);
+        const proposal = safeOnyomi
+            ? `${n1HiraganaParaKatakana(KanjiRomajiDraft.word(safeOnyomi[1].toLowerCase(), {}))} (${safeOnyomi[1]})`
+            : '';
+        kanji.readingEditorialReview = kanji.readingEditorialReview || {};
+        kanji.readingEditorialReview[field] = {
+            status: 'pending-human-review', phase: '6', legacyValue,
+            classification: proposal ? 'mechanically-convertible-onyomi' : 'ambiguous-or-foreign',
+            proposal
+        };
+        if (proposal) kanji[field] = proposal;
+    }
+}));

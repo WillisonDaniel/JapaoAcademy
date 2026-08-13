@@ -684,7 +684,7 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
         n3: 974 * 1024,
         n2: 1007 * 1024,
-        n1: 1770 * 1024
+        n1: 1778 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {
@@ -698,7 +698,7 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
             return total + fs.statSync(caminho).size;
         }, 0);
 
-        const usesDraftHelper = level === 'n3' || level === 'n2';
+        const usesDraftHelper = ['n3', 'n2', 'n1'].includes(level);
         assert.equal(scriptsLocais.length, usesDraftHelper ? 26 : 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
         if (usesDraftHelper) {
             assert.equal(scriptsLocais[0], '../../js/kanji/romaji-draft.js', `${level.toUpperCase()}: helper deve preceder o dataset`);

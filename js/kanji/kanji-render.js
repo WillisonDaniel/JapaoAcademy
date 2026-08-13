@@ -67,7 +67,6 @@ function renderKanjiModule(moduleIndex) {
         container.appendChild(grammarDiv);
     }
 
-    // VERIFICAÇÃO: Se for a Tabela Geral de Revisão
     if (moduleData.isReviewTable) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'review-grid-container';
@@ -119,7 +118,6 @@ function renderKanjiModule(moduleIndex) {
         return;
     }
 
-    // 2. CARDS DE ESTUDO DO MÓDULO (Meio da página)
     const gridDiv = document.createElement('div');
     gridDiv.className = 'kanji-grid';
 
@@ -134,6 +132,8 @@ function renderKanjiModule(moduleIndex) {
             const meaningVal = item.meaning || item.significado || '';
             const kunVal = item.kunyomi || item.kun || '-';
             const onVal = item.onyomi || item.on || '-';
+            const readingPending = item.readingEditorialReview
+                ? '<small class="reading-editorial-pending">Leitura pendente de revisão editorial</small>' : '';
             const mnemonicVal = item.mnemonic || item.dica || '';
             const examplesList = item.examples || item.exemplos || [];
 
@@ -192,7 +192,6 @@ function renderKanjiModule(moduleIndex) {
                         <div class="kanji-meaning">${meaningVal}</div>
                         <button class="audio-btn" onclick="playKanjiAudio('${charVal}', event)" style="width:100%; margin-top:8px; padding: 8px;">🔊 Ouvir Kanji</button>
 
-                        <!-- CANVAS INTERATIVO DE ESCRITA DE KANJI -->
                         <div class="canvas-practice-box">
                             <span class="canvas-practice-title">✏️ Treino Motor do Ideograma:</span>
                             <canvas id="${canvasId}" class="kanji-canvas" width="200" height="200" data-char="${charVal}"></canvas>
@@ -215,6 +214,7 @@ function renderKanjiModule(moduleIndex) {
                             <span class="reading-label">Onyomi (Chino-Japonês):</span>
                             <div class="reading-val onyomi-val">${onVal}</div>
                         </div>
+                        ${readingPending}
                         ${mnemonicHTML}
                         ${renderRadicaisKanjiLocal}
                         ${examplesHTML}
@@ -232,7 +232,6 @@ function renderKanjiModule(moduleIndex) {
 
     container.appendChild(gridDiv);
 
-    // 3. LEITURA GUIADA EM CONTEXTO
     if (moduleData.readingText) {
         const rtData = moduleData.readingText;
         const boxId = `kanji-reading-box-${moduleIndex}`;
