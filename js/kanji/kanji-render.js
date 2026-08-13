@@ -1,6 +1,13 @@
-// ======================================
-// MÓDULO KANJI - RENDER MODULE
-// ======================================
+function safeKanjiText(value) {
+    const text = String(value || '');
+    return typeof escapeHTML === 'function' ? escapeHTML(text) : text;
+}
+
+function bindKanjiAudio(root) {
+    root.querySelectorAll('[data-kanji-audio]').forEach(button => button.addEventListener('click', event => {
+        if (typeof playKanjiAudio === 'function') playKanjiAudio(button.dataset.kanjiAudio || '', event);
+    }));
+}
 
 function renderKanjiModule(moduleIndex) {
     const container = document.getElementById('moduleDisplay');
@@ -14,7 +21,6 @@ function renderKanjiModule(moduleIndex) {
     container.setAttribute('aria-busy', 'true');
     container.innerHTML = '';
 
-    // 1. CABEÇALHO DO MÓDULO (Topo)
     const headerDiv = document.createElement('div');
     headerDiv.className = 'module-header';
     const fNomeLocal = typeof fNome === 'function' ? fNome : (t => t);
@@ -37,6 +43,14 @@ function renderKanjiModule(moduleIndex) {
             kanji_n1: 'N1'
         };
         const grammarNivel = grammarLevelByMode[mode] || 'N5';
+        const grammarContent = moduleData.grammar.content && typeof moduleData.grammar.content === 'object' ? moduleData.grammar.content : null;
+        const grammarExample = safeKanjiText(grammarContent ? grammarContent.displayText : moduleData.grammar.example);
+        const grammarTranslation = safeKanjiText(grammarContent ? grammarContent.translation : moduleData.grammar.translation);
+        const grammarOptions = typeof getOpcoesLeitura === 'function' ? getOpcoesLeitura() : { romaji: false };
+        const grammarRomaji = grammarContent && grammarOptions.romaji && grammarContent.romaji
+            ? `<small class="japanese-romaji-text" style="display:block; margin-top:3px;">${safeKanjiText(grammarContent.romaji)}</small>` : '';
+        const grammarAudio = grammarContent && grammarContent.audioText
+            ? `<button type="button" class="audio-btn" data-kanji-audio="${safeKanjiText(grammarContent.audioText)}" title="Ouvir exemplo">🔊</button>` : '';
         grammarDiv.innerHTML = `
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                 <span style="font-size:1.4rem;">💡</span>
@@ -44,10 +58,12 @@ function renderKanjiModule(moduleIndex) {
             </div>
             <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:12px;">${moduleData.grammar.explanation}</p>
             <div style="background:var(--card-bg); border-left:4px solid #f59e0b; padding:10px 14px; border-radius:8px; font-size:0.9rem;">
-                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${moduleData.grammar.example}</span>
-                <small style="color:var(--text-muted); display:block; margin-top:3px;">"${moduleData.grammar.translation}"</small>
+                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${grammarExample}</span> ${grammarAudio}
+                ${grammarRomaji}
+                <small style="color:var(--text-muted); display:block; margin-top:3px;">"${grammarTranslation}"</small>
             </div>
         `;
+        bindKanjiAudio(grammarDiv);
         container.appendChild(grammarDiv);
     }
 
@@ -125,18 +141,29 @@ function renderKanjiModule(moduleIndex) {
             if (examplesList.length > 0) {
                 examplesHTML = `<div class="kanji-examples-title">Exemplos & Gramática:</div>`;
                 examplesList.forEach(ex => {
-                    const w = ex.word || ex.palavra || '';
-                    const wm = ex.wordMeaning || ex.significadoPalavra || ex.significado || '';
-                    const s = ex.sentence || ex.frase || '';
-                    const sm = ex.sentenceMeaning || ex.traducaoFrase || ex.traducao || '';
+                    const content = ex.content && typeof ex.content === 'object' ? ex.content : null;
+                    const w = safeKanjiText(ex.word || ex.palavra || '');
+                    const wm = safeKanjiText(ex.wordMeaning || ex.significadoPalavra || ex.significado || '');
+                    const rawSentence = content ? content.displayText : (ex.sentence || ex.frase || '');
+                    const audioText = content ? content.audioText : rawSentence;
+                    const sm = safeKanjiText(content ? content.translation : (ex.sentenceMeaning || ex.traducaoFrase || ex.traducao || ''));
+                    const readingOptions = typeof getOpcoesLeitura === 'function' ? getOpcoesLeitura() : { furigana: true, romaji: false };
+                    const formatted = content && typeof formatarTextoJapones === 'function'
+                        ? formatarTextoJapones({ kanji: safeKanjiText(rawSentence), kana: safeKanjiText(content.furigana), romaji: safeKanjiText(content.romaji) })
+                        : null;
+                    const s = formatted ? (formatted.htmlJapones || safeKanjiText(rawSentence)) : safeKanjiText(rawSentence);
+                    const romajiHTML = content && readingOptions.romaji && content.romaji
+                        ? `<div class="ex-romaji japanese-romaji-text">${safeKanjiText(content.romaji)}</div>` : '';
+                    const audioAttribute = safeKanjiText(audioText);
 
                     examplesHTML += `
                         <div class="kanji-example-item">
                             <div class="ex-word">
                                 ${w} ${wm ? `<span>(${wm})</span>` : ''}
-                                ${s ? `<button class="audio-btn" onclick="playKanjiAudio('${s.replace(/'/g, "\\'")}', event)" title="Ouvir frase">🔊</button>` : ''}
+                                ${audioText ? `<button type="button" class="audio-btn kanji-example-audio" data-kanji-audio="${audioAttribute}" title="Ouvir frase">🔊</button>` : ''}
                             </div>
                             ${s ? `<div class="ex-sentence">${s}</div>` : ''}
+                            ${romajiHTML}
                             ${sm ? `<div class="ex-translation">"${sm}"</div>` : ''}
                         </div>
                     `;
@@ -194,6 +221,8 @@ function renderKanjiModule(moduleIndex) {
                     </div>
                 </div>
             `;
+
+            bindKanjiAudio(card);
 
             gridDiv.appendChild(card);
         } catch (err) {

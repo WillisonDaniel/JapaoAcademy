@@ -5,9 +5,9 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 ## Resultado
 
 - Bloqueadores técnicos: 0
-- Ocorrências editoriais: 7527
+- Ocorrências editoriais: 6118
 - Exceções documentadas: 1
-- Total de ocorrências: 7528
+- Total de ocorrências: 6119
 
 ## Inventário validado
 
@@ -23,7 +23,6 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 |---|---:|
 | N1 | 4527 |
 | N2 | 1491 |
-| N3 | 1409 |
 | N4 | 89 |
 | N5 | 12 |
 
@@ -31,10 +30,10 @@ Relatório gerado por `npm run audit:japanese`. A auditoria identifica consistê
 
 | Regra | Quantidade |
 |---|---:|
-| kanji-example-missing-target | 3449 |
-| kanji-example-no-japanese | 3382 |
-| reading-latin-only | 663 |
-| english-intrusion | 34 |
+| kanji-example-missing-target | 2730 |
+| kanji-example-no-japanese | 2698 |
+| reading-latin-only | 661 |
+| english-intrusion | 30 |
 
 ## Amostras prioritárias
 

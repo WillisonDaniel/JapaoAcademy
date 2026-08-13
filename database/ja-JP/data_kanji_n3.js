@@ -13612,25 +13612,25 @@ const kanjiN3Data = [
     {
         "module": 19,
         "title": "Módulo 19: Tabela Geral e Revisão N3",
-        "description": "Tabela mestre completa contendo a consulta rápida de todos os ~370 Kanjis do Nível N3 do Japão Academy!",
+        "description": "Tabela de consulta e revisão dos registros de Kanji apresentados nesta trilha de referência N3.",
         "isReviewTable": true,
         "grammar": {
-            "title": "Consolidação Integral dos 370 Kanjis N3",
-            "explanation": "Parabéns por dominar a lista inteira dos 370 ideogramas do Nível N3!",
-            "example": "370 N3 kanji complete mastered.",
-            "translation": "Domínio integral dos 370 Kanjis do Nível N3 do Japão Academy!"
+            "title": "Revisão dos Kanji apresentados na trilha N3",
+            "explanation": "Use esta tabela para retomar os caracteres estudados e identificar quais ainda precisam de revisão.",
+            "example": "N3の漢字を復習します。",
+            "translation": "Vou revisar os Kanji da trilha N3."
         },
         "kanjis": [],
         "readingText": {
             "title": "Tabela Mestre N3",
-            "japanese": "N3 kanji review table.",
-            "romaji": "N3 kanji review table.",
+            "japanese": "N3漢字復習表。",
+            "romaji": "N3 kanji fukushuu-hyou.",
             "translation": "Tabela mestre de revisão de N3.",
             "comprehensionQuiz": [
                 {
                     "q": "Revisão N3 Concluída?",
                     "options": [
-                        "Sim, 370 Kanjis Dominados!",
+                        "Sim, concluí esta revisão.",
                         "Não"
                     ],
                     "a": 0
@@ -13640,3 +13640,167 @@ const kanjiN3Data = [
         "quiz": []
     }
 ];
+
+// Rascunhos editoriais da Fase 4. A conversão preserva a intenção do Romaji legado;
+// os resultados continuam pendentes de revisão humana qualificada.
+const N3_ROMAJI_HIRAGANA = {
+    kya:'きゃ',kyu:'きゅ',kyo:'きょ',sha:'しゃ',shu:'しゅ',sho:'しょ',cha:'ちゃ',chu:'ちゅ',cho:'ちょ',
+    nya:'にゃ',nyu:'にゅ',nyo:'にょ',hya:'ひゃ',hyu:'ひゅ',hyo:'ひょ',mya:'みゃ',myu:'みゅ',myo:'みょ',
+    rya:'りゃ',ryu:'りゅ',ryo:'りょ',gya:'ぎゃ',gyu:'ぎゅ',gyo:'ぎょ',ja:'じゃ',ju:'じゅ',jo:'じょ',
+    bya:'びゃ',byu:'びゅ',byo:'びょ',pya:'ぴゃ',pyu:'ぴゅ',pyo:'ぴょ',fa:'ふぁ',fi:'ふぃ',fe:'ふぇ',fo:'ふぉ',
+    she:'しぇ',je:'じぇ',che:'ちぇ',ti:'てぃ',di:'でぃ',tsa:'つぁ',tsi:'つぃ',tse:'つぇ',tso:'つぉ',
+    ka:'か',ki:'き',ku:'く',ke:'け',ko:'こ',sa:'さ',shi:'し',su:'す',se:'せ',so:'そ',
+    ta:'た',chi:'ち',tsu:'つ',te:'て',to:'と',na:'な',ni:'に',nu:'ぬ',ne:'ね',no:'の',
+    ha:'は',hi:'ひ',fu:'ふ',he:'へ',ho:'ほ',ma:'ま',mi:'み',mu:'む',me:'め',mo:'も',
+    ya:'や',yu:'ゆ',yo:'よ',ra:'ら',ri:'り',ru:'る',re:'れ',ro:'ろ',wa:'わ',wo:'を',
+    ga:'が',gi:'ぎ',gu:'ぐ',ge:'げ',go:'ご',za:'ざ',ji:'じ',zu:'ず',ze:'ぜ',zo:'ぞ',
+    da:'だ',de:'で',do:'ど',ba:'ば',bi:'び',bu:'ぶ',be:'べ',bo:'ぼ',pa:'ぱ',pi:'ぴ',pu:'ぷ',pe:'ぺ',po:'ぽ',
+    a:'あ',i:'い',u:'う',e:'え',o:'お'
+};
+
+const N3_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    arrival: 'とうちゃく', method: 'ほうほう', study: 'べんきょう', pc: 'パソコン',
+    news: 'ニュース', check: 'チェック', team: 'チーム', test: 'テスト', data: 'データ',
+    bus: 'バス', bertemu: 'あう', warm: 'あたたかい', talento: '才能', moves: '動く', towel: 'タオル',
+    put: '入れる', result: '結果', feel: '感じる', bread: 'パン', sports: 'スポーツ', taste: '味',
+    actitud: '態度', story: '話', drama: 'ドラマ', comete: 'こめて', error: '間違い', request: '申請する',
+    visa: 'ビザ', money: 'お金', ticket: '切符', drink: '飲み物', buy: '買う', high: '高い', report: '報告書',
+    system: '制度', truth: '真実', plan: '計画', future: '未来', research: '研究', boss: '上司',
+    issuance: '発行', behavior: '行動', barbecue: 'バーベキュー', white: '白い', festival: '祭り',
+    asian: 'アジア', highway: '高速道路', camel: 'ラクダ', snow: '雪', village: '村', lifestyle: '生活',
+    farm: '農場', tromba: '鼻', long: '長い', good: '良い', race: 'レース', champion: 'チャンピオン',
+    paper: '紙', video: '動画', sweater: 'セーター', stage: '舞台', live: '生', stress: 'ストレス',
+    question: '質問', rule: '規則', lecture: '講義', museum: '美術館', car: '車', famous: '有名な',
+    hotel: 'ホテル', finished: '終えた', ball: 'ボール', player: '選手', top: '首位', lesson: 'レッスン',
+    user: '利用者', show: '見せる', trip: '旅行', friend: '友達', hold: '持つ', cafe: 'カフェ',
+    company: '会社', park: '公園', speed: '速度', nature: '自然', schedule: '予定', work: '仕事',
+    power: '権力', office: '事務所', card: 'カード', documento: '書類', soup: 'スープ', will: '意志',
+    food: '食べ物', knife: 'ナイフ', attitude: '態度', stone: '石', medicine: '薬', cake: 'ケーキ',
+    lemon: 'レモン', curry: 'カレー', experience: '経験', daily: '日々', judgment: '判断', project: '企画',
+    person: '人', arrest: '逮捕する', correct: '正しい', district: '地区', candidate: '候補者',
+    protection: '保護', leader: '指導者', city: '市', service: 'サービス', memory: '思い出', event: '行事',
+    four: '四つの', electric: '電気', payment: '支払い', step: '段階', train: '列車', dream: '夢',
+    class: '授業', guest: '客', function: '働き', fungsi: '働き', m: 'メートル', phat: '発', trien: '展',
+    wa: 'は', o: 'を', e: 'へ'
+};
+
+function converterPalavraRomajiN3(rawWord) {
+    const original = String(rawWord || '');
+    const lower = original.toLowerCase()
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/ū/g, 'uu').replace(/ō/g, 'ou').replace(/ā/g, 'aa').replace(/ī/g, 'ii').replace(/ē/g, 'ee');
+    if (N3_ROMAJI_EDITORIAL_REPLACEMENTS[lower]) return N3_ROMAJI_EDITORIAL_REPLACEMENTS[lower];
+    let result = '';
+    let index = 0;
+    const keys = Object.keys(N3_ROMAJI_HIRAGANA).sort((a, b) => b.length - a.length);
+    while (index < lower.length) {
+        const current = lower[index];
+        const next = lower[index + 1] || '';
+        if (/[^a-z]/.test(current)) { result += current; index++; continue; }
+        if (current !== 'n' && current === next && /[bcdfghjklmpqrstvwxyz]/.test(current)) {
+            result += 'っ'; index++; continue;
+        }
+        if (current === 'n' && (!next || /[bcdfghjklmpqrstvwxyz]/.test(next))) {
+            result += 'ん'; index++; continue;
+        }
+        const key = keys.find(candidate => lower.startsWith(candidate, index));
+        if (key) { result += N3_ROMAJI_HIRAGANA[key]; index += key.length; }
+        else { result += current; index++; }
+    }
+    return result;
+}
+
+function obterPalavraELeituraN3(example) {
+    const raw = String(example.word || '').trim();
+    const match = raw.match(/^(.+?)\s*[（(]([^）)]+)[）)]\s*$/);
+    return match
+        ? { japanese: match[1].trim(), reading: match[2].trim().toLowerCase() }
+        : { japanese: raw, reading: '' };
+}
+
+function substituirLeituraAlvoN3(sentence, japaneseWord, reading) {
+    if (!reading || !japaneseWord) return { text: sentence, replaced: false };
+    const cleanReading = reading.split(/[\s/・]/)[0].replace(/[^a-z'-]/g, '');
+    const japaneseStem = japaneseWord.replace(/[るうくぐすつぬぶむ]$/, '');
+    const candidates = [[cleanReading, japaneseWord]];
+    const endings = [
+        ['ru', 'ri', 'り'], ['u', 'i', 'い'], ['ku', 'ki', 'き'], ['gu', 'gi', 'ぎ'],
+        ['su', 'shi', 'し'], ['tsu', 'chi', 'ち'], ['nu', 'ni', 'に'], ['bu', 'bi', 'び'], ['mu', 'mi', 'み']
+    ];
+    endings.forEach(([ending, politeEnding, kanaEnding]) => {
+        if (cleanReading.endsWith(ending)) {
+            const stem = cleanReading.slice(0, -ending.length);
+            candidates.push([`${stem}${politeEnding}`, `${japaneseStem}${kanaEnding}`]);
+            if (ending === 'ru') candidates.push([stem, japaneseStem]);
+        }
+    });
+    if (cleanReading.endsWith('i')) {
+        const stem = cleanReading.slice(0, -1);
+        candidates.push([`${stem}ku`, `${japaneseStem}く`], [`${stem}katta`, `${japaneseStem}かった`]);
+    }
+    candidates.sort((a, b) => b[0].length - a[0].length);
+    for (const [source, target] of candidates) {
+        const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const pattern = new RegExp(`\\b${escaped}`, 'i');
+        if (pattern.test(sentence)) return { text: sentence.replace(pattern, target), replaced: true };
+    }
+    return { text: sentence, replaced: false };
+}
+
+function converterFraseRomajiN3(rawSentence, example) {
+    const { japanese, reading } = obterPalavraELeituraN3(example || {});
+    const target = substituirLeituraAlvoN3(String(rawSentence || ''), japanese, reading);
+    let converted = target.text.replace(/[A-Za-z][A-Za-z'-]*/g, converterPalavraRomajiN3);
+    converted = converted
+        .replace(/,/g, '、').replace(/\./g, '。').replace(/!/g, '！').replace(/\?/g, '？')
+        .replace(/-/g, '')
+        .replace(/\s+([、。！？])/g, '$1')
+        .replace(/([ぁ-んァ-ヶ一-龯])\s+(?=[ぁ-んァ-ヶ一-龯])/g, '$1');
+    return { text: converted.trim(), targetReplaced: target.replaced };
+}
+
+kanjiN3Data.forEach(module => {
+    module.editorialReview = { status: 'pending-human-review', phase: '4' };
+    if (module.grammar && module.grammar.example && !module.isReviewTable) {
+        const grammarText = converterFraseRomajiN3(module.grammar.example, {}).text;
+        module.grammar.content = {
+            displayText: grammarText, audioText: grammarText, furigana: '',
+            romaji: module.grammar.example, translation: module.grammar.translation || '', scenario: ''
+        };
+    }
+    (module.kanjis || []).forEach(kanji => {
+        (kanji.examples || []).forEach(example => {
+            const converted = converterFraseRomajiN3(example.sentence, example);
+            example.content = {
+                displayText: converted.text, audioText: converted.text, furigana: '',
+                romaji: example.sentence || '', translation: example.sentenceMeaning || '', scenario: ''
+            };
+            example.editorialReview = {
+                status: 'pending-human-review', phase: '4', targetReplaced: converted.targetReplaced
+            };
+        });
+    });
+});
+
+// Correções objetivas de leituras sem Kana.
+if (kanjiN3Data[8] && kanjiN3Data[8].kanjis[3]) kanjiN3Data[8].kanjis[3].onyomi = 'ボウ (BOU) / バク (BAKU)';
+if (kanjiN3Data[12] && kanjiN3Data[12].kanjis[11]) kanjiN3Data[12].kanjis[11].onyomi = 'ゾウ (ZOU)';
+
+const N3_EXAMPLE_OVERRIDES = [
+    [0, 4, 0, '停留所でバスを待つ。'],
+    [1, 2, 0, '髪の毛を切ります。'],
+    [2, 18, 1, '温泉の湯に入る。'],
+    [4, 6, 1, '産業が発展する。'],
+    [5, 17, 0, '二割引きの服。'],
+    [6, 3, 1, '重傷を負う。'],
+    [6, 9, 1, '食中毒になった。'],
+    [10, 13, 0, 'いちご狩りに行く。'],
+    [9, 2, 1, '上り坂が続く。'],
+    [11, 16, 0, '生放送を見る。']
+];
+N3_EXAMPLE_OVERRIDES.forEach(([moduleIndex, kanjiIndex, exampleIndex, text]) => {
+    const example = kanjiN3Data[moduleIndex].kanjis[kanjiIndex].examples[exampleIndex];
+    example.content.displayText = text;
+    example.content.audioText = text;
+    example.editorialReview.targetReplaced = true;
+});

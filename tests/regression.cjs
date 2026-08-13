@@ -1241,6 +1241,37 @@ test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
     assert.match(contractTest, /91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2/);
 });
 
+test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () => {
+    const n3 = read('database/ja-JP/data_kanji_n3.js');
+    const render = read('js/kanji/kanji-render.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const contract = read('tests/kanji-n3-contract.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_KANJI_N3_HUMAN_REVIEW.md');
+    const packageJson = JSON.parse(read('package.json'));
+
+    assert.match(n3, /const N3_ROMAJI_HIRAGANA = \{/);
+    assert.match(n3, /const N3_EXAMPLE_OVERRIDES = \[/);
+    assert.match(n3, /pending-human-review/);
+    assert.match(n3, /ボウ \(BOU\) \/ バク \(BAKU\)/);
+    assert.match(n3, /ゾウ \(ZOU\)/);
+    assert.doesNotMatch(n3, /370 N3 kanji complete mastered|370 Kanjis Dominados|Domínio integral dos 370/i);
+    assert.match(render, /const content = ex\.content/);
+    assert.match(render, /data-kanji-audio/);
+    assert.match(render, /content \? content\.audioText/);
+    assert.doesNotMatch(render, /onclick="playKanjiAudio\('\$\{s\.replace/);
+    assert.match(audit, /kanji-example-contract-invalid/);
+    assert.match(audit, /kanji-example-audio-invalid/);
+    assert.match(audit, /N3_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => item.level === 'N3').length, 0);
+    assert.match(contract, /720 exemplos/);
+    assert.match(contract, /23d00eb9b56f99c918566cfa032ea8b6b4a4501c2c63c99a220a9a4233cd3043/);
+    assert.match(review, /Todas as linhas permanecem pendentes/);
+    assert.equal(packageJson.scripts['test:japanese-kanji-n3'], 'node tests/kanji-n3-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/kanji-n3-contract\.cjs/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

@@ -681,7 +681,8 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
     const budgets = {
         n5: 700 * 1024,
         n4: 715 * 1024,
-        n3: 965 * 1024,
+        // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
+        n3: 971 * 1024,
         n2: 1000 * 1024,
         n1: 1770 * 1024
     };

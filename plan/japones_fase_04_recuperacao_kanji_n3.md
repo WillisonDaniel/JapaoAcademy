@@ -34,7 +34,8 @@ As quatro intrusões objetivas são `arrival`, `method`, outro `arrival` e `Stud
   - `editorialReview.status = "pending-human-review"`.
 - O novo `displayText` deve conter o caractere-alvo. Não aceitar prefixos artificiais ou frases metalinguísticas criadas apenas para satisfazer o teste.
 - Corrigir as duas leituras on'yomi para Kana + Romaji no campo existente, registrando a alteração objetiva no relatório.
-- Adicionar contrato textual aos 18 exemplos gramaticais dos módulos de ensino; o módulo 19 de revisão deve permanecer estruturalmente estável.
+- Adicionar contrato textual aos 18 exemplos gramaticais dos módulos de ensino.
+- No módulo 19, preservar número, função e quiz, mas remover alegações de domínio integral e a contagem imprecisa de 370 Kanji.
 
 ## Produção dos exemplos
 
