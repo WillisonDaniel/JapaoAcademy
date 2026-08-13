@@ -36,14 +36,17 @@ console.log('✓ superficies, hierarquia de acoes e CTA JLPT possuem contrato vi
 
 pages.forEach(page => {
     const html = read(`html/ja-JP/${page}.html`);
-    assert.match(html, /japanese-experience\.css\?v=43/);
+    assert.match(html, /japanese-experience\.css\?v=44/);
     assert.match(html, /class="japanese-experience jp-study-page/);
     assert.match(html, /jp-action-(?:primary|secondary|tertiary|accent)/);
+    assert.match(html, /jp-filter-field/);
 });
-assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v43'/);
+assert.match(css, /\.jp-filter-field\s*\{[^}]*gap:\s*12px/s);
+assert.match(css, /focus-visible\s*\{[^}]*outline:\s*2px/s);
+assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v44'/);
 assert.match(read('js/japanese/jlpt.js'), /is-correct.*is-incorrect.*is-unanswered/);
 assert.match(read('js/japanese/reading.js'), /dataset\.answerState = correct \? 'correct' : 'incorrect'/);
 assert.match(read('js/japanese/grammar.js'), /dataset\.answerState = correct \? 'correct' : 'incorrect'/);
-console.log('✓ paginas, estados dinamicos e cache PWA usam a versao cromatica v43');
+console.log('✓ paginas, campos, estados dinamicos e cache PWA usam a versao v44');
 
 console.log('\nRedesign cromatico japones: 4/4 contratos aprovados.');

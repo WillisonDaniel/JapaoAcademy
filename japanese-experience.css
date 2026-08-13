@@ -683,7 +683,7 @@
 .listening-footer button,.reading-nav button { min-height: 44px; padding: 10px 16px; color: var(--jp-ink); background: var(--jp-surface); border: 1px solid var(--jp-line); border-radius: 12px; font-weight: 800; }
 
 .reading-filters,.writing-filters { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; padding: 18px 20px; margin-bottom: 18px; }
-.reading-filters input { flex: 1; min-width: 210px; }
+.reading-filters input { min-width: 210px; }
 .reading-grid,.writing-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 14px; }
 .reading-card,.writing-card,.grammar-card { position: relative; padding: 18px; text-align: left; color: var(--jp-ink); background: var(--jp-surface); border: 1px solid var(--jp-line); border-radius: var(--jp-radius-lg); box-shadow: var(--jp-shadow-soft); cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
 .reading-card::before,.writing-card::before,.grammar-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(var(--jp-red),var(--jp-gold)); border-radius: var(--jp-radius-lg) 0 0 var(--jp-radius-lg); }
@@ -780,9 +780,35 @@
 .dark-theme.jp-jlpt-page { --jp-page-primary: #b91c1c; --jp-page-accent: #f59e0b; --jp-page-soft: #493319; --jp-page-text: #fde68a; }
 
 .jp-study-page :is(input, select, textarea, button, a):focus-visible {
-    outline: 3px solid var(--jp-focus-ring);
+    outline: 2px solid var(--jp-focus-ring);
     outline-offset: 3px;
-    box-shadow: 0 0 0 5px color-mix(in srgb, var(--jp-focus-ring) 24%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--jp-focus-ring) 22%, transparent);
+}
+
+.jp-study-page .jp-filter-field {
+    display: grid;
+    min-width: 0;
+    align-content: start;
+    gap: 12px;
+    margin: 0;
+}
+
+.jp-study-page .jp-filter-field > span { display: block; line-height: 1.25; }
+.jp-study-page .jp-filter-field > :is(input, select) { width: 100%; margin: 0; }
+.jp-study-page .jp-filter-field-grow { flex: 1 1 280px; }
+
+.jp-study-page .jp-check-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+.jp-study-page .jp-check-field > input {
+    flex: 0 0 auto;
+    width: 18px;
+    min-height: 18px;
+    margin: 0;
 }
 
 .jp-study-page :is(input, select, textarea) {
@@ -937,7 +963,7 @@
 .jp-grammar-page .grammar-lookup { border-left: 0; background: linear-gradient(135deg, color-mix(in srgb, var(--jp-page-soft) 82%, var(--jp-surface)), var(--jp-surface)); }
 .jp-grammar-page .grammar-lookup-row { align-items: stretch; }
 .jp-grammar-page .grammar-lookup-row input { border-color: color-mix(in srgb, var(--jp-page-primary) 35%, var(--jp-line)); }
-.jp-grammar-page .grammar-filters label { padding: 12px; border: 1px solid color-mix(in srgb, var(--jp-page-primary) 18%, var(--jp-line)); border-radius: 14px; background: color-mix(in srgb, var(--jp-page-soft) 35%, var(--jp-surface)); }
+.jp-grammar-page .grammar-filters label { padding: 14px; border: 1px solid color-mix(in srgb, var(--jp-page-primary) 18%, var(--jp-line)); border-radius: 14px; background: color-mix(in srgb, var(--jp-page-soft) 35%, var(--jp-surface)); }
 .jp-grammar-page .grammar-formula { border-left: 4px solid #2563eb; background: color-mix(in srgb, #dbeafe 64%, var(--jp-surface)); }
 .jp-grammar-page .grammar-example { border-left: 4px solid var(--jp-red); background: color-mix(in srgb, #fee2e2 55%, var(--jp-surface)); }
 .jp-grammar-page .grammar-practice { border: 1px solid color-mix(in srgb, var(--jp-page-primary) 25%, var(--jp-line)); background: color-mix(in srgb, var(--jp-page-soft) 62%, var(--jp-surface)); }
@@ -1001,6 +1027,7 @@
     .jp-study-page .jp-action-accent { width: 100%; }
     .jp-study-page :is(#reading-count,#grammar-count,#writing-count,#listening-count) { width: 100%; }
     .jp-writing-page .writing-modes { gap: 10px; }
+    .jp-study-page .jp-filter-field-grow { flex-basis: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

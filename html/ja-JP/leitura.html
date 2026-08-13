@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#1e1b4b">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
-    <link rel="stylesheet" href="../../japanese-experience.css?v=43">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 <body data-mode="reading" data-lang="japanese" class="japanese-experience jp-study-page jp-reading-page">
     <header><a href="../../hub_japones.html" class="home-btn">⬅ Japonês</a><button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button><h1>📚 Biblioteca de leitura</h1><p>Textos reais das trilhas Kanji, organizados por nível de referência.</p></header>
@@ -17,7 +17,7 @@
         <section class="jp-page-intro" aria-labelledby="reading-intro-title"><div><span class="jp-page-kicker">Leitura graduada</span><h2 id="reading-intro-title">Leia com apoio, sem perder o foco</h2><p>Escolha um texto por nível, controle os apoios de leitura e avance para questões de compreensão em uma área separada.</p></div><div class="jp-page-stat"><span>Biblioteca atual</span><strong>91 textos</strong></div></section>
         <div class="reading-note"><strong>Transparência:</strong> os níveis são referências pedagógicas JLPT e não constituem listas oficiais. “Sem marcação editorial” não significa aprovação humana. O áudio, quando usado, é sintetizado pelo dispositivo.</div>
         <section id="reading-library">
-            <div class="reading-filters" aria-label="Filtros da biblioteca"><label for="reading-level">Nível</label><select id="reading-level"><option value="all">N5–N1</option><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select><label for="reading-search">Busca</label><input id="reading-search" type="search" placeholder="Título ou texto" autocomplete="off"><span id="reading-count" aria-live="polite"></span></div>
+            <div class="reading-filters" aria-label="Filtros da biblioteca"><label class="jp-filter-field" for="reading-level"><span>Nível</span><select id="reading-level"><option value="all">N5–N1</option><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label class="jp-filter-field jp-filter-field-grow" for="reading-search"><span>Busca</span><input id="reading-search" type="search" placeholder="Título ou texto" autocomplete="off"></label><span id="reading-count" aria-live="polite"></span></div>
             <div id="reading-grid" class="reading-grid" aria-live="polite"></div>
         </section>
         <article id="reading-reader" class="reading-reader" hidden aria-label="Leitor graduado">
