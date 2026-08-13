@@ -685,3 +685,7 @@
 }
 
 @media(prefers-reduced-motion:reduce){.reading-card,.writing-card,.grammar-card{transition:none}}
+
+.jp-progressive-footer{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0;padding:15px 18px;color:var(--jp-muted);background:var(--jp-surface);border:1px solid var(--jp-line);border-radius:15px;box-shadow:var(--jp-shadow-soft)}
+.jp-progressive-status{font-weight:800}.jp-load-more{min-height:44px;padding:10px 18px;color:#fff;background:var(--jp-indigo);border:1px solid var(--jp-indigo);border-radius:12px;font-weight:800;cursor:pointer}.jp-load-more[hidden]{display:none}
+@media(max-width:520px){.jp-progressive-footer{flex-direction:column}.jp-load-more{width:100%}}

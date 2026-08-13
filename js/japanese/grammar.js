@@ -1,8 +1,10 @@
 'use strict';
 
-let japaneseGrammarItems = [], japaneseGrammarCurrent = null, japaneseGrammarSessionStarted = false;
+let japaneseGrammarItems = [], japaneseGrammarCurrent = null, japaneseGrammarSessionStarted = false, japaneseGrammarCollection = null;
 const japaneseGrammarActivity = new Set();
 const grammarEl = id => document.getElementById(id);
+function installJapaneseProgressiveUI(){window.JapaneseUI=window.JapaneseUI||{};if(window.JapaneseUI.createProgressiveCollection)return;window.JapaneseUI.createProgressiveCollection=o=>{const c=o.container,f=document.createElement('div'),s=document.createElement('span'),b=document.createElement('button');f.className='jp-progressive-footer';s.className='jp-progressive-status';s.setAttribute('aria-live','polite');b.type='button';b.className='jp-load-more';b.textContent='Carregar mais';f.append(s,b);c.after(f);let a=[],n=0,z=o.batchSize||12;const u=()=>{s.textContent=`Exibindo ${n} de ${a.length}`;b.hidden=n>=a.length;f.hidden=!a.length},l=q=>{let x=n,e=Math.min(a.length,n+z);for(;n<e;n++)c.append(o.renderItem(a[n],n));u();if(q&&c.children[x])c.children[x].focus();if(o.afterRender)o.afterRender()};b.onclick=()=>l(true);u();return{reset:v=>{a=v||[];n=0;c.textContent='';l(false)},loadMore:l,revealThrough:p=>{let i=a.findIndex(p);while(i>=n)l(false);return i},getState:()=>({shown:n,total:a.length,batchSize:z})}}}
+installJapaneseProgressiveUI();
 const normalizeGrammarLookup = value => String(value || '').normalize('NFKC').trim().toLocaleLowerCase('pt-BR');
 
 function registerGrammarActivity(item, eventType) {
@@ -17,9 +19,8 @@ function grammarReadingOptions() { return typeof getOpcoesLeitura === 'function'
 function renderGrammarLibrary() {
     const index = grammarIndex(), source = grammarEl('grammar-source').value, cefr = grammarEl('grammar-cefr').value, jlpt = grammarEl('grammar-jlpt').value, query = normalizeGrammarLookup(grammarEl('grammar-search').value);
     japaneseGrammarItems = index.references.filter(item => (source === 'all' || item.source === source) && (item.framework !== 'CEFR' || cefr === 'all' || item.level === cefr) && (item.framework !== 'JLPT' || jlpt === 'all' || item.level === jlpt) && (!query || normalizeGrammarLookup(`${item.title} ${item.rule} ${item.formula} ${item.exampleText}`).includes(query)));
-    const grid = grammarEl('grammar-grid'); grid.innerHTML = ''; grammarEl('grammar-count').textContent = `${japaneseGrammarItems.length} referências`;
-    japaneseGrammarItems.forEach(item => { const card = document.createElement('button'); card.type = 'button'; card.className = 'grammar-card'; const meta = document.createElement('div'); meta.className = 'grammar-meta'; meta.textContent = `${item.framework} ${item.level} • ${item.source === 'course' ? 'Curso' : 'Kanji aplicado'}`; const title = document.createElement('h2'); title.textContent = item.title; const origin = document.createElement('div'); origin.className = 'grammar-meta'; origin.textContent = item.moduleTitle; card.append(meta, title, origin); card.addEventListener('click', () => showGrammarReference(item)); grid.appendChild(card); });
-    if (!japaneseGrammarItems.length) grid.textContent = 'Nenhuma referência corresponde aos filtros atuais.';
+    grammarEl('grammar-count').textContent = `${japaneseGrammarItems.length} referências`; japaneseGrammarCollection.reset(japaneseGrammarItems);
+    if (!japaneseGrammarItems.length) grammarEl('grammar-grid').textContent = 'Nenhuma referência corresponde aos filtros atuais.';
 }
 
 function renderGrammarPractice(reference) {
@@ -49,6 +50,7 @@ function lookupGrammarForms() {
 
 function initializeJapaneseGrammar() {
     const index = grammarIndex(); if (!index || !Array.isArray(index.references) || !Array.isArray(index.forms)) { grammarEl('grammar-grid').textContent = 'Referência gramatical indisponível.'; return; }
+    japaneseGrammarCollection = window.JapaneseUI.createProgressiveCollection({ container: grammarEl('grammar-grid'), batchSize: 12, renderItem(item) { const card = document.createElement('button'); card.type = 'button'; card.className = 'grammar-card'; const meta = document.createElement('div'); meta.className = 'grammar-meta'; meta.textContent = `${item.framework} ${item.level} • ${item.source === 'course' ? 'Curso' : 'Kanji aplicado'}`; const title = document.createElement('h2'); title.textContent = item.title; const origin = document.createElement('div'); origin.className = 'grammar-meta'; origin.textContent = item.moduleTitle; card.append(meta, title, origin); card.addEventListener('click', () => showGrammarReference(item)); return card; } });
     ['grammar-source', 'grammar-cefr', 'grammar-jlpt'].forEach(id => grammarEl(id).addEventListener('change', renderGrammarLibrary)); grammarEl('grammar-search').addEventListener('input', renderGrammarLibrary); renderGrammarLibrary();
     grammarEl('grammar-form-search').addEventListener('click', lookupGrammarForms); grammarEl('grammar-form-input').addEventListener('keydown', event => { if (event.key === 'Enter') lookupGrammarForms(); }); grammarEl('grammar-back').addEventListener('click', () => { grammarEl('grammar-detail').hidden = true; grammarEl('grammar-library').hidden = false; history.replaceState(null, '', window.location.pathname); });
     grammarEl('grammar-romaji-toggle').addEventListener('click', () => { const visible = grammarEl('grammar-romaji').hidden; grammarEl('grammar-romaji').hidden = !visible; grammarEl('grammar-romaji-toggle').setAttribute('aria-pressed', visible ? 'true' : 'false'); }); grammarEl('grammar-audio').addEventListener('click', () => { const item = japaneseGrammarCurrent; if (item && item.audioText && typeof tocarAudio === 'function') { registerGrammarActivity(item, 'audio'); tocarAudio(item.audioText, 'ja-JP', 1); } });

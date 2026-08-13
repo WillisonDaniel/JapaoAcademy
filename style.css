@@ -5957,3 +5957,6 @@ rt {
     margin-top: auto;
     align-self: flex-start;
 }
+.jp-progressive-footer{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0;padding:15px 18px;border:1px solid var(--border-color);border-radius:15px;background:var(--card-bg);box-shadow:var(--shadow)}
+.jp-progressive-status{font-weight:800;color:var(--text-muted)}.jp-load-more{min-height:44px;padding:10px 18px;color:#fff;background:#1e1b4b;border:1px solid #1e1b4b;border-radius:12px;font-weight:800;cursor:pointer}.jp-load-more[hidden]{display:none}
+@media(max-width:520px){.jp-progressive-footer{flex-direction:column}.jp-load-more{width:100%}}

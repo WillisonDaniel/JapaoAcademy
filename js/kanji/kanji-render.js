@@ -3,6 +3,9 @@ function safeKanjiText(value) {
     return typeof escapeHTML === 'function' ? escapeHTML(text) : text;
 }
 
+function installJapaneseProgressiveUI(){window.JapaneseUI=window.JapaneseUI||{};if(window.JapaneseUI.createProgressiveCollection)return;window.JapaneseUI.createProgressiveCollection=o=>{const c=o.container,f=document.createElement('div'),s=document.createElement('span'),b=document.createElement('button');f.className='jp-progressive-footer';s.className='jp-progressive-status';s.setAttribute('aria-live','polite');b.type='button';b.className='jp-load-more';b.textContent='Carregar mais';f.append(s,b);c.after(f);let a=[],n=0,z=o.batchSize||12;const u=()=>{s.textContent=`Exibindo ${n} de ${a.length}`;b.hidden=n>=a.length;f.hidden=!a.length},l=q=>{let x=n,e=Math.min(a.length,n+z);for(;n<e;n++)c.append(o.renderItem(a[n],n));u();if(q&&c.children[x])c.children[x].focus();if(o.afterRender)o.afterRender()};b.onclick=()=>l(true);u();return{reset:v=>{a=v||[];n=0;c.textContent='';l(false)},loadMore:l,revealThrough:p=>{let i=a.findIndex(p);while(i>=n)l(false);return i},getState:()=>({shown:n,total:a.length,batchSize:z})}}}
+installJapaneseProgressiveUI();
+
 function bindKanjiAudio(root) {
     root.querySelectorAll('[data-kanji-audio]').forEach(button => button.addEventListener('click', event => {
         if (typeof playKanjiAudio === 'function') playKanjiAudio(button.dataset.kanjiAudio || '', event);
@@ -94,6 +97,7 @@ function renderKanjiModule(moduleIndex) {
 
                 const cell = document.createElement('div');
                 cell.className = 'review-grid-cell';
+                cell.tabIndex = -1;
                 cell.innerHTML = `
                     <div class="grid-char">${charVal}</div>
                     <div class="grid-meaning">${meaningVal}</div>
@@ -114,7 +118,10 @@ function renderKanjiModule(moduleIndex) {
             }
         });
 
+        const reviewCells = Array.from(gridDiv.children);
+        gridDiv.textContent = '';
         container.appendChild(gridDiv);
+        window.JapaneseUI.createProgressiveCollection({ container: gridDiv, batchSize: 60, renderItem: cell => cell }).reset(reviewCells);
         return;
     }
 
@@ -126,6 +133,7 @@ function renderKanjiModule(moduleIndex) {
         try {
             const card = document.createElement('div');
             card.className = 'kana-card kanji-card-layout';
+            card.tabIndex = -1;
             card.style.animationDelay = `${index * 0.05}s`;
 
             const charVal = item.character || item.kanji || item.char || '';
@@ -230,7 +238,15 @@ function renderKanjiModule(moduleIndex) {
         }
     });
 
+    const kanjiCards = Array.from(gridDiv.children);
+    gridDiv.textContent = '';
     container.appendChild(gridDiv);
+    window.JapaneseUI.createProgressiveCollection({
+        container: gridDiv,
+        batchSize: 6,
+        renderItem: card => card,
+        afterRender() { if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases(); }
+    }).reset(kanjiCards);
 
     if (moduleData.readingText) {
         const rtData = moduleData.readingText;

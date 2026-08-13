@@ -1399,6 +1399,23 @@ test('hub e Dashboard da Fase 13 usam habilidades e sessoes reais', () => {
     assert.match(read('js/dashboard/meu-progresso.js'), /criarResumoHabilidadesJaponesDashboard/);
 });
 
+test('redesign japones usa colecoes progressivas sem alterar dados ou canvases', () => {
+    const reading = read('js/japanese/reading.js'), grammar = read('js/japanese/grammar.js'), writing = read('js/japanese/writing.js');
+    [reading, grammar, writing].forEach(source => {
+        assert.match(source, /JapaneseUI\.createProgressiveCollection/);
+        assert.match(source, /batchSize: 12/);
+        assert.match(source, /Exibindo \$\{n\} de \$\{a\.length\}/);
+        assert.match(source, /Carregar mais/);
+    });
+    const kanji = read('js/kanji/kanji-render.js');
+    assert.match(kanji, /batchSize: 60/);
+    assert.match(kanji, /batchSize: 6/);
+    assert.match(kanji, /afterRender\(\)/);
+    assert.match(kanji, /inicializarTodosOsCanvases/);
+    assert.match(read('js/kanji/kanji-canvas.js'), /data-initialized/);
+    assert.doesNotMatch(kanji, /pending-human-review.*=/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

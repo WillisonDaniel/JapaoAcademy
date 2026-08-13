@@ -1,8 +1,10 @@
 'use strict';
 
-let japaneseReadingItems = [], japaneseReadingCurrent = -1, japaneseReadingSessionStarted = false;
+let japaneseReadingItems = [], japaneseReadingCurrent = -1, japaneseReadingSessionStarted = false, japaneseReadingCollection = null;
 const japaneseReadingActivity = new Set();
 const readingEl = id => document.getElementById(id);
+function installJapaneseProgressiveUI(){window.JapaneseUI=window.JapaneseUI||{};if(window.JapaneseUI.createProgressiveCollection)return;window.JapaneseUI.createProgressiveCollection=o=>{const c=o.container,f=document.createElement('div'),s=document.createElement('span'),b=document.createElement('button');f.className='jp-progressive-footer';s.className='jp-progressive-status';s.setAttribute('aria-live','polite');b.type='button';b.className='jp-load-more';b.textContent='Carregar mais';f.append(s,b);c.after(f);let a=[],n=0,z=o.batchSize||12;const u=()=>{s.textContent=`Exibindo ${n} de ${a.length}`;b.hidden=n>=a.length;f.hidden=!a.length},l=q=>{let x=n,e=Math.min(a.length,n+z);for(;n<e;n++)c.append(o.renderItem(a[n],n));u();if(q&&c.children[x])c.children[x].focus();if(o.afterRender)o.afterRender()};b.onclick=()=>l(true);u();return{reset:v=>{a=v||[];n=0;c.textContent='';l(false)},loadMore:l,revealThrough:p=>{let i=a.findIndex(p);while(i>=n)l(false);return i},getState:()=>({shown:n,total:a.length,batchSize:z})}}}
+installJapaneseProgressiveUI();
 
 function sanitizeReadingHtml(value) {
     const template = document.createElement('template'); template.innerHTML = String(value || '');
@@ -51,9 +53,8 @@ function showReading(index) {
 function renderReadingLibrary() {
     const source = typeof JAPANESE_READING_INDEX !== 'undefined' ? JAPANESE_READING_INDEX : [], level = readingEl('reading-level').value, query = readingEl('reading-search').value.trim().toLowerCase();
     japaneseReadingItems = source.filter(item => (level === 'all' || item.referenceLevel === level) && (!query || `${item.title} ${item.plainText} ${item.moduleTitle}`.toLowerCase().includes(query)));
-    const grid = readingEl('reading-grid'); grid.innerHTML = ''; readingEl('reading-count').textContent = `${japaneseReadingItems.length} leituras`;
-    japaneseReadingItems.forEach((item, index) => { const card = document.createElement('button'); card.type = 'button'; card.className = 'reading-card'; const meta = document.createElement('div'); meta.className = 'reading-meta'; meta.textContent = `${item.referenceLevel} • ${item.charCount} caracteres • ${item.questions.length} questões`; const title = document.createElement('h2'); title.textContent = item.title; const origin = document.createElement('div'); origin.className = 'reading-meta'; origin.textContent = item.moduleTitle; card.append(meta, title, origin); card.addEventListener('click', () => showReading(index)); grid.appendChild(card); });
-    if (!japaneseReadingItems.length) grid.textContent = 'Nenhuma leitura corresponde aos filtros atuais.';
+    readingEl('reading-count').textContent = `${japaneseReadingItems.length} leituras`; japaneseReadingCollection.reset(japaneseReadingItems);
+    if (!japaneseReadingItems.length) readingEl('reading-grid').textContent = 'Nenhuma leitura corresponde aos filtros atuais.';
 }
 function openReadingFromQuery() {
     const params = new URLSearchParams(window.location.search), requested = params.get('text'); if (!requested) return false;
@@ -61,6 +62,7 @@ function openReadingFromQuery() {
 }
 function initializeJapaneseReading() {
     const source = typeof JAPANESE_READING_INDEX !== 'undefined' ? JAPANESE_READING_INDEX : null; if (!Array.isArray(source)) { readingEl('reading-grid').textContent = 'Biblioteca indisponível.'; return; }
+    japaneseReadingCollection = window.JapaneseUI.createProgressiveCollection({ container: readingEl('reading-grid'), batchSize: 12, renderItem(item) { const index = japaneseReadingItems.indexOf(item), card = document.createElement('button'); card.type = 'button'; card.className = 'reading-card'; const meta = document.createElement('div'); meta.className = 'reading-meta'; meta.textContent = `${item.referenceLevel} • ${item.charCount} caracteres • ${item.questions.length} questões`; const title = document.createElement('h2'); title.textContent = item.title; const origin = document.createElement('div'); origin.className = 'reading-meta'; origin.textContent = item.moduleTitle; card.append(meta, title, origin); card.addEventListener('click', () => showReading(index)); return card; } });
     const level = new URLSearchParams(window.location.search).get('level'); if (['N5', 'N4', 'N3', 'N2', 'N1'].includes(level)) readingEl('reading-level').value = level;
     readingEl('reading-level').addEventListener('change', renderReadingLibrary); readingEl('reading-search').addEventListener('input', renderReadingLibrary); renderReadingLibrary(); openReadingFromQuery();
     document.querySelectorAll('[data-reading-toggle]').forEach(button => button.addEventListener('click', () => setReadingSupport(button.dataset.readingToggle, button.getAttribute('aria-pressed') !== 'true')));

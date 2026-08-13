@@ -1,8 +1,10 @@
 'use strict';
 
-let japaneseWritingItems = [], japaneseWritingCurrent = null, japaneseWritingMode = 'order', japaneseWritingSelected = [], japaneseWritingSessionStarted = false;
+let japaneseWritingItems = [], japaneseWritingCurrent = null, japaneseWritingMode = 'order', japaneseWritingSelected = [], japaneseWritingSessionStarted = false, japaneseWritingCollection = null;
 const japaneseWritingActivity = new Set();
 const writingEl = id => document.getElementById(id);
+function installJapaneseProgressiveUI(){window.JapaneseUI=window.JapaneseUI||{};if(window.JapaneseUI.createProgressiveCollection)return;window.JapaneseUI.createProgressiveCollection=o=>{const c=o.container,f=document.createElement('div'),s=document.createElement('span'),b=document.createElement('button');f.className='jp-progressive-footer';s.className='jp-progressive-status';s.setAttribute('aria-live','polite');b.type='button';b.className='jp-load-more';b.textContent='Carregar mais';f.append(s,b);c.after(f);let a=[],n=0,z=o.batchSize||12;const u=()=>{s.textContent=`Exibindo ${n} de ${a.length}`;b.hidden=n>=a.length;f.hidden=!a.length},l=q=>{let x=n,e=Math.min(a.length,n+z);for(;n<e;n++)c.append(o.renderItem(a[n],n));u();if(q&&c.children[x])c.children[x].focus();if(o.afterRender)o.afterRender()};b.onclick=()=>l(true);u();return{reset:v=>{a=v||[];n=0;c.textContent='';l(false)},loadMore:l,revealThrough:p=>{let i=a.findIndex(p);while(i>=n)l(false);return i},getState:()=>({shown:n,total:a.length,batchSize:z})}}}
+installJapaneseProgressiveUI();
 function normalizeWritingComparison(value) { return String(value || '').normalize('NFKC').trim().replace(/[\s\u3000]+/gu, ''); }
 function registerWritingActivity(item, eventType) {
     if (!item) return; const key = `${item.id}:${eventType}`; if (japaneseWritingActivity.has(key)) return; japaneseWritingActivity.add(key);
@@ -16,9 +18,8 @@ function orderedWritingChunks(item) { if (!item || item.chunks.length < 2) retur
 function renderWritingLibrary() {
     const level = writingEl('writing-level').value, query = String(writingEl('writing-search').value || '').trim().toLocaleLowerCase('pt-BR');
     japaneseWritingItems = writingIndex().filter(item => (level === 'all' || item.level === level) && (!query || `${item.translation} ${item.sentence} ${item.moduleTitle}`.toLocaleLowerCase('pt-BR').includes(query)));
-    const grid = writingEl('writing-grid'); grid.textContent = ''; writingEl('writing-count').textContent = `${japaneseWritingItems.length} modelos`;
-    japaneseWritingItems.forEach(item => { const card = document.createElement('button'); card.type = 'button'; card.className = 'writing-card'; const meta = document.createElement('div'); meta.className = 'writing-meta'; meta.textContent = `${item.level} • ${item.moduleTitle}`; const title = document.createElement('h2'); title.textContent = item.translation; const preview = document.createElement('div'); preview.className = 'writing-meta'; preview.lang = 'ja'; preview.textContent = item.sentence; card.append(meta, title, preview); card.addEventListener('click', () => showWritingItem(item)); grid.appendChild(card); });
-    if (!japaneseWritingItems.length) grid.textContent = 'Nenhum modelo corresponde aos filtros atuais.';
+    writingEl('writing-count').textContent = `${japaneseWritingItems.length} modelos`; japaneseWritingCollection.reset(japaneseWritingItems);
+    if (!japaneseWritingItems.length) writingEl('writing-grid').textContent = 'Nenhum modelo corresponde aos filtros atuais.';
 }
 function renderWritingOrder() {
     const item = japaneseWritingCurrent, bank = writingEl('writing-bank'), selected = writingEl('writing-selected'); bank.textContent = ''; selected.textContent = '';
@@ -42,6 +43,7 @@ function showWritingItem(item) {
 function resetWriting() { japaneseWritingSelected = []; writingEl('writing-input').value = ''; writingEl('writing-result').textContent = ''; renderWritingOrder(); }
 function initializeJapaneseWriting() {
     if (!Array.isArray(writingIndex())) { writingEl('writing-grid').textContent = 'Oficina de escrita indisponível.'; return; }
+    japaneseWritingCollection = window.JapaneseUI.createProgressiveCollection({ container: writingEl('writing-grid'), batchSize: 12, renderItem(item) { const card = document.createElement('button'); card.type = 'button'; card.className = 'writing-card'; const meta = document.createElement('div'); meta.className = 'writing-meta'; meta.textContent = `${item.level} • ${item.moduleTitle}`; const title = document.createElement('h2'); title.textContent = item.translation; const preview = document.createElement('div'); preview.className = 'writing-meta'; preview.lang = 'ja'; preview.textContent = item.sentence; card.append(meta, title, preview); card.addEventListener('click', () => showWritingItem(item)); return card; } });
     writingEl('writing-level').addEventListener('change', renderWritingLibrary); writingEl('writing-search').addEventListener('input', renderWritingLibrary); renderWritingLibrary();
     document.querySelectorAll('[data-writing-mode]').forEach(button => button.addEventListener('click', () => setWritingMode(button.dataset.writingMode))); writingEl('writing-compare').addEventListener('click', compareWriting); writingEl('writing-reset').addEventListener('click', resetWriting); writingEl('writing-back').addEventListener('click', () => { resetWriting(); writingEl('writing-workshop').hidden = true; writingEl('writing-library').hidden = false; history.replaceState(null, '', window.location.pathname); });
     writingEl('writing-audio').addEventListener('click', () => { const item = japaneseWritingCurrent; if (item && typeof tocarAudio === 'function') { registerWritingActivity(item, 'audio'); tocarAudio(item.sentence, 'ja-JP', 1); } });
