@@ -14376,6 +14376,47 @@ const kanjiN2Data = [
         "isReviewTable": true,
         "module": 21,
         "title": "Módulo 21: Tabela Geral de Kanjis e Revisão do N2",
-        "description": "Tabela completa de revisão com todos os 380 Kanjis aprendidos nos 20 módulos do nível JLPT N2."
+        "description": "Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2."
     }
 ];
+
+// Rascunhos editoriais da Fase 5; todos permanecem pendentes de revisão humana qualificada.
+const N2_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    strategy: '戦略', study: '勉強', ancient: '古代', decision: '判断', method: '方法', melody: '旋律', loss: '損失',
+    visit: '訪問する', success: '成功', peace: '平和', life: '生活', wish: '願う', festival: '祭り',
+    business: '事業', management: '経営', project: '企画', system: '制度', service: 'サービス', data: 'データ',
+    check: '確認する', report: '報告書', research: '研究', test: '試験', team: 'チーム', news: 'ニュース',
+    problem: '問題', result: '結果', plan: '計画', future: '未来', company: '会社', office: '事務所',
+    work: '仕事', leader: '指導者', rule: '規則', power: '力', money: 'お金', economy: '経済',
+    culture: '文化', society: '社会', history: '歴史', nature: '自然', city: '都市', world: '世界',
+    food: '食べ物', medicine: '薬', health: '健康', stress: 'ストレス', sports: 'スポーツ',
+    music: '音楽', movie: '映画', story: '話', event: '行事', hotel: 'ホテル', bus: 'バス', train: '列車'
+};
+
+if (typeof KanjiRomajiDraft === 'undefined') {
+    throw new Error('KanjiRomajiDraft deve carregar antes do dataset Kanji N2.');
+}
+KanjiRomajiDraft.apply(kanjiN2Data, {
+    phase: 5,
+    replacements: N2_ROMAJI_EDITORIAL_REPLACEMENTS,
+    overrides: [
+        [3, 8, 0, '国会議事堂。'],
+        [4, 4, 1, '訴訟で勝ったという報告。'],
+        [6, 7, 0, '擬似体験。'],
+        [11, 9, 1, '公園の休憩亭。'],
+        [13, 7, 0, '乗車券を買います。'],
+        [13, 7, 1, '航空券。'],
+        [13, 12, 0, '国境を越える。'],
+        [13, 18, 0, '観光一覧を見る。'],
+        [14, 15, 1, '選挙に行く。']
+    ]
+});
+
+// Correções objetivas de leituras sem Kana.
+if (kanjiN2Data[4] && kanjiN2Data[4].kanjis[7]) kanjiN2Data[4].kanjis[7].onyomi = 'キン (KIN)';
+if (kanjiN2Data[14] && kanjiN2Data[14].kanjis[3]) kanjiN2Data[14].kanjis[3].onyomi = 'ダツ (DATSU)';
+
+// A revisão referencia o inventário real sem alegar domínio integral.
+if (kanjiN2Data[20]) {
+    kanjiN2Data[20].description = 'Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2.';
+}

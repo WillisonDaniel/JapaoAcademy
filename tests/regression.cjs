@@ -68,6 +68,7 @@ function runFile(context, relativePath) {
 
 function loadValue(relativePath, expression) {
     const context = createContext();
+    if (/data_kanji_n[23]\.js$/.test(relativePath)) runFile(context, 'js/kanji/romaji-draft.js');
     vm.runInContext(`${read(relativePath)}\n;globalThis.__testValue = ${expression};`, context, {
         filename: relativePath
     });
@@ -91,7 +92,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 83, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 84, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -551,6 +552,7 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
         'database/ja-JP/data_kanji_n2.js',
         'database/ja-JP/data_kanji_n1.js'
     ];
+    runFile(context, 'js/kanji/romaji-draft.js');
     datasetFiles.forEach(file => runFile(context, file));
     runFile(context, 'js/course/moduleNormalizer.js');
     runFile(context, 'js/core/state.js');
@@ -1250,7 +1252,7 @@ test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () =>
     const review = read('tests/JAPANESE_KANJI_N3_HUMAN_REVIEW.md');
     const packageJson = JSON.parse(read('package.json'));
 
-    assert.match(n3, /const N3_ROMAJI_HIRAGANA = \{/);
+    assert.match(n3, /KanjiRomajiDraft\.sentence/);
     assert.match(n3, /const N3_EXAMPLE_OVERRIDES = \[/);
     assert.match(n3, /pending-human-review/);
     assert.match(n3, /ボウ \(BOU\) \/ バク \(BAKU\)/);
@@ -1270,6 +1272,36 @@ test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () =>
     assert.match(review, /Todas as linhas permanecem pendentes/);
     assert.equal(packageJson.scripts['test:japanese-kanji-n3'], 'node tests/kanji-n3-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/kanji-n3-contract\.cjs/);
+});
+
+test('recuperacao Kanji N2 da Fase 5 permanece rastreavel e nao aprovada', () => {
+    const n2 = read('database/ja-JP/data_kanji_n2.js');
+    const helper = read('js/kanji/romaji-draft.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const contract = read('tests/kanji-n2-contract.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_KANJI_N2_HUMAN_REVIEW.md');
+    const n2Page = read('html/ja-JP/kanji_n2.html');
+    const n3Page = read('html/ja-JP/kanji_n3.html');
+    const packageJson = JSON.parse(read('package.json'));
+
+    assert.match(n2, /KanjiRomajiDraft\.apply\(kanjiN2Data/);
+    assert.match(n2, /キン \(KIN\)/);
+    assert.match(n2, /ダツ \(DATSU\)/);
+    assert.match(n2, /375 registros apresentados/);
+    assert.doesNotMatch(n2, /todos os 380 Kanjis aprendidos/i);
+    assert.match(helper, /global\.KanjiRomajiDraft/);
+    assert.match(helper, /pending-human-review/);
+    assert.ok(n2Page.indexOf('romaji-draft.js') < n2Page.indexOf('data_kanji_n2.js'));
+    assert.ok(n3Page.indexOf('romaji-draft.js') < n3Page.indexOf('data_kanji_n3.js'));
+    assert.match(audit, /N2_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => item.level === 'N2').length, 0);
+    assert.match(contract, /750 exemplos/);
+    assert.match(contract, /5a70dff97bf428118a9c509c9ba54419f9b5a66f5cd4bff20358521426e8d02e/);
+    assert.match(review, /Todas as linhas permanecem pendentes/);
+    assert.equal(packageJson.scripts['test:japanese-kanji-n2'], 'node tests/kanji-n2-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/kanji-n2-contract\.cjs/);
 });
 
 const failed = results.filter(result => !result.ok);

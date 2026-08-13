@@ -682,8 +682,8 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
         n5: 700 * 1024,
         n4: 715 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 971 * 1024,
-        n2: 1000 * 1024,
+        n3: 974 * 1024,
+        n2: 1007 * 1024,
         n1: 1770 * 1024
     };
 
@@ -698,7 +698,13 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
             return total + fs.statSync(caminho).size;
         }, 0);
 
-        assert.equal(scriptsLocais.length, 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        const usesDraftHelper = level === 'n3' || level === 'n2';
+        assert.equal(scriptsLocais.length, usesDraftHelper ? 26 : 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        if (usesDraftHelper) {
+            assert.equal(scriptsLocais[0], '../../js/kanji/romaji-draft.js', `${level.toUpperCase()}: helper deve preceder o dataset`);
+        } else {
+            assert.doesNotMatch(html, /js\/kanji\/romaji-draft\.js/);
+        }
         assert.ok(bytesLocais <= maxBytes, `${level.toUpperCase()}: ${Math.round(bytesLocais / 1024)} KB locais`);
         assert.deepEqual(
             scriptsLocais.filter(src => /database\/ja-JP\/data_kanji_n\d\.js/.test(src)),

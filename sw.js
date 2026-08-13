@@ -89,6 +89,7 @@ const ASSETS_TO_CACHE = [
     './js/core/dictionary.js',
     './js/kanji/kanji-canvas.js',
     './js/kanji/kanji-render.js',
+    './js/kanji/romaji-draft.js',
     './js/phrasal/navigation.js',
     './js/phrasal/render.js',
     './js/pronunciation/render.js',

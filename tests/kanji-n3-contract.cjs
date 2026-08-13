@@ -8,7 +8,11 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const read = relativePath => fs.readFileSync(path.join(ROOT, relativePath), 'utf8');
-const context = vm.createContext({ console });
+const context = { console };
+context.window = context;
+context.globalThis = context;
+vm.createContext(context);
+vm.runInContext(read('js/kanji/romaji-draft.js'), context, { filename: 'js/kanji/romaji-draft.js' });
 vm.runInContext(`${read('database/ja-JP/data_kanji_n3.js')}\nglobalThis.__data = kanjiN3Data;`, context, { filename: 'data_kanji_n3.js' });
 const modules = JSON.parse(JSON.stringify(context.__data));
 
