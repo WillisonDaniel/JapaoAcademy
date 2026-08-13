@@ -514,3 +514,174 @@
 @media (prefers-reduced-motion: reduce) {
     .skill-grid .course-btn.jp-resource-card { transition: none; }
 }
+
+/* Study experiences: listening, reading, grammar, writing and JLPT */
+.jp-study-page > header::after {
+    content: "日本語 • Idiomas Academy";
+    display: block;
+    margin-top: 8px;
+    color: rgba(255,255,255,.72);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.jp-study-shell {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 64px;
+}
+
+.jp-page-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 22px;
+    align-items: end;
+    margin-bottom: 18px;
+    padding: clamp(22px, 4vw, 34px);
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    background:
+        linear-gradient(120deg, rgba(185,28,28,.84), rgba(30,27,75,.92)),
+        linear-gradient(135deg, var(--jp-indigo), var(--jp-indigo-soft));
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--jp-radius-xl);
+    box-shadow: var(--jp-shadow-strong);
+}
+
+.jp-page-intro::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -72px;
+    top: -86px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 50%;
+    box-shadow: 0 0 0 34px rgba(255,255,255,.035), 0 0 0 68px rgba(255,255,255,.025);
+}
+
+.jp-page-intro > * { position: relative; z-index: 1; }
+.jp-page-intro h2 { margin: 4px 0 8px; font-size: clamp(1.55rem, 4vw, 2.35rem); }
+.jp-page-intro p { max-width: 68ch; margin: 0; color: rgba(255,255,255,.82); line-height: 1.65; }
+.jp-page-kicker { color: var(--jp-gold-soft); font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.jp-page-stat { min-width: 142px; padding: 14px 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 16px; backdrop-filter: blur(8px); }
+.jp-page-stat span,.jp-page-stat strong { display: block; }
+.jp-page-stat span { color: rgba(255,255,255,.72); font-size: .76rem; font-weight: 700; }
+.jp-page-stat strong { margin-top: 4px; font-size: 1.2rem; }
+
+.jp-study-page :is(.listening-notice,.reading-note,.grammar-note,.writing-note,.jlpt-note) {
+    position: relative;
+    padding: 17px 20px 17px 50px;
+    margin-bottom: 18px;
+    color: var(--jp-ink-soft);
+    line-height: 1.62;
+    background: color-mix(in srgb, var(--jp-gold-soft) 12%, var(--jp-surface));
+    border: 1px solid color-mix(in srgb, var(--jp-gold) 35%, var(--jp-line));
+    border-radius: var(--jp-radius-lg);
+    box-shadow: var(--jp-shadow-soft);
+}
+
+.jp-study-page :is(.listening-notice,.reading-note,.grammar-note,.writing-note,.jlpt-note)::before {
+    content: "i";
+    position: absolute;
+    top: 17px;
+    left: 18px;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    color: #fff;
+    background: var(--jp-indigo);
+    border-radius: 50%;
+    font: 800 .8rem/1 Fredoka, sans-serif;
+}
+
+.jp-study-page :is(.listening-controls,.reading-filters,.grammar-filters,.grammar-lookup,.writing-filters,.listening-card,.reading-reader,.grammar-detail,.writing-workshop,.jlpt-config,.jlpt-session,.jlpt-result) {
+    background: var(--jp-surface);
+    border: 1px solid var(--jp-line);
+    border-radius: var(--jp-radius-xl);
+    box-shadow: var(--jp-shadow-soft);
+}
+
+.jp-study-page :is(input,select,textarea,button,a):focus-visible { outline: 3px solid var(--jp-focus); outline-offset: 3px; }
+.jp-study-page :is(input,select,textarea) { color: var(--jp-ink); background: var(--jp-surface-raised); border-color: var(--jp-line); }
+
+.listening-shell { max-width: 940px; }
+.reading-shell { max-width: 1120px; }
+.grammar-shell { max-width: 1160px; }
+.writing-shell { max-width: 1120px; }
+.jlpt-shell { max-width: 1020px; }
+.listening-shell,.reading-shell,.grammar-shell,.writing-shell,.jlpt-shell { width: min(var(--shell-max, 1120px), calc(100% - 32px)); margin: 0 auto; padding: 28px 0 64px; }
+
+.listening-controls { padding: 20px; margin-bottom: 18px; display: grid; gap: 14px; }
+.listening-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.listening-row label,.reading-filters label,.grammar-filters label,.writing-filters label,.jlpt-config label { font-weight: 800; }
+.listening-row :is(select,button),.reading-filters :is(input,select,button),.reading-toolbar button,.grammar-filters :is(input,select),.grammar-lookup :is(input,button),.grammar-actions :is(button,a),.grammar-practice button,.writing-filters :is(input,select),.writing-modes button,.writing-actions :is(button,a),.writing-bank button,.writing-selected button,.writing-back,.jlpt-config :is(select,button),.jlpt-nav button,.jlpt-options button,.jlpt-review a,.jlpt-result-actions button {
+    min-height: 44px;
+    padding: 10px 14px;
+    color: var(--jp-ink);
+    background: var(--jp-surface-raised);
+    border: 1px solid var(--jp-line);
+    border-radius: 12px;
+    font-weight: 800;
+}
+.listening-row[aria-label="Modo de prática"] { width: fit-content; padding: 4px; background: var(--jp-paper-deep); border: 1px solid var(--jp-line); border-radius: 14px; }
+.listening-row button[aria-pressed="true"],.listening-primary,.reading-toolbar button[aria-pressed="true"],.writing-modes button[aria-pressed="true"],.jlpt-options button[aria-pressed="true"] { color: #fff !important; background: var(--jp-indigo) !important; border-color: var(--jp-indigo) !important; box-shadow: 0 6px 16px rgba(30,27,75,.2); }
+.listening-card { padding: clamp(20px, 4vw, 34px); border-top: 4px solid var(--jp-red); }
+.listening-meta,.jlpt-meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; color: var(--jp-muted); font-size: .86rem; font-weight: 800; letter-spacing: .025em; }
+.listening-prompt { min-height: 220px; display: grid; place-items: center; text-align: center; padding: 30px 18px; background: radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--jp-indigo) 9%, transparent), transparent 62%); border-radius: 18px; }
+.listening-prompt h2 { margin: 0; font-family: 'Noto Sans JP',sans-serif; font-size: clamp(1.8rem,6vw,2.8rem); line-height: 1.55; }
+.listening-hidden { display: none; }
+.listening-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 18px 0; }
+.listening-actions button,.listening-link { min-height: 44px; padding: 11px 16px; display: inline-flex; align-items: center; justify-content: center; color: #fff; background: var(--jp-indigo); border: 1px solid var(--jp-indigo); border-radius: 12px; font-weight: 800; text-decoration: none; }
+.listening-actions .secondary,.listening-link { color: var(--jp-ink); background: var(--jp-surface-raised); border-color: var(--jp-line); }
+.listening-status { min-height: 28px; text-align: center; color: var(--jp-indigo-soft); font-weight: 800; }
+.listening-transcript,.listening-review { margin-top: 12px; padding: 15px 17px; overflow-wrap: anywhere; background: var(--jp-paper-deep); border: 1px solid var(--jp-line); border-radius: 14px; }
+.listening-review { background: color-mix(in srgb, var(--jp-gold-soft) 16%, var(--jp-surface)); }
+.listening-source-wrap { text-align: center; margin-top: 16px; }
+.listening-footer,.reading-nav,.jlpt-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 24px; }
+.listening-footer button,.reading-nav button { min-height: 44px; padding: 10px 16px; color: var(--jp-ink); background: var(--jp-surface); border: 1px solid var(--jp-line); border-radius: 12px; font-weight: 800; }
+
+.reading-filters,.writing-filters { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; padding: 18px 20px; margin-bottom: 18px; }
+.reading-filters input { flex: 1; min-width: 210px; }
+.reading-grid,.writing-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(270px,1fr)); gap: 14px; }
+.reading-card,.writing-card,.grammar-card { position: relative; padding: 18px; text-align: left; color: var(--jp-ink); background: var(--jp-surface); border: 1px solid var(--jp-line); border-radius: var(--jp-radius-lg); box-shadow: var(--jp-shadow-soft); cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.reading-card::before,.writing-card::before,.grammar-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(var(--jp-red),var(--jp-gold)); border-radius: var(--jp-radius-lg) 0 0 var(--jp-radius-lg); }
+.reading-card:hover,.writing-card:hover,.grammar-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--jp-indigo) 38%, var(--jp-line)); box-shadow: var(--jp-shadow-strong); }
+.reading-card h2,.writing-card h2,.grammar-card h2 { margin: 8px 0; font-size: 1.06rem; line-height: 1.4; }
+.reading-meta,.writing-meta,.grammar-meta { color: var(--jp-muted); font-size: .84rem; font-weight: 800; }
+.reading-reader,.grammar-detail,.writing-workshop { padding: clamp(20px,5vw,38px); }
+.reading-toolbar { position: sticky; top: 8px; z-index: 5; display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; padding: 10px; background: color-mix(in srgb,var(--jp-surface) 90%,transparent); border: 1px solid var(--jp-line); border-radius: 14px; backdrop-filter: blur(12px); }
+.reading-text { max-width: 70ch; margin-inline: auto; padding: clamp(20px,4vw,32px); font-family: 'Noto Sans JP',sans-serif; font-size: clamp(1.2rem,3.6vw,1.7rem); line-height: 2.08; background: var(--jp-paper-deep); border: 1px solid var(--jp-line); border-radius: 16px; }
+.reading-text rt { font-size: .55em; }.hide-reading-furigana rt{display:none}.reading-support{max-width:70ch;margin-inline:auto;padding:16px 0;line-height:1.75}.reading-support[hidden]{display:none}
+.reading-editorial,.grammar-editorial,.writing-editorial,.jlpt-editorial { padding: 13px 15px; margin: 14px 0; background: color-mix(in srgb,var(--jp-gold-soft) 15%,var(--jp-surface)); border: 1px solid color-mix(in srgb,var(--jp-gold) 35%,var(--jp-line)); border-radius: 12px; }
+.reading-actions,.grammar-actions,.writing-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+.reading-actions :is(a,button) { min-height: 44px; padding: 10px 14px; color: var(--jp-ink); background: var(--jp-surface); border: 1px solid var(--jp-line); border-radius: 12px; font-weight: 800; text-decoration: none; }
+.reading-questions { margin-top: 26px; padding: clamp(18px,4vw,28px); background: var(--jp-paper-deep); border-radius: 16px; }
+.reading-question { padding: 16px 0; border-top: 1px solid var(--jp-line); }.reading-options,.grammar-practice-options,.jlpt-options{display:grid;gap:9px}.reading-options button{padding:11px;text-align:left;color:var(--jp-ink);background:var(--jp-surface);border:1px solid var(--jp-line);border-radius:10px}
+.reading-focus header,.reading-focus .jp-page-intro,.reading-focus .reading-note,.reading-focus .reading-filters,.reading-focus .reading-actions,.reading-focus .reading-questions{display:none}.reading-focus .reading-shell{max-width:780px;padding-top:8vh}.reading-focus .reading-reader{box-shadow:none;border:0}
+
+.grammar-filters { display: grid; grid-template-columns: repeat(4,minmax(130px,1fr)); gap: 12px; align-items: end; padding: 20px; margin-bottom: 18px; }.grammar-search{grid-column:span 2}.grammar-lookup{position:relative;padding:24px;margin:0 0 18px;background:linear-gradient(135deg,color-mix(in srgb,var(--jp-indigo) 8%,var(--jp-surface)),var(--jp-surface));border-left:5px solid var(--jp-indigo)}.grammar-lookup h2{margin-top:0}.grammar-lookup-row{display:flex;gap:10px;flex-wrap:wrap}.grammar-lookup-row input{flex:1;min-width:220px}.grammar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}.grammar-rule{line-height:1.75}.grammar-formula,.grammar-example{padding:17px;margin:14px 0;white-space:pre-wrap;background:var(--jp-paper-deep);border:1px solid var(--jp-line);border-radius:13px}.grammar-example{font-family:'Noto Sans JP',sans-serif;font-size:1.25rem;border-left:4px solid var(--jp-red)}.grammar-actions a{text-decoration:none}.grammar-support[hidden]{display:none}.grammar-form-table{width:100%;border-collapse:collapse;margin-top:14px}.grammar-form-table th,.grammar-form-table td{padding:10px;border:1px solid var(--jp-line);text-align:left}.grammar-practice{margin-top:26px;padding:22px;background:var(--jp-paper-deep);border-radius:16px}.grammar-practice button{text-align:left}.grammar-status{min-height:1.5em}.grammar-back{margin-bottom:16px}
+
+.writing-filters input{min-width:240px}.writing-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0;padding:5px;background:var(--jp-paper-deep);border:1px solid var(--jp-line);border-radius:15px}.writing-modes button{position:relative}.writing-modes button:not(:last-child)::after{content:"";position:absolute;right:-8px;top:50%;width:8px;height:1px;background:var(--jp-line)}.writing-prompt{padding:20px;line-height:1.75;background:var(--jp-paper-deep);border:1px solid var(--jp-line);border-radius:15px}.writing-model{font-family:'Noto Sans JP',sans-serif;font-size:1.3rem;line-height:1.9}.writing-bank{display:flex;gap:9px;flex-wrap:wrap;margin:16px 0;padding:14px;background:var(--jp-paper-deep);border-radius:14px}.writing-bank button,.writing-selected button{cursor:pointer}.writing-selected{display:grid;gap:8px;min-height:76px;padding:14px;background:color-mix(in srgb,var(--jp-indigo) 4%,var(--jp-surface));border:2px dashed color-mix(in srgb,var(--jp-indigo) 35%,var(--jp-line));border-radius:14px}.writing-selected-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.writing-selected-token{font-family:'Noto Sans JP',sans-serif;font-size:1.1rem;flex:1}.writing-input{width:100%;min-height:150px;padding:16px;color:var(--jp-ink);background:var(--jp-paper-deep);border:1px solid var(--jp-line);border-radius:14px;font:1.15rem/1.8 'Noto Sans JP',sans-serif}.writing-result{min-height:1.5em;padding:14px;background:var(--jp-paper-deep);border-radius:12px}.writing-actions a{text-decoration:none}.writing-private{display:flex;gap:9px;align-items:flex-start;padding:13px 15px;color:var(--jp-muted);background:color-mix(in srgb,var(--jp-indigo) 5%,var(--jp-surface));border:1px solid var(--jp-line);border-radius:12px;font-size:.9rem}.writing-private::before{content:"🔒"}
+
+.jlpt-note,.jlpt-config,.jlpt-session,.jlpt-result{padding:clamp(20px,4vw,32px);margin-bottom:18px}.jlpt-config{counter-reset:config-step}.jlpt-config-grid{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px;margin:20px 0}.jlpt-config-grid label{position:relative;padding:18px 16px 16px;background:var(--jp-paper-deep);border:1px solid var(--jp-line);border-radius:14px;counter-increment:config-step}.jlpt-config-grid label::before{content:counter(config-step);display:grid;place-items:center;width:27px;height:27px;margin-bottom:10px;color:#fff;background:var(--jp-red);border-radius:50%;font-size:.82rem}.jlpt-config select{display:block;width:100%;margin-top:8px}.jlpt-start{margin-top:16px;color:#fff!important;background:var(--jp-red)!important;border-color:var(--jp-red)!important;cursor:pointer}.jlpt-meta{padding-bottom:14px;border-bottom:1px solid var(--jp-line)}.jlpt-question{margin:26px 0;font-size:1.25rem;line-height:1.7}.jlpt-options button{text-align:left;cursor:pointer}.jlpt-nav button{cursor:pointer}.jlpt-nav #jlpt-finish{color:#fff;background:var(--jp-red);border-color:var(--jp-red)}.jlpt-review{padding:16px 0;border-top:1px solid var(--jp-line)}.jlpt-review p{line-height:1.65}.jlpt-review a{display:inline-block;text-decoration:none}.jlpt-status{min-height:1.5em}.jlpt-result-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.dark-theme .jp-study-page :is(.listening-notice,.reading-note,.grammar-note,.writing-note,.jlpt-note) { color: var(--jp-ink); }
+
+@media(max-width:720px){.jp-page-intro{grid-template-columns:1fr}.jp-page-stat{width:fit-content}.grammar-filters{grid-template-columns:1fr 1fr}.grammar-search{grid-column:1/-1}}
+@media(max-width:520px){
+    .jp-study-page > header::after{display:none}
+    .jp-study-page > header > h1{font-size:1.72rem}
+    .jp-study-shell,.listening-shell,.reading-shell,.grammar-shell,.writing-shell,.jlpt-shell{width:min(100% - 24px,1120px);padding-top:18px}
+    .jp-page-intro{padding:22px 20px;border-radius:20px}.jp-page-intro h2{font-size:1.7rem}.jp-page-stat{width:100%}
+    .listening-card{padding:18px}.listening-prompt{min-height:185px;padding:22px 8px}.listening-footer,.reading-nav,.jlpt-nav{flex-direction:column}.listening-footer button,.reading-nav button,.jlpt-nav button{width:100%}
+    .reading-filters>*,.writing-filters>*{width:100%}.reading-filters input,.writing-filters input{width:100%;min-width:0}.reading-grid,.writing-grid,.grammar-grid{grid-template-columns:1fr}.reading-toolbar button{flex:1 1 calc(50% - 8px)}
+    .grammar-filters{grid-template-columns:1fr}.grammar-search{grid-column:auto}.grammar-form-table{display:block;overflow-x:auto}.grammar-actions>*,.writing-actions>*{width:100%;text-align:center}
+    .writing-modes{grid-template-columns:1fr}.writing-modes button:not(:last-child)::after{display:none}.writing-selected-row button{min-width:44px;padding:8px}.jlpt-config-grid{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){.reading-card,.writing-card,.grammar-card{transition:none}}

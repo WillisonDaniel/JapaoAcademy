@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Biblioteca de leitura japonesa | Idiomas Academy</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png"><link rel="manifest" href="../../manifest.json"><meta name="theme-color" content="#1e1b4b">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../style.css?v=28f">
-    <style>
-        .reading-shell{max-width:1050px;margin:auto;padding:24px 16px 60px}.reading-note,.reading-filters,.reading-reader,.reading-card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;box-shadow:var(--shadow)}.reading-note,.reading-filters{padding:16px 18px;margin-bottom:18px}.reading-filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.reading-filters input,.reading-filters select,.reading-filters button,.reading-toolbar button{min-height:44px;border:1px solid var(--border-color);border-radius:10px;padding:9px 12px;background:var(--bg-color);color:var(--text-main);font-weight:700}.reading-filters input{flex:1;min-width:210px}.reading-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.reading-card{padding:18px;text-align:left;cursor:pointer;color:var(--text-main)}.reading-card h2{font-size:1.08rem;margin:7px 0}.reading-meta{color:var(--text-muted);font-size:.86rem;font-weight:700}.reading-reader{padding:clamp(18px,5vw,36px)}.reading-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.reading-toolbar button[aria-pressed="true"]{background:#0f766e;color:#fff;border-color:#0f766e}.reading-text{font-family:'Noto Sans JP',sans-serif;font-size:clamp(1.25rem,3.6vw,1.75rem);line-height:2.1;padding:22px;background:var(--bg-color);border-radius:14px}.reading-text rt{font-size:.55em}.hide-reading-furigana rt{display:none}.reading-support{padding:16px 0;line-height:1.7}.reading-support[hidden]{display:none}.reading-editorial{padding:12px;border-radius:10px;background:rgba(245,158,11,.14);margin:14px 0}.reading-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.reading-actions a,.reading-actions button{min-height:44px;padding:10px 14px;border-radius:10px;border:1px solid var(--border-color);background:var(--card-bg);color:var(--text-main);font-weight:700;text-decoration:none;cursor:pointer}.reading-question{border-top:1px solid var(--border-color);padding:16px 0}.reading-options{display:grid;gap:8px}.reading-options button{padding:10px;text-align:left;border:1px solid var(--border-color);border-radius:9px;background:var(--bg-color);color:var(--text-main);cursor:pointer}.reading-focus header,.reading-focus .reading-note,.reading-focus .reading-filters,.reading-focus .reading-actions,.reading-focus .reading-questions{display:none}.reading-focus .reading-shell{max-width:780px;padding-top:8vh}.reading-focus .reading-reader{box-shadow:none;border:0}.reading-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.reading-nav button{min-height:44px;padding:10px 14px;border:1px solid var(--border-color);border-radius:10px;background:var(--card-bg);color:var(--text-main);font-weight:700}@media(max-width:520px){.reading-nav{flex-direction:column}.reading-nav button{width:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de leitura japonesa | Idiomas Academy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=7">
 </head>
-<body data-mode="reading" data-lang="japanese">
+<body data-mode="reading" data-lang="japanese" class="japanese-experience jp-study-page jp-reading-page">
     <header><a href="../../hub_japones.html" class="home-btn">⬅ Japonês</a><button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button><h1>📚 Biblioteca de leitura</h1><p>Textos reais das trilhas Kanji, organizados por nível de referência.</p></header>
     <main class="reading-shell">
+        <section class="jp-page-intro" aria-labelledby="reading-intro-title"><div><span class="jp-page-kicker">Leitura graduada</span><h2 id="reading-intro-title">Leia com apoio, sem perder o foco</h2><p>Escolha um texto por nível, controle os apoios de leitura e avance para questões de compreensão em uma área separada.</p></div><div class="jp-page-stat"><span>Biblioteca atual</span><strong>91 textos</strong></div></section>
         <div class="reading-note"><strong>Transparência:</strong> os níveis são referências pedagógicas JLPT e não constituem listas oficiais. “Sem marcação editorial” não significa aprovação humana. O áudio, quando usado, é sintetizado pelo dispositivo.</div>
         <section id="reading-library">
             <div class="reading-filters" aria-label="Filtros da biblioteca"><label for="reading-level">Nível</label><select id="reading-level"><option value="all">N5–N1</option><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select><label for="reading-search">Busca</label><input id="reading-search" type="search" placeholder="Título ou texto" autocomplete="off"><span id="reading-count" aria-live="polite"></span></div>
@@ -27,5 +31,5 @@
         </article>
     </main>
     <script src="../../database/ja-JP/data_leitura_index.js"></script><script type="module" src="../../firebase-init.js"></script><script src="../../js/core/config.js"></script><script src="../../js/core/constants.js"></script><script src="../../js/core/state.js"></script><script src="../../js/core/utils.js"></script><script src="../../js/core/theme.js"></script><script src="../../js/core/audio.js"></script><script src="../../js/core/toast.js"></script><script src="../../js/core/storage.js"></script><script src="../../js/core/study-session.js"></script><script src="../../js/core/dom.js"></script><script src="../../js/core/events.js"></script><script src="../../js/game/xp.js"></script><script src="../../js/game/ranking.js"></script><script src="../../js/japanese/reading.js"></script><script src="../../js/core/bootstrap.js"></script><script src="../../app.js"></script>
-</body></html>
-
+</body>
+</html>

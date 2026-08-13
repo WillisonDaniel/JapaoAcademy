@@ -48,11 +48,13 @@ test('motor de audio aceita callbacks e preserva ja-JP e velocidades', () => {
 
 test('pagina declara sintese, privacidade, filtros e estados acessiveis', () => {
     const html = read('html/ja-JP/escuta.html');
+    const sharedStyles = read('japanese-experience.css');
     assert.match(html, /áudio é sintetizado pelo seu dispositivo/);
     assert.match(html, /não avalia pronúncia/);
     assert.match(html, /Nenhum áudio gravado é persistido/);
     assert.match(html, /aria-live="polite"/);
-    assert.match(html, /prefers-reduced-motion/);
+    assert.match(sharedStyles, /prefers-reduced-motion/);
+    assert.match(html, /japanese-experience\.css/);
     ['A1', 'A2', 'B1', 'B2'].forEach(level => assert.match(html, new RegExp(`<option>${level}<\\/option>`)));
     assert.doesNotMatch(html, /canvas-confetti|wanakana|https:\/\/(?!fonts\.googleapis)/);
 });
@@ -92,4 +94,3 @@ test('hub e PWA incluem pagina, controlador e indice', () => {
 const passed = results.filter(Boolean).length;
 console.log(`\nEscuta japonesa: ${passed}/${results.length} contratos aprovados.`);
 if (passed !== results.length) process.exit(1);
-
