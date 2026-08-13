@@ -59,3 +59,12 @@ As revisões finais usam lotes de 60 e os módulos regulares usam lotes de 6. Ex
 - Multidioma: 32/32 cenários.
 - PWA: 131 recursos locais antes da contagem final desta fase; asset compartilhado incluído.
 - `git diff --check`: sem erros.
+
+## Refinamento pós-QA do hub e dos cabeçalhos
+
+- Corrigida a sobreposição dos botões “Idiomas/Japonês” com os títulos do cabeçalho compartilhado.
+- Removido o texto residual que reutilizava incorretamente a camada decorativa do cabeçalho das experiências.
+- Contadores laterais “x recursos” removidos; títulos, subtítulos e marcadores das seções receberam hierarquia centralizada.
+- Resumo da jornada reorganizado em três colunas centralizadas para 105 módulos, 5 trilhas e 12 experiências.
+- QA repetida em 1280×900 e 390×844, nos temas claro e escuro: sem sobreposição, overflow horizontal ou novos erros de console.
+- Cache atualizado para `idiomas-academy-v42` para distribuir o refinamento visual sem preservar o CSS anterior.

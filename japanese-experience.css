@@ -30,7 +30,11 @@
 
 .japanese-experience > header {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
+    padding: 72px 24px 22px;
     border-bottom: 1px solid rgba(255, 255, 255, .1);
     background:
         radial-gradient(circle at 82% 16%, rgba(245, 158, 11, .18), transparent 20rem),
@@ -54,6 +58,26 @@
     z-index: 1;
 }
 
+.japanese-experience > header > .home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    z-index: 3;
+}
+
+.japanese-experience > header > .header-actions-group {
+    position: static !important;
+    display: flex;
+    width: min(100%, 1240px);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px auto 0 !important;
+}
+
 .japanese-experience :is(a, button, input, select, textarea):focus-visible {
     outline: 2px solid var(--jp-gold);
     outline-offset: 3px;
@@ -68,9 +92,10 @@
 
 .jp-hub-hero {
     display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr);
+    grid-template-columns: 1fr;
     gap: 24px;
     align-items: stretch;
+    text-align: center;
     padding: clamp(26px, 5vw, 48px);
     border: 1px solid var(--jp-border);
     border-radius: 28px;
@@ -85,17 +110,27 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin: 0 0 10px;
-    color: #fde68a;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .12em;
+    margin: 0 0 14px;
+    padding: 7px 12px;
+    border: 1px solid rgba(245, 158, 11, .28);
+    border-radius: 999px;
+    color: #92400e;
+    background: rgba(254, 243, 199, .92);
+    font-size: .86rem;
+    font-weight: 800;
+    letter-spacing: .1em;
     text-transform: uppercase;
+}
+
+.jp-hub-hero .jp-eyebrow {
+    color: #fde68a;
+    border-color: rgba(253, 230, 138, .32);
+    background: rgba(15, 23, 42, .3);
 }
 
 .jp-hub-hero h2 {
     max-width: 15ch;
-    margin: 0;
+    margin: 0 auto;
     color: #fff;
     font-family: 'Fredoka', sans-serif;
     font-size: clamp(2rem, 5vw, 3.8rem);
@@ -104,7 +139,7 @@
 
 .jp-hub-hero p {
     max-width: 62ch;
-    margin: 18px 0 0;
+    margin: 18px auto 0;
     color: #e2e8f0;
     line-height: 1.65;
 }
@@ -114,6 +149,7 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 24px;
+    justify-content: center;
 }
 
 .jp-primary-action,
@@ -141,9 +177,11 @@
 
 .jp-hero-summary {
     display: grid;
-    align-content: center;
-    gap: 10px;
-    padding: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: min(100%, 820px);
+    margin: 0 auto;
+    padding: 10px;
     border: 1px solid rgba(255,255,255,.16);
     border-radius: 22px;
     background: rgba(15, 23, 42, .34);
@@ -151,17 +189,19 @@
 }
 
 .jp-summary-item {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,.12);
+    justify-items: center;
+    gap: 7px;
+    min-height: 104px;
+    padding: 16px 20px;
+    border-right: 1px solid rgba(255,255,255,.12);
+    text-align: center;
 }
 
-.jp-summary-item:last-child { border-bottom: 0; }
-.jp-summary-item span { color: #cbd5e1; font-size: .86rem; }
-.jp-summary-item strong { color: #fff; font-size: 1.05rem; }
+.jp-summary-item:last-child { border-right: 0; }
+.jp-summary-item span { color: #cbd5e1; font-size: .86rem; line-height: 1.35; }
+.jp-summary-item strong { color: #fff; font-size: 1.15rem; line-height: 1.25; }
 
 .skill-hub-note {
     display: grid;
@@ -190,36 +230,40 @@
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.skill-group { margin-top: 42px; }
+.skill-group { margin-top: 52px; }
 
 .jp-group-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 16px;
+    position: relative;
+    display: block;
+    margin: 0 auto 24px;
+    padding: 0 18px 20px;
+    text-align: center;
+}
+
+.jp-group-heading::after {
+    content: "";
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 18px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--jp-vermilion), var(--jp-gold));
 }
 
 .jp-group-heading h2 {
     margin: 0;
     color: var(--text-main);
-    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    line-height: 1.15;
 }
 
 .jp-group-heading p {
-    margin: 5px 0 0;
+    max-width: 680px;
+    margin: 8px auto 0;
     color: var(--text-muted);
-}
-
-.jp-group-count {
-    flex: 0 0 auto;
-    padding: 7px 11px;
-    border: 1px solid var(--jp-border);
-    border-radius: 999px;
-    color: var(--text-muted);
-    background: var(--jp-surface);
-    font-size: .78rem;
-    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.55;
 }
 
 .skill-grid {
@@ -402,7 +446,6 @@
 .dashboard-page .dashboard-japanese-skill-card h3 { margin: 0; }
 
 @media (max-width: 820px) {
-    .jp-hub-hero { grid-template-columns: 1fr; }
     .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .skill-grid .jp-featured-card { grid-column: 1 / -1; }
 }
@@ -500,12 +543,17 @@
     .jp-hero-actions > * { width: 100%; }
     .jp-hero-summary { padding: 16px; }
 
+    .jp-summary-item {
+        min-height: 94px;
+        padding: 12px 8px;
+    }
+
     .skill-hub-note {
         grid-template-columns: 1fr;
         padding: 16px;
     }
 
-    .jp-group-heading { align-items: flex-start; }
+    .jp-group-heading { padding-inline: 4px; }
     .skill-grid { grid-template-columns: 1fr; }
     .skill-grid .jp-featured-card { grid-column: auto; }
     .skill-grid .course-btn.jp-resource-card { min-height: 210px; }
@@ -516,17 +564,6 @@
 }
 
 /* Study experiences: listening, reading, grammar, writing and JLPT */
-.jp-study-page > header::after {
-    content: "日本語 • Idiomas Academy";
-    display: block;
-    margin-top: 8px;
-    color: rgba(255,255,255,.72);
-    font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-}
-
 .jp-study-shell {
     width: min(1120px, calc(100% - 32px));
     margin: 0 auto;
@@ -674,7 +711,6 @@
 
 @media(max-width:720px){.jp-page-intro{grid-template-columns:1fr}.jp-page-stat{width:fit-content}.grammar-filters{grid-template-columns:1fr 1fr}.grammar-search{grid-column:1/-1}}
 @media(max-width:520px){
-    .jp-study-page > header::after{display:none}
     .jp-study-page > header > h1{font-size:1.72rem}
     .jp-study-shell,.listening-shell,.reading-shell,.grammar-shell,.writing-shell,.jlpt-shell{width:min(100% - 24px,1120px);padding-top:18px}
     .jp-page-intro{padding:22px 20px;border-radius:20px}.jp-page-intro h2{font-size:1.7rem}.jp-page-stat{width:100%}

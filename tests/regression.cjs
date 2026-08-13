@@ -786,7 +786,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v41'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v42'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -926,7 +926,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v41'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v42'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1400,6 +1400,12 @@ test('hub e Dashboard da Fase 13 usam habilidades e sessoes reais', () => {
 });
 
 test('redesign japones usa colecoes progressivas sem alterar dados ou canvases', () => {
+    const hub = read('hub_japones.html'), experienceCss = read('japanese-experience.css');
+    assert.doesNotMatch(hub, /jp-group-count/);
+    assert.match(experienceCss, /\.japanese-experience > header > \.home-btn\s*\{[^}]*position: absolute/s);
+    assert.match(experienceCss, /\.jp-hero-summary\s*\{[^}]*grid-template-columns: repeat\(3,/s);
+    assert.match(experienceCss, /\.jp-group-heading\s*\{[^}]*text-align: center/s);
+    assert.doesNotMatch(experienceCss, /Idiomas Academy";/);
     const reading = read('js/japanese/reading.js'), grammar = read('js/japanese/grammar.js'), writing = read('js/japanese/writing.js');
     [reading, grammar, writing].forEach(source => {
         assert.match(source, /JapaneseUI\.createProgressiveCollection/);
@@ -1417,11 +1423,11 @@ test('redesign japones usa colecoes progressivas sem alterar dados ou canvases',
     ['escuta', 'leitura', 'gramatica', 'escrita', 'jlpt'].forEach(page => {
         const html = read(`html/ja-JP/${page}.html`);
         assert.doesNotMatch(html, /<style>/);
-        assert.match(html, /japanese-experience\.css\?v=41/);
+        assert.match(html, /japanese-experience\.css\?v=42/);
         assert.match(html, /class="japanese-experience jp-study-page/);
     });
     const events = read('js/core/events.js'), sw = read('sw.js');
-    assert.match(sw, /idiomas-academy-v41/);
+    assert.match(sw, /idiomas-academy-v42/);
     assert.match(sw, /japanese-experience\.css/);
     assert.match(events, /controllerchange/);
     assert.match(events, /Nova versão disponível/);
