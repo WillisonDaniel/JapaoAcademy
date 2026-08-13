@@ -67,6 +67,7 @@ const ASSETS_TO_CACHE = [
     './html/ja-JP/escrita.html',
     './html/ja-JP/jlpt.html',
     './style.css',
+    './japanese-experience.css',
     './app.js',
     './js/core/config.js',
     './js/core/constants.js',

@@ -152,6 +152,11 @@ const JAPANESE_SKILL_REGISTRY = [
     ['jlpt', 'Preparação JLPT'], ['other', 'Outros']
 ];
 
+const JAPANESE_SKILL_ICONS = {
+    course: '道', kana: 'あ', kanji: '漢', listening: '聴', reading: '読', grammar: '文',
+    writing: '書', dictionary: '辞', minigame: '遊', srs: '復', jlpt: '試', other: '日'
+};
+
 function classificarHabilidadeJaponesaSessao(sessao = {}) {
     if (!sessao || sessao.language !== 'ja-JP') return null;
     const conteudo = String(sessao.contentId || '').toLowerCase();
@@ -190,11 +195,14 @@ function renderizarHabilidadesJaponesDashboard(dados = dashboardDadosAtuais) {
     if (!grid) return [];
     const resumo = criarResumoHabilidadesJaponesDashboard(dados || {}); grid.textContent = ''; if (vazio) vazio.hidden = resumo.length > 0;
     resumo.forEach(item => {
-        const card = document.createElement('article'); card.className = 'dashboard-japanese-skill-card';
+        const card = document.createElement('article'); card.className = 'dashboard-japanese-skill-card'; card.dataset.skill = item.id;
         const titulo = document.createElement('h3'); titulo.textContent = item.label;
+        const cabecalho = document.createElement('div'); cabecalho.className = 'dashboard-japanese-skill-heading';
+        const icone = document.createElement('span'); icone.className = 'dashboard-japanese-skill-icon'; icone.setAttribute('aria-hidden', 'true'); icone.textContent = JAPANESE_SKILL_ICONS[item.id] || '日';
+        cabecalho.append(icone, titulo);
         const lista = document.createElement('dl');
         [['Sessões', String(item.sessionCount)], ['Tempo real', item.activeSeconds < 60 ? '< 1 min' : `${Math.floor(item.activeSeconds / 60)} min`], ['Última atividade', formatarUltimaAtividadeHabilidadeJaponesa(item.lastActivity)]].forEach(([rotulo, valor]) => { const linha = document.createElement('div'), termo = document.createElement('dt'), dado = document.createElement('dd'); termo.textContent = rotulo; dado.textContent = valor; linha.append(termo, dado); lista.appendChild(linha); });
-        card.append(titulo, lista); grid.appendChild(card);
+        card.append(cabecalho, lista); grid.appendChild(card);
     });
     return resumo;
 }

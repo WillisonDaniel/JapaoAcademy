@@ -1,0 +1,516 @@
+/* Japanese Experience — camada visual compartilhada da area japonesa. */
+.japanese-experience {
+    --jp-ink: #111827;
+    --jp-indigo: #1e1b4b;
+    --jp-indigo-soft: #312e81;
+    --jp-vermilion: #dc2626;
+    --jp-vermilion-deep: #991b1b;
+    --jp-gold: #f59e0b;
+    --jp-paper: #fffaf0;
+    --jp-surface: rgba(255, 255, 255, .92);
+    --jp-border: rgba(30, 27, 75, .12);
+    --jp-shadow: 0 22px 55px rgba(30, 27, 75, .12);
+    --jp-focus: 0 0 0 4px rgba(245, 158, 11, .34);
+    background:
+        radial-gradient(circle at 12% 4%, rgba(220, 38, 38, .07), transparent 24rem),
+        linear-gradient(180deg, #f8fafc 0%, var(--jp-paper) 46%, #f8fafc 100%);
+}
+
+.japanese-experience.dark-theme,
+.dark-theme .japanese-experience {
+    --jp-ink: #f8fafc;
+    --jp-paper: #0f172a;
+    --jp-surface: rgba(30, 41, 59, .9);
+    --jp-border: rgba(226, 232, 240, .12);
+    --jp-shadow: 0 24px 65px rgba(0, 0, 0, .28);
+    background:
+        radial-gradient(circle at 12% 4%, rgba(220, 38, 38, .12), transparent 26rem),
+        linear-gradient(180deg, #0f172a 0%, #111827 48%, #0f172a 100%);
+}
+
+.japanese-experience > header {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    background:
+        radial-gradient(circle at 82% 16%, rgba(245, 158, 11, .18), transparent 20rem),
+        linear-gradient(135deg, #11152f, var(--jp-indigo) 55%, #35152a);
+}
+
+.japanese-experience > header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .18;
+    background-image:
+        linear-gradient(30deg, transparent 48%, rgba(255,255,255,.2) 49%, rgba(255,255,255,.2) 51%, transparent 52%),
+        linear-gradient(150deg, transparent 48%, rgba(255,255,255,.14) 49%, rgba(255,255,255,.14) 51%, transparent 52%);
+    background-size: 44px 76px;
+}
+
+.japanese-experience > header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.japanese-experience :is(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--jp-gold);
+    outline-offset: 3px;
+    box-shadow: var(--jp-focus);
+}
+
+.skill-hub {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 72px;
+}
+
+.jp-hub-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr);
+    gap: 24px;
+    align-items: stretch;
+    padding: clamp(26px, 5vw, 48px);
+    border: 1px solid var(--jp-border);
+    border-radius: 28px;
+    color: #fff;
+    background:
+        radial-gradient(circle at 78% 22%, rgba(245, 158, 11, .28), transparent 12rem),
+        linear-gradient(135deg, #17143f, #312e81 58%, #7f1d1d);
+    box-shadow: var(--jp-shadow);
+}
+
+.jp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 10px;
+    color: #fde68a;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.jp-hub-hero h2 {
+    max-width: 15ch;
+    margin: 0;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.02;
+}
+
+.jp-hub-hero p {
+    max-width: 62ch;
+    margin: 18px 0 0;
+    color: #e2e8f0;
+    line-height: 1.65;
+}
+
+.jp-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.jp-primary-action,
+.jp-secondary-action {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.jp-primary-action {
+    border-color: #fbbf24;
+    color: #2b1600;
+    background: linear-gradient(135deg, #fde68a, #f59e0b);
+    box-shadow: 0 10px 28px rgba(245, 158, 11, .28);
+}
+
+.jp-secondary-action { background: rgba(255,255,255,.08); }
+
+.jp-hero-summary {
+    display: grid;
+    align-content: center;
+    gap: 10px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 22px;
+    background: rgba(15, 23, 42, .34);
+    backdrop-filter: blur(14px);
+}
+
+.jp-summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.jp-summary-item:last-child { border-bottom: 0; }
+.jp-summary-item span { color: #cbd5e1; font-size: .86rem; }
+.jp-summary-item strong { color: #fff; font-size: 1.05rem; }
+
+.skill-hub-note {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px solid var(--jp-border);
+    border-radius: 18px;
+    color: var(--text-main);
+    background: var(--jp-surface);
+    box-shadow: 0 12px 34px rgba(30, 27, 75, .08);
+    line-height: 1.6;
+}
+
+.skill-hub-note::before {
+    content: "誠";
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 13px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--jp-vermilion), var(--jp-vermilion-deep));
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.skill-group { margin-top: 42px; }
+
+.jp-group-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.jp-group-heading h2 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.jp-group-heading p {
+    margin: 5px 0 0;
+    color: var(--text-muted);
+}
+
+.jp-group-count {
+    flex: 0 0 auto;
+    padding: 7px 11px;
+    border: 1px solid var(--jp-border);
+    border-radius: 999px;
+    color: var(--text-muted);
+    background: var(--jp-surface);
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.skill-grid .course-btn.jp-resource-card {
+    position: relative;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    min-height: 230px;
+    margin: 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid var(--jp-border);
+    border-radius: 22px;
+    color: var(--text-main);
+    text-align: left;
+    background: var(--jp-surface);
+    box-shadow: 0 16px 42px rgba(30, 27, 75, .1);
+    transform: none;
+}
+
+.skill-grid .course-btn.jp-resource-card::after {
+    content: "";
+    position: absolute;
+    right: -36px;
+    bottom: -56px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: .11;
+    background: var(--jp-card-accent, var(--jp-indigo));
+}
+
+.skill-grid .course-btn.jp-resource-card:hover {
+    border-color: color-mix(in srgb, var(--jp-card-accent, var(--jp-indigo)) 46%, var(--jp-border));
+    box-shadow: 0 24px 54px rgba(30, 27, 75, .17);
+    transform: translateY(-4px);
+}
+
+.jp-resource-card[data-accent="red"] { --jp-card-accent: #dc2626; }
+.jp-resource-card[data-accent="teal"] { --jp-card-accent: #0f766e; }
+.jp-resource-card[data-accent="blue"] { --jp-card-accent: #1d4ed8; }
+.jp-resource-card[data-accent="gold"] { --jp-card-accent: #d97706; }
+.jp-resource-card[data-accent="violet"] { --jp-card-accent: #7c3aed; }
+
+.skill-grid .jp-featured-card {
+    grid-column: span 2;
+    color: #fff !important;
+    background:
+        radial-gradient(circle at 86% 18%, rgba(245,158,11,.3), transparent 11rem),
+        linear-gradient(135deg, #991b1b, #dc2626 52%, #312e81) !important;
+}
+
+.jp-featured-card .jp-card-eyebrow,
+.jp-featured-card p,
+.jp-featured-card .jp-card-action { color: #fee2e2 !important; }
+
+.jp-card-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.jp-card-icon {
+    display: grid !important;
+    flex: 0 0 auto;
+    width: 58px;
+    height: 58px;
+    margin: 0 !important;
+    place-items: center;
+    border: 1px solid color-mix(in srgb, var(--jp-card-accent, var(--jp-indigo)) 22%, transparent);
+    border-radius: 18px;
+    color: var(--jp-card-accent, var(--jp-indigo));
+    background: color-mix(in srgb, var(--jp-card-accent, var(--jp-indigo)) 10%, var(--jp-surface));
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.75rem !important;
+}
+
+.jp-featured-card .jp-card-icon {
+    color: #fff;
+    border-color: rgba(255,255,255,.22);
+    background: rgba(255,255,255,.13);
+}
+
+.jp-card-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--jp-card-accent, var(--jp-indigo));
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.jp-card-copy {
+    position: relative;
+    z-index: 1;
+    margin-top: 22px;
+}
+
+.skill-grid .jp-resource-card h3 {
+    margin: 0;
+    color: inherit;
+    font-size: 1.28rem;
+    line-height: 1.2;
+}
+
+.skill-grid .jp-resource-card p {
+    margin: 10px 0 0;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: .94rem;
+    line-height: 1.55;
+}
+
+.jp-card-action {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 18px;
+    color: var(--jp-card-accent, var(--jp-indigo));
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.skill-status {
+    margin: 30px 0 0;
+    color: var(--text-muted);
+    font-size: .9rem;
+    text-align: center;
+}
+
+/* Refinamento exclusivamente visual do resumo de habilidades japonesas. */
+.dashboard-page .dashboard-japanese-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+}
+
+.dashboard-page .dashboard-japanese-skill-card {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(220, 38, 38, .16);
+    border-radius: 18px;
+    padding: 18px;
+    background:
+        radial-gradient(circle at 100% 0, rgba(220, 38, 38, .09), transparent 8rem),
+        color-mix(in srgb, var(--card-bg) 94%, #fff7ed);
+}
+
+.dashboard-page .dashboard-japanese-skill-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.dashboard-page .dashboard-japanese-skill-icon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 11px;
+    color: #fff;
+    background: linear-gradient(135deg, #dc2626, #312e81);
+}
+
+.dashboard-page .dashboard-japanese-skill-card h3 { margin: 0; }
+
+@media (max-width: 820px) {
+    .jp-hub-hero { grid-template-columns: 1fr; }
+    .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .skill-grid .jp-featured-card { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+    .japanese-experience > header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px 12px;
+        align-items: center;
+        padding: 18px 16px 20px;
+        text-align: left;
+    }
+
+    .japanese-experience > header > .home-btn {
+        position: static;
+        grid-column: 1;
+        justify-self: start;
+        min-height: 44px;
+        margin: 0;
+    }
+
+    .japanese-experience > header > h1,
+    .japanese-experience > header > p {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: none;
+        margin-inline: 0;
+        text-align: left;
+    }
+
+    .japanese-experience > header > h1 {
+        margin-top: 2px;
+        font-size: clamp(1.85rem, 9vw, 2.35rem);
+        line-height: 1.08;
+    }
+
+    .japanese-experience > header > p {
+        margin-top: 0;
+        font-size: .98rem;
+        line-height: 1.45;
+    }
+
+    .japanese-experience > header > .header-actions-group {
+        position: static !important;
+        grid-column: 1 / -1;
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        height: 54px;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        margin: 2px 0 0;
+        padding: 3px 2px 7px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+    }
+
+    .japanese-experience > header > .header-actions-group > * {
+        flex: 0 0 auto;
+        min-height: 44px;
+        scroll-snap-align: start;
+    }
+
+    .japanese-experience > header > .header-actions-group::-webkit-scrollbar { display: none; }
+    .japanese-experience > header > .header-actions-group { scrollbar-width: none; }
+    .japanese-experience > header > .header-actions-group > .theme-btn {
+        display: grid;
+        position: absolute !important;
+        top: 18px !important;
+        right: 18px !important;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        z-index: 2;
+    }
+    .japanese-experience > header .xp-profile-widget { min-width: 205px; }
+
+    .skill-hub {
+        width: min(100% - 24px, 1180px);
+        padding-top: 18px;
+    }
+
+    .jp-hub-hero {
+        gap: 18px;
+        padding: 24px 20px;
+        border-radius: 22px;
+    }
+
+    .jp-hub-hero h2 { font-size: 2.25rem; }
+    .jp-hero-actions > * { width: 100%; }
+    .jp-hero-summary { padding: 16px; }
+
+    .skill-hub-note {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    .jp-group-heading { align-items: flex-start; }
+    .skill-grid { grid-template-columns: 1fr; }
+    .skill-grid .jp-featured-card { grid-column: auto; }
+    .skill-grid .course-btn.jp-resource-card { min-height: 210px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-grid .course-btn.jp-resource-card { transition: none; }
+}
