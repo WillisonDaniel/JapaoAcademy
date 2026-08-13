@@ -19,7 +19,14 @@ const REQUIRED_OFFLINE = [
     './hub_russo.html',
     './hub_italiano.html',
     './html/it-IT/italiano_curso.html',
+    './html/it-IT/italiano_pronuncia.html',
+    './html/it-IT/italiano_minigame_conjugacao.html',
     './database/it-IT/data_curso_italiano_a1.js',
+    './database/it-IT/data_curso_italiano_a2.js',
+    './database/it-IT/data_curso_italiano_b1.js',
+    './database/it-IT/data_curso_italiano_b2.js',
+    './database/it-IT/data_italiano_fonetica_recursos.js',
+    './database/it-IT/data_italiano_minigame_conjugacao.js',
     './meu-progresso.html',
     './html/ru-RU/russo_curso.html',
     './html/ru-RU/russo_alfabeto.html',
@@ -121,7 +128,7 @@ async function runLifecycleSimulation(assets, optionalAssets, listeners) {
     };
     const runtime = loadServiceWorker();
     runtime.context.caches.open = async () => cache;
-    runtime.context.caches.keys = async () => ['idiomas-academy-v1', runtime.CACHE_NAME, 'outro-cache'];
+    runtime.context.caches.keys = async () => ['idiomas-academy-v33', runtime.CACHE_NAME, 'outro-cache'];
     runtime.context.caches.delete = async key => { deleted.push(key); return true; };
     runtime.context.self.skipWaiting = async () => { skipped = true; };
     runtime.context.self.clients.claim = async () => { claimed = true; };
@@ -135,7 +142,7 @@ async function runLifecycleSimulation(assets, optionalAssets, listeners) {
     let activatePromise;
     runtime.listeners.activate({ waitUntil(value) { activatePromise = value; } });
     await activatePromise;
-    assert.deepEqual(deleted, ['idiomas-academy-v1']);
+    assert.deepEqual(deleted, ['idiomas-academy-v33']);
     assert.equal(deleted.includes('outro-cache'), false, 'ativacao removeu cache de outra aplicacao');
     assert.equal(claimed, true, 'service worker nao assumiu as paginas abertas');
 }
@@ -215,7 +222,7 @@ async function main() {
     assert.equal(unique.has('./html/it-IT/italiano_dicionario.html'), false, 'a página do dicionário italiano deve usar cache sob demanda');
     assert.equal(unique.has('./database/it-IT/data_dicionario_index.js'), false, 'o índice do dicionário italiano deve usar cache sob demanda');
 
-    console.log('\u2713 contrato offline: shell, Dashboard, area russa e Italiano A1 completos');
+    console.log('\u2713 contrato offline: shell, Dashboard, area russa e Italiano A1-B2 completos');
     console.log('\u2713 instalacao tolera falhas remotas e ativacao preserva caches de outras aplicacoes');
     console.log('\u2713 dicionario italiano explica o primeiro acesso offline e funciona apos aquecimento online');
 }

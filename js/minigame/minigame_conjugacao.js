@@ -225,7 +225,7 @@ const synth = new ArcadeAudioSynth();
 // ====================================================
 let arcadeState = {
     modo: 'sobrevivencia', // presente | preteritos | subjuntivo_imperativo | sobrevivencia
-    inputMode: 'click',    // click | voice
+    inputMode: 'click',    // click | typing | voice
     vidasInfinitas: false, // opção de Vidas Infinitas
     vidas: 3,
     pontos: 0,
@@ -323,24 +323,58 @@ function inicializarReconhecimentoVoz() {
 function alternarModoInput(mode) {
     arcadeState.inputMode = mode;
     const btnClick = document.getElementById('btn-mode-click');
+    const btnTyping = document.getElementById('btn-mode-typing');
     const btnVoice = document.getElementById('btn-mode-voice');
+    const typingBox = document.getElementById('typing-input-container');
     const voiceBox = document.getElementById('voice-input-container');
 
     if (mode === 'voice') {
         if (!inicializarReconhecimentoVoz()) {
             if (typeof mostrarToast === 'function') mostrarToast('Navegador não suporta Reconhecimento de Voz.', 'warning');
-            arcadeState.inputMode = 'click';
-            return;
+            return alternarModoInput('click');
         }
         if (btnClick) btnClick.classList.remove('active');
+        if (btnTyping) btnTyping.classList.remove('active');
         if (btnVoice) btnVoice.classList.add('active');
+        if (typingBox) typingBox.style.display = 'none';
         if (voiceBox) voiceBox.style.display = 'block';
+    } else if (mode === 'typing') {
+        pararReconhecimentoVoz();
+        if (btnClick) btnClick.classList.remove('active');
+        if (btnTyping) btnTyping.classList.add('active');
+        if (btnVoice) btnVoice.classList.remove('active');
+        if (voiceBox) voiceBox.style.display = 'none';
+        if (typingBox) typingBox.style.display = 'block';
+        const input = document.getElementById('arcade-typing-input');
+        if (input) input.focus();
     } else {
         pararReconhecimentoVoz();
         if (btnClick) btnClick.classList.add('active');
+        if (btnTyping) btnTyping.classList.remove('active');
         if (btnVoice) btnVoice.classList.remove('active');
+        if (typingBox) typingBox.style.display = 'none';
         if (voiceBox) voiceBox.style.display = 'none';
     }
+
+    const options = document.getElementById('arcade-options');
+    if (options) options.style.display = arcadeState.inputMode === 'click' ? '' : 'none';
+}
+
+function normalizarRespostaArcade(valor) {
+    return String(valor || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function responderArcadeDigitacao() {
+    const input = document.getElementById('arcade-typing-input');
+    if (!input || !arcadeState.desafioAtual) return;
+    const resposta = input.value.trim();
+    if (!resposta) {
+        if (typeof mostrarToast === 'function') mostrarToast('Digite uma conjugação antes de confirmar.', 'warning');
+        return;
+    }
+    const correta = normalizarRespostaArcade(resposta) === normalizarRespostaArcade(arcadeState.desafioAtual.correct);
+    input.value = '';
+    responderArcade(correta, resposta);
 }
 
 function escutarVozUsuario() {
@@ -420,8 +454,10 @@ function selecionarModoJogo(modo) {
     cards.forEach(c => {
         if (c.getAttribute('data-modo') === modo) {
             c.classList.add('selected');
+            c.setAttribute('aria-pressed', 'true');
         } else {
             c.classList.remove('selected');
+            c.setAttribute('aria-pressed', 'false');
         }
     });
 }
@@ -442,6 +478,14 @@ function iniciarArcadeConjugacao() {
     document.getElementById('arcade-game-over').style.display = 'none';
     document.getElementById('arcade-feedback-modal').style.display = 'none';
 
+    if (typeof iniciarSessaoEstudo === 'function') {
+        iniciarSessaoEstudo({
+            language: getMinigameLangCode(),
+            activityType: 'minigame',
+            contentId: `conjugacao-${arcadeState.modo}`
+        });
+    }
+
     atualizarPlacarArcade();
     proximoDesafioArcade();
 }
@@ -454,6 +498,9 @@ function voltarMenuModos() {
     document.getElementById('arcade-game-container').style.display = 'none';
     document.getElementById('arcade-game-over').style.display = 'none';
     document.getElementById('arcade-feedback-modal').style.display = 'none';
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('exit', { contentId: `conjugacao-${arcadeState.modo}` });
+    }
     carregarHighScoreArcade();
 }
 
@@ -520,6 +567,7 @@ function proximoDesafioArcade() {
 
     const optionsContainer = document.getElementById('arcade-options');
     optionsContainer.innerHTML = '';
+    optionsContainer.style.display = arcadeState.inputMode === 'click' ? '' : 'none';
 
     const erradasDistintas = Array.from(new Set(arcadeState.desafioAtual.wrong)).filter(w => w !== arcadeState.desafioAtual.correct);
     const selecionadasErradas = erradasDistintas.sort(() => 0.5 - Math.random()).slice(0, 3);
@@ -533,6 +581,14 @@ function proximoDesafioArcade() {
         btn.onclick = () => responderArcade(op === arcadeState.desafioAtual.correct, op);
         optionsContainer.appendChild(btn);
     });
+
+    const typingInput = document.getElementById('arcade-typing-input');
+    const typingBox = document.getElementById('typing-input-container');
+    if (typingBox) typingBox.style.display = arcadeState.inputMode === 'typing' ? 'block' : 'none';
+    if (typingInput) {
+        typingInput.value = '';
+        if (arcadeState.inputMode === 'typing') typingInput.focus();
+    }
 
     if (arcadeState.inputMode === 'voice') {
         escutarVozUsuario();
@@ -580,6 +636,14 @@ function iniciarTimerArcade() {
 function responderArcade(eCorreto, respostaEscolha) {
     clearInterval(arcadeState.timer);
     pararReconhecimentoVoz();
+    if (typeof atualizarSessaoEstudo === 'function') {
+        atualizarSessaoEstudo({
+            activityCountDelta: 1,
+            interactionCountDelta: 1,
+            relevantInteraction: true,
+            contentId: `conjugacao-${arcadeState.modo}`
+        });
+    }
 
     if (eCorreto) {
         synth.playCorrect();
@@ -692,13 +756,10 @@ function encerrarArcade() {
         eNovoRecorde = true;
     }
 
-    if (typeof registrarSessaoEstudo === 'function') {
-        const langCode = getMinigameLangCode();
-        registrarSessaoEstudo({
-            languageCode: langCode,
-            activityType: 'minigame',
-            durationMinutes: 2,
-            itemCount: Math.floor(arcadeState.pontos / 10) || 1
+    if (typeof finalizarSessaoEstudo === 'function') {
+        finalizarSessaoEstudo('completion', {
+            activityCountDelta: 0,
+            contentId: `conjugacao-${arcadeState.modo}`
         });
     }
 
@@ -722,6 +783,7 @@ if (typeof window !== 'undefined') {
     window.iniciarArcadeConjugacao = iniciarArcadeConjugacao;
     window.voltarMenuModos = voltarMenuModos;
     window.alternarModoInput = alternarModoInput;
+    window.responderArcadeDigitacao = responderArcadeDigitacao;
     window.escutarVozUsuario = escutarVozUsuario;
     window.fecharFeedbackEContinuar = fecharFeedbackEContinuar;
     window.alternarVidasInfinitas = alternarVidasInfinitas;

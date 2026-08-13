@@ -14,6 +14,7 @@ Esta auditoria editorial cobre a totalidade dos **108 módulos handcrafted** do 
 - **Construtores de Frase**: 216
 - **Falas de Diálogo Situacional**: 216
 - **Exercícios Interativos de Quiz**: 615
+- **Exercícios no formato direto “Como se diz...”**: 525
 - **Entradas do Dicionário Compilado**: 1011
 - **Tópicos Fonéticos & Pronúncia**: 12
 - **Banco de Conjugações do Minigame**: 63
@@ -24,11 +25,11 @@ Esta auditoria editorial cobre a totalidade dos **108 módulos handcrafted** do 
 - **Mínimos por Módulo**: Garantidos 6 vocabulários, 2-3 pílulas gramaticais, 2 construtores de frase, 2 falas de diálogo e 5-30 questões de quiz.
 - **Sincronia de Áudio & Tokens**: `audio === word`, `audio === sentence`, `audio === text` e `tokens.join(" ") === sentence`.
 - **Integridade do Dicionário & Fonética**: 1011 entradas deduplicadas, 12 tópicos fonéticos IPA, sem placeholders ou links quebrados.
-- **Zero Erros Bloqueadores**: Ausência de placeholders, texto em português em campos italianos ou opções de quiz ambíguas.
+- **Zero Erros Bloqueadores**: Ausência de placeholders, texto em português em campos italianos ou opções de quiz ambíguas. A predominância de tradução direta permanece registrada como ponto editorial não bloqueador.
 
 ## Conclusão
 
-O curso completo de italiano (A1 a B2) está mecanicamente validado, 100% aprovado pela suíte de auditoria automatizada e pronto para imersão.
+O curso completo de italiano (A1 a B2) está mecanicamente consistente e aprovado pela suíte automatizada. Isso não substitui validação pedagógica ou linguística humana, especialmente quanto à variedade dos exercícios.
 
 ## Limite desta validação
 

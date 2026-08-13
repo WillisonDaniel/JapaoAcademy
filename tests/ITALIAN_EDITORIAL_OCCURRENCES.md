@@ -5,14 +5,14 @@ Relatório gerado automaticamente por `npm run audit:italian`. A validação cob
 *(Nota: Esta auditoria é 100% automatizada e autoexecutada pelo sistema de teste e QA da plataforma)*
 
 - Erros técnicos bloqueadores: 0
-- Ocorrências informativas: 0
-- Total registrado: 0
+- Ocorrências informativas: 1
+- Total registrado: 1
 
 ## Ocorrências
 
 | Severidade | Arquivo | Módulo | Caminho do campo | Motivo | Valor |
 |---|---|---|---|---|---|
-| — | — | — | — | Nenhuma ocorrência técnica encontrada | — |
+| revisão | database/it-IT/data_curso_italiano_a2.js..data_curso_italiano_b2.js | A2-B2 | stage5_quiz.question | Predomínio de exercícios de tradução direta; diversificar em futura revisão humana | 525/615 |
 
 ## Limite desta validação
 

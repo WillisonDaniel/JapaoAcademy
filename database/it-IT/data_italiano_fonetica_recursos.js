@@ -171,7 +171,7 @@ const FONETICA_ITALIANO_DADOS = [
     // NÍVEL B2
     {
         level: 'B2',
-        levelTitle: 'Nível B2 — Fluência Nativa, Entonação e Variações Regionais',
+        levelTitle: 'Nível B2 — Entonação e Variações Regionais',
         topics: [
             {
                 id: 'it_fon_b2_01',
@@ -180,7 +180,7 @@ const FONETICA_ITALIANO_DADOS = [
                 description: 'No italiano falado padrão (especialmente centro e sul), certas palavras monossílabas com acento ou marcadas provocam a duplicação espontânea da consoante inicial da palavra seguinte.',
                 rule: 'Monossílabo forte / palavra oxítona + consoante ➔ duplicação fonética da consoante inicial',
                 examples: [
-                    { it: 'a casa ➔ [akˈkaːsa]', phonetic: '[akˈkaːsa]', pt: 'para casa (na pronúncia nativa a consoante C duplica)', audio: 'a casa' },
+                    { it: 'a casa ➔ [akˈkaːsa]', phonetic: '[akˈkaːsa]', pt: 'para casa (na fala padrão de algumas regiões, a consoante C duplica)', audio: 'a casa' },
                     { it: 'va bene ➔ [vabˈbɛːne]', phonetic: '[vabˈbɛːne]', pt: 'está bem / ok (pronunciado como "vabbene")', audio: 'va bene' },
                     { it: 'soprattutto ➔ [sopratˈtut.to]', phonetic: '[sopratˈtut.to]', pt: 'sobretudo (fusão com duplicação de T)', audio: 'soprattutto' },
                     { it: 'da capo ➔ [dakˈkaːpo]', phonetic: '[dakˈkaːpo]', pt: 'do início (duplicação de C no falado)', audio: 'da capo' }
@@ -195,12 +195,12 @@ const FONETICA_ITALIANO_DADOS = [
                 examples: [
                     { it: 'Vieni a cena con noi stasera?', phonetic: 'Pergunta com subida melódica', pt: 'Você vem jantar conosco hoje à noite?', audio: 'Vieni a cena con noi stasera?' },
                     { it: 'Non è possibile che sia successo davvero!', phonetic: 'Exclamação com pico expressivo', pt: 'Não é possível que tenha acontecido de verdade!', audio: 'Non è possibile che sia successo davvero!' },
-                    { it: 'Ma davvero pensi che sia la scelta giusta?', phonetic: 'Pergunta retórica com ironia leve', pt: 'Mas você realmente pensa que seja a escolha certa?', audio: 'Ma davvero pensi che sia la escolha certa?' }
+                    { it: 'Ma davvero pensi che sia la scelta giusta?', phonetic: 'Pergunta retórica com ironia leve', pt: 'Mas você realmente pensa que seja a escolha certa?', audio: 'Ma davvero pensi che sia la scelta giusta?' }
                 ]
             },
             {
                 id: 'it_fon_b2_03',
-                title: 'Nuances e Variações Regionais na Pronúncia Nativa',
+                title: 'Nuances e Variações Regionais da Pronúncia',
                 ipaSymbol: 'Variantes regionais (Nord, Centro, Sud)',
                 description: 'Embora o italiano padrão (italiano standard) seja ensinado nas escolas e mídia, existem sotaques regionais naturais (norte com S sonora, Toscana com "gorgia", sul com consoantes mais fortes). Todas são compreendidas.',
                 rule: 'Aprecie a riqueza geográfica dos sotaques sem considerar variantes regionais como erros.',

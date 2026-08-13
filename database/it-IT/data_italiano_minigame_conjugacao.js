@@ -78,16 +78,16 @@ const BANCO_ARCADE_VERBOS_ITALIANO = [
 
 // 🐉 CHEFÕES IRREGULARES LENDÁRIOS ITALIANOS (BOSS ENCOUNTERS A CADA 10 ACERTOS)
 const BANCO_BOSS_IRREGULARES_ITALIANO = [
-    { pronoun: "Io", infinitive: "Tradurre", tense: "Passato Remoto", correct: "tradussi", wrong: ["traduco", "tradussi", "tradotto"], tip: "¡BOSS! Tradurre forma o passado remoto com raiz irregular: tradussi." },
-    { pronoun: "Io", infinitive: "Proporre", tense: "Passato Remoto", correct: "proposi", wrong: ["propongo", "proposi", "proposto"], tip: "¡BOSS! Proporre forma o passado remoto em proposi (proposi, proponesti...)." },
-    { pronoun: "Io", infinitive: "Rimanere", tense: "Presente Indicativo", correct: "rimango", wrong: ["rimano", "rimango", "rimanga"], tip: "¡BOSS! Rimanere insere -g- na 1ª pessoa do presente: io rimango." },
-    { pronoun: "Io", infinitive: "Rimanere", tense: "Passato Remoto", correct: "rimasi", wrong: ["rimango", "rimasi", "rimasto"], tip: "¡BOSS! Rimanere no passado remoto é io rimasi." },
-    { pronoun: "Io", infinitive: "Sapere", tense: "Presente Indicativo", correct: "so", wrong: ["sapo", "so", "sappia"], tip: "¡BOSS! Sapere tem a 1ª pessoa do presente monossílaba: io so." },
-    { pronoun: "Io", infinitive: "Sapere", tense: "Futuro Semplice", correct: "saprò", wrong: ["saperò", "saprò", "saprei"], tip: "¡BOSS! Futuro de sapere encurta a raiz: io saprò." },
-    { pronoun: "Io", infinitive: "Stare", tense: "Passato Remoto", correct: "stetti", wrong: ["stavo", "stetti", "stato"], tip: "¡BOSS! Stare no passado remoto forma: io stetti." },
-    { pronoun: "Io", infinitive: "Dare", tense: "Passato Remoto", correct: "detti", wrong: ["davo", "detti", "dato"], tip: "¡BOSS! Dare no passado remoto forma: io detti (ou diedi)." },
-    { pronoun: "Io", infinitive: "Dovere", tense: "Presente Indicativo", correct: "devo", wrong: ["devo", "devo", "debbo"], tip: "¡BOSS! Dovere na 1ª pessoa pode ser devo / debbo." },
-    { pronoun: "Io", infinitive: "Bere", tense: "Imperfetto", correct: "bevevo", wrong: ["bevevo", "bevevo", "bevevo"], tip: "¡BOSS! Bere preserva a raiz latina bever-: io bevevo." }
+    { pronoun: "Io", infinitive: "Tradurre", tense: "Passato Remoto", correct: "tradussi", wrong: ["traducevo", "tradurrò", "ho tradotto"], tip: "BOSS! Tradurre forma o passato remoto com a raiz irregular: tradussi." },
+    { pronoun: "Io", infinitive: "Proporre", tense: "Passato Remoto", correct: "proposi", wrong: ["propongo", "proporrò", "ho proposto"], tip: "BOSS! Proporre forma o passato remoto em proposi (proposi, proponesti...)." },
+    { pronoun: "Io", infinitive: "Rimanere", tense: "Presente Indicativo", correct: "rimango", wrong: ["rimasi", "rimarrò", "rimanga"], tip: "BOSS! Rimanere insere -g- na 1ª pessoa do presente: io rimango." },
+    { pronoun: "Io", infinitive: "Rimanere", tense: "Passato Remoto", correct: "rimasi", wrong: ["rimango", "rimanevo", "rimarrò"], tip: "BOSS! Rimanere no passato remoto é io rimasi." },
+    { pronoun: "Io", infinitive: "Sapere", tense: "Presente Indicativo", correct: "so", wrong: ["sapevo", "saprò", "sappia"], tip: "BOSS! Sapere tem a 1ª pessoa do presente monossílaba: io so." },
+    { pronoun: "Io", infinitive: "Sapere", tense: "Futuro Semplice", correct: "saprò", wrong: ["so", "sapevo", "saprei"], tip: "BOSS! O futuro de sapere encurta a raiz: io saprò." },
+    { pronoun: "Io", infinitive: "Stare", tense: "Passato Remoto", correct: "stetti", wrong: ["stavo", "sono stato", "starò"], tip: "BOSS! Stare no passato remoto forma: io stetti." },
+    { pronoun: "Io", infinitive: "Dare", tense: "Passato Remoto", correct: "detti", wrong: ["davo", "ho dato", "darò"], tip: "BOSS! Dare no passato remoto forma: io detti (ou diedi)." },
+    { pronoun: "Io", infinitive: "Dovere", tense: "Presente Indicativo", correct: "devo", wrong: ["dovevo", "dovrò", "debba"], tip: "BOSS! Dovere na 1ª pessoa do presente pode ser devo ou debbo." },
+    { pronoun: "Io", infinitive: "Bere", tense: "Imperfetto", correct: "bevevo", wrong: ["bevo", "ho bevuto", "berrò"], tip: "BOSS! Bere preserva a raiz bever- no imperfetto: io bevevo." }
 ];
 
 if (typeof window !== 'undefined') {

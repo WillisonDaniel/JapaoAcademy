@@ -394,6 +394,16 @@ test('curso italiano inclui A1, A2, B1 e B2 e isola indice, decks e progresso', 
 
     const html = read('html/it-IT/italiano_curso.html');
     assert.doesNotMatch(html, /Ativar (?:Kanji|Kana|Furigana|Romaji)/);
+
+    const minigameHtml = read('html/it-IT/italiano_minigame_conjugacao.html');
+    const minigameScript = read('js/minigame/minigame_conjugacao.js');
+    assert.match(minigameHtml, /id="btn-mode-typing"/);
+    assert.match(minigameHtml, /id="arcade-typing-input"/);
+    assert.match(minigameHtml, /js\/core\/study-session\.js/);
+    assert.match(minigameScript, /iniciarSessaoEstudo\(/);
+    assert.match(minigameScript, /atualizarSessaoEstudo\(/);
+    assert.match(minigameScript, /finalizarSessaoEstudo\(/);
+    assert.doesNotMatch(minigameScript, /registrarSessaoEstudo\(/);
 });
 
 test('Falsos Amigos usa AppState central e curso russo usa nivel SRS ativo', () => {
@@ -494,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v33/);
+    assert.match(serviceWorker, /idiomas-academy-v34/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);

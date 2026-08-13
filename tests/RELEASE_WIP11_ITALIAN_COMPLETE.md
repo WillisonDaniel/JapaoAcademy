@@ -16,7 +16,7 @@ Data da validação: 11 de agosto de 2026.
 - [x] **Auditoria Editorial**: 108 módulos auditados, 648 itens de vocabulário, 264 pílulas gramaticais, 216 construtores de frase, 216 falas de diálogo situacional e 615 exercícios de quiz consistentes.
 - [x] **Zero Erros Bloqueadores**: 0 erros no relatório técnico de ocorrências (`tests/ITALIAN_EDITORIAL_OCCURRENCES.md`).
 - [x] **Relatório Editorial**: Auto-revisão técnica documentada em `tests/ITALIAN_EDITORIAL_REVIEW.md`.
-- [x] **Cache PWA & Orçamento Offline**: Cache `idiomas-academy-v33` contendo 114 recursos locais e 10,66 MB (abaixo do limite estrito de 12 MB).
+- [x] **Cache PWA & Orçamento Offline**: Cache `idiomas-academy-v34` contendo 114 recursos locais e 10,66 MB (abaixo do limite estrito de 12 MB), com atualização explícita sobre a versão v33.
 - [x] **Cache Sob Demanda**: Dicionário italiano armazenado sob demanda com fallback explicativo offline.
 
 ## Validação de QA e Suíte de Testes

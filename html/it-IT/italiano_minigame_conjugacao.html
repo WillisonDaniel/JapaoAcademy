@@ -436,28 +436,28 @@
             </div>
 
             <div class="mode-select-grid">
-                <div class="mode-select-card" data-modo="presente" onclick="selecionarModoJogo('presente')">
+                <div class="mode-select-card" data-modo="presente" role="button" tabindex="0" aria-pressed="false" onclick="selecionarModoJogo('presente')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selecionarModoJogo('presente');}">
                     <span class="mode-badge-tag tag-green">A1-A2</span>
                     <div class="mode-icon">🟢</div>
                     <h3>Presente do Indicativo</h3>
                     <p>Ideal para iniciantes automatizarem a conjugação regular e irregular.</p>
                 </div>
 
-                <div class="mode-select-card" data-modo="preteritos" onclick="selecionarModoJogo('preteritos')">
+                <div class="mode-select-card" data-modo="preteritos" role="button" tabindex="0" aria-pressed="false" onclick="selecionarModoJogo('preteritos')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selecionarModoJogo('preteritos');}">
                     <span class="mode-badge-tag tag-yellow">A2-B1</span>
                     <div class="mode-icon">🟡</div>
                     <h3>Pretéritos & Passado</h3>
                     <p>Domine o contraste entre Passato Prossimo e Imperfetto.</p>
                 </div>
 
-                <div class="mode-select-card" data-modo="subjuntivo_imperativo" onclick="selecionarModoJogo('subjuntivo_imperativo')">
+                <div class="mode-select-card" data-modo="subjuntivo_imperativo" role="button" tabindex="0" aria-pressed="false" onclick="selecionarModoJogo('subjuntivo_imperativo')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selecionarModoJogo('subjuntivo_imperativo');}">
                     <span class="mode-badge-tag tag-purple">B1-B2</span>
                     <div class="mode-icon">🟣</div>
                     <h3>Subjuntivo & Imperativo</h3>
                     <p>Para estudantes avançados dominarem hipóteses e ordens diretas.</p>
                 </div>
 
-                <div class="mode-select-card selected" data-modo="sobrevivencia" onclick="selecionarModoJogo('sobrevivencia')">
+                <div class="mode-select-card selected" data-modo="sobrevivencia" role="button" tabindex="0" aria-pressed="true" onclick="selecionarModoJogo('sobrevivencia')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selecionarModoJogo('sobrevivencia');}">
                     <span class="mode-badge-tag tag-red">ARCADE</span>
                     <div class="mode-icon">⚡</div>
                     <h3>Modo Sobrevivência</h3>
@@ -482,6 +482,7 @@
         <div id="arcade-game-container" class="arcade-card-conj" style="display: none;">
             <div class="input-mode-toggle">
                 <button id="btn-mode-click" class="btn-toggle-input active" onclick="alternarModoInput('click')">🖱️ Modo Clique</button>
+                <button id="btn-mode-typing" class="btn-toggle-input" onclick="alternarModoInput('typing')">⌨️ Modo Digitação</button>
                 <button id="btn-mode-voice" class="btn-toggle-input" onclick="alternarModoInput('voice')">🎙️ Modo Voz (it-IT)</button>
             </div>
 
@@ -509,6 +510,14 @@
             <div id="voice-input-container" style="display: none; margin-bottom: 20px;">
                 <button onclick="escutarVozUsuario()" class="mic-trigger-btn">🎙️ Falar Conjugação</button>
                 <div id="voice-status-msg" style="font-size: 0.9rem; margin-top: 8px; font-weight: 600;">Clique para falar em italiano</div>
+            </div>
+
+            <div id="typing-input-container" style="display:none;margin-bottom:20px;">
+                <label for="arcade-typing-input" style="display:block;font-weight:700;margin-bottom:8px;">Digite a conjugação</label>
+                <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                    <input id="arcade-typing-input" type="text" lang="it" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Conjugação em italiano" onkeydown="if(event.key==='Enter'){event.preventDefault();responderArcadeDigitacao();}" style="flex:1;min-width:200px;max-width:420px;padding:12px 14px;border:2px solid var(--border-color);border-radius:12px;font-size:1.05rem;">
+                    <button type="button" class="btn-toggle-input" onclick="responderArcadeDigitacao()">Confirmar</button>
+                </div>
             </div>
 
             <div id="arcade-options" class="conj-options-grid"></div>
@@ -560,6 +569,7 @@
     <script src="../../js/core/audio.js"></script>
     <script src="../../js/core/toast.js"></script>
     <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
     <script src="../../js/core/dom.js"></script>
     <script src="../../js/game/xp.js"></script>
     <script src="../../js/minigame/minigame_conjugacao.js"></script>

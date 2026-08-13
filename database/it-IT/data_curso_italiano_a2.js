@@ -2182,9 +2182,9 @@ const MODULOS_ITALIANO_A2 = [
                 "Il racconto di una giornata perfetta in Italia."
             ],
             [
-                "certificato",
-                "certificado",
-                "Ottenere il certificato di livello A2."
+                "completamento",
+                "conclusão",
+                "Completare il percorso interno di livello A2."
             ],
             [
                 "valutazione",

@@ -50,6 +50,7 @@ function audit() {
     let totalSentences = 0;
     let totalDialogue = 0;
     let totalQuiz = 0;
+    let translationTemplateQuiz = 0;
 
     DATASETS.forEach(ds => {
         assert.ok(Array.isArray(ds.modules), `${ds.file}: dataset inválido`);
@@ -113,6 +114,7 @@ function audit() {
                 assert.ok(Array.isArray(item.options) && item.options.length >= 4, `${mod.id}: exercício ${itemIdx} sem opções suficientes`);
                 assert.equal(new Set(item.options).size, item.options.length, `${mod.id}: exercício ${itemIdx} tem opções duplicadas`);
                 assert.ok(Number.isInteger(item.correctIndex) && item.correctIndex >= 0 && item.correctIndex < item.options.length, `${mod.id}: índice correto inválido no exercício ${itemIdx}`);
+                if (/^Como se diz\b/i.test(item.question.trim())) translationTemplateQuiz++;
             });
         });
     });
@@ -127,12 +129,50 @@ function audit() {
         sec.topics.forEach(t => {
             foneticaTopics++;
             assert.ok(t.id && t.title && t.description && t.rule && Array.isArray(t.examples), `tópico fonético ${t.id} incompleto`);
+            t.examples.forEach((example, exampleIndex) => {
+                inspectTarget('database/it-IT/data_italiano_fonetica_recursos.js', { id: t.id }, `examples[${exampleIndex}].audio`, example.audio, occurrences);
+                assert.ok(example.it && example.pt && example.audio, `${t.id}: exemplo fonético ${exampleIndex} incompleto`);
+            });
         });
     });
     assert.equal(foneticaTopics, 12, 'deve haver exatamente 12 tópicos fonéticos');
 
     assert.ok(Array.isArray(minigameVerbs) && minigameVerbs.length >= 40, 'minigame de conjugação deve conter pelo menos 40 questões normais');
     assert.ok(Array.isArray(minigameBosses) && minigameBosses.length >= 10, 'minigame de conjugação deve conter pelo menos 10 chefões irregulares');
+    [...minigameVerbs, ...minigameBosses].forEach((item, itemIndex) => {
+        assert.ok(item.pronoun && item.infinitive && item.tense && item.correct && item.tip, `minigame: questão ${itemIndex} incompleta`);
+        assert.ok(Array.isArray(item.wrong) && item.wrong.length >= 3, `minigame: questão ${itemIndex} sem três distratores`);
+        assert.equal(new Set(item.wrong).size, item.wrong.length, `minigame: questão ${itemIndex} tem distratores duplicados`);
+        assert.equal(item.wrong.includes(item.correct), false, `minigame: questão ${itemIndex} repete a resposta correta nos distratores`);
+        assert.equal(new Set([item.correct, ...item.wrong]).size, item.wrong.length + 1, `minigame: questão ${itemIndex} não oferece alternativas distintas`);
+    });
+
+    const pronunciationPage = fs.readFileSync(path.join(ROOT, 'html', 'it-IT', 'italiano_pronuncia.html'), 'utf8');
+    const minigamePage = fs.readFileSync(path.join(ROOT, 'html', 'it-IT', 'italiano_minigame_conjugacao.html'), 'utf8');
+    const coursePage = fs.readFileSync(path.join(ROOT, 'html', 'it-IT', 'italiano_curso.html'), 'utf8');
+    assert.doesNotMatch(pronunciationPage, /Pron[uú]ncia Perfeita|Áudio Nativo|Pronuncia Italiana Nativa|fallback sonoro automático/i, 'página de pronúncia contém promessa técnica ou editorial indevida');
+    assert.doesNotMatch(coursePage, /<title>Curso de Italiano A1 \|/i, 'título do curso limita incorretamente a oferta ao A1');
+    assert.match(minigamePage, /id="btn-mode-typing"/);
+    assert.match(minigamePage, /id="arcade-typing-input"/);
+    assert.match(minigamePage, /js\/core\/study-session\.js/);
+    const modeCards = [...minigamePage.matchAll(/<div class="mode-select-card[^>]*>/g)].map(match => match[0]);
+    assert.equal(modeCards.length, 4, 'minigame deve expor quatro modos de treino');
+    modeCards.forEach(card => {
+        assert.match(card, /role="button"/);
+        assert.match(card, /tabindex="0"/);
+        assert.match(card, /onkeydown=/);
+    });
+
+    if (translationTemplateQuiz > totalQuiz * 0.7) {
+        occurrences.push(issue(
+            'database/it-IT/data_curso_italiano_a2.js..data_curso_italiano_b2.js',
+            { id: 'A2-B2' },
+            'stage5_quiz.question',
+            'revisão',
+            'Predomínio de exercícios de tradução direta; diversificar em futura revisão humana',
+            `${translationTemplateQuiz}/${totalQuiz}`
+        ));
+    }
 
     return {
         occurrences,
@@ -143,6 +183,7 @@ function audit() {
             totalSentences,
             totalDialogue,
             totalQuiz,
+            translationTemplateQuiz,
             dictEntries: dictEntries.length,
             foneticaTopics,
             minigameVerbs: minigameVerbs.length + minigameBosses.length
@@ -195,6 +236,7 @@ Esta auditoria editorial cobre a totalidade dos **108 módulos handcrafted** do 
 - **Construtores de Frase**: ${metrics.totalSentences}
 - **Falas de Diálogo Situacional**: ${metrics.totalDialogue}
 - **Exercícios Interativos de Quiz**: ${metrics.totalQuiz}
+- **Exercícios no formato direto “Como se diz...”**: ${metrics.translationTemplateQuiz}
 - **Entradas do Dicionário Compilado**: ${metrics.dictEntries}
 - **Tópicos Fonéticos & Pronúncia**: ${metrics.foneticaTopics}
 - **Banco de Conjugações do Minigame**: ${metrics.minigameVerbs}
@@ -205,11 +247,11 @@ Esta auditoria editorial cobre a totalidade dos **108 módulos handcrafted** do 
 - **Mínimos por Módulo**: Garantidos 6 vocabulários, 2-3 pílulas gramaticais, 2 construtores de frase, 2 falas de diálogo e 5-30 questões de quiz.
 - **Sincronia de Áudio & Tokens**: \`audio === word\`, \`audio === sentence\`, \`audio === text\` e \`tokens.join(" ") === sentence\`.
 - **Integridade do Dicionário & Fonética**: ${metrics.dictEntries} entradas deduplicadas, ${metrics.foneticaTopics} tópicos fonéticos IPA, sem placeholders ou links quebrados.
-- **Zero Erros Bloqueadores**: Ausência de placeholders, texto em português em campos italianos ou opções de quiz ambíguas.
+- **Zero Erros Bloqueadores**: Ausência de placeholders, texto em português em campos italianos ou opções de quiz ambíguas. A predominância de tradução direta permanece registrada como ponto editorial não bloqueador.
 
 ## Conclusão
 
-O curso completo de italiano (A1 a B2) está mecanicamente validado, 100% aprovado pela suíte de auditoria automatizada e pronto para imersão.
+O curso completo de italiano (A1 a B2) está mecanicamente consistente e aprovado pela suíte automatizada. Isso não substitui validação pedagógica ou linguística humana, especialmente quanto à variedade dos exercícios.
 
 ## Limite desta validação
 

@@ -308,6 +308,14 @@ test('bases especiais e minigame preservam os totais esperados', () => {
         assert.ok(Array.isArray(minigame[level]), `minigame ${level}: formato invalido`);
         assert.equal(minigame[level].length, count, `minigame ${level}: total alterado`);
     });
+
+    const italianBosses = loadValue('database/it-IT/data_italiano_minigame_conjugacao.js', 'BANCO_BOSS_IRREGULARES_ITALIANO');
+    assert.equal(italianBosses.length, 10, 'total de chefões italianos');
+    italianBosses.forEach((item, index) => {
+        assert.equal(item.wrong.length, 3, `chefão italiano ${index}: total de distratores`);
+        assert.equal(item.wrong.includes(item.correct), false, `chefão italiano ${index}: resposta correta repetida`);
+        assert.equal(new Set([item.correct, ...item.wrong]).size, 4, `chefão italiano ${index}: alternativas não são únicas`);
+    });
 });
 
 test('minigame japonês monta os mesmos pools a partir do índice leve', () => {
@@ -776,7 +784,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v33'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v34'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -916,7 +924,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v33'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v34'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 

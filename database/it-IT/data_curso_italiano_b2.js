@@ -682,8 +682,8 @@ const MODULOS_ITALIANO_B2 = [
         ],
         "frases": [
             [
-                "Avendo completato tutti i moduli del corso, lo studente ha ricevuto il certificato di livello B2.",
-                "Tendo completado todos os módulos do curso, o estudante recebeu o certificado de nível B2."
+                "Avendo completato tutti i moduli del corso, lo studente ha concluso il percorso di livello B2.",
+                "Tendo concluído todos os módulos do curso, o estudante completou o percurso de nível B2."
             ],
             [
                 "Prima di prendere una decisione importante, è bene riflettere con molta attenzione.",
@@ -1888,9 +1888,9 @@ const MODULOS_ITALIANO_B2 = [
                 "Livello di autonomia avanzata."
             ],
             [
-                "certificato B2",
-                "certificado B2",
-                "Attestazione ufficiale del raggiungimento del livello."
+                "completamento del livello B2",
+                "conclusão do nível B2",
+                "Conclusione del percorso formativo interno."
             ],
             [
                 "eccellenza linguistica",
@@ -1923,7 +1923,7 @@ const MODULOS_ITALIANO_B2 = [
             ],
             [
                 "Validação da autonomia B2 (CEFR)",
-                "Aprovação na prova confirma a capacidade de interagir com falantes nativos sem esforço e compreender textos abstratos.",
+                "A atividade final verifica, dentro do curso, a capacidade de interagir com autonomia e compreender textos abstratos.",
                 "nível de autonomia avançada B2",
                 "Il candidato ha dimostrato una straordinaria padronanza della lingua italiana!"
             ]
@@ -2263,7 +2263,7 @@ const SFIDA_FINALE_QUIZ_B2 = [
         "explanation": "La risposta scaramantica rituale è sempre \"Crepi!\" o \"Crepi il lupo!\"."
     },
     {
-        "question": "Qual è il numero totale di moduli completati con il superamento del Nello B2 di Italiano?",
+        "question": "Qual è il numero totale di moduli completati con il superamento del livello B2 di italiano?",
         "options": [
             "30 moduli",
             "60 moduli",
@@ -2271,7 +2271,7 @@ const SFIDA_FINALE_QUIZ_B2 = [
             "108 moduli"
         ],
         "correctIndex": 3,
-        "explanation": "Il corso completo comprende 30 (A1) + 30 (A2) + 24 (B1) + 24 (B2) = 108 Módulos de Italiano."
+        "explanation": "Il corso completo comprende 30 (A1) + 30 (A2) + 24 (B1) + 24 (B2) = 108 moduli di italiano."
     },
     {
         "question": "Che livello del Quadro Comune Europeo (CEFR) attesta il pieno dominio dell'autonomia comunicativa?",
