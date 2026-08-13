@@ -33592,24 +33592,29 @@ const kanjiN1Data = [
     {
         "module": 25,
         "title": "Módulo 25: Tabela Geral e Revisão N1",
-        "description": "Tabela completa e dicionário interativo de todos os ~1.136 Kanjis do N1. Parabéns por concluir a grade integral de 2.136 Kanjis do Japão Academy!",
+        "description": "Tabela de revisão dos 990 registros de estudo do N1, correspondentes a 822 caracteres únicos. Esta trilha pedagógica usa níveis de referência JLPT e não constitui uma lista oficial do exame.",
         "isReviewTable": true,
+        "editorialReview": {
+            "status": "pending-human-review",
+            "fields": ["grammar", "readingText", "comprehensionQuiz", "quiz"],
+            "reason": "Textos de conclusão reformulados para representar as contagens reais da trilha."
+        },
         "grammar": {
-            "title": "Conclusão da Grade Integral de 2.136 Kanjis (N5 ao N1)",
-            "explanation": "Você dominou todos os ideogramas oficiais de uso geral (Jouyou Kanji) da língua japonesa no Japão Academy!",
-            "example": "N1 kanji no zen-gekou o shuutoku shi, Jouyou Kanji 2,136-ji o kanzen ni master shimasu.",
-            "translation": "Conclui-se a grade inteira dos Kanjis N1, dominando integralmente todos os 2.136 Kanjis do Jouyou Kanji."
+            "title": "Conclusão da trilha pedagógica de Kanji (N5 ao N1)",
+            "explanation": "Você concluiu os módulos e revisões da trilha de Kanji organizada por níveis de referência JLPT.",
+            "example": "N5 kara N1 made no kanji gakushuu koosu o shuuryou shimashita.",
+            "translation": "Concluiu-se a trilha de estudo de Kanji do N5 ao N1."
         },
         "readingText": {
-            "title": "日本語マスターへの道 (A Jornada do Domínio Integral do Japonês)",
-            "japanese": "<ruby>日本語<rt>にほんご</rt></ruby><ruby>能力<rt>のうりょく</rt></ruby><ruby>試験<rt>しけん</rt></ruby>N1のすべての<ruby>漢字<rt>かんじ</rt></ruby>と<ruby>語彙<rt>ごい</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>し、<ruby>常用漢字<rt>じょうようかんじ</rt></ruby>2,136<ruby>字<rt>じ</rt></ruby>の<ruby>学習<rt>がくしゅう</rt></ruby>を<ruby>完了<rt>かんりょう</rt></ruby>しました。<ruby>高度<rt>こうど</rt></ruby>な<ruby>文献<rt>ぶんけん</rt></ruby>や<ruby>専門<rt>せんもん</rt></ruby><ruby>書<rt>しょ</rt></ruby>を<ruby>読解<rt>どっかい</rt></ruby>する<ruby>確かな<rt>た確かな</rt></ruby><ruby>実力<rt>じつりょく</rt></ruby>が<ruby>身<rt>み</rt></ruby>につきました。",
-            "romaji": "Nihongo nouryoku shiken N1 no subete no kanji to goi o shuutoku shi, Jouyou Kanji 2,136-ji no gakushuu o kanryou shimashita. Koudo na bunken ya senmonsho o dokkai suru tashika na jitsuryoku ga mi ni tsukimashita.",
-            "translation": "Domina-se todos os kanjis e vocabulários do exame N1 de proficiência em língua japonesa, concluindo o aprendizado de todos os 2.136 Jouyou Kanjis. Adquiriu-se a capacidade sólida para ler e interpretar obras eruditas e livros especializados.",
+            "title": "漢字学習の振り返り (Revisão da jornada de estudo de Kanji)",
+            "japanese": "この学習コースでは、N5からN1までの参考レベルに沿って、1,267字の異なる漢字を学びました。これはJLPTの公式漢字一覧ではありません。",
+            "romaji": "Kono gakushuu koosu de wa, N5 kara N1 made no sankou reberu ni sotte, 1,267-ji no kotonaru kanji o manabimashita. Kore wa JLPT no koushiki kanji ichiran de wa arimasen.",
+            "translation": "Nesta trilha, foram estudados 1.267 caracteres Kanji únicos, organizados por níveis de referência do N5 ao N1. Ela não constitui uma lista oficial de Kanji do JLPT.",
             "comprehensionQuiz": [
                 {
-                    "q": "Quantos Jouyou Kanjis foram concluídos no Japão Academy?",
+                    "q": "Quantos caracteres Kanji únicos aparecem na trilha completa?",
                     "options": [
-                        "2.136 Kanjis (2,136字)",
+                        "1.267 caracteres únicos",
                         "1.000 Kanjis",
                         "500 Kanjis",
                         "3.000 Kanjis"
@@ -33617,13 +33622,8 @@ const kanjiN1Data = [
                     "a": 0
                 },
                 {
-                    "q": "Qual a leitura de 常用漢字?",
-                    "options": [
-                        "じょうようかんじ (jouyou-kanji)",
-                        "にほんご",
-                        "しゅうとく",
-                        "かんりょう"
-                    ],
+                    "q": "A organização da trilha constitui uma lista oficial de Kanji do JLPT?",
+                    "options": ["Não", "Sim", "Somente no N1", "Somente no N5"],
                     "a": 0
                 }
             ]
@@ -33631,9 +33631,9 @@ const kanjiN1Data = [
         "kanjis": [],
         "quiz": [
             {
-                "q": "Parabéns! Quantos Kanjis no total compõem a grade Jouyou Kanji do Japão Academy (N5 ao N1)?",
+                "q": "Quantos caracteres Kanji únicos compõem a trilha pedagógica completa (N5 ao N1)?",
                 "options": [
-                    "2.136 Kanjis",
+                    "1.267 caracteres únicos",
                     "1.500 Kanjis",
                     "3.000 Kanjis",
                     "800 Kanjis"
@@ -33721,12 +33721,12 @@ const kanjiN1Data = [
                 "a": 0
             },
             {
-                "q": "Você concluiu com 100% de sucesso todos os 25 módulos do N1?",
+                "q": "O que a conclusão dos 25 módulos do N1 representa?",
                 "options": [
-                    "Sim! Grade do N1 e 2.136 Kanjis concluídos com sucesso!",
-                    "Não",
-                    "Ainda no N5",
-                    "Não tenho certeza"
+                    "Conclusão da trilha pedagógica e de sua revisão N1",
+                    "Certificação oficial do JLPT",
+                    "Domínio comprovado de todos os Jōyō Kanji",
+                    "Equivalência automática à proficiência externa"
                 ],
                 "a": 0
             }

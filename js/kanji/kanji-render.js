@@ -24,12 +24,19 @@ function renderKanjiModule(moduleIndex) {
     `;
     container.appendChild(headerDiv);
 
-    // BANNER DE GRAMÁTICA (N5 ou N4, conforme o modo atual)
+    // BANNER DE GRAMÁTICA (nível derivado explicitamente do modo atual)
     if (moduleData.grammar) {
         const grammarDiv = document.createElement('div');
         grammarDiv.className = 'kanji-grammar-box';
         grammarDiv.style.cssText = 'background: rgba(180, 83, 9, 0.08); border: 2px solid #f59e0b; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; box-shadow: var(--shadow);';
-        const grammarNivel = (mode === 'kanji_n4') ? 'N4' : 'N5';
+        const grammarLevelByMode = {
+            kanji: 'N5',
+            kanji_n4: 'N4',
+            kanji_n3: 'N3',
+            kanji_n2: 'N2',
+            kanji_n1: 'N1'
+        };
+        const grammarNivel = grammarLevelByMode[mode] || 'N5';
         grammarDiv.innerHTML = `
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                 <span style="font-size:1.4rem;">💡</span>
@@ -168,7 +175,7 @@ function renderKanjiModule(moduleIndex) {
                                 <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                                 <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                                 <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
-                                <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                                <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar forma aproximada">✅ Verificar forma</button>
                             </div>
                         </div>
                     </div>

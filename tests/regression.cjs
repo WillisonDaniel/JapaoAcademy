@@ -1049,6 +1049,83 @@ test('regressoes corrigidas na Etapa 22 permanecem protegidas', () => {
     assert.ok(scrollCalls.length >= 3, 'reposicionamento no topo nao esta presente nas tres transicoes');
 });
 
+test('integridade pedagogica japonesa da Fase 1 permanece protegida', () => {
+    const kanjiRender = read('js/kanji/kanji-render.js');
+    const kanjiCanvas = read('js/kanji/kanji-canvas.js');
+    const kanjiHub = read('html/ja-JP/kanji.html');
+    const kanjiN1Page = read('html/ja-JP/kanji_n1.html');
+    const coursePage = read('html/ja-JP/curso.html');
+    const courseQuiz = read('js/course/quiz.js');
+    const hiragana = loadValue('database/ja-JP/data_hiragana.js', 'HIRA_COURSE_DATA');
+    const katakana = loadValue('database/ja-JP/data_katakana.js', 'KATA_COURSE_DATA');
+
+    for (const [mode, level] of Object.entries({
+        kanji: 'N5',
+        kanji_n4: 'N4',
+        kanji_n3: 'N3',
+        kanji_n2: 'N2',
+        kanji_n1: 'N1'
+    })) {
+        assert.match(kanjiRender, new RegExp(`${mode}:\\s*'${level}'`), `${mode}: nivel gramatical incorreto`);
+    }
+    assert.match(kanjiRender, /grammarLevelByMode\[mode\] \|\| 'N5'/);
+
+    assert.doesNotMatch(kanjiCanvas, /gerarCaminhosSvgFallback/);
+    assert.match(kanjiCanvas, /Ordem de traços indisponível offline para este caractere/);
+    assert.match(kanjiCanvas, /Não foi possível carregar a ordem de traços deste caractere/);
+    assert.match(kanjiCanvas, /Forma aproximada de/);
+    assert.match(kanjiRender, />✅ Verificar forma</);
+    assert.match(kanjiCanvas, /adicionarXP\(30, 'Cobertura Mestre da Forma \(≥90%\)'\)/);
+    assert.match(kanjiCanvas, /adicionarXP\(15, 'Cobertura Excelente da Forma \(≥70%\)'\)/);
+    assert.match(kanjiCanvas, /adicionarXP\(10, 'Forma Reconhecida'\)/);
+
+    const katakanaText = JSON.stringify(katakana);
+    assert.match(katakanaText, /ソング/);
+    assert.match(katakanaText, /songu/);
+    assert.doesNotMatch(katakanaText, /ソン(?:"|\\)/);
+    assert.match(hiragana[5].desc, /combinações principais/);
+    assert.match(hiragana[5].desc, /Módulo 8/);
+
+    const levelSpecs = [
+        ['N5', 'database/ja-JP/data_kanji_n5.js', 'kanjiN5Data', 201, 104],
+        ['N4', 'database/ja-JP/data_kanji_n4.js', 'kanjiN4Data', 289, 147],
+        ['N3', 'database/ja-JP/data_kanji_n3.js', 'kanjiN3Data', 360, 353],
+        ['N2', 'database/ja-JP/data_kanji_n2.js', 'kanjiN2Data', 375, 342],
+        ['N1', 'database/ja-JP/data_kanji_n1.js', 'kanjiN1Data', 990, 822]
+    ];
+    const allCharacters = [];
+    let allEntries = 0;
+    for (const [level, file, variable, expectedEntries, expectedUnique] of levelSpecs) {
+        const modules = loadValue(file, variable);
+        const characters = modules.flatMap(module => module.kanjis || [])
+            .map(item => item.character || item.kanji)
+            .filter(Boolean);
+        assert.equal(characters.length, expectedEntries, `${level}: total de registros mudou`);
+        assert.equal(new Set(characters).size, expectedUnique, `${level}: total de caracteres unicos mudou`);
+        allEntries += characters.length;
+        allCharacters.push(...characters);
+    }
+    assert.equal(allEntries, 2215);
+    assert.equal(new Set(allCharacters).size, 1267);
+    assert.match(kanjiHub, /2\.215 registros de estudo/);
+    assert.match(kanjiHub, /1\.267 caracteres únicos/);
+    assert.match(kanjiHub, /Não constitui uma lista oficial de Kanji do JLPT/);
+
+    const kanjiN1 = loadValue('database/ja-JP/data_kanji_n1.js', 'kanjiN1Data');
+    const finalModule = kanjiN1.at(-1);
+    assert.equal(finalModule.editorialReview.status, 'pending-human-review');
+    assert.doesNotMatch(kanjiN1Page, /2[\.,]136/);
+    assert.doesNotMatch(JSON.stringify(finalModule), /2[\.,]136/);
+
+    assert.match(coursePage, /CERTIFICADO DE CONCLUSÃO — JAPONÊS B2/);
+    assert.match(coursePage, /105 Módulos/);
+    assert.match(coursePage, /IDENTIFICADOR LOCAL/);
+    assert.doesNotMatch(coursePage, /CERTIFICADO DE CONCLUSÃO & PROFICIENCY|120 Horas-Aula|CÓDIGO DE AUTENTICIDADE|VERIFIED PROFICIENCY|Certificado de Fluência B2/);
+    assert.match(courseQuiz, /Avaliação final da trilha B2/);
+    assert.match(courseQuiz, /certificado de conclusão da trilha/);
+    assert.doesNotMatch(courseQuiz, /Simulado Final de Proficiency B2|Certificado Oficial|Certificado de Fluência B2/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\n${results.length - failed.length}/${results.length} grupos de regressao aprovados.`);
 if (failed.length > 0) {

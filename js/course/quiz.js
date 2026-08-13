@@ -233,9 +233,9 @@ function renderizarSimuladoB2(container, rawMod) {
     });
     container.innerHTML = `
         <span style="font-size: 3rem;">📝</span>
-        <h3>Simulado Final de Proficiency B2</h3>
+        <h3>Avaliação final da trilha B2</h3>
         <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Responda às 30 questões abrangendo os Níveis A1, A2, B1 e B2. É necessário alcançar no mínimo <strong>80% de acertos (24/30)</strong> para emitir o Certificado Oficial.
+            Responda às 30 questões abrangendo os Níveis A1, A2, B1 e B2. É necessário alcançar no mínimo <strong>80% de acertos (24/30)</strong> para emitir o certificado de conclusão da trilha.
         </p>
         <div style="max-width: 650px; margin: 0 auto;">
             ${quizHTML}
@@ -301,7 +301,7 @@ function submeterSimuladoB2() {
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">Você concluiu toda a jornada de Japonês A1 ➔ B2 do Idiomas Academy!</p>
             </div>
             <button onclick="abrirModalCertificado()" style="background: linear-gradient(135deg, #d97706, #b45309); color: white; border: none; padding: 14px 28px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4); margin-top: 10px;">
-                🎓 Gerar Certificado de Fluência B2
+                🎓 Gerar Certificado de Conclusão — Japonês B2
             </button>
         `;
         if (btnAvancar) {
