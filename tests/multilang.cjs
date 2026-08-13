@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v40/);
+    assert.match(serviceWorker, /idiomas-academy-v41/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -610,28 +610,29 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             scripts: 27,
             // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
             // O registro central dos recursos japoneses adiciona apenas metadados locais de rota e deck.
-            maxBytes: 1623 * 1024,
+            // A Fase 14D acrescenta o aviso seguro de atualização do Service Worker.
+            maxBytes: 1625 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
             file: 'html/en-US/curso_ingles.html',
             locale: 'en-US',
             scripts: 27,
-            maxBytes: 1050 * 1024,
+            maxBytes: 1052 * 1024,
             dataPattern: /database\/en-US\/data_english_[a-b][1-2]\.js/
         },
         {
             file: 'html/es-ES/espanhol_curso.html',
             locale: 'es-ES',
             scripts: 27,
-            maxBytes: 1612 * 1024,
+            maxBytes: 1614 * 1024,
             dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
         },
         {
             file: 'html/ru-RU/russo_curso.html',
             locale: 'ru-RU',
             scripts: 27,
-            maxBytes: 971 * 1024,
+            maxBytes: 973 * 1024,
             dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
             dataCount: 4
         },
@@ -639,7 +640,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/it-IT/italiano_curso.html',
             locale: 'it-IT',
             scripts: 27,
-            maxBytes: 1050 * 1024,
+            maxBytes: 1052 * 1024,
             dataPattern: /database\/it-IT\/data_curso_italiano_[a-b][1-2]\.js/,
             dataCount: 4
         }

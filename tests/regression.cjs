@@ -786,7 +786,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v40'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v41'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -926,7 +926,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v40'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v41'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1213,7 +1213,7 @@ test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
     assert.match(humanReview, /stage4_dialog\[0\]\.content/);
     assert.match(humanReview, /Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente/);
     assert.match(multilang, /Baseline recalibrado para os 151 contratos textuais A1\/A2 da Fase 3B/);
-    assert.match(multilang, /maxBytes: 1623 \* 1024/);
+    assert.match(multilang, /maxBytes: 1625 \* 1024/);
 });
 
 test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
@@ -1414,6 +1414,19 @@ test('redesign japones usa colecoes progressivas sem alterar dados ou canvases',
     assert.match(kanji, /inicializarTodosOsCanvases/);
     assert.match(read('js/kanji/kanji-canvas.js'), /data-initialized/);
     assert.doesNotMatch(kanji, /pending-human-review.*=/);
+    ['escuta', 'leitura', 'gramatica', 'escrita', 'jlpt'].forEach(page => {
+        const html = read(`html/ja-JP/${page}.html`);
+        assert.doesNotMatch(html, /<style>/);
+        assert.match(html, /japanese-experience\.css\?v=41/);
+        assert.match(html, /class="japanese-experience jp-study-page/);
+    });
+    const events = read('js/core/events.js'), sw = read('sw.js');
+    assert.match(sw, /idiomas-academy-v41/);
+    assert.match(sw, /japanese-experience\.css/);
+    assert.match(events, /controllerchange/);
+    assert.match(events, /Nova versão disponível/);
+    assert.match(events, /obterSessaoEstudoAtiva/);
+    assert.match(events, /Recarregar agora/);
 });
 
 const failed = results.filter(result => !result.ok);
