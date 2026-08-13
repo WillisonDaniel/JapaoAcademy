@@ -92,16 +92,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 86, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 88, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('39 paginas HTML e referencias locais validas', () => {
+test('40 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 39, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 40, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -775,7 +775,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 39);
+    assert.equal(pages.length, 40);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
@@ -786,7 +786,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v35'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v36'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -926,7 +926,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v35'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v36'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1352,6 +1352,15 @@ test('escuta, pronuncia e shadowing da Fase 8 permanecem transparentes', () => {
     assert.match(read('html/ja-JP/escuta.html'), /não avalia pronúncia/);
     assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
     assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+});
+
+test('biblioteca de leitura graduada da Fase 9 permanece rastreavel', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-reading'], 'node tests/japanese-reading-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-reading-(?:index|contract)\.cjs/);
+    assert.match(read('tests/japanese-reading-contract.cjs'), /91 leituras Kanji/);
+    assert.match(read('html/ja-JP/leitura.html'), /não constituem listas oficiais/);
+    assert.doesNotMatch(read('js/japanese/reading.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
 });
 
 const failed = results.filter(result => !result.ok);

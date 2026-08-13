@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v35/);
+    assert.match(serviceWorker, /idiomas-academy-v36/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -682,10 +682,10 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
     const budgets = {
         // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
         n5: 708 * 1024,
-        n4: 720 * 1024,
+        n4: 721 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 979 * 1024,
-        n2: 1012 * 1024,
+        n3: 980 * 1024,
+        n2: 1013 * 1024,
         n1: 1783 * 1024
     };
 
@@ -852,6 +852,16 @@ test('escuta japonesa usa indice leve, voz local e nenhuma avaliacao artificial'
     assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
     assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
     assert.match(read('sw.js'), /html\/ja-JP\/escuta\.html/);
+});
+
+test('biblioteca japonesa usa indice leve e niveis JLPT sem equivalencia CEFR', () => {
+    const file = 'html/ja-JP/leitura.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 425 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
+    assert.match(html, /data_leitura_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
+    assert.match(read('js/japanese/reading.js'), /sanitizeReadingHtml/);
+    assert.doesNotMatch(read('tests/japanese-reading-index.cjs'), /jlptToCefr|A1.*N5/i);
 });
 
 const failed = results.filter(result => !result.ok);

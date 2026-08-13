@@ -385,6 +385,15 @@ function initializeKanji(mode) {
         if (typeof loadCourseModule === 'function') loadCourseModule(0);
     }
     if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(mode);
+    if (typeof URLSearchParams !== 'undefined') {
+        const requestedModule = parseInt(new URLSearchParams(window.location.search).get('module'), 10);
+        const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+        const level = resource && resource.id.startsWith('kanji_n') ? resource.id.replace('kanji_', '').toUpperCase() : 'N5';
+        if (Number.isInteger(requestedModule) && requestedModule >= 0 && typeof eNivelKanjiDesbloqueado === 'function' && eNivelKanjiDesbloqueado(level)) {
+            const data = typeof getCourseData === 'function' ? getCourseData(mode) : [];
+            if (data && requestedModule < data.length && typeof loadCourseModule === 'function') setTimeout(() => loadCourseModule(requestedModule), 0);
+        }
+    }
     if (typeof URLSearchParams !== 'undefined' && new URLSearchParams(window.location.search).get('review') === '1') {
         const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
         if (resource && typeof iniciarSessaoSRS === 'function') setTimeout(() => iniciarSessaoSRS(resource.deckType), 0);
