@@ -4,7 +4,7 @@
   "private": true,
   "description": "Suite de regressao local da Idiomas Academy",
   "scripts": {
-    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-listening-index.cjs && node tests/japanese-listening-contract.cjs && node tests/japanese-reading-index.cjs && node tests/japanese-reading-contract.cjs && node tests/japanese-grammar-index.cjs && node tests/japanese-grammar-contract.cjs && node tests/japanese-writing-index.cjs && node tests/japanese-writing-contract.cjs && node tests/japanese-jlpt-index.cjs && node tests/japanese-jlpt-contract.cjs && node tests/japanese-release-contract.cjs && node tests/japanese-visual-contract.cjs && node tests/japanese-editorial-audit.cjs && node tests/course-text-contract.cjs && node tests/kanji-n3-contract.cjs && node tests/kanji-n2-contract.cjs && node tests/kanji-n1-contract.cjs && node tests/japanese-resources-contract.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
+    "test": "node tests/course-index.cjs && node tests/dictionary-index.cjs && node tests/minigame-index.cjs && node tests/japanese-listening-index.cjs && node tests/japanese-listening-contract.cjs && node tests/japanese-reading-index.cjs && node tests/japanese-reading-contract.cjs && node tests/japanese-grammar-index.cjs && node tests/japanese-grammar-contract.cjs && node tests/japanese-writing-index.cjs && node tests/japanese-writing-contract.cjs && node tests/japanese-jlpt-index.cjs && node tests/japanese-jlpt-contract.cjs && node tests/japanese-release-contract.cjs && node tests/japanese-visual-contract.cjs && node tests/japanese-editorial-ledger.cjs && node tests/japanese-editorial-audit.cjs && node tests/course-text-contract.cjs && node tests/kanji-n3-contract.cjs && node tests/kanji-n2-contract.cjs && node tests/kanji-n1-contract.cjs && node tests/japanese-resources-contract.cjs && node tests/russian-editorial-audit.cjs && node tests/russian-integral-review.cjs && node tests/italian-editorial-audit.cjs && node tests/pwa-offline.cjs && node tests/dashboard-visual-server.cjs --check && node tests/regression.cjs && node tests/integration.cjs && node tests/multilang.cjs",
     "test:regression": "node tests/regression.cjs",
     "test:integration": "node tests/integration.cjs",
     "test:multilang": "node tests/multilang.cjs",
@@ -31,6 +31,9 @@
     "audit:italian:check": "node tests/italian-editorial-audit.cjs",
     "audit:japanese": "node tests/japanese-editorial-audit.cjs --write",
     "audit:japanese:check": "node tests/japanese-editorial-audit.cjs",
+    "audit:japanese:sources": "node tests/japanese-editorial-ledger.cjs",
+    "audit:japanese:sources:local": "node tests/japanese-editorial-ledger.cjs --check-local",
+    "audit:japanese:ocr": "node tests/japanese-editorial-ledger.cjs --check-local --check-ocr",
     "test:japanese-text": "node tests/course-text-contract.cjs",
     "test:japanese-kanji-n3": "node tests/kanji-n3-contract.cjs",
     "test:japanese-kanji-n2": "node tests/kanji-n2-contract.cjs",

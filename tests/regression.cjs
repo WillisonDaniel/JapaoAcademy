@@ -8,6 +8,7 @@ const { spawnSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const results = [];
+const WALK_EXCLUDED_DIRECTORIES = new Set(['.git', 'node_modules', 'livros', 'scratch']);
 
 function test(name, fn) {
     try {
@@ -28,7 +29,7 @@ function read(relativePath) {
 function walk(directory, extension) {
     const output = [];
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-        if (entry.name === '.git' || entry.name === 'node_modules') continue;
+        if (WALK_EXCLUDED_DIRECTORIES.has(entry.name)) continue;
         const fullPath = path.join(directory, entry.name);
         if (entry.isDirectory()) output.push(...walk(fullPath, extension));
         else if (fullPath.endsWith(extension)) output.push(fullPath);

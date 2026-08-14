@@ -1,0 +1,693 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-08-14",
+  "corpusRoot": "livros",
+  "policy": {
+    "copyright": "As fontes servem apenas para verificacao editorial. Texto extraido, OCR e imagens permanecem em scratch/ e nao sao versionados.",
+    "sourceRequirement": "Toda aprovacao exige referencia localizada; decisoes de naturalidade ou conflito exigem duas fontes independentes.",
+    "romanization": "Hepburn ASCII, com ou/uu e apostrofo em n' ambiguo.",
+    "translation": "Portugues brasileiro natural e fiel ao contexto."
+  },
+  "summary": {
+    "documents": 21,
+    "pdfs": 20,
+    "docx": 1,
+    "pdfPages": 4238,
+    "nativeTextPages": 398,
+    "ocrRequiredPages": 3840,
+    "audioFilesDeferred": 464,
+    "meanOcrConfidence": 86.27,
+    "lowConfidencePages": 144,
+    "verticalAttempts": 180
+  },
+  "sources": [
+    {
+      "id": "genki-2e-1-textbook",
+      "path": "livros/Genki 2nd Edition/Genki I/Genki - An Integrated Course in Elementary Japanese I [Second Edition] (2011), WITH PDF BOOKMARKS!.pdf",
+      "kind": "pdf",
+      "sha256": "846cc2c9fc4d5310c8e6b3ee711817186239c3810e4433ec350015f32a4004b5",
+      "bytes": 137581176,
+      "pageCount": 382,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 382,
+          "meanOcrConfidence": 87.35,
+          "lowConfidencePages": 3,
+          "verticalAttempts": 6,
+          "visualSamplePages": [
+            1,
+            191,
+            382
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "beginner-course",
+        "grammar",
+        "vocabulary",
+        "dialogue",
+        "kana",
+        "kanji"
+      ]
+    },
+    {
+      "id": "genki-2e-1-workbook",
+      "path": "livros/Genki 2nd Edition/Genki I/Genki - An Integrated Course in Elementary Japanese Workbook I [Second Edition] (2011), WITH PDF BOOKMARKS!.pdf",
+      "kind": "pdf",
+      "sha256": "086c0952826c2c80ef2eae871fa5673870f1042af50568157cdad1a13da9732d",
+      "bytes": 38134134,
+      "pageCount": 148,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 148,
+          "meanOcrConfidence": 86.83,
+          "lowConfidencePages": 8,
+          "verticalAttempts": 8,
+          "visualSamplePages": [
+            1,
+            74,
+            148
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "beginner-practice",
+        "grammar",
+        "vocabulary",
+        "kana",
+        "kanji"
+      ]
+    },
+    {
+      "id": "genki-2e-1-answer-key",
+      "path": "livros/Genki 2nd Edition/Genki I/Genki I Workbook Answer Key.pdf",
+      "kind": "pdf",
+      "sha256": "960929ee9c50dbc3b63bb060168e917eb4467c37ab77a8f84d5b2576fccca21c",
+      "bytes": 43762222,
+      "pageCount": 86,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 86,
+          "meanOcrConfidence": 85.23,
+          "lowConfidencePages": 2,
+          "verticalAttempts": 2,
+          "visualSamplePages": [
+            1,
+            43,
+            86
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "answer-key",
+        "beginner-practice-validation"
+      ]
+    },
+    {
+      "id": "genki-2e-2-textbook",
+      "path": "livros/Genki 2nd Edition/Genki II/Genki - An Integrated Course in Elementary Japanese II [Second Edition] (2011), WITH PDF BOOKMARKS!.pdf",
+      "kind": "pdf",
+      "sha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+      "bytes": 142580993,
+      "pageCount": 386,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 386,
+          "meanOcrConfidence": 87.2,
+          "lowConfidencePages": 7,
+          "verticalAttempts": 9,
+          "visualSamplePages": [
+            1,
+            193,
+            386
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "elementary-course",
+        "grammar",
+        "vocabulary",
+        "dialogue",
+        "kanji"
+      ]
+    },
+    {
+      "id": "genki-2e-2-workbook",
+      "path": "livros/Genki 2nd Edition/Genki II/Genki - An Integrated Course in Elementary Japanese Workbook II [Second Edition] (2011), WITH PDF BOOKMARKS!.pdf",
+      "kind": "pdf",
+      "sha256": "e82156cede34a5681fcb919872e2818a5e9c5f3f65d061cb5346de4dc1d28067",
+      "bytes": 34195131,
+      "pageCount": 130,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 130,
+          "meanOcrConfidence": 86.46,
+          "lowConfidencePages": 6,
+          "verticalAttempts": 6,
+          "visualSamplePages": [
+            1,
+            65,
+            130
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "elementary-practice",
+        "grammar",
+        "vocabulary",
+        "kanji"
+      ]
+    },
+    {
+      "id": "genki-2e-2-answer-key-pdf",
+      "path": "livros/Genki 2nd Edition/Genki II/Genki II Workbook Answer Key.pdf",
+      "kind": "pdf",
+      "sha256": "16a798bbcfa93d4a26509dbbefb9109ac8a66556faa004ba429c314b66bac0d2",
+      "bytes": 8951868,
+      "pageCount": 120,
+      "encrypted": false,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": 120,
+        "quality": {
+          "status": "complete",
+          "processedPages": 120,
+          "meanOcrConfidence": null,
+          "lowConfidencePages": 0,
+          "verticalAttempts": 0,
+          "visualSamplePages": [
+            1,
+            60,
+            120
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "answer-key",
+        "elementary-practice-validation"
+      ]
+    },
+    {
+      "id": "genki-2e-2-answer-key-docx",
+      "path": "livros/Genki 2nd Edition/Genki II/Genki II Workbook Answer Key.docx",
+      "kind": "docx",
+      "sha256": "3d5a10db5306305d81a02c02347b93d321e2858b7c8b2a3cf762894eb329cee4",
+      "bytes": 2221899,
+      "pageCount": null,
+      "encrypted": false,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": null,
+        "quality": {
+          "status": "complete",
+          "method": "docx-native"
+        }
+      },
+      "roles": [
+        "answer-key",
+        "elementary-practice-validation",
+        "cross-check"
+      ]
+    },
+    {
+      "id": "kanji-imaginar-aprender",
+      "path": "livros/Kanji - Imaginar Para Aprender James Heisig, Rafael Shoji.pdf",
+      "kind": "pdf",
+      "sha256": "0c6791be0e36b547d4c4cbefa146458e894b89534022d269be0a44db573ec663",
+      "bytes": 88757910,
+      "pageCount": 523,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 523,
+          "meanOcrConfidence": 89.93,
+          "lowConfidencePages": 17,
+          "verticalAttempts": 17,
+          "visualSamplePages": [
+            1,
+            261,
+            523
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "kanji-meaning",
+        "mnemonic-reference"
+      ],
+      "limitations": [
+        "Nao usar como autoridade unica para leituras japonesas ou naturalidade de frases."
+      ]
+    },
+    {
+      "id": "shinkanzen-n1-kanji",
+      "path": "livros/N1/26. Shinkanzen N1 Kanji.pdf",
+      "kind": "pdf",
+      "sha256": "842d398f0145b5e2a6f83715e91786f747ece08c0b1debaacd5b8c15f17005a2",
+      "bytes": 276436917,
+      "pageCount": 220,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 220,
+          "meanOcrConfidence": 82.79,
+          "lowConfidencePages": 19,
+          "verticalAttempts": 20,
+          "visualSamplePages": [
+            1,
+            110,
+            220
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "jlpt-n1-reference",
+        "kanji",
+        "readings",
+        "vocabulary"
+      ]
+    },
+    {
+      "id": "shinkanzen-n1-goi",
+      "path": "livros/N1/27. Shinkanzen N1 Goi.pdf",
+      "kind": "pdf",
+      "sha256": "68c400b50f309e0a3006d791af489f0457c99d24702001f90a5c3e1919bd286a",
+      "bytes": 238754737,
+      "pageCount": 195,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 195,
+          "meanOcrConfidence": 85.1,
+          "lowConfidencePages": 11,
+          "verticalAttempts": 12,
+          "visualSamplePages": [
+            1,
+            97,
+            195
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "jlpt-n1-reference",
+        "vocabulary",
+        "usage"
+      ]
+    },
+    {
+      "id": "shinkanzen-n1-bunpo",
+      "path": "livros/N1/28. Shinkanzen N1 Bunpo.pdf",
+      "kind": "pdf",
+      "sha256": "38f53fcb649a40b8d8e442eb25de2cbf4e30203bd208e2633a823c0a74e27549",
+      "bytes": 19002197,
+      "pageCount": 199,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 199,
+          "meanOcrConfidence": 85.05,
+          "lowConfidencePages": 6,
+          "verticalAttempts": 6,
+          "visualSamplePages": [
+            1,
+            99,
+            199
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "jlpt-n1-reference",
+        "grammar",
+        "usage"
+      ]
+    },
+    {
+      "id": "shinkanzen-n1-dokkai",
+      "path": "livros/N1/29. Shinkanzen N1 Dokkai.pdf",
+      "kind": "pdf",
+      "sha256": "392f34d1e235ff89109ab1f71426737aeeb33a570d6f7373b05bd0d5eba9c139",
+      "bytes": 45967033,
+      "pageCount": 217,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 217,
+          "meanOcrConfidence": 87.96,
+          "lowConfidencePages": 8,
+          "verticalAttempts": 8,
+          "visualSamplePages": [
+            1,
+            108,
+            217
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "jlpt-n1-reference",
+        "reading",
+        "register",
+        "usage"
+      ]
+    },
+    {
+      "id": "quartet-1-answer-key",
+      "path": "livros/Quartet I e II/Quartet I - Answer Key - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "57189cd170219da813d3f9344de14546a02ef55fbefdbf85bc8223818cec702c",
+      "bytes": 8842049,
+      "pageCount": 102,
+      "encrypted": false,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": 102,
+        "quality": {
+          "status": "complete",
+          "processedPages": 102,
+          "meanOcrConfidence": null,
+          "lowConfidencePages": 0,
+          "verticalAttempts": 0,
+          "visualSamplePages": [
+            1,
+            51,
+            102
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "answer-key",
+        "intermediate-practice-validation"
+      ]
+    },
+    {
+      "id": "quartet-1-textbook",
+      "path": "livros/Quartet I e II/Quartet I - Textbook - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+      "bytes": 293103770,
+      "pageCount": 353,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 353,
+          "meanOcrConfidence": 84.52,
+          "lowConfidencePages": 18,
+          "verticalAttempts": 29,
+          "visualSamplePages": [
+            1,
+            176,
+            353
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "intermediate-course",
+        "grammar",
+        "vocabulary",
+        "reading",
+        "writing",
+        "register"
+      ]
+    },
+    {
+      "id": "quartet-1-workbook",
+      "path": "livros/Quartet I e II/Quartet I - Workbook - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "1352166728fb8462af368f57cc9baa1a62bf8b0659f2dd5517c93738b5e66db9",
+      "bytes": 64583684,
+      "pageCount": 113,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 113,
+          "meanOcrConfidence": 86.67,
+          "lowConfidencePages": 4,
+          "verticalAttempts": 4,
+          "visualSamplePages": [
+            1,
+            56,
+            113
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "intermediate-practice",
+        "grammar",
+        "reading",
+        "writing"
+      ]
+    },
+    {
+      "id": "quartet-2-answer-key",
+      "path": "livros/Quartet I e II/Quartet II - Answer Key - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "e602a068bdf70a6e8885a26eb1dd87f4957ce08a5345686611fa348ee4992103",
+      "bytes": 7713709,
+      "pageCount": 93,
+      "encrypted": true,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": 93,
+        "quality": {
+          "status": "complete",
+          "processedPages": 93,
+          "meanOcrConfidence": null,
+          "lowConfidencePages": 0,
+          "verticalAttempts": 0,
+          "visualSamplePages": [
+            1,
+            46,
+            93
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "answer-key",
+        "upper-intermediate-practice-validation"
+      ]
+    },
+    {
+      "id": "quartet-2-textbook",
+      "path": "livros/Quartet I e II/Quartet II - Textbook - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+      "bytes": 311723310,
+      "pageCount": 357,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 357,
+          "meanOcrConfidence": 84.39,
+          "lowConfidencePages": 14,
+          "verticalAttempts": 26,
+          "visualSamplePages": [
+            1,
+            178,
+            357
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "upper-intermediate-course",
+        "grammar",
+        "vocabulary",
+        "reading",
+        "writing",
+        "register"
+      ]
+    },
+    {
+      "id": "quartet-2-workbook",
+      "path": "livros/Quartet I e II/Quartet II - Workbook - (1st Edition).pdf",
+      "kind": "pdf",
+      "sha256": "88497fea50e44e7e896e00582d04b2be2fdfc24686afbab6599abf66599ff879",
+      "bytes": 60296495,
+      "pageCount": 103,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 103,
+          "meanOcrConfidence": 86.48,
+          "lowConfidencePages": 3,
+          "verticalAttempts": 3,
+          "visualSamplePages": [
+            1,
+            51,
+            103
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "upper-intermediate-practice",
+        "grammar",
+        "reading",
+        "writing"
+      ]
+    },
+    {
+      "id": "quartet-1-vocabulary-pt",
+      "path": "livros/Quartet I e II/quartet1_vocabularylist_Portuguese.pdf",
+      "kind": "pdf",
+      "sha256": "f27d46cd3d4b20bf507b6dbebe3353f5a67dfdae7314aaf6336e53402e90a7f4",
+      "bytes": 855629,
+      "pageCount": 31,
+      "encrypted": false,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": 31,
+        "quality": {
+          "status": "complete",
+          "processedPages": 31,
+          "meanOcrConfidence": null,
+          "lowConfidencePages": 0,
+          "verticalAttempts": 0,
+          "visualSamplePages": [
+            1,
+            15,
+            31
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "vocabulary",
+        "portuguese-translation",
+        "cross-check"
+      ]
+    },
+    {
+      "id": "quartet-2-vocabulary-pt",
+      "path": "livros/Quartet I e II/quartet2_vocabularylist_Portuguese.pdf",
+      "kind": "pdf",
+      "sha256": "18ebe1dd8d47e3e40b2773299696f7cc9369524ba8c36f8aab2f4fb2f904dfa9",
+      "bytes": 976625,
+      "pageCount": 52,
+      "encrypted": false,
+      "extraction": {
+        "mode": "native",
+        "nativeTextPages": 52,
+        "quality": {
+          "status": "complete",
+          "processedPages": 52,
+          "meanOcrConfidence": null,
+          "lowConfidencePages": 0,
+          "verticalAttempts": 0,
+          "visualSamplePages": [
+            1,
+            26,
+            52
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "vocabulary",
+        "portuguese-translation",
+        "cross-check"
+      ]
+    },
+    {
+      "id": "tobira-2009",
+      "path": "livros/TOBIRA Gateway to Advanced Japanese Learning Through Content and Multimedia (2009).pdf",
+      "kind": "pdf",
+      "sha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "bytes": 206175305,
+      "pageCount": 428,
+      "encrypted": false,
+      "extraction": {
+        "mode": "ocr-required",
+        "nativeTextPages": 0,
+        "quality": {
+          "status": "complete",
+          "processedPages": 428,
+          "meanOcrConfidence": 84.84,
+          "lowConfidencePages": 18,
+          "verticalAttempts": 24,
+          "visualSamplePages": [
+            1,
+            214,
+            428
+          ],
+          "visualSampleStatus": "inspected"
+        }
+      },
+      "roles": [
+        "advanced-course",
+        "grammar",
+        "vocabulary",
+        "reading",
+        "register",
+        "culture"
+      ]
+    }
+  ],
+  "audioCorpus": {
+    "root": "livros/Genki 2nd Edition",
+    "files": 464,
+    "bytes": 821808892,
+    "status": "deferred-to-phase-6",
+    "aggregateSha256": "9cc16ddf0638d7570f80ace4dc6dbd4503e45e51ae9523a66867743ce79304be"
+  }
+}
