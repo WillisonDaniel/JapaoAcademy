@@ -18,34 +18,36 @@
 
     <!-- CSS Global e Fontes -->
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 
-<body data-mode="pronuncia" data-lang="english">
+<body data-mode="pronuncia" data-lang="english" class="japanese-experience jp-study-page">
 
     <!-- CABEÇALHO PADRÃO DO HUB -->
     <header>
         <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>🎙️ Guia de Pronúncia & Fonética</h1>
-        <p>Aprenda a falar inglês com clareza e naturalidade. Domine sons que não existem em português, entenda os segredos do <em>Connected Speech</em> e perca o medo de falar!</p>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎙️ Guia de Pronúncia & Fonética</h1>
+        <p id="mainDesc">Aprenda a falar inglês com clareza, naturalidade e domine os sons do IPA.</p>
     </header>
 
     <!-- BANNER HERO DE APRESENTAÇÃO -->
     <main class="course-container">
-        <div class="hero-pronuncia-banner" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 24px; margin-bottom: 24px; box-shadow: var(--shadow);">
-            <div class="hero-content">
-                <span class="badge badge-accent" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border: 1px solid #a855f7; padding: 4px 12px; border-radius: 12px; font-weight: bold;">🎙️ Master Native Phonetics</span>
-                <h1 class="page-title" style="font-size: 1.8rem; margin: 12px 0 8px 0; color: var(--text-main); font-family: 'Fredoka', sans-serif;">Guia Prático de Pronúncia & Fonética</h1>
-                <p class="page-subtitle" style="color: var(--text-muted); font-size: 1rem; line-height: 1.5; margin: 0;">
-                    Aprenda a falar inglês com clareza e naturalidade. Domine sons que não existem em português, entenda os segredos do <em>Connected Speech</em> e treine sua fala!
-                </p>
+        <section class="jp-page-intro en-page-intro" aria-labelledby="pronuncia-intro-title" style="background: linear-gradient(120deg, rgba(29, 78, 216, 0.92), rgba(30, 58, 138, 0.96)), linear-gradient(135deg, #1d4ed8, #1e3a8a) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(29, 78, 216, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Fonética & Connected Speech</span>
+                <h2 id="pronuncia-intro-title">Fale com naturalidade e domine os sons nativos</h2>
+                <p>Explore os fonemas do alfabeto IPA, entenda os segredos de redução vocal e treine sua fala com retorno do microfone.</p>
             </div>
-        </div>
+            <div class="jp-page-stat">
+                <span>Guia prático</span>
+                <strong>Fonética IPA</strong>
+            </div>
+        </section>
 
         <!-- NAVEGAÇÃO DE NÍVEIS CEFR (TAB SYSTEM) -->
         <nav class="pv-level-selector" aria-label="Níveis de Pronúncia" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">

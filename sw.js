@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'idiomas-academy-';
-const CACHE_NAME = 'idiomas-academy-v34';
+const CACHE_NAME = 'idiomas-academy-v44';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -61,7 +61,13 @@ const ASSETS_TO_CACHE = [
     './html/ja-JP/kanji_n1.html',
     './html/ja-JP/minigame.html',
     './html/ja-JP/dicionario.html',
+    './html/ja-JP/escuta.html',
+    './html/ja-JP/leitura.html',
+    './html/ja-JP/gramatica.html',
+    './html/ja-JP/escrita.html',
+    './html/ja-JP/jlpt.html',
     './style.css',
+    './japanese-experience.css',
     './app.js',
     './js/core/config.js',
     './js/core/constants.js',
@@ -89,6 +95,12 @@ const ASSETS_TO_CACHE = [
     './js/core/dictionary.js',
     './js/kanji/kanji-canvas.js',
     './js/kanji/kanji-render.js',
+    './js/kanji/romaji-draft.js',
+    './js/japanese/listening.js',
+    './js/japanese/reading.js',
+    './js/japanese/grammar.js',
+    './js/japanese/writing.js',
+    './js/japanese/jlpt.js',
     './js/phrasal/navigation.js',
     './js/phrasal/render.js',
     './js/pronunciation/render.js',
@@ -113,6 +125,11 @@ const ASSETS_TO_CACHE = [
     './database/ja-JP/data_katakana.js',
     './database/ja-JP/data_dicionario_index.js',
     './database/ja-JP/data_minigame_kanji_index.js',
+    './database/ja-JP/data_escuta_index.js',
+    './database/ja-JP/data_leitura_index.js',
+    './database/ja-JP/data_gramatica_index.js',
+    './database/ja-JP/data_escrita_index.js',
+    './database/ja-JP/data_jlpt_pratica_index.js',
     './favicon.png',
     './favicon-512.png',
     './logo.png'

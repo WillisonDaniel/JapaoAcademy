@@ -7852,4 +7852,70 @@ const CURSO_A1_DADOS = [
     }
 ];
 
+// Contrato textual editorial da Fase 3B. Conteúdo pendente de revisão humana qualificada.
+const A1_EDITORIAL_CONTRACT = [
+    ["おはようございます。", "Ohayou gozaimasu.", "Bom dia.", "Cumprimentar alguém de modo adequado ao período do dia."],
+    ["はじめまして。よろしくお願いします。", "Hajimemashite. Yoroshiku onegaishimasu.", "Muito prazer. Conto com sua gentileza.", "Apresentar-se brevemente em um primeiro encontro."],
+    ["ありがとうございます。すみません。", "Arigatou gozaimasu. Sumimasen.", "Muito obrigado. Com licença.", "Agradecer e pedir licença com expressões básicas."],
+    ["お疲れ様でした。じゃあね。", "Otsukaresama deshita. Jaa ne.", "Obrigado pelo esforço. Até mais.", "Escolher uma despedida adequada à situação."],
+    ["田中さん。先生、こんにちは。", "Tanaka-san. Sensei, konnichiwa.", "Sr. Tanaka. Professor, boa tarde.", "Usar formas básicas de tratamento com respeito."],
+    ["私はブラジル人です。日本語です。", "Watashi wa Burajiru-jin desu. Nihon-go desu.", "Sou brasileiro. É japonês.", "Dizer nacionalidade e identificar um idioma."],
+    ["私は学生です。会社員です。", "Watashi wa gakusei desu. Kaishain desu.", "Sou estudante. Sou funcionário de empresa.", "Dizer uma ocupação com uma frase nominal simples."],
+    ["あなたは学生ですか。誰ですか。", "Anata wa gakusei desu ka. Dare desu ka.", "Você é estudante? Quem é?", "Formar perguntas básicas com か e 誰."],
+    ["一、二、三！二十五歳です。", "Ichi, ni, san! Nijuu-go sai desu.", "Um, dois, três! Tenho 25 anos.", "Contar até dez e dizer a própria idade."],
+    ["私もブラジル人です！そうですか！", "Watashi mo Burajiru-jin desu! Sou desu ka!", "Eu também sou brasileiro! É mesmo?", "Usar も para indicar inclusão em uma frase simples."],
+    ["それは何ですか。", "Sore wa nan desu ka.", "O que é isso?", "Perguntar e indicar a localização básica de objetos."],
+    ["猫がいます。本があります。", "Neko ga imasu. Hon ga arimasu.", "Há um gato. Há um livro.", "Distinguir います e あります em frases de existência."],
+    ["学校へ行きます。", "Gakkou e ikimasu.", "Vou à escola.", "Descrever um deslocamento simples com verbo de movimento."],
+    ["電車で行きます。", "Densha de ikimasu.", "Vou de trem.", "Indicar o meio usado para realizar uma ação."],
+    ["誕生日はいつですか。", "Tanjoubi wa itsu desu ka.", "Quando é seu aniversário?", "Perguntar e informar uma data simples."],
+    ["一、二、三、四……", "Ichi, ni, san, yon...", "Um, dois, três, quatro...", "Contar de um a dez em japonês."],
+    ["これはいくらですか。", "Kore wa ikura desu ka.", "Quanto custa isto?", "Perguntar e compreender um preço básico."],
+    ["これをください。", "Kore o kudasai.", "Isto, por favor.", "Pedir um produto de forma simples em uma loja."],
+    ["水を飲みます。", "Mizu o nomimasu.", "Bebo água.", "Falar sobre uma ação básica de comer ou beber."],
+    ["このラーメンはおいしいです。", "Kono raamen wa oishii desu.", "Este ramen é saboroso.", "Descrever um alimento com um adjetivo básico."],
+    ["今、何時ですか。", "Ima, nan-ji desu ka.", "Que horas são agora?", "Perguntar e informar as horas."],
+    ["今日は月曜日です。", "Kyou wa getsuyoubi desu.", "Hoje é segunda-feira.", "Identificar os dias da semana em uma frase."],
+    ["昨日、映画を見ました。", "Kinou, eiga o mimashita.", "Ontem, assisti a um filme.", "Situar uma ação em uma parte do dia ou no passado recente."],
+    ["ご飯を食べます。", "Gohan o tabemasu.", "Como uma refeição.", "Construir uma frase simples com objeto e verbo de consumo."],
+    ["学校へ行きます。", "Gakkou e ikimasu.", "Vou à escola.", "Construir uma frase simples sobre deslocamento."],
+    ["電車で行きます。", "Densha de ikimasu.", "Vou de trem.", "Escolher um transporte e dizer como irá a um lugar."],
+    ["駅はどこですか。", "Eki wa doko desu ka.", "Onde fica a estação?", "Pedir a localização de um lugar."],
+    ["本があります。", "Hon ga arimasu.", "Há um livro.", "Dizer que um objeto inanimado existe."],
+    ["犬がいます。友達がいます。", "Inu ga imasu. Tomodachi ga imasu.", "Há um cachorro. Há um amigo.", "Dizer que uma pessoa ou animal existe."],
+    ["そして、でも、私も行きます。", "Soshite, demo, watashi mo ikimasu.", "E então, mas eu também vou.", "Conectar duas ideias básicas com uma conjunção."],
+    ["おめでとうございます！A1修了です！", "Omedetou gozaimasu! A1 shuuryou desu!", "Parabéns! O A1 foi concluído!", "Usar os recursos do A1 em uma simulação guiada." ]
+];
+
+CURSO_A1_DADOS.forEach((module, index) => {
+    const [displayText, romaji, translation, canDo] = A1_EDITORIAL_CONTRACT[index];
+    module.stage1_context.audio = {
+        displayText,
+        audioText: displayText,
+        furigana: "",
+        romaji,
+        translation,
+        scenario: ""
+    };
+    module.canDo = canDo;
+    module.editorialReview = { status: "pending-human-review", phase: "3B" };
+});
+
+CURSO_A1_DADOS[2].stage4_dialog[2].content = {
+    displayText: "",
+    audioText: "",
+    furigana: "",
+    romaji: "",
+    translation: "",
+    scenario: "O garçom está de costas, limpando o balcão do outro lado da sala."
+};
+CURSO_A1_DADOS[20].stage4_dialog[0].content = {
+    displayText: "",
+    audioText: "",
+    furigana: "",
+    romaji: "",
+    translation: "",
+    scenario: "A pessoa aguarda você iniciar a conversa."
+};
+
 if (typeof window !== "undefined") { window.CURSO_A1_DADOS = CURSO_A1_DADOS; }

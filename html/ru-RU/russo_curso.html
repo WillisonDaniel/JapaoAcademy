@@ -18,17 +18,32 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 
-<body data-mode="russian" data-lang="russian">
+<body data-mode="russian" data-lang="russian" class="japanese-experience jp-study-page jp-course-page">
     <header>
-        <a href="../../hub_russo.html" class="home-btn">⬅ Hub Russo</a>
-        <h1>🪆 Curso de Russo (CEFR)</h1>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <a href="../../hub_russo.html" class="home-btn">⬅ Menu do Russo</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🪆 Curso de Russo (CEFR)</h1>
+        <p id="mainDesc">Trilha guiada e estruturada do nível básico ao intermediário (A1 a B2).</p>
     </header>
 
     <!-- TELA 1: HUB DE NÍVEIS DO RUSSO -->
     <main id="hub-niveis" class="container">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro ru-page-intro" aria-labelledby="course-intro-title" style="background: linear-gradient(120deg, rgba(109, 40, 217, 0.92), rgba(46, 16, 101, 0.96)), linear-gradient(135deg, #7c3aed, #4c1d95) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(109, 40, 217, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Curso principal CEFR</span>
+                <h2 id="course-intro-title">Sua trilha completa do A1 ao B2</h2>
+                <p>96 módulos estruturados com gramática prática, diálogos situacionais, áudio nativo russo (ru-RU) e repetição espaçada integrada.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Trilha total</span>
+                <strong>96 módulos</strong>
+            </div>
+        </section>
+
         <!-- BANNER DE REVISÃO SRS -->
         <div class="banner-srs" aria-busy="true">
             <div class="srs-banner-info">

@@ -18,17 +18,32 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 
-<body data-mode="curso" data-lang="spanish">
+<body data-mode="curso" data-lang="spanish" class="japanese-experience jp-study-page jp-course-page">
     <header>
         <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
-        <h1>💃 Curso de Espanhol (CEFR)</h1>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">💃 Curso de Espanhol (CEFR)</h1>
+        <p id="mainDesc">Trilha guiada e estruturada do nível básico ao avançado (A1 a B2).</p>
     </header>
 
     <!-- TELA 1: HUB DE NÍVEIS DO ESPANHOL -->
     <main id="hub-niveis" class="container">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro es-page-intro" aria-labelledby="course-intro-title" style="background: linear-gradient(120deg, rgba(217, 119, 6, 0.92), rgba(124, 45, 18, 0.96)), linear-gradient(135deg, #ea580c, #9a3412) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(217, 119, 6, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Curso principal CEFR</span>
+                <h2 id="course-intro-title">Sua trilha completa do A1 ao B2</h2>
+                <p>108 módulos estruturados com diálogos situacionais, pílulas contrastivas anti-portunhol, áudio nativo e repetição espaçada integrada.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Trilha total</span>
+                <strong>108 módulos</strong>
+            </div>
+        </section>
+
         <!-- BANNER DE REVISÃO SRS -->
         <div class="banner-srs" aria-busy="true">
             <div class="srs-banner-info">

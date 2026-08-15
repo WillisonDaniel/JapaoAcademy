@@ -14376,6 +14376,62 @@ const kanjiN2Data = [
         "isReviewTable": true,
         "module": 21,
         "title": "Módulo 21: Tabela Geral de Kanjis e Revisão do N2",
-        "description": "Tabela completa de revisão com todos os 380 Kanjis aprendidos nos 20 módulos do nível JLPT N2."
+        "description": "Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2."
     }
 ];
+
+// Rascunhos editoriais da Fase 5; todos permanecem pendentes de revisão humana qualificada.
+const N2_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    feel: '感じる', stop: '止める', eye: '目', enemy: '敵', spirit: '精神', voice: '声', sky: '空',
+    heart: '心', hero: '英雄', poor: '貧しい', attitude: '態度', success: '成功', opinion: '意見',
+    scandal: 'スキャンダル', essence: '本質', study: '勉強', ancient: '古代', decision: '判断',
+    motive: '動機', chasing: '追う', target: '目標', abrir: '開く', felt: '覚える', mistake: '間違い',
+    teacher: '恩師', man: '人', torawared: 'とらわれる', loss: '損失', arrival: '到着', melody: '旋律',
+    castle: '城', rice: '米', beach: '海岸', economy: '経済', park: '公園', habitat: '生息地',
+    education: '教育', recovery: '復興', museum: '博物館', light: '照明', dunes: '砂丘', room: '部屋',
+    poetry: '詩', capital: '首都', shrine: '神社', map: '地図', travel: '旅行', transport: '輸送',
+    encounter: '出会い', spend: '過ごす', enter: '入る', story: '物語', human: '人間', life: '生活',
+    fail: '失敗する', movement: '運動', win: '勝つ', chance: '機会', think: '考える', state: '国家',
+    condition: '条件', law: '法律', reality: '現実', fact: '事実', known: '知られる', refusal: '拒否',
+    clear: '明確な', design: '設計', impossible: '不可能', purpose: '目的', good: '良い', evaluation: '評価',
+    problems: '問題', listen: '聞く', role: '役割', leader: '指導者', step: '段階', update: '更新',
+    care: '手当て', solution: '解決', clinic: '診療所', volcano: '火山', island: '島', port: '港',
+    tree: '木', food: '食べ物', scent: '香り', peace: '平和', development: '開発', license: '免許',
+    observation: '観察', coast: '海岸', strategy: '戦略', method: '方法', research: '研究',
+    report: '報告書', project: '企画', system: '制度', business: '事業', management: '経営',
+    company: '会社', office: '事務所', service: 'サービス', data: 'データ', test: '試験',
+    team: 'チーム', news: 'ニュース', result: '結果', plan: '計画', future: '未来', culture: '文化',
+    society: '社会', history: '歴史', nature: '自然', world: '世界', visit: '訪問する', wish: '願う',
+    festival: '祭り', problem: '問題', work: '仕事', rule: '規則', power: '力', money: 'お金',
+    city: '都市', medicine: '薬', health: '健康', stress: 'ストレス', sports: 'スポーツ',
+    music: '音楽', movie: '映画', event: '行事', hotel: 'ホテル', bus: 'バス', train: '列車',
+    wa: 'は', o: 'を', e: 'へ'
+};
+
+if (typeof KanjiRomajiDraft === 'undefined') {
+    throw new Error('KanjiRomajiDraft deve carregar antes do dataset Kanji N2.');
+}
+KanjiRomajiDraft.apply(kanjiN2Data, {
+    phase: 5,
+    replacements: N2_ROMAJI_EDITORIAL_REPLACEMENTS,
+    overrides: [
+        [3, 8, 0, '国会議事堂。'],
+        [4, 4, 1, '訴訟で勝ったという報告。'],
+        [6, 7, 0, '擬似体験。'],
+        [11, 9, 1, '公園の休憩亭。'],
+        [13, 7, 0, '乗車券を買います。'],
+        [13, 7, 1, '航空券。'],
+        [13, 12, 0, '国境を越える。'],
+        [13, 18, 0, '観光一覧を見る。'],
+        [14, 15, 1, '選挙に行く。']
+    ]
+});
+
+// Correções objetivas de leituras sem Kana.
+if (kanjiN2Data[4] && kanjiN2Data[4].kanjis[7]) kanjiN2Data[4].kanjis[7].onyomi = 'キン (KIN)';
+if (kanjiN2Data[14] && kanjiN2Data[14].kanjis[3]) kanjiN2Data[14].kanjis[3].onyomi = 'ダツ (DATSU)';
+
+// A revisão referencia o inventário real sem alegar domínio integral.
+if (kanjiN2Data[20]) {
+    kanjiN2Data[20].description = 'Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2.';
+}

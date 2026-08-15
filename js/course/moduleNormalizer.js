@@ -2,6 +2,32 @@
 // MÓDULO COURSE - CAMADA DE NORMALIZAÇÃO
 // ======================================
 
+function firstDefined(...values) {
+    return values.find(value => value !== undefined && value !== null);
+}
+
+/**
+ * Mantém separados os componentes de uma entrada textual do curso.
+ * O segundo argumento existe somente para compatibilidade com schemas legados;
+ * nenhum apoio de leitura ou tradução é fabricado quando a fonte não o fornece.
+ */
+function normalizeTextContent(rawContent, legacyFallbacks = {}) {
+    const source = typeof rawContent === 'string'
+        ? { displayText: rawContent, audioText: rawContent }
+        : ((rawContent && typeof rawContent === 'object') ? rawContent : {});
+    const displayText = String(firstDefined(source.displayText, legacyFallbacks.displayText, '') || '');
+    const audioText = String(firstDefined(source.audioText, legacyFallbacks.audioText, displayText) || '');
+
+    return {
+        displayText,
+        audioText,
+        furigana: String(firstDefined(source.furigana, legacyFallbacks.furigana, '') || ''),
+        romaji: String(firstDefined(source.romaji, legacyFallbacks.romaji, '') || ''),
+        translation: String(firstDefined(source.translation, legacyFallbacks.translation, '') || ''),
+        scenario: String(firstDefined(source.scenario, legacyFallbacks.scenario, '') || '')
+    };
+}
+
 /**
  * Normaliza um módulo do curso para a estrutura padrão desacoplada de schemas do banco.
  *
@@ -34,18 +60,52 @@ function normalizeModule(rawModule) {
     const title = rawModule.title || '';
 
     // 2. Context (stage1_context -> context)
-    const context = rawModule.context || rawModule.stage1_context || {};
+    const rawContext = rawModule.context || rawModule.stage1_context || {};
+    const contextBase = (rawContext && typeof rawContext === 'object') ? rawContext : {};
+    const explicitContextAudio = (contextBase.audio && typeof contextBase.audio === 'object')
+        ? { ...contextBase, ...contextBase.audio }
+        : (typeof contextBase.audio === 'string' ? contextBase.audio : contextBase);
+    const audioGuide = typeof contextBase.audioGuide === 'string' ? contextBase.audioGuide : '';
+    const context = {
+        ...contextBase,
+        audio: {
+            ...normalizeTextContent(explicitContextAudio, {
+                displayText: audioGuide,
+                audioText: audioGuide,
+                furigana: contextBase.furigana,
+                romaji: contextBase.romaji,
+                translation: contextBase.translation,
+                scenario: contextBase.scenario
+            }),
+            _contractExplicit: Boolean(contextBase.audio || contextBase.displayText || contextBase.audioText)
+        }
+    };
 
     // 3. Drops (stage1_drops / stage2_drops -> drops)
     const rawDrops = rawModule.drops || rawModule.stage2_drops || rawModule.stage1_drops || [];
     const drops = (Array.isArray(rawDrops) ? rawDrops : []).map(item => {
         if (!item || typeof item !== 'object') return item;
+        const kanji = item.kanji || item.word || item.english || item.spanish || item.Spanish || item.texto || '';
+        const romaji = item.romaji || item.ipa || item.pronunciation || '';
+        const translation = item.translation || item.meaning || item.portuguese || item.Portuguese || '';
+        const explicitContent = (item.content && typeof item.content === 'object') ? item.content : {};
         return {
             ...item,
             type: item.type || 'vocab',
-            kanji: item.kanji || item.word || item.english || item.spanish || item.Spanish || item.texto || '',
-            romaji: item.romaji || item.ipa || item.pronunciation || '',
-            translation: item.translation || item.meaning || item.portuguese || item.Portuguese || ''
+            kanji,
+            romaji,
+            translation,
+            content: {
+                ...normalizeTextContent({ ...item, ...explicitContent }, {
+                    displayText: kanji,
+                    audioText: kanji || romaji,
+                    furigana: item.furigana || item.kana || item.reading,
+                    romaji,
+                    translation,
+                    scenario: item.scenario
+                }),
+                _contractExplicit: Boolean(item.content || item.displayText !== undefined || item.audioText !== undefined)
+            }
         };
     });
 
@@ -97,8 +157,11 @@ function normalizeModule(rawModule) {
         if (!item || typeof item !== 'object') return item;
         const speaker = item.speaker || item.npcName || 'Pessoa';
         const text = item.text !== undefined ? item.text : (item.npcMessage !== undefined ? item.npcMessage : '');
-        const translation = item.translation !== undefined ? item.translation : (item.scenario !== undefined ? item.scenario : '');
+        const explicitTranslation = item.translation !== undefined ? item.translation : '';
+        const scenario = item.scenario !== undefined ? item.scenario : '';
+        const translation = explicitTranslation || scenario;
         const options = normalizeOptions(item.options, item.correctIndex);
+        const explicitContent = (item.content && typeof item.content === 'object') ? item.content : {};
         return {
             ...item,
             speaker,
@@ -107,6 +170,17 @@ function normalizeModule(rawModule) {
             npcMessage: text,
             translation,
             scenario: translation,
+            content: {
+                ...normalizeTextContent({ ...item, ...explicitContent }, {
+                    displayText: text,
+                    audioText: text,
+                    furigana: item.furigana || item.kana || item.reading,
+                    romaji: item.romaji,
+                    translation: explicitTranslation,
+                    scenario
+                }),
+                _contractExplicit: Boolean(item.content || item.displayText !== undefined || item.audioText !== undefined)
+            },
             options
         };
     });
@@ -164,7 +238,8 @@ function normalizeModule(rawModule) {
         _sourceVar: rawModule._sourceVar || null
     };
 
-    return {
+    const canDo = firstDefined(rawModule.canDo, contextBase.canDo);
+    const normalized = {
         _normalized: true,
         id,
         title,
@@ -176,13 +251,18 @@ function normalizeModule(rawModule) {
         quiz,
         metadata
     };
+    if (canDo !== undefined && canDo !== null && String(canDo).trim()) {
+        normalized.canDo = String(canDo);
+    }
+    return normalized;
 }
 
 // Garantir compatibilidade global em navegadores e módulos Node.js
 if (typeof window !== 'undefined') {
     window.normalizeModule = normalizeModule;
+    window.normalizeTextContent = normalizeTextContent;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { normalizeModule };
+    module.exports = { normalizeModule, normalizeTextContent };
 }

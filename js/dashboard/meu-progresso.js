@@ -145,6 +145,68 @@ const DASHBOARD_ACTIVITY_LABELS = {
     minigame: 'Minigame'
 };
 
+const JAPANESE_SKILL_REGISTRY = [
+    ['course', 'Curso'], ['kana', 'Kana'], ['kanji', 'Kanji'], ['listening', 'Escuta'],
+    ['reading', 'Leitura'], ['grammar', 'Gramática'], ['writing', 'Escrita'],
+    ['dictionary', 'Dicionário'], ['minigame', 'Minigame'], ['srs', 'Revisão SRS'],
+    ['jlpt', 'Preparação JLPT'], ['other', 'Outros']
+];
+
+const JAPANESE_SKILL_ICONS = {
+    course: '道', kana: 'あ', kanji: '漢', listening: '聴', reading: '読', grammar: '文',
+    writing: '書', dictionary: '辞', minigame: '遊', srs: '復', jlpt: '試', other: '日'
+};
+
+function classificarHabilidadeJaponesaSessao(sessao = {}) {
+    if (!sessao || sessao.language !== 'ja-JP') return null;
+    const conteudo = String(sessao.contentId || '').toLowerCase();
+    if (conteudo.startsWith('listening-')) return 'listening';
+    if (conteudo.startsWith('reading-')) return 'reading';
+    if (conteudo.startsWith('grammar-')) return 'grammar';
+    if (conteudo.startsWith('writing-')) return 'writing';
+    if (conteudo === 'jlpt-practice' || conteudo.startsWith('jlpt-')) return 'jlpt';
+    const porTipo = { pronunciation: 'listening', kana: 'kana', kanji: 'kanji', dictionary: 'dictionary', minigame: 'minigame', srs: 'srs', course: 'course', quiz: 'course' };
+    return porTipo[String(sessao.activityType || '')] || 'other';
+}
+
+function criarResumoHabilidadesJaponesDashboard(dados = {}) {
+    const labels = Object.fromEntries(JAPANESE_SKILL_REGISTRY);
+    const buckets = new Map();
+    (Array.isArray(dados.sessions) ? dados.sessions : []).forEach(sessao => {
+        const habilidade = classificarHabilidadeJaponesaSessao(sessao);
+        if (!habilidade) return;
+        if (!buckets.has(habilidade)) buckets.set(habilidade, { id: habilidade, label: labels[habilidade], sessionCount: 0, activeSeconds: 0, lastActivity: null });
+        const resumo = buckets.get(habilidade); resumo.sessionCount += 1; resumo.activeSeconds += Math.max(0, Number(sessao.activeSeconds) || 0);
+        const instante = String(sessao.endedAt || sessao.startedAt || sessao.date || '').trim();
+        if (instante && (!resumo.lastActivity || instante > resumo.lastActivity)) resumo.lastActivity = instante;
+    });
+    return JAPANESE_SKILL_REGISTRY.map(([id]) => buckets.get(id)).filter(Boolean);
+}
+
+function formatarUltimaAtividadeHabilidadeJaponesa(valor) {
+    if (!valor) return 'Não informada';
+    const data = new Date(valor);
+    return Number.isNaN(data.getTime()) ? String(valor) : data.toLocaleDateString('pt-BR');
+}
+
+function renderizarHabilidadesJaponesDashboard(dados = dashboardDadosAtuais) {
+    const grid = document.getElementById('dashboard-japanese-skills-grid');
+    const vazio = document.getElementById('dashboard-japanese-skills-empty');
+    if (!grid) return [];
+    const resumo = criarResumoHabilidadesJaponesDashboard(dados || {}); grid.textContent = ''; if (vazio) vazio.hidden = resumo.length > 0;
+    resumo.forEach(item => {
+        const card = document.createElement('article'); card.className = 'dashboard-japanese-skill-card'; card.dataset.skill = item.id;
+        const titulo = document.createElement('h3'); titulo.textContent = item.label;
+        const cabecalho = document.createElement('div'); cabecalho.className = 'dashboard-japanese-skill-heading';
+        const icone = document.createElement('span'); icone.className = 'dashboard-japanese-skill-icon'; icone.setAttribute('aria-hidden', 'true'); icone.textContent = JAPANESE_SKILL_ICONS[item.id] || '日';
+        cabecalho.append(icone, titulo);
+        const lista = document.createElement('dl');
+        [['Sessões', String(item.sessionCount)], ['Tempo real', item.activeSeconds < 60 ? '< 1 min' : `${Math.floor(item.activeSeconds / 60)} min`], ['Última atividade', formatarUltimaAtividadeHabilidadeJaponesa(item.lastActivity)]].forEach(([rotulo, valor]) => { const linha = document.createElement('div'), termo = document.createElement('dt'), dado = document.createElement('dd'); termo.textContent = rotulo; dado.textContent = valor; linha.append(termo, dado); lista.appendChild(linha); });
+        card.append(cabecalho, lista); grid.appendChild(card);
+    });
+    return resumo;
+}
+
 let dashboardDadosAtuais = null;
 let dashboardStreakAtual = {};
 let dashboardMesCalendarioAtual = null;
@@ -152,7 +214,38 @@ let dashboardDataCalendarioSelecionada = null;
 
 function obterUsuarioDashboard() {
     const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
-    return fb && fb.auth ? fb.auth.currentUser : null;
+    if (fb && fb.auth && fb.auth.currentUser) return fb.auth.currentUser;
+    
+    // Tenta encontrar sessão persistida pelo Firebase SDK no localStorage
+    try {
+        if (typeof localStorage !== 'undefined') {
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('firebase:authUser:')) {
+                    const authData = JSON.parse(localStorage.getItem(key));
+                    if (authData && authData.uid) {
+                        return {
+                            uid: authData.uid,
+                            displayName: authData.displayName || (authData.email ? authData.email.split('@')[0] : 'Estudante'),
+                            email: authData.email || ''
+                        };
+                    }
+                }
+            }
+        }
+    } catch (e) {}
+
+    // Fallback: se houver sessão persistida localmente no navegador
+    const uidLocal = localStorage.getItem('ja_uid_usuario') || localStorage.getItem('ja_last_sync_uid');
+    const nomeLocal = localStorage.getItem('ja_nome_usuario');
+    if (uidLocal || nomeLocal) {
+        return {
+            uid: uidLocal || 'local_user',
+            displayName: nomeLocal || 'Estudante',
+            email: localStorage.getItem('ja_email_usuario') || ''
+        };
+    }
+    return null;
 }
 
 function obterNomeDashboard(user) {
@@ -1678,14 +1771,19 @@ function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso 
             : 'Escolha um idioma e inicie sua primeira atividade.';
     }
 
-    atualizarMetaDashboard(dados);
-    atualizarSRSDashboard(resumoSRS);
-    atualizarResumoGeralDashboard(resumo);
-    atualizarOpcoesAtividadeDashboard(dados);
-    const estatisticas = renderizarEstatisticasDashboard(dados, streak);
-    renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
-    renderizarHistoricoSRSDashboard(dados);
-    renderizarInsightsDashboard(dados, estatisticas, streak);
+    try {
+        atualizarMetaDashboard(dados);
+        atualizarSRSDashboard(resumoSRS);
+        atualizarResumoGeralDashboard(resumo);
+        atualizarOpcoesAtividadeDashboard(dados);
+        const estatisticas = renderizarEstatisticasDashboard(dados, streak);
+        renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
+        renderizarHistoricoSRSDashboard(dados);
+        renderizarInsightsDashboard(dados, estatisticas, streak);
+        renderizarHabilidadesJaponesDashboard(dados);
+    } catch (e) {
+        console.warn("⚠️ Aviso ao renderizar seções do dashboard:", e);
+    }
 
     const temAtividade = Object.values(dados.activityByDate || {}).some(valor => Number(valor) > 0)
         || Object.values(dados.studySecondsByDate || {}).some(valor => Number(valor) > 0)
@@ -1774,7 +1872,7 @@ function inicializarMeuProgresso() {
         gradeCalendario.addEventListener('keydown', navegarTecladoCalendarioDashboard);
     }
     const user = obterUsuarioDashboard();
-    if (!user) renderizarMeuProgresso(null);
+    renderizarMeuProgresso(user || null, false);
 }
 
 if (typeof window !== 'undefined') {
@@ -1798,6 +1896,9 @@ if (typeof window !== 'undefined') {
     window.renderizarHistoricoSRSDashboard = renderizarHistoricoSRSDashboard;
     window.calcularInsightsDashboard = calcularInsightsDashboard;
     window.renderizarInsightsDashboard = renderizarInsightsDashboard;
+    window.classificarHabilidadeJaponesaSessao = classificarHabilidadeJaponesaSessao;
+    window.criarResumoHabilidadesJaponesDashboard = criarResumoHabilidadesJaponesDashboard;
+    window.renderizarHabilidadesJaponesDashboard = renderizarHabilidadesJaponesDashboard;
     window.renderizarMeuProgresso = renderizarMeuProgresso;
     window.inicializarMeuProgresso = inicializarMeuProgresso;
     if (typeof window.addEventListener === 'function') {

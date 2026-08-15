@@ -13612,25 +13612,25 @@ const kanjiN3Data = [
     {
         "module": 19,
         "title": "Módulo 19: Tabela Geral e Revisão N3",
-        "description": "Tabela mestre completa contendo a consulta rápida de todos os ~370 Kanjis do Nível N3 do Japão Academy!",
+        "description": "Tabela de consulta e revisão dos registros de Kanji apresentados nesta trilha de referência N3.",
         "isReviewTable": true,
         "grammar": {
-            "title": "Consolidação Integral dos 370 Kanjis N3",
-            "explanation": "Parabéns por dominar a lista inteira dos 370 ideogramas do Nível N3!",
-            "example": "370 N3 kanji complete mastered.",
-            "translation": "Domínio integral dos 370 Kanjis do Nível N3 do Japão Academy!"
+            "title": "Revisão dos Kanji apresentados na trilha N3",
+            "explanation": "Use esta tabela para retomar os caracteres estudados e identificar quais ainda precisam de revisão.",
+            "example": "N3の漢字を復習します。",
+            "translation": "Vou revisar os Kanji da trilha N3."
         },
         "kanjis": [],
         "readingText": {
             "title": "Tabela Mestre N3",
-            "japanese": "N3 kanji review table.",
-            "romaji": "N3 kanji review table.",
+            "japanese": "N3漢字復習表。",
+            "romaji": "N3 kanji fukushuu-hyou.",
             "translation": "Tabela mestre de revisão de N3.",
             "comprehensionQuiz": [
                 {
                     "q": "Revisão N3 Concluída?",
                     "options": [
-                        "Sim, 370 Kanjis Dominados!",
+                        "Sim, concluí esta revisão.",
                         "Não"
                     ],
                     "a": 0
@@ -13640,3 +13640,86 @@ const kanjiN3Data = [
         "quiz": []
     }
 ];
+
+// Rascunhos editoriais da Fase 4. A conversão preserva a intenção do Romaji legado;
+// os resultados continuam pendentes de revisão humana qualificada.
+const N3_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    feel: '感じる', stop: '止める', eye: '目', enemy: '敵', spirit: '精神', voice: '声', sky: '空',
+    heart: '心', hero: '英雄', poor: '貧しい', attitude: '態度', success: '成功', opinion: '意見',
+    scandal: 'スキャンダル', essence: '本質', study: '勉強', ancient: '古代', decision: '判断',
+    motive: '動機', chasing: '追う', target: '目標', abrir: '開く', felt: '覚える', mistake: '間違い',
+    teacher: '恩師', man: '人', torawared: 'とらわれる', loss: '損失', arrival: 'とうちゃく', melody: '旋律',
+    castle: '城', rice: '米', beach: '海岸', economy: '経済', park: '公園', habitat: '生息地',
+    education: '教育', recovery: '復興', museum: '博物館', light: '照明', dunes: '砂丘', room: '部屋',
+    poetry: '詩', capital: '首都', shrine: '神社', map: '地図', travel: '旅行', transport: '輸送',
+    encounter: '出会い', spend: '過ごす', enter: '入る', story: '物語', human: '人間', life: '生活',
+    fail: '失敗する', movement: '運動', win: '勝つ', chance: '機会', think: '考える', state: '国家',
+    condition: '条件', law: '法律', reality: '現実', fact: '事実', known: '知られる', refusal: '拒否',
+    clear: '明確な', design: '設計', impossible: '不可能', purpose: '目的', good: '良い', evaluation: '評価',
+    problems: '問題', listen: '聞く', role: '役割', leader: '指導者', step: '段階', update: '更新',
+    care: '手当て', solution: '解決', clinic: '診療所', volcano: '火山', island: '島', port: '港',
+    tree: '木', food: '食べ物', scent: '香り', peace: '平和', development: '開発', license: '免許',
+    observation: '観察', coast: '海岸', strategy: '戦略', method: '方法', research: '研究',
+    report: '報告書', project: '企画', system: '制度', business: '事業', management: '経営',
+    company: '会社', office: '事務所', service: 'サービス', data: 'データ', test: '試験',
+    team: 'チーム', news: 'ニュース', result: '結果', plan: '計画', future: '未来', culture: '文化',
+    society: '社会', history: '歴史', nature: '自然', world: '世界', visit: '訪問する', wish: '願う',
+    festival: '祭り', problem: '問題', work: '仕事', rule: '規則', power: '力', money: 'お金',
+    city: '都市', medicine: '薬', health: '健康', stress: 'ストレス', sports: 'スポーツ',
+    music: '音楽', movie: '映画', event: '行事', hotel: 'ホテル', bus: 'バス', train: '列車',
+    wa: 'は', o: 'を', e: 'へ'
+};
+
+function converterPalavraRomajiN3(rawWord) {
+    return KanjiRomajiDraft.word(rawWord, N3_ROMAJI_EDITORIAL_REPLACEMENTS);
+}
+
+function converterFraseRomajiN3(rawSentence, example) {
+    return KanjiRomajiDraft.sentence(rawSentence, example, N3_ROMAJI_EDITORIAL_REPLACEMENTS);
+}
+
+kanjiN3Data.forEach(module => {
+    module.editorialReview = { status: 'pending-human-review', phase: '4' };
+    if (module.grammar && module.grammar.example && !module.isReviewTable) {
+        const grammarText = converterFraseRomajiN3(module.grammar.example, {}).text;
+        module.grammar.content = {
+            displayText: grammarText, audioText: grammarText, furigana: '',
+            romaji: module.grammar.example, translation: module.grammar.translation || '', scenario: ''
+        };
+    }
+    (module.kanjis || []).forEach(kanji => {
+        (kanji.examples || []).forEach(example => {
+            const converted = converterFraseRomajiN3(example.sentence, example);
+            example.content = {
+                displayText: converted.text, audioText: converted.text, furigana: '',
+                romaji: example.sentence || '', translation: example.sentenceMeaning || '', scenario: ''
+            };
+            example.editorialReview = {
+                status: 'pending-human-review', phase: '4', targetReplaced: converted.targetReplaced
+            };
+        });
+    });
+});
+
+// Correções objetivas de leituras sem Kana.
+if (kanjiN3Data[8] && kanjiN3Data[8].kanjis[3]) kanjiN3Data[8].kanjis[3].onyomi = 'ボウ (BOU) / バク (BAKU)';
+if (kanjiN3Data[12] && kanjiN3Data[12].kanjis[11]) kanjiN3Data[12].kanjis[11].onyomi = 'ゾウ (ZOU)';
+
+const N3_EXAMPLE_OVERRIDES = [
+    [0, 4, 0, '停留所でバスを待つ。'],
+    [1, 2, 0, '髪の毛を切ります。'],
+    [2, 18, 1, '温泉の湯に入る。'],
+    [4, 6, 1, '産業が発展する。'],
+    [5, 17, 0, '二割引きの服。'],
+    [6, 3, 1, '重傷を負う。'],
+    [6, 9, 1, '食中毒になった。'],
+    [10, 13, 0, 'いちご狩りに行く。'],
+    [9, 2, 1, '上り坂が続く。'],
+    [11, 16, 0, '生放送を見る。']
+];
+N3_EXAMPLE_OVERRIDES.forEach(([moduleIndex, kanjiIndex, exampleIndex, text]) => {
+    const example = kanjiN3Data[moduleIndex].kanjis[kanjiIndex].examples[exampleIndex];
+    example.content.displayText = text;
+    example.content.audioText = text;
+    example.editorialReview.targetReplaced = true;
+});

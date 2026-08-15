@@ -89,6 +89,16 @@ function initGameScreen() {
     if (hsElem) hsElem.textContent = globalHighScore;
     if (mcElem) mcElem.textContent = isEnglishMinigame() ? `🔥 ${globalMaxCombo}x` : `${globalMaxCombo}x`;
 
+    if (!isEnglishMinigame() && typeof URLSearchParams !== 'undefined' && typeof window !== 'undefined') {
+        const requestedMode = new URLSearchParams(window.location.search).get('mode');
+        const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(requestedMode) : null;
+        const selected = resource ? document.querySelector(`input[name="script_mode"][value="${resource.minigameMode}"]`) : null;
+        if (selected) {
+            selected.checked = true;
+            document.querySelectorAll('.script-lbl').forEach(label => label.classList.toggle('active', label.contains(selected)));
+        }
+    }
+
     document.querySelectorAll('.script-lbl').forEach(lbl => {
         lbl.onclick = () => {
             document.querySelectorAll('.script-lbl').forEach(l => l.classList.remove('active'));
@@ -423,6 +433,7 @@ function processGameResult(isCorrect, heardText = "") {
         setTimeout(nextGameCard, 1200);
     } else {
         if (typeof playBeep === 'function') playBeep('error');
+        if (!isEnglishMinigame() && typeof registrarErroSRS === 'function' && gCard && gCard.k) registrarErroSRS(gCard.k);
         gStreak = 0;
         if (!isInfiniteLives) gLives--;
         if (card) card.classList.add('shake', 'glow-error');

@@ -1,6 +1,4 @@
-// ======================================
-// MÓDULO CORE - CONSTANTES E DICIONÁRIOS GLOBAIS
-// ======================================
+
 
 const LANGUAGE_CONFIG = Object.freeze({
     'ja-JP': Object.freeze({ code: 'ja-JP', id: 'japanese', prefix: 'ja', label: 'Japonês', speechCode: 'ja-JP' }),
@@ -83,73 +81,63 @@ const CAT_NAMES = {
 };
 
 const KANAI_SINGLE_SYLLABLE_MAP = {
-    // VOGAIS BÁSICAS
+
     'a': ['あ', 'ア', '亜', '阿', 'ah', 'uh', 'a'],
     'i': ['い', 'イ', '胃', '井', '意', '伊', 'ee', 'i'],
     'u': ['う', 'ウ', '宇', '鵜', '卯', 'oo', 'u'],
     'e': ['え', 'エ', '絵', '江', '柄', 'eh', 'e'],
     'o': ['お', 'オ', '尾', '男', 'oh', 'o'],
 
-    // LINHA K
     'ka': ['か', 'カ', '加', '可', '科', '蚊', '課', 'ca', 'ka'],
     'ki': ['き', 'キ', '木', '気', '黄', '樹', 'kee', 'key', 'ki'],
     'ku': ['く', 'ク', '九', '区', '苦', '9', 'coo', 'ku'],
     'ke': ['け', 'ケ', '毛', '卦', 'kay', 'ke'],
     'ko': ['こ', 'コ', '子', '小', '古', '個', 'co', 'ko'],
 
-    // LINHA S
     'sa': ['さ', 'サ', '差', '査', '砂', '佐', 'sa'],
     'shi': ['し', 'シ', '四', '死', '市', '氏', '詩', '4', '7', 'si', 'shi', 'shee'],
     'su': ['す', 'ス', '酢', '巣', 'soo', 'su'],
     'se': ['せ', 'セ', '背', '世', '瀬', 'say', 'se'],
     'so': ['そ', 'ソ', '祖', '粗', '诉', 'saw', 'so'],
 
-    // LINHA T
     'ta': ['た', 'タ', '田', '他', '多', 'ta'],
     'chi': ['ち', 'チ', '千', '知', '血', '地', 'ti', 'chi', 'chee'],
     'tsu': ['つ', 'ツ', '津', '都', 'tzu', 'tsu', 'two'],
     'te': ['て', 'テ', '手', 'tay', 'te'],
     'to': ['と', 'ト', '戸', '都', '途', 'toe', 'to'],
 
-    // LINHA N
     'na': ['な', 'ナ', '名', '菜', 'na'],
     'ni': ['に', 'ニ', '二', '似', '荷', '2', 'ni', 'nee', 'nii', 'knee'],
     'nu': ['ぬ', 'ヌ', '沼', 'nu', 'new'],
     'ne': ['ね', 'ネ', '根', '音', 'nee', 'nay', 'ne'],
     'no': ['の', 'ノ', '野', 'no'],
 
-    // LINHA H
     'ha': ['は', 'ハ', '葉', '歯', 'wa', 'ha'],
     'hi': ['ひ', 'ヒ', '火', '日', '非', 'hee', 'hi'],
     'fu': ['ふ', 'フ', '府', '負', 'hu', 'foo', 'fu', 'who'],
     'he': ['へ', 'ヘ', '辺', '屁', 'e', 'hay', 'he'],
     'ho': ['ほ', 'ホ', '歩', '穂', 'ho'],
 
-    // LINHA M
     'ma': ['ま', 'マ', '魔', '真', 'ma'],
     'mi': ['み', 'ミ', '身', '実', '未', '見', 'mee', 'mi'],
     'mu': ['む', 'ム', '無', 'moo', 'mu'],
     'me': ['め', 'メ', '目', '芽', 'may', 'me'],
     'mo': ['も', 'モ', '藻', '模', '喪', 'mo'],
 
-    // LINHA Y
     'ya': ['や', 'ヤ', '矢', '屋', 'ya'],
     'yu': ['ゆ', 'ユ', '湯', '由', 'you', 'yu'],
     'yo': ['よ', 'ヨ', '夜', '世', 'yo'],
 
-    // LINHA R
     'ra': ['ら', 'ラ', '等', '羅', 'ra'],
     'ri': ['り', 'リ', '理', '利', 'ree', 'ri'],
     'ru': ['る', 'ル', '留', '類', 'roo', 'ru'],
     're': ['れ', 'レ', '例', '零', 'ray', 're'],
     'ro': ['ろ', 'ロ', '六', '6', 'row', 'ro'],
 
-    // LINHA W / N
     'wa': ['わ', 'ワ', '輪', '和', 'wa'],
     'wo': ['を', 'ヲ', '尾', 'o', 'wo'],
     'n': ['ん', 'ン', 'm', 'nn', 'ng', 'un', 'um', 'hum', 'uh', 'en', 'an', 'on', 'n'],
 
-    // DAKUON / HANDAKUON (G, Z, D, B, P)
     'ga': ['が', 'ガ', '画', 'ga'],
     'gi': ['ぎ', 'ギ', '技', 'gi', 'ghee'],
     'gu': ['ぐ', 'グ', '具', '愚', '偶', '五', '5', 'gu', 'go', 'goo'],
@@ -178,7 +166,6 @@ const KANAI_SINGLE_SYLLABLE_MAP = {
     'pe': ['ぺ', 'ペ', 'pay', 'pe'],
     'po': ['ぽ', 'ポ', 'poh', 'po'],
 
-    // NÚMEROS E OUTROS HOMÓFONOS
     'hachi': ['はち', 'ハチ', '八', '8', 'hachi'],
     'yon': ['よん', 'ヨン', '四', '4', 'yon'],
     'san': ['さん', 'サン', '三', '3', 'san'],
@@ -247,6 +234,63 @@ const ENGLISH_ALPHABET_DATA = [
     { letter: "Y y", name: "wy", ipa: "/waɪ/", example: "Yellow" },
     { letter: "Z z", name: "zee", ipa: "/ziː/", example: "Zebra" }
 ];
+
+const JAPANESE_RESOURCE_REGISTRY = Object.freeze({
+    hiragana: Object.freeze({ id: 'hiragana', label: 'Hiragana', route: 'hiragana.html', deckType: 'hiragana', minigameMode: 'hiragana' }),
+    katakana: Object.freeze({ id: 'katakana', label: 'Katakana', route: 'katakana.html', deckType: 'katakana', minigameMode: 'katakana' }),
+    kanji_n5: Object.freeze({ id: 'kanji_n5', label: 'Kanji N5', route: 'kanji_n5.html', deckType: 'kanji', minigameMode: 'kanji_n5' }),
+    kanji_n4: Object.freeze({ id: 'kanji_n4', label: 'Kanji N4', route: 'kanji_n4.html', deckType: 'kanji_n4', minigameMode: 'kanji_n4' }),
+    kanji_n3: Object.freeze({ id: 'kanji_n3', label: 'Kanji N3', route: 'kanji_n3.html', deckType: 'kanji_n3', minigameMode: 'kanji_n3' }),
+    kanji_n2: Object.freeze({ id: 'kanji_n2', label: 'Kanji N2', route: 'kanji_n2.html', deckType: 'kanji_n2', minigameMode: 'kanji_n2' }),
+    kanji_n1: Object.freeze({ id: 'kanji_n1', label: 'Kanji N1', route: 'kanji_n1.html', deckType: 'kanji_n1', minigameMode: 'kanji_n1' })
+});
+
+function normalizeJapaneseResourceId(value) {
+    const id = String(value || '').trim().toLowerCase();
+    if (id === 'kanji' || id === 'n5') return 'kanji_n5';
+    if (/^n[1-4]$/.test(id)) return `kanji_${id}`;
+    return Object.prototype.hasOwnProperty.call(JAPANESE_RESOURCE_REGISTRY, id) ? id : null;
+}
+
+function getJapaneseResourceConfig(value) {
+    const id = normalizeJapaneseResourceId(value);
+    return id ? JAPANESE_RESOURCE_REGISTRY[id] : null;
+}
+
+if (typeof window !== 'undefined') {
+    window.JAPANESE_RESOURCE_REGISTRY = JAPANESE_RESOURCE_REGISTRY;
+    window.normalizeJapaneseResourceId = normalizeJapaneseResourceId;
+    window.getJapaneseResourceConfig = getJapaneseResourceConfig;
+}
+
+function getCadernoErros() {
+    try {
+        return JSON.parse(localStorage.getItem('ja_caderno_erros')) || [];
+    } catch (error) {
+        return [];
+    }
+}
+
+function salvarCadernoErros(erros) {
+    localStorage.setItem('ja_caderno_erros', JSON.stringify(erros));
+}
+
+function registrarErroSRS(itemId) {
+    if (!itemId) return;
+    const strId = String(itemId);
+    const erros = getCadernoErros();
+    if (!erros.includes(strId)) {
+        erros.push(strId);
+        salvarCadernoErros(erros);
+    }
+    if (typeof srsTipoAtivo !== 'undefined' && typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(srsTipoAtivo);
+}
+
+if (typeof window !== 'undefined') {
+    window.getCadernoErros = getCadernoErros;
+    window.salvarCadernoErros = salvarCadernoErros;
+    window.registrarErroSRS = registrarErroSRS;
+}
 
 function getCourseData(mode) {
     if (!mode) return null;
@@ -322,7 +366,7 @@ function getCourseData(mode) {
     }
     return null;
 }
-// Exposição explícita no objeto window
+
 if (typeof window !== 'undefined') {
     window.LANGUAGE_CONFIG = LANGUAGE_CONFIG;
     window.normalizeLanguage = normalizeLanguage;

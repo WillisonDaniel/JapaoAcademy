@@ -16,18 +16,6 @@ function salvarFavoritosDeck(favs) {
     localStorage.setItem('ja_favoritos_deck', JSON.stringify(favs));
 }
 
-function getCadernoErros() {
-    try {
-        return JSON.parse(localStorage.getItem('ja_caderno_erros')) || [];
-    } catch (e) {
-        return [];
-    }
-}
-
-function salvarCadernoErros(erros) {
-    localStorage.setItem('ja_caderno_erros', JSON.stringify(erros));
-}
-
 function eFavoritado(itemId) {
     if (!itemId) return false;
     const favs = getFavoritosDeck();
@@ -62,19 +50,6 @@ function toggleFavorito(itemId, btnElement) {
         }
     });
 
-    if (typeof srsTipoAtivo !== 'undefined' && typeof atualizarBadgeSRS === 'function') {
-        atualizarBadgeSRS(srsTipoAtivo);
-    }
-}
-
-function registrarErroSRS(itemId) {
-    if (!itemId) return;
-    const strId = String(itemId);
-    let erros = getCadernoErros();
-    if (!erros.includes(strId)) {
-        erros.push(strId);
-        salvarCadernoErros(erros);
-    }
     if (typeof srsTipoAtivo !== 'undefined' && typeof atualizarBadgeSRS === 'function') {
         atualizarBadgeSRS(srsTipoAtivo);
     }
@@ -139,8 +114,10 @@ function atualizarBadgeSRS(tipo) {
         const mode = document.body.getAttribute('data-mode') || 'curso';
         tipo = (mode === 'curso' || mode === 'japa') ? (typeof nivelAtivo !== 'undefined' && nivelAtivo ? nivelAtivo.toLowerCase() : 'a1') : mode;
     }
-    let labelExibicao = 'A1';
-    if (tipo === 'kanji_n5' || tipo === 'kanji' || tipo === 'n5') labelExibicao = 'Kanji N5';
+    const japaneseResource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(tipo) : null;
+    let labelExibicao = japaneseResource ? japaneseResource.label : 'A1';
+    if (japaneseResource) labelExibicao = japaneseResource.label;
+    else if (tipo === 'kanji_n5' || tipo === 'kanji' || tipo === 'n5') labelExibicao = 'Kanji N5';
     else if (tipo === 'kanji_n4' || tipo === 'n4') labelExibicao = 'Kanji N4';
     else if (tipo === 'kanji_n3' || tipo === 'n3') labelExibicao = 'Kanji N3';
     else if (tipo === 'kanji_n2' || tipo === 'n2') labelExibicao = 'Kanji N2';

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-08-14",
+  "states": ["approved", "corrected", "unresolved", "excluded"],
+  "policy": {
+    "publicLabel": "Approved and corrected items are normal editorial approval; provenance remains internal.",
+    "approvalEvidence": "approved and corrected decisions require at least one localized source reference.",
+    "consensusEvidence": "naturalness and source-conflict decisions require two independent sources.",
+    "unresolved": "Lack of consensus must remain unresolved and must not be forced into approval."
+  },
+  "decisions": []
+}

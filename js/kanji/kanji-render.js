@@ -1,6 +1,16 @@
-// ======================================
-// MÓDULO KANJI - RENDER MODULE
-// ======================================
+function safeKanjiText(value) {
+    const text = String(value || '');
+    return typeof escapeHTML === 'function' ? escapeHTML(text) : text;
+}
+
+function installJapaneseProgressiveUI(){window.JapaneseUI=window.JapaneseUI||{};if(window.JapaneseUI.createProgressiveCollection)return;window.JapaneseUI.createProgressiveCollection=o=>{const c=o.container,f=document.createElement('div'),s=document.createElement('span'),b=document.createElement('button');f.className='jp-progressive-footer';s.className='jp-progressive-status';s.setAttribute('aria-live','polite');b.type='button';b.className='jp-load-more';b.textContent='Carregar mais';f.append(s,b);c.after(f);let a=[],n=0,z=o.batchSize||12;const u=()=>{s.textContent=`Exibindo ${n} de ${a.length}`;b.hidden=n>=a.length;f.hidden=!a.length},l=q=>{let x=n,e=Math.min(a.length,n+z);for(;n<e;n++)c.append(o.renderItem(a[n],n));u();if(q&&c.children[x])c.children[x].focus();if(o.afterRender)o.afterRender()};b.onclick=()=>l(true);u();return{reset:v=>{a=v||[];n=0;c.textContent='';l(false)},loadMore:l,revealThrough:p=>{let i=a.findIndex(p);while(i>=n)l(false);return i},getState:()=>({shown:n,total:a.length,batchSize:z})}}}
+installJapaneseProgressiveUI();
+
+function bindKanjiAudio(root) {
+    root.querySelectorAll('[data-kanji-audio]').forEach(button => button.addEventListener('click', event => {
+        if (typeof playKanjiAudio === 'function') playKanjiAudio(button.dataset.kanjiAudio || '', event);
+    }));
+}
 
 function renderKanjiModule(moduleIndex) {
     const container = document.getElementById('moduleDisplay');
@@ -14,7 +24,6 @@ function renderKanjiModule(moduleIndex) {
     container.setAttribute('aria-busy', 'true');
     container.innerHTML = '';
 
-    // 1. CABEÇALHO DO MÓDULO (Topo)
     const headerDiv = document.createElement('div');
     headerDiv.className = 'module-header';
     const fNomeLocal = typeof fNome === 'function' ? fNome : (t => t);
@@ -24,12 +33,27 @@ function renderKanjiModule(moduleIndex) {
     `;
     container.appendChild(headerDiv);
 
-    // BANNER DE GRAMÁTICA (N5 ou N4, conforme o modo atual)
+    // BANNER DE GRAMÁTICA (nível derivado explicitamente do modo atual)
     if (moduleData.grammar) {
         const grammarDiv = document.createElement('div');
         grammarDiv.className = 'kanji-grammar-box';
         grammarDiv.style.cssText = 'background: rgba(180, 83, 9, 0.08); border: 2px solid #f59e0b; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; box-shadow: var(--shadow);';
-        const grammarNivel = (mode === 'kanji_n4') ? 'N4' : 'N5';
+        const grammarLevelByMode = {
+            kanji: 'N5',
+            kanji_n4: 'N4',
+            kanji_n3: 'N3',
+            kanji_n2: 'N2',
+            kanji_n1: 'N1'
+        };
+        const grammarNivel = grammarLevelByMode[mode] || 'N5';
+        const grammarContent = moduleData.grammar.content && typeof moduleData.grammar.content === 'object' ? moduleData.grammar.content : null;
+        const grammarExample = safeKanjiText(grammarContent ? grammarContent.displayText : moduleData.grammar.example);
+        const grammarTranslation = safeKanjiText(grammarContent ? grammarContent.translation : moduleData.grammar.translation);
+        const grammarOptions = typeof getOpcoesLeitura === 'function' ? getOpcoesLeitura() : { romaji: false };
+        const grammarRomaji = grammarContent && grammarOptions.romaji && grammarContent.romaji
+            ? `<small class="japanese-romaji-text" style="display:block; margin-top:3px;">${safeKanjiText(grammarContent.romaji)}</small>` : '';
+        const grammarAudio = grammarContent && grammarContent.audioText
+            ? `<button type="button" class="audio-btn" data-kanji-audio="${safeKanjiText(grammarContent.audioText)}" title="Ouvir exemplo">🔊</button>` : '';
         grammarDiv.innerHTML = `
             <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
                 <span style="font-size:1.4rem;">💡</span>
@@ -37,14 +61,15 @@ function renderKanjiModule(moduleIndex) {
             </div>
             <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:12px;">${moduleData.grammar.explanation}</p>
             <div style="background:var(--card-bg); border-left:4px solid #f59e0b; padding:10px 14px; border-radius:8px; font-size:0.9rem;">
-                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${moduleData.grammar.example}</span>
-                <small style="color:var(--text-muted); display:block; margin-top:3px;">"${moduleData.grammar.translation}"</small>
+                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${grammarExample}</span> ${grammarAudio}
+                ${grammarRomaji}
+                <small style="color:var(--text-muted); display:block; margin-top:3px;">"${grammarTranslation}"</small>
             </div>
         `;
+        bindKanjiAudio(grammarDiv);
         container.appendChild(grammarDiv);
     }
 
-    // VERIFICAÇÃO: Se for a Tabela Geral de Revisão
     if (moduleData.isReviewTable) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'review-grid-container';
@@ -72,6 +97,7 @@ function renderKanjiModule(moduleIndex) {
 
                 const cell = document.createElement('div');
                 cell.className = 'review-grid-cell';
+                cell.tabIndex = -1;
                 cell.innerHTML = `
                     <div class="grid-char">${charVal}</div>
                     <div class="grid-meaning">${meaningVal}</div>
@@ -92,11 +118,13 @@ function renderKanjiModule(moduleIndex) {
             }
         });
 
+        const reviewCells = Array.from(gridDiv.children);
+        gridDiv.textContent = '';
         container.appendChild(gridDiv);
+        window.JapaneseUI.createProgressiveCollection({ container: gridDiv, batchSize: 60, renderItem: cell => cell }).reset(reviewCells);
         return;
     }
 
-    // 2. CARDS DE ESTUDO DO MÓDULO (Meio da página)
     const gridDiv = document.createElement('div');
     gridDiv.className = 'kanji-grid';
 
@@ -105,12 +133,15 @@ function renderKanjiModule(moduleIndex) {
         try {
             const card = document.createElement('div');
             card.className = 'kana-card kanji-card-layout';
+            card.tabIndex = -1;
             card.style.animationDelay = `${index * 0.05}s`;
 
             const charVal = item.character || item.kanji || item.char || '';
             const meaningVal = item.meaning || item.significado || '';
             const kunVal = item.kunyomi || item.kun || '-';
             const onVal = item.onyomi || item.on || '-';
+            const readingPending = item.readingEditorialReview
+                ? '<small class="reading-editorial-pending">Leitura pendente de revisão editorial</small>' : '';
             const mnemonicVal = item.mnemonic || item.dica || '';
             const examplesList = item.examples || item.exemplos || [];
 
@@ -118,18 +149,29 @@ function renderKanjiModule(moduleIndex) {
             if (examplesList.length > 0) {
                 examplesHTML = `<div class="kanji-examples-title">Exemplos & Gramática:</div>`;
                 examplesList.forEach(ex => {
-                    const w = ex.word || ex.palavra || '';
-                    const wm = ex.wordMeaning || ex.significadoPalavra || ex.significado || '';
-                    const s = ex.sentence || ex.frase || '';
-                    const sm = ex.sentenceMeaning || ex.traducaoFrase || ex.traducao || '';
+                    const content = ex.content && typeof ex.content === 'object' ? ex.content : null;
+                    const w = safeKanjiText(ex.word || ex.palavra || '');
+                    const wm = safeKanjiText(ex.wordMeaning || ex.significadoPalavra || ex.significado || '');
+                    const rawSentence = content ? content.displayText : (ex.sentence || ex.frase || '');
+                    const audioText = content ? content.audioText : rawSentence;
+                    const sm = safeKanjiText(content ? content.translation : (ex.sentenceMeaning || ex.traducaoFrase || ex.traducao || ''));
+                    const readingOptions = typeof getOpcoesLeitura === 'function' ? getOpcoesLeitura() : { furigana: true, romaji: false };
+                    const formatted = content && typeof formatarTextoJapones === 'function'
+                        ? formatarTextoJapones({ kanji: safeKanjiText(rawSentence), kana: safeKanjiText(content.furigana), romaji: safeKanjiText(content.romaji) })
+                        : null;
+                    const s = formatted ? (formatted.htmlJapones || safeKanjiText(rawSentence)) : safeKanjiText(rawSentence);
+                    const romajiHTML = content && readingOptions.romaji && content.romaji
+                        ? `<div class="ex-romaji japanese-romaji-text">${safeKanjiText(content.romaji)}</div>` : '';
+                    const audioAttribute = safeKanjiText(audioText);
 
                     examplesHTML += `
                         <div class="kanji-example-item">
                             <div class="ex-word">
                                 ${w} ${wm ? `<span>(${wm})</span>` : ''}
-                                ${s ? `<button class="audio-btn" onclick="playKanjiAudio('${s.replace(/'/g, "\\'")}', event)" title="Ouvir frase">🔊</button>` : ''}
+                                ${audioText ? `<button type="button" class="audio-btn kanji-example-audio" data-kanji-audio="${audioAttribute}" title="Ouvir frase">🔊</button>` : ''}
                             </div>
                             ${s ? `<div class="ex-sentence">${s}</div>` : ''}
+                            ${romajiHTML}
                             ${sm ? `<div class="ex-translation">"${sm}"</div>` : ''}
                         </div>
                     `;
@@ -158,7 +200,6 @@ function renderKanjiModule(moduleIndex) {
                         <div class="kanji-meaning">${meaningVal}</div>
                         <button class="audio-btn" onclick="playKanjiAudio('${charVal}', event)" style="width:100%; margin-top:8px; padding: 8px;">🔊 Ouvir Kanji</button>
 
-                        <!-- CANVAS INTERATIVO DE ESCRITA DE KANJI -->
                         <div class="canvas-practice-box">
                             <span class="canvas-practice-title">✏️ Treino Motor do Ideograma:</span>
                             <canvas id="${canvasId}" class="kanji-canvas" width="200" height="200" data-char="${charVal}"></canvas>
@@ -168,7 +209,7 @@ function renderKanjiModule(moduleIndex) {
                                 <button class="canvas-btn btn-desfazer" onclick="desfazerUltimoTracoCanvas('${canvasId}')" title="Desfazer Traço">↩️ Desfazer</button>
                                 <button class="canvas-btn btn-limpar" onclick="limparCanvas('${canvasId}')" title="Limpar">🧹 Limpar</button>
                                 <button class="canvas-btn btn-guia" id="btn-guia-${canvasId}" onclick="alternarGuiaCanvas('${canvasId}')" title="Alternar Guia">👁️ Guia ON</button>
-                                <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar Traço">✅ Verificar</button>
+                                <button class="canvas-btn btn-verificar" onclick="verificarTracoCanvas('${canvasId}')" title="Verificar forma aproximada">✅ Verificar forma</button>
                             </div>
                         </div>
                     </div>
@@ -181,6 +222,7 @@ function renderKanjiModule(moduleIndex) {
                             <span class="reading-label">Onyomi (Chino-Japonês):</span>
                             <div class="reading-val onyomi-val">${onVal}</div>
                         </div>
+                        ${readingPending}
                         ${mnemonicHTML}
                         ${renderRadicaisKanjiLocal}
                         ${examplesHTML}
@@ -188,15 +230,24 @@ function renderKanjiModule(moduleIndex) {
                 </div>
             `;
 
+            bindKanjiAudio(card);
+
             gridDiv.appendChild(card);
         } catch (err) {
             console.error("Erro ao renderizar card individual do Kanji N5:", err);
         }
     });
 
+    const kanjiCards = Array.from(gridDiv.children);
+    gridDiv.textContent = '';
     container.appendChild(gridDiv);
+    window.JapaneseUI.createProgressiveCollection({
+        container: gridDiv,
+        batchSize: 6,
+        renderItem: card => card,
+        afterRender() { if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases(); }
+    }).reset(kanjiCards);
 
-    // 3. LEITURA GUIADA EM CONTEXTO
     if (moduleData.readingText) {
         const rtData = moduleData.readingText;
         const boxId = `kanji-reading-box-${moduleIndex}`;
@@ -276,6 +327,7 @@ function renderKanjiModule(moduleIndex) {
         container.appendChild(quizDiv);
     }
 
+    if (typeof renderJapaneseResourceActions === 'function') renderJapaneseResourceActions(container, mode, moduleIndex, dataBase.length);
     if (typeof inicializarTodosOsCanvases === 'function') inicializarTodosOsCanvases();
     container.setAttribute('aria-busy', 'false');
     container.setAttribute('aria-label', 'Conteúdo do módulo');
@@ -312,6 +364,30 @@ function playKanjiAudio(text, event) {
     }
 }
 
+function renderJapaneseResourceActions(container, mode, moduleIndex, moduleCount) {
+    if (!container || !['hiragana', 'katakana'].includes(mode) || moduleIndex !== moduleCount - 1) return;
+    const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+    if (!resource) return;
+    const actions = document.createElement('section');
+    actions.className = 'japanese-resource-actions';
+    actions.setAttribute('aria-label', `Próximos passos de ${resource.label}`);
+    actions.style.cssText = 'margin-top:32px;padding:22px;border:1px solid var(--border-color);border-radius:16px;background:var(--card-bg);text-align:center;';
+    actions.innerHTML = `
+        <h3 style="margin:0 0 8px;">Continue praticando ${resource.label}</h3>
+        <p style="margin:0 0 16px;color:var(--text-muted);">Revise o conteúdo, pratique no minigame ou consulte os caracteres no dicionário.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+            <button type="button" class="btn-primary" data-resource-action="review">Revisar no SRS</button>
+            <button type="button" class="btn-secondary" data-resource-action="minigame">Praticar no minigame</button>
+            <button type="button" class="btn-secondary" data-resource-action="dictionary">Abrir no dicionário</button>
+        </div>`;
+    actions.querySelector('[data-resource-action="review"]').onclick = () => {
+        if (typeof iniciarSessaoSRS === 'function') iniciarSessaoSRS(resource.deckType);
+    };
+    actions.querySelector('[data-resource-action="minigame"]').onclick = () => { window.location.href = `minigame.html?mode=${resource.minigameMode}`; };
+    actions.querySelector('[data-resource-action="dictionary"]').onclick = () => { window.location.href = `dicionario.html?cat=${resource.id}`; };
+    container.appendChild(actions);
+}
+
 function initializeKanji(mode) {
     let primaryColor = 'var(--hira-primary)';
 
@@ -325,6 +401,19 @@ function initializeKanji(mode) {
         if (typeof loadCourseModule === 'function') loadCourseModule(0);
     }
     if (typeof atualizarBadgeSRS === 'function') atualizarBadgeSRS(mode);
+    if (typeof URLSearchParams !== 'undefined') {
+        const requestedModule = parseInt(new URLSearchParams(window.location.search).get('module'), 10);
+        const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+        const level = resource && resource.id.startsWith('kanji_n') ? resource.id.replace('kanji_', '').toUpperCase() : 'N5';
+        if (Number.isInteger(requestedModule) && requestedModule >= 0 && typeof eNivelKanjiDesbloqueado === 'function' && eNivelKanjiDesbloqueado(level)) {
+            const data = typeof getCourseData === 'function' ? getCourseData(mode) : [];
+            if (data && requestedModule < data.length && typeof loadCourseModule === 'function') setTimeout(() => loadCourseModule(requestedModule), 0);
+        }
+    }
+    if (typeof URLSearchParams !== 'undefined' && new URLSearchParams(window.location.search).get('review') === '1') {
+        const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(mode) : null;
+        if (resource && typeof iniciarSessaoSRS === 'function') setTimeout(() => iniciarSessaoSRS(resource.deckType), 0);
+    }
 }
 
 function eNivelKanjiDesbloqueado(nivelJLPT) {
@@ -419,6 +508,7 @@ if (typeof window !== 'undefined') {
     window.playReadingTextAudio = playReadingTextAudio;
     window.playKanjiAudio = playKanjiAudio;
     window.initializeKanji = initializeKanji;
+    window.renderJapaneseResourceActions = renderJapaneseResourceActions;
     window.eNivelKanjiDesbloqueado = eNivelKanjiDesbloqueado;
     window.abrirTrilhaKanji = abrirTrilhaKanji;
     window.calcularProgressoKanjiGlobal = calcularProgressoKanjiGlobal;

@@ -18,6 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <style>
@@ -395,16 +396,28 @@
     </style>
 </head>
 
-<body data-mode="falsos_amigos" data-lang="spanish">
+<body data-mode="falsos_amigos" data-lang="spanish" class="japanese-experience jp-study-page">
     <header>
         <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>🚨 Falsos Cognatos de Espanhol (A1 a B2)</h1>
-        <p>Domine os 16 Módulos Anti-Portunhol, evite armadilhas e comunique-se com proficiência nativa.</p>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🚨 Falsos Amigos (Cognatos)</h1>
+        <p id="mainDesc">Evite armadilhas e deslizes comuns entre o Português e o Espanhol.</p>
     </header>
 
     <div class="container" id="study-area">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro es-page-intro" aria-labelledby="falsos-intro-title" style="background: linear-gradient(120deg, rgba(217, 119, 6, 0.92), rgba(124, 45, 18, 0.96)), linear-gradient(135deg, #ea580c, #9a3412) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(217, 119, 6, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Anti-portunhol</span>
+                <h2 id="falsos-intro-title">Desmascare os falsos cognatos do espanhol</h2>
+                <p>Evite armadilhas e mal-entendidos entre português e espanhol com explicações detalhadas, exemplos e quiz interativo.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Catálogo visual</span>
+                <strong>Falsos Cognatos</strong>
+            </div>
+        </section>
+
         <!-- BANNER DE REVISÃO SRS DE FALSOS COGNATOS -->
         <div class="banner-srs" aria-busy="true"
             style="background: linear-gradient(135deg, #d97706, #b45309); border-color: rgba(217, 119, 6, 0.3);">

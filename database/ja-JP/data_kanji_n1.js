@@ -33592,24 +33592,29 @@ const kanjiN1Data = [
     {
         "module": 25,
         "title": "Módulo 25: Tabela Geral e Revisão N1",
-        "description": "Tabela completa e dicionário interativo de todos os ~1.136 Kanjis do N1. Parabéns por concluir a grade integral de 2.136 Kanjis do Japão Academy!",
+        "description": "Tabela de revisão dos 990 registros de estudo do N1, correspondentes a 822 caracteres únicos. Esta trilha pedagógica usa níveis de referência JLPT e não constitui uma lista oficial do exame.",
         "isReviewTable": true,
+        "editorialReview": {
+            "status": "pending-human-review",
+            "fields": ["grammar", "readingText", "comprehensionQuiz", "quiz"],
+            "reason": "Textos de conclusão reformulados para representar as contagens reais da trilha."
+        },
         "grammar": {
-            "title": "Conclusão da Grade Integral de 2.136 Kanjis (N5 ao N1)",
-            "explanation": "Você dominou todos os ideogramas oficiais de uso geral (Jouyou Kanji) da língua japonesa no Japão Academy!",
-            "example": "N1 kanji no zen-gekou o shuutoku shi, Jouyou Kanji 2,136-ji o kanzen ni master shimasu.",
-            "translation": "Conclui-se a grade inteira dos Kanjis N1, dominando integralmente todos os 2.136 Kanjis do Jouyou Kanji."
+            "title": "Conclusão da trilha pedagógica de Kanji (N5 ao N1)",
+            "explanation": "Você concluiu os módulos e revisões da trilha de Kanji organizada por níveis de referência JLPT.",
+            "example": "N5 kara N1 made no kanji gakushuu koosu o shuuryou shimashita.",
+            "translation": "Concluiu-se a trilha de estudo de Kanji do N5 ao N1."
         },
         "readingText": {
-            "title": "日本語マスターへの道 (A Jornada do Domínio Integral do Japonês)",
-            "japanese": "<ruby>日本語<rt>にほんご</rt></ruby><ruby>能力<rt>のうりょく</rt></ruby><ruby>試験<rt>しけん</rt></ruby>N1のすべての<ruby>漢字<rt>かんじ</rt></ruby>と<ruby>語彙<rt>ごい</rt></ruby>を<ruby>習得<rt>しゅうとく</rt></ruby>し、<ruby>常用漢字<rt>じょうようかんじ</rt></ruby>2,136<ruby>字<rt>じ</rt></ruby>の<ruby>学習<rt>がくしゅう</rt></ruby>を<ruby>完了<rt>かんりょう</rt></ruby>しました。<ruby>高度<rt>こうど</rt></ruby>な<ruby>文献<rt>ぶんけん</rt></ruby>や<ruby>専門<rt>せんもん</rt></ruby><ruby>書<rt>しょ</rt></ruby>を<ruby>読解<rt>どっかい</rt></ruby>する<ruby>確かな<rt>た確かな</rt></ruby><ruby>実力<rt>じつりょく</rt></ruby>が<ruby>身<rt>み</rt></ruby>につきました。",
-            "romaji": "Nihongo nouryoku shiken N1 no subete no kanji to goi o shuutoku shi, Jouyou Kanji 2,136-ji no gakushuu o kanryou shimashita. Koudo na bunken ya senmonsho o dokkai suru tashika na jitsuryoku ga mi ni tsukimashita.",
-            "translation": "Domina-se todos os kanjis e vocabulários do exame N1 de proficiência em língua japonesa, concluindo o aprendizado de todos os 2.136 Jouyou Kanjis. Adquiriu-se a capacidade sólida para ler e interpretar obras eruditas e livros especializados.",
+            "title": "漢字学習の振り返り (Revisão da jornada de estudo de Kanji)",
+            "japanese": "この学習コースでは、N5からN1までの参考レベルに沿って、1,267字の異なる漢字を学びました。これはJLPTの公式漢字一覧ではありません。",
+            "romaji": "Kono gakushuu koosu de wa, N5 kara N1 made no sankou reberu ni sotte, 1,267-ji no kotonaru kanji o manabimashita. Kore wa JLPT no koushiki kanji ichiran de wa arimasen.",
+            "translation": "Nesta trilha, foram estudados 1.267 caracteres Kanji únicos, organizados por níveis de referência do N5 ao N1. Ela não constitui uma lista oficial de Kanji do JLPT.",
             "comprehensionQuiz": [
                 {
-                    "q": "Quantos Jouyou Kanjis foram concluídos no Japão Academy?",
+                    "q": "Quantos caracteres Kanji únicos aparecem na trilha completa?",
                     "options": [
-                        "2.136 Kanjis (2,136字)",
+                        "1.267 caracteres únicos",
                         "1.000 Kanjis",
                         "500 Kanjis",
                         "3.000 Kanjis"
@@ -33617,13 +33622,8 @@ const kanjiN1Data = [
                     "a": 0
                 },
                 {
-                    "q": "Qual a leitura de 常用漢字?",
-                    "options": [
-                        "じょうようかんじ (jouyou-kanji)",
-                        "にほんご",
-                        "しゅうとく",
-                        "かんりょう"
-                    ],
+                    "q": "A organização da trilha constitui uma lista oficial de Kanji do JLPT?",
+                    "options": ["Não", "Sim", "Somente no N1", "Somente no N5"],
                     "a": 0
                 }
             ]
@@ -33631,9 +33631,9 @@ const kanjiN1Data = [
         "kanjis": [],
         "quiz": [
             {
-                "q": "Parabéns! Quantos Kanjis no total compõem a grade Jouyou Kanji do Japão Academy (N5 ao N1)?",
+                "q": "Quantos caracteres Kanji únicos compõem a trilha pedagógica completa (N5 ao N1)?",
                 "options": [
-                    "2.136 Kanjis",
+                    "1.267 caracteres únicos",
                     "1.500 Kanjis",
                     "3.000 Kanjis",
                     "800 Kanjis"
@@ -33721,15 +33721,97 @@ const kanjiN1Data = [
                 "a": 0
             },
             {
-                "q": "Você concluiu com 100% de sucesso todos os 25 módulos do N1?",
+                "q": "O que a conclusão dos 25 módulos do N1 representa?",
                 "options": [
-                    "Sim! Grade do N1 e 2.136 Kanjis concluídos com sucesso!",
-                    "Não",
-                    "Ainda no N5",
-                    "Não tenho certeza"
+                    "Conclusão da trilha pedagógica e de sua revisão N1",
+                    "Certificação oficial do JLPT",
+                    "Domínio comprovado de todos os Jōyō Kanji",
+                    "Equivalência automática à proficiência externa"
                 ],
                 "a": 0
             }
         ]
     }
 ];
+
+// Rascunhos editoriais da Fase 6; nenhum resultado recebe aprovação automática.
+const N1_ROMAJI_EDITORIAL_REPLACEMENTS = {
+    feel: '感じる', stop: '止める', eye: '目', enemy: '敵', spirit: '精神', voice: '声', sky: '空',
+    heart: '心', hero: '英雄', poor: '貧しい', attitude: '態度', success: '成功', opinion: '意見',
+    scandal: 'スキャンダル', essence: '本質', study: '勉強', ancient: '古代', decision: '判断',
+    motive: '動機', chasing: '追う', target: '目標', abrir: '開く', felt: '覚える', mistake: '間違い',
+    teacher: '恩師', man: '人', torawared: 'とらわれる', loss: '損失', arrival: '到着', melody: '旋律',
+    castle: '城', rice: '米', beach: '海岸', economy: '経済', park: '公園', habitat: '生息地',
+    education: '教育', recovery: '復興', museum: '博物館', light: '照明', dunes: '砂丘', room: '部屋',
+    poetry: '詩', capital: '首都', shrine: '神社', map: '地図', travel: '旅行', transport: '輸送',
+    encounter: '出会い', spend: '過ごす', enter: '入る', story: '物語', human: '人間', life: '生活',
+    fail: '失敗する', movement: '運動', win: '勝つ', chance: '機会', think: '考える', state: '国家',
+    condition: '条件', law: '法律', reality: '現実', fact: '事実', known: '知られる', refusal: '拒否',
+    clear: '明確な', design: '設計', impossible: '不可能', purpose: '目的', good: '良い', evaluation: '評価',
+    problems: '問題', listen: '聞く', role: '役割', leader: '指導者', step: '段階', update: '更新',
+    care: '手当て', solution: '解決', clinic: '診療所', volcano: '火山', island: '島', port: '港',
+    tree: '木', food: '食べ物', scent: '香り', peace: '平和', development: '開発', license: '免許',
+    observation: '観察', coast: '海岸', strategy: '戦略', method: '方法', research: '研究',
+    report: '報告書', project: '企画', system: '制度', business: '事業', management: '経営',
+    company: '会社', office: '事務所', service: 'サービス', data: 'データ', test: '試験',
+    team: 'チーム', news: 'ニュース', result: '結果', plan: '計画', future: '未来', culture: '文化',
+    society: '社会', history: '歴史', nature: '自然', world: '世界', visit: '訪問する', wish: '願う',
+    festival: '祭り', problem: '問題', work: '仕事', rule: '規則', power: '力', money: 'お金',
+    city: '都市', medicine: '薬', health: '健康', stress: 'ストレス', sports: 'スポーツ',
+    music: '音楽', movie: '映画', event: '行事', hotel: 'ホテル', bus: 'バス', train: '列車',
+    wa: 'は', o: 'を', e: 'へ'
+};
+
+if (typeof KanjiRomajiDraft === 'undefined') {
+    throw new Error('KanjiRomajiDraft deve carregar antes do dataset Kanji N1.');
+}
+KanjiRomajiDraft.apply(kanjiN1Data, {
+    phase: 6,
+    replacements: N1_ROMAJI_EDITORIAL_REPLACEMENTS,
+    overrides: [
+        [0, 30, 1, '惶恐の書状。'],
+        [1, 9, 1, '祖先の廟。'],
+        [1, 19, 1, '落魄する。'],
+        [2, 6, 1, '訴訟の勝訴報告。'],
+        [4, 6, 0, '国の歳入を収める。'],
+        [4, 15, 1, '総理大臣。'],
+        [5, 18, 0, '会社が設備を購入する。'],
+        [5, 22, 0, '独占禁止法。'],
+        [6, 41, 1, '川に架橋する。'],
+        [7, 18, 1, '有機化合物。'],
+        [7, 31, 1, '電波の周波数振動。'],
+        [9, 6, 1, '雷霆のような疾風迅雷の行動。'],
+        [10, 10, 1, '拙文への謝罪。'],
+        [12, 10, 0, '拙文への謝罪。'],
+        [14, 41, 1, '感慨の報告。'],
+        [15, 24, 0, '百戦錬磨の熟練者。'],
+        [16, 12, 0, '以心伝心の関係。'],
+        [16, 13, 0, '以心伝心の絆。'],
+        [21, 19, 1, '廖姓の観客は少ない。'],
+        [22, 5, 0, '故に、勝った。'],
+        [23, 3, 0, '茨城県の水戸。'],
+        [23, 26, 0, '廣島ドーム。']
+    ]
+});
+
+function n1HiraganaParaKatakana(text) {
+    return String(text || '').replace(/[ぁ-ゖ]/g, character => String.fromCharCode(character.charCodeAt(0) + 0x60));
+}
+
+kanjiN1Data.forEach(module => (module.kanjis || []).forEach(kanji => {
+    for (const field of ['onyomi', 'kunyomi']) {
+        const legacyValue = kanji[field];
+        if (!legacyValue || legacyValue === '-' || !/[A-Za-z]/.test(legacyValue) || /[\u3040-\u30ff\u3400-\u9fff]/u.test(legacyValue)) continue;
+        const safeOnyomi = field === 'onyomi' && legacyValue.match(/^([A-Z]+) \(\1\)$/);
+        const proposal = safeOnyomi
+            ? `${n1HiraganaParaKatakana(KanjiRomajiDraft.word(safeOnyomi[1].toLowerCase(), {}))} (${safeOnyomi[1]})`
+            : '';
+        kanji.readingEditorialReview = kanji.readingEditorialReview || {};
+        kanji.readingEditorialReview[field] = {
+            status: 'pending-human-review', phase: '6', legacyValue,
+            classification: proposal ? 'mechanically-convertible-onyomi' : 'ambiguous-or-foreign',
+            proposal
+        };
+        if (proposal) kanji[field] = proposal;
+    }
+}));

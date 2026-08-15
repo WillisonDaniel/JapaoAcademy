@@ -12,6 +12,7 @@
 
     <!-- CSS Global e Fontes -->
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -67,23 +68,28 @@
     </style>
 </head>
 
-<body data-mode="italiano" data-lang="it-IT" class="italian-pronuncia">
+<body data-mode="italiano" data-lang="it-IT" class="japanese-experience jp-study-page italian-accent">
 
     <header>
         <a href="../../hub_italiano.html" class="home-btn">⬅ Menu do Italiano</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>🎙️ Guia de Pronúncia & Fonética Italiana</h1>
-        <p>Domine os sons do italiano, as vogais abertas/fechadas, le doppie e o ritmo das palavras (A1 a B2).</p>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎙️ Guia de Pronúncia & Fonética</h1>
+        <p id="mainDesc">Domine as consoantes duplas (doppie), dígrafos especiais e a musicalidade do italiano.</p>
     </header>
 
     <main class="container" style="max-width:900px;margin:0 auto;padding:20px;">
-        <div class="hero-banner" style="background:var(--card-bg);border:2px solid var(--border-color);border-radius:16px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow);">
-            <span class="badge-hero-italian" style="background:rgba(21,128,61,0.12);color:#15803d;border:1px solid rgba(21,128,61,0.3);padding:6px 14px;border-radius:20px;font-weight:700;font-size:0.85rem;display:inline-flex;align-items:center;gap:6px;">🎙️ Guia de Pronúncia Italiana</span>
-            <h2 style="margin:10px 0 6px 0;font-family:'Fredoka',sans-serif;">Pratique a Pronúncia do Italiano</h2>
-            <p style="margin:0;color:var(--text-muted);font-size:0.95rem;line-height:1.5;">
-                Pratique vogais, encontros consonantais (C, G, SC, GN, GLI), a duplicação das consoantes (<em>le doppie</em>) e padrões de entonação do italiano.
-            </p>
-        </div>
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro it-page-intro" aria-labelledby="pronuncia-intro-title" style="background: linear-gradient(120deg, rgba(5, 150, 105, 0.92), rgba(6, 78, 59, 0.96)), linear-gradient(135deg, #0d9488, #065f46) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(5, 150, 105, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Fonética & Sons Duplos</span>
+                <h2 id="pronuncia-intro-title">Domine a musicalidade e os sons autênticos</h2>
+                <p>Guia de pronúncia do italiano com consoantes duplas (doppie), dígrafos (GLI, GN, SC, CH), acentuação e exemplos em áudio.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Guia completo</span>
+                <strong>Fonética & Sons</strong>
+            </div>
+        </section>
 
         <!-- ALERTA DE VOZ TTS -->
         <div id="tts-notice" style="background:rgba(21,128,61,0.08);border:1px solid rgba(21,128,61,0.3);border-radius:12px;padding:12px 16px;margin-bottom:20px;font-size:0.9rem;color:var(--text-main);display:flex;align-items:center;gap:10px;">

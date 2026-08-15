@@ -16,6 +16,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <style>
@@ -418,15 +419,29 @@
     </style>
 </head>
 
-<body data-mode="italiano" data-lang="it-IT">
+<body data-mode="italiano" data-lang="it-IT" class="japanese-experience jp-study-page italian-accent">
 
     <header>
         <a href="../../hub_italiano.html" class="home-btn">⬅ Menu do Italiano</a>
-        <h1>⚡ Arena de Conjugação Verbal</h1>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">⚡ Arcade de Conjugação Rápida</h1>
+        <p id="mainDesc">Treine a velocidade de conjugação verbal no relógio contra o tempo.</p>
     </header>
 
     <main class="arcade-container">
+
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro it-page-intro" aria-labelledby="minigame-intro-title" style="background: linear-gradient(120deg, rgba(5, 150, 105, 0.92), rgba(6, 78, 59, 0.96)), linear-gradient(135deg, #0d9488, #065f46) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(5, 150, 105, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Treino rápido no relógio</span>
+                <h2 id="minigame-intro-title">Arcade de Verbos: Velocidade e reflexo</h2>
+                <p>Treine a conjugação verbal italiana em contexto contra o tempo, mantenha sua sequência de combo e suba no ranking de XP.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Arcade oficial</span>
+                <strong>Conjugação Rápida</strong>
+            </div>
+        </section>
 
         <!-- TELA 1: SELEÇÃO DE MODOS -->
         <div id="arcade-mode-selection" class="arcade-card-conj">
@@ -571,7 +586,11 @@
     <script src="../../js/core/storage.js"></script>
     <script src="../../js/core/study-session.js"></script>
     <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
     <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
     <script src="../../js/minigame/minigame_conjugacao.js"></script>
 </body>
 

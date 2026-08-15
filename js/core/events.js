@@ -102,12 +102,32 @@ function carregarMedidorSessoesEstudo() {
 
 function registrarServiceWorker() {
     if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+        const controleAnterior = Boolean(navigator.serviceWorker.controller);
+        let trocaDeControladorDetectada = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!controleAnterior || trocaDeControladorDetectada) return;
+            trocaDeControladorDetectada = true;
+            exibirAvisoNovaVersao();
+        });
         window.addEventListener('load', () => {
             navigator.serviceWorker.register(SERVICE_WORKER_URL)
                 .then(reg => console.log('⚡ Service Worker PWA Ativo!', reg.scope))
                 .catch(err => console.error('Erro ao registrar PWA:', err));
         });
     }
+}
+
+function exibirAvisoNovaVersao() {
+    if (typeof document === 'undefined' || document.getElementById('pwa-update-notice')) return;
+    const notice = document.createElement('aside'); notice.id = 'pwa-update-notice'; notice.className = 'pwa-update-notice'; notice.setAttribute('role', 'status'); notice.setAttribute('aria-live', 'polite');
+    const text = document.createElement('span'); text.textContent = 'Nova versão disponível.';
+    const action = document.createElement('button'); action.type = 'button'; action.textContent = 'Recarregar agora';
+    action.addEventListener('click', () => {
+        const active = typeof window.obterSessaoEstudoAtiva === 'function' ? window.obterSessaoEstudoAtiva() : null;
+        if (active && active.status !== 'paused') { text.textContent = 'Conclua ou pause a atividade antes de recarregar.'; return; }
+        window.location.reload();
+    });
+    notice.append(text, action); document.body.appendChild(notice);
 }
 
 // Inicializa os listeners globais
@@ -125,4 +145,5 @@ if (typeof window !== 'undefined') {
     window.setupGlobalKeybindings = setupGlobalKeybindings;
     window.registrarServiceWorker = registrarServiceWorker;
     window.carregarMedidorSessoesEstudo = carregarMedidorSessoesEstudo;
+    window.exibirAvisoNovaVersao = exibirAvisoNovaVersao;
 }

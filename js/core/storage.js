@@ -1,6 +1,4 @@
-// ======================================
-// MÓDULO CORE - PERSISTÊNCIA, LOCALSTORAGE E CLOUD BACKUP
-// ======================================
+
 
 function carregarProgressoGlobal() {
     const salvo = localStorage.getItem('japao_academy_progress');
@@ -688,8 +686,6 @@ function estimarXPMinimoDeBackupLegado(progresso) {
         : 0;
     let xpEstimado = concluidosPrincipais * 50;
 
-    // Backups anteriores nao persistiam ja_user_xp. Estes valores reproduzem
-    // a regra ja existente em course/tabs.js para recuperar o minimo verificavel.
     const cursosEspeciais = [
         { key: 'progress_hiragana', mode: 'hiragana', budget: 500, fallbackTotal: 8 },
         { key: 'progress_katakana', mode: 'katakana', budget: 500, fallbackTotal: 8 },
@@ -857,6 +853,9 @@ let sincronizacaoFirestoreAtiva = null;
 
 function confirmarAutenticacaoVisual(user) {
     if (!user) return;
+    if (user.uid) localStorage.setItem('ja_uid_usuario', user.uid);
+    if (user.displayName) localStorage.setItem('ja_nome_usuario', user.displayName);
+    if (user.email) localStorage.setItem('ja_email_usuario', user.email);
     if (typeof garantirElementosCabecalhoEModal === 'function') garantirElementosCabecalhoEModal();
     if (typeof fecharModalAuth === 'function') fecharModalAuth();
 }
@@ -910,11 +909,19 @@ function inicializarAuthObserverFirebase() {
     const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
     if (!fb || !fb.auth || !fb.onAuthStateChanged) return;
     fb.onAuthStateChanged(fb.auth, async (user) => {
-        if (typeof garantirElementosCabecalhoEModal === 'function') garantirElementosCabecalhoEModal();
         if (user) {
+            if (user.uid) localStorage.setItem('ja_uid_usuario', user.uid);
+            if (user.displayName) localStorage.setItem('ja_nome_usuario', user.displayName);
+            if (user.email) localStorage.setItem('ja_email_usuario', user.email);
             confirmarAutenticacaoVisual(user);
+            if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function' && typeof CustomEvent === 'function') {
+                window.dispatchEvent(new CustomEvent('ja:auth-state-changed', { detail: { user } }));
+            }
             await sincronizarProgressoComFirestore(user);
         } else {
+            localStorage.removeItem('ja_uid_usuario');
+            localStorage.removeItem('ja_nome_usuario');
+            localStorage.removeItem('ja_email_usuario');
             if (typeof atualizarIndicadorSincronizacao === 'function') {
                 atualizarIndicadorSincronizacao((typeof navigator !== 'undefined' && navigator.onLine === false) ? 'offline' : 'local');
             }
@@ -1026,10 +1033,16 @@ async function fazerLogout() {
     if (!fb || !fb.auth || !fb.signOut) return;
     try {
         await fb.signOut(fb.auth);
+        localStorage.removeItem('ja_uid_usuario');
+        localStorage.removeItem('ja_nome_usuario');
+        localStorage.removeItem('ja_email_usuario');
         if (typeof mostrarToast === 'function') mostrarToast(`👋 <strong>Sessão Encerrada.</strong> Você deslogou do Idiomas Academy.`);
         if (typeof playBeep === 'function') playBeep('click');
         if (typeof garantirElementosCabecalhoEModal === 'function') garantirElementosCabecalhoEModal();
         if (typeof atualizarUIProgresso === 'function') atualizarUIProgresso();
+        if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function' && typeof CustomEvent === 'function') {
+            window.dispatchEvent(new CustomEvent('ja:auth-state-changed', { detail: { user: null } }));
+        }
     } catch (err) {
         console.warn("⚠️ Erro ao deslogar:", err);
         if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('auth', 'Não foi possível encerrar a sessão');
@@ -1139,7 +1152,6 @@ function salvarOpcoesLeitura() {
     }
 }
 
-// Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
     window.carregarProgressoGlobal = carregarProgressoGlobal;
     window.salvarProgressoGlobal = salvarProgressoGlobal;

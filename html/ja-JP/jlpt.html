@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação JLPT | Idiomas Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
+</head>
+
+<body data-mode="jlpt-practice" data-lang="japanese" class="japanese-experience jp-study-page jp-jlpt-page">
+    <header>
+        <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎯 Preparação JLPT</h1>
+        <p id="mainDesc">Sessões internas de treino com questões organizadas por nível de referência pedagógica.</p>
+    </header>
+
+    <main class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="jlpt-intro-title">
+            <div>
+                <span class="jp-page-kicker">Preparação interna</span>
+                <h2 id="jlpt-intro-title">Monte uma sessão alinhada ao seu foco</h2>
+                <p>Escolha nível, origem e quantidade. O progresso e o cronômetro pessoal apoiam a sessão sem simular escala ou condições oficiais.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Banco atual</span>
+                <strong>1.060 questões</strong>
+            </div>
+        </section>
+
+        <!-- BANNER DE TRANSPARÊNCIA -->
+        <div class="jlpt-note" style="margin-bottom: 1.5rem;">
+            <strong>Transparência:</strong> esta é uma trilha pedagógica organizada por níveis de referência JLPT. Não é conteúdo oficial, não possui afiliação com o JLPT e não reproduz sua escala, pesos ou tempos. O resultado interno não prevê aprovação nem proficiência.
+        </div>
+
+        <!-- CARD DE CONFIGURAÇÃO DA SESSÃO -->
+        <section id="jlpt-config" class="jlpt-config jlpt-card">
+            <h2 style="font-size: 1.35rem; margin-top: 0; color: var(--text-main); margin-bottom: 0.4rem;">⚙️ Configurar Sessão</h2>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Monte uma sessão personalizada com questões extraídas dos módulos de estudo e leituras.</p>
+
+            <!-- PÍLULAS DE NÍVEL JLPT -->
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px;">Nível de Referência JLPT</label>
+                <div class="dict-filters-row jlpt-level-pills" style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                    <button type="button" class="dict-filter-pill active" data-level="N5">🟢 N5</button>
+                    <button type="button" class="dict-filter-pill" data-level="N4">🟡 N4</button>
+                    <button type="button" class="dict-filter-pill" data-level="N3">🟠 N3</button>
+                    <button type="button" class="dict-filter-pill" data-level="N2">🔴 N2</button>
+                    <button type="button" class="dict-filter-pill" data-level="N1">🟣 N1</button>
+                </div>
+            </div>
+
+            <!-- PÍLULAS DE ORIGEM -->
+            <div style="margin-bottom: 1.2rem;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px;">Origem das Questões</label>
+                <div class="dict-filters-row jlpt-origin-pills" style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                    <button type="button" class="dict-filter-pill active" data-origin="all">Todas</button>
+                    <button type="button" class="dict-filter-pill" data-origin="module-quiz">Questões de Módulo</button>
+                    <button type="button" class="dict-filter-pill" data-origin="reading-comprehension">Compreensão de Leitura</button>
+                </div>
+            </div>
+
+            <!-- PÍLULAS DE QUANTIDADE -->
+            <div style="margin-bottom: 1.4rem;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px;">Quantidade de Questões</label>
+                <div class="dict-filters-row jlpt-count-pills" style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                    <button type="button" class="dict-filter-pill active" data-count="10">10 itens</button>
+                    <button type="button" class="dict-filter-pill" data-count="20">20 itens</button>
+                </div>
+            </div>
+
+            <!-- SELECTS OCULTOS PARA COMPATIBILIDADE DE TESTES -->
+            <div style="display: none;" aria-hidden="true">
+                <label class="jp-filter-field" for="jlpt-level">
+                    <span>Nível</span>
+                    <select id="jlpt-level">
+                        <option value="N5" selected>N5</option>
+                        <option value="N4">N4</option>
+                        <option value="N3">N3</option>
+                        <option value="N2">N2</option>
+                        <option value="N1">N1</option>
+                    </select>
+                </label>
+                <label class="jp-filter-field" for="jlpt-origin">
+                    <span>Origem</span>
+                    <select id="jlpt-origin">
+                        <option value="all" selected>Todas</option>
+                        <option value="module-quiz">Questões de módulo</option>
+                        <option value="reading-comprehension">Compreensão de leitura</option>
+                    </select>
+                </label>
+                <label class="jp-filter-field" for="jlpt-count">
+                    <span>Quantidade</span>
+                    <select id="jlpt-count">
+                        <option value="10" selected>10 itens</option>
+                        <option value="20">20 itens</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- OPÇÃO DE CRONÔMETRO -->
+            <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
+                <input id="jlpt-timer-enabled" type="checkbox" style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
+                <label for="jlpt-timer-enabled" style="font-weight: 600; color: var(--text-main); cursor: pointer; user-select: none;">Mostrar cronômetro pessoal, sem limite</label>
+            </div>
+
+            <!-- DISPONIBILIDADE & BOTÃO INICIAR -->
+            <p id="jlpt-availability" class="jlpt-status" aria-live="polite" style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+            <button id="jlpt-start" class="jlpt-start jp-action-primary" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: none; padding: 1rem 2rem; border-radius: 14px; font-weight: 700; font-size: 1.1rem; cursor: pointer; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); width: 100%; max-width: 320px;">Iniciar sessão</button>
+        </section>
+
+        <!-- CARD DA SESSÃO & QUIZ -->
+        <section id="jlpt-session" class="jlpt-session jlpt-card" hidden aria-label="Sessão de preparação">
+            <div class="jlpt-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.8rem;">
+                <span id="jlpt-progress" style="font-size: 1rem; font-weight: 700; color: var(--text-main);"></span>
+                <span id="jlpt-timer" hidden class="pill-badge" style="background: var(--bg-color); border: 1px solid var(--border-color); font-family: monospace; font-size: 1.1rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 8px;">00:00</span>
+            </div>
+
+            <div id="jlpt-editorial" class="jlpt-editorial" hidden style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-muted);">⚠️ Esta questão pertence a conteúdo pendente de revisão editorial humana.</div>
+
+            <p id="jlpt-question" class="jlpt-question" style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.7; color: var(--text-main); margin-bottom: 1.5rem;"></p>
+
+            <div id="jlpt-answer" style="margin-bottom: 1.25rem;"></div>
+
+            <p id="jlpt-answer-status" class="jlpt-status" role="status" aria-live="polite" style="font-size: 0.9rem; color: var(--text-muted); min-height: 1.4rem;"></p>
+
+            <nav class="jlpt-nav" aria-label="Navegação da sessão" style="display: flex; gap: 0.75rem; justify-content: space-between; margin-top: 1.5rem; flex-wrap: wrap;">
+                <button id="jlpt-previous" class="jp-action-secondary" type="button" style="padding: 0.75rem 1.4rem; border-radius: 12px;">← Anterior</button>
+                <div style="display: flex; gap: 0.75rem;">
+                    <button id="jlpt-next" class="jp-action-primary" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: none; padding: 0.75rem 1.6rem; border-radius: 12px; font-weight: 700; cursor: pointer;">Próxima →</button>
+                    <button id="jlpt-finish" class="jp-action-accent" type="button" style="background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; border: none; padding: 0.75rem 1.6rem; border-radius: 12px; font-weight: 700; cursor: pointer;">Concluir sessão</button>
+                </div>
+            </nav>
+        </section>
+
+        <!-- CARD DE RESULTADO -->
+        <section id="jlpt-result" class="jlpt-result jlpt-card" hidden>
+            <h2 style="font-size: 1.5rem; color: var(--text-main); margin-top: 0; margin-bottom: 0.5rem;">📊 Resultado Interno</h2>
+            <p id="jlpt-summary" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-color, #2563eb); margin-bottom: 0.8rem;"></p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.5;">Este resultado conta correspondências com os gabaritos armazenados. Ele não é nota oficial, escala JLPT, proficiência ou previsão de aprovação.</p>
+
+            <div id="jlpt-reviews" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;"></div>
+
+            <div class="jlpt-result-actions" style="text-align: center; margin-top: 1.5rem;">
+                <button id="jlpt-new-session" class="jp-action-primary" type="button" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; border: none; padding: 0.9rem 2.2rem; border-radius: 14px; font-weight: 700; font-size: 1.05rem; cursor: pointer;">Nova sessão</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../database/ja-JP/data_jlpt_pratica_index.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/japanese/jlpt.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>
+

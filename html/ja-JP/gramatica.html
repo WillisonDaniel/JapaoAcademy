@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramática e Formas Japonesas | Idiomas Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
+</head>
+
+<body data-mode="grammar" data-lang="japanese" class="japanese-experience jp-study-page jp-grammar-page">
+    <header>
+        <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">文法 Gramática e Formas</h1>
+        <p id="mainDesc">Referência pesquisável de regras, fórmulas e formas em contexto.</p>
+    </header>
+
+    <main class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="grammar-intro-title">
+            <div>
+                <span class="jp-page-kicker">Referência aplicada</span>
+                <h2 id="grammar-intro-title">Encontre a regra e veja a forma em contexto</h2>
+                <p>Consulte formas conhecidas, combine filtros CEFR e JLPT independentes e abra cada referência em uma estrutura clara de regra, fórmula, exemplo e prática.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Referências atuais</span>
+                <strong>194 itens</strong>
+            </div>
+        </section>
+
+        <!-- BANNER DE ESCOPO E TRANSPARÊNCIA -->
+        <div class="grammar-note" style="margin-bottom: 1.5rem;">
+            <strong>Escopo:</strong> CEFR e JLPT são filtros independentes. A consulta mostra apenas formas explicitamente registradas e não conjuga verbos arbitrários. “Sem marcação editorial” não significa aprovação humana.
+        </div>
+
+        <section id="grammar-library" aria-labelledby="grammar-library-title">
+            <h2 id="grammar-library-title" class="visually-hidden" style="display:none;">Biblioteca de Gramática</h2>
+
+            <!-- CONSULTA DIRETA DE FORMA CONHECIDA -->
+            <section class="grammar-lookup-card grammar-lookup" aria-labelledby="grammar-lookup-title">
+                <h2 id="grammar-lookup-title" style="font-size:1.3rem; margin-top:0; color:var(--text-main); margin-bottom:0.4rem;">🔍 Consultar Forma Conhecida</h2>
+                <p style="font-size:0.95rem; color:var(--text-muted); margin-bottom:1rem;">Pesquise uma forma exatamente como aparece no material. Esta ferramenta não é um conjugador universal.</p>
+                <div class="grammar-lookup-row" style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                    <input id="grammar-form-input" type="search" placeholder="Ex.: Tabemasu ou 食べます..." autocomplete="off" style="flex:1; min-width:220px; padding:0.8rem 1.2rem; border-radius:12px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; outline:none;">
+                    <button id="grammar-form-search" class="jp-action-primary" type="button" style="background:linear-gradient(135deg, #2563eb, #1d4ed8); color:#fff; border:none; padding:0.8rem 1.6rem; border-radius:12px; font-weight:700; cursor:pointer;">Consultar</button>
+                </div>
+                <div id="grammar-form-results" class="grammar-status" role="status" aria-live="polite" style="margin-top:1rem;"></div>
+            </section>
+
+            <!-- BARRA DE BUSCA UNIVERSAL (Estilo dict-search-wrapper) -->
+            <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
+                <label class="grammar-search jp-filter-field jp-filter-field-grow" for="grammar-search" style="border:none; padding:0; background:transparent; width:100%;">
+                    <input id="grammar-search" type="search" aria-label="Pesquisar regras gramaticais" placeholder="Título, regra, fórmula ou exemplo..." style="width:100%; padding:0.9rem 1.4rem; border-radius:14px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1.05rem; font-weight:600; outline:none; box-shadow:var(--shadow);" autocomplete="off">
+                </label>
+            </div>
+
+            <!-- FILTROS POR PÍLULAS CEFR -->
+            <div class="dict-filters-row grammar-cefr-pills" style="display:flex; gap:0.6rem; margin-bottom:0.8rem; flex-wrap:wrap; justify-content:center;">
+                <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); align-self:center; margin-right:0.4rem;">CEFR:</span>
+                <button type="button" class="dict-filter-pill active" data-cefr="all">Todos (A1–B2)</button>
+                <button type="button" class="dict-filter-pill" data-cefr="A1">🔵 A1</button>
+                <button type="button" class="dict-filter-pill" data-cefr="A2">🟢 A2</button>
+                <button type="button" class="dict-filter-pill" data-cefr="B1">🟡 B1</button>
+                <button type="button" class="dict-filter-pill" data-cefr="B2">🔴 B2</button>
+            </div>
+
+            <!-- FILTROS POR PÍLULAS JLPT -->
+            <div class="dict-filters-row grammar-jlpt-pills" style="display:flex; gap:0.6rem; margin-bottom:0.8rem; flex-wrap:wrap; justify-content:center;">
+                <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); align-self:center; margin-right:0.4rem;">JLPT:</span>
+                <button type="button" class="dict-filter-pill active" data-jlpt="all">Todos (N5–N1)</button>
+                <button type="button" class="dict-filter-pill" data-jlpt="N5">🟢 N5</button>
+                <button type="button" class="dict-filter-pill" data-jlpt="N4">🟡 N4</button>
+                <button type="button" class="dict-filter-pill" data-jlpt="N3">🟠 N3</button>
+                <button type="button" class="dict-filter-pill" data-jlpt="N2">🔴 N2</button>
+                <button type="button" class="dict-filter-pill" data-jlpt="N1">🟣 N1</button>
+            </div>
+
+            <!-- FILTROS POR PÍLULAS ORIGEM -->
+            <div class="dict-filters-row grammar-source-pills" style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap; justify-content:center;">
+                <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); align-self:center; margin-right:0.4rem;">Origem:</span>
+                <button type="button" class="dict-filter-pill active" data-source="all">Todas</button>
+                <button type="button" class="dict-filter-pill" data-source="course">Curso A1–B2</button>
+                <button type="button" class="dict-filter-pill" data-source="kanji">Kanji</button>
+            </div>
+
+            <!-- SELECTS OCULTOS PARA COMPATIBILIDADE DE TESTES -->
+            <div style="display:none;" aria-hidden="true">
+                <label class="jp-filter-field" for="grammar-source">
+                    <span>Origem</span>
+                    <select id="grammar-source">
+                        <option value="all">Todas</option>
+                        <option value="course">Curso A1–B2</option>
+                        <option value="kanji">Aplicada em Kanji</option>
+                    </select>
+                </label>
+                <label class="jp-filter-field" for="grammar-cefr">
+                    <span>CEFR</span>
+                    <select id="grammar-cefr">
+                        <option value="all">A1–B2</option>
+                        <option>A1</option>
+                        <option>A2</option>
+                        <option>B1</option>
+                        <option>B2</option>
+                    </select>
+                </label>
+                <label class="jp-filter-field" for="grammar-jlpt">
+                    <span>JLPT</span>
+                    <select id="grammar-jlpt">
+                        <option value="all">N5–N1</option>
+                        <option>N5</option>
+                        <option>N4</option>
+                        <option>N3</option>
+                        <option>N2</option>
+                        <option>N1</option>
+                    </select>
+                </label>
+            </div>
+
+            <!-- CONTADOR DE REGRAS -->
+            <div id="grammar-count" aria-live="polite" style="font-size:0.95rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;"></div>
+
+            <!-- GRADE DE CARDS -->
+            <div id="grammar-grid" class="grammar-grid" aria-live="polite"></div>
+        </section>
+
+        <!-- CARD DE DETALHE GRAMATICAL -->
+        <article id="grammar-detail" class="grammar-detail" hidden aria-label="Referência gramatical">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:0.8rem;">
+                <button type="button" id="grammar-back" class="grammar-back jp-action-secondary">← Voltar à referência</button>
+                <div id="grammar-detail-meta" class="grammar-meta" style="font-weight:700; color:var(--text-muted);"></div>
+            </div>
+
+            <h1 id="grammar-title" style="font-size:1.6rem; margin-bottom:0.75rem; color:var(--text-main);"></h1>
+            <p id="grammar-rule" class="grammar-rule" style="font-size:1.15rem; line-height:1.7; color:var(--text-main); margin-bottom:1rem;"></p>
+
+            <div style="margin-bottom:1.2rem;">
+                <strong style="color:var(--text-muted); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">Fórmula Estrutural</strong>
+                <div id="grammar-formula" class="grammar-formula grammar-formula-box"></div>
+            </div>
+
+            <div style="margin-bottom:1.2rem;">
+                <strong style="color:var(--text-muted); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">Exemplo Prático</strong>
+                <div id="grammar-example" class="grammar-example grammar-example-box" lang="ja"></div>
+                <div id="grammar-romaji" class="grammar-support" style="margin-top:0.5rem; font-size:1.05rem; color:var(--text-muted);"></div>
+                <div id="grammar-translation" class="grammar-support" style="margin-top:0.5rem; font-size:1.1rem; font-weight:600; color:var(--text-main);"></div>
+            </div>
+
+            <p id="grammar-support-note" class="grammar-meta" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;"></p>
+            <div id="grammar-editorial" class="grammar-editorial" hidden style="margin-bottom:1rem; font-size:0.85rem; color:var(--text-muted);">⚠️ Conteúdo pendente de revisão editorial humana. A presença nesta referência não constitui aprovação linguística.</div>
+
+            <div class="grammar-actions" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem;">
+                <button type="button" id="grammar-romaji-toggle" class="jp-action-secondary" aria-pressed="false">Romaji</button>
+                <button type="button" id="grammar-audio" class="jp-action-primary grammar-btn-audio">🔊 Ouvir exemplo</button>
+                <a id="grammar-origin" class="jp-action-tertiary" href="curso.html">Abrir módulo de origem</a>
+                <a class="jp-action-tertiary" href="dicionario.html">Abrir dicionário</a>
+            </div>
+
+            <section id="grammar-practice" class="grammar-practice grammar-practice-box" hidden>
+                <h2 style="font-size:1.2rem; color:var(--text-main); margin-top:0;">Reconhecer forma</h2>
+                <p id="grammar-practice-question" style="font-size:1.05rem; font-weight:600; color:var(--text-main); margin-bottom:0.8rem;"></p>
+                <div id="grammar-practice-options" class="grammar-practice-options"></div>
+                <p id="grammar-practice-feedback" role="status" aria-live="polite" style="margin-top:1rem; font-weight:700; min-height:1.5rem; text-align:center;"></p>
+            </section>
+        </article>
+    </main>
+
+    <script src="../../database/ja-JP/data_gramatica_index.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/japanese/grammar.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

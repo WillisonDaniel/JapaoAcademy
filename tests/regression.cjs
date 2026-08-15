@@ -8,6 +8,7 @@ const { spawnSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const results = [];
+const WALK_EXCLUDED_DIRECTORIES = new Set(['.git', 'node_modules', 'livros', 'scratch']);
 
 function test(name, fn) {
     try {
@@ -28,7 +29,7 @@ function read(relativePath) {
 function walk(directory, extension) {
     const output = [];
     for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
-        if (entry.name === '.git' || entry.name === 'node_modules') continue;
+        if (WALK_EXCLUDED_DIRECTORIES.has(entry.name)) continue;
         const fullPath = path.join(directory, entry.name);
         if (entry.isDirectory()) output.push(...walk(fullPath, extension));
         else if (fullPath.endsWith(extension)) output.push(fullPath);
@@ -68,6 +69,7 @@ function runFile(context, relativePath) {
 
 function loadValue(relativePath, expression) {
     const context = createContext();
+    if (/data_kanji_n[123]\.js$/.test(relativePath)) runFile(context, 'js/kanji/romaji-draft.js');
     vm.runInContext(`${read(relativePath)}\n;globalThis.__testValue = ${expression};`, context, {
         filename: relativePath
     });
@@ -91,16 +93,16 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 83, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 94, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
     }
 });
 
-test('38 paginas HTML e referencias locais validas', () => {
+test('43 paginas HTML e referencias locais validas', () => {
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 38, 'a quantidade de paginas HTML mudou');
+    assert.equal(pages.length, 43, 'a quantidade de paginas HTML mudou');
     const missing = [];
     const referencePattern = /\b(?:src|href)\s*=\s*["']([^"']+)["']/gi;
 
@@ -551,6 +553,7 @@ test('compilacao do dicionario japones mantem o glossario completo', () => {
         'database/ja-JP/data_kanji_n2.js',
         'database/ja-JP/data_kanji_n1.js'
     ];
+    runFile(context, 'js/kanji/romaji-draft.js');
     datasetFiles.forEach(file => runFile(context, file));
     runFile(context, 'js/course/moduleNormalizer.js');
     runFile(context, 'js/core/state.js');
@@ -773,7 +776,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     assert.match(japaneseMinigame, /class="g-options-grid"/);
 
     const pages = walk(ROOT, '.html');
-    assert.equal(pages.length, 38);
+    assert.equal(pages.length, 43);
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
@@ -784,7 +787,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v34'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v44'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -924,7 +927,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v34'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v44'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1047,6 +1050,390 @@ test('regressoes corrigidas na Etapa 22 permanecem protegidas', () => {
     const course = read('js/course/course.js');
     const scrollCalls = course.match(/scrollTo\s*\(/g) || [];
     assert.ok(scrollCalls.length >= 3, 'reposicionamento no topo nao esta presente nas tres transicoes');
+});
+
+test('integridade pedagogica japonesa da Fase 1 permanece protegida', () => {
+    const kanjiRender = read('js/kanji/kanji-render.js');
+    const kanjiCanvas = read('js/kanji/kanji-canvas.js');
+    const kanjiHub = read('html/ja-JP/kanji.html');
+    const kanjiN1Page = read('html/ja-JP/kanji_n1.html');
+    const coursePage = read('html/ja-JP/curso.html');
+    const courseQuiz = read('js/course/quiz.js');
+    const hiragana = loadValue('database/ja-JP/data_hiragana.js', 'HIRA_COURSE_DATA');
+    const katakana = loadValue('database/ja-JP/data_katakana.js', 'KATA_COURSE_DATA');
+
+    for (const [mode, level] of Object.entries({
+        kanji: 'N5',
+        kanji_n4: 'N4',
+        kanji_n3: 'N3',
+        kanji_n2: 'N2',
+        kanji_n1: 'N1'
+    })) {
+        assert.match(kanjiRender, new RegExp(`${mode}:\\s*'${level}'`), `${mode}: nivel gramatical incorreto`);
+    }
+    assert.match(kanjiRender, /grammarLevelByMode\[mode\] \|\| 'N5'/);
+
+    assert.doesNotMatch(kanjiCanvas, /gerarCaminhosSvgFallback/);
+    assert.match(kanjiCanvas, /Ordem de traços indisponível offline para este caractere/);
+    assert.match(kanjiCanvas, /Não foi possível carregar a ordem de traços deste caractere/);
+    assert.match(kanjiCanvas, /Forma aproximada de/);
+    assert.match(kanjiRender, />✅ Verificar forma</);
+    assert.match(kanjiCanvas, /adicionarXP\(30, 'Cobertura Mestre da Forma \(≥90%\)'\)/);
+    assert.match(kanjiCanvas, /adicionarXP\(15, 'Cobertura Excelente da Forma \(≥70%\)'\)/);
+    assert.match(kanjiCanvas, /adicionarXP\(10, 'Forma Reconhecida'\)/);
+
+    const katakanaText = JSON.stringify(katakana);
+    assert.match(katakanaText, /ソング/);
+    assert.match(katakanaText, /songu/);
+    assert.doesNotMatch(katakanaText, /ソン(?:"|\\)/);
+    assert.match(hiragana[5].desc, /combinações principais/);
+    assert.match(hiragana[5].desc, /Módulo 8/);
+
+    const levelSpecs = [
+        ['N5', 'database/ja-JP/data_kanji_n5.js', 'kanjiN5Data', 201, 104],
+        ['N4', 'database/ja-JP/data_kanji_n4.js', 'kanjiN4Data', 289, 147],
+        ['N3', 'database/ja-JP/data_kanji_n3.js', 'kanjiN3Data', 360, 353],
+        ['N2', 'database/ja-JP/data_kanji_n2.js', 'kanjiN2Data', 375, 342],
+        ['N1', 'database/ja-JP/data_kanji_n1.js', 'kanjiN1Data', 990, 822]
+    ];
+    const allCharacters = [];
+    let allEntries = 0;
+    for (const [level, file, variable, expectedEntries, expectedUnique] of levelSpecs) {
+        const modules = loadValue(file, variable);
+        const characters = modules.flatMap(module => module.kanjis || [])
+            .map(item => item.character || item.kanji)
+            .filter(Boolean);
+        assert.equal(characters.length, expectedEntries, `${level}: total de registros mudou`);
+        assert.equal(new Set(characters).size, expectedUnique, `${level}: total de caracteres unicos mudou`);
+        allEntries += characters.length;
+        allCharacters.push(...characters);
+    }
+    assert.equal(allEntries, 2215);
+    assert.equal(new Set(allCharacters).size, 1267);
+    assert.match(kanjiHub, /2\.215 registros de estudo/);
+    assert.match(kanjiHub, /1\.267 caracteres únicos/);
+    assert.match(kanjiHub, /Não constitui uma lista oficial de Kanji do JLPT/);
+
+    const kanjiN1 = loadValue('database/ja-JP/data_kanji_n1.js', 'kanjiN1Data');
+    const finalModule = kanjiN1.at(-1);
+    assert.equal(finalModule.editorialReview.status, 'pending-human-review');
+    assert.doesNotMatch(kanjiN1Page, /2[\.,]136/);
+    assert.doesNotMatch(JSON.stringify(finalModule), /2[\.,]136/);
+
+    assert.match(coursePage, /CERTIFICADO DE CONCLUSÃO — JAPONÊS B2/);
+    assert.match(coursePage, /105 Módulos/);
+    assert.match(coursePage, /IDENTIFICADOR LOCAL/);
+    assert.doesNotMatch(coursePage, /CERTIFICADO DE CONCLUSÃO & PROFICIENCY|120 Horas-Aula|CÓDIGO DE AUTENTICIDADE|VERIFIED PROFICIENCY|Certificado de Fluência B2/);
+    assert.match(courseQuiz, /Avaliação final da trilha B2/);
+    assert.match(courseQuiz, /certificado de conclusão da trilha/);
+    assert.doesNotMatch(courseQuiz, /Simulado Final de Proficiency B2|Certificado Oficial|Certificado de Fluência B2/);
+});
+
+test('auditoria editorial japonesa da Fase 2 permanece permanente e deterministica', () => {
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const packageJson = JSON.parse(read('package.json'));
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_EDITORIAL_REVIEW.md');
+
+    assert.equal(packageJson.scripts['audit:japanese'], 'node tests/japanese-editorial-audit.cjs --write');
+    assert.equal(packageJson.scripts['audit:japanese:check'], 'node tests/japanese-editorial-audit.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-editorial-audit\.cjs/);
+
+    for (const rule of [
+        'module-id-duplicate',
+        'audio-guide-no-japanese',
+        'dialogue-no-japanese',
+        'english-intrusion',
+        'reading-latin-only',
+        'kanji-example-no-japanese',
+        'kanji-example-missing-target',
+        'quiz-answer-invalid'
+    ]) {
+        assert.match(audit, new RegExp(`rule: '${rule}'`), `regra ausente: ${rule}`);
+    }
+    assert.match(audit, /function runRuleFixtures\(\)/);
+    assert.match(audit, /const ALLOWLIST = new Map\(\[/);
+    assert.doesNotMatch(audit, /ALLOWLIST.*(?:N1|N2|N3).*\*/s, 'allowlist ampla por nível não é permitida');
+
+    assert.equal(occurrences.schemaVersion, 1);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.ok(occurrences.summary.bySeverity.editorial > 0, 'backlog editorial japonês deve permanecer inventariado');
+    assert.equal(Object.values(occurrences.metrics.course).reduce((sum, item) => sum + item.modules, 0), 105);
+    assert.equal(Object.values(occurrences.metrics.kana).reduce((sum, item) => sum + item.modules, 0), 16);
+    assert.equal(Object.values(occurrences.metrics.kanji).reduce((sum, item) => sum + item.modules, 0), 92);
+    assert.equal(Object.values(occurrences.metrics.kanji).reduce((sum, item) => sum + item.entries, 0), 2215);
+    assert.match(review, /Bloqueadores técnicos: 0/);
+    assert.match(review, /não substitui revisão humana/i);
+});
+
+test('contrato textual japones da Fase 3A permanece separado e retrocompativel', () => {
+    const normalizer = read('js/course/moduleNormalizer.js');
+    const course = read('js/course/course.js');
+    const packageJson = JSON.parse(read('package.json'));
+    const contractTest = read('tests/course-text-contract.cjs');
+
+    assert.match(normalizer, /function normalizeTextContent\(rawContent, legacyFallbacks = \{\}\)/);
+    for (const field of ['displayText', 'audioText', 'furigana', 'romaji', 'translation', 'scenario']) {
+        assert.match(normalizer, new RegExp(`${field}:`), `campo textual ausente: ${field}`);
+    }
+    assert.match(normalizer, /audio: \{/);
+    assert.match(normalizer, /_contractExplicit/);
+    assert.match(normalizer, /normalized\.canDo = String\(canDo\)/);
+    assert.match(course, /data-course-audio-text/);
+    assert.match(course, /criarBotaoAudioCurso\(content\.audioText/);
+    assert.match(course, /course-dialogue-translation/);
+    assert.match(course, /course-dialogue-scenario/);
+    assert.doesNotMatch(course, /const speakWord = speechText/);
+    assert.doesNotMatch(course, /onclick="speakKana\('\$\{speakWord\}/);
+    assert.equal(packageJson.scripts['test:japanese-text'], 'node tests/course-text-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/course-text-contract\.cjs/);
+    assert.match(contractTest, /inventario japones permanece com 105 modulos/);
+});
+
+test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
+    const a1 = read('database/ja-JP/data_curso_a1.js');
+    const a2 = read('database/ja-JP/data_curso_a2.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const humanReview = read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md');
+    const multilang = read('tests/multilang.cjs');
+
+    assert.match(a1, /const A1_EDITORIAL_CONTRACT = \[/);
+    assert.match(a2, /const A2_EDITORIAL_AUDIO = \[/);
+    assert.match(a2, /const A2_DIALOGUE_CONTRACT = \{/);
+    assert.match(a1, /pending-human-review/);
+    assert.match(a2, /pending-human-review/);
+    assert.match(a2, /A2コース修了です/);
+    assert.doesNotMatch(a2, /audioText:\s*"?\[Seu Nome\]/);
+    assert.match(audit, /function isScenarioOnlyContent\(content\)/);
+    assert.match(audit, /audio-placeholder-invalid/);
+    assert.match(audit, /editorial-review-status-invalid/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => ['A1', 'A2'].includes(item.level)).length, 0);
+    assert.match(humanReview, /stage1_context\.audio/);
+    assert.match(humanReview, /stage4_dialog\[0\]\.content/);
+    assert.match(humanReview, /Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente/);
+    assert.match(multilang, /Baseline recalibrado para os 151 contratos textuais A1\/A2 da Fase 3B/);
+    assert.match(multilang, /maxBytes: 1625 \* 1024/);
+});
+
+test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
+    const b1 = read('database/ja-JP/data_curso_b1.js');
+    const b2 = read('database/ja-JP/data_curso_b2.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const humanReview = read('tests/JAPANESE_B1_B2_HUMAN_REVIEW.md');
+    const contractTest = read('tests/course-text-contract.cjs');
+
+    assert.match(b1, /const B1_EDITORIAL_AUDIO = \[/);
+    assert.match(b1, /const B1_DIALOGUE_CONTRACT = \{/);
+    assert.match(b2, /const B2_EDITORIAL_AUDIO = \[/);
+    assert.match(b2, /const B2_DIALOGUE_CONTRACT = \{/);
+    assert.match(b1, /pending-human-review/);
+    assert.match(b2, /pending-human-review/);
+    assert.match(b2, /B2コースの修了証をお渡しいたします/);
+    assert.doesNotMatch(b2, /audioText:\s*"?\[Seu Nome\]/);
+    assert.match(audit, /function hasCompleteTextContract\(content\)/);
+    assert.match(audit, /ADVANCED_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => ['B1', 'B2'].includes(item.level)).length, 0);
+    assert.match(humanReview, /stage1_context\.audio/);
+    assert.match(humanReview, /stage4_dialog\[0\]\.content/);
+    assert.match(contractTest, /B1 e B2 possuem os 165 contratos editoriais previstos/);
+    assert.match(contractTest, /1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae/);
+    assert.match(contractTest, /91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2/);
+});
+
+test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () => {
+    const n3 = read('database/ja-JP/data_kanji_n3.js');
+    const render = read('js/kanji/kanji-render.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const contract = read('tests/kanji-n3-contract.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_KANJI_N3_HUMAN_REVIEW.md');
+    const packageJson = JSON.parse(read('package.json'));
+
+    assert.match(n3, /KanjiRomajiDraft\.sentence/);
+    assert.match(n3, /const N3_EXAMPLE_OVERRIDES = \[/);
+    assert.match(n3, /pending-human-review/);
+    assert.match(n3, /ボウ \(BOU\) \/ バク \(BAKU\)/);
+    assert.match(n3, /ゾウ \(ZOU\)/);
+    assert.doesNotMatch(n3, /370 N3 kanji complete mastered|370 Kanjis Dominados|Domínio integral dos 370/i);
+    assert.match(render, /const content = ex\.content/);
+    assert.match(render, /data-kanji-audio/);
+    assert.match(render, /content \? content\.audioText/);
+    assert.doesNotMatch(render, /onclick="playKanjiAudio\('\$\{s\.replace/);
+    assert.match(audit, /kanji-example-contract-invalid/);
+    assert.match(audit, /kanji-example-audio-invalid/);
+    assert.match(audit, /N3_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => item.level === 'N3').length, 0);
+    assert.match(contract, /720 exemplos/);
+    assert.match(contract, /23d00eb9b56f99c918566cfa032ea8b6b4a4501c2c63c99a220a9a4233cd3043/);
+    assert.match(review, /Todas as linhas permanecem pendentes/);
+    assert.equal(packageJson.scripts['test:japanese-kanji-n3'], 'node tests/kanji-n3-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/kanji-n3-contract\.cjs/);
+});
+
+test('recuperacao Kanji N2 da Fase 5 permanece rastreavel e nao aprovada', () => {
+    const n2 = read('database/ja-JP/data_kanji_n2.js');
+    const helper = read('js/kanji/romaji-draft.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const contract = read('tests/kanji-n2-contract.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_KANJI_N2_HUMAN_REVIEW.md');
+    const n2Page = read('html/ja-JP/kanji_n2.html');
+    const n3Page = read('html/ja-JP/kanji_n3.html');
+    const packageJson = JSON.parse(read('package.json'));
+
+    assert.match(n2, /KanjiRomajiDraft\.apply\(kanjiN2Data/);
+    assert.match(n2, /キン \(KIN\)/);
+    assert.match(n2, /ダツ \(DATSU\)/);
+    assert.match(n2, /375 registros apresentados/);
+    assert.doesNotMatch(n2, /todos os 380 Kanjis aprendidos/i);
+    assert.match(helper, /global\.KanjiRomajiDraft/);
+    assert.match(helper, /pending-human-review/);
+    assert.ok(n2Page.indexOf('romaji-draft.js') < n2Page.indexOf('data_kanji_n2.js'));
+    assert.ok(n3Page.indexOf('romaji-draft.js') < n3Page.indexOf('data_kanji_n3.js'));
+    assert.match(audit, /N2_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    assert.equal(occurrences.occurrences.filter(item => item.level === 'N2').length, 0);
+    assert.match(contract, /750 exemplos/);
+    assert.match(contract, /5a70dff97bf428118a9c509c9ba54419f9b5a66f5cd4bff20358521426e8d02e/);
+    assert.match(review, /Todas as linhas permanecem pendentes/);
+    assert.equal(packageJson.scripts['test:japanese-kanji-n2'], 'node tests/kanji-n2-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/kanji-n2-contract\.cjs/);
+});
+
+test('recuperacao Kanji N1 da Fase 6 preserva leituras ambiguas como pendentes', () => {
+    const n1 = read('database/ja-JP/data_kanji_n1.js');
+    const render = read('js/kanji/kanji-render.js');
+    const audit = read('tests/japanese-editorial-audit.cjs');
+    const contract = read('tests/kanji-n1-contract.cjs');
+    const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
+    const review = read('tests/JAPANESE_KANJI_N1_HUMAN_REVIEW.md');
+    const page = read('html/ja-JP/kanji_n1.html');
+    const packageJson = JSON.parse(read('package.json'));
+
+    assert.match(n1, /KanjiRomajiDraft\.apply\(kanjiN1Data/);
+    assert.match(n1, /mechanically-convertible-onyomi/);
+    assert.match(n1, /ambiguous-or-foreign/);
+    assert.match(n1, /legacyValue/);
+    assert.match(render, /Leitura pendente de revisão editorial/);
+    assert.ok(page.indexOf('romaji-draft.js') < page.indexOf('data_kanji_n1.js'));
+    assert.match(audit, /reading-pending-human-review/);
+    assert.match(audit, /N1_HUMAN_REVIEW_OUTPUT/);
+    assert.equal(occurrences.summary.bySeverity.blocking, 0);
+    const n1Occurrences = occurrences.occurrences.filter(item => item.level === 'N1');
+    assert.equal(n1Occurrences.filter(item => item.rule.startsWith('kanji-example-')).length, 0);
+    assert.equal(n1Occurrences.filter(item => item.rule === 'reading-pending-human-review').length, 158);
+    assert.match(contract, /565 leituras/);
+    assert.match(contract, /fb568a7a2762c5391aa128332a23eebb6c7027a8bf4c8c9618dbfcc6fbedcf6d/);
+    assert.match(review, /ambiguous-or-foreign/);
+    assert.equal(packageJson.scripts['test:japanese-kanji-n1'], 'node tests/kanji-n1-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/kanji-n1-contract\.cjs/);
+});
+
+test('consolidacao dos recursos japoneses da Fase 7 permanece integrada', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    const contract = read('tests/japanese-resources-contract.cjs');
+    assert.equal(packageJson.scripts['test:japanese-resources'], 'node tests/japanese-resources-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-resources-contract\.cjs/);
+    assert.match(contract, /registro central cobre os sete recursos japoneses/);
+    assert.match(contract, /snapshots estruturais N5 e N4/);
+    assert.match(read('tests/FASE_JAPONES_07_CONSOLIDACAO_RECURSOS.md'), /252 pendências editoriais/);
+});
+
+test('escuta, pronuncia e shadowing da Fase 8 permanecem transparentes', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    const contract = read('tests/japanese-listening-contract.cjs');
+    assert.equal(packageJson.scripts['test:japanese-listening'], 'node tests/japanese-listening-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-listening-(?:index|contract)\.cjs/);
+    assert.match(contract, /265/);
+    assert.match(read('html/ja-JP/escuta.html'), /não avalia pronúncia/);
+    assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
+    assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+});
+
+test('biblioteca de leitura graduada da Fase 9 permanece rastreavel', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-reading'], 'node tests/japanese-reading-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-reading-(?:index|contract)\.cjs/);
+    assert.match(read('tests/japanese-reading-contract.cjs'), /91 leituras Kanji/);
+    assert.match(read('html/ja-JP/leitura.html'), /não constituem listas oficiais/);
+    assert.doesNotMatch(read('js/japanese/reading.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+});
+
+test('referencia gramatical da Fase 10 permanece conservadora e rastreavel', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-grammar'], 'node tests/japanese-grammar-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-grammar-(?:index|contract)\.cjs/);
+    assert.match(read('tests/japanese-grammar-contract.cjs'), /194/);
+    assert.match(read('html/ja-JP/gramatica.html'), /não é um conjugador universal/);
+    assert.doesNotMatch(read('js/japanese/grammar.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+});
+
+test('producao escrita guiada da Fase 11 permanece privada e transparente', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-writing'], 'node tests/japanese-writing-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-writing-(?:index|contract)\.cjs/);
+    assert.match(read('tests/japanese-writing-contract.cjs'), /208 modelos explícitos/);
+    assert.match(read('html/ja-JP/escrita.html'), /não é salvo nem enviado/);
+    assert.doesNotMatch(read('js/japanese/writing.js'), /adicionarXP|processarAvaliacaoSRS|localStorage|fetch\(/);
+});
+
+test('preparacao JLPT da Fase 12 permanece interna e nao oficial', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-jlpt'], 'node tests/japanese-jlpt-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-jlpt-(?:index|contract)\.cjs/);
+    assert.match(read('tests/japanese-jlpt-contract.cjs'), /1060 questões explícitas/);
+    assert.match(read('html/ja-JP/jlpt.html'), /não possui afiliação com o JLPT/);
+    assert.doesNotMatch(read('js/japanese/jlpt.js'), /adicionarXP|processarAvaliacaoSRS|localStorage|fetch\(/);
+});
+
+test('hub e Dashboard da Fase 13 usam habilidades e sessoes reais', () => {
+    const packageJson = JSON.parse(read('package.json'));
+    assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
+    assert.match(packageJson.scripts.test, /node tests\/japanese-release-contract\.cjs/);
+    assert.match(read('hub_japones.html'), /data-skill-group="foundations"/);
+    assert.match(read('meu-progresso.html'), /dashboard-japanese-skills-grid/);
+    assert.match(read('js/dashboard/meu-progresso.js'), /criarResumoHabilidadesJaponesDashboard/);
+});
+
+test('redesign japones usa colecoes progressivas sem alterar dados ou canvases', () => {
+    const hub = read('hub_japones.html'), experienceCss = read('japanese-experience.css');
+    assert.doesNotMatch(hub, /jp-group-count/);
+    assert.match(experienceCss, /\.japanese-experience > header > \.home-btn\s*\{[^}]*position: absolute/s);
+    assert.match(experienceCss, /\.jp-hero-summary\s*\{[^}]*grid-template-columns: repeat\(3,/s);
+    assert.match(experienceCss, /\.jp-group-heading\s*\{[^}]*text-align: center/s);
+    assert.doesNotMatch(experienceCss, /Idiomas Academy";/);
+    const reading = read('js/japanese/reading.js'), grammar = read('js/japanese/grammar.js'), writing = read('js/japanese/writing.js');
+    [reading, grammar, writing].forEach(source => {
+        assert.match(source, /JapaneseUI\.createProgressiveCollection/);
+        assert.match(source, /batchSize: 12/);
+        assert.match(source, /Exibindo \$\{n\} de \$\{a\.length\}/);
+        assert.match(source, /Carregar mais/);
+    });
+    const kanji = read('js/kanji/kanji-render.js');
+    assert.match(kanji, /batchSize: 60/);
+    assert.match(kanji, /batchSize: 6/);
+    assert.match(kanji, /afterRender\(\)/);
+    assert.match(kanji, /inicializarTodosOsCanvases/);
+    assert.match(read('js/kanji/kanji-canvas.js'), /data-initialized/);
+    assert.doesNotMatch(kanji, /pending-human-review.*=/);
+    ['escuta', 'leitura', 'gramatica', 'escrita', 'jlpt'].forEach(page => {
+        const html = read(`html/ja-JP/${page}.html`);
+        assert.doesNotMatch(html, /<style>/);
+        assert.match(html, /japanese-experience\.css\?v=44/);
+        assert.match(html, /class="japanese-experience jp-study-page/);
+    });
+    const events = read('js/core/events.js'), sw = read('sw.js');
+    assert.match(sw, /idiomas-academy-v44/);
+    assert.match(sw, /japanese-experience\.css/);
+    assert.match(events, /controllerchange/);
+    assert.match(events, /Nova versão disponível/);
+    assert.match(events, /obterSessaoEstudoAtiva/);
+    assert.match(events, /Recarregar agora/);
 });
 
 const failed = results.filter(result => !result.ok);

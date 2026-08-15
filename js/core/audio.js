@@ -43,13 +43,13 @@ function alternarVelocidadeAudio(btnElement) {
     });
 }
 
-function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null) {
-    if (!texto) return;
+function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null, handlers = null) {
+    if (!texto) return false;
     if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
         console.warn('[Áudio] Síntese de voz indisponível neste navegador.');
         if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('browser', 'Áudio indisponível');
         else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não é compatível com este navegador.');
-        return;
+        return false;
     }
     try {
         window.speechSynthesis.cancel();
@@ -63,7 +63,7 @@ function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null) {
             .replace(/\s+/g, ' ')
             .trim();
 
-        if (!textoLimpo) return;
+        if (!textoLimpo) return false;
 
         const u = new SpeechSynthesisUtterance(textoLimpo);
         let targetSpeechCode = null;
@@ -84,6 +84,10 @@ function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null) {
 
         if (targetSpeechCode) u.lang = targetSpeechCode;
         u.rate = targetRate;
+        if (handlers && typeof handlers === 'object') {
+            if (typeof handlers.onstart === 'function') u.onstart = handlers.onstart;
+            if (typeof handlers.onend === 'function') u.onend = handlers.onend;
+        }
 
         u.onerror = event => {
             if (event && (event.error === 'interrupted' || event.error === 'canceled')) return;
@@ -92,10 +96,12 @@ function tocarAudio(texto, rateOrLangOverride = null, rateOverride = null) {
             else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não pôde ser reproduzido. Tente novamente.');
         };
         window.speechSynthesis.speak(u);
+        return true;
     } catch (erro) {
         console.warn('[Áudio] Erro ao iniciar a síntese de voz:', erro);
         if (typeof mostrarErroRecuperavelUX === 'function') mostrarErroRecuperavelUX('audio', 'Falha ao reproduzir o áudio');
         else if (typeof mostrarToast === 'function') mostrarToast('⚠️ O áudio não pôde ser reproduzido. Tente novamente.');
+        return false;
     }
 }
 

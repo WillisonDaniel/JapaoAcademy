@@ -1129,6 +1129,20 @@ test('fluxo completo de integracao do SRS com historico, taxa de acertos e insig
     assert.ok(insights.length <= 3, 'insights excedem o limite maximo de 3');
 });
 
+test('Dashboard agrupa somente sessoes japonesas reais por habilidade', () => {
+    const session = loadCoreSession(createStorage(), { getTodosOsCursos: () => sampleCourses });
+    runFile(session, 'js/dashboard/meu-progresso.js');
+    const resumo = plain(session.criarResumoHabilidadesJaponesDashboard({ sessions: [
+        { language: 'ja-JP', activityType: 'course', contentId: 'reading-ja-reading-n5-1', activeSeconds: 80, endedAt: '2026-08-10T10:00:00.000Z' },
+        { language: 'ja-JP', activityType: 'course', contentId: 'writing-ja-writing-a1-1', activeSeconds: 40, endedAt: '2026-08-11T10:00:00.000Z' },
+        { language: 'ja-JP', activityType: 'pronunciation', contentId: 'listening-ja-listening-a1-1', activeSeconds: 70, endedAt: '2026-08-12T10:00:00.000Z' },
+        { language: 'it-IT', activityType: 'course', contentId: 'reading-italian', activeSeconds: 900 }
+    ] }));
+    assert.deepEqual(resumo.map(item => item.id), ['listening', 'reading', 'writing']);
+    assert.equal(resumo.find(item => item.id === 'reading').activeSeconds, 80);
+    assert.equal(resumo.some(item => item.activeSeconds === 900), false);
+});
+
 (async () => {
     for (const { name, fn } of asyncTests) {
         try {

@@ -504,7 +504,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v34/);
+    assert.match(serviceWorker, /idiomas-academy-v44/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -608,28 +608,31 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/ja-JP/curso.html',
             locale: 'ja-JP',
             scripts: 27,
-            maxBytes: 1580 * 1024,
+            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
+            // O registro central dos recursos japoneses adiciona apenas metadados locais de rota e deck.
+            // A Fase 14D acrescenta o aviso seguro de atualização do Service Worker.
+            maxBytes: 1625 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
             file: 'html/en-US/curso_ingles.html',
             locale: 'en-US',
             scripts: 27,
-            maxBytes: 1050 * 1024,
+            maxBytes: 1052 * 1024,
             dataPattern: /database\/en-US\/data_english_[a-b][1-2]\.js/
         },
         {
             file: 'html/es-ES/espanhol_curso.html',
             locale: 'es-ES',
             scripts: 27,
-            maxBytes: 1610 * 1024,
+            maxBytes: 1614 * 1024,
             dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
         },
         {
             file: 'html/ru-RU/russo_curso.html',
             locale: 'ru-RU',
             scripts: 27,
-            maxBytes: 970 * 1024,
+            maxBytes: 973 * 1024,
             dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
             dataCount: 4
         },
@@ -637,7 +640,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/it-IT/italiano_curso.html',
             locale: 'it-IT',
             scripts: 27,
-            maxBytes: 1050 * 1024,
+            maxBytes: 1052 * 1024,
             dataPattern: /database\/it-IT\/data_curso_italiano_[a-b][1-2]\.js/,
             dataCount: 4
         }
@@ -678,11 +681,14 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
     const budgets = {
-        n5: 700 * 1024,
-        n4: 715 * 1024,
-        n3: 965 * 1024,
-        n2: 1000 * 1024,
-        n1: 1770 * 1024
+        // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
+        // A Fase 14C acrescenta o controlador progressivo compartilhado do renderizador Kanji.
+        n5: 713 * 1024,
+        n4: 733 * 1024,
+        // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
+        n3: 998 * 1024,
+        n2: 1033 * 1024,
+        n1: 1823 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {
@@ -696,7 +702,13 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
             return total + fs.statSync(caminho).size;
         }, 0);
 
-        assert.equal(scriptsLocais.length, 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        const usesDraftHelper = ['n3', 'n2', 'n1'].includes(level);
+        assert.equal(scriptsLocais.length, usesDraftHelper ? 26 : 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        if (usesDraftHelper) {
+            assert.equal(scriptsLocais[0], '../../js/kanji/romaji-draft.js', `${level.toUpperCase()}: helper deve preceder o dataset`);
+        } else {
+            assert.doesNotMatch(html, /js\/kanji\/romaji-draft\.js/);
+        }
         assert.ok(bytesLocais <= maxBytes, `${level.toUpperCase()}: ${Math.round(bytesLocais / 1024)} KB locais`);
         assert.deepEqual(
             scriptsLocais.filter(src => /database\/ja-JP\/data_kanji_n\d\.js/.test(src)),
@@ -824,6 +836,71 @@ test('minigame japonês usa conjunto leve e equivalente de Kanji', () => {
     assert.match(read('js/game/minigames.js'), /JAPANESE_MINIGAME_KANJI_INDEX/);
     assert.match(read('sw.js'), /database\/ja-JP\/data_minigame_kanji_index\.js/);
     assert.match(read('package.json'), /"index:minigame:check"/);
+});
+
+test('escuta japonesa usa indice leve, voz local e nenhuma avaliacao artificial', () => {
+    const file = 'html/ja-JP/escuta.html';
+    const html = read(file);
+    const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
+        .map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytesLocais = scriptsLocais.reduce((total, src) => {
+        const caminho = path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0]);
+        return total + fs.statSync(caminho).size;
+    }, 0);
+    assert.ok(scriptsLocais.length <= 18, `${scriptsLocais.length} scripts locais na escuta japonesa`);
+    assert.ok(bytesLocais <= 400 * 1024, `${Math.round(bytesLocais / 1024)} KB na escuta japonesa`);
+    assert.match(html, /database\/ja-JP\/data_escuta_index\.js/);
+    assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|js\/srs\//);
+    assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
+    assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
+    assert.match(read('sw.js'), /html\/ja-JP\/escuta\.html/);
+});
+
+test('biblioteca japonesa usa indice leve e niveis JLPT sem equivalencia CEFR', () => {
+    const file = 'html/ja-JP/leitura.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 425 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
+    assert.match(html, /data_leitura_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
+    assert.match(read('js/japanese/reading.js'), /sanitizeReadingHtml/);
+    assert.doesNotMatch(read('tests/japanese-reading-index.cjs'), /jlptToCefr|A1.*N5/i);
+});
+
+test('referencia gramatical japonesa usa indice leve e taxonomias independentes', () => {
+    const file = 'html/ja-JP/gramatica.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 550 * 1024, `${Math.round(bytes / 1024)} KB na referência gramatical japonesa`);
+    assert.match(html, /data_gramatica_index\.js/); assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|data_kanji_n[1-5]\.js/);
+    assert.match(html, /id="grammar-cefr"/); assert.match(html, /id="grammar-jlpt"/);
+    assert.doesNotMatch(read('tests/japanese-grammar-index.cjs'), /cefrEquivalent|jlptEquivalent|jlptToCefr/i);
+});
+
+test('oficina de escrita japonesa usa modelos leves sem persistir texto livre', () => {
+    const file = 'html/ja-JP/escrita.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 525 * 1024, `${Math.round(bytes / 1024)} KB na oficina de escrita japonesa`);
+    assert.match(html, /data_escrita_index\.js/); assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js/);
+    const source = read('js/japanese/writing.js'); assert.match(source, /normalizeWritingComparison/); assert.doesNotMatch(source, /localStorage|sessionStorage|fetch\(|firebase/i);
+});
+
+test('preparacao JLPT usa indice leve e nao mistura referencia com escala oficial', () => {
+    const file = 'html/ja-JP/jlpt.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 17); assert.ok(bytes <= 900 * 1024, `${Math.round(bytes / 1024)} KB na preparação JLPT`);
+    assert.match(html, /data_jlpt_pratica_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
+    const source = read('js/japanese/jlpt.js'); assert.match(source, /selectJlptSession/); assert.doesNotMatch(source, /localStorage|sessionStorage|scaledScore|cefr/i);
+});
+
+test('hub japonês final permanece leve e Dashboard ignora sessoes de outros idiomas', () => {
+    const file = 'hub_japones.html', html = read(file);
+    const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
+    const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
+    assert.ok(scripts.length <= 15); assert.ok(bytes <= 350 * 1024, `${Math.round(bytes / 1024)} KB no hub japonês final`);
+    assert.equal((html.match(/data-skill-group=/g) || []).length, 4); assert.match(html, /meu-progresso\.html/);
+    const dashboard = read('js/dashboard/meu-progresso.js'); assert.match(dashboard, /sessao\.language !== 'ja-JP'/); assert.doesNotMatch(dashboard.slice(dashboard.indexOf('const JAPANESE_SKILL_REGISTRY'), dashboard.indexOf('function formatarUltimaAtividadeHabilidadeJaponesa')), /dailyAggregates|localStorage/);
 });
 
 const failed = results.filter(result => !result.ok);

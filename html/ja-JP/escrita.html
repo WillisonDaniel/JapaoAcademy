@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrita Guiada Japonesa | Idiomas Academy</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="theme-color" content="#1e1b4b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
+</head>
+
+<body data-mode="writing" data-lang="japanese" class="japanese-experience jp-study-page jp-writing-page">
+    <header>
+        <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">✍️ Escrita Guiada</h1>
+        <p id="mainDesc">Reconstrua modelos de frases em três passos com prática interativa.</p>
+    </header>
+
+    <main class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="writing-intro-title">
+            <div>
+                <span class="jp-page-kicker">Produção guiada</span>
+                <h2 id="writing-intro-title">Construa a frase em três passos</h2>
+                <p>Ordene blocos, copie o modelo e tente reconstruí-lo de memória. A comparação permanece mecânica, privada e transparente.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Modelos atuais</span>
+                <strong>208 práticas</strong>
+            </div>
+        </section>
+
+        <!-- BANNER DE TRANSPARÊNCIA E PRIVACIDADE -->
+        <div class="writing-note" style="margin-bottom: 1.5rem;">
+            <strong>Transparência e privacidade:</strong> A comparação indica apenas se o texto corresponde ao modelo registrado. Uma variante diferente não é declarada errada. O que você digita permanece somente nesta página e não é salvo nem enviado.
+        </div>
+
+        <!-- SEÇÃO DA BIBLIOTECA DE MODELOS -->
+        <section id="writing-library" aria-labelledby="writing-library-title">
+            <h2 id="writing-library-title" class="visually-hidden" style="display:none;">Explorar Modelos de Escrita</h2>
+
+            <!-- BARRA DE BUSCA (Estilo dict-search-wrapper) -->
+            <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
+                <label class="jp-filter-field jp-filter-field-grow" for="writing-search" style="border:none; padding:0; background:transparent; width:100%;">
+                    <input id="writing-search" type="search" aria-label="Pesquisar modelos de escrita" placeholder="Tradução, frase ou módulo..." style="width:100%; padding:0.9rem 1.4rem; border-radius:14px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1.05rem; font-weight:600; outline:none; box-shadow:var(--shadow);" autocomplete="off">
+                </label>
+            </div>
+
+            <!-- FILTROS POR PÍLULAS CEFR (Estilo .dict-filter-pill) -->
+            <div class="dict-filters-row writing-filters-pills" style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap; justify-content:center;">
+                <button type="button" class="dict-filter-pill active" data-level="all">Todos (A1–B2)</button>
+                <button type="button" class="dict-filter-pill" data-level="A1">🔵 A1</button>
+                <button type="button" class="dict-filter-pill" data-level="A2">🟢 A2</button>
+                <button type="button" class="dict-filter-pill" data-level="B1">🟡 B1</button>
+                <button type="button" class="dict-filter-pill" data-level="B2">🔴 B2</button>
+            </div>
+
+            <!-- Select oculto para compatibilidade de testes -->
+            <label class="jp-filter-field" for="writing-level" style="display:none;" aria-hidden="true">
+                <span>Nível CEFR</span>
+                <select id="writing-level">
+                    <option value="all">A1–B2</option>
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                </select>
+            </label>
+
+            <!-- CONTADOR DE MODELOS -->
+            <div id="writing-count" aria-live="polite" style="font-size:0.95rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;"></div>
+
+            <!-- GRADE DE CARDS DE MODELOS -->
+            <div id="writing-grid" class="writing-grid" aria-live="polite"></div>
+        </section>
+
+        <!-- OFICINA DE ESCRITA (CARD CONTÍNUO) -->
+        <article id="writing-workshop" class="writing-workshop" hidden aria-label="Oficina de escrita">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:0.8rem;">
+                <button id="writing-back" class="writing-back jp-action-secondary" type="button">← Voltar aos modelos</button>
+                <div id="writing-meta" class="writing-meta" style="font-weight:700; color:var(--text-muted);"></div>
+            </div>
+
+            <h1 id="writing-title" style="font-size:1.6rem; margin-bottom:0.75rem; color:var(--text-main);"></h1>
+            <div id="writing-editorial" class="writing-editorial" hidden style="margin-bottom:1rem; font-size:0.85rem; color:var(--text-muted);">⚠️ Modelo pendente de revisão editorial humana. Esta prática não constitui aprovação linguística.</div>
+
+            <!-- ABAS DOS TRÊS PASSOS (Estilo .btn-srs-tab) -->
+            <div class="writing-modes" aria-label="Modo de prática">
+                <button type="button" data-writing-mode="order" class="active" aria-pressed="true">1. 🧩 Ordenar blocos</button>
+                <button type="button" data-writing-mode="copy" aria-pressed="false">2. 📝 Copiar modelo</button>
+                <button type="button" data-writing-mode="recall" aria-pressed="false">3. 🧠 Reconstruir</button>
+            </div>
+
+            <div class="writing-prompt" style="padding:1.2rem; background:var(--bg-color); border:1px solid var(--border-color); border-radius:14px; margin-bottom:1.2rem;">
+                <strong style="color:var(--text-muted); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">Sentido em português</strong>
+                <p id="writing-translation" style="font-size:1.15rem; font-weight:600; color:var(--text-main); margin:0.4rem 0 0.8rem 0;"></p>
+                <div id="writing-model-wrap">
+                    <strong style="color:var(--text-muted); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.5px;">Modelo registrado</strong>
+                    <p id="writing-model" class="writing-model" lang="ja" style="font-family:'Noto Sans JP', sans-serif; font-size:1.4rem; font-weight:700; color:var(--primary-color); margin:0.4rem 0 0 0;"></p>
+                </div>
+            </div>
+
+            <section id="writing-order">
+                <h2 style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.5rem;">Blocos disponíveis</h2>
+                <div id="writing-bank" class="writing-bank"></div>
+                <h2 style="font-size:1.1rem; color:var(--text-main); margin-bottom:0.5rem;">Sua sequência</h2>
+                <div id="writing-selected" class="writing-selected" aria-live="polite"></div>
+            </section>
+
+            <section id="writing-free" hidden>
+                <label for="writing-input"><strong style="font-size:1.1rem; color:var(--text-main); display:block; margin-bottom:0.5rem;">Digite sua reconstrução</strong></label>
+                <textarea id="writing-input" class="writing-input" lang="ja" autocomplete="off" spellcheck="false" placeholder="Digite em japonês aqui..."></textarea>
+            </section>
+
+            <div class="writing-actions" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; margin-top:1.5rem;">
+                <button id="writing-compare" class="jp-action-primary writing-btn-compare" type="button">Comparar com o modelo</button>
+                <button id="writing-reset" class="jp-action-secondary writing-btn-reset" type="button">Recomeçar</button>
+                <button id="writing-audio" class="jp-action-secondary writing-btn-audio" type="button">🔊 Ouvir modelo</button>
+                <a id="writing-origin" class="jp-action-tertiary" href="curso.html">Abrir módulo de origem</a>
+                <a class="jp-action-tertiary" href="gramatica.html">Abrir gramática</a>
+            </div>
+
+            <p id="writing-result" class="writing-result" role="status" aria-live="polite" style="margin-top:1.2rem; text-align:center; font-weight:700; min-height:1.5rem;"></p>
+            <p class="writing-private" style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); text-align:center;">Nenhum texto digitado é persistido. A atividade agregada não inclui o conteúdo da sua resposta.</p>
+        </article>
+    </main>
+
+    <script src="../../database/ja-JP/data_escrita_index.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/japanese/writing.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
+</body>
+
+</html>

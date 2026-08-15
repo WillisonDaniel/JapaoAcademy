@@ -74,7 +74,7 @@ const kanjiN4Data = [
             {
                 "character": "族",
                 "meaning": "Tribo / Família / Clan",
-                "kunyomi": "zoku (conceito)",
+                "kunyomi": "-",
                 "onyomi": "ゾク (ZOKU)",
                 "mnemonic": "Uma bandeira 🚩 sob a qual uma família inteira se une com flechas.",
                 "examples": [
@@ -598,7 +598,7 @@ const kanjiN4Data = [
             {
                 "character": "曜",
                 "meaning": "Dia da Semana",
-                "kunyomi": "you",
+                "kunyomi": "-",
                 "onyomi": "ヨウ (YOU)",
                 "mnemonic": "O sol (日) brilhando a cada dia da semana.",
                 "examples": [
@@ -773,7 +773,7 @@ const kanjiN4Data = [
             {
                 "character": "地",
                 "meaning": "Terra / Solo",
-                "kunyomi": "ji / chi",
+                "kunyomi": "-",
                 "onyomi": "チ (CHI)",
                 "mnemonic": "Terra (土) onde seres habitam.",
                 "examples": [
@@ -836,7 +836,7 @@ const kanjiN4Data = [
             {
                 "character": "界",
                 "meaning": "Mundo",
-                "kunyomi": "kai",
+                "kunyomi": "-",
                 "onyomi": "カイ (KAI)",
                 "mnemonic": "Campos de arroz (田) delimitados.",
                 "examples": [
@@ -1141,7 +1141,7 @@ const kanjiN4Data = [
             {
                 "character": "偏",
                 "meaning": "Inclinado",
-                "kunyomi": "katamuku",
+                "kunyomi": "かたむ・く (katamu-ku)",
                 "onyomi": "ヘン (HEN)",
                 "mnemonic": "Pessoa inclinada.",
                 "examples": [
@@ -1166,7 +1166,7 @@ const kanjiN4Data = [
             {
                 "character": "側",
                 "meaning": "Lado / Lateral",
-                "kunyomi": "gawa",
+                "kunyomi": "がわ (gawa) / そば (soba)",
                 "onyomi": "ソク (SOKU)",
                 "mnemonic": "Pessoa ao lado da parede.",
                 "examples": [
@@ -1512,7 +1512,7 @@ const kanjiN4Data = [
             {
                 "character": "房",
                 "meaning": "Quarto / Cômodo",
-                "kunyomi": "fusa",
+                "kunyomi": "ふさ (fusa)",
                 "onyomi": "ボウ (BOU)",
                 "mnemonic": "Porta para o quarto.",
                 "examples": [
@@ -1537,7 +1537,7 @@ const kanjiN4Data = [
             {
                 "character": "室",
                 "meaning": "Sala",
-                "kunyomi": "shitsu",
+                "kunyomi": "-",
                 "onyomi": "シツ (SHITSU)",
                 "mnemonic": "Teto do cômodo fechado.",
                 "examples": [
@@ -1562,7 +1562,7 @@ const kanjiN4Data = [
             {
                 "character": "堂",
                 "meaning": "Salão",
-                "kunyomi": "dou",
+                "kunyomi": "-",
                 "onyomi": "ドウ (DOU)",
                 "mnemonic": "Construção em terreno elevado.",
                 "examples": [
@@ -1591,7 +1591,7 @@ const kanjiN4Data = [
             {
                 "character": "宅",
                 "meaning": "Residência",
-                "kunyomi": "taku",
+                "kunyomi": "-",
                 "onyomi": "タク (TAKU)",
                 "mnemonic": "Teto de residência formal.",
                 "examples": [
@@ -1612,7 +1612,7 @@ const kanjiN4Data = [
             {
                 "character": "局",
                 "meaning": "Repartição",
-                "kunyomi": "kyoku",
+                "kunyomi": "-",
                 "onyomi": "キョク (KYOKU)",
                 "mnemonic": "Escritório de serviços públicos.",
                 "examples": [
@@ -1858,7 +1858,7 @@ const kanjiN4Data = [
             {
                 "character": "校",
                 "meaning": "Escola",
-                "kunyomi": "kou",
+                "kunyomi": "-",
                 "onyomi": "コウ (KOU)",
                 "mnemonic": "Construção de madeira escolar.",
                 "examples": [
@@ -1883,7 +1883,7 @@ const kanjiN4Data = [
             {
                 "character": "漢",
                 "meaning": "Han / Kanji",
-                "kunyomi": "kan",
+                "kunyomi": "-",
                 "onyomi": "カン (KAN)",
                 "mnemonic": "Rio da terra de Han.",
                 "examples": [
@@ -1908,7 +1908,7 @@ const kanjiN4Data = [
             {
                 "character": "文",
                 "meaning": "Texto / Frase",
-                "kunyomi": "fumi",
+                "kunyomi": "ふみ (fumi) / あや (aya)",
                 "onyomi": "ブン (BUN)",
                 "mnemonic": "Desenho ornamental de texto.",
                 "examples": [
@@ -1929,7 +1929,7 @@ const kanjiN4Data = [
             {
                 "character": "字",
                 "meaning": "Letra",
-                "kunyomi": "ji",
+                "kunyomi": "-",
                 "onyomi": "ジ (JI)",
                 "mnemonic": "Criança aprendendo letras.",
                 "examples": [
@@ -1954,7 +1954,7 @@ const kanjiN4Data = [
             {
                 "character": "工",
                 "meaning": "Engenharia",
-                "kunyomi": "kou",
+                "kunyomi": "-",
                 "onyomi": "コウ (KOU)",
                 "mnemonic": "Viga estrutural.",
                 "examples": [
@@ -2067,7 +2067,7 @@ const kanjiN4Data = [
             {
                 "character": "試",
                 "meaning": "Exame / Teste",
-                "kunyomi": "kokoromiru",
+                "kunyomi": "こころ・みる (kokoro-miru)",
                 "onyomi": "シ (SHI)",
                 "mnemonic": "Palavras em exame.",
                 "examples": [
@@ -2338,7 +2338,7 @@ const kanjiN4Data = [
             {
                 "character": "転",
                 "meaning": "Girar",
-                "kunyomi": "korogaru",
+                "kunyomi": "ころ・がる (koro-garu)",
                 "onyomi": "テン (TEN)",
                 "mnemonic": "Rodas girando.",
                 "examples": [
@@ -2676,7 +2676,7 @@ const kanjiN4Data = [
             {
                 "character": "語",
                 "meaning": "Idioma",
-                "kunyomi": "kataru",
+                "kunyomi": "かた・る (kata-ru)",
                 "onyomi": "ゴ (GO)",
                 "mnemonic": "Palavras faladas por mim.",
                 "examples": [
@@ -3322,7 +3322,7 @@ const kanjiN4Data = [
             {
                 "character": "社",
                 "meaning": "Empresa",
-                "kunyomi": "sha",
+                "kunyomi": "-",
                 "onyomi": "シャ (SHA)",
                 "mnemonic": "Altar de terra.",
                 "examples": [
@@ -3347,7 +3347,7 @@ const kanjiN4Data = [
             {
                 "character": "員",
                 "meaning": "Membro",
-                "kunyomi": "in",
+                "kunyomi": "-",
                 "onyomi": "イン (IN)",
                 "mnemonic": "Pessoa registrada.",
                 "examples": [
@@ -3397,7 +3397,7 @@ const kanjiN4Data = [
             {
                 "character": "業",
                 "meaning": "Negócio",
-                "kunyomi": "waza",
+                "kunyomi": "わざ (waza)",
                 "onyomi": "ギョウ (GYOU)",
                 "mnemonic": "Placa industrial.",
                 "examples": [
@@ -3518,7 +3518,7 @@ const kanjiN4Data = [
             {
                 "character": "官",
                 "meaning": "Oficial",
-                "kunyomi": "kan",
+                "kunyomi": "-",
                 "onyomi": "カン (KAN)",
                 "mnemonic": "Guarda oficial.",
                 "examples": [
@@ -3539,7 +3539,7 @@ const kanjiN4Data = [
             {
                 "character": "院",
                 "meaning": "Instituição / Hospital",
-                "kunyomi": "in",
+                "kunyomi": "-",
                 "onyomi": "イン (IN)",
                 "mnemonic": "Construção murada pública.",
                 "examples": [
@@ -3781,7 +3781,7 @@ const kanjiN4Data = [
             {
                 "character": "代",
                 "meaning": "Taxa / Era",
-                "kunyomi": "kawaru / dai",
+                "kunyomi": "か・わる (ka-waru) / よ (yo)",
                 "onyomi": "ダイ (DAI)",
                 "mnemonic": "Troca de posição.",
                 "examples": [
@@ -3806,7 +3806,7 @@ const kanjiN4Data = [
             {
                 "character": "料",
                 "meaning": "Taxa / Ingrediente",
-                "kunyomi": "ryou",
+                "kunyomi": "-",
                 "onyomi": "リョウ (RYOU)",
                 "mnemonic": "Grãos medidos.",
                 "examples": [
@@ -3831,7 +3831,7 @@ const kanjiN4Data = [
             {
                 "character": "賃",
                 "meaning": "Aluguel",
-                "kunyomi": "chin",
+                "kunyomi": "-",
                 "onyomi": "チン (CHIN)",
                 "mnemonic": "Moedas de aluguel.",
                 "examples": [
@@ -4177,7 +4177,7 @@ const kanjiN4Data = [
             {
                 "character": "病",
                 "meaning": "Doença",
-                "kunyomi": "yamai",
+                "kunyomi": "やまい (yamai)",
                 "onyomi": "ビョウ (BYOU)",
                 "mnemonic": "Pessoa doente na cama.",
                 "examples": [
@@ -4198,7 +4198,7 @@ const kanjiN4Data = [
             {
                 "character": "院",
                 "meaning": "Instituição",
-                "kunyomi": "in",
+                "kunyomi": "-",
                 "onyomi": "イン (IN)",
                 "mnemonic": "Construção de atendimento.",
                 "examples": [
@@ -4273,7 +4273,7 @@ const kanjiN4Data = [
             {
                 "character": "医",
                 "meaning": "Médico",
-                "kunyomi": "i",
+                "kunyomi": "-",
                 "onyomi": "イ (I)",
                 "mnemonic": "Caixa de medicina.",
                 "examples": [
@@ -4490,7 +4490,7 @@ const kanjiN4Data = [
             {
                 "character": "肉",
                 "meaning": "Carne",
-                "kunyomi": "niku",
+                "kunyomi": "-",
                 "onyomi": "ニク (NIKU)",
                 "mnemonic": "Corte de carne.",
                 "examples": [
@@ -4532,7 +4532,7 @@ const kanjiN4Data = [
             {
                 "character": "茶",
                 "meaning": "Chá",
-                "kunyomi": "cha",
+                "kunyomi": "-",
                 "onyomi": "チャ (CHA)",
                 "mnemonic": "Folhas de chá.",
                 "examples": [
@@ -4582,7 +4582,7 @@ const kanjiN4Data = [
             {
                 "character": "理",
                 "meaning": "Razão",
-                "kunyomi": "ri",
+                "kunyomi": "-",
                 "onyomi": "リ (RI)",
                 "mnemonic": "Estrutura lógica.",
                 "examples": [
@@ -4607,7 +4607,7 @@ const kanjiN4Data = [
             {
                 "character": "具",
                 "meaning": "Utensílio",
-                "kunyomi": "gu",
+                "kunyomi": "-",
                 "onyomi": "グ (GU)",
                 "mnemonic": "Ferramenta.",
                 "examples": [
@@ -4782,7 +4782,7 @@ const kanjiN4Data = [
             {
                 "character": "万",
                 "meaning": "Dez Mil",
-                "kunyomi": "man",
+                "kunyomi": "-",
                 "onyomi": "マン (MAN)",
                 "mnemonic": "Dez mil expansivo.",
                 "examples": [
@@ -4803,7 +4803,7 @@ const kanjiN4Data = [
             {
                 "character": "億",
                 "meaning": "Cem Milhões",
-                "kunyomi": "oku",
+                "kunyomi": "-",
                 "onyomi": "オク (OKU)",
                 "mnemonic": "Grande número.",
                 "examples": [
@@ -4832,7 +4832,7 @@ const kanjiN4Data = [
             {
                 "character": "度",
                 "meaning": "Graus",
-                "kunyomi": "tabi",
+                "kunyomi": "たび (tabi)",
                 "onyomi": "ド (DO)",
                 "mnemonic": "Frequência / grau.",
                 "examples": [
@@ -4857,7 +4857,7 @@ const kanjiN4Data = [
             {
                 "character": "特",
                 "meaning": "Especial",
-                "kunyomi": "toku",
+                "kunyomi": "-",
                 "onyomi": "トク (TOKU)",
                 "mnemonic": "Elemento especial.",
                 "examples": [
@@ -4882,7 +4882,7 @@ const kanjiN4Data = [
             {
                 "character": "別",
                 "meaning": "Separar",
-                "kunyomi": "wakareru",
+                "kunyomi": "わか・れる (waka-reru)",
                 "onyomi": "ベツ (BETSU)",
                 "mnemonic": "Faca separando.",
                 "examples": [
@@ -4903,7 +4903,7 @@ const kanjiN4Data = [
             {
                 "character": "同",
                 "meaning": "Mesmo",
-                "kunyomi": "onaji",
+                "kunyomi": "おな・じ (ona-ji)",
                 "onyomi": "ドウ (DOU)",
                 "mnemonic": "Mesmo teto.",
                 "examples": [
@@ -4924,7 +4924,7 @@ const kanjiN4Data = [
             {
                 "character": "異",
                 "meaning": "Diferente",
-                "kunyomi": "koto",
+                "kunyomi": "こと (koto)",
                 "onyomi": "イ (I)",
                 "mnemonic": "Diferente da multidão.",
                 "examples": [
@@ -5237,7 +5237,7 @@ const kanjiN4Data = [
             {
                 "character": "支",
                 "meaning": "Apoiar",
-                "kunyomi": "sasaeru",
+                "kunyomi": "ささ・える (sasa-eru)",
                 "onyomi": "シ (SHI)",
                 "mnemonic": "Mão com bastão.",
                 "examples": [
@@ -5358,7 +5358,7 @@ const kanjiN4Data = [
             {
                 "character": "留",
                 "meaning": "Permanecer",
-                "kunyomi": "tomeru",
+                "kunyomi": "と・める (to-meru)",
                 "onyomi": "リュウ (RYUU)",
                 "mnemonic": "Permanecer fixo.",
                 "examples": [
@@ -5515,7 +5515,7 @@ const kanjiN4Data = [
             {
                 "character": "族",
                 "meaning": "Família / Tribo",
-                "kunyomi": "zoku",
+                "kunyomi": "-",
                 "onyomi": "ゾク",
                 "radicals": [
                     {
@@ -5755,7 +5755,7 @@ const kanjiN4Data = [
             {
                 "character": "曜",
                 "meaning": "Dia da semana",
-                "kunyomi": "you",
+                "kunyomi": "-",
                 "onyomi": "ヨウ",
                 "radicals": [
                     {
@@ -5775,7 +5775,7 @@ const kanjiN4Data = [
             {
                 "character": "地",
                 "meaning": "Terra / Solo",
-                "kunyomi": "chi",
+                "kunyomi": "-",
                 "onyomi": "チ / ジ",
                 "radicals": [
                     {
@@ -5811,7 +5811,7 @@ const kanjiN4Data = [
             {
                 "character": "界",
                 "meaning": "Mundo",
-                "kunyomi": "kai",
+                "kunyomi": "-",
                 "onyomi": "カイ",
                 "radicals": [
                     {
@@ -6027,7 +6027,7 @@ const kanjiN4Data = [
             {
                 "character": "室",
                 "meaning": "Sala",
-                "kunyomi": "shitsu",
+                "kunyomi": "-",
                 "onyomi": "シツ",
                 "radicals": [
                     {
@@ -6043,7 +6043,7 @@ const kanjiN4Data = [
             {
                 "character": "堂",
                 "meaning": "Salão",
-                "kunyomi": "dou",
+                "kunyomi": "-",
                 "onyomi": "ドウ",
                 "radicals": [
                     {
@@ -6063,7 +6063,7 @@ const kanjiN4Data = [
             {
                 "character": "局",
                 "meaning": "Repartição",
-                "kunyomi": "kyoku",
+                "kunyomi": "-",
                 "onyomi": "キョク",
                 "radicals": [
                     {
@@ -6139,7 +6139,7 @@ const kanjiN4Data = [
             {
                 "character": "校",
                 "meaning": "Escola",
-                "kunyomi": "kou",
+                "kunyomi": "-",
                 "onyomi": "コウ",
                 "radicals": [
                     {
@@ -6155,7 +6155,7 @@ const kanjiN4Data = [
             {
                 "character": "漢",
                 "meaning": "Han / Kanji",
-                "kunyomi": "kan",
+                "kunyomi": "-",
                 "onyomi": "カン",
                 "radicals": [
                     {
@@ -6171,7 +6171,7 @@ const kanjiN4Data = [
             {
                 "character": "字",
                 "meaning": "Caractere",
-                "kunyomi": "ji",
+                "kunyomi": "-",
                 "onyomi": "ジ",
                 "radicals": [
                     {
@@ -6243,7 +6243,7 @@ const kanjiN4Data = [
             {
                 "character": "試",
                 "meaning": "Exame",
-                "kunyomi": "shiken",
+                "kunyomi": "こころ・みる (kokoro-miru)",
                 "onyomi": "シ",
                 "radicals": [
                     {
@@ -6467,7 +6467,7 @@ const kanjiN4Data = [
             {
                 "character": "語",
                 "meaning": "Idioma",
-                "kunyomi": "go",
+                "kunyomi": "かた・る (kata-ru)",
                 "onyomi": "ゴ",
                 "radicals": [
                     {
@@ -6719,7 +6719,7 @@ const kanjiN4Data = [
             {
                 "character": "社",
                 "meaning": "Empresa",
-                "kunyomi": "sha",
+                "kunyomi": "-",
                 "onyomi": "シャ",
                 "radicals": [
                     {
@@ -6735,7 +6735,7 @@ const kanjiN4Data = [
             {
                 "character": "員",
                 "meaning": "Membro",
-                "kunyomi": "in",
+                "kunyomi": "-",
                 "onyomi": "イン",
                 "radicals": [
                     {
@@ -6767,7 +6767,7 @@ const kanjiN4Data = [
             {
                 "character": "業",
                 "meaning": "Negócio",
-                "kunyomi": "gyou",
+                "kunyomi": "わざ (waza)",
                 "onyomi": "ギョウ",
                 "radicals": [
                     {
@@ -6843,7 +6843,7 @@ const kanjiN4Data = [
             {
                 "character": "病",
                 "meaning": "Doença",
-                "kunyomi": "byou",
+                "kunyomi": "やまい (yamai)",
                 "onyomi": "ビョウ",
                 "radicals": [
                     {
@@ -6855,7 +6855,7 @@ const kanjiN4Data = [
             {
                 "character": "院",
                 "meaning": "Hospital / Inst.",
-                "kunyomi": "in",
+                "kunyomi": "-",
                 "onyomi": "イン",
                 "radicals": [
                     {
@@ -6927,7 +6927,7 @@ const kanjiN4Data = [
             {
                 "character": "代",
                 "meaning": "Taxa / Era",
-                "kunyomi": "dai",
+                "kunyomi": "か・わる (ka-waru) / よ (yo)",
                 "onyomi": "ダイ",
                 "radicals": [
                     {
@@ -6943,7 +6943,7 @@ const kanjiN4Data = [
             {
                 "character": "料",
                 "meaning": "Ingrediente",
-                "kunyomi": "ryou",
+                "kunyomi": "-",
                 "onyomi": "リョウ",
                 "radicals": [
                     {
@@ -6959,7 +6959,7 @@ const kanjiN4Data = [
             {
                 "character": "賃",
                 "meaning": "Aluguel",
-                "kunyomi": "chin",
+                "kunyomi": "-",
                 "onyomi": "チン",
                 "radicals": [
                     {
@@ -7131,7 +7131,7 @@ const kanjiN4Data = [
             {
                 "character": "医",
                 "meaning": "Médico",
-                "kunyomi": "isha",
+                "kunyomi": "-",
                 "onyomi": "イ",
                 "radicals": [
                     {
@@ -7167,7 +7167,7 @@ const kanjiN4Data = [
             {
                 "character": "飯",
                 "meaning": "Refeição",
-                "kunyomi": "meshi",
+                "kunyomi": "めし (meshi)",
                 "onyomi": "ハン",
                 "radicals": [
                     {
@@ -7187,7 +7187,7 @@ const kanjiN4Data = [
             {
                 "character": "肉",
                 "meaning": "Carne",
-                "kunyomi": "niku",
+                "kunyomi": "-",
                 "onyomi": "ニク",
                 "radicals": [
                     {
@@ -7211,7 +7211,7 @@ const kanjiN4Data = [
             {
                 "character": "茶",
                 "meaning": "Chá",
-                "kunyomi": "ocha",
+                "kunyomi": "-",
                 "onyomi": "チャ",
                 "radicals": [
                     {
@@ -7227,7 +7227,7 @@ const kanjiN4Data = [
             {
                 "character": "味",
                 "meaning": "Sabor",
-                "kunyomi": "aji",
+                "kunyomi": "あじ (aji)",
                 "onyomi": "ミ",
                 "radicals": [
                     {
@@ -7243,7 +7243,7 @@ const kanjiN4Data = [
             {
                 "character": "理",
                 "meaning": "Razão",
-                "kunyomi": "ri",
+                "kunyomi": "-",
                 "onyomi": "リ",
                 "radicals": [
                     {
@@ -7259,7 +7259,7 @@ const kanjiN4Data = [
             {
                 "character": "具",
                 "meaning": "Utensílio",
-                "kunyomi": "gu",
+                "kunyomi": "-",
                 "onyomi": "グ",
                 "radicals": [
                     {
@@ -7291,7 +7291,7 @@ const kanjiN4Data = [
             {
                 "character": "万",
                 "meaning": "Dez Mil",
-                "kunyomi": "man",
+                "kunyomi": "-",
                 "onyomi": "マン",
                 "radicals": [
                     {
@@ -7303,7 +7303,7 @@ const kanjiN4Data = [
             {
                 "character": "億",
                 "meaning": "Cem Milhões",
-                "kunyomi": "oku",
+                "kunyomi": "-",
                 "onyomi": "オク",
                 "radicals": [
                     {
@@ -7323,7 +7323,7 @@ const kanjiN4Data = [
             {
                 "character": "度",
                 "meaning": "Graus",
-                "kunyomi": "tabi",
+                "kunyomi": "たび (tabi)",
                 "onyomi": "ド",
                 "radicals": [
                     {
@@ -7339,7 +7339,7 @@ const kanjiN4Data = [
             {
                 "character": "特",
                 "meaning": "Especial",
-                "kunyomi": "toku",
+                "kunyomi": "-",
                 "onyomi": "トク",
                 "radicals": [
                     {
@@ -7355,7 +7355,7 @@ const kanjiN4Data = [
             {
                 "character": "別",
                 "meaning": "Separar",
-                "kunyomi": "betsu",
+                "kunyomi": "わか・れる (waka-reru)",
                 "onyomi": "ベツ",
                 "radicals": [
                     {
@@ -7367,7 +7367,7 @@ const kanjiN4Data = [
             {
                 "character": "同",
                 "meaning": "Mesmo",
-                "kunyomi": "onaji",
+                "kunyomi": "おな・じ (ona-ji)",
                 "onyomi": "ドウ",
                 "radicals": [
                     {
@@ -7379,7 +7379,7 @@ const kanjiN4Data = [
             {
                 "character": "異",
                 "meaning": "Diferente",
-                "kunyomi": "koto",
+                "kunyomi": "こと (koto)",
                 "onyomi": "イ",
                 "radicals": [
                     {
@@ -7391,7 +7391,7 @@ const kanjiN4Data = [
             {
                 "character": "集",
                 "meaning": "Reunir",
-                "kunyomi": "atsumaru",
+                "kunyomi": "あつ・まる (atsu-maru)",
                 "onyomi": "シュウ",
                 "radicals": [
                     {
@@ -7407,7 +7407,7 @@ const kanjiN4Data = [
             {
                 "character": "合",
                 "meaning": "Combinar",
-                "kunyomi": "au",
+                "kunyomi": "あ・う (a-u)",
                 "onyomi": "ゴウ",
                 "radicals": [
                     {
@@ -7423,7 +7423,7 @@ const kanjiN4Data = [
             {
                 "character": "始",
                 "meaning": "Iniciar",
-                "kunyomi": "hajimaru",
+                "kunyomi": "はじ・まる (haji-maru)",
                 "onyomi": "シ",
                 "radicals": [
                     {
@@ -7439,7 +7439,7 @@ const kanjiN4Data = [
             {
                 "character": "作",
                 "meaning": "Fazer",
-                "kunyomi": "tsukuru",
+                "kunyomi": "つく・る (tsuku-ru)",
                 "onyomi": "サク",
                 "radicals": [
                     {
@@ -7455,7 +7455,7 @@ const kanjiN4Data = [
             {
                 "character": "使",
                 "meaning": "Usar",
-                "kunyomi": "tsukau",
+                "kunyomi": "つか・う (tsuka-u)",
                 "onyomi": "シ",
                 "radicals": [
                     {
@@ -7471,7 +7471,7 @@ const kanjiN4Data = [
             {
                 "character": "切",
                 "meaning": "Cortar",
-                "kunyomi": "kiru",
+                "kunyomi": "き・る (ki-ru)",
                 "onyomi": "セツ",
                 "radicals": [
                     {
@@ -7483,7 +7483,7 @@ const kanjiN4Data = [
             {
                 "character": "送",
                 "meaning": "Enviar",
-                "kunyomi": "okuru",
+                "kunyomi": "おく・る (oku-ru)",
                 "onyomi": "ソウ",
                 "radicals": [
                     {
@@ -7495,7 +7495,7 @@ const kanjiN4Data = [
             {
                 "character": "支",
                 "meaning": "Apoiar",
-                "kunyomi": "sasaeru",
+                "kunyomi": "ささ・える (sasa-eru)",
                 "onyomi": "シ",
                 "radicals": [
                     {
@@ -7511,7 +7511,7 @@ const kanjiN4Data = [
             {
                 "character": "覚",
                 "meaning": "Lembrar",
-                "kunyomi": "oboeru",
+                "kunyomi": "おぼ・える (obo-eru)",
                 "onyomi": "カク",
                 "radicals": [
                     {
@@ -7523,7 +7523,7 @@ const kanjiN4Data = [
             {
                 "character": "忘",
                 "meaning": "Esquecer",
-                "kunyomi": "wasureru",
+                "kunyomi": "わす・れる (wasu-reru)",
                 "onyomi": "ボウ",
                 "radicals": [
                     {
@@ -7535,7 +7535,7 @@ const kanjiN4Data = [
             {
                 "character": "持",
                 "meaning": "Ter / Segurar",
-                "kunyomi": "motsu",
+                "kunyomi": "も・つ (mo-tsu)",
                 "onyomi": "ジ",
                 "radicals": [
                     {
@@ -7551,7 +7551,7 @@ const kanjiN4Data = [
             {
                 "character": "留",
                 "meaning": "Permanecer",
-                "kunyomi": "tomeru",
+                "kunyomi": "と・める (to-meru)",
                 "onyomi": "リュウ",
                 "radicals": [
                     {
@@ -7567,3 +7567,16 @@ const kanjiN4Data = [
         ]
     }
 ];
+
+// Leituras latinas N4 permanecem rastreáveis e pendentes de revisão humana.
+kanjiN4Data.forEach(module => (module.kanjis || []).forEach(kanji => {
+    for (const field of ['onyomi', 'kunyomi']) {
+        const value = kanji[field];
+        if (!value || value === '-' || !/[A-Za-z]/.test(value) || /[\u3040-\u30ff\u3400-\u9fff]/u.test(value)) continue;
+        kanji.readingEditorialReview = kanji.readingEditorialReview || {};
+        kanji.readingEditorialReview[field] = {
+            status: 'pending-human-review', phase: '7', legacyValue: value,
+            classification: 'ambiguous-or-unverified', proposal: ''
+        };
+    }
+}));

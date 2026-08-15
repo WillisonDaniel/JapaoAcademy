@@ -10,6 +10,7 @@ let categoriaAtivaDict = 'tudo';
 let subNivelKanjiDict = 'tudo';
 let subNivelVocabDict = 'tudo';
 let filtroDebounceTimerDict = null;
+let filtrosIniciaisDicionarioAplicados = false;
 
 function carregarTodosOsDatasets(callback) {
     compilarGlossarioUniversal();
@@ -867,6 +868,13 @@ function compilarGlossarioUniversal() {
     renderizarResultadosDicionario('');
 }
 
+function getDictionaryJapaneseResource(item) {
+    if (!item || typeof getJapaneseResourceConfig !== 'function') return null;
+    if (item.cat === 'hiragana' || item.cat === 'katakana') return getJapaneseResourceConfig(item.cat);
+    if (item.cat === 'kanji' && /^N[1-5]$/i.test(String(item.level || ''))) return getJapaneseResourceConfig(`kanji_${String(item.level).toLowerCase()}`);
+    return null;
+}
+
 function buildDictCardHtml(item, cardIndex = 0) {
     let catBg = 'rgba(13, 148, 136, 0.1)';
     let catBorder = '#0d9488';
@@ -939,6 +947,12 @@ function buildDictCardHtml(item, cardIndex = 0) {
     const isGrammar = (item.cat === 'grammar');
     const isVocab = (item.cat === 'vocab');
     const hasCanvas = isKana || isKanji;
+    const japaneseResource = getDictionaryJapaneseResource(item);
+    const resourceActionsHtml = japaneseResource ? `
+        <div class="dict-resource-actions" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+            <button type="button" onclick="window.location.href='${japaneseResource.route}'" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:9px;background:var(--card-bg);color:var(--text-main);cursor:pointer;font-weight:700;">Abrir trilha</button>
+            <button type="button" onclick="window.location.href='${japaneseResource.route}?review=1'" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:9px;background:var(--bg-color);color:var(--text-main);cursor:pointer;font-weight:700;">Revisar no SRS</button>
+        </div>` : '';
 
     const audioWord = (item.audio || item.primary || '').replace(/'/g, "\\'");
     const canvasId = `dict-canvas-${cardIndex}`;
@@ -1097,6 +1111,8 @@ function buildDictCardHtml(item, cardIndex = 0) {
                     ${item.desc ? `<div style="margin-top:8px; font-size:0.88rem; font-weight:600; color:var(--text-main, #334155); line-height:1.4;">${item.desc}</div>` : ''}
                 ` : ''}
 
+                ${resourceActionsHtml}
+
                 <!-- Dica / Context Box -->
                 ${item.hint ? `
                     <div style="margin-top:8px; padding:10px 14px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; font-size:0.85rem; color:#334155; line-height:1.4;">
@@ -1170,6 +1186,18 @@ function renderizarResultadosDicionario(queryStr = '') {
     const container = document.getElementById('dict-results-container');
     const counter = document.getElementById('dict-results-counter');
     const alphabetSection = document.getElementById('dict-alphabet-section');
+    if (!filtrosIniciaisDicionarioAplicados && typeof window !== 'undefined' && typeof URLSearchParams !== 'undefined') {
+        filtrosIniciaisDicionarioAplicados = true;
+        const requestedCat = new URLSearchParams(window.location.search).get('cat');
+        if (requestedCat === 'hiragana' || requestedCat === 'katakana') categoriaAtivaDict = requestedCat;
+        if (requestedCat && requestedCat.startsWith('kanji_')) {
+            const resource = typeof getJapaneseResourceConfig === 'function' ? getJapaneseResourceConfig(requestedCat) : null;
+            if (resource) {
+                categoriaAtivaDict = 'kanji';
+                subNivelKanjiDict = resource.id.replace('kanji_', '').toUpperCase();
+            }
+        }
+    }
     if (container) container.setAttribute('aria-busy', 'true');
     document.querySelectorAll('.dict-filter-pill').forEach(btn => {
         btn.setAttribute('aria-pressed', btn.getAttribute('data-cat') === categoriaAtivaDict ? 'true' : 'false');

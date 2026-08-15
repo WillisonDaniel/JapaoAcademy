@@ -571,7 +571,7 @@ const CYRILLIC_VG_DATA = {
  * Obtém os traços vetoriais oficiais do KanjiVG ou Cirílico
  */
 async function carregarTracosKanjiVG(cleanSymbol, canvasW, canvasH) {
-    if (!cleanSymbol) return converterSvgPathsParaPontos(gerarCaminhosSvgFallback(cleanSymbol), canvasW, canvasH);
+    if (!cleanSymbol) return [];
 
     if (CYRILLIC_VG_DATA[cleanSymbol]) {
         return converterSvgPathsParaPontos(CYRILLIC_VG_DATA[cleanSymbol], canvasW, canvasH);
@@ -602,8 +602,9 @@ async function carregarTracosKanjiVG(cleanSymbol, canvasW, canvasH) {
         console.warn(`KanjiVG CDN fallback para '${cleanSymbol}':`, err);
     }
 
-    // Fallback para banco local em memória ou gerador vetorial
-    const localPaths = KANJI_VG_DATA[cleanSymbol] || gerarCaminhosSvgFallback(cleanSymbol);
+    // Fallback somente para vetores reais disponíveis no banco local.
+    const localPaths = KANJI_VG_DATA[cleanSymbol];
+    if (!localPaths || localPaths.length === 0) return [];
     KANJI_VG_CACHE[cleanSymbol] = localPaths;
     return converterSvgPathsParaPontos(localPaths, canvasW, canvasH);
 }
@@ -663,14 +664,6 @@ function getVectorPointsFromSvgPath(dString, canvasW, canvasH) {
     }
 }
 
-function gerarCaminhosSvgFallback(cleanSymbol) {
-    return [
-        "M 25 35 L 75 35",
-        "M 50 18 L 50 82 L 40 75",
-        "M 50 35 C 38 52 28 68 18 80"
-    ];
-}
-
 /**
  * Animação Vetorial Real Traço a Traço (Stroke Order / Hitsujun - 筆順)
  */
@@ -716,6 +709,13 @@ async function animarKakijun(canvasId) {
 
     if (!strokePaths || strokePaths.length === 0) {
         state.animating = false;
+        state.animFrameId = null;
+        const offline = typeof navigator !== 'undefined' && navigator.onLine === false;
+        if (typeof mostrarToast === 'function') {
+            mostrarToast(offline
+                ? '⚠️ <strong>Ordem de traços indisponível offline para este caractere.</strong>'
+                : '⚠️ <strong>Não foi possível carregar a ordem de traços deste caractere.</strong>');
+        }
         return;
     }
 
@@ -921,16 +921,16 @@ function verificarTracoCanvas(canvasId) {
         canvasEl.classList.add('canvas-success');
         if (typeof playBeep === 'function') playBeep('success');
         const pct = Math.round(taxaCobertura * 100);
-        if (typeof mostrarToast === 'function') mostrarToast(`✨ <strong>Excelente!</strong> Traço de <strong>"${cleanSymbol}"</strong> aprovado com <strong>${pct}% de precisão!</strong>`);
+        if (typeof mostrarToast === 'function') mostrarToast(`✨ <strong>Forma aproximada de "${cleanSymbol}":</strong> <strong>${pct}% de cobertura.</strong>`);
 
-        // Recompensa de XP e efeito de confeti por precisão no traço
+        // Recompensa de XP e efeito de confete pelas mesmas faixas de cobertura.
         if (taxaCobertura >= 0.90) {
-            if (typeof adicionarXP === 'function') adicionarXP(30, 'Precisão Mestre no Traço (≥90%)');
+            if (typeof adicionarXP === 'function') adicionarXP(30, 'Cobertura Mestre da Forma (≥90%)');
             if (typeof dispararConfeti === 'function') dispararConfeti({ particleCount: 50, spread: 60, origin: { y: 0.8 } });
         } else if (taxaCobertura >= 0.70) {
-            if (typeof adicionarXP === 'function') adicionarXP(15, 'Precisão Excelente no Traço (≥70%)');
+            if (typeof adicionarXP === 'function') adicionarXP(15, 'Cobertura Excelente da Forma (≥70%)');
         } else {
-            if (typeof adicionarXP === 'function') adicionarXP(10, 'Traço Aprovado');
+            if (typeof adicionarXP === 'function') adicionarXP(10, 'Forma Reconhecida');
         }
 
         if (typeof registrarAtividadeDiaria === 'function') registrarAtividadeDiaria();
@@ -939,9 +939,9 @@ function verificarTracoCanvas(canvasId) {
         if (typeof playBeep === 'function') playBeep('error');
 
         if (taxaPenalidade >= 0.30) {
-            if (typeof mostrarToast === 'function') mostrarToast(`❌ <strong>Traço Fora da Guia:</strong> Evite rabiscar fora do contorno da letra (${Math.round(taxaPenalidade * 100)}% excedente).`);
+            if (typeof mostrarToast === 'function') mostrarToast(`❌ <strong>Forma fora da guia:</strong> Evite desenhar fora do contorno do caractere (${Math.round(taxaPenalidade * 100)}% excedente).`);
         } else {
-            if (typeof mostrarToast === 'function') mostrarToast(`❌ <strong>Traço Incompleto:</strong> Cobertura atual em <strong>${Math.round(taxaCobertura * 100)}%</strong>. Exige no mínimo 50%.`);
+            if (typeof mostrarToast === 'function') mostrarToast(`❌ <strong>Forma incompleta:</strong> Cobertura atual em <strong>${Math.round(taxaCobertura * 100)}%</strong>. Exige no mínimo 50%.`);
         }
     }
 }

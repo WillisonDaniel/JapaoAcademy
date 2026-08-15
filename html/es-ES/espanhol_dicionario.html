@@ -18,17 +18,31 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 
-<body data-mode="espanhol" data-lang="spanish">
+<body data-mode="espanhol" data-lang="spanish" class="japanese-experience jp-study-page">
     <header>
-        <a href="../../hub_espanhol.html" class="home-btn">⬅ Espanhol</a>
-        <h1 id="mainTitle">📖 Dicionário & Glossário de Espanhol</h1>
-        <p id="mainDesc">Consulte o abecedário, vocabulário A1-B2, falsos cognatos, heterotônicos, gramática e regionalismos por país.</p>
+        <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">📖 Dicionário & Regionalismos</h1>
+        <p id="mainDesc">Consulte vocabulário, falsos amigos, heterotônicos e gírias de 21 países.</p>
     </header>
 
     <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px;">
-        
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro es-page-intro" aria-labelledby="dict-intro-title" style="background: linear-gradient(120deg, rgba(217, 119, 6, 0.92), rgba(124, 45, 18, 0.96)), linear-gradient(135deg, #ea580c, #9a3412) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(217, 119, 6, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Consulta universal</span>
+                <h2 id="dict-intro-title">Pesquise vocabulário, gramática e regionalismos</h2>
+                <p>Busca instantânea universal com áudio nativo, abecedário sonoro, heterotônicos e gírias de todos os países hispanofalantes.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Banco de dados</span>
+                <strong>1.139+ termos</strong>
+            </div>
+        </section>
+
         <!-- Barra de Pesquisa Inteligente -->
         <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
             <input type="text" id="dict-search-input" aria-label="Pesquisar no dicionário espanhol" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em espanhol, tradução, falso cognato, heterotónico ou regra gramatical..." style="width:100%; padding:0.9rem 1.2rem; border-radius:12px; background:var(--card-bg); color:var(--text-main); border:2px solid var(--border-color); font-size:1rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
