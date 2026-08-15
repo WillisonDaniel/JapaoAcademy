@@ -214,7 +214,38 @@ let dashboardDataCalendarioSelecionada = null;
 
 function obterUsuarioDashboard() {
     const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
-    return fb && fb.auth ? fb.auth.currentUser : null;
+    if (fb && fb.auth && fb.auth.currentUser) return fb.auth.currentUser;
+    
+    // Tenta encontrar sessão persistida pelo Firebase SDK no localStorage
+    try {
+        if (typeof localStorage !== 'undefined') {
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && key.startsWith('firebase:authUser:')) {
+                    const authData = JSON.parse(localStorage.getItem(key));
+                    if (authData && authData.uid) {
+                        return {
+                            uid: authData.uid,
+                            displayName: authData.displayName || (authData.email ? authData.email.split('@')[0] : 'Estudante'),
+                            email: authData.email || ''
+                        };
+                    }
+                }
+            }
+        }
+    } catch (e) {}
+
+    // Fallback: se houver sessão persistida localmente no navegador
+    const uidLocal = localStorage.getItem('ja_uid_usuario') || localStorage.getItem('ja_last_sync_uid');
+    const nomeLocal = localStorage.getItem('ja_nome_usuario');
+    if (uidLocal || nomeLocal) {
+        return {
+            uid: uidLocal || 'local_user',
+            displayName: nomeLocal || 'Estudante',
+            email: localStorage.getItem('ja_email_usuario') || ''
+        };
+    }
+    return null;
 }
 
 function obterNomeDashboard(user) {
@@ -1740,15 +1771,19 @@ function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso 
             : 'Escolha um idioma e inicie sua primeira atividade.';
     }
 
-    atualizarMetaDashboard(dados);
-    atualizarSRSDashboard(resumoSRS);
-    atualizarResumoGeralDashboard(resumo);
-    atualizarOpcoesAtividadeDashboard(dados);
-    const estatisticas = renderizarEstatisticasDashboard(dados, streak);
-    renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
-    renderizarHistoricoSRSDashboard(dados);
-    renderizarInsightsDashboard(dados, estatisticas, streak);
-    renderizarHabilidadesJaponesDashboard(dados);
+    try {
+        atualizarMetaDashboard(dados);
+        atualizarSRSDashboard(resumoSRS);
+        atualizarResumoGeralDashboard(resumo);
+        atualizarOpcoesAtividadeDashboard(dados);
+        const estatisticas = renderizarEstatisticasDashboard(dados, streak);
+        renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
+        renderizarHistoricoSRSDashboard(dados);
+        renderizarInsightsDashboard(dados, estatisticas, streak);
+        renderizarHabilidadesJaponesDashboard(dados);
+    } catch (e) {
+        console.warn("⚠️ Aviso ao renderizar seções do dashboard:", e);
+    }
 
     const temAtividade = Object.values(dados.activityByDate || {}).some(valor => Number(valor) > 0)
         || Object.values(dados.studySecondsByDate || {}).some(valor => Number(valor) > 0)
@@ -1837,7 +1872,7 @@ function inicializarMeuProgresso() {
         gradeCalendario.addEventListener('keydown', navegarTecladoCalendarioDashboard);
     }
     const user = obterUsuarioDashboard();
-    if (!user) renderizarMeuProgresso(null);
+    renderizarMeuProgresso(user || null, false);
 }
 
 if (typeof window !== 'undefined') {

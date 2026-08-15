@@ -17,18 +17,32 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script src="https://unpkg.com/wanakana@5.3.1/wanakana.min.js"></script>
 </head>
-<body data-mode="dict">
+<body data-mode="dict" data-lang="japanese" class="japanese-experience jp-study-page jp-dict-page">
     <header>
         <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1 id="mainTitle">📖 Dicionário & Glossário Universal</h1>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">📖 Dicionário & Glossário Universal</h1>
         <p id="mainDesc">Pesquisa unificada de ideogramas, kana, tópicos gramaticais e vocabulário completo.</p>
     </header>
 
-    <div class="dict-page-container">
+    <div class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="dict-intro-title">
+            <div>
+                <span class="jp-page-kicker">Consulta universal</span>
+                <h2 id="dict-intro-title">Pesquise qualquer palavra, kanji ou regra</h2>
+                <p>Busca instantânea unificada em todo o vocabulário, ideogramas, kana e formas gramaticais com áudio e favoritos.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Banco universal</span>
+                <strong>3.000+ termos</strong>
+            </div>
+        </section>
+
         <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
             <input type="text" id="dict-search-input" aria-label="Pesquisar no dicionário japonês" oninput="filtrarGlossarioDebounced(this.value)" placeholder="Pesquise por palavra em português, romaji, kana ou kanji..." style="width:100%; padding:0.9rem 1.4rem; border-radius:14px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1.05rem; font-weight:600; outline:none; box-shadow:var(--shadow);">
         </div>

@@ -21,6 +21,31 @@ function stopJlptTimer() { if (jlptTimerId) clearInterval(jlptTimerId); jlptTime
 function formatJlptTime(milliseconds) { const seconds = Math.max(0, Math.floor(milliseconds / 1000)); return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; }
 function startJlptTimer(enabled) { stopJlptTimer(); jlptEl('jlpt-timer').hidden = !enabled; if (!enabled) return; jlptStartedAt = Date.now(); jlptEl('jlpt-timer').textContent = '00:00'; jlptTimerId = setInterval(() => { jlptEl('jlpt-timer').textContent = formatJlptTime(Date.now() - jlptStartedAt); }, 1000); }
 function saveJlptAnswer(value) { const item = jlptSession[jlptCurrent]; if (!item) return; jlptAnswers.set(item.id, String(value)); jlptEl('jlpt-answer-status').textContent = 'Resposta mantida somente nesta sessão.'; registerJlptActivity(item, 'answer'); }
+
+function syncJlptLevelPills(level) {
+    document.querySelectorAll('.jlpt-level-pills .dict-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.level === level);
+    });
+    const select = jlptEl('jlpt-level');
+    if (select) select.value = level;
+    updateJlptAvailability();
+}
+function syncJlptOriginPills(origin) {
+    document.querySelectorAll('.jlpt-origin-pills .dict-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.origin === origin);
+    });
+    const select = jlptEl('jlpt-origin');
+    if (select) select.value = origin;
+    updateJlptAvailability();
+}
+function syncJlptCountPills(count) {
+    document.querySelectorAll('.jlpt-count-pills .dict-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.count === String(count));
+    });
+    const select = jlptEl('jlpt-count');
+    if (select) select.value = String(count);
+}
+
 function renderJlptQuestion() {
     const item = jlptSession[jlptCurrent], container = jlptEl('jlpt-answer'); if (!item) return; container.textContent = ''; jlptEl('jlpt-progress').textContent = `${item.level} • Item ${jlptCurrent + 1} de ${jlptSession.length} • ${item.origin === 'module-quiz' ? 'Módulo' : 'Leitura'}`; jlptEl('jlpt-question').textContent = item.question; jlptEl('jlpt-editorial').hidden = item.editorialStatus !== 'pending-human-review'; jlptEl('jlpt-answer-status').textContent = jlptAnswers.has(item.id) ? 'Resposta mantida somente nesta sessão.' : '';
     if (item.options.length) { const options = document.createElement('div'); options.className = 'jlpt-options'; item.options.forEach(option => { const button = document.createElement('button'); button.type = 'button'; button.textContent = option; button.setAttribute('aria-pressed', jlptAnswers.get(item.id) === option ? 'true' : 'false'); button.addEventListener('click', () => { saveJlptAnswer(option); renderJlptQuestion(); }); options.appendChild(button); }); container.appendChild(options); }
@@ -37,6 +62,21 @@ function finishJlptSession() {
 }
 function resetJlptSession() { stopJlptTimer(); jlptSession = []; jlptAnswers = new Map(); jlptEl('jlpt-result').hidden = true; jlptEl('jlpt-session').hidden = true; jlptEl('jlpt-config').hidden = false; updateJlptAvailability(); }
 function initializeJapaneseJlpt() {
-    if (!Array.isArray(jlptIndex())) { jlptEl('jlpt-availability').textContent = 'Preparação indisponível.'; return; } ['jlpt-level', 'jlpt-origin'].forEach(id => jlptEl(id).addEventListener('change', updateJlptAvailability)); updateJlptAvailability(); jlptEl('jlpt-start').addEventListener('click', startJlptSession); jlptEl('jlpt-previous').addEventListener('click', () => { if (jlptCurrent > 0) { jlptCurrent -= 1; renderJlptQuestion(); } }); jlptEl('jlpt-next').addEventListener('click', () => { if (jlptCurrent < jlptSession.length - 1) { jlptCurrent += 1; renderJlptQuestion(); } }); jlptEl('jlpt-finish').addEventListener('click', finishJlptSession); jlptEl('jlpt-new-session').addEventListener('click', resetJlptSession); window.addEventListener('beforeunload', () => { stopJlptTimer(); if (jlptStudySessionStarted && typeof finalizarSessaoEstudo === 'function') finalizarSessaoEstudo('navigation'); });
+    if (!Array.isArray(jlptIndex())) { jlptEl('jlpt-availability').textContent = 'Preparação indisponível.'; return; }
+    document.querySelectorAll('.jlpt-level-pills .dict-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => syncJlptLevelPills(pill.dataset.level || 'N5'));
+    });
+    document.querySelectorAll('.jlpt-origin-pills .dict-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => syncJlptOriginPills(pill.dataset.origin || 'all'));
+    });
+    document.querySelectorAll('.jlpt-count-pills .dict-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => syncJlptCountPills(pill.dataset.count || '10'));
+    });
+    ['jlpt-level', 'jlpt-origin'].forEach(id => {
+        const el = jlptEl(id);
+        if (el) el.addEventListener('change', updateJlptAvailability);
+    });
+    updateJlptAvailability(); jlptEl('jlpt-start').addEventListener('click', startJlptSession); jlptEl('jlpt-previous').addEventListener('click', () => { if (jlptCurrent > 0) { jlptCurrent -= 1; renderJlptQuestion(); } }); jlptEl('jlpt-next').addEventListener('click', () => { if (jlptCurrent < jlptSession.length - 1) { jlptCurrent += 1; renderJlptQuestion(); } }); jlptEl('jlpt-finish').addEventListener('click', finishJlptSession); jlptEl('jlpt-new-session').addEventListener('click', resetJlptSession); window.addEventListener('beforeunload', () => { stopJlptTimer(); if (jlptStudySessionStarted && typeof finalizarSessaoEstudo === 'function') finalizarSessaoEstudo('navigation'); });
 }
 if (typeof window !== 'undefined') { window.normalizeJlptAnswer = normalizeJlptAnswer; window.selectJlptSession = selectJlptSession; window.jlptOriginHref = jlptOriginHref; window.initializeJapaneseJlpt = initializeJapaneseJlpt; window.addEventListener('DOMContentLoaded', initializeJapaneseJlpt, { once: true }); }
+

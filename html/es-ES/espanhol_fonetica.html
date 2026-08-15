@@ -14,6 +14,7 @@
 
     <!-- Design System CSS -->
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 
     <style>
         :root {
@@ -186,16 +187,28 @@
     </style>
 </head>
 
-<body data-mode="fonetica" data-lang="spanish">
+<body data-mode="fonetica" data-lang="spanish" class="japanese-experience jp-study-page">
     <header>
         <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>🎙️ Fonética, Verbos & Recursos de Espanhol</h1>
-        <p>Domine a pronúncia autêntica, a conjugação de verbos, heterotónicos e as variações regionais por país.</p>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎙️ Fonética, Verbos & Recursos</h1>
+        <p id="mainDesc">Guia de pronúncia A1-B2, conjugador completo de verbos, heterotônicos e regionalismos.</p>
     </header>
 
     <div class="container" id="study-area">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro es-page-intro" aria-labelledby="fonetica-intro-title" style="background: linear-gradient(120deg, rgba(217, 119, 6, 0.92), rgba(124, 45, 18, 0.96)), linear-gradient(135deg, #ea580c, #9a3412) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(217, 119, 6, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Pronúncia & Conjugação</span>
+                <h2 id="fonetica-intro-title">Domine a pronúncia autêntica e os verbos</h2>
+                <p>Guia completo com 30 regras fonéticas, conjugador universal de verbos, heterotônicos e regionalismos de 21 países.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Recursos completos</span>
+                <strong>30 regras & verbos</strong>
+            </div>
+        </section>
+
         <!-- NAVEGAÇÃO DE ABAS UNIFICADAS -->
         <nav class="fon-tabs-nav">
             <button id="tab-btn-fonetica" class="btn-fon-tab active-tab" onclick="alternarAbaFonetica('fonetica')">

@@ -47,7 +47,7 @@ const kanjiN5Data = [
             {
                 "character": "漢",
                 "meaning": "1. A Origem e o Conceito dos Kanjis",
-                "kunyomi": "kan (conceito histórico)",
+                "kunyomi": "-",
                 "onyomi": "カン (KAN)",
                 "mnemonic": "💡 ANATOMIA HISTÓRICA: Diferente do Hiragana e Katakana (que são silabários fonéticos criados no Japão), os Kanjis vieram da China (Dinastia Han). Eles são ideogramas conceituais: carregam ideias, imagens e conceitos visuais, permitindo ler textos eliminando qualquer ambiguidade instantaneamente.",
                 "examples": [
@@ -113,7 +113,7 @@ const kanjiN5Data = [
             {
                 "character": "音",
                 "meaning": "3. Onyomi e as Palavras Compostas (Jukugo)",
-                "kunyomi": "oto / ne",
+                "kunyomi": "おと (oto) / ね (ne)",
                 "onyomi": "オン (ON) / イン (IN)",
                 "mnemonic": "💡 REGRA DE OURO DO ONYOMI: É a adaptação japonesa para a pronúncia chinesa original. Use o Onyomi obrigatoriamente quando dois ou mais Kanjis se grudam para formar uma palavra composta (chamada de JUKUGO), como 'Água + Dia da Semana = Quarta-feira'.",
                 "examples": [
@@ -144,7 +144,7 @@ const kanjiN5Data = [
             {
                 "character": "部",
                 "meaning": "4. O Universo dos Radicais (Busshu)",
-                "kunyomi": "부 / parte",
+                "kunyomi": "-",
                 "onyomi": "ブ (BU)",
                 "mnemonic": "💡 A ANATOMIA DOS BLOCOS: Kanjis não são rabiscos aleatórios; são quebra-cabeças formados por Radicais (partes fundamentais). Conhecer os 4 radicais mais vitais do N5 acelera sua memorização em 300%:\n• 亻 (Ninben): Radicais de Pessoas (Ex: 休 descansa, 他 outro).\n• 氵 (Sanzui): Radicais de Água (Ex: 水 água, 河 rio, 酒 saquê).\n• 口 (Kuchi): Radicais de Boca / Fala (Ex: 喰 comer, 喝 gritar, 語 idioma).\n• 木 (Ki): Radicais de Árvore / Planta (Ex: 森 floresta, 林 bosques, 本 raiz/livro).",
                 "examples": [
@@ -179,7 +179,7 @@ const kanjiN5Data = [
             {
                 "character": "正",
                 "meaning": "5. Kakijun (A Ordem Absoluta dos Traços)",
-                "kunyomi": "tadasu / masa",
+                "kunyomi": "ただ・しい (tada-shii) / ただ・す (tada-su) / まさ (masa)",
                 "onyomi": "セイ (SEI) / ショウ (SHOU)",
                 "mnemonic": "💡 COMO ESCREVER CORRETAMENTE: A ordem dos traços (Kakijun) não é capricho estético — ela garante a velocidade da escrita fluida e o equilíbrio visual do caractere. As 3 Leis Universais são:\n1. De cima para baixo;\n2. Da esquerda para a direita;\n3. Traços horizontais principais cortados por verticais vêm por último.",
                 "examples": [
@@ -210,7 +210,7 @@ const kanjiN5Data = [
             {
                 "character": "々",
                 "meaning": "6. Kurikaeshi e o Fenômeno do Rendaku",
-                "kunyomi": "onaji (mesmo)",
+                "kunyomi": "-",
                 "onyomi": "-",
                 "mnemonic": "💡 O DOBRO DE IMPACTO E O RENDAKU: O símbolo '々' duplica o kanji anterior. Quando isso acontece, surge frequentemente o fenômeno fonético do **Rendaku** (a sonorização de consoantes para facilitar a fala, como a plosiva 'h' ou 'k' virando 'b' ou 'g'). Exemplos clássicos: 人 (hito) + 人 (hito) vira 人々 (hitobito, e não hitohito) e 時 (toki) + 時 (toki) vira 時々 (tokidoki).",
                 "examples": [

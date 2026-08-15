@@ -1,35 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca de leitura japonesa | Idiomas Academy</title>
+    <title>Biblioteca de Leitura Japonesa | Idiomas Academy</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
     <link rel="manifest" href="../../manifest.json">
     <meta name="theme-color" content="#1e1b4b">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
     <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
+
 <body data-mode="reading" data-lang="japanese" class="japanese-experience jp-study-page jp-reading-page">
-    <header><a href="../../hub_japones.html" class="home-btn">⬅ Japonês</a><button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button><h1>📚 Biblioteca de leitura</h1><p>Textos reais das trilhas Kanji, organizados por nível de referência.</p></header>
-    <main class="reading-shell">
-        <section class="jp-page-intro" aria-labelledby="reading-intro-title"><div><span class="jp-page-kicker">Leitura graduada</span><h2 id="reading-intro-title">Leia com apoio, sem perder o foco</h2><p>Escolha um texto por nível, controle os apoios de leitura e avance para questões de compreensão em uma área separada.</p></div><div class="jp-page-stat"><span>Biblioteca atual</span><strong>91 textos</strong></div></section>
-        <div class="reading-note"><strong>Transparência:</strong> os níveis são referências pedagógicas JLPT e não constituem listas oficiais. “Sem marcação editorial” não significa aprovação humana. O áudio, quando usado, é sintetizado pelo dispositivo.</div>
-        <section id="reading-library">
-            <div class="reading-filters" aria-label="Filtros da biblioteca"><label class="jp-filter-field" for="reading-level"><span>Nível</span><select id="reading-level"><option value="all">N5–N1</option><option>N5</option><option>N4</option><option>N3</option><option>N2</option><option>N1</option></select></label><label class="jp-filter-field jp-filter-field-grow" for="reading-search"><span>Busca</span><input id="reading-search" type="search" placeholder="Título ou texto" autocomplete="off"></label><span id="reading-count" aria-live="polite"></span></div>
+    <header>
+        <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">📚 Biblioteca de Leitura</h1>
+        <p id="mainDesc">Textos reais das trilhas Kanji, organizados por nível de referência pedagógica.</p>
+    </header>
+
+    <main class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="reading-intro-title">
+            <div>
+                <span class="jp-page-kicker">Leitura graduada</span>
+                <h2 id="reading-intro-title">Leia com apoio, sem perder o foco</h2>
+                <p>Escolha um texto por nível, controle os apoios de leitura e avance para questões de compreensão em uma área separada.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Biblioteca atual</span>
+                <strong>91 textos</strong>
+            </div>
+        </section>
+
+        <!-- BANNER DE TRANSPARÊNCIA E ESTATÍSTICA -->
+        <div class="reading-note" style="margin-bottom: 1.5rem;">
+            <strong>Transparência pedagógica:</strong> Os níveis são referências pedagógicas JLPT e não constituem listas oficiais. “Sem marcação editorial” não significa aprovação humana. O áudio, quando usado, é sintetizado pelo dispositivo nativo.
+        </div>
+
+        <!-- SEÇÃO DA BIBLIOTECA (BUSCA + FILTROS EM PÍLULAS + GRID) -->
+        <section id="reading-library" aria-labelledby="reading-library-title">
+            <h2 id="reading-library-title" class="visually-hidden" style="display:none;">Explorar Leituras Graduadas</h2>
+
+            <!-- BARRA DE BUSCA (Estilo dict-search-wrapper com jp-filter-field) -->
+            <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">
+                <label class="jp-filter-field jp-filter-field-grow" for="reading-search" style="border:none; padding:0; background:transparent; width:100%;">
+                    <input id="reading-search" type="search" aria-label="Pesquisar textos de leitura" placeholder="Pesquise por título, kanji ou trecho do texto..." style="width:100%; padding:0.9rem 1.4rem; border-radius:14px; background:var(--bg-color); color:var(--text-main); border:2px solid var(--border-color); font-size:1.05rem; font-weight:600; outline:none; box-shadow:var(--shadow);" autocomplete="off">
+                </label>
+            </div>
+
+            <!-- FILTROS POR PÍLULAS VISUAIS (Estilo dicionario.html / kanji.html) -->
+            <div class="dict-filters-row reading-filters-pills" style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap; justify-content:center;">
+                <button type="button" class="dict-filter-pill active" data-level="all">Todos (N5–N1)</button>
+                <button type="button" class="dict-filter-pill" data-level="N5">🟢 N5</button>
+                <button type="button" class="dict-filter-pill" data-level="N4">🟡 N4</button>
+                <button type="button" class="dict-filter-pill" data-level="N3">🟠 N3</button>
+                <button type="button" class="dict-filter-pill" data-level="N2">🔴 N2</button>
+                <button type="button" class="dict-filter-pill" data-level="N1">🟣 N1</button>
+            </div>
+
+            <!-- Select oculto para retrocompatibilidade com scripts e testes -->
+            <select id="reading-level" style="display:none;" aria-hidden="true">
+                <option value="all">N5–N1</option>
+                <option value="N5">N5</option>
+                <option value="N4">N4</option>
+                <option value="N3">N3</option>
+                <option value="N2">N2</option>
+                <option value="N1">N1</option>
+            </select>
+
+            <!-- CONTADOR DE RESULTADOS -->
+            <div id="reading-count" aria-live="polite" style="font-size:0.95rem; color:var(--text-muted); font-weight:700; margin-bottom:1.5rem; text-align:center;"></div>
+
+            <!-- GRADE DE CARDS -->
             <div id="reading-grid" class="reading-grid" aria-live="polite"></div>
         </section>
+
+        <!-- SEÇÃO DO LEITOR GRADUADO -->
         <article id="reading-reader" class="reading-reader" hidden aria-label="Leitor graduado">
-            <div class="reading-meta"><span id="reading-origin"></span> • <span id="reading-length"></span></div><h1 id="reading-title"></h1>
-            <div class="reading-toolbar" aria-label="Apoios de leitura"><button type="button" data-reading-toggle="furigana">Furigana</button><button type="button" data-reading-toggle="romaji">Romaji</button><button type="button" data-reading-toggle="translation">Tradução</button><button type="button" id="reading-focus">Modo foco</button></div>
-            <div id="reading-japanese" class="reading-text" lang="ja"></div><div id="reading-romaji" class="reading-support" hidden></div><div id="reading-translation" class="reading-support" hidden></div>
+            <!-- TOPO DO LEITOR COM BOTÃO VOLTAR -->
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.2rem; flex-wrap:wrap; gap:0.8rem;">
+                <button type="button" id="reading-back-top" class="reading-back-btn jp-action-secondary" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.2rem; border-radius:12px; font-weight:700; cursor:pointer;">← Voltar à biblioteca</button>
+            </div>
+
+            <div class="reading-meta"><span id="reading-origin"></span> • <span id="reading-length"></span></div>
+            <h1 id="reading-title"></h1>
+            
+            <div class="reading-toolbar" aria-label="Apoios de leitura">
+                <button type="button" class="dict-filter-pill" data-reading-toggle="furigana">Furigana</button>
+                <button type="button" class="dict-filter-pill" data-reading-toggle="romaji">Romaji</button>
+                <button type="button" class="dict-filter-pill" data-reading-toggle="translation">Tradução</button>
+                <button type="button" class="dict-filter-pill" id="reading-focus">Modo foco</button>
+            </div>
+            
+            <div id="reading-japanese" class="reading-text" lang="ja"></div>
+            <div id="reading-romaji" class="reading-support" hidden></div>
+            <div id="reading-translation" class="reading-support" hidden></div>
             <div id="reading-editorial" class="reading-editorial" hidden>⚠️ Texto pendente de revisão editorial humana. A publicação nesta biblioteca não constitui aprovação linguística.</div>
-            <div class="reading-actions"><button type="button" id="reading-audio" class="jp-action-primary">🔊 Ouvir</button><button type="button" id="reading-audio-slow" class="jp-action-secondary">🐢 Ouvir devagar</button><a id="reading-source" class="jp-action-tertiary" href="kanji.html">Abrir módulo de origem</a><a class="jp-action-tertiary" href="dicionario.html">Abrir dicionário</a><button type="button" id="reading-back" class="jp-action-secondary">Voltar à biblioteca</button></div>
-            <section id="reading-questions" class="reading-questions" aria-label="Compreensão"><h2>Compreensão</h2><div id="reading-question-list"></div><p id="reading-feedback" role="status" aria-live="polite"></p></section>
-            <div class="reading-nav"><button type="button" id="reading-previous">← Leitura anterior</button><button type="button" id="reading-next">Próxima leitura →</button></div>
+            
+            <div class="reading-actions">
+                <button type="button" id="reading-audio" class="jp-action-primary">🔊 Ouvir</button>
+                <button type="button" id="reading-audio-slow" class="jp-action-secondary">🐢 Ouvir devagar</button>
+                <a id="reading-source" class="jp-action-tertiary" href="kanji.html">Abrir módulo de origem</a>
+                <a id="reading-dict" class="jp-action-tertiary" href="dicionario.html">Abrir dicionário</a>
+                <button type="button" id="reading-back" class="reading-back-btn jp-action-secondary">Voltar à biblioteca</button>
+            </div>
+            
+            <section id="reading-questions" class="reading-questions" aria-label="Compreensão">
+                <h2>Compreensão</h2>
+                <div id="reading-question-list"></div>
+                <p id="reading-feedback" role="status" aria-live="polite"></p>
+            </section>
+            
+            <div class="reading-nav">
+                <button type="button" id="reading-previous" class="jp-action-secondary">← Leitura anterior</button>
+                <button type="button" id="reading-next" class="jp-action-primary">Próxima leitura →</button>
+            </div>
         </article>
     </main>
-    <script src="../../database/ja-JP/data_leitura_index.js"></script><script type="module" src="../../firebase-init.js"></script><script src="../../js/core/config.js"></script><script src="../../js/core/constants.js"></script><script src="../../js/core/state.js"></script><script src="../../js/core/utils.js"></script><script src="../../js/core/theme.js"></script><script src="../../js/core/audio.js"></script><script src="../../js/core/toast.js"></script><script src="../../js/core/storage.js"></script><script src="../../js/core/study-session.js"></script><script src="../../js/core/dom.js"></script><script src="../../js/core/events.js"></script><script src="../../js/game/xp.js"></script><script src="../../js/game/ranking.js"></script><script src="../../js/japanese/reading.js"></script><script src="../../js/core/bootstrap.js"></script><script src="../../app.js"></script>
+
+    <script src="../../database/ja-JP/data_leitura_index.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/japanese/reading.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
 </body>
+
 </html>

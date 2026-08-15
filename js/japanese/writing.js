@@ -15,8 +15,17 @@ function writingIndex() { return typeof JAPANESE_WRITING_INDEX !== 'undefined' ?
 function writingOriginHref(item) { return `${item.route}?level=${encodeURIComponent(item.level)}&module=${item.moduleIndex}`; }
 function orderedWritingChunks(item) { if (!item || item.chunks.length < 2) return item ? item.chunks.map((value, originalIndex) => ({ value, originalIndex })) : []; const shift = (item.moduleIndex + item.itemIndex + 1) % item.chunks.length || 1; return item.chunks.map((value, originalIndex) => ({ value, originalIndex })).slice(shift).concat(item.chunks.map((value, originalIndex) => ({ value, originalIndex })).slice(0, shift)); }
 
+function syncWritingLevelPills(level) {
+    document.querySelectorAll('.writing-filters-pills .dict-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.level === level);
+    });
+    const select = writingEl('writing-level');
+    if (select) select.value = level;
+}
 function renderWritingLibrary() {
-    const level = writingEl('writing-level').value, query = String(writingEl('writing-search').value || '').trim().toLocaleLowerCase('pt-BR');
+    const activePill = document.querySelector('.writing-filters-pills .dict-filter-pill.active');
+    const level = activePill ? activePill.dataset.level : (writingEl('writing-level') ? writingEl('writing-level').value : 'all');
+    const query = String(writingEl('writing-search').value || '').trim().toLocaleLowerCase('pt-BR');
     japaneseWritingItems = writingIndex().filter(item => (level === 'all' || item.level === level) && (!query || `${item.translation} ${item.sentence} ${item.moduleTitle}`.toLocaleLowerCase('pt-BR').includes(query)));
     writingEl('writing-count').textContent = `${japaneseWritingItems.length} modelos`; japaneseWritingCollection.reset(japaneseWritingItems);
     if (!japaneseWritingItems.length) writingEl('writing-grid').textContent = 'Nenhum modelo corresponde aos filtros atuais.';
@@ -28,7 +37,12 @@ function renderWritingOrder() {
     if (!japaneseWritingSelected.length) selected.textContent = 'Selecione os blocos na ordem desejada.';
 }
 function setWritingMode(mode) {
-    if (!['order', 'copy', 'recall'].includes(mode)) return; japaneseWritingMode = mode; document.querySelectorAll('[data-writing-mode]').forEach(button => button.setAttribute('aria-pressed', button.dataset.writingMode === mode ? 'true' : 'false'));
+    if (!['order', 'copy', 'recall'].includes(mode)) return; japaneseWritingMode = mode;
+    document.querySelectorAll('[data-writing-mode]').forEach(button => {
+        const isCurrent = button.dataset.writingMode === mode;
+        button.setAttribute('aria-pressed', isCurrent ? 'true' : 'false');
+        button.classList.toggle('active', isCurrent);
+    });
     writingEl('writing-order').hidden = mode !== 'order'; writingEl('writing-free').hidden = mode === 'order'; writingEl('writing-model-wrap').hidden = mode === 'recall'; writingEl('writing-input').value = ''; writingEl('writing-result').textContent = ''; japaneseWritingSelected = []; renderWritingOrder();
 }
 function compareWriting() {
@@ -43,11 +57,53 @@ function showWritingItem(item) {
 function resetWriting() { japaneseWritingSelected = []; writingEl('writing-input').value = ''; writingEl('writing-result').textContent = ''; renderWritingOrder(); }
 function initializeJapaneseWriting() {
     if (!Array.isArray(writingIndex())) { writingEl('writing-grid').textContent = 'Oficina de escrita indisponível.'; return; }
-    japaneseWritingCollection = window.JapaneseUI.createProgressiveCollection({ container: writingEl('writing-grid'), batchSize: 12, renderItem(item) { const card = document.createElement('button'); card.type = 'button'; card.className = 'writing-card'; const meta = document.createElement('div'); meta.className = 'writing-meta'; meta.textContent = `${item.level} • ${item.moduleTitle}`; const title = document.createElement('h2'); title.textContent = item.translation; const preview = document.createElement('div'); preview.className = 'writing-meta'; preview.lang = 'ja'; preview.textContent = item.sentence; card.append(meta, title, preview); card.addEventListener('click', () => showWritingItem(item)); return card; } });
-    writingEl('writing-level').addEventListener('change', renderWritingLibrary); writingEl('writing-search').addEventListener('input', renderWritingLibrary); renderWritingLibrary();
+    japaneseWritingCollection = window.JapaneseUI.createProgressiveCollection({
+        container: writingEl('writing-grid'),
+        batchSize: 12,
+        renderItem(item) {
+            const card = document.createElement('button');
+            card.type = 'button';
+            card.className = 'writing-card dict-entry-card';
+            card.dataset.level = item.level;
+            const meta = document.createElement('div');
+            meta.className = 'writing-meta';
+            meta.style.display = 'flex';
+            meta.style.gap = '0.5rem';
+            meta.style.alignItems = 'center';
+            const badge = document.createElement('span');
+            badge.className = `pill-badge badge-${item.level.toLowerCase()}`;
+            badge.textContent = item.level;
+            const origin = document.createElement('span');
+            origin.className = 'writing-origin-badge';
+            origin.textContent = item.moduleTitle;
+            meta.append(badge, origin);
+            const title = document.createElement('h2');
+            title.className = 'writing-card-title';
+            title.textContent = item.translation;
+            const preview = document.createElement('div');
+            preview.className = 'writing-card-japanese';
+            preview.lang = 'ja';
+            preview.textContent = item.sentence;
+            card.append(meta, title, preview);
+            card.addEventListener('click', () => showWritingItem(item));
+            return card;
+        }
+    });
+    document.querySelectorAll('.writing-filters-pills .dict-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+            syncWritingLevelPills(pill.dataset.level || 'all');
+            renderWritingLibrary();
+        });
+    });
+    if (writingEl('writing-level')) writingEl('writing-level').addEventListener('change', () => {
+        syncWritingLevelPills(writingEl('writing-level').value);
+        renderWritingLibrary();
+    });
+    writingEl('writing-search').addEventListener('input', renderWritingLibrary); renderWritingLibrary();
     document.querySelectorAll('[data-writing-mode]').forEach(button => button.addEventListener('click', () => setWritingMode(button.dataset.writingMode))); writingEl('writing-compare').addEventListener('click', compareWriting); writingEl('writing-reset').addEventListener('click', resetWriting); writingEl('writing-back').addEventListener('click', () => { resetWriting(); writingEl('writing-workshop').hidden = true; writingEl('writing-library').hidden = false; history.replaceState(null, '', window.location.pathname); });
     writingEl('writing-audio').addEventListener('click', () => { const item = japaneseWritingCurrent; if (item && typeof tocarAudio === 'function') { registerWritingActivity(item, 'audio'); tocarAudio(item.sentence, 'ja-JP', 1); } });
     const requested = new URLSearchParams(window.location.search).get('model'), item = writingIndex().find(entry => entry.id === requested); if (item) showWritingItem(item);
     window.addEventListener('beforeunload', () => { if (japaneseWritingSessionStarted && typeof finalizarSessaoEstudo === 'function') finalizarSessaoEstudo('navigation'); });
 }
 if (typeof window !== 'undefined') { window.normalizeWritingComparison = normalizeWritingComparison; window.writingOriginHref = writingOriginHref; window.initializeJapaneseWriting = initializeJapaneseWriting; window.addEventListener('DOMContentLoaded', initializeJapaneseWriting, { once: true }); }
+

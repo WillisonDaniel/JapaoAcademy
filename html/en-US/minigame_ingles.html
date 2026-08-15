@@ -16,21 +16,33 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 
-<body data-mode="game" data-lang="english">
+<body data-mode="game" data-lang="english" class="japanese-experience jp-study-page">
     <header>
-        <a href="../../hub_ingles.html" class="home-btn">⬅ Inglês</a>
-        <h1 id="mainTitle">🎮 Word Master Pro</h1>
-        <p id="mainDesc">Treine sua escuta, digitação e agilidade de vocabulário em tempo real.</p>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎮 Word Master Pro</h1>
+        <p id="mainDesc">Minigame oficial de escuta, digitação, velocidade e combos.</p>
     </header>
 
     <div class="container" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro en-page-intro" aria-labelledby="minigame-intro-title" style="background: linear-gradient(120deg, rgba(29, 78, 216, 0.92), rgba(30, 58, 138, 0.96)), linear-gradient(135deg, #1d4ed8, #1e3a8a) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(29, 78, 216, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Treino rápido no relógio</span>
+                <h2 id="minigame-intro-title">Word Master Pro: Escuta e digitação</h2>
+                <p>Desafie seu reflexo auditivo, digite termos contra o cronômetro, faça sequências de combo e bata seu recorde de XP.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Arcade oficial</span>
+                <strong>Word Master Pro</strong>
+            </div>
+        </section>
 
         <!-- 1. TELA DE MENU / CONFIGURAÇÃO DO JOGO -->
         <div id="game-menu-screen" class="game-card-screen" style="display: block;">

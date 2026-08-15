@@ -44,16 +44,29 @@ function renderListeningItem() {
     listeningEl('listening-previous').disabled = japaneseListeningIndex === 0; listeningEl('listening-next').disabled = japaneseListeningIndex >= japaneseListeningItems.length - 1;
     setListeningStatus('');
 }
+function syncListeningLevelPills(level) {
+    document.querySelectorAll('.listening-filters-pills .dict-filter-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.level === level);
+    });
+    const select = listeningEl('listening-level');
+    if (select) select.value = level;
+}
 function applyListeningFilter() {
     const source = typeof JAPANESE_LISTENING_INDEX !== 'undefined' ? JAPANESE_LISTENING_INDEX : [];
-    const level = listeningEl('listening-level').value; japaneseListeningItems = source.filter(item => level === 'all' || item.level === level); japaneseListeningIndex = 0;
+    const activePill = document.querySelector('.listening-filters-pills .dict-filter-pill.active');
+    const level = activePill ? activePill.dataset.level : (listeningEl('listening-level') ? listeningEl('listening-level').value : 'all');
+    japaneseListeningItems = source.filter(item => level === 'all' || item.level === level); japaneseListeningIndex = 0;
     listeningEl('listening-count').textContent = `${japaneseListeningItems.length} trechos`;
     if (typeof history !== 'undefined' && typeof history.replaceState === 'function') history.replaceState(null, '', `${window.location.pathname}${level === 'all' ? '' : `?level=${encodeURIComponent(level)}`}`);
     renderListeningItem();
 }
 function setListeningMode(mode) {
     japaneseListeningMode = mode === 'shadowing' ? 'shadowing' : 'listen';
-    document.querySelectorAll('[data-listening-mode]').forEach(button => button.setAttribute('aria-pressed', button.dataset.listeningMode === japaneseListeningMode ? 'true' : 'false'));
+    document.querySelectorAll('[data-listening-mode]').forEach(button => {
+        const isCurrent = button.dataset.listeningMode === japaneseListeningMode;
+        button.setAttribute('aria-pressed', isCurrent ? 'true' : 'false');
+        button.classList.toggle('active', isCurrent);
+    });
     const shadowing = japaneseListeningMode === 'shadowing'; listeningEl('shadowing-settings').hidden = !shadowing; listeningEl('shadowing-start').hidden = !shadowing;
     listeningEl('listen-microphone').hidden = !shadowing; listeningEl('listen-normal').hidden = shadowing; listeningEl('listen-slow').hidden = shadowing; listeningEl('listening-self-review').hidden = true;
     setListeningStatus(shadowing ? 'Ouça, prepare-se e repita junto. A autoavaliação não gera nota.' : '');
@@ -86,8 +99,19 @@ function startListeningTranscription() {
 }
 function initializeJapaneseListening() {
     const source = typeof JAPANESE_LISTENING_INDEX !== 'undefined' ? JAPANESE_LISTENING_INDEX : null; if (!Array.isArray(source)) { setListeningStatus('Conteúdo auditivo indisponível.'); return; }
-    const requested = new URLSearchParams(window.location.search).get('level'); if (['A1', 'A2', 'B1', 'B2'].includes(requested)) listeningEl('listening-level').value = requested;
-    listeningEl('listening-level').addEventListener('change', applyListeningFilter); document.querySelectorAll('[data-listening-mode]').forEach(button => button.addEventListener('click', () => setListeningMode(button.dataset.listeningMode)));
+    const requested = new URLSearchParams(window.location.search).get('level');
+    if (['A1', 'A2', 'B1', 'B2'].includes(requested)) syncListeningLevelPills(requested);
+    document.querySelectorAll('.listening-filters-pills .dict-filter-pill').forEach(pill => {
+        pill.addEventListener('click', () => {
+            syncListeningLevelPills(pill.dataset.level || 'all');
+            applyListeningFilter();
+        });
+    });
+    if (listeningEl('listening-level')) listeningEl('listening-level').addEventListener('change', () => {
+        syncListeningLevelPills(listeningEl('listening-level').value);
+        applyListeningFilter();
+    });
+    document.querySelectorAll('[data-listening-mode]').forEach(button => button.addEventListener('click', () => setListeningMode(button.dataset.listeningMode)));
     listeningEl('listen-normal').addEventListener('click', () => playListeningItem(1)); listeningEl('listen-slow').addEventListener('click', () => playListeningItem(0.65)); listeningEl('listen-reveal').addEventListener('click', revealListeningItem);
     listeningEl('shadowing-start').addEventListener('click', startShadowing); listeningEl('listen-microphone').addEventListener('click', startListeningTranscription);
     listeningEl('listening-previous').addEventListener('click', () => { if (japaneseListeningIndex > 0) { japaneseListeningIndex--; renderListeningItem(); } }); listeningEl('listening-next').addEventListener('click', () => { if (japaneseListeningIndex < japaneseListeningItems.length - 1) { japaneseListeningIndex++; renderListeningItem(); } });

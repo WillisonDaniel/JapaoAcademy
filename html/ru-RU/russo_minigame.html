@@ -18,6 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&family=Outfit:wght@600;700;800&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <style>
@@ -570,14 +571,29 @@
     </style>
 </head>
 
-<body data-mode="russian" data-lang="russian">
+<body data-mode="russian" data-lang="russian" class="japanese-experience jp-study-page">
 
     <header>
-        <a href="../../hub_russo.html" class="home-btn">⬅ Menu Inicial</a>
+        <a href="../../hub_russo.html" class="home-btn">⬅ Menu do Russo</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">⚡ Arcade Cirílico Rápido</h1>
+        <p id="mainDesc">Treine o reconhecimento ágil das letras russas contra o relógio.</p>
     </header>
 
     <div class="arcade-container">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro ru-page-intro" aria-labelledby="minigame-intro-title" style="background: linear-gradient(120deg, rgba(109, 40, 217, 0.92), rgba(46, 16, 101, 0.96)), linear-gradient(135deg, #7c3aed, #4c1d95) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(109, 40, 217, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Treino rápido no relógio</span>
+                <h2 id="minigame-intro-title">Arcade Cirílico: Velocidade e pegadinhas</h2>
+                <p>Treine o reconhecimento instantâneo do cirílico em 3 segundos, fuja dos falsos cognatos e bata seu recorde de XP.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Arcade oficial</span>
+                <strong>Pegadinha 3s</strong>
+            </div>
+        </section>
+
         <div class="arcade-box">
 
             <!-- 1. TELA DE CONFIGURAÇÃO DO JOGO -->

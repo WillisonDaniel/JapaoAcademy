@@ -1,7 +1,4 @@
-// ======================================
-// MÓDULO CORE - INFRAESTRUTURA DO APPSTATE
-// Store Central de Estado da Aplicação & API de Mutadores Centralizados
-// ======================================
+
 
 var AppState = {
     user: {
@@ -48,12 +45,6 @@ var AppState = {
         version: '1.0.0'
     },
 
-    // ======================================
-    // API OFICIAL DE MUTADORES CENTRALIZADOS (SETTERS)
-    // Sincronizam AppState e o estado legado simultaneamente
-    // ======================================
-
-    // --- USER SETTERS ---
     setProgress: function (progress) {
         const val = (typeof progress === 'object' && progress !== null) ? progress : {};
         this.user.progressoGlobal = val;
@@ -82,7 +73,6 @@ var AppState = {
         return val;
     },
 
-    // --- COURSE SETTERS ---
     setLevel: function (level) {
         const val = typeof level === 'string' && level ? level : 'A1';
         this.course.level = val;
@@ -118,7 +108,6 @@ var AppState = {
         return val;
     },
 
-    // --- SRS SETTERS ---
     setSRSDeck: function (deck) {
         const val = Array.isArray(deck) ? deck : [];
         this.srs.activeDeck = val;
@@ -153,7 +142,6 @@ var AppState = {
         return val;
     },
 
-    // --- DICTIONARY SETTERS ---
     setDictionaryCache: function (data) {
         const val = Array.isArray(data) ? data : [];
         this.dictionary.universalGlossary = val;
@@ -168,7 +156,6 @@ var AppState = {
         return val;
     },
 
-    // --- UI SETTERS ---
     setUITheme: function (theme) {
         const val = typeof theme === 'string' && theme ? theme : 'dark';
         this.ui.currentTheme = val;
@@ -187,7 +174,6 @@ var AppState = {
         return val;
     },
 
-    // --- UNIFIED DOMAIN MUTATORS ---
     markModuleCompleted: function (modId, level) {
         if (!modId) return;
         const prog = this.user.progressoGlobal || {};
@@ -279,7 +265,6 @@ var AppState = {
     }
 };
 
-// Exposição global segura sem sobrescrever o objeto se já existir
 if (typeof window !== 'undefined') {
     if (!window.AppState) {
         window.AppState = AppState;
@@ -296,7 +281,6 @@ function syncAppStateMirror() {
     try {
         const state = window.AppState;
 
-        // User Mirror
         if (typeof progressoGlobal !== 'undefined') state.user.progressoGlobal = progressoGlobal;
         if (typeof localStorage !== 'undefined') {
             const rawXp = localStorage.getItem('ja_user_xp');
@@ -318,24 +302,20 @@ function syncAppStateMirror() {
             }
         }
 
-        // Course Mirror
         if (typeof nivelAtivo !== 'undefined') state.course.level = nivelAtivo;
         if (typeof moduloAtivoIndex !== 'undefined') state.course.moduleIndex = moduloAtivoIndex;
         if (typeof etapaAtual !== 'undefined') state.course.stage = etapaAtual;
         if (typeof dropAtual !== 'undefined') state.course.dropIndex = dropAtual;
         if (typeof modoDesbloqueado !== 'undefined') state.course.unlocked = modoDesbloqueado ? ['ALL'] : [];
 
-        // SRS Mirror
         if (typeof srsSessaoCards !== 'undefined') state.srs.activeDeck = srsSessaoCards;
         if (typeof srsIndexAtivo !== 'undefined') state.srs.currentIndex = srsIndexAtivo;
         if (typeof srsCardRevelado !== 'undefined') state.srs.revealed = srsCardRevelado;
         if (typeof srsModoFiltro !== 'undefined') state.srs.filter = srsModoFiltro;
 
-        // Dictionary Mirror
         if (typeof glossarioUniversalData !== 'undefined') state.dictionary.universalGlossary = glossarioUniversalData;
         if (typeof glossarioFiltradoData !== 'undefined') state.dictionary.filteredGlossary = glossarioFiltradoData;
 
-        // UI Mirror
         if (typeof document !== 'undefined') {
             state.ui.currentPage = (typeof window !== 'undefined' && window.location) ? window.location.pathname : '';
             state.ui.currentLanguage = (document.body && document.body.getAttribute) ? (document.body.getAttribute('data-lang') || 'pt-BR') : 'pt-BR';
@@ -348,7 +328,6 @@ function syncAppStateMirror() {
     }
 }
 
-// Exposição global da função de sincronização
 if (typeof window !== 'undefined') {
     window.syncAppStateMirror = syncAppStateMirror;
 }

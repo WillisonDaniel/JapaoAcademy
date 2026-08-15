@@ -1,47 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escuta e shadowing em japonês | Idiomas Academy</title>
+    <title>Escuta e Shadowing em Japonês | Idiomas Academy</title>
+
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" href="../../favicon.png">
+
     <link rel="manifest" href="../../manifest.json">
     <meta name="theme-color" content="#1e1b4b">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
     <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
+
 <body data-mode="listening" data-lang="japanese" class="japanese-experience jp-study-page jp-listening-page">
     <header>
-        <a href="../../hub_japones.html" class="home-btn">⬅ Japonês</a>
-        <button class="theme-btn" onclick="toggleTheme()" title="Alternar tema">🌙</button>
-        <h1>🎧 Escuta e shadowing</h1>
-        <p>Prática guiada com frases reais dos módulos A1–B2.</p>
+        <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🎧 Escuta e Shadowing</h1>
+        <p id="mainDesc">Prática guiada com frases reais dos módulos A1–B2.</p>
     </header>
-    <main class="listening-shell">
+
+    <main class="container dict-page-container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
         <section class="jp-page-intro" aria-labelledby="listening-intro-title">
-            <div><span class="jp-page-kicker">Compreensão oral</span><h2 id="listening-intro-title">Ouça, revele e repita no seu ritmo</h2><p>Alterne entre escuta focada e shadowing, ajuste a velocidade e use a transcrição opcional como retorno bruto do navegador.</p></div>
-            <div class="jp-page-stat"><span>Biblioteca atual</span><strong>265 trechos</strong></div>
+            <div>
+                <span class="jp-page-kicker">Compreensão oral</span>
+                <h2 id="listening-intro-title">Ouça, revele e repita no seu ritmo</h2>
+                <p>Alterne entre escuta focada e shadowing, ajuste a velocidade e use a transcrição opcional como retorno bruto do navegador.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Biblioteca atual</span>
+                <strong>265 trechos</strong>
+            </div>
         </section>
-        <div class="listening-notice" role="note"><strong>Transparência:</strong> o áudio é sintetizado pelo seu dispositivo, pode variar entre navegadores e não substitui gravação nativa. A transcrição opcional é retorno bruto do navegador e não avalia pronúncia. Nenhum áudio gravado é persistido pela aplicação.</div>
-        <section class="listening-controls" aria-label="Configuração da prática">
-            <div class="listening-row"><label class="jp-filter-field" for="listening-level"><span>Nível</span><select id="listening-level"><option value="all">Todos</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></label><span id="listening-count" aria-live="polite"></span></div>
-            <div class="listening-row" aria-label="Modo de prática"><button type="button" data-listening-mode="listen" aria-pressed="true">Escuta</button><button type="button" data-listening-mode="shadowing" aria-pressed="false">Shadowing</button></div>
-            <div id="shadowing-settings" class="listening-row" hidden><label class="jp-filter-field" for="shadowing-delay"><span>Preparação</span><select id="shadowing-delay"><option value="0">0 s</option><option value="2" selected>2 s</option><option value="4">4 s</option></select></label><label class="jp-check-field"><input type="checkbox" id="shadowing-repeat"> Repetir junto mais uma vez</label></div>
-        </section>
-        <section class="listening-card" aria-label="Exercício de escuta atual">
-            <div class="listening-meta"><span id="listening-origin"></span><span id="listening-position"></span></div>
-            <div class="listening-prompt"><p id="listening-instruction">Ouça antes de revelar o texto.</p><div id="listening-content" class="listening-hidden"><h2 id="listening-item-title" lang="ja"></h2><p id="listening-romaji"></p><p id="listening-translation"></p></div></div>
-            <div class="listening-actions"><button type="button" id="listen-normal" class="jp-action-primary">▶ Ouvir normal</button><button type="button" id="listen-slow" class="jp-action-secondary">🐢 Ouvir devagar</button><button type="button" id="listen-reveal" class="jp-action-tertiary">Revelar texto</button><button type="button" id="shadowing-start" class="jp-action-accent" hidden>Iniciar shadowing</button><button type="button" id="listen-microphone" class="jp-action-tertiary" hidden>🎤 Transcrever minha repetição</button></div>
-            <div id="listening-status" class="listening-status" role="status" aria-live="polite"></div>
-            <div id="listening-transcript" class="listening-transcript" hidden></div>
-            <div id="listening-self-review" class="listening-actions" hidden><button type="button" class="jp-action-secondary" data-self-review="repeat">Quero repetir</button><button type="button" class="jp-action-primary" data-self-review="followed">Consegui acompanhar</button></div>
-            <div id="listening-editorial" class="listening-review" hidden>⚠️ Trecho pendente de revisão editorial humana. A presença nesta prática não constitui aprovação linguística.</div>
-            <div class="listening-source-wrap"><a id="listening-source-link" class="listening-link jp-action-tertiary" href="curso.html">Abrir módulo de origem</a></div>
-            <div class="listening-footer"><button type="button" id="listening-previous">← Anterior</button><button type="button" id="listening-next">Próximo →</button></div>
+
+        <!-- BANNER DE TRANSPARÊNCIA E PRIVACIDADE -->
+        <div class="listening-notice" role="note" style="margin-bottom: 1.5rem;">
+            <strong>Transparência:</strong> O áudio é sintetizado pelo seu dispositivo, pode variar entre navegadores e não substitui gravação nativa. A transcrição opcional é retorno bruto do navegador e não avalia pronúncia. Nenhum áudio gravado é persistido pela aplicação.
+        </div>
+
+        <!-- CARD PRINCIPAL UNIFICADO -->
+        <section class="listening-card" aria-label="Prática de escuta e shadowing">
+            <!-- TOPO DO CARD: ABAS DE MODO + PÍLULAS DE NÍVEL CEFR -->
+            <div class="listening-controls" aria-label="Configuração da prática" style="border:none; background:transparent; padding:0; box-shadow:none; margin-bottom:0;">
+                <!-- ABAS DE MODO (Estilo .btn-srs-tab) -->
+                <div class="srs-tabs-wrapper" style="display:flex; gap:0.6rem; justify-content:center; margin-bottom:1.2rem;">
+                    <button type="button" class="btn-srs-tab active" data-listening-mode="listen" id="listening-tab-listening" aria-pressed="true">🎧 Modo Escuta</button>
+                    <button type="button" class="btn-srs-tab" data-listening-mode="shadowing" id="listening-tab-shadowing" aria-pressed="false">🗣️ Modo Shadowing</button>
+                </div>
+
+                <!-- FILTROS POR PÍLULAS CEFR (Estilo .dict-filter-pill) -->
+                <div class="dict-filters-row listening-filters-pills" style="display:flex; gap:0.6rem; margin-bottom:1.2rem; flex-wrap:wrap; justify-content:center;">
+                    <button type="button" class="dict-filter-pill active" data-level="all">Todos (A1–B2)</button>
+                    <button type="button" class="dict-filter-pill" data-level="A1">🔵 A1</button>
+                    <button type="button" class="dict-filter-pill" data-level="A2">🟢 A2</button>
+                    <button type="button" class="dict-filter-pill" data-level="B1">🟡 B1</button>
+                    <button type="button" class="dict-filter-pill" data-level="B2">🔴 B2</button>
+                </div>
+
+                <!-- Select oculto para compatibilidade com scripts e contratos de teste -->
+                <label class="jp-filter-field" for="listening-level" style="display:none;" aria-hidden="true">
+                    <span>Nível</span>
+                    <select id="listening-level">
+                        <option value="all">Todos</option>
+                        <option>A1</option>
+                        <option>A2</option>
+                        <option>B1</option>
+                        <option>B2</option>
+                    </select>
+                </label>
+
+                <!-- CONTADOR DE TRECHOS -->
+                <div id="listening-count" aria-live="polite" style="font-size:0.95rem; color:var(--text-muted); font-weight:700; margin-bottom:0.5rem; text-align:center;"></div>
+
+                <!-- CONFIGURAÇÃO DO SHADOWING (Exibida dinamicamente) -->
+                <div id="shadowing-settings" class="listening-row" hidden style="display:flex; gap:1rem; justify-content:center; align-items:center; margin-top:0.8rem; margin-bottom:0.5rem; flex-wrap:wrap;">
+                    <label class="jp-filter-field" for="shadowing-delay">
+                        <span>Preparação</span>
+                        <select id="shadowing-delay">
+                            <option value="0">0 s</option>
+                            <option value="2" selected>2 s</option>
+                            <option value="4">4 s</option>
+                        </select>
+                    </label>
+                    <label class="jp-check-field" style="display:flex; align-items:center; gap:0.5rem; font-weight:600; cursor:pointer;">
+                        <input type="checkbox" id="shadowing-repeat"> Repetir junto mais uma vez
+                    </label>
+                </div>
+            </div>
+
+            <!-- DIVISOR SUAVE -->
+            <hr class="listening-divider" style="border:none; border-bottom:1px solid var(--border-color); margin:1.5rem 0;">
+
+            <!-- CORPO DO PLAYER -->
+            <div class="listening-meta" style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:0.9rem; color:var(--text-muted); font-weight:700;">
+                <span id="listening-origin"></span>
+                <span id="listening-position"></span>
+            </div>
+
+            <div class="listening-prompt">
+                <p id="listening-instruction" style="font-size:1.05rem; font-weight:600; margin-bottom:1rem; text-align:center; color:var(--text-muted);">Ouça antes de revelar o texto.</p>
+                <div id="listening-content" class="listening-hidden">
+                    <h2 id="listening-item-title" lang="ja" style="font-family:'Noto Sans JP', sans-serif; font-size:1.8rem; font-weight:700; text-align:center; margin-bottom:0.75rem; color:var(--text-main);"></h2>
+                    <p id="listening-romaji" style="font-size:1.1rem; color:var(--text-muted); text-align:center; margin-bottom:0.5rem;"></p>
+                    <p id="listening-translation" style="font-size:1.15rem; font-weight:600; color:var(--text-main); text-align:center; margin-bottom:1rem;"></p>
+                </div>
+            </div>
+
+            <div class="listening-actions" style="display:flex; gap:0.75rem; flex-wrap:wrap; justify-content:center; margin-top:1.2rem;">
+                <button type="button" id="listen-normal" class="jp-action-primary listening-btn-normal">▶ Ouvir normal</button>
+                <button type="button" id="listen-slow" class="jp-action-secondary listening-btn-slow">🐢 Ouvir devagar</button>
+                <button type="button" id="listen-reveal" class="jp-action-tertiary listening-btn-reveal">👁️ Revelar texto</button>
+                <button type="button" id="shadowing-start" class="jp-action-accent listening-btn-shadowing" hidden>🎙️ Iniciar shadowing</button>
+                <button type="button" id="listen-microphone" class="jp-action-tertiary listening-btn-mic" hidden>🎤 Transcrever minha repetição</button>
+            </div>
+
+            <div id="listening-status" class="listening-status" role="status" aria-live="polite" style="margin-top:1rem; text-align:center; font-weight:600; min-height:1.5rem; color:var(--primary-color);"></div>
+            <div id="listening-transcript" class="listening-transcript" hidden style="margin-top:1rem; padding:1rem; border-radius:12px; background:rgba(124, 58, 237, 0.08); border:1px solid rgba(124, 58, 237, 0.2); font-weight:600; text-align:center;"></div>
+            <div id="listening-self-review" class="listening-actions" hidden style="display:flex; gap:0.75rem; justify-content:center; margin-top:1rem;">
+                <button type="button" class="jp-action-secondary" data-self-review="repeat">Quero repetir</button>
+                <button type="button" class="jp-action-primary" data-self-review="followed">Consegui acompanhar</button>
+            </div>
+            <div id="listening-editorial" class="listening-review" hidden style="margin-top:1rem; font-size:0.85rem; color:var(--text-muted); text-align:center;">⚠️ Trecho pendente de revisão editorial humana. A presença nesta prática não constitui aprovação linguística.</div>
+
+            <div class="listening-source-wrap" style="text-align:center; margin-top:1.2rem;">
+                <a id="listening-source-link" class="listening-link jp-action-tertiary" href="curso.html" style="font-size:0.9rem; text-decoration:underline;">Abrir módulo de origem</a>
+            </div>
+
+            <div class="listening-footer" style="display:flex; justify-content:space-between; margin-top:1.5rem; border-top:1px solid var(--border-color); padding-top:1rem;">
+                <button type="button" id="listening-previous" class="jp-action-secondary">← Anterior</button>
+                <button type="button" id="listening-next" class="jp-action-primary">Próximo →</button>
+            </div>
         </section>
     </main>
-    <script src="../../database/ja-JP/data_escuta_index.js"></script><script type="module" src="../../firebase-init.js"></script>
-    <script src="../../js/core/config.js"></script><script src="../../js/core/constants.js"></script><script src="../../js/core/state.js"></script><script src="../../js/core/utils.js"></script><script src="../../js/core/theme.js"></script><script src="../../js/core/audio.js"></script><script src="../../js/core/toast.js"></script><script src="../../js/core/storage.js"></script><script src="../../js/core/study-session.js"></script><script src="../../js/core/dom.js"></script><script src="../../js/core/events.js"></script><script src="../../js/game/xp.js"></script><script src="../../js/game/ranking.js"></script><script src="../../js/japanese/listening.js"></script><script src="../../js/core/bootstrap.js"></script><script src="../../app.js"></script>
+
+    <script src="../../database/ja-JP/data_escuta_index.js"></script>
+    <script type="module" src="../../firebase-init.js"></script>
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/constants.js"></script>
+    <script src="../../js/core/state.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/theme.js"></script>
+    <script src="../../js/core/audio.js"></script>
+    <script src="../../js/core/toast.js"></script>
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/study-session.js"></script>
+    <script src="../../js/core/dom.js"></script>
+    <script src="../../js/core/events.js"></script>
+    <script src="../../js/game/xp.js"></script>
+    <script src="../../js/game/ranking.js"></script>
+    <script src="../../js/japanese/listening.js"></script>
+    <script src="../../js/core/bootstrap.js"></script>
+    <script src="../../app.js"></script>
 </body>
+
 </html>

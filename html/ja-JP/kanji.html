@@ -20,17 +20,31 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 
-<body data-mode="kanji">
+<body data-mode="kanji" data-lang="japanese" class="japanese-experience jp-study-page jp-kanji-page">
     <header>
         <a href="../../hub_japones.html" class="home-btn">⬅ Menu Inicial</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1 id="mainTitle">🏯 Curso de Kanjis (N5 a N1)</h1>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">🏯 Curso de Kanjis (N5 a N1)</h1>
         <p id="mainDesc">Ideogramas e Vocabulário de Proficiência do N5 ao N1.</p>
     </header>
 
     <div class="container">
+        <!-- BANNER HERO DE INTRODUÇÃO -->
+        <section class="jp-page-intro" aria-labelledby="kanji-hub-intro-title">
+            <div>
+                <span class="jp-page-kicker">Ideogramas japoneses</span>
+                <h2 id="kanji-hub-intro-title">Explore os ideogramas do N5 ao N1</h2>
+                <p>Trilhas pedagógicas organizadas por níveis de referência JLPT com significados, leituras On/Kun, vocabulário e prática.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Conjunto total</span>
+                <strong>2.215 registros</strong>
+            </div>
+        </section>
+
         <!-- BANNER DE REVISÃO SRS DE KANJI -->
         <div class="banner-srs" style="border-color: rgba(180, 83, 9, 0.4);" aria-busy="true">
             <div class="srs-banner-info">

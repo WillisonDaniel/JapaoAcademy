@@ -3897,7 +3897,7 @@ const CURSO_A2_DADOS = [
             {
                 "type": "vocab",
                 "kanji": "きんえん",
-                "romaji": "Kinen",
+                "romaji": "Kin'en",
                 "translation": "Proibido Fumar (Placa)",
                 "timeContext": "Vocabulário de sinalização."
             },
@@ -3948,7 +3948,7 @@ const CURSO_A2_DADOS = [
                 "question": "3. Qual é a palavra de sinalização para 'Proibido Fumar'?",
                 "options": [
                     {
-                        "label": "きんえん (Kinen)",
+                        "label": "きんえん (Kin'en)",
                         "isCorrect": true
                     },
                     {
@@ -4127,7 +4127,7 @@ const CURSO_A2_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'きんえん' (Kinen)?",
+                "question": "Qual é o significado correto da palavra 'きんえん' (Kin'en)?",
                 "options": [
                     "Proibido Fumar (Placa)",
                     "Proibido entrar",

@@ -20,51 +20,176 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=28f">
+    <link rel="stylesheet" href="japanese-experience.css?v=42">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <style>
+        .skill-grid .course-btn.jp-resource-card {
+            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s ease;
+        }
+        .skill-grid .course-btn.jp-resource-card:hover,
+        .skill-grid .course-btn.jp-resource-card:focus-within {
+            transform: translateY(-8px) scale(1.025);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18), 0 0 20px color-mix(in srgb, var(--jp-card-accent, #6366f1) 25%, transparent);
+            border-color: var(--jp-card-accent, #6366f1);
+        }
+    </style>
 </head>
 
-<body data-mode="russian" data-lang="russian" data-page="hub">
+<body data-mode="russian" data-lang="russian" data-page="hub" class="japanese-experience japanese-hub-page">
     <header>
         <a href="hub_idiomas.html" class="home-btn">⬅ Idiomas</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
         <h1 id="mainTitle">🪆 Russo</h1>
-        <p id="mainDesc">Sua jornada imersiva no Idioma Russo: do Alfabeto Cirílico aos níveis A1 a B2 com áudio nativo.
-        </p>
+        <p id="mainDesc">Sua jornada imersiva no Idioma Russo: do Alfabeto Cirílico aos níveis A1 a B2 com áudio nativo.</p>
     </header>
 
-    <div class="container">
-        <div id="main-menu">
+    <main class="skill-hub">
+        <!-- HERO SECTION -->
+        <section class="jp-hub-hero" aria-labelledby="jp-hub-hero-title">
+            <div>
+                <span class="jp-eyebrow">РУССКИЙ • Da escrita à conversação</span>
+                <h2 id="jp-hub-hero-title">Aprenda russo por habilidades</h2>
+                <p>Do Alfabeto Cirílico com treino no canvas ao nível avançado (A1–B2), domine os 6 casos gramaticais e treine reconhecimento no arcade.</p>
+                <div class="jp-hero-actions">
+                    <a class="jp-primary-action" href="html/ru-RU/russo_curso.html">Continuar curso <span aria-hidden="true">→</span></a>
+                    <a class="jp-secondary-action" href="meu-progresso.html">Ver meu progresso</a>
+                </div>
+            </div>
+            <aside class="jp-hero-summary" aria-label="Resumo da área de russo">
+                <div class="jp-summary-item"><span>Curso principal</span><strong>96 módulos</strong></div>
+                <div class="jp-summary-item"><span>Alfabeto</span><strong>33 letras com Canvas</strong></div>
+                <div class="jp-summary-item"><span>Dicionário</span><strong>728+ termos</strong></div>
+            </aside>
+        </section>
 
-            <!-- 1. CURSO PRINCIPAL DE RUSSO (A1 a B2) -->
-            <a href="html/ru-RU/russo_curso.html" class="course-btn russian">
-                <span>📚</span>
-                Curso de Russo (A1 a B2)
-                <p>Do nível básico ao avançado (A1 a B2) com gramática, frases e áudio nativo</p>
-            </a>
-
-            <!-- 2. ALFABETO CIRÍLICO -->
-            <a href="html/ru-RU/russo_alfabeto.html" class="course-btn cyrillic">
-                <span>🔤</span>
-                Alfabeto Cirílico
-                <p>Domine as 33 letras cirílicas com treino de escrita interativo canvas e áudio nativo</p>
-            </a>
-
-            <!-- 3. MINIGAME CIRÍLICO ARCADE -->
-            <a href="html/ru-RU/russo_minigame.html" class="course-btn russo-arcade">
-                <span>⚡</span>
-                Minigame Cirílico Arcade
-                <p>Treine a velocidade de reconhecimento do alfabeto e vocabulário no relógio</p>
-            </a>
-
-            <!-- 4. DICIONÁRIO CIRÍLICO & GLOSSÁRIO -->
-            <a href="html/ru-RU/russo_dicionario.html" class="course-btn russian">
-                <span>📖</span>
-                Dicionário & Glossário Cirílico
-                <p>Consulta rápida de vocabulário, termos essenciais, regras de pronúncia e áudios</p>
-            </a>
-
+        <!-- BANNER DE TRANSPARÊNCIA -->
+        <div class="skill-hub-note">
+            <div><strong>Transparência pedagógica:</strong> Todos os 96 módulos A1–B2 possuem áudio sintetizado em russo nativo (ru-RU), pílulas gramaticais com declinações reais, diálogos contextualizados e SRS integrado.</div>
         </div>
-    </div>
+
+        <!-- GRUPO 1: FUNDAMENTOS -->
+        <section class="skill-group" data-skill-group="foundations" aria-labelledby="skill-foundations-title">
+            <div class="jp-group-heading">
+                <div>
+                    <span class="jp-eyebrow">Comece por aqui</span>
+                    <h2 id="skill-foundations-title">Fundamentos</h2>
+                    <p>Curso principal e escrita no alfabeto cirílico.</p>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <!-- CURSO DE RUSSO A1-B2 -->
+                <a href="html/ru-RU/russo_curso.html" class="course-btn jp-resource-card jp-featured-card" data-accent="violet">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">Trilha principal</small>
+                            <span class="jp-card-icon">📚</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Curso de Russo</h3>
+                        <p>96 módulos A1–B2 com gramática, diálogos situacionais e áudio nativo.</p>
+                        <span class="jp-card-action">Abrir trilha <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+
+                <!-- ALFABETO CIRÍLICO -->
+                <a href="html/ru-RU/russo_alfabeto.html" class="course-btn jp-resource-card" data-accent="teal">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">33 letras com Canvas</small>
+                            <span class="jp-card-icon">🔤</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Alfabeto Cirílico</h3>
+                        <p>Domine as 33 letras cirílicas com treino de escrita no canvas e áudio nativo.</p>
+                        <span class="jp-card-action">Estudar alfabeto →</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- GRUPO 2: COMPREENSÃO & CONSULTA -->
+        <section class="skill-group" data-skill-group="comprehension" aria-labelledby="skill-comprehension-title">
+            <div class="jp-group-heading">
+                <div>
+                    <span class="jp-eyebrow">Entenda o idioma</span>
+                    <h2 id="skill-comprehension-title">Compreensão & Consulta</h2>
+                    <p>Vocabulário estruturado e regras dos 6 casos.</p>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <!-- DICIONÁRIO CIRÍLICO & GLOSSÁRIO -->
+                <a href="html/ru-RU/russo_dicionario.html" class="course-btn jp-resource-card" data-accent="gold">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">Consulta e 6 Casos</small>
+                            <span class="jp-card-icon">📖</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Dicionário & Glossário</h3>
+                        <p>Consulte vocabulário, regras dos 6 casos gramaticais e áudios nativos.</p>
+                        <span class="jp-card-action">Pesquisar dicionário →</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- GRUPO 3: PRODUÇÃO E PRÁTICA -->
+        <section class="skill-group" data-skill-group="production" aria-labelledby="skill-production-title">
+            <div class="jp-group-heading">
+                <div>
+                    <span class="jp-eyebrow">Use o que aprendeu</span>
+                    <h2 id="skill-production-title">Produção e Prática</h2>
+                    <p>Treino de velocidade de reconhecimento no relógio.</p>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <!-- MINIGAME CIRÍLICO ARCADE -->
+                <a href="html/ru-RU/russo_minigame.html" class="course-btn jp-resource-card" data-accent="violet">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">Pegadinha 3s & Arcade</small>
+                            <span class="jp-card-icon">⚡</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Minigame Cirílico Arcade</h3>
+                        <p>Treine a velocidade de leitura e reconhecimento do cirílico no relógio.</p>
+                        <span class="jp-card-action">Jogar agora →</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- GRUPO 4: ACOMPANHAMENTO -->
+        <section class="skill-group" data-skill-group="tracking" aria-labelledby="skill-tracking-title">
+            <div class="jp-group-heading">
+                <div>
+                    <span class="jp-eyebrow">Acompanhe sua jornada</span>
+                    <h2 id="skill-tracking-title">Acompanhamento</h2>
+                    <p>Métricas e revisões reais do SRS.</p>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <!-- MEU PROGRESSO -->
+                <a href="meu-progresso.html" class="course-btn jp-resource-card" data-accent="blue">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">Dados reais</small>
+                            <span class="jp-card-icon">📊</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Meu Progresso</h3>
+                        <p>Acompanhe estatísticas, histórico de sessões e revisões do SRS.</p>
+                        <span class="jp-card-action">Abrir painel →</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <script type="module" src="firebase-init.js"></script>
     <script src="js/core/config.js"></script>

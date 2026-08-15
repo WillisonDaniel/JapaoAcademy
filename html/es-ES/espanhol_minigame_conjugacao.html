@@ -18,6 +18,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <style>
@@ -429,14 +430,28 @@
     </style>
 </head>
 
-<body data-mode="spanish" data-lang="spanish">
+<body data-mode="spanish" data-lang="spanish" class="japanese-experience jp-study-page">
     <header>
         <a href="../../hub_espanhol.html" class="home-btn">⬅ Menu do Espanhol</a>
-        <h1>⚡ Arcade de Conjugação Rápida</h1>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">⚡ Arcade de Conjugação Rápida</h1>
+        <p id="mainDesc">Treine a velocidade de conjugação verbal no relógio contra o tempo.</p>
     </header>
 
     <main class="arcade-container">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro es-page-intro" aria-labelledby="minigame-intro-title" style="background: linear-gradient(120deg, rgba(217, 119, 6, 0.92), rgba(124, 45, 18, 0.96)), linear-gradient(135deg, #ea580c, #9a3412) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(217, 119, 6, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Treino rápido no relógio</span>
+                <h2 id="minigame-intro-title">Arcade de Conjugação: Velocidade e reflexo</h2>
+                <p>Treine a conjugação verbal em contexto contra o tempo, mantenha sua sequência de combo e suba no ranking de XP.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Arcade oficial</span>
+                <strong>Conjugação Rápida</strong>
+            </div>
+        </section>
+
         <!-- TELA 1: SELEÇÃO DE MODOS -->
         <div id="arcade-mode-selection" class="arcade-card-conj">
             <div class="arcade-title-box">

@@ -40,4 +40,7 @@ window.jaFirebase = {
 
 console.log("🔥 Firebase inicializado com sucesso no Idiomas Academy!");
 
-
+// Dispara imediatamente o observador de autenticação se os scripts de core já carregaram
+if (typeof inicializarAuthObserverFirebase === 'function') {
+    inicializarAuthObserverFirebase();
+}

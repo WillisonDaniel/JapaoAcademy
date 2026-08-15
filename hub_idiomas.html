@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seleção de Idiomas - Idiomas Academy</title>
+    <title>Seleção de Idiomas | Idiomas Academy</title>
 
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
@@ -20,83 +20,134 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=28f">
+    <link rel="stylesheet" href="japanese-experience.css?v=42">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
-        /* Botão do Inglês perfeitamente padronizado com as dimensões da plataforma */
-        .course-btn.english {
-            background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .skill-grid .course-btn.jp-resource-card {
+            transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.28s ease;
         }
-
-        .course-btn.english:hover {
-            border-color: #60a5fa;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(29, 78, 216, 0.4), 0 0 15px rgba(96, 165, 250, 0.3);
-        }
-
-        .course-btn.italian {
-            background: linear-gradient(135deg, #008c45, #ce2b37);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .course-btn.italian:hover {
-            border-color: #f8fafc;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(0, 140, 69, 0.35), 0 0 15px rgba(206, 43, 55, 0.25);
+        .skill-grid .course-btn.jp-resource-card:hover,
+        .skill-grid .course-btn.jp-resource-card:focus-within {
+            transform: translateY(-8px) scale(1.025);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18), 0 0 20px color-mix(in srgb, var(--jp-card-accent, #6366f1) 25%, transparent);
+            border-color: var(--jp-card-accent, #6366f1);
         }
     </style>
 </head>
 
-<body data-mode="curso" data-page="hub">
+<body data-mode="curso" data-page="hub" class="japanese-experience japanese-hub-page">
     <header>
-        <a href="index.html" class="home-btn">📊 Meu Progresso</a>
+        <a href="meu-progresso.html" class="home-btn">📊 Meu Progresso</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1 id="mainTitle">🌐 Seleção de Idiomas</h1>
-        <p id="mainDesc">Escolha o idioma que deseja aprender e inicie sua jornada guiada de estudos.</p>
+        <h1 id="mainTitle">🌐 Idiomas Academy</h1>
+        <p id="mainDesc">Escolha o idioma que deseja dominar e inicie sua jornada guiada de estudos.</p>
     </header>
 
-    <div class="container">
-        <div id="main-menu">
+    <main class="skill-hub">
+        <!-- HERO SECTION -->
+        <section class="jp-hub-hero" aria-labelledby="jp-hub-hero-title">
+            <div>
+                <span class="jp-eyebrow">🌐 IDIOMAS ACADEMY • Sua plataforma multilíngue</span>
+                <h2 id="jp-hub-hero-title">Qual idioma você vai dominar hoje?</h2>
+                <p>Explore os 5 idiomas disponíveis com cursos completos A1–B2, dicionários, alfabetos, minigames e ferramentas de prática imersiva.</p>
+                <div class="jp-hero-actions">
+                    <a class="jp-primary-action" href="meu-progresso.html">Ver meu progresso <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+            <aside class="jp-hero-summary" aria-label="Resumo da plataforma">
+                <div class="jp-summary-item"><span>Idiomas canônicos</span><strong>5 disponíveis</strong></div>
+                <div class="jp-summary-item"><span>Módulos de cursos</span><strong>521 módulos</strong></div>
+                <div class="jp-summary-item"><span>Plataforma</span><strong>100% gratuita</strong></div>
+            </aside>
+        </section>
 
-            <!-- OPÇÃO 1: HUB DO JAPONÊS -->
-            <a href="hub_japones.html" class="course-btn japa">
-                <span>🎌</span>
-                Japonês
-                <p>Curso Completo, Hiragana, Katakana, Kanjis e Minigame</p>
-            </a>
+        <!-- GRID DE CARDS DOS 5 IDIOMAS CANÔNICOS -->
+        <section class="skill-group" data-skill-group="languages" aria-labelledby="skill-languages-title">
+            <div class="jp-group-heading">
+                <div>
+                    <span class="jp-eyebrow">Escolha seu próximo destino</span>
+                    <h2 id="skill-languages-title">Idiomas disponíveis</h2>
+                    <p>Trilhas completas do iniciante ao avançado com recursos práticos e imersivos.</p>
+                </div>
+            </div>
+            <div class="skill-grid">
+                <!-- JAPONÊS -->
+                <a href="hub_japones.html" class="course-btn jp-resource-card" data-accent="red">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">105 módulos A1–B2</small>
+                            <span class="jp-card-icon">🎌</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Japonês</h3>
+                        <p>Curso Completo A1–B2, Hiragana, Katakana, Kanji N5–N1 e Kana Master Pro.</p>
+                        <span class="jp-card-action">Acessar hub de Japonês <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-            <!-- OPÇÃO 2: HUB DO INGLÊS -->
-            <a href="hub_ingles.html" class="course-btn english">
-                <span>🗽</span>
-                Inglês
-                <p>Do Nível Básico ao Avançado (A1 a B2), Phrasal Verbs e Pronúncia</p>
-            </a>
+                <!-- INGLÊS -->
+                <a href="hub_ingles.html" class="course-btn jp-resource-card" data-accent="blue">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">108 módulos A1–B2</small>
+                            <span class="jp-card-icon">🗽</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Inglês</h3>
+                        <p>Curso Completo A1–B2, Phrasal Verbs, Guia de Pronúncia IPA e Word Master Pro.</p>
+                        <span class="jp-card-action">Acessar hub de Inglês <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-            <!-- OPÇÃO 3: HUB DO ESPANHOL -->
-            <a href="hub_espanhol.html" class="course-btn spanish">
-                <span>💃</span>
-                Espanhol
-                <p>Do Nível Básico ao Avançado (A1 a B2), Falsos Amigos, Conjugação e Regionalismos</p>
-            </a>
+                <!-- ESPANHOL -->
+                <a href="hub_espanhol.html" class="course-btn jp-resource-card" data-accent="orange">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">108 módulos A1–B2</small>
+                            <span class="jp-card-icon">💃</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Espanhol</h3>
+                        <p>Curso Completo A1–B2, Falsos Amigos, Fonética, Regionalismos e Arcade de Conjugação.</p>
+                        <span class="jp-card-action">Acessar hub de Espanhol <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-            <!-- OPÇÃO 4: HUB DO RUSSO -->
-            <a href="hub_russo.html" class="course-btn russian">
-                <span>🪆</span>
-                Russo
-                <p>Do Nível Básico ao Avançado (A1 a B2), Alfabeto Cirílico, Fonética e Arcade</p>
-            </a>
+                <!-- RUSSO -->
+                <a href="hub_russo.html" class="course-btn jp-resource-card" data-accent="violet">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">96 módulos A1–B2</small>
+                            <span class="jp-card-icon">🪆</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Russo</h3>
+                        <p>Curso Completo A1–B2, Alfabeto Cirílico 33 letras com Canvas, 6 Casos e Minigame 3s.</p>
+                        <span class="jp-card-action">Acessar hub de Russo <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-            <!-- OPÇÃO 5: HUB DO ITALIANO -->
-            <a href="hub_italiano.html" class="course-btn italian">
-                <span>🍕</span>
-                Italiano
-                <p>Cursos A1 e A2 com diálogos, áudio, SRS e dicionário essencial</p>
-            </a>
-
-        </div>
-    </div>
+                <!-- ITALIANO -->
+                <a href="hub_italiano.html" class="course-btn jp-resource-card" data-accent="teal">
+                    <span class="jp-card-top">
+                        <span>
+                            <small class="jp-card-eyebrow">108 módulos A1–B2</small>
+                            <span class="jp-card-icon">🍕</span>
+                        </span>
+                    </span>
+                    <span class="jp-card-copy">
+                        <h3>Italiano</h3>
+                        <p>Curso Completo A1–B2, Guia de Pronúncia, Minigame de Conjugação e Dicionário 358+.</p>
+                        <span class="jp-card-action">Acessar hub de Italiano <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <script type="module" src="firebase-init.js"></script>
     <script src="js/core/config.js"></script>

@@ -1,6 +1,4 @@
-// ======================================
-// MÓDULO CORE - MANIPULAÇÃO DE DOM E MODAIS
-// ======================================
+
 
 const uxModalTriggers = new WeakMap();
 
@@ -108,7 +106,7 @@ function garantirElementosCabecalhoEModal() {
             group.className = 'header-actions-group';
             header.appendChild(group);
         }
-        // 0. Widget de XP e Nível do Perfil
+
         let elXp = document.getElementById('xp-profile-widget-container');
         if (!elXp) {
             elXp = document.createElement('div');
@@ -128,7 +126,7 @@ function garantirElementosCabecalhoEModal() {
         if (typeof atualizarIndicadorSincronizacao === 'function') {
             atualizarIndicadorSincronizacao((typeof window !== 'undefined' && window.uxSyncState) ? window.uxSyncState : 'local');
         }
-        // 1. Badge da Ofensiva
+
         let elStreak = document.getElementById('streak-badge-header');
         if (!elStreak) {
             elStreak = document.createElement('button');
@@ -139,7 +137,7 @@ function garantirElementosCabecalhoEModal() {
             elStreak.onclick = typeof abrirModalOfensiva === 'function' ? abrirModalOfensiva : null;
             group.appendChild(elStreak);
         }
-        // 2. Botão de Conquistas
+
         let elConq = document.getElementById('btn-conquistas-hdr');
         if (!elConq) {
             elConq = document.createElement('button');
@@ -150,7 +148,7 @@ function garantirElementosCabecalhoEModal() {
             elConq.onclick = typeof abrirModalConquistas === 'function' ? abrirModalConquistas : null;
             group.appendChild(elConq);
         }
-        // 3. Botão de Dicionário & Glossário (Redireciona para o Dicionário de Japonês ou Inglês)
+
         let btnDict = document.getElementById('btn-dicionario-hdr');
         if (!btnDict) {
             btnDict = document.createElement('button');
@@ -162,7 +160,6 @@ function garantirElementosCabecalhoEModal() {
         }
         btnDict.onclick = typeof redirecionarParaDicionario === 'function' ? redirecionarParaDicionario : null;
 
-        // 4. Botão de Opções / Configurações (em todo o site)
         let btnProgress = document.getElementById('btn-meu-progresso-hdr');
         if (!btnProgress) {
             btnProgress = document.createElement('button');
@@ -186,7 +183,7 @@ function garantirElementosCabecalhoEModal() {
         } else if (btnConfig.parentNode !== group) {
             group.appendChild(btnConfig);
         }
-        // 5. Botão de Autenticação / Perfil Firebase
+
         let btnAuth = document.getElementById('btn-auth-hdr');
         if (!btnAuth) {
             btnAuth = document.createElement('button');
@@ -206,7 +203,18 @@ function garantirElementosCabecalhoEModal() {
             group.appendChild(btnLogout);
         }
         const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
-        const user = fb && fb.auth ? fb.auth.currentUser : null;
+        let user = fb && fb.auth ? fb.auth.currentUser : null;
+        if (!user) {
+            const uidLocal = localStorage.getItem('ja_uid_usuario');
+            const nomeLocal = localStorage.getItem('ja_nome_usuario');
+            if (uidLocal || nomeLocal) {
+                user = {
+                    uid: uidLocal || 'local_user',
+                    displayName: nomeLocal || 'Estudante',
+                    email: localStorage.getItem('ja_email_usuario') || ''
+                };
+            }
+        }
         if (user) {
             const displayName = user.displayName || (user.email ? user.email.split('@')[0] : 'Estudante');
             btnAuth.title = `Conectado como ${user.email || displayName}`;
@@ -214,14 +222,16 @@ function garantirElementosCabecalhoEModal() {
             btnAuth.onclick = typeof irParaMeuProgresso === 'function' ? irParaMeuProgresso : null;
             btnProgress.hidden = false;
             btnLogout.hidden = false;
+            document.body.classList.add('dashboard-authenticated');
         } else {
             btnAuth.title = 'Entrar ou Criar Conta';
             btnAuth.textContent = '🔐 Entrar / Cadastrar';
             btnAuth.onclick = () => { if (typeof abrirModalAuth === 'function') abrirModalAuth('login', btnAuth); };
             btnProgress.hidden = true;
             btnLogout.hidden = true;
+            document.body.classList.remove('dashboard-authenticated');
         }
-        // 6. Botão de Tema Escuro/Claro (em todo o site)
+
         let btnTema = header.querySelector('.theme-btn');
         if (!btnTema) {
             btnTema = document.createElement('button');
@@ -233,7 +243,7 @@ function garantirElementosCabecalhoEModal() {
         } else if (btnTema.parentNode !== group) {
             group.appendChild(btnTema);
         }
-        // Reordena para ficar padronizado em todas as paginas: [XP Widget] [Streak] [Conquistas] [Dicionário] [Opções] [Auth] [Tema]
+
         if (elXp) group.appendChild(elXp);
         if (syncStatus) group.appendChild(syncStatus);
         if (elStreak) group.appendChild(elStreak);
@@ -621,7 +631,6 @@ function fecharOpcoesCurso() {
     fecharModalAcessivel(modalOp);
 }
 
-
 function alternarDesbloqueio(ativo) {
     window.modoDesbloqueado = !!ativo;
     localStorage.setItem('ja_modo_desbloqueado', window.modoDesbloqueado ? 'true' : 'false');
@@ -795,7 +804,6 @@ function redirecionarParaDicionario() {
     }
 }
 
-// Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
     window.renderizarHeatmapEstudo = renderizarHeatmapEstudo;
     window.prepararModalAcessivel = prepararModalAcessivel;

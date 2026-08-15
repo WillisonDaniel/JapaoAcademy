@@ -18,16 +18,30 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
 </head>
 
-<body data-mode="pronuncia" data-lang="english">
+<body data-mode="pronuncia" data-lang="english" class="japanese-experience jp-study-page">
     <header>
-        <a href="../../hub_ingles.html" class="home-btn">⬅ Inglês</a>
-        <h1 id="mainTitle">📖 Dicionário & Glossário de Inglês</h1>
-        <p id="mainDesc">Consulte o alfabeto, vocabulário, phrasal verbs, regras gramaticais e treine sua pronúncia.</p>
+        <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
+        <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">📖 Dicionário & Glossário de Inglês</h1>
+        <p id="mainDesc">Consulte o alfabeto, vocabulário, phrasal verbs, regras gramaticais e áudio nativo.</p>
     </header>
 
     <div class="container" style="max-width: 900px; margin: 0 auto; padding: 20px;">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro en-page-intro" aria-labelledby="dict-intro-title" style="background: linear-gradient(120deg, rgba(29, 78, 216, 0.92), rgba(30, 58, 138, 0.96)), linear-gradient(135deg, #1d4ed8, #1e3a8a) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(29, 78, 216, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Consulta universal</span>
+                <h2 id="dict-intro-title">Pesquise vocabulário, phrasal verbs e gramática</h2>
+                <p>Busca instantânea universal com áudio nativo, alfabeto sonoro A-Z, termos por nível CEFR e lista de favoritos.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Banco de dados</span>
+                <strong>647+ termos</strong>
+            </div>
+        </section>
         
         <!-- Barra de Pesquisa -->
         <div class="dict-search-wrapper" style="margin-bottom: 1.2rem;">

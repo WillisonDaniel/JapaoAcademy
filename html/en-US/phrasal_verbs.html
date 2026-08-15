@@ -20,6 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <style>
         /* Estilos dedicados ao módulo de Phrasal Verbs & Expressões */
@@ -80,16 +81,28 @@
     </style>
 </head>
 
-<body data-mode="phrasal_verbs" data-lang="english">
+<body data-mode="phrasal_verbs" data-lang="english" class="japanese-experience jp-study-page">
     <header>
         <a href="../../hub_ingles.html" class="home-btn">⬅ Menu do Inglês</a>
         <button class="theme-btn" onclick="toggleTheme()" title="Alternar Tema">🌙</button>
-        <h1>⚡ Phrasal Verbs & Expressões</h1>
-        <p>Domine os verbos compostos, gírias e expressões idiomáticas mais usadas pelos nativos.</p>
-        <button id="btn-config-curso" onclick="abrirOpcoesCurso()">⚙️ Opções</button>
+        <h1 id="mainTitle" style="font-family: 'Fredoka', cursive, sans-serif !important; font-weight: 700;">⚡ Phrasal Verbs & Expressões</h1>
+        <p id="mainDesc">Domine os verbos compostos e expressões idiomáticas do dia a dia.</p>
     </header>
 
     <div class="container" id="study-area">
+        <!-- BANNER HERO DE APRESENTAÇÃO -->
+        <section class="jp-page-intro en-page-intro" aria-labelledby="phrasal-intro-title" style="background: linear-gradient(120deg, rgba(29, 78, 216, 0.92), rgba(30, 58, 138, 0.96)), linear-gradient(135deg, #1d4ed8, #1e3a8a) !important; border: 1px solid rgba(255, 255, 255, 0.16) !important; box-shadow: 0 16px 36px rgba(29, 78, 216, 0.25) !important;">
+            <div>
+                <span class="jp-page-kicker">Expressões & Verbos Compostos</span>
+                <h2 id="phrasal-intro-title">Domine as partículas e o inglês falado real</h2>
+                <p>Aprenda o significado literal e figurado dos verbos compostos mais comuns com exemplos contextualizados e áudio nativo.</p>
+            </div>
+            <div class="jp-page-stat">
+                <span>Catálogo essencial</span>
+                <strong>Phrasal Verbs</strong>
+            </div>
+        </section>
+
         <!-- BANNER DE REVISÃO SRS DE PHRASAL VERBS -->
         <div class="banner-srs" aria-busy="true"
             style="background: linear-gradient(135deg, #028090, #155e75); border-color: rgba(6, 182, 212, 0.3);">

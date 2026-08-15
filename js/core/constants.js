@@ -1,6 +1,4 @@
-// ======================================
-// MÓDULO CORE - CONSTANTES E DICIONÁRIOS GLOBAIS
-// ======================================
+
 
 const LANGUAGE_CONFIG = Object.freeze({
     'ja-JP': Object.freeze({ code: 'ja-JP', id: 'japanese', prefix: 'ja', label: 'Japonês', speechCode: 'ja-JP' }),
@@ -83,73 +81,63 @@ const CAT_NAMES = {
 };
 
 const KANAI_SINGLE_SYLLABLE_MAP = {
-    // VOGAIS BÁSICAS
+
     'a': ['あ', 'ア', '亜', '阿', 'ah', 'uh', 'a'],
     'i': ['い', 'イ', '胃', '井', '意', '伊', 'ee', 'i'],
     'u': ['う', 'ウ', '宇', '鵜', '卯', 'oo', 'u'],
     'e': ['え', 'エ', '絵', '江', '柄', 'eh', 'e'],
     'o': ['お', 'オ', '尾', '男', 'oh', 'o'],
 
-    // LINHA K
     'ka': ['か', 'カ', '加', '可', '科', '蚊', '課', 'ca', 'ka'],
     'ki': ['き', 'キ', '木', '気', '黄', '樹', 'kee', 'key', 'ki'],
     'ku': ['く', 'ク', '九', '区', '苦', '9', 'coo', 'ku'],
     'ke': ['け', 'ケ', '毛', '卦', 'kay', 'ke'],
     'ko': ['こ', 'コ', '子', '小', '古', '個', 'co', 'ko'],
 
-    // LINHA S
     'sa': ['さ', 'サ', '差', '査', '砂', '佐', 'sa'],
     'shi': ['し', 'シ', '四', '死', '市', '氏', '詩', '4', '7', 'si', 'shi', 'shee'],
     'su': ['す', 'ス', '酢', '巣', 'soo', 'su'],
     'se': ['せ', 'セ', '背', '世', '瀬', 'say', 'se'],
     'so': ['そ', 'ソ', '祖', '粗', '诉', 'saw', 'so'],
 
-    // LINHA T
     'ta': ['た', 'タ', '田', '他', '多', 'ta'],
     'chi': ['ち', 'チ', '千', '知', '血', '地', 'ti', 'chi', 'chee'],
     'tsu': ['つ', 'ツ', '津', '都', 'tzu', 'tsu', 'two'],
     'te': ['て', 'テ', '手', 'tay', 'te'],
     'to': ['と', 'ト', '戸', '都', '途', 'toe', 'to'],
 
-    // LINHA N
     'na': ['な', 'ナ', '名', '菜', 'na'],
     'ni': ['に', 'ニ', '二', '似', '荷', '2', 'ni', 'nee', 'nii', 'knee'],
     'nu': ['ぬ', 'ヌ', '沼', 'nu', 'new'],
     'ne': ['ね', 'ネ', '根', '音', 'nee', 'nay', 'ne'],
     'no': ['の', 'ノ', '野', 'no'],
 
-    // LINHA H
     'ha': ['は', 'ハ', '葉', '歯', 'wa', 'ha'],
     'hi': ['ひ', 'ヒ', '火', '日', '非', 'hee', 'hi'],
     'fu': ['ふ', 'フ', '府', '負', 'hu', 'foo', 'fu', 'who'],
     'he': ['へ', 'ヘ', '辺', '屁', 'e', 'hay', 'he'],
     'ho': ['ほ', 'ホ', '歩', '穂', 'ho'],
 
-    // LINHA M
     'ma': ['ま', 'マ', '魔', '真', 'ma'],
     'mi': ['み', 'ミ', '身', '実', '未', '見', 'mee', 'mi'],
     'mu': ['む', 'ム', '無', 'moo', 'mu'],
     'me': ['め', 'メ', '目', '芽', 'may', 'me'],
     'mo': ['も', 'モ', '藻', '模', '喪', 'mo'],
 
-    // LINHA Y
     'ya': ['や', 'ヤ', '矢', '屋', 'ya'],
     'yu': ['ゆ', 'ユ', '湯', '由', 'you', 'yu'],
     'yo': ['よ', 'ヨ', '夜', '世', 'yo'],
 
-    // LINHA R
     'ra': ['ら', 'ラ', '等', '羅', 'ra'],
     'ri': ['り', 'リ', '理', '利', 'ree', 'ri'],
     'ru': ['る', 'ル', '留', '類', 'roo', 'ru'],
     're': ['れ', 'レ', '例', '零', 'ray', 're'],
     'ro': ['ろ', 'ロ', '六', '6', 'row', 'ro'],
 
-    // LINHA W / N
     'wa': ['わ', 'ワ', '輪', '和', 'wa'],
     'wo': ['を', 'ヲ', '尾', 'o', 'wo'],
     'n': ['ん', 'ン', 'm', 'nn', 'ng', 'un', 'um', 'hum', 'uh', 'en', 'an', 'on', 'n'],
 
-    // DAKUON / HANDAKUON (G, Z, D, B, P)
     'ga': ['が', 'ガ', '画', 'ga'],
     'gi': ['ぎ', 'ギ', '技', 'gi', 'ghee'],
     'gu': ['ぐ', 'グ', '具', '愚', '偶', '五', '5', 'gu', 'go', 'goo'],
@@ -178,7 +166,6 @@ const KANAI_SINGLE_SYLLABLE_MAP = {
     'pe': ['ぺ', 'ペ', 'pay', 'pe'],
     'po': ['ぽ', 'ポ', 'poh', 'po'],
 
-    // NÚMEROS E OUTROS HOMÓFONOS
     'hachi': ['はち', 'ハチ', '八', '8', 'hachi'],
     'yon': ['よん', 'ヨン', '四', '4', 'yon'],
     'san': ['さん', 'サン', '三', '3', 'san'],
@@ -379,7 +366,7 @@ function getCourseData(mode) {
     }
     return null;
 }
-// Exposição explícita no objeto window
+
 if (typeof window !== 'undefined') {
     window.LANGUAGE_CONFIG = LANGUAGE_CONFIG;
     window.normalizeLanguage = normalizeLanguage;
