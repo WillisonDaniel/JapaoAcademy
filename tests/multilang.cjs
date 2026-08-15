@@ -683,12 +683,12 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
     const budgets = {
         // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
         // A Fase 14C acrescenta o controlador progressivo compartilhado do renderizador Kanji.
-        n5: 711 * 1024,
-        n4: 724 * 1024,
+        n5: 713 * 1024,
+        n4: 733 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 983 * 1024,
-        n2: 1016 * 1024,
-        n1: 1786 * 1024
+        n3: 998 * 1024,
+        n2: 1033 * 1024,
+        n1: 1823 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {

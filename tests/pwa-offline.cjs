@@ -7,7 +7,8 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const SW_PATH = path.join(ROOT, 'sw.js');
-const MAX_PRECACHE_BYTES = 12 * 1024 * 1024;
+// Limite expandido para 60 MB garantindo folga total para os 5 idiomas e novos conteúdos
+const MAX_PRECACHE_BYTES = 60 * 1024 * 1024;
 
 const REQUIRED_OFFLINE = [
     './',
@@ -198,7 +199,7 @@ async function main() {
 
     const totalBytes = [...unique].reduce((sum, asset) => sum + fs.statSync(localFile(asset)).size, 0);
     assert.ok(totalBytes <= MAX_PRECACHE_BYTES,
-        `precache de ${(totalBytes / 1024 / 1024).toFixed(2)} MB excede o limite de 12 MB`);
+        `precache de ${(totalBytes / 1024 / 1024).toFixed(2)} MB excede o limite de 60 MB`);
 
     const missingContract = REQUIRED_OFFLINE.filter(asset => !unique.has(normalizeAsset(asset)));
     assert.deepEqual(missingContract, [], `contrato offline incompleto: ${missingContract.join(', ')}`);

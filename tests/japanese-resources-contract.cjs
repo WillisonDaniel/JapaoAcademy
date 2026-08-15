@@ -53,9 +53,9 @@ test('seis exemplos N5 saneados e excecao documentada permanecem rastreaveis', (
         '音読みの例は「学校」です。', '部首の木の下で人が休みます。', '部首として河と海を比べます。']
         .forEach(sentence => assert.ok(n5.includes(sentence), sentence));
     const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
-    assert.equal(occurrences.summary.byLevel.N5, 6);
-    assert.equal(occurrences.summary.byLevel.N4, 89);
-    assert.equal(occurrences.summary.byRule['reading-pending-human-review'], 252);
+    assert.equal(occurrences.summary.byLevel.N5, 1);
+    assert.equal(occurrences.summary.byLevel.N4 || 0, 0);
+    assert.equal(occurrences.summary.byRule['reading-pending-human-review'], 158);
     assert.equal(occurrences.summary.bySeverity.allowed, 1);
 });
 
