@@ -1,26 +1,14 @@
-// Medicao central de sessoes de estudo (Etapa 29 - Fase 1).
-// Mantem apenas um controlador ativo e persiste somente tempo com interacao real.
-
 (function inicializarModuloSessoesEstudo(global) {
     'use strict';
 
     const INACTIVITY_MS = 2 * 60 * 1000;
     const MIN_ACTIVE_SECONDS = 15;
     const DRAFT_PREFIX = 'ja_study_session_draft_';
-    const VALID_ACTIVITY_TYPES = new Set([
-        'course', 'quiz', 'srs', 'kanji', 'kana', 'dictionary',
-        'pronunciation', 'phrasal-verbs', 'minigame'
-    ]);
+    const VALID_ACTIVITY_TYPES = new Set(['course', 'quiz', 'srs', 'kanji', 'kana', 'dictionary', 'pronunciation', 'phrasal-verbs', 'minigame']);
 
     function normalizarIdiomaSessao(valor) {
         if (typeof global.normalizeLanguage === 'function') return global.normalizeLanguage(valor);
-        const aliases = {
-            'ja': 'ja-JP', 'ja-jp': 'ja-JP', 'japanese': 'ja-JP', 'japones': 'ja-JP',
-            'en': 'en-US', 'en-us': 'en-US', 'english': 'en-US', 'ingles': 'en-US',
-            'es': 'es-ES', 'es-es': 'es-ES', 'spanish': 'es-ES', 'espanhol': 'es-ES',
-            'ru': 'ru-RU', 'ru-ru': 'ru-RU', 'russian': 'ru-RU', 'russo': 'ru-RU',
-            'it': 'it-IT', 'it-it': 'it-IT', 'italian': 'it-IT', 'italiano': 'it-IT'
-        };
+        const aliases = {'ja':'ja-JP','ja-jp':'ja-JP','japanese':'ja-JP','japones':'ja-JP','en':'en-US','en-us':'en-US','english':'en-US','ingles':'en-US','es':'es-ES','es-es':'es-ES','spanish':'es-ES','espanhol':'es-ES','ru':'ru-RU','ru-ru':'ru-RU','russian':'ru-RU','russo':'ru-RU','it':'it-IT','it-it':'it-IT','italian':'it-IT','italiano':'it-IT'};
         const chave = String(valor || '').trim().toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/_/g, '-');
         return aliases[chave] || null;
@@ -48,10 +36,7 @@
 
     function dataLocal(data) {
         if (typeof global.obterDataLocalDashboard === 'function') return global.obterDataLocalDashboard(data);
-        const ano = data.getFullYear();
-        const mes = String(data.getMonth() + 1).padStart(2, '0');
-        const dia = String(data.getDate()).padStart(2, '0');
-        return `${ano}-${mes}-${dia}`;
+        return `${data.getFullYear()}-${String(data.getMonth() + 1).padStart(2, '0')}-${String(data.getDate()).padStart(2, '0')}`;
     }
 
     function criarControladorSessaoEstudo(opcoes = {}) {

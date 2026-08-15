@@ -121,6 +121,10 @@ function garantirElementosCabecalhoEModal() {
             syncStatus.setAttribute('role', 'status');
             syncStatus.setAttribute('aria-live', 'polite');
             syncStatus.setAttribute('aria-atomic', 'true');
+            syncStatus.style.cursor = 'pointer';
+            syncStatus.onclick = () => {
+                if (typeof salvarSilenciosamenteNaNuvem === 'function') salvarSilenciosamenteNaNuvem();
+            };
             group.appendChild(syncStatus);
         }
         if (typeof atualizarIndicadorSincronizacao === 'function') {
