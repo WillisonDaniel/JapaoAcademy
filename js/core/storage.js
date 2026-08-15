@@ -824,6 +824,9 @@ function aplicarDadosDoBackup(dadosNuvem, uid) {
     };
 }
 
+let salvamentoNuvemAtivo = null;
+let salvamentoNuvemPendente = false;
+
 async function salvarSilenciosamenteNaNuvem() {
     const fb = typeof window !== 'undefined' ? window.jaFirebase : null;
     const user = fb && fb.auth ? fb.auth.currentUser : null;
@@ -835,18 +838,39 @@ async function salvarSilenciosamenteNaNuvem() {
         if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('local');
         return false;
     }
-    try {
-        if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('syncing');
-        const backupObj = criarBackupNuvem();
-        const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
-        await fb.setDoc(docRef, backupObj, { merge: true });
-        if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('synced');
-        return true;
-    } catch (e) {
-        if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('error');
-        console.warn("⚠️ Erro ao preparar backup silencioso para o Firestore:", e);
-        return false;
+
+    if (salvamentoNuvemAtivo) {
+        salvamentoNuvemPendente = true;
+        return salvamentoNuvemAtivo;
     }
+
+    const executarSalvamento = async () => {
+        try {
+            if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('syncing');
+            const backupObj = JSON.parse(JSON.stringify(criarBackupNuvem()));
+            const docRef = fb.doc(fb.db, "users", user.uid, "progresso", "dados");
+            await fb.setDoc(docRef, backupObj, { merge: true });
+            if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('synced');
+            return true;
+        } catch (e) {
+            console.warn("⚠️ Erro ao salvar backup no Firestore:", e);
+            if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+                if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('offline');
+            } else {
+                if (typeof atualizarIndicadorSincronizacao === 'function') atualizarIndicadorSincronizacao('error');
+            }
+            return false;
+        } finally {
+            salvamentoNuvemAtivo = null;
+            if (salvamentoNuvemPendente) {
+                salvamentoNuvemPendente = false;
+                salvarSilenciosamenteNaNuvem();
+            }
+        }
+    };
+
+    salvamentoNuvemAtivo = executarSalvamento();
+    return salvamentoNuvemAtivo;
 }
 
 let sincronizacaoFirestoreAtiva = null;
