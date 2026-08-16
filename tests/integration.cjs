@@ -837,7 +837,7 @@ testAsync('login Google aguarda e restaura progresso e XP do Firestore', async (
     const resultadoLogin = await loginPromise;
 
     assert.equal(resultadoLogin.success, true);
-    assert.equal(session.location.href, '../../index.html');
+    assert.equal(session.location.href, '../../meu-progresso.html');
     assert.deepEqual(plain(JSON.parse(storage.getItem('japao_academy_progress')).progress_hiragana), [0, 1, 2, 3, 4, 5, 6, 7]);
     assert.equal(storage.getItem('ja_user_xp'), '504');
     assert.equal(session.AppState.user.xp, 504);
@@ -1067,7 +1067,7 @@ testAsync('login por email e cadastro direcionam ao dashboard sem loop', async (
     });
     const login = await loginSession.fazerLoginEmailSenha('aluno@example.com', 'segredo');
     assert.equal(login.success, true);
-    assert.equal(loginSession.location.href, '../../index.html');
+    assert.equal(loginSession.location.href, '../../meu-progresso.html');
 
     const cadastroFirebase = criarFirebase({ cadastro: true });
     const cadastroSession = loadCoreSession(createStorage(), {
@@ -1077,8 +1077,8 @@ testAsync('login por email e cadastro direcionam ao dashboard sem loop', async (
     const cadastro = await cadastroSession.fazerCadastroEmailSenha('novo@example.com', 'segredo', 'Novo Aluno');
     assert.equal(cadastro.success, true);
     assert.equal(cadastro.user.displayName, 'Novo Aluno');
-    assert.equal(cadastroSession.location.href, '../../index.html');
-    cadastroSession.location.pathname = '/index.html';
+    assert.equal(cadastroSession.location.href, '../../meu-progresso.html');
+    cadastroSession.location.pathname = '/meu-progresso.html';
     assert.equal(cadastroSession.irParaMeuProgresso(), false, 'dashboard redirecionou para si mesmo');
 });
 

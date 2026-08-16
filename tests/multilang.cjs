@@ -354,12 +354,20 @@ test('dashboard reconhece cinco idiomas, datasets e filtros', () => {
     vm.runInContext('globalThis.__languageIds = DASHBOARD_LANGUAGE_REGISTRY.map(item => item.id)', context);
     assert.deepEqual(plain(context.__languageIds), ['japanese', 'english', 'spanish', 'russian', 'italian']);
 
-    for (const page of ['index.html', 'meu-progresso.html']) {
+    for (const page of ['meu-progresso.html']) {
         const html = read(page);
         for (const code of ['ja-JP', 'en-US', 'es-ES', 'ru-RU', 'it-IT']) assert.match(html, new RegExp(`value="${code}"`));
         assert.match(html, /js\/core\/course-index\.js/);
         assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU|it-IT)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     }
+    const indexHtml = read('index.html');
+    assert.match(indexHtml, /url=hub_idiomas\.html/);
+    assert.match(indexHtml, /window\.location\.replace\('hub_idiomas\.html'\)/);
+
+    const legacyProgresso = read('html/ja-JP/meu-progresso.html');
+    assert.match(legacyProgresso, /url=\.\.\/\.\.\/meu-progresso\.html/);
+    assert.match(legacyProgresso, /window\.location\.replace\('\.\.\/\.\.\/meu-progresso\.html'\)/);
+
     for (const key of ['it_srs_a1_deck', 'it_srs_a2_deck', 'it_srs_b1_deck', 'it_srs_b2_deck']) {
         assert.match(read('js/dashboard/meu-progresso.js'), new RegExp(`key: '${key}'`));
     }
@@ -484,6 +492,271 @@ test('XP mantem fallback moderno quando o AppState nao esta disponivel', () => {
     assert.equal(storage.getItem('ja_user_xp'), '25');
 });
 
+test('XP hibrido por idioma e cargos tematicos operam nos cinco idiomas', () => {
+    const storage = createStorage({ ja_user_xp: '300' });
+    const context = createContext({ storage });
+    runFile(context, 'js/game/xp.js');
+
+    const xpInicial = context.obterXPPorIdioma();
+    assert.equal(xpInicial.japanese, 300);
+    assert.equal(xpInicial.english, 0);
+
+    assert.equal(context.normalizarIdiomaCargo('ja-JP'), 'japanese');
+    assert.equal(context.normalizarIdiomaCargo('english'), 'english');
+    assert.equal(context.normalizarIdiomaCargo('es-ES'), 'spanish');
+    assert.equal(context.normalizarIdiomaCargo('ru-RU'), 'russian');
+    assert.equal(context.normalizarIdiomaCargo('it-IT'), 'italian');
+    assert.equal(context.normalizarIdiomaCargo('desconhecido'), 'global');
+
+    // 1. Matriz Japonesa
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'japanese')), { minLvl: 1, titulo: 'Aprendiz', icone: '⛩️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(3, 'japanese')), { minLvl: 3, titulo: 'Samurai', icone: '⚔️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(5, 'japanese')), { minLvl: 5, titulo: 'Ninja', icone: '🥷' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'japanese')), { minLvl: 10, titulo: 'Shogun', icone: '🏯' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(20, 'japanese')), { minLvl: 20, titulo: 'Daimyo', icone: '👑' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'japanese')), { minLvl: 50, titulo: 'Kami', icone: '🐉' });
+
+    // 2. Matriz Inglesa
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'english')), { minLvl: 1, titulo: 'Rookie', icone: '🗽' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(3, 'english')), { minLvl: 3, titulo: 'Explorer', icone: '🧭' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(5, 'english')), { minLvl: 5, titulo: 'Pioneer', icone: '🚀' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'english')), { minLvl: 10, titulo: 'Master', icone: '🎩' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(20, 'english')), { minLvl: 20, titulo: 'Legend', icone: '🦅' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'english')), { minLvl: 50, titulo: 'Titan', icone: '⚡' });
+
+    // 3. Matriz Espanhola
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'spanish')), { minLvl: 1, titulo: 'Novato', icone: '🌾' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(3, 'spanish')), { minLvl: 3, titulo: 'Hidalgo', icone: '🗡️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(5, 'spanish')), { minLvl: 5, titulo: 'Conquistador', icone: '🏰' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'spanish')), { minLvl: 10, titulo: 'Maestro', icone: '🎭' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(20, 'spanish')), { minLvl: 20, titulo: 'Matador', icone: '🐂' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'spanish')), { minLvl: 50, titulo: 'Leyenda', icone: '🔥' });
+
+    // 4. Matriz Russa
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'russian')), { minLvl: 1, titulo: 'Uchenik', icone: '📖' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(3, 'russian')), { minLvl: 3, titulo: 'Bogatyr', icone: '🛡️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(5, 'russian')), { minLvl: 5, titulo: 'Boyar', icone: '🏰' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'russian')), { minLvl: 10, titulo: 'Voivoda', icone: '⚔️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(20, 'russian')), { minLvl: 20, titulo: 'Tsar', icone: '👑' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'russian')), { minLvl: 50, titulo: 'Lenda', icone: '🐻' });
+
+    // 5. Matriz Italiana
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'italian')), { minLvl: 1, titulo: 'Novizio', icone: '🍕' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(3, 'italian')), { minLvl: 3, titulo: 'Gladiatore', icone: '🏛️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(5, 'italian')), { minLvl: 5, titulo: 'Cavaliere', icone: '⚔️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'italian')), { minLvl: 10, titulo: 'Console', icone: '📜' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(20, 'italian')), { minLvl: 20, titulo: 'Rinascimentale', icone: '🎨' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'italian')), { minLvl: 50, titulo: 'Imperatore', icone: '🦅' });
+
+    // 6. Matriz Global
+    assert.deepEqual(plain(context.obterCargoPorNivel(1, 'global')), { minLvl: 1, titulo: 'Iniciante', icone: '🌱' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(10, 'global')), { minLvl: 10, titulo: 'Aprendiz de Idiomas', icone: '📖' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(25, 'global')), { minLvl: 25, titulo: 'Explorador Cultural', icone: '🧭' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(50, 'global')), { minLvl: 50, titulo: 'Bilíngue', icone: '📚' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(100, 'global')), { minLvl: 100, titulo: 'Trilíngue', icone: '🌍' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(150, 'global')), { minLvl: 150, titulo: 'Quadrilíngue', icone: '🏛️' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(200, 'global')), { minLvl: 200, titulo: 'Poliglota', icone: '👑' });
+    assert.deepEqual(plain(context.obterCargoPorNivel(250, 'global')), { minLvl: 250, titulo: 'Mestre dos Idiomas', icone: '🌟' });
+
+    // Concessao cumulativa nos 5 idiomas
+    context.adicionarXP(100, 'aula ingles', 'english');
+    context.adicionarXP(200, 'aula espanhol', 'spanish');
+    context.adicionarXP(300, 'aula russo', 'russian');
+    context.adicionarXP(400, 'aula italiano', 'italian');
+
+    assert.equal(storage.getItem('ja_user_xp'), '1300');
+    const xpFinal = context.obterXPPorIdioma();
+    assert.equal(xpFinal.japanese, 300);
+    assert.equal(xpFinal.english, 100);
+    assert.equal(xpFinal.spanish, 200);
+    assert.equal(xpFinal.russian, 300);
+    assert.equal(xpFinal.italian, 400);
+
+    // Deducao controlada
+    context.removerXP(50, 'desmarcar', 'italian');
+    assert.equal(storage.getItem('ja_user_xp'), '1250');
+    assert.equal(context.obterXPPorIdioma().italian, 350);
+});
+
+test('widget do cabecalho contextual e modal com abas operam nos cinco idiomas e global', () => {
+    const storage = createStorage({
+        ja_user_xp: '1200',
+        ja_xp_per_language: JSON.stringify({ japanese: 950, english: 250, spanish: 0, russian: 0, italian: 0 })
+    });
+    const container = { innerHTML: '' };
+    const modalDinamico = { innerHTML: '' };
+    const context = createContext({
+        language: 'english',
+        pathname: '/html/en-US/curso_ingles.html',
+        storage
+    });
+    context.document.getElementById = id => {
+        if (id === 'xp-profile-widget-container') return container;
+        if (id === 'modal-cargos-conteudo-dinamico') return modalDinamico;
+        return null;
+    };
+    runFile(context, 'js/game/xp.js');
+
+    assert.equal(context.obterIdiomaPaginaAtual(), 'english');
+    assert.equal(context.obterXPDoIdioma('english'), 250);
+    assert.equal(context.obterXPDoIdioma('japanese'), 950);
+    assert.equal(context.obterXPDoIdioma('global'), 1200);
+
+    context.atualizarHeaderXP();
+    assert.match(container.innerHTML, /Nível 3 • Explorer/);
+    assert.match(container.innerHTML, /250 XP/);
+    assert.match(container.innerHTML, /abrirModalNiveisECargos\('english'\)/);
+
+    const conteudoAbaIngles = context.renderizarConteudoAbaCargos('english');
+    assert.match(conteudoAbaIngles, /Nível 3 • Explorer/);
+    assert.match(conteudoAbaIngles, /✓ Conquistado/);
+    assert.match(conteudoAbaIngles, /⚡ Próximo/);
+    assert.match(conteudoAbaIngles, /🔒 Nível 10/);
+    assert.match(conteudoAbaIngles, /trocarAbaModalCargos\('japanese'\)/);
+
+    const conteudoAbaJapones = context.renderizarConteudoAbaCargos('japanese');
+    assert.match(conteudoAbaJapones, /Nível 10 • Shogun/);
+    assert.match(conteudoAbaJapones, /950 XP/);
+
+    const conteudoAbaGlobal = context.renderizarConteudoAbaCargos('global');
+    assert.match(conteudoAbaGlobal, /Nível 13 • Aprendiz de Idiomas/);
+    assert.match(conteudoAbaGlobal, /1200 XP/);
+});
+
+test('mural de patentes dos 5 idiomas integra com meu-progresso.html e meu-progresso.js', () => {
+    const html = read('meu-progresso.html');
+    assert.match(html, /id="dashboard-ranks-card"/);
+    assert.match(html, /id="dashboard-ranks-grid"/);
+    assert.match(html, /Mural de Patentes por Idioma/);
+
+    const storage = createStorage({
+        ja_user_xp: '2000',
+        ja_xp_per_language: JSON.stringify({
+            japanese: 1000,
+            english: 500,
+            spanish: 300,
+            russian: 150,
+            italian: 50
+        })
+    });
+    const grid = { innerHTML: '' };
+    const context = createContext({
+        language: 'japanese',
+        pathname: '/meu-progresso.html',
+        storage
+    });
+    context.document.getElementById = id => {
+        if (id === 'dashboard-ranks-grid') return grid;
+        return null;
+    };
+    runFile(context, 'js/game/xp.js');
+    runFile(context, 'js/dashboard/meu-progresso.js');
+
+    context.renderizarMuralPatentesDashboard();
+    assert.match(grid.innerHTML, /🇯🇵 Japonês/);
+    assert.match(grid.innerHTML, /Shogun/);
+    assert.match(grid.innerHTML, /Nível 11/);
+    assert.match(grid.innerHTML, /1000 XP/);
+    assert.match(grid.innerHTML, /abrirModalNiveisECargos\('japanese'\)/);
+
+    assert.match(grid.innerHTML, /🇺🇸 Inglês/);
+    assert.match(grid.innerHTML, /Pioneer/);
+    assert.match(grid.innerHTML, /Nível 6/);
+    assert.match(grid.innerHTML, /500 XP/);
+    assert.match(grid.innerHTML, /abrirModalNiveisECargos\('english'\)/);
+
+    assert.match(grid.innerHTML, /🇪🇸 Espanhol/);
+    assert.match(grid.innerHTML, /Hidalgo/);
+    assert.match(grid.innerHTML, /Nível 4/);
+    assert.match(grid.innerHTML, /300 XP/);
+
+    assert.match(grid.innerHTML, /🇷🇺 Russo/);
+    assert.match(grid.innerHTML, /Uchenik/);
+    assert.match(grid.innerHTML, /Nível 2/);
+    assert.match(grid.innerHTML, /150 XP/);
+
+    assert.match(grid.innerHTML, /🇮🇹 Italiano/);
+    assert.match(grid.innerHTML, /Novizio/);
+    assert.match(grid.innerHTML, /Nível 1/);
+    assert.match(grid.innerHTML, /50 XP/);
+});
+
+test('sincronizacao Firebase cria backup e mescla XP por idioma sem perdas', () => {
+    const storage = createStorage({
+        ja_user_xp: '1000',
+        ja_xp_per_language: JSON.stringify({
+            japanese: 500,
+            english: 300,
+            spanish: 100,
+            russian: 100,
+            italian: 0
+        })
+    });
+    const context = createContext({
+        language: 'japanese',
+        pathname: '/meu-progresso.html',
+        storage
+    });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/state.js');
+    runFile(context, 'js/game/xp.js');
+    runFile(context, 'js/core/storage.js');
+
+    assert.equal(typeof context.obterTodosXPsPorIdioma, 'function');
+    assert.equal(typeof context.definirTodosXPsPorIdioma, 'function');
+    assert.deepEqual(plain(context.obterTodosXPsPorIdioma()), {
+        japanese: 500,
+        english: 300,
+        spanish: 100,
+        russian: 100,
+        italian: 0
+    });
+
+    const backup = context.criarBackupNuvem();
+    assert.ok(backup.xpPorIdioma, 'backup da nuvem deve conter xpPorIdioma');
+    assert.equal(backup.xpPorIdioma.japanese, 500);
+    assert.equal(backup.xpPorIdioma.english, 300);
+
+    const dadosNuvem = {
+        progressoGlobal: {},
+        xpTotal: 1200,
+        xpPorIdioma: {
+            japanese: 400,
+            english: 300,
+            spanish: 200,
+            russian: 100,
+            italian: 200
+        }
+    };
+
+    context.aplicarDadosDoBackup(dadosNuvem, 'test-uid');
+
+    const mesclado = plain(JSON.parse(storage.getItem('ja_xp_per_language')));
+    assert.equal(mesclado.japanese, 500); // 500 local > 400 nuvem
+    assert.equal(mesclado.english, 300);
+    assert.equal(mesclado.spanish, 200);  // 200 nuvem > 100 local
+    assert.equal(mesclado.russian, 100);
+    assert.equal(mesclado.italian, 200);  // 200 nuvem > 0 local
+});
+
+test('motor de navegacao instantanea pre-carrega rotas e integra ao precache', () => {
+    const instantNavSource = read('js/core/instant-nav.js');
+    assert.match(instantNavSource, /link\.rel = 'prefetch'/);
+    assert.match(instantNavSource, /link\.as = 'document'/);
+    assert.match(instantNavSource, /fetch\(targetUrl\.href, \{ priority: 'low', cache: 'force-cache' \}\)/);
+    assert.match(instantNavSource, /mouseover/);
+    assert.match(instantNavSource, /touchstart/);
+    assert.match(instantNavSource, /focusin/);
+
+    const swSource = read('sw.js');
+    assert.match(swSource, /'\.\/js\/core\/instant-nav\.js'/);
+
+    for (const page of ['hub_idiomas.html', 'meu-progresso.html', 'hub_japones.html', 'hub_ingles.html', 'hub_espanhol.html', 'hub_russo.html', 'hub_italiano.html']) {
+        const html = read(page);
+        assert.match(html, /js\/core\/instant-nav\.js/);
+    }
+});
+
 test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
     const serviceWorker = read('sw.js');
     const dom = read('js/core/dom.js');
@@ -546,7 +819,7 @@ test('hubs e imagens principais respeitam o orçamento leve', () => {
         const scriptsLocais = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g))
             .map(match => match[1])
             .filter(src => !/^https?:\/\//.test(src));
-        assert.ok(scriptsLocais.length <= 15, `${file}: ${scriptsLocais.length} scripts locais`);
+        assert.ok(scriptsLocais.length <= 16, `${file}: ${scriptsLocais.length} scripts locais`);
         assert.match(html, /<body\b[^>]*\bdata-page="hub"/);
         assert.doesNotMatch(html, /<script[^>]+src="database\//);
         assert.doesNotMatch(html, /js\/(?:course|kanji|phrasal|pronunciation|minigame)\//);
@@ -608,31 +881,30 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/ja-JP/curso.html',
             locale: 'ja-JP',
             scripts: 27,
-            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
-            // O registro central dos recursos japoneses adiciona apenas metadados locais de rota e deck.
-            // A Fase 14D acrescenta o aviso seguro de atualização do Service Worker.
-            maxBytes: 1625 * 1024,
+            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B (maxBytes: 1625 * 1024).
+            // Recalibrado para a Fase 1 da gamificação multidioma (matriz de cargos e XP híbrido nos 5 idiomas).
+            maxBytes: 1635 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
             file: 'html/en-US/curso_ingles.html',
             locale: 'en-US',
             scripts: 27,
-            maxBytes: 1052 * 1024,
+            maxBytes: 1060 * 1024,
             dataPattern: /database\/en-US\/data_english_[a-b][1-2]\.js/
         },
         {
             file: 'html/es-ES/espanhol_curso.html',
             locale: 'es-ES',
             scripts: 27,
-            maxBytes: 1614 * 1024,
+            maxBytes: 1625 * 1024,
             dataPattern: /database\/es-ES\/data_espanhol_[a-b][1-2]\.js/
         },
         {
             file: 'html/ru-RU/russo_curso.html',
             locale: 'ru-RU',
             scripts: 27,
-            maxBytes: 973 * 1024,
+            maxBytes: 985 * 1024,
             dataPattern: /database\/ru-RU\/data_curso_russo_[a-b][1-2]\.js/,
             dataCount: 4
         },
@@ -640,7 +912,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/it-IT/italiano_curso.html',
             locale: 'it-IT',
             scripts: 27,
-            maxBytes: 1052 * 1024,
+            maxBytes: 1060 * 1024,
             dataPattern: /database\/it-IT\/data_curso_italiano_[a-b][1-2]\.js/,
             dataCount: 4
         }
@@ -681,10 +953,9 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
     const budgets = {
-        // A Fase 7 acrescenta rastreabilidade editorial N5/N4 e ações transversais de recurso.
-        // A Fase 14C acrescenta o controlador progressivo compartilhado do renderizador Kanji.
-        n5: 713 * 1024,
-        n4: 733 * 1024,
+        // A Fase 1 e 2 de gamificação multidioma acrescentam a matriz oficial de cargos e abas nos 5 idiomas.
+        n5: 725 * 1024,
+        n4: 735 * 1024,
         // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
         n3: 998 * 1024,
         n2: 1033 * 1024,
@@ -860,7 +1131,7 @@ test('biblioteca japonesa usa indice leve e niveis JLPT sem equivalencia CEFR', 
     const file = 'html/ja-JP/leitura.html', html = read(file);
     const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
     const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
-    assert.ok(scripts.length <= 18); assert.ok(bytes <= 425 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 435 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
     assert.match(html, /data_leitura_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
     assert.match(read('js/japanese/reading.js'), /sanitizeReadingHtml/);
     assert.doesNotMatch(read('tests/japanese-reading-index.cjs'), /jlptToCefr|A1.*N5/i);
@@ -898,7 +1169,7 @@ test('hub japonês final permanece leve e Dashboard ignora sessoes de outros idi
     const file = 'hub_japones.html', html = read(file);
     const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
     const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
-    assert.ok(scripts.length <= 15); assert.ok(bytes <= 350 * 1024, `${Math.round(bytes / 1024)} KB no hub japonês final`);
+    assert.ok(scripts.length <= 16); assert.ok(bytes <= 350 * 1024, `${Math.round(bytes / 1024)} KB no hub japonês final`);
     assert.equal((html.match(/data-skill-group=/g) || []).length, 4); assert.match(html, /meu-progresso\.html/);
     const dashboard = read('js/dashboard/meu-progresso.js'); assert.match(dashboard, /sessao\.language !== 'ja-JP'/); assert.doesNotMatch(dashboard.slice(dashboard.indexOf('const JAPANESE_SKILL_REGISTRY'), dashboard.indexOf('function formatarUltimaAtividadeHabilidadeJaponesa')), /dailyAggregates|localStorage/);
 });

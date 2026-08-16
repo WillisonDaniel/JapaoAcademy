@@ -41,6 +41,7 @@ const REQUIRED_OFFLINE = [
     './database/ru-RU/data_russo_dicionario.js',
     './database/ru-RU/data_dicionario_index.js',
     './js/minigame/minigame_russo.js',
+    './js/core/instant-nav.js',
     './manifest.json',
     './favicon.png',
     './favicon-512.png',

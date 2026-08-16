@@ -93,7 +93,7 @@ function assertQuiz(questions, label) {
 
 test('sintaxe dos arquivos JavaScript', () => {
     const files = walk(ROOT, '.js');
-    assert.equal(files.length, 94, 'quantidade inesperada de arquivos JavaScript');
+    assert.equal(files.length, 95, 'quantidade inesperada de arquivos JavaScript');
     for (const file of files) {
         const check = spawnSync(process.execPath, ['--check', file], { encoding: 'utf8' });
         assert.equal(check.status, 0, `${path.relative(ROOT, file)}: ${check.stderr.trim()}`);
@@ -230,7 +230,7 @@ test('estados vazios e erros da Etapa 28D seguem o contrato seguro', () => {
 test('AppState e carregado depois das constantes em todas as paginas', () => {
     for (const page of walk(ROOT, '.html')) {
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
-        if (relative === 'meu-progresso.html' || relative === 'html/ja-JP/meu-progresso.html') continue;
+        if (relative === 'index.html' || relative === 'html/ja-JP/meu-progresso.html') continue;
         const html = fs.readFileSync(page, 'utf8');
         const constants = html.indexOf('js/core/constants.js');
         const state = html.indexOf('js/core/state.js');
@@ -780,7 +780,11 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
     pages.forEach(page => {
         const html = fs.readFileSync(page, 'utf8');
         const relative = path.relative(ROOT, page).replace(/\\/g, '/');
-        if (relative === 'index.html' || relative === 'meu-progresso.html' || relative === 'html/ja-JP/meu-progresso.html') {
+        if (relative === 'index.html') {
+            assert.match(html, /url=hub_idiomas\.html/, 'index.html deve redirecionar para hub_idiomas.html');
+            return;
+        }
+        if (relative === 'meu-progresso.html' || relative === 'html/ja-JP/meu-progresso.html') {
             assert.match(html, /style\.css\?v=29[a-z]?/, `${relative} sem cache visual 29 global`);
         } else {
             assert.match(html, /style\.css\?v=28f/, `${relative} sem cache visual 28F`);
@@ -791,8 +795,8 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
-    const html = read('index.html');
-    const dashboardPage = read('meu-progresso.html');
+    const html = read('meu-progresso.html');
+    const indexRedirect = read('index.html');
     const legacyRedirect = read('html/ja-JP/meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const storage = read('js/core/storage.js');
@@ -800,6 +804,11 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     const app = read('app.js');
     const css = read('style.css');
     const serviceWorker = read('sw.js');
+
+    assert.match(indexRedirect, /url=hub_idiomas\.html/);
+    assert.match(indexRedirect, /window\.location\.replace\('hub_idiomas\.html'\)/);
+    assert.match(legacyRedirect, /url=\.\.\/\.\.\/meu-progresso\.html/);
+    assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/meu-progresso\.html'\)/);
 
     assert.match(html, /data-mode="dashboard"/);
     assert.match(html, /data-lang="all"/);
@@ -809,8 +818,8 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.doesNotMatch(html, /database\/(?:ja-JP|en-US|es-ES|ru-RU)\/data_(?:curso|english|espanhol).*_(?:a1|a2|b1|b2)\.js/i);
     assert.match(html, /id="dashboard-signed-out"[^>]*hidden/);
     assert.match(html, /id="dashboard-first-access"[^>]*hidden/);
-    assert.doesNotMatch(dashboardPage, /href="index\.html"/);
-    assert.equal((dashboardPage.match(/href="hub_idiomas\.html"/g) || []).length, 4);
+    assert.doesNotMatch(html, /href="index\.html"/);
+    assert.equal((html.match(/href="hub_idiomas\.html"/g) || []).length, 4);
     assert.match(html, /id="dashboard-goal-bar"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-course-progress"[^>]*role="progressbar"/);
     assert.match(html, /id="dashboard-weekly-summary"[^>]*aria-label=/);
@@ -843,7 +852,7 @@ test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
     assert.match(css, /\.dashboard-page:not\(\.dashboard-authenticated\) #xp-profile-widget-container/);
     assert.match(css, /@media \(max-width: 480px\)/);
     assert.match(css, /@media \(prefers-reduced-motion: reduce\)/);
-    assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/index\.html'\)/);
+    assert.match(legacyRedirect, /window\.location\.replace\('\.\.\/\.\.\/meu-progresso\.html'\)/);
     assert.match(serviceWorker, /'\.\/meu-progresso\.html'/);
     assert.match(serviceWorker, /js\/dashboard\/meu-progresso\.js/);
 });
@@ -894,8 +903,7 @@ test('medicao de sessoes da Etapa 29 usa API central e retencao limitada', () =>
 });
 
 test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade', () => {
-    const html = read('index.html');
-    const dashboardPage = read('meu-progresso.html');
+    const html = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
     const serviceWorker = read('sw.js');
@@ -920,7 +928,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(dashboard, /renderizarGraficoRevisoesDashboard\(estatisticas\)/);
     assert.match(dashboard, /estatisticas\.accuracy\.available[\s\S]*?estatisticas\.accuracy\.value/);
     assert.doesNotMatch(dashboard, /Acertos e erros histÃ³ricos serÃ£o registrados na Fase 5/);
-    assert.doesNotMatch(`${html}\n${dashboardPage}`, /Fase 5/);
+    assert.doesNotMatch(html, /Fase 5/);
     assert.match(dashboard, /Dias que alcançaram a meta ÷ dias medidos elegíveis/);
     assert.match(dashboard, /filtro\.addEventListener\('change'/);
     assert.match(dashboard, /renderizarGraficosDashboard\(estatisticas\)/);
@@ -932,7 +940,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
 });
 
 test('graficos de aprendizado da Etapa 29 usam dados reais e alternativa acessivel', () => {
-    const html = read('index.html');
+    const html = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
 
@@ -964,7 +972,7 @@ test('graficos de aprendizado da Etapa 29 usam dados reais e alternativa acessiv
 });
 
 test('calendario de estudos da Etapa 29 preserva datas locais e navegacao acessivel', () => {
-    const html = read('index.html');
+    const html = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
     const storage = read('js/core/storage.js');
@@ -1000,8 +1008,7 @@ test('calendario de estudos da Etapa 29 preserva datas locais e navegacao acessi
 test('historico de revisoes SRS da Etapa 29 registra tentativas e deduplica por ID', () => {
     const storage = read('js/core/storage.js');
     const engine = read('js/srs/engine.js');
-    const html = read('index.html');
-    const dashboardPage = read('meu-progresso.html');
+    const html = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
 
     assert.match(storage, /DASHBOARD_SRS_HISTORY_LIMIT = 500/);
@@ -1011,21 +1018,16 @@ test('historico de revisoes SRS da Etapa 29 registra tentativas e deduplica por 
     assert.match(engine, /registrarTentativaSRS\(\{/);
     assert.match(html, /id="dashboard-srs-history-card"/);
     assert.match(html, /id="dashboard-srs-history-list"/);
-    assert.match(dashboardPage, /id="dashboard-srs-history-card"/);
-    assert.match(dashboardPage, /id="dashboard-srs-history-list"/);
     assert.match(dashboard, /function renderizarHistoricoSRSDashboard/);
 });
 
 test('insights personalizados locais da Etapa 29 sao deterministicos e limitados a tres', () => {
-    const html = read('index.html');
-    const dashboardPage = read('meu-progresso.html');
+    const html = read('meu-progresso.html');
     const dashboard = read('js/dashboard/meu-progresso.js');
     const css = read('style.css');
 
     assert.match(html, /id="dashboard-insights-card"/);
     assert.match(html, /id="dashboard-insights-grid"/);
-    assert.match(dashboardPage, /id="dashboard-insights-card"/);
-    assert.match(dashboardPage, /id="dashboard-insights-grid"/);
     assert.match(dashboard, /function calcularInsightsDashboard/);
     assert.match(dashboard, /function renderizarInsightsDashboard/);
     assert.match(dashboard, /candidatos\.slice\(0, 3\)/);

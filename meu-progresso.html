@@ -87,6 +87,19 @@
                 <div id="dashboard-languages-grid" class="dashboard-languages-grid"></div>
             </section>
 
+            <section id="dashboard-ranks-card" class="dashboard-card dashboard-wide-card" aria-labelledby="dashboard-ranks-title">
+                <div class="dashboard-card-heading">
+                    <div>
+                        <span class="dashboard-eyebrow">Hierarquia de Conquistas</span>
+                        <h2 id="dashboard-ranks-title">👑 Mural de Patentes por Idioma</h2>
+                        <p class="dashboard-card-note">Seus cargos culturais e níveis de maestria conquistados em cada trilha.</p>
+                    </div>
+                </div>
+                <div id="dashboard-ranks-grid" class="dashboard-ranks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 14px;">
+                    <!-- Os 5 cards de patentes (JP, EN, ES, RU, IT) serão renderizados dinamicamente aqui -->
+                </div>
+            </section>
+
             <section id="dashboard-japanese-skills-card" class="dashboard-card dashboard-wide-card" aria-labelledby="dashboard-japanese-skills-title">
                 <div class="dashboard-card-heading">
                     <div>
@@ -419,6 +432,7 @@
     <script src="js/game/ranking.js"></script>
     <script src="js/dashboard/meu-progresso.js?v=31"></script>
     <script src="js/core/bootstrap.js"></script>
+    <script src="js/core/instant-nav.js" defer></script>
     <script src="app.js"></script>
 </body>
 

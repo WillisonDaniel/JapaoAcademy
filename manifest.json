@@ -2,7 +2,7 @@
   "name": "Idiomas Academy",
   "short_name": "Idiomas Academy",
   "description": "Plataforma de estudos de japonês, inglês, espanhol, russo e italiano.",
-  "start_url": "./index.html",
+  "start_url": "./hub_idiomas.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#0f172a",

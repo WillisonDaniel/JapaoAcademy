@@ -81,6 +81,7 @@ const ASSETS_TO_CACHE = [
     './js/core/dom.js',
     './js/core/events.js',
     './js/core/bootstrap.js',
+    './js/core/instant-nav.js',
     './js/core/study-session.js',
     './js/course/moduleNormalizer.js',
     './js/course/tabs.js',
