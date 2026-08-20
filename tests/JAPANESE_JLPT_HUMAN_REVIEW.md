@@ -1,6 +1,6 @@
 # Inventário humano — preparação JLPT
 
-Gerado mecanicamente na Fase 12. Snapshot: `c91ded09e81facf7`. Não é material oficial nem aprovação editorial.
+Gerado mecanicamente na Fase 12. Snapshot: `0bc851187099096e`. Não é material oficial nem aprovação editorial.
 
 - Questões examinadas: **1061**.
 - Questões publicadas: **1060**.

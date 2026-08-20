@@ -1,6 +1,6 @@
 # Inventário humano — referência gramatical japonesa
 
-Gerado mecanicamente pelo índice da Fase 10. Snapshot: `cd2ca2706358fe2f`. Este documento não constitui aprovação editorial.
+Gerado mecanicamente pelo índice da Fase 10. Snapshot: `83d0a07138f3aff6`. Este documento não constitui aprovação editorial.
 
 - Referências do curso A1–B2: **105**.
 - Referências aplicadas das trilhas Kanji: **89**.

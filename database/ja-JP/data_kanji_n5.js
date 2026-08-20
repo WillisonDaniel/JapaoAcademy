@@ -6,18 +6,18 @@ const kanjiN5Data = [
     {
         "module": 1,
         "title": "Módulo 1: Guia Fundamental e Anatomia do Kanji",
-        "description": "O alicerce definitivo da sua jornada! Aprofunde-se na lógica dos radicais (Busshu), na mecânica do Okurigana, nas regras de ouro do Kakijun e nos segredos da sonorização (Rendaku).",
+        "description": "Conheça a origem dos Kanji, as leituras on'yomi e kun'yomi, o okurigana, os radicais (bushu) e princípios básicos de ordem dos traços.",
         "grammar": {
             "title": "Frases de Identificação: ～は ～です (A é B)",
             "explanation": "A estrutura fundamental do japonês é: [Tópico] は [Identificação] です. A partícula は (wa) marca o TEMA/TÓPICO da frase (o que estamos falando). です (desu) é o verbo de ligação formal equivalente a 'é/são'. Para negar, use ではありません (dewa arimasen) ou o informal じゃない (ja nai).",
-            "example": "これは漢字です。漢字は日本語の文字ではありません。中国語から来ました。",
-            "translation": "Isto é um kanji. Kanji não é um caractere japonês. Veio do chinês."
+            "example": "これは漢字です。漢字は中国から日本に伝わり、日本語の表記にも使われています。",
+            "translation": "Isto é um Kanji. Os Kanji foram transmitidos da China ao Japão e também são usados na escrita da língua japonesa."
         },
         "readingText": {
             "title": "漢字の歴史と書き方 (História e Escrita dos Kanjis)",
             "japanese": "<ruby>私<rt>わたし</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby>、<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えます。<ruby>漢字<rt>かんじ</rt></ruby>は<ruby>中国<rt>ちゅうごく</rt></ruby>から<ruby>来<rt>き</rt></ruby>ました。<ruby>正<rt>ただ</rt></ruby>しい<ruby>順番<rt>じゅんばん</rt></ruby>で<ruby>書<rt>か</rt></ruby>くことが<ruby>大切<rt>たいせつ</rt></ruby>です。",
             "romaji": "Watashi wa mainichi, kanji no imi o kangaemasu. Kanji wa Chuugoku kara kimashita. Tadashii junban de kaku koto ga taisetsu desu.",
-            "translation": "Eu penso no significado dos ideogramas todos os dias. Os ideogramas vieram da China. É importante escrever na ordem correta dos traços.",
+            "translation": "Penso no significado dos Kanji todos os dias. Os Kanji vieram da China. É importante escrevê-los na ordem correta dos traços.",
             "comprehensionQuiz": [
                 {
                     "q": "De onde vieram os kanjis segundo o texto?",
@@ -49,7 +49,7 @@ const kanjiN5Data = [
                 "meaning": "1. A Origem e o Conceito dos Kanjis",
                 "kunyomi": "-",
                 "onyomi": "カン (KAN)",
-                "mnemonic": "💡 ANATOMIA HISTÓRICA: Diferente do Hiragana e Katakana (que são silabários fonéticos criados no Japão), os Kanjis vieram da China (Dinastia Han). Eles são ideogramas conceituais: carregam ideias, imagens e conceitos visuais, permitindo ler textos eliminando qualquer ambiguidade instantaneamente.",
+                "mnemonic": "💡 CONTEXTO HISTÓRICO: Hiragana e Katakana se desenvolveram no Japão a partir de formas de caracteres chineses. Os Kanji foram transmitidos da China e representam unidades de significado e som; o sentido exato depende da palavra e do contexto.",
                 "examples": [
                     {
                         "word": "漢字 (kanji)",
@@ -89,7 +89,7 @@ const kanjiN5Data = [
                 "meaning": "2. Kunyomi e o Segredo do Okurigana",
                 "kunyomi": "おし・える (oshieru) / くん (kun)",
                 "onyomi": "クン (KUN)",
-                "mnemonic": "💡 REGRA DE OURO DO KUNYOMI: É a leitura nativa japonesa aplicada quando o Kanji está isolado (ex: 水 mizu) ou acompanhado de flexões em Hiragana, chamadas de OKURIGANA (ex: 食べます - o 'besu' indica que a raiz 'tabe' deve ser lida em japonês).",
+                "mnemonic": "💡 KUN'YOMI E OKURIGANA: Kun'yomi são leituras japonesas associadas aos Kanji. Muitas aparecem quando o caractere forma uma palavra japonesa ou vem acompanhado de okurigana, como 食べる (taberu), em que べる completa a forma verbal.",
                 "examples": [
                     {
                         "word": "食べる (taberu)",
@@ -120,7 +120,7 @@ const kanjiN5Data = [
                 "meaning": "3. Onyomi e as Palavras Compostas (Jukugo)",
                 "kunyomi": "おと (oto) / ね (ne)",
                 "onyomi": "オン (ON) / イン (IN)",
-                "mnemonic": "💡 REGRA DE OURO DO ONYOMI: É a adaptação japonesa para a pronúncia chinesa original. Use o Onyomi obrigatoriamente quando dois ou mais Kanjis se grudam para formar uma palavra composta (chamada de JUKUGO), como 'Água + Dia da Semana = Quarta-feira'.",
+                "mnemonic": "💡 ON'YOMI E COMPOSTOS: On'yomi são leituras de origem chinesa adaptadas ao japonês e aparecem com frequência em compostos (jukugo), como 水曜日 (suiyoubi). Há exceções; a leitura deve ser aprendida junto com cada palavra.",
                 "examples": [
                     {
                         "word": "水曜日 (suiyoubi)",
@@ -148,10 +148,10 @@ const kanjiN5Data = [
             },
             {
                 "character": "部",
-                "meaning": "4. O Universo dos Radicais (Busshu)",
+                "meaning": "4. O Universo dos Radicais (Bushu)",
                 "kunyomi": "-",
                 "onyomi": "ブ (BU)",
-                "mnemonic": "💡 A ANATOMIA DOS BLOCOS: Kanjis não são rabiscos aleatórios; são quebra-cabeças formados por Radicais (partes fundamentais). Conhecer os 4 radicais mais vitais do N5 acelera sua memorização em 300%:\n• 亻 (Ninben): Radicais de Pessoas (Ex: 休 descansa, 他 outro).\n• 氵 (Sanzui): Radicais de Água (Ex: 水 água, 河 rio, 酒 saquê).\n• 口 (Kuchi): Radicais de Boca / Fala (Ex: 喰 comer, 喝 gritar, 語 idioma).\n• 木 (Ki): Radicais de Árvore / Planta (Ex: 森 floresta, 林 bosques, 本 raiz/livro).",
+                "mnemonic": "💡 A ANATOMIA DOS BLOCOS: os Kanji são formados por componentes gráficos. Um deles é o radical usado na classificação em dicionários; outros componentes também podem ajudar a reconhecer e memorizar o caractere. Exemplos frequentes incluem 亻, associado a pessoa em 休 e 他; 氵, associado a água em 河 e 海; 口, associado a boca em 吃 e 唱; e 木, associado a árvore ou madeira em 林 e 森.",
                 "examples": [
                     {
                         "word": "休 (yasumu) / 他 (hoka)",
@@ -252,12 +252,12 @@ const kanjiN5Data = [
                 "type": "romaji"
             },
             {
-                "q": "A leitura Kunyomi é geralmente usada quando o Kanji está isolado na frase?",
+                "q": "Qual tipo de leitura japonesa aparece com frequência em palavras nativas e formas com okurigana?",
                 "options": [
-                    "sim",
-                    "nao"
+                    "kunyomi",
+                    "onyomi"
                 ],
-                "a": "sim",
+                "a": "kunyomi",
                 "type": "choice"
             },
             {
@@ -279,12 +279,12 @@ const kanjiN5Data = [
             {
                 "q": "Como é chamada a raiz ou parte fundamental que ajuda a classificar e dar sentido a um Kanji?",
                 "options": [
-                    "Radical (Busshu)",
+                    "Radical (Bushu)",
                     "Okurigana",
                     "Sufixo",
                     "Vogal"
                 ],
-                "a": "Radical (Busshu)",
+                "a": "Radical (Bushu)",
                 "type": "choice"
             },
             {
@@ -861,7 +861,7 @@ const kanjiN5Data = [
     {
         "module": 3,
         "title": "Módulo 3: Tempo, Dias da Semana e Calendário",
-        "description": "Domine os ideogramas dos dias da semana, meses, anos e horas — essenciais para agendar compromissos e entender rotinas no N5.",
+        "description": "Estude os Kanji dos dias da semana, meses, anos e horas, úteis para agendar compromissos e entender rotinas.",
         "grammar": {
             "title": "Marcação de Tempo: ～に / ～から / ～まで (Horário, De... Até...)",
             "explanation": "Para indicar QUANDO algo acontece, use に após horas, dias e meses (ex: 月曜日に - na segunda-feira; 三時に - às três horas). Para expressar uma faixa de tempo, use から (kara = de/a partir de) e まで (made = até/antes de): 月曜日から金曜日まで trabalho. Para durações (quanto tempo dura), NÃO use に — use apenas o número com contador.",
@@ -1447,7 +1447,7 @@ const kanjiN5Data = [
     {
         "module": 4,
         "title": "Módulo 4: Natureza, Fenômenos e Meio Ambiente",
-        "description": "Explore os elementos naturais no N5 e domine a gramática da existência: use 「あります」 para coisas inanimadas (montanhas, rios) e 「います」 para seres vivos (animais).",
+        "description": "Explore Kanji ligados à natureza e pratique a gramática de existência: use 「あります」 para coisas inanimadas, como montanhas e rios, e 「います」 para seres animados, como pessoas e animais.",
         "grammar": {
             "title": "Verbos de Existência: あります vs います (Há / Existe)",
             "explanation": "Regra de ouro do N5: Para indicar a EXISTÊNCIA de algo, use dois verbos diferentes. あります (arimasu) → para coisas INANIMADAS: objetos, plantas, lugares, fenômenos naturais (山があります = Há uma montanha). います (imasu) → para seres ANIMADOS: pessoas, animais, insetos (犬がいます = Há um cachorro). Para indicar onde está: [Lugar] に [Sujeito] が あります/います.",
@@ -1870,7 +1870,7 @@ const kanjiN5Data = [
     {
         "module": 5,
         "title": "Módulo 5: Posição, Direção e Espaço",
-        "description": "Aprenda a navegar pelo mundo! Domine os ideogramas de localização e a estrutura gramatical fundamental para dizer onde pessoas e objetos estão (〜の〜にあります/います).",
+        "description": "Estude Kanji de localização e a estrutura gramatical para dizer onde pessoas e objetos estão (〜の〜にあります/います).",
         "grammar": {
             "title": "Localização: ～の + Posição + に あります/います",
             "explanation": "Para descrever a posição de algo em relação a um ponto de referência, use a estrutura: [Objeto] は [Referência] の [Posição] に あります/います. Exemplos de posições: 上 (ue - cima), 下 (shita - baixo), 中 (naka - dentro), 外 (soto - fora), 前 (mae - frente), 後ろ (ushiro - atrás), 右 (migi - direita), 左 (hidari - esquerda), 間 (aida - entre), 隣 (tonari - ao lado).",
@@ -2321,7 +2321,7 @@ const kanjiN5Data = [
     {
         "module": 6,
         "title": "Módulo 6: Pessoas, Relações e Família",
-        "description": "Domine o vocabulário humano do N5 e a regra de ouro cultural de 'Uchi vs. Soto' (família própria vs. família alheia), além dos pronomes e contadores de pessoas.",
+        "description": "Estude vocabulário sobre pessoas e família, diferenças de uso relacionadas a uchi e soto, além de pronomes e contadores de pessoas.",
         "grammar": {
             "title": "Posse e Relação: の (Partícula de Posse e Ligação)",
             "explanation": "A partícula の (no) é multifuncional no N5: (1) Indica POSSE como 'de': 私の本 = meu livro (lit. livro de mim); 田中さんの家族 = família do Sr. Tanaka. (2) Liga substantivos descrevendo o tipo: 女の人 = mulher (lit. pessoa do tipo mulher). (3) Substitui um substantivo já mencionado (pronome): この本は私のです = Este livro é meu. Note a diferença cultural: use vocabulário humilde para sua própria família (父 chichi) e respeitoso para a família alheia (お父さん otousan).",
@@ -2430,7 +2430,7 @@ const kanjiN5Data = [
                         "word": "女の人 (onna no hito)",
                         "wordMeaning": "Mulher (lit. Pessoa mulher - forma educada)",
                         "sentence": "きれいな女の人が歩いています。(Kirei na onna no hito ga aruite imasu)",
-                        "sentenceMeaning": "Uma mulher bonita está caminhando. (💡 Dica de ouro: Dizer apenas 'onna' pode soar rude; use sempre 'onna no hito')."
+                        "sentenceMeaning": "Uma mulher bonita está caminhando. Em muitas situações, 女の人 (onna no hito) soa mais neutro e cortês do que 女 (onna) isoladamente."
                     },
                     {
                         "word": "彼女 (kanojo - Onyomi)",
@@ -2742,7 +2742,7 @@ const kanjiN5Data = [
     {
         "module": 7,
         "title": "Módulo 7: Verbos de Ação e Movimento",
-        "description": "Coloque o idioma em movimento! Domine os principais ideogramas de ação do N5 e aprenda a conectar verbos às partículas essenciais do dia a dia: 「を」 (objeto direto), 「へ/に」 (direção) e 「で」 (local da ação).",
+        "description": "Estude Kanji ligados a ações e pratique as partículas 「を」 (objeto direto), 「へ/に」 (direção) e 「で」 (local da ação).",
         "grammar": {
             "title": "Partículas de Ação: を / へ・に / で (Objeto / Destino / Local)",
             "explanation": "As três partículas de ação mais importantes do N5: を (o): marca o OBJETO DIRETO que recebe a ação → 本を読みます (leio o livro). へ ou に (e / ni): indica o DESTINO ou DIREÇÃO do movimento → 学校へ行きます (vou à escola). で (de): indica o LOCAL onde uma ação dinâmica acontece → 図書館で勉強します (estudo na biblioteca). ATENÇÃO: に para estado/existência, で para ação ativa. Forma do passado: -ます → -ました.",
@@ -3179,10 +3179,10 @@ const kanjiN5Data = [
     {
         "module": 8,
         "title": "Módulo 8: Adjetivos e Qualidades N5",
-        "description": "Deixe o seu japonês muito mais expressivo! Domine os pares de adjetivos opostos mais essenciais do N5 (grande/pequeno, novo/velho, alto/barato), as cores fundamentais e a regra de modificação de substantivos.",
+        "description": "Amplie seu repertório com pares de adjetivos opostos, cores frequentes e a forma como adjetivos modificam substantivos.",
         "grammar": {
             "title": "Adjetivos い vs. な: Conjugação e Modificação de Substantivos",
-            "explanation": "O japonês tem dois tipos de adjetivos com regras distintas. ADJETIVOS-い (terminam em い): conectam direto ao substantivo → 大きいいえ (casa grande); negativa: 大きくない (não é grande); passado: 大きかった (era grande). ADJETIVOS-な (originalmente substantivos): precisam de な antes do substantivo → 有名な人 (pessoa famosa); negativa: 有名ではない; passado: 有名だった. Para comparações no N5: A は B より [Adjetivo] です (A é mais [adj] que B); A と B と どちらが [Adj] ですか (Qual dos dois, A ou B, é mais [adj]?).",
+            "explanation": "O japonês tem dois tipos de adjetivos com regras distintas. ADJETIVOS-い (terminam em い): conectam direto ao substantivo → 大きい家 (casa grande); negativa: 大きくない (não é grande); passado: 大きかった (era grande). ADJETIVOS-な (originalmente substantivos): precisam de な antes do substantivo → 有名な人 (pessoa famosa); negativa: 有名ではない; passado: 有名だった. Para comparações no N5: A は B より [Adjetivo] です (A é mais [adj] que B); A と B と どちらが [Adj] ですか (Qual dos dois, A ou B, é mais [adj]?).",
             "example": "新しい車より古い自転車のほうが好きです。白い猫はとても小さくて可愛いです。",
             "translation": "Prefiro a bicicleta velha ao carro novo. O gato branco é muito pequeno e fofo."
         },
@@ -3383,7 +3383,7 @@ const kanjiN5Data = [
                         "word": "古い (furui - Kunyomi)",
                         "wordMeaning": "Velho / Antigo",
                         "sentence": "これはとても古い本です。(Kore wa totemo furui hon desu)",
-                        "sentenceMeaning": "Este é um livro muito antigo. (💡 Atenção N5: 「古い - furui」 é usado APENAS para objetos/coisas velhas, NUNCA para pessoas idosas!)."
+                        "sentenceMeaning": "Este é um livro muito antigo. Para falar da idade de uma pessoa, normalmente se usa 年を取った ou 年配の, e não 古い com o sentido direto de 'idoso'."
                     },
                     {
                         "word": "中古 (chuuko - Onyomi)",
@@ -3602,11 +3602,11 @@ const kanjiN5Data = [
     {
         "module": 9,
         "title": "Módulo 9: Sociedade, Escola e Vida Cotidiana",
-        "description": "O gran finale do curso N5! Domine os ideogramas essenciais da vida escolar, transporte e comércio. Aprenda a formular perguntas com 「何」 (o que/qual) e a dominar os sufixos de idiomas (〜語) e estabelecimentos.",
+        "description": "Estude Kanji ligados à vida escolar, ao transporte e ao comércio. Pratique perguntas com 「何」 (o que/qual), nomes de idiomas com 〜語 e termos de estabelecimentos.",
         "grammar": {
-            "title": "Perguntas com Interrogativos: 何 / どこ / いつ / 誤 (O quê / Onde / Quando / Quem)",
-            "explanation": "As palavras interrogativas do N5 são essenciais na vida cotidiana. Use: 何 (nani/nan = O quê) → 何を飲みますか (O que bebe?); どこ (doko = Onde) → 学校はどこですか (Onde é a escola?); いつ (itsu = Quando) → 試験はいつですか (Quando é a prova?); 誤 (dare = Quem) → あの人は誤ですか (Quem é aquela pessoa?); どの (dono = Qual) → どの本ですか (Qual livro?). NUNCA use ka (か) em afirmativas; ele SEMPRE indica pergunta.",
-            "example": "すみません、驅はどこですか？この魚は何ですか？いつから学校が始まりますか？",
+            "title": "Perguntas com Interrogativos: 何 / どこ / いつ / 誰 (O quê / Onde / Quando / Quem)",
+            "explanation": "Palavras interrogativas são úteis em situações cotidianas. Use: 何 (nani/nan = o quê) → 何を飲みますか (O que você bebe?); どこ (doko = onde) → 学校はどこですか (Onde fica a escola?); いつ (itsu = quando) → 試験はいつですか (Quando é a prova?); 誰 (dare = quem) → あの人は誰ですか (Quem é aquela pessoa?); どの (dono = qual) → どの本ですか (Qual livro?). Em registro polido, か costuma marcar perguntas no fim da frase; também aparece em outras estruturas, como alternativas e interrogativas indefinidas.",
+            "example": "すみません、駅はどこですか？この魚は何ですか？いつから学校が始まりますか？",
             "translation": "Com licença, onde é a estação? O que é esse peixe? Quando começa a escola?"
         },
         "readingText": {
@@ -3936,7 +3936,7 @@ const kanjiN5Data = [
                         "word": "喫茶店 (kissaten - Onyomi)",
                         "wordMeaning": "Cafeteria tradicional (lit. Loja de beber chá/café)",
                         "sentence": "駅前の喫茶店で会いましょう。(Ekimae no kissaten de aimashou)",
-                        "sentenceMeaning": "Vamos nos encontrar na cafeteria em frente à estação. (💡 Vocabulário N5 Clássico: Embora se use 'kafe' hoje em dia, 'kissaten' é uma palavra garantida no teste do JLPT!)."
+                        "sentenceMeaning": "Vamos nos encontrar na cafeteria em frente à estação. 喫茶店 (kissaten) designa uma cafeteria tradicional; カフェ (kafe) também é comum no uso atual."
                     }
                 ],
                 "radicals": [
@@ -4082,7 +4082,7 @@ const kanjiN5Data = [
     {
         "module": 10,
         "title": "Módulo 10: Culinária, Alimentos e Restaurantes",
-        "description": "Expanda seu vocabulário para o universo gastronômico japonês! Aprenda ideogramas essenciais sobre ingredientes, pratos típicos, bebidas e termos indispensáveis para o dia a dia e viagens.",
+        "description": "Amplie o vocabulário com Kanji relacionados a ingredientes, pratos, bebidas e situações de alimentação.",
         "grammar": {
             "title": "Expressões de Preferência: ～が 好きです / がきらいです (Gosto / Não Gosto)",
             "explanation": "Para expressar preferências alimentares no N5, a estrutura é: [Pessoa] は [Coisa] が 好きです (gosta de). O ponto crítico: use が (ga), não を (o), antes de 好き (suki = gostar) e 嫌い (kirai = não gostar/detestar). Para intensificar use 大好き (daisuki = adorar) e 大嫌い (daikirai = detestar muito). Para indicar o que quer pedir, use: ～をください (~ o kudasai = Por favor, me dê ~) ou ～にします (~ni shimasu = Vou pedir o ~, para fazer escolha).",
@@ -4472,7 +4472,7 @@ const kanjiN5Data = [
     {
         "module": 11,
         "title": "Módulo 11: Tabela Geral e Revisão N5",
-        "description": "A Tabela Periódica do JLPT N5! Consulte aqui todos os ideogramas dominados ao longo do curso, incluindo o bônus de culinária. Use este guia como referência rápida para revisar significados, leituras e conferir em qual módulo cada Kanji foi introduzido.",
+        "description": "Tabela de revisão da trilha de referência N5. Consulte os Kanji apresentados, incluindo o módulo de culinária, e revise significados, leituras e módulos de origem. Esta não é uma lista oficial do JLPT.",
         "isReviewTable": true,
         "readingText": {
             "title": "N5漢字の復習とこれからの道 (Revisão dos Kanjis N5 e o Caminho Futuro)",
