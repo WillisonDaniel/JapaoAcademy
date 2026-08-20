@@ -16073,7 +16073,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_18-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;module.metadata",
@@ -16081,16 +16081,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "b612647249b49e7e7de7f8fdc162d88e6d481e9369b2421e467e100886cf99c5",
-      "finalHash": "b612647249b49e7e7de7f8fdc162d88e6d481e9369b2421e467e100886cf99c5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "39886d129d7475e6db09520003b6e3f4e16f0c4a74257bb20bfd1b957315a1e2",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "title": "Pedidos e pagamento em lojas",
+        "sectionTitle": "Números, Dinheiro & Compras",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Peça um item com ～をください e pratique vocabulário básico para sacola e pagamento com cartão."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b612647249b49e7e7de7f8fdc162d88e6d481e9369b2421e467e100886cf99c5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage1_context",
@@ -16098,16 +16116,40 @@
         "kind": "context"
       },
       "beforeHash": "44749faea3695cc7311b502bcb28fdad0bbbd0336dfd0ea948e647b76268bec6",
-      "finalHash": "44749faea3695cc7311b502bcb28fdad0bbbd0336dfd0ea948e647b76268bec6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e794a9c6b095281111031f52998138731244cd00202c4368c061413e61fd334e",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Kore o kudasai.",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Peça um item com ～をください e pratique vocabulário básico para sacola e pagamento com cartão.",
+        "audio": {
+          "displayText": "これをください。",
+          "audioText": "これをください。",
+          "furigana": "",
+          "romaji": "Kore o kudasai.",
+          "translation": "Isto, por favor.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "44749faea3695cc7311b502bcb28fdad0bbbd0336dfd0ea948e647b76268bec6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage2_drops[0]",
@@ -16115,16 +16157,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "4883e9a4d291213826edf4ed57830ab06d2372f7dc11e36fc3230f2b2c7b7e06",
-      "finalHash": "4883e9a4d291213826edf4ed57830ab06d2372f7dc11e36fc3230f2b2c7b7e06",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "42f061f9b50473a782b604f697ccb6ccd7d4a77137c97c9db535aaa4754828de",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～をください",
+        "romaji": "o kudasai",
+        "translation": "~ por favor; dê-me ~, por favor",
+        "timeContext": "Expressão polida e frequente para solicitar um item em situações de atendimento."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4883e9a4d291213826edf4ed57830ab06d2372f7dc11e36fc3230f2b2c7b7e06"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage2_drops[1]",
@@ -16132,16 +16188,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d5cda172bef68ee6422a6cc3d95d4c1e4b1f9faa9dd9eaa9eec0b26c75f58878",
-      "finalHash": "d5cda172bef68ee6422a6cc3d95d4c1e4b1f9faa9dd9eaa9eec0b26c75f58878",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ea40eb4c66eab3f46fadf736f7cd77d945f41abe331906057e42c9e514784b3c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "袋（ふくろ）",
+        "romaji": "fukuro",
+        "translation": "saco; sacola",
+        "timeContext": "Em uma loja, pode referir-se à sacola para levar a compra."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d5cda172bef68ee6422a6cc3d95d4c1e4b1f9faa9dd9eaa9eec0b26c75f58878"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage2_drops[2]",
@@ -16149,16 +16219,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "0fd603eba0b2e33896e18e0d7d8c6b80ca70fc9a8adccb00f70f74320cb55b74",
-      "finalHash": "0fd603eba0b2e33896e18e0d7d8c6b80ca70fc9a8adccb00f70f74320cb55b74",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fbaf9e623cda7b453ffa48d673327d1c68abcd46ca6282dea5980ea3b4c96304",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "カード",
+        "romaji": "kaado",
+        "translation": "cartão",
+        "timeContext": "Em um pagamento, カード pode indicar o cartão usado na transação."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0fd603eba0b2e33896e18e0d7d8c6b80ca70fc9a8adccb00f70f74320cb55b74"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage2_drops[3]",
@@ -16166,16 +16250,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "b3805b3a636f8bcc3c91620e9fb982ee4e8f5559a09e2e9dac9b270f98950fa1",
-      "finalHash": "b3805b3a636f8bcc3c91620e9fb982ee4e8f5559a09e2e9dac9b270f98950fa1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d6d1fb3a7bec7db44147ed028cdc465cde3b7a85bd3b988a1efbc7e26575b9d1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Pedir um item com ～をください",
+        "rule": "Coloque o item antes de をください para fazer um pedido polido. ください integra a expressão de solicitação; não é apresentado aqui como um verbo independente.",
+        "formula": "[Item] + を + ください",
+        "example": "おみずをください。 (Omizu o kudasai.) — Água, por favor."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b3805b3a636f8bcc3c91620e9fb982ee4e8f5559a09e2e9dac9b270f98950fa1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage3_practice[0]",
@@ -16183,16 +16281,40 @@
         "kind": "practice"
       },
       "beforeHash": "cae1e3a45a097fa744cc7a740dff23ca1885b63eea7332b08ecbcd2e0e5e8875",
-      "finalHash": "cae1e3a45a097fa744cc7a740dff23ca1885b63eea7332b08ecbcd2e0e5e8875",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1c0e7d66803f8efc745133cf03d6b80bcfc469bb5d8df0f117c72aa59169a25f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "1. Você quer comprar um pão. Como você pede ao atendente?",
+        "options": [
+          {
+            "label": "パンをください。 (Pan o kudasai.)",
+            "isCorrect": true
+          },
+          {
+            "label": "パンは いくらですか。",
+            "isCorrect": false
+          },
+          {
+            "label": "パンが あります。",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cae1e3a45a097fa744cc7a740dff23ca1885b63eea7332b08ecbcd2e0e5e8875"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage3_practice[1]",
@@ -16200,16 +16322,40 @@
         "kind": "practice"
       },
       "beforeHash": "a82e73154af4fc9e8de16518ef5089ff3ca7ee6233ad73f1c9c01c928018e205",
-      "finalHash": "a82e73154af4fc9e8de16518ef5089ff3ca7ee6233ad73f1c9c01c928018e205",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "af369cd84e503bb44bff38e9cb116c295cc4ad725ba158fc52f15c949eeef364",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "2. O atendente pergunta 袋はいりますか（Fukuro wa irimasu ka）. O que ele quer saber?",
+        "options": [
+          {
+            "label": "Se você quer uma sacola.",
+            "isCorrect": true
+          },
+          {
+            "label": "Se você vai pagar com cartão.",
+            "isCorrect": false
+          },
+          {
+            "label": "Se você quer um desconto.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a82e73154af4fc9e8de16518ef5089ff3ca7ee6233ad73f1c9c01c928018e205"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage3_5_sentenceBuilder[0]",
@@ -16217,16 +16363,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "c5413e65cf8564f8da3d2f63d32ab36fb2fcd7661c5cc327a36ac3110cfd65a8",
-      "finalHash": "c5413e65cf8564f8da3d2f63d32ab36fb2fcd7661c5cc327a36ac3110cfd65a8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7f01346cbe78ee428a79fa4266088adffc41a590507ffcf9f21bac8de1b9b354",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "この パン を ください",
+        "translation": "Este pão, por favor.",
+        "chunks": [
+          "この",
+          "パン",
+          "を",
+          "ください"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c5413e65cf8564f8da3d2f63d32ab36fb2fcd7661c5cc327a36ac3110cfd65a8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage3_5_sentenceBuilder[1]",
@@ -16234,16 +16397,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "0e9f31253db2df2a8859456cb28e8ebfd1dddf3aad04be13df9b7ea2cbe4866e",
-      "finalHash": "0e9f31253db2df2a8859456cb28e8ebfd1dddf3aad04be13df9b7ea2cbe4866e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "14d4cf764381e0338d780ef37913ac209de63caeaed6deab6efbad3e5e34767a",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "カード で おねがいします",
+        "translation": "Com cartão, por favor.",
+        "chunks": [
+          "カード",
+          "で",
+          "おねがいします"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0e9f31253db2df2a8859456cb28e8ebfd1dddf3aad04be13df9b7ea2cbe4866e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage4_dialog[0]",
@@ -16251,16 +16430,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "bcb05bf6ede1fc67f6950e7a6717df563fb7ad7350ec12c0612c95a1fa16e722",
-      "finalHash": "bcb05bf6ede1fc67f6950e7a6717df563fb7ad7350ec12c0612c95a1fa16e722",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "180d5e68dc5c203f9f359167cb3749a7f387454ff5ec0a436bcda856d2ee6632",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: No caixa do konbini, você quer pagar com seu cartão.",
+        "npcName": "Atendente",
+        "npcMessage": "おかいけいは ごひゃくえんです。 (A conta é 500 ienes.)",
+        "options": [
+          {
+            "text": "カードで おねがいします。 (Com cartão, por favor.)",
+            "feedback": "A resposta indica o cartão como forma de pagamento.",
+            "isCorrect": true
+          },
+          {
+            "text": "ふくろ を ください。",
+            "feedback": "Essa frase pede uma sacola, mas não informa a forma de pagamento.",
+            "isCorrect": false
+          },
+          {
+            "text": "はい、ごひゃくえん です。",
+            "feedback": "Essa frase apenas repete o valor informado.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bcb05bf6ede1fc67f6950e7a6717df563fb7ad7350ec12c0612c95a1fa16e722"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage5_quiz[0]",
@@ -16268,16 +16480,32 @@
         "kind": "quiz"
       },
       "beforeHash": "c2adf79472c59cf40b55afcc3a760deb014fe0590e20acbbe9765e14943a23d2",
-      "finalHash": "c2adf79472c59cf40b55afcc3a760deb014fe0590e20acbbe9765e14943a23d2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7bb5418e3feb15ee774fecd3be55e36a6ffbe346124a642bb50631ecf443a38c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "Qual estrutura pode ser usada para pedir um item em uma loja?",
+        "options": [
+          "～をください",
+          "~ wa doko desu ka",
+          "~ ga suki desu"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c2adf79472c59cf40b55afcc3a760deb014fe0590e20acbbe9765e14943a23d2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage5_quiz[1]",
@@ -16285,16 +16513,32 @@
         "kind": "quiz"
       },
       "beforeHash": "5d92c02e22e72c9e3166373aff655f9de4adabfaac7f7c58d59f3f85bd3d1a0d",
-      "finalHash": "5d92c02e22e72c9e3166373aff655f9de4adabfaac7f7c58d59f3f85bd3d1a0d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "058fae129a3ecf917a4c4f5a5ff2f9c5829ffb5b1f06c7c8650f55016f3fbbf1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de ～をください?",
+        "options": [
+          "Me dê ~, por favor",
+          "Sacola",
+          "Cartão (de crédito/débito)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5d92c02e22e72c9e3166373aff655f9de4adabfaac7f7c58d59f3f85bd3d1a0d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage5_quiz[2]",
@@ -16302,16 +16546,32 @@
         "kind": "quiz"
       },
       "beforeHash": "eabb7bbd3f62aabaa15db0b777763f645dd441d22b5e24962324fb9bfaa4940c",
-      "finalHash": "eabb7bbd3f62aabaa15db0b777763f645dd441d22b5e24962324fb9bfaa4940c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "0776869eb49805e889c15060ff209f6e03f47072ce0c9ff48b3852ea3a02165e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de 袋（ふくろ）?",
+        "options": [
+          "Me dê ~, por favor",
+          "Sacola",
+          "Cartão (de crédito/débito)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "eabb7bbd3f62aabaa15db0b777763f645dd441d22b5e24962324fb9bfaa4940c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage5_quiz[3]",
@@ -16319,16 +16579,32 @@
         "kind": "quiz"
       },
       "beforeHash": "8f74f22d09d84aa99a82d7f2a2650b4497de42261bb49652f8a53e18fbab948f",
-      "finalHash": "8f74f22d09d84aa99a82d7f2a2650b4497de42261bb49652f8a53e18fbab948f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2383e661676203e271173c52419a3989cc0005bcbac1e4883575226e226ed354",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de カード?",
+        "options": [
+          "Sacola",
+          "Me dê ~, por favor",
+          "Cartão (de crédito/débito)"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8f74f22d09d84aa99a82d7f2a2650b4497de42261bb49652f8a53e18fbab948f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_18;stage5_quiz[4]",
@@ -16336,11 +16612,27 @@
         "kind": "quiz"
       },
       "beforeHash": "f46cbde441341e7d4e0e21b10e75f6e96dc19a2c26fba557c98865ad72ddeb79",
-      "finalHash": "f46cbde441341e7d4e0e21b10e75f6e96dc19a2c26fba557c98865ad72ddeb79",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "54cfda5bc12231b0113f59fc1ad716b424bdb46cf046f1b7db031efdf2567915",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre ～をください, qual afirmação é correta?",
+        "options": [
+          "O item pode aparecer antes de をください para formar um pedido polido.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f46cbde441341e7d4e0e21b10e75f6e96dc19a2c26fba557c98865ad72ddeb79"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_19-module-metadata",
@@ -358800,8 +359092,8 @@
         "locator": "items[222]",
         "resource": "dictionary"
       },
-      "beforeHash": "61d62ee31f2f714bb923a84a132ee9d3c772ed9a6dc29bba01689e9fa9376d1f",
-      "finalHash": "61d62ee31f2f714bb923a84a132ee9d3c772ed9a6dc29bba01689e9fa9376d1f",
+      "beforeHash": "b09ef63c5178cbacd8c79284d8f073b45d7a12476e2b5b393baf428bed8ed3fb",
+      "finalHash": "b09ef63c5178cbacd8c79284d8f073b45d7a12476e2b5b393baf428bed8ed3fb",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358817,8 +359109,8 @@
         "locator": "items[223]",
         "resource": "dictionary"
       },
-      "beforeHash": "76815b15b0a48f467c1ecbbd1d8ebffe4eb2129a8b70805a50fc9142357fa300",
-      "finalHash": "76815b15b0a48f467c1ecbbd1d8ebffe4eb2129a8b70805a50fc9142357fa300",
+      "beforeHash": "0897b8147c1af56f9cb2f0cb7495a8907eb728b50c819b9f131ce0a7046160ad",
+      "finalHash": "0897b8147c1af56f9cb2f0cb7495a8907eb728b50c819b9f131ce0a7046160ad",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358834,8 +359126,8 @@
         "locator": "items[224]",
         "resource": "dictionary"
       },
-      "beforeHash": "34911d71da523fc8f30563791b514b26776d5607178c654c8dd7f7a976184314",
-      "finalHash": "34911d71da523fc8f30563791b514b26776d5607178c654c8dd7f7a976184314",
+      "beforeHash": "145615f4c2f4e0d6943d0ad9181d1d56fffd308723e34304d5ff78d6d5a8be16",
+      "finalHash": "145615f4c2f4e0d6943d0ad9181d1d56fffd308723e34304d5ff78d6d5a8be16",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358851,8 +359143,8 @@
         "locator": "items[225]",
         "resource": "dictionary"
       },
-      "beforeHash": "6a772b2d918a0e02a6a11d7b5f577492646b0aa912e5d32e1bdef77d6dc66213",
-      "finalHash": "6a772b2d918a0e02a6a11d7b5f577492646b0aa912e5d32e1bdef77d6dc66213",
+      "beforeHash": "08a86bbc97c283a6117ba344ae7295653fbb7d6eb42ec45b871292b00e338182",
+      "finalHash": "08a86bbc97c283a6117ba344ae7295653fbb7d6eb42ec45b871292b00e338182",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -428362,21 +428654,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_18-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[17]",
         "resource": "listening"
       },
-      "beforeHash": "3e2adf571fd7edfe2a9cfd18e8d7855a69e9bcc45b78ab5b3a6cd215dca5abda",
-      "finalHash": "3e2adf571fd7edfe2a9cfd18e8d7855a69e9bcc45b78ab5b3a6cd215dca5abda",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "78768a8822bee6f50779f89d0d69dc2c33b7eee321294b042cda4a19d8d6446d",
+      "finalHash": "78768a8822bee6f50779f89d0d69dc2c33b7eee321294b042cda4a19d8d6446d",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_18-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_19-context-0",
@@ -436116,8 +436417,8 @@
         "locator": "reference[17]",
         "resource": "grammar"
       },
-      "beforeHash": "2ea0cc2325a7bffb86388e3e00373668b400c95583b7df15a4e94e9ddb85e111",
-      "finalHash": "2ea0cc2325a7bffb86388e3e00373668b400c95583b7df15a4e94e9ddb85e111",
+      "beforeHash": "5853379b1cc23dcbb3bba29bd33c6170c1f75c026446c6cfdf65ada92ca8089b",
+      "finalHash": "5853379b1cc23dcbb3bba29bd33c6170c1f75c026446c6cfdf65ada92ca8089b",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -440349,40 +440650,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_18-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[34]",
         "resource": "writing"
       },
-      "beforeHash": "7bc5fe9cb71aa94b18eb1bf351abb2f05fcf5165762a0c9d329cf1b506b9656d",
-      "finalHash": "7bc5fe9cb71aa94b18eb1bf351abb2f05fcf5165762a0c9d329cf1b506b9656d",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "6086cc0b4aec6d46032790790113ad52f72921be403ae7b6ac03f7d016243b2a",
+      "finalHash": "6086cc0b4aec6d46032790790113ad52f72921be403ae7b6ac03f7d016243b2a",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_18-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_18-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[35]",
         "resource": "writing"
       },
-      "beforeHash": "ea76f65c0fa7c9b1985ae86efeb0d3c8baf769d98a4acc79ffc46f4bdff149e5",
-      "finalHash": "ea76f65c0fa7c9b1985ae86efeb0d3c8baf769d98a4acc79ffc46f4bdff149e5",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "62967e50b7232020cff4a5d40f25536351601840f8d5a7c3b7ddc2b9a2f43e23",
+      "finalHash": "62967e50b7232020cff4a5d40f25536351601840f8d5a7c3b7ddc2b9a2f43e23",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_18-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 61
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_19-1",

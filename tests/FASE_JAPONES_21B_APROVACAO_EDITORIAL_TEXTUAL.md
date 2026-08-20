@@ -243,8 +243,20 @@ O módulo de preços agora apresenta `いくら`, `円`, centenas e milhares sem
 
 As decisões usam o diálogo de compras e a tabela de números do *Genki I* (pp. 58 e 69), com uma segunda família editorial (*Tobira*, p. 41) para a conferência contextual de `いくら`. Após a propagação, o ledger global contém 6.182 aprovações, 738 correções e 16.614 casos inconclusivos. Os dezessete módulos já auditados somam 343 alvos canônicos sustentados; neste lote, 17 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
+## Lote A1-18
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 16 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo de compras remove títulos promocionais e esclarece `～をください` como expressão polida de solicitação, sem rotular `ください` isoladamente como o verbo ensinado. `袋` e `カード` ganharam sentidos dependentes do contexto, enquanto as duas construções de frase alheias ao tema foram substituídas por um pedido de item e uma escolha de pagamento. Diálogo, Romaji e feedbacks foram normalizados.
+
+As decisões usam o vocabulário e o diálogo de compras do *Genki I* (pp. 58 e 61), com uma segunda família editorial (*Tobira*, p. 124) para a conferência contextual de `袋`. Após a propagação, o ledger global contém 6.182 aprovações, 757 correções e 16.595 casos inconclusivos. Os dezoito módulos já auditados somam 359 alvos canônicos sustentados; neste lote, 16 alvos canônicos e três projeções derivadas deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-18 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-19 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

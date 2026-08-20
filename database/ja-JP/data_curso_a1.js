@@ -4099,44 +4099,44 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_18",
-        "title": "Comprando na Loja de Conveniência",
+        "title": "Pedidos e pagamento em lojas",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 105,
         "stage1_context": {
             "audioGuide": "Kore o kudasai.",
-            "missionTitle": "Objetivo de Hoje: Mestre do Konbini",
-            "missionDescription": "Aprenda a frase mágica para pedir qualquer coisa em uma loja, como pedir uma sacola e como dizer que vai pagar com cartão."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Peça um item com ～をください e pratique vocabulário básico para sacola e pagamento com cartão."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
-                "kanji": "～を ください",
+                "kanji": "～をください",
                 "romaji": "o kudasai",
-                "translation": "Me dê ~, por favor",
-                "timeContext": "A forma mais direta e educada de pedir um item em uma loja."
+                "translation": "~ por favor; dê-me ~, por favor",
+                "timeContext": "Expressão polida e frequente para solicitar um item em situações de atendimento."
             },
             {
                 "type": "vocab",
-                "kanji": "ふくろ",
-                "romaji": "Fukuro",
-                "translation": "Sacola",
-                "timeContext": "No Japão, muitas vezes perguntam se você precisa de uma."
+                "kanji": "袋（ふくろ）",
+                "romaji": "fukuro",
+                "translation": "saco; sacola",
+                "timeContext": "Em uma loja, pode referir-se à sacola para levar a compra."
             },
             {
                 "type": "vocab",
                 "kanji": "カード",
-                "romaji": "Kaado",
-                "translation": "Cartão (de crédito/débito)",
-                "timeContext": "Palavra estrangeira, por isso em Katakana."
+                "romaji": "kaado",
+                "translation": "cartão",
+                "timeContext": "Em um pagamento, カード pode indicar o cartão usado na transação."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Fórmula do Pedido",
-                "rule": "Para pedir algo, aponte ou pegue o item e diga o nome dele seguido da partícula de objeto 'o' (を) e o verbo 'kudasai'.",
+                "title": "Pedir um item com ～をください",
+                "rule": "Coloque o item antes de をください para fazer um pedido polido. ください integra a expressão de solicitação; não é apresentado aqui como um verbo independente.",
                 "formula": "[Item] + を + ください",
-                "example": "おみず を ください (O-mizu o kudasai) ➔ Me dê a água, por favor."
+                "example": "おみずをください。 (Omizu o kudasai.) — Água, por favor."
             }
         ],
         "stage3_practice": [
@@ -4144,21 +4144,21 @@ const CURSO_A1_DADOS = [
                 "question": "1. Você quer comprar um pão. Como você pede ao atendente?",
                 "options": [
                     {
-                        "label": "パン を ください (Pan o kudasai)",
+                        "label": "パンをください。 (Pan o kudasai.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "パン は いくら です か (Pan wa ikura desu ka)",
+                        "label": "パンは いくらですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "パン が あります (Pan ga arimasu)",
+                        "label": "パンが あります。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. O atendente pergunta 'Fukuro wa irimasu ka?'. O que ele quer saber?",
+                "question": "2. O atendente pergunta 袋はいりますか（Fukuro wa irimasu ka）. O que ele quer saber?",
                 "options": [
                     {
                         "label": "Se você quer uma sacola.",
@@ -4177,26 +4177,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "この へや は しずか です",
-                "translation": "Este quarto é silencioso.",
+                "sentenceJp": "この パン を ください",
+                "translation": "Este pão, por favor.",
                 "chunks": [
                     "この",
-                    "へや",
-                    "は",
-                    "しずか",
-                    "です"
+                    "パン",
+                    "を",
+                    "ください"
                 ]
             },
             {
-                "sentenceJp": "きょうと は ゆうめい な まち です",
-                "translation": "Quioto é uma cidade famosa.",
+                "sentenceJp": "カード で おねがいします",
+                "translation": "Com cartão, por favor.",
                 "chunks": [
-                    "きょうと",
-                    "は",
-                    "ゆうめい",
-                    "な",
-                    "まち",
-                    "です"
+                    "カード",
+                    "で",
+                    "おねがいします"
                 ]
             }
         ],
@@ -4204,21 +4200,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: No caixa do konbini, você quer pagar com seu cartão.",
                 "npcName": "Atendente",
-                "npcMessage": "おかいけい は ごひゃくえん です。(A conta é 500 ienes.)",
+                "npcMessage": "おかいけいは ごひゃくえんです。 (A conta é 500 ienes.)",
                 "options": [
                     {
-                        "text": "カード で おねがいします。(Com cartão, por favor.)",
-                        "feedback": "Perfeito! Você usou a partícula 'de' para indicar o meio de pagamento.",
+                        "text": "カードで おねがいします。 (Com cartão, por favor.)",
+                        "feedback": "A resposta indica o cartão como forma de pagamento.",
                         "isCorrect": true
                     },
                     {
                         "text": "ふくろ を ください。",
-                        "feedback": "Incorreto. Você pediu uma sacola em vez de dizer como vai pagar.",
+                        "feedback": "Essa frase pede uma sacola, mas não informa a forma de pagamento.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、ごひゃくえん です。",
-                        "feedback": "Incorreto. Você apenas repetiu o preço para o atendente.",
+                        "feedback": "Essa frase apenas repete o valor informado.",
                         "isCorrect": false
                     }
                 ]
@@ -4226,16 +4222,16 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a frase para pedir um item em uma loja?",
+                "question": "Qual estrutura pode ser usada para pedir um item em uma loja?",
                 "options": [
-                    "~ o kudasai",
+                    "～をください",
                     "~ wa doko desu ka",
                     "~ ga suki desu"
                 ],
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra '～を ください' (o kudasai)?",
+                "question": "Qual é o sentido de ～をください?",
                 "options": [
                     "Me dê ~, por favor",
                     "Sacola",
@@ -4244,7 +4240,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'ふくろ' (Fukuro)?",
+                "question": "Qual é o sentido de 袋（ふくろ）?",
                 "options": [
                     "Me dê ~, por favor",
                     "Sacola",
@@ -4253,7 +4249,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'カード' (Kaado)?",
+                "question": "Qual é o sentido de カード?",
                 "options": [
                     "Sacola",
                     "Me dê ~, por favor",
@@ -4262,9 +4258,9 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'A Fórmula do Pedido': qual afirmação é correta?",
+                "question": "Sobre ～をください, qual afirmação é correta?",
                 "options": [
-                    "Para pedir algo, aponte ou pegue o item e diga o nome dele seguido da partícula de objeto 'o' (を) e o verbo 'kudasai'.",
+                    "O item pode aparecer antes de をください para formar um pedido polido.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -8197,6 +8193,13 @@ CURSO_A1_DADOS[15].editorialReview = {
 };
 
 CURSO_A1_DADOS[16].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[17].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
