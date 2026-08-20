@@ -186,9 +186,9 @@ function stripEditorialFields(value) {
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
         ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '23119266b91e7fa0f1ea4609816655044a24d638eda836bdaa31c9acc5521b6b'],
-        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '24e2f22f3488024b605024edeb538944f86b08d760afdfa858d5333fc68559d7'],
+        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '52512e3aa86185b86151a28a4f5bec08ed4f0ff1591d571f6bcde104b2e09038'],
         ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', 'eb603690932c3ca4f8044a72b7a8325ebe2a49f2576467bb1f63933fcd6262d6'],
-        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', 'a063ea1f73204483d5d7484cee25d1bcd2d329ed61f7949eb4c73075773c9cab']
+        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', 'ce2fc286bc4a1869dd9082277de2ddea38ccd3d73b2cbc5db9c27a8c76b55de4']
     ];
     fixtures.forEach(([file, variable, expected]) => {
         const structural = JSON.stringify(stripEditorialFields(loadDataset(file, variable)));

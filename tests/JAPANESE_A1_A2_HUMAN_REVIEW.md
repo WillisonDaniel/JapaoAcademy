@@ -47,7 +47,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a2_mod_03 | stage1_context.audio | 週末、何をしますか。 | Shuumatsu, nani o shimasu ka. | O que você faz no fim de semana? | corrected |
 | a2_mod_03 | stage4_dialog[0].content | 週末、何をしますか。 | shuumatsu, nani o shimasu ka. | O que você faz no fim de semana? | corrected |
 | a2_mod_03 | stage4_dialog[1].content | 本を読みますか。 | Hon o yomimasu ka. | Você lê livros? | corrected |
-| a2_mod_03 | stage4_dialog[2].content | の趣味は何ですか。 | no shumi wa nan desu ka. | Qual é o seu hobby? | corrected |
+| a2_mod_03 | stage4_dialog[2].content | 趣味は何ですか。 | Shumi wa nan desu ka. | Qual é o seu hobby? | corrected |
 | a2_mod_04 | stage1_context.audio | このラーメンはおいしいです！ | Kono raamen wa oishii desu! | Este ramen é saboroso! | corrected |
 | a2_mod_04 | stage4_dialog[0].content | ラーメンはいかがですか。 | Raamen wa ikaga desu ka. | O que achou do ramen? | corrected |
 | a2_mod_04 | stage4_dialog[1].content | 新しいスマホですか。 | Atarashii sumaho desu ka. | É um celular novo? | corrected |
@@ -70,7 +70,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a2_mod_08 | stage4_dialog[2].content | 一人で行きましたか。 | Hitori de ikimashita ka. | Você foi sozinho? | corrected |
 | a2_mod_09 | stage1_context.audio | 日本語が好きです！ | Nihongo ga suki desu! | Gosto de japonês! | corrected |
 | a2_mod_09 | stage4_dialog[0].content | 日本の食べ物が好きですか。 | Nihon no tabemono ga suki desu ka. | Você gosta de comida japonesa? | corrected |
-| a2_mod_09 | stage4_dialog[1].content | は日本語が上手ですね！ | wa nihongo ga jouzu desu ne! | Você é muito bom em japonês! | corrected |
+| a2_mod_09 | stage4_dialog[1].content | 日本語が上手ですね！ | Nihongo ga jouzu desu ne! | Seu japonês é muito bom! | corrected |
 | a2_mod_09 | stage4_dialog[2].content | スポーツが好きですか。 | Supootsu ga suki desu ka. | Gosta de esportes? | corrected |
 | a2_mod_10 | stage1_context.audio | AはBより高いです！ | A wa B yori takai desu! | A é mais caro que B! | corrected |
 | a2_mod_10 | stage4_dialog[0].content | 新幹線とバス、どちらがいいですか。 | Shinkansen to basu, dochira ga ii desu ka. | Trem-bala ou ônibus, qual é melhor? | corrected |
@@ -106,7 +106,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a2_mod_17 | stage4_dialog[2].content | 名古屋駅で乗り換えです。 | Nagoya-eki de norikae desu. | A baldeação é na Estação de Nagoya. | corrected |
 | a2_mod_18 | stage1_context.audio | チェックインをお願いします！ | Chekkuin o onegai shimasu! | Gostaria de fazer o check-in! | corrected |
 | a2_mod_18 | stage4_dialog[0].content | いらっしゃいませ！こんにちは。 | Irasshaimase! Konnichiwa. | Bem-vindo! Boa tarde. | corrected |
-| a2_mod_18 | stage4_dialog[1].content | 様、お部屋は四〇二号室です。これは鍵です。 | oheya wa yon-maru-ni gou-shitsu desu. Kore wa kagi desu. | Sr. seu quarto é o 402. Aqui está a chave. | corrected |
+| a2_mod_18 | stage4_dialog[1].content | お客様、お部屋は四〇二号室です。これは鍵です。 | Okyaku-sama, oheya wa yon-maru-ni-gou shitsu desu. Kore wa kagi desu. | Seu quarto é o 402. Aqui está a chave. | corrected |
 | a2_mod_19 | stage1_context.audio | 右に曲がってください！ | Migi ni magatte kudasai! | Vire à direita, por favor! | corrected |
 | a2_mod_19 | stage4_dialog[0].content | すみません！コンビニはどこですか。コンビニですか。あの信号を右に曲がってください。 | Sumimasen! Konbini wa doko desu ka. Konbini desu ka. Ano shingou o migi ni magatte kudasai. | Com licença! Onde fica a loja de conveniência? Vire à direita naquele semáforo. | corrected |
 | a2_mod_19 | stage4_dialog[1].content | 駅はどこですか。 | Eki wa doko desu ka. | Onde fica a estação? | corrected |

@@ -6223,3 +6223,16 @@ const B2_PHASE18_TEXT_REPLACEMENTS = new Map([
 }
 
 applyB2Phase21BEditorialReview();
+
+// A Fase 22A remove o fragmento deixado pelo marcador de nome na projeção de Escuta.
+(function applyB2Phase22AListeningCorrections() {
+    const dialogue = CURSO_B2_DADOS.find(module => module.id === "b2_mod_19")?.stage4_dialog?.[1];
+    if (!dialogue?.content) return;
+    dialogue.npcMessage = "生きがいは何ですか。";
+    Object.assign(dialogue.content, {
+        displayText: "生きがいは何ですか。",
+        audioText: "生きがいは何ですか。",
+        romaji: "Ikigai wa nan desu ka?",
+        translation: "O que dá sentido à sua vida?"
+    });
+})();

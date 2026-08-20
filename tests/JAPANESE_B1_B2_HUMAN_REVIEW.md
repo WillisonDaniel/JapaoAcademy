@@ -174,7 +174,7 @@ Conteúdo criado na Fase 3C. O status `pending-human-review` indica que a valida
 | b2_mod_18 | stage4_dialog[2].content | にこにこ笑って食べよう！ | Nikoniko waratte tabeyou! | Vamos comer sorrindo! | corrected |
 | b2_mod_19 | stage1_context.audio | おもてなしの心と生きがいを大切にします。 | Omotenashi no kokoro to ikigai o taisetsu ni shimasu. | Valorizamos o espírito de hospitalidade e aquilo que dá sentido à vida. | corrected |
 | b2_mod_19 | stage4_dialog[0].content | おもてなしとは、相手の心を思うことです。 | Omotenashi to wa, aite no kokoro o omou koto desu. | Omotenashi é pensar no coração do outro. | corrected |
-| b2_mod_19 | stage4_dialog[1].content | の生きがいは何ですか。 | no Ikigai wa nani desu ka? | Qual é o seu Ikigai / razão de viver? | corrected |
+| b2_mod_19 | stage4_dialog[1].content | 生きがいは何ですか。 | Ikigai wa nan desu ka? | O que dá sentido à sua vida? | corrected |
 | b2_mod_19 | stage4_dialog[2].content | どうぞ、わび・さびの趣をお楽しみください。 | Douzo, wabi-sabi no omomuki o o-tanoshimi kudasai. | Aprecie a estética de wabi-sabi, por favor. | corrected |
 | b2_mod_20 | stage1_context.audio | おめでとうございます！すべてのレベル修了です！ | Omedetou gozaimasu! Subete no reberu shuuryou desu! | Parabéns! Todos os níveis foram concluídos! | corrected |
 | b2_mod_20 | stage4_dialog[0].content | おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！ | omedetou gozaimasu. Kono yottsu no reberu no gakushuu wa, hontou ni subarashikatta desu! | Parabéns! Seu trabalho ao longo destes quatro níveis foi realmente excelente! | corrected |

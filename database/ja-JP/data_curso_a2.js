@@ -9183,3 +9183,19 @@ CURSO_A2_DADOS.find(module => module.id === "a2_mod_30").stage5_quiz[4].options[
         module.editorialReview = { status: "corrected", phase: "21B.2", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
     });
 })();
+
+// A Fase 22A alinha a projeção de Escuta ao diálogo canônico após a remoção
+// dos marcadores de nome. Nenhuma regra de progresso ou atividade é alterada.
+(function applyA2Phase22AListeningCorrections() {
+    const corrections = {
+        a2_mod_03: [2, "趣味は何ですか。", "Shumi wa nan desu ka.", "Qual é o seu hobby?"],
+        a2_mod_09: [1, "日本語が上手ですね！", "Nihongo ga jouzu desu ne!", "Seu japonês é muito bom!"],
+        a2_mod_18: [1, "お客様、お部屋は四〇二号室です。これは鍵です。", "Okyaku-sama, oheya wa yon-maru-ni-gou shitsu desu. Kore wa kagi desu.", "Seu quarto é o 402. Aqui está a chave."]
+    };
+    Object.entries(corrections).forEach(([moduleId, [dialogueIndex, japanese, romaji, translation]]) => {
+        const dialogue = CURSO_A2_DADOS.find(module => module.id === moduleId)?.stage4_dialog?.[dialogueIndex];
+        if (!dialogue?.content) return;
+        dialogue.npcMessage = japanese;
+        Object.assign(dialogue.content, { displayText: japanese, audioText: japanese, romaji, translation });
+    });
+})();

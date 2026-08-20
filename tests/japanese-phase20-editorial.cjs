@@ -76,7 +76,7 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { unresolved: 5855, corrected: 285, approved: 33 }, 'estados derivados mudaram sem atualização do relatório');
+assert.deepEqual(states, { unresolved: 5639, corrected: 501, approved: 33 }, 'estados derivados mudaram sem atualização do relatório');
 
 for (const decision of decisions) {
     assert.ok(['approved', 'corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
@@ -97,9 +97,9 @@ const byResource = decisions.reduce((result, decision) => {
     result[resource][decision.state] += 1;
     return result;
 }, {});
-assert.equal(byResource.listening.corrected, 74);
+assert.equal(byResource.listening.corrected, 290);
 assert.equal(byResource.listening.approved, 29);
-assert.equal(byResource.listening.unresolved, 216);
+assert.equal(byResource.listening.unresolved, 0);
 assert.equal(byResource.grammar.corrected, 3);
 assert.equal(byResource.jlpt.corrected, 2);
 assert.equal(byResource.writing.corrected, 206);
@@ -118,4 +118,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
         `${name}: nomenclatura humana permaneceu no relatório neutro`);
 }
 
-console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após B2-20.`);
+console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após a auditoria de Escuta.`);

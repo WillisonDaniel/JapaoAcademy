@@ -44,7 +44,8 @@ for (const courseModule of modules) {
         assert.ok(decision, `${target.id}: decisão ausente`);
         assert.ok(['approved', 'corrected'].includes(decision.state), `${target.id}: alvo inconclusivo`);
         assert.equal(decision.finalHash, digest(target.value), `${target.id}: hash final divergente`);
-        assert.equal(decision.resolutionPhase, '21B.4');
+        assert.equal(decision.resolutionPhase,
+            target.id === 'ja-course-phase18-b2-b2_mod_19-stage4-dialog-1' ? '22A' : '21B.4');
         assert.ok(decision.references.length >= 1, `${target.id}: evidência ausente`);
         if (decision.reasonKind === 'naturalness') {
             assert.ok(new Set(decision.references.map(reference => sourceFamily(reference.sourceId))).size >= 2,
