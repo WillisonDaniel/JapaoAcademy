@@ -790,51 +790,51 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_04",
-        "title": "Despedidas e Variações: Sayounara vs. Ja ne",
+        "title": "Despedidas: registro e contexto",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
         "xpReward": 80,
         "stage1_context": {
-            "audioGuide": "Otsukaresama deshita! Ja ne!",
+            "audioGuide": "Otsukaresama deshita! Jaa ne!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Sabia que os japoneses quase nunca usam 'Sayounara' no dia a dia? Vamos aprender a nos despedir do jeito certo entre amigos e no trabalho!"
+            "missionDescription": "Escolha despedidas adequadas à relação e ao contexto: casual entre amigos, profissional e mais formal."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "さようなら",
                 "romaji": "Sayounara",
-                "translation": "Adeus / Até um longo tempo",
-                "timeContext": "Evite no dia a dia! Soa dramático, como se você não fosse ver a pessoa por muito tempo."
+                "translation": "Adeus / despedida",
+                "timeContext": "Pode sugerir uma separação maior ou mais marcada pelo contexto. É comum, por exemplo, quando alunos se despedem do professor; não é o equivalente universal de 'tchau'."
             },
             {
                 "type": "vocab",
                 "kanji": "じゃあね / またね",
-                "romaji": "Ja ne / Mata ne",
-                "translation": "Até logo / Tchau tchau!",
-                "timeContext": "A forma mais comum e natural de se despedir de amigos, colegas de escola e familiares."
+                "romaji": "Jaa ne / Mata ne",
+                "translation": "Até mais / Até logo",
+                "timeContext": "Formas casuais entre pessoas próximas quando se espera se ver novamente em breve."
             },
             {
                 "type": "vocab",
                 "kanji": "おつかれさまでした",
                 "romaji": "Otsukaresama deshita",
-                "translation": "Obrigado pelo seu duro trabalho / Bom descanso",
-                "timeContext": "Frase sagrada no ambiente de trabalho e cursos ao final do dia ou de um projeto."
+                "translation": "Obrigado pelo esforço / Bom trabalho",
+                "timeContext": "Expressão frequente ao encerrar uma atividade, especialmente em contextos de trabalho; a outra pessoa pode responder com a mesma expressão."
             },
             {
                 "type": "vocab",
                 "kanji": "しつれいします",
                 "romaji": "Shitsurei shimasu",
                 "translation": "Com licença (ao me retirar)",
-                "timeContext": "Despedida muito formal usada ao sair da sala de um professor, chefe ou cliente."
+                "timeContext": "Forma polida para sair, por exemplo, do escritório de um professor. Em empresas, também se ouve お先に失礼します ao sair antes dos demais."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Armadilha do 'Sayounara'",
-                "rule": "Em animes antigos traduzimos Sayounara como simples 'Tchau', mas no Japão real tem peso de 'Adeus final'.",
-                "formula": "Amigos ➔ じゃあね (Ja ne) | Trabalho ➔ おつかれさま (Otsukaresama)",
-                "example": "Dizer Sayounara para o chefe no fim do dia soa como se você estivesse se demitindo da empresa!"
+                "title": "Escolha pelo contexto",
+                "rule": "Há várias despedidas em japonês. A escolha depende da proximidade, da situação e de quando se espera ver a pessoa outra vez.",
+                "formula": "Amigos ➔ じゃあ、またね | Trabalho ➔ おつかれさまでした | Saída formal ➔ 失礼します",
+                "example": "Ao deixar o escritório de um professor, 失礼します é uma opção polida; com um amigo, じゃあ、またね combina melhor."
             }
         ],
         "stage3_practice": [
@@ -863,7 +863,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "👋 じゃあね！ / またね！ (Ja ne! / Mata ne!)",
+                        "label": "👋 じゃあね！ / またね！ (Jaa ne! / Mata ne!)",
                         "isCorrect": true
                     },
                     {
@@ -873,18 +873,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que dizer 'Sayounara' para sua esposa/marido antes de ir trabalhar de manhã é um erro horrível?",
+                "question": "3. Qual despedida tende a ser mais natural ao sair de casa de manhã, esperando voltar depois?",
                 "options": [
                     {
-                        "label": "Porque soa como se você estivesse pedindo divórcio e nunca mais fosse voltar",
+                        "label": "いってきます (Ittekimasu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque é informal demais para casais",
+                        "label": "さようなら (Sayounara)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque significa 'Bom apetite'",
+                        "label": "いただきます (Itadakimasu)",
                         "isCorrect": false
                     }
                 ]
@@ -893,7 +893,7 @@ const CURSO_A1_DADOS = [
                 "question": "4. Você está na sala de um professor universitário tirando dúvidas. Ao fechar a porta para ir embora, o que você diz?",
                 "options": [
                     {
-                        "label": "じゃあね！ (Ja ne!)",
+                        "label": "じゃあね！ (Jaa ne!)",
                         "isCorrect": false
                     },
                     {
@@ -926,24 +926,20 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "これ は ほん です",
-                "translation": "Isto é um livro.",
+                "sentenceJp": "じゃあ また ね",
+                "translation": "Então, até mais.",
                 "chunks": [
-                    "これ",
-                    "は",
-                    "ほん",
-                    "です"
+                    "じゃあ",
+                    "また",
+                    "ね"
                 ]
             },
             {
-                "sentenceJp": "それ は なん です か",
-                "translation": "O que é isso?",
+                "sentenceJp": "しつれい します",
+                "translation": "Com licença (ao me retirar).",
                 "chunks": [
-                    "それ",
-                    "は",
-                    "なん",
-                    "です",
-                    "か"
+                    "しつれい",
+                    "します"
                 ]
             }
         ],
@@ -955,17 +951,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "しつれいします (Shitsurei shimasu)",
-                        "feedback": "Muitíssimo formal e robótico para dizer a um amigo de classe!",
+                        "feedback": "É uma despedida polida, mas aqui a relação é casual; uma forma como じゃあね combina melhor.",
                         "isCorrect": false
                     },
                     {
-                        "text": "うん、じゃあね！ またね！ (Un, ja ne! Mata ne!)",
-                        "feedback": "Perfeito! Natural, amigável e com a entonação exata entre amigos.",
+                        "text": "うん、じゃあね！ またね！ (Un, jaa ne! Mata ne!)",
+                        "feedback": "Boa escolha: é casual e adequada entre colegas próximos que esperam se ver no dia seguinte.",
                         "isCorrect": true
                     },
                     {
                         "text": "さようなら... (Sayounara...)",
-                        "feedback": "Incorreto! O Kenji vai achar que você vai mudar de cidade e nunca mais voltará!",
+                        "feedback": "Não é a opção mais usual aqui: さようなら pode transmitir uma separação mais marcada do que a situação pede.",
                         "isCorrect": false
                     }
                 ]
@@ -976,13 +972,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "おさきに しつれいします。 (Com licença, estou indo na frente.)",
                 "options": [
                     {
-                        "text": "じゃあね、サトウ・さん！",
-                        "feedback": "Extremamente informal! Falar assim com o chefe pode causar demissão!",
+                        "text": "じゃあね、佐藤さん！",
+                        "feedback": "É casual demais para esta interação profissional. Prefira uma despedida polida.",
                         "isCorrect": false
                     },
                     {
                         "text": "おつかれさまでした！ (Otsukaresama deshita!)",
-                        "feedback": "Excelente! Resposta corporativa perfeita, agradecendo o esforço do chefe.",
+                        "feedback": "Boa resposta: reconhece o esforço em um contexto de trabalho.",
                         "isCorrect": true
                     },
                     {
@@ -999,17 +995,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "ありがとうございます！ しつれいします！",
-                        "feedback": "Impecável! 'Muito obrigado! Com licença ao me retirar' mostra respeito e etiqueta profissional de alto nível.",
+                        "feedback": "Boa escolha: agradece pela entrevista e usa uma despedida polida ao sair.",
                         "isCorrect": true
                     },
                     {
                         "text": "またね！ バイバイ！ (Até logo! Bye bye!)",
-                        "feedback": "Socorro! Informal demais! Adeus vaga de emprego!",
+                        "feedback": "É informal para uma entrevista. Escolha uma despedida polida.",
                         "isCorrect": false
                     },
                     {
                         "text": "さようなら！",
-                        "feedback": "Passa a impressão de que você desistiu da vaga para sempre.",
+                        "feedback": "Não é a despedida mais adequada a esta situação profissional; agradeça e retire-se de modo polido.",
                         "isCorrect": false
                     }
                 ]
@@ -1017,10 +1013,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Por que não devemos dizer 'Sayounara' para colegas ao sair do trabalho todo dia?",
+                "question": "Por que さようなら não é a escolha padrão para colegas ao sair do trabalho?",
                 "options": [
                     "Porque é uma gíria muito informal de adolescentes.",
-                    "Porque passa uma ideia dramática de separação longa ou adeus definitivo.",
+                    "Porque pode sugerir uma separação mais marcada; おつかれさまでした é mais comum nesse contexto.",
                     "Porque é proibido por lei no Japão."
                 ],
                 "correctIndex": 1
@@ -1028,27 +1024,27 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'さようなら' (Sayounara)?",
                 "options": [
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'じゃあね / またね' (Ja ne / Mata ne)?",
                 "options": [
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'おつかれさまでした' (Otsukaresama deshita)?",
                 "options": [
-                    "Até logo / Tchau tchau!",
-                    "Adeus / Até um longo tempo",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Até mais / Até logo",
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 2
             },
@@ -1056,8 +1052,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'しつれいします' (Shitsurei shimasu)?",
                 "options": [
                     "Com licença (ao me retirar)",
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo"
                 ],
                 "correctIndex": 0
             }
@@ -7964,6 +7960,13 @@ CURSO_A1_DADOS[1].editorialReview = {
 };
 
 CURSO_A1_DADOS[2].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[3].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

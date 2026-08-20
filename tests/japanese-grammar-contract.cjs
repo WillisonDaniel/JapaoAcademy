@@ -38,7 +38,7 @@ test('página separa filtros, declara escopo e não cria métricas paralelas', (
 });
 
 test('origens respeitam as rotas protegidas e estados editoriais permanecem públicos', () => {
-    const source = read('js/japanese/grammar.js'), data = indexData(); assert.match(source, /\?level=\$\{encodeURIComponent\(item\.level\)\}&module=\$\{item\.moduleIndex\}/); assert.match(source, /\?module=\$\{item\.moduleIndex\}/); assert.equal(data.references.filter(item => item.editorialStatus === 'pending-human-review').length, 166); assert.match(read('html/ja-JP/gramatica.html'), /decisão editorial inconclusiva/);
+    const source = read('js/japanese/grammar.js'), data = indexData(); assert.match(source, /\?level=\$\{encodeURIComponent\(item\.level\)\}&module=\$\{item\.moduleIndex\}/); assert.match(source, /\?module=\$\{item\.moduleIndex\}/); assert.equal(data.references.filter(item => item.editorialStatus === 'pending-human-review').length, 165); assert.match(read('html/ja-JP/gramatica.html'), /decisão editorial inconclusiva/);
 });
 
 test('hub e PWA incluem página, controlador e índice leve', () => {

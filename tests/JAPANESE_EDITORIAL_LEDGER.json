@@ -5764,7 +5764,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_04-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;module.metadata",
@@ -5772,16 +5772,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "bed5eda22492f6f3cb351213ec6c32fa4bb0fdb361ba49588da9b2cd9cde3d6a",
-      "finalHash": "bed5eda22492f6f3cb351213ec6c32fa4bb0fdb361ba49588da9b2cd9cde3d6a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fe7c029a04f150c69c1d621aff1cfc2af44010954754af0a47069f8e721c27d1",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "title": "Despedidas: registro e contexto",
+        "sectionTitle": "Primeiros Passos & Etiqueta",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Escolha despedidas adequadas à relação e ao contexto: casual entre amigos, profissional e mais formal."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bed5eda22492f6f3cb351213ec6c32fa4bb0fdb361ba49588da9b2cd9cde3d6a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage1_context",
@@ -5789,16 +5807,40 @@
         "kind": "context"
       },
       "beforeHash": "99abd02f39b102ee485f0f9bb89f2e90c48b586d415f32dde77bab7920f011f8",
-      "finalHash": "99abd02f39b102ee485f0f9bb89f2e90c48b586d415f32dde77bab7920f011f8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "02a0eaf5e8ed3324b09d7827131d23eb75e02990bc5de798c5a94486db183618",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Otsukaresama deshita! Jaa ne!",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Escolha despedidas adequadas à relação e ao contexto: casual entre amigos, profissional e mais formal.",
+        "audio": {
+          "displayText": "お疲れ様でした。じゃあね。",
+          "audioText": "お疲れ様でした。じゃあね。",
+          "furigana": "",
+          "romaji": "Otsukaresama deshita. Jaa ne.",
+          "translation": "Obrigado pelo esforço. Até mais.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "99abd02f39b102ee485f0f9bb89f2e90c48b586d415f32dde77bab7920f011f8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage2_drops[0]",
@@ -5806,16 +5848,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d8c4c0deb6ae597dfc9fc73dd60a53ab1cc55933945fd880978ab0aaba8b4a3b",
-      "finalHash": "d8c4c0deb6ae597dfc9fc73dd60a53ab1cc55933945fd880978ab0aaba8b4a3b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "40b98eed514568f840e84abcebe2edbd138aa88bbd76a448f2f26df45104deaa",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "さようなら",
+        "romaji": "Sayounara",
+        "translation": "Adeus / despedida",
+        "timeContext": "Pode sugerir uma separação maior ou mais marcada pelo contexto. É comum, por exemplo, quando alunos se despedem do professor; não é o equivalente universal de 'tchau'."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d8c4c0deb6ae597dfc9fc73dd60a53ab1cc55933945fd880978ab0aaba8b4a3b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage2_drops[1]",
@@ -5823,16 +5879,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "760755c2486a383398aeb63ca68607b45e4a5567ff345d35b8dafe63425bea92",
-      "finalHash": "760755c2486a383398aeb63ca68607b45e4a5567ff345d35b8dafe63425bea92",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "bf04826f51c06cdb15a611624e4fb01eabbafa8ada164c7157e44347ccce144e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "じゃあね / またね",
+        "romaji": "Jaa ne / Mata ne",
+        "translation": "Até mais / Até logo",
+        "timeContext": "Formas casuais entre pessoas próximas quando se espera se ver novamente em breve."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "760755c2486a383398aeb63ca68607b45e4a5567ff345d35b8dafe63425bea92"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage2_drops[2]",
@@ -5840,16 +5910,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "1b9a4aed4c169165a9ccf3ab150282f4bf2f1e39bb60d43bd25c5429da4b61b6",
-      "finalHash": "1b9a4aed4c169165a9ccf3ab150282f4bf2f1e39bb60d43bd25c5429da4b61b6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1d01e3f2848967f7ac38752eee4c49cd06a3299135bb4439d62f5033b3703d9c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "おつかれさまでした",
+        "romaji": "Otsukaresama deshita",
+        "translation": "Obrigado pelo esforço / Bom trabalho",
+        "timeContext": "Expressão frequente ao encerrar uma atividade, especialmente em contextos de trabalho; a outra pessoa pode responder com a mesma expressão."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1b9a4aed4c169165a9ccf3ab150282f4bf2f1e39bb60d43bd25c5429da4b61b6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage2_drops[3]",
@@ -5857,16 +5941,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "9639d6a25e6fc046a1fd9da27811290914749609b3897f59eab12516ec716cdc",
-      "finalHash": "9639d6a25e6fc046a1fd9da27811290914749609b3897f59eab12516ec716cdc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9759f4b3b307e67f81d97e117e61bdbdbf712cf9c1821eea029c17c7b7e970d3",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "しつれいします",
+        "romaji": "Shitsurei shimasu",
+        "translation": "Com licença (ao me retirar)",
+        "timeContext": "Forma polida para sair, por exemplo, do escritório de um professor. Em empresas, também se ouve お先に失礼します ao sair antes dos demais."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9639d6a25e6fc046a1fd9da27811290914749609b3897f59eab12516ec716cdc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage2_drops[4]",
@@ -5874,16 +5972,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "8854acb28d7bdd944004cfc5fd997398aadac5d0dc4879f536e1158690315f2f",
-      "finalHash": "8854acb28d7bdd944004cfc5fd997398aadac5d0dc4879f536e1158690315f2f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "636efc2dfc47dc64114a2bbb24cac3d1b462e2af6530f34169b10692b40de041",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Escolha pelo contexto",
+        "rule": "Há várias despedidas em japonês. A escolha depende da proximidade, da situação e de quando se espera ver a pessoa outra vez.",
+        "formula": "Amigos ➔ じゃあ、またね | Trabalho ➔ おつかれさまでした | Saída formal ➔ 失礼します",
+        "example": "Ao deixar o escritório de um professor, 失礼します é uma opção polida; com um amigo, じゃあ、またね combina melhor."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8854acb28d7bdd944004cfc5fd997398aadac5d0dc4879f536e1158690315f2f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_practice[0]",
@@ -5892,15 +6004,39 @@
       },
       "beforeHash": "9de9ea60faf616459cf4e193c5bd24df4dff9df7e529bb61648d3a9f641d1709",
       "finalHash": "9de9ea60faf616459cf4e193c5bd24df4dff9df7e529bb61648d3a9f641d1709",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "1. Você terminou seu turno de trabalho na loja e está indo para casa enquanto seus colegas ainda estão lá. O que você diz?",
+        "options": [
+          {
+            "label": "👋 さようなら (Sayounara)",
+            "isCorrect": false
+          },
+          {
+            "label": "💼 おつかれさまでした (Otsukaresama deshita)",
+            "isCorrect": true
+          },
+          {
+            "label": "🌅 おはようございます (Ohayou gozaimasu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9de9ea60faf616459cf4e193c5bd24df4dff9df7e529bb61648d3a9f641d1709"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_practice[1]",
@@ -5908,16 +6044,40 @@
         "kind": "practice"
       },
       "beforeHash": "78225f30cccd4ce7cd82f5017217b592428007f05514f897039e1710b96992c7",
-      "finalHash": "78225f30cccd4ce7cd82f5017217b592428007f05514f897039e1710b96992c7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e014c55252716fcdd1bc5155c2fc730480a0fc02ea291e6c0df53811a6c89af8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como você se despede do seu melhor amigo japonês ao final de um passeio no shopping?",
+        "options": [
+          {
+            "label": "🙇 しつれいします (Shitsurei shimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "👋 じゃあね！ / またね！ (Jaa ne! / Mata ne!)",
+            "isCorrect": true
+          },
+          {
+            "label": "😭 さようなら (Sayounara)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "78225f30cccd4ce7cd82f5017217b592428007f05514f897039e1710b96992c7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_practice[2]",
@@ -5925,16 +6085,40 @@
         "kind": "practice"
       },
       "beforeHash": "9e0959ec7eac11191d52b9716669ef371ed88103db4307e258c0404e43ce8dbe",
-      "finalHash": "9e0959ec7eac11191d52b9716669ef371ed88103db4307e258c0404e43ce8dbe",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "387cd60b44dce9472f321a742be7c22b7b38c2ac19a503ed553b65338cf33083",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "3. Qual despedida tende a ser mais natural ao sair de casa de manhã, esperando voltar depois?",
+        "options": [
+          {
+            "label": "いってきます (Ittekimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "さようなら (Sayounara)",
+            "isCorrect": false
+          },
+          {
+            "label": "いただきます (Itadakimasu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9e0959ec7eac11191d52b9716669ef371ed88103db4307e258c0404e43ce8dbe"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_practice[3]",
@@ -5942,16 +6126,40 @@
         "kind": "practice"
       },
       "beforeHash": "a253c5dfa5661d0e7747fa0df17eb5e4842d128ee273b9906d80b5b6999cd5a5",
-      "finalHash": "a253c5dfa5661d0e7747fa0df17eb5e4842d128ee273b9906d80b5b6999cd5a5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "aa00f7c85f8ca39d96cc048c342c0cbdd9ebcf390ae260d37d713c3c16401ab9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "4. Você está na sala de um professor universitário tirando dúvidas. Ao fechar a porta para ir embora, o que você diz?",
+        "options": [
+          {
+            "label": "じゃあね！ (Jaa ne!)",
+            "isCorrect": false
+          },
+          {
+            "label": "しつれいします (Shitsurei shimasu - Com licença ao me retirar)",
+            "isCorrect": true
+          },
+          {
+            "label": "こんにちは (Konnichiwa)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a253c5dfa5661d0e7747fa0df17eb5e4842d128ee273b9906d80b5b6999cd5a5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_practice[4]",
@@ -5960,15 +6168,39 @@
       },
       "beforeHash": "a2ca08ade32213be1dddd4773053a73ac4a2b648d78e02af14a398c4786a8850",
       "finalHash": "a2ca08ade32213be1dddd4773053a73ac4a2b648d78e02af14a398c4786a8850",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "5. Quando um colega de trabalho diz 'Otsukaresama deshita' para você no elevador da empresa, qual é a melhor resposta?",
+        "options": [
+          {
+            "label": "Repetir: おつかれさまでした (Otsukaresama deshita!)",
+            "isCorrect": true
+          },
+          {
+            "label": "Dizer: はじめまして (Hajimemashite)",
+            "isCorrect": false
+          },
+          {
+            "label": "Dizer: ごめんなさい (Gomennasai)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a2ca08ade32213be1dddd4773053a73ac4a2b648d78e02af14a398c4786a8850"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_5_sentenceBuilder[0]",
@@ -5976,16 +6208,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "76c1a394ce89f7166b6170c90d01113af70c46680563a01ea0d57ad23d875d54",
-      "finalHash": "76c1a394ce89f7166b6170c90d01113af70c46680563a01ea0d57ad23d875d54",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "84afb01a0bb64e3962ecd2a222e16ac42d26d5b8cbca784e9def6b52a4d47616",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "じゃあ また ね",
+        "translation": "Então, até mais.",
+        "chunks": [
+          "じゃあ",
+          "また",
+          "ね"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "76c1a394ce89f7166b6170c90d01113af70c46680563a01ea0d57ad23d875d54"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage3_5_sentenceBuilder[1]",
@@ -5993,16 +6241,31 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "743ec1c831b5508e6d9ed87c8ea35f3a43210cfe8d8d773b41fbdec3f6676c15",
-      "finalHash": "743ec1c831b5508e6d9ed87c8ea35f3a43210cfe8d8d773b41fbdec3f6676c15",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "88a549d46a9e45dd4c9132e2afb1bcdff3439a5d8b14736005b83ff9c550644d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "しつれい します",
+        "translation": "Com licença (ao me retirar).",
+        "chunks": [
+          "しつれい",
+          "します"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "743ec1c831b5508e6d9ed87c8ea35f3a43210cfe8d8d773b41fbdec3f6676c15"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage4_dialog[0]",
@@ -6010,16 +6273,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "51168d1cfc6af3bb5e663338f813290a4047e01ceb55b0e372af5f0fba56534c",
-      "finalHash": "51168d1cfc6af3bb5e663338f813290a4047e01ceb55b0e372af5f0fba56534c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fcc184a53be2ddf7d96bb18130de4e9e2af3a8113e7adce1442693fa4243402c",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Sua aula de japonês acabou e você está se despedindo do seu colega de classe, Kenji, no portão da escola.",
+        "npcName": "Kenji",
+        "npcMessage": "きょうは たのしかったね！ また あした！ (Hoje foi divertido! Até amanhã!)",
+        "options": [
+          {
+            "text": "しつれいします (Shitsurei shimasu)",
+            "feedback": "É uma despedida polida, mas aqui a relação é casual; uma forma como じゃあね combina melhor.",
+            "isCorrect": false
+          },
+          {
+            "text": "うん、じゃあね！ またね！ (Un, jaa ne! Mata ne!)",
+            "feedback": "Boa escolha: é casual e adequada entre colegas próximos que esperam se ver no dia seguinte.",
+            "isCorrect": true
+          },
+          {
+            "text": "さようなら... (Sayounara...)",
+            "feedback": "Não é a opção mais usual aqui: さようなら pode transmitir uma separação mais marcada do que a situação pede.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "51168d1cfc6af3bb5e663338f813290a4047e01ceb55b0e372af5f0fba56534c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage4_dialog[1]",
@@ -6027,16 +6323,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "bd4324c0b2a42386629eed6b91d6af4adbb2117b37d254830a309bd2f2e32515",
-      "finalHash": "bd4324c0b2a42386629eed6b91d6af4adbb2117b37d254830a309bd2f2e32515",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6c5d6f886e18a92197105ba3ed80b2495acd5abf27ee2af74afbc62414985746",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: São 18:00 na empresa de TI. Seu chefe, o Sr. Sato, pega a pasta e se levanta para ir embora.",
+        "npcName": "Chefe Sato",
+        "npcMessage": "おさきに しつれいします。 (Com licença, estou indo na frente.)",
+        "options": [
+          {
+            "text": "じゃあね、佐藤さん！",
+            "feedback": "É casual demais para esta interação profissional. Prefira uma despedida polida.",
+            "isCorrect": false
+          },
+          {
+            "text": "おつかれさまでした！ (Otsukaresama deshita!)",
+            "feedback": "Boa resposta: reconhece o esforço em um contexto de trabalho.",
+            "isCorrect": true
+          },
+          {
+            "text": "こんにちは！",
+            "feedback": "Incorreto: Isso é saudação de chegada à tarde, não de saída à noite.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bd4324c0b2a42386629eed6b91d6af4adbb2117b37d254830a309bd2f2e32515"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage4_dialog[2]",
@@ -6044,16 +6373,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "ca21d8e7a50e9a412550db9aef9cabf27fc937b44fa09470835d1119942338f7",
-      "finalHash": "ca21d8e7a50e9a412550db9aef9cabf27fc937b44fa09470835d1119942338f7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "50ed2eea7822bf1b5cf7feeafa67ec6689f18cba72e07b0052ba99864da0cdee",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Você termina uma entrevista de emprego de 30 minutos na empresa dos seus sonhos e se levanta da cadeira.",
+        "npcName": "Entrevistador",
+        "npcMessage": "きょうは ありがとうございました。 けっか は メール で おくり ます。 (Obrigado por hoje. Enviaremos o resultado por e-mail.)",
+        "options": [
+          {
+            "text": "ありがとうございます！ しつれいします！",
+            "feedback": "Boa escolha: agradece pela entrevista e usa uma despedida polida ao sair.",
+            "isCorrect": true
+          },
+          {
+            "text": "またね！ バイバイ！ (Até logo! Bye bye!)",
+            "feedback": "É informal para uma entrevista. Escolha uma despedida polida.",
+            "isCorrect": false
+          },
+          {
+            "text": "さようなら！",
+            "feedback": "Não é a despedida mais adequada a esta situação profissional; agradeça e retire-se de modo polido.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ca21d8e7a50e9a412550db9aef9cabf27fc937b44fa09470835d1119942338f7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage5_quiz[0]",
@@ -6061,16 +6423,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b7ef74d153b20c76cfcca8ff245998056ebe501d39e82052427e48098b7abf0b",
-      "finalHash": "b7ef74d153b20c76cfcca8ff245998056ebe501d39e82052427e48098b7abf0b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c56f877102719aeb91c4c11f8dc78a8d53b4afb05826b16bcc550fda4a53a402",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "Por que さようなら não é a escolha padrão para colegas ao sair do trabalho?",
+        "options": [
+          "Porque é uma gíria muito informal de adolescentes.",
+          "Porque pode sugerir uma separação mais marcada; おつかれさまでした é mais comum nesse contexto.",
+          "Porque é proibido por lei no Japão."
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b7ef74d153b20c76cfcca8ff245998056ebe501d39e82052427e48098b7abf0b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage5_quiz[1]",
@@ -6078,16 +6456,32 @@
         "kind": "quiz"
       },
       "beforeHash": "a9444aceaa1e533aaee5d96fe9233834d14d2d6c376d59beca4f2e3abda37943",
-      "finalHash": "a9444aceaa1e533aaee5d96fe9233834d14d2d6c376d59beca4f2e3abda37943",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "caae349086818cdd7ee030810c8101959806d73a7ac8fdce468541e5be565dd8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'さようなら' (Sayounara)?",
+        "options": [
+          "Adeus / despedida, às vezes com separação mais marcada",
+          "Até mais / Até logo",
+          "Obrigado pelo esforço / Bom trabalho"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a9444aceaa1e533aaee5d96fe9233834d14d2d6c376d59beca4f2e3abda37943"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage5_quiz[2]",
@@ -6095,16 +6489,32 @@
         "kind": "quiz"
       },
       "beforeHash": "e52adabe0ac0f0529bf4642b974edaf57f66d12d106c5d9e17c962f00e0b36db",
-      "finalHash": "e52adabe0ac0f0529bf4642b974edaf57f66d12d106c5d9e17c962f00e0b36db",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f96e700042f7dccdaceec4d1b7c1b19666ae65ef51f46598ac1b473c1fa4e117",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'じゃあね / またね' (Ja ne / Mata ne)?",
+        "options": [
+          "Adeus / despedida, às vezes com separação mais marcada",
+          "Até mais / Até logo",
+          "Obrigado pelo esforço / Bom trabalho"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e52adabe0ac0f0529bf4642b974edaf57f66d12d106c5d9e17c962f00e0b36db"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage5_quiz[3]",
@@ -6112,16 +6522,32 @@
         "kind": "quiz"
       },
       "beforeHash": "89b060d81ff3480885fd14254ee894f2d107f553816735abee32787ae3a600ae",
-      "finalHash": "89b060d81ff3480885fd14254ee894f2d107f553816735abee32787ae3a600ae",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ba14291d7ddfa31faec90f1ed41676128514dc4523c0bc8f16385d9c0287f36c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'おつかれさまでした' (Otsukaresama deshita)?",
+        "options": [
+          "Até mais / Até logo",
+          "Adeus / despedida, às vezes com separação mais marcada",
+          "Obrigado pelo esforço / Bom trabalho"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "89b060d81ff3480885fd14254ee894f2d107f553816735abee32787ae3a600ae"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_04;stage5_quiz[4]",
@@ -6129,11 +6555,27 @@
         "kind": "quiz"
       },
       "beforeHash": "31432821e456aa15188ada4356fbfde1cb313543ac82fc31a119bad0cc4b6136",
-      "finalHash": "31432821e456aa15188ada4356fbfde1cb313543ac82fc31a119bad0cc4b6136",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4a30803f17fcdf36c52d2a22d9e59154dc3346173d791ebfaabd84bdbdd84b19",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'しつれいします' (Shitsurei shimasu)?",
+        "options": [
+          "Com licença (ao me retirar)",
+          "Adeus / despedida, às vezes com separação mais marcada",
+          "Até mais / Até logo"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "31432821e456aa15188ada4356fbfde1cb313543ac82fc31a119bad0cc4b6136"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-module-metadata",
@@ -352320,8 +352762,8 @@
         "locator": "items[154]",
         "resource": "dictionary"
       },
-      "beforeHash": "f0ad1d66e5c110937ef3b772c8366a360eba9c1ec8bb9d1d90f3fbaae239ce9d",
-      "finalHash": "f0ad1d66e5c110937ef3b772c8366a360eba9c1ec8bb9d1d90f3fbaae239ce9d",
+      "beforeHash": "972514f1cf015d0296a28866e79cfa9faeb30bfb02f8956f5105ce1013dbb5ce",
+      "finalHash": "972514f1cf015d0296a28866e79cfa9faeb30bfb02f8956f5105ce1013dbb5ce",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352337,8 +352779,8 @@
         "locator": "items[155]",
         "resource": "dictionary"
       },
-      "beforeHash": "9fd218536976f927d1f93a1ec7280cf1baed86d2b365b819dc0ad5525fa88162",
-      "finalHash": "9fd218536976f927d1f93a1ec7280cf1baed86d2b365b819dc0ad5525fa88162",
+      "beforeHash": "ae5afe91eb300587ef5ef77ebe51200f261c5260b4dce197db9bf5851a553a87",
+      "finalHash": "ae5afe91eb300587ef5ef77ebe51200f261c5260b4dce197db9bf5851a553a87",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352354,8 +352796,8 @@
         "locator": "items[156]",
         "resource": "dictionary"
       },
-      "beforeHash": "40961c816e74a6042bd6ddc55a7d2b6774e27295f19480211c525db7501fffff",
-      "finalHash": "40961c816e74a6042bd6ddc55a7d2b6774e27295f19480211c525db7501fffff",
+      "beforeHash": "cb16760a158ba54cd59a4018fbbafe1ba669ec19cdfd4a8f3f1b1e4abbc75498",
+      "finalHash": "cb16760a158ba54cd59a4018fbbafe1ba669ec19cdfd4a8f3f1b1e4abbc75498",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352371,8 +352813,8 @@
         "locator": "items[157]",
         "resource": "dictionary"
       },
-      "beforeHash": "0b3dce10c53565ef150eafdba07e09f69bb32b1d0e07b4aa56cca7617576b294",
-      "finalHash": "0b3dce10c53565ef150eafdba07e09f69bb32b1d0e07b4aa56cca7617576b294",
+      "beforeHash": "d97100f18b45cd1f5d1e016b9abbd9d2cd9744ad8d7a4997f614ba5359bccea5",
+      "finalHash": "d97100f18b45cd1f5d1e016b9abbd9d2cd9744ad8d7a4997f614ba5359bccea5",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352388,8 +352830,8 @@
         "locator": "items[158]",
         "resource": "dictionary"
       },
-      "beforeHash": "a08220e1985c3be47207edfae686aab577e75f308e0cf31ed804a199064db247",
-      "finalHash": "a08220e1985c3be47207edfae686aab577e75f308e0cf31ed804a199064db247",
+      "beforeHash": "180282a1affe62c88431bec2a8a67d1a8531bc3e00b00ae9a5acbc4bb7dbc3c3",
+      "finalHash": "180282a1affe62c88431bec2a8a67d1a8531bc3e00b00ae9a5acbc4bb7dbc3c3",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -422646,21 +423088,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_04-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[3]",
         "resource": "listening"
       },
-      "beforeHash": "358475a4530948ec8d36775c02db194f0f80dc16b915f66124cae4626d1a1e0d",
-      "finalHash": "358475a4530948ec8d36775c02db194f0f80dc16b915f66124cae4626d1a1e0d",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "3bdea92366cea99980d6de33a31c30667b4a5d5b062e6c13704da1bfb02eaac9",
+      "finalHash": "3bdea92366cea99980d6de33a31c30667b4a5d5b062e6c13704da1bfb02eaac9",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_04-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_05-context-0",
@@ -430464,8 +430915,8 @@
         "locator": "reference[3]",
         "resource": "grammar"
       },
-      "beforeHash": "a45772cb06df6c5c42361f4abf32fa11b59bc7b853b890ea9a96bf11dd45636d",
-      "finalHash": "a45772cb06df6c5c42361f4abf32fa11b59bc7b853b890ea9a96bf11dd45636d",
+      "beforeHash": "d1acab7a6ecf0751b397e5f70a48929e1da5c35f540696d6c66864078b5d7173",
+      "finalHash": "d1acab7a6ecf0751b397e5f70a48929e1da5c35f540696d6c66864078b5d7173",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -434263,40 +434714,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_04-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[6]",
         "resource": "writing"
       },
-      "beforeHash": "bbca3069c560d5c9fffb8b8babb47f217ba5595d2a092b2f694909d91d4ceec8",
-      "finalHash": "bbca3069c560d5c9fffb8b8babb47f217ba5595d2a092b2f694909d91d4ceec8",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "b56188db5426123b34b9a09f2317bf92299a7dfe31a61854bff7044b09d49284",
+      "finalHash": "b56188db5426123b34b9a09f2317bf92299a7dfe31a61854bff7044b09d49284",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_04-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_04-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[7]",
         "resource": "writing"
       },
-      "beforeHash": "0eb5060556fc31ef371ae9c6fc5cb29f38aa13e196a2834c54795a8107f94347",
-      "finalHash": "0eb5060556fc31ef371ae9c6fc5cb29f38aa13e196a2834c54795a8107f94347",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "46b6050b89adfdadb9b0e70d6a8cc588a1c8a2b7744af69ac70b71f3c424a44a",
+      "finalHash": "46b6050b89adfdadb9b0e70d6a8cc588a1c8a2b7744af69ac70b71f3c424a44a",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_04-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 36
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_05-1",

@@ -12,7 +12,7 @@ const slug = value => value.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').t
 const context = {};
 vm.createContext(context);
 vm.runInContext(`${fs.readFileSync(path.join(ROOT, 'database/ja-JP/data_curso_a1.js'), 'utf8')}\nglobalThis.__value=CURSO_A1_DADOS;`, context);
-const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
+const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03', 'a1_mod_04'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname, 'JAPANESE_EDITORIAL_LEDGER.json'), 'utf8'));
 const decisions = new Map(ledger.decisions.map(decision => [decision.id, decision]));
 
@@ -24,7 +24,7 @@ for (const courseModule of courseModules) {
     for (const [field, kind] of [['stage2_drops', 'lesson-item'], ['stage3_practice', 'practice'], ['stage3_5_sentenceBuilder', 'sentence-builder'], ['stage4_dialog', 'dialogue'], ['stage5_quiz', 'quiz']]) {
         (courseModule[field] || []).forEach((item, index) => add(`${field}[${index}]`, kind, item));
     }
-    assert.equal(targets.length, 21);
+    assert.equal(targets.length, courseModule.id === 'a1_mod_04' ? 22 : 21);
     assert.ok(['approved', 'corrected'].includes(courseModule.editorialReview.status));
     assert.equal(courseModule.editorialReview.phase, '21B.1');
     for (const target of targets) {
@@ -50,5 +50,8 @@ assert.match(runtime, /こちらこそ、よろしくおねがいします/);
 assert.doesNotMatch(runtime, /primeiríssimo segundo|fórmula perfeita|["「]じめまして|\[Seu Nome\]・さん/i);
 assert.match(runtime, /Usos frequentes de すみません/);
 assert.doesNotMatch(runtime, /espinha dorsal|canivete suíço|3 Superpoderes|auge da fluência cultural|socialmente perfeita/i);
+assert.match(runtime, /Escolha pelo contexto/);
+assert.match(runtime, /Otsukaresama deshita! Jaa ne!/);
+assert.doesNotMatch(runtime, /quase nunca usam 'Sayounara'|Adeus final|pode causar demissão|Adeus vaga|erro horrível/i);
 
-console.log('Fase 21B.1: módulos A1-01 a A1-03 possuem 63/63 alvos sustentados e nenhum alvo inconclusivo.');
+console.log('Fase 21B.1: módulos A1-01 a A1-04 possuem 85/85 alvos sustentados e nenhum alvo inconclusivo.');
