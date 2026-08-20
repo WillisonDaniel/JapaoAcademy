@@ -7289,3 +7289,136 @@ const B1_PHASE18_TEXT_REPLACEMENTS = new Map([
     });
 })(CURSO_B1_DADOS);
 CURSO_B1_DADOS.find(module => module.id === "b1_mod_24").stage5_quiz[4].options[0] = B1_PHASE18_TEXT_REPLACEMENTS.get("Com a conclusão do Nível B1, você conquistou independência total para trabalhar, viajar, fazer amigos nativos e resolver problemas no Japão!");
+
+(function applyB1Phase21BEditorialReview() {
+    const builders = {
+        b1_mod_01: [["きのう えいが を みた", "Ontem assisti a um filme."], ["あした は やすみ だ", "Amanhã é dia de folga."]],
+        b1_mod_02: [["いま なに してる の", "O que você está fazendo agora?"], ["はやく いかなきゃ", "Preciso ir logo."]],
+        b1_mod_03: [["あした は あめ が ふる と おもいます", "Acho que amanhã vai chover."], ["せんせい は しけん が ある と いいました", "O professor disse que haverá prova."]],
+        b1_mod_04: [["いける か どうか わかりません", "Não sei se conseguirei ir."], ["でんしゃ が おくれる かも しれません", "Talvez o trem se atrase."]],
+        b1_mod_05: [["あめ が ふっている ので タクシー で いきます", "Como está chovendo, vou de táxi."], ["じかん が ない から いそぎましょう", "Como não há tempo, vamos nos apressar."]],
+        b1_mod_06: [["さいふ を わすれて しまいました", "Acabei esquecendo a carteira."], ["しゅくだい は もう やって しまいました", "Já terminei toda a lição de casa."]],
+        b1_mod_07: [["せんせい に ほめられました", "Fui elogiado pelo professor."], ["この ほん は おおく の ひと に よまれています", "Este livro é lido por muitas pessoas."]],
+        b1_mod_08: [["あめ に ふられて ぬれました", "Peguei chuva e me molhei."], ["となり の ひと に よなか まで さわがれました", "O vizinho fez barulho até tarde e isso me incomodou."]],
+        b1_mod_09: [["じかん が あったら てつだって ください", "Se tiver tempo, ajude-me, por favor."], ["この ボタン を おす と ドア が あきます", "Ao apertar este botão, a porta abre."]],
+        b1_mod_10: [["やすければ かいます", "Se for barato, compro."], ["きょうと なら あき が いい ですよ", "Se o assunto é Kyoto, o outono é uma boa época."]],
+        b1_mod_11: [["かんじ が よめる よう に なりました", "Passei a conseguir ler kanji."], ["まいにち うんどう する こと に しました", "Decidi fazer exercício todos os dias."]],
+        b1_mod_12: [["この りょうり を たべて みます", "Vou experimentar este prato."], ["おきなわ に いった こと が あります", "Já fui a Okinawa."]],
+        b1_mod_13: [["ともだち に にほんご を おしえて あげました", "Ensinei japonês a um amigo."], ["ともだち が にもつ を もって くれました", "Um amigo carregou a bagagem para mim."]],
+        b1_mod_14: [["せんせい に さくぶん を みて もらいました", "Pedi ao professor que revisasse minha redação."], ["ともだち に えき まで おくって もらいました", "Um amigo me levou até a estação."]],
+        b1_mod_15: [["こども に へや を そうじ させました", "Fiz a criança limpar o quarto."], ["わたし に せつめい させて ください", "Deixe-me explicar, por favor."]],
+        b1_mod_16: [["いちじかん も またされました", "Fui obrigado a esperar por uma hora."], ["にがてな もの を たべさせられました", "Fui obrigado a comer algo de que não gosto."]],
+        b1_mod_17: [["しゃちょう は もう いらっしゃいました", "O presidente já chegou."], ["なに を めしあがります か", "O que deseja comer ou beber?"]],
+        b1_mod_18: [["わたし が ごあんない いたします", "Eu o acompanharei."], ["たなか と もうします", "Meu nome é Tanaka."]],
+        b1_mod_19: [["いつも おせわ に なって おります", "Agradeço pela colaboração de sempre."], ["おさき に しつれい します", "Com licença, vou me retirar antes."]],
+        b1_mod_20: [["わたし の ちょうしょ は せきにんかん です", "Meu ponto forte é o senso de responsabilidade."], ["けいけん を いかして こうけん したい です", "Quero contribuir aproveitando minha experiência."]],
+        b1_mod_21: [["この ケーキ は おいしそう です", "Este bolo parece saboroso."], ["あの ひと は せんせい みたい です", "Aquela pessoa parece ser professor."]],
+        b1_mod_22: [["おんせん に はいる まえ に からだ を あらいます", "Lavo o corpo antes de entrar no onsen."], ["ちいき の ルール に したがって ごみ を わけます", "Separo o lixo conforme as regras locais."]],
+        b1_mod_23: [["じしん の ため でんしゃ は うんてん みあわせ です", "Devido ao terremoto, a circulação dos trens está suspensa."], ["しんかんせん は さんじゅっぷん おくれています", "O Shinkansen está trinta minutos atrasado."]],
+        b1_mod_24: [["これまで に ならった ぶんぽう を ふくしゅう しました", "Revisei a gramática estudada até aqui."], ["これからも にほんご の べんきょう を つづけます", "Continuarei estudando japonês."]]
+    };
+    const rules = {
+        b1_mod_01: ["Regra da forma casual e formas simples", "Na fala informal, verbos e adjetivos usam formas simples adequadas ao tempo e à polaridade. Substantivos e adjetivos な podem usar だ na afirmativa, embora ele seja frequentemente omitido em certos contextos conversacionais.", "Vる／Vない／Vた／Vなかった | N・Adjな + だ", "行きます ➔ 行く | 行きません ➔ 行かない | 行きました ➔ 行った"],
+        b1_mod_02: ["Contrações frequentes na fala informal", "Contrações como 〜てる, 〜なきゃ e 〜とく são frequentes na fala informal. Seu uso depende do interlocutor, da situação e do grau de formalidade.", "〜ている → 〜てる | 〜なければ → 〜なきゃ | 〜ておく → 〜とく", "何してるの。— O que você está fazendo?"],
+        b1_mod_03: ["Citações e pensamentos com と", "Antes de と, normalmente se usa a forma simples. Substantivos e adjetivos な afirmativos levam だ: 学生だと思います. O verbo de citação indica se a fala é pensamento, afirmação ou relato.", "[oração em forma simples] + と + 思う／言う", "田中さんは明日行くと言いました。— Tanaka disse que irá amanhã."],
+        b1_mod_04: ["Perguntas indiretas e possibilidade", "〜かどうか introduz uma questão de sim ou não dentro de outra oração. 〜かもしれません expressa possibilidade; com substantivos e adjetivos な, não se usa だ antes de かもしれません.", "[oração] + かどうか | [forma simples] + かもしれません", "電車が遅れるかもしれません。— Talvez o trem se atrase."],
+        b1_mod_05: ["Razões com ので e から", "ので e から apresentam uma razão. ので costuma enquadrá-la de modo mais explicativo, enquanto から pode realçar a justificativa do falante; a escolha também depende de registro, contexto e construção.", "V・Adjい + ので | N・Adjな + なので | oração + から", "雨が降っているので、タクシーで行きます。— Como está chovendo, vou de táxi."],
+        b1_mod_06: ["Conclusão e resultado com 〜てしまう", "〜てしまう pode indicar que uma ação foi concluída ou que produziu um resultado lamentado, conforme o contexto. Na fala informal, 〜てしまう e 〜でしまう podem contrair-se para 〜ちゃう e 〜じゃう.", "Vて + しまう | Vで + しまう", "財布を忘れてしまいました。— Acabei esquecendo a carteira."],
+        b1_mod_07: ["Formação básica da voz passiva", "No grupo 1, a mora final passa para a linha de あ + れる; no grupo 2, acrescenta-se られる à base; する torna-se される e 来る, 来られる. O agente pode ser marcado por に.", "G1: 書く→書かれる | G2: 食べる→食べられる | する→される", "先生に褒められました。— Fui elogiado pelo professor."],
+        b1_mod_08: ["Passiva indireta e efeito sobre o falante", "A passiva indireta pode apresentar alguém como afetado por uma ação ou acontecimento, frequentemente com sentido de transtorno. Esse efeito vem do contexto e não de toda forma passiva.", "[afetado] は [agente] に V-passivo", "私は隣の人に夜中まで騒がれました。— O vizinho fez barulho até tarde e isso me incomodou."],
+        b1_mod_09: ["Condições com 〜たら e 〜と", "〜たら apresenta uma condição ou uma situação posterior à realização de X. 〜と é comum em resultados regulares, instruções e descobertas; em seu consequente, pedidos e intenções do falante sofrem restrições.", "forma た + ら | forma não passada + と", "このボタンを押すと、ドアが開きます。— Ao apertar este botão, a porta abre."],
+        b1_mod_10: ["Condições com 〜ば e 〜なら", "〜ば apresenta uma condição, enquanto 〜なら retoma uma hipótese, informação ou tópico como base para o comentário seguinte. Nenhuma das duas formas é simplesmente uma versão mais formal de ‘se’.", "V-eば／Adjければ | N・oração + なら", "京都なら、秋がいいですよ。— Se o assunto é Kyoto, o outono é uma boa época."],
+        b1_mod_11: ["Mudança com 〜ようになる e decisão com 〜ことにする", "〜ようになる descreve uma mudança de capacidade, hábito ou estado expresso por uma oração. 〜ことにする apresenta uma decisão tomada pelo sujeito.", "Vる／Vない + ようになる | Vる／Vない + ことにする", "毎日運動することにしました。— Decidi fazer exercício todos os dias."],
+        b1_mod_12: ["Tentativa com 〜てみる e experiência com 〜たことがある", "〜てみる indica tentar uma ação para ver seu resultado. 〜たことがある apresenta uma experiência anterior, sem indicar por si só quando ela ocorreu.", "Vて + みる | Vた + ことがある", "沖縄に行ったことがあります。— Já fui a Okinawa."],
+        b1_mod_13: ["Benefativos 〜てあげる e 〜てくれる", "〜てあげる apresenta uma ação feita em benefício de outra pessoa; 〜てくれる apresenta uma ação feita em benefício do falante ou de seu grupo. Perspectiva e relação social influenciam a escolha, e 〜てあげる pode soar impositivo em alguns contextos.", "A は B に Vてあげる | A が 私に Vてくれる", "友達が荷物を持ってくれました。— Um amigo carregou a bagagem para mim."],
+        b1_mod_14: ["Receber uma ação com 〜てもらう", "〜てもらう apresenta o sujeito como beneficiário de uma ação realizada por outra pessoa. O agente costuma ser marcado por に e, em alguns contextos, por から.", "beneficiário は agente に／から Vてもらう", "先生に作文を見てもらいました。— Pedi ao professor que revisasse minha redação."],
+        b1_mod_15: ["Forma causativa: fazer ou permitir", "A forma causativa pode indicar que alguém faz outra pessoa agir ou permite que ela aja. A interpretação e a partícula do participante dependem do verbo e do contexto.", "G1: 書く→書かせる | G2: 食べる→食べさせる | する→させる", "私に説明させてください。— Deixe-me explicar, por favor."],
+        b1_mod_16: ["Forma causativa-passiva", "A causativa-passiva apresenta o sujeito como levado ou obrigado a realizar uma ação. No grupo 1, além da forma completa 〜せられる, há contrações frequentes como 待たされる.", "G1: 書かせられる／書かされる | G2: 食べさせられる", "一時間も待たされました。— Fui obrigado a esperar por uma hora."],
+        b1_mod_17: ["Introdução ao sonkeigo", "O sonkeigo eleva a ação da pessoa tratada com respeito. Há verbos especiais, como いらっしゃる, 召し上がる, おっしゃる e ご覧になる, além do padrão おVになります quando aplicável.", "いらっしゃる／召し上がる／おっしゃる／ご覧になる", "社長はもういらっしゃいました。— O presidente já chegou."],
+        b1_mod_18: ["Introdução ao kenjougo", "O kenjougo apresenta com humildade ações do falante ou de seu grupo relacionadas ao interlocutor. Entre as formas frequentes estão 参る, 申す, いたす e いただく; o padrão おVする não se aplica indistintamente a todos os verbos.", "参る／申す／いたす／いただく", "私がご案内いたします。— Eu o acompanharei."],
+        b1_mod_19: ["Fórmulas profissionais dependentes de contexto", "Expressões como お世話になっております são frequentes em contatos profissionais já estabelecidos. A abertura adequada de e-mails e telefonemas varia conforme relação, finalidade, organização e primeiro contato.", "名乗り + 挨拶 + 用件", "ABC商事の田中です。いつもお世話になっております。"],
+        b1_mod_20: ["Organização de uma apresentação profissional", "Uma apresentação profissional pode relacionar ponto forte, evidência concreta e contribuição pretendida. A ordem e as fórmulas devem ser adaptadas à vaga, à experiência e à pergunta recebida.", "ponto forte + evidência + contribuição", "私の長所は責任感です。経験を生かして貢献したいです。"],
+        b1_mod_21: ["Aparência com 〜そう e impressão com 〜みたい", "〜そう descreve uma aparência percebida, com regras próprias de conexão. 〜みたい apresenta semelhança ou inferência em registro relativamente informal; não equivale a toda ocorrência de ‘parece’ em português.", "Adjい sem い + そう | Adjな + そう | N・oração + みたい", "このケーキはおいしそうです。— Este bolo parece saboroso."],
+        b1_mod_22: ["Explicar regras e práticas cotidianas", "Em muitos banhos termais, lava-se o corpo antes de entrar na banheira e evita-se colocar a toalha na água. Regras de lixo, ruído, tatuagens e uso das instalações variam por município, edifício e estabelecimento.", "regra local + 〜てから／〜なければならない", "地域のルールに従って、ごみを分別します。— Separo o lixo conforme as regras locais."],
+        b1_mod_23: ["Compreender avisos públicos", "Avisos públicos combinam vocabulário formal e construções adequadas ao fato comunicado; não usam obrigatoriamente voz passiva ou honorífica. Identifique causa, situação, linha afetada e previsão de retomada.", "[causa] のため + [situação／consequência]", "地震のため、電車は運転見合わせです。— Devido ao terremoto, a circulação está suspensa."],
+        b1_mod_24: ["Revisão de conclusão B1", "A conclusão do B1 registra que as atividades desta trilha foram realizadas. Ela não certifica domínio externo, autonomia no Japão nem proficiência profissional.", "conteúdos estudados + prática integrada", "これからも日本語の勉強を続けます。— Continuarei estudando japonês."]
+    };
+    const missingDialogueContent = {
+        b1_mod_08: { 0: ["ずぶ濡れじゃない！どうしたの？", "Zubunure janai! Dou shita no?", "Você está encharcado! O que aconteceu?"] },
+        b1_mod_09: { 1: ["早く予約すると、安くなるよ！", "Hayaku yoyaku suru to, yasuku naru yo!", "Se reservar cedo, fica mais barato!"] },
+        b1_mod_15: { 1: ["いい意気込みだね！では、君に任せるよ！", "Ii ikigomi da ne! Dewa, kimi ni makaseru yo!", "Boa disposição! Então deixo isso com você!"] },
+        b1_mod_16: { 2: ["今週末はゆっくり休もう！", "Konshuumatsu wa yukkuri yasumou!", "Vamos descansar bem neste fim de semana!"] },
+        b1_mod_17: { 0: ["すみません、おすすめは何ですか。", "Sumimasen, osusume wa nan desu ka?", "Com licença, o que recomenda?"] },
+        b1_mod_19: { 0: ["Eメールを拝見しました。資料を添付していただき、ありがとうございます。", "E-meeru o haiken shimashita. Shiryou o tenpu shite itadaki, arigatou gozaimasu.", "Li o e-mail. Obrigado por anexar os documentos."] }
+    };
+    const exactReplacements = new Map([
+        ["O que significa a expressão contraída 'Shiratai' ou 'Shiranai'?", "O que significa 'Shiranai'?"],
+        ["Densha ga okureta node,遅 (oku) remashita. Moushiwake arimasen.", "Densha ga okureta node, okuremashita. Moushiwake arimasen."],
+        ["Taifuu no tame, event ga中止 (chuushi) ni naru kamo shiremasen", "Taifuu no tame, ibento ga chuushi ni naru kamo shiremasen"],
+        ["Presentation o yarasete kudasai", "Purezenteeshon o yarasete kudasai"],
+        ["San-juu-fun-go ni re-operation (unten saikai) suru to kaite arimasu yo! (Está escrito que a circulação retorna em 30 minutos!)", "Sanjuppun-go ni unten o saikai suru to kaite arimasu yo! (Está escrito que a circulação será retomada em 30 minutos!)"],
+        ["Nihon-go de jiritsu shite seikatsu dekiru you ni narimashita! (Passei a conseguir viver com autonomia em japonês!)", "Korekara mo Nihongo no benkyou o tsuzukemasu. (Continuarei estudando japonês.)"],
+        ["Autonomia para viver, trabalhar, conversar na fala casual, dominar Keigo e resolver imprevistos no Japão!", "Conclusão das atividades e da revisão integrada da trilha B1."],
+        ["Parabéns! O que você conquistou ao concluir com sucesso o Nível B1?", "O que a conclusão do Nível B1 registra?"],
+        ["Qual frase indica o auge do hábito conquistado 'Passei a conseguir conversar em japonês'?", "Qual frase expressa uma mudança de capacidade com 〜ようになる?"],
+        ["Qual a frase obrigatória de abertura para e-mails profissionais no Japão?", "Qual expressão é frequente em contatos profissionais já estabelecidos?"],
+        ["A toalha nunca deve encostar ou entrar na água da banheira principal", "Em muitos estabelecimentos, a toalha não deve ser colocada na água da banheira principal"]
+    ]);
+    const normalizeText = value => {
+        if (typeof value !== "string") return value;
+        let text = exactReplacements.get(value) || value;
+        return text
+            .replace(/\[Seu Nome\](?:さん|君|-san|-kun|-sama)?[！、,]?\s*/g, "")
+            .replace(/\bwakurete\b/gi, "wasurete")
+            .replace(/\biite imashita\b/gi, "itte imashita")
+            .replace(/\bSugum\b/g, "Sugu")
+            .replace(/Gギリ \(Giri-giri\) da tta/gi, "Giri-giri datta")
+            .replace(/Ima家 \(ie\)/g, "Ima, ie")
+            .replace(/\boshadaru\b/gi, "ossharu")
+            .replace(/\bGuran ni naru\b/gi, "Goran ni naru")
+            .replace(/\bosh iarimashidai\b/gi, "moushimasu")
+            .replace(/\boshiarimashidai\b/gi, "moushimasu")
+            .replace(/Sem sentindo/g, "Sem sentido")
+            .replace(/nível intermediário B1/gi, "contexto praticado")
+            .replace(/verdadeiro nativo/gi, "residente atento às regras locais");
+    };
+    const normalizeObject = value => {
+        if (Array.isArray(value)) return value.map(normalizeObject);
+        if (!value || typeof value !== "object") return normalizeText(value);
+        Object.keys(value).forEach(key => { value[key] = normalizeObject(value[key]); });
+        return value;
+    };
+    const makeBuilder = ([sentenceJp, translation]) => ({ sentenceJp, translation, chunks: sentenceJp.split(" ") });
+    CURSO_B1_DADOS.forEach(module => {
+        module.stage3_5_sentenceBuilder = builders[module.id].map(makeBuilder);
+        const pill = module.stage2_drops.find(item => item.type === "grammar_pill");
+        const rule = rules[module.id];
+        Object.assign(pill, { title: rule[0], rule: rule[1], formula: rule[2], example: rule[3] });
+        const ruleQuiz = module.stage5_quiz.find(item => /Sobre (?:a regra|a revisão)/i.test(item.question));
+        if (ruleQuiz) ruleQuiz.options[ruleQuiz.correctIndex] = rule[1];
+        Object.entries(missingDialogueContent[module.id] || {}).forEach(([index, values]) => {
+            const dialogue = module.stage4_dialog[Number(index)];
+            const [displayText, romaji, translation] = values;
+            dialogue.content = { displayText, audioText: displayText, furigana: "", romaji, translation, scenario: "" };
+        });
+        normalizeObject(module);
+        module.stage4_dialog.forEach(dialogue => {
+            if (dialogue.content && dialogue.content.displayText) dialogue.npcMessage = dialogue.content.displayText;
+            dialogue.options.forEach(option => {
+                option.feedback = option.isCorrect
+                    ? "A resposta corresponde ao contexto e à estrutura praticada."
+                    : "A resposta não corresponde à pergunta ou à estrutura praticada neste contexto.";
+            });
+        });
+        module.editorialReview = { status: "corrected", phase: "21B.3", scope: "all-editorial-targets", sources: ["genki-2e-2-textbook", "quartet-1-textbook"] };
+    });
+    Object.assign(CURSO_B1_DADOS.find(module => module.id === "b1_mod_02"), {
+        title: "Contrações frequentes na fala informal"
+    });
+    Object.assign(CURSO_B1_DADOS.find(module => module.id === "b1_mod_22").stage1_context, {
+        missionDescription: "Estude vocabulário e práticas comuns de convivência, conferindo sempre as regras do município, edifício ou estabelecimento."
+    });
+    Object.assign(CURSO_B1_DADOS.find(module => module.id === "b1_mod_24"), {
+        title: "Desafio de revisão B1: situações integradas"
+    });
+})();

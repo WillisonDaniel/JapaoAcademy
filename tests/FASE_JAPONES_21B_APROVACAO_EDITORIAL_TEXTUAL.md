@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-Os 31 módulos A1 e os 30 módulos A2 foram auditados integralmente. O primeiro lote abaixo registra o início histórico da fase; a consolidação mais recente está na seção “Bloco A2-01 a A2-30”.
+Os 31 módulos A1, os 30 módulos A2 e os 24 módulos B1 foram auditados integralmente. O primeiro lote abaixo registra o início histórico da fase; a consolidação mais recente está na seção “Bloco B1-01 a B1-24”.
 
 | Resultado do lote inicial | Alvos |
 |---|---:|
@@ -384,6 +384,35 @@ As decisões registram páginas localizadas do *Genki I* e do *Tobira*. Alvos de
 
 Após a propagação, o ledger global registra 6.846 aprovações, 1.191 correções e 15.487 casos inconclusivos. Na Fase 18, restam 803 pendências, todas fora de A1 e A2. Dez alvos A1 obsoletos, que já não correspondiam a itens existentes no dataset, foram removidos do ledger. Nos recursos derivados, a fila passou para 5.934 itens; os casos ainda abertos não foram promovidos por inferência.
 
+## Bloco B1-01 a B1-24
+
+| Resultado consolidado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 315 |
+| Corrigidos com evidência localizada | 212 |
+| Inconclusivos remanescentes no B1 | 0 |
+| Total auditado | 527 |
+
+Todos os módulos, de `b1_mod_01` a `b1_mod_24`, foram processados individualmente. Os alvos abrangem metadados, contexto, itens de aula, práticas, construção de frases, diálogos e quizzes, sem modificar IDs, ordem, XP, desbloqueio, SRS, progresso, favoritos ou persistência.
+
+### Principais decisões editoriais
+
+- As 48 construções de frase foram alinhadas ao assunto efetivamente ensinado em cada módulo.
+- As 24 regras gramaticais foram reescritas com escopo conservador, incluindo forma casual, citação com `と`, `かどうか`, `かもしれない`, `ので／から`, passiva, condicionais, causativa, causativa-passiva, sonkeigo e kenjougo.
+- Foram removidas explicações absolutas sobre condicionais, saudações profissionais, costumes locais, ruído após um horário fixo e suposta autonomia ou proficiência externa ao concluir B1.
+- Erros como `areluru`, `こと金`, `Oshadaru`, `Guran`, `harawaseteku`, `Monomoraite`, `re-operation` e a forma defeituosa de `〜次第` foram eliminados.
+- Seis diálogos que não possuíam contrato textual explícito foram recuperados, elevando Escuta de 309 para 315 trechos.
+- A correção das construções antes excluídas elevou Escrita de 208 para 210 modelos, agora sem exclusões.
+- Feedbacks promocionais e o marcador `[Seu Nome]` foram removidos; traduções, Romaji e respostas relacionadas foram sincronizados.
+
+### Fontes, contratos e propagação
+
+As decisões registram páginas localizadas do *Genki II* e do *Quartet I*. Alvos de naturalidade exigem as duas famílias editoriais; os demais possuem ao menos uma evidência localizada. O contrato `japanese-phase21b-b1-editorial.cjs` verifica os 527 hashes atuais, referências, estados, contagens e resíduos conhecidos.
+
+Após a propagação, o ledger global registra 7.163 aprovações, 1.384 correções e 14.985 casos inconclusivos. Na Fase 18 restam 343 pendências, todas nos módulos B2. Os recursos derivados registram 6.169 itens: 33 aprovados, 244 corrigidos e 5.892 ainda inconclusivos. O índice de Gramática preserva 194 referências e 13 formas consultáveis; Escuta possui 315 trechos e Escrita 210 modelos sem exclusões.
+
+Como o dataset e os índices públicos mudaram, o cache PWA foi atualizado para `idiomas-academy-v48`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
+
 ## Próximo lote automático
 
-O próximo bloco editorial previsto é B1-01 em diante, mantendo o mesmo ciclo de fonte localizada, decisão por alvo, regeneração de índices, contratos e commit isolado.
+O próximo bloco editorial previsto é B2-01 em diante, mantendo o mesmo ciclo de fonte localizada, decisão por alvo, regeneração de índices, contratos e commit isolado.

@@ -791,7 +791,7 @@ test('responsividade e cache final da Etapa 28F permanecem protegidos', () => {
         }
     });
 
-    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v47'/);
+    assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v48'/);
 });
 
 test('dashboard Meu Progresso usa dados reais e acesso seguro', () => {
@@ -935,7 +935,7 @@ test('estatisticas avancadas da Etapa 29 preservam dados reais e acessibilidade'
     assert.match(css, /\.dashboard-advanced-stats-grid/);
     assert.match(css, /\.dashboard-statistics-filters/);
     assert.match(css, /\.dashboard-distributions-grid/);
-    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v47'/);
+    assert.match(serviceWorker, /const CACHE_NAME = 'idiomas-academy-v48'/);
     assert.match(serviceWorker, /meu-progresso\.js\?v=31/);
 });
 
@@ -1242,7 +1242,7 @@ test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
     assert.match(humanReview, /stage1_context\.audio/);
     assert.match(humanReview, /stage4_dialog\[0\]\.content/);
     assert.match(contractTest, /B1 e B2 possuem os 165 contratos editoriais previstos/);
-    assert.match(contractTest, /5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754/);
+    assert.match(contractTest, /eb603690932c3ca4f8044a72b7a8325ebe2a49f2576467bb1f63933fcd6262d6/);
     assert.match(contractTest, /5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f/);
 });
 
@@ -1352,7 +1352,7 @@ test('escuta, pronuncia e shadowing da Fase 8 permanecem transparentes', () => {
     const contract = read('tests/japanese-listening-contract.cjs');
     assert.equal(packageJson.scripts['test:japanese-listening'], 'node tests/japanese-listening-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/japanese-listening-(?:index|contract)\.cjs/);
-    assert.match(contract, /309/);
+    assert.match(contract, /315/);
     assert.match(read('html/ja-JP/escuta.html'), /não avalia pronúncia/);
     assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
     assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);
@@ -1380,7 +1380,7 @@ test('producao escrita guiada da Fase 11 permanece privada e transparente', () =
     const packageJson = JSON.parse(read('package.json'));
     assert.equal(packageJson.scripts['test:japanese-writing'], 'node tests/japanese-writing-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/japanese-writing-(?:index|contract)\.cjs/);
-    assert.match(read('tests/japanese-writing-contract.cjs'), /208 modelos explícitos/);
+    assert.match(read('tests/japanese-writing-contract.cjs'), /210 modelos explícitos/);
     assert.match(read('html/ja-JP/escrita.html'), /não é salvo nem enviado/);
     assert.doesNotMatch(read('js/japanese/writing.js'), /adicionarXP|processarAvaliacaoSRS|localStorage|fetch\(/);
 });
@@ -1431,7 +1431,7 @@ test('redesign japones usa colecoes progressivas sem alterar dados ou canvases',
         assert.match(html, /class="japanese-experience jp-study-page/);
     });
     const events = read('js/core/events.js'), sw = read('sw.js');
-    assert.match(sw, /idiomas-academy-v47/);
+    assert.match(sw, /idiomas-academy-v48/);
     assert.match(sw, /japanese-experience\.css/);
     assert.match(events, /controllerchange/);
     assert.match(events, /Nova versão disponível/);

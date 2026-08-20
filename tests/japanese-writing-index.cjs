@@ -49,8 +49,8 @@ function review(inventory, snapshot) {
 }
 
 const inventory = buildInventory(), output = render(inventory.items), snapshot = crypto.createHash('sha256').update(JSON.stringify(inventory.items)).digest('hex').slice(0, 16), reviewOutput = review(inventory, snapshot);
-assert.equal(inventory.items.length, 208); assert.equal(inventory.exclusions.length, 2);
-assert.deepEqual(inventory.exclusions.map(item => item.moduleId), ['b1_mod_10', 'b1_mod_18']);
+assert.equal(inventory.items.length, 210); assert.equal(inventory.exclusions.length, 0);
+assert.deepEqual(inventory.exclusions.map(item => item.moduleId), []);
 assert.equal(new Set(inventory.items.map(item => item.id)).size, inventory.items.length);
 inventory.items.forEach(item => { assert.ok(item.sentence && item.translation && item.chunks.length); assert.equal(compact(item.chunks.join('')), compact(item.sentence)); assert.equal(item.framework, 'CEFR'); });
 if (process.argv.includes('--write')) {

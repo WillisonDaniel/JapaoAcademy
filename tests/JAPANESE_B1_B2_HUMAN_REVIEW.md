@@ -4,96 +4,102 @@ Conteúdo criado na Fase 3C. O status `pending-human-review` indica que a valida
 
 | Módulo | Campo | Japonês | Romaji | Tradução / cenário | Status |
 |---|---|---|---|---|---|
-| b1_mod_01 | stage1_context.audio | ただいま！昨日、何した？ | Tadaima! Kinou nani shita? | Cheguei! O que você fez ontem? | pending-human-review |
-| b1_mod_01 | stage4_dialog[0].content | [Seu Nome]君！昨日、何した？ | [Seu Nome]-kun! Kinou nani shita? | O que você fez ontem? | pending-human-review |
-| b1_mod_01 | stage4_dialog[1].content | 今日の昼、ラーメンを食べに行く？ | Kyou no hiru, ramen tabe ni iku? | Bora comer ramen hoje no almoço? | pending-human-review |
-| b1_mod_01 | stage4_dialog[2].content | このラーメン、めっちゃおいしくない？ | Kono raamen, meccha oishikunai? | Este ramen está muito gostoso, não está? | pending-human-review |
-| b1_mod_02 | stage1_context.audio | 何してるの？早く行かなきゃ！ | Nani shiteru no? Hayaku ikanakya! | O que está fazendo? Preciso ir logo! | pending-human-review |
-| b1_mod_02 | stage4_dialog[0].content | もしもし、[Seu Nome]！今、何してるの？ | Moshimoshi, [Seu Nome]! Ima nani shiteru no? | Alô! O que tá fazendo agora? | pending-human-review |
-| b1_mod_02 | stage4_dialog[1].content | やばいよ！授業が始まる！早く行かなきゃ！ | Yabai yo! Jugyou ga hajimaru! Hayaku ikanakya! | Caramba! A aula vai começar! Precisamos ir logo! | pending-human-review |
-| b1_mod_02 | stage4_dialog[2].content | 間に合った！よかった！ | Maniaatta! Yokatta! | Chegamos a tempo! Que bom! | pending-human-review |
-| b1_mod_03 | stage1_context.audio | 明日は雨が降ると思います。 | Ashita wa ame ga furu to omoimasu. | Acho que vai chover amanhã. | pending-human-review |
-| b1_mod_03 | stage4_dialog[0].content | [Seu Nome]さん、明日の天気、どう思いますか。 | [Seu Nome]-san, ashita no tenki, dou omoimasu ka? | O que acha do tempo amanhã? | pending-human-review |
-| b1_mod_03 | stage4_dialog[1].content | 駅の前の新しいレストラン、おいしいと思いますか。 | Eki no mae no atarashii resutoran, oishii to omoimasu ka? | Acha que o novo restaurante em frente à estação é gostoso? | pending-human-review |
-| b1_mod_03 | stage4_dialog[2].content | いいですね！私も行きたいと思っていました！ | Ii desu ne! Watashi mo ikitai to omotte imashita! | Boa! Eu também estava pensando em ir! | pending-human-review |
-| b1_mod_04 | stage1_context.audio | 明日は行けるかどうか分からない。 | Ashita wa ikeru ka dou ka wakaranai. | Não sei se conseguirei ir amanhã. | pending-human-review |
-| b1_mod_04 | stage4_dialog[0].content | [Seu Nome]さん、週末のパーティー、来る？ | [Seu Nome]-san, shuumatsu no paatii, kuru? | Você vem para a festa no fim de semana? | pending-human-review |
-| b1_mod_04 | stage4_dialog[1].content | 遅くなってもいいから、来ない？ | Osoku natte mo ii kara, konai? | Mesmo que chegue tarde, não quer vir? | pending-human-review |
-| b1_mod_04 | stage4_dialog[2].content | わあ！待っているよ！ | Waa! Matte iru yo! | Que bom! Vou esperar por você! | pending-human-review |
-| b1_mod_05 | stage1_context.audio | 雨が降っているので、タクシーに乗りましょう。 | Ame ga futte iru node, takushii ni norimashou. | Como está chovendo, vamos de táxi. | pending-human-review |
-| b1_mod_05 | stage4_dialog[0].content | [Seu Nome]さん、遅刻ですね。何があったんですか。 | [Seu Nome]-san, chikoku desu ne. Nani ga atta n desu ka? | Você se atrasou. O que aconteceu? | pending-human-review |
-| b1_mod_05 | stage4_dialog[1].content | そうですか。事故なら仕方がないですね。 | Sou desu ka. Jiko nara shikata ga nai desu ne. | Entendo. Se foi um acidente, não havia o que fazer. | pending-human-review |
-| b1_mod_05 | stage4_dialog[2].content | では、会議を始めましょう。 | Dewa, kaigi o hajimemashou. | Bem, vamos começar a reunião. | pending-human-review |
-| b1_mod_06 | stage1_context.audio | 財布をなくしてしまいました！どうしよう！ | Saifu o nakushite shimaimashita! Dou shiyou! | Acabei perdendo a carteira! O que vou fazer? | pending-human-review |
-| b1_mod_06 | stage4_dialog[0].content | [Seu Nome]さん、どうしたの？顔色が悪いよ。 | [Seu Nome]-san, doushitano? Kaoiro ga warui yo. | O que houve? Você tá com uma cara péssima. | pending-human-review |
-| b1_mod_06 | stage4_dialog[1].content | ええ？！交番に行こう！誰かが届けてくれているかも！ | Ee?! Kouban ni ikou! Dareka ga todokete kurete iru kamo! | O quê?! Vamos ao posto policial! Talvez alguém tenha entregado a carteira! | pending-human-review |
-| b1_mod_06 | stage4_dialog[2].content | これですか。親切な方が届けてくれましたよ。 | Kore desu ka. Shinsetsu na kata ga todokete kuremashita yo. | É esta? Uma pessoa gentil a entregou aqui. | pending-human-review |
-| b1_mod_07 | stage1_context.audio | 先生に褒められました！ | Sensei ni homeraremashita! | Fui elogiado pelo professor! | pending-human-review |
-| b1_mod_07 | stage4_dialog[0].content | [Seu Nome]さん、今日の日本語の授業、どうだった？ | [Seu Nome]-san, kyou no Nihongo no jugyou, dou datta? | Como foi a aula de japonês hoje? | pending-human-review |
-| b1_mod_07 | stage4_dialog[1].content | すごいじゃん！毎日勉強してるからね！ | Sugoi jan! Mainichi benkyou shiteru kara ne! | Que incrível! É porque você estuda todos os dias! | pending-human-review |
-| b1_mod_07 | stage4_dialog[2].content | 今度、一緒に勉強しない？ | Kondo, issho ni benkyou shinai? | Quer estudar comigo na próxima vez? | pending-human-review |
-| b1_mod_08 | stage1_context.audio | 雨に降られて、濡れてしまいました。 | Ame ni furarete, nurete shimaimashita. | Peguei chuva e acabei ficando molhado. | pending-human-review |
-| b1_mod_08 | stage4_dialog[1].content | 大変だったね！このタオル、使って！ | Taihen datta ne! Kono taoru, tsukatte! | Foi difícil, não foi? Use esta toalha! | pending-human-review |
-| b1_mod_08 | stage4_dialog[2].content | 今、暖房をつけるね。風邪をひかないでね！ | Ima, danbou o tsukeru ne. Kaze o hikanaide ne! | Vou ligar o aquecedor agora. Não pegue um resfriado! | pending-human-review |
-| b1_mod_09 | stage1_context.audio | 日本に行ったら、京都に行きたいです。 | Nihon ni ittara, Kyouto ni ikitai desu. | Quando eu for ao Japão, quero ir a Kyoto. | pending-human-review |
-| b1_mod_09 | stage4_dialog[0].content | [Seu Nome]さん、夏休みの予定は？ | [Seu Nome]-san, natsu yasumi no yotei wa? | Quais os planos para as férias de verão? | pending-human-review |
-| b1_mod_09 | stage4_dialog[2].content | 行けるといいね！お土産、待っているよ！ | Ikeru to ii ne! Omiyage, matteru yo! | Tomara que consiga ir! Vou esperar a lembrancinha! | pending-human-review |
-| b1_mod_10 | stage1_context.audio | 安ければ買います。日本語なら、お任せください！ | Yasukereba kaimasu. Nihongo nara, omakase kudasai! | Se for barato, compro. Se for japonês, deixe comigo! | pending-human-review |
-| b1_mod_10 | stage4_dialog[0].content | [Seu Nome]さん、新しいパソコンが欲しいんだけど、どこがいいかな。 | [Seu Nome]-san, atarashii pasokon ga hoshii n da kedo, doko ga ii ka na? | Quero um computador novo; onde será um bom lugar? | pending-human-review |
-| b1_mod_10 | stage4_dialog[1].content | 秋葉原は安いですか。 | Akihabara wa yasui desu ka? | Em Akihabara é barato? | pending-human-review |
-| b1_mod_10 | stage4_dialog[2].content | 一緒に行ってくれない？ | Issho ni itte kurenai? | Você poderia ir comigo? | pending-human-review |
-| b1_mod_11 | stage1_context.audio | 日本語が話せるようになりました。 | Nihongo ga hanaseru you ni narimashita. | Passei a conseguir falar japonês. | pending-human-review |
-| b1_mod_11 | stage4_dialog[0].content | [Seu Nome]さん、最近、日本語が上手になりましたね！ | [Seu Nome]-san, saikin Nihon-go ga jouzu ni narimashita ne! | Ultimamente seu japonês melhorou bastante, hein! | pending-human-review |
-| b1_mod_11 | stage4_dialog[1].content | 素晴らしい！毎日どれくらい勉強していますか。 | Subarashii! Mainichi dorekurai benkyou shite imasu ka? | Incrível! Quanto estuda por dia? | pending-human-review |
-| b1_mod_11 | stage4_dialog[2].content | この調子で頑張ってくださいね！ | Kono choushi de ganbatte kudasai ne! | Continue nesse ritmo! | pending-human-review |
-| b1_mod_12 | stage1_context.audio | 納豆を食べてみました。富士山に登ったことがあります。 | Nattou o tabete mimashita. Fuji-san ni nobotta koto ga arimasu. | Experimentei comer natto. Já subi o Monte Fuji. | pending-human-review |
-| b1_mod_12 | stage4_dialog[0].content | [Seu Nome]さん、納豆を食べたことある？ | [Seu Nome]-san, nattou o tabeta koto aru? | Você já comeu natto? | pending-human-review |
-| b1_mod_12 | stage4_dialog[1].content | どう？おいしい？ | Dou? Oishii? | E aí? Gostoso? | pending-human-review |
-| b1_mod_12 | stage4_dialog[2].content | すごい！納豆が食べられたら、もう日本人だね！ | Sugoi! Natto ga taberaretara, mou Nihonjin da ne! | Incrível! Se consegue comer Natto, já é um japonês! | pending-human-review |
-| b1_mod_13 | stage1_context.audio | 友達に英語を教えてあげた。田中さんが手伝ってくれた。 | Tomodachi ni eigo o oshiete ageta. Tanaka-san ga tetsudatte kureta. | Ensinei inglês a um amigo. O Sr. Tanaka me ajudou. | pending-human-review |
-| b1_mod_13 | stage4_dialog[0].content | [Seu Nome]さん、パソコンの故障、直った？ | [Seu Nome]-san, PC no koshou, naotta? | Consertou o problema do PC? | pending-human-review |
-| b1_mod_13 | stage4_dialog[1].content | 海斗君、優しいね！何かお礼した？ | Kaito-kun, yasashii ne! Nani ka o-rei shita? | O Kaito é muito gentil! Fez algum agradecimento? | pending-human-review |
-| b1_mod_13 | stage4_dialog[2].content | いい友達だね！ | Ii tomodachi da ne! | Que boa amizade! | pending-human-review |
-| b1_mod_14 | stage1_context.audio | 田中さんに日本語を教えてもらいました。 | Tanaka-san ni Nihongo o oshiete moraimashita. | O Sr. Tanaka me ensinou japonês. | pending-human-review |
-| b1_mod_14 | stage4_dialog[0].content | [Seu Nome]さん、日本料理が上手ですね！どこで習ったの？ | [Seu Nome]-san, Nihon-ryouri ga jouzu desu ne! Doko de naratta no? | Você manda bem na culinária japonesa! Onde aprendeu? | pending-human-review |
-| b1_mod_14 | stage4_dialog[1].content | 大家さん、めっちゃ優しいね！ | Ooya-san, meccha yasashii ne! | A proprietária é muito gentil, não é? | pending-human-review |
-| b1_mod_14 | stage4_dialog[2].content | 今度、料理でお礼をしないとね！ | Kondo, ryouri de orei o shinai to ne! | Na próxima vez, você precisa agradecer com uma refeição! | pending-human-review |
-| b1_mod_15 | stage1_context.audio | 子供に勉強させます。この仕事をさせてください。 | Kodomo ni benkyou sasemasu. Kono shigoto o sasete kudasai. | Faço a criança estudar. Por favor, deixe-me fazer este trabalho. | pending-human-review |
-| b1_mod_15 | stage4_dialog[0].content | [Seu Nome]さん、新しい企画のプレゼンテーション、誰がやる？ | [Seu Nome]-san, atarashii kikaku no purezenteeshon, dare ga yaru? | Quem fará a apresentação do novo projeto? | pending-human-review |
-| b1_mod_15 | stage4_dialog[2].content | チームのメンバーにも手伝わせるからね。 | Chiimu no menbaa ni mo tetsudawaseru kara ne. | Também vou pedir aos membros da equipe que ajudem. | pending-human-review |
-| b1_mod_16 | stage1_context.audio | 嫌いな野菜を食べさせられました。 | Kirai na yasai o tabesaseraremashita. | Fui obrigado a comer um legume de que não gosto. | pending-human-review |
-| b1_mod_16 | stage4_dialog[0].content | [Seu Nome]さん、昨日の飲み会、疲れたね！ | [Seu Nome]-san, kinou no nomikai, tsukareta ne! | A confraternização de ontem foi cansativa, não foi? | pending-human-review |
-| b1_mod_16 | stage4_dialog[1].content | 先輩たちの無理な振り、大変だよね。 | Senpai-tachi no muri na furi, taihen da yo ne. | As exigências excessivas dos veteranos são difíceis, não são? | pending-human-review |
-| b1_mod_17 | stage1_context.audio | 社長がいらっしゃいました。何を召し上がりますか。 | Shachou ga irasshaimashita. Nani o meshiagarimasu ka? | O presidente chegou. O que deseja comer? | pending-human-review |
-| b1_mod_17 | stage4_dialog[1].content | では、それをいただこう。 | Dewa, sore o itadakou. | Bem, vou querer esse então. | pending-human-review |
-| b1_mod_17 | stage4_dialog[2].content | おいしそうだね。 | Oishisou da ne. | Parece muito gostoso. | pending-human-review |
-| b1_mod_18 | stage1_context.audio | 私が参ります。田中と申します。 | Watashi ga mairimasu. Tanaka to moushimasu. | Eu irei. Meu nome é Tanaka. | pending-human-review |
-| b1_mod_18 | stage4_dialog[0].content | 小林社長はいらっしゃいますか。 | Kobayashi-shachou wa irasshaimasu ka? | O presidente Kobayashi está? | pending-human-review |
-| b1_mod_18 | stage4_dialog[1].content | では、伝言をお願いできるかな。 | Dewa, dengon o onegai dekiru ka na? | Bem, posso deixar uma mensagem? | pending-human-review |
-| b1_mod_18 | stage4_dialog[2].content | 助かるよ。よろしく。 | Tasukaru yo. Yoroshiku. | Ajuda muito. Conto com você. | pending-human-review |
-| b1_mod_19 | stage1_context.audio | お世話になっております。お先に失礼します。 | Osewa ni natte orimasu. Osaki ni shitsurei shimasu. | Agradeço sempre pelo apoio. Com licença, vou me retirar antes. | pending-human-review |
-| b1_mod_19 | stage4_dialog[1].content | [Seu Nome]さん、今日の仕事は終了ですか。 | [Seu Nome]-san, kyou no shigoto wa shuuryou desu ka? | Terminou o trabalho de hoje? | pending-human-review |
-| b1_mod_19 | stage4_dialog[2].content | お疲れ様でした！気をつけて帰ってね！ | Otsukaresama deshita! Ki o tsukete kaette ne! | Bom trabalho! Vá com cuidado para casa! | pending-human-review |
-| b1_mod_20 | stage1_context.audio | 自己PRをさせていただきます。職務経歴について説明します。 | Jiko PR o sasete itadakimasu. Shokumu keireki ni tsuite setsumei shimasu. | Permita-me fazer uma breve apresentação profissional. Explicarei minha experiência de trabalho. | pending-human-review |
-| b1_mod_20 | stage4_dialog[0].content | では、[Seu Nome]さん、自己PRをお願いいたします。 | Dewa, [Seu Nome]-san, jiko PR o onegai itashimasu. | Então, faça sua apresentação profissional, por favor. | pending-human-review |
-| b1_mod_20 | stage4_dialog[1].content | 的確な説明ですね。厳しい日程のとき、どうしますか。 | Tekikaku na setsumei desu ne. Kibishii nittei no toki, dou shimasu ka? | É uma explicação precisa. O que faz quando o cronograma é apertado? | pending-human-review |
-| b1_mod_20 | stage4_dialog[2].content | 素晴らしいですね！結果は来週メールでお知らせいたします。 | Subarashii desu ne! Kekka wa raishuu meeru de oshirase itashimasu. | Excelente! Informaremos o resultado por e-mail na próxima semana. | pending-human-review |
-| b1_mod_21 | stage1_context.audio | この料理はおいしそうです。雨が降るみたいです。 | Kono ryouri wa oishisou desu. Ame ga furu mitai desu. | Este prato parece saboroso. Parece que vai chover. | pending-human-review |
-| b1_mod_21 | stage4_dialog[0].content | [Seu Nome]さん、このパフェ、どう？ | [Seu Nome]-san, kono pafe, dou? | O que acha deste parfait? | pending-human-review |
-| b1_mod_21 | stage4_dialog[1].content | この店の内装、映画のセットみたいじゃない？ | Kono mise no naisou, eiga no setto mitai janai? | A decoração deste lugar não parece um cenário de filme? | pending-human-review |
-| b1_mod_21 | stage4_dialog[2].content | じゃあ、食べよう！ | Jaa, tabeyou! | Então, bora comer! | pending-human-review |
-| b1_mod_22 | stage1_context.audio | 温泉では体を洗ってから入ります。ごみの分別が大切です。 | Onsen de wa karada o aratte kara hairimasu. Gomi no bunbetsu ga taisetsu desu. | No onsen, lavamos o corpo antes de entrar. Separar o lixo é importante. | pending-human-review |
-| b1_mod_22 | stage4_dialog[0].content | [Seu Nome]さん、温泉のマナーは大丈夫？ | [Seu Nome]-san, Onsen no manaa wa daijoubu? | Tudo certo com as regras do Onsen? | pending-human-review |
-| b1_mod_22 | stage4_dialog[1].content | さすが！マナーがちゃんとしてるね！ゆっくりつかろう！ | Sashuga! Manaa ga chanto shiteru ne! Yukkuri tsukarou! | Como esperado! Suas maneiras são impecáveis! Vamos relaxar na água! | pending-human-review |
-| b1_mod_22 | stage4_dialog[2].content | 温泉の後は、冷たい牛乳だね！ | Onsen no ato wa, tsumetai gyuunyuu da ne! | Depois do Onsen, nada como leite gelado, né! | pending-human-review |
-| b1_mod_23 | stage1_context.audio | 地震のお知らせです。新幹線は遅延しています。 | Jishin no oshirase desu. Shinkansen wa chien shite imasu. | Este é um aviso sobre o terremoto. O Shinkansen está atrasado. | pending-human-review |
-| b1_mod_23 | stage4_dialog[0].content | すみません、この電車はなぜ動かないんですか。 | Sumimasen, kono densha wa naze ugokanai n desu ka? | Com licença, por que este trem não está circulando? | pending-human-review |
-| b1_mod_23 | stage4_dialog[1].content | 運行はいつ再開するか分かりますか。 | Unkou wa itsu saikai suru ka wakarimasu ka? | Sabe quando a operação será retomada? | pending-human-review |
-| b1_mod_23 | stage4_dialog[2].content | 助かりました！ありがとうございます！ | Tasukarimashita! Arigatou gozaimasu! | Isso ajudou muito! Muito obrigado! | pending-human-review |
-| b1_mod_24 | stage1_context.audio | おめでとうございます！B1コース修了です！ | Omedetou gozaimasu! B1 koosu shuuryou desu! | Parabéns! O curso B1 foi concluído! | pending-human-review |
-| b1_mod_24 | stage4_dialog[0].content | [Seu Nome]さん、この一年間の日本での仕事と生活、どうだったかな。 | [Seu Nome]-san, kono 1-nenkan no Nihon de no shigoto to seikatsu, dou datta ka na? | Como foi seu trabalho e vida no Japão neste 1 ano? | pending-human-review |
-| b1_mod_24 | stage4_dialog[1].content | 素晴らしい成長だね！会社の支えになってくれてありがとう！ | Subarashii seichou da ne! Kaisha no sasae ni natte kurete arigatou! | Que crescimento incrível! Obrigado por apoiar a empresa! | pending-human-review |
-| b1_mod_24 | stage4_dialog[2].content | おめでとうございます！[Seu Nome]さん、B1コース修了です！ | Omedetou gozaimasu! [Seu Nome]-san, B1 koosu shuuryou desu! | Parabéns! Você concluiu o curso B1! | pending-human-review |
+| b1_mod_01 | stage1_context.audio | ただいま！昨日、何した？ | Tadaima! Kinou nani shita? | Cheguei! O que você fez ontem? | corrected |
+| b1_mod_01 | stage4_dialog[0].content | 昨日、何した？ | ! Kinou nani shita? | O que você fez ontem? | corrected |
+| b1_mod_01 | stage4_dialog[1].content | 今日の昼、ラーメンを食べに行く？ | Kyou no hiru, ramen tabe ni iku? | Bora comer ramen hoje no almoço? | corrected |
+| b1_mod_01 | stage4_dialog[2].content | このラーメン、めっちゃおいしくない？ | Kono raamen, meccha oishikunai? | Este ramen está muito gostoso, não está? | corrected |
+| b1_mod_02 | stage1_context.audio | 何してるの？早く行かなきゃ！ | Nani shiteru no? Hayaku ikanakya! | O que está fazendo? Preciso ir logo! | corrected |
+| b1_mod_02 | stage4_dialog[0].content | もしもし、今、何してるの？ | Moshimoshi, ! Ima nani shiteru no? | Alô! O que tá fazendo agora? | corrected |
+| b1_mod_02 | stage4_dialog[1].content | やばいよ！授業が始まる！早く行かなきゃ！ | Yabai yo! Jugyou ga hajimaru! Hayaku ikanakya! | Caramba! A aula vai começar! Precisamos ir logo! | corrected |
+| b1_mod_02 | stage4_dialog[2].content | 間に合った！よかった！ | Maniaatta! Yokatta! | Chegamos a tempo! Que bom! | corrected |
+| b1_mod_03 | stage1_context.audio | 明日は雨が降ると思います。 | Ashita wa ame ga furu to omoimasu. | Acho que vai chover amanhã. | corrected |
+| b1_mod_03 | stage4_dialog[0].content | 明日の天気、どう思いますか。 | ashita no tenki, dou omoimasu ka? | O que acha do tempo amanhã? | corrected |
+| b1_mod_03 | stage4_dialog[1].content | 駅の前の新しいレストラン、おいしいと思いますか。 | Eki no mae no atarashii resutoran, oishii to omoimasu ka? | Acha que o novo restaurante em frente à estação é gostoso? | corrected |
+| b1_mod_03 | stage4_dialog[2].content | いいですね！私も行きたいと思っていました！ | Ii desu ne! Watashi mo ikitai to omotte imashita! | Boa! Eu também estava pensando em ir! | corrected |
+| b1_mod_04 | stage1_context.audio | 明日は行けるかどうか分からない。 | Ashita wa ikeru ka dou ka wakaranai. | Não sei se conseguirei ir amanhã. | corrected |
+| b1_mod_04 | stage4_dialog[0].content | 週末のパーティー、来る？ | shuumatsu no paatii, kuru? | Você vem para a festa no fim de semana? | corrected |
+| b1_mod_04 | stage4_dialog[1].content | 遅くなってもいいから、来ない？ | Osoku natte mo ii kara, konai? | Mesmo que chegue tarde, não quer vir? | corrected |
+| b1_mod_04 | stage4_dialog[2].content | わあ！待っているよ！ | Waa! Matte iru yo! | Que bom! Vou esperar por você! | corrected |
+| b1_mod_05 | stage1_context.audio | 雨が降っているので、タクシーに乗りましょう。 | Ame ga futte iru node, takushii ni norimashou. | Como está chovendo, vamos de táxi. | corrected |
+| b1_mod_05 | stage4_dialog[0].content | 遅刻ですね。何があったんですか。 | chikoku desu ne. Nani ga atta n desu ka? | Você se atrasou. O que aconteceu? | corrected |
+| b1_mod_05 | stage4_dialog[1].content | そうですか。事故なら仕方がないですね。 | Sou desu ka. Jiko nara shikata ga nai desu ne. | Entendo. Se foi um acidente, não havia o que fazer. | corrected |
+| b1_mod_05 | stage4_dialog[2].content | では、会議を始めましょう。 | Dewa, kaigi o hajimemashou. | Bem, vamos começar a reunião. | corrected |
+| b1_mod_06 | stage1_context.audio | 財布をなくしてしまいました！どうしよう！ | Saifu o nakushite shimaimashita! Dou shiyou! | Acabei perdendo a carteira! O que vou fazer? | corrected |
+| b1_mod_06 | stage4_dialog[0].content | どうしたの？顔色が悪いよ。 | doushitano? Kaoiro ga warui yo. | O que houve? Você tá com uma cara péssima. | corrected |
+| b1_mod_06 | stage4_dialog[1].content | ええ？！交番に行こう！誰かが届けてくれているかも！ | Ee?! Kouban ni ikou! Dareka ga todokete kurete iru kamo! | O quê?! Vamos ao posto policial! Talvez alguém tenha entregado a carteira! | corrected |
+| b1_mod_06 | stage4_dialog[2].content | これですか。親切な方が届けてくれましたよ。 | Kore desu ka. Shinsetsu na kata ga todokete kuremashita yo. | É esta? Uma pessoa gentil a entregou aqui. | corrected |
+| b1_mod_07 | stage1_context.audio | 先生に褒められました！ | Sensei ni homeraremashita! | Fui elogiado pelo professor! | corrected |
+| b1_mod_07 | stage4_dialog[0].content | 今日の日本語の授業、どうだった？ | kyou no Nihongo no jugyou, dou datta? | Como foi a aula de japonês hoje? | corrected |
+| b1_mod_07 | stage4_dialog[1].content | すごいじゃん！毎日勉強してるからね！ | Sugoi jan! Mainichi benkyou shiteru kara ne! | Que incrível! É porque você estuda todos os dias! | corrected |
+| b1_mod_07 | stage4_dialog[2].content | 今度、一緒に勉強しない？ | Kondo, issho ni benkyou shinai? | Quer estudar comigo na próxima vez? | corrected |
+| b1_mod_08 | stage1_context.audio | 雨に降られて、濡れてしまいました。 | Ame ni furarete, nurete shimaimashita. | Peguei chuva e acabei ficando molhado. | corrected |
+| b1_mod_08 | stage4_dialog[0].content | ずぶ濡れじゃない！どうしたの？ | Zubunure janai! Dou shita no? | Você está encharcado! O que aconteceu? | corrected |
+| b1_mod_08 | stage4_dialog[1].content | 大変だったね！このタオル、使って！ | Taihen datta ne! Kono taoru, tsukatte! | Foi difícil, não foi? Use esta toalha! | corrected |
+| b1_mod_08 | stage4_dialog[2].content | 今、暖房をつけるね。風邪をひかないでね！ | Ima, danbou o tsukeru ne. Kaze o hikanaide ne! | Vou ligar o aquecedor agora. Não pegue um resfriado! | corrected |
+| b1_mod_09 | stage1_context.audio | 日本に行ったら、京都に行きたいです。 | Nihon ni ittara, Kyouto ni ikitai desu. | Quando eu for ao Japão, quero ir a Kyoto. | corrected |
+| b1_mod_09 | stage4_dialog[0].content | 夏休みの予定は？ | natsu yasumi no yotei wa? | Quais os planos para as férias de verão? | corrected |
+| b1_mod_09 | stage4_dialog[1].content | 早く予約すると、安くなるよ！ | Hayaku yoyaku suru to, yasuku naru yo! | Se reservar cedo, fica mais barato! | corrected |
+| b1_mod_09 | stage4_dialog[2].content | 行けるといいね！お土産、待っているよ！ | Ikeru to ii ne! Omiyage, matteru yo! | Tomara que consiga ir! Vou esperar a lembrancinha! | corrected |
+| b1_mod_10 | stage1_context.audio | 安ければ買います。日本語なら、お任せください！ | Yasukereba kaimasu. Nihongo nara, omakase kudasai! | Se for barato, compro. Se for japonês, deixe comigo! | corrected |
+| b1_mod_10 | stage4_dialog[0].content | 新しいパソコンが欲しいんだけど、どこがいいかな。 | atarashii pasokon ga hoshii n da kedo, doko ga ii ka na? | Quero um computador novo; onde será um bom lugar? | corrected |
+| b1_mod_10 | stage4_dialog[1].content | 秋葉原は安いですか。 | Akihabara wa yasui desu ka? | Em Akihabara é barato? | corrected |
+| b1_mod_10 | stage4_dialog[2].content | 一緒に行ってくれない？ | Issho ni itte kurenai? | Você poderia ir comigo? | corrected |
+| b1_mod_11 | stage1_context.audio | 日本語が話せるようになりました。 | Nihongo ga hanaseru you ni narimashita. | Passei a conseguir falar japonês. | corrected |
+| b1_mod_11 | stage4_dialog[0].content | 最近、日本語が上手になりましたね！ | saikin Nihon-go ga jouzu ni narimashita ne! | Ultimamente seu japonês melhorou bastante, hein! | corrected |
+| b1_mod_11 | stage4_dialog[1].content | 素晴らしい！毎日どれくらい勉強していますか。 | Subarashii! Mainichi dorekurai benkyou shite imasu ka? | Incrível! Quanto estuda por dia? | corrected |
+| b1_mod_11 | stage4_dialog[2].content | この調子で頑張ってくださいね！ | Kono choushi de ganbatte kudasai ne! | Continue nesse ritmo! | corrected |
+| b1_mod_12 | stage1_context.audio | 納豆を食べてみました。富士山に登ったことがあります。 | Nattou o tabete mimashita. Fuji-san ni nobotta koto ga arimasu. | Experimentei comer natto. Já subi o Monte Fuji. | corrected |
+| b1_mod_12 | stage4_dialog[0].content | 納豆を食べたことある？ | nattou o tabeta koto aru? | Você já comeu natto? | corrected |
+| b1_mod_12 | stage4_dialog[1].content | どう？おいしい？ | Dou? Oishii? | E aí? Gostoso? | corrected |
+| b1_mod_12 | stage4_dialog[2].content | すごい！納豆が食べられたら、もう日本人だね！ | Sugoi! Natto ga taberaretara, mou Nihonjin da ne! | Incrível! Se consegue comer Natto, já é um japonês! | corrected |
+| b1_mod_13 | stage1_context.audio | 友達に英語を教えてあげた。田中さんが手伝ってくれた。 | Tomodachi ni eigo o oshiete ageta. Tanaka-san ga tetsudatte kureta. | Ensinei inglês a um amigo. O Sr. Tanaka me ajudou. | corrected |
+| b1_mod_13 | stage4_dialog[0].content | パソコンの故障、直った？ | PC no koshou, naotta? | Consertou o problema do PC? | corrected |
+| b1_mod_13 | stage4_dialog[1].content | 海斗君、優しいね！何かお礼した？ | Kaito-kun, yasashii ne! Nani ka o-rei shita? | O Kaito é muito gentil! Fez algum agradecimento? | corrected |
+| b1_mod_13 | stage4_dialog[2].content | いい友達だね！ | Ii tomodachi da ne! | Que boa amizade! | corrected |
+| b1_mod_14 | stage1_context.audio | 田中さんに日本語を教えてもらいました。 | Tanaka-san ni Nihongo o oshiete moraimashita. | O Sr. Tanaka me ensinou japonês. | corrected |
+| b1_mod_14 | stage4_dialog[0].content | 日本料理が上手ですね！どこで習ったの？ | Nihon-ryouri ga jouzu desu ne! Doko de naratta no? | Você manda bem na culinária japonesa! Onde aprendeu? | corrected |
+| b1_mod_14 | stage4_dialog[1].content | 大家さん、めっちゃ優しいね！ | Ooya-san, meccha yasashii ne! | A proprietária é muito gentil, não é? | corrected |
+| b1_mod_14 | stage4_dialog[2].content | 今度、料理でお礼をしないとね！ | Kondo, ryouri de orei o shinai to ne! | Na próxima vez, você precisa agradecer com uma refeição! | corrected |
+| b1_mod_15 | stage1_context.audio | 子供に勉強させます。この仕事をさせてください。 | Kodomo ni benkyou sasemasu. Kono shigoto o sasete kudasai. | Faço a criança estudar. Por favor, deixe-me fazer este trabalho. | corrected |
+| b1_mod_15 | stage4_dialog[0].content | 新しい企画のプレゼンテーション、誰がやる？ | atarashii kikaku no purezenteeshon, dare ga yaru? | Quem fará a apresentação do novo projeto? | corrected |
+| b1_mod_15 | stage4_dialog[1].content | いい意気込みだね！では、君に任せるよ！ | Ii ikigomi da ne! Dewa, kimi ni makaseru yo! | Boa disposição! Então deixo isso com você! | corrected |
+| b1_mod_15 | stage4_dialog[2].content | チームのメンバーにも手伝わせるからね。 | Chiimu no menbaa ni mo tetsudawaseru kara ne. | Também vou pedir aos membros da equipe que ajudem. | corrected |
+| b1_mod_16 | stage1_context.audio | 嫌いな野菜を食べさせられました。 | Kirai na yasai o tabesaseraremashita. | Fui obrigado a comer um legume de que não gosto. | corrected |
+| b1_mod_16 | stage4_dialog[0].content | 昨日の飲み会、疲れたね！ | kinou no nomikai, tsukareta ne! | A confraternização de ontem foi cansativa, não foi? | corrected |
+| b1_mod_16 | stage4_dialog[1].content | 先輩たちの無理な振り、大変だよね。 | Senpai-tachi no muri na furi, taihen da yo ne. | As exigências excessivas dos veteranos são difíceis, não são? | corrected |
+| b1_mod_16 | stage4_dialog[2].content | 今週末はゆっくり休もう！ | Konshuumatsu wa yukkuri yasumou! | Vamos descansar bem neste fim de semana! | corrected |
+| b1_mod_17 | stage1_context.audio | 社長がいらっしゃいました。何を召し上がりますか。 | Shachou ga irasshaimashita. Nani o meshiagarimasu ka? | O presidente chegou. O que deseja comer? | corrected |
+| b1_mod_17 | stage4_dialog[0].content | すみません、おすすめは何ですか。 | Sumimasen, osusume wa nan desu ka? | Com licença, o que recomenda? | corrected |
+| b1_mod_17 | stage4_dialog[1].content | では、それをいただこう。 | Dewa, sore o itadakou. | Bem, vou querer esse então. | corrected |
+| b1_mod_17 | stage4_dialog[2].content | おいしそうだね。 | Oishisou da ne. | Parece muito gostoso. | corrected |
+| b1_mod_18 | stage1_context.audio | 私が参ります。田中と申します。 | Watashi ga mairimasu. Tanaka to moushimasu. | Eu irei. Meu nome é Tanaka. | corrected |
+| b1_mod_18 | stage4_dialog[0].content | 小林社長はいらっしゃいますか。 | Kobayashi-shachou wa irasshaimasu ka? | O presidente Kobayashi está? | corrected |
+| b1_mod_18 | stage4_dialog[1].content | では、伝言をお願いできるかな。 | Dewa, dengon o onegai dekiru ka na? | Bem, posso deixar uma mensagem? | corrected |
+| b1_mod_18 | stage4_dialog[2].content | 助かるよ。よろしく。 | Tasukaru yo. Yoroshiku. | Ajuda muito. Conto com você. | corrected |
+| b1_mod_19 | stage1_context.audio | お世話になっております。お先に失礼します。 | Osewa ni natte orimasu. Osaki ni shitsurei shimasu. | Agradeço sempre pelo apoio. Com licença, vou me retirar antes. | corrected |
+| b1_mod_19 | stage4_dialog[0].content | Eメールを拝見しました。資料を添付していただき、ありがとうございます。 | E-meeru o haiken shimashita. Shiryou o tenpu shite itadaki, arigatou gozaimasu. | Li o e-mail. Obrigado por anexar os documentos. | corrected |
+| b1_mod_19 | stage4_dialog[1].content | 今日の仕事は終了ですか。 | kyou no shigoto wa shuuryou desu ka? | Terminou o trabalho de hoje? | corrected |
+| b1_mod_19 | stage4_dialog[2].content | お疲れ様でした！気をつけて帰ってね！ | Otsukaresama deshita! Ki o tsukete kaette ne! | Bom trabalho! Vá com cuidado para casa! | corrected |
+| b1_mod_20 | stage1_context.audio | 自己PRをさせていただきます。職務経歴について説明します。 | Jiko PR o sasete itadakimasu. Shokumu keireki ni tsuite setsumei shimasu. | Permita-me fazer uma breve apresentação profissional. Explicarei minha experiência de trabalho. | corrected |
+| b1_mod_20 | stage4_dialog[0].content | では、自己PRをお願いいたします。 | Dewa, jiko PR o onegai itashimasu. | Então, faça sua apresentação profissional, por favor. | corrected |
+| b1_mod_20 | stage4_dialog[1].content | 的確な説明ですね。厳しい日程のとき、どうしますか。 | Tekikaku na setsumei desu ne. Kibishii nittei no toki, dou shimasu ka? | É uma explicação precisa. O que faz quando o cronograma é apertado? | corrected |
+| b1_mod_20 | stage4_dialog[2].content | 素晴らしいですね！結果は来週メールでお知らせいたします。 | Subarashii desu ne! Kekka wa raishuu meeru de oshirase itashimasu. | Excelente! Informaremos o resultado por e-mail na próxima semana. | corrected |
+| b1_mod_21 | stage1_context.audio | この料理はおいしそうです。雨が降るみたいです。 | Kono ryouri wa oishisou desu. Ame ga furu mitai desu. | Este prato parece saboroso. Parece que vai chover. | corrected |
+| b1_mod_21 | stage4_dialog[0].content | このパフェ、どう？ | kono pafe, dou? | O que acha deste parfait? | corrected |
+| b1_mod_21 | stage4_dialog[1].content | この店の内装、映画のセットみたいじゃない？ | Kono mise no naisou, eiga no setto mitai janai? | A decoração deste lugar não parece um cenário de filme? | corrected |
+| b1_mod_21 | stage4_dialog[2].content | じゃあ、食べよう！ | Jaa, tabeyou! | Então, bora comer! | corrected |
+| b1_mod_22 | stage1_context.audio | 温泉では体を洗ってから入ります。ごみの分別が大切です。 | Onsen de wa karada o aratte kara hairimasu. Gomi no bunbetsu ga taisetsu desu. | No onsen, lavamos o corpo antes de entrar. Separar o lixo é importante. | corrected |
+| b1_mod_22 | stage4_dialog[0].content | 温泉のマナーは大丈夫？ | Onsen no manaa wa daijoubu? | Tudo certo com as regras do Onsen? | corrected |
+| b1_mod_22 | stage4_dialog[1].content | さすが！マナーがちゃんとしてるね！ゆっくりつかろう！ | Sashuga! Manaa ga chanto shiteru ne! Yukkuri tsukarou! | Como esperado! Suas maneiras são impecáveis! Vamos relaxar na água! | corrected |
+| b1_mod_22 | stage4_dialog[2].content | 温泉の後は、冷たい牛乳だね！ | Onsen no ato wa, tsumetai gyuunyuu da ne! | Depois do Onsen, nada como leite gelado, né! | corrected |
+| b1_mod_23 | stage1_context.audio | 地震のお知らせです。新幹線は遅延しています。 | Jishin no oshirase desu. Shinkansen wa chien shite imasu. | Este é um aviso sobre o terremoto. O Shinkansen está atrasado. | corrected |
+| b1_mod_23 | stage4_dialog[0].content | すみません、この電車はなぜ動かないんですか。 | Sumimasen, kono densha wa naze ugokanai n desu ka? | Com licença, por que este trem não está circulando? | corrected |
+| b1_mod_23 | stage4_dialog[1].content | 運行はいつ再開するか分かりますか。 | Unkou wa itsu saikai suru ka wakarimasu ka? | Sabe quando a operação será retomada? | corrected |
+| b1_mod_23 | stage4_dialog[2].content | 助かりました！ありがとうございます！ | Tasukarimashita! Arigatou gozaimasu! | Isso ajudou muito! Muito obrigado! | corrected |
+| b1_mod_24 | stage1_context.audio | おめでとうございます！B1コース修了です！ | Omedetou gozaimasu! B1 koosu shuuryou desu! | Parabéns! O curso B1 foi concluído! | corrected |
+| b1_mod_24 | stage4_dialog[0].content | この一年間の日本での仕事と生活、どうだったかな。 | kono 1-nenkan no Nihon de no shigoto to seikatsu, dou datta ka na? | Como foi seu trabalho e vida no Japão neste 1 ano? | corrected |
+| b1_mod_24 | stage4_dialog[1].content | 素晴らしい成長だね！会社の支えになってくれてありがとう！ | Subarashii seichou da ne! Kaisha no sasae ni natte kurete arigatou! | Que crescimento incrível! Obrigado por apoiar a empresa! | corrected |
+| b1_mod_24 | stage4_dialog[2].content | おめでとうございます！B1コース修了です！ | Omedetou gozaimasu! B1 koosu shuuryou desu! | Parabéns! Você concluiu o curso B1! | corrected |
 | b2_mod_01 | stage1_context.audio | この会社では、毎週月曜日に会議を開くことになっている。 | Kono kaisha de wa, maishuu getsuyoubi ni kaigi o hiraku koto ni natte iru. | Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira. | pending-human-review |
 | b2_mod_01 | stage4_dialog[0].content | [Seu Nome]さん、管理規則によると、ごみは朝八時前に出すことになっていますよ。 | [Seu Nome]-san, kanri kisho ni yoru to, gomi wa asa hachi-ji maeni dasu koto ni natte imasu yo. | Segundo o regulamento, está estabelecido que o lixo deve ser colocado antes das 8h. | pending-human-review |
 | b2_mod_01 | stage4_dialog[2].content | 分かってくれて助かるよ。よろしく。 | Wakatte kurete tasukaru yo. Yoroshiku. | Ajuda muito você compreender. Conto com você. | pending-human-review |

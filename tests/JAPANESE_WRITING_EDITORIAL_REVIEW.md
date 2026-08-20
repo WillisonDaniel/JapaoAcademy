@@ -1,17 +1,16 @@
 # Inventário editorial — escrita guiada japonesa
 
-Gerado mecanicamente na Fase 11. Snapshot dos 208 itens publicados: `2f1726921d81a417`. Este documento não constitui aprovação editorial.
+Gerado mecanicamente na Fase 11. Snapshot dos 210 itens publicados: `62301843478967e0`. Este documento não constitui aprovação editorial.
 
 - Modelos examinados: **210**.
-- Modelos publicados mecanicamente: **208**.
-- Modelos excluídos sem inferência: **2**.
-- Modelos publicados com decisão editorial inconclusiva: **86**.
+- Modelos publicados mecanicamente: **210**.
+- Modelos excluídos sem inferência: **0**.
+- Modelos publicados com decisão editorial inconclusiva: **40**.
 
 ## Exclusões
 
 | Nível | Módulo | Item | Motivo | Frase | Blocos |
 |---|---|---:|---|---|---|
-| B1 | b1_mod_10 | 2 | frase-e-blocos-divergentes | かいぎ の Mae に しりょう を つくります | かいぎ / の / まえ / に / しりょう / を / つくります |
-| B1 | b1_mod_18 | 1 | frase-e-blocos-divergentes | たなかさん は こない かもしれません | たなかさん / は / こない / かもしれん |
+| — | — | — | Nenhuma | — | — |
 
 Campos divergentes permanecem inconclusivos até que evidência localizada sustente naturalidade, tradução e segmentação.

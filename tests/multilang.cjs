@@ -777,7 +777,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v47/);
+    assert.match(serviceWorker, /idiomas-academy-v48/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -881,9 +881,9 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/ja-JP/curso.html',
             locale: 'ja-JP',
             scripts: 27,
-            // A trilha A1/A2 continua dentro do orçamento de 1,7 MB; a margem cobre
-            // correções editoriais rastreáveis, sem adicionar dependências ao player.
-            maxBytes: 1740 * 1024,
+            // A trilha A1–B1 continua dentro do orçamento de 1,72 MB; a margem cobre
+            // contratos editoriais explícitos, sem adicionar dependências ao player.
+            maxBytes: 1760 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
@@ -1119,7 +1119,7 @@ test('escuta japonesa usa indice leve, voz local e nenhuma avaliacao artificial'
         return total + fs.statSync(caminho).size;
     }, 0);
     assert.ok(scriptsLocais.length <= 18, `${scriptsLocais.length} scripts locais na escuta japonesa`);
-    // Fase 18: 44 diálogos B1/B2 recuperados elevaram o índice de 265 para 309 itens.
+    // Fases 18 e 21B.3: os diálogos B1/B2 com contrato explícito elevaram o índice para 315 itens.
     assert.ok(bytesLocais <= 415 * 1024, `${Math.round(bytesLocais / 1024)} KB na escuta japonesa`);
     assert.match(html, /database\/ja-JP\/data_escuta_index\.js/);
     assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|js\/srs\//);
