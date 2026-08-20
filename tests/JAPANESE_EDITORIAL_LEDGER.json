@@ -19866,7 +19866,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_24-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;module.metadata",
@@ -19874,16 +19874,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "eff6e49ba69a532130db2660163f49fa64dcf5a8a6ebf4fcda9309219f1936ab",
-      "finalHash": "eff6e49ba69a532130db2660163f49fa64dcf5a8a6ebf4fcda9309219f1936ab",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "acbe944adbeb512174f08366494fe4f73cfec2f5befd01d8d3c15aee65fd5ec0",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "title": "Verbos de ação: comer, beber, ver e ouvir",
+        "sectionTitle": "Tempo, Horários & Rotina",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Use quatro verbos frequentes com を para indicar o objeto da ação."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "eff6e49ba69a532130db2660163f49fa64dcf5a8a6ebf4fcda9309219f1936ab"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage1_context",
@@ -19891,7 +19909,7 @@
         "kind": "context"
       },
       "beforeHash": "124699da8a271e93646a9f1b90b269f896324cb63a9dffd2afcaffb7aea31397",
-      "finalHash": "e69a3e26c5e861cb1aa60585c9a7069d93cbe304adc33c6bb0fecb5449905f3b",
+      "finalHash": "5c124da149d56026ea116c627f59b5a38cec893b29c50dcc8abf51461bff1956",
       "beforeValue": {
         "audioGuide": "Gohan o tabemasu.",
         "missionTitle": "Objetivo de Hoje: O que você faz?",
@@ -19907,8 +19925,8 @@
       },
       "finalValue": {
         "audioGuide": "Gohan o tabemasu.",
-        "missionTitle": "Objetivo de Hoje: O que você faz?",
-        "missionDescription": "Aprenda os 4 verbos de 'consumo' mais comuns do dia a dia: comer, beber, ver e ouvir. E domine a partícula 'wo' (を) para indicar o que você consome.",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Use quatro verbos frequentes com を para indicar o objeto da ação.",
         "audio": {
           "displayText": "ご飯を食べます。",
           "audioText": "ご飯を食べます。",
@@ -19918,20 +19936,26 @@
           "scenario": ""
         }
       },
-      "reasonKind": "evidence-pending",
-      "rationale": "A correção objetiva foi aplicada, mas o alvo permanece editorialmente aberto até reunir o nível de evidência exigido pela política.",
-      "confidence": 0.72,
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 26
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 40
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e69a3e26c5e861cb1aa60585c9a7069d93cbe304adc33c6bb0fecb5449905f3b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage2_drops[0]",
@@ -19939,16 +19963,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d37d887b78f9391b8ce770461c39f17bb937dfa4c56a6f40ee0aa034abb92ed7",
-      "finalHash": "d37d887b78f9391b8ce770461c39f17bb937dfa4c56a6f40ee0aa034abb92ed7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "67a84fbd580406719ea86dd1b18375116f096c1f5298a8f9f96e5e6532582f0c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "食べます（たべます）",
+        "romaji": "tabemasu",
+        "translation": "comer",
+        "timeContext": "Usado para alimentos e refeições."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d37d887b78f9391b8ce770461c39f17bb937dfa4c56a6f40ee0aa034abb92ed7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage2_drops[1]",
@@ -19956,16 +19994,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "09d82a3602465054e41076795a08c48611b480b777252c398fb46fdcdabf5640",
-      "finalHash": "09d82a3602465054e41076795a08c48611b480b777252c398fb46fdcdabf5640",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4c1f622ed8a80752c6c1f33164c9c992a38a39c8e8716a7fe0f64baf8cd7754c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "飲みます（のみます）",
+        "romaji": "nomimasu",
+        "translation": "beber",
+        "timeContext": "Usado para bebidas."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "09d82a3602465054e41076795a08c48611b480b777252c398fb46fdcdabf5640"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage2_drops[2]",
@@ -19973,16 +20025,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "9d610b9abc640d287e1faafa1aa5b369caa178bf7adef6137df07f6f2b38e0a1",
-      "finalHash": "9d610b9abc640d287e1faafa1aa5b369caa178bf7adef6137df07f6f2b38e0a1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9b8d491df6e03ebc552480720bc8eb5237a4f8bf3dc56fda8cc746b3eedc3862",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "見ます（みます）",
+        "romaji": "mimasu",
+        "translation": "ver; assistir",
+        "timeContext": "Pode descrever ver TV, filmes e outras coisas."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9d610b9abc640d287e1faafa1aa5b369caa178bf7adef6137df07f6f2b38e0a1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage2_drops[3]",
@@ -19990,16 +20056,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "08f21e52429b3a8d126a3d5a7c97cdef40ffe947c4473af6e47702151f93c4ea",
-      "finalHash": "08f21e52429b3a8d126a3d5a7c97cdef40ffe947c4473af6e47702151f93c4ea",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c36c9074acbba701fec0fbb71bf9646670d1e812e9edcde7e20d8e53eeb204f9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "聞きます（ききます）",
+        "romaji": "kikimasu",
+        "translation": "ouvir; escutar",
+        "timeContext": "Neste módulo, é usado para ouvir música."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "08f21e52429b3a8d126a3d5a7c97cdef40ffe947c4473af6e47702151f93c4ea"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage2_drops[4]",
@@ -20007,16 +20087,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "4df9a0131f4511f16a423879bc795ced8bac251ba76e990fe89c121aaee4f46c",
-      "finalHash": "4df9a0131f4511f16a423879bc795ced8bac251ba76e990fe89c121aaee4f46c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "8da5537a419c6c27d182ba5d3ec6720668df6d20723dc74cec6c7d6d0e84b518",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Objeto direto com を",
+        "rule": "A partícula を, pronunciada “o”, marca o objeto diretamente envolvido na ação do verbo.",
+        "formula": "[objeto] を [verbo]",
+        "example": "音楽を聞きます。 (Ongaku o kikimasu.) — Ouço música."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4df9a0131f4511f16a423879bc795ced8bac251ba76e990fe89c121aaee4f46c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage3_practice[0]",
@@ -20024,16 +20118,40 @@
         "kind": "practice"
       },
       "beforeHash": "66f7b2f4b70a6176ab430e3908747ed80e532ff4aa653801a959e4aa3f973e3a",
-      "finalHash": "66f7b2f4b70a6176ab430e3908747ed80e532ff4aa653801a959e4aa3f973e3a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2e57285f8777d4653751694eade303b2e0f43b07ccf466c590c07978dad085ea",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "1. Para dizer “Eu assisto TV”, qual verbo você usa?",
+        "options": [
+          {
+            "label": "みます (Mimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "ききます (Kikimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "たべます (Tabemasu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "66f7b2f4b70a6176ab430e3908747ed80e532ff4aa653801a959e4aa3f973e3a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage3_practice[1]",
@@ -20041,16 +20159,40 @@
         "kind": "practice"
       },
       "beforeHash": "413a5ae0512b46ed68af689dfe24ff61dca2b4331be0d08253d0a080c99191d2",
-      "finalHash": "413a5ae0512b46ed68af689dfe24ff61dca2b4331be0d08253d0a080c99191d2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a8027461aacd2ba0b9a513adc610240a8d2fc7adb1281c9db5e503dc1ad97193",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "2. Complete: おんがく ___ ききます。",
+        "options": [
+          {
+            "label": "を (o)",
+            "isCorrect": true
+          },
+          {
+            "label": "へ (e)",
+            "isCorrect": false
+          },
+          {
+            "label": "で (de)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "413a5ae0512b46ed68af689dfe24ff61dca2b4331be0d08253d0a080c99191d2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage3_5_sentenceBuilder[0]",
@@ -20058,16 +20200,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "9c4823807eca8bc2928316957363d7e6bd8bcbd96aca57c70145173aa9c29920",
-      "finalHash": "9c4823807eca8bc2928316957363d7e6bd8bcbd96aca57c70145173aa9c29920",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "586df61667924ffba1e643323cddb525f89d0f4ecd95099edad6594478468a98",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "テレビ を みます",
+        "translation": "Assisto TV.",
+        "chunks": [
+          "テレビ",
+          "を",
+          "みます"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9c4823807eca8bc2928316957363d7e6bd8bcbd96aca57c70145173aa9c29920"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage3_5_sentenceBuilder[1]",
@@ -20075,16 +20233,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "23371d4e54089d76305fcd99ae10209ab5b5dc4b058309aea6f0f73b13345ec5",
-      "finalHash": "23371d4e54089d76305fcd99ae10209ab5b5dc4b058309aea6f0f73b13345ec5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "31464f89628dcae43db9d7c0c8fcc6f3d81333bc9eac10cf634c99c48dd87ccd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "おんがく を ききます",
+        "translation": "Ouço música.",
+        "chunks": [
+          "おんがく",
+          "を",
+          "ききます"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "23371d4e54089d76305fcd99ae10209ab5b5dc4b058309aea6f0f73b13345ec5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage4_dialog[0]",
@@ -20092,16 +20266,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "2e5f2ad28823475740e24a2df1f2d89c185cb018489bf09261e9ccd892ebc8e0",
-      "finalHash": "2e5f2ad28823475740e24a2df1f2d89c185cb018489bf09261e9ccd892ebc8e0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3237496145709b23f516f5e462b48962ae3211fd7d7c3bb1f2f978ddf91c3ae2",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Em um restaurante, o garçom pergunta o que você vai comer.",
+        "npcName": "Garçom",
+        "npcMessage": "なに を たべます か。 (O que você vai comer?)",
+        "options": [
+          {
+            "text": "ラーメン を たべます。",
+            "feedback": "A resposta informa o alimento e usa を com o verbo corretamente.",
+            "isCorrect": true
+          },
+          {
+            "text": "みず を のみます。",
+            "feedback": "A frase fala de uma bebida, não do alimento solicitado.",
+            "isCorrect": false
+          },
+          {
+            "text": "はい、たべます。",
+            "feedback": "A resposta não informa o que você vai comer.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2e5f2ad28823475740e24a2df1f2d89c185cb018489bf09261e9ccd892ebc8e0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage5_quiz[0]",
@@ -20109,16 +20316,32 @@
         "kind": "quiz"
       },
       "beforeHash": "c3bb7f852be9fdebc0c58fb4e78db9427d10d62d2922de964726bf8097a47b21",
-      "finalHash": "c3bb7f852be9fdebc0c58fb4e78db9427d10d62d2922de964726bf8097a47b21",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3b3006f33e2e747f764c762ab6ad233dfd1562704a03cb85a5960bbca303f71c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "Qual partícula marca o objeto direto em 食べます?",
+        "options": [
+          "を (o)",
+          "が (ga)",
+          "に (ni)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c3bb7f852be9fdebc0c58fb4e78db9427d10d62d2922de964726bf8097a47b21"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage5_quiz[1]",
@@ -20126,16 +20349,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b353b7cde4454ec02ec8f7793c1eaa7daa48cbfd5db65a5fc1aa4a69dcf399bb",
-      "finalHash": "b353b7cde4454ec02ec8f7793c1eaa7daa48cbfd5db65a5fc1aa4a69dcf399bb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c9a68bdcfb8e229988c7a5096dd68e08992817e93658e8541d55c3ac796f8a7f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 食べます（たべます）?",
+        "options": [
+          "Comer",
+          "Beber",
+          "Ver / Assistir"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b353b7cde4454ec02ec8f7793c1eaa7daa48cbfd5db65a5fc1aa4a69dcf399bb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage5_quiz[2]",
@@ -20143,16 +20382,32 @@
         "kind": "quiz"
       },
       "beforeHash": "36ccddb1f9f1308e6c9c6897d74057d0b4927b983574a655ce4399339fbbe949",
-      "finalHash": "36ccddb1f9f1308e6c9c6897d74057d0b4927b983574a655ce4399339fbbe949",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d74ef158af8442350e38cc43d6849f692705428b6d28b25af31ee1f1ee5abb75",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 飲みます（のみます）?",
+        "options": [
+          "Comer",
+          "Beber",
+          "Ver / Assistir"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "36ccddb1f9f1308e6c9c6897d74057d0b4927b983574a655ce4399339fbbe949"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage5_quiz[3]",
@@ -20160,16 +20415,32 @@
         "kind": "quiz"
       },
       "beforeHash": "e4e0ea00d5eb2b2361603baeea96f82ec7a2533d1cba6eaa6b38572dd8ecbd83",
-      "finalHash": "e4e0ea00d5eb2b2361603baeea96f82ec7a2533d1cba6eaa6b38572dd8ecbd83",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "59cd71df0e77c8cb2fcdb54feb2eaceff49c5f101fb890891ac8593fa101555b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 見ます（みます）?",
+        "options": [
+          "Beber",
+          "Comer",
+          "Ver / Assistir"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e4e0ea00d5eb2b2361603baeea96f82ec7a2533d1cba6eaa6b38572dd8ecbd83"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_24-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_24;stage5_quiz[4]",
@@ -20177,11 +20448,27 @@
         "kind": "quiz"
       },
       "beforeHash": "bd5241f198a05fdfdefaf5b9f62b390d07ba415ef26e9a9b503b29a37e50d18e",
-      "finalHash": "bd5241f198a05fdfdefaf5b9f62b390d07ba415ef26e9a9b503b29a37e50d18e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "bc4e9c46a872048748b8842e57df4ab3e7632fd38f5cb631fc6c094b3d4465aa",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado trabalhado de 聞きます（ききます）?",
+        "options": [
+          "Ouvir / Escutar",
+          "Comer",
+          "Beber"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bd5241f198a05fdfdefaf5b9f62b390d07ba415ef26e9a9b503b29a37e50d18e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_25-module-metadata",
@@ -361369,8 +361656,8 @@
         "locator": "items[259]",
         "resource": "dictionary"
       },
-      "beforeHash": "12b27a7eddd073bc607644839b4d2e7b0092e110e1943d05883ce0dd771ee25f",
-      "finalHash": "12b27a7eddd073bc607644839b4d2e7b0092e110e1943d05883ce0dd771ee25f",
+      "beforeHash": "9fc847107d7fe712f168457fa567a8738866d5e13e941051f47f57c0f40adf7d",
+      "finalHash": "9fc847107d7fe712f168457fa567a8738866d5e13e941051f47f57c0f40adf7d",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -361386,8 +361673,8 @@
         "locator": "items[260]",
         "resource": "dictionary"
       },
-      "beforeHash": "aa73d4f3c0bf7c94841a356b7c6211d017fc3ec40c4bcac8f536607aca547b17",
-      "finalHash": "aa73d4f3c0bf7c94841a356b7c6211d017fc3ec40c4bcac8f536607aca547b17",
+      "beforeHash": "e449f0fa8dc85d7c71a9a5e8501ed50f85b28f1e701a1a7e6954569babdd296c",
+      "finalHash": "e449f0fa8dc85d7c71a9a5e8501ed50f85b28f1e701a1a7e6954569babdd296c",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -361403,8 +361690,8 @@
         "locator": "items[261]",
         "resource": "dictionary"
       },
-      "beforeHash": "470424780a1f45f70f1b114b9bb181850731bd8861dd4cc3635c0ccae287f345",
-      "finalHash": "470424780a1f45f70f1b114b9bb181850731bd8861dd4cc3635c0ccae287f345",
+      "beforeHash": "f9802b39a434b1013833de09a0b16eb0af4cd18aea87c582a77a3aec02cf3848",
+      "finalHash": "f9802b39a434b1013833de09a0b16eb0af4cd18aea87c582a77a3aec02cf3848",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -361420,8 +361707,8 @@
         "locator": "items[262]",
         "resource": "dictionary"
       },
-      "beforeHash": "83a366efadb790d2824a329fe80f3ecf3274995ce34ab0318e98dca4cfdf533a",
-      "finalHash": "83a366efadb790d2824a329fe80f3ecf3274995ce34ab0318e98dca4cfdf533a",
+      "beforeHash": "656d9af8118489f1a379c50643a24bdd4dcc642c0dda8bc2d118e47e59df4bb0",
+      "finalHash": "656d9af8118489f1a379c50643a24bdd4dcc642c0dda8bc2d118e47e59df4bb0",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -361437,8 +361724,8 @@
         "locator": "items[263]",
         "resource": "dictionary"
       },
-      "beforeHash": "1a4cfede2b093a3ba127b2b119cf363b041dad88e1d132fbf8c45a59a3921fcd",
-      "finalHash": "1a4cfede2b093a3ba127b2b119cf363b041dad88e1d132fbf8c45a59a3921fcd",
+      "beforeHash": "c61d1ef1df1ae0e60fc9f7eea461426fda311e9d8514eb4be15c783956dc3ce0",
+      "finalHash": "c61d1ef1df1ae0e60fc9f7eea461426fda311e9d8514eb4be15c783956dc3ce0",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -430470,21 +430757,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_24-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[23]",
         "resource": "listening"
       },
-      "beforeHash": "6ff4258f45488bed0c1ff63b48c564ae8a0aba0147dc343bc9f97a514041fbbd",
-      "finalHash": "6ff4258f45488bed0c1ff63b48c564ae8a0aba0147dc343bc9f97a514041fbbd",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "a8c3c3fef79548add64673bcad79f78e5fd310e6ca6fcf37c57f29d0212e99c2",
+      "finalHash": "a8c3c3fef79548add64673bcad79f78e5fd310e6ca6fcf37c57f29d0212e99c2",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_24-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 40
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_27-context-0",
@@ -438212,8 +438508,8 @@
         "locator": "reference[23]",
         "resource": "grammar"
       },
-      "beforeHash": "7280d0a2b47574e17ebd0e5f95de05c41e061a7c746b11a268828f699c209ea8",
-      "finalHash": "7280d0a2b47574e17ebd0e5f95de05c41e061a7c746b11a268828f699c209ea8",
+      "beforeHash": "d62620838cfc61e8e8efb99e6cb7af3ce4e0b1cfd505c71b4cc8931ef8ab37bf",
+      "finalHash": "d62620838cfc61e8e8efb99e6cb7af3ce4e0b1cfd505c71b4cc8931ef8ab37bf",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -442631,40 +442927,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_24-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[46]",
         "resource": "writing"
       },
-      "beforeHash": "871fc8f13c1f1f1db8a467ba4a8858c8fa4bb5be868082588eaea0ff7f757657",
-      "finalHash": "871fc8f13c1f1f1db8a467ba4a8858c8fa4bb5be868082588eaea0ff7f757657",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "5a8842a55ce34b1b32c4d6e83024664580c53d3ef6b7a8689b581b262700a005",
+      "finalHash": "5a8842a55ce34b1b32c4d6e83024664580c53d3ef6b7a8689b581b262700a005",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_24-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_24-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[47]",
         "resource": "writing"
       },
-      "beforeHash": "9f6c82725d02a56f4dffe12be5b31e2034498c2eed0c8d181f373d2faa7ae221",
-      "finalHash": "9f6c82725d02a56f4dffe12be5b31e2034498c2eed0c8d181f373d2faa7ae221",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "860ac95079a23ca85dd6741b06506f31fbf0daa616600945996edf1c545be754",
+      "finalHash": "860ac95079a23ca85dd6741b06506f31fbf0daa616600945996edf1c545be754",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_24-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 90
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_25-1",

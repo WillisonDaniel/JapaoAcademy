@@ -8335,3 +8335,48 @@ CURSO_A1_DADOS[19].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o significado de 朝（あさ）?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Module24() {
+    const module = CURSO_A1_DADOS[23];
+    module.title = "Verbos de ação: comer, beber, ver e ouvir";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Gohan o tabemasu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Use quatro verbos frequentes com を para indicar o objeto da ação."
+    });
+    const verbs = [
+        ["食べます（たべます）", "tabemasu", "comer", "Usado para alimentos e refeições."],
+        ["飲みます（のみます）", "nomimasu", "beber", "Usado para bebidas."],
+        ["見ます（みます）", "mimasu", "ver; assistir", "Pode descrever ver TV, filmes e outras coisas."],
+        ["聞きます（ききます）", "kikimasu", "ouvir; escutar", "Neste módulo, é usado para ouvir música."]
+    ];
+    verbs.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[4], {
+        title: "Objeto direto com を",
+        rule: "A partícula を, pronunciada “o”, marca o objeto diretamente envolvido na ação do verbo.",
+        formula: "[objeto] を [verbo]",
+        example: "音楽を聞きます。 (Ongaku o kikimasu.) — Ouço música."
+    });
+    module.stage3_practice[0].question = "1. Para dizer “Eu assisto TV”, qual verbo você usa?";
+    module.stage3_practice[1].question = "2. Complete: おんがく ___ ききます。";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "テレビ を みます", translation: "Assisto TV.", chunks: ["テレビ", "を", "みます"] },
+        { sentenceJp: "おんがく を ききます", translation: "Ouço música.", chunks: ["おんがく", "を", "ききます"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Em um restaurante, o garçom pergunta o que você vai comer.",
+        npcName: "Garçom",
+        npcMessage: "なに を たべます か。 (O que você vai comer?)",
+        options: [
+            { text: "ラーメン を たべます。", feedback: "A resposta informa o alimento e usa を com o verbo corretamente.", isCorrect: true },
+            { text: "みず を のみます。", feedback: "A frase fala de uma bebida, não do alimento solicitado.", isCorrect: false },
+            { text: "はい、たべます。", feedback: "A resposta não informa o que você vai comer.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual partícula marca o objeto direto em 食べます?";
+    module.stage5_quiz[1].question = "Qual é o significado de 食べます（たべます）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 飲みます（のみます）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 見ます（みます）?";
+    module.stage5_quiz[4].question = "Qual é o significado trabalhado de 聞きます（ききます）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

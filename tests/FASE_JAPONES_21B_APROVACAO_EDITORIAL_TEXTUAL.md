@@ -293,7 +293,19 @@ As decisões usam a tabela de horários do *Genki I* (p. 49), com evidência ind
 
 ## Próximo lote automático
 
-Continuar no módulo A1-24 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-25 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+
+## Lote A1-24
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 17 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo abandona o rótulo impreciso de “consumo” e apresenta os quatro verbos como ações, sem apagar a polissemia de `見ます` e `聞きます`. A explicação de を passa a definir objeto direto, e as duas construções de frase agora praticam assistir e ouvir.
+
+As decisões usam os exemplos de `を`, comida, bebida, TV e música do *Genki I* (p. 90), com uma segunda família editorial (*Tobira*, p. 40) para contextualizar usos de `食べる` e `見る`. Após a propagação, o ledger global contém 6.182 aprovações, 885 correções e 16.467 casos inconclusivos. Os vinte e quatro módulos já auditados somam 469 alvos canônicos sustentados; neste lote, 17 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
 ## Lote A1-23
 

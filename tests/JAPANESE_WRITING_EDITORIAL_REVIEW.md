@@ -1,11 +1,11 @@
 # Inventário editorial — escrita guiada japonesa
 
-Gerado mecanicamente na Fase 11. Snapshot dos 208 itens publicados: `5f546da8243eed71`. Este documento não constitui aprovação editorial.
+Gerado mecanicamente na Fase 11. Snapshot dos 208 itens publicados: `f1eae70caf8141f5`. Este documento não constitui aprovação editorial.
 
 - Modelos examinados: **210**.
 - Modelos publicados mecanicamente: **208**.
 - Modelos excluídos sem inferência: **2**.
-- Modelos publicados com decisão editorial inconclusiva: **162**.
+- Modelos publicados com decisão editorial inconclusiva: **160**.
 
 ## Exclusões
 
