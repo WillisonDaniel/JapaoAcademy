@@ -8240,3 +8240,51 @@ CURSO_A1_DADOS[19].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o sentido de 半（はん）depois de uma hora?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Module22() {
+    const module = CURSO_A1_DADOS[21];
+    module.title = "Dias da semana";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Kyou wa getsuyoubi desu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Reconheça e use os dias da semana em perguntas e compromissos simples."
+    });
+    const days = [
+        ["月曜日（げつようび）", "getsuyoubi", "segunda-feira", "O primeiro kanji é 月, “lua”."],
+        ["火曜日（かようび）", "kayoubi", "terça-feira", "O primeiro kanji é 火, “fogo”."],
+        ["水曜日（すいようび）", "suiyoubi", "quarta-feira", "O primeiro kanji é 水, “água”."],
+        ["木曜日（もくようび）", "mokuyoubi", "quinta-feira", "O primeiro kanji é 木, “árvore/madeira”."],
+        ["金曜日（きんようび）", "kinyoubi", "sexta-feira", "O primeiro kanji é 金, “ouro/metal”."],
+        ["土曜日（どようび）", "doyoubi", "sábado", "O primeiro kanji é 土, “terra/solo”."],
+        ["日曜日（にちようび）", "nichiyoubi", "domingo", "O primeiro kanji é 日, “sol/dia”."]
+    ];
+    days.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[7], {
+        title: "Formação dos dias da semana",
+        rule: "Os nomes dos dias da semana terminam em 曜日（ようび）. O primeiro kanji distingue cada dia.",
+        formula: "[kanji do dia] + 曜日（ようび）",
+        example: "日曜日（にちようび）é domingo; 月曜日（げつようび）é segunda-feira."
+    });
+    module.stage3_practice[0].question = "1. Qual dia da semana é 火曜日（かようび）?";
+    module.stage3_practice[1].question = "2. Como se diz “sábado” em japonês?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "きょう は げつようび です", translation: "Hoje é segunda-feira.", chunks: ["きょう", "は", "げつようび", "です"] },
+        { sentenceJp: "パーティー は どようび です", translation: "A festa é no sábado.", chunks: ["パーティー", "は", "どようび", "です"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Você quer saber quando será a festa.",
+        npcName: "Amigo Kenji",
+        npcMessage: "パーティー に いきましょう。 (Vamos à festa.)",
+        options: [
+            { text: "パーティー は なんようび です か。", feedback: "A pergunta identifica corretamente o dia da semana da festa.", isCorrect: true },
+            { text: "なんじ です か。", feedback: "A pergunta pede o horário, não o dia.", isCorrect: false },
+            { text: "どようび です。", feedback: "A frase dá uma resposta sem antes perguntar o dia.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual é a leitura de 金曜日?";
+    module.stage5_quiz[1].question = "Qual é o significado de 月曜日（げつようび）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 火曜日（かようび）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 水曜日（すいようび）?";
+    module.stage5_quiz[4].question = "Qual é o significado de 木曜日（もくようび）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

@@ -293,6 +293,18 @@ As decisões usam a tabela de horários do *Genki I* (p. 49), com evidência ind
 
 ## Próximo lote automático
 
-Continuar no módulo A1-22 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-23 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+
+## Lote A1-22
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 20 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo de dias da semana agora usa os nomes e leituras completos, distingue o sufixo `曜日` do primeiro kanji de cada dia e substitui práticas de tempo e estado por construções ligadas a dias da semana. O diálogo e os feedbacks foram normalizados, sem transformar os nomes históricos dos kanji em uma regra cultural absoluta.
+
+As decisões usam a tabela de dias e palavras temporais do *Genki I* (p. 127), com uma segunda família editorial (*Tobira*, p. 52) para confirmar um uso contextual de `土曜日`. Após a propagação, o ledger global contém 6.182 aprovações, 843 correções e 16.509 casos inconclusivos. Os vinte e dois módulos já auditados somam 433 alvos canônicos sustentados; neste lote, 20 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

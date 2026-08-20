@@ -18519,7 +18519,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_22-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;module.metadata",
@@ -18527,16 +18527,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "65953f77e01cf5dfaabb5bfed1062e70b257af5426db01fbd69416305356648b",
-      "finalHash": "65953f77e01cf5dfaabb5bfed1062e70b257af5426db01fbd69416305356648b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ca774dd8e23812ba9f076af8d49faa40d0b16d9836b05edd5af1038afa834edc",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "title": "Dias da semana",
+        "sectionTitle": "Tempo, Horários & Rotina",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Reconheça e use os dias da semana em perguntas e compromissos simples."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "65953f77e01cf5dfaabb5bfed1062e70b257af5426db01fbd69416305356648b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage1_context",
@@ -18544,16 +18562,40 @@
         "kind": "context"
       },
       "beforeHash": "90927be6b1ac197436a12e8a9c85663500fa16ef8f3e2410350a75686b864d89",
-      "finalHash": "90927be6b1ac197436a12e8a9c85663500fa16ef8f3e2410350a75686b864d89",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "57981ffd60efafc79488c8ccfb1dbaa25f2fe2b38695a7d777cccd2e4bb27bfe",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Kyou wa getsuyoubi desu.",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Reconheça e use os dias da semana em perguntas e compromissos simples.",
+        "audio": {
+          "displayText": "今日は月曜日です。",
+          "audioText": "今日は月曜日です。",
+          "furigana": "",
+          "romaji": "Kyou wa getsuyoubi desu.",
+          "translation": "Hoje é segunda-feira.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "90927be6b1ac197436a12e8a9c85663500fa16ef8f3e2410350a75686b864d89"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[0]",
@@ -18561,16 +18603,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "9ceb78b7a1f0401edc8185878e98b9a5c201d25bfc3012e7d7630dae8e60543e",
-      "finalHash": "9ceb78b7a1f0401edc8185878e98b9a5c201d25bfc3012e7d7630dae8e60543e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f83db9f49299f1f21be0d57ffda7707671b4f6f8e2ab6a1c890ff5715d68bb76",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "月曜日（げつようび）",
+        "romaji": "getsuyoubi",
+        "translation": "segunda-feira",
+        "timeContext": "O primeiro kanji é 月, “lua”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9ceb78b7a1f0401edc8185878e98b9a5c201d25bfc3012e7d7630dae8e60543e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[1]",
@@ -18578,16 +18634,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "96811d16ecbcc392f6f85c0a7b9b8ccd91157eaac8490ec10d1c861cdd6c58f4",
-      "finalHash": "96811d16ecbcc392f6f85c0a7b9b8ccd91157eaac8490ec10d1c861cdd6c58f4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c60d4bca5e6eaf4f55ed42c7b231d9f97d99ee50ed0b97994d0105040fbe8b49",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "火曜日（かようび）",
+        "romaji": "kayoubi",
+        "translation": "terça-feira",
+        "timeContext": "O primeiro kanji é 火, “fogo”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "96811d16ecbcc392f6f85c0a7b9b8ccd91157eaac8490ec10d1c861cdd6c58f4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[2]",
@@ -18595,16 +18665,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "b737ddeecc86f6abfc59c5ef18ba9f59f9974c72cf0f4baefe7f01cc491d1f1b",
-      "finalHash": "b737ddeecc86f6abfc59c5ef18ba9f59f9974c72cf0f4baefe7f01cc491d1f1b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "64de49f6ffbfdc93518410642ffbb7269385121bd48fe6f45cd3aa0a7bbe64a4",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "水曜日（すいようび）",
+        "romaji": "suiyoubi",
+        "translation": "quarta-feira",
+        "timeContext": "O primeiro kanji é 水, “água”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b737ddeecc86f6abfc59c5ef18ba9f59f9974c72cf0f4baefe7f01cc491d1f1b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[3]",
@@ -18612,16 +18696,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "c140012a400274413f98075cccd49f0e37e548395a786ee35de6a26dc5b0cf89",
-      "finalHash": "c140012a400274413f98075cccd49f0e37e548395a786ee35de6a26dc5b0cf89",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5b6c46b1686bd8aaa16bf244c73ab44b1a6680209e8ddb823e49714ce5a64200",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "木曜日（もくようび）",
+        "romaji": "mokuyoubi",
+        "translation": "quinta-feira",
+        "timeContext": "O primeiro kanji é 木, “árvore/madeira”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c140012a400274413f98075cccd49f0e37e548395a786ee35de6a26dc5b0cf89"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[4]",
@@ -18629,16 +18727,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "72fbfdc8b0259372124504ff98aab801fcb566bdded78c9190b97a7aeafe81d6",
-      "finalHash": "72fbfdc8b0259372124504ff98aab801fcb566bdded78c9190b97a7aeafe81d6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6dff147d7ac91e7efd4f8f43b342bb980ad9fb82a1e12d74e70a68585e722aa9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "金曜日（きんようび）",
+        "romaji": "kinyoubi",
+        "translation": "sexta-feira",
+        "timeContext": "O primeiro kanji é 金, “ouro/metal”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "72fbfdc8b0259372124504ff98aab801fcb566bdded78c9190b97a7aeafe81d6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-5",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[5]",
@@ -18646,16 +18758,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d5b309827e7bc20a9d302172466950839bce52096bf8fa488d0b689c644d430b",
-      "finalHash": "d5b309827e7bc20a9d302172466950839bce52096bf8fa488d0b689c644d430b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2769fa1156a18dc9e1be036790a3795a6edb833ca924a3401dba17d1b3462fec",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "土曜日（どようび）",
+        "romaji": "doyoubi",
+        "translation": "sábado",
+        "timeContext": "O primeiro kanji é 土, “terra/solo”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d5b309827e7bc20a9d302172466950839bce52096bf8fa488d0b689c644d430b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-6",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[6]",
@@ -18663,16 +18789,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "fab648fa7bc878cb4aebb9ab99982bb23d6d118a5d7ab4078e002bf0ac1479d9",
-      "finalHash": "fab648fa7bc878cb4aebb9ab99982bb23d6d118a5d7ab4078e002bf0ac1479d9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5f0091fc097ab715e131b81bb638183dd172d66fa5829971e12c2747bc01e399",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "日曜日（にちようび）",
+        "romaji": "nichiyoubi",
+        "translation": "domingo",
+        "timeContext": "O primeiro kanji é 日, “sol/dia”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fab648fa7bc878cb4aebb9ab99982bb23d6d118a5d7ab4078e002bf0ac1479d9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage2-drops-7",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage2_drops[7]",
@@ -18680,16 +18820,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "f713cb4a338b658a495c7cff65cd8318c85bee24a96a1f4a446daeef1dff3780",
-      "finalHash": "f713cb4a338b658a495c7cff65cd8318c85bee24a96a1f4a446daeef1dff3780",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "61580ecff6ebabd155c402ddae45a3ca4862046a18aac93a59a72b8c7334a52e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Formação dos dias da semana",
+        "rule": "Os nomes dos dias da semana terminam em 曜日（ようび）. O primeiro kanji distingue cada dia.",
+        "formula": "[kanji do dia] + 曜日（ようび）",
+        "example": "日曜日（にちようび）é domingo; 月曜日（げつようび）é segunda-feira."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f713cb4a338b658a495c7cff65cd8318c85bee24a96a1f4a446daeef1dff3780"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage3_practice[0]",
@@ -18697,16 +18851,40 @@
         "kind": "practice"
       },
       "beforeHash": "df38b4dbe56d7f832fa3b8a09c2ac2b54f2cbfcc38b90145d33bbf5567cffaa9",
-      "finalHash": "df38b4dbe56d7f832fa3b8a09c2ac2b54f2cbfcc38b90145d33bbf5567cffaa9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c3dc321938b47b9327f2bd8dee431acbadc46df59d377c7f29834cc40a190fed",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "1. Qual dia da semana é 火曜日（かようび）?",
+        "options": [
+          {
+            "label": "Terça-feira",
+            "isCorrect": true
+          },
+          {
+            "label": "Quinta-feira",
+            "isCorrect": false
+          },
+          {
+            "label": "Sexta-feira",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "df38b4dbe56d7f832fa3b8a09c2ac2b54f2cbfcc38b90145d33bbf5567cffaa9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage3_practice[1]",
@@ -18714,16 +18892,40 @@
         "kind": "practice"
       },
       "beforeHash": "3ed42a549d40223b13a3501103a0e831ab003d1a22abd3b5f00d88a2dc129a4c",
-      "finalHash": "3ed42a549d40223b13a3501103a0e831ab003d1a22abd3b5f00d88a2dc129a4c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1be9db634b379b5af7f7639906c1ee1c35e29893db3e48ca01fd458b5b7fde6b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como se diz “sábado” em japonês?",
+        "options": [
+          {
+            "label": "どようび (Doyoubi)",
+            "isCorrect": true
+          },
+          {
+            "label": "すいようび (Suiyoubi)",
+            "isCorrect": false
+          },
+          {
+            "label": "げつようび (Getsuyoubi)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3ed42a549d40223b13a3501103a0e831ab003d1a22abd3b5f00d88a2dc129a4c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage3_5_sentenceBuilder[0]",
@@ -18731,16 +18933,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "567a894a456fb8bfd2aa6f53d758309bcc0a12a54444bd6c45db38b2b6f34d7f",
-      "finalHash": "567a894a456fb8bfd2aa6f53d758309bcc0a12a54444bd6c45db38b2b6f34d7f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cb4089bfaa69c19c04a8ca51882f57d09c47af9a2f9a44fa3c9d37429c09a7b5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "きょう は げつようび です",
+        "translation": "Hoje é segunda-feira.",
+        "chunks": [
+          "きょう",
+          "は",
+          "げつようび",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "567a894a456fb8bfd2aa6f53d758309bcc0a12a54444bd6c45db38b2b6f34d7f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage3_5_sentenceBuilder[1]",
@@ -18748,16 +18967,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "520c053e0615cfe9769478a7c50a7d36fc5c263bb0fef3258f1d47c5eb5fdf1b",
-      "finalHash": "520c053e0615cfe9769478a7c50a7d36fc5c263bb0fef3258f1d47c5eb5fdf1b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a17e50942e70a3a38eea25f4a2d951ce92f29a9dbd9b805c58195015ec68d94b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "パーティー は どようび です",
+        "translation": "A festa é no sábado.",
+        "chunks": [
+          "パーティー",
+          "は",
+          "どようび",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "520c053e0615cfe9769478a7c50a7d36fc5c263bb0fef3258f1d47c5eb5fdf1b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage4_dialog[0]",
@@ -18765,16 +19001,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "4f4000951392eac32c08b8f3842a5624161353811b502c9f65de2a555ce9c8ad",
-      "finalHash": "4f4000951392eac32c08b8f3842a5624161353811b502c9f65de2a555ce9c8ad",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f89e04d1c5e88f187f8e9a422f115940f4532d1e1f6d3ba8efd190a401a6ebb7",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você quer saber quando será a festa.",
+        "npcName": "Amigo Kenji",
+        "npcMessage": "パーティー に いきましょう。 (Vamos à festa.)",
+        "options": [
+          {
+            "text": "パーティー は なんようび です か。",
+            "feedback": "A pergunta identifica corretamente o dia da semana da festa.",
+            "isCorrect": true
+          },
+          {
+            "text": "なんじ です か。",
+            "feedback": "A pergunta pede o horário, não o dia.",
+            "isCorrect": false
+          },
+          {
+            "text": "どようび です。",
+            "feedback": "A frase dá uma resposta sem antes perguntar o dia.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4f4000951392eac32c08b8f3842a5624161353811b502c9f65de2a555ce9c8ad"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage5_quiz[0]",
@@ -18782,16 +19051,32 @@
         "kind": "quiz"
       },
       "beforeHash": "cfd27f4c88c51543fe89ad4a4a2789416fbc0aef814039f6a65404c131845f4c",
-      "finalHash": "cfd27f4c88c51543fe89ad4a4a2789416fbc0aef814039f6a65404c131845f4c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "522324988abdb474aa4446530890a49d5a83e0543913282a273989e3c798a24c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é a leitura de 金曜日?",
+        "options": [
+          "Ouro/Metal",
+          "Água",
+          "Fogo"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cfd27f4c88c51543fe89ad4a4a2789416fbc0aef814039f6a65404c131845f4c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage5_quiz[1]",
@@ -18799,16 +19084,32 @@
         "kind": "quiz"
       },
       "beforeHash": "073b63ca48c587198e36810e1fd3a983c5c25178a1d8b891170636faf537abfd",
-      "finalHash": "073b63ca48c587198e36810e1fd3a983c5c25178a1d8b891170636faf537abfd",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "46ca308a78792f7ab84c7eb19feca4fe43e36304df2051a0cbd14b5c2ada1f05",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 月曜日（げつようび）?",
+        "options": [
+          "Segunda-feira (Dia da Lua)",
+          "Terça-feira (Dia do Fogo)",
+          "Quarta-feira (Dia da Água)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "073b63ca48c587198e36810e1fd3a983c5c25178a1d8b891170636faf537abfd"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage5_quiz[2]",
@@ -18816,16 +19117,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b92a37954631f5f2cf340402134c9612abaedeae2b95faccd7678aad81c861a0",
-      "finalHash": "b92a37954631f5f2cf340402134c9612abaedeae2b95faccd7678aad81c861a0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3ac1275ce91d41fa760d009b9588bdb6a1c3b0b29ae9c101d2af68fe91fa10f5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 火曜日（かようび）?",
+        "options": [
+          "Segunda-feira (Dia da Lua)",
+          "Terça-feira (Dia do Fogo)",
+          "Quarta-feira (Dia da Água)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b92a37954631f5f2cf340402134c9612abaedeae2b95faccd7678aad81c861a0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage5_quiz[3]",
@@ -18833,16 +19150,32 @@
         "kind": "quiz"
       },
       "beforeHash": "542b99f63fee6696ed950009146a3d8cc8769c0684b97b1459f16c7c0f1f4c68",
-      "finalHash": "542b99f63fee6696ed950009146a3d8cc8769c0684b97b1459f16c7c0f1f4c68",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4ab5c79e37ed20cef9db8743383fcb9234e804cc5dd158a890f68ad91ff8c375",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 水曜日（すいようび）?",
+        "options": [
+          "Terça-feira (Dia do Fogo)",
+          "Segunda-feira (Dia da Lua)",
+          "Quarta-feira (Dia da Água)"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "542b99f63fee6696ed950009146a3d8cc8769c0684b97b1459f16c7c0f1f4c68"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_22;stage5_quiz[4]",
@@ -18850,11 +19183,27 @@
         "kind": "quiz"
       },
       "beforeHash": "6fe091dafaa8df54892e588e5819819a3a42078490cbb41f2485c8291f066620",
-      "finalHash": "6fe091dafaa8df54892e588e5819819a3a42078490cbb41f2485c8291f066620",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "93afb49de2ff0c90ed15d00081eb80c37b6d1dc74415fbd5f27b8d5cc255a8d0",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de 木曜日（もくようび）?",
+        "options": [
+          "Quinta-feira (Dia da Madeira)",
+          "Segunda-feira (Dia da Lua)",
+          "Terça-feira (Dia do Fogo)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6fe091dafaa8df54892e588e5819819a3a42078490cbb41f2485c8291f066620"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_23-module-metadata",
@@ -360430,8 +360779,8 @@
         "locator": "items[244]",
         "resource": "dictionary"
       },
-      "beforeHash": "079341243c9f09a28109ead371dcc57a34e04e4ad87a71a2e7c7b66d01d02a39",
-      "finalHash": "079341243c9f09a28109ead371dcc57a34e04e4ad87a71a2e7c7b66d01d02a39",
+      "beforeHash": "54dde647dda319e81781152cd545799e4b42d87786e50fb4ff121279adec8d13",
+      "finalHash": "54dde647dda319e81781152cd545799e4b42d87786e50fb4ff121279adec8d13",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360447,8 +360796,8 @@
         "locator": "items[245]",
         "resource": "dictionary"
       },
-      "beforeHash": "8e0aa73f3191f427ea217c3c52c0e4376428d6807b6ced4881442d00cd6eef65",
-      "finalHash": "8e0aa73f3191f427ea217c3c52c0e4376428d6807b6ced4881442d00cd6eef65",
+      "beforeHash": "922277bda85fb5eca846c066130227034f825ddd6057b4cfb74037368c279224",
+      "finalHash": "922277bda85fb5eca846c066130227034f825ddd6057b4cfb74037368c279224",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360464,8 +360813,8 @@
         "locator": "items[246]",
         "resource": "dictionary"
       },
-      "beforeHash": "d661a9ef6f68edd9118edf0078701de334b2d68133b894cac0933dd8abad6411",
-      "finalHash": "d661a9ef6f68edd9118edf0078701de334b2d68133b894cac0933dd8abad6411",
+      "beforeHash": "5363a3e3b4e881f1ebce533a9a645d9d43e69a69d16facdd15e339687c6c4b75",
+      "finalHash": "5363a3e3b4e881f1ebce533a9a645d9d43e69a69d16facdd15e339687c6c4b75",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360481,8 +360830,8 @@
         "locator": "items[247]",
         "resource": "dictionary"
       },
-      "beforeHash": "6ab0a211c7b57d7537d985b4f12ade835f421cb614a5bf7332a6e74a17551c32",
-      "finalHash": "6ab0a211c7b57d7537d985b4f12ade835f421cb614a5bf7332a6e74a17551c32",
+      "beforeHash": "54685dda5a52f5d641fd2bd2cb6f14c5258d8a4c67d32b8f029cc9c373d74d46",
+      "finalHash": "54685dda5a52f5d641fd2bd2cb6f14c5258d8a4c67d32b8f029cc9c373d74d46",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360498,8 +360847,8 @@
         "locator": "items[248]",
         "resource": "dictionary"
       },
-      "beforeHash": "9c5048f8450e3abb645fcd57ce036ba1176aa1caa5ef4b2ad0265059bd2a497b",
-      "finalHash": "9c5048f8450e3abb645fcd57ce036ba1176aa1caa5ef4b2ad0265059bd2a497b",
+      "beforeHash": "05c50fb1ab574725fc91dff592a449da3b3baecc4ad806e347a3b8a911f245ff",
+      "finalHash": "05c50fb1ab574725fc91dff592a449da3b3baecc4ad806e347a3b8a911f245ff",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360515,8 +360864,8 @@
         "locator": "items[249]",
         "resource": "dictionary"
       },
-      "beforeHash": "c753d8e7a519fd6d763372613279371aa261a17caba8665a4fbb684afccf1346",
-      "finalHash": "c753d8e7a519fd6d763372613279371aa261a17caba8665a4fbb684afccf1346",
+      "beforeHash": "cb76ae12b2a1bf4c543ad546d173f4aa6566a1bbfec9ea817b426a968cf0324a",
+      "finalHash": "cb76ae12b2a1bf4c543ad546d173f4aa6566a1bbfec9ea817b426a968cf0324a",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360532,8 +360881,8 @@
         "locator": "items[250]",
         "resource": "dictionary"
       },
-      "beforeHash": "3ec167db105f0a412afddbd4920674c275ed4da8d2d984c94d1440822e5ad359",
-      "finalHash": "3ec167db105f0a412afddbd4920674c275ed4da8d2d984c94d1440822e5ad359",
+      "beforeHash": "91be21a06c080d86afba90741e5999ebada450402e28f05cd983f01e06dd50dd",
+      "finalHash": "91be21a06c080d86afba90741e5999ebada450402e28f05cd983f01e06dd50dd",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360549,8 +360898,8 @@
         "locator": "items[251]",
         "resource": "dictionary"
       },
-      "beforeHash": "ca15749247dba0b392f50d23520a693e9333bc2f3955fc36b49a0d3e8a9f19cf",
-      "finalHash": "ca15749247dba0b392f50d23520a693e9333bc2f3955fc36b49a0d3e8a9f19cf",
+      "beforeHash": "b14f700781b42b7dde4511b95f81181226a793673af3a187416bc72296a19bb2",
+      "finalHash": "b14f700781b42b7dde4511b95f81181226a793673af3a187416bc72296a19bb2",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -429730,21 +430079,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_22-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[21]",
         "resource": "listening"
       },
-      "beforeHash": "568910717a75b5f6a01dfc242faf3b1448d49e79bf5164ed049597c3cc17f231",
-      "finalHash": "568910717a75b5f6a01dfc242faf3b1448d49e79bf5164ed049597c3cc17f231",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "693d86c552193e50fc185ea0f7cb62f0ac421988dae5d8cd9f26007490f499c9",
+      "finalHash": "693d86c552193e50fc185ea0f7cb62f0ac421988dae5d8cd9f26007490f499c9",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_22-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_23-context-0",
@@ -437476,8 +437834,8 @@
         "locator": "reference[21]",
         "resource": "grammar"
       },
-      "beforeHash": "cb9cc840cd01b1e26573ab2a8c953fd413d583503a5199708a0f7c2db7e1152a",
-      "finalHash": "cb9cc840cd01b1e26573ab2a8c953fd413d583503a5199708a0f7c2db7e1152a",
+      "beforeHash": "edfc6d05e1579969616987233b017d16e9cf3eb6a8bf46be1aa27eb54910963b",
+      "finalHash": "edfc6d05e1579969616987233b017d16e9cf3eb6a8bf46be1aa27eb54910963b",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -441833,40 +442191,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_22-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[42]",
         "resource": "writing"
       },
-      "beforeHash": "519f082213887206e515f504bc2393950089033d681d92d0b1ee6a1589c3b24e",
-      "finalHash": "519f082213887206e515f504bc2393950089033d681d92d0b1ee6a1589c3b24e",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "50e64c94734548603e4f8f666487b8756c6071484220e44d4f51f615000915fa",
+      "finalHash": "50e64c94734548603e4f8f666487b8756c6071484220e44d4f51f615000915fa",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_22-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_22-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[43]",
         "resource": "writing"
       },
-      "beforeHash": "5605f377a5a955b22908dc7d3998a6674901ded946429f237e8dcddd51f7ff4a",
-      "finalHash": "5605f377a5a955b22908dc7d3998a6674901ded946429f237e8dcddd51f7ff4a",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "8043335945a44954a9731e41347be7d655a3a80282a377155cb122ae0db48376",
+      "finalHash": "8043335945a44954a9731e41347be7d655a3a80282a377155cb122ae0db48376",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_22-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_23-1",

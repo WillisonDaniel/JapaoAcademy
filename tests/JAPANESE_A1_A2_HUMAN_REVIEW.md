@@ -26,7 +26,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_19 | stage1_context.audio | 水を飲みます。 | Mizu o nomimasu. | Bebo água. | corrected |
 | a1_mod_20 | stage1_context.audio | このラーメンはおいしいです。 | Kono raamen wa oishii desu. | Este ramen é saboroso. | corrected |
 | a1_mod_21 | stage1_context.audio | 今、何時ですか。 | Ima, nan-ji desu ka. | Que horas são agora? | corrected |
-| a1_mod_22 | stage1_context.audio | 今日は月曜日です。 | Kyou wa getsuyoubi desu. | Hoje é segunda-feira. | pending-human-review |
+| a1_mod_22 | stage1_context.audio | 今日は月曜日です。 | Kyou wa getsuyoubi desu. | Hoje é segunda-feira. | corrected |
 | a1_mod_23 | stage1_context.audio | 昨日、映画を見ました。 | Kinou, eiga o mimashita. | Ontem, assisti a um filme. | pending-human-review |
 | a1_mod_24 | stage1_context.audio | ご飯を食べます。 | Gohan o tabemasu. | Como arroz. | pending-human-review |
 | a1_mod_25 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | pending-human-review |
