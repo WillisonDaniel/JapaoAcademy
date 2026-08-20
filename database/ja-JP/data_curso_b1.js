@@ -7142,3 +7142,150 @@ CURSO_B1_DADOS.forEach(module => {
 });
 
 if (typeof window !== "undefined") { window.CURSO_B1_DADOS = CURSO_B1_DADOS; }
+
+const B1_PHASE18_AUDIO_CORRECTIONS = {
+    b1_mod_01: ["ただいま！昨日、何した？", "Tadaima! Kinou nani shita?", "Cheguei! O que você fez ontem?"],
+    b1_mod_02: ["何してるの？早く行かなきゃ！", "Nani shiteru no? Hayaku ikanakya!", "O que está fazendo? Preciso ir logo!"],
+    b1_mod_03: ["明日は雨が降ると思います。", "Ashita wa ame ga furu to omoimasu.", "Acho que vai chover amanhã."],
+    b1_mod_04: ["明日は行けるかどうか分からない。", "Ashita wa ikeru ka dou ka wakaranai.", "Não sei se conseguirei ir amanhã."],
+    b1_mod_05: ["雨が降っているので、タクシーに乗りましょう。", "Ame ga futte iru node, takushii ni norimashou.", "Como está chovendo, vamos de táxi."],
+    b1_mod_06: ["財布をなくしてしまいました！どうしよう！", "Saifu o nakushite shimaimashita! Dou shiyou!", "Acabei perdendo a carteira! O que vou fazer?"],
+    b1_mod_07: ["先生に褒められました！", "Sensei ni homeraremashita!", "Fui elogiado pelo professor!"],
+    b1_mod_08: ["雨に降られて、濡れてしまいました。", "Ame ni furarete, nurete shimaimashita.", "Peguei chuva e acabei ficando molhado."],
+    b1_mod_09: ["日本に行ったら、京都に行きたいです。", "Nihon ni ittara, Kyouto ni ikitai desu.", "Quando eu for ao Japão, quero ir a Kyoto."],
+    b1_mod_10: ["安ければ買います。日本語なら、お任せください！", "Yasukereba kaimasu. Nihongo nara, omakase kudasai!", "Se for barato, compro. Se for japonês, deixe comigo!"],
+    b1_mod_11: ["日本語が話せるようになりました。", "Nihongo ga hanaseru you ni narimashita.", "Passei a conseguir falar japonês."],
+    b1_mod_12: ["納豆を食べてみました。富士山に登ったことがあります。", "Nattou o tabete mimashita. Fuji-san ni nobotta koto ga arimasu.", "Experimentei comer natto. Já subi o Monte Fuji."],
+    b1_mod_13: ["友達に英語を教えてあげた。田中さんが手伝ってくれた。", "Tomodachi ni eigo o oshiete ageta. Tanaka-san ga tetsudatte kureta.", "Ensinei inglês a um amigo. O Sr. Tanaka me ajudou."],
+    b1_mod_14: ["田中さんに日本語を教えてもらいました。", "Tanaka-san ni Nihongo o oshiete moraimashita.", "O Sr. Tanaka me ensinou japonês."],
+    b1_mod_15: ["子供に勉強させます。この仕事をさせてください。", "Kodomo ni benkyou sasemasu. Kono shigoto o sasete kudasai.", "Faço a criança estudar. Por favor, deixe-me fazer este trabalho."],
+    b1_mod_16: ["嫌いな野菜を食べさせられました。", "Kirai na yasai o tabesaseraremashita.", "Fui obrigado a comer um legume de que não gosto."],
+    b1_mod_17: ["社長がいらっしゃいました。何を召し上がりますか。", "Shachou ga irasshaimashita. Nani o meshiagarimasu ka?", "O presidente chegou. O que deseja comer?"],
+    b1_mod_18: ["私が参ります。田中と申します。", "Watashi ga mairimasu. Tanaka to moushimasu.", "Eu irei. Meu nome é Tanaka."],
+    b1_mod_19: ["お世話になっております。お先に失礼します。", "Osewa ni natte orimasu. Osaki ni shitsurei shimasu.", "Agradeço sempre pelo apoio. Com licença, vou me retirar antes."],
+    b1_mod_20: ["自己PRをさせていただきます。職務経歴について説明します。", "Jiko PR o sasete itadakimasu. Shokumu keireki ni tsuite setsumei shimasu.", "Permita-me fazer uma breve apresentação profissional. Explicarei minha experiência de trabalho."],
+    b1_mod_21: ["この料理はおいしそうです。雨が降るみたいです。", "Kono ryouri wa oishisou desu. Ame ga furu mitai desu.", "Este prato parece saboroso. Parece que vai chover."],
+    b1_mod_22: ["温泉では体を洗ってから入ります。ごみの分別が大切です。", "Onsen de wa karada o aratte kara hairimasu. Gomi no bunbetsu ga taisetsu desu.", "No onsen, lavamos o corpo antes de entrar. Separar o lixo é importante."],
+    b1_mod_23: ["地震のお知らせです。新幹線は遅延しています。", "Jishin no oshirase desu. Shinkansen wa chien shite imasu.", "Este é um aviso sobre o terremoto. O Shinkansen está atrasado."],
+    b1_mod_24: ["おめでとうございます！B1コース修了です！", "Omedetou gozaimasu! B1 koosu shuuryou desu!", "Parabéns! O curso B1 foi concluído!"]
+};
+
+const B1_PHASE18_DIALOGUE_CORRECTIONS = {
+    b1_mod_01: { 2: ["このラーメン、めっちゃおいしくない？", "Kono raamen, meccha oishikunai?", "Este ramen está muito gostoso, não está?"] },
+    b1_mod_02: {
+        1: ["やばいよ！授業が始まる！早く行かなきゃ！", "Yabai yo! Jugyou ga hajimaru! Hayaku ikanakya!", "Caramba! A aula vai começar! Precisamos ir logo!"],
+        2: ["間に合った！よかった！", "Maniaatta! Yokatta!", "Chegamos a tempo! Que bom!"]
+    },
+    b1_mod_04: {
+        1: ["遅くなってもいいから、来ない？", "Osoku natte mo ii kara, konai?", "Mesmo que chegue tarde, não quer vir?"],
+        2: ["わあ！待っているよ！", "Waa! Matte iru yo!", "Que bom! Vou esperar por você!"]
+    },
+    b1_mod_05: { 0: ["[Seu Nome]さん、遅刻ですね。何があったんですか。", "[Seu Nome]-san, chikoku desu ne. Nani ga atta n desu ka?", "Você se atrasou. O que aconteceu?"] },
+    b1_mod_06: {
+        1: ["ええ？！交番に行こう！誰かが届けてくれているかも！", "Ee?! Kouban ni ikou! Dareka ga todokete kurete iru kamo!", "O quê?! Vamos ao posto policial! Talvez alguém tenha entregado a carteira!"],
+        2: ["これですか。親切な方が届けてくれましたよ。", "Kore desu ka. Shinsetsu na kata ga todokete kuremashita yo.", "É esta? Uma pessoa gentil a entregou aqui."]
+    },
+    b1_mod_07: {
+        1: ["すごいじゃん！毎日勉強してるからね！", "Sugoi jan! Mainichi benkyou shiteru kara ne!", "Que incrível! É porque você estuda todos os dias!"],
+        2: ["今度、一緒に勉強しない？", "Kondo, issho ni benkyou shinai?", "Quer estudar comigo na próxima vez?"]
+    },
+    b1_mod_08: {
+        1: ["大変だったね！このタオル、使って！", "Taihen datta ne! Kono taoru, tsukatte!", "Foi difícil, não foi? Use esta toalha!"],
+        2: ["今、暖房をつけるね。風邪をひかないでね！", "Ima, danbou o tsukeru ne. Kaze o hikanaide ne!", "Vou ligar o aquecedor agora. Não pegue um resfriado!"]
+    },
+    b1_mod_09: { 2: ["行けるといいね！お土産、待っているよ！", "Ikeru to ii ne! Omiyage, matteru yo!", "Tomara que consiga ir! Vou esperar a lembrancinha!"] },
+    b1_mod_10: {
+        0: ["[Seu Nome]さん、新しいパソコンが欲しいんだけど、どこがいいかな。", "[Seu Nome]-san, atarashii pasokon ga hoshii n da kedo, doko ga ii ka na?", "Quero um computador novo; onde será um bom lugar?"],
+        2: ["一緒に行ってくれない？", "Issho ni itte kurenai?", "Você poderia ir comigo?"]
+    },
+    b1_mod_12: { 0: ["[Seu Nome]さん、納豆を食べたことある？", "[Seu Nome]-san, nattou o tabeta koto aru?", "Você já comeu natto?"] },
+    b1_mod_14: {
+        1: ["大家さん、めっちゃ優しいね！", "Ooya-san, meccha yasashii ne!", "A proprietária é muito gentil, não é?"],
+        2: ["今度、料理でお礼をしないとね！", "Kondo, ryouri de orei o shinai to ne!", "Na próxima vez, você precisa agradecer com uma refeição!"]
+    },
+    b1_mod_15: {
+        0: ["[Seu Nome]さん、新しい企画のプレゼンテーション、誰がやる？", "[Seu Nome]-san, atarashii kikaku no purezenteeshon, dare ga yaru?", "Quem fará a apresentação do novo projeto?"],
+        2: ["チームのメンバーにも手伝わせるからね。", "Chiimu no menbaa ni mo tetsudawaseru kara ne.", "Também vou pedir aos membros da equipe que ajudem."]
+    },
+    b1_mod_16: {
+        0: ["[Seu Nome]さん、昨日の飲み会、疲れたね！", "[Seu Nome]-san, kinou no nomikai, tsukareta ne!", "A confraternização de ontem foi cansativa, não foi?"],
+        1: ["先輩たちの無理な振り、大変だよね。", "Senpai-tachi no muri na furi, taihen da yo ne.", "As exigências excessivas dos veteranos são difíceis, não são?"]
+    },
+    b1_mod_18: { 0: ["小林社長はいらっしゃいますか。", "Kobayashi-shachou wa irasshaimasu ka?", "O presidente Kobayashi está?"] },
+    b1_mod_19: { 1: ["[Seu Nome]さん、今日の仕事は終了ですか。", "[Seu Nome]-san, kyou no shigoto wa shuuryou desu ka?", "Terminou o trabalho de hoje?"] },
+    b1_mod_20: {
+        0: ["では、[Seu Nome]さん、自己PRをお願いいたします。", "Dewa, [Seu Nome]-san, jiko PR o onegai itashimasu.", "Então, faça sua apresentação profissional, por favor."],
+        1: ["的確な説明ですね。厳しい日程のとき、どうしますか。", "Tekikaku na setsumei desu ne. Kibishii nittei no toki, dou shimasu ka?", "É uma explicação precisa. O que faz quando o cronograma é apertado?"],
+        2: ["素晴らしいですね！結果は来週メールでお知らせいたします。", "Subarashii desu ne! Kekka wa raishuu meeru de oshirase itashimasu.", "Excelente! Informaremos o resultado por e-mail na próxima semana."]
+    },
+    b1_mod_21: {
+        0: ["[Seu Nome]さん、このパフェ、どう？", "[Seu Nome]-san, kono pafe, dou?", "O que acha deste parfait?"],
+        1: ["この店の内装、映画のセットみたいじゃない？", "Kono mise no naisou, eiga no setto mitai janai?", "A decoração deste lugar não parece um cenário de filme?"]
+    },
+    b1_mod_23: {
+        0: ["すみません、この電車はなぜ動かないんですか。", "Sumimasen, kono densha wa naze ugokanai n desu ka?", "Com licença, por que este trem não está circulando?"],
+        1: ["運行はいつ再開するか分かりますか。", "Unkou wa itsu saikai suru ka wakarimasu ka?", "Sabe quando a operação será retomada?"],
+        2: ["助かりました！ありがとうございます！", "Tasukarimashita! Arigatou gozaimasu!", "Isso ajudou muito! Muito obrigado!"]
+    },
+    b1_mod_24: {
+        1: ["素晴らしい成長だね！会社の支えになってくれてありがとう！", "Subarashii seichou da ne! Kaisha no sasae ni natte kurete arigatou!", "Que crescimento incrível! Obrigado por apoiar a empresa!"],
+        2: ["おめでとうございます！[Seu Nome]さん、B1コース修了です！", "Omedetou gozaimasu! [Seu Nome]-san, B1 koosu shuuryou desu!", "Parabéns! Você concluiu o curso B1!"]
+    }
+};
+
+Object.entries(B1_PHASE18_AUDIO_CORRECTIONS).forEach(([moduleId, values]) => {
+    const module = CURSO_B1_DADOS.find(item => item.id === moduleId);
+    const [displayText, romaji, translation] = values;
+    module.stage1_context.audioGuide = romaji;
+    Object.assign(module.stage1_context.audio, { displayText, audioText: displayText, romaji, translation });
+});
+Object.entries(B1_PHASE18_DIALOGUE_CORRECTIONS).forEach(([moduleId, corrections]) => {
+    const module = CURSO_B1_DADOS.find(item => item.id === moduleId);
+    Object.entries(corrections).forEach(([index, values]) => {
+        const dialogue = module.stage4_dialog[Number(index)];
+        const [displayText, romaji, translation] = values;
+        const audioText = displayText.replace(/\[Seu Nome\](?:さん|君)?[！、]?/gu, "").trim();
+        Object.assign(dialogue.content, { displayText, audioText, romaji, translation });
+        dialogue.npcMessage = `${romaji} (${translation})`;
+    });
+});
+CURSO_B1_DADOS.forEach(module => {
+    module.editorialReview.phase18 = { status: "in-progress", correctedAudio: true };
+});
+
+const B1_PHASE18_TEXT_REPLACEMENTS = new Map([
+    ["Jikopr", "Jiko PR"],
+    ["Mecha", "Meccha"],
+    ["Jouka", "Jugyou"],
+    ["Mani aotta", "Maniaatta"],
+    ["Oso-ku", "Osoku"],
+    ["korai?", "konai?"],
+    ["fukatte", "futte"],
+    ["chokkou", "chikoku"],
+    ["Oya-san", "Ooya-san"],
+    ["meshiagarisasu", "meshiagarimasu"],
+    ["Hajime wa taiken deshita", "Hajime wa taihen deshita"],
+    ["Kozutsumi itadaki, hontou ni arigatou gozaimasu! Kisha de fururu ni koukenできるよう (dekiru you) ganbarimasu!", "Kono you na kikai o itadaki, hontou ni arigatou gozaimasu! Kisha ni kouken dekiru you ganbarimasu!"],
+    ["Domo arigatou gozaimasu! Nihon-go no benkyou o tsuzukete, tsugi wa B2 ni chousen shimasu!", "Doumo arigatou gozaimasu! Nihongo no benkyou o tsuzukete, tsugi wa B2 ni chousen shimasu!"],
+    ["Simpatia e fluência natural!", "Resposta natural e adequada ao contexto!"],
+    ["Fluência condicional perfeita!", "Uso correto da estrutura condicional!"],
+    ["Fluência completa no diálogo causativo!", "Uso adequado da forma causativa no diálogo!"],
+    ["Empatia e fluência em ambiente social de Nível B1!", "Resposta empática e adequada ao contexto social!"],
+    ["Desafio Final B1: Simulação Completa de Fluência Intermediária", "Desafio final B1: revisão integrada da trilha"],
+    ["Seu Passaporte para a Fluência B1", "Revisão de conclusão B1"],
+    ["Com a conclusão do Nível B1, você conquistou independência total para trabalhar, viajar, fazer amigos nativos e resolver problemas no Japão!", "A conclusão do Nível B1 registra o estudo das situações de trabalho, viagem, convivência e resolução de imprevistos apresentadas nesta trilha."],
+    ["30. Qual frase resume a vitória da fluência no Nível B1?", "30. Qual frase expressa a continuidade dos estudos após a trilha B1?"],
+    ["🏆 PARABÉNS! VOCÊ ZEROU O NÍVEL B1 DO JAPÃO ACADEMY COM LOUVOR E AUTONOMIA TOTAL!", "Parabéns! Você concluiu as atividades da trilha B1."],
+    ["Sobre a regra 'Seu Passaporte para a Fluência B1': qual afirmação é correta?", "Sobre a revisão de conclusão B1: qual afirmação é correta?"]
+]);
+(function applyB1Phase18Text(value) {
+    if (Array.isArray(value)) return value.forEach(applyB1Phase18Text);
+    if (!value || typeof value !== "object") return;
+    Object.entries(value).forEach(([key, item]) => {
+        if (typeof item !== "string") return applyB1Phase18Text(item);
+        let corrected = item;
+        B1_PHASE18_TEXT_REPLACEMENTS.forEach((replacement, original) => { corrected = corrected.split(original).join(replacement); });
+        value[key] = corrected;
+    });
+})(CURSO_B1_DADOS);
+CURSO_B1_DADOS.find(module => module.id === "b1_mod_24").stage5_quiz[4].options[0] = B1_PHASE18_TEXT_REPLACEMENTS.get("Com a conclusão do Nível B1, você conquistou independência total para trabalhar, viajar, fazer amigos nativos e resolver problemas no Japão!");

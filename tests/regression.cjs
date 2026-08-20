@@ -1242,8 +1242,8 @@ test('correcao editorial B1 e B2 da Fase 3C permanece rastreavel', () => {
     assert.match(humanReview, /stage1_context\.audio/);
     assert.match(humanReview, /stage4_dialog\[0\]\.content/);
     assert.match(contractTest, /B1 e B2 possuem os 165 contratos editoriais previstos/);
-    assert.match(contractTest, /1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae/);
-    assert.match(contractTest, /91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2/);
+    assert.match(contractTest, /5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754/);
+    assert.match(contractTest, /5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f/);
 });
 
 test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () => {
@@ -1352,7 +1352,7 @@ test('escuta, pronuncia e shadowing da Fase 8 permanecem transparentes', () => {
     const contract = read('tests/japanese-listening-contract.cjs');
     assert.equal(packageJson.scripts['test:japanese-listening'], 'node tests/japanese-listening-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/japanese-listening-(?:index|contract)\.cjs/);
-    assert.match(contract, /265/);
+    assert.match(contract, /309/);
     assert.match(read('html/ja-JP/escuta.html'), /não avalia pronúncia/);
     assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);
     assert.doesNotMatch(read('js/japanese/listening.js'), /adicionarXP|processarAvaliacaoSRS|localStorage/);

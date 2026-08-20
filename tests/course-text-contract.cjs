@@ -185,10 +185,10 @@ function stripEditorialFields(value) {
 
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
-        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '52fd4f27dc2b2b8c404773a60f6ef4c9d7fbd4f49454c108a30346f05ad1afbc'],
-        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '02b8b3325910503dc7eff5294d836419b835f348c2c07dce8964ff76eac5de44'],
-        ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae'],
-        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2']
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '79d0c7544ade7c6548d56f9b64786409662def6b557c17ae1fd523b1096760bf'],
+        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '44179791ab39cbc5f321fde9a32de50c797c2f3cd7beeb4e8fd2965ad6f8a9ff'],
+        ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754'],
+        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f']
     ];
     fixtures.forEach(([file, variable, expected]) => {
         const structural = JSON.stringify(stripEditorialFields(loadDataset(file, variable)));

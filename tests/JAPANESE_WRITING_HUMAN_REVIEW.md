@@ -1,6 +1,6 @@
 # Inventário humano — escrita guiada japonesa
 
-Gerado mecanicamente na Fase 11. Snapshot dos 208 itens publicados: `75bac8136c69014f`. Este documento não constitui aprovação editorial.
+Gerado mecanicamente na Fase 11. Snapshot dos 208 itens publicados: `4a016da54f002607`. Este documento não constitui aprovação editorial.
 
 - Modelos examinados: **210**.
 - Modelos publicados mecanicamente: **208**.

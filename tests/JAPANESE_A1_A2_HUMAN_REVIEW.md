@@ -9,12 +9,12 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_03 | stage1_context.audio | ありがとうございます。すみません。 | Arigatou gozaimasu. Sumimasen. | Muito obrigado. Com licença. | pending-human-review |
 | a1_mod_03 | stage4_dialog[2].content |  |  | O garçom está de costas, limpando o balcão do outro lado da sala. | pending-human-review |
 | a1_mod_04 | stage1_context.audio | お疲れ様でした。じゃあね。 | Otsukaresama deshita. Jaa ne. | Obrigado pelo esforço. Até mais. | pending-human-review |
-| a1_mod_05 | stage1_context.audio | 田中さん。先生、こんにちは。 | Tanaka-san. Sensei, konnichiwa. | Sr. Tanaka. Professor, boa tarde. | pending-human-review |
-| a1_mod_06 | stage1_context.audio | 私はブラジル人です。日本語です。 | Watashi wa Burajiru-jin desu. Nihon-go desu. | Sou brasileiro. É japonês. | pending-human-review |
-| a1_mod_07 | stage1_context.audio | 私は学生です。会社員です。 | Watashi wa gakusei desu. Kaishain desu. | Sou estudante. Sou funcionário de empresa. | pending-human-review |
-| a1_mod_08 | stage1_context.audio | あなたは学生ですか。誰ですか。 | Anata wa gakusei desu ka. Dare desu ka. | Você é estudante? Quem é? | pending-human-review |
+| a1_mod_05 | stage1_context.audio | 田中さん、こんにちは。先生、こんにちは。 | Tanaka-san, konnichiwa. Sensei, konnichiwa. | Olá, Sr. Tanaka. Olá, professor. | pending-human-review |
+| a1_mod_06 | stage1_context.audio | 私はブラジル人です。日本語を勉強しています。 | Watashi wa Burajiru-jin desu. Nihongo o benkyou shite imasu. | Sou brasileiro e estudo japonês. | pending-human-review |
+| a1_mod_07 | stage1_context.audio | 私は学生です。田中さんは会社員です。 | Watashi wa gakusei desu. Tanaka-san wa kaishain desu. | Sou estudante. O Sr. Tanaka é funcionário de uma empresa. | pending-human-review |
+| a1_mod_08 | stage1_context.audio | あなたは学生ですか。あの人は誰ですか。 | Anata wa gakusei desu ka. Ano hito wa dare desu ka. | Você é estudante? Quem é aquela pessoa? | pending-human-review |
 | a1_mod_09 | stage1_context.audio | 一、二、三！二十五歳です。 | Ichi, ni, san! Nijuu-go sai desu. | Um, dois, três! Tenho 25 anos. | pending-human-review |
-| a1_mod_10 | stage1_context.audio | 私もブラジル人です！そうですか！ | Watashi mo Burajiru-jin desu! Sou desu ka! | Eu também sou brasileiro! É mesmo? | pending-human-review |
+| a1_mod_10 | stage1_context.audio | 「私もブラジル人です。」「そうですか！」 | Watashi mo Burajiru-jin desu. Sou desu ka! | Eu também sou brasileiro. É mesmo? | pending-human-review |
 | a1_mod_11 | stage1_context.audio | それは何ですか。 | Sore wa nan desu ka. | O que é isso? | pending-human-review |
 | a1_mod_12 | stage1_context.audio | 猫がいます。本があります。 | Neko ga imasu. Hon ga arimasu. | Há um gato. Há um livro. | pending-human-review |
 | a1_mod_13 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | pending-human-review |
@@ -29,19 +29,19 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_21 | stage4_dialog[0].content |  |  | A pessoa aguarda você iniciar a conversa. | pending-human-review |
 | a1_mod_22 | stage1_context.audio | 今日は月曜日です。 | Kyou wa getsuyoubi desu. | Hoje é segunda-feira. | pending-human-review |
 | a1_mod_23 | stage1_context.audio | 昨日、映画を見ました。 | Kinou, eiga o mimashita. | Ontem, assisti a um filme. | pending-human-review |
-| a1_mod_24 | stage1_context.audio | ご飯を食べます。 | Gohan o tabemasu. | Como uma refeição. | pending-human-review |
+| a1_mod_24 | stage1_context.audio | ご飯を食べます。 | Gohan o tabemasu. | Como arroz. | pending-human-review |
 | a1_mod_25 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | pending-human-review |
 | a1_mod_26 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | pending-human-review |
 | a1_mod_27 | stage1_context.audio | 駅はどこですか。 | Eki wa doko desu ka. | Onde fica a estação? | pending-human-review |
 | a1_mod_28 | stage1_context.audio | 本があります。 | Hon ga arimasu. | Há um livro. | pending-human-review |
 | a1_mod_29 | stage1_context.audio | 犬がいます。友達がいます。 | Inu ga imasu. Tomodachi ga imasu. | Há um cachorro. Há um amigo. | pending-human-review |
-| a1_mod_30 | stage1_context.audio | そして、でも、私も行きます。 | Soshite, demo, watashi mo ikimasu. | E então, mas eu também vou. | pending-human-review |
+| a1_mod_30 | stage1_context.audio | 友達は行きます。そして、私も行きます。でも、田中さんは行きません。 | Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen. | Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai. | pending-human-review |
 | a1_mod_31 | stage1_context.audio | おめでとうございます！A1修了です！ | Omedetou gozaimasu! A1 shuuryou desu! | Parabéns! O A1 foi concluído! | pending-human-review |
-| a2_mod_01 | stage1_context.audio | 朝、起きます！ | Asa, okimasu! | Acordo de manhã! | pending-human-review |
+| a2_mod_01 | stage1_context.audio | 毎朝七時に起きます。 | Maiasa shichi-ji ni okimasu. | Acordo às sete horas todas as manhãs. | pending-human-review |
 | a2_mod_01 | stage4_dialog[0].content | [Seu Nome]さん、朝、何時に起きますか。 | [Seu Nome]-san, asa, nan-ji ni okimasu ka. | A que horas você acorda de manhã? | pending-human-review |
 | a2_mod_01 | stage4_dialog[1].content | 今晩、何時に寝ますか。 | Konban, nan-ji ni nemasu ka. | A que horas vai dormir esta noite? | pending-human-review |
 | a2_mod_01 | stage4_dialog[2].content | 寝る前に歯を磨きますか。 | Neru mae ni ha o migakimasu ka. | Você escova os dentes antes de dormir? | pending-human-review |
-| a2_mod_02 | stage1_context.audio | いつも映画を見ます！ | Itsumo eiga o mimasu! | Sempre assisto a filmes! | pending-human-review |
+| a2_mod_02 | stage1_context.audio | 週末はいつも映画を見ます。 | Shuumatsu wa itsumo eiga o mimasu. | Sempre assisto a filmes no fim de semana. | pending-human-review |
 | a2_mod_02 | stage4_dialog[0].content | [Seu Nome]さん、朝、いつもコーヒーを飲みますか。 | [Seu Nome]-san, asa, itsumo koohii o nomimasu ka. | Você sempre bebe café de manhã? | pending-human-review |
 | a2_mod_02 | stage4_dialog[1].content | 時々スポーツをしますか。 | Tokidoki supootsu o shimasu ka. | Você pratica esportes às vezes? | pending-human-review |
 | a2_mod_02 | stage4_dialog[2].content | お酒を飲みますか。 | Osake o nomimasu ka. | Você bebe bebida alcoólica? | pending-human-review |
@@ -101,7 +101,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a2_mod_16 | stage4_dialog[0].content | [Seu Nome]さん、昨日は家に帰ってから何をしましたか。 | [Seu Nome]-san, kinou wa uchi ni kaette kara nani o shimashita ka. | Ontem, depois de voltar para casa, o que fez? | pending-human-review |
 | a2_mod_16 | stage4_dialog[1].content | 土曜日は何をしますか。 | Doyoubi wa nani o shimasu ka. | O que faz no sábado? | pending-human-review |
 | a2_mod_16 | stage4_dialog[2].content | 今朝、何をしましたか。 | Kesa, nani o shimashita ka. | O que fez hoje de manhã? | pending-human-review |
-| a2_mod_17 | stage1_context.audio | 京都駅で乗り換えです！ | Kyouto-eki de norikae desu! | A baldeação é na Estação de Kyoto! | pending-human-review |
+| a2_mod_17 | stage1_context.audio | 京都駅で乗り換えます。 | Kyouto-eki de norikaemasu. | Faço baldeação na Estação de Kyoto. | pending-human-review |
 | a2_mod_17 | stage4_dialog[0].content | いらっしゃいませ！どこまでですか。 | Irasshaimase! Doko made desu ka. | Bem-vindo! Até onde vai? | pending-human-review |
 | a2_mod_17 | stage4_dialog[1].content | はい、一万三千円です。 | Hai, ichi-man san-zen en desu. | Sim, são 13.000 ienes. | pending-human-review |
 | a2_mod_17 | stage4_dialog[2].content | 名古屋駅で乗り換えです。 | Nagoya-eki de norikae desu. | A baldeação é na Estação de Nagoya. | pending-human-review |
@@ -143,7 +143,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a2_mod_27 | stage4_dialog[0].content | [Seu Nome]さん、今晩、一緒にご飯を食べませんか。 | [Seu Nome]-san, konban, issho ni gohan o tabemasen ka. | Não quer jantar comigo hoje à noite? | pending-human-review |
 | a2_mod_27 | stage4_dialog[1].content | そうですか。じゃあ、次はぜひ！ | Sou desu ka. Jaa, tsugi wa zehi! | Entendi. Então, na próxima, com certeza! | pending-human-review |
 | a2_mod_27 | stage4_dialog[2].content | 週末、温泉に行きませんか。 | Shuumatsu, onsen ni ikimasen ka. | Que tal irmos a uma fonte termal no fim de semana? | pending-human-review |
-| a2_mod_28 | stage1_context.audio | あげる、もらう、くれる！ | Ageru, morau, kureru! | Dar, receber e alguém dar para mim! | pending-human-review |
+| a2_mod_28 | stage1_context.audio | 友達に本をあげます。母にプレゼントをもらいます。先生が辞書をくれます。 | Tomodachi ni hon o agemasu. Haha ni purezento o moraimasu. Sensei ga jisho o kuremasu. | Dou um livro a um amigo. Recebo um presente da minha mãe. O professor me dá um dicionário. | pending-human-review |
 | a2_mod_28 | stage4_dialog[0].content | これは何ですか。 | Kore wa nan desu ka. | O que é isto? | pending-human-review |
 | a2_mod_28 | stage4_dialog[1].content | わあ！ありがとうございます！うれしいです！ | Waa! Arigatou gozaimasu! Ureshii desu! | Uau! Muito obrigado! Estou muito feliz! | pending-human-review |
 | a2_mod_28 | stage4_dialog[2].content | このキーホルダーはどうしましたか。 | Kono kiihorudaa wa dou shimashita ka. | Como conseguiu este chaveiro? | pending-human-review |

@@ -9075,3 +9075,30 @@ CURSO_A2_DADOS.forEach(module => {
 });
 
 if (typeof window !== "undefined") { window.CURSO_A2_DADOS = CURSO_A2_DADOS; }
+
+const A2_PHASE18_AUDIO_CORRECTIONS = {
+    a2_mod_01: ["毎朝七時に起きます。", "Maiasa shichi-ji ni okimasu.", "Acordo às sete horas todas as manhãs."],
+    a2_mod_02: ["週末はいつも映画を見ます。", "Shuumatsu wa itsumo eiga o mimasu.", "Sempre assisto a filmes no fim de semana."],
+    a2_mod_17: ["京都駅で乗り換えます。", "Kyouto-eki de norikaemasu.", "Faço baldeação na Estação de Kyoto."],
+    a2_mod_28: ["友達に本をあげます。母にプレゼントをもらいます。先生が辞書をくれます。", "Tomodachi ni hon o agemasu. Haha ni purezento o moraimasu. Sensei ga jisho o kuremasu.", "Dou um livro a um amigo. Recebo um presente da minha mãe. O professor me dá um dicionário."]
+};
+Object.entries(A2_PHASE18_AUDIO_CORRECTIONS).forEach(([moduleId, values]) => {
+    const module = CURSO_A2_DADOS.find(item => item.id === moduleId);
+    const [displayText, romaji, translation] = values;
+    module.stage1_context.audioGuide = romaji;
+    Object.assign(module.stage1_context.audio, { displayText, audioText: displayText, romaji, translation });
+    module.editorialReview.phase18 = { status: "corrected", target: "stage1_context.audio" };
+});
+
+const A2_PHASE18_TEXT_REPLACEMENTS = new Map([
+    ["Com a conclusão do Nível A2, você já consegue comunicar sua rotina, passados, desejos, fazer pedidos com a Forma TE e planejar viagens com autonomia total!", "A conclusão do Nível A2 registra que você estudou formas para falar da rotina, de fatos passados e desejos, fazer pedidos com a forma て e planejar viagens."]
+]);
+(function applyA2Phase18Text(value) {
+    if (Array.isArray(value)) return value.forEach(applyA2Phase18Text);
+    if (!value || typeof value !== "object") return;
+    Object.entries(value).forEach(([key, item]) => {
+        if (typeof item === "string" && A2_PHASE18_TEXT_REPLACEMENTS.has(item)) value[key] = A2_PHASE18_TEXT_REPLACEMENTS.get(item);
+        else applyA2Phase18Text(item);
+    });
+})(CURSO_A2_DADOS);
+CURSO_A2_DADOS.find(module => module.id === "a2_mod_30").stage5_quiz[4].options[0] = A2_PHASE18_TEXT_REPLACEMENTS.get("Com a conclusão do Nível A2, você já consegue comunicar sua rotina, passados, desejos, fazer pedidos com a Forma TE e planejar viagens com autonomia total!");

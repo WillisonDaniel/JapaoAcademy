@@ -881,9 +881,9 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/ja-JP/curso.html',
             locale: 'ja-JP',
             scripts: 27,
-            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B (maxBytes: 1625 * 1024).
-            // Recalibrado para a Fase 1 da gamificação multidioma (matriz de cargos e XP híbrido nos 5 idiomas).
-            maxBytes: 1635 * 1024,
+            // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
+            // Fase 18: 173 correções editoriais rastreadas nos quatro datasets, sem novas dependências.
+            maxBytes: 1690 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {
@@ -1119,7 +1119,8 @@ test('escuta japonesa usa indice leve, voz local e nenhuma avaliacao artificial'
         return total + fs.statSync(caminho).size;
     }, 0);
     assert.ok(scriptsLocais.length <= 18, `${scriptsLocais.length} scripts locais na escuta japonesa`);
-    assert.ok(bytesLocais <= 400 * 1024, `${Math.round(bytesLocais / 1024)} KB na escuta japonesa`);
+    // Fase 18: 44 diálogos B1/B2 recuperados elevaram o índice de 265 para 309 itens.
+    assert.ok(bytesLocais <= 415 * 1024, `${Math.round(bytesLocais / 1024)} KB na escuta japonesa`);
     assert.match(html, /database\/ja-JP\/data_escuta_index\.js/);
     assert.doesNotMatch(html, /data_curso_[a-b][1-2]\.js|js\/srs\//);
     assert.match(read('js/japanese/listening.js'), /activityType: 'pronunciation'/);

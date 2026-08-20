@@ -5787,3 +5787,191 @@ CURSO_B2_DADOS.forEach(module => {
 });
 
 if (typeof window !== "undefined") { window.CURSO_B2_DADOS = CURSO_B2_DADOS; }
+
+const B2_PHASE18_AUDIO_CORRECTIONS = {
+    b2_mod_01: ["明日は雨が降ることになっている。", "Ashita wa ame ga furu koto ni natte iru.", "Está previsto que chova amanhã."],
+    b2_mod_02: ["日本語だけでなく、漢字も勉強しています。これは一歩にすぎない。", "Nihongo dake de naku, kanji mo benkyou shite imasu. Kore wa ippo ni suginai.", "Estudo não apenas japonês, mas também Kanji. Isto não passa de um primeiro passo."],
+    b2_mod_03: ["知らないくせに、話さないで。値段の割にはおいしい。", "Shiranai kuse ni, hanasanaide. Nedan no wari ni wa oishii.", "Não fale como se soubesse, quando não sabe. É saboroso considerando o preço."],
+    b2_mod_04: ["目が回る忙しさ。顔が広いですね。", "Me ga mawaru isogashisa. Kao ga hiroi desu ne.", "Uma correria de deixar a cabeça girando. Você conhece muita gente, não é?"],
+    b2_mod_05: ["ご覧になりましたか。お目にかかれて光栄です。", "Goran ni narimashita ka. O-me ni kakarete kouei desu.", "O senhor viu? É uma honra conhecê-lo."],
+    b2_mod_06: ["この件について、起承転結でレポートを作成しました。", "Kono ken ni tsuite, kishoutenketsu de repooto o sakusei shimashita.", "Elaborei um relatório sobre este assunto com estrutura kishoutenketsu."],
+    b2_mod_07: ["申し訳ございませんが、この条件はお受けしかねます。", "Moushiwake gozaimasen ga, kono jouken wa o-uke shikanemasu.", "Lamento, mas não podemos aceitar esta condição."],
+    b2_mod_08: ["今日はB2プロジェクトについて発表いたします。", "Kyou wa B2 purojekuto ni tsuite happyou itashimasu.", "Hoje farei uma apresentação sobre o projeto B2."],
+    b2_mod_09: ["経済の統計によると、景気が回復しています。", "Keizai no toukei ni yoru to, keiki ga kaifuku shite imasu.", "Segundo as estatísticas econômicas, a economia está se recuperando."],
+    b2_mod_10: ["市役所の書類についてご案内いたします。", "Shiyakusho no shorui ni tsuite go-annai itashimasu.", "Vou orientá-lo sobre os documentos da prefeitura."],
+    b2_mod_11: ["めっちゃ、ほんまにええやん！やばいですよ！", "Meccha, honma ni ee yan! Yabai desu yo!", "É muito bom mesmo! É impressionante!"],
+    b2_mod_12: ["高齢化社会と環境問題について考察します。", "Koureika shakai to kankyou mondai ni tsuite kousatsu shimasu.", "Analisaremos a sociedade em envelhecimento e os problemas ambientais."],
+    b2_mod_13: ["お金さえあれば、大丈夫。悪天候にもかかわらず、出発した。", "Okane sae areba, daijoubu. Akutenkou ni mo kakawarazu, shuppatsu shita.", "Desde que haja dinheiro, ficará tudo bem. Partimos apesar do mau tempo."],
+    b2_mod_14: ["これは成功と言えるだろう。毎日の努力にほかならない。", "Kore wa seikou to ieru darou. Mainichi no doryoku ni hoka naranai.", "Pode-se dizer que isto foi um sucesso. Não é nada além do resultado do esforço diário."],
+    b2_mod_15: ["心を打つ文学の世界。夏目漱石の作品を読む。", "Kokoro o utsu bungaku no sekai. Natsume Souseki no sakuhin o yomu.", "O mundo comovente da literatura. Ler uma obra de Natsume Souseki."],
+    b2_mod_16: ["調査の結果、新しい技術が生まれた。この出会いをきっかけに……。", "Chousa no kekka, atarashii gijutsu ga umareta. Kono deai o kikkake ni...", "Como resultado da pesquisa, surgiu uma nova tecnologia. A partir deste encontro..."],
+    b2_mod_17: ["おおきに！好いとうよ！めんそーれ！", "Ookini! Suitou yo! Mensooree!", "Muito obrigado! Gosto de você! Bem-vindo!"],
+    b2_mod_18: ["わくわくしています。ぴかぴかに磨きました。", "Wakuwaku shite imasu. Pikapika ni migakimashita.", "Estou empolgado. Poli até ficar brilhando."],
+    b2_mod_19: ["おもてなしの心と生きがいを大切にします。", "Omotenashi no kokoro to ikigai o taisetsu ni shimasu.", "Valorizamos o espírito de hospitalidade e aquilo que dá sentido à vida."],
+    b2_mod_20: ["おめでとうございます！すべてのレベル修了です！", "Omedetou gozaimasu! Subete no reberu shuuryou desu!", "Parabéns! Todos os níveis foram concluídos!"]
+};
+
+const B2_PHASE18_DIALOGUE_CORRECTIONS = {
+    b2_mod_02: { 1: ["チームだけでなく、会社全体の支援になりますよ。", "Chiimu dake de naku, kaisha zentai no shien ni narimasu yo.", "Isso apoiará não apenas a equipe, mas a empresa inteira."] },
+    b2_mod_03: { 1: ["あの評論家、行ったことがないくせに、悪いことばかり書いているよ。", "Ano hyouronka, itta koto ga nai kuse ni, warui koto bakari kaite iru yo.", "Aquele crítico só escreve coisas ruins, embora nunca tenha ido lá."] },
+    b2_mod_04: { 0: ["[Seu Nome]さん、最近、仕事で目が回る忙しさだね……", "[Seu Nome]-san, saikin shigoto de me ga mawaru isogashisa da ne...", "Ultimamente o trabalho está numa correria de deixar a cabeça girando..."] },
+    b2_mod_05: {
+        0: ["[Seu Nome]さん、最近の業績はいかがですか。", "[Seu Nome]-san, saikin no gyouseki wa ikaga desu ka?", "Como está o desempenho recente?"],
+        1: ["素晴らしいデータだ。この計画はすでにご存じだったのか。", "Subarashii deeta da. Kono keikaku wa sude ni gozonji datta no ka?", "São dados excelentes. Você já conhecia este plano?"]
+    },
+    b2_mod_06: {
+        0: ["[Seu Nome]さん、B2プロジェクトのメールの下書き、できた？", "[Seu Nome]-san, B2 purojekuto no meeru no shitagaki, dekita?", "O rascunho do e-mail do projeto B2 ficou pronto?"],
+        1: ["本題が明確で、素晴らしい文章だね！", "Hondai ga meikaku de, subarashii bunshou da ne!", "O assunto principal está claro; é um excelente texto!"],
+        2: ["よろしくお願いするよ！", "Yoroshiku onegai suru yo!", "Conto com você!"]
+    },
+    b2_mod_07: {
+        0: ["この値段から五十パーセント割引してくれないか。", "Kono nedan kara gojuu paasento waribiki shite kurenai ka?", "Não poderia dar cinquenta por cento de desconto neste preço?"],
+        1: ["ふむ……十パーセントの特典なら、悪くないね。", "Fumu... Juu paasento no tokuten nara, warukunai ne.", "Hum... Se for um benefício de dez por cento, não está mal."]
+    },
+    b2_mod_08: { 1: ["予算の統計について、少し説明してくれないか。", "Yosan no toukei ni tsuite, sukoshi setsumei shite kurenai ka?", "Poderia explicar um pouco as estatísticas do orçamento?"] },
+    b2_mod_09: {
+        0: ["[Seu Nome]さん、今日のNHKニュース、見た？", "[Seu Nome]-san, kyou no NHK nyuusu, mita?", "Viu o noticiário da NHK de hoje?"],
+        2: ["賢い分析だ！毎日ニュースを確認しよう！", "Kashikoi bunseki da! Mainichi nyuusu o kakunin shiyou!", "É uma análise inteligente! Vamos conferir as notícias todos os dias!"]
+    },
+    b2_mod_10: {
+        0: ["いらっしゃいませ。本日はどのようなご用件ですか。", "Irasshaimase. Honjitsu wa dono you na goyouken desu ka?", "Bem-vindo. Em que posso ajudá-lo hoje?"],
+        2: ["確認いたしました。これで問題なく完了です。", "Kakunin itashimashita. Kore de mondai naku kanryou desu.", "Conferi. Com isso, o procedimento foi concluído sem problemas."]
+    },
+    b2_mod_11: {
+        0: ["このコメディ、ほんまにめっちゃおもろいやろ？", "Kono komedi, honma ni meccha omoroi yaro?", "Esta comédia é muito engraçada mesmo, não é?"],
+        2: ["もちろんや！もう関西人と同じやん！", "Mochiron ya! Mou Kansai-jin to onaji yan!", "Claro! Você já fala como alguém de Kansai!"]
+    },
+    b2_mod_12: { 1: ["環境問題とのバランスも大切ですね。", "Kankyou mondai to no baransu mo taisetsu desu ne.", "O equilíbrio com as questões ambientais também é importante."] },
+    b2_mod_13: {
+        0: ["[Seu Nome]さん、この論文の論理は明確だね。", "[Seu Nome]-san, kono ronbun no ronri wa meikaku da ne.", "A lógica deste artigo está clara."],
+        1: ["厳しい条件にもかかわらず、結果を出したね。", "Kibishii jouken ni mo kakawarazu, kekka o dashita ne.", "Você obteve resultados apesar das condições difíceis."],
+        2: ["素晴らしいです！学会に投稿しましょう！", "Subarashii desu! Gakkai ni toukou shimashou!", "Excelente! Vamos submeter o trabalho à sociedade acadêmica!"]
+    },
+    b2_mod_14: {
+        0: ["[Seu Nome]さん、このデータの考察をまとめてください。", "[Seu Nome]-san, kono deeta no kousatsu o matomete kudasai.", "Resuma a análise destes dados, por favor."],
+        1: ["明確で価値の高い論旨だね。議論の組み立てが素晴らしいよ。", "Meikaku de kachi no takai ronshi da ne. Giron no kumitate ga subarashii yo.", "É uma tese clara e valiosa. A estrutura da argumentação está excelente."]
+    },
+    b2_mod_15: {
+        1: ["太宰治の作品も、文学的にとても深いよ。", "Dazai Osamu no sakuhin mo, bungakuteki ni totemo fukai yo.", "As obras de Dazai Osamu também têm grande profundidade literária."],
+        2: ["来月の議論、楽しみにしているよ！", "Raigetsu no giron, tanoshimi ni shite iru yo!", "Estou ansioso pela discussão do mês que vem!"]
+    },
+    b2_mod_16: {
+        1: ["毎日の努力の結果、今は自然に話せますね！", "Mainichi no doryoku no kekka, ima wa shizen ni hanasemasu ne!", "Como resultado do esforço diário, agora você consegue falar com naturalidade!"],
+        2: ["素晴らしい話です！聞いている皆さんの励みになりました！", "Subarashii hanashi desu! Kiite iru minasan no hagemi ni narimashita!", "É uma história excelente! Ela incentivou todos que estavam ouvindo!"]
+    },
+    b2_mod_17: {
+        0: ["福岡のラーメン、好いとうと？", "Fukuoka no raamen, suitou to?", "Você gosta do ramen de Fukuoka?"],
+        1: ["福岡の方言も知っとうと！すごかたい！", "Fukuoka no hougen mo shittou to! Sugoka tai!", "Você conhece até o dialeto de Fukuoka! Que incrível!"],
+        2: ["また福岡に来てね！", "Mata Fukuoka ni kite ne!", "Venha novamente a Fukuoka!"]
+    },
+    b2_mod_18: {
+        0: ["[Seu Nome]さん、天気もいいし、遊園地日和だね！", "[Seu Nome]-san, tenki mo ii shi, yuuenchi biyori da ne!", "O tempo está bom; é um dia perfeito para o parque de diversões!"],
+        1: ["楽しい！でも、もうお腹がぺこぺこになったね！", "Tanoshii! Demo, mou onaka ga pekopeko ni natta ne!", "Está divertido! Mas já ficamos morrendo de fome!"],
+        2: ["にこにこ笑って食べよう！", "Nikoniko waratte tabeyou!", "Vamos comer sorrindo!"]
+    },
+    b2_mod_19: { 2: ["どうぞ、わび・さびの趣をお楽しみください。", "Douzo, wabi-sabi no omomuki o o-tanoshimi kudasai.", "Aprecie a estética de wabi-sabi, por favor."] },
+    b2_mod_20: {
+        0: ["[Seu Nome]さん、おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！", "[Seu Nome]-san, omedetou gozaimasu. Kono yottsu no reberu no gakushuu wa, hontou ni subarashikatta desu!", "Parabéns! Seu trabalho ao longo destes quatro níveis foi realmente excelente!"],
+        2: ["素晴らしいです！B2コースの修了証をお渡しいたします。おめでとうございます！", "Subarashii desu! B2 koosu no shuuryoushou o owatashi itashimasu. Omedetou gozaimasu!", "Excelente! Entregaremos o certificado de conclusão do curso B2. Parabéns!"]
+    }
+};
+
+Object.entries(B2_PHASE18_AUDIO_CORRECTIONS).forEach(([moduleId, values]) => {
+    const module = CURSO_B2_DADOS.find(item => item.id === moduleId);
+    const [displayText, romaji, translation] = values;
+    module.stage1_context.audioGuide = romaji;
+    Object.assign(module.stage1_context.audio, { displayText, audioText: displayText, romaji, translation });
+});
+Object.entries(B2_PHASE18_DIALOGUE_CORRECTIONS).forEach(([moduleId, corrections]) => {
+    const module = CURSO_B2_DADOS.find(item => item.id === moduleId);
+    Object.entries(corrections).forEach(([index, values]) => {
+        const dialogue = module.stage4_dialog[Number(index)];
+        const [displayText, romaji, translation] = values;
+        const audioText = displayText.replace(/\[Seu Nome\](?:さん|君)?[！、]?/gu, "").trim();
+        Object.assign(dialogue.content, { displayText, audioText, romaji, translation });
+        dialogue.npcMessage = `${romaji} (${translation})`;
+    });
+});
+CURSO_B2_DADOS.forEach(module => {
+    module.editorialReview.phase18 = { status: "in-progress", correctedAudio: true };
+});
+
+const B2_PHASE18_TEXT_REPLACEMENTS = new Map([
+    ["Expressando Expectativas e Decepções: ~ni nihonki e ~koto ni natte iru", "Expressando regras e expectativas: ~koto ni natte iru e ~wari ni"],
+    ["Mecha", "Meccha"],
+    ["mecha", "meccha"],
+    ["karawazu", "kakawarazu"],
+    ["hokanaranai", "hoka naranai"],
+    ["dialecto", "dialeto"],
+    ["Honmani", "Honma ni"],
+    ["honmani", "honma ni"],
+    ["Mecha / Metcha", "Meccha / Mecha"],
+    ["Honma ni meccha ee ya n!", "Honma ni meccha ee yan!"],
+    ["情熱 (jounetsu) sae araba, douno goal mo dekiru", "Jounetsu sae areba, donna mokuhyou demo tassei dekiru"],
+    ["Oome ni mo kakawarazu", "Ooame ni mo kakawarazu"],
+    ["Tai-ten ni mo kakawarazu", "Ooame ni mo kakawarazu"],
+    ["Kare wa shoshinsha ni mo kakawarazu, pro mitai ni jouzu desu", "Kare wa shoshinsha ni mo kakawarazu, puro nami ni jouzu desu"],
+    ["Kono kekka wa minasan no doryoku no賜 (tamamono) ni hoka naranai", "Kono kekka wa minasan no doryoku no tamamono ni hoka naranai"],
+    ["Kare no shippai wa準備 (junbi)不足 (busoku) ni hoka naranai", "Kare no shippai wa junbi busoku ni hoka naranai"],
+    ["Koushou-na jcondition ni mo kakawarazu", "Kibishii jouken ni mo kakawarazu"],
+    ["Shiren ni mo kakawarazu, data o collect shita kai ga arimashita!", "Konnan ni mo kakawarazu, deeta o shuushuu shita kai ga arimashita!"],
+    ["Kono data yori, atarashii strategy ga yukou desu to ieru darou. Soshite, kono seika wa team no doryoku ni hoka naranai to omotte orimasu.", "Kono deeta kara, atarashii senryaku wa yuukou da to ieru darou. Soshite, kono seika wa chiimu no doryoku no tamamono ni hoka naranai to kangaete orimasu."],
+    ["Entendendo Mídia & Animes sem Legendas: Kansai-ben e Gírias Modernas", "Kansai-ben e gírias modernas na mídia"],
+    ["Conquiste a capacidade de assistir filmes, animes e programas de TV sem legendas! Aprenda as estruturas do famoso dialeto de Kansai (Kansai-ben: ~ya, ~honmani) e gírias modernas da internet (Yabai, Mecha).", "Reconheça em trechos de mídia algumas formas do dialeto de Kansai, como ~ya e honma ni, e gírias modernas como yabai e meccha."],
+    ["Uso espetacular de gírias e dialeto entendidos com fluência!", "Você reconheceu as formas coloquiais apresentadas nesta atividade!"],
+    ["Fluência corporativa avançada de nível B2!", "Resposta adequada ao contexto corporativo desta atividade!"],
+    ["Fluência jornalística madura de nível B2!", "Uso adequado do vocabulário jornalístico apresentado!"],
+    ["Gratidão e fluência acadêmica impecável!", "Agradecimento adequado ao contexto acadêmico!"],
+    ["Imersão Total & Maestria", "Integração e conclusão"],
+    ["Grande Desafio de Maestria B2: Trabalho de Conclusão de Curso", "Avaliação integrativa de conclusão B2"],
+    ["Você chegou ao cume da montanha! Este é o grande teste de conclusão integrativo de toda a plataforma Japão Academy. O Quiz final reunirá 30 questões abrangendo os Níveis A1, A2, B1 e B2 para consagrar a sua fluência avançada!", "Esta avaliação interna de conclusão reúne 30 questões sobre conteúdos apresentados nas trilhas A1, A2, B1 e B2."],
+    ["Maestria absoluta atingida.", "Trilha A1–B2 concluída."],
+    ["O Troféu de Maestria Japão Academy", "Registro de conclusão da trilha"],
+    ["Você percorreu uma jornada extraordinária: do 'Konnichiwa' A1 às negociações Keigo e filosofias avançadas B2. Você possui agora fluência e autonomia no idioma!", "Você concluiu os conteúdos e as atividades previstos na trilha japonesa A1–B2 da plataforma."],
+    ["[A1 + A2 + B1 + B2] = 日本語 Master (Japonês Fluente)!", "[A1 + A2 + B1 + B2] = trilha japonesa concluída"],
+    ["Situação 3: O Reitor entrega o Troféu de Maestria B2 e o Certificado da Japão Academy sob aplausos!", "Situação 3: O responsável pela atividade registra a conclusão da trilha B2."],
+    ["🏆 PARABÉNS! VOCÊ ZEROU A JORNADA COMPLETA DA JAPÃO ACADEMY E CONQUISTOU A MAESTRIA B2!", "Parabéns! Você concluiu as atividades da trilha japonesa A1–B2."],
+    ["日本語 Master", "trilha japonesa concluída"]
+]);
+(function applyB2Phase18Text(value) {
+    if (Array.isArray(value)) return value.forEach(applyB2Phase18Text);
+    if (!value || typeof value !== "object") return;
+    Object.entries(value).forEach(([key, item]) => {
+        if (typeof item !== "string") return applyB2Phase18Text(item);
+        let corrected = item;
+        B2_PHASE18_TEXT_REPLACEMENTS.forEach((replacement, original) => { corrected = corrected.split(original).join(replacement); });
+        value[key] = corrected;
+    });
+})(CURSO_B2_DADOS);
+{
+    const rulesModule = CURSO_B2_DADOS.find(module => module.id === "b2_mod_01");
+    rulesModule.title = "Regras estabelecidas e resultados esperados: ~koto ni natte iru e ~wari ni";
+    Object.assign(rulesModule.stage1_context.audio, {
+        displayText: "この会社では、毎週月曜日に会議を開くことになっている。",
+        audioText: "この会社では、毎週月曜日に会議を開くことになっている。",
+        romaji: "Kono kaisha de wa, maishuu getsuyoubi ni kaigi o hiraku koto ni natte iru.",
+        translation: "Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira."
+    });
+    rulesModule.stage1_context.audioGuide = rulesModule.stage1_context.audio.romaji;
+
+    const mediaModule = CURSO_B2_DADOS.find(module => module.id === "b2_mod_11");
+    mediaModule.stage1_context.missionDescription = "Reconheça em trechos de mídia algumas formas do dialeto de Kansai, como ~ya e honma ni, e gírias modernas como yabai e meccha.";
+    mediaModule.stage4_dialog[1].scenario = "Situação 2: O amigo pergunta quais formas você reconheceu no trecho de anime.";
+    mediaModule.stage4_dialog[1].npcMessage = "日本のアニメでも関西弁が分かるんですか。 (Você também reconhece o dialeto de Kansai em animes japoneses?)";
+    mediaModule.stage4_dialog[2].options[0].text = "Ookini! Motto benkyou shite, Kansai-ben no renshuu o tsuzukeru de! (Muito obrigado! Vou continuar praticando o dialeto de Kansai!)";
+
+    const connectorsModule = CURSO_B2_DADOS.find(module => module.id === "b2_mod_13");
+    connectorsModule.stage5_quiz[3].options[0] = "1) Substantivo + さえ (sae) + Verbo condicional ば (ba) = Basta apenas X. 2) Frase casual / Substantivo + にもかかわらず (ni mo kakawarazu) = Apesar da situação de X.";
+
+    const thesisModule = CURSO_B2_DADOS.find(module => module.id === "b2_mod_14");
+    thesisModule.stage5_quiz[3].options[0] = "1) Frase + と言えるだろう (to ieru darou) suaviza a afirmação. 2) Substantivo + にほかならない (ni hoka naranai) apresenta uma conclusão enfática.";
+
+    const dialectModule = CURSO_B2_DADOS.find(module => module.id === "b2_mod_17");
+    Object.assign(dialectModule.stage4_dialog[1].content, {
+        displayText: "福岡の方言も知っとうと！すごかね！",
+        audioText: "福岡の方言も知っとうと！すごかね！",
+        romaji: "Fukuoka no hougen mo shittou to! Sugoka ne!",
+        translation: "Você conhece até o dialeto de Fukuoka! Que incrível!"
+    });
+    dialectModule.stage4_dialog[1].npcMessage = "Fukuoka no hougen mo shittou to! Sugoka ne! (Você conhece até o dialeto de Fukuoka! Que incrível!)";
+}

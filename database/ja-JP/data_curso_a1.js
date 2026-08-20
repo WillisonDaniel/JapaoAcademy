@@ -7919,3 +7919,38 @@ CURSO_A1_DADOS[20].stage4_dialog[0].content = {
 };
 
 if (typeof window !== "undefined") { window.CURSO_A1_DADOS = CURSO_A1_DADOS; }
+
+const A1_PHASE18_AUDIO_CORRECTIONS = {
+    a1_mod_05: ["田中さん、こんにちは。先生、こんにちは。", "Tanaka-san, konnichiwa. Sensei, konnichiwa.", "Olá, Sr. Tanaka. Olá, professor."],
+    a1_mod_06: ["私はブラジル人です。日本語を勉強しています。", "Watashi wa Burajiru-jin desu. Nihongo o benkyou shite imasu.", "Sou brasileiro e estudo japonês."],
+    a1_mod_07: ["私は学生です。田中さんは会社員です。", "Watashi wa gakusei desu. Tanaka-san wa kaishain desu.", "Sou estudante. O Sr. Tanaka é funcionário de uma empresa."],
+    a1_mod_08: ["あなたは学生ですか。あの人は誰ですか。", "Anata wa gakusei desu ka. Ano hito wa dare desu ka.", "Você é estudante? Quem é aquela pessoa?"],
+    a1_mod_10: ["「私もブラジル人です。」「そうですか！」", "Watashi mo Burajiru-jin desu. Sou desu ka!", "Eu também sou brasileiro. É mesmo?"],
+    a1_mod_24: ["ご飯を食べます。", "Gohan o tabemasu.", "Como arroz."],
+    a1_mod_30: ["友達は行きます。そして、私も行きます。でも、田中さんは行きません。", "Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen.", "Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai."]
+};
+Object.entries(A1_PHASE18_AUDIO_CORRECTIONS).forEach(([moduleId, values]) => {
+    const module = CURSO_A1_DADOS.find(item => item.id === moduleId);
+    const [displayText, romaji, translation] = values;
+    module.stage1_context.audioGuide = romaji;
+    Object.assign(module.stage1_context.audio, { displayText, audioText: displayText, romaji, translation });
+    module.editorialReview.phase18 = { status: "corrected", target: "stage1_context.audio" };
+});
+
+const A1_PHASE18_TEXT_REPLACEMENTS = new Map([
+    ["Perfeito! O combo 'Muito obrigado + Desculpe o incômodo' é o auge da fluência cultural!", "Perfeito! Você combinou agradecimento e pedido de desculpas de modo adequado ao contexto."],
+    ["Aprenda a perguntar 'quando?' (itsu) e a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi), e finalize a Seção 3 com maestria!", "Aprenda a perguntar 'quando?' (itsu), a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi) e conclua a Seção 3."],
+    ["Fantástico! Usou 'Soshite' e a partícula 'Mo' (também) com enorme fluência!", "Fantástico! Você usou 'soshite' e a partícula 'mo' (também) de forma adequada."],
+    ["Chegou a hora de provar sua fluência A1! Enfrente o grande teste integrando saudações, pronomes, compras, valores, direções e existências na chegada ao Japão.", "Chegou a hora de revisar a trilha A1. Este teste integra saudações, pronomes, compras, valores, direções e expressões de existência."],
+    ["O Passaporte da Fluência A1", "Revisão de conclusão A1"],
+    ["[Esforço] + [Prática] = 日本語 A1 Master!", "[Conteúdo A1] + [Prática] = trilha A1 concluída"],
+    ["Sobre a regra 'O Passaporte da Fluência A1': qual afirmação é correta?", "Sobre a revisão de conclusão A1: qual afirmação é correta?"]
+]);
+(function applyA1Phase18Text(value) {
+    if (Array.isArray(value)) return value.forEach(applyA1Phase18Text);
+    if (!value || typeof value !== "object") return;
+    Object.entries(value).forEach(([key, item]) => {
+        if (typeof item === "string" && A1_PHASE18_TEXT_REPLACEMENTS.has(item)) value[key] = A1_PHASE18_TEXT_REPLACEMENTS.get(item);
+        else applyA1Phase18Text(item);
+    });
+})(CURSO_A1_DADOS);
