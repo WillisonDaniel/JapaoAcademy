@@ -3738,67 +3738,67 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_16",
-        "title": "Contando de 1 a 10",
+        "title": "Números de 1 a 10",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
             "audioGuide": "Ichi, ni, san, yon...",
-            "missionTitle": "Objetivo de Hoje: A Base Numérica",
-            "missionDescription": "Contar é a base para tudo: preços, horas, idade. Vamos dominar os números de 1 a 10 e entender por que alguns têm duas pronúncias."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Reconheça e pronuncie os números de 1 a 10, observando que algumas leituras mudam conforme o contexto."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いち, に, さん",
-                "romaji": "Ichi, Ni, San",
+                "romaji": "ichi, ni, san",
                 "translation": "1, 2, 3",
-                "timeContext": "A base da contagem japonesa."
+                "timeContext": "Leituras básicas dos números 1, 2 e 3 quando aparecem isolados."
             },
             {
                 "type": "vocab",
                 "kanji": "よん (し), ご, ろく",
-                "romaji": "Yon (Shi), Go, Roku",
+                "romaji": "yon (shi), go, roku",
                 "translation": "4, 5, 6",
-                "timeContext": ""
+                "timeContext": "O número 4 pode ter as leituras よん ou し; a escolha depende da palavra ou do contador associado."
             },
             {
                 "type": "vocab",
                 "kanji": "なな (しち), はち, きゅう",
-                "romaji": "Nana (Shichi), Hachi, Kyuu",
+                "romaji": "nana (shichi), hachi, kyuu",
                 "translation": "7, 8, 9",
-                "timeContext": ""
+                "timeContext": "O número 7 pode ter as leituras なな ou しち; a forma adequada depende do contexto."
             },
             {
                 "type": "vocab",
                 "kanji": "じゅう",
-                "romaji": "Juu",
+                "romaji": "juu",
                 "translation": "10",
-                "timeContext": "Com o 'Juu', você já pode formar números até 99!"
+                "timeContext": "じゅう é 10 e também participa da formação das dezenas, como にじゅう (20)."
             },
             {
                 "type": "grammar_pill",
-                "title": "Os Números da Sorte (e do Azar)",
-                "rule": "Os números 4 e 7 têm duas leituras. 'Shi' (4) tem o mesmo som de 'morte' (死), e 'shichi' (7) pode ser confundido com 'ichi' (1). Por isso, no dia a dia, os japoneses preferem usar 'yon' e 'nana' para evitar confusão e superstição!",
-                "formula": "Prefira: よん (Yon) e なな (Nana)",
-                "example": "Ao contar objetos, é mais comum ouvir 'yon-mai' (4 folhas) do que 'shi-mai'."
+                "title": "Leituras que dependem do contexto",
+                "rule": "Os números 4 e 7 possuem mais de uma leitura. Não há uma única forma correta para todos os usos: horas, datas, idade e contadores podem selecionar leituras específicas.",
+                "formula": "4: よん / し　　7: なな / しち",
+                "example": "Na sequência básica, é possível praticar いち、に、さん、よん、ご、ろく、なな、はち、きゅう、じゅう."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual a pronúncia mais comum e segura para o número 4 no dia a dia?",
+                "question": "1. Qual destas é uma leitura do número 4?",
                 "options": [
                     {
-                        "label": "よん (Yon)",
+                        "label": "よん (yon)",
                         "isCorrect": true
                     },
                     {
-                        "label": "し (Shi)",
+                        "label": "さん (san)",
                         "isCorrect": false
                     },
                     {
-                        "label": "なな (Nana)",
+                        "label": "なな (nana)",
                         "isCorrect": false
                     }
                 ]
@@ -3807,15 +3807,15 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como se diz o número 8 em japonês?",
                 "options": [
                     {
-                        "label": "はち (Hachi)",
+                        "label": "はち (hachi)",
                         "isCorrect": true
                     },
                     {
-                        "label": "ろく (Roku)",
+                        "label": "ろく (roku)",
                         "isCorrect": false
                     },
                     {
-                        "label": "じゅう (Juu)",
+                        "label": "じゅう (juu)",
                         "isCorrect": false
                     }
                 ]
@@ -3823,48 +3823,47 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "とうきょう は おおきい まち です",
-                "translation": "Tóquio é uma cidade grande.",
+                "sentenceJp": "いち に さん よん ご",
+                "translation": "Um, dois, três, quatro, cinco.",
                 "chunks": [
-                    "とうきょう",
-                    "は",
-                    "おおきい",
-                    "まち",
-                    "です"
+                    "いち",
+                    "に",
+                    "さん",
+                    "よん",
+                    "ご"
                 ]
             },
             {
-                "sentenceJp": "この おちゃ は とても あつい です",
-                "translation": "Este chá está muito quente.",
+                "sentenceJp": "ろく なな はち きゅう じゅう",
+                "translation": "Seis, sete, oito, nove, dez.",
                 "chunks": [
-                    "この",
-                    "おちゃ",
-                    "は",
-                    "とても",
-                    "あつい",
-                    "です"
+                    "ろく",
+                    "なな",
+                    "はち",
+                    "きゅう",
+                    "じゅう"
                 ]
             }
         ],
         "stage4_dialog": [
             {
-                "scenario": "Situação 1: Você está em uma loja e o vendedor pergunta quantos itens você quer.",
-                "npcName": "Vendedor",
-                "npcMessage": "いくつ ですか？ (Quantos são?)",
+                "scenario": "Situação 1: Um colega pede que você leia os quatro primeiros dígitos de um número de telefone.",
+                "npcName": "Colega",
+                "npcMessage": "さいしょの よんけたは なんですか。 (Quais são os quatro primeiros dígitos?)",
                 "options": [
                     {
-                        "text": "よん、おねがいします。(Quatro, por favor.)",
-                        "feedback": "Perfeito! Você usou 'yon', a forma mais comum para o número 4.",
+                        "text": "いち、に、さん、よんです。 (São 1, 2, 3 e 4.)",
+                        "feedback": "A resposta lê os quatro dígitos na ordem solicitada.",
                         "isCorrect": true
                     },
                     {
-                        "text": "し、おねがいします。",
-                        "feedback": "Funciona, mas 'yon' é mais natural e evita o som de 'morte'.",
+                        "text": "いち、に、さんです。",
+                        "feedback": "A resposta informa somente três dígitos.",
                         "isCorrect": false
                     },
                     {
-                        "text": "じゅう、おねがいします。",
-                        "feedback": "Ops! Você pediu 10 em vez de 4.",
+                        "text": "よん、さん、に、いちです。",
+                        "feedback": "Os mesmos dígitos foram lidos na ordem inversa.",
                         "isCorrect": false
                     }
                 ]
@@ -3872,7 +3871,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual número é 'kyuu' em japonês?",
+                "question": "Qual número corresponde a きゅう (kyuu)?",
                 "options": [
                     "9",
                     "7",
@@ -3881,7 +3880,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'いち, に, さん' (Ichi, Ni, San)?",
+                "question": "Quais números correspondem a いち、に、さん?",
                 "options": [
                     "1, 2, 3",
                     "4, 5, 6",
@@ -3890,7 +3889,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'よん (し), ご, ろく' (Yon (Shi), Go, Roku)?",
+                "question": "Quais números correspondem a よん（し）、ご、ろく?",
                 "options": [
                     "1, 2, 3",
                     "4, 5, 6",
@@ -3899,7 +3898,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'なな (しち), はち, きゅう' (Nana (Shichi), Hachi, Kyuu)?",
+                "question": "Quais números correspondem a なな（しち）、はち、きゅう?",
                 "options": [
                     "4, 5, 6",
                     "1, 2, 3",
@@ -3908,7 +3907,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'じゅう' (Juu)?",
+                "question": "Qual número corresponde a じゅう (juu)?",
                 "options": [
                     "10",
                     "1, 2, 3",
@@ -8187,6 +8186,13 @@ CURSO_A1_DADOS[13].editorialReview = {
 };
 
 CURSO_A1_DADOS[14].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[15].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

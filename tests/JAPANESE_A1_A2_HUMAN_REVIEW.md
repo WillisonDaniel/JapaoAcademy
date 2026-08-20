@@ -20,7 +20,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_13 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | corrected |
 | a1_mod_14 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | corrected |
 | a1_mod_15 | stage1_context.audio | 誕生日はいつですか。 | Tanjoubi wa itsu desu ka. | Quando é seu aniversário? | corrected |
-| a1_mod_16 | stage1_context.audio | 一、二、三、四…… | Ichi, ni, san, yon... | Um, dois, três, quatro... | pending-human-review |
+| a1_mod_16 | stage1_context.audio | 一、二、三、四…… | Ichi, ni, san, yon... | Um, dois, três, quatro... | corrected |
 | a1_mod_17 | stage1_context.audio | これはいくらですか。 | Kore wa ikura desu ka. | Quanto custa isto? | pending-human-review |
 | a1_mod_18 | stage1_context.audio | これをください。 | Kore o kudasai. | Isto, por favor. | pending-human-review |
 | a1_mod_19 | stage1_context.audio | 水を飲みます。 | Mizu o nomimasu. | Bebo água. | pending-human-review |

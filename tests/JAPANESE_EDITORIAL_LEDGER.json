@@ -14878,7 +14878,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_16-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;module.metadata",
@@ -14886,16 +14886,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "9a69f02478480dbbcb6e05f9cd1d89af27685a4d2b1d6e65c048b5be32ecab8e",
-      "finalHash": "9a69f02478480dbbcb6e05f9cd1d89af27685a4d2b1d6e65c048b5be32ecab8e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d96a7b4133b69952a9d25b3dee54af89b3ef1bc1c61e3a7cfa734534f65fbf45",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 317
+        }
+      ],
+      "finalValue": {
+        "title": "Números de 1 a 10",
+        "sectionTitle": "Números, Dinheiro & Compras",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Reconheça e pronuncie os números de 1 a 10, observando que algumas leituras mudam conforme o contexto."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9a69f02478480dbbcb6e05f9cd1d89af27685a4d2b1d6e65c048b5be32ecab8e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage1_context",
@@ -14903,16 +14921,40 @@
         "kind": "context"
       },
       "beforeHash": "71322ec82620c17202496df22af2064fa237c3cead4079a91f83eea22f03171c",
-      "finalHash": "71322ec82620c17202496df22af2064fa237c3cead4079a91f83eea22f03171c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "043bc237c2515583c610db63f90aae74a58d50d395f77853ea8aa062053ac4aa",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 317
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Ichi, ni, san, yon...",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Reconheça e pronuncie os números de 1 a 10, observando que algumas leituras mudam conforme o contexto.",
+        "audio": {
+          "displayText": "一、二、三、四……",
+          "audioText": "一、二、三、四……",
+          "furigana": "",
+          "romaji": "Ichi, ni, san, yon...",
+          "translation": "Um, dois, três, quatro...",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "71322ec82620c17202496df22af2064fa237c3cead4079a91f83eea22f03171c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage2_drops[0]",
@@ -14920,16 +14962,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "0e9bfa9583bb1b119ac46710ffe532b309d95822a3e71ca4ca05b3415d89496e",
-      "finalHash": "0e9bfa9583bb1b119ac46710ffe532b309d95822a3e71ca4ca05b3415d89496e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "efa52b7a108fd99f3b5003d89a3f5747001689bf18614b4c9ef38eab9a92626d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "いち, に, さん",
+        "romaji": "ichi, ni, san",
+        "translation": "1, 2, 3",
+        "timeContext": "Leituras básicas dos números 1, 2 e 3 quando aparecem isolados."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0e9bfa9583bb1b119ac46710ffe532b309d95822a3e71ca4ca05b3415d89496e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage2_drops[1]",
@@ -14937,16 +14993,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "79682beae506a28a470529bf1e8430aa07fe3a49c97f49ba3990f2aebe791792",
-      "finalHash": "79682beae506a28a470529bf1e8430aa07fe3a49c97f49ba3990f2aebe791792",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "97f42ed3638571246d52255d0f7cc3c3b0656e51ba203670837c9664fddae0c1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "よん (し), ご, ろく",
+        "romaji": "yon (shi), go, roku",
+        "translation": "4, 5, 6",
+        "timeContext": "O número 4 pode ter as leituras よん ou し; a escolha depende da palavra ou do contador associado."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "79682beae506a28a470529bf1e8430aa07fe3a49c97f49ba3990f2aebe791792"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage2_drops[2]",
@@ -14954,16 +15024,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "7e4b58d4a04d391befeb1e80e00cae788a67aacf503a971577f54ac546bfe0e9",
-      "finalHash": "7e4b58d4a04d391befeb1e80e00cae788a67aacf503a971577f54ac546bfe0e9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9c7030931c9bb2f93bef053393b6e2d738ae57d4d17b80fd8dc8648daede053d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "なな (しち), はち, きゅう",
+        "romaji": "nana (shichi), hachi, kyuu",
+        "translation": "7, 8, 9",
+        "timeContext": "O número 7 pode ter as leituras なな ou しち; a forma adequada depende do contexto."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7e4b58d4a04d391befeb1e80e00cae788a67aacf503a971577f54ac546bfe0e9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage2_drops[3]",
@@ -14971,16 +15055,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "ef2e2a94bed58542d9c8e49b1ebcdd19d1c24b1b540f82d9f45d3aa11f651297",
-      "finalHash": "ef2e2a94bed58542d9c8e49b1ebcdd19d1c24b1b540f82d9f45d3aa11f651297",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "463bf59475b6a9a56f3fa13778a36382b696ac7901db5e8f7526c660bce4895b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "じゅう",
+        "romaji": "juu",
+        "translation": "10",
+        "timeContext": "じゅう é 10 e também participa da formação das dezenas, como にじゅう (20)."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ef2e2a94bed58542d9c8e49b1ebcdd19d1c24b1b540f82d9f45d3aa11f651297"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage2_drops[4]",
@@ -14988,16 +15086,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "53ad2d25a8eec03e2168defbd366f79445eba0d17b4abe0a84376a22d399f564",
-      "finalHash": "53ad2d25a8eec03e2168defbd366f79445eba0d17b4abe0a84376a22d399f564",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f5d8c374c4e05011e1fd9c2ea4f813c1282570ce403c776f9f8643a02606a0f7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Leituras que dependem do contexto",
+        "rule": "Os números 4 e 7 possuem mais de uma leitura. Não há uma única forma correta para todos os usos: horas, datas, idade e contadores podem selecionar leituras específicas.",
+        "formula": "4: よん / し　　7: なな / しち",
+        "example": "Na sequência básica, é possível praticar いち、に、さん、よん、ご、ろく、なな、はち、きゅう、じゅう."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "53ad2d25a8eec03e2168defbd366f79445eba0d17b4abe0a84376a22d399f564"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage3_practice[0]",
@@ -15005,16 +15117,40 @@
         "kind": "practice"
       },
       "beforeHash": "3d49c157ef16dae3b64803f49f3da4386a11843fa61159deb448b4c30e48efe1",
-      "finalHash": "3d49c157ef16dae3b64803f49f3da4386a11843fa61159deb448b4c30e48efe1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "0b05dc1b51b5c951d6bdbe204a20e3981e263bd4bd5382c23332acd83fcecdf9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "1. Qual destas é uma leitura do número 4?",
+        "options": [
+          {
+            "label": "よん (yon)",
+            "isCorrect": true
+          },
+          {
+            "label": "さん (san)",
+            "isCorrect": false
+          },
+          {
+            "label": "なな (nana)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3d49c157ef16dae3b64803f49f3da4386a11843fa61159deb448b4c30e48efe1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage3_practice[1]",
@@ -15022,16 +15158,40 @@
         "kind": "practice"
       },
       "beforeHash": "d63ad180ca700f5a9ebdafe3fde4ef698b9ed91d54ed8d2b595ee3087f8fec84",
-      "finalHash": "d63ad180ca700f5a9ebdafe3fde4ef698b9ed91d54ed8d2b595ee3087f8fec84",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f32f73dd845abafc600d6cee807dbd5c802acc66ad6637d811ce1281be0e8e0c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como se diz o número 8 em japonês?",
+        "options": [
+          {
+            "label": "はち (hachi)",
+            "isCorrect": true
+          },
+          {
+            "label": "ろく (roku)",
+            "isCorrect": false
+          },
+          {
+            "label": "じゅう (juu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d63ad180ca700f5a9ebdafe3fde4ef698b9ed91d54ed8d2b595ee3087f8fec84"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage3_5_sentenceBuilder[0]",
@@ -15039,16 +15199,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "b979d8e32b83780f814578f06e4feec34cca12cdc2bee4405d0b5eb1c5177c41",
-      "finalHash": "b979d8e32b83780f814578f06e4feec34cca12cdc2bee4405d0b5eb1c5177c41",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b1edda63ae1886320fe00a836f9cfa763ffc989509ba4a9d4669569ad15aa3d7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "いち に さん よん ご",
+        "translation": "Um, dois, três, quatro, cinco.",
+        "chunks": [
+          "いち",
+          "に",
+          "さん",
+          "よん",
+          "ご"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b979d8e32b83780f814578f06e4feec34cca12cdc2bee4405d0b5eb1c5177c41"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage3_5_sentenceBuilder[1]",
@@ -15056,16 +15234,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "6639e831a3ffc14d455e4eb81f0bd6aef6ae07062bf6ecde14ef770871bbb036",
-      "finalHash": "6639e831a3ffc14d455e4eb81f0bd6aef6ae07062bf6ecde14ef770871bbb036",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f40c764b12ba881bb823860b663b921cdbdf63724c2d093ea6c34fc2b4e1a3e1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "ろく なな はち きゅう じゅう",
+        "translation": "Seis, sete, oito, nove, dez.",
+        "chunks": [
+          "ろく",
+          "なな",
+          "はち",
+          "きゅう",
+          "じゅう"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6639e831a3ffc14d455e4eb81f0bd6aef6ae07062bf6ecde14ef770871bbb036"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage4_dialog[0]",
@@ -15073,16 +15269,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "5522f34abaadcff96f6f8148c311e7b9358493dbdfed63f31eda974d1de9a027",
-      "finalHash": "5522f34abaadcff96f6f8148c311e7b9358493dbdfed63f31eda974d1de9a027",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1545d0bc464653fc272d567e68c985b93707262d4258e4e8d773d6c201b4eda6",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 317
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Um colega pede que você leia os quatro primeiros dígitos de um número de telefone.",
+        "npcName": "Colega",
+        "npcMessage": "さいしょの よんけたは なんですか。 (Quais são os quatro primeiros dígitos?)",
+        "options": [
+          {
+            "text": "いち、に、さん、よんです。 (São 1, 2, 3 e 4.)",
+            "feedback": "A resposta lê os quatro dígitos na ordem solicitada.",
+            "isCorrect": true
+          },
+          {
+            "text": "いち、に、さんです。",
+            "feedback": "A resposta informa somente três dígitos.",
+            "isCorrect": false
+          },
+          {
+            "text": "よん、さん、に、いちです。",
+            "feedback": "Os mesmos dígitos foram lidos na ordem inversa.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5522f34abaadcff96f6f8148c311e7b9358493dbdfed63f31eda974d1de9a027"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage5_quiz[0]",
@@ -15090,16 +15319,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b66d6fc01c577a3d929db062c4e63a364be5f35a8c7564bad659bb5cffca0564",
-      "finalHash": "b66d6fc01c577a3d929db062c4e63a364be5f35a8c7564bad659bb5cffca0564",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "27574cc9154cc0fa85ed4d8a902f14d3650e753b0f34826a4c785b2b311b1569",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "Qual número corresponde a きゅう (kyuu)?",
+        "options": [
+          "9",
+          "7",
+          "4"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b66d6fc01c577a3d929db062c4e63a364be5f35a8c7564bad659bb5cffca0564"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage5_quiz[1]",
@@ -15107,16 +15352,32 @@
         "kind": "quiz"
       },
       "beforeHash": "abb79f6623054c9cb463e87a7d1bb95f5a7b4323c32d81e727e477ced36688cc",
-      "finalHash": "abb79f6623054c9cb463e87a7d1bb95f5a7b4323c32d81e727e477ced36688cc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "68bde19647d39f283be6452fb817945a0d8cde24ee8fff67d2fbb61038a074e5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "Quais números correspondem a いち、に、さん?",
+        "options": [
+          "1, 2, 3",
+          "4, 5, 6",
+          "7, 8, 9"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "abb79f6623054c9cb463e87a7d1bb95f5a7b4323c32d81e727e477ced36688cc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage5_quiz[2]",
@@ -15124,16 +15385,32 @@
         "kind": "quiz"
       },
       "beforeHash": "e8842853193d4bb93c20b4ef986fdaf2c33a9fc231ea7b23b087104909e70310",
-      "finalHash": "e8842853193d4bb93c20b4ef986fdaf2c33a9fc231ea7b23b087104909e70310",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "89c89b214aa54cbdb551ff59cd29919b174310b4dd90693e23d5b6254eb47035",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "Quais números correspondem a よん（し）、ご、ろく?",
+        "options": [
+          "1, 2, 3",
+          "4, 5, 6",
+          "7, 8, 9"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e8842853193d4bb93c20b4ef986fdaf2c33a9fc231ea7b23b087104909e70310"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage5_quiz[3]",
@@ -15141,16 +15418,32 @@
         "kind": "quiz"
       },
       "beforeHash": "aac6c028a3b43ec28510da9004c8fd41ade011dfa0ba14ab886ce05b81a08aea",
-      "finalHash": "aac6c028a3b43ec28510da9004c8fd41ade011dfa0ba14ab886ce05b81a08aea",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d70d334d3de571b2d8b47bc31e6b209afca6fe49e6ba7073302ce56561626979",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "Quais números correspondem a なな（しち）、はち、きゅう?",
+        "options": [
+          "4, 5, 6",
+          "1, 2, 3",
+          "7, 8, 9"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "aac6c028a3b43ec28510da9004c8fd41ade011dfa0ba14ab886ce05b81a08aea"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_16;stage5_quiz[4]",
@@ -15158,11 +15451,27 @@
         "kind": "quiz"
       },
       "beforeHash": "f874400e5527d799acefb87e4a0e3805c3d677edc7fd81dd38e3d2c7c6e7bfd6",
-      "finalHash": "f874400e5527d799acefb87e4a0e3805c3d677edc7fd81dd38e3d2c7c6e7bfd6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7984f3ca37dc8fa6f294cb7024412f94b64bf02468ab5c851584799075bcc578",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ],
+      "finalValue": {
+        "question": "Qual número corresponde a じゅう (juu)?",
+        "options": [
+          "10",
+          "1, 2, 3",
+          "4, 5, 6"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f874400e5527d799acefb87e4a0e3805c3d677edc7fd81dd38e3d2c7c6e7bfd6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-module-metadata",
@@ -358013,8 +358322,8 @@
         "locator": "items[212]",
         "resource": "dictionary"
       },
-      "beforeHash": "7b3590ad4d77b27cd2c841f8e252f891d8a926571e3814e427a626a2474e6bee",
-      "finalHash": "7b3590ad4d77b27cd2c841f8e252f891d8a926571e3814e427a626a2474e6bee",
+      "beforeHash": "b1b6d6573c484aca57b7a6bf450572e2d2523a1d28d7dc0b6b5f28234d5b6a41",
+      "finalHash": "b1b6d6573c484aca57b7a6bf450572e2d2523a1d28d7dc0b6b5f28234d5b6a41",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358030,8 +358339,8 @@
         "locator": "items[213]",
         "resource": "dictionary"
       },
-      "beforeHash": "321fb4a03309ef31a291f475317ee53196afc782a60486f689b2febb9c8d70dd",
-      "finalHash": "321fb4a03309ef31a291f475317ee53196afc782a60486f689b2febb9c8d70dd",
+      "beforeHash": "48e74a653068aa1642aab1424ee670c9087ef600272b5257067884858da44b95",
+      "finalHash": "48e74a653068aa1642aab1424ee670c9087ef600272b5257067884858da44b95",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358047,8 +358356,8 @@
         "locator": "items[214]",
         "resource": "dictionary"
       },
-      "beforeHash": "ada9463d2c3c860037752bb100d1fad72bd918618825db7131b619b6e9872d87",
-      "finalHash": "ada9463d2c3c860037752bb100d1fad72bd918618825db7131b619b6e9872d87",
+      "beforeHash": "a2308f8a40e9d21eb88058f1166b0fbb3dfe29fc3d75cbc0befa649967d62b7d",
+      "finalHash": "a2308f8a40e9d21eb88058f1166b0fbb3dfe29fc3d75cbc0befa649967d62b7d",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358064,8 +358373,8 @@
         "locator": "items[215]",
         "resource": "dictionary"
       },
-      "beforeHash": "49576d6647b148600115e94c47e3554303588f26fcdeeb61019ad6e21623b7a0",
-      "finalHash": "49576d6647b148600115e94c47e3554303588f26fcdeeb61019ad6e21623b7a0",
+      "beforeHash": "004dd2d5e55e69737f6ef32099709c720483bfbea4321d468926443894dabebe",
+      "finalHash": "004dd2d5e55e69737f6ef32099709c720483bfbea4321d468926443894dabebe",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358081,8 +358390,8 @@
         "locator": "items[216]",
         "resource": "dictionary"
       },
-      "beforeHash": "f90bfadd8ba4e8138effec81903f877ec2da04e065a1beb91f5d1558a2def93c",
-      "finalHash": "f90bfadd8ba4e8138effec81903f877ec2da04e065a1beb91f5d1558a2def93c",
+      "beforeHash": "09687693c74e70b95525cde5a000c63fe0cb8a5ebaa6f692c81df91cc0a9d7ac",
+      "finalHash": "09687693c74e70b95525cde5a000c63fe0cb8a5ebaa6f692c81df91cc0a9d7ac",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -427689,21 +427998,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_16-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[15]",
         "resource": "listening"
       },
-      "beforeHash": "3e0b14e8237503bdee9a926f08524ea6a2b035e898cc5a0a70486fee2abf76f4",
-      "finalHash": "3e0b14e8237503bdee9a926f08524ea6a2b035e898cc5a0a70486fee2abf76f4",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "918be7c345e5d8a708a6b51345501f6568fccb79c2f4c66ec960d845fc6f9820",
+      "finalHash": "918be7c345e5d8a708a6b51345501f6568fccb79c2f4c66ec960d845fc6f9820",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_16-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 317
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_17-context-0",
@@ -435447,8 +435765,8 @@
         "locator": "reference[15]",
         "resource": "grammar"
       },
-      "beforeHash": "0084c93afcf1058a7a9e4f952c1511d8aea885765d7ae2352a83e0c6907ed9a5",
-      "finalHash": "0084c93afcf1058a7a9e4f952c1511d8aea885765d7ae2352a83e0c6907ed9a5",
+      "beforeHash": "20d7c3dda0d0a10c153b7f76ac5312abea78713b19b3d0e90c50d4f9cf06729f",
+      "finalHash": "20d7c3dda0d0a10c153b7f76ac5312abea78713b19b3d0e90c50d4f9cf06729f",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -439618,40 +439936,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_16-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[30]",
         "resource": "writing"
       },
-      "beforeHash": "e9a534dfedc178b01000e035570d791df2bd9ec312c3b4fe8b18bc5c34e4f8cb",
-      "finalHash": "e9a534dfedc178b01000e035570d791df2bd9ec312c3b4fe8b18bc5c34e4f8cb",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "efe7147f516d8171ae0970af8f8639f4662753093f6740b5e396964539be703b",
+      "finalHash": "efe7147f516d8171ae0970af8f8639f4662753093f6740b5e396964539be703b",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_16-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_16-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[31]",
         "resource": "writing"
       },
-      "beforeHash": "511bd0ba5e36f756dbba65c1de0550d73c356807583713074e25c5d633517979",
-      "finalHash": "511bd0ba5e36f756dbba65c1de0550d73c356807583713074e25c5d633517979",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "2bd3f58be338f7148683ab34b0240e2b97526735e2c5c0d3ecd5d270fe14ad5e",
+      "finalHash": "2bd3f58be338f7148683ab34b0240e2b97526735e2c5c0d3ecd5d270fe14ad5e",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_16-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 48
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_17-1",

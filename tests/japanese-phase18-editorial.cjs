@@ -119,12 +119,12 @@ const stateCounts = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(stateCounts.corrected, 422, 'quantidade de correcoes rastreadas mudou');
+assert.equal(stateCounts.corrected, 439, 'quantidade de correcoes rastreadas mudou');
 assert.equal(stateCounts.approved, 54, 'quantidade de aprovacoes rastreadas mudou');
-assert.equal(stateCounts.unresolved, 1839, 'fila editorial aberta mudou sem atualizacao do relatorio');
+assert.equal(stateCounts.unresolved, 1822, 'fila editorial aberta mudou sem atualizacao do relatorio');
 
 for (const module of modules) {
-    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (['a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05', 'a1_mod_06', 'a1_mod_07', 'a1_mod_08', 'a1_mod_09', 'a1_mod_10', 'a1_mod_11', 'a1_mod_12', 'a1_mod_13', 'a1_mod_14', 'a1_mod_15'].includes(module.id) ? 'corrected' : 'pending-human-review');
+    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (['a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05', 'a1_mod_06', 'a1_mod_07', 'a1_mod_08', 'a1_mod_09', 'a1_mod_10', 'a1_mod_11', 'a1_mod_12', 'a1_mod_13', 'a1_mod_14', 'a1_mod_15', 'a1_mod_16'].includes(module.id) ? 'corrected' : 'pending-human-review');
     assert.equal(module.editorialReview.status, expectedStatus, `${module.id}: estado editorial do módulo divergiu dos seus alvos`);
     (module.stage3_practice || []).forEach((item, index) => {
         assert.equal((item.options || []).filter(option => option.isCorrect).length, 1, `${module.id}: pratica ${index} sem gabarito unico`);
