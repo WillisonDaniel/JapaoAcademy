@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-A fase foi iniciada pelo curso A1. O primeiro lote cobre integralmente o módulo `a1_mod_01`.
+Os 31 módulos A1 e os 30 módulos A2 foram auditados integralmente. O primeiro lote abaixo registra o início histórico da fase; a consolidação mais recente está na seção “Bloco A2-01 a A2-30”.
 
 | Resultado do lote inicial | Alvos |
 |---|---:|
@@ -356,3 +356,34 @@ O módulo de dias da semana agora usa os nomes e leituras completos, distingue o
 As decisões usam a tabela de dias e palavras temporais do *Genki I* (p. 127), com uma segunda família editorial (*Tobira*, p. 52) para confirmar um uso contextual de `土曜日`. Após a propagação, o ledger global contém 6.182 aprovações, 843 correções e 16.509 casos inconclusivos. Os vinte e dois módulos já auditados somam 433 alvos canônicos sustentados; neste lote, 20 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
+
+## Bloco A2-01 a A2-30
+
+| Resultado consolidado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 537 |
+| Corrigidos com evidência localizada | 162 |
+| Inconclusivos remanescentes no A2 | 0 |
+| Total auditado | 699 |
+
+Todos os módulos, de `a2_mod_01` a `a2_mod_30`, foram processados individualmente e receberam uma decisão para metadados, contexto, itens de aula, práticas, construção de frases, diálogos e quizzes. Os 29 módulos regulares preservam 22 alvos cada; a revisão final preserva 61, totalizando 699/699.
+
+### Principais decisões editoriais
+
+- `ぜんぜん` deixou de ser descrito como obrigatoriamente negativo em todo o japonês: o módulo delimita a combinação negativa básica e reconhece usos afirmativos coloquiais fora de seu foco.
+- A formação da forma て do grupo 2 passou a advertir que a terminação `います`, isoladamente, não identifica com segurança a classe verbal.
+- `〜ています` deixou de ser equiparado genericamente ao gerúndio português e agora distingue ação em andamento de outros valores dependentes do verbo e do contexto.
+- A sequência com forma て, a obrigação com `〜なければなりません`, a recusa indireta com `ちょっと`, a perspectiva de `あげる／くれる` e a intenção com `つもり` perderam formulações absolutas.
+- Os 60 exercícios de construção foram alinhados aos assuntos efetivamente ensinados em cada módulo.
+- Diálogos tiveram marcadores `[Seu Nome]`, erros de digitação e feedbacks promocionais removidos; as mensagens passaram a usar o texto japonês explícito já registrado no contrato editorial.
+- IDs, ordem, XP, desbloqueio, SRS, progresso, favoritos e persistência não foram alterados.
+
+### Fontes e rastreabilidade
+
+As decisões registram páginas localizadas do *Genki I* e do *Tobira*. Alvos de naturalidade possuem duas famílias editoriais independentes; os demais têm ao menos uma evidência localizada. O contrato `japanese-phase21b-a2-editorial.cjs` verifica hashes atuais, referências, estados e ausência de resíduos conhecidos.
+
+Após a propagação, o ledger global registra 6.846 aprovações, 1.191 correções e 15.487 casos inconclusivos. Na Fase 18, restam 803 pendências, todas fora de A1 e A2. Dez alvos A1 obsoletos, que já não correspondiam a itens existentes no dataset, foram removidos do ledger. Nos recursos derivados, a fila passou para 5.934 itens; os casos ainda abertos não foram promovidos por inferência.
+
+## Próximo lote automático
+
+O próximo bloco editorial previsto é B1-01 em diante, mantendo o mesmo ciclo de fonte localizada, decisão por alvo, regeneração de índices, contratos e commit isolado.

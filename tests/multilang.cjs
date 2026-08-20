@@ -883,7 +883,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             scripts: 27,
             // A trilha A1/A2 continua dentro do orçamento de 1,7 MB; a margem cobre
             // correções editoriais rastreáveis, sem adicionar dependências ao player.
-            maxBytes: 1720 * 1024,
+            maxBytes: 1740 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {

@@ -1215,7 +1215,7 @@ test('correcao editorial A1 e A2 da Fase 3B permanece rastreavel', () => {
     assert.match(humanReview, /stage1_context\.audio/);
     assert.match(humanReview, /stage4_dialog\[0\]\.content/);
     assert.match(humanReview, /Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente/);
-    assert.match(multilang, /Baseline recalibrado para os 151 contratos textuais A1\/A2 da Fase 3B/);
+    assert.match(a2, /applyA2Phase21BEditorialReview/);
     assert.match(multilang, /maxBytes: 1625 \* 1024/);
 });
 

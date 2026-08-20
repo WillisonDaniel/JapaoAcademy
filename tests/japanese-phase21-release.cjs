@@ -16,13 +16,13 @@ const publicPages = [
     'html/ja-JP/gramatica.html', 'html/ja-JP/escrita.html', 'html/ja-JP/jlpt.html'
 ];
 
-assert.equal(ledger.decisions.length, 23534, 'cobertura consolidada do ledger mudou');
+assert.equal(ledger.decisions.length, 23524, 'cobertura consolidada do ledger mudou');
 const states = ledger.decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { corrected: 976, unresolved: 16278, approved: 6280 });
-assert.equal(ledger.decisions.filter(item => item.phase === 18).length, 2315);
+assert.deepEqual(states, { corrected: 1191, unresolved: 15487, approved: 6846 });
+assert.equal(ledger.decisions.filter(item => item.phase === 18).length, 2305);
 assert.equal(ledger.decisions.filter(item => item.phase === 19).length, 14899);
 assert.equal(ledger.decisions.filter(item => item.phase === 20).length, 6161);
 assert.equal(catalog.sources.length + catalog.externalSources.length, 23);
@@ -58,4 +58,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     assert.ok(!fs.existsSync(path.join(__dirname, `JAPANESE_${name}_HUMAN_REVIEW.md`)));
 }
 
-console.log(`Release textual: ${ledger.decisions.length} alvos; ${states.approved + states.corrected} sustentados e ${states.unresolved} inconclusivos preservados após A1-31.`);
+console.log(`Release textual: ${ledger.decisions.length} alvos; ${states.approved + states.corrected} sustentados e ${states.unresolved} inconclusivos preservados após A2-30.`);

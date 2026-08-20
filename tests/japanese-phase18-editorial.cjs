@@ -19,7 +19,7 @@ const EXPECTED_KINDS = {
     'lesson-item': 451,
     practice: 563,
     'sentence-builder': 210,
-    dialogue: 286,
+    dialogue: 276,
     quiz: 595
 };
 
@@ -119,12 +119,12 @@ const stateCounts = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(stateCounts.corrected, 656, 'quantidade de correcoes rastreadas mudou');
-assert.equal(stateCounts.approved, 152, 'quantidade de aprovacoes rastreadas mudou');
-assert.equal(stateCounts.unresolved, 1507, 'fila editorial aberta mudou sem atualizacao do relatorio');
+assert.equal(stateCounts.corrected, 813, 'quantidade de correcoes rastreadas mudou');
+assert.equal(stateCounts.approved, 689, 'quantidade de aprovacoes rastreadas mudou');
+assert.equal(stateCounts.unresolved, 803, 'fila editorial aberta mudou sem atualizacao do relatorio');
 
 for (const module of modules) {
-    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (['a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05', 'a1_mod_06', 'a1_mod_07', 'a1_mod_08', 'a1_mod_09', 'a1_mod_10', 'a1_mod_11', 'a1_mod_12', 'a1_mod_13', 'a1_mod_14', 'a1_mod_15', 'a1_mod_16', 'a1_mod_17', 'a1_mod_18', 'a1_mod_19', 'a1_mod_20', 'a1_mod_21', 'a1_mod_22', 'a1_mod_23', 'a1_mod_24', 'a1_mod_25', 'a1_mod_26', 'a1_mod_27', 'a1_mod_28', 'a1_mod_29', 'a1_mod_30', 'a1_mod_31'].includes(module.id) ? 'corrected' : 'pending-human-review');
+    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (/^(?:a1|a2)_mod_/.test(module.id) ? 'corrected' : 'pending-human-review');
     assert.equal(module.editorialReview.status, expectedStatus, `${module.id}: estado editorial do módulo divergiu dos seus alvos`);
     (module.stage3_practice || []).forEach((item, index) => {
         assert.equal((item.options || []).filter(option => option.isCorrect).length, 1, `${module.id}: pratica ${index} sem gabarito unico`);
@@ -145,4 +145,4 @@ for (const forbidden of [
     assert.doesNotMatch(runtimeText, forbidden, `residuo editorial proibido: ${forbidden}`);
 }
 
-console.log(`Fase 18: ${targets.length} alvos classificados; ${stateCounts.corrected} corrigidos e ${stateCounts.unresolved} inconclusivos rastreados.`);
+console.log(`Fase 18: ${targets.length} alvos classificados; ${stateCounts.corrected} corrigidos e ${stateCounts.unresolved} inconclusivos rastreados após A2-30.`);

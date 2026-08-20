@@ -9102,3 +9102,84 @@ const A2_PHASE18_TEXT_REPLACEMENTS = new Map([
     });
 })(CURSO_A2_DADOS);
 CURSO_A2_DADOS.find(module => module.id === "a2_mod_30").stage5_quiz[4].options[0] = A2_PHASE18_TEXT_REPLACEMENTS.get("Com a conclusão do Nível A2, você já consegue comunicar sua rotina, passados, desejos, fazer pedidos com a Forma TE e planejar viagens com autonomia total!");
+
+(function applyA2Phase21BEditorialReview() {
+    const builders = {
+        a2_mod_01: [["まいあさ 7じ に おきます", "Acordo todas as manhãs às 7 horas."], ["ねる まえ に は を みがきます", "Escovo os dentes antes de dormir."]],
+        a2_mod_02: [["しゅうまつ は たいてい うち で やすみます", "Geralmente descanso em casa no fim de semana."], ["たまに ともだち と おちゃ を のみます", "De vez em quando tomo chá com amigos."]],
+        a2_mod_03: [["わたし の しゅみ は えいが です", "Meu hobby é cinema."], ["しゅうまつ に しゃしん を とります", "Tiro fotos no fim de semana."]],
+        a2_mod_04: [["この へや は おおきい です", "Este quarto é grande."], ["この りょうり は おいしくない です", "Esta comida não está gostosa."]],
+        a2_mod_05: [["ここ は しずかな まち です", "Aqui é uma cidade tranquila."], ["この みせ は にぎやか です", "Esta loja é movimentada."]],
+        a2_mod_06: [["きのう えいが を みました", "Ontem assisti a um filme."], ["せんしゅう べんきょう しませんでした", "Na semana passada não estudei."]],
+        a2_mod_07: [["きのう は あつかった です", "Ontem fez calor."], ["まち は しずか でした", "A cidade era tranquila."]],
+        a2_mod_08: [["ともだち と きょうと へ いきました", "Fui a Kyoto com um amigo."], ["しゅうまつ は うち に いました", "Fiquei em casa no fim de semana."]],
+        a2_mod_09: [["おんがく が すき です", "Gosto de música."], ["りょうり が じょうず です", "Sou bom em cozinhar."]],
+        a2_mod_10: [["でんしゃ は バス より はやい です", "O trem é mais rápido que o ônibus."], ["ねこ と いぬ と どちら が すき です か", "De qual você gosta mais, gatos ou cachorros?"]],
+        a2_mod_11: [["ほん を よんで ください", "Leia o livro, por favor."], ["まど を あけて ください", "Abra a janela, por favor."]],
+        a2_mod_12: [["ここ に なまえ を かいて ください", "Escreva seu nome aqui, por favor."], ["ちょっと まって ください", "Espere um pouco, por favor."]],
+        a2_mod_13: [["いま にほんご を べんきょう しています", "Estou estudando japonês agora."], ["ともだち と でんわ を しています", "Estou falando ao telefone com um amigo."]],
+        a2_mod_14: [["ここ で しゃしん を とっても いい です か", "Posso tirar uma foto aqui?"], ["ここ に すわっても いい です か", "Posso sentar aqui?"]],
+        a2_mod_15: [["ここ で たばこ を すってはいけません", "Não é permitido fumar aqui."], ["ここ に はいってはいけません", "Não é permitido entrar aqui."]],
+        a2_mod_16: [["あさ おきて は を みがきます", "Acordo de manhã e escovo os dentes."], ["えき に いって でんしゃ に のります", "Vou à estação e pego o trem."]],
+        a2_mod_17: [["きょうと えき で のりかえます", "Faço baldeação na Estação de Kyoto."], ["とうきょう まで でんしゃ で いきます", "Vou de trem até Tóquio."]],
+        a2_mod_18: [["いっぱく おねがいします", "Uma diária, por favor."], ["この へや を おねがいします", "Este quarto, por favor."]],
+        a2_mod_19: [["つぎ の かど を みぎ に まがります", "Vire à direita na próxima esquina."], ["えき は ぎんこう の となり です", "A estação fica ao lado do banco."]],
+        a2_mod_20: [["にほん へ いきたい です", "Quero ir ao Japão."], ["あたらしい パソコン が ほしい です", "Quero um computador novo."]],
+        a2_mod_21: [["きょう は はれて いい てんき です", "Hoje está ensolarado e o tempo está bom."], ["あした は あめ が ふる と おもいます", "Acho que amanhã vai chover."]],
+        a2_mod_22: [["あたま が いたい です", "Estou com dor de cabeça."], ["ねつ が あります", "Estou com febre."]],
+        a2_mod_23: [["くすり を のまなければ なりません", "Tenho que tomar o remédio."], ["あした は はやく おきなければ なりません", "Tenho que acordar cedo amanhã."]],
+        a2_mod_24: [["きょう は はやく ねた ほう が いい です", "É melhor dormir cedo hoje."], ["びょういん へ いった ほう が いい です", "É melhor ir ao hospital."]],
+        a2_mod_25: [["あめ です から うち に います", "Como está chovendo, fico em casa."], ["つかれました から はやく ねます", "Como estou cansado, vou dormir cedo."]],
+        a2_mod_26: [["いっしょ に おちゃ を のみません か", "Não quer tomar chá comigo?"], ["いっしょ に いきましょう", "Vamos juntos."]],
+        a2_mod_27: [["すみません きょう は ちょっと", "Desculpe, hoje está um pouco difícil..."], ["また こんど おねがいします", "Em outra ocasião, por favor."]],
+        a2_mod_28: [["ともだち に ほん を あげました", "Dei um livro a um amigo."], ["せんせい が じしょ を くれました", "O professor me deu um dicionário."]],
+        a2_mod_29: [["らいねん にほん に いく つもり です", "Pretendo ir ao Japão no ano que vem."], ["くるま は かわない つもり です", "Não pretendo comprar um carro."]],
+        a2_mod_30: [["まいにち にほんご を れんしゅう しました", "Pratiquei japonês todos os dias."], ["これからも にほんご を べんきょう します", "Continuarei estudando japonês."]]
+    };
+    const rules = {
+        a2_mod_02: ["Frequência e ぜんぜん", "No sentido básico de “nem um pouco”, ぜんぜん combina com uma forma negativa. No japonês contemporâneo também há usos afirmativos coloquiais, fora do foco deste módulo.", "ぜんぜん + forma negativa", "ぜんぜん テレビを見ません。 — Não assisto TV de jeito nenhum."],
+        a2_mod_11: ["Regra Básica do Grupo 2 e Forma TE", "Nos verbos do grupo 2 trabalhados aqui, retire ます e acrescente て. A terminação em います, por si só, não identifica com segurança o grupo verbal.", "食べます → 食べて／見ます → 見て", "食べます ➔ 食べて | 見ます ➔ 見て | 起きます ➔ 起きて"],
+        a2_mod_13: ["Usos iniciais de 〜ています", "A forma て + います pode descrever uma ação em andamento; outros usos, como estados resultantes e hábitos, dependem do verbo e do contexto.", "forma て + います", "今、日本語を勉強しています。 — Estou estudando japonês agora."],
+        a2_mod_16: ["Ações em sequência com a forma て", "A forma て conecta ações; a forma do predicado final normalmente situa a sequência no tempo, enquanto o contexto também contribui para a interpretação.", "Vて、Vて、Vます／ました", "起きて、朝ご飯を食べました。 — Acordei e tomei café da manhã."],
+        a2_mod_17: ["Perguntar onde fazer baldeação", "Use どこで乗り換えますか para perguntar em que lugar ocorre a baldeação.", "どこで 乗り換えますか", "どこで乗り換えますか。— Onde faço baldeação?"],
+        a2_mod_23: ["Expressar obrigação com 〜なければなりません", "A estrutura 〜なければなりません expressa que algo precisa ser feito. A força pragmática depende da situação.", "forma ない sem い + ければなりません", "薬を飲まなければなりません。 — Tenho que tomar o remédio."],
+        a2_mod_27: ["Recusar de modo indireto com ちょっと", "Em convites, ちょっと… pode sinalizar hesitação ou recusa indireta. A escolha depende da relação, do contexto e do grau de formalidade.", "すみません、[circunstância] は ちょっと…", "今日はちょっと…。 — Hoje está um pouco difícil..."],
+        a2_mod_28: ["Perspectiva em あげる e くれる", "あげる descreve uma dádiva do ponto de vista de quem dá; くれる descreve alguém dando ao falante ou a alguém de seu grupo. A escolha depende da direção e da perspectiva da dádiva.", "A は B に X を あげる／A が 私に X を くれる", "先生が私に本をくれました。 — O professor me deu um livro."],
+        a2_mod_29: ["Intenção com つもりです", "Use a forma simples não passada antes de つもりです: a forma de dicionário para intenção afirmativa e a forma ない para intenção negativa.", "Vる／Vない + つもりです", "日本へ行くつもりです。— Pretendo ir ao Japão."]
+    };
+    const normalizeDialogueText = value => {
+        if (typeof value !== "string") return value;
+        return value
+            .replace(/\[Seu Nome\](?:さん|-san|-sama)?[、,]?\s*/g, "")
+            .replace(/\bmaasa\b/gi, "maiasa")
+            .replace(/\bnomimase\s+n\b/gi, "nomimasen")
+            .replace(/\bsuportsusimasu\b/gi, "supootsu o shimasu")
+            .replace(/あたしい/g, "あたらしい");
+    };
+    const normalizeDialogue = value => {
+        if (Array.isArray(value)) return value.map(normalizeDialogue);
+        if (!value || typeof value !== "object") return normalizeDialogueText(value);
+        Object.keys(value).forEach(key => { value[key] = normalizeDialogue(value[key]); });
+        return value;
+    };
+    const makeBuilder = ([sentenceJp, translation]) => ({ sentenceJp, translation, chunks: sentenceJp.split(" ") });
+    CURSO_A2_DADOS.forEach(module => {
+        module.stage3_5_sentenceBuilder = builders[module.id].map(makeBuilder);
+        const rule = rules[module.id];
+        if (rule) {
+            const pill = module.stage2_drops.find(item => item.type === "grammar_pill");
+            Object.assign(pill, { title: rule[0], rule: rule[1], formula: rule[2], example: rule[3] });
+        }
+        if (module.id === "a2_mod_01") module.stage1_context.audioGuide = "Maiasa shichi-ji ni okimasu.";
+        module.stage4_dialog.forEach(dialogue => {
+            normalizeDialogue(dialogue);
+            if (dialogue.content && dialogue.content.displayText) dialogue.npcMessage = dialogue.content.displayText;
+            dialogue.options.forEach(option => {
+                option.feedback = option.isCorrect
+                    ? "A resposta corresponde ao contexto e à estrutura praticada."
+                    : "A resposta não corresponde à pergunta ou à estrutura praticada neste contexto.";
+            });
+        });
+        module.editorialReview = { status: "corrected", phase: "21B.2", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+    });
+})();
