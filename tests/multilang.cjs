@@ -882,8 +882,8 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             locale: 'ja-JP',
             scripts: 27,
             // Baseline recalibrado para os 151 contratos textuais A1/A2 da Fase 3B.
-            // Fase 18: 173 correções editoriais rastreadas nos quatro datasets, sem novas dependências.
-            maxBytes: 1690 * 1024,
+            // Fase 21B adiciona correções editoriais rastreáveis sem novas dependências.
+            maxBytes: 1692 * 1024,
             dataPattern: /database\/ja-JP\/data_curso_[a-b][1-2]\.js/
         },
         {

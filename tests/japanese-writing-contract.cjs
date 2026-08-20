@@ -14,7 +14,7 @@ test('índice preserva 208 modelos explícitos e duas exclusões sem inferência
 });
 
 test('cada modelo mantém frase, tradução, blocos, origem e status editorial reais', () => {
-    const data = indexData(); data.forEach(item => { assert.equal(item.framework, 'CEFR'); assert.ok(['A1', 'A2', 'B1', 'B2'].includes(item.level)); assert.ok(item.sentence && item.translation && item.chunks.length); assert.equal(item.route, 'curso.html'); assert.ok(['pending-human-review', 'not-flagged'].includes(item.editorialStatus)); assert.equal(item.chunks.join('').normalize('NFKC').replace(/\s+/gu, ''), item.sentence.normalize('NFKC').replace(/\s+/gu, '')); }); assert.equal(data.filter(item => item.editorialStatus === 'pending-human-review').length, 188);
+    const data = indexData(); data.forEach(item => { assert.equal(item.framework, 'CEFR'); assert.ok(['A1', 'A2', 'B1', 'B2'].includes(item.level)); assert.ok(item.sentence && item.translation && item.chunks.length); assert.equal(item.route, 'curso.html'); assert.ok(['pending-human-review', 'not-flagged'].includes(item.editorialStatus)); assert.equal(item.chunks.join('').normalize('NFKC').replace(/\s+/gu, ''), item.sentence.normalize('NFKC').replace(/\s+/gu, '')); }); assert.equal(data.filter(item => item.editorialStatus === 'pending-human-review').length, 186);
 });
 
 test('oficina oferece três modos e comparação mecânica transparente', () => {

@@ -8144,3 +8144,34 @@ CURSO_A1_DADOS[7].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o sentido de そうですか?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Module11() {
+    const module = CURSO_A1_DADOS[10];
+    module.title = "これ・それ・あれ e lugares";
+    Object.assign(module.stage1_context, { audioGuide: "Sore wa nan desu ka?", missionTitle: "Objetivo de hoje", missionDescription: "Pratique palavras que apontam para objetos e lugares, escolhendo a forma de acordo com a relação entre falante, ouvinte e referente." });
+    Object.assign(module.stage2_drops[0], { romaji: "Kore", translation: "isto; este aqui", timeContext: "Refere-se, em regra, a algo próximo de quem fala." });
+    Object.assign(module.stage2_drops[1], { romaji: "Sore", translation: "isso; esse aí", timeContext: "Refere-se, em regra, a algo próximo de quem ouve ou já saliente na conversa." });
+    Object.assign(module.stage2_drops[2], { romaji: "Are", translation: "aquilo; aquele lá", timeContext: "Refere-se a algo distante de falante e ouvinte." });
+    Object.assign(module.stage2_drops[3], { romaji: "Koko / soko / asoko", translation: "aqui / aí / ali", timeContext: "São palavras para lugares; a escolha também depende da situação de fala." });
+    Object.assign(module.stage2_drops[4], { title: "Palavras que apontam", rule: "これ・それ・あれ apontam para coisas. ここ・そこ・あそこ apontam para lugares. A proximidade é interpretada na situação de fala.", formula: "これ / それ / あれ / どれ; ここ / そこ / あそこ / どこ", example: "トイレはどこですか。 (Toire wa doko desu ka.) — Onde fica o banheiro?" });
+    module.stage3_practice[0].question = "1. Você segura uma caneta e pergunta “O que é isto?”. Qual palavra usa?";
+    module.stage3_practice[1].question = "2. Seu interlocutor segura um livro. Como pergunta “O que é isso?”";
+    module.stage3_practice[2].question = "3. Vocês veem um prédio distante. Como pergunta “O que é aquilo?”";
+    module.stage3_practice[3].question = "4. Para perguntar onde fica a estação, qual pergunta é adequada?";
+    module.stage3_practice[4].question = "5. Se a estação está no local onde você está, qual resposta usa ここ?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "これ は なん です か", translation: "O que é isto?", chunks: ["これ", "は", "なん", "です", "か"] },
+        { sentenceJp: "トイレ は どこ です か", translation: "Onde fica o banheiro?", chunks: ["トイレ", "は", "どこ", "です", "か"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: Em uma loja, o produto está perto do atendente.", npcName: "Atendente", npcMessage: "いらっしゃいませ。", options: [{ text: "すみません。それはなんですか。", feedback: "A resposta usa それ para o item perto do atendente.", isCorrect: true }, { text: "すみません。これはなんですか。", feedback: "Neste cenário, o item está perto do atendente, não de quem pergunta.", isCorrect: false }, { text: "すみません。あれはなんですか。", feedback: "あれ indicaria algo distante de ambas as pessoas.", isCorrect: false }] },
+        { scenario: "Situação 2: A estação que você indica fica distante de vocês.", npcName: "Turista", npcMessage: "しぶや駅はどこですか。", options: [{ text: "しぶや駅はあそこです。", feedback: "あそこ aponta para o lugar distante indicado.", isCorrect: true }, { text: "しぶや駅はここです。", feedback: "ここ seria usado se a estação estivesse no local atual.", isCorrect: false }, { text: "わたしは学生です。", feedback: "A resposta não informa um lugar.", isCorrect: false }] }
+    ];
+    module.stage5_quiz[0].question = "Qual é a diferença principal entre これ e ここ?";
+    module.stage5_quiz[0].options[1] = "これ aponta para uma coisa; ここ aponta para um lugar.";
+    module.stage5_quiz[1].question = "Qual é um sentido de これ?";
+    module.stage5_quiz[2].question = "Qual é um sentido de それ?";
+    module.stage5_quiz[3].question = "Qual é um sentido de あれ?";
+    module.stage5_quiz[4].question = "Qual é o sentido de ここ / そこ / あそこ?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

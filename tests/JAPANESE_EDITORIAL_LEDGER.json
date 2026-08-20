@@ -11496,7 +11496,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_11-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;module.metadata",
@@ -11504,16 +11504,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "c185a5e4ea329b898449f5542d3eb909078ce27708bc03a2cfdb280396fcf218",
-      "finalHash": "c185a5e4ea329b898449f5542d3eb909078ce27708bc03a2cfdb280396fcf218",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7fb105242f8f7901bed2c450dc4402f6928787a733226f274e8d31a388b42c31",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "title": "これ・それ・あれ e lugares",
+        "sectionTitle": "Localização, Lugares & Movimento",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique palavras que apontam para objetos e lugares, escolhendo a forma de acordo com a relação entre falante, ouvinte e referente."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c185a5e4ea329b898449f5542d3eb909078ce27708bc03a2cfdb280396fcf218"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage1_context",
@@ -11521,16 +11539,40 @@
         "kind": "context"
       },
       "beforeHash": "650b6c2913abbc14c90f7eeb55070bf096a81fe936b55c856e5159a79d76a486",
-      "finalHash": "650b6c2913abbc14c90f7eeb55070bf096a81fe936b55c856e5159a79d76a486",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2fe9424e3f653d98044793ddfaab3fb6f7bd4a9406a2c904dcbd4abffb86fa18",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Sore wa nan desu ka?",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique palavras que apontam para objetos e lugares, escolhendo a forma de acordo com a relação entre falante, ouvinte e referente.",
+        "audio": {
+          "displayText": "それは何ですか。",
+          "audioText": "それは何ですか。",
+          "furigana": "",
+          "romaji": "Sore wa nan desu ka.",
+          "translation": "O que é isso?",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "650b6c2913abbc14c90f7eeb55070bf096a81fe936b55c856e5159a79d76a486"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage2_drops[0]",
@@ -11538,16 +11580,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "84862360c91ff3f556cef96854f04b25116f8cd7836de75e4eb52f6e3a19fc7e",
-      "finalHash": "84862360c91ff3f556cef96854f04b25116f8cd7836de75e4eb52f6e3a19fc7e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "eadc4fafdd058f8ec79a9f4dd0fc61f40a47349b8c663802767da34f3c070913",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "これ",
+        "romaji": "Kore",
+        "translation": "isto; este aqui",
+        "timeContext": "Refere-se, em regra, a algo próximo de quem fala."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "84862360c91ff3f556cef96854f04b25116f8cd7836de75e4eb52f6e3a19fc7e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage2_drops[1]",
@@ -11555,16 +11611,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "2b323e700548aaae56504167d0b91d959c6d5cf15a722b78c6004095f03a372c",
-      "finalHash": "2b323e700548aaae56504167d0b91d959c6d5cf15a722b78c6004095f03a372c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "44856737e86abdf65587250dcd0dddeef2e3a5c67c924d86666d9e01e8445887",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "それ",
+        "romaji": "Sore",
+        "translation": "isso; esse aí",
+        "timeContext": "Refere-se, em regra, a algo próximo de quem ouve ou já saliente na conversa."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2b323e700548aaae56504167d0b91d959c6d5cf15a722b78c6004095f03a372c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage2_drops[2]",
@@ -11572,16 +11642,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "78a7973cb51e750bf68808dfab7658f87c6537568f423933257a106c764e5e1a",
-      "finalHash": "78a7973cb51e750bf68808dfab7658f87c6537568f423933257a106c764e5e1a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6db26e6c954c6cafff402c2c1ebf58896da9dd2bae64aa5ad6754fbda027afa9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "あれ",
+        "romaji": "Are",
+        "translation": "aquilo; aquele lá",
+        "timeContext": "Refere-se a algo distante de falante e ouvinte."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "78a7973cb51e750bf68808dfab7658f87c6537568f423933257a106c764e5e1a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage2_drops[3]",
@@ -11589,16 +11673,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "f9173b87c468ecce04f445a003f8cafc99bf3225bc6b3486982c9dfcd2160817",
-      "finalHash": "f9173b87c468ecce04f445a003f8cafc99bf3225bc6b3486982c9dfcd2160817",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ed836d56cff1800d996295cc8b2206fb8d97d8fe9fffb22c7d0d696e88c0f16f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "ここ / そこ / あそこ",
+        "romaji": "Koko / soko / asoko",
+        "translation": "aqui / aí / ali",
+        "timeContext": "São palavras para lugares; a escolha também depende da situação de fala."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f9173b87c468ecce04f445a003f8cafc99bf3225bc6b3486982c9dfcd2160817"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage2_drops[4]",
@@ -11606,16 +11704,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "758628810b4e17b43c405f4e19ca8aab20a2028a8e55f866ba006e2830bc20fe",
-      "finalHash": "758628810b4e17b43c405f4e19ca8aab20a2028a8e55f866ba006e2830bc20fe",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a1357b0cf08b1dfab2d7e7396c1c24236c17b67d2ec592397fa04bf657c86c58",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Palavras que apontam",
+        "rule": "これ・それ・あれ apontam para coisas. ここ・そこ・あそこ apontam para lugares. A proximidade é interpretada na situação de fala.",
+        "formula": "これ / それ / あれ / どれ; ここ / そこ / あそこ / どこ",
+        "example": "トイレはどこですか。 (Toire wa doko desu ka.) — Onde fica o banheiro?"
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "758628810b4e17b43c405f4e19ca8aab20a2028a8e55f866ba006e2830bc20fe"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_practice[0]",
@@ -11623,16 +11735,40 @@
         "kind": "practice"
       },
       "beforeHash": "8c04484217f1dd86474714edf2eba2b92a32a825815dfaf095bf84915945cb9c",
-      "finalHash": "8c04484217f1dd86474714edf2eba2b92a32a825815dfaf095bf84915945cb9c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "58478af62061220ab1c5ee9403947b7bea5eb9d658940948fab73dc4ea434094",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "1. Você segura uma caneta e pergunta “O que é isto?”. Qual palavra usa?",
+        "options": [
+          {
+            "label": "👉 これ (Kore)",
+            "isCorrect": true
+          },
+          {
+            "label": "👇 それ (Sore)",
+            "isCorrect": false
+          },
+          {
+            "label": "👆 あれ (Are)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8c04484217f1dd86474714edf2eba2b92a32a825815dfaf095bf84915945cb9c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_practice[1]",
@@ -11640,16 +11776,40 @@
         "kind": "practice"
       },
       "beforeHash": "5f62bb5baa588e5372384e3bd54a6c9cf24fa2fe3b475d0c3b032a492950e197",
-      "finalHash": "5f62bb5baa588e5372384e3bd54a6c9cf24fa2fe3b475d0c3b032a492950e197",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "bf9d3bc572a5881909792fd078c77a8145f7a1caf6ebaa96d5766e14ac138852",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "2. Seu interlocutor segura um livro. Como pergunta “O que é isso?”",
+        "options": [
+          {
+            "label": "これ は なん です か？ (Kore wa nan desu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "それ は なん です か？ (Sore wa nan desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "あれ は なん です か？ (Are wa nan desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5f62bb5baa588e5372384e3bd54a6c9cf24fa2fe3b475d0c3b032a492950e197"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_practice[2]",
@@ -11657,16 +11817,40 @@
         "kind": "practice"
       },
       "beforeHash": "69b189ed366d5c7644d127ab7a22bd1b736bcf35a43d9dfb3147b02ac7fbf3a5",
-      "finalHash": "69b189ed366d5c7644d127ab7a22bd1b736bcf35a43d9dfb3147b02ac7fbf3a5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fc090ee66b0765f6cf23d1785b40cc204b821a1adbdea188315a71829927bc00",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "3. Vocês veem um prédio distante. Como pergunta “O que é aquilo?”",
+        "options": [
+          {
+            "label": "👆 あれ は なん です か？ (Are wa nan desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "👉 これ は なん です か？ (Kore wa nan desu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "👇 それ は なん です か？ (Sore wa nan desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "69b189ed366d5c7644d127ab7a22bd1b736bcf35a43d9dfb3147b02ac7fbf3a5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_practice[3]",
@@ -11674,16 +11858,40 @@
         "kind": "practice"
       },
       "beforeHash": "cc2a9fedfca95334ad6db421b2e227c2d5eae2169f0daf268edc597aac9bcf8d",
-      "finalHash": "cc2a9fedfca95334ad6db421b2e227c2d5eae2169f0daf268edc597aac9bcf8d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3a05a51a135c0e4b86baa6b7d9fd5eed77c1a021f0c2a1003147b68ca6b92251",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "4. Para perguntar onde fica a estação, qual pergunta é adequada?",
+        "options": [
+          {
+            "label": "えき は ここ です か？ (Eki wa koko desu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "えき は どこ です か？ (Eki wa doko desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "えき は あそこ です か？ (Eki wa asoko desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cc2a9fedfca95334ad6db421b2e227c2d5eae2169f0daf268edc597aac9bcf8d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_practice[4]",
@@ -11691,16 +11899,40 @@
         "kind": "practice"
       },
       "beforeHash": "edfaa2012a5a05e894537e46d966394f9475d4e8b50141cc52bf96c8d6e1a108",
-      "finalHash": "edfaa2012a5a05e894537e46d966394f9475d4e8b50141cc52bf96c8d6e1a108",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f6a1b56ab944f74170e78a6874b7bacee07de90233f2b7a019c95313c107b7a6",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "5. Se a estação está no local onde você está, qual resposta usa ここ?",
+        "options": [
+          {
+            "label": "えき は そこ です (Eki wa soko desu)",
+            "isCorrect": false
+          },
+          {
+            "label": "えき は ここ です (Eki wa koko desu)",
+            "isCorrect": true
+          },
+          {
+            "label": "えき は あそこ です (Eki wa asoko desu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "edfaa2012a5a05e894537e46d966394f9475d4e8b50141cc52bf96c8d6e1a108"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_5_sentenceBuilder[0]",
@@ -11708,16 +11940,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "f9ae334b7461bb61db20bf75ba532e788f941553dab6612cb4ab872dc2f8d638",
-      "finalHash": "f9ae334b7461bb61db20bf75ba532e788f941553dab6612cb4ab872dc2f8d638",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "67da043558a702ba9242d7399571a7d3f6b849b8a903cf4e276c8aa2e9b5e604",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "これ は なん です か",
+        "translation": "O que é isto?",
+        "chunks": [
+          "これ",
+          "は",
+          "なん",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f9ae334b7461bb61db20bf75ba532e788f941553dab6612cb4ab872dc2f8d638"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage3_5_sentenceBuilder[1]",
@@ -11725,16 +11975,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "fd954ce91d37b8f5e41436caefb1c42ec354359f8574d95e78a23980aae335a1",
-      "finalHash": "fd954ce91d37b8f5e41436caefb1c42ec354359f8574d95e78a23980aae335a1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a16e7d100bcd21dbf97cdc176123bcb9666105fe8f7ee607dde80c9fbdde53bd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "トイレ は どこ です か",
+        "translation": "Onde fica o banheiro?",
+        "chunks": [
+          "トイレ",
+          "は",
+          "どこ",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fd954ce91d37b8f5e41436caefb1c42ec354359f8574d95e78a23980aae335a1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage4_dialog[0]",
@@ -11742,16 +12010,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "71ec0705fc72ae01b87f3215126502c09259bc0f02e353326e84982e3ec64170",
-      "finalHash": "71ec0705fc72ae01b87f3215126502c09259bc0f02e353326e84982e3ec64170",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1b54e1eab2c3aa29ec99a18cc36109940c5e45a6b630256e9ffe26c96c43b082",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Em uma loja, o produto está perto do atendente.",
+        "npcName": "Atendente",
+        "npcMessage": "いらっしゃいませ。",
+        "options": [
+          {
+            "text": "すみません。それはなんですか。",
+            "feedback": "A resposta usa それ para o item perto do atendente.",
+            "isCorrect": true
+          },
+          {
+            "text": "すみません。これはなんですか。",
+            "feedback": "Neste cenário, o item está perto do atendente, não de quem pergunta.",
+            "isCorrect": false
+          },
+          {
+            "text": "すみません。あれはなんですか。",
+            "feedback": "あれ indicaria algo distante de ambas as pessoas.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "71ec0705fc72ae01b87f3215126502c09259bc0f02e353326e84982e3ec64170"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage4_dialog[1]",
@@ -11759,16 +12060,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "7ef255c105798d25062ceb64bafda74739062278f4f000abc7842abc613c4b65",
-      "finalHash": "7ef255c105798d25062ceb64bafda74739062278f4f000abc7842abc613c4b65",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1a07634e28a9cf4bc67619a61a128bc295a6acaf95f3a9ae38de97691c7000d0",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: A estação que você indica fica distante de vocês.",
+        "npcName": "Turista",
+        "npcMessage": "しぶや駅はどこですか。",
+        "options": [
+          {
+            "text": "しぶや駅はあそこです。",
+            "feedback": "あそこ aponta para o lugar distante indicado.",
+            "isCorrect": true
+          },
+          {
+            "text": "しぶや駅はここです。",
+            "feedback": "ここ seria usado se a estação estivesse no local atual.",
+            "isCorrect": false
+          },
+          {
+            "text": "わたしは学生です。",
+            "feedback": "A resposta não informa um lugar.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7ef255c105798d25062ceb64bafda74739062278f4f000abc7842abc613c4b65"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage5_quiz[0]",
@@ -11776,16 +12110,32 @@
         "kind": "quiz"
       },
       "beforeHash": "fd78ff0ea45c56c1abad975185df29a1ecb3279e80a097ab18989b9cfdf86f50",
-      "finalHash": "fd78ff0ea45c56c1abad975185df29a1ecb3279e80a097ab18989b9cfdf86f50",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5c5fdf394becc57e6047758ae7fe3b9be1130b11f2ffc537a33ee8c6584d7b95",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é a diferença principal entre これ e ここ?",
+        "options": [
+          "Nenhuma, são iguais.",
+          "これ aponta para uma coisa; ここ aponta para um lugar.",
+          "Kore é formal, Koko é informal."
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fd78ff0ea45c56c1abad975185df29a1ecb3279e80a097ab18989b9cfdf86f50"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage5_quiz[1]",
@@ -11793,16 +12143,32 @@
         "kind": "quiz"
       },
       "beforeHash": "0335404ab3b1dacc49f03ca17e22d04bbc0433c022ed245a3353dbba5182f56b",
-      "finalHash": "0335404ab3b1dacc49f03ca17e22d04bbc0433c022ed245a3353dbba5182f56b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cf3e6ff896465a23b6d8aaed588a2ef39ef5544179fc45b864c302dc73cf0b7e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é um sentido de これ?",
+        "options": [
+          "Isto (Perto de quem fala)",
+          "Isso (Perto de quem ouve)",
+          "Aquilo (Longe de ambos)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0335404ab3b1dacc49f03ca17e22d04bbc0433c022ed245a3353dbba5182f56b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage5_quiz[2]",
@@ -11810,16 +12176,32 @@
         "kind": "quiz"
       },
       "beforeHash": "60b406ad56d52e0187ea1934bdf44fafbb36468ec2ddee6d7c61d2c69c4378c2",
-      "finalHash": "60b406ad56d52e0187ea1934bdf44fafbb36468ec2ddee6d7c61d2c69c4378c2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "71c99d1308e6980e0dde1cc113f5d984943a3fcf86a5dc2b3f09e216223e11d5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é um sentido de それ?",
+        "options": [
+          "Isto (Perto de quem fala)",
+          "Isso (Perto de quem ouve)",
+          "Aquilo (Longe de ambos)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "60b406ad56d52e0187ea1934bdf44fafbb36468ec2ddee6d7c61d2c69c4378c2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage5_quiz[3]",
@@ -11827,16 +12209,32 @@
         "kind": "quiz"
       },
       "beforeHash": "25f8ad183d72866c023d2cb2dbe23c3c85b0305e4216a553673f63866321096b",
-      "finalHash": "25f8ad183d72866c023d2cb2dbe23c3c85b0305e4216a553673f63866321096b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3f06e7b950343214e2b825a4a822ab4a4b538739780b27ef7b0cf85762767c2c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é um sentido de あれ?",
+        "options": [
+          "Isso (Perto de quem ouve)",
+          "Isto (Perto de quem fala)",
+          "Aquilo (Longe de ambos)"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "25f8ad183d72866c023d2cb2dbe23c3c85b0305e4216a553673f63866321096b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_11-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_11;stage5_quiz[4]",
@@ -11844,11 +12242,27 @@
         "kind": "quiz"
       },
       "beforeHash": "545f88b72265f7eab18e6460c0560bfd5dd762bb5d7877869d87d800b2bb3927",
-      "finalHash": "545f88b72265f7eab18e6460c0560bfd5dd762bb5d7877869d87d800b2bb3927",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9ac083341487f08d99a715ee7318203b6f3b1a8044316d1302727c77c3f8f8fb",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de ここ / そこ / あそこ?",
+        "options": [
+          "Aqui / Aí / Ali",
+          "Isto (Perto de quem fala)",
+          "Isso (Perto de quem ouve)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "545f88b72265f7eab18e6460c0560bfd5dd762bb5d7877869d87d800b2bb3927"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_12-module-metadata",
@@ -355862,8 +356276,8 @@
         "locator": "items[187]",
         "resource": "dictionary"
       },
-      "beforeHash": "d55c82772a0a081b32e1c831ae13366c241e152cf7b45ef7258ff2e984717c99",
-      "finalHash": "d55c82772a0a081b32e1c831ae13366c241e152cf7b45ef7258ff2e984717c99",
+      "beforeHash": "e4ec540b9f701d150d031ec8f6c5de567239a6419235e44e55b9e50ec9ef65be",
+      "finalHash": "e4ec540b9f701d150d031ec8f6c5de567239a6419235e44e55b9e50ec9ef65be",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -355879,8 +356293,8 @@
         "locator": "items[188]",
         "resource": "dictionary"
       },
-      "beforeHash": "0d49511f9448e8a1efe84e85d93352a937b45be190ee21c7966cf41592996c97",
-      "finalHash": "0d49511f9448e8a1efe84e85d93352a937b45be190ee21c7966cf41592996c97",
+      "beforeHash": "525475ca96d4b7e2a11429de756bb9f7794dfbca5aadf53aa950e34dc022f4f0",
+      "finalHash": "525475ca96d4b7e2a11429de756bb9f7794dfbca5aadf53aa950e34dc022f4f0",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -355896,8 +356310,8 @@
         "locator": "items[189]",
         "resource": "dictionary"
       },
-      "beforeHash": "ba94b41ca503d06823c541393dc9cea43ab9f3e531a799e01d6b568fb0b9d3ee",
-      "finalHash": "ba94b41ca503d06823c541393dc9cea43ab9f3e531a799e01d6b568fb0b9d3ee",
+      "beforeHash": "03b6b5d476166f3f0ad64f29a6a49ee57bedfd1b1adfb9531c13b210d653f46e",
+      "finalHash": "03b6b5d476166f3f0ad64f29a6a49ee57bedfd1b1adfb9531c13b210d653f46e",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -355913,8 +356327,8 @@
         "locator": "items[190]",
         "resource": "dictionary"
       },
-      "beforeHash": "16a5ee3be77c3e5ea800fa300310ba30ef9c22986e068b64feed55c58c61aa9c",
-      "finalHash": "16a5ee3be77c3e5ea800fa300310ba30ef9c22986e068b64feed55c58c61aa9c",
+      "beforeHash": "4fbb40ed95ee465281db51471e04d7cb52b1af09f96b196ce889b6d489cae520",
+      "finalHash": "4fbb40ed95ee465281db51471e04d7cb52b1af09f96b196ce889b6d489cae520",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -355930,8 +356344,8 @@
         "locator": "items[191]",
         "resource": "dictionary"
       },
-      "beforeHash": "befd90322821c1b9af79c0ea52d62059fe5ce70beae434440a4157ab12e3bd69",
-      "finalHash": "befd90322821c1b9af79c0ea52d62059fe5ce70beae434440a4157ab12e3bd69",
+      "beforeHash": "02423ee5dacdf73f88d8cc82b16f31c2db51a996bb110e47656c46032f9fa6df",
+      "finalHash": "02423ee5dacdf73f88d8cc82b16f31c2db51a996bb110e47656c46032f9fa6df",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -425823,21 +426237,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_11-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[10]",
         "resource": "listening"
       },
-      "beforeHash": "883ca51320b9bf7d328d1df81c19019bc4268dad00e75e40432ff33eb7394084",
-      "finalHash": "883ca51320b9bf7d328d1df81c19019bc4268dad00e75e40432ff33eb7394084",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "2d81574310b77f4b1150067c6f85038560d9364eb7f275e08c6472a06c0b0263",
+      "finalHash": "2d81574310b77f4b1150067c6f85038560d9364eb7f275e08c6472a06c0b0263",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_11-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_12-context-0",
@@ -433600,8 +434023,8 @@
         "locator": "reference[10]",
         "resource": "grammar"
       },
-      "beforeHash": "f89e353548e6f316734c8556d8b31b6454d4d74eafddb6fe660bea61ab7c0abf",
-      "finalHash": "f89e353548e6f316734c8556d8b31b6454d4d74eafddb6fe660bea61ab7c0abf",
+      "beforeHash": "29e351da5049e287e8a539a123a6ec7ad5682d65b61654509ca7e60581264bc9",
+      "finalHash": "29e351da5049e287e8a539a123a6ec7ad5682d65b61654509ca7e60581264bc9",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -437616,40 +438039,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_11-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[20]",
         "resource": "writing"
       },
-      "beforeHash": "f4923d36c6a8d61fb07ca635f6cfca8ff76b1f69040aef2de7bf5fc8688a3c69",
-      "finalHash": "f4923d36c6a8d61fb07ca635f6cfca8ff76b1f69040aef2de7bf5fc8688a3c69",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "3284a594e23e05ff696f6647fa7afa7c38e1d81d4c9371cfb2836934797d6430",
+      "finalHash": "3284a594e23e05ff696f6647fa7afa7c38e1d81d4c9371cfb2836934797d6430",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_11-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_11-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[21]",
         "resource": "writing"
       },
-      "beforeHash": "0049fd02a1cc4c846e124cd2d1cb6fb6c77dee2378a9c6dedc1572984dcc91cc",
-      "finalHash": "0049fd02a1cc4c846e124cd2d1cb6fb6c77dee2378a9c6dedc1572984dcc91cc",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "a5d62cee9738bb439533f7585762558f379e729e78d666922f70ccba907da9b0",
+      "finalHash": "a5d62cee9738bb439533f7585762558f379e729e78d666922f70ccba907da9b0",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_11-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 62
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_12-1",
