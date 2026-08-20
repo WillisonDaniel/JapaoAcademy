@@ -18,7 +18,7 @@ test('hub japonês agrupa todas as rotas em quatro habilidades', () => {
 });
 
 test('hub remove alegações públicas imprecisas e mantém transparência editorial', () => {
-    const hub = read('hub_japones.html'); assert.doesNotMatch(hub, /plataforma definitiva|para dominar|Minigame Oficial|Vocabulário de Proficiência/i); assert.match(hub, /não constituem listas oficiais/); assert.match(hub, /pendentes.*revisão editorial humana/i); assert.match(hub, /não substitui revisão editorial qualificada/);
+    const hub = read('hub_japones.html'); assert.doesNotMatch(hub, /plataforma definitiva|para dominar|Minigame Oficial|Vocabulário de Proficiência/i); assert.match(hub, /não constituem listas oficiais/); assert.match(hub, /pendentes.*decisão editorial baseada em evidências/i); assert.match(hub, /não substitui revisão editorial qualificada/);
 });
 
 test('classificação japonesa usa somente idioma, tipo e prefixos explícitos', () => {
@@ -46,7 +46,7 @@ test('cadeia documental das fases 0–13 está materializada', () => {
 });
 
 test('PWA final referencia hub e Dashboard sem ampliar o contrato de dados', () => {
-    const sw = read('sw.js'), packageJson = JSON.parse(read('package.json')); assert.match(sw, /idiomas-academy-v44/); assert.match(sw, /hub_japones\.html/); assert.match(sw, /meu-progresso\.html/); assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
+    const sw = read('sw.js'), packageJson = JSON.parse(read('package.json')); assert.match(sw, /idiomas-academy-v46/); assert.match(sw, /hub_japones\.html/); assert.match(sw, /meu-progresso\.html/); assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
 });
 
 let passed = 0;
