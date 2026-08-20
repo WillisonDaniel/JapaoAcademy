@@ -76,7 +76,7 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { unresolved: 6086, corrected: 74, approved: 1 }, 'estados derivados mudaram sem atualização do relatório');
+assert.deepEqual(states, { unresolved: 6084, corrected: 76, approved: 1 }, 'estados derivados mudaram sem atualização do relatório');
 
 for (const decision of decisions) {
     assert.ok(['approved', 'corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
@@ -100,12 +100,12 @@ const byResource = decisions.reduce((result, decision) => {
 assert.equal(byResource.listening.corrected, 56);
 assert.equal(byResource.grammar.corrected, 3);
 assert.equal(byResource.jlpt.corrected, 2);
-assert.equal(byResource.writing.corrected, 13);
+assert.equal(byResource.writing.corrected, 15);
 assert.equal(byResource.writing.approved, 1);
 assert.equal(byResource.dictionary.unresolved, 3271);
 assert.equal(byResource.minigame.unresolved, 1015);
 assert.equal(byResource.reading.unresolved, 91);
-assert.equal(byResource.writing.unresolved, 194);
+assert.equal(byResource.writing.unresolved, 192);
 
 for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     const neutral = path.join(__dirname, `JAPANESE_${name}_EDITORIAL_REVIEW.md`);
@@ -116,4 +116,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
         `${name}: nomenclatura humana permaneceu no relatório neutro`);
 }
 
-console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovado, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após A1-07.`);
+console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovado, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após A1-08.`);

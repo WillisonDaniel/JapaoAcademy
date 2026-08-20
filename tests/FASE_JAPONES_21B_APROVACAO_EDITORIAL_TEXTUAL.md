@@ -103,8 +103,34 @@ O módulo foi conferido em Genki I, p. 40–42, e Tobira, p. 50. A revisão subs
 
 Após a propagação, o ledger global contém 6.146 aprovações, 533 correções e 16.855 casos inconclusivos. Os seis módulos já auditados somam 128 alvos canônicos sustentados; neste lote, 22 alvos canônicos e dois projetos derivados deixaram a fila aberta.
 
+## Lote A1-07
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 9 |
+| Corrigidos e aprovados | 13 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 22 |
+
+O módulo foi confrontado com Genki I, p. 40–42, e Tobira, p. 50. A revisão delimitou o papel de `は` como marcador de tópico nesta apresentação introdutória, eliminou equivalências absolutas com o português, normalizou exemplos de profissão e reescreveu respostas e diálogos para registro e contexto mais naturais.
+
+Após a propagação, o ledger global contém 6.155 aprovações, 549 correções e 16.830 casos inconclusivos. Os sete módulos já auditados somam 150 alvos canônicos sustentados; neste lote, 22 alvos canônicos e três projeções derivadas deixaram a fila aberta.
+
+## Lote A1-08
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 10 |
+| Corrigidos e aprovados | 12 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 22 |
+
+O módulo foi confrontado com Genki I, p. 43, e Tobira, p. 50. A revisão passou a apresentar `か` como partícula de pergunta em construções polidas, separou com precisão `なん`, `だれ` e `どなた`, e substituiu a proibição absoluta de `あなた` por orientação de uso dependente de contexto. Diálogos, feedbacks e exercícios agora praticam as perguntas introduzidas no próprio módulo.
+
+Após a propagação, o ledger global contém 6.165 aprovações, 562 correções e 16.807 casos inconclusivos. Os oito módulos já auditados somam 172 alvos canônicos sustentados; neste lote, 22 alvos canônicos e uma projeção derivada deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-08 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-09 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

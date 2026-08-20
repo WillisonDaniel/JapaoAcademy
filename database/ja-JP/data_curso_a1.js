@@ -1875,37 +1875,37 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_08",
-        "title": "A Magia da Pergunta: O Marcador 'Ka' e 'Dare'",
+        "title": "Perguntas com か, だれ e なん",
         "section": 2,
         "sectionTitle": "Identidade & Profissões",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
-            "audioGuide": "Anata wa gakusei desu ka? Dare desu ka?",
+            "audioGuide": "Gakusei desu ka? Ano hito wa dare desu ka?",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Até agora você só afirmou coisas. Mas como fazer perguntas em japonês? Esqueça o ponto de interrogação (?): no Japão, usamos uma sílaba mágica no final da frase para transformar tudo em pergunta!"
+            "missionDescription": "Forme perguntas simples com か e escolha palavras interrogativas adequadas ao que deseja perguntar."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "～か",
                 "romaji": "~ka",
-                "translation": "Partícula de Pergunta (O ponto de interrogação falado)",
-                "timeContext": "Colocada sempre no final absoluto da frase para transformá-la em pergunta."
+                "translation": "Partícula de pergunta",
+                "timeContext": "Em perguntas polidas simples, か costuma vir ao fim da frase. Na escrita contemporânea, o ponto de interrogação também pode aparecer."
             },
             {
                 "type": "vocab",
                 "kanji": "あなた",
                 "romaji": "Anata",
                 "translation": "Você",
-                "timeContext": "Atenção: Evite usar 'Anata' se você já sabe o nome da pessoa! No Japão é muito mais educado perguntar usando [Nome] + san."
+                "timeContext": "Pode significar 'você', mas seu uso depende de relação e contexto. Muitas vezes o japonês omite o pronome ou usa o nome/título da pessoa."
             },
             {
                 "type": "vocab",
                 "kanji": "だれ / どなた",
                 "romaji": "Dare / Donata",
-                "translation": "Quem? / Quem? (Mais formal)",
-                "timeContext": "Usado para perguntar a identidade de alguém. 'Donata' é a versão super educada."
+                "translation": "Quem? / quem? (polido)",
+                "timeContext": "だれ pergunta quem é alguém; どなた é uma alternativa mais polida."
             },
             {
                 "type": "vocab",
@@ -1916,10 +1916,10 @@ const CURSO_A1_DADOS = [
             },
             {
                 "type": "grammar_pill",
-                "title": "Fórmula Mágica da Pergunta",
-                "rule": "Para transformar QUALQUER frase em pergunta no japonês, você não precisa mudar a ordem das palavras como no inglês ou português. Basta colar a partícula か (ka) no final!",
-                "formula": "Afirmação: [Seu Nome]さん です (É o(a) [Seu Nome]) ➔ Pergunta: [Seu Nome]さん です か (É o(a) [Seu Nome]?)",
-                "example": "がくせい です か？ (Gakusei desu ka? = Você é estudante?) | あの ひと は だれ です か？ (Ano hito wa dare desu ka? = Quem é aquela pessoa?)."
+                "title": "Perguntas básicas",
+                "rule": "Uma pergunta polida de sim/não pode ser formada ao acrescentar か ao enunciado. Perguntas também podem usar palavras como なん e だれ.",
+                "formula": "Afirmação: がくせいです。 → Pergunta: がくせいですか。",
+                "example": "あの ひと は だれ ですか。 = Quem é aquela pessoa? せんこう は なん ですか。 = Qual é sua área de estudo?"
             }
         ],
         "stage3_practice": [
@@ -1941,14 +1941,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. Por que os falantes nativos de japonês evitam usar a palavra 'Anata' (Você) em conversas diretas?",
+                "question": "2. Qual orientação é mais segura sobre あなた em uma conversa direta?",
                 "options": [
                     {
                         "label": "Porque 'Anata' é um palavrão proibido no Japão",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque soa distante e frio; é muito mais educado chamar a pessoa pelo Nome + sufixo (-san)",
+                        "label": "O contexto decide: muitas vezes o pronome é omitido ou se usa nome/título, mas あなた não é um palavrão",
                         "isCorrect": true
                     },
                     {
@@ -2011,23 +2011,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は まいにち べんきょう します",
-                "translation": "Eu estudo todos os dias.",
+                "sentenceJp": "がくせい です か",
+                "translation": "Você é estudante?",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "まいにち",
-                    "べんきょう",
-                    "します"
+                    "がくせい",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "あした は はたらきません",
-                "translation": "Amanhã não vou trabalhar.",
+                "sentenceJp": "あの ひと は だれ です か",
+                "translation": "Quem é aquela pessoa?",
                 "chunks": [
-                    "あした",
+                    "あの ひと",
                     "は",
-                    "はたらきません"
+                    "だれ",
+                    "です",
+                    "か"
                 ]
             }
         ],
@@ -2035,21 +2035,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está na recepção de um hotel em Quioto e o atendente quer confirmar sua identidade e profissão.",
                 "npcName": "Atendente do Hotel",
-                "npcMessage": "[Seu Nome]・さん です か？ かいしゃいん です か？ (Você é o(a) Sr(a). [Seu Nome]? É funcionário(a) de empresa?)",
+                "npcMessage": "ペドロさん です か？ かいしゃいん です か？ (Você é o Pedro? É funcionário de empresa?)",
                 "options": [
                     {
-                        "text": "はい、[Seu Nome] です。 がくせい です。",
-                        "feedback": "Mandou muito bem! 'Hai' (Sim), confirmou seu nome e respondeu sua verdadeira ocupação com clareza.",
+                        "text": "はい、ペドロ です。がくせい です。",
+                        "feedback": "Boa resposta: confirma a identidade e informa a ocupação.",
                         "isCorrect": true
                     },
                     {
                         "text": "いいえ、だれ です か？ (Não, quem é você?)",
-                        "feedback": "Incorreto e grosseiro com o recepcionista!",
+                        "feedback": "Não responde às perguntas de confirmação feitas pelo atendente.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、かいしゃいん です か？",
-                        "feedback": "Ops! Você respondeu devolvendo exatamente a mesma pergunta com 'ka' no final!",
+                        "feedback": "A resposta repete a pergunta em vez de confirmar ou corrigir a informação.",
                         "isCorrect": false
                     }
                 ]
@@ -2061,12 +2061,12 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "ケンジさん、この ひと は どなた です か？ (Kenji-san, quem é esta pessoa?)",
-                        "feedback": "Perfeito! Usou 'Donata desu ka' demonstrando alto nível de etiqueta e curiosidade educada.",
+                        "feedback": "Boa escolha: どなた é uma forma polida de perguntar quem é uma pessoa.",
                         "isCorrect": true
                     },
                     {
                         "text": "この ひと は なに です か？ (O que é esta pessoa?)",
-                        "feedback": "Gafe horrível! Perguntar 'O que é isso?' para um ser humano é extremamente ofensivo!",
+                        "feedback": "なに pergunta 'o que'; para identificar uma pessoa, use だれ ou どなた.",
                         "isCorrect": false
                     },
                     {
@@ -2079,7 +2079,7 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Em uma aula de conversação em Tóquio, o professor quer testar se você entendeu a partícula de pergunta.",
                 "npcName": "Professor Sato",
-                "npcMessage": "[Seu Nome]・さん は、 にほんじん です か？ ブラジルじん です か？",
+                "npcMessage": "ペドロさん は、にほんじん です か？ ブラジルじん です か？",
                 "options": [
                     {
                         "text": "はい！ にほんじん です か？",
@@ -2088,12 +2088,12 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "わたし は ブラジルじん です！",
-                        "feedback": "Excelente! Ouviu as duas opções da pergunta e afirmou com firmeza e precisão a sua nacionalidade brasileira!",
+                        "feedback": "Boa resposta: responde afirmativamente com a nacionalidade proposta.",
                         "isCorrect": true
                     },
                     {
                         "text": "いいえ、ブラジルご です。",
-                        "feedback": "Ops! Você disse 'Não, eu sou o idioma brasileiro'!",
+                        "feedback": "ブラジル語 se refere a um idioma, não à nacionalidade da pessoa.",
                         "isCorrect": false
                     }
                 ]
@@ -7981,6 +7981,13 @@ CURSO_A1_DADOS[5].editorialReview = {
 };
 
 CURSO_A1_DADOS[6].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[7].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

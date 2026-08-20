@@ -12,7 +12,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_05 | stage1_context.audio | 田中さん、こんにちは。先生、こんにちは。 | Tanaka-san, konnichiwa. Sensei, konnichiwa. | Olá, Sr. Tanaka. Olá, professor. | corrected |
 | a1_mod_06 | stage1_context.audio | 私はブラジル人です。日本語を勉強しています。 | Watashi wa Burajiru-jin desu. Nihongo o benkyou shite imasu. | Sou brasileiro e estudo japonês. | corrected |
 | a1_mod_07 | stage1_context.audio | 私は学生です。田中さんは会社員です。 | Watashi wa gakusei desu. Tanaka-san wa kaishain desu. | Sou estudante. O Sr. Tanaka é funcionário de uma empresa. | corrected |
-| a1_mod_08 | stage1_context.audio | あなたは学生ですか。あの人は誰ですか。 | Anata wa gakusei desu ka. Ano hito wa dare desu ka. | Você é estudante? Quem é aquela pessoa? | pending-human-review |
+| a1_mod_08 | stage1_context.audio | あなたは学生ですか。あの人は誰ですか。 | Anata wa gakusei desu ka. Ano hito wa dare desu ka. | Você é estudante? Quem é aquela pessoa? | corrected |
 | a1_mod_09 | stage1_context.audio | 一、二、三！二十五歳です。 | Ichi, ni, san! Nijuu-go sai desu. | Um, dois, três! Tenho 25 anos. | pending-human-review |
 | a1_mod_10 | stage1_context.audio | 「私もブラジル人です。」「そうですか！」 | Watashi mo Burajiru-jin desu. Sou desu ka! | Eu também sou brasileiro. É mesmo? | pending-human-review |
 | a1_mod_11 | stage1_context.audio | それは何ですか。 | Sore wa nan desu ka. | O que é isso? | pending-human-review |
