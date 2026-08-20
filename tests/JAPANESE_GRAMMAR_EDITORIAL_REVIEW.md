@@ -1,11 +1,11 @@
 # Inventário editorial — referência gramatical japonesa
 
-Gerado mecanicamente pelo índice da Fase 10. Snapshot: `f5764ccf455fb5bd`. Este documento não constitui aprovação editorial.
+Gerado mecanicamente pelo índice da Fase 10. Snapshot: `a52b5c3bf357cc7b`. Este documento não constitui aprovação editorial.
 
 - Referências do curso A1–B2: **105**.
 - Referências aplicadas das trilhas Kanji: **89**.
 - Transformações explícitas indexadas: **13**.
-- Referências com decisão editorial inconclusiva: **151**.
+- Referências com decisão editorial inconclusiva: **150**.
 
 ## Lacunas deliberadamente preservadas
 

@@ -4270,81 +4270,81 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_19",
-        "title": "Comida & Bebida I",
+        "title": "Comidas e bebidas básicas",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 95,
         "stage1_context": {
             "audioGuide": "Mizu o nomimasu.",
-            "missionTitle": "Objetivo de Hoje: O Cardápio Básico",
-            "missionDescription": "Aprenda o vocabulário essencial para sobreviver em qualquer restaurante ou mercado: água, chá, arroz, pão, carne e peixe."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Reconheça palavras básicas de comida e bebida e pratique como marcar o objeto de comer ou beber."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "みず (水)",
-                "romaji": "Mizu",
-                "translation": "Água",
+                "romaji": "mizu",
+                "translation": "água",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "おちゃ (お茶)",
-                "romaji": "Ocha",
-                "translation": "Chá (geralmente verde)",
-                "timeContext": ""
+                "romaji": "ocha",
+                "translation": "chá",
+                "timeContext": "Pode designar chá em geral; o contexto indica o tipo de chá."
             },
             {
                 "type": "vocab",
                 "kanji": "ごはん (ご飯)",
-                "romaji": "Gohan",
-                "translation": "Arroz cozido / Refeição",
-                "timeContext": ""
+                "romaji": "gohan",
+                "translation": "arroz cozido; refeição",
+                "timeContext": "O sentido pode ser “arroz cozido” ou “refeição”, conforme a frase."
             },
             {
                 "type": "vocab",
                 "kanji": "パン",
-                "romaji": "Pan",
-                "translation": "Pão",
-                "timeContext": "Vem do português, por isso é escrito em Katakana!"
+                "romaji": "pan",
+                "translation": "pão",
+                "timeContext": "Empréstimo histórico do português, normalmente escrito em katakana."
             },
             {
                 "type": "vocab",
                 "kanji": "にく (肉)",
-                "romaji": "Niku",
-                "translation": "Carne",
+                "romaji": "niku",
+                "translation": "carne",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "さかな (魚)",
-                "romaji": "Sakana",
-                "translation": "Peixe",
+                "romaji": "sakana",
+                "translation": "peixe",
                 "timeContext": ""
             },
             {
                 "type": "grammar_pill",
-                "title": "O Objeto da Ação: Partícula 'o' (を)",
-                "rule": "Quando você realiza uma ação (comer, beber, ver), o que sofre essa ação é marcado pela partícula 'o' (を).",
-                "formula": "[Comida/Bebida] を [Verbo]",
-                "example": "わたし は パン を たべます (Watashi wa pan o tabemasu) ➔ Eu como pão."
+                "title": "O objeto direto com を",
+                "rule": "Em frases como comer, beber ou ver, を marca o objeto direto: aquilo sobre o qual a ação recai.",
+                "formula": "[comida ou bebida] を [verbo]",
+                "example": "わたしは パンを たべます。 (Watashi wa pan o tabemasu.) — Eu como pão."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual a palavra para 'arroz cozido', que também pode significar 'refeição'?",
+                "question": "1. Qual palavra pode significar “arroz cozido” ou “refeição”, conforme o contexto?",
                 "options": [
                     {
-                        "label": "ごはん (Gohan)",
+                        "label": "ごはん (gohan)",
                         "isCorrect": true
                     },
                     {
-                        "label": "みず (Mizu)",
+                        "label": "みず (mizu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "にく (Niku)",
+                        "label": "にく (niku)",
                         "isCorrect": false
                     }
                 ]
@@ -4353,15 +4353,15 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como se diz 'Eu bebo chá'?",
                 "options": [
                     {
-                        "label": "おちゃ を のみます (Ocha o nomimasu)",
+                        "label": "おちゃを のみます。 (Ocha o nomimasu.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "おちゃ が あります (Ocha ga arimasu)",
+                        "label": "おちゃが あります。",
                         "isCorrect": false
                     },
                     {
-                        "label": "おちゃ です (Ocha desu)",
+                        "label": "おちゃです。",
                         "isCorrect": false
                     }
                 ]
@@ -4369,26 +4369,21 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は にほんの たべもの が すき です",
-                "translation": "Eu gosto de comida japonesa.",
+                "sentenceJp": "みず を のみます",
+                "translation": "Bebo água.",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "にほんの",
-                    "たべもの",
-                    "が",
-                    "すき",
-                    "です"
+                    "みず",
+                    "を",
+                    "のみます"
                 ]
             },
             {
-                "sentenceJp": "スポーツ が あまり すきではありません",
-                "translation": "Não gosto muito de esportes.",
+                "sentenceJp": "パン を たべます",
+                "translation": "Como pão.",
                 "chunks": [
-                    "スポーツ",
-                    "が",
-                    "あまり",
-                    "すきではありません"
+                    "パン",
+                    "を",
+                    "たべます"
                 ]
             }
         ],
@@ -4396,21 +4391,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Em um restaurante, o garçom pergunta o que você quer beber.",
                 "npcName": "Garçom",
-                "npcMessage": "おのみもの は？ (E a bebida?)",
+                "npcMessage": "お飲み物は 何にしますか。 (O que vai querer de bebida?)",
                 "options": [
                     {
-                        "text": "みず を おねがいします。(Água, por favor.)",
-                        "feedback": "Perfeito! Pedido claro e educado.",
+                        "text": "みずを おねがいします。 (Água, por favor.)",
+                        "feedback": "A resposta pede uma bebida de maneira adequada ao contexto.",
                         "isCorrect": true
                     },
                     {
                         "text": "さかな です。",
-                        "feedback": "Incorreto. Ele perguntou sobre a bebida, e você respondeu 'É peixe'.",
+                        "feedback": "A resposta nomeia um alimento, não uma bebida.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、そうです。",
-                        "feedback": "Incorreto. 'Sim, é isso' não responde à pergunta.",
+                        "feedback": "A resposta não especifica qual bebida você quer.",
                         "isCorrect": false
                     }
                 ]
@@ -4418,7 +4413,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a palavra para 'carne' em japonês?",
+                "question": "Qual palavra significa “carne”?",
                 "options": [
                     "Niku",
                     "Sakana",
@@ -4427,7 +4422,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'みず (水)' (Mizu)?",
+                "question": "Qual é o sentido de 水（みず）?",
                 "options": [
                     "Água",
                     "Chá (geralmente verde)",
@@ -4436,7 +4431,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'おちゃ (お茶)' (Ocha)?",
+                "question": "Qual é o sentido de お茶（おちゃ）?",
                 "options": [
                     "Água",
                     "Chá (geralmente verde)",
@@ -4445,7 +4440,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'ごはん (ご飯)' (Gohan)?",
+                "question": "Qual é o sentido de ご飯（ごはん）?",
                 "options": [
                     "Chá (geralmente verde)",
                     "Água",
@@ -4454,7 +4449,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'パン' (Pan)?",
+                "question": "Qual é o sentido de パン?",
                 "options": [
                     "Pão",
                     "Água",
@@ -8200,6 +8195,13 @@ CURSO_A1_DADOS[16].editorialReview = {
 };
 
 CURSO_A1_DADOS[17].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[18].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
