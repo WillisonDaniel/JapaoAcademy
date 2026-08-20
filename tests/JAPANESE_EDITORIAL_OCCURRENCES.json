@@ -5,7 +5,7 @@
     "course": {
       "A1": {
         "modules": 31,
-        "npcMessages": 64,
+        "npcMessages": 54,
         "audioGuides": 31
       },
       "A2": {
