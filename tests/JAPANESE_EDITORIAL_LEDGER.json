@@ -3362,7 +3362,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_01-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;module.metadata",
@@ -3370,16 +3370,38 @@
         "kind": "module-metadata"
       },
       "beforeHash": "0572310f67e290fe8a1c394d756d115832b7d342f5cbfff0938d9de5bbce43ab",
-      "finalHash": "0572310f67e290fe8a1c394d756d115832b7d342f5cbfff0938d9de5bbce43ab",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f157800b953c92b564946c2701cea06cd200f520eea4b37528b36ba1e6d82870",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "title": "Saudações Básicas & A Magia do 'Desu'",
+        "sectionTitle": "Primeiros Passos & Etiqueta",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Vamos aprender saudações usadas em diferentes momentos do dia e uma estrutura nominal polida para se apresentar."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0572310f67e290fe8a1c394d756d115832b7d342f5cbfff0938d9de5bbce43ab"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage1_context",
@@ -3387,16 +3409,44 @@
         "kind": "context"
       },
       "beforeHash": "cdba6f2d03f5435da8395a5b6f2a3b95679f7590040418eb17f2f2a34669c3e1",
-      "finalHash": "cdba6f2d03f5435da8395a5b6f2a3b95679f7590040418eb17f2f2a34669c3e1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "dd6a4d760e5914a655d4031cdd04637ad0a35a2045a6c57131e39e8c84e4875e",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Ohayou gozaimasu!",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Vamos aprender saudações usadas em diferentes momentos do dia e uma estrutura nominal polida para se apresentar.",
+        "audio": {
+          "displayText": "おはようございます。",
+          "audioText": "おはようございます。",
+          "furigana": "",
+          "romaji": "Ohayou gozaimasu.",
+          "translation": "Bom dia.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cdba6f2d03f5435da8395a5b6f2a3b95679f7590040418eb17f2f2a34669c3e1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage2_drops[0]",
@@ -3404,16 +3454,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "35cc5d31ea73f5b419763cd4ef167144e1815858ec4677a7ccf8fc39db846b18",
-      "finalHash": "35cc5d31ea73f5b419763cd4ef167144e1815858ec4677a7ccf8fc39db846b18",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f77e5a2aa74f6a808071d32b5bcfe016e51cd558c6be73ab5fc70e21b4b18dc5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "おはようございます",
+        "romaji": "Ohayou gozaimasu",
+        "translation": "Bom dia (Formal)",
+        "timeContext": "Saudação de bom-dia; ございます torna a expressão mais polida."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "35cc5d31ea73f5b419763cd4ef167144e1815858ec4677a7ccf8fc39db846b18"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage2_drops[1]",
@@ -3421,16 +3485,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "5d792c96d4f5fce18364b4491083e11ab9f29900e0887d1af71b46a31694a794",
-      "finalHash": "5d792c96d4f5fce18364b4491083e11ab9f29900e0887d1af71b46a31694a794",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cdd0db57a7aa92066b4427d9b0b417f6fc1699ffe53aa5f246b15f0e87c140a0",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "こんにちは",
+        "romaji": "Konnichiwa",
+        "translation": "Boa tarde / Olá",
+        "timeContext": "Saudação usada ao encontrar alguém durante o dia."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5d792c96d4f5fce18364b4491083e11ab9f29900e0887d1af71b46a31694a794"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage2_drops[2]",
@@ -3438,16 +3516,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "6cb0a47f706a139915816a00c612da5919bc35d4c00dfee43b02b8aad9be50ad",
-      "finalHash": "6cb0a47f706a139915816a00c612da5919bc35d4c00dfee43b02b8aad9be50ad",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "45ec915b19989695c4782c0b4bb065023180ace56adfefd67084cac73f020ef6",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "こんばんは",
+        "romaji": "Konbanwa",
+        "translation": "Boa noite",
+        "timeContext": "Saudação usada ao encontrar alguém à noite; antes de dormir, usa-se おやすみなさい."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6cb0a47f706a139915816a00c612da5919bc35d4c00dfee43b02b8aad9be50ad"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage2_drops[3]",
@@ -3455,16 +3547,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "a00fc0541fc678fc7fad063c28db95a1912f71b5d11d91c5bdc08c8f982ce950",
-      "finalHash": "a00fc0541fc678fc7fad063c28db95a1912f71b5d11d91c5bdc08c8f982ce950",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fe81262bebc349c17e1138e8cd75160cc758c0eeb95df8e90cb5892fad395c5b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "O Camaleão 'です (Desu)'",
+        "rule": "No padrão nominal X は Y です, です marca o predicado como polido. Conforme o contexto, a tradução pode usar formas de 'ser', mas です não corresponde sozinho a todos os usos de 'ser' ou 'estar'.",
+        "formula": "[ Tópico ] は [ Nome ou identificação ] です",
+        "example": "わたしはカルロスです。 ➔ Eu sou o Carlos. Na fala corrente, a vogal final de です pode ser pouco audível."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a00fc0541fc678fc7fad063c28db95a1912f71b5d11d91c5bdc08c8f982ce950"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_practice[0]",
@@ -3472,16 +3578,40 @@
         "kind": "practice"
       },
       "beforeHash": "fd0eeedddc4cb24d2fde190d2a7dfd7c47385da1ae48c2a78060cdad8dd17394",
-      "finalHash": "fd0eeedddc4cb24d2fde190d2a7dfd7c47385da1ae48c2a78060cdad8dd17394",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f7b36d667bb0b40724ad4d34ca59c1a0fe3dee0b2d41ecbe99257e0e49117898",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "1. Selecione o momento correto do dia para usar a saudação: 'Konnichiwa'",
+        "options": [
+          {
+            "label": "🌅 Manhã bem cedo",
+            "isCorrect": false
+          },
+          {
+            "label": "☀️ Durante o dia",
+            "isCorrect": true
+          },
+          {
+            "label": "🌙 Noite (Ao chegar)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fd0eeedddc4cb24d2fde190d2a7dfd7c47385da1ae48c2a78060cdad8dd17394"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_practice[1]",
@@ -3490,15 +3620,39 @@
       },
       "beforeHash": "d4881011df509327f330afe9efc008a3ce661020854f032dc2021673e3180484",
       "finalHash": "d4881011df509327f330afe9efc008a3ce661020854f032dc2021673e3180484",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como você deve cumprimentar o recepcionista do seu hotel às 07h30 da manhã?",
+        "options": [
+          {
+            "label": "☀️ こんにちは (Konnichiwa)",
+            "isCorrect": false
+          },
+          {
+            "label": "🌅 おはようございます (Ohayou gozaimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "🌙 こんばんは (Konbanwa)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d4881011df509327f330afe9efc008a3ce661020854f032dc2021673e3180484"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_practice[2]",
@@ -3506,16 +3660,40 @@
         "kind": "practice"
       },
       "beforeHash": "ba5bd76b5a9325f8c59ee90e440829c9f2f66709e4f381c2453114d5b8178225",
-      "finalHash": "ba5bd76b5a9325f8c59ee90e440829c9f2f66709e4f381c2453114d5b8178225",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "15e5ad1710daa590bdc7f6e8e75c4a6ac8eaeca1162c9de9ff3368d66f4f07ce",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 43
+        }
+      ],
+      "finalValue": {
+        "question": "3. No padrão nominal afirmativo X は Y です, onde aparece です?",
+        "options": [
+          {
+            "label": "Sempre no início absoluto da frase",
+            "isCorrect": false
+          },
+          {
+            "label": "No meio, entre o nome e a saudação",
+            "isCorrect": false
+          },
+          {
+            "label": "Depois do nome ou identificação que forma o predicado",
+            "isCorrect": true
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ba5bd76b5a9325f8c59ee90e440829c9f2f66709e4f381c2453114d5b8178225"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_practice[3]",
@@ -3524,15 +3702,39 @@
       },
       "beforeHash": "bb874e7c47e026a3e42bcd5dab6f6e153b6aeb1038f54ca6f76ba9aa6e39a8ac",
       "finalHash": "bb874e7c47e026a3e42bcd5dab6f6e153b6aeb1038f54ca6f76ba9aa6e39a8ac",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "4. Você chega a um restaurante tradicional em Quioto às 20h30. O que você diz ao garçom?",
+        "options": [
+          {
+            "label": "🌙 こんばんは (Konbanwa)",
+            "isCorrect": true
+          },
+          {
+            "label": "🌅 おはようございます (Ohayou gozaimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "☀️ こんにちは (Konnichiwa)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bb874e7c47e026a3e42bcd5dab6f6e153b6aeb1038f54ca6f76ba9aa6e39a8ac"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_practice[4]",
@@ -3540,16 +3742,40 @@
         "kind": "practice"
       },
       "beforeHash": "48947d1fb5208bdd150e5c9989c6ac46a99af326c21843891f72932c34b45cb4",
-      "finalHash": "48947d1fb5208bdd150e5c9989c6ac46a99af326c21843891f72932c34b45cb4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e9c8b5e7cbb5cd82d50240f702f1a98638953c439560ed763d840560eec47caa",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        }
+      ],
+      "finalValue": {
+        "question": "5. Qual opção segue o padrão nominal polido X は Y です para dizer 'Sou a Ana'?",
+        "options": [
+          {
+            "label": "わたしはアナです (Watashi wa Ana desu)",
+            "isCorrect": true
+          },
+          {
+            "label": "です Ana (Desu Ana)",
+            "isCorrect": false
+          },
+          {
+            "label": "Ana おはよう (Ana ohayou)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "48947d1fb5208bdd150e5c9989c6ac46a99af326c21843891f72932c34b45cb4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_5_sentenceBuilder[0]",
@@ -3558,15 +3784,29 @@
       },
       "beforeHash": "8a882f76420646bebeb58c0ee80397948af6b4914d08b9b2251b8c753845c079",
       "finalHash": "8a882f76420646bebeb58c0ee80397948af6b4914d08b9b2251b8c753845c079",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "おはようございます",
+        "translation": "Bom dia!",
+        "chunks": [
+          "おはようございます"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8a882f76420646bebeb58c0ee80397948af6b4914d08b9b2251b8c753845c079"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage3_5_sentenceBuilder[1]",
@@ -3574,16 +3814,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "e3085bdfec8ae242f8a111a95afbc26b8d30d9477aedc822d00a16c973f7d864",
-      "finalHash": "e3085bdfec8ae242f8a111a95afbc26b8d30d9477aedc822d00a16c973f7d864",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "29d65926ad30abd70629ae8f1d4dd05e0939940e027df43b148f5e3110070d70",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "わたし は カルロス です",
+        "translation": "Eu sou o Carlos.",
+        "chunks": [
+          "わたし",
+          "は",
+          "カルロス",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e3085bdfec8ae242f8a111a95afbc26b8d30d9477aedc822d00a16c973f7d864"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage4_dialog[0]",
@@ -3591,16 +3848,53 @@
         "kind": "dialogue"
       },
       "beforeHash": "74017626c94011d75f0f5fddaad66bf9e856648b2fda693cca6070a66451d26b",
-      "finalHash": "74017626c94011d75f0f5fddaad66bf9e856648b2fda693cca6070a66451d26b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "26a33edf82fc48ef16b3c02dff44aa26aa5379fadb9237dd5117daa03fd36e4d",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você está no elevador do hotel em Tóquio durante a tarde e outro hóspede inicia uma conversa.",
+        "npcName": "Kenji",
+        "npcMessage": "こんにちは。ケンジです。 (Konnichiwa. Kenji desu.)",
+        "options": [
+          {
+            "text": "おはようございます！",
+            "feedback": "Esta não é a saudação diurna trabalhada nesta situação.",
+            "isCorrect": false
+          },
+          {
+            "text": "こんにちは。[Seu Nome]です。",
+            "feedback": "Correto: você usou a saudação diurna e o padrão nominal polido do módulo.",
+            "isCorrect": true
+          },
+          {
+            "text": "ケンジ です！",
+            "feedback": "Incorreto: Você acabou de dizer que se chama Kenji!",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "74017626c94011d75f0f5fddaad66bf9e856648b2fda693cca6070a66451d26b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage4_dialog[1]",
@@ -3608,16 +3902,53 @@
         "kind": "dialogue"
       },
       "beforeHash": "10074de544999c0c15767427a3d5f469da3ab180077119db729c4e5b096466d8",
-      "finalHash": "10074de544999c0c15767427a3d5f469da3ab180077119db729c4e5b096466d8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7ec5a7322e147b63caaa1fb06de181cdd73da41cdb6d4783d38494e33d875806",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Você entra em uma padaria local às 08:00 da manhã e o padeiro acena com um sorriso.",
+        "npcName": "Padeiro Sato",
+        "npcMessage": "あ、おはようございます。 (A, ohayou gozaimasu.)",
+        "options": [
+          {
+            "text": "こんばんは。[Seu Nome]です。",
+            "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
+            "isCorrect": false
+          },
+          {
+            "text": "おはようございます。",
+            "feedback": "Correto: você respondeu com a saudação polida de bom-dia.",
+            "isCorrect": true
+          },
+          {
+            "text": "こんにちは！",
+            "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "10074de544999c0c15767427a3d5f469da3ab180077119db729c4e5b096466d8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage4_dialog[2]",
@@ -3625,16 +3956,53 @@
         "kind": "dialogue"
       },
       "beforeHash": "abdcc5fae13ae885d42abefdfa8e0a0765e477f58b581408adc5545e1ce98420",
-      "finalHash": "abdcc5fae13ae885d42abefdfa8e0a0765e477f58b581408adc5545e1ce98420",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "df8b8cbc47984363b274f25d9d69ff92142789a4f1069e77a35e075f4259539a",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Você chega ao seu ryokan (pousada tradicional) às 19:45 e a anfitriã abre a porta de correr.",
+        "npcName": "Anfitriã Suzuki",
+        "npcMessage": "いらっしゃいませ。こんばんは。 (Bem-vindo(a). Boa noite.)",
+        "options": [
+          {
+            "text": "こんばんは。",
+            "feedback": "Correto: você respondeu com a saudação noturna trabalhada no módulo.",
+            "isCorrect": true
+          },
+          {
+            "text": "おはようございます！",
+            "feedback": "Esta não é a saudação noturna trabalhada nesta situação.",
+            "isCorrect": false
+          },
+          {
+            "text": "です [Seu Nome]！",
+            "feedback": "Essa ordem não segue o padrão nominal X は Y です trabalhado no módulo.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "abdcc5fae13ae885d42abefdfa8e0a0765e477f58b581408adc5545e1ce98420"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage5_quiz[0]",
@@ -3642,16 +4010,32 @@
         "kind": "quiz"
       },
       "beforeHash": "d15e897ab67955840e3b691db98ccf7c53cce4be29bda792a5ab1067182a154b",
-      "finalHash": "d15e897ab67955840e3b691db98ccf7c53cce4be29bda792a5ab1067182a154b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c1109d555ea43ae7e55a0cbba66cdb7c24a0164052fb44f87f30f507e8466834",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é a saudação polida de bom-dia trabalhada no módulo?",
+        "options": [
+          "こんにちは (Konnichiwa)",
+          "おはようございます (Ohayou gozaimasu)",
+          "こんばんは (Konbanwa)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d15e897ab67955840e3b691db98ccf7c53cce4be29bda792a5ab1067182a154b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage5_quiz[1]",
@@ -3660,15 +4044,31 @@
       },
       "beforeHash": "83174705bf2edbfc903f57e340c89d1d781abca1e01781f0eefd4551add0b2dd",
       "finalHash": "83174705bf2edbfc903f57e340c89d1d781abca1e01781f0eefd4551add0b2dd",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'おはようございます' (Ohayou gozaimasu)?",
+        "options": [
+          "Bom dia (Formal)",
+          "Boa tarde / Olá",
+          "Boa noite"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "83174705bf2edbfc903f57e340c89d1d781abca1e01781f0eefd4551add0b2dd"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage5_quiz[2]",
@@ -3677,15 +4077,31 @@
       },
       "beforeHash": "9a03fb754278bca2f0f697cca64e913d0b26a993a1f5704c8629fca1f9d67ffe",
       "finalHash": "9a03fb754278bca2f0f697cca64e913d0b26a993a1f5704c8629fca1f9d67ffe",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'こんにちは' (Konnichiwa)?",
+        "options": [
+          "Bom dia (Formal)",
+          "Boa tarde / Olá",
+          "Boa noite"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9a03fb754278bca2f0f697cca64e913d0b26a993a1f5704c8629fca1f9d67ffe"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage5_quiz[3]",
@@ -3694,15 +4110,31 @@
       },
       "beforeHash": "cc7ec7fe865ad4d72139433d99b947632d1b01c46e4646e5bfda93031edfcfba",
       "finalHash": "cc7ec7fe865ad4d72139433d99b947632d1b01c46e4646e5bfda93031edfcfba",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'こんばんは' (Konbanwa)?",
+        "options": [
+          "Boa tarde / Olá",
+          "Bom dia (Formal)",
+          "Boa noite"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cc7ec7fe865ad4d72139433d99b947632d1b01c46e4646e5bfda93031edfcfba"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_01-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_01;stage5_quiz[4]",
@@ -3710,11 +4142,27 @@
         "kind": "quiz"
       },
       "beforeHash": "417efeacabae269a00aa1a57a77d082edebd55188481560a6dc05d0c91be137b",
-      "finalHash": "417efeacabae269a00aa1a57a77d082edebd55188481560a6dc05d0c91be137b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "70a18906ecbb0a4d1c12a1796fbcb51b45520e5d4143a1b26a9be50a8a91e752",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre a regra 'O Camaleão 'です (Desu)'': qual afirmação é correta?",
+        "options": [
+          "No padrão X は Y です, です marca o predicado nominal como polido.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "417efeacabae269a00aa1a57a77d082edebd55188481560a6dc05d0c91be137b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-module-metadata",
@@ -350838,8 +351286,8 @@
         "locator": "items[142]",
         "resource": "dictionary"
       },
-      "beforeHash": "37437a68d26ca4f218c879e714ddbcd72747598730ed068dd9a5726cced5db1b",
-      "finalHash": "37437a68d26ca4f218c879e714ddbcd72747598730ed068dd9a5726cced5db1b",
+      "beforeHash": "8e6163bf07b901246eb1d65d2434a7e859f997965b97d9b560677ebdbf0afa42",
+      "finalHash": "8e6163bf07b901246eb1d65d2434a7e859f997965b97d9b560677ebdbf0afa42",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -350855,8 +351303,8 @@
         "locator": "items[143]",
         "resource": "dictionary"
       },
-      "beforeHash": "86d63593d673f1b512287dae9103300979bb4d2885338b0a01500562005d3f06",
-      "finalHash": "86d63593d673f1b512287dae9103300979bb4d2885338b0a01500562005d3f06",
+      "beforeHash": "44c291d5aa48c96b1994fc779c7150249d2712daa55e82597c559933ad560232",
+      "finalHash": "44c291d5aa48c96b1994fc779c7150249d2712daa55e82597c559933ad560232",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -350872,8 +351320,8 @@
         "locator": "items[144]",
         "resource": "dictionary"
       },
-      "beforeHash": "0648403c15d7f1f33365dff5a5859b7f75e0577097f522d5b440cfedb8e576f6",
-      "finalHash": "0648403c15d7f1f33365dff5a5859b7f75e0577097f522d5b440cfedb8e576f6",
+      "beforeHash": "cc21cba6147170d69f92b8521b4f2dc800d8b03109fccf9c649fd863573ea01d",
+      "finalHash": "cc21cba6147170d69f92b8521b4f2dc800d8b03109fccf9c649fd863573ea01d",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -350889,8 +351337,8 @@
         "locator": "items[145]",
         "resource": "dictionary"
       },
-      "beforeHash": "97b58a55ef9179878097f1967a687d114a4d296dcf07eb9ae8bf15954ffcf60d",
-      "finalHash": "97b58a55ef9179878097f1967a687d114a4d296dcf07eb9ae8bf15954ffcf60d",
+      "beforeHash": "7c06fe4023774f78ef4ee87d7a06194ffbddabdf82689e5854de53c1e96a7826",
+      "finalHash": "7c06fe4023774f78ef4ee87d7a06194ffbddabdf82689e5854de53c1e96a7826",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -421280,21 +421728,34 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_01-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[0]",
         "resource": "listening"
       },
-      "beforeHash": "e39aa3d001c17a1da4fb8db94c562fce50c041d8aa271962ac5589451c75106f",
-      "finalHash": "e39aa3d001c17a1da4fb8db94c562fce50c041d8aa271962ac5589451c75106f",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "160271eb8b28fbaac9f0a4910afe3dd0cc435644a46367e818dad15dc86bd1e4",
+      "finalHash": "160271eb8b28fbaac9f0a4910afe3dd0cc435644a46367e818dad15dc86bd1e4",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_01-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_02-context-0",
@@ -429104,8 +429565,8 @@
         "locator": "reference[0]",
         "resource": "grammar"
       },
-      "beforeHash": "68f30422a9742a435b4efae66bc102a8ccd38951dc75cee40f1bdb418bd1f115",
-      "finalHash": "68f30422a9742a435b4efae66bc102a8ccd38951dc75cee40f1bdb418bd1f115",
+      "beforeHash": "a8fff975ccc3cdbcd70cd4ac581d5432b73e5b9c7fe375e005df635c30053b17",
+      "finalHash": "a8fff975ccc3cdbcd70cd4ac581d5432b73e5b9c7fe375e005df635c30053b17",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -432810,40 +433271,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_01-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[0]",
         "resource": "writing"
       },
-      "beforeHash": "1564accf42d455bad14e0bc911efe113a8a6a1fc2464aadbd7ea81d33aad14b8",
-      "finalHash": "1564accf42d455bad14e0bc911efe113a8a6a1fc2464aadbd7ea81d33aad14b8",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "fa99805d279f397cca57e3efaf7cb123580bfbe49dd55eabe987cf0c4127b7a1",
+      "finalHash": "fa99805d279f397cca57e3efaf7cb123580bfbe49dd55eabe987cf0c4127b7a1",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_01-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_01-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[1]",
         "resource": "writing"
       },
-      "beforeHash": "04f2defee49539742d65b9818b4a21f7d5f1a476a9933ef4d1b5054773166625",
-      "finalHash": "04f2defee49539742d65b9818b4a21f7d5f1a476a9933ef4d1b5054773166625",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "59bd6c8700965ff91cd15bfa61b35239227121b27126f25e7943fcd032de7ef0",
+      "finalHash": "59bd6c8700965ff91cd15bfa61b35239227121b27126f25e7943fcd032de7ef0",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_01-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 42
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_02-1",

@@ -18,6 +18,8 @@ const WRITE_MODE = process.argv.includes('--write');
 const JAPANESE = /[\u3040-\u30ff\u3400-\u9fff]/u;
 const LATIN = /[A-Za-z]/;
 const ENGLISH_INTRUSION = /\b(?:arrival|ancient|decision|loss|melody|method|strategy|study|target)\b/i;
+const VALID_EDITORIAL_STATUSES = new Set(['pending-human-review', 'approved', 'corrected']);
+const hasValidEditorialStatus = review => Boolean(review && VALID_EDITORIAL_STATUSES.has(review.status));
 
 const COURSE_SPECS = [
     { level: 'A1', file: 'database/ja-JP/data_curso_a1.js', variable: 'CURSO_A1_DADOS', count: 31 },
@@ -148,7 +150,7 @@ function auditCourses(occurrences, metrics) {
             if (!moduleId) addOccurrence(occurrences, { ...metadata, field: 'id', rule: 'module-id-missing', severity: 'blocking', value: moduleId });
             ids.push(moduleId);
 
-            if (!module.editorialReview || module.editorialReview.status !== 'pending-human-review') {
+            if (!hasValidEditorialStatus(module.editorialReview)) {
                 addOccurrence(occurrences, { ...metadata, field: 'editorialReview.status', rule: 'editorial-review-status-invalid', severity: 'blocking', value: module.editorialReview });
             }
 
@@ -265,7 +267,7 @@ function auditKanji(occurrences, metrics) {
                 addOccurrence(occurrences, { ...metadata, field: 'title/description', rule: 'required-field-missing', severity: 'blocking', value: module });
             }
             const contractedLevel = ['N3', 'N2', 'N1'].includes(spec.level);
-            if (contractedLevel && (!module.editorialReview || module.editorialReview.status !== 'pending-human-review')) {
+            if (contractedLevel && !hasValidEditorialStatus(module.editorialReview)) {
                 addOccurrence(occurrences, { ...metadata, field: 'editorialReview.status', rule: 'editorial-review-status-invalid', severity: 'blocking', value: module.editorialReview });
             }
             if (contractedLevel && !module.isReviewTable) {
@@ -308,7 +310,7 @@ function auditKanji(occurrences, metrics) {
                     if (!sentence || !example.word || !example.wordMeaning || !example.sentenceMeaning) {
                         addOccurrence(occurrences, { ...metadata, field: exampleBase, rule: 'kanji-example-incomplete', severity: 'blocking', value: example });
                     }
-                    if (contractedLevel && (!hasCompleteTextContract(content) || !example.editorialReview || example.editorialReview.status !== 'pending-human-review')) {
+                    if (contractedLevel && (!hasCompleteTextContract(content) || !hasValidEditorialStatus(example.editorialReview))) {
                         addOccurrence(occurrences, { ...metadata, field: exampleBase, rule: 'kanji-example-contract-invalid', severity: 'blocking', value: example });
                     }
                     if (!hasJapanese(sentence)) {

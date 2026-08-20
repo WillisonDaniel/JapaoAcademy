@@ -185,7 +185,7 @@ function stripEditorialFields(value) {
 
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
-        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '79d0c7544ade7c6548d56f9b64786409662def6b557c17ae1fd523b1096760bf'],
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '7280effd239dd8eb1a11b6b0db18de74f334190e59c9cdad20bb1979fad18b9d'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '44179791ab39cbc5f321fde9a32de50c797c2f3cd7beeb4e8fd2965ad6f8a9ff'],
         ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754'],
         ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f']
@@ -206,7 +206,8 @@ run('A1 e A2 possuem os 151 contratos editoriais previstos', () => {
     assert.equal(dialogueContracts, 90);
     assert.equal(audioContracts + dialogueContracts, 151);
     assert.equal(modules.filter(module => module.canDo).length, 61);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 61);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 60);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'approved').length, 1);
     modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
         if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
     });
@@ -218,7 +219,7 @@ run('auditoria reduz a zero as ocorrencias alvo de A1 e A2', () => {
     assert.equal(target.length, 0);
     assert.equal(report.summary.bySeverity.blocking, 0);
     assert.match(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /pending-human-review/);
-    assert.doesNotMatch(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| approved \|/i);
+    assert.match(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| a1_mod_01 \|[^\n]+\| approved \|/i);
 });
 
 run('B1 e B2 possuem os 165 contratos editoriais previstos', () => {

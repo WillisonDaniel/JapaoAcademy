@@ -21,7 +21,7 @@ const states = ledger.decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { corrected: 410, unresolved: 16998, approved: 6126 });
+assert.deepEqual(states, { corrected: 427, unresolved: 16974, approved: 6133 });
 assert.equal(ledger.decisions.filter(item => item.phase === 18).length, 2315);
 assert.equal(ledger.decisions.filter(item => item.phase === 19).length, 14899);
 assert.equal(ledger.decisions.filter(item => item.phase === 20).length, 6161);
@@ -51,11 +51,11 @@ const css = read('japanese-experience.css');
 assert.match(css, /\.jp-study-page \.dict-filter-pill\s*\{[^}]*min-height:\s*44px/s);
 assert.match(css, /\.jp-study-page \.jp-check-field\s*\{[^}]*min-height:\s*44px/s);
 assert.match(read('html/ja-JP/jlpt.html'), /<label class="jp-check-field"[^>]*>[\s\S]*?id="jlpt-timer-enabled"/);
-assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v46'/);
+assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v47'/);
 
 for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     assert.ok(fs.existsSync(path.join(__dirname, `JAPANESE_${name}_EDITORIAL_REVIEW.md`)));
     assert.ok(!fs.existsSync(path.join(__dirname, `JAPANESE_${name}_HUMAN_REVIEW.md`)));
 }
 
-console.log(`Fase 21: ${ledger.decisions.length} alvos consolidados; ${states.approved + states.corrected} sustentados e ${states.unresolved} inconclusivos preservados.`);
+console.log(`Release textual: ${ledger.decisions.length} alvos; ${states.approved + states.corrected} sustentados e ${states.unresolved} inconclusivos preservados após o lote 21B.1 inicial.`);

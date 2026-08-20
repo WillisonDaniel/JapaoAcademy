@@ -9,7 +9,7 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Ohayou gozaimasu!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Você acabou de pousar no Japão! Vamos aprender a cumprimentar as pessoas nas ruas em cada período do dia e dizer quem você é de forma educada e natural."
+            "missionDescription": "Vamos aprender saudações usadas em diferentes momentos do dia e uma estrutura nominal polida para se apresentar."
         },
         "stage2_drops": [
             {
@@ -17,28 +17,28 @@ const CURSO_A1_DADOS = [
                 "kanji": "おはようございます",
                 "romaji": "Ohayou gozaimasu",
                 "translation": "Bom dia (Formal)",
-                "timeContext": "Usado até aproximadamente 10h da manhã com professores, chefes e desconhecidos."
+                "timeContext": "Saudação de bom-dia; ございます torna a expressão mais polida."
             },
             {
                 "type": "vocab",
                 "kanji": "こんにちは",
                 "romaji": "Konnichiwa",
                 "translation": "Boa tarde / Olá",
-                "timeContext": "Usado durante todo o dia claro (entre 10h e o pôr do sol)."
+                "timeContext": "Saudação usada ao encontrar alguém durante o dia."
             },
             {
                 "type": "vocab",
                 "kanji": "こんばんは",
                 "romaji": "Konbanwa",
                 "translation": "Boa noite",
-                "timeContext": "Usado ao chegar ou encontrar alguém à noite (nunca para ir dormir!)."
+                "timeContext": "Saudação usada ao encontrar alguém à noite; antes de dormir, usa-se おやすみなさい."
             },
             {
                 "type": "grammar_pill",
                 "title": "O Camaleão 'です (Desu)'",
-                "rule": "Para dizer 'Eu sou...' ou 'É...', colocamos a palavra mágica です (desu) sempre no final da frase. Ela funciona como o verbo ser/estar e garante que você soe educado!",
-                "formula": "[ Seu Nome ] + です (desu)",
-                "example": "Carlos です ➔ (Sou o Carlos). Dica: O 'u' final não é pronunciado, soando como 'dess'."
+                "rule": "No padrão nominal X は Y です, です marca o predicado como polido. Conforme o contexto, a tradução pode usar formas de 'ser', mas です não corresponde sozinho a todos os usos de 'ser' ou 'estar'.",
+                "formula": "[ Tópico ] は [ Nome ou identificação ] です",
+                "example": "わたしはカルロスです。 ➔ Eu sou o Carlos. Na fala corrente, a vogal final de です pode ser pouco audível."
             }
         ],
         "stage3_practice": [
@@ -50,7 +50,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "☀️ Tarde (Dia claro)",
+                        "label": "☀️ Durante o dia",
                         "isCorrect": true
                     },
                     {
@@ -77,7 +77,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Qual é a posição gramatical correta da palavra mágica 'です (desu)' na frase?",
+                "question": "3. No padrão nominal afirmativo X は Y です, onde aparece です?",
                 "options": [
                     {
                         "label": "Sempre no início absoluto da frase",
@@ -88,7 +88,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "Sempre no final da frase",
+                        "label": "Depois do nome ou identificação que forma o predicado",
                         "isCorrect": true
                     }
                 ]
@@ -111,10 +111,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Para dizer formalmente 'Sou a Ana' em japonês, qual é a estrutura perfeita?",
+                "question": "5. Qual opção segue o padrão nominal polido X は Y です para dizer 'Sou a Ana'?",
                 "options": [
                     {
-                        "label": "Ana です (Ana desu)",
+                        "label": "わたしはアナです (Watashi wa Ana desu)",
                         "isCorrect": true
                     },
                     {
@@ -137,30 +137,30 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "sentenceJp": "わたし は カロス です",
+                "sentenceJp": "わたし は カルロス です",
                 "translation": "Eu sou o Carlos.",
                 "chunks": [
                     "わたし",
                     "は",
-                    "カロス",
+                    "カルロス",
                     "です"
                 ]
             }
         ],
         "stage4_dialog": [
             {
-                "scenario": "Situação 1: Você está no elevador do hotel em Tóquio às 14:00 e um nativo simpático puxa assunto.",
+                "scenario": "Situação 1: Você está no elevador do hotel em Tóquio durante a tarde e outro hóspede inicia uma conversa.",
                 "npcName": "Kenji",
-                "npcMessage": "こんにちは！ ケンジ です。 (Konnichiwa! Kenji desu.)",
+                "npcMessage": "こんにちは。ケンジです。 (Konnichiwa. Kenji desu.)",
                 "options": [
                     {
                         "text": "おはようございます！",
-                        "feedback": "Incorreto: São 14:00 da tarde!",
+                        "feedback": "Esta não é a saudação diurna trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こんにちは！ [Seu Nome] です.",
-                        "feedback": "Mandou bem! Saudação correta para a tarde e uso perfeito do desu.",
+                        "text": "こんにちは。[Seu Nome]です。",
+                        "feedback": "Correto: você usou a saudação diurna e o padrão nominal polido do módulo.",
                         "isCorrect": true
                     },
                     {
@@ -173,21 +173,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 2: Você entra em uma padaria local às 08:00 da manhã e o padeiro acena com um sorriso.",
                 "npcName": "Padeiro Sato",
-                "npcMessage": "あ！ おはようございます！ (Ah! Ohayou gozaimasu!)",
+                "npcMessage": "あ、おはようございます。 (A, ohayou gozaimasu.)",
                 "options": [
                     {
-                        "text": "こんばんは！ [Seu Nome] です.",
-                        "feedback": "Ops! 'Konbanwa' é usado apenas à noite!",
+                        "text": "こんばんは。[Seu Nome]です。",
+                        "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
-                        "text": "おはようございます！ [Seu Nome] です.",
-                        "feedback": "Perfeito! Você respondeu com o 'Bom dia' formal e se apresentou com naturalidade.",
+                        "text": "おはようございます。",
+                        "feedback": "Correto: você respondeu com a saudação polida de bom-dia.",
                         "isCorrect": true
                     },
                     {
                         "text": "こんにちは！",
-                        "feedback": "Inadequado para as 8h da manhã em um ambiente de comércio formal.",
+                        "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
                         "isCorrect": false
                     }
                 ]
@@ -195,21 +195,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Você chega ao seu ryokan (pousada tradicional) às 19:45 e a anfitriã abre a porta de correr.",
                 "npcName": "Anfitriã Suzuki",
-                "npcMessage": "いらっしゃいませ！ こんばんは！ (Bem-vindo(a)! Boa noite!)",
+                "npcMessage": "いらっしゃいませ。こんばんは。 (Bem-vindo(a). Boa noite.)",
                 "options": [
                     {
-                        "text": "こんばんは！ [Seu Nome] です.",
-                        "feedback": "Excelente! Resposta educada, no tempo correto e com apresentação clara.",
+                        "text": "こんばんは。",
+                        "feedback": "Correto: você respondeu com a saudação noturna trabalhada no módulo.",
                         "isCorrect": true
                     },
                     {
                         "text": "おはようございます！",
-                        "feedback": "Incorreto: Você não pode dar 'Bom dia' às 19:45 da noite!",
+                        "feedback": "Esta não é a saudação noturna trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
                         "text": "です [Seu Nome]！",
-                        "feedback": "Erro gramatical grave: O 'desu' nunca pode vir antes do nome!",
+                        "feedback": "Essa ordem não segue o padrão nominal X は Y です trabalhado no módulo.",
                         "isCorrect": false
                     }
                 ]
@@ -217,7 +217,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual saudação você DEVE usar ao ver seu professor às 7h30 da manhã?",
+                "question": "Qual é a saudação polida de bom-dia trabalhada no módulo?",
                 "options": [
                     "こんにちは (Konnichiwa)",
                     "おはようございます (Ohayou gozaimasu)",
@@ -255,7 +255,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Sobre a regra 'O Camaleão 'です (Desu)'': qual afirmação é correta?",
                 "options": [
-                    "Para dizer 'Eu sou...' ou 'É...', colocamos a palavra mágica です (desu) sempre no final da frase. Ela funciona como o verbo ser/estar e garante que você soe educado!",
+                    "No padrão X は Y です, です marca o predicado nominal como polido.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -7954,3 +7954,10 @@ const A1_PHASE18_TEXT_REPLACEMENTS = new Map([
         else applyA1Phase18Text(item);
     });
 })(CURSO_A1_DADOS);
+
+CURSO_A1_DADOS[0].editorialReview = {
+    status: "approved",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "quartet-1-textbook"]
+};

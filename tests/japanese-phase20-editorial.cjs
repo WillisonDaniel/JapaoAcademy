@@ -76,14 +76,14 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { unresolved: 6106, corrected: 55 }, 'estados derivados mudaram sem atualização do relatório');
+assert.deepEqual(states, { unresolved: 6103, corrected: 57, approved: 1 }, 'estados derivados mudaram sem atualização do relatório');
 
 for (const decision of decisions) {
-    assert.ok(['corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
+    assert.ok(['approved', 'corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
     for (const upstreamId of decision.upstreamDecisionIds) {
         assert.ok(canonical.has(upstreamId), `${decision.id}: origem canônica inexistente ${upstreamId}`);
     }
-    if (decision.state === 'corrected') {
+    if (decision.state === 'corrected' || decision.state === 'approved') {
         assert.ok(decision.upstreamDecisionIds.length > 0, `${decision.id}: correção derivada sem origem`);
         assert.ok(decision.upstreamDecisionIds.every(id => ['approved', 'corrected'].includes(canonical.get(id).state)),
             `${decision.id}: correção derivada promove origem inconclusiva`);
@@ -93,17 +93,19 @@ for (const decision of decisions) {
 
 const byResource = decisions.reduce((result, decision) => {
     const resource = decision.target.resource;
-    result[resource] ||= { corrected: 0, unresolved: 0 };
+    result[resource] ||= { approved: 0, corrected: 0, unresolved: 0 };
     result[resource][decision.state] += 1;
     return result;
 }, {});
-assert.equal(byResource.listening.corrected, 50);
+assert.equal(byResource.listening.corrected, 51);
 assert.equal(byResource.grammar.corrected, 3);
 assert.equal(byResource.jlpt.corrected, 2);
+assert.equal(byResource.writing.corrected, 1);
+assert.equal(byResource.writing.approved, 1);
 assert.equal(byResource.dictionary.unresolved, 3271);
 assert.equal(byResource.minigame.unresolved, 1015);
 assert.equal(byResource.reading.unresolved, 91);
-assert.equal(byResource.writing.unresolved, 208);
+assert.equal(byResource.writing.unresolved, 206);
 
 for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     const neutral = path.join(__dirname, `JAPANESE_${name}_EDITORIAL_REVIEW.md`);
@@ -114,4 +116,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
         `${name}: nomenclatura humana permaneceu no relatório neutro`);
 }
 
-console.log(`Fase 20: ${decisions.length} registros derivados classificados; ${states.corrected} correções propagadas e ${states.unresolved} pendências preservadas.`);
+console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovado, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após 21B.1.`);
