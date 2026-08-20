@@ -12988,7 +12988,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_13-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;module.metadata",
@@ -12996,16 +12996,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "c093b08e791d1402105d125b4cf16d2eb44fcd5e45c9153bb90dfe83ea0eeca3",
-      "finalHash": "c093b08e791d1402105d125b4cf16d2eb44fcd5e45c9153bb90dfe83ea0eeca3",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "097c6ee82ade052715601cc6d2277d573a3e04c0ce04074d4bd61adf77db8e96",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 70
+        }
+      ],
+      "finalValue": {
+        "title": "Movimento com 行きます・来ます・帰ります",
+        "sectionTitle": "Localização, Lugares & Movimento",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique os verbos ir, vir e retornar, marcando o destino do movimento com へ ou に."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c093b08e791d1402105d125b4cf16d2eb44fcd5e45c9153bb90dfe83ea0eeca3"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage1_context",
@@ -13013,16 +13031,40 @@
         "kind": "context"
       },
       "beforeHash": "0769cb19d5265ba050712b4be2ff0c5a8e290581b05d3bb62cb197652dc9118d",
-      "finalHash": "0769cb19d5265ba050712b4be2ff0c5a8e290581b05d3bb62cb197652dc9118d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "bd9c827f0345b320cbe3a1148ecc01a042d5f77e845cef3ff3294f6f99a5d084",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 70
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Gakkou e ikimasu.",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique os verbos ir, vir e retornar, marcando o destino do movimento com へ ou に.",
+        "audio": {
+          "displayText": "学校へ行きます。",
+          "audioText": "学校へ行きます。",
+          "furigana": "",
+          "romaji": "Gakkou e ikimasu.",
+          "translation": "Vou à escola.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0769cb19d5265ba050712b4be2ff0c5a8e290581b05d3bb62cb197652dc9118d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage2_drops[0]",
@@ -13030,16 +13072,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "90817186d3eac4294c46974d9549139fcd3c4d229ec751c7e8c46d367b17b880",
-      "finalHash": "90817186d3eac4294c46974d9549139fcd3c4d229ec751c7e8c46d367b17b880",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f0751d81393beb2cdf8924c83fb358384ea9b9d4b1da31a69f6f4a3b2fedb0ff",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "いきます (行きます)",
+        "romaji": "Ikimasu",
+        "translation": "Ir (para algum lugar)",
+        "timeContext": "Indica deslocamento para um destino visto como “ir”."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "90817186d3eac4294c46974d9549139fcd3c4d229ec751c7e8c46d367b17b880"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage2_drops[1]",
@@ -13047,16 +13103,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "dad7691fe7d87a965a61d3c094408ea2806b3dd17e264dd2982763e4cf46a512",
-      "finalHash": "dad7691fe7d87a965a61d3c094408ea2806b3dd17e264dd2982763e4cf46a512",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f59a0ff953caae5960b32550436ad7ba4c32d569e14c9f49735da979cbe3daf9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "きます (来ます)",
+        "romaji": "Kimasu",
+        "translation": "Vir",
+        "timeContext": "Indica movimento em direção ao lugar tomado como referência pelo falante."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "dad7691fe7d87a965a61d3c094408ea2806b3dd17e264dd2982763e4cf46a512"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage2_drops[2]",
@@ -13064,16 +13134,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "2dfa6bc1d66e6c410cadf2fde235e0a925877323c679ebd0060a6be2e1168115",
-      "finalHash": "2dfa6bc1d66e6c410cadf2fde235e0a925877323c679ebd0060a6be2e1168115",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f825e97052f75f07479237e7b0f75497460cff8dc8b0ee276d86047d394c0a15",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "かえります (帰ります)",
+        "romaji": "Kaerimasu",
+        "translation": "Voltar / retornar",
+        "timeContext": "Indica retorno a casa ou a outro lugar entendido como base ou origem."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2dfa6bc1d66e6c410cadf2fde235e0a925877323c679ebd0060a6be2e1168115"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage2_drops[3]",
@@ -13082,15 +13166,29 @@
       },
       "beforeHash": "93850c836733349fc7b196eca6e92e6537d3903f99a9fe2d3e1a03273b7a5578",
       "finalHash": "93850c836733349fc7b196eca6e92e6537d3903f99a9fe2d3e1a03273b7a5578",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "がっこう / えき / うち",
+        "romaji": "Gakkou / Eki / Uchi",
+        "translation": "Escola / Estação / Casa",
+        "timeContext": "Destinos comuns para os verbos de movimento."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "93850c836733349fc7b196eca6e92e6537d3903f99a9fe2d3e1a03273b7a5578"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage2_drops[4]",
@@ -13098,16 +13196,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "1dc98df0f1cd8736be5a691fc6214aa2b79f3d919f0db1feb575551303e9d569",
-      "finalHash": "1dc98df0f1cd8736be5a691fc6214aa2b79f3d919f0db1feb575551303e9d569",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4b3540d3e38f10df71601b64054565bc491383cbd39f01918d9f05008dbbd125",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Destino com へ e に",
+        "rule": "Com verbos de movimento, へ e に podem marcar o destino. へ é pronunciado e. Essa substituição não vale para todos os outros usos de に.",
+        "formula": "[Lugar] + へ/に + [Verbo de Movimento]",
+        "example": "とうきょうへ いきます (Toukyou e ikimasu.) — Vou para Tóquio."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1dc98df0f1cd8736be5a691fc6214aa2b79f3d919f0db1feb575551303e9d569"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage3_practice[0]",
@@ -13116,15 +13228,39 @@
       },
       "beforeHash": "6fc2efea5da7268ad74a3344f5fc3cf38065f56bafd016431328ee4a31e80f6e",
       "finalHash": "6fc2efea5da7268ad74a3344f5fc3cf38065f56bafd016431328ee4a31e80f6e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "1. Para dizer 'Eu vou para a escola', qual é a frase correta?",
+        "options": [
+          {
+            "label": "わたし は がっこう へ いきます",
+            "isCorrect": true
+          },
+          {
+            "label": "わたし は がっこう が あります",
+            "isCorrect": false
+          },
+          {
+            "label": "わたし は がっこう を たべます",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6fc2efea5da7268ad74a3344f5fc3cf38065f56bafd016431328ee4a31e80f6e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage3_practice[1]",
@@ -13133,15 +13269,39 @@
       },
       "beforeHash": "71137ce1b4f8445fbc676f248e7faa204ffa196a8b2a75db5c07989711385b44",
       "finalHash": "71137ce1b4f8445fbc676f248e7faa204ffa196a8b2a75db5c07989711385b44",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "2. Seu amigo te liga e pergunta 'Você vem para a festa?'. Qual verbo ele usaria?",
+        "options": [
+          {
+            "label": "きます か？ (Kimasu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "かえります か？ (Kaerimasu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "あります か？ (Arimasu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "71137ce1b4f8445fbc676f248e7faa204ffa196a8b2a75db5c07989711385b44"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage3_practice[2]",
@@ -13150,15 +13310,39 @@
       },
       "beforeHash": "b2683e5c99a2bd9257e61752c4ef5607a8f85133c0ab9ecad7f740d3aacbac5d",
       "finalHash": "b2683e5c99a2bd9257e61752c4ef5607a8f85133c0ab9ecad7f740d3aacbac5d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "3. Você está no trabalho e diz 'Vou voltar para casa'. Qual verbo é o mais apropriado?",
+        "options": [
+          {
+            "label": "うち へ いきます (Uchi e ikimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "うち へ かえります (Uchi e kaerimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "うち へ きます (Uchi e kimasu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b2683e5c99a2bd9257e61752c4ef5607a8f85133c0ab9ecad7f740d3aacbac5d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage3_5_sentenceBuilder[0]",
@@ -13166,16 +13350,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "58d99e8bb5b989f05c85bd52cb2018f9fab4131aaf680cdfbdf53f56f599e157",
-      "finalHash": "58d99e8bb5b989f05c85bd52cb2018f9fab4131aaf680cdfbdf53f56f599e157",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "37653da35d89a304466fa11aa5288946cd9ec07b1c2938540bd3c7147b731e32",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "がっこう へ いきます",
+        "translation": "Vou para a escola.",
+        "chunks": [
+          "がっこう",
+          "へ",
+          "いきます"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "58d99e8bb5b989f05c85bd52cb2018f9fab4131aaf680cdfbdf53f56f599e157"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage3_5_sentenceBuilder[1]",
@@ -13183,16 +13383,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "1d4aafcac38802b351f632020c364bb00953b5116401651f65ed96af1bfb9dcc",
-      "finalHash": "1d4aafcac38802b351f632020c364bb00953b5116401651f65ed96af1bfb9dcc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5864f217c540a00600677afdc586ddd4e081316b43447e447c3169fe6793e4e0",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "うち に かえります",
+        "translation": "Volto para casa.",
+        "chunks": [
+          "うち",
+          "に",
+          "かえります"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1d4aafcac38802b351f632020c364bb00953b5116401651f65ed96af1bfb9dcc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage4_dialog[0]",
@@ -13200,16 +13416,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "48e9ddf764fa85aa7c3b0975db231876fda6c43230cba9a6cf9fd0a2d6d0b1bd",
-      "finalHash": "48e9ddf764fa85aa7c3b0975db231876fda6c43230cba9a6cf9fd0a2d6d0b1bd",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b77c852c6ad1c72bf24a7b166e99f26624d02228c939165384f4c416408c7780",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 70
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você encontra seu professor no corredor e ele pergunta sobre seus planos para depois da aula.",
+        "npcName": "Sato-sensei",
+        "npcMessage": "このあと どこへ いきますか。 (Depois daqui, para onde você vai?)",
+        "options": [
+          {
+            "text": "うち へ かえります。",
+            "feedback": "A resposta usa 帰ります para indicar o retorno a casa.",
+            "isCorrect": true
+          },
+          {
+            "text": "うち が あります。",
+            "feedback": "Incorreto. Você disse 'Existe uma casa'.",
+            "isCorrect": false
+          },
+          {
+            "text": "うち です。",
+            "feedback": "Incorreto. Você disse 'É uma casa'.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "48e9ddf764fa85aa7c3b0975db231876fda6c43230cba9a6cf9fd0a2d6d0b1bd"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage5_quiz[0]",
@@ -13217,16 +13466,32 @@
         "kind": "quiz"
       },
       "beforeHash": "bfb1da2719c4777bab3492d9aa09863919a876c52ef79a8ea44c95fa3e3a3862",
-      "finalHash": "bfb1da2719c4777bab3492d9aa09863919a876c52ef79a8ea44c95fa3e3a3862",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a6912e588ec208b2aac389ad772cb1b45ff7ae5c00b8c5e7399af69ed47aef54",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "Qual contraste básico existe entre 行きます e 来ます?",
+        "options": [
+          "行きます é ir; 来ます é vir em relação ao ponto de referência.",
+          "'Ikimasu' é formal, 'kimasu' é informal.",
+          "Não há diferença."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bfb1da2719c4777bab3492d9aa09863919a876c52ef79a8ea44c95fa3e3a3862"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage5_quiz[1]",
@@ -13234,16 +13499,32 @@
         "kind": "quiz"
       },
       "beforeHash": "95731f03c31bbcd84d07e0f13388088b3bc77dca00d292d7c59c9fb4c46c67d8",
-      "finalHash": "95731f03c31bbcd84d07e0f13388088b3bc77dca00d292d7c59c9fb4c46c67d8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "caa4c00a13c3d5a5ffc3cbf83c256376ae6edc196e3aa9f41cc4d741f367e6bc",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'いきます (行きます)' (Ikimasu)?",
+        "options": [
+          "Ir (para algum lugar)",
+          "Vir",
+          "Voltar / retornar"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "95731f03c31bbcd84d07e0f13388088b3bc77dca00d292d7c59c9fb4c46c67d8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage5_quiz[2]",
@@ -13251,16 +13532,32 @@
         "kind": "quiz"
       },
       "beforeHash": "5cc38dfdb5621377e17472d20f0fb7379da2a47c65d0bb13a1034684773b0dd9",
-      "finalHash": "5cc38dfdb5621377e17472d20f0fb7379da2a47c65d0bb13a1034684773b0dd9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ab34db2ff462e8a7def455b2014c4f58e27c81d6696d3f925edc8a57b10b3d5e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'きます (来ます)' (Kimasu)?",
+        "options": [
+          "Ir (para algum lugar)",
+          "Vir",
+          "Voltar / retornar"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5cc38dfdb5621377e17472d20f0fb7379da2a47c65d0bb13a1034684773b0dd9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage5_quiz[3]",
@@ -13268,16 +13565,32 @@
         "kind": "quiz"
       },
       "beforeHash": "ac50b010401b830051a488878a83f694e2e6bbbfd0f7c4659ac80089f369ebd8",
-      "finalHash": "ac50b010401b830051a488878a83f694e2e6bbbfd0f7c4659ac80089f369ebd8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fc645ffb8a404db5f7fe3c007bbb444012c357beb691773ca7421744c7c7425b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'かえります (帰ります)' (Kaerimasu)?",
+        "options": [
+          "Vir",
+          "Ir (para algum lugar)",
+          "Voltar / retornar"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ac50b010401b830051a488878a83f694e2e6bbbfd0f7c4659ac80089f369ebd8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_13-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_13;stage5_quiz[4]",
@@ -13285,11 +13598,27 @@
         "kind": "quiz"
       },
       "beforeHash": "9e9c6a90a69d3f2708cafbb91fa9e5059367f250c047f060068556a78d39659e",
-      "finalHash": "9e9c6a90a69d3f2708cafbb91fa9e5059367f250c047f060068556a78d39659e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d2d6729c197aff618133ce5f24cd19688132d3a000f553e437ab96a0f5e8c3ce",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'がっこう / えき / うち' (Gakkou / Eki / Uchi)?",
+        "options": [
+          "Escola / Estação / Casa",
+          "Ir (para algum lugar)",
+          "Vir"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9e9c6a90a69d3f2708cafbb91fa9e5059367f250c047f060068556a78d39659e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_14-module-metadata",
@@ -356827,8 +357156,8 @@
         "locator": "items[197]",
         "resource": "dictionary"
       },
-      "beforeHash": "2c921e624d746775db163e564dd64b0d8a0c5b59cc03fc403e888e368cd3cedf",
-      "finalHash": "2c921e624d746775db163e564dd64b0d8a0c5b59cc03fc403e888e368cd3cedf",
+      "beforeHash": "d5833570ce5a3bf56577516f049cf0aeb30f459de1474c8ec404b3ddf84b3fca",
+      "finalHash": "d5833570ce5a3bf56577516f049cf0aeb30f459de1474c8ec404b3ddf84b3fca",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -356844,8 +357173,8 @@
         "locator": "items[198]",
         "resource": "dictionary"
       },
-      "beforeHash": "af36bc66da5e8fcf9073109f738ee273db6676c9ae729c77df62de729891a53a",
-      "finalHash": "af36bc66da5e8fcf9073109f738ee273db6676c9ae729c77df62de729891a53a",
+      "beforeHash": "1ed11f7292b2dde33b941ecf9a83c657cfc1a9e3d2d1011e78ce335efe43f080",
+      "finalHash": "1ed11f7292b2dde33b941ecf9a83c657cfc1a9e3d2d1011e78ce335efe43f080",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -356861,8 +357190,8 @@
         "locator": "items[199]",
         "resource": "dictionary"
       },
-      "beforeHash": "e109c4e886d04f843fdf8957d4cf7dd55c759ac98948e45d13e7dda72d4b1745",
-      "finalHash": "e109c4e886d04f843fdf8957d4cf7dd55c759ac98948e45d13e7dda72d4b1745",
+      "beforeHash": "fc59ee0cb8a376f9238efaa12c7384d550b944b85e4a0c76ff7c781443bb21e4",
+      "finalHash": "fc59ee0cb8a376f9238efaa12c7384d550b944b85e4a0c76ff7c781443bb21e4",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -356878,8 +357207,8 @@
         "locator": "items[200]",
         "resource": "dictionary"
       },
-      "beforeHash": "c90a51ddf2854e5c148b7454f8437ac9787fcba432bed1277c92a69c8bbd04ee",
-      "finalHash": "c90a51ddf2854e5c148b7454f8437ac9787fcba432bed1277c92a69c8bbd04ee",
+      "beforeHash": "e46a70ac44834a3db9179c9a39ae0030f49317eb789999a9b3203b158d03d7ec",
+      "finalHash": "e46a70ac44834a3db9179c9a39ae0030f49317eb789999a9b3203b158d03d7ec",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -356895,8 +357224,8 @@
         "locator": "items[201]",
         "resource": "dictionary"
       },
-      "beforeHash": "fcbf7da5b7fb6904b0b752432e2c440ba9a6234aeb260ffe161daa7882e62702",
-      "finalHash": "fcbf7da5b7fb6904b0b752432e2c440ba9a6234aeb260ffe161daa7882e62702",
+      "beforeHash": "205a0b6b75257906cf330640cf0fb91b1ddf3c7395a68c7540cf0e25063b8c0d",
+      "finalHash": "205a0b6b75257906cf330640cf0fb91b1ddf3c7395a68c7540cf0e25063b8c0d",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -426674,21 +427003,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_13-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[12]",
         "resource": "listening"
       },
-      "beforeHash": "632d26667fec8a5f545c25f57e610dcc59b3fd60112b9c653b9fd8749ee83a91",
-      "finalHash": "632d26667fec8a5f545c25f57e610dcc59b3fd60112b9c653b9fd8749ee83a91",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "57ea1927a9fec36a86156341d816d4882d48efc04f3d8d685d5640817cdd1d36",
+      "finalHash": "57ea1927a9fec36a86156341d816d4882d48efc04f3d8d685d5640817cdd1d36",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_13-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 70
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_14-context-0",
@@ -434447,8 +434785,8 @@
         "locator": "reference[12]",
         "resource": "grammar"
       },
-      "beforeHash": "a3ae9f67c40198b8e920e4caf27c92e22207a3053ab0fc9cb9c5db00090781c9",
-      "finalHash": "a3ae9f67c40198b8e920e4caf27c92e22207a3053ab0fc9cb9c5db00090781c9",
+      "beforeHash": "45b04d8c5729db861cd75e34616cba4b42b90a30a1ca066ba25a08353041eef7",
+      "finalHash": "45b04d8c5729db861cd75e34616cba4b42b90a30a1ca066ba25a08353041eef7",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -438525,40 +438863,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_13-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[24]",
         "resource": "writing"
       },
-      "beforeHash": "13c9bfa9a0903ea93c22667638e76e5b1cb182133fe0692ba31a311bcda42461",
-      "finalHash": "13c9bfa9a0903ea93c22667638e76e5b1cb182133fe0692ba31a311bcda42461",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "358161fe82069ba93c72d0bb4f737515f88357d4f6fed044ccbf172717621e51",
+      "finalHash": "358161fe82069ba93c72d0bb4f737515f88357d4f6fed044ccbf172717621e51",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_13-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_13-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[25]",
         "resource": "writing"
       },
-      "beforeHash": "64671b41570a2dd33eeb9cb1b26dde58ec86b05296e5aa3693a34c5db01ce3fe",
-      "finalHash": "64671b41570a2dd33eeb9cb1b26dde58ec86b05296e5aa3693a34c5db01ce3fe",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "907f41217a1cb0f699a38c3d5ab1f78478709e2607e90ed1b2787442e2cd76e8",
+      "finalHash": "907f41217a1cb0f699a38c3d5ab1f78478709e2607e90ed1b2787442e2cd76e8",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_13-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 91
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_14-1",

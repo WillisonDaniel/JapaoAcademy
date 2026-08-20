@@ -3175,15 +3175,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_13",
-        "title": "Verbos de Movimento: Ikimasu, Kimasu, Kaerimasu",
+        "title": "Movimento com 行きます・来ます・帰ります",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Gakkou e ikimasu.",
-            "missionTitle": "Objetivo de Hoje: Colocando o Mundo em Movimento",
-            "missionDescription": "Aprenda a dizer que vai, vem e volta para casa, usando as partículas de direção essenciais 'e' (へ) e 'ni' (に)."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pratique os verbos ir, vir e retornar, marcando o destino do movimento com へ ou に."
         },
         "stage2_drops": [
             {
@@ -3191,21 +3191,21 @@ const CURSO_A1_DADOS = [
                 "kanji": "いきます (行きます)",
                 "romaji": "Ikimasu",
                 "translation": "Ir (para algum lugar)",
-                "timeContext": "Movimento de saída, se afastando de onde você está."
+                "timeContext": "Indica deslocamento para um destino visto como “ir”."
             },
             {
                 "type": "vocab",
                 "kanji": "きます (来ます)",
                 "romaji": "Kimasu",
-                "translation": "Vir (para cá)",
-                "timeContext": "Movimento de chegada, em direção a onde você está."
+                "translation": "Vir",
+                "timeContext": "Indica movimento em direção ao lugar tomado como referência pelo falante."
             },
             {
                 "type": "vocab",
                 "kanji": "かえります (帰ります)",
                 "romaji": "Kaerimasu",
-                "translation": "Voltar (para casa/origem)",
-                "timeContext": "Verbo específico para o retorno ao ponto de partida (casa, país)."
+                "translation": "Voltar / retornar",
+                "timeContext": "Indica retorno a casa ou a outro lugar entendido como base ou origem."
             },
             {
                 "type": "vocab",
@@ -3216,10 +3216,10 @@ const CURSO_A1_DADOS = [
             },
             {
                 "type": "grammar_pill",
-                "title": "Partículas de Destino: へ (e) & に (ni)",
-                "rule": "Para indicar o destino de um movimento, usamos as partículas 'e' (へ) ou 'ni' (に) após o lugar. 'へ' foca na DIREÇÃO, enquanto 'に' foca no PONTO DE CHEGADA. Para iniciantes, são praticamente intercambiáveis!",
+                "title": "Destino com へ e に",
+                "rule": "Com verbos de movimento, へ e に podem marcar o destino. へ é pronunciado e. Essa substituição não vale para todos os outros usos de に.",
                 "formula": "[Lugar] + へ/に + [Verbo de Movimento]",
-                "example": "とうきょう へ いきます (Toukyou e ikimasu) ➔ Vou para Tóquio."
+                "example": "とうきょうへ いきます (Toukyou e ikimasu.) — Vou para Tóquio."
             }
         ],
         "stage3_practice": [
@@ -3277,34 +3277,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "いっしょ に えいが を みませんか",
-                "translation": "Gostaria de assistir a um filme juntos?",
-                "chunks": [
-                    "いっしょ",
-                    "に",
-                    "えいが",
-                    "を",
-                    "みませんか"
-                ]
+                "sentenceJp": "がっこう へ いきます",
+                "translation": "Vou para a escola.",
+                "chunks": ["がっこう", "へ", "いきます"]
             },
             {
-                "sentenceJp": "いいですね いきましょう",
-                "translation": "Boa ideia, vamos!",
-                "chunks": [
-                    "いいですね",
-                    "いきましょう"
-                ]
+                "sentenceJp": "うち に かえります",
+                "translation": "Volto para casa.",
+                "chunks": ["うち", "に", "かえります"]
             }
         ],
         "stage4_dialog": [
             {
                 "scenario": "Situação 1: Você encontra seu professor no corredor e ele pergunta sobre seus planos para depois da aula.",
                 "npcName": "Sato-sensei",
-                "npcMessage": "[Nome]-さん、このあと どこへ いきますか？ (Depois daqui, para onde você vai?)",
+                "npcMessage": "このあと どこへ いきますか。 (Depois daqui, para onde você vai?)",
                 "options": [
                     {
                         "text": "うち へ かえります。",
-                        "feedback": "Perfeito! Resposta clara e correta usando o verbo de retorno.",
+                        "feedback": "A resposta usa 帰ります para indicar o retorno a casa.",
                         "isCorrect": true
                     },
                     {
@@ -3322,9 +3313,9 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a principal diferença entre 'ikimasu' e 'kimasu'?",
+                "question": "Qual contraste básico existe entre 行きます e 来ます?",
                 "options": [
-                    "'Ikimasu' é ir, 'kimasu' é vir.",
+                    "行きます é ir; 来ます é vir em relação ao ponto de referência.",
                     "'Ikimasu' é formal, 'kimasu' é informal.",
                     "Não há diferença."
                 ],
@@ -3334,8 +3325,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'いきます (行きます)' (Ikimasu)?",
                 "options": [
                     "Ir (para algum lugar)",
-                    "Vir (para cá)",
-                    "Voltar (para casa/origem)"
+                    "Vir",
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 0
             },
@@ -3343,17 +3334,17 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'きます (来ます)' (Kimasu)?",
                 "options": [
                     "Ir (para algum lugar)",
-                    "Vir (para cá)",
-                    "Voltar (para casa/origem)"
+                    "Vir",
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'かえります (帰ります)' (Kaerimasu)?",
                 "options": [
-                    "Vir (para cá)",
+                    "Vir",
                     "Ir (para algum lugar)",
-                    "Voltar (para casa/origem)"
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 2
             },
@@ -3362,7 +3353,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Escola / Estação / Casa",
                     "Ir (para algum lugar)",
-                    "Vir (para cá)"
+                    "Vir"
                 ],
                 "correctIndex": 0
             }
@@ -8177,6 +8168,13 @@ CURSO_A1_DADOS[7].editorialReview = {
 })();
 
 CURSO_A1_DADOS[11].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[12].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
