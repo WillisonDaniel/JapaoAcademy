@@ -12,7 +12,7 @@ const slug = value => value.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').t
 const context = {};
 vm.createContext(context);
 vm.runInContext(`${fs.readFileSync(path.join(ROOT, 'database/ja-JP/data_curso_a1.js'), 'utf8')}\nglobalThis.__value=CURSO_A1_DADOS;`, context);
-const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05', 'a1_mod_06', 'a1_mod_07', 'a1_mod_08'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
+const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05', 'a1_mod_06', 'a1_mod_07', 'a1_mod_08', 'a1_mod_09'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname, 'JAPANESE_EDITORIAL_LEDGER.json'), 'utf8'));
 const decisions = new Map(ledger.decisions.map(decision => [decision.id, decision]));
 
@@ -58,4 +58,4 @@ assert.doesNotMatch(runtime, /qualquer adulto|nunca '-san'|rebaixou o título|ex
 assert.match(runtime, /Nacionalidade e idioma/);
 assert.doesNotMatch(runtime, /qualquer país|todas as palavras de origem estrangeira|o idioma brasileiro|Lego das Nacionalidades/i);
 
-console.log('Fase 21B.1: módulos A1-01 a A1-08 possuem 172/172 alvos sustentados e nenhum alvo inconclusivo.');
+console.log('Fase 21B.1: módulos A1-01 a A1-09 possuem 193/193 alvos sustentados e nenhum alvo inconclusivo.');

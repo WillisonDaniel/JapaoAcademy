@@ -9876,7 +9876,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_09-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;module.metadata",
@@ -9884,16 +9884,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "57c62df3ef91a6591096fb00c572ec599a3e2798fdd8bd4778a980824b02235c",
-      "finalHash": "57c62df3ef91a6591096fb00c572ec599a3e2798fdd8bd4778a980824b02235c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c18cf3d4112364e07f0f2e3b502f8ca9e44ce20f9c7be6c82e3020c8173537a5",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "title": "Números de 1 a 10 e idades com ～歳",
+        "sectionTitle": "Identidade & Profissões",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Pratique os números de 1 a 10 e a forma ～歳 (sai) para falar de idade em exemplos simples."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "57c62df3ef91a6591096fb00c572ec599a3e2798fdd8bd4778a980824b02235c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage1_context",
@@ -9901,16 +9919,40 @@
         "kind": "context"
       },
       "beforeHash": "5f789cb754a8e52051675eb1250bbe69783304e97fc1a7904e3d7390cc6f34dc",
-      "finalHash": "5f789cb754a8e52051675eb1250bbe69783304e97fc1a7904e3d7390cc6f34dc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2b409286e9567708a70ff12849c3036d8d4975c749b9ba359c3e005df815845b",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Ichi, ni, san. Ni-juu-go-sai desu.",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Pratique os números de 1 a 10 e a forma ～歳 (sai) para falar de idade em exemplos simples.",
+        "audio": {
+          "displayText": "一、二、三！二十五歳です。",
+          "audioText": "一、二、三！二十五歳です。",
+          "furigana": "",
+          "romaji": "Ichi, ni, san! Nijuu-go sai desu.",
+          "translation": "Um, dois, três! Tenho 25 anos.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5f789cb754a8e52051675eb1250bbe69783304e97fc1a7904e3d7390cc6f34dc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage2_drops[0]",
@@ -9918,16 +9960,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "e0f8c80e467c4de5f4c68f390bac9785c6789343cae6302d14b7b012b096b23f",
-      "finalHash": "e0f8c80e467c4de5f4c68f390bac9785c6789343cae6302d14b7b012b096b23f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ff93898ba88a8942b1d3f8b9cd642514995cd6dc36e46137b3ab29c7ce0a7969",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "いち、に、さん",
+        "romaji": "Ichi, ni, san",
+        "translation": "1, 2, 3",
+        "timeContext": "Números básicos usados em contagens e combinações."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e0f8c80e467c4de5f4c68f390bac9785c6789343cae6302d14b7b012b096b23f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage2_drops[1]",
@@ -9935,16 +9991,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "7368ffe3f6b517b9fff62e61243c01b7d2c32f51a6191ab93374bc57801ee5af",
-      "finalHash": "7368ffe3f6b517b9fff62e61243c01b7d2c32f51a6191ab93374bc57801ee5af",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "19222a7845da0c30eb3c28d5260e7899473bc8b0bb873442054cabe669f96e79",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "よん（し）、ご、ろく",
+        "romaji": "Yon (shi), go, roku",
+        "translation": "4, 5, 6",
+        "timeContext": "よん é uma leitura básica de 4; し também aparece em combinações, como しがつ (abril)."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7368ffe3f6b517b9fff62e61243c01b7d2c32f51a6191ab93374bc57801ee5af"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage2_drops[2]",
@@ -9952,16 +10022,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "c4f6867e9bda3e5cae5cc4e81fa0583f5467ed82900e34140513515fb9cce8b6",
-      "finalHash": "c4f6867e9bda3e5cae5cc4e81fa0583f5467ed82900e34140513515fb9cce8b6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e92c0e3a2753d94c9670a6ebfefddeb58d3cfa88238f322b4a1e3c46e62cc63d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "なな（しち）、はち、きゅう、じゅう",
+        "romaji": "Nana (shichi), hachi, kyuu, juu",
+        "translation": "7, 8, 9, 10",
+        "timeContext": "Algumas leituras variam conforme o contador ou a palavra seguinte."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c4f6867e9bda3e5cae5cc4e81fa0583f5467ed82900e34140513515fb9cce8b6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage2_drops[3]",
@@ -9969,16 +10053,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "7fcf7f6316c8ba232d4795393c669b4e6341cbb5a57fa6811463bec66a5bf288",
-      "finalHash": "7fcf7f6316c8ba232d4795393c669b4e6341cbb5a57fa6811463bec66a5bf288",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2851e70c44923825a2c9de425a2d1c8ea84a062eeb34b2f183e4db9c4b5b6a89",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Números e idade com ～歳",
+        "rule": "Em números compostos, 20 é にじゅう e 25 é にじゅうご. Para indicar idade, usa-se ～歳 (さい) após o número.",
+        "formula": "[Número] + 歳（さい）です",
+        "example": "25 anos → にじゅうごさいです (Ni-juu-go-sai desu). Para 20 anos, はたち é uma leitura comum de 二十歳."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7fcf7f6316c8ba232d4795393c669b4e6341cbb5a57fa6811463bec66a5bf288"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_practice[0]",
@@ -9986,16 +10084,40 @@
         "kind": "practice"
       },
       "beforeHash": "d0ff053b285177f9702d1fb30c6bc9a0c7955b62b3bcc1928c34d84ca40e3316",
-      "finalHash": "d0ff053b285177f9702d1fb30c6bc9a0c7955b62b3bcc1928c34d84ca40e3316",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "59b4ac512bf0a98fc78fbac26fcc89267680da1002a1222d9b320c3be0d2dc07",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "1. Sabendo que 3 é さん e 10 é じゅう, como se diz “30 anos” em japonês?",
+        "options": [
+          {
+            "label": "🎂 さんじゅうさいです (San-juu-sai desu)",
+            "isCorrect": true
+          },
+          {
+            "label": "🎂 じゅうさんさいです (Juu-san-sai desu)",
+            "isCorrect": false
+          },
+          {
+            "label": "🎂 はたちです (Hatachi desu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d0ff053b285177f9702d1fb30c6bc9a0c7955b62b3bcc1928c34d84ca40e3316"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_practice[1]",
@@ -10003,16 +10125,40 @@
         "kind": "practice"
       },
       "beforeHash": "9ff1d4230a9e0bd98214a71b0b6f0d84f5ac996e8489558b5d59c25762700a86",
-      "finalHash": "9ff1d4230a9e0bd98214a71b0b6f0d84f5ac996e8489558b5d59c25762700a86",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "526de3f1bf632c1f2c4549f202b58f3c55bb9f714a05e797f61c4e04c59197be",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "2. Qual leitura é frequentemente usada para a idade de 20 anos?",
+        "options": [
+          {
+            "label": "にじゅうさい (Ni-juu-sai)",
+            "isCorrect": false
+          },
+          {
+            "label": "はたち (Hatachi)",
+            "isCorrect": true
+          },
+          {
+            "label": "じゅうにさい (Juu-ni-sai)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9ff1d4230a9e0bd98214a71b0b6f0d84f5ac996e8489558b5d59c25762700a86"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_practice[2]",
@@ -10020,16 +10166,40 @@
         "kind": "practice"
       },
       "beforeHash": "a40843f4b1f4a0fc4c9b01bcf030e39661508384d09f79e99a815800992f164e",
-      "finalHash": "a40843f4b1f4a0fc4c9b01bcf030e39661508384d09f79e99a815800992f164e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d603c26d7a09fa4fabb956631ea6da68a047a71bbd3bd862d6f0d78214c99f0e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "3. Qual leitura básica de 4 aparece na lista de números do módulo?",
+        "options": [
+          {
+            "label": "よん (Yon)",
+            "isCorrect": true
+          },
+          {
+            "label": "ご (Go)",
+            "isCorrect": false
+          },
+          {
+            "label": "きゅう (Kyuu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a40843f4b1f4a0fc4c9b01bcf030e39661508384d09f79e99a815800992f164e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_practice[3]",
@@ -10037,16 +10207,40 @@
         "kind": "practice"
       },
       "beforeHash": "bbbf0d8c7af6fa87ff534a0e58174835fde21e73a480fac29491ca011fcb6d23",
-      "finalHash": "bbbf0d8c7af6fa87ff534a0e58174835fde21e73a480fac29491ca011fcb6d23",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9670ebb2b830d629b3592eaf6e0a408dad9e9a48e1f3698544b5d4e7a102c357",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "4. Qual frase pergunta a idade de alguém? Use-a apenas quando o contexto tornar a pergunta apropriada.",
+        "options": [
+          {
+            "label": "なんごですか？ (Nan-go desu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "なんさいですか？ (Nan-sai desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "だれですか？ (Dare desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bbbf0d8c7af6fa87ff534a0e58174835fde21e73a480fac29491ca011fcb6d23"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_practice[4]",
@@ -10054,16 +10248,40 @@
         "kind": "practice"
       },
       "beforeHash": "d25319310e565a470c95f6c2867a07eb8a5f6fdc7fdb9c1b9097385008e26973",
-      "finalHash": "d25319310e565a470c95f6c2867a07eb8a5f6fdc7fdb9c1b9097385008e26973",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a7de3cd51b94d7c32ad272e69d00905a915b4464e341a7e81ca4206f1d4e1c8a",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "5. Como se diz “18 anos” com 10 = じゅう e 8 = はち?",
+        "options": [
+          {
+            "label": "はちじゅうさい (Hachi-juu-sai — 80 anos)",
+            "isCorrect": false
+          },
+          {
+            "label": "じゅうはっさい (Juu-hassai — 18 anos)",
+            "isCorrect": true
+          },
+          {
+            "label": "はたち (Hatachi — 20 anos)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d25319310e565a470c95f6c2867a07eb8a5f6fdc7fdb9c1b9097385008e26973"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_5_sentenceBuilder[0]",
@@ -10071,16 +10289,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "f399dbbf8ec23061aba0f12808e25697b26db96affd2ed95af82c45e88ef84ae",
-      "finalHash": "f399dbbf8ec23061aba0f12808e25697b26db96affd2ed95af82c45e88ef84ae",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "da51beb567bd1c77cca165ada88198b171aeccbdad57448deb82c01e6e0eb1ad",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "わたし は にじゅうごさい です",
+        "translation": "Tenho 25 anos.",
+        "chunks": [
+          "わたし",
+          "は",
+          "にじゅうごさい",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f399dbbf8ec23061aba0f12808e25697b26db96affd2ed95af82c45e88ef84ae"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage3_5_sentenceBuilder[1]",
@@ -10088,16 +10323,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "bb72f23e5fc30740f291b2b3a866887797b037a76fe00533935eb775e9e07ddb",
-      "finalHash": "bb72f23e5fc30740f291b2b3a866887797b037a76fe00533935eb775e9e07ddb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6a75d2cf3e460a15a0c5e9e26d9d8d559d2064963c03087440429bf635b55bb4",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "メアリーさん は じゅうきゅうさい です",
+        "translation": "Mary tem 19 anos.",
+        "chunks": [
+          "メアリーさん",
+          "は",
+          "じゅうきゅうさい",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bb72f23e5fc30740f291b2b3a866887797b037a76fe00533935eb775e9e07ddb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage4_dialog[0]",
@@ -10105,16 +10357,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "e5c49b69e37189e37f85be27d1a8a78c866fc1abbc8fa03ade018c2fd5b9a37d",
-      "finalHash": "e5c49b69e37189e37f85be27d1a8a78c866fc1abbc8fa03ade018c2fd5b9a37d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a63ded5e194b4bbcd513316297c3aaabaff728e247b780e55387c0a02d9dc927",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Em uma atividade de apresentação, a professora pede uma resposta-modelo sobre idade.",
+        "npcName": "Professora Suzuki",
+        "npcMessage": "たとえば、なんさいですか。 (Por exemplo: quantos anos você tem?)",
+        "options": [
+          {
+            "text": "わたし は にじゅうごさい です。 (Tenho 25 anos.)",
+            "feedback": "Boa resposta-modelo: ela usa um número seguido de ～歳です.",
+            "isCorrect": true
+          },
+          {
+            "text": "わたし は にじゅうごじん です。",
+            "feedback": "-人 não indica idade. Use ～歳 para este significado.",
+            "isCorrect": false
+          },
+          {
+            "text": "いち、に、さん です。",
+            "feedback": "A resposta precisa informar uma idade completa.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e5c49b69e37189e37f85be27d1a8a78c866fc1abbc8fa03ade018c2fd5b9a37d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage4_dialog[1]",
@@ -10122,16 +10407,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "5148b342162fb88f8ddd7fbc5d04e5ad7db3b94c87378c0ed7ebdd6c69993fe2",
-      "finalHash": "5148b342162fb88f8ddd7fbc5d04e5ad7db3b94c87378c0ed7ebdd6c69993fe2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fb4dd37c39459ce280e6d56bc3dc2fa214c8563092ddd1490ce8751610d364db",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Em um exercício de leitura, Kenji pergunta pela idade de uma pessoa de 20 anos.",
+        "npcName": "Kenji",
+        "npcMessage": "はたち です か。 (Você tem 20 anos?)",
+        "options": [
+          {
+            "text": "いいえ、わたし は じゅうきゅうさい です。 (Não, tenho 19 anos.)",
+            "feedback": "A resposta usa じゅうきゅうさい para 19 anos.",
+            "isCorrect": true
+          },
+          {
+            "text": "はい、じゅうさい です。",
+            "feedback": "じゅうさい significa 10 anos, não 20.",
+            "isCorrect": false
+          },
+          {
+            "text": "こんにちは。",
+            "feedback": "A frase não responde à pergunta sobre idade.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5148b342162fb88f8ddd7fbc5d04e5ad7db3b94c87378c0ed7ebdd6c69993fe2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage4_dialog[2]",
@@ -10139,16 +10457,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "f36f8f24b7a2b11917b27f6f90dab3d295d8ab6b7e434dd7eb5056af2ab94124",
-      "finalHash": "f36f8f24b7a2b11917b27f6f90dab3d295d8ab6b7e434dd7eb5056af2ab94124",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3be587d7a5ae233bf3f8fb0052d0c72d341124245d65456c5d9ad7cb5eb94583",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Ao comprar um ingresso com desconto estudantil, a atendente pergunta sua idade.",
+        "npcName": "Atendente do museu",
+        "npcMessage": "すみません。がくせいですか。なんさいですか。 (Com licença. Você é estudante? Quantos anos tem?)",
+        "options": [
+          {
+            "text": "はい、がくせいです。はたちです。",
+            "feedback": "A resposta usa a leitura apresentada para 20 anos.",
+            "isCorrect": false
+          },
+          {
+            "text": "はい、がくせいです。にじゅうにさいです。 (Sim, sou estudante. Tenho 22 anos.)",
+            "feedback": "Boa resposta: ela confirma a condição e informa a idade com ～歳です.",
+            "isCorrect": true
+          },
+          {
+            "text": "ありがとう。",
+            "feedback": "Ainda falta responder à pergunta sobre a idade.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f36f8f24b7a2b11917b27f6f90dab3d295d8ab6b7e434dd7eb5056af2ab94124"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage5_quiz[0]",
@@ -10156,16 +10507,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b64f1076424221e439f26e5c4ad55da8861075b6f3992dd7b4bfbdf133577d2d",
-      "finalHash": "b64f1076424221e439f26e5c4ad55da8861075b6f3992dd7b4bfbdf133577d2d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "874f1d90ea5b39635250f2b002495e9294b13775e19b78098ed3742b0d52bc7a",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é a leitura de 35 em japonês?",
+        "options": [
+          "さんじゅうご (San-juu-go)",
+          "ごじゅうさん (Go-juu-san)",
+          "さんごじゅう (San-go-juu)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b64f1076424221e439f26e5c4ad55da8861075b6f3992dd7b4bfbdf133577d2d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage5_quiz[1]",
@@ -10173,16 +10540,32 @@
         "kind": "quiz"
       },
       "beforeHash": "216791e04865bf41eb8eaebb96ee0a93ccb8584da9e3f35a21f3b0650925ac4a",
-      "finalHash": "216791e04865bf41eb8eaebb96ee0a93ccb8584da9e3f35a21f3b0650925ac4a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d385540c8ff8a2ace332799d2c20ea50ff7e80e5d6866c73f24068877ffe38d6",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de いち、に、さん?",
+        "options": [
+          "1, 2, 3",
+          "4, 5, 6",
+          "7, 8, 9, 10"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "216791e04865bf41eb8eaebb96ee0a93ccb8584da9e3f35a21f3b0650925ac4a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage5_quiz[2]",
@@ -10190,16 +10573,32 @@
         "kind": "quiz"
       },
       "beforeHash": "0c3679601e079209c3f4327c02db08e453fcdc1871b4b49d3c50cf1cf5835117",
-      "finalHash": "0c3679601e079209c3f4327c02db08e453fcdc1871b4b49d3c50cf1cf5835117",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "40441a54808e97e15568b9ca9c1157d0dbcc20629d7f8820bb1e55692ca52c21",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de よん（し）、ご、ろく?",
+        "options": [
+          "1, 2, 3",
+          "4, 5, 6",
+          "7, 8, 9, 10"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0c3679601e079209c3f4327c02db08e453fcdc1871b4b49d3c50cf1cf5835117"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage5_quiz[3]",
@@ -10207,16 +10606,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b4abc0d008fcd0ce9abc8ad650ada2a047196dc4476313d44014601786d34861",
-      "finalHash": "b4abc0d008fcd0ce9abc8ad650ada2a047196dc4476313d44014601786d34861",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7e4d72268b8bf85bce349df909e72b194382c0262f2d8f112479ec19f69f8e6d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado de なな（しち）、はち、きゅう、じゅう?",
+        "options": [
+          "4, 5, 6",
+          "1, 2, 3",
+          "7, 8, 9, 10"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b4abc0d008fcd0ce9abc8ad650ada2a047196dc4476313d44014601786d34861"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_09-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_09;stage5_quiz[4]",
@@ -10224,11 +10639,27 @@
         "kind": "quiz"
       },
       "beforeHash": "c0d3d9c24965da4c5157bccd71bde1f4ffe2c79bc91cd7fa1656246f960f89d4",
-      "finalHash": "c0d3d9c24965da4c5157bccd71bde1f4ffe2c79bc91cd7fa1656246f960f89d4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ace6f3d73bb54f0400cdedd42dcabd8b3d95c5a2da521366449476ff82948711",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre números e idade com ～歳, qual afirmação é correta?",
+        "options": [
+          "25 anos pode ser expresso como にじゅうごさいです (Ni-juu-go-sai desu); はたち é uma leitura comum para 20 anos.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c0d3d9c24965da4c5157bccd71bde1f4ffe2c79bc91cd7fa1656246f960f89d4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_10-module-metadata",
@@ -354855,8 +355286,8 @@
         "locator": "items[178]",
         "resource": "dictionary"
       },
-      "beforeHash": "fd76ee12f2b749ce653820b36e3ae1dcb17643972febf8180bac97d07d019d02",
-      "finalHash": "fd76ee12f2b749ce653820b36e3ae1dcb17643972febf8180bac97d07d019d02",
+      "beforeHash": "8c45280a631c4053b3f515f3926c8a7f774b582ecb5ba58c089aaa3091874ef1",
+      "finalHash": "8c45280a631c4053b3f515f3926c8a7f774b582ecb5ba58c089aaa3091874ef1",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -354872,8 +355303,8 @@
         "locator": "items[179]",
         "resource": "dictionary"
       },
-      "beforeHash": "b281b3a762e41409730fcf5b4509698e9bd9fb6ae3154d9030c065a0cba1b3a6",
-      "finalHash": "b281b3a762e41409730fcf5b4509698e9bd9fb6ae3154d9030c065a0cba1b3a6",
+      "beforeHash": "b8bb57a119e471331fb02dd79f14e9ec0a5a309effe682798af2be4b7cf6be7f",
+      "finalHash": "b8bb57a119e471331fb02dd79f14e9ec0a5a309effe682798af2be4b7cf6be7f",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -354889,8 +355320,8 @@
         "locator": "items[180]",
         "resource": "dictionary"
       },
-      "beforeHash": "26a87f315dbd7c436ab176c50c5a2bfdecd031b4932c0432d2cf61664d01e9e1",
-      "finalHash": "26a87f315dbd7c436ab176c50c5a2bfdecd031b4932c0432d2cf61664d01e9e1",
+      "beforeHash": "e4bf1218485b44fdc3f44a91dac91fd0d9b3fd740fbc375e1a1fc1bb3ffa8741",
+      "finalHash": "e4bf1218485b44fdc3f44a91dac91fd0d9b3fd740fbc375e1a1fc1bb3ffa8741",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -354906,8 +355337,8 @@
         "locator": "items[181]",
         "resource": "dictionary"
       },
-      "beforeHash": "74d1175e75ccd6f4b0c4e2656a37d111d049d84ca144ad24706327407a3704ba",
-      "finalHash": "74d1175e75ccd6f4b0c4e2656a37d111d049d84ca144ad24706327407a3704ba",
+      "beforeHash": "76e728e978e03f0d4d00c34273a97db347e232eafda969eb0d3154c1f037f8bd",
+      "finalHash": "76e728e978e03f0d4d00c34273a97db347e232eafda969eb0d3154c1f037f8bd",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -424913,21 +425344,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_09-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[8]",
         "resource": "listening"
       },
-      "beforeHash": "b4da6af543e395f34a152be4814950595f6c9559393d3f57a0874589d6239781",
-      "finalHash": "b4da6af543e395f34a152be4814950595f6c9559393d3f57a0874589d6239781",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "e0bb35fe9bf32079b734f07673f58e775beea0fa6b622fa1a2b3d3c3f85bf92a",
+      "finalHash": "e0bb35fe9bf32079b734f07673f58e775beea0fa6b622fa1a2b3d3c3f85bf92a",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_09-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 124
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_10-context-0",
@@ -432703,8 +433143,8 @@
         "locator": "reference[8]",
         "resource": "grammar"
       },
-      "beforeHash": "9b1c04e49855bb6c593dce4f085b245101d62900547021aa9debaba9f336dd08",
-      "finalHash": "9b1c04e49855bb6c593dce4f085b245101d62900547021aa9debaba9f336dd08",
+      "beforeHash": "2250dc644d4a59f8a52e8b6b94e6080a14f816c75a9dfe3f252313ae9a0a1d9a",
+      "finalHash": "2250dc644d4a59f8a52e8b6b94e6080a14f816c75a9dfe3f252313ae9a0a1d9a",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -436657,40 +437097,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_09-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[16]",
         "resource": "writing"
       },
-      "beforeHash": "56b501441e1e6a8b30adf129c0d54e64778116d5d751600bb4f61a256350362a",
-      "finalHash": "56b501441e1e6a8b30adf129c0d54e64778116d5d751600bb4f61a256350362a",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "d43dc240a599fb31badbc35d01f205e20388cb628824551251dfee94f5f7f3e7",
+      "finalHash": "d43dc240a599fb31badbc35d01f205e20388cb628824551251dfee94f5f7f3e7",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_09-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_09-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[17]",
         "resource": "writing"
       },
-      "beforeHash": "b8e258e02a078e18b9faaaab7df6daf9fd4f1b4d06191c8351e312bba47deb03",
-      "finalHash": "b8e258e02a078e18b9faaaab7df6daf9fd4f1b4d06191c8351e312bba47deb03",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "e799e9895ca61bf2dcb5bf00529c3f4326f909c10b6cf53c78f7a532b7e81060",
+      "finalHash": "e799e9895ca61bf2dcb5bf00529c3f4326f909c10b6cf53c78f7a532b7e81060",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_09-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 44
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_10-1",

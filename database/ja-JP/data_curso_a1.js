@@ -7993,3 +7993,121 @@ CURSO_A1_DADOS[7].editorialReview = {
     scope: "all-editorial-targets",
     sources: ["genki-2e-1-textbook", "tobira-2009"]
 };
+
+(function reviewA1Module09() {
+    const module = CURSO_A1_DADOS[8];
+    module.title = "Números de 1 a 10 e idades com ～歳";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Ichi, ni, san. Ni-juu-go-sai desu.",
+        missionDescription: "Pratique os números de 1 a 10 e a forma ～歳 (sai) para falar de idade em exemplos simples."
+    });
+    Object.assign(module.stage2_drops[0], {
+        romaji: "Ichi, ni, san",
+        timeContext: "Números básicos usados em contagens e combinações."
+    });
+    Object.assign(module.stage2_drops[1], {
+        kanji: "よん（し）、ご、ろく",
+        romaji: "Yon (shi), go, roku",
+        timeContext: "よん é uma leitura básica de 4; し também aparece em combinações, como しがつ (abril)."
+    });
+    Object.assign(module.stage2_drops[2], {
+        kanji: "なな（しち）、はち、きゅう、じゅう",
+        romaji: "Nana (shichi), hachi, kyuu, juu",
+        timeContext: "Algumas leituras variam conforme o contador ou a palavra seguinte."
+    });
+    Object.assign(module.stage2_drops[3], {
+        title: "Números e idade com ～歳",
+        rule: "Em números compostos, 20 é にじゅう e 25 é にじゅうご. Para indicar idade, usa-se ～歳 (さい) após o número.",
+        formula: "[Número] + 歳（さい）です",
+        example: "25 anos → にじゅうごさいです (Ni-juu-go-sai desu). Para 20 anos, はたち é uma leitura comum de 二十歳."
+    });
+    Object.assign(module.stage3_practice[0], {
+        question: "1. Sabendo que 3 é さん e 10 é じゅう, como se diz “30 anos” em japonês?",
+        options: [
+            { label: "🎂 さんじゅうさいです (San-juu-sai desu)", isCorrect: true },
+            { label: "🎂 じゅうさんさいです (Juu-san-sai desu)", isCorrect: false },
+            { label: "🎂 はたちです (Hatachi desu)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[1], {
+        question: "2. Qual leitura é frequentemente usada para a idade de 20 anos?",
+        options: [
+            { label: "にじゅうさい (Ni-juu-sai)", isCorrect: false },
+            { label: "はたち (Hatachi)", isCorrect: true },
+            { label: "じゅうにさい (Juu-ni-sai)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[2], {
+        question: "3. Qual leitura básica de 4 aparece na lista de números do módulo?",
+        options: [
+            { label: "よん (Yon)", isCorrect: true },
+            { label: "ご (Go)", isCorrect: false },
+            { label: "きゅう (Kyuu)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[3], {
+        question: "4. Qual frase pergunta a idade de alguém? Use-a apenas quando o contexto tornar a pergunta apropriada.",
+        options: [
+            { label: "なんごですか？ (Nan-go desu ka?)", isCorrect: false },
+            { label: "なんさいですか？ (Nan-sai desu ka?)", isCorrect: true },
+            { label: "だれですか？ (Dare desu ka?)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[4], {
+        question: "5. Como se diz “18 anos” com 10 = じゅう e 8 = はち?",
+        options: [
+            { label: "はちじゅうさい (Hachi-juu-sai — 80 anos)", isCorrect: false },
+            { label: "じゅうはっさい (Juu-hassai — 18 anos)", isCorrect: true },
+            { label: "はたち (Hatachi — 20 anos)", isCorrect: false }
+        ]
+    });
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "わたし は にじゅうごさい です", translation: "Tenho 25 anos.", chunks: ["わたし", "は", "にじゅうごさい", "です"] },
+        { sentenceJp: "メアリーさん は じゅうきゅうさい です", translation: "Mary tem 19 anos.", chunks: ["メアリーさん", "は", "じゅうきゅうさい", "です"] }
+    ];
+    module.stage4_dialog = [
+        {
+            scenario: "Situação 1: Em uma atividade de apresentação, a professora pede uma resposta-modelo sobre idade.",
+            npcName: "Professora Suzuki",
+            npcMessage: "たとえば、なんさいですか。 (Por exemplo: quantos anos você tem?)",
+            options: [
+                { text: "わたし は にじゅうごさい です。 (Tenho 25 anos.)", feedback: "Boa resposta-modelo: ela usa um número seguido de ～歳です.", isCorrect: true },
+                { text: "わたし は にじゅうごじん です。", feedback: "-人 não indica idade. Use ～歳 para este significado.", isCorrect: false },
+                { text: "いち、に、さん です。", feedback: "A resposta precisa informar uma idade completa.", isCorrect: false }
+            ]
+        },
+        {
+            scenario: "Situação 2: Em um exercício de leitura, Kenji pergunta pela idade de uma pessoa de 20 anos.",
+            npcName: "Kenji",
+            npcMessage: "はたち です か。 (Você tem 20 anos?)",
+            options: [
+                { text: "いいえ、わたし は じゅうきゅうさい です。 (Não, tenho 19 anos.)", feedback: "A resposta usa じゅうきゅうさい para 19 anos.", isCorrect: true },
+                { text: "はい、じゅうさい です。", feedback: "じゅうさい significa 10 anos, não 20.", isCorrect: false },
+                { text: "こんにちは。", feedback: "A frase não responde à pergunta sobre idade.", isCorrect: false }
+            ]
+        },
+        {
+            scenario: "Situação 3: Ao comprar um ingresso com desconto estudantil, a atendente pergunta sua idade.",
+            npcName: "Atendente do museu",
+            npcMessage: "すみません。がくせいですか。なんさいですか。 (Com licença. Você é estudante? Quantos anos tem?)",
+            options: [
+                { text: "はい、がくせいです。はたちです。", feedback: "A resposta usa a leitura apresentada para 20 anos.", isCorrect: false },
+                { text: "はい、がくせいです。にじゅうにさいです。 (Sim, sou estudante. Tenho 22 anos.)", feedback: "Boa resposta: ela confirma a condição e informa a idade com ～歳です.", isCorrect: true },
+                { text: "ありがとう。", feedback: "Ainda falta responder à pergunta sobre a idade.", isCorrect: false }
+            ]
+        }
+    ];
+    module.stage5_quiz[0].question = "Qual é a leitura de 35 em japonês?";
+    module.stage5_quiz[0].options = ["さんじゅうご (San-juu-go)", "ごじゅうさん (Go-juu-san)", "さんごじゅう (San-go-juu)"];
+    module.stage5_quiz[1].question = "Qual é o significado de いち、に、さん?";
+    module.stage5_quiz[2].question = "Qual é o significado de よん（し）、ご、ろく?";
+    module.stage5_quiz[3].question = "Qual é o significado de なな（しち）、はち、きゅう、じゅう?";
+    module.stage5_quiz[4].question = "Sobre números e idade com ～歳, qual afirmação é correta?";
+    module.stage5_quiz[4].options[0] = "25 anos pode ser expresso como にじゅうごさいです (Ni-juu-go-sai desu); はたち é uma leitura comum para 20 anos.";
+    module.editorialReview = {
+        status: "corrected",
+        phase: "21B.1",
+        scope: "all-editorial-targets",
+        sources: ["genki-2e-1-textbook", "tobira-2009"]
+    };
+})();
