@@ -119,12 +119,12 @@ const stateCounts = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(stateCounts.corrected, 208, 'quantidade de correcoes rastreadas mudou');
-assert.equal(stateCounts.approved, 7, 'quantidade de aprovacoes rastreadas mudou');
-assert.equal(stateCounts.unresolved, 2100, 'fila editorial aberta mudou sem atualizacao do relatorio');
+assert.equal(stateCounts.corrected, 226, 'quantidade de correcoes rastreadas mudou');
+assert.equal(stateCounts.approved, 9, 'quantidade de aprovacoes rastreadas mudou');
+assert.equal(stateCounts.unresolved, 2080, 'fila editorial aberta mudou sem atualizacao do relatorio');
 
 for (const module of modules) {
-    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (module.id === 'a1_mod_02' ? 'corrected' : 'pending-human-review');
+    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (['a1_mod_02', 'a1_mod_03'].includes(module.id) ? 'corrected' : 'pending-human-review');
     assert.equal(module.editorialReview.status, expectedStatus, `${module.id}: estado editorial do módulo divergiu dos seus alvos`);
     (module.stage3_practice || []).forEach((item, index) => {
         assert.equal((item.options || []).filter(option => option.isCorrect).length, 1, `${module.id}: pratica ${index} sem gabarito unico`);

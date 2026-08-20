@@ -4952,7 +4952,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_03-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;module.metadata",
@@ -4960,16 +4960,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "70e6df403bbd0bc27d895887138b89bc1b2601f9e24d18e69e50e78a8e0382eb",
-      "finalHash": "70e6df403bbd0bc27d895887138b89bc1b2601f9e24d18e69e50e78a8e0382eb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "71fc338bc8d8f9a4a0395ba35465a81cefa6233e9db1f353084141be64aab257",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 58
+        }
+      ],
+      "finalValue": {
+        "title": "Agradecer, Pedir Licença e Desculpar-se",
+        "sectionTitle": "Primeiros Passos & Etiqueta",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Pratique expressões frequentes para agradecer, pedir licença e fazer uma desculpa breve em situações cotidianas."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "70e6df403bbd0bc27d895887138b89bc1b2601f9e24d18e69e50e78a8e0382eb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage1_context",
@@ -4977,16 +4995,40 @@
         "kind": "context"
       },
       "beforeHash": "37c47cdf423d17fc1aeb972c4c2c74958d271fcf3e444ce56db9742783336707",
-      "finalHash": "37c47cdf423d17fc1aeb972c4c2c74958d271fcf3e444ce56db9742783336707",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "09735f5d71aa9ae0169ee7778f5a8fef3493e73e71287d9d4df87d2b92f095f8",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 58
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Arigatou gozaimasu! Sumimasen!",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Pratique expressões frequentes para agradecer, pedir licença e fazer uma desculpa breve em situações cotidianas.",
+        "audio": {
+          "displayText": "ありがとうございます。すみません。",
+          "audioText": "ありがとうございます。すみません。",
+          "furigana": "",
+          "romaji": "Arigatou gozaimasu. Sumimasen.",
+          "translation": "Muito obrigado. Com licença.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "37c47cdf423d17fc1aeb972c4c2c74958d271fcf3e444ce56db9742783336707"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage2_drops[0]",
@@ -4994,16 +5036,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "0e2d7f2ee9068f0eca21f1c3800941176409fff8459f604cdf46d0800e287664",
-      "finalHash": "0e2d7f2ee9068f0eca21f1c3800941176409fff8459f604cdf46d0800e287664",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "39a562289bb8ead35e8847dfa863fdbe5e234c0c639bdfc4756d61109e24de15",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "ありがとうございます",
+        "romaji": "Arigatou gozaimasu",
+        "translation": "Muito obrigado / Obrigado",
+        "timeContext": "Forma polida de agradecimento, adequada em situações com desconhecidos e atendimento."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0e2d7f2ee9068f0eca21f1c3800941176409fff8459f604cdf46d0800e287664"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage2_drops[1]",
@@ -5011,16 +5067,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "03f72a42cb795e0f1ee4efb920bcf2ba03319aef917ed2e2f7957852fe86daa8",
-      "finalHash": "03f72a42cb795e0f1ee4efb920bcf2ba03319aef917ed2e2f7957852fe86daa8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e2081d376efb05ca87e7be3a31bc06efad1dac630fecf1a98d8236e4136a78be",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "すみません",
+        "romaji": "Sumimasen",
+        "translation": "Com licença / Desculpe",
+        "timeContext": "Pode chamar a atenção de alguém, pedir licença, desculpar-se e, em certos contextos, reconhecer o incômodo causado por um favor."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "03f72a42cb795e0f1ee4efb920bcf2ba03319aef917ed2e2f7957852fe86daa8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage2_drops[2]",
@@ -5028,16 +5098,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "ba24f885af23c5be31291317d03f8e2df0f50f9a61a44ea6156b2eb5d4e159a9",
-      "finalHash": "ba24f885af23c5be31291317d03f8e2df0f50f9a61a44ea6156b2eb5d4e159a9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cdaca5aa83032dcdccf0e23ccbabdf26ce37cb0c36a3e8fe19ee856ade85f4f2",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "ごめんなさい",
+        "romaji": "Gomennasai",
+        "translation": "Desculpe / Perdão",
+        "timeContext": "É uma desculpa mais direta e costuma aparecer em contextos pessoais ou menos formais."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ba24f885af23c5be31291317d03f8e2df0f50f9a61a44ea6156b2eb5d4e159a9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage2_drops[3]",
@@ -5045,16 +5129,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d2f1049ca39b88a879dca81285308e7b69fd79bf312cd88a55cc4b0f4f8e44b5",
-      "finalHash": "d2f1049ca39b88a879dca81285308e7b69fd79bf312cd88a55cc4b0f4f8e44b5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5346a073ea9ab04b0a0d592825a7e44069dd8c178437374bb0ab2609d31ab995",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Usos frequentes de すみません",
+        "rule": "O sentido de すみません depende da situação: pode iniciar um pedido, pedir licença ou expressar uma desculpa breve.",
+        "formula": "1. Chamar atenção | 2. Pedir licença ou desculpar-se | 3. Reconhecer o esforço associado a um favor",
+        "example": "Ao receber um favor, すみません pode reconhecer o trabalho que a outra pessoa teve; ありがとうございます deixa o agradecimento explícito."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d2f1049ca39b88a879dca81285308e7b69fd79bf312cd88a55cc4b0f4f8e44b5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_practice[0]",
@@ -5063,15 +5161,39 @@
       },
       "beforeHash": "1567ba23a2dcef2aa81e5a26e4eeb8c4fe9d965af8f0c909363396802688a5a5",
       "finalHash": "1567ba23a2dcef2aa81e5a26e4eeb8c4fe9d965af8f0c909363396802688a5a5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "1. Você entra em um restaurante no Japão e quer chamar o garçom até a sua mesa. O que você grita educadamente?",
+        "options": [
+          {
+            "label": "🙏 ごめんなさい (Gomennasai!)",
+            "isCorrect": false
+          },
+          {
+            "label": "🙋‍♂️ すみません！ (Sumimasen!)",
+            "isCorrect": true
+          },
+          {
+            "label": "🤝 はじめまして (Hajimemashite)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1567ba23a2dcef2aa81e5a26e4eeb8c4fe9d965af8f0c909363396802688a5a5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_practice[1]",
@@ -5079,16 +5201,40 @@
         "kind": "practice"
       },
       "beforeHash": "eec11868958bf7fadc6b8b6fa8ca325b98f7b11b235a7128f724a964cf250c8c",
-      "finalHash": "eec11868958bf7fadc6b8b6fa8ca325b98f7b11b235a7128f724a964cf250c8c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "dfdc9f555930ec50daf4d5ba1bbd9df63b45780a48960634418b3b33d94a0ce2",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "2. Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
+        "options": [
+          {
+            "label": "Gomennasai é social/leve; Sumimasen é apenas para a família",
+            "isCorrect": false
+          },
+          {
+            "label": "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção",
+            "isCorrect": true
+          },
+          {
+            "label": "Não há diferença, significam exatamente a mesma coisa em tudo",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "eec11868958bf7fadc6b8b6fa8ca325b98f7b11b235a7128f724a964cf250c8c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_practice[2]",
@@ -5096,16 +5242,40 @@
         "kind": "practice"
       },
       "beforeHash": "2b7de73491269c4a93c2dc5708412fd0ffd769cfa4dd57b798080432f7f6fde9",
-      "finalHash": "2b7de73491269c4a93c2dc5708412fd0ffd769cfa4dd57b798080432f7f6fde9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "89de4c952066c1b659533ae1e3b0ea876b04d3c3148284422dc91c19597c6a9e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "3. Por que 'Arigatou gozaimasu' é uma escolha segura ao agradecer um vendedor?",
+        "options": [
+          {
+            "label": "Porque é uma forma polida de agradecimento adequada ao atendimento",
+            "isCorrect": true
+          },
+          {
+            "label": "Porque 'Arigatou' significa 'Adeus'",
+            "isCorrect": false
+          },
+          {
+            "label": "Porque os vendedores não entendem essa palavra",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2b7de73491269c4a93c2dc5708412fd0ffd769cfa4dd57b798080432f7f6fde9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_practice[3]",
@@ -5114,15 +5284,39 @@
       },
       "beforeHash": "12d8748188e949aefc2661aac74683f3f71d7a5d50956a2793d500c5cf11700b",
       "finalHash": "12d8748188e949aefc2661aac74683f3f71d7a5d50956a2793d500c5cf11700b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "4. Você está no trem lotado e precisa passar pelas pessoas para descer na estação. O que você vai dizendo?",
+        "options": [
+          {
+            "label": "ありがとうございます (Arigatou gozaimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "すみません (Sumimasen - Com licença!)",
+            "isCorrect": true
+          },
+          {
+            "label": "こんばんは (Konbanwa)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "12d8748188e949aefc2661aac74683f3f71d7a5d50956a2793d500c5cf11700b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_practice[4]",
@@ -5130,16 +5324,40 @@
         "kind": "practice"
       },
       "beforeHash": "4fc82525f262dcfdc8d9f8288e7aef8950758d7e4ce16abb8bae6b218a464d25",
-      "finalHash": "4fc82525f262dcfdc8d9f8288e7aef8950758d7e4ce16abb8bae6b218a464d25",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "16699945550de2f02aea946c19bdb52d6b2db5ede31d4cc3c485ad1a2ac28366",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "5. Se alguém segura a porta do elevador para você, por que 'Sumimasen' pode acompanhar o agradecimento?",
+        "options": [
+          {
+            "label": "Para xingar a pessoa que segurou a porta",
+            "isCorrect": false
+          },
+          {
+            "label": "Porque pode reconhecer o incômodo ou esforço causado pelo favor, junto de um agradecimento explícito",
+            "isCorrect": true
+          },
+          {
+            "label": "Porque o elevador quebrou",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4fc82525f262dcfdc8d9f8288e7aef8950758d7e4ce16abb8bae6b218a464d25"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_5_sentenceBuilder[0]",
@@ -5147,16 +5365,30 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "37be171ab3c188da12aabca2bebdaeb4bfd85d21ecb22b6f7613758c3d46be91",
-      "finalHash": "37be171ab3c188da12aabca2bebdaeb4bfd85d21ecb22b6f7613758c3d46be91",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "29bf894d9894b294bd9f1d114788471cc4c357d8fbd1527a131ae7f59e84d2e5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "ありがとうございます。",
+        "translation": "Muito obrigado.",
+        "chunks": [
+          "ありがとうございます。"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "37be171ab3c188da12aabca2bebdaeb4bfd85d21ecb22b6f7613758c3d46be91"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage3_5_sentenceBuilder[1]",
@@ -5164,16 +5396,30 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "e572c020544a06eaaafd8e73969a0d0c62cf64e80717761033fdd7dca1e0ef10",
-      "finalHash": "e572c020544a06eaaafd8e73969a0d0c62cf64e80717761033fdd7dca1e0ef10",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "9e0d9d14ef96399f8e5eb7d40af6ffebe2f998d8c24a040ee01297c5bc81ddd8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "すみません。",
+        "translation": "Com licença / Desculpe.",
+        "chunks": [
+          "すみません。"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e572c020544a06eaaafd8e73969a0d0c62cf64e80717761033fdd7dca1e0ef10"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage4_dialog[0]",
@@ -5181,11 +5427,44 @@
         "kind": "dialogue"
       },
       "beforeHash": "89bd111871aba112d70771f1f07b2acdcd476aaa605d207cf5f27d7cc7e67d93",
-      "finalHash": "89bd111871aba112d70771f1f07b2acdcd476aaa605d207cf5f27d7cc7e67d93",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "074a11110141bffe04f385c0c98f5960cdd0b763d20eb783dc5a8aeb581bbc23",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 58
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você está saindo do metrô lotado em Tóquio e acidentalmente pisa de leve no pé de uma senhora.",
+        "npcName": "Senhora no Metrô",
+        "npcMessage": "痛っ！",
+        "options": [
+          {
+            "text": "ありがとうございます！",
+            "feedback": "Inadequado: neste contexto, é necessário pedir desculpas primeiro.",
+            "isCorrect": false
+          },
+          {
+            "text": "あ、すみません！",
+            "feedback": "Adequado: você fez uma desculpa breve após esbarrar na pessoa.",
+            "isCorrect": true
+          },
+          {
+            "text": "よろしくおねがいします！",
+            "feedback": "Incorreto: Isso é usado em apresentações pessoais.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "89bd111871aba112d70771f1f07b2acdcd476aaa605d207cf5f27d7cc7e67d93"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage4-dialog-1",
@@ -5198,7 +5477,7 @@
         "kind": "dialogue"
       },
       "beforeHash": "815aed33ffb0c42931c36d38d77d9a19707e04db198ad2c1376633e93f8083f3",
-      "finalHash": "514e4c556b5fbdb06461d2f94314dbe010ae2799a17dfb235e8fd292d846d2ba",
+      "finalHash": "1e34f522a6c7813dd09af0bf3bc5ff1c16c01e41a3061ba6b1954726fd52eb3d",
       "beforeValue": {
         "scenario": "Situação 2: Você deixa sua carteira cair na rua e um pedestre corre atrás de você para devolvê-la.",
         "npcName": "Pedestre Gentil",
@@ -5224,16 +5503,16 @@
       "finalValue": {
         "scenario": "Situação 2: Você deixa sua carteira cair na rua e um pedestre corre atrás de você para devolvê-la.",
         "npcName": "Pedestre Gentil",
-        "npcMessage": "あの！ これ、おちましたよ！ (Com licença! Isso caiu!)",
+        "npcMessage": "あの、これ、落としましたよ。",
         "options": [
           {
-            "text": "ごめんなさい！ (Gomennasai!)",
-            "feedback": "Ops! Gomennasai soa como se você tivesse cometido um crime contra ele. Use agradecimento!",
+            "text": "ごめんなさい！",
+            "feedback": "Menos adequado: a situação pede principalmente agradecimento pela devolução.",
             "isCorrect": false
           },
           {
             "text": "あ！ ありがとうございます！ すみません！",
-            "feedback": "Perfeito! Você combinou agradecimento e pedido de desculpas de modo adequado ao contexto.",
+            "feedback": "Adequado: você agradeceu e também reconheceu o trabalho da pessoa ao devolver a carteira.",
             "isCorrect": true
           },
           {
@@ -5244,23 +5523,25 @@
         ]
       },
       "reasonKind": "naturalness",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 4
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
         },
         {
-          "sourceId": "quartet-1-answer-key",
-          "page": 82
+          "sourceId": "tobira-2009",
+          "page": 58
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "514e4c556b5fbdb06461d2f94314dbe010ae2799a17dfb235e8fd292d846d2ba"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage4_dialog[2]",
@@ -5268,16 +5549,57 @@
         "kind": "dialogue"
       },
       "beforeHash": "39cb9f605c9f5d5cf64f0990e5b65637b181a48496c2ac37072909b830fadc29",
-      "finalHash": "39cb9f605c9f5d5cf64f0990e5b65637b181a48496c2ac37072909b830fadc29",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "df8b605744f4bd45e254fd81e35d417acae0a70f42eed9ede6e6b1b0c5b79fe6",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 58
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Você entra em um Izakaya (bar tradicional) barulhento e está pronto para fazer seu pedido.",
+        "npcName": "Garçom (De costas, longe da mesa)",
+        "npcMessage": "*(Limpando o balcão do outro lado da sala)*",
+        "options": [
+          {
+            "text": "すみません！",
+            "feedback": "Adequado: すみません é uma forma frequente de chamar a atenção de um atendente.",
+            "isCorrect": true
+          },
+          {
+            "text": "こんにちは！",
+            "feedback": "Incomum para chamar garçons em restaurantes.",
+            "isCorrect": false
+          },
+          {
+            "text": "こちらこそ！",
+            "feedback": "Completamente sem sentido no contexto.",
+            "isCorrect": false
+          }
+        ],
+        "content": {
+          "displayText": "",
+          "audioText": "",
+          "furigana": "",
+          "romaji": "",
+          "translation": "",
+          "scenario": "O garçom está de costas, limpando o balcão do outro lado da sala."
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "39cb9f605c9f5d5cf64f0990e5b65637b181a48496c2ac37072909b830fadc29"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage5_quiz[0]",
@@ -5285,16 +5607,32 @@
         "kind": "quiz"
       },
       "beforeHash": "df22fc9cd2a78cf19429528b87c63f85bc0e84ff107893076e64a09d90c2c2d0",
-      "finalHash": "df22fc9cd2a78cf19429528b87c63f85bc0e84ff107893076e64a09d90c2c2d0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b85671ab59309db05e733238e4ed8b08047092ec9f6b0455da4e17bf62dd0b51",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
+        "options": [
+          "Não há nenhuma diferença, são idênticos em tudo.",
+          "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção.",
+          "Sumimasen só pode ser usado à noite."
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "df22fc9cd2a78cf19429528b87c63f85bc0e84ff107893076e64a09d90c2c2d0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage5_quiz[1]",
@@ -5302,16 +5640,32 @@
         "kind": "quiz"
       },
       "beforeHash": "8e0bf94606e1b6b3bc15d6ec555e4c57c9833723f42ac0211b36ca5980e70752",
-      "finalHash": "8e0bf94606e1b6b3bc15d6ec555e4c57c9833723f42ac0211b36ca5980e70752",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e3d88b09399bb52b2848bdb2e2ae613ff5a5de79d65d307016a3a338778101c7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'ありがとうございます' (Arigatou gozaimasu)?",
+        "options": [
+          "Muito obrigado / Obrigado",
+          "Com licença / Desculpe",
+          "Desculpe / Perdão"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8e0bf94606e1b6b3bc15d6ec555e4c57c9833723f42ac0211b36ca5980e70752"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage5_quiz[2]",
@@ -5319,16 +5673,32 @@
         "kind": "quiz"
       },
       "beforeHash": "76b421801e449f60ba8cef0a48993099522c7ca8b8f9938db2461e3cc23965a8",
-      "finalHash": "76b421801e449f60ba8cef0a48993099522c7ca8b8f9938db2461e3cc23965a8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "69193b4c3ba92d2be5586d679a9abb3829d40e5af3c67497851de51e3682377f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'すみません' (Sumimasen)?",
+        "options": [
+          "Muito obrigado / Obrigado",
+          "Com licença / Desculpe",
+          "Desculpe / Perdão"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "76b421801e449f60ba8cef0a48993099522c7ca8b8f9938db2461e3cc23965a8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage5_quiz[3]",
@@ -5336,16 +5706,32 @@
         "kind": "quiz"
       },
       "beforeHash": "2cdd438f6f54b761ba17f8a3ec3d85f84ad12cf6ab445677f3d8febeeb9ad76e",
-      "finalHash": "2cdd438f6f54b761ba17f8a3ec3d85f84ad12cf6ab445677f3d8febeeb9ad76e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "72719cd14763d925d2ef88e66cfd228d674bb9a79b0444a3216cc17b39a06d23",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'ごめんなさい' (Gomennasai)?",
+        "options": [
+          "Com licença / Desculpe",
+          "Muito obrigado / Obrigado",
+          "Desculpe / Perdão"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2cdd438f6f54b761ba17f8a3ec3d85f84ad12cf6ab445677f3d8febeeb9ad76e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_03;stage5_quiz[4]",
@@ -5353,11 +5739,27 @@
         "kind": "quiz"
       },
       "beforeHash": "5884f1af58d65d3c4506d712944cff5e6455740f699accd22d39c17c2a2b3d86",
-      "finalHash": "5884f1af58d65d3c4506d712944cff5e6455740f699accd22d39c17c2a2b3d86",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cc1567b584fa5850ae3e70f7150ca31fa98a08065a09bfa05028a1849c7dd7c8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre os usos frequentes de 'Sumimasen': qual afirmação é correta?",
+        "options": [
+          "O sentido de Sumimasen depende da situação e pode incluir pedir licença, desculpar-se ou chamar atenção.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5884f1af58d65d3c4506d712944cff5e6455740f699accd22d39c17c2a2b3d86"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_04-module-metadata",
@@ -351850,8 +352252,8 @@
         "locator": "items[150]",
         "resource": "dictionary"
       },
-      "beforeHash": "a664933cf9496a55abcc6114f83f7ae2544586f1265552c89061e9de40765424",
-      "finalHash": "a664933cf9496a55abcc6114f83f7ae2544586f1265552c89061e9de40765424",
+      "beforeHash": "73206954584a9886d190e98da3146e77f8c6fffc2a7f188684d2cfd4aee80f51",
+      "finalHash": "73206954584a9886d190e98da3146e77f8c6fffc2a7f188684d2cfd4aee80f51",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351867,8 +352269,8 @@
         "locator": "items[151]",
         "resource": "dictionary"
       },
-      "beforeHash": "305bbc48ca24b500900ad3148f833324f65a9c51b5cf57371ef79a9c57d20f15",
-      "finalHash": "305bbc48ca24b500900ad3148f833324f65a9c51b5cf57371ef79a9c57d20f15",
+      "beforeHash": "9526994a9fe209690336f0e4905d20e7bdab43a24c74b6419554d77a36745878",
+      "finalHash": "9526994a9fe209690336f0e4905d20e7bdab43a24c74b6419554d77a36745878",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351884,8 +352286,8 @@
         "locator": "items[152]",
         "resource": "dictionary"
       },
-      "beforeHash": "a87757b96290af9d8a551c321afdf5750371cd92594974c75af7182f20ff1219",
-      "finalHash": "a87757b96290af9d8a551c321afdf5750371cd92594974c75af7182f20ff1219",
+      "beforeHash": "1fa001e4e3c5a29c6ba491a993ae9e0422f789d5af815fc279ec22174fe6b9ae",
+      "finalHash": "1fa001e4e3c5a29c6ba491a993ae9e0422f789d5af815fc279ec22174fe6b9ae",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351901,8 +352303,8 @@
         "locator": "items[153]",
         "resource": "dictionary"
       },
-      "beforeHash": "a77ee10fe7e27cb82dba3269ff1ca81f2ce795f9fcd6e94feea75977811b32d6",
-      "finalHash": "a77ee10fe7e27cb82dba3269ff1ca81f2ce795f9fcd6e94feea75977811b32d6",
+      "beforeHash": "b9b546968680a5e6302b4044e0a3519eae4dd80e6dfe3d0f5a78884599cc10fb",
+      "finalHash": "b9b546968680a5e6302b4044e0a3519eae4dd80e6dfe3d0f5a78884599cc10fb",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -422216,21 +422618,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_03-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[2]",
         "resource": "listening"
       },
-      "beforeHash": "4ebfb6e4d9a75afa0d8f4935f8703b772af33fad564251556d3bd36035b83cff",
-      "finalHash": "4ebfb6e4d9a75afa0d8f4935f8703b772af33fad564251556d3bd36035b83cff",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "d7c5fe8155a900f139e43dc97a0e5192d335991408604cba5592dba491abadf3",
+      "finalHash": "d7c5fe8155a900f139e43dc97a0e5192d335991408604cba5592dba491abadf3",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_03-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 58
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_04-context-0",
@@ -430036,8 +430447,8 @@
         "locator": "reference[2]",
         "resource": "grammar"
       },
-      "beforeHash": "dabb4fc3314b4ef1756567f8c6c219436f6a7d62cdd035c3ef3ce69a9258fc78",
-      "finalHash": "dabb4fc3314b4ef1756567f8c6c219436f6a7d62cdd035c3ef3ce69a9258fc78",
+      "beforeHash": "5172ae10cd0217c07271eef25a174c87650d68da2ee977f48545409250454ebc",
+      "finalHash": "5172ae10cd0217c07271eef25a174c87650d68da2ee977f48545409250454ebc",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -433804,40 +434215,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_03-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[4]",
         "resource": "writing"
       },
-      "beforeHash": "c65508a6d063744e10920eb06160cbac166cf54e17cded33d1cb70f263e498de",
-      "finalHash": "c65508a6d063744e10920eb06160cbac166cf54e17cded33d1cb70f263e498de",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "4cf85b4c2482a54cab03f5510619df6bc6c6c5122a17a6a6a38c5c247ef4548b",
+      "finalHash": "4cf85b4c2482a54cab03f5510619df6bc6c6c5122a17a6a6a38c5c247ef4548b",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_03-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_03-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[5]",
         "resource": "writing"
       },
-      "beforeHash": "063549db0a333dc7b041cf25aad22b8e4119ac208da641bda3bd8179af2e8624",
-      "finalHash": "063549db0a333dc7b041cf25aad22b8e4119ac208da641bda3bd8179af2e8624",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "30bf6f2c807b9bfc293614c9cb8f6297306d77938a9a91f88d57082adce7a146",
+      "finalHash": "30bf6f2c807b9bfc293614c9cb8f6297306d77938a9a91f88d57082adce7a146",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_03-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_04-1",

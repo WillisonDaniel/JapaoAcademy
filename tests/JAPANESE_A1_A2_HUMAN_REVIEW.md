@@ -6,8 +6,8 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 |---|---|---|---|---|---|
 | a1_mod_01 | stage1_context.audio | おはようございます。 | Ohayou gozaimasu. | Bom dia. | approved |
 | a1_mod_02 | stage1_context.audio | はじめまして。よろしくお願いします。 | Hajimemashite. Yoroshiku onegaishimasu. | Muito prazer. Espero contar com você. | corrected |
-| a1_mod_03 | stage1_context.audio | ありがとうございます。すみません。 | Arigatou gozaimasu. Sumimasen. | Muito obrigado. Com licença. | pending-human-review |
-| a1_mod_03 | stage4_dialog[2].content |  |  | O garçom está de costas, limpando o balcão do outro lado da sala. | pending-human-review |
+| a1_mod_03 | stage1_context.audio | ありがとうございます。すみません。 | Arigatou gozaimasu. Sumimasen. | Muito obrigado. Com licença. | corrected |
+| a1_mod_03 | stage4_dialog[2].content |  |  | O garçom está de costas, limpando o balcão do outro lado da sala. | corrected |
 | a1_mod_04 | stage1_context.audio | お疲れ様でした。じゃあね。 | Otsukaresama deshita. Jaa ne. | Obrigado pelo esforço. Até mais. | pending-human-review |
 | a1_mod_05 | stage1_context.audio | 田中さん、こんにちは。先生、こんにちは。 | Tanaka-san, konnichiwa. Sensei, konnichiwa. | Olá, Sr. Tanaka. Olá, professor. | pending-human-review |
 | a1_mod_06 | stage1_context.audio | 私はブラジル人です。日本語を勉強しています。 | Watashi wa Burajiru-jin desu. Nihongo o benkyou shite imasu. | Sou brasileiro e estudo japonês. | pending-human-review |

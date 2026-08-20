@@ -529,7 +529,7 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_03",
-        "title": "As Palavras Mágicas: Arigatou & Sumimasen",
+        "title": "Agradecer, Pedir Licença e Desculpar-se",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
@@ -537,36 +537,36 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Arigatou gozaimasu! Sumimasen!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "A gentileza é a espinha dorsal do Japão. Hoje você vai dominar as duas palavras mais importantes para sobreviver em lojas, trens e restaurantes."
+            "missionDescription": "Pratique expressões frequentes para agradecer, pedir licença e fazer uma desculpa breve em situações cotidianas."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "ありがとうございます",
                 "romaji": "Arigatou gozaimasu",
-                "translation": "Muito obrigado (Formal)",
-                "timeContext": "A forma educada padrão. Dizer apenas 'Arigatou' é casual demais para desconhecidos."
+                "translation": "Muito obrigado / Obrigado",
+                "timeContext": "Forma polida de agradecimento, adequada em situações com desconhecidos e atendimento."
             },
             {
                 "type": "vocab",
                 "kanji": "すみません",
                 "romaji": "Sumimasen",
-                "translation": "Com licença / Desculpe / Obrigado",
-                "timeContext": "O canivete suíço japonês! Serve para chamar o garçom, pedir licença no trem ou pedir desculpas leves."
+                "translation": "Com licença / Desculpe",
+                "timeContext": "Pode chamar a atenção de alguém, pedir licença, desculpar-se e, em certos contextos, reconhecer o incômodo causado por um favor."
             },
             {
                 "type": "vocab",
                 "kanji": "ごめんなさい",
                 "romaji": "Gomennasai",
-                "translation": "Me desculpe / Perdão",
-                "timeContext": "Mais pessoal e emocional. Usado com amigos, família ou quando você realmente cometeu um erro."
+                "translation": "Desculpe / Perdão",
+                "timeContext": "É uma desculpa mais direta e costuma aparecer em contextos pessoais ou menos formais."
             },
             {
                 "type": "grammar_pill",
-                "title": "Os 3 Superpoderes do 'Sumimasen'",
-                "rule": "Por que os japoneses usam tanto Sumimasen? Porque ele tem 3 funções em 1 só palavra!",
-                "formula": "1. Chamar Atenção (Ei, garçom!) | 2. Pedir Licença/Desculpa | 3. Agradecer um favor",
-                "example": "Se alguém pega algo que você deixou cair no chão, você diz 'Sumimasen' (Desculpe o incômodo / Obrigado)."
+                "title": "Usos frequentes de すみません",
+                "rule": "O sentido de すみません depende da situação: pode iniciar um pedido, pedir licença ou expressar uma desculpa breve.",
+                "formula": "1. Chamar atenção | 2. Pedir licença ou desculpar-se | 3. Reconhecer o esforço associado a um favor",
+                "example": "Ao receber um favor, すみません pode reconhecer o trabalho que a outra pessoa teve; ありがとうございます deixa o agradecimento explícito."
             }
         ],
         "stage3_practice": [
@@ -588,14 +588,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. Qual é a diferença fundamental entre 'Sumimasen' e 'Gomennasai'?",
+                "question": "2. Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
                 "options": [
                     {
                         "label": "Gomennasai é social/leve; Sumimasen é apenas para a família",
                         "isCorrect": false
                     },
                     {
-                        "label": "Gomennasai é emotivo/pessoal para erros; Sumimasen é social, leve e multifuncional",
+                        "label": "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção",
                         "isCorrect": true
                     },
                     {
@@ -605,10 +605,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que devemos evitar dizer apenas 'Arigatou' (sem gozaimasu) para um vendedor de loja?",
+                "question": "3. Por que 'Arigatou gozaimasu' é uma escolha segura ao agradecer um vendedor?",
                 "options": [
                     {
-                        "label": "Porque soa íntimo e informal demais para um desconhecido",
+                        "label": "Porque é uma forma polida de agradecimento adequada ao atendimento",
                         "isCorrect": true
                     },
                     {
@@ -639,14 +639,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Se alguém corre para segurar a porta do elevador para você não perder a viagem, por que um japonês diria 'Sumimasen'?",
+                "question": "5. Se alguém segura a porta do elevador para você, por que 'Sumimasen' pode acompanhar o agradecimento?",
                 "options": [
                     {
                         "label": "Para xingar a pessoa que segurou a porta",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque Sumimasen também funciona como agradecimento ('Desculpe o incômodo que te causei')",
+                        "label": "Porque pode reconhecer o incômodo ou esforço causado pelo favor, junto de um agradecimento explícito",
                         "isCorrect": true
                     },
                     {
@@ -658,23 +658,17 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は ガクセイ です",
-                "translation": "Eu sou estudante.",
+                "sentenceJp": "ありがとうございます。",
+                "translation": "Muito obrigado.",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "ガクセイ",
-                    "です"
+                    "ありがとうございます。"
                 ]
             },
             {
-                "sentenceJp": "マリアさん は ブラジルじん です",
-                "translation": "A Sra. Maria é brasileira.",
+                "sentenceJp": "すみません。",
+                "translation": "Com licença / Desculpe.",
                 "chunks": [
-                    "マリアさん",
-                    "は",
-                    "ブラジルじん",
-                    "です"
+                    "すみません。"
                 ]
             }
         ],
@@ -682,20 +676,20 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está saindo do metrô lotado em Tóquio e acidentalmente pisa de leve no pé de uma senhora.",
                 "npcName": "Senhora no Metrô",
-                "npcMessage": "いてっ！ (Ite! - Ai!)",
+                "npcMessage": "痛っ！",
                 "options": [
                     {
-                        "text": "ありがとうございます！ (Arigatou gozaimasu)",
-                        "feedback": "Incorreto! Você não pode agradecer por pisar no pé de alguém!",
+                        "text": "ありがとうございます！",
+                        "feedback": "Inadequado: neste contexto, é necessário pedir desculpas primeiro.",
                         "isCorrect": false
                     },
                     {
-                        "text": "あ、すみません！ (A, sumimasen!)",
-                        "feedback": "Excelente! Uma desculpa rápida, educada e socialmente perfeita para o dia a dia.",
+                        "text": "あ、すみません！",
+                        "feedback": "Adequado: você fez uma desculpa breve após esbarrar na pessoa.",
                         "isCorrect": true
                     },
                     {
-                        "text": "よろしくおねがいします！ (Yoroshiku...)",
+                        "text": "よろしくおねがいします！",
                         "feedback": "Incorreto: Isso é usado em apresentações pessoais.",
                         "isCorrect": false
                     }
@@ -704,16 +698,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 2: Você deixa sua carteira cair na rua e um pedestre corre atrás de você para devolvê-la.",
                 "npcName": "Pedestre Gentil",
-                "npcMessage": "あの！ これ、おちましたよ！ (Com licença! Isso caiu!)",
+                "npcMessage": "あの、これ、落としましたよ。",
                 "options": [
                     {
-                        "text": "ごめんなさい！ (Gomennasai!)",
-                        "feedback": "Ops! Gomennasai soa como se você tivesse cometido um crime contra ele. Use agradecimento!",
+                        "text": "ごめんなさい！",
+                        "feedback": "Menos adequado: a situação pede principalmente agradecimento pela devolução.",
                         "isCorrect": false
                     },
                     {
                         "text": "あ！ ありがとうございます！ すみません！",
-                        "feedback": "Perfeito! O combo 'Muito obrigado + Desculpe o incômodo' é o auge da fluência cultural!",
+                        "feedback": "Adequado: você agradeceu e também reconheceu o trabalho da pessoa ao devolver a carteira.",
                         "isCorrect": true
                     },
                     {
@@ -729,17 +723,17 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "*(Limpando o balcão do outro lado da sala)*",
                 "options": [
                     {
-                        "text": "すみません！ (Sumimasen!)",
-                        "feedback": "Mandou bem! Em restaurantes japoneses, é normal e esperado chamar o garçom em bom som com Sumimasen.",
+                        "text": "すみません！",
+                        "feedback": "Adequado: すみません é uma forma frequente de chamar a atenção de um atendente.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こんにちは！ (Konnichiwa!)",
+                        "text": "こんにちは！",
                         "feedback": "Incomum para chamar garçons em restaurantes.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こちらこそ！ (Kochirakoso!)",
+                        "text": "こちらこそ！",
                         "feedback": "Completamente sem sentido no contexto.",
                         "isCorrect": false
                     }
@@ -748,10 +742,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a diferença entre 'Sumimasen' e 'Gomennasai' ao pedir desculpas?",
+                "question": "Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
                 "options": [
                     "Não há nenhuma diferença, são idênticos em tudo.",
-                    "Gomennasai é mais pessoal/afetivo para erros; Sumimasen é social, leve e serve para chamar atenção.",
+                    "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção.",
                     "Sumimasen só pode ser usado à noite."
                 ],
                 "correctIndex": 1
@@ -759,34 +753,34 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'ありがとうございます' (Arigatou gozaimasu)?",
                 "options": [
-                    "Muito obrigado (Formal)",
-                    "Com licença / Desculpe / Obrigado",
-                    "Me desculpe / Perdão"
+                    "Muito obrigado / Obrigado",
+                    "Com licença / Desculpe",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'すみません' (Sumimasen)?",
                 "options": [
-                    "Muito obrigado (Formal)",
-                    "Com licença / Desculpe / Obrigado",
-                    "Me desculpe / Perdão"
+                    "Muito obrigado / Obrigado",
+                    "Com licença / Desculpe",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'ごめんなさい' (Gomennasai)?",
                 "options": [
-                    "Com licença / Desculpe / Obrigado",
-                    "Muito obrigado (Formal)",
-                    "Me desculpe / Perdão"
+                    "Com licença / Desculpe",
+                    "Muito obrigado / Obrigado",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'Os 3 Superpoderes do 'Sumimasen'': qual afirmação é correta?",
+                "question": "Sobre os usos frequentes de 'Sumimasen': qual afirmação é correta?",
                 "options": [
-                    "Por que os japoneses usam tanto Sumimasen? Porque ele tem 3 funções em 1 só palavra!",
+                    "O sentido de Sumimasen depende da situação e pode incluir pedir licença, desculpar-se ou chamar atenção.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -7967,4 +7961,11 @@ CURSO_A1_DADOS[1].editorialReview = {
     phase: "21B.1",
     scope: "all-editorial-targets",
     sources: ["genki-2e-1-textbook", "quartet-1-textbook"]
+};
+
+CURSO_A1_DADOS[2].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
 };

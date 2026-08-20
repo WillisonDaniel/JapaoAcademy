@@ -12,7 +12,7 @@ const slug = value => value.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').t
 const context = {};
 vm.createContext(context);
 vm.runInContext(`${fs.readFileSync(path.join(ROOT, 'database/ja-JP/data_curso_a1.js'), 'utf8')}\nglobalThis.__value=CURSO_A1_DADOS;`, context);
-const courseModules = ['a1_mod_01', 'a1_mod_02'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
+const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname, 'JAPANESE_EDITORIAL_LEDGER.json'), 'utf8'));
 const decisions = new Map(ledger.decisions.map(decision => [decision.id, decision]));
 
@@ -48,5 +48,7 @@ assert.match(runtime, /カルロス/);
 assert.match(runtime, /おやすみなさい/);
 assert.match(runtime, /こちらこそ、よろしくおねがいします/);
 assert.doesNotMatch(runtime, /primeiríssimo segundo|fórmula perfeita|["「]じめまして|\[Seu Nome\]・さん/i);
+assert.match(runtime, /Usos frequentes de すみません/);
+assert.doesNotMatch(runtime, /espinha dorsal|canivete suíço|3 Superpoderes|auge da fluência cultural|socialmente perfeita/i);
 
-console.log('Fase 21B.1: módulos A1-01 e A1-02 possuem 42/42 alvos sustentados e nenhum alvo inconclusivo.');
+console.log('Fase 21B.1: módulos A1-01 a A1-03 possuem 63/63 alvos sustentados e nenhum alvo inconclusivo.');

@@ -51,8 +51,21 @@ O módulo de primeiras apresentações foi conferido nas mesmas duas famílias e
 
 Após a propagação, o ledger global contém 6.134 aprovações, 450 correções e 16.950 casos inconclusivos. Os dois primeiros módulos somam 42 alvos canônicos sustentados e seis projeções derivadas retiradas da fila aberta.
 
+## Lote A1-03
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 2 |
+| Corrigidos e aprovados | 19 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 21 |
+
+O módulo foi conferido em Genki I, p. 35, e Tobira, p. 58. Foram normalizados registro e significado de `ありがとうございます`, `すみません` e `ごめんなさい`; removidas metáforas e absolutos; corrigidos diálogos e gabaritos; e substituídos dois exercícios de escrita que não correspondiam ao tema do módulo.
+
+O ledger global passou a 6.136 aprovações, 471 correções e 16.927 casos inconclusivos. A redução adicional é de 23 pendências: 20 alvos canônicos anteriormente abertos e três projeções derivadas.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-03 e seguintes, repetindo inspeção de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-04 e seguintes, repetindo inspeção de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
