@@ -17922,7 +17922,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_21-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;module.metadata",
@@ -17930,16 +17930,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "7a8f019508bc61c474c1017e0fe6fc39534f9ae025722913b477bb12325e3fba",
-      "finalHash": "7a8f019508bc61c474c1017e0fe6fc39534f9ae025722913b477bb12325e3fba",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b2ba814ad06e70bebab1af727f47798ff20d908ede790d363dc8b1deccb72702",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 122
+        }
+      ],
+      "finalValue": {
+        "title": "Horas, minutos e meia hora",
+        "sectionTitle": "Tempo, Horários & Rotina",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pergunte e informe horas básicas, minutos e meia hora com as leituras próprias do relógio."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7a8f019508bc61c474c1017e0fe6fc39534f9ae025722913b477bb12325e3fba"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage1_context",
@@ -17947,16 +17965,40 @@
         "kind": "context"
       },
       "beforeHash": "929b42cee5d6a92cbb49357a697a727961c6101db8e7cdb3389e831b75fc5f26",
-      "finalHash": "929b42cee5d6a92cbb49357a697a727961c6101db8e7cdb3389e831b75fc5f26",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6ea5106c178d76d73b039cab4fa00c20f37fa85039793a5c64b84edd1003b3e7",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 122
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Ima nanji desu ka?",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pergunte e informe horas básicas, minutos e meia hora com as leituras próprias do relógio.",
+        "audio": {
+          "displayText": "今、何時ですか。",
+          "audioText": "今、何時ですか。",
+          "furigana": "",
+          "romaji": "Ima, nan-ji desu ka.",
+          "translation": "Que horas são agora?",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "929b42cee5d6a92cbb49357a697a727961c6101db8e7cdb3389e831b75fc5f26"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage2_drops[0]",
@@ -17964,16 +18006,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "49d41da22ec174638c21a9611b301a021579b6e45c28e84f6a9e04efdcafea0c",
-      "finalHash": "49d41da22ec174638c21a9611b301a021579b6e45c28e84f6a9e04efdcafea0c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "17e2928b258752c2224ccdc10d59b7b7b3b3d0b994bccff5bfa66985819d5f38",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "今（いま）",
+        "romaji": "ima",
+        "translation": "agora",
+        "timeContext": "Usado para indicar o momento atual."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "49d41da22ec174638c21a9611b301a021579b6e45c28e84f6a9e04efdcafea0c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage2_drops[1]",
@@ -17981,16 +18037,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "4da8cfa9881e58a17900a1a883d801868d47eb2c4023935b55f05e3e795cf277",
-      "finalHash": "4da8cfa9881e58a17900a1a883d801868d47eb2c4023935b55f05e3e795cf277",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "76b010e4d058572fbcb120d57fed813c20346e2757d5a50fb000d4fac9388538",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～時（～じ）",
+        "romaji": "ji",
+        "translation": "hora",
+        "timeContext": "Forma horários como 一時（いちじ）. Algumas horas têm leituras próprias, como 四時（よじ）e 七時（しちじ）."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4da8cfa9881e58a17900a1a883d801868d47eb2c4023935b55f05e3e795cf277"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage2_drops[2]",
@@ -17998,16 +18068,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d474f361019211bcd96f4a1cc6460f5150ac472347cf2eb76228d391b3a4d992",
-      "finalHash": "d474f361019211bcd96f4a1cc6460f5150ac472347cf2eb76228d391b3a4d992",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "17d33ad9b7a324eb417651b0885895986a4dd49a331ef9395b80cfecf490f414",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～分（～ふん／～ぷん）",
+        "romaji": "fun / pun",
+        "translation": "minuto",
+        "timeContext": "A leitura varia conforme o número: 五分（ごふん）, 八分（はっぷん）e 十分（じゅっぷん）são exemplos."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d474f361019211bcd96f4a1cc6460f5150ac472347cf2eb76228d391b3a4d992"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage2_drops[3]",
@@ -18015,16 +18099,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "dcc8dc43fd970c80c77f42249ddc3b9a83c7d552e09b1ce1f33f78fcbef525c8",
-      "finalHash": "dcc8dc43fd970c80c77f42249ddc3b9a83c7d552e09b1ce1f33f78fcbef525c8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "2ff37f1d9fcdd272498e7b1c071eb5e5d8833a5f9706ca363f319ff6620eeb6c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "半（はん）",
+        "romaji": "han",
+        "translation": "meia hora",
+        "timeContext": "Depois da hora, indica “e meia”: 二時半（にじはん）."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "dcc8dc43fd970c80c77f42249ddc3b9a83c7d552e09b1ce1f33f78fcbef525c8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage2_drops[4]",
@@ -18032,16 +18130,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "26ba367fdbff5de6ae5491bf27ad64336a7a8bb345ad6efb5164a05f495f853e",
-      "finalHash": "26ba367fdbff5de6ae5491bf27ad64336a7a8bb345ad6efb5164a05f495f853e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4b20e8c4db40c759a31010fe7c26cee2f76b511e8a1d064b4dd893750234a1dc",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Informar uma hora",
+        "rule": "Combine a hora com 時; acrescente minutos ou 半 quando necessário. Para perguntar as horas, use 今何時ですか.",
+        "formula": "[hora]時 [minutos]分 / [hora]時半",
+        "example": "今は五時半です。 (Ima wa goji han desu.) — Agora são cinco e meia."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "26ba367fdbff5de6ae5491bf27ad64336a7a8bb345ad6efb5164a05f495f853e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage3_practice[0]",
@@ -18049,16 +18161,40 @@
         "kind": "practice"
       },
       "beforeHash": "c1534709617ab24f4b89047429649a8c10f896480acfe729e3db59cccfa28852",
-      "finalHash": "c1534709617ab24f4b89047429649a8c10f896480acfe729e3db59cccfa28852",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7c3cbea005aeb8952a74d9cf0ba72bd0d4a76d04c8c8326a02e022fda3b8028f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "1. Como se pergunta “Que horas são agora?”",
+        "options": [
+          {
+            "label": "いま なんじですか。 (Ima nanji desu ka.)",
+            "isCorrect": true
+          },
+          {
+            "label": "いま いくらですか。",
+            "isCorrect": false
+          },
+          {
+            "label": "いま どこですか。",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c1534709617ab24f4b89047429649a8c10f896480acfe729e3db59cccfa28852"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage3_practice[1]",
@@ -18066,16 +18202,40 @@
         "kind": "practice"
       },
       "beforeHash": "ac095a179460ec93aac50cb73b0061d5009af33ed61f6f861b52ccc874b771b7",
-      "finalHash": "ac095a179460ec93aac50cb73b0061d5009af33ed61f6f861b52ccc874b771b7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ded312d4e197c18082c2a81dcf9022291398f3a44e3281cd934131fe9d19d42f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como se diz “São duas e meia”?",
+        "options": [
+          {
+            "label": "にじはんです。 (Niji han desu.)",
+            "isCorrect": true
+          },
+          {
+            "label": "にふんです。",
+            "isCorrect": false
+          },
+          {
+            "label": "にじです。",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ac095a179460ec93aac50cb73b0061d5009af33ed61f6f861b52ccc874b771b7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage3_5_sentenceBuilder[0]",
@@ -18083,16 +18243,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "de58df52702d163b4bbf09fb12953d605813eaa87aafcf5e29e01f1af37b7ca2",
-      "finalHash": "de58df52702d163b4bbf09fb12953d605813eaa87aafcf5e29e01f1af37b7ca2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b3111d843b9588d6d30c34123cc13fdb54755a8a89249c800c16d6d047e6356f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "いま は ごじ はん です",
+        "translation": "Agora são cinco e meia.",
+        "chunks": [
+          "いま",
+          "は",
+          "ごじ",
+          "はん",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "de58df52702d163b4bbf09fb12953d605813eaa87aafcf5e29e01f1af37b7ca2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage3_5_sentenceBuilder[1]",
@@ -18100,16 +18278,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "f3181223b74bc5dde2ce51bb30df220f5ca86c64eb8165ed7845bffb40da7be9",
-      "finalHash": "f3181223b74bc5dde2ce51bb30df220f5ca86c64eb8165ed7845bffb40da7be9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "08aa2c130a4a60c40436b95da193a394a07623aca1bd7318b469e08a3df9bece",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "いま なんじ です か",
+        "translation": "Que horas são agora?",
+        "chunks": [
+          "いま",
+          "なんじ",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f3181223b74bc5dde2ce51bb30df220f5ca86c64eb8165ed7845bffb40da7be9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage4_dialog[0]",
@@ -18117,16 +18312,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "6b98a1250cef19047400c45b157ded043a7a5988363ade2c13b605645557c0c5",
-      "finalHash": "6b98a1250cef19047400c45b157ded043a7a5988363ade2c13b605645557c0c5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "978f139b54632dc7cd4123794273cb47f4eb1c3339583121c1dc1f1419ac365b",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 122
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Na estação, você quer confirmar a hora.",
+        "npcName": "Pessoa na estação",
+        "npcMessage": "どうしましたか。 (O que houve?)",
+        "options": [
+          {
+            "text": "すみません、いま なんじですか。",
+            "feedback": "A resposta chama a atenção da pessoa e pergunta a hora atual.",
+            "isCorrect": true
+          },
+          {
+            "text": "でんしゃは おいしいです。",
+            "feedback": "A frase não faz uma pergunta sobre horário.",
+            "isCorrect": false
+          },
+          {
+            "text": "わたしは がくせいです。",
+            "feedback": "A apresentação não responde à situação.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6b98a1250cef19047400c45b157ded043a7a5988363ade2c13b605645557c0c5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage5_quiz[0]",
@@ -18134,16 +18362,32 @@
         "kind": "quiz"
       },
       "beforeHash": "67e934997089a1397e30495df7b986295408eb3a98d4c6df28cd1e1f36c574bb",
-      "finalHash": "67e934997089a1397e30495df7b986295408eb3a98d4c6df28cd1e1f36c574bb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4df4977d0383860cbf63548cc68c0936379eecb337c26e7831d685554710b16a",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "O que 半（はん）indica em 三時半?",
+        "options": [
+          "Meia hora",
+          "15 minutos",
+          "Em ponto"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "67e934997089a1397e30495df7b986295408eb3a98d4c6df28cd1e1f36c574bb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage5_quiz[1]",
@@ -18151,16 +18395,32 @@
         "kind": "quiz"
       },
       "beforeHash": "46edd626e9b3c1edcbc9596a41616c8cb727c38f652d4f25ac48d3f79deb0c2e",
-      "finalHash": "46edd626e9b3c1edcbc9596a41616c8cb727c38f652d4f25ac48d3f79deb0c2e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fe8b369cc050c2e76f0fbf86fc18d096d148866781503699f00899c4cb74f3b5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de 今（いま）?",
+        "options": [
+          "Agora",
+          "Sufixo para Horas",
+          "Sufixo para Minutos"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "46edd626e9b3c1edcbc9596a41616c8cb727c38f652d4f25ac48d3f79deb0c2e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage5_quiz[2]",
@@ -18168,16 +18428,32 @@
         "kind": "quiz"
       },
       "beforeHash": "31bb8a365dfd8762a49c1aceb013590865dd7d41763950f6aae94f6932cee880",
-      "finalHash": "31bb8a365dfd8762a49c1aceb013590865dd7d41763950f6aae94f6932cee880",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "bc34e99f9ee99019691cf15b17b8e90eafe6744231d522614b5f38bde89e9c76",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "O que ～時（～じ）indica em um horário?",
+        "options": [
+          "Agora",
+          "Sufixo para Horas",
+          "Sufixo para Minutos"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "31bb8a365dfd8762a49c1aceb013590865dd7d41763950f6aae94f6932cee880"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage5_quiz[3]",
@@ -18185,16 +18461,32 @@
         "kind": "quiz"
       },
       "beforeHash": "cf2efd8c129032dcd367da209bc3f74c00a8c44f99932bb85ed48fd3f3ec45d8",
-      "finalHash": "cf2efd8c129032dcd367da209bc3f74c00a8c44f99932bb85ed48fd3f3ec45d8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7ab166daddf1e624e89970281f150d46d9f3d6b3e37f77431588a8351dfb73d9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "O que ～分（～ふん／～ぷん）indica em um horário?",
+        "options": [
+          "Sufixo para Horas",
+          "Agora",
+          "Sufixo para Minutos"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cf2efd8c129032dcd367da209bc3f74c00a8c44f99932bb85ed48fd3f3ec45d8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_21-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_21;stage5_quiz[4]",
@@ -18202,11 +18494,27 @@
         "kind": "quiz"
       },
       "beforeHash": "9f2709bc5d3f2bdfb53e75eb693cffb72eb40312006049423d50172f2dcef2e9",
-      "finalHash": "9f2709bc5d3f2bdfb53e75eb693cffb72eb40312006049423d50172f2dcef2e9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "87e298c0f12b60c8538eb7f9a1948e499e036476ea4a7120f3ffabee5cfce034",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de 半（はん）depois de uma hora?",
+        "options": [
+          "Meia (hora)",
+          "Agora",
+          "Sufixo para Horas"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9f2709bc5d3f2bdfb53e75eb693cffb72eb40312006049423d50172f2dcef2e9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_22-module-metadata",
@@ -360037,8 +360345,8 @@
         "locator": "items[239]",
         "resource": "dictionary"
       },
-      "beforeHash": "6aee0d54c19432ebd7294f48c71cfadc72fda9fb52f747b050392b25ee799db6",
-      "finalHash": "6aee0d54c19432ebd7294f48c71cfadc72fda9fb52f747b050392b25ee799db6",
+      "beforeHash": "3e70cf8518b9bc2631573544e1d33774684a2f560ce54666849ca5a0c8704cf5",
+      "finalHash": "3e70cf8518b9bc2631573544e1d33774684a2f560ce54666849ca5a0c8704cf5",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360054,8 +360362,8 @@
         "locator": "items[240]",
         "resource": "dictionary"
       },
-      "beforeHash": "9c0e63798ce9c7c6367347e28342fc4056cd783c015e7f3efe171abaa8ed37e1",
-      "finalHash": "9c0e63798ce9c7c6367347e28342fc4056cd783c015e7f3efe171abaa8ed37e1",
+      "beforeHash": "bc347506acb7f7841f72e004a16cb12d09c02e3be2f8db6b3adc968f7dbe2d92",
+      "finalHash": "bc347506acb7f7841f72e004a16cb12d09c02e3be2f8db6b3adc968f7dbe2d92",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360071,8 +360379,8 @@
         "locator": "items[241]",
         "resource": "dictionary"
       },
-      "beforeHash": "cfe1278864b900a17c44b73f6b6d13ca9b875d1f4d959fb7b20d697367ce738f",
-      "finalHash": "cfe1278864b900a17c44b73f6b6d13ca9b875d1f4d959fb7b20d697367ce738f",
+      "beforeHash": "91598adac4ed71ae22c4704c05fd502db3330240239d901e82822d73f1e3be02",
+      "finalHash": "91598adac4ed71ae22c4704c05fd502db3330240239d901e82822d73f1e3be02",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360088,8 +360396,8 @@
         "locator": "items[242]",
         "resource": "dictionary"
       },
-      "beforeHash": "b7811950e1e17ba5c5e4aa7806b5a017c604e6e6daba6d66d9fbbcf2f4bf510a",
-      "finalHash": "b7811950e1e17ba5c5e4aa7806b5a017c604e6e6daba6d66d9fbbcf2f4bf510a",
+      "beforeHash": "6026a86f77912c76de99323faa0b8110d1931209f7e01e802c4d91ea23764ee0",
+      "finalHash": "6026a86f77912c76de99323faa0b8110d1931209f7e01e802c4d91ea23764ee0",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -360105,8 +360413,8 @@
         "locator": "items[243]",
         "resource": "dictionary"
       },
-      "beforeHash": "aefb3a407a70de5aefa589e59ad0f9521ae3d15eb80c86e070139ca94569ee42",
-      "finalHash": "aefb3a407a70de5aefa589e59ad0f9521ae3d15eb80c86e070139ca94569ee42",
+      "beforeHash": "3d4d38ac1f6d44eadc6a55f38b6f7a68fc9bd2e629a982705df7b1f4c52f3db6",
+      "finalHash": "3d4d38ac1f6d44eadc6a55f38b6f7a68fc9bd2e629a982705df7b1f4c52f3db6",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -429394,21 +429702,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_21-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[20]",
         "resource": "listening"
       },
-      "beforeHash": "aa2809b3c888390dffc5caab23027b3eb408551317775b259f51c211675d1501",
-      "finalHash": "aa2809b3c888390dffc5caab23027b3eb408551317775b259f51c211675d1501",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "dd1785b26b5ecbd5eb574f955e99dc60c530ac33c4dd9ed42a40dad3bbed3ec5",
+      "finalHash": "dd1785b26b5ecbd5eb574f955e99dc60c530ac33c4dd9ed42a40dad3bbed3ec5",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_21-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 122
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_22-context-0",
@@ -437142,8 +437459,8 @@
         "locator": "reference[20]",
         "resource": "grammar"
       },
-      "beforeHash": "96d204ad78c320ca5554cad82d34802e61f7eabfb9b4773a4eea3e3e62ce97f5",
-      "finalHash": "96d204ad78c320ca5554cad82d34802e61f7eabfb9b4773a4eea3e3e62ce97f5",
+      "beforeHash": "634c15a40b9b7a135fedac44f5ee1264821e1359cfbc4af10dabc4378cfc9b34",
+      "finalHash": "634c15a40b9b7a135fedac44f5ee1264821e1359cfbc4af10dabc4378cfc9b34",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -441468,40 +441785,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_21-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[40]",
         "resource": "writing"
       },
-      "beforeHash": "3f689be0f8ee302e9302eb29f9408641d89e65b6e07a328632fe4e523a1c7634",
-      "finalHash": "3f689be0f8ee302e9302eb29f9408641d89e65b6e07a328632fe4e523a1c7634",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "c0a807a05be21904de2e21ef65fe7f092d8e54ab1e2d8e210449f22ead1f7c11",
+      "finalHash": "c0a807a05be21904de2e21ef65fe7f092d8e54ab1e2d8e210449f22ead1f7c11",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_21-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_21-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[41]",
         "resource": "writing"
       },
-      "beforeHash": "600cd1ddaf6701b36807b02a8c321004e9650097969ff37c0ac7a4df72b6d46b",
-      "finalHash": "600cd1ddaf6701b36807b02a8c321004e9650097969ff37c0ac7a4df72b6d46b",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "9322a5d4aa80dc26711ec3ad0d8df49c33e07f23b96e826d5e8aafa7435276aa",
+      "finalHash": "9322a5d4aa80dc26711ec3ad0d8df49c33e07f23b96e826d5e8aafa7435276aa",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_21-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 49
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_22-1",

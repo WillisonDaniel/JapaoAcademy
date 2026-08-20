@@ -8212,3 +8212,31 @@ CURSO_A1_DADOS[19].editorialReview = {
     scope: "all-editorial-targets",
     sources: ["genki-2e-1-textbook", "tobira-2009"]
 };
+
+(function reviewA1Module21() {
+    const module = CURSO_A1_DADOS[20];
+    module.title = "Horas, minutos e meia hora";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Ima nanji desu ka?",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Pergunte e informe horas básicas, minutos e meia hora com as leituras próprias do relógio."
+    });
+    Object.assign(module.stage2_drops[0], { kanji: "今（いま）", romaji: "ima", translation: "agora", timeContext: "Usado para indicar o momento atual." });
+    Object.assign(module.stage2_drops[1], { kanji: "～時（～じ）", romaji: "ji", translation: "hora", timeContext: "Forma horários como 一時（いちじ）. Algumas horas têm leituras próprias, como 四時（よじ）e 七時（しちじ）." });
+    Object.assign(module.stage2_drops[2], { kanji: "～分（～ふん／～ぷん）", romaji: "fun / pun", translation: "minuto", timeContext: "A leitura varia conforme o número: 五分（ごふん）, 八分（はっぷん）e 十分（じゅっぷん）são exemplos." });
+    Object.assign(module.stage2_drops[3], { kanji: "半（はん）", romaji: "han", translation: "meia hora", timeContext: "Depois da hora, indica “e meia”: 二時半（にじはん）." });
+    Object.assign(module.stage2_drops[4], { title: "Informar uma hora", rule: "Combine a hora com 時; acrescente minutos ou 半 quando necessário. Para perguntar as horas, use 今何時ですか.", formula: "[hora]時 [minutos]分 / [hora]時半", example: "今は五時半です。 (Ima wa goji han desu.) — Agora são cinco e meia." });
+    module.stage3_practice[0] = { question: "1. Como se pergunta “Que horas são agora?”", options: [{ label: "いま なんじですか。 (Ima nanji desu ka.)", isCorrect: true }, { label: "いま いくらですか。", isCorrect: false }, { label: "いま どこですか。", isCorrect: false }] };
+    module.stage3_practice[1] = { question: "2. Como se diz “São duas e meia”?", options: [{ label: "にじはんです。 (Niji han desu.)", isCorrect: true }, { label: "にふんです。", isCorrect: false }, { label: "にじです。", isCorrect: false }] };
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "いま は ごじ はん です", translation: "Agora são cinco e meia.", chunks: ["いま", "は", "ごじ", "はん", "です"] },
+        { sentenceJp: "いま なんじ です か", translation: "Que horas são agora?", chunks: ["いま", "なんじ", "です", "か"] }
+    ];
+    module.stage4_dialog = [{ scenario: "Situação 1: Na estação, você quer confirmar a hora.", npcName: "Pessoa na estação", npcMessage: "どうしましたか。 (O que houve?)", options: [{ text: "すみません、いま なんじですか。", feedback: "A resposta chama a atenção da pessoa e pergunta a hora atual.", isCorrect: true }, { text: "でんしゃは おいしいです。", feedback: "A frase não faz uma pergunta sobre horário.", isCorrect: false }, { text: "わたしは がくせいです。", feedback: "A apresentação não responde à situação.", isCorrect: false }] }];
+    module.stage5_quiz[0].question = "O que 半（はん）indica em 三時半?";
+    module.stage5_quiz[1].question = "Qual é o sentido de 今（いま）?";
+    module.stage5_quiz[2].question = "O que ～時（～じ）indica em um horário?";
+    module.stage5_quiz[3].question = "O que ～分（～ふん／～ぷん）indica em um horário?";
+    module.stage5_quiz[4].question = "Qual é o sentido de 半（はん）depois de uma hora?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

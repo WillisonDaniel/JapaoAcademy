@@ -185,7 +185,7 @@ function stripEditorialFields(value) {
 
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
-        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', 'a25eb1c83d5bb509de5272f4cf64da75702f5c46632aa4bccef994f60221f0d4'],
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '2190091aef20257a0c09aee8ee492acffd150cd3bcb4fa0def2ed259848ad798'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '44179791ab39cbc5f321fde9a32de50c797c2f3cd7beeb4e8fd2965ad6f8a9ff'],
         ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754'],
         ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f']
@@ -196,19 +196,19 @@ run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     });
 });
 
-run('A1 e A2 possuem os 151 contratos editoriais previstos', () => {
+run('A1 e A2 possuem os 150 contratos editoriais previstos', () => {
     const a1 = loadDataset('database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS');
     const a2 = loadDataset('database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS');
     const modules = [...a1, ...a2];
     const audioContracts = modules.filter(module => module.stage1_context && module.stage1_context.audio).length;
     const dialogueContracts = modules.flatMap(module => module.stage4_dialog || []).filter(dialogue => dialogue.content).length;
     assert.equal(audioContracts, 61);
-    assert.equal(dialogueContracts, 90);
-    assert.equal(audioContracts + dialogueContracts, 151);
+    assert.equal(dialogueContracts, 89);
+    assert.equal(audioContracts + dialogueContracts, 150);
     assert.equal(modules.filter(module => module.canDo).length, 61);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 41);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 40);
     assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'approved').length, 1);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 19);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 20);
     modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
         if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
     });
