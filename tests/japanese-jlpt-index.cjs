@@ -7,7 +7,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT = path.join(ROOT, 'database/ja-JP/data_jlpt_pratica_index.js');
-const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_JLPT_HUMAN_REVIEW.md');
+const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_JLPT_EDITORIAL_REVIEW.md');
 const LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'];
 
 function loadKanji(level) {
@@ -40,7 +40,7 @@ function buildInventory() {
 function render(items) { return `// Gerado por tests/japanese-jlpt-index.cjs. Não editar manualmente.\nconst JAPANESE_JLPT_PRACTICE_INDEX = Object.freeze(${JSON.stringify(items)});\nif (typeof window !== 'undefined') window.JAPANESE_JLPT_PRACTICE_INDEX = JAPANESE_JLPT_PRACTICE_INDEX;\n`; }
 function review(inventory, snapshot) {
     const rows = inventory.exclusions.map(item => `| ${item.level} | ${item.moduleId} | ${item.origin} | ${item.reason} | ${item.question.replace(/\|/g, '\\|')} | ${item.answer.replace(/\|/g, '\\|')} |`).join('\n');
-    return `# Inventário humano — preparação JLPT\n\nGerado mecanicamente na Fase 12. Snapshot: \`${snapshot}\`. Não é material oficial nem aprovação editorial.\n\n- Questões examinadas: **${inventory.items.length + inventory.exclusions.length}**.\n- Questões publicadas: **${inventory.items.length}**.\n- Exclusões: **${inventory.exclusions.length}**.\n- Questões publicadas pendentes de revisão humana: **${inventory.items.filter(item => item.editorialStatus === 'pending-human-review').length}**.\n\n| Nível | Módulo | Origem | Motivo | Pergunta | Gabarito armazenado |\n|---|---|---|---|---|---|\n${rows || '| — | — | — | Nenhuma | — | — |'}\n\nUma pessoa qualificada deve revisar naturalidade, precisão e gabaritos. Os níveis são referências pedagógicas e não listas oficiais do JLPT.\n`;
+    return `# Inventário editorial — preparação JLPT\n\nGerado mecanicamente na Fase 12. Snapshot: \`${snapshot}\`. Não é material oficial nem aprovação editorial.\n\n- Questões examinadas: **${inventory.items.length + inventory.exclusions.length}**.\n- Questões publicadas: **${inventory.items.length}**.\n- Exclusões: **${inventory.exclusions.length}**.\n- Questões publicadas com decisão editorial inconclusiva: **${inventory.items.filter(item => item.editorialStatus === 'pending-human-review').length}**.\n\n| Nível | Módulo | Origem | Motivo | Pergunta | Gabarito armazenado |\n|---|---|---|---|---|---|\n${rows || '| — | — | — | Nenhuma | — | — |'}\n\nQuestões inconclusivas permanecem sem aprovação até que naturalidade, precisão e gabaritos tenham evidência localizada suficiente. Os níveis são referências pedagógicas e não listas oficiais do JLPT.\n`;
 }
 
 const inventory = buildInventory(), output = render(inventory.items), snapshot = crypto.createHash('sha256').update(JSON.stringify(inventory.items)).digest('hex').slice(0, 16), reviewOutput = review(inventory, snapshot);
@@ -48,4 +48,4 @@ assert.equal(inventory.items.length, 1060); assert.equal(inventory.exclusions.le
 assert.deepEqual(Object.fromEntries(LEVELS.map(level => [level, inventory.items.filter(item => item.level === level).length])), { N5: 122, N4: 181, N3: 217, N2: 240, N1: 300 });
 assert.equal(new Set(inventory.items.map(item => item.id)).size, inventory.items.length); inventory.items.forEach(item => { assert.ok(item.question && item.answer && item.route); if (item.options.length) assert.equal(item.options[item.answerIndex], item.answer); });
 if (process.argv.includes('--write')) { fs.writeFileSync(OUTPUT, output, 'utf8'); fs.writeFileSync(REVIEW_OUTPUT, reviewOutput, 'utf8'); console.log(`✓ índice JLPT gerado: ${inventory.items.length} questões, ${inventory.exclusions.length} exclusão, snapshot ${snapshot}`); }
-else { assert.ok(fs.existsSync(OUTPUT), 'índice JLPT ausente; execute npm.cmd run index:jlpt'); assert.equal(fs.readFileSync(OUTPUT, 'utf8'), output, 'índice JLPT fora de sincronia'); assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewOutput, 'inventário humano JLPT fora de sincronia'); console.log(`✓ índice JLPT sincronizado: ${inventory.items.length} questões, ${inventory.exclusions.length} exclusão, snapshot ${snapshot}`); }
+else { assert.ok(fs.existsSync(OUTPUT), 'índice JLPT ausente; execute npm.cmd run index:jlpt'); assert.equal(fs.readFileSync(OUTPUT, 'utf8'), output, 'índice JLPT fora de sincronia'); assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewOutput, 'inventário editorial JLPT fora de sincronia'); console.log(`✓ índice JLPT sincronizado: ${inventory.items.length} questões, ${inventory.exclusions.length} exclusão, snapshot ${snapshot}`); }

@@ -11,7 +11,7 @@ function indexData() { const sandbox = {}; sandbox.window = sandbox; vm.createCo
 function controller() { const sandbox = { console: { log() {}, warn() {}, error() {} }, Map, Set, Date, clearInterval, setInterval }; vm.createContext(sandbox); vm.runInContext(`${read('js/japanese/jlpt.js')}\n;globalThis.x={normalizeJlptAnswer,selectJlptSession,jlptOriginHref}`, sandbox); return sandbox.x; }
 
 test('índice preserva 1060 questões explícitas e a exclusão N4 conhecida', () => {
-    const data = indexData(), review = read('tests/JAPANESE_JLPT_HUMAN_REVIEW.md'); assert.equal(data.length, 1060); assert.equal(new Set(data.map(item => item.id)).size, 1060); assert.match(review, /Questões examinadas: \*\*1061\*\*/); assert.match(review, /Questões publicadas: \*\*1060\*\*/); assert.match(review, /Muito gentis \(tanto親切\)/);
+    const data = indexData(), review = read('tests/JAPANESE_JLPT_EDITORIAL_REVIEW.md'); assert.equal(data.length, 1060); assert.equal(new Set(data.map(item => item.id)).size, 1060); assert.match(review, /Questões examinadas: \*\*1061\*\*/); assert.match(review, /Questões publicadas: \*\*1060\*\*/); assert.match(review, /Muito gentis \(tanto親切\)/);
 });
 
 test('contagens por nível e origem correspondem aos datasets', () => {

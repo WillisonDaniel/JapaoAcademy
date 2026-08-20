@@ -10,7 +10,7 @@ const tests = [], test = (name, fn) => tests.push([name, fn]);
 function indexData() { const sandbox = {}; sandbox.window = sandbox; vm.createContext(sandbox); vm.runInContext(`${read('database/ja-JP/data_escrita_index.js')}\n;globalThis.x=JAPANESE_WRITING_INDEX`, sandbox); return JSON.parse(JSON.stringify(sandbox.x)); }
 
 test('índice preserva 208 modelos explícitos e duas exclusões sem inferência', () => {
-    const data = indexData(), review = read('tests/JAPANESE_WRITING_HUMAN_REVIEW.md'); assert.equal(data.length, 208); assert.equal(new Set(data.map(item => item.id)).size, 208); assert.match(review, /Modelos examinados: \*\*210\*\*/); assert.match(review, /Modelos excluídos sem inferência: \*\*2\*\*/); assert.match(review, /b1_mod_10/); assert.match(review, /b1_mod_18/);
+    const data = indexData(), review = read('tests/JAPANESE_WRITING_EDITORIAL_REVIEW.md'); assert.equal(data.length, 208); assert.equal(new Set(data.map(item => item.id)).size, 208); assert.match(review, /Modelos examinados: \*\*210\*\*/); assert.match(review, /Modelos excluídos sem inferência: \*\*2\*\*/); assert.match(review, /b1_mod_10/); assert.match(review, /b1_mod_18/);
 });
 
 test('cada modelo mantém frase, tradução, blocos, origem e status editorial reais', () => {

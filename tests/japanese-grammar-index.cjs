@@ -8,7 +8,7 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT = path.join(ROOT, 'database/ja-JP/data_gramatica_index.js');
-const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_GRAMMAR_HUMAN_REVIEW.md');
+const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_GRAMMAR_EDITORIAL_REVIEW.md');
 const COURSE_LEVELS = ['A1', 'A2', 'B1', 'B2'];
 const JLPT_LEVELS = ['N5', 'N4', 'N3', 'N2', 'N1'];
 
@@ -104,12 +104,12 @@ function renderReview(index, snapshot) {
     const course = index.references.filter(item => item.source === 'course');
     const kanji = index.references.filter(item => item.source === 'kanji');
     const pending = index.references.filter(item => item.editorialStatus === 'pending-human-review');
-    return `# Inventário humano — referência gramatical japonesa\n\n` +
+    return `# Inventário editorial — referência gramatical japonesa\n\n` +
         `Gerado mecanicamente pelo índice da Fase 10. Snapshot: \`${snapshot}\`. Este documento não constitui aprovação editorial.\n\n` +
         `- Referências do curso A1–B2: **${course.length}**.\n` +
         `- Referências aplicadas das trilhas Kanji: **${kanji.length}**.\n` +
         `- Transformações explícitas indexadas: **${index.forms.length}**.\n` +
-        `- Referências pendentes de revisão humana: **${pending.length}**.\n\n` +
+        `- Referências com decisão editorial inconclusiva: **${pending.length}**.\n\n` +
         `## Lacunas deliberadamente preservadas\n\n` +
         `- Não há equivalência inferida entre CEFR e JLPT.\n` +
         `- Categoria permanece \`sem-categoria\` quando o dataset não a declara.\n` +
@@ -117,7 +117,7 @@ function renderReview(index, snapshot) {
         `- Exemplos sem japonês explícito não recebem áudio japonês artificial.\n` +
         `- Exercícios, feedback e alternativas incorretas não são usados como fonte de regras ou formas.\n\n` +
         `## Revisão necessária\n\n` +
-        `Uma pessoa qualificada deve validar terminologia, exemplos, traduções, Romaji e completude antes de qualquer marcação de conteúdo aprovado.\n`;
+        `Itens inconclusivos permanecem sem aprovação até que haja evidência localizada suficiente para validar terminologia, exemplos, traduções, Romaji e completude.\n`;
 }
 
 const index = buildIndex();
@@ -145,6 +145,6 @@ if (process.argv.includes('--write')) {
 } else {
     assert.ok(fs.existsSync(OUTPUT), 'índice gramatical ausente; execute npm.cmd run index:grammar');
     assert.equal(fs.readFileSync(OUTPUT, 'utf8'), output, 'índice gramatical fora de sincronia');
-    assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), review, 'inventário humano gramatical fora de sincronia');
+    assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), review, 'inventário editorial gramatical fora de sincronia');
     console.log(`✓ índice gramatical sincronizado: ${index.references.length} referências, ${index.forms.length} formas, snapshot ${snapshot}`);
 }

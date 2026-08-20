@@ -8,7 +8,7 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT = path.join(ROOT, 'database/ja-JP/data_escrita_index.js');
-const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_WRITING_HUMAN_REVIEW.md');
+const REVIEW_OUTPUT = path.join(ROOT, 'tests/JAPANESE_WRITING_EDITORIAL_REVIEW.md');
 const LEVELS = ['A1', 'A2', 'B1', 'B2'];
 
 function loadCourse(level) {
@@ -45,7 +45,7 @@ function buildInventory() {
 function render(items) { return `// Gerado por tests/japanese-writing-index.cjs. Não editar manualmente.\nconst JAPANESE_WRITING_INDEX = Object.freeze(${JSON.stringify(items)});\nif (typeof window !== 'undefined') window.JAPANESE_WRITING_INDEX = JAPANESE_WRITING_INDEX;\n`; }
 function review(inventory, snapshot) {
     const lines = inventory.exclusions.map(item => `| ${item.level} | ${item.moduleId} | ${item.itemIndex + 1} | ${item.reason} | ${item.sentence.replace(/\|/g, '\\|')} | ${item.chunks.join(' / ').replace(/\|/g, '\\|')} |`).join('\n');
-    return `# Inventário humano — escrita guiada japonesa\n\nGerado mecanicamente na Fase 11. Snapshot dos ${inventory.items.length} itens publicados: \`${snapshot}\`. Este documento não constitui aprovação editorial.\n\n- Modelos examinados: **${inventory.items.length + inventory.exclusions.length}**.\n- Modelos publicados mecanicamente: **${inventory.items.length}**.\n- Modelos excluídos sem inferência: **${inventory.exclusions.length}**.\n- Modelos publicados pendentes de revisão humana: **${inventory.items.filter(item => item.editorialStatus === 'pending-human-review').length}**.\n\n## Exclusões\n\n| Nível | Módulo | Item | Motivo | Frase | Blocos |\n|---|---|---:|---|---|---|\n${lines || '| — | — | — | Nenhuma | — | — |'}\n\nUma pessoa qualificada deve decidir a correção dos campos divergentes e validar naturalidade, tradução e segmentação antes de qualquer aprovação editorial.\n`;
+    return `# Inventário editorial — escrita guiada japonesa\n\nGerado mecanicamente na Fase 11. Snapshot dos ${inventory.items.length} itens publicados: \`${snapshot}\`. Este documento não constitui aprovação editorial.\n\n- Modelos examinados: **${inventory.items.length + inventory.exclusions.length}**.\n- Modelos publicados mecanicamente: **${inventory.items.length}**.\n- Modelos excluídos sem inferência: **${inventory.exclusions.length}**.\n- Modelos publicados com decisão editorial inconclusiva: **${inventory.items.filter(item => item.editorialStatus === 'pending-human-review').length}**.\n\n## Exclusões\n\n| Nível | Módulo | Item | Motivo | Frase | Blocos |\n|---|---|---:|---|---|---|\n${lines || '| — | — | — | Nenhuma | — | — |'}\n\nCampos divergentes permanecem inconclusivos até que evidência localizada sustente naturalidade, tradução e segmentação.\n`;
 }
 
 const inventory = buildInventory(), output = render(inventory.items), snapshot = crypto.createHash('sha256').update(JSON.stringify(inventory.items)).digest('hex').slice(0, 16), reviewOutput = review(inventory, snapshot);
@@ -57,6 +57,6 @@ if (process.argv.includes('--write')) {
     fs.writeFileSync(OUTPUT, output, 'utf8'); fs.writeFileSync(REVIEW_OUTPUT, reviewOutput, 'utf8');
     console.log(`✓ índice de escrita gerado: ${inventory.items.length} modelos, ${inventory.exclusions.length} exclusões, snapshot ${snapshot}`);
 } else {
-    assert.ok(fs.existsSync(OUTPUT), 'índice de escrita ausente; execute npm.cmd run index:writing'); assert.equal(fs.readFileSync(OUTPUT, 'utf8'), output, 'índice de escrita fora de sincronia'); assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewOutput, 'inventário humano de escrita fora de sincronia');
+    assert.ok(fs.existsSync(OUTPUT), 'índice de escrita ausente; execute npm.cmd run index:writing'); assert.equal(fs.readFileSync(OUTPUT, 'utf8'), output, 'índice de escrita fora de sincronia'); assert.equal(fs.readFileSync(REVIEW_OUTPUT, 'utf8'), reviewOutput, 'inventário editorial de escrita fora de sincronia');
     console.log(`✓ índice de escrita sincronizado: ${inventory.items.length} modelos, ${inventory.exclusions.length} exclusões, snapshot ${snapshot}`);
 }
