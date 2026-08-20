@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'idiomas-academy-';
-const CACHE_NAME = 'idiomas-academy-v48';
+const CACHE_NAME = 'idiomas-academy-v49';
 
 const ASSETS_TO_CACHE = [
     './',

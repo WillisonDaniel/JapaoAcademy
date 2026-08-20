@@ -5660,6 +5660,252 @@ function separarDialogoLegadoB2(dialogue, displayText, audioText = displayText, 
     return { displayText, audioText, furigana: "", romaji, translation, scenario };
 }
 
+// Fase 21B.4 — auditoria editorial integral dos módulos B2-01 a B2-20.
+function applyB2Phase21BEditorialReview() {
+    const builders = {
+        b2_mod_01: [["この 会社 では 毎週 月曜日 に 会議 を 開く こと に なっています", "Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira."], ["予定 の 割 に 早く 終わりました", "Terminou cedo considerando o que estava previsto."]],
+        b2_mod_02: [["日本語 だけ で なく 中国語 も 話せます", "Ele fala não apenas japonês, mas também chinês."], ["これ は 一つ の 提案 に すぎません", "Isto não passa de uma proposta."]],
+        b2_mod_03: [["知らない くせ に 知っている よう に 話します", "Mesmo sem saber, fala como se soubesse."], ["この 店 は 値段 の 割 に おいしい です", "Este restaurante é bom considerando o preço."]],
+        b2_mod_04: [["佐藤さん は 顔 が 広い です", "Sato conhece muita gente."], ["忙しい ので 手 を 貸して ください", "Estou ocupado; dê-me uma ajuda, por favor."]],
+        b2_mod_05: [["本日 は お目 に かかれて 光栄 です", "É uma honra encontrá-lo hoje."], ["こちら の 資料 を ご覧 ください", "Veja este material, por favor."]],
+        b2_mod_06: [["添付 資料 を ご確認 ください", "Confira o documento anexo, por favor."], ["ご不明 な 点 が ございましたら お知らせ ください", "Caso haja alguma dúvida, avise-nos, por favor."]],
+        b2_mod_07: [["あいにく その 条件 は お受け しかねます", "Infelizmente, não podemos aceitar essa condição."], ["代案 として 別 の プラン を ご提案 します", "Como alternativa, propomos outro plano."]],
+        b2_mod_08: [["本日 は 調査 結果 について 発表 いたします", "Hoje apresentarei os resultados da pesquisa."], ["統計 に よる と 売上 は 十パーセント 増加 しました", "Segundo as estatísticas, as vendas aumentaram dez por cento."]],
+        b2_mod_09: [["報道 に よる と 景気 は 回復 して います", "Segundo as notícias, a economia está se recuperando."], ["政府 は 新しい 方針 を 発表 しました", "O governo anunciou uma nova política."]],
+        b2_mod_10: [["申請書 に 名前 と 住所 を ご記入 ください", "Preencha seu nome e endereço no formulário, por favor."], ["必要 書類 を 窓口 に 提出 して ください", "Entregue os documentos necessários no balcão, por favor."]],
+        b2_mod_11: [["この 映画 ほんま に おもろい な", "Este filme é realmente engraçado."], ["この 曲 めっちゃ ええ やん", "Esta música é muito boa, não é?"]],
+        b2_mod_12: [["少子化 に よって 労働 人口 が 減って います", "A população economicamente ativa está diminuindo devido à baixa natalidade."], ["環境 を 守る ため に 再生 可能 エネルギー を 利用 します", "Usamos energia renovável para proteger o meio ambiente."]],
+        b2_mod_13: [["時間 さえ あれば 完成 できます", "Basta haver tempo para conseguirmos concluir."], ["強い 雨 にも かかわらず 試合 は 続きました", "A partida continuou apesar da chuva forte."]],
+        b2_mod_14: [["この 方法 は 有効 だ と 言える でしょう", "Pode-se dizer que este método é eficaz."], ["この 成果 は 毎日 の 努力 に ほかなりません", "Este resultado se deve precisamente ao esforço diário."]],
+        b2_mod_15: [["この 作品 は 読者 の 心 を 打ちます", "Esta obra comove os leitores."], ["主人公 の 心情 が 丁寧 に 描かれて います", "Os sentimentos do protagonista são retratados cuidadosamente."]],
+        b2_mod_16: [["調査 の 結果 新しい 問題 が 分かりました", "Como resultado da pesquisa, identificou-se um novo problema."], ["留学 を きっかけ に 日本語 を 学び 始めました", "Comecei a estudar japonês a partir da experiência de intercâmbio."]],
+        b2_mod_17: [["方言 は 地域 や 世代 に よって 異なります", "Os dialetos variam conforme a região e a geração."], ["大阪 で おおきに と 言われました", "Em Osaka, disseram-me 'ookini'."]],
+        b2_mod_18: [["明日 の 旅行 が 楽しみ で わくわく して います", "Estou empolgado com a viagem de amanhã."], ["机 を ぴかぴか に 磨きました", "Poli a mesa até ela ficar brilhando."]],
+        b2_mod_19: [["仕事 に 生きがい を 感じて います", "Sinto que meu trabalho dá sentido à minha vida."], ["旅館 では 客 を 迎える 心遣い を 大切 に して います", "No ryokan, valoriza-se o cuidado ao receber hóspedes."]],
+        b2_mod_20: [["これまで に 学んだ 内容 を 復習 しました", "Revisei o conteúdo estudado até aqui."], ["これから も 日本語 の 学習 を 続けます", "Continuarei estudando japonês."]]
+    };
+    const rules = {
+        b2_mod_01: ["Regras e decisões vigentes com 〜ことになっている", "〜ことになっている apresenta uma decisão, regra ou arranjo que continua válido. A estrutura não indica, por si só, previsão meteorológica, sentimento ou decisão espontânea do falante.", "Vる／Vない + ことになっている", "この会社では、毎週月曜日に会議を開くことになっています。— Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira."],
+        b2_mod_02: ["Acréscimo com 〜だけでなく e limitação com 〜にすぎない", "〜だけでなく acrescenta outro elemento ao primeiro. 〜にすぎない limita a avaliação a ‘não passar de’; pode produzir modéstia em certos contextos, mas não possui essa função obrigatoriamente.", "X だけでなく Y も | N／forma simples + にすぎない", "これは一つの提案にすぎません。— Isto não passa de uma proposta."],
+        b2_mod_03: ["Contraste avaliativo com 〜くせに e 〜わりに", "〜くせに costuma transmitir crítica, reprovação ou surpresa negativa e exige atenção à relação entre os interlocutores. 〜わりに apresenta um resultado diferente do esperado considerando uma referência.", "forma simples + くせに | N の／forma simples + わりに", "この店は値段のわりにおいしいです。— Este restaurante é bom considerando o preço."],
+        b2_mod_04: ["Expressões idiomáticas dependem do contexto", "Expressões como 顔が広い e 手を貸す têm sentidos convencionais que não resultam apenas da soma literal das palavras. Registro, colocação e situação determinam se uma expressão é adequada.", "顔が広い | 手を貸す | 心を打つ", "困っている友達に手を貸しました。— Dei uma ajuda ao amigo que estava com dificuldades."],
+        b2_mod_05: ["Distinções essenciais de sonkeigo e kenjougo", "Sonkeigo eleva ações da pessoa respeitada; kenjougo apresenta com humildade ações do falante ou de seu grupo relacionadas a ela. お目にかかる é humilde para 会う, enquanto ご覧になる é respeitoso para 見る. As formas devem acompanhar a relação e a situação.", "会う→お目にかかる | 見る→ご覧になる", "本日はお目にかかれて光栄です。— É uma honra encontrá-lo hoje."],
+        b2_mod_06: ["Organização de e-mails profissionais", "E-mails profissionais costumam apresentar saudação, identificação, assunto, pedido ou informação e encerramento, mas a composição varia conforme relação, finalidade e convenções da organização. Não há uma fórmula tripartite universal.", "saudação・identificação + assunto + ação solicitada + encerramento", "添付資料をご確認くださいますよう、お願いいたします。— Solicitamos que confira o documento anexo."],
+        b2_mod_07: ["Recusa e impossibilidade com 〜かねる", "〜かねる, ligado à base em ます, indica que o falante não pode ou não se dispõe a realizar algo. É frequente em atendimento e negócios, mas pode soar firme; explicação e alternativa ajudam a ajustar a recusa.", "Vます sem ます + かねる", "その条件はお受けしかねます。— Não podemos aceitar essa condição."],
+        b2_mod_08: ["Estrutura contextual de apresentações", "Uma apresentação pode situar tema e objetivo, desenvolver evidências e encerrar com síntese ou próximos passos. Fórmulas de abertura, tratamento da plateia e grau de polidez variam conforme evento e público.", "tema・objetivo + evidências + síntese・próximos passos", "本日は調査結果について発表いたします。— Hoje apresentarei os resultados da pesquisa."],
+        b2_mod_09: ["Fontes e estilo informativo", "Expressões como 〜によると e 〜と報じられている apresentam a fonte ou o caráter reportado da informação. O estilo jornalístico alterna formas simples, construções nominais e registro polido conforme veículo e gênero.", "fonte + によると | oração + と報じられている", "報道によると、景気は回復しているそうです。— Segundo as notícias, a economia estaria se recuperando."],
+        b2_mod_10: ["Instruções e linguagem administrativa", "Avisos e formulários usam expressões como ご記入ください, ご提出ください e 〜が必要です. A formulação depende do órgão e do procedimento; prefixos honoríficos e いただく não podem ser combinados mecanicamente com qualquer substantivo.", "N にご記入ください | N をご提出ください | N が必要です", "申請書にお名前と住所をご記入ください。— Preencha seu nome e endereço no formulário."],
+        b2_mod_11: ["Reconhecimento de Kansai-ben e linguagem informal", "Formas como や, ほんま e めっちゃ aparecem em variedades de Kansai e na fala informal, com distribuição que varia por região, geração, identidade e mídia. Reconhecê-las não implica que sejam adequadas em todo contexto.", "だ→や | 本当に→ほんまに | とても→めっちゃ", "この映画、ほんまにおもろいな。— Este filme é realmente engraçado."],
+        b2_mod_12: ["Apresentar causas em temas sociais", "〜によって pode apresentar causa ou meio em construções compatíveis; 〜ため（に） pode indicar causa ou finalidade conforme a forma precedente. Relações sociais complexas normalmente exigem evidências, não uma única causa gramaticalmente simplificada.", "N によって | forma simples + ため（に）", "少子化によって、労働人口が減っています。— A população economicamente ativa está diminuindo devido à baixa natalidade."],
+        b2_mod_13: ["Condição mínima e contraste com 〜さえ〜ば e 〜にもかかわらず", "〜さえ〜ば apresenta um requisito considerado suficiente dentro do enunciado. 〜にもかかわらず introduz um fato que contrasta com o resultado esperado; a conexão muda conforme substantivo, verbo ou adjetivo.", "N さえ Vば | N／forma simples + にもかかわらず", "強い雨にもかかわらず、試合は続きました。— A partida continuou apesar da chuva forte."],
+        b2_mod_14: ["Conclusão modalizada e conclusão enfática", "〜と言えるだろう apresenta uma conclusão com modalização, enquanto 〜にほかならない identifica enfaticamente uma causa ou natureza. A força retórica de ambas exige apoio no argumento e adequação ao gênero textual.", "oração + と言えるだろう | N + にほかならない", "この成果は皆の努力にほかなりません。— Este resultado se deve precisamente ao esforço de todos."],
+        b2_mod_15: ["Leitura e comentário de textos literários", "Textos literários podem empregar estilos, vocabulário e recursos retóricos variados. Formas clássicas como なり aparecem em certos textos, mas não definem toda literatura japonesa; a análise deve apoiar-se no trecho efetivamente lido.", "trecho + evidência textual + interpretação", "主人公の心情が丁寧に描かれています。— Os sentimentos do protagonista são retratados cuidadosamente."],
+        b2_mod_16: ["Resultado com 〜の結果 e marco com 〜をきっかけに", "〜の結果 apresenta um resultado decorrente de processo, ação ou investigação. 〜をきっかけに marca um acontecimento que deu início ou impulso a uma mudança, sem afirmar sozinho uma relação causal total.", "N の結果 | N をきっかけに", "留学をきっかけに、日本語を学び始めました。— Comecei a estudar japonês a partir da experiência de intercâmbio."],
+        b2_mod_17: ["Variação regional sem equivalências absolutas", "方言 abrange variedades regionais internamente diversas. おおきに é associado a Kansai, e formas como 好いとう aparecem em partes de Kyushu, mas uso, pronúncia e nuance variam por localidade, geração e falante.", "forma regional + região・falante・situação", "方言は地域や世代によって異なります。— Os dialetos variam conforme a região e a geração."],
+        b2_mod_18: ["Giongo, giseigo e gitaigo", "Palavras miméticas podem representar sons, vozes, movimentos, estados ou sensações. わくわく descreve expectativa animada, ぴかぴか pode descrever brilho e ぺこぺこ pode indicar muita fome; partícula e verbo dependem da construção.", "わくわくする | ぴかぴかに磨く | お腹がぺこぺこだ", "明日の旅行が楽しみで、わくわくしています。— Estou empolgado com a viagem de amanhã."],
+        b2_mod_19: ["Conceitos culturais com contexto e diversidade", "おもてなし, わび・さび e 生きがい possuem histórias e usos variados. São conceitos úteis para leitura e discussão cultural, mas não definem uma essência universal do Japão nem têm uma única tradução suficiente em todo contexto.", "termo + contexto histórico・social + uso no texto", "仕事に生きがいを感じています。— Sinto que meu trabalho dá sentido à minha vida."],
+        b2_mod_20: ["Revisão de conclusão B2", "A conclusão registra a realização das atividades internas da trilha A1–B2 e o resultado de sua avaliação. Ela não certifica competência linguística externa, capacidade profissional ou equivalência oficial com exames.", "conteúdos estudados + avaliação interna", "これからも日本語の学習を続けます。— Continuarei estudando japonês."]
+    };
+    const missions = {
+        b2_mod_01: "Apresente regras, decisões e arranjos que permanecem vigentes com 〜ことになっている.",
+        b2_mod_02: "Acrescente informações com 〜だけでなく e limite uma avaliação com 〜にすぎない.",
+        b2_mod_03: "Compare as nuances críticas de 〜くせに com a discrepância avaliativa de 〜わりに.",
+        b2_mod_04: "Reconheça e use algumas expressões idiomáticas frequentes sem interpretá-las literalmente.",
+        b2_mod_05: "Distinga formas respeitosas e humildes frequentes em encontros profissionais.",
+        b2_mod_06: "Organize um e-mail profissional de acordo com destinatário, objetivo e ação solicitada.",
+        b2_mod_07: "Recuse uma condição com polidez e apresente uma alternativa adequada ao contexto.",
+        b2_mod_08: "Estruture uma apresentação com tema, evidências, resposta a perguntas e encerramento.",
+        b2_mod_09: "Identifique fontes, fatos reportados e escolhas de registro em textos informativos.",
+        b2_mod_10: "Compreenda instruções frequentes em formulários e procedimentos administrativos.",
+        b2_mod_11: "Reconheça formas selecionadas de Kansai-ben e avalie seu registro antes de usá-las.",
+        b2_mod_12: "Apresente causas e consequências sem reduzir temas sociais complexos a uma única explicação.",
+        b2_mod_13: "Construa condição mínima e contraste com 〜さえ〜ば e 〜にもかかわらず.",
+        b2_mod_14: "Defenda uma conclusão usando modalização e ênfase compatíveis com as evidências.",
+        b2_mod_15: "Comente um texto literário com base em elementos efetivamente presentes no trecho.",
+        b2_mod_16: "Relacione processo, resultado e acontecimento inicial com 〜の結果 e 〜をきっかけに.",
+        b2_mod_17: "Reconheça exemplos de variação regional sem tratá-los como equivalências universais.",
+        b2_mod_18: "Use palavras miméticas para descrever expectativa, brilho e fome em construções naturais.",
+        b2_mod_19: "Discuta conceitos culturais japoneses com contexto e sem generalizações essencialistas.",
+        b2_mod_20: "Revise os conteúdos da trilha e conclua a avaliação interna sem alegação de proficiência externa."
+    };
+    const correctAnswers = {
+        b2_mod_01: ["分かりました。規則を確認します。 (Entendi. Vou conferir as regras.)", "申し訳ありません。今後、気をつけます。 (Peço desculpas. Tomarei cuidado daqui em diante.)", "ご説明ありがとうございます。 (Obrigado pela explicação.)"],
+        b2_mod_02: ["ご評価ありがとうございます。今後も検討を続けます。 (Obrigado pela avaliação. Continuarei examinando o tema.)", "この成果はチームだけでなく、会社全体にも役立ちます。 (Este resultado será útil não apenas à equipe, mas à empresa toda.)", "ご期待に応えられるよう、努力いたします。 (Vou me esforçar para corresponder às expectativas.)"],
+        b2_mod_03: ["そうですね。値段のわりに、品質がよくありません。 (É verdade. A qualidade não é boa considerando o preço.)", "実際に見ていないくせに批判するのはよくないですね。 (Não é bom criticar sem ter visto de fato.)", "まず、自分たちで確かめましょう。 (Primeiro, vamos conferir por conta própria.)"],
+        b2_mod_04: ["手を貸してくれる人がいると助かりますね。 (Seria uma grande ajuda se alguém pudesse colaborar.)", "部長に相談してみましょう。 (Vamos tentar consultar o gerente.)", "ありがとうございます。私から頼んでみます。 (Obrigado. Vou tentar pedir.)"],
+        b2_mod_05: ["本日はお目にかかれて光栄です。資料をご覧いただけますか。 (É uma honra encontrá-lo. Poderia ver os documentos?)", "はい、存じておりました。計画どおり進めてまいります。 (Sim, eu já sabia. Prosseguiremos conforme o plano.)", "ご期待に応えられるよう、努力してまいります。 (Continuaremos nos esforçando para corresponder às expectativas.)"],
+        b2_mod_06: ["下書きができました。ご確認いただけますか。 (O rascunho ficou pronto. Poderia conferi-lo?)", "ありがとうございます。確認してから送信します。 (Obrigado. Vou conferir antes de enviar.)", "承知しました。送信後にご報告します。 (Entendido. Informarei após o envio.)"],
+        b2_mod_07: ["あいにく、その条件はお受けしかねます。代案をご提案してもよろしいでしょうか。 (Infelizmente, não podemos aceitar essa condição. Podemos propor uma alternativa?)", "ご検討いただき、ありがとうございます。 (Obrigado por considerar a proposta.)", "では、契約書を準備いたします。 (Então prepararei o contrato.)"],
+        b2_mod_08: ["本日はお忙しい中、お越しいただきありがとうございます。調査結果について発表いたします。 (Obrigado por virem apesar da agenda. Apresentarei os resultados.)", "ご質問ありがとうございます。予算の内訳をご説明します。 (Obrigado pela pergunta. Explicarei a composição do orçamento.)", "ご清聴ありがとうございました。 (Obrigado pela atenção.)"],
+        b2_mod_09: ["はい。経済指標の変化が報じられていましたね。 (Sim. Foi noticiada uma mudança nos indicadores econômicos.)", "技術の影響についても慎重に考える必要がありますね。 (Também precisamos considerar cuidadosamente os impactos da tecnologia.)", "国際情勢も続けて確認しましょう。 (Vamos continuar acompanhando a situação internacional.)"],
+        b2_mod_10: ["手続きについて伺いたいのですが。 (Gostaria de perguntar sobre o procedimento.)", "はい。こちらに記入すればよろしいですか。 (Sim. Devo preencher aqui?)", "ご案内ありがとうございました。 (Obrigado pela orientação.)"],
+        b2_mod_11: ["ほんまやな。めっちゃおもろいわ。 (É verdade. É muito engraçado.)", "標準語との違いを確認しながら見ています。 (Assisto conferindo as diferenças em relação à língua padrão.)", "おおきに。もっと練習するわ。 (Obrigado. Vou praticar mais.)"],
+        b2_mod_12: ["複数の要因を資料に基づいて考える必要があります。 (Precisamos considerar vários fatores com base nos dados.)", "環境への影響とのバランスも大切ですね。 (O equilíbrio com os impactos ambientais também é importante.)", "関連する資料も確認してみます。 (Também vou conferir materiais relacionados.)"],
+        b2_mod_13: ["時間さえあれば、考察をさらに深められると思います。 (Basta haver tempo para eu aprofundar a análise.)", "厳しい条件にもかかわらず、データを集めることができました。 (Conseguimos coletar dados apesar das condições difíceis.)", "貴重なご指導をありがとうございました。 (Muito obrigado pela valiosa orientação.)"],
+        b2_mod_14: ["このデータから、新しい方法は有効だと言えるでしょう。 (A partir dos dados, pode-se dizer que o novo método é eficaz.)", "貴重なご意見をいただき、ありがとうございます。 (Obrigado pelas valiosas observações.)", "今後も研究を続けてまいります。 (Continuarei realizando a pesquisa.)"],
+        b2_mod_15: ["はい。『こころ』を読みました。人物の心情が丁寧に描かれていました。 (Sim. Li Kokoro. Os sentimentos das personagens foram retratados cuidadosamente.)", "次は太宰治の作品も読んでみます。 (Na próxima vez, experimentarei ler uma obra de Dazai Osamu.)", "来月の話し合いを楽しみにしています。 (Estou ansioso pela conversa do próximo mês.)"],
+        b2_mod_16: ["子どものころに見た映画をきっかけに、日本文化に興味を持ちました。 (Um filme que vi na infância despertou meu interesse pela cultura japonesa.)", "毎日の学習の結果、以前より話せるようになりました。 (Como resultado do estudo diário, passei a falar melhor do que antes.)", "貴重なお時間をいただき、ありがとうございました。 (Muito obrigado por seu valioso tempo.)"],
+        b2_mod_17: ["福岡では、この言い方を使う人もいるんですね。 (Em Fukuoka, há pessoas que usam essa forma, não é?)", "方言は地域や話す人によって違うので、もっと調べたいです。 (Os dialetos variam por região e falante; quero pesquisar mais.)", "ありがとうございます。また福岡に伺います。 (Obrigado. Visitarei Fukuoka novamente.)"],
+        b2_mod_18: ["うん。昨日からわくわくしていました。 (Sim. Estou empolgado desde ontem.)", "私もお腹がぺこぺこです。まず食事にしましょう。 (Também estou morrendo de fome. Vamos comer primeiro.)", "うん。楽しく食べよう。 (Sim. Vamos aproveitar a refeição.)"],
+        b2_mod_19: ["お話を聞けて勉強になりました。 (Aprendi muito ouvindo sua explicação.)", "人と学び続けることに生きがいを感じます。 (Sinto propósito em continuar aprendendo com as pessoas.)", "ありがとうございます。ゆっくり味わいます。 (Obrigado. Vou apreciar com calma.)"],
+        b2_mod_20: ["これまでのご指導に感謝いたします。 (Agradeço pela orientação até aqui.)", "これからも日本語を学び、できる場面で活用したいです。 (Quero continuar estudando e usar o japonês nas situações em que puder.)", "ありがとうございます。今後も学習を続けます。 (Obrigado. Continuarei estudando.)"]
+    };
+    const missingDialogueContent = {
+        b2_mod_01: { 1: ["夜十時以降は静かにすることになっています。", "Yoru juuji ikou wa shizuka ni suru koto ni natte imasu.", "Está estabelecido que se mantenha silêncio depois das dez da noite."] },
+        b2_mod_04: { 2: ["よろしく頼むよ。", "Yoroshiku tanomu yo.", "Conto com você."] },
+        b2_mod_07: { 2: ["よろしく頼むよ。", "Yoroshiku tanomu yo.", "Conto com você."] },
+        b2_mod_11: { 1: ["日本のアニメでも関西弁が分かるんですか。", "Nihon no anime demo Kansai-ben ga wakaru n desu ka?", "Você também reconhece Kansai-ben em animes japoneses?"] },
+        b2_mod_12: { 2: ["資料を確認して、また話し合いましょう。", "Shiryou o kakunin shite, mata hanashiaimashou.", "Vamos conferir os dados e conversar novamente."] }
+    };
+    const titles = {
+        b2_mod_01: "Regras e decisões vigentes: 〜ことになっている",
+        b2_mod_02: "Acréscimo e limitação: 〜だけでなく e 〜にすぎない",
+        b2_mod_03: "Crítica e discrepância: 〜くせに e 〜わりに",
+        b2_mod_05: "Keigo em encontros profissionais: お目にかかる e ご覧になる",
+        b2_mod_06: "E-mails profissionais: organização, pedido e encerramento",
+        b2_mod_08: "Apresentações profissionais: tema, evidências e conclusão",
+        b2_mod_09: "Leitura de notícias: fonte, registro e vocabulário informativo",
+        b2_mod_10: "Formulários e avisos administrativos",
+        b2_mod_12: "Temas sociais e ambientais: causas, dados e argumentos",
+        b2_mod_13: "Condição e contraste: 〜さえ〜ば e 〜にもかかわらず",
+        b2_mod_14: "Conclusões argumentativas: 〜と言えるだろう e 〜にほかならない",
+        b2_mod_15: "Leitura literária: observação e interpretação textual",
+        b2_mod_16: "Resultado e marco de mudança: 〜の結果 e 〜をきっかけに",
+        b2_mod_17: "Dialetos e variações regionais em contexto",
+        b2_mod_18: "Palavras miméticas: sons, estados e sensações",
+        b2_mod_19: "Conceitos culturais japoneses em contexto",
+        b2_mod_20: "Avaliação integrativa de conclusão B2"
+    };
+    const exactReplacements = new Map([
+        ["Qual verbo Kenjougo é usado para dizer que VOCÊ encontrou um cliente/superior com extremo respeito?", "Qual forma humilde pode ser usada para dizer que você encontrou uma pessoa tratada com respeito?"],
+        ["Qual o verbo em Kenjougo avançado para dizer a um CEO 'É uma honra conhecê-lo/encontrá-lo'?", "Qual expressão usa お目にかかる para dizer que foi uma honra encontrar alguém?"],
+        ["Quais são os 3 blocos obrigatórios de um e-mail de negócios japonês?", "Quais componentes podem organizar um e-mail profissional nesta atividade?"],
+        ["No Japão, discordar diretamente é considerado indelicado.", "Em muitos contextos profissionais, uma discordância pode ser formulada com explicação e alternativa."],
+        ["Desenvolva a capacidade de ler e entender notícias reais da imprensa japonesa (NHK News)!", "Pratique a leitura de frases informativas inspiradas no vocabulário jornalístico."],
+        ["Navegue pela burocracia japonesa com autonomia!", "Pratique instruções frequentes em formulários e procedimentos administrativos."],
+        ["1. [Nível A1] Qual a saudação formal para 'Bom dia' usada até às 10h?", "1. [Nível A1] Qual saudação polida significa 'Bom dia'?"],
+        ["Kare wa koutu to iimashita", "Kare wa kau to iimashita"],
+        ["Qual o verbo honorífico Sonkeigo supremo para a ação do cliente 'Comer/Beber'?", "Qual verbo respeitoso pode apresentar a ação de comer ou beber de outra pessoa?"],
+        ["O que define a filosofia vitalícia tradicional japonesa 'Ikigai (生きがい)'?", "A que ideia a palavra 生きがい pode se referir?"],
+        ["A razão de viver / o propósito que motiva a jornada diária da vida", "Aquilo que dá sentido, valor ou motivação à vida de alguém"],
+        ["Comprovação de competência em japonês.", "Prova ou demonstração, conforme o contexto da palavra."],
+        ["Celebração de conquista máxima da plataforma.", "Expressão de congratulação pela conclusão da trilha."],
+        ["Nihon-go de kanzen ni seikatsu shite, shigoto dekiru you ni narimashita! (Passei a conseguir viver e trabalhar plenamente em japonês!)", "Korekara mo Nihongo no gakushuu o tsuzukemasu. (Continuarei estudando japonês.)"]
+    ]);
+    const normalizeText = value => {
+        if (typeof value !== "string") return value;
+        let text = exactReplacements.get(value) || value;
+        return text
+            .replace(/\[Seu Nome\](?:さん|-san)?[！、,]?\s*/g, "")
+            .replace(/\bGuran\b/g, "Goran")
+            .replace(/\bO-me ni kakarer\b/g, "O-me ni kakaru")
+            .replace(/\bAimeu\b/g, "au")
+            .replace(/\bre-report\b/gi, "houkoku")
+            .replace(/\breached\b/gi, "tasshita")
+            .replace(/\bquoriti \(shiina\)\b/gi, "hinshitsu")
+            .replace(/\bNews\b/g, "Nyuusu")
+            .replace(/\bdata\b/gi, "deeta")
+            .replace(/\bdiscussion\b/gi, "hanashiai")
+            .replace(/\bperson no sentiment\b/gi, "jinbutsu no shinjou")
+            .replace(/\bkotaerareu\b/gi, "kotaerareru")
+            .replace(/\bmoro kousatsu o fukame rarenu\b/gi, "motto kousatsu o fukamerareru")
+            .replace(/\bshourui\b/gi, "shorui")
+            .replace(/\bzouta\b/gi, "zouka");
+    };
+    const normalizeObject = value => {
+        if (Array.isArray(value)) return value.map(normalizeObject);
+        if (!value || typeof value !== "object") return normalizeText(value);
+        Object.keys(value).forEach(key => { value[key] = normalizeObject(value[key]); });
+        return value;
+    };
+    const makeBuilder = ([sentenceJp, translation]) => ({ sentenceJp, translation, chunks: sentenceJp.split(" ") });
+    CURSO_B2_DADOS.forEach(module => {
+        module.title = titles[module.id] || module.title;
+        module.stage1_context.missionDescription = missions[module.id];
+        module.stage3_5_sentenceBuilder = builders[module.id].map(makeBuilder);
+        const pill = module.stage2_drops.find(item => item.type === "grammar_pill");
+        const rule = rules[module.id];
+        Object.assign(pill, { title: rule[0], rule: rule[1], formula: rule[2], example: rule[3] });
+        const ruleQuiz = module.stage5_quiz.find(item => /Sobre (?:a regra|a revisão)/i.test(item.question));
+        if (ruleQuiz) {
+            ruleQuiz.question = `Sobre a regra '${rule[0]}': qual afirmação é correta?`;
+            ruleQuiz.options[ruleQuiz.correctIndex] = rule[1];
+        }
+        Object.entries(missingDialogueContent[module.id] || {}).forEach(([index, values]) => {
+            const [displayText, romaji, translation] = values;
+            module.stage4_dialog[Number(index)].content = { displayText, audioText: displayText, furigana: "", romaji, translation, scenario: "" };
+        });
+        normalizeObject(module);
+        module.stage4_dialog.forEach((dialogue, index) => {
+            if (dialogue.content && dialogue.content.displayText) dialogue.npcMessage = dialogue.content.displayText;
+            const correct = dialogue.options.find(option => option.isCorrect);
+            if (correct) correct.text = correctAnswers[module.id][index];
+            dialogue.options.forEach(option => {
+                option.feedback = option.isCorrect
+                    ? "A resposta corresponde ao contexto e à estrutura praticada."
+                    : "A resposta não corresponde à pergunta ou à estrutura praticada neste contexto.";
+            });
+        });
+        module.editorialReview = { status: "corrected", phase: "21B.4", scope: "all-editorial-targets", sources: ["quartet-2-textbook", "tobira-2009"] };
+    });
+    const m01 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_01");
+    Object.assign(m01.stage2_drops[1], { kanji: "よてい (予定)", romaji: "Yotei", translation: "Plano / programação", timeContext: "Plano ou evento programado." });
+    const m05 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_05");
+    Object.assign(m05.stage2_drops[0], { romaji: "O-me ni kakaru", translation: "Encontrar alguém (forma humilde de 会う)", timeContext: "Apresentar humildemente o encontro do falante com uma pessoa tratada com respeito." });
+    Object.assign(m05.stage2_drops[1], { romaji: "Goran ni naru", translation: "Ver / olhar (forma respeitosa de 見る)", timeContext: "Apresentar respeitosamente a ação de ver de outra pessoa." });
+    const m10 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_10");
+    Object.assign(m10.stage2_drops[1], { kanji: "しょるい (書類)", romaji: "Shorui", translation: "Documento / documentação", timeContext: "Documentos exigidos em um procedimento." });
+    const m17 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_17");
+    Object.assign(m17.stage2_drops[2], { kanji: "好いとう", romaji: "Suitou", translation: "Forma regional associada a ‘gostar’", timeContext: "Uso e nuance variam dentro de Kyushu e entre falantes." });
+    const m19 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_19");
+    Object.assign(m19.stage2_drops[0], { translation: "Hospitalidade / acolhimento atento", timeContext: "Conceito usado em discursos sobre atendimento e recepção, com sentidos dependentes do contexto." });
+    Object.assign(m19.stage2_drops[1], { translation: "Aquilo que dá sentido ou valor à vida", timeContext: "A fonte de sentido pode variar de pessoa para pessoa." });
+    Object.assign(m19.stage2_drops[2], { translation: "Conceito estético ligado, entre outros aspectos, à transitoriedade e à imperfeição", timeContext: "O significado depende do período, da tradição e do texto em análise." });
+    const culturalReplacements = new Map([
+        ["A hospitalidade suprema, atenciosa e desinteressada de coração", "Hospitalidade ou acolhimento atento, conforme o contexto"],
+        ["Hospitalidade desinteressada suprema de coração", "Hospitalidade ou acolhimento atento, conforme o contexto"],
+        ["A apreciação da beleza na simplicidade, imperfeição e efemeridade do tempo", "Conceito estético ligado à transitoriedade e à imperfeição"],
+        ["Estética da imperfeição e efemeridade", "Conceito estético ligado à transitoriedade e à imperfeição"]
+    ]);
+    const replaceCulturalClaims = value => {
+        if (Array.isArray(value)) {
+            value.forEach((item, index) => {
+                if (typeof item === "string" && culturalReplacements.has(item)) value[index] = culturalReplacements.get(item);
+                else replaceCulturalClaims(item);
+            });
+            return;
+        }
+        if (!value || typeof value !== "object") return;
+        Object.entries(value).forEach(([key, item]) => {
+            if (typeof item === "string" && culturalReplacements.has(item)) value[key] = culturalReplacements.get(item);
+            else replaceCulturalClaims(item);
+        });
+    };
+    replaceCulturalClaims(m19);
+    const m20 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_20");
+    Object.assign(m20.stage2_drops[0], { translation: "Completude / integridade", timeContext: "Vocabulário revisto sem alegar domínio linguístico total." });
+    Object.assign(m20.stage2_drops[1], { translation: "Prova / demonstração", timeContext: "Nesta plataforma, o documento registra apenas a conclusão interna da trilha." });
+    Object.assign(m20.stage2_drops[2], { timeContext: "Congratulação pela conclusão das atividades da trilha." });
+    m20.stage3_practice.forEach(item => {
+        (item.options || []).forEach(option => {
+            if (/total autonomia e independência/i.test(option.label || "")) {
+                option.label = "Concluí as atividades da trilha e continuarei estudando japonês";
+            }
+        });
+    });
+    m20.stage5_quiz[20].options[2] = "Ossharu (おっしゃる)";
+    m20.stage5_quiz[26].question = "27. [Nível B2] Qual verbo respeitoso pode apresentar a ação de comer ou beber de outra pessoa?";
+    const m02 = CURSO_B2_DADOS.find(module => module.id === "b2_mod_02");
+    if (m02.stage4_dialog[0].content) m02.stage4_dialog[0].content.translation = "Foi uma análise excelente!";
+    const m05Practice = CURSO_B2_DADOS.find(module => module.id === "b2_mod_05").stage3_practice;
+    m05Practice.forEach(item => {
+        item.question = String(item.question || "")
+            .replace(/guran/gi, "goran")
+            .replace(/polidez Keigo suprema/gi, "registro de Keigo adequado");
+    });
+    normalizeObject(CURSO_B2_DADOS);
+}
+
 CURSO_B2_DADOS.forEach((module, index) => {
     const [displayText, canDo] = B2_EDITORIAL_AUDIO[index];
     module.stage1_context.audio = {
@@ -5975,3 +6221,5 @@ const B2_PHASE18_TEXT_REPLACEMENTS = new Map([
     });
     dialectModule.stage4_dialog[1].npcMessage = "Fukuoka no hougen mo shittou to! Sugoka ne! (Você conhece até o dialeto de Fukuoka! Que incrível!)";
 }
+
+applyB2Phase21BEditorialReview();

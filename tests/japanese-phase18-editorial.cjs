@@ -119,12 +119,12 @@ const stateCounts = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(stateCounts.corrected, 958, 'quantidade de correcoes rastreadas mudou');
-assert.equal(stateCounts.approved, 1004, 'quantidade de aprovacoes rastreadas mudou');
-assert.equal(stateCounts.unresolved, 343, 'fila editorial aberta mudou sem atualizacao do relatorio');
+assert.equal(stateCounts.corrected, 1098, 'quantidade de correcoes rastreadas mudou');
+assert.equal(stateCounts.approved, 1207, 'quantidade de aprovacoes rastreadas mudou');
+assert.equal(stateCounts.unresolved || 0, 0, 'fila editorial aberta mudou sem atualizacao do relatorio');
 
 for (const module of modules) {
-    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : (/^(?:a1|a2|b1)_mod_/.test(module.id) ? 'corrected' : 'pending-human-review');
+    const expectedStatus = module.id === 'a1_mod_01' ? 'approved' : 'corrected';
     assert.equal(module.editorialReview.status, expectedStatus, `${module.id}: estado editorial do módulo divergiu dos seus alvos`);
     (module.stage3_practice || []).forEach((item, index) => {
         assert.equal((item.options || []).filter(option => option.isCorrect).length, 1, `${module.id}: pratica ${index} sem gabarito unico`);
@@ -145,4 +145,4 @@ for (const forbidden of [
     assert.doesNotMatch(runtimeText, forbidden, `residuo editorial proibido: ${forbidden}`);
 }
 
-console.log(`Fase 18: ${targets.length} alvos classificados; ${stateCounts.corrected} corrigidos e ${stateCounts.unresolved} inconclusivos rastreados após B1-24.`);
+console.log(`Fase 18: ${targets.length} alvos sustentados; ${stateCounts.approved} aprovados, ${stateCounts.corrected} corrigidos e nenhuma pendência após B2-20.`);

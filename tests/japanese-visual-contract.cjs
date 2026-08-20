@@ -44,10 +44,10 @@ pages.forEach(page => {
 assert.match(css, /\.jp-filter-field\s*\{[^}]*gap:\s*12px/s);
 assert.match(css, /\.dict-filter-pill\s*\{[^}]*min-height:\s*44px/s);
 assert.match(css, /focus-visible\s*\{[^}]*outline:\s*2px/s);
-assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v48'/);
+assert.match(read('sw.js'), /const CACHE_NAME = 'idiomas-academy-v49'/);
 assert.match(read('js/japanese/jlpt.js'), /is-correct.*is-incorrect.*is-unanswered/);
 assert.match(read('js/japanese/reading.js'), /dataset\.answerState = correct \? 'correct' : 'incorrect'/);
 assert.match(read('js/japanese/grammar.js'), /dataset\.answerState = correct \? 'correct' : 'incorrect'/);
-console.log('✓ paginas e campos usam os assets v46; o cache PWA editorial usa v48');
+console.log('✓ paginas e campos usam os assets v46; o cache PWA editorial usa v49');
 
 console.log('\nRedesign cromatico japones: 4/4 contratos aprovados.');

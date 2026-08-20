@@ -46,7 +46,7 @@ test('cadeia documental das fases 0–13 está materializada', () => {
 });
 
 test('PWA final referencia hub e Dashboard sem ampliar o contrato de dados', () => {
-    const sw = read('sw.js'), packageJson = JSON.parse(read('package.json')); assert.match(sw, /idiomas-academy-v48/); assert.match(sw, /hub_japones\.html/); assert.match(sw, /meu-progresso\.html/); assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
+    const sw = read('sw.js'), packageJson = JSON.parse(read('package.json')); assert.match(sw, /idiomas-academy-v49/); assert.match(sw, /hub_japones\.html/); assert.match(sw, /meu-progresso\.html/); assert.equal(packageJson.scripts['test:japanese-release'], 'node tests/japanese-release-contract.cjs');
 });
 
 let passed = 0;

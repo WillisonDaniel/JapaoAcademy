@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-Os 31 módulos A1, os 30 módulos A2 e os 24 módulos B1 foram auditados integralmente. O primeiro lote abaixo registra o início histórico da fase; a consolidação mais recente está na seção “Bloco B1-01 a B1-24”.
+Os 31 módulos A1, os 30 módulos A2, os 24 módulos B1 e os 20 módulos B2 foram auditados integralmente. O primeiro lote abaixo registra o início histórico da fase; a consolidação mais recente está na seção “Bloco B2-01 a B2-20”.
 
 | Resultado do lote inicial | Alvos |
 |---|---:|
@@ -413,6 +413,38 @@ Após a propagação, o ledger global registra 7.163 aprovações, 1.384 correç
 
 Como o dataset e os índices públicos mudaram, o cache PWA foi atualizado para `idiomas-academy-v48`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
 
-## Próximo lote automático
+## Bloco B2-01 a B2-20
 
-O próximo bloco editorial previsto é B2-01 em diante, mantendo o mesmo ciclo de fonte localizada, decisão por alvo, regeneração de índices, contratos e commit isolado.
+| Resultado consolidado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 203 |
+| Corrigidos com evidência localizada | 229 |
+| Inconclusivos remanescentes no B2 | 0 |
+| Total auditado | 432 |
+
+Todos os módulos, de `b2_mod_01` a `b2_mod_20`, foram processados individualmente. Os alvos cobrem metadados, contexto, itens de aula, práticas, 40 construções de frase, diálogos e quizzes. IDs, ordem, XP, desbloqueio, SRS, progresso, favoritos e persistência foram preservados.
+
+### Principais decisões editoriais
+
+- As 20 explicações centrais foram reescritas com escopo explícito: `〜ことになっている`, `〜だけでなく`, `〜にすぎない`, `〜くせに`, `〜わりに`, `〜かねる`, `〜さえ〜ば`, `〜にもかかわらず`, `〜にほかならない`, `〜の結果` e `〜をきっかけに` deixaram de receber equivalências absolutas.
+- Keigo passou a distinguir sonkeigo e kenjougo sem hierarquias inventadas como “supremo”; `お目にかかる` e `ご覧になる` foram corrigidos e contextualizados.
+- E-mails, apresentações, notícias e linguagem administrativa deixaram de ser apresentados por fórmulas universais. Instruções como `ご記入ください` e `ご提出ください` substituíram combinações mecânicas incorretas.
+- Kansai-ben, variedades de Kyushu e outras formas regionais passaram a registrar variação por localidade, geração, falante e situação, sem misturar variedades como se fossem intercambiáveis.
+- `おもてなし`, `わび・さび` e `生きがい` foram tratados como conceitos histórica e socialmente contextualizados, não como essência universal do Japão.
+- A avaliação final registra somente conclusão interna da trilha e não declara competência linguística externa, capacidade profissional ou equivalência com exames.
+- Cinco diálogos sem contrato textual explícito foram recuperados; quatro deles passaram a integrar Escuta, elevando o índice de 315 para 319 trechos.
+- Erros e resíduos como `Guran`, `Aimeu`, `Oshiaru`, `koutu`, `reached`, `re-report`, `shourui`, `zouta`, fragmentos de inglês e marcadores `[Seu Nome]` foram removidos do conteúdo executado.
+
+### Fontes, contratos e propagação
+
+As decisões registram páginas localizadas do *Quartet II* e do *Tobira*. Alvos de naturalidade exigem as duas famílias editoriais; os demais possuem ao menos uma evidência localizada. O contrato `japanese-phase21b-b2-editorial.cjs` verifica os 432 hashes, referências, estados, contagens e resíduos conhecidos.
+
+A Fase 18 agora possui 2.305/2.305 alvos sustentados: 1.207 aprovados e 1.098 corrigidos, sem casos inconclusivos no curso A1–B2. Após a propagação, o ledger global registra 7.366 aprovações, 1.565 correções e 14.605 casos inconclusivos. Estes casos restantes pertencem a outras camadas editoriais e recursos derivados; não são módulos canônicos A1–B2.
+
+Os recursos derivados registram 6.173 itens: 33 aprovados, 285 corrigidos e 5.855 inconclusivos. Escuta possui 319 trechos; Gramática preserva 194 referências e 13 formas; Escrita possui 210 modelos, todos sem marcação editorial pendente.
+
+Como o dataset e os índices públicos mudaram, o cache PWA foi atualizado para `idiomas-academy-v49`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
+
+## Próxima etapa
+
+A auditoria canônica do curso A1–B2 está concluída. A etapa editorial seguinte é resolver, por recurso, as projeções ainda inconclusivas de dicionário, minigame, Escuta, Leitura, Gramática e JLPT, sem promover automaticamente itens cuja origem permaneça sem evidência suficiente.

@@ -100,80 +100,85 @@ Conteúdo criado na Fase 3C. O status `pending-human-review` indica que a valida
 | b1_mod_24 | stage4_dialog[0].content | この一年間の日本での仕事と生活、どうだったかな。 | kono 1-nenkan no Nihon de no shigoto to seikatsu, dou datta ka na? | Como foi seu trabalho e vida no Japão neste 1 ano? | corrected |
 | b1_mod_24 | stage4_dialog[1].content | 素晴らしい成長だね！会社の支えになってくれてありがとう！ | Subarashii seichou da ne! Kaisha no sasae ni natte kurete arigatou! | Que crescimento incrível! Obrigado por apoiar a empresa! | corrected |
 | b1_mod_24 | stage4_dialog[2].content | おめでとうございます！B1コース修了です！ | Omedetou gozaimasu! B1 koosu shuuryou desu! | Parabéns! Você concluiu o curso B1! | corrected |
-| b2_mod_01 | stage1_context.audio | この会社では、毎週月曜日に会議を開くことになっている。 | Kono kaisha de wa, maishuu getsuyoubi ni kaigi o hiraku koto ni natte iru. | Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira. | pending-human-review |
-| b2_mod_01 | stage4_dialog[0].content | [Seu Nome]さん、管理規則によると、ごみは朝八時前に出すことになっていますよ。 | [Seu Nome]-san, kanri kisho ni yoru to, gomi wa asa hachi-ji maeni dasu koto ni natte imasu yo. | Segundo o regulamento, está estabelecido que o lixo deve ser colocado antes das 8h. | pending-human-review |
-| b2_mod_01 | stage4_dialog[2].content | 分かってくれて助かるよ。よろしく。 | Wakatte kurete tasukaru yo. Yoroshiku. | Ajuda muito você compreender. Conto com você. | pending-human-review |
-| b2_mod_02 | stage1_context.audio | 日本語だけでなく、漢字も勉強しています。これは一歩にすぎない。 | Nihongo dake de naku, kanji mo benkyou shite imasu. Kore wa ippo ni suginai. | Estudo não apenas japonês, mas também Kanji. Isto não passa de um primeiro passo. | pending-human-review |
-| b2_mod_02 | stage4_dialog[0].content | [Seu Nome]さん、素晴らしい分析でした！ | [Seu Nome]-san, subarashii bunseki deshita! | Foi uma análise espetacular! | pending-human-review |
-| b2_mod_02 | stage4_dialog[1].content | チームだけでなく、会社全体の支援になりますよ。 | Chiimu dake de naku, kaisha zentai no shien ni narimasu yo. | Isso apoiará não apenas a equipe, mas a empresa inteira. | pending-human-review |
-| b2_mod_02 | stage4_dialog[2].content | 今後の活動も期待しております。 | Kongo no katsudou mo kitai shite orimasu. | Esperamos grandes realizações nas suas próximas atividades. | pending-human-review |
-| b2_mod_03 | stage1_context.audio | 知らないくせに、話さないで。値段の割にはおいしい。 | Shiranai kuse ni, hanasanaide. Nedan no wari ni wa oishii. | Não fale como se soubesse, quando não sabe. É saboroso considerando o preço. | pending-human-review |
-| b2_mod_03 | stage4_dialog[0].content | [Seu Nome]さん、あの新しい店、値段が高いね。 | [Seu Nome]-san, ano atarashii mise, nedan ga takai ne. | Aquela loja nova é cara, né. | pending-human-review |
-| b2_mod_03 | stage4_dialog[1].content | あの評論家、行ったことがないくせに、悪いことばかり書いているよ。 | Ano hyouronka, itta koto ga nai kuse ni, warui koto bakari kaite iru yo. | Aquele crítico só escreve coisas ruins, embora nunca tenha ido lá. | pending-human-review |
-| b2_mod_03 | stage4_dialog[2].content | 自分たちで行って確かめよう！ | Jibun-tachi de itte tashikameyou! | Vamos nós mesmos lá verificar! | pending-human-review |
-| b2_mod_04 | stage1_context.audio | 目が回る忙しさ。顔が広いですね。 | Me ga mawaru isogashisa. Kao ga hiroi desu ne. | Uma correria de deixar a cabeça girando. Você conhece muita gente, não é? | pending-human-review |
-| b2_mod_04 | stage4_dialog[0].content | [Seu Nome]さん、最近、仕事で目が回る忙しさだね…… | [Seu Nome]-san, saikin shigoto de me ga mawaru isogashisa da ne... | Ultimamente o trabalho está numa correria de deixar a cabeça girando... | pending-human-review |
-| b2_mod_04 | stage4_dialog[1].content | 佐藤部長は顔が広いから、誰か紹介してくれるかも！ | Sato-buchou wa kao ga hiroi kara, dare ka shoukai shite kureru kamo! | Como o chefe Sato é muito bem conectado, pode ser que nos apresente alguém! | pending-human-review |
-| b2_mod_05 | stage1_context.audio | ご覧になりましたか。お目にかかれて光栄です。 | Goran ni narimashita ka. O-me ni kakarete kouei desu. | O senhor viu? É uma honra conhecê-lo. | pending-human-review |
-| b2_mod_05 | stage4_dialog[0].content | [Seu Nome]さん、最近の業績はいかがですか。 | [Seu Nome]-san, saikin no gyouseki wa ikaga desu ka? | Como está o desempenho recente? | pending-human-review |
-| b2_mod_05 | stage4_dialog[1].content | 素晴らしいデータだ。この計画はすでにご存じだったのか。 | Subarashii deeta da. Kono keikaku wa sude ni gozonji datta no ka? | São dados excelentes. Você já conhecia este plano? | pending-human-review |
-| b2_mod_05 | stage4_dialog[2].content | 今後の活動に期待しているよ。 | Kongo no katsudou ni kitai shite iru yo. | Conto com suas atividades futuras. | pending-human-review |
-| b2_mod_06 | stage1_context.audio | この件について、起承転結でレポートを作成しました。 | Kono ken ni tsuite, kishoutenketsu de repooto o sakusei shimashita. | Elaborei um relatório sobre este assunto com estrutura kishoutenketsu. | pending-human-review |
-| b2_mod_06 | stage4_dialog[0].content | [Seu Nome]さん、B2プロジェクトのメールの下書き、できた？ | [Seu Nome]-san, B2 purojekuto no meeru no shitagaki, dekita? | O rascunho do e-mail do projeto B2 ficou pronto? | pending-human-review |
-| b2_mod_06 | stage4_dialog[1].content | 本題が明確で、素晴らしい文章だね！ | Hondai ga meikaku de, subarashii bunshou da ne! | O assunto principal está claro; é um excelente texto! | pending-human-review |
-| b2_mod_06 | stage4_dialog[2].content | よろしくお願いするよ！ | Yoroshiku onegai suru yo! | Conto com você! | pending-human-review |
-| b2_mod_07 | stage1_context.audio | 申し訳ございませんが、この条件はお受けしかねます。 | Moushiwake gozaimasen ga, kono jouken wa o-uke shikanemasu. | Lamento, mas não podemos aceitar esta condição. | pending-human-review |
-| b2_mod_07 | stage4_dialog[0].content | この値段から五十パーセント割引してくれないか。 | Kono nedan kara gojuu paasento waribiki shite kurenai ka? | Não poderia dar cinquenta por cento de desconto neste preço? | pending-human-review |
-| b2_mod_07 | stage4_dialog[1].content | ふむ……十パーセントの特典なら、悪くないね。 | Fumu... Juu paasento no tokuten nara, warukunai ne. | Hum... Se for um benefício de dez por cento, não está mal. | pending-human-review |
-| b2_mod_08 | stage1_context.audio | 今日はB2プロジェクトについて発表いたします。 | Kyou wa B2 purojekuto ni tsuite happyou itashimasu. | Hoje farei uma apresentação sobre o projeto B2. | pending-human-review |
-| b2_mod_08 | stage4_dialog[0].content |  | (Silêncio respeitoso aguardando o início do seu discurso) | 役員たちは静かに発表の開始を待っている。 | pending-human-review |
-| b2_mod_08 | stage4_dialog[1].content | 予算の統計について、少し説明してくれないか。 | Yosan no toukei ni tsuite, sukoshi setsumei shite kurenai ka? | Poderia explicar um pouco as estatísticas do orçamento? | pending-human-review |
-| b2_mod_08 | stage4_dialog[2].content |  | (Aplausos entusiasmados dos diretores) | 役員たちが発表に拍手を送っている。 | pending-human-review |
-| b2_mod_09 | stage1_context.audio | 経済の統計によると、景気が回復しています。 | Keizai no toukei ni yoru to, keiki ga kaifuku shite imasu. | Segundo as estatísticas econômicas, a economia está se recuperando. | pending-human-review |
-| b2_mod_09 | stage4_dialog[0].content | [Seu Nome]さん、今日のNHKニュース、見た？ | [Seu Nome]-san, kyou no NHK nyuusu, mita? | Viu o noticiário da NHK de hoje? | pending-human-review |
-| b2_mod_09 | stage4_dialog[1].content | AIと技術の開発も、すごい成長だね。 | AI to gijutsu no kaihatsu mo sugoi seichou da ne. | O desenvolvimento de IA e tecnologia também tá num crescimento incrível, né. | pending-human-review |
-| b2_mod_09 | stage4_dialog[2].content | 賢い分析だ！毎日ニュースを確認しよう！ | Kashikoi bunseki da! Mainichi nyuusu o kakunin shiyou! | É uma análise inteligente! Vamos conferir as notícias todos os dias! | pending-human-review |
-| b2_mod_10 | stage1_context.audio | 市役所の書類についてご案内いたします。 | Shiyakusho no shorui ni tsuite go-annai itashimasu. | Vou orientá-lo sobre os documentos da prefeitura. | pending-human-review |
-| b2_mod_10 | stage4_dialog[0].content | いらっしゃいませ。本日はどのようなご用件ですか。 | Irasshaimase. Honjitsu wa dono you na goyouken desu ka? | Bem-vindo. Em que posso ajudá-lo hoje? | pending-human-review |
-| b2_mod_10 | stage4_dialog[1].content | では、この書類にお名前と住所をご記入いただけますか。 | Dewa, kono shourui ni namae to juusho o go-kinyuu itadakemasu ka? | Bem, o senhor poderia por gentileza preencher seu nome e endereço neste documento? | pending-human-review |
-| b2_mod_10 | stage4_dialog[2].content | 確認いたしました。これで問題なく完了です。 | Kakunin itashimashita. Kore de mondai naku kanryou desu. | Conferi. Com isso, o procedimento foi concluído sem problemas. | pending-human-review |
-| b2_mod_11 | stage1_context.audio | めっちゃ、ほんまにええやん！やばいですよ！ | Meccha, honma ni ee yan! Yabai desu yo! | É muito bom mesmo! É impressionante! | pending-human-review |
-| b2_mod_11 | stage4_dialog[0].content | このコメディ、ほんまにめっちゃおもろいやろ？ | Kono komedi, honma ni meccha omoroi yaro? | Esta comédia é muito engraçada mesmo, não é? | pending-human-review |
-| b2_mod_11 | stage4_dialog[2].content | もちろんや！もう関西人と同じやん！ | Mochiron ya! Mou Kansai-jin to onaji yan! | Claro! Você já fala como alguém de Kansai! | pending-human-review |
-| b2_mod_12 | stage1_context.audio | 高齢化社会と環境問題について考察します。 | Koureika shakai to kankyou mondai ni tsuite kousatsu shimasu. | Analisaremos a sociedade em envelhecimento e os problemas ambientais. | pending-human-review |
-| b2_mod_12 | stage4_dialog[0].content | [Seu Nome]さん、日本の高齢化社会についてどう考えますか。 | [Seu Nome]-san, Nihon no koureika shakai ni tsuite dou kangaemasu ka? | O que pensa sobre a sociedade envelhecida no Japão? | pending-human-review |
-| b2_mod_12 | stage4_dialog[1].content | 環境問題とのバランスも大切ですね。 | Kankyou mondai to no baransu mo taisetsu desu ne. | O equilíbrio com as questões ambientais também é importante. | pending-human-review |
-| b2_mod_13 | stage1_context.audio | お金さえあれば、大丈夫。悪天候にもかかわらず、出発した。 | Okane sae areba, daijoubu. Akutenkou ni mo kakawarazu, shuppatsu shita. | Desde que haja dinheiro, ficará tudo bem. Partimos apesar do mau tempo. | pending-human-review |
-| b2_mod_13 | stage4_dialog[0].content | [Seu Nome]さん、この論文の論理は明確だね。 | [Seu Nome]-san, kono ronbun no ronri wa meikaku da ne. | A lógica deste artigo está clara. | pending-human-review |
-| b2_mod_13 | stage4_dialog[1].content | 厳しい条件にもかかわらず、結果を出したね。 | Kibishii jouken ni mo kakawarazu, kekka o dashita ne. | Você obteve resultados apesar das condições difíceis. | pending-human-review |
-| b2_mod_13 | stage4_dialog[2].content | 素晴らしいです！学会に投稿しましょう！ | Subarashii desu! Gakkai ni toukou shimashou! | Excelente! Vamos submeter o trabalho à sociedade acadêmica! | pending-human-review |
-| b2_mod_14 | stage1_context.audio | これは成功と言えるだろう。毎日の努力にほかならない。 | Kore wa seikou to ieru darou. Mainichi no doryoku ni hoka naranai. | Pode-se dizer que isto foi um sucesso. Não é nada além do resultado do esforço diário. | pending-human-review |
-| b2_mod_14 | stage4_dialog[0].content | [Seu Nome]さん、このデータの考察をまとめてください。 | [Seu Nome]-san, kono deeta no kousatsu o matomete kudasai. | Resuma a análise destes dados, por favor. | pending-human-review |
-| b2_mod_14 | stage4_dialog[1].content | 明確で価値の高い論旨だね。議論の組み立てが素晴らしいよ。 | Meikaku de kachi no takai ronshi da ne. Giron no kumitate ga subarashii yo. | É uma tese clara e valiosa. A estrutura da argumentação está excelente. | pending-human-review |
-| b2_mod_14 | stage4_dialog[2].content | 合格です！おめでとうございます！ | Goukaku desu! Omedetou gozaimasu! | Aprovado! Parabéns! | pending-human-review |
-| b2_mod_15 | stage1_context.audio | 心を打つ文学の世界。夏目漱石の作品を読む。 | Kokoro o utsu bungaku no sekai. Natsume Souseki no sakuhin o yomu. | O mundo comovente da literatura. Ler uma obra de Natsume Souseki. | pending-human-review |
-| b2_mod_15 | stage4_dialog[0].content | [Seu Nome]さん、夏目漱石の作品を読んだことある？ | [Seu Nome]-san, Natsume Souseki no sakuhin o yonda koto aru? | Você já leu alguma obra de Natsume Souseki? | pending-human-review |
-| b2_mod_15 | stage4_dialog[1].content | 太宰治の作品も、文学的にとても深いよ。 | Dazai Osamu no sakuhin mo, bungakuteki ni totemo fukai yo. | As obras de Dazai Osamu também têm grande profundidade literária. | pending-human-review |
-| b2_mod_15 | stage4_dialog[2].content | 来月の議論、楽しみにしているよ！ | Raigetsu no giron, tanoshimi ni shite iru yo! | Estou ansioso pela discussão do mês que vem! | pending-human-review |
-| b2_mod_16 | stage1_context.audio | 調査の結果、新しい技術が生まれた。この出会いをきっかけに……。 | Chousa no kekka, atarashii gijutsu ga umareta. Kono deai o kikkake ni... | Como resultado da pesquisa, surgiu uma nova tecnologia. A partir deste encontro... | pending-human-review |
-| b2_mod_16 | stage4_dialog[0].content | [Seu Nome]さん、日本語の勉強を始めたきっかけは何ですか。 | [Seu Nome]-san, Nihon-go no benkyou o hajimeta kikkake wa nani desu ka? | O que serviu de gatilho para você começar a estudar japonês? | pending-human-review |
-| b2_mod_16 | stage4_dialog[1].content | 毎日の努力の結果、今は自然に話せますね！ | Mainichi no doryoku no kekka, ima wa shizen ni hanasemasu ne! | Como resultado do esforço diário, agora você consegue falar com naturalidade! | pending-human-review |
-| b2_mod_16 | stage4_dialog[2].content | 素晴らしい話です！聞いている皆さんの励みになりました！ | Subarashii hanashi desu! Kiite iru minasan no hagemi ni narimashita! | É uma história excelente! Ela incentivou todos que estavam ouvindo! | pending-human-review |
-| b2_mod_17 | stage1_context.audio | おおきに！好いとうよ！めんそーれ！ | Ookini! Suitou yo! Mensooree! | Muito obrigado! Gosto de você! Bem-vindo! | pending-human-review |
-| b2_mod_17 | stage4_dialog[0].content | 福岡のラーメン、好いとうと？ | Fukuoka no raamen, suitou to? | Você gosta do ramen de Fukuoka? | pending-human-review |
-| b2_mod_17 | stage4_dialog[1].content | 福岡の方言も知っとうと！すごかね！ | Fukuoka no hougen mo shittou to! Sugoka ne! | Você conhece até o dialeto de Fukuoka! Que incrível! | pending-human-review |
-| b2_mod_17 | stage4_dialog[2].content | また福岡に来てね！ | Mata Fukuoka ni kite ne! | Venha novamente a Fukuoka! | pending-human-review |
-| b2_mod_18 | stage1_context.audio | わくわくしています。ぴかぴかに磨きました。 | Wakuwaku shite imasu. Pikapika ni migakimashita. | Estou empolgado. Poli até ficar brilhando. | pending-human-review |
-| b2_mod_18 | stage4_dialog[0].content | [Seu Nome]さん、天気もいいし、遊園地日和だね！ | [Seu Nome]-san, tenki mo ii shi, yuuenchi biyori da ne! | O tempo está bom; é um dia perfeito para o parque de diversões! | pending-human-review |
-| b2_mod_18 | stage4_dialog[1].content | 楽しい！でも、もうお腹がぺこぺこになったね！ | Tanoshii! Demo, mou onaka ga pekopeko ni natta ne! | Está divertido! Mas já ficamos morrendo de fome! | pending-human-review |
-| b2_mod_18 | stage4_dialog[2].content | にこにこ笑って食べよう！ | Nikoniko waratte tabeyou! | Vamos comer sorrindo! | pending-human-review |
-| b2_mod_19 | stage1_context.audio | おもてなしの心と生きがいを大切にします。 | Omotenashi no kokoro to ikigai o taisetsu ni shimasu. | Valorizamos o espírito de hospitalidade e aquilo que dá sentido à vida. | pending-human-review |
-| b2_mod_19 | stage4_dialog[0].content | [Seu Nome]さん、おもてなしとは、相手の心を思うことです。 | [Seu Nome]-san, Omotenashi to wa, aite no kokoro o omou koto desu. | Omotenashi é pensar no coração do outro. | pending-human-review |
-| b2_mod_19 | stage4_dialog[1].content | [Seu Nome]さんの生きがいは何ですか。 | [Seu Nome]-san no Ikigai wa nani desu ka? | Qual é o seu Ikigai / razão de viver? | pending-human-review |
-| b2_mod_19 | stage4_dialog[2].content | どうぞ、わび・さびの趣をお楽しみください。 | Douzo, wabi-sabi no omomuki o o-tanoshimi kudasai. | Aprecie a estética de wabi-sabi, por favor. | pending-human-review |
-| b2_mod_20 | stage1_context.audio | おめでとうございます！すべてのレベル修了です！ | Omedetou gozaimasu! Subete no reberu shuuryou desu! | Parabéns! Todos os níveis foram concluídos! | pending-human-review |
-| b2_mod_20 | stage4_dialog[0].content | [Seu Nome]さん、おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！ | [Seu Nome]-san, omedetou gozaimasu. Kono yottsu no reberu no gakushuu wa, hontou ni subarashikatta desu! | Parabéns! Seu trabalho ao longo destes quatro níveis foi realmente excelente! | pending-human-review |
-| b2_mod_20 | stage4_dialog[1].content | 今後、日本語を使って何をしたいですか。 | Kongo, Nihon-go o tsukatte nani o shitai desu ka? | No futuro, o que deseja fazer usando o japonês? | pending-human-review |
-| b2_mod_20 | stage4_dialog[2].content | 素晴らしいです！B2コースの修了証をお渡しいたします。おめでとうございます！ | Subarashii desu! B2 koosu no shuuryoushou o owatashi itashimasu. Omedetou gozaimasu! | Excelente! Entregaremos o certificado de conclusão do curso B2. Parabéns! | pending-human-review |
+| b2_mod_01 | stage1_context.audio | この会社では、毎週月曜日に会議を開くことになっている。 | Kono kaisha de wa, maishuu getsuyoubi ni kaigi o hiraku koto ni natte iru. | Nesta empresa, está estabelecido que haverá uma reunião toda segunda-feira. | corrected |
+| b2_mod_01 | stage4_dialog[0].content | 管理規則によると、ごみは朝八時前に出すことになっていますよ。 | kanri kisho ni yoru to, gomi wa asa hachi-ji maeni dasu koto ni natte imasu yo. | Segundo o regulamento, está estabelecido que o lixo deve ser colocado antes das 8h. | corrected |
+| b2_mod_01 | stage4_dialog[1].content | 夜十時以降は静かにすることになっています。 | Yoru juuji ikou wa shizuka ni suru koto ni natte imasu. | Está estabelecido que se mantenha silêncio depois das dez da noite. | corrected |
+| b2_mod_01 | stage4_dialog[2].content | 分かってくれて助かるよ。よろしく。 | Wakatte kurete tasukaru yo. Yoroshiku. | Ajuda muito você compreender. Conto com você. | corrected |
+| b2_mod_02 | stage1_context.audio | 日本語だけでなく、漢字も勉強しています。これは一歩にすぎない。 | Nihongo dake de naku, kanji mo benkyou shite imasu. Kore wa ippo ni suginai. | Estudo não apenas japonês, mas também Kanji. Isto não passa de um primeiro passo. | corrected |
+| b2_mod_02 | stage4_dialog[0].content | 素晴らしい分析でした！ | subarashii bunseki deshita! | Foi uma análise excelente! | corrected |
+| b2_mod_02 | stage4_dialog[1].content | チームだけでなく、会社全体の支援になりますよ。 | Chiimu dake de naku, kaisha zentai no shien ni narimasu yo. | Isso apoiará não apenas a equipe, mas a empresa inteira. | corrected |
+| b2_mod_02 | stage4_dialog[2].content | 今後の活動も期待しております。 | Kongo no katsudou mo kitai shite orimasu. | Esperamos grandes realizações nas suas próximas atividades. | corrected |
+| b2_mod_03 | stage1_context.audio | 知らないくせに、話さないで。値段の割にはおいしい。 | Shiranai kuse ni, hanasanaide. Nedan no wari ni wa oishii. | Não fale como se soubesse, quando não sabe. É saboroso considerando o preço. | corrected |
+| b2_mod_03 | stage4_dialog[0].content | あの新しい店、値段が高いね。 | ano atarashii mise, nedan ga takai ne. | Aquela loja nova é cara, né. | corrected |
+| b2_mod_03 | stage4_dialog[1].content | あの評論家、行ったことがないくせに、悪いことばかり書いているよ。 | Ano hyouronka, itta koto ga nai kuse ni, warui koto bakari kaite iru yo. | Aquele crítico só escreve coisas ruins, embora nunca tenha ido lá. | corrected |
+| b2_mod_03 | stage4_dialog[2].content | 自分たちで行って確かめよう！ | Jibun-tachi de itte tashikameyou! | Vamos nós mesmos lá verificar! | corrected |
+| b2_mod_04 | stage1_context.audio | 目が回る忙しさ。顔が広いですね。 | Me ga mawaru isogashisa. Kao ga hiroi desu ne. | Uma correria de deixar a cabeça girando. Você conhece muita gente, não é? | corrected |
+| b2_mod_04 | stage4_dialog[0].content | 最近、仕事で目が回る忙しさだね…… | saikin shigoto de me ga mawaru isogashisa da ne... | Ultimamente o trabalho está numa correria de deixar a cabeça girando... | corrected |
+| b2_mod_04 | stage4_dialog[1].content | 佐藤部長は顔が広いから、誰か紹介してくれるかも！ | Sato-buchou wa kao ga hiroi kara, dare ka shoukai shite kureru kamo! | Como o chefe Sato é muito bem conectado, pode ser que nos apresente alguém! | corrected |
+| b2_mod_04 | stage4_dialog[2].content | よろしく頼むよ。 | Yoroshiku tanomu yo. | Conto com você. | corrected |
+| b2_mod_05 | stage1_context.audio | ご覧になりましたか。お目にかかれて光栄です。 | Goran ni narimashita ka. O-me ni kakarete kouei desu. | O senhor viu? É uma honra conhecê-lo. | corrected |
+| b2_mod_05 | stage4_dialog[0].content | 最近の業績はいかがですか。 | saikin no gyouseki wa ikaga desu ka? | Como está o desempenho recente? | corrected |
+| b2_mod_05 | stage4_dialog[1].content | 素晴らしいデータだ。この計画はすでにご存じだったのか。 | Subarashii deeta da. Kono keikaku wa sude ni gozonji datta no ka? | São dados excelentes. Você já conhecia este plano? | corrected |
+| b2_mod_05 | stage4_dialog[2].content | 今後の活動に期待しているよ。 | Kongo no katsudou ni kitai shite iru yo. | Conto com suas atividades futuras. | corrected |
+| b2_mod_06 | stage1_context.audio | この件について、起承転結でレポートを作成しました。 | Kono ken ni tsuite, kishoutenketsu de repooto o sakusei shimashita. | Elaborei um relatório sobre este assunto com estrutura kishoutenketsu. | corrected |
+| b2_mod_06 | stage4_dialog[0].content | B2プロジェクトのメールの下書き、できた？ | B2 purojekuto no meeru no shitagaki, dekita? | O rascunho do e-mail do projeto B2 ficou pronto? | corrected |
+| b2_mod_06 | stage4_dialog[1].content | 本題が明確で、素晴らしい文章だね！ | Hondai ga meikaku de, subarashii bunshou da ne! | O assunto principal está claro; é um excelente texto! | corrected |
+| b2_mod_06 | stage4_dialog[2].content | よろしくお願いするよ！ | Yoroshiku onegai suru yo! | Conto com você! | corrected |
+| b2_mod_07 | stage1_context.audio | 申し訳ございませんが、この条件はお受けしかねます。 | Moushiwake gozaimasen ga, kono jouken wa o-uke shikanemasu. | Lamento, mas não podemos aceitar esta condição. | corrected |
+| b2_mod_07 | stage4_dialog[0].content | この値段から五十パーセント割引してくれないか。 | Kono nedan kara gojuu paasento waribiki shite kurenai ka? | Não poderia dar cinquenta por cento de desconto neste preço? | corrected |
+| b2_mod_07 | stage4_dialog[1].content | ふむ……十パーセントの特典なら、悪くないね。 | Fumu... Juu paasento no tokuten nara, warukunai ne. | Hum... Se for um benefício de dez por cento, não está mal. | corrected |
+| b2_mod_07 | stage4_dialog[2].content | よろしく頼むよ。 | Yoroshiku tanomu yo. | Conto com você. | corrected |
+| b2_mod_08 | stage1_context.audio | 今日はB2プロジェクトについて発表いたします。 | Kyou wa B2 purojekuto ni tsuite happyou itashimasu. | Hoje farei uma apresentação sobre o projeto B2. | corrected |
+| b2_mod_08 | stage4_dialog[0].content |  | (Silêncio respeitoso aguardando o início do seu discurso) | 役員たちは静かに発表の開始を待っている。 | corrected |
+| b2_mod_08 | stage4_dialog[1].content | 予算の統計について、少し説明してくれないか。 | Yosan no toukei ni tsuite, sukoshi setsumei shite kurenai ka? | Poderia explicar um pouco as estatísticas do orçamento? | corrected |
+| b2_mod_08 | stage4_dialog[2].content |  | (Aplausos entusiasmados dos diretores) | 役員たちが発表に拍手を送っている。 | corrected |
+| b2_mod_09 | stage1_context.audio | 経済の統計によると、景気が回復しています。 | Keizai no toukei ni yoru to, keiki ga kaifuku shite imasu. | Segundo as estatísticas econômicas, a economia está se recuperando. | corrected |
+| b2_mod_09 | stage4_dialog[0].content | 今日のNHKニュース、見た？ | kyou no NHK nyuusu, mita? | Viu o noticiário da NHK de hoje? | corrected |
+| b2_mod_09 | stage4_dialog[1].content | AIと技術の開発も、すごい成長だね。 | AI to gijutsu no kaihatsu mo sugoi seichou da ne. | O desenvolvimento de IA e tecnologia também tá num crescimento incrível, né. | corrected |
+| b2_mod_09 | stage4_dialog[2].content | 賢い分析だ！毎日ニュースを確認しよう！ | Kashikoi bunseki da! Mainichi nyuusu o kakunin shiyou! | É uma análise inteligente! Vamos conferir as notícias todos os dias! | corrected |
+| b2_mod_10 | stage1_context.audio | 市役所の書類についてご案内いたします。 | Shiyakusho no shorui ni tsuite go-annai itashimasu. | Vou orientá-lo sobre os documentos da prefeitura. | corrected |
+| b2_mod_10 | stage4_dialog[0].content | いらっしゃいませ。本日はどのようなご用件ですか。 | Irasshaimase. Honjitsu wa dono you na goyouken desu ka? | Bem-vindo. Em que posso ajudá-lo hoje? | corrected |
+| b2_mod_10 | stage4_dialog[1].content | では、この書類にお名前と住所をご記入いただけますか。 | Dewa, kono shorui ni namae to juusho o go-kinyuu itadakemasu ka? | Bem, o senhor poderia por gentileza preencher seu nome e endereço neste documento? | corrected |
+| b2_mod_10 | stage4_dialog[2].content | 確認いたしました。これで問題なく完了です。 | Kakunin itashimashita. Kore de mondai naku kanryou desu. | Conferi. Com isso, o procedimento foi concluído sem problemas. | corrected |
+| b2_mod_11 | stage1_context.audio | めっちゃ、ほんまにええやん！やばいですよ！ | Meccha, honma ni ee yan! Yabai desu yo! | É muito bom mesmo! É impressionante! | corrected |
+| b2_mod_11 | stage4_dialog[0].content | このコメディ、ほんまにめっちゃおもろいやろ？ | Kono komedi, honma ni meccha omoroi yaro? | Esta comédia é muito engraçada mesmo, não é? | corrected |
+| b2_mod_11 | stage4_dialog[1].content | 日本のアニメでも関西弁が分かるんですか。 | Nihon no anime demo Kansai-ben ga wakaru n desu ka? | Você também reconhece Kansai-ben em animes japoneses? | corrected |
+| b2_mod_11 | stage4_dialog[2].content | もちろんや！もう関西人と同じやん！ | Mochiron ya! Mou Kansai-jin to onaji yan! | Claro! Você já fala como alguém de Kansai! | corrected |
+| b2_mod_12 | stage1_context.audio | 高齢化社会と環境問題について考察します。 | Koureika shakai to kankyou mondai ni tsuite kousatsu shimasu. | Analisaremos a sociedade em envelhecimento e os problemas ambientais. | corrected |
+| b2_mod_12 | stage4_dialog[0].content | 日本の高齢化社会についてどう考えますか。 | Nihon no koureika shakai ni tsuite dou kangaemasu ka? | O que pensa sobre a sociedade envelhecida no Japão? | corrected |
+| b2_mod_12 | stage4_dialog[1].content | 環境問題とのバランスも大切ですね。 | Kankyou mondai to no baransu mo taisetsu desu ne. | O equilíbrio com as questões ambientais também é importante. | corrected |
+| b2_mod_12 | stage4_dialog[2].content | 資料を確認して、また話し合いましょう。 | Shiryou o kakunin shite, mata hanashiaimashou. | Vamos conferir os dados e conversar novamente. | corrected |
+| b2_mod_13 | stage1_context.audio | お金さえあれば、大丈夫。悪天候にもかかわらず、出発した。 | Okane sae areba, daijoubu. Akutenkou ni mo kakawarazu, shuppatsu shita. | Desde que haja dinheiro, ficará tudo bem. Partimos apesar do mau tempo. | corrected |
+| b2_mod_13 | stage4_dialog[0].content | この論文の論理は明確だね。 | kono ronbun no ronri wa meikaku da ne. | A lógica deste artigo está clara. | corrected |
+| b2_mod_13 | stage4_dialog[1].content | 厳しい条件にもかかわらず、結果を出したね。 | Kibishii jouken ni mo kakawarazu, kekka o dashita ne. | Você obteve resultados apesar das condições difíceis. | corrected |
+| b2_mod_13 | stage4_dialog[2].content | 素晴らしいです！学会に投稿しましょう！ | Subarashii desu! Gakkai ni toukou shimashou! | Excelente! Vamos submeter o trabalho à sociedade acadêmica! | corrected |
+| b2_mod_14 | stage1_context.audio | これは成功と言えるだろう。毎日の努力にほかならない。 | Kore wa seikou to ieru darou. Mainichi no doryoku ni hoka naranai. | Pode-se dizer que isto foi um sucesso. Não é nada além do resultado do esforço diário. | corrected |
+| b2_mod_14 | stage4_dialog[0].content | このデータの考察をまとめてください。 | kono deeta no kousatsu o matomete kudasai. | Resuma a análise destes dados, por favor. | corrected |
+| b2_mod_14 | stage4_dialog[1].content | 明確で価値の高い論旨だね。議論の組み立てが素晴らしいよ。 | Meikaku de kachi no takai ronshi da ne. Giron no kumitate ga subarashii yo. | É uma tese clara e valiosa. A estrutura da argumentação está excelente. | corrected |
+| b2_mod_14 | stage4_dialog[2].content | 合格です！おめでとうございます！ | Goukaku desu! Omedetou gozaimasu! | Aprovado! Parabéns! | corrected |
+| b2_mod_15 | stage1_context.audio | 心を打つ文学の世界。夏目漱石の作品を読む。 | Kokoro o utsu bungaku no sekai. Natsume Souseki no sakuhin o yomu. | O mundo comovente da literatura. Ler uma obra de Natsume Souseki. | corrected |
+| b2_mod_15 | stage4_dialog[0].content | 夏目漱石の作品を読んだことある？ | Natsume Souseki no sakuhin o yonda koto aru? | Você já leu alguma obra de Natsume Souseki? | corrected |
+| b2_mod_15 | stage4_dialog[1].content | 太宰治の作品も、文学的にとても深いよ。 | Dazai Osamu no sakuhin mo, bungakuteki ni totemo fukai yo. | As obras de Dazai Osamu também têm grande profundidade literária. | corrected |
+| b2_mod_15 | stage4_dialog[2].content | 来月の議論、楽しみにしているよ！ | Raigetsu no giron, tanoshimi ni shite iru yo! | Estou ansioso pela discussão do mês que vem! | corrected |
+| b2_mod_16 | stage1_context.audio | 調査の結果、新しい技術が生まれた。この出会いをきっかけに……。 | Chousa no kekka, atarashii gijutsu ga umareta. Kono deai o kikkake ni... | Como resultado da pesquisa, surgiu uma nova tecnologia. A partir deste encontro... | corrected |
+| b2_mod_16 | stage4_dialog[0].content | 日本語の勉強を始めたきっかけは何ですか。 | Nihon-go no benkyou o hajimeta kikkake wa nani desu ka? | O que serviu de gatilho para você começar a estudar japonês? | corrected |
+| b2_mod_16 | stage4_dialog[1].content | 毎日の努力の結果、今は自然に話せますね！ | Mainichi no doryoku no kekka, ima wa shizen ni hanasemasu ne! | Como resultado do esforço diário, agora você consegue falar com naturalidade! | corrected |
+| b2_mod_16 | stage4_dialog[2].content | 素晴らしい話です！聞いている皆さんの励みになりました！ | Subarashii hanashi desu! Kiite iru minasan no hagemi ni narimashita! | É uma história excelente! Ela incentivou todos que estavam ouvindo! | corrected |
+| b2_mod_17 | stage1_context.audio | おおきに！好いとうよ！めんそーれ！ | Ookini! Suitou yo! Mensooree! | Muito obrigado! Gosto de você! Bem-vindo! | corrected |
+| b2_mod_17 | stage4_dialog[0].content | 福岡のラーメン、好いとうと？ | Fukuoka no raamen, suitou to? | Você gosta do ramen de Fukuoka? | corrected |
+| b2_mod_17 | stage4_dialog[1].content | 福岡の方言も知っとうと！すごかね！ | Fukuoka no hougen mo shittou to! Sugoka ne! | Você conhece até o dialeto de Fukuoka! Que incrível! | corrected |
+| b2_mod_17 | stage4_dialog[2].content | また福岡に来てね！ | Mata Fukuoka ni kite ne! | Venha novamente a Fukuoka! | corrected |
+| b2_mod_18 | stage1_context.audio | わくわくしています。ぴかぴかに磨きました。 | Wakuwaku shite imasu. Pikapika ni migakimashita. | Estou empolgado. Poli até ficar brilhando. | corrected |
+| b2_mod_18 | stage4_dialog[0].content | 天気もいいし、遊園地日和だね！ | tenki mo ii shi, yuuenchi biyori da ne! | O tempo está bom; é um dia perfeito para o parque de diversões! | corrected |
+| b2_mod_18 | stage4_dialog[1].content | 楽しい！でも、もうお腹がぺこぺこになったね！ | Tanoshii! Demo, mou onaka ga pekopeko ni natta ne! | Está divertido! Mas já ficamos morrendo de fome! | corrected |
+| b2_mod_18 | stage4_dialog[2].content | にこにこ笑って食べよう！ | Nikoniko waratte tabeyou! | Vamos comer sorrindo! | corrected |
+| b2_mod_19 | stage1_context.audio | おもてなしの心と生きがいを大切にします。 | Omotenashi no kokoro to ikigai o taisetsu ni shimasu. | Valorizamos o espírito de hospitalidade e aquilo que dá sentido à vida. | corrected |
+| b2_mod_19 | stage4_dialog[0].content | おもてなしとは、相手の心を思うことです。 | Omotenashi to wa, aite no kokoro o omou koto desu. | Omotenashi é pensar no coração do outro. | corrected |
+| b2_mod_19 | stage4_dialog[1].content | の生きがいは何ですか。 | no Ikigai wa nani desu ka? | Qual é o seu Ikigai / razão de viver? | corrected |
+| b2_mod_19 | stage4_dialog[2].content | どうぞ、わび・さびの趣をお楽しみください。 | Douzo, wabi-sabi no omomuki o o-tanoshimi kudasai. | Aprecie a estética de wabi-sabi, por favor. | corrected |
+| b2_mod_20 | stage1_context.audio | おめでとうございます！すべてのレベル修了です！ | Omedetou gozaimasu! Subete no reberu shuuryou desu! | Parabéns! Todos os níveis foram concluídos! | corrected |
+| b2_mod_20 | stage4_dialog[0].content | おめでとうございます。この四つのレベルの学習は、本当に素晴らしかったです！ | omedetou gozaimasu. Kono yottsu no reberu no gakushuu wa, hontou ni subarashikatta desu! | Parabéns! Seu trabalho ao longo destes quatro níveis foi realmente excelente! | corrected |
+| b2_mod_20 | stage4_dialog[1].content | 今後、日本語を使って何をしたいですか。 | Kongo, Nihon-go o tsukatte nani o shitai desu ka? | No futuro, o que deseja fazer usando o japonês? | corrected |
+| b2_mod_20 | stage4_dialog[2].content | 素晴らしいです！B2コースの修了証をお渡しいたします。おめでとうございます！ | Subarashii desu! B2 koosu no shuuryoushou o owatashi itashimasu. Omedetou gozaimasu! | Excelente! Entregaremos o certificado de conclusão do curso B2. Parabéns! | corrected |
 
 Nenhuma linha desta tabela deve ser marcada como aprovada automaticamente.
