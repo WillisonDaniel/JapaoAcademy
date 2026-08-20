@@ -293,7 +293,19 @@ As decisões usam a tabela de horários do *Genki I* (p. 49), com evidência ind
 
 ## Próximo lote automático
 
-Continuar no módulo A1-26 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-31 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+
+## Lotes A1-26 a A1-30
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 49 |
+| Corrigidos com evidência localizada | 51 |
+| Inconclusivos remanescentes nos módulos | 0 |
+
+O bloco revisa meios de transporte, localização, existência com `あります` e `います` e conectores básicos. Remove explicações absolutas, cenários turísticos desnecessários, construções alheias ao tópico e formulários com marcadores de nome. As regras agora distinguem veículo como meio com `で`, referência espacial de `ここ／そこ／あそこ`, existência de coisas e plantas versus pessoas e animais, e o uso limitado de `も` para inclusão em frases simples.
+
+As decisões usam páginas localizadas do *Genki I* (pp. 102 e 153), com evidência contextual independente de *Tobira*. Após a propagação, o ledger global contém 6.231 aprovações, 965 correções e 16.338 casos inconclusivos. Os trinta módulos já auditados somam 585 alvos canônicos sustentados; neste bloco, 100 alvos canônicos e treze projeções derivadas saíram da fila aberta.
 
 ## Lote A1-25
 

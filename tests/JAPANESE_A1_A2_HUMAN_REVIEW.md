@@ -30,11 +30,11 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_23 | stage1_context.audio | 昨日、映画を見ました。 | Kinou, eiga o mimashita. | Ontem, assisti a um filme. | corrected |
 | a1_mod_24 | stage1_context.audio | ご飯を食べます。 | Gohan o tabemasu. | Como arroz. | corrected |
 | a1_mod_25 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | corrected |
-| a1_mod_26 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | pending-human-review |
-| a1_mod_27 | stage1_context.audio | 駅はどこですか。 | Eki wa doko desu ka. | Onde fica a estação? | pending-human-review |
-| a1_mod_28 | stage1_context.audio | 本があります。 | Hon ga arimasu. | Há um livro. | pending-human-review |
-| a1_mod_29 | stage1_context.audio | 犬がいます。友達がいます。 | Inu ga imasu. Tomodachi ga imasu. | Há um cachorro. Há um amigo. | pending-human-review |
-| a1_mod_30 | stage1_context.audio | 友達は行きます。そして、私も行きます。でも、田中さんは行きません。 | Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen. | Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai. | pending-human-review |
+| a1_mod_26 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | corrected |
+| a1_mod_27 | stage1_context.audio | 駅はどこですか。 | Eki wa doko desu ka. | Onde fica a estação? | corrected |
+| a1_mod_28 | stage1_context.audio | 本があります。 | Hon ga arimasu. | Há um livro. | corrected |
+| a1_mod_29 | stage1_context.audio | 犬がいます。友達がいます。 | Inu ga imasu. Tomodachi ga imasu. | Há um cachorro. Há um amigo. | corrected |
+| a1_mod_30 | stage1_context.audio | 友達は行きます。そして、私も行きます。でも、田中さんは行きません。 | Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen. | Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai. | corrected |
 | a1_mod_31 | stage1_context.audio | おめでとうございます！A1修了です！ | Omedetou gozaimasu! A1 shuuryou desu! | Parabéns! O A1 foi concluído! | pending-human-review |
 | a2_mod_01 | stage1_context.audio | 毎朝七時に起きます。 | Maiasa shichi-ji ni okimasu. | Acordo às sete horas todas as manhãs. | pending-human-review |
 | a2_mod_01 | stage4_dialog[0].content | [Seu Nome]さん、朝、何時に起きますか。 | [Seu Nome]-san, asa, nan-ji ni okimasu ka. | A que horas você acorda de manhã? | pending-human-review |

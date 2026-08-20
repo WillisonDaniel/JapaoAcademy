@@ -8426,3 +8426,53 @@ CURSO_A1_DADOS[19].editorialReview = {
     ];
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Modules26To30() {
+    const corrected = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+    const transport = CURSO_A1_DADOS[25];
+    transport.title = "Meios de transporte";
+    Object.assign(transport.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga como você se desloca usando veículos e a partícula で." });
+    [["電車（でんしゃ）", "densha", "trem", "Meio de transporte ferroviário."], ["地下鉄（ちかてつ）", "chikatetsu", "metrô", "Trem urbano subterrâneo."], ["バス", "basu", "ônibus", "Empréstimo escrito em katakana."], ["タクシー", "takushii", "táxi", "Empréstimo escrito em katakana."]].forEach((v,i)=>Object.assign(transport.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(transport.stage2_drops[4], { title: "Meio de transporte com で", rule: "Com um veículo, で pode indicar o meio usado para se deslocar.", formula: "[veículo] で [verbo de movimento]", example: "電車で行きます。 (Densha de ikimasu.) — Vou de trem." });
+    transport.stage3_5_sentenceBuilder = [{sentenceJp:"でんしゃ で いきます",translation:"Vou de trem.",chunks:["でんしゃ","で","いきます"]},{sentenceJp:"バス で かえります",translation:"Volto de ônibus.",chunks:["バス","で","かえります"]}];
+    transport.stage4_dialog = [{scenario:"Situação 1: Um colega pergunta como você vai ao trabalho.",npcName:"Colega",npcMessage:"なにで かいしゃへ いきますか。",options:[{text:"ちかてつ で いきます。",feedback:"A resposta informa o meio de transporte.",isCorrect:true},{text:"かいしゃ です。",feedback:"A frase não informa como você se desloca.",isCorrect:false},{text:"こんばんは。",feedback:"A saudação não responde à pergunta.",isCorrect:false}]}];
+    transport.editorialReview = corrected;
+
+    const location = CURSO_A1_DADOS[26];
+    location.title = "Perguntar onde fica";
+    Object.assign(location.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Pergunte onde um lugar fica e interprete aqui, aí e lá no contexto da conversa." });
+    [["どこ", "doko", "onde", "Palavra interrogativa para lugar."], ["ここ", "koko", "aqui", "Lugar próximo do falante."], ["そこ", "soko", "aí; ali", "Lugar próximo do ouvinte ou já mencionado."], ["あそこ", "asoko", "lá", "Lugar distante do falante e do ouvinte."]].forEach((v,i)=>Object.assign(location.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(location.stage2_drops[4], { title: "Perguntar localização", rule: "Use o lugar seguido de はどこですか para perguntar onde ele fica.", formula: "[lugar] は どこですか", example: "駅はどこですか。 (Eki wa doko desu ka.) — Onde fica a estação?" });
+    location.stage3_5_sentenceBuilder = [{sentenceJp:"トイレ は どこ です か",translation:"Onde fica o banheiro?",chunks:["トイレ","は","どこ","です","か"]},{sentenceJp:"えき は あそこ です",translation:"A estação fica lá.",chunks:["えき","は","あそこ","です"]}];
+    location.stage4_dialog = [{scenario:"Situação 1: Você procura uma loja de conveniência.",npcName:"Pedestre",npcMessage:"なにか おこまりですか。 (Posso ajudar?)",options:[{text:"すみません、コンビニ は どこ です か。",feedback:"A pergunta pede a localização da loja.",isCorrect:true},{text:"コンビニ は あそこ です。",feedback:"A frase dá uma indicação sem antes perguntar.",isCorrect:false},{text:"ありがとう です。",feedback:"Primeiro é preciso pedir a informação.",isCorrect:false}]}];
+    location.stage5_quiz[4].question = "Qual é uma forma mais polida de perguntar “onde”?";
+    location.stage5_quiz[4].options = ["どちら", "どれ", "だれ"];
+    location.editorialReview = corrected;
+
+    const inanimate = CURSO_A1_DADOS[27];
+    inanimate.title = "Existência de coisas com あります";
+    Object.assign(inanimate.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga que objetos e plantas existem em um lugar usando あります." });
+    [["あります", "arimasu", "haver; existir", "Usado neste nível para coisas e plantas."], ["ありません", "arimasen", "não haver; não existir", "Forma negativa polida de あります."], ["本（ほん）", "hon", "livro", "Coisa inanimada."], ["車（くるま）", "kuruma", "carro; veículo", "Coisa inanimada."]].forEach((v,i)=>Object.assign(inanimate.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(inanimate.stage2_drops[4], { title: "Existência com あります", rule: "Para indicar a existência de coisas e plantas, use [lugar] に [coisa] が あります.", formula: "[lugar] に [coisa] が あります", example: "机に本があります。 — Há um livro na mesa." });
+    inanimate.stage3_5_sentenceBuilder = [{sentenceJp:"つくえ に ほん が あります",translation:"Há um livro na mesa.",chunks:["つくえ","に","ほん","が","あります"]},{sentenceJp:"くるま が あります",translation:"Há um carro.",chunks:["くるま","が","あります"]}];
+    inanimate.stage4_dialog = [{scenario:"Situação 1: Você pergunta se há dicionários na livraria.",npcName:"Atendente",npcMessage:"なにを おさがしですか。",options:[{text:"じしょ が あります か。",feedback:"A pergunta verifica a existência de dicionários.",isCorrect:true},{text:"じしょ が います か。",feedback:"O módulo usa あります para dicionários, que são coisas.",isCorrect:false},{text:"じしょ です。",feedback:"A frase não formula a pergunta.",isCorrect:false}]}];
+    inanimate.editorialReview = corrected;
+
+    const animate = CURSO_A1_DADOS[28];
+    animate.title = "Existência de pessoas e animais com います";
+    Object.assign(animate.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga que pessoas e animais estão presentes usando います." });
+    [["います", "imasu", "haver; estar", "Usado neste nível para pessoas e animais."], ["いません", "imasen", "não haver; não estar", "Forma negativa polida de います."], ["犬（いぬ）", "inu", "cachorro", "Animal."], ["猫（ねこ）", "neko", "gato", "Animal."]].forEach((v,i)=>Object.assign(animate.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(animate.stage2_drops[4], { title: "Existência com います", rule: "Para pessoas e animais, use [lugar] に [pessoa ou animal] が います.", formula: "[lugar] に [ser animado] が います", example: "公園に犬がいます。 — Há um cachorro no parque." });
+    animate.stage3_5_sentenceBuilder = [{sentenceJp:"ねこ が います",translation:"Há um gato.",chunks:["ねこ","が","います"]},{sentenceJp:"へや に せんせい が います",translation:"O professor está na sala.",chunks:["へや","に","せんせい","が","います"]}];
+    animate.stage4_dialog = [{scenario:"Situação 1: Você procura Tanaka na recepção.",npcName:"Recepcionista",npcMessage:"なにか ごようですか。",options:[{text:"すみません、たなかさん は います か。",feedback:"A pergunta verifica se a pessoa está presente.",isCorrect:true},{text:"たなかさん は あります か。",feedback:"Para uma pessoa, o módulo usa います.",isCorrect:false},{text:"たなかさん です。",feedback:"A frase não pergunta se a pessoa está presente.",isCorrect:false}]}];
+    animate.editorialReview = corrected;
+
+    const connectors = CURSO_A1_DADOS[29];
+    connectors.title = "Conectar ideias com そして、でも e も";
+    Object.assign(connectors.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Conecte frases simples e indique inclusão com も." });
+    [["そして", "soshite", "e; então", "Conecta enunciados em sequência."], ["でも", "demo", "mas", "Introduz contraste entre enunciados."], ["も", "mo", "também", "Em frases simples, pode substituir は ou が para marcar inclusão."], ["楽しい（たのしい）", "tanoshii", "divertido; agradável", "Adjetivo em い."]].forEach((v,i)=>Object.assign(connectors.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(connectors.stage2_drops[4], { title: "Inclusão com も", rule: "Em frases simples, も pode substituir は ou が para acrescentar “também”.", formula: "X は [ação]. Y も [ação].", example: "友達は行きます。私も行きます。 — Meu amigo vai. Eu também vou." });
+    connectors.stage3_5_sentenceBuilder = [{sentenceJp:"ともだち は いきます そして わたし も いきます",translation:"Meu amigo vai, e eu também vou.",chunks:["ともだち","は","いきます","そして","わたし","も","いきます"]},{sentenceJp:"たなかさん は いきます でも わたし は いきません",translation:"Tanaka vai, mas eu não vou.",chunks:["たなかさん","は","いきます","でも","わたし","は","いきません"]}];
+    connectors.stage4_dialog = [{scenario:"Situação 1: Um amigo conta quem irá à festa.",npcName:"Amigo",npcMessage:"わたしは パーティーに いきます。",options:[{text:"わたし も いきます。",feedback:"も acrescenta você ao grupo que irá à festa.",isCorrect:true},{text:"わたし は でも いきます。",feedback:"でも não substitui は dessa forma.",isCorrect:false},{text:"わたし は たのしい です。",feedback:"A frase não responde à informação dada.",isCorrect:false}]}];
+    connectors.editorialReview = corrected;
+})();
