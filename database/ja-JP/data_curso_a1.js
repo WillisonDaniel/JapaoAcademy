@@ -3361,15 +3361,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_14",
-        "title": "Meios e Ferramentas: A Partícula 'de' (で)",
+        "title": "Meios e instrumentos com で",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 105,
         "stage1_context": {
             "audioGuide": "Densha de ikimasu.",
-            "missionTitle": "Objetivo de Hoje: Como Você Faz?",
-            "missionDescription": "Descubra o poder da partícula 'de' (で) para indicar o meio de transporte que você usa, a ferramenta com que escreve ou o idioma em que fala."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Use で para indicar meio de transporte, instrumento ou idioma empregado em uma ação."
         },
         "stage2_drops": [
             {
@@ -3377,7 +3377,7 @@ const CURSO_A1_DADOS = [
                 "kanji": "でんしゃ (電車)",
                 "romaji": "Densha",
                 "translation": "Trem",
-                "timeContext": "Principal meio de transporte no Japão."
+                "timeContext": "Exemplo de meio de transporte marcado por で."
             },
             {
                 "type": "vocab",
@@ -3391,21 +3391,21 @@ const CURSO_A1_DADOS = [
                 "kanji": "バス",
                 "romaji": "Basu",
                 "translation": "Ônibus",
-                "timeContext": "Escrito em Katakana por ser palavra estrangeira (Bus)."
+                "timeContext": "Empréstimo linguístico normalmente escrito em katakana."
             },
             {
                 "type": "vocab",
                 "kanji": "はし",
                 "romaji": "Hashi",
-                "translation": "Hashi (pauzinhos para comer)",
-                "timeContext": "Ferramenta essencial na culinária asiática."
+                "translation": "hashi / palitos para comer",
+                "timeContext": "Exemplo de instrumento marcado por で."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Meio/Método 'で' (de)",
-                "rule": "A partícula 'de' (で) é usada para indicar o MEIO pelo qual uma ação é realizada. Pode ser um veículo, uma ferramenta, um idioma, etc.",
+                "title": "Meio ou instrumento com で",
+                "rule": "A partícula で pode marcar o meio de transporte, o instrumento ou o idioma usado para realizar uma ação.",
                 "formula": "[Meio/Ferramenta] + で + [Verbo]",
-                "example": "えき まで でんしゃ で いきます (Eki made densha DE ikimasu) ➔ Vou até a estação DE trem."
+                "example": "バスで えきまで いきました (Basu de eki made ikimashita.) — Fui até a estação de ônibus."
             }
         ],
         "stage3_practice": [
@@ -3464,7 +3464,7 @@ const CURSO_A1_DADOS = [
         "stage3_5_sentenceBuilder": [
             {
                 "sentenceJp": "はし で すし を たべます",
-                "translation": "Como sushi com palzinhos (hashi).",
+                "translation": "Como sushi com palitos (hashi).",
                 "chunks": [
                     "はし",
                     "で",
@@ -3489,11 +3489,11 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Seu colega pergunta como você vai para o trabalho todos os dias.",
                 "npcName": "Colega",
-                "npcMessage": "かいしゃ へ なんで いきますか？ (Como você vai para a empresa?)",
+                "npcMessage": "かいしゃへ なにで いきますか。 (Com que meio você vai para a empresa?)",
                 "options": [
                     {
                         "text": "でんしゃ で いきます。",
-                        "feedback": "Perfeito! Resposta direta e correta usando a partícula 'de' para o meio de transporte.",
+                        "feedback": "A resposta marca o meio de transporte com で.",
                         "isCorrect": true
                     },
                     {
@@ -3511,7 +3511,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual é a função da partícula 'de' (で) em 'kuruma de ikimasu'?",
+                "question": "Qual é a função de で em くるまで いきます?",
                 "options": [
                     "Indicar o destino.",
                     "Indicar o meio de transporte.",
@@ -3549,7 +3549,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'はし' (Hashi)?",
                 "options": [
-                    "Hashi (pauzinhos para comer)",
+                    "hashi / palitos para comer",
                     "Trem",
                     "Carro"
                 ],
@@ -8175,6 +8175,13 @@ CURSO_A1_DADOS[11].editorialReview = {
 };
 
 CURSO_A1_DADOS[12].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[13].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

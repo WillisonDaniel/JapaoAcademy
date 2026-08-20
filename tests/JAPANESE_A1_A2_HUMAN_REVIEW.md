@@ -18,7 +18,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_11 | stage1_context.audio | それは何ですか。 | Sore wa nan desu ka. | O que é isso? | corrected |
 | a1_mod_12 | stage1_context.audio | 猫がいます。本があります。 | Neko ga imasu. Hon ga arimasu. | Há um gato. Há um livro. | corrected |
 | a1_mod_13 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | corrected |
-| a1_mod_14 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | pending-human-review |
+| a1_mod_14 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | corrected |
 | a1_mod_15 | stage1_context.audio | 誕生日はいつですか。 | Tanjoubi wa itsu desu ka. | Quando é seu aniversário? | pending-human-review |
 | a1_mod_16 | stage1_context.audio | 一、二、三、四…… | Ichi, ni, san, yon... | Um, dois, três, quatro... | pending-human-review |
 | a1_mod_17 | stage1_context.audio | これはいくらですか。 | Kore wa ikura desu ka. | Quanto custa isto? | pending-human-review |
