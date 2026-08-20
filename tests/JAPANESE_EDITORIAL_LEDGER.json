@@ -7380,7 +7380,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_06-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;module.metadata",
@@ -7389,10 +7389,28 @@
       },
       "beforeHash": "53de3b5888567bd944dfa2d92a6d0aedce485057d6476da27d382887b32d979d",
       "finalHash": "53de3b5888567bd944dfa2d92a6d0aedce485057d6476da27d382887b32d979d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "naturalness",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "title": "Nacionalidades e Países (Jin & Go)",
+        "sectionTitle": "Identidade & Profissões",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "De onde você é e qual língua você fala? No Japão, dizer sua nacionalidade é o primeiro passo para criar amizades internacionais. Vamos dominar os sufixos mágicos de país e idioma!"
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "53de3b5888567bd944dfa2d92a6d0aedce485057d6476da27d382887b32d979d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage1-context",
@@ -7433,23 +7451,25 @@
         }
       },
       "reasonKind": "naturalness",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
+          "sourceId": "genki-2e-1-textbook",
           "page": 41
         },
         {
           "sourceId": "tobira-2009",
-          "page": 359
+          "page": 50
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "81d5e39c5b6c82744aa2e239b3f541b0076e733572274a0f8922a035c27b87d0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage2_drops[0]",
@@ -7457,16 +7477,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "0d6e6d12e865fdac489d0b3fb01cc66af1b6e97c99630b80948a7822a6a30a96",
-      "finalHash": "0d6e6d12e865fdac489d0b3fb01cc66af1b6e97c99630b80948a7822a6a30a96",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a0a48802f536c60a66c46328cd7dfb65d6c72774ddcc5974d775c82c23724733",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "にほん (日本)",
+        "romaji": "Nihon",
+        "translation": "Japão",
+        "timeContext": "Nome comum do Japão em japonês."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0d6e6d12e865fdac489d0b3fb01cc66af1b6e97c99630b80948a7822a6a30a96"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage2_drops[1]",
@@ -7474,16 +7508,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "61f1856ed7694fe0eabce9360b65cf4b618b4dd2f11e4ea096655cff67e0a4ac",
-      "finalHash": "61f1856ed7694fe0eabce9360b65cf4b618b4dd2f11e4ea096655cff67e0a4ac",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a5dd85799f881658c73893abcb53ecdcdbb57d6936c6c89436768d5db66fbfe8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "ブラジル",
+        "romaji": "Burajiru",
+        "translation": "Brasil",
+        "timeContext": "Nome de país estrangeiro geralmente escrito em katakana: ブラジル."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "61f1856ed7694fe0eabce9360b65cf4b618b4dd2f11e4ea096655cff67e0a4ac"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage2_drops[2]",
@@ -7491,16 +7539,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "dc301e4a204ff9f88e04f700eb50072ba5eecfab92f2b84ca8d16e8314ba2524",
-      "finalHash": "dc301e4a204ff9f88e04f700eb50072ba5eecfab92f2b84ca8d16e8314ba2524",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "802179bd7bd388e0809ae5bb221299df8faaf085e87f32c604541c64a4ba0bc8",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～じん (人)",
+        "romaji": "~jin",
+        "translation": "Pessoa de / nacionalidade",
+        "timeContext": "Forma muitas nacionalidades, como 日本人 e ブラジル人. Aprenda cada forma de país como vocabulário, pois há exceções."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "dc301e4a204ff9f88e04f700eb50072ba5eecfab92f2b84ca8d16e8314ba2524"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage2_drops[3]",
@@ -7508,16 +7570,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "63b1f1f5313fcbf2c4ae73bbafc141f012c1c0e4306f2226302662d2652f7fd5",
-      "finalHash": "63b1f1f5313fcbf2c4ae73bbafc141f012c1c0e4306f2226302662d2652f7fd5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "947a05960e270d0c434ce2e90de41ca3c1522c79fe7ba673130a169345f92623",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～ご (語)",
+        "romaji": "~go",
+        "translation": "Idioma / língua",
+        "timeContext": "Aparece em nomes de idiomas, como 日本語. Nem todo idioma segue apenas 'nome do país + 語'; 英語 é um exemplo importante."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "63b1f1f5313fcbf2c4ae73bbafc141f012c1c0e4306f2226302662d2652f7fd5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage2_drops[4]",
@@ -7525,16 +7601,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "427d3a4ce28ccd7bed1efabc3067ffc63d1b38a7af72b7c1ad7e652c21b5363c",
-      "finalHash": "427d3a4ce28ccd7bed1efabc3067ffc63d1b38a7af72b7c1ad7e652c21b5363c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "0d9c360d49c67e88cb06e5148b222ff5a2d06c89265ac70476ea57427f57aecb",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Nacionalidade e idioma",
+        "rule": "日本人 indica uma pessoa japonesa e 日本語 indica o idioma japonês. Muitos nomes seguem padrões parecidos, mas convém aprender cada forma frequente.",
+        "formula": "日本 + 人 = 日本人 | 日本 + 語 = 日本語",
+        "example": "日本人 (Nihonjin) = pessoa japonesa; 日本語 (Nihongo) = língua japonesa; ブラジル人 (Burajirujin) = pessoa brasileira."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "427d3a4ce28ccd7bed1efabc3067ffc63d1b38a7af72b7c1ad7e652c21b5363c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_practice[0]",
@@ -7542,16 +7632,40 @@
         "kind": "practice"
       },
       "beforeHash": "a3b5b2708d8b49b262a7fb219ddccfa72284c51925a9965f6f923cfc5937046a",
-      "finalHash": "a3b5b2708d8b49b262a7fb219ddccfa72284c51925a9965f6f923cfc5937046a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "165cf90f408a7bb0acb824c36c563374423ebfc472f13ed824d812e5f0a95bff",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "1. Como dizer 'Sou brasileiro(a)' em uma apresentação simples?",
+        "options": [
+          {
+            "label": "🇧🇷 わたしは ブラジルじん です (Watashi wa Burajiru-jin desu)",
+            "isCorrect": true
+          },
+          {
+            "label": "🗣️ わたしは ブラジルご です (Watashi wa Burajiru-go desu)",
+            "isCorrect": false
+          },
+          {
+            "label": "🗾 わたしは にほんじん です (Watashi wa Nihon-jin desu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a3b5b2708d8b49b262a7fb219ddccfa72284c51925a9965f6f923cfc5937046a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_practice[1]",
@@ -7559,16 +7673,40 @@
         "kind": "practice"
       },
       "beforeHash": "4fc32c0eef5c485249afd63589323485aad292d1236766589bd46894a85c3341",
-      "finalHash": "4fc32c0eef5c485249afd63589323485aad292d1236766589bd46894a85c3341",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b6eb662d3467610d978c1dfd77e67341fc18f0939f5b5e3a1e06d56913440c13",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "2. O que há de inadequado em dizer 'Watashi wa Burajiru-go desu' para informar sua nacionalidade?",
+        "options": [
+          {
+            "label": "Você estará dizendo corretamente que nasceu no Brasil",
+            "isCorrect": false
+          },
+          {
+            "label": "ブラジル語 é um idioma; para informar nacionalidade, use ブラジル人",
+            "isCorrect": true
+          },
+          {
+            "label": "Você estará ofendendo a pessoa com uma gíria rude",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4fc32c0eef5c485249afd63589323485aad292d1236766589bd46894a85c3341"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_practice[2]",
@@ -7577,15 +7715,39 @@
       },
       "beforeHash": "bcfa9eac24a98bed91e43daa4f5241417d8fefeb8c7dcf0cac92230cf1466b66",
       "finalHash": "bcfa9eac24a98bed91e43daa4f5241417d8fefeb8c7dcf0cac92230cf1466b66",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "3. Qual é o sufixo correto para se referir ao IDIOMA japonês?",
+        "options": [
+          {
+            "label": "～じん (~jin)",
+            "isCorrect": false
+          },
+          {
+            "label": "～さん (~san)",
+            "isCorrect": false
+          },
+          {
+            "label": "～ご (~go)",
+            "isCorrect": true
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bcfa9eac24a98bed91e43daa4f5241417d8fefeb8c7dcf0cac92230cf1466b66"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_practice[3]",
@@ -7593,16 +7755,40 @@
         "kind": "practice"
       },
       "beforeHash": "f46afbd61a82971d733a6a1661e3b2a6422dd35763eed8767f74642e714f0585",
-      "finalHash": "f46afbd61a82971d733a6a1661e3b2a6422dd35763eed8767f74642e714f0585",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ae41e4f1a566c67e95421ed345fd967c448f4dec82015e3f5fe5155ec4d1f4e9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "4. Por que ブラジル (Burajiru) aparece em katakana?",
+        "options": [
+          {
+            "label": "Porque é a grafia convencional desse nome estrangeiro em japonês",
+            "isCorrect": true
+          },
+          {
+            "label": "Porque é uma palavra sagrada",
+            "isCorrect": false
+          },
+          {
+            "label": "Porque os japoneses não conseguem pronunciar o Hiragana",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f46afbd61a82971d733a6a1661e3b2a6422dd35763eed8767f74642e714f0585"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_practice[4]",
@@ -7611,15 +7797,39 @@
       },
       "beforeHash": "a84933e5882b9b6839371913d2e94b80935bdfbd7786ab803642a2a566691da2",
       "finalHash": "a84933e5882b9b6839371913d2e94b80935bdfbd7786ab803642a2a566691da2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "5. Se 'Eigo' (英語) significa 'Língua Inglesa', qual seria a tradução lógica de 'Furansu-jin' (フランス人)?",
+        "options": [
+          {
+            "label": "Língua Francesa",
+            "isCorrect": false
+          },
+          {
+            "label": "Pessoa Francesa / Francês (Nacionalidade)",
+            "isCorrect": true
+          },
+          {
+            "label": "A cidade de Paris",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a84933e5882b9b6839371913d2e94b80935bdfbd7786ab803642a2a566691da2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_5_sentenceBuilder[0]",
@@ -7627,16 +7837,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "08aa2c130a4a60c40436b95da193a394a07623aca1bd7318b469e08a3df9bece",
-      "finalHash": "08aa2c130a4a60c40436b95da193a394a07623aca1bd7318b469e08a3df9bece",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "39df646a64a7d2e598b0ccfdd687b1c84ed1afc49d3b8f9f77c9c6f7a6b5911c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "わたし は ブラジルじん です",
+        "translation": "Eu sou brasileiro(a).",
+        "chunks": [
+          "わたし",
+          "は",
+          "ブラジルじん",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "08aa2c130a4a60c40436b95da193a394a07623aca1bd7318b469e08a3df9bece"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage3_5_sentenceBuilder[1]",
@@ -7644,16 +7871,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "0b3d578ba692e7eff30f897c0d3655530147f38b531cf99ab458fcb933934950",
-      "finalHash": "0b3d578ba692e7eff30f897c0d3655530147f38b531cf99ab458fcb933934950",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c373f0c58da70b206346b050f995b79a90dfb26c954aae928a91bd7463e0d878",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "にほんご の ほん です",
+        "translation": "É um livro de japonês.",
+        "chunks": [
+          "にほんご",
+          "の",
+          "ほん",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0b3d578ba692e7eff30f897c0d3655530147f38b531cf99ab458fcb933934950"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage4_dialog[0]",
@@ -7661,16 +7905,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "e87a5368255e6dbf9aa097296e9c9cb34db87301abe9461fc6d7e780e7370259",
-      "finalHash": "e87a5368255e6dbf9aa097296e9c9cb34db87301abe9461fc6d7e780e7370259",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ea80f86ba54d5e0f371d3530a7a0f0598e6adc7e7b941bdb6530af2bdb43303e",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você passa pela imigração no Aeroporto de Narita e o oficial pergunta sua nacionalidade.",
+        "npcName": "Oficial de Imigração",
+        "npcMessage": "こんにちは。どちらの ご出身ですか？ (Olá. De onde você é?)",
+        "options": [
+          {
+            "text": "ブラジルじん です。 (Burajiru-jin desu.)",
+            "feedback": "Boa resposta para praticar nacionalidade: ブラジル人 identifica uma pessoa brasileira.",
+            "isCorrect": true
+          },
+          {
+            "text": "ブラジルご です！",
+            "feedback": "ブラジル語 se refere a um idioma, não à nacionalidade da pessoa.",
+            "isCorrect": false
+          },
+          {
+            "text": "さようなら！",
+            "feedback": "Não responde à pergunta sobre sua origem.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e87a5368255e6dbf9aa097296e9c9cb34db87301abe9461fc6d7e780e7370259"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage4_dialog[1]",
@@ -7678,16 +7955,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "458f28d01423c6c23899b2ad6be4cd057ea90a709a93e8f657630a7a7202cfad",
-      "finalHash": "458f28d01423c6c23899b2ad6be4cd057ea90a709a93e8f657630a7a7202cfad",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "0097e904409b701c4769ae5389d36f520f98e36a9943006fc30dbae9da108ce1",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Em uma recepção de estudantes em Tóquio, uma japonesa simpatiza com você.",
+        "npcName": "Estudante Haruka",
+        "npcMessage": "わあ！ はじめまして！ わたし は にほんじん です。",
+        "options": [
+          {
+            "text": "はじめまして！ ペドロ です。わたし は ブラジルじん です！",
+            "feedback": "Boa apresentação: informa seu nome e usa ブラジル人 para a nacionalidade.",
+            "isCorrect": true
+          },
+          {
+            "text": "こちらこそ！ にほんじん です！",
+            "feedback": "Você se descreve como japonês(a), o que não corresponde ao cenário proposto.",
+            "isCorrect": false
+          },
+          {
+            "text": "おはようございます！",
+            "feedback": "Fora de contexto e não responde à apresentação dela.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "458f28d01423c6c23899b2ad6be4cd057ea90a709a93e8f657630a7a7202cfad"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage4_dialog[2]",
@@ -7695,16 +8005,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "3caefcabd496cd9a5698eca8349dfd8c0bb583f371d95828b50e21e4af0af3d7",
-      "finalHash": "3caefcabd496cd9a5698eca8349dfd8c0bb583f371d95828b50e21e4af0af3d7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4eab07ad34c2dbb6464ffcefd8d41af4f98c82de191254b7f9bb08f669bbf627",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Em uma livraria em Quioto, você está procurando um livro para estudar o idioma local.",
+        "npcName": "Atendente da Livraria",
+        "npcMessage": "いらっしゃいませ！ なに を おさがし ですか？ (Bem-vindo! O que está procurando?)",
+        "options": [
+          {
+            "text": "すみません。にほんご の ほん は ありますか？",
+            "feedback": "Boa pergunta: 日本語 indica o idioma e 本 indica o livro procurado.",
+            "isCorrect": true
+          },
+          {
+            "text": "にほんじん です！",
+            "feedback": "日本人 descreve uma pessoa, não o livro procurado.",
+            "isCorrect": false
+          },
+          {
+            "text": "よろしくおねがいします！",
+            "feedback": "Incompleto e sem sentido para um pedido de ajuda em loja.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3caefcabd496cd9a5698eca8349dfd8c0bb583f371d95828b50e21e4af0af3d7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage5_quiz[0]",
@@ -7713,15 +8056,31 @@
       },
       "beforeHash": "395a8abc6bd614028727e59469cccd1a7e6838238a1966a2e15b13289e0475e7",
       "finalHash": "395a8abc6bd614028727e59469cccd1a7e6838238a1966a2e15b13289e0475e7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "Qual a diferença estrutural entre 'Nihon-jin' e 'Nihon-go'?",
+        "options": [
+          "Nihon-jin é formal e Nihon-go é gíria.",
+          "Nihon-jin se refere à nacionalidade/pessoa e Nihon-go se refere ao idioma japonês.",
+          "Não há diferença, significam a mesma coisa."
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "395a8abc6bd614028727e59469cccd1a7e6838238a1966a2e15b13289e0475e7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage5_quiz[1]",
@@ -7729,16 +8088,32 @@
         "kind": "quiz"
       },
       "beforeHash": "3f5a25be144c05a71e58261dc8cd2edefacc7d6554f987fca84a4446a9c1f3f7",
-      "finalHash": "3f5a25be144c05a71e58261dc8cd2edefacc7d6554f987fca84a4446a9c1f3f7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "07d5bcc400f5160b19dae9d1614e136c9682d9ed9fbfe85e8bece22c5fe434ea",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'にほん (日本)' (Nihon)?",
+        "options": [
+          "Japão",
+          "Brasil",
+          "Pessoa de / nacionalidade"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3f5a25be144c05a71e58261dc8cd2edefacc7d6554f987fca84a4446a9c1f3f7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage5_quiz[2]",
@@ -7746,16 +8121,32 @@
         "kind": "quiz"
       },
       "beforeHash": "0324f68edac8902021aa2b2f39bddfcc2e937447af17e2f64777ce9e6015b314",
-      "finalHash": "0324f68edac8902021aa2b2f39bddfcc2e937447af17e2f64777ce9e6015b314",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "53827839c62e879f8b6a4541ca0fc527d62cdd5df920fba47b0b88478964ea05",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'ブラジル' (Burajiru)?",
+        "options": [
+          "Japão",
+          "Brasil",
+          "Pessoa de / nacionalidade"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0324f68edac8902021aa2b2f39bddfcc2e937447af17e2f64777ce9e6015b314"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage5_quiz[3]",
@@ -7764,15 +8155,31 @@
       },
       "beforeHash": "e9f82bde1cdb2b57e31cdaabe9c584c08822de1a40e3789013ea7ab6227efb99",
       "finalHash": "e9f82bde1cdb2b57e31cdaabe9c584c08822de1a40e3789013ea7ab6227efb99",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra '～じん (人)' (~jin)?",
+        "options": [
+          "Brasil",
+          "Japão",
+          "Sufixo de Nacionalidade (Pessoa de...)"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e9f82bde1cdb2b57e31cdaabe9c584c08822de1a40e3789013ea7ab6227efb99"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_06;stage5_quiz[4]",
@@ -7780,11 +8187,27 @@
         "kind": "quiz"
       },
       "beforeHash": "59b945112bc2dd249c6aeb08832bf5963088c15cea23f593ce09f9a14b10b3bc",
-      "finalHash": "59b945112bc2dd249c6aeb08832bf5963088c15cea23f593ce09f9a14b10b3bc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "4cd35a231b46b4c80435910ffffeba93eef09d85d9cd5f92ebbe310d8e69e713",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra '～ご (語)' (~go)?",
+        "options": [
+          "Idioma / língua",
+          "Japão",
+          "Brasil"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "59b945112bc2dd249c6aeb08832bf5963088c15cea23f593ce09f9a14b10b3bc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_07-module-metadata",
@@ -353327,8 +353750,8 @@
         "locator": "items[163]",
         "resource": "dictionary"
       },
-      "beforeHash": "6efa20d1b480908063937b7c1df6d720cb8274bfc1cf40b60b4aa5f078fa1b81",
-      "finalHash": "6efa20d1b480908063937b7c1df6d720cb8274bfc1cf40b60b4aa5f078fa1b81",
+      "beforeHash": "ba189faa4c41047cd744be426c1d10a912f583aa3f61e99703e827ced8397cbe",
+      "finalHash": "ba189faa4c41047cd744be426c1d10a912f583aa3f61e99703e827ced8397cbe",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -353344,8 +353767,8 @@
         "locator": "items[164]",
         "resource": "dictionary"
       },
-      "beforeHash": "c4260ad289d75ad95ec9bef716a2c390648282a73b13b41befeee33584b1e6d8",
-      "finalHash": "c4260ad289d75ad95ec9bef716a2c390648282a73b13b41befeee33584b1e6d8",
+      "beforeHash": "0b877af031f3b43d7e86008067072d66625f90557a988e6a43e53224b2fd8bb5",
+      "finalHash": "0b877af031f3b43d7e86008067072d66625f90557a988e6a43e53224b2fd8bb5",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -353361,8 +353784,8 @@
         "locator": "items[165]",
         "resource": "dictionary"
       },
-      "beforeHash": "1e9a66c5243acd0457fb82dfd2c13ea23ea2c4e173a739bb57cbe940aed1d22c",
-      "finalHash": "1e9a66c5243acd0457fb82dfd2c13ea23ea2c4e173a739bb57cbe940aed1d22c",
+      "beforeHash": "91f19f1d6e67e05b8cc93447052fb68fdca7597cd41b010f0915d405076631a8",
+      "finalHash": "91f19f1d6e67e05b8cc93447052fb68fdca7597cd41b010f0915d405076631a8",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -353378,8 +353801,8 @@
         "locator": "items[166]",
         "resource": "dictionary"
       },
-      "beforeHash": "0d30118837542fd01b63d3dc7be8774fc633a7a71bba0eb6b4524e4436db4eaa",
-      "finalHash": "0d30118837542fd01b63d3dc7be8774fc633a7a71bba0eb6b4524e4436db4eaa",
+      "beforeHash": "9939c7c0e824539d8d888924d366d475dc94898df016367e905e90e067268d69",
+      "finalHash": "9939c7c0e824539d8d888924d366d475dc94898df016367e905e90e067268d69",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -353395,8 +353818,8 @@
         "locator": "items[167]",
         "resource": "dictionary"
       },
-      "beforeHash": "3eb835f8e78748e0970ddd812eeabf1ca66b8e48acb410e2e4e6e7aba48d2695",
-      "finalHash": "3eb835f8e78748e0970ddd812eeabf1ca66b8e48acb410e2e4e6e7aba48d2695",
+      "beforeHash": "a963e36d0c7d0fa746672ca052b76eac1c98b3ba4112c963b75cf52a0f1786ad",
+      "finalHash": "a963e36d0c7d0fa746672ca052b76eac1c98b3ba4112c963b75cf52a0f1786ad",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -423562,8 +423985,8 @@
         "locator": "items[5]",
         "resource": "listening"
       },
-      "beforeHash": "e7ff7f9cafbda7094243563e2110dc417a1ec2a48e1a468775dc508337ecea3f",
-      "finalHash": "e7ff7f9cafbda7094243563e2110dc417a1ec2a48e1a468775dc508337ecea3f",
+      "beforeHash": "94511961e2f4e2be25c693ab770ba2f76a499e78a8b301c530ed781b93b84fc0",
+      "finalHash": "94511961e2f4e2be25c693ab770ba2f76a499e78a8b301c530ed781b93b84fc0",
       "reasonKind": "deterministic-derivation",
       "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
       "confidence": 0.99,
@@ -423572,12 +423995,12 @@
       ],
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
+          "sourceId": "genki-2e-1-textbook",
           "page": 41
         },
         {
           "sourceId": "tobira-2009",
-          "page": 359
+          "page": 50
         }
       ]
     },
@@ -431370,8 +431793,8 @@
         "locator": "reference[5]",
         "resource": "grammar"
       },
-      "beforeHash": "133f267de4400745456738911e4274c636194dd2fec973c0b396f32ef57db720",
-      "finalHash": "133f267de4400745456738911e4274c636194dd2fec973c0b396f32ef57db720",
+      "beforeHash": "75d8bfee10554c0a7b7acad66ddc6b33778c54b3880ec659e7c204fe501325c4",
+      "finalHash": "75d8bfee10554c0a7b7acad66ddc6b33778c54b3880ec659e7c204fe501325c4",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -435231,40 +435654,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_06-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[10]",
         "resource": "writing"
       },
-      "beforeHash": "6f807d7d338292d1e3a748b0d119d59ce9a58598b604573a28c2f1c37d3df6bd",
-      "finalHash": "6f807d7d338292d1e3a748b0d119d59ce9a58598b604573a28c2f1c37d3df6bd",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "adc88af498d7cbfda5b85a118feff34b0d3022bb8df3f247acf28397634e004a",
+      "finalHash": "adc88af498d7cbfda5b85a118feff34b0d3022bb8df3f247acf28397634e004a",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_06-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_06-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[11]",
         "resource": "writing"
       },
-      "beforeHash": "6f136ec82f36d7751ff6c43f8c6ffe3fc821874abc0075f82f76f444acdb2888",
-      "finalHash": "6f136ec82f36d7751ff6c43f8c6ffe3fc821874abc0075f82f76f444acdb2888",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "9ab3ccb4d799626f0284305c6688c361537ee03ba42e64c4cc4503324e0a1ecf",
+      "finalHash": "9ab3ccb4d799626f0284305c6688c361537ee03ba42e64c4cc4503324e0a1ecf",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_06-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 41
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_07-1",

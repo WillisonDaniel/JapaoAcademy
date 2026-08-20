@@ -1343,40 +1343,40 @@ const CURSO_A1_DADOS = [
                 "kanji": "にほん (日本)",
                 "romaji": "Nihon",
                 "translation": "Japão",
-                "timeContext": "O nome nativo do país do sol nascente."
+                "timeContext": "Nome comum do Japão em japonês."
             },
             {
                 "type": "vocab",
                 "kanji": "ブラジル",
                 "romaji": "Burajiru",
                 "translation": "Brasil",
-                "timeContext": "Como é um nome estrangeiro, é sempre escrito no alfabeto Katakana!"
+                "timeContext": "Nome de país estrangeiro geralmente escrito em katakana: ブラジル."
             },
             {
                 "type": "vocab",
                 "kanji": "～じん (人)",
                 "romaji": "~jin",
-                "translation": "Sufixo de Nacionalidade (Pessoa de...)",
-                "timeContext": "Basta colar após o nome de qualquer país para dizer a nacionalidade."
+                "translation": "Pessoa de / nacionalidade",
+                "timeContext": "Forma muitas nacionalidades, como 日本人 e ブラジル人. Aprenda cada forma de país como vocabulário, pois há exceções."
             },
             {
                 "type": "vocab",
                 "kanji": "～ご (語)",
                 "romaji": "~go",
-                "translation": "Sufixo de Idioma (Língua de...)",
-                "timeContext": "Colado após o nome do país para se referir à língua falada ali."
+                "translation": "Idioma / língua",
+                "timeContext": "Aparece em nomes de idiomas, como 日本語. Nem todo idioma segue apenas 'nome do país + 語'; 英語 é um exemplo importante."
             },
             {
                 "type": "grammar_pill",
-                "title": "O Lego das Nacionalidades",
-                "rule": "Para criar nacionalidades e idiomas no japonês, você não precisa decorar palavras totalmente novas! Basta pegar o nome do país e adicionar o sufixo correto no final.",
-                "formula": "País + じん (jin) = Nacionalidade | País + ご (go) = Idioma",
-                "example": "Nihon (Japão) ➔ Nihon-jin (Japonês/Pessoa) ➔ Nihon-go (Língua Japonesa). Brasil ➔ Burajiru-jin (Brasileiro)."
+                "title": "Nacionalidade e idioma",
+                "rule": "日本人 indica uma pessoa japonesa e 日本語 indica o idioma japonês. Muitos nomes seguem padrões parecidos, mas convém aprender cada forma frequente.",
+                "formula": "日本 + 人 = 日本人 | 日本 + 語 = 日本語",
+                "example": "日本人 (Nihonjin) = pessoa japonesa; 日本語 (Nihongo) = língua japonesa; ブラジル人 (Burajirujin) = pessoa brasileira."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se diz 'Eu sou brasileiro(a)' de forma formal em japonês?",
+                "question": "1. Como dizer 'Sou brasileiro(a)' em uma apresentação simples?",
                 "options": [
                     {
                         "label": "🇧🇷 わたしは ブラジルじん です (Watashi wa Burajiru-jin desu)",
@@ -1393,14 +1393,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. O que acontece se você disser 'Watashi wa Burajiru-go desu' em uma apresentação?",
+                "question": "2. O que há de inadequado em dizer 'Watashi wa Burajiru-go desu' para informar sua nacionalidade?",
                 "options": [
                     {
                         "label": "Você estará dizendo corretamente que nasceu no Brasil",
                         "isCorrect": false
                     },
                     {
-                        "label": "Você estará dizendo 'Eu sou o idioma brasileiro', o que soa muito engraçado!",
+                        "label": "ブラジル語 é um idioma; para informar nacionalidade, use ブラジル人",
                         "isCorrect": true
                     },
                     {
@@ -1427,10 +1427,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Por que a palavra 'Burajiru' (Brasil) é escrita com o alfabeto Katakana?",
+                "question": "4. Por que ブラジル (Burajiru) aparece em katakana?",
                 "options": [
                     {
-                        "label": "Porque todas as palavras de origem estrangeira são escritas em Katakana",
+                        "label": "Porque é a grafia convencional desse nome estrangeiro em japonês",
                         "isCorrect": true
                     },
                     {
@@ -1463,22 +1463,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "いま なんじ です か",
-                "translation": "Que horas são agora?",
+                "sentenceJp": "わたし は ブラジルじん です",
+                "translation": "Eu sou brasileiro(a).",
                 "chunks": [
-                    "いま",
-                    "なんじ",
-                    "です",
-                    "か"
+                    "わたし",
+                    "は",
+                    "ブラジルじん",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "いま 7じ はん です",
-                "translation": "Agora são 7 horas e meia.",
+                "sentenceJp": "にほんご の ほん です",
+                "translation": "É um livro de japonês.",
                 "chunks": [
-                    "いま",
-                    "7じ",
-                    "はん",
+                    "にほんご",
+                    "の",
+                    "ほん",
                     "です"
                 ]
             }
@@ -1487,21 +1487,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você passa pela imigração no Aeroporto de Narita e o oficial pergunta sua nacionalidade.",
                 "npcName": "Oficial de Imigração",
-                "npcMessage": "こんにちは。[Seu Nome]・さん ですね。おくに は どちら ですか？ (Olá, Sr(a). [Seu Nome]. Qual é o seu país?)",
+                "npcMessage": "こんにちは。どちらの ご出身ですか？ (Olá. De onde você é?)",
                 "options": [
                     {
-                        "text": "こんにちは！ ブラジルじん です。よろしくおねがいします。",
-                        "feedback": "Perfeito! Você respondeu sua nacionalidade de forma clara e respeitosa com o oficial.",
+                        "text": "ブラジルじん です。 (Burajiru-jin desu.)",
+                        "feedback": "Boa resposta para praticar nacionalidade: ブラジル人 identifica uma pessoa brasileira.",
                         "isCorrect": true
                     },
                     {
                         "text": "ブラジルご です！",
-                        "feedback": "Ops! Você respondeu 'Sou o idioma brasileiro' para o oficial da imigração!",
+                        "feedback": "ブラジル語 se refere a um idioma, não à nacionalidade da pessoa.",
                         "isCorrect": false
                     },
                     {
                         "text": "さようなら！",
-                        "feedback": "Incorreto: Nunca se despeça antes de responder a pergunta da imigração!",
+                        "feedback": "Não responde à pergunta sobre sua origem.",
                         "isCorrect": false
                     }
                 ]
@@ -1512,13 +1512,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "わあ！ はじめまして！ わたし は にほんじん です。",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome] です。 わたし は ブラジルじん です！",
-                        "feedback": "Excelente! Você retribuiu a apresentação e usou o sufixo -jin perfeitamente para criar conexão.",
+                        "text": "はじめまして！ ペドロ です。わたし は ブラジルじん です！",
+                        "feedback": "Boa apresentação: informa seu nome e usa ブラジル人 para a nacionalidade.",
                         "isCorrect": true
                     },
                     {
                         "text": "こちらこそ！ にほんじん です！",
-                        "feedback": "Incorreto: Você disse que também é japonês(a) e usou 'Kochirakoso' no momento errado!",
+                        "feedback": "Você se descreve como japonês(a), o que não corresponde ao cenário proposto.",
                         "isCorrect": false
                     },
                     {
@@ -1534,13 +1534,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "いらっしゃいませ！ なに を おさがし ですか？ (Bem-vindo! O que está procurando?)",
                 "options": [
                     {
-                        "text": "すみません！ にほんご の ほん (Livro) です！",
-                        "feedback": "Mandou muito bem! Usou 'Sumimasen' para chamar atenção e pediu pelo idioma Nihon-go corretamente.",
+                        "text": "すみません。にほんご の ほん は ありますか？",
+                        "feedback": "Boa pergunta: 日本語 indica o idioma e 本 indica o livro procurado.",
                         "isCorrect": true
                     },
                     {
                         "text": "にほんじん です！",
-                        "feedback": "Confuso: O atendente perguntou o que você procura e você respondeu 'Sou uma pessoa japonesa'!",
+                        "feedback": "日本人 descreve uma pessoa, não o livro procurado.",
                         "isCorrect": false
                     },
                     {
@@ -1566,7 +1566,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Japão",
                     "Brasil",
-                    "Sufixo de Nacionalidade (Pessoa de...)"
+                    "Pessoa de / nacionalidade"
                 ],
                 "correctIndex": 0
             },
@@ -1575,7 +1575,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Japão",
                     "Brasil",
-                    "Sufixo de Nacionalidade (Pessoa de...)"
+                    "Pessoa de / nacionalidade"
                 ],
                 "correctIndex": 1
             },
@@ -1591,7 +1591,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra '～ご (語)' (~go)?",
                 "options": [
-                    "Sufixo de Idioma (Língua de...)",
+                    "Idioma / língua",
                     "Japão",
                     "Brasil"
                 ],
@@ -7968,6 +7968,13 @@ CURSO_A1_DADOS[3].editorialReview = {
 };
 
 CURSO_A1_DADOS[4].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[5].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
