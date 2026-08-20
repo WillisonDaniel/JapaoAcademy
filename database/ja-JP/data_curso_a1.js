@@ -2943,51 +2943,51 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_12",
-        "title": "Verbos de Existência: Imasu & Arimasu",
+        "title": "Existência com います e あります",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Neko ga imasu. Hon ga arimasu.",
-            "missionTitle": "Objetivo de Hoje: O Mundo Animado e Inanimado",
-            "missionDescription": "Domine a diferença crucial entre 'ter/haver' para seres vivos (います) e para objetos/coisas (あります). Esta é uma das regras mais importantes do japonês básico!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Distinga います, usado com pessoas e outros seres sencientes, de あります, usado com coisas, acontecimentos e certas relações de posse."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "います",
                 "romaji": "Imasu",
-                "translation": "Haver / Existir / Estar (Para seres vivos)",
-                "timeContext": "Use para pessoas, animais, insetos, etc."
+                "translation": "haver / existir / estar (pessoas e outros seres sencientes)",
+                "timeContext": "Use em exemplos de existência com pessoas e animais."
             },
             {
                 "type": "vocab",
                 "kanji": "あります",
                 "romaji": "Arimasu",
-                "translation": "Haver / Existir / Ter (Para objetos inanimados)",
-                "timeContext": "Use para coisas, plantas, lugares, ideias, etc."
+                "translation": "haver / existir / ter (coisas e acontecimentos)",
+                "timeContext": "Use com coisas; あります também pode indicar posse ou a ocorrência de um evento."
             },
             {
                 "type": "vocab",
                 "kanji": "ねこ / いぬ",
                 "romaji": "Neko / Inu",
                 "translation": "Gato / Cachorro",
-                "timeContext": "Exemplos clássicos de seres que usam 'imasu'."
+                "timeContext": "Exemplos de animais apresentados com います."
             },
             {
                 "type": "vocab",
                 "kanji": "つくえ / ほん",
                 "romaji": "Tsukue / Hon",
                 "translation": "Mesa / Livro",
-                "timeContext": "Exemplos clássicos de objetos que usam 'arimasu'."
+                "timeContext": "Exemplos de objetos apresentados com あります."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Existência 'が' (ga)",
-                "rule": "Quando você introduz algo pela primeira vez dizendo 'Há um gato' ou 'Tem um livro', você usa a partícula 'ga' antes do verbo de existência.",
-                "formula": "[Coisa/Ser] + が + あります / います",
-                "example": "へや に つくえ が あります (Heya ni tsukue GA arimasu) ➔ No quarto, HÁ UMA mesa."
+                "title": "Existência com に e が",
+                "rule": "Na construção básica de existência, o lugar pode ser marcado por に e o elemento apresentado por が.",
+                "formula": "[Lugar] に [Pessoa/coisa] が います / あります",
+                "example": "へやに つくえが あります (Heya ni tsukue ga arimasu.) — Há uma mesa no quarto."
             }
         ],
         "stage3_practice": [
@@ -3060,18 +3060,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Por que plantas, apesar de serem seres vivos na biologia, usam o verbo 'arimasu' no japonês?",
+                "question": "5. Na divisão elementar apresentada, qual verbo é normalmente usado para indicar a existência de uma planta?",
                 "options": [
                     {
-                        "label": "Porque no japonês, a regra é sobre a capacidade de se mover por conta própria.",
+                        "label": "あります (Arimasu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque os japoneses não gostam de plantas.",
+                        "label": "います (Imasu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque é uma exceção sem motivo.",
+                        "label": "いきます (Ikimasu)",
                         "isCorrect": false
                     }
                 ]
@@ -3079,25 +3079,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "レストラン で ひるごはん を たべます",
-                "translation": "Almoço no restaurante.",
+                "sentenceJp": "こうえん に いぬ が います",
+                "translation": "Há um cachorro no parque.",
                 "chunks": [
-                    "レストラン",
-                    "で",
-                    "ひるごはん",
-                    "を",
-                    "たべます"
+                    "こうえん",
+                    "に",
+                    "いぬ",
+                    "が",
+                    "います"
                 ]
             },
             {
-                "sentenceJp": "こうえん で ほん を よみます",
-                "translation": "Lerei um livro no parque.",
+                "sentenceJp": "へや に つくえ が あります",
+                "translation": "Há uma mesa no quarto.",
                 "chunks": [
-                    "こうえん",
-                    "で",
-                    "ほん",
-                    "を",
-                    "よみます"
+                    "へや",
+                    "に",
+                    "つくえ",
+                    "が",
+                    "あります"
                 ]
             }
         ],
@@ -3105,7 +3105,7 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está descrevendo seu quarto para um amigo japonês.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "へえ、[Nome]・さん の へや には なに が あります か？ (Sério? O que tem no seu quarto?)",
+                "npcMessage": "へやには なにが ありますか。 (O que há no quarto?)",
                 "options": [
                     {
                         "text": "ベッド が あります。 それから、ねこ が あります。",
@@ -3114,12 +3114,12 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "ベッド が あります。 それから、ねこ が います。",
-                        "feedback": "Perfeito! Você usou 'arimasu' para a cama (objeto) e 'imasu' para o gato (ser vivo).",
+                        "feedback": "A resposta usa あります para a cama e います para o gato.",
                         "isCorrect": true
                     },
                     {
                         "text": "ベッド が います。 ねこ が います。",
-                        "feedback": "Ops! Camas não são seres vivos, não podem 'imasu'!",
+                        "feedback": "Para a existência de uma cama, use あります neste padrão.",
                         "isCorrect": false
                     }
                 ]
@@ -3127,10 +3127,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a regra principal para escolher entre 'imasu' e 'arimasu'?",
+                "question": "Na apresentação básica, como se distingue います de あります?",
                 "options": [
                     "Formal vs. Informal",
-                    "Seres que se movem vs. Coisas que não se movem",
+                    "Pessoas e outros seres sencientes vs. coisas e acontecimentos",
                     "Presente vs. Passado"
                 ],
                 "correctIndex": 1
@@ -3138,8 +3138,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'います' (Imasu)?",
                 "options": [
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 0
@@ -3147,8 +3147,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'あります' (Arimasu)?",
                 "options": [
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 1
@@ -3156,8 +3156,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'ねこ / いぬ' (Neko / Inu)?",
                 "options": [
-                    "Haver / Existir / Ter (Para objetos inanimados)",
-                    "Haver / Existir / Estar (Para seres vivos)",
+                    "haver / existir / ter (coisas e acontecimentos)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 2
@@ -3166,8 +3166,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'つくえ / ほん' (Tsukue / Hon)?",
                 "options": [
                     "Mesa / Livro",
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)"
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)"
                 ],
                 "correctIndex": 0
             }
@@ -8175,3 +8175,10 @@ CURSO_A1_DADOS[7].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o sentido de ここ / そこ / あそこ?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+CURSO_A1_DADOS[11].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};

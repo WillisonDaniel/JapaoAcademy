@@ -168,8 +168,21 @@ O módulo foi confrontado com Genki I, p. 58, 60 e 62, e Tobira, p. 50. A revis�
 
 Após a propagação, o ledger global contém 6.165 aprovações, 633 correções e 16.736 casos inconclusivos. Os onze módulos já auditados somam 236 alvos canônicos sustentados; neste lote, 21 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
+## Lote A1-12
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 4 |
+| Corrigidos e aprovados | 16 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 20 |
+
+O módulo foi confrontado com Genki I, p. 107–108, e Tobira, p. 50. A revisão distinguiu seres sencientes de coisas e acontecimentos, retirou a explicação imprecisa baseada apenas em movimento autônomo e delimitou os papéis de に e が na construção básica de existência. As montagens passaram a praticar diretamente います e あります.
+
+Após a propagação, o ledger global contém 6.169 aprovações, 652 correções e 16.713 casos inconclusivos. Os doze módulos já auditados somam 256 alvos canônicos sustentados; neste lote, 20 alvos canônicos e três projeções derivadas deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-12 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-13 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
