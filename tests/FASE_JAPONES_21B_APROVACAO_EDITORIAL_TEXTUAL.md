@@ -105,6 +105,6 @@ Após a propagação, o ledger global contém 6.146 aprovações, 533 correçõe
 
 ## Próximo lote automático
 
-Continuar no módulo A1-07 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-08 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

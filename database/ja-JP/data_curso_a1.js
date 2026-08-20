@@ -1601,15 +1601,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_07",
-        "title": "Profissões & Ocupações (Gakusei, Kaishain)",
+        "title": "Ocupações e o tópico は",
         "section": 2,
         "sectionTitle": "Identidade & Profissões",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
-            "audioGuide": "Watashi wa gakusei desu. Kaishain desu.",
+            "audioGuide": "Watashi wa gakusei desu. Watashi wa kaishain desu.",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "O que você faz da vida? No Japão, sua ocupação define muito sobre como as pessoas interagem com você. Vamos aprender a falar sobre trabalho e estudos e conhecer a famosa partícula 'wa' (は)!"
+            "missionDescription": "Fale sobre estudos e trabalho com frases nominais simples e use は para marcar o tópico quando ele precisa ficar explícito."
         },
         "stage2_drops": [
             {
@@ -1617,35 +1617,35 @@ const CURSO_A1_DADOS = [
                 "kanji": "がくせい (学生)",
                 "romaji": "Gakusei",
                 "translation": "Estudante / Aluno(a)",
-                "timeContext": "Usado para estudantes universitários ou de escolas de idiomas."
+                "timeContext": "Pessoa que estuda em uma instituição de ensino; o contexto esclarece o tipo de curso."
             },
             {
                 "type": "vocab",
                 "kanji": "かいしゃいん (会社員)",
                 "romaji": "Kaishain",
-                "translation": "Funcionário(a) de Empresa / Office Worker",
-                "timeContext": "A profissão mais comum no mundo corporativo japonês."
+                "translation": "Funcionário(a) de empresa",
+                "timeContext": "Pessoa empregada por uma empresa; não indica uma função específica."
             },
             {
                 "type": "vocab",
                 "kanji": "いしゃ (医者)",
                 "romaji": "Isha",
                 "translation": "Médico(a)",
-                "timeContext": "Profissional da saúde (lembrando que para chamá-los usamos -sensei!)."
+                "timeContext": "Pessoa cuja profissão é a medicina. Ao se dirigir a um médico, 先生 é frequente em muitos contextos."
             },
             {
                 "type": "vocab",
                 "kanji": "エンジニア",
                 "romaji": "Enjinia",
-                "translation": "Engenheiro(a) / Programador(a)",
-                "timeContext": "Palavra importada do inglês (Engineer), por isso escrita em Katakana."
+                "translation": "Engenheiro(a)",
+                "timeContext": "Empréstimo escrito em katakana; pode abranger diferentes especialidades de engenharia."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Tópico 'は' (Wa)",
-                "rule": "Para dizer 'Eu sou estudante' ou '[Nome] é médico', usamos a partícula は (escrita com o hiragana 'ha', mas pronunciada 'WA') para indicar de QUEM estamos falando na frase!",
-                "formula": "わたし は [ Profissão ] です (Watashi wa [Profissão] desu)",
-                "example": "わたし は エンジニア です ➔ (Eu sou programador/engenheiro). Se você quiser falar de outra pessoa: ケンジさん は かいしゃいん です ➔ (O Kenji é funcionário de empresa)."
+                "title": "A partícula de tópico は",
+                "rule": "Quando funciona como partícula, は é pronunciada wa. Ela introduz o tópico sobre o qual a frase faz uma afirmação; o tópico pode ser omitido quando já está claro.",
+                "formula": "X は Y です (X wa Y desu)",
+                "example": "わたし は エンジニア です = Eu sou engenheiro(a). けんじさん は かいしゃいん です = Kenji trabalha em uma empresa."
             }
         ],
         "stage3_practice": [
@@ -1701,18 +1701,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Qual a estrutura gramatical perfeita para dizer 'O Sr. Tanaka é programador/engenheiro'?",
+                "question": "4. Qual frase apresenta Tanaka como engenheiro?",
                 "options": [
                     {
-                        "label": "タナカ・さん は エンジニア です (Tanaka-san wa Enjinia desu)",
+                        "label": "田中さん は エンジニア です (Tanaka-san wa enjinia desu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "エンジニア は タナカ・さん です (Enjinia wa Tanaka-san desu)",
+                        "label": "エンジニア は 田中さん です (Enjinia wa Tanaka-san desu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "タナカ・さん エンジニア は です (Tanaka-san Enjinia wa desu)",
+                        "label": "田中さん エンジニア は です (Tanaka-san enjinia wa desu)",
                         "isCorrect": false
                     }
                 ]
@@ -1737,23 +1737,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "きょう は なんようび です か",
-                "translation": "Que dia da semana é hoje?",
+                "sentenceJp": "わたし は がくせい です",
+                "translation": "Eu sou estudante.",
                 "chunks": [
-                    "きょう",
+                    "わたし",
                     "は",
-                    "なんようび",
-                    "です",
-                    "か"
+                    "がくせい",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "きょう は げつようび です",
-                "translation": "Hoje é segunda-feira.",
+                "sentenceJp": "けんじさん は かいしゃいん です",
+                "translation": "Kenji trabalha em uma empresa.",
                 "chunks": [
-                    "きょう",
+                    "けんじさん",
                     "は",
-                    "げつようび",
+                    "かいしゃいん",
                     "です"
                 ]
             }
@@ -1765,8 +1764,8 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして！ ユキ です。 わたし は がくせい です。 よろしくおねがいします！ (Prazer! Sou a Yuki. Sou estudante. Conto com sua gentileza!)",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome] です。 わたし は エンジニア です。 よろしく！",
-                        "feedback": "Perfeito! Você se apresentou, disse seu nome, usou a partícula 'wa' corretamente para sua profissão e devolveu a cortesia!",
+                        "text": "はじめまして！ ペドロ です。わたし は エンジニア です。よろしく おねがいします。",
+                        "feedback": "Boa apresentação: informa nome e ocupação com a estrutura X は Y です.",
                         "isCorrect": true
                     },
                     {
@@ -1787,8 +1786,8 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして。ヤマモト です。 わたし は かいしゃいん です。",
                 "options": [
                     {
-                        "text": "こちらこそ！ [Seu Nome] です。 わたし は がくせい です。 よろしくおねがいします！",
-                        "feedback": "Impecável! Devolveu o cumprimento com 'Kochirakoso', se apresentou e declarou sua ocupação como estudante com elegância.",
+                        "text": "こちらこそ。ペドロ です。わたし は がくせい です。よろしく おねがいします。",
+                        "feedback": "Boa resposta: apresenta-se e informa que é estudante de modo polido.",
                         "isCorrect": true
                     },
                     {
@@ -1798,7 +1797,7 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "わたし は ヤマモト です！",
-                        "feedback": "Erro grave: Você roubou o nome do Sr. Yamamoto!",
+                        "feedback": "Você se apresenta com o nome da outra pessoa, o que não corresponde à situação.",
                         "isCorrect": false
                     }
                 ]
@@ -1806,16 +1805,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Na recepção do hospital, a atendente precisa preencher seu cadastro profissional.",
                 "npcName": "Atendente do Hospital",
-                "npcMessage": "[Seu Nome]・さん、おしごと (Trabalho) は なん ですか？",
+                "npcMessage": "ペドロさん、おしごと は なん ですか？",
                 "options": [
                     {
                         "text": "わたし は エンジニア です！",
-                        "feedback": "Mandou muito bem! Entendeu a pergunta sobre trabalho ('oshigoto') e respondeu sua profissão perfeitamente.",
+                        "feedback": "Boa resposta: informa uma ocupação com a estrutura estudada.",
                         "isCorrect": true
                     },
                     {
                         "text": "わたし は ブラジルじん です！",
-                        "feedback": "Ops! Ela perguntou seu TRABALHO e você respondeu sua NACIONALIDADE!",
+                        "feedback": "A pergunta é sobre trabalho; a resposta fornece nacionalidade.",
                         "isCorrect": false
                     },
                     {
@@ -7975,6 +7974,13 @@ CURSO_A1_DADOS[4].editorialReview = {
 };
 
 CURSO_A1_DADOS[5].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[6].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
