@@ -24849,7 +24849,7 @@
         "kind": "module-metadata"
       },
       "beforeHash": "b935c3af4637551fc7e93d37759cf60d673f8f5f730db6332cfc7288b1874ddc",
-      "finalHash": "39b9f91f87cec81d0c5305c6a859a6b5ce4d19a4ce81bdade716d5f1816a1950",
+      "finalHash": "11a71ca64f60cbce9383893fde7126037568757b02022fd8f1db1901b454acde",
       "beforeValue": {
         "title": "Revisão Geral & O Desafio do Aeroporto (Simulação Prática A1)",
         "sectionTitle": "Navegação, Existência & Desafio Final",
@@ -24858,25 +24858,27 @@
         "missionDescription": "Chegou a hora de provar sua fluência A1! Enfrente o grande teste integrando saudações, pronomes, compras, valores, direções e existências na chegada ao Japão."
       },
       "finalValue": {
-        "title": "Revisão Geral & O Desafio do Aeroporto (Simulação Prática A1)",
+        "title": "Revisão guiada da trilha A1",
         "sectionTitle": "Navegação, Existência & Desafio Final",
         "level": "A1",
-        "missionTitle": "Desafio Final A1: Sobrevivência Total no Aeroporto de Haneda",
-        "missionDescription": "Chegou a hora de revisar a trilha A1. Este teste integra saudações, pronomes, compras, valores, direções e expressões de existência."
+        "missionTitle": "Revisão final A1",
+        "missionDescription": "Retome, em situações curtas, as estruturas e o vocabulário praticados ao longo da trilha A1."
       },
-      "reasonKind": "source-correction",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 69
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 122
+          "sourceId": "tobira-2009",
+          "page": 52
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "39b9f91f87cec81d0c5305c6a859a6b5ce4d19a4ce81bdade716d5f1816a1950"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage1-context",
@@ -24889,7 +24891,7 @@
         "kind": "context"
       },
       "beforeHash": "90a7ad38aa7531ca5614a0ab86eca207bb4b5db43220c6ec200ef903359a4a18",
-      "finalHash": "6e086bc1648bc63f73607e38233961216da552493d0ece4c3eec6d9a47104557",
+      "finalHash": "a09fe4af7551f843cf52c7a8b40968e89d32e05fbb697c952167c18c34c29596",
       "beforeValue": {
         "audioGuide": "Omedetou gozaimasu! A1 kanryou!",
         "missionTitle": "Desafio Final A1: Sobrevivência Total no Aeroporto de Haneda",
@@ -24904,9 +24906,9 @@
         }
       },
       "finalValue": {
-        "audioGuide": "Omedetou gozaimasu! A1 kanryou!",
-        "missionTitle": "Desafio Final A1: Sobrevivência Total no Aeroporto de Haneda",
-        "missionDescription": "Chegou a hora de revisar a trilha A1. Este teste integra saudações, pronomes, compras, valores, direções e expressões de existência.",
+        "audioGuide": "Omedetou gozaimasu. A1 no naiyou o fukushuu shimashou.",
+        "missionTitle": "Revisão final A1",
+        "missionDescription": "Retome, em situações curtas, as estruturas e o vocabulário praticados ao longo da trilha A1.",
         "audio": {
           "displayText": "おめでとうございます！A1修了です！",
           "audioText": "おめでとうございます！A1修了です！",
@@ -24917,23 +24919,25 @@
         }
       },
       "reasonKind": "naturalness",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 69
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 122
+          "sourceId": "tobira-2009",
+          "page": 52
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6e086bc1648bc63f73607e38233961216da552493d0ece4c3eec6d9a47104557"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage2_drops[0]",
@@ -24941,16 +24945,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "4d22a96da44714aa5cec84d44d76c661d3c6ce0fa4d362210d170b91517d3939",
-      "finalHash": "4d22a96da44714aa5cec84d44d76c661d3c6ce0fa4d362210d170b91517d3939",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "556ae83a8319404135a3a949f1610b536843edf8c9cc4c76069a36ddac9d0bdd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "空港（くうこう）",
+        "romaji": "kuukou",
+        "translation": "aeroporto",
+        "timeContext": "Lugar usado no cenário de revisão."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4d22a96da44714aa5cec84d44d76c661d3c6ce0fa4d362210d170b91517d3939"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage2_drops[1]",
@@ -24958,16 +24976,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "09ec20fa3000e68630dc89575deefda5b3522bf2e6cd736719fbec81ac4ce86d",
-      "finalHash": "09ec20fa3000e68630dc89575deefda5b3522bf2e6cd736719fbec81ac4ce86d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "811d09363135bb607c10cc3f1db99fe7686ae47a586c64195f0fe39e432c881b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "パスポート",
+        "romaji": "pasupooto",
+        "translation": "passaporte",
+        "timeContext": "Documento de viagem."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "09ec20fa3000e68630dc89575deefda5b3522bf2e6cd736719fbec81ac4ce86d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage2_drops[2]",
@@ -24975,16 +25007,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "363c6f169393033c1e51785401640d2b4b4cc680273f7573df6d1b315ea10e01",
-      "finalHash": "363c6f169393033c1e51785401640d2b4b4cc680273f7573df6d1b315ea10e01",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a0d3f50b6a328735d2c155c2539ac46dde77c1910c86078c82204baef1ad1519",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "おめでとうございます",
+        "romaji": "omedetou gozaimasu",
+        "translation": "parabéns",
+        "timeContext": "Expressão polida de felicitação."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "363c6f169393033c1e51785401640d2b4b4cc680273f7573df6d1b315ea10e01"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage2_drops[3]",
@@ -24992,11 +25038,25 @@
         "kind": "lesson-item"
       },
       "beforeHash": "e060499495d549d36f62c2b4761b9a2f71773a1cded374e4e26f23acd613f5be",
-      "finalHash": "e060499495d549d36f62c2b4761b9a2f71773a1cded374e4e26f23acd613f5be",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "8fcd31e7f63a1d6d4b3304cdba31e509bf72bb82bcf0a50dd137f030c9e045fa",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "完了（かんりょう）",
+        "romaji": "kanryou",
+        "translation": "conclusão",
+        "timeContext": "Substantivo que indica finalização."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e060499495d549d36f62c2b4761b9a2f71773a1cded374e4e26f23acd613f5be"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage2-drops-4",
@@ -25009,7 +25069,7 @@
         "kind": "lesson-item"
       },
       "beforeHash": "ff8d9fed6faff10955acd096a8e031c3ce8f80740600567d7e765cc6b9002aee",
-      "finalHash": "c029897c5e1f49a1badaec70d50c3bb1c4854723c39174c4a3181a5d713d4219",
+      "finalHash": "21906d2e2c68f5557ebca2b25d5761490fede9b9d059f09e1dcb1de451e26ca2",
       "beforeValue": {
         "type": "grammar_pill",
         "title": "O Passaporte da Fluência A1",
@@ -25019,29 +25079,27 @@
       },
       "finalValue": {
         "type": "grammar_pill",
-        "title": "Revisão de conclusão A1",
-        "rule": "Você dominou os 31 Módulos A1! Agora consegue se apresentar, comprar no Konbini, pegar trens, pedir comida e se orientar no Japão.",
-        "formula": "[Conteúdo A1] + [Prática] = trilha A1 concluída",
-        "example": "Watashi wa Nihon-go A1 desu! (Eu sou Nível A1 em Japonês!)"
+        "title": "Retomar e praticar",
+        "rule": "A revisão reúne estruturas já apresentadas no A1. Ela mede somente a prática interna da trilha.",
+        "formula": "[conteúdo estudado] + [prática de revisão]",
+        "example": "駅はどこですか。電車で行きます。"
       },
       "reasonKind": "source-correction",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 69
-        },
-        {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 122
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c029897c5e1f49a1badaec70d50c3bb1c4854723c39174c4a3181a5d713d4219"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[0]",
@@ -25050,15 +25108,39 @@
       },
       "beforeHash": "c6deae29ad19607b8c2b9d98b764c552fa5e5f71ffecc73dc55616888bbf0133",
       "finalHash": "c6deae29ad19607b8c2b9d98b764c552fa5e5f71ffecc73dc55616888bbf0133",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "1. No desembarque do Aeroporto de Haneda às 15h, como você saúda o oficial da imigração?",
+        "options": [
+          {
+            "label": "☀️ こんにちは！ (Konnichiwa!)",
+            "isCorrect": true
+          },
+          {
+            "label": "🌅 おはようございます！ (Ohayou gozaimasu!)",
+            "isCorrect": false
+          },
+          {
+            "label": "🌙 こんばんは！ (Konbanwa!)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c6deae29ad19607b8c2b9d98b764c552fa5e5f71ffecc73dc55616888bbf0133"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[1]",
@@ -25067,15 +25149,39 @@
       },
       "beforeHash": "bc56862d64d8a59f67944581a20ebb33ed30d2e0b355aaf0e195d09375a0d472",
       "finalHash": "bc56862d64d8a59f67944581a20ebb33ed30d2e0b355aaf0e195d09375a0d472",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como pedir educadamente uma garrafa de água na loja de conveniência do aeroporto?",
+        "options": [
+          {
+            "label": "🥤 みず を ください (Mizu o kudasai)",
+            "isCorrect": true
+          },
+          {
+            "label": "🥤 みず は どこ ですか (Mizu wa doko desu ka)",
+            "isCorrect": false
+          },
+          {
+            "label": "🥤 みず ですか (Mizu desu ka)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bc56862d64d8a59f67944581a20ebb33ed30d2e0b355aaf0e195d09375a0d472"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[2]",
@@ -25084,15 +25190,39 @@
       },
       "beforeHash": "f8155d56e6674b16808abfb7114773c72ab02a3a54c25beabec881f530ad3976",
       "finalHash": "f8155d56e6674b16808abfb7114773c72ab02a3a54c25beabec881f530ad3976",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "3. Como perguntar onde fica a estação de trem dentro do aeroporto?",
+        "options": [
+          {
+            "label": "🚆 えき は どこ ですか？ (Eki wa doko desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "🚆 えき が あります (Eki ga arimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "🚆 えき で いきます (Eki de ikimasu)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f8155d56e6674b16808abfb7114773c72ab02a3a54c25beabec881f530ad3976"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[3]",
@@ -25101,15 +25231,39 @@
       },
       "beforeHash": "3e5baf585d1552142d08250ee74b7b165f72ad6c16571c21bf3f38d4d4aa4a83",
       "finalHash": "3e5baf585d1552142d08250ee74b7b165f72ad6c16571c21bf3f38d4d4aa4a83",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "4. Ao pagar uma passagem de 500 Ienes no caixa, qual a forma correta de perguntar o valor?",
+        "options": [
+          {
+            "label": "💴 いくら ですか？ (Ikura desu ka?)",
+            "isCorrect": true
+          },
+          {
+            "label": "💴 なん ですか？ (Nan desu ka?)",
+            "isCorrect": false
+          },
+          {
+            "label": "💴 だれ ですか？ (Dare desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3e5baf585d1552142d08250ee74b7b165f72ad6c16571c21bf3f38d4d4aa4a83"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[4]",
@@ -25118,15 +25272,39 @@
       },
       "beforeHash": "342e436f11ebf493738ac5dcf85fc5ef3a586de14cf4ff136976ae7ec5f0265d",
       "finalHash": "342e436f11ebf493738ac5dcf85fc5ef3a586de14cf4ff136976ae7ec5f0265d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "5. Qual frase encerra sua jornada com chave de ouro agradecendo ao seu instrutor?",
+        "options": [
+          {
+            "label": "🏆 せんせい、ほんとうに ありがとうございました！ (Sensei, hontou ni arigatou gozaimasu!)",
+            "isCorrect": true
+          },
+          {
+            "label": "😭 さようなら (Sayounara)",
+            "isCorrect": false
+          },
+          {
+            "label": "❓ なに ですか？ (Nani desu ka?)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "342e436f11ebf493738ac5dcf85fc5ef3a586de14cf4ff136976ae7ec5f0265d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-5",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[5]",
@@ -25135,15 +25313,39 @@
       },
       "beforeHash": "2a10e161e31115f49534c502ffb5156c8ab891f400c3e2852c7fa0a6f4ca3a1e",
       "finalHash": "2a10e161e31115f49534c502ffb5156c8ab891f400c3e2852c7fa0a6f4ca3a1e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "6. Como se apresentar formalmente dizendo 'Prazer em conhecê-lo'?",
+        "options": [
+          {
+            "label": "Hajimemashite",
+            "isCorrect": true
+          },
+          {
+            "label": "Arigatou gozaimasu",
+            "isCorrect": false
+          },
+          {
+            "label": "Gomen nasai",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2a10e161e31115f49534c502ffb5156c8ab891f400c3e2852c7fa0a6f4ca3a1e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-6",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[6]",
@@ -25152,15 +25354,39 @@
       },
       "beforeHash": "df427fac5f9e699719447ac48ca35516bbca928041d6e9efb3d46418dec58db9",
       "finalHash": "df427fac5f9e699719447ac48ca35516bbca928041d6e9efb3d46418dec58db9",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "7. Como dizer a frase negativa 'Eu não sou estudante'?",
+        "options": [
+          {
+            "label": "Gakusei ja arimasen",
+            "isCorrect": true
+          },
+          {
+            "label": "Gakusei desu",
+            "isCorrect": false
+          },
+          {
+            "label": "Gakusei desu ka",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "df427fac5f9e699719447ac48ca35516bbca928041d6e9efb3d46418dec58db9"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-7",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[7]",
@@ -25169,15 +25395,39 @@
       },
       "beforeHash": "7c33e33ff2e9d55af1a04e35a36328767e4fb28c5fc162e0e894e999d6eac777",
       "finalHash": "7c33e33ff2e9d55af1a04e35a36328767e4fb28c5fc162e0e894e999d6eac777",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "8. Qual palavra usar ao esbarrar acidentalmente em alguém na rua?",
+        "options": [
+          {
+            "label": "Sumimasen",
+            "isCorrect": true
+          },
+          {
+            "label": "Konnichiwa",
+            "isCorrect": false
+          },
+          {
+            "label": "Itadakimasu",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7c33e33ff2e9d55af1a04e35a36328767e4fb28c5fc162e0e894e999d6eac777"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-8",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[8]",
@@ -25186,15 +25436,39 @@
       },
       "beforeHash": "8df5b1e48d59ef8e76cfe8f128032554c2901ab2aa5c81aab20ecb9b874777b1",
       "finalHash": "8df5b1e48d59ef8e76cfe8f128032554c2901ab2aa5c81aab20ecb9b874777b1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "9. Como se despedir informalmente de um amigo que você verá amanhã?",
+        "options": [
+          {
+            "label": "Mata ashita!",
+            "isCorrect": true
+          },
+          {
+            "label": "Sayounara",
+            "isCorrect": false
+          },
+          {
+            "label": "Hajimemashite",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8df5b1e48d59ef8e76cfe8f128032554c2901ab2aa5c81aab20ecb9b874777b1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-9",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[9]",
@@ -25203,15 +25477,39 @@
       },
       "beforeHash": "df44112d3780c6f853c9382efd2b6cc98b5cca8bfac472a78cd953be59d60198",
       "finalHash": "df44112d3780c6f853c9382efd2b6cc98b5cca8bfac472a78cd953be59d60198",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "10. Como perguntar o nome de alguém de forma polida?",
+        "options": [
+          {
+            "label": "O-namae wa nan desu ka?",
+            "isCorrect": true
+          },
+          {
+            "label": "Kore wa nan desu ka?",
+            "isCorrect": false
+          },
+          {
+            "label": "Doko desu ka?",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "df44112d3780c6f853c9382efd2b6cc98b5cca8bfac472a78cd953be59d60198"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-10",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[10]",
@@ -25220,15 +25518,39 @@
       },
       "beforeHash": "b3dc7424363e6cd7bb6f556e990e1ba0bc08a176124b1d726f618b192bf9b259",
       "finalHash": "b3dc7424363e6cd7bb6f556e990e1ba0bc08a176124b1d726f618b192bf9b259",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "11. Como dizer 'Sou brasileiro(a)'?",
+        "options": [
+          {
+            "label": "Burajiru-jin desu",
+            "isCorrect": true
+          },
+          {
+            "label": "Burajiru-go desu",
+            "isCorrect": false
+          },
+          {
+            "label": "Burajiru ni ikimasu",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b3dc7424363e6cd7bb6f556e990e1ba0bc08a176124b1d726f618b192bf9b259"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-11",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[11]",
@@ -25237,15 +25559,39 @@
       },
       "beforeHash": "349ab9c1ea71c8c51e5ff2c890ecee0fbbfd79584a77fedd0d435cba6ac0c2e1",
       "finalHash": "349ab9c1ea71c8c51e5ff2c890ecee0fbbfd79584a77fedd0d435cba6ac0c2e1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "12. Qual sufixo de respeito deve ser adicionado ao nome dos amigos/conhecidos?",
+        "options": [
+          {
+            "label": "-san",
+            "isCorrect": true
+          },
+          {
+            "label": "-go",
+            "isCorrect": false
+          },
+          {
+            "label": "-jin",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "349ab9c1ea71c8c51e5ff2c890ecee0fbbfd79584a77fedd0d435cba6ac0c2e1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-12",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[12]",
@@ -25254,15 +25600,39 @@
       },
       "beforeHash": "c743d6c1c53235ce4c4a84d57ed4d474ac4926cb113f31d90b020ee5111b6a28",
       "finalHash": "c743d6c1c53235ce4c4a84d57ed4d474ac4926cb113f31d90b020ee5111b6a28",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "13. O que a partícula 'Ka' no final da frase indica?",
+        "options": [
+          {
+            "label": "Uma pergunta / ponto de interrogação",
+            "isCorrect": true
+          },
+          {
+            "label": "Uma negação",
+            "isCorrect": false
+          },
+          {
+            "label": "Um comando de ordem",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c743d6c1c53235ce4c4a84d57ed4d474ac4926cb113f31d90b020ee5111b6a28"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-13",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[13]",
@@ -25271,15 +25641,39 @@
       },
       "beforeHash": "b7838da16f5e4b497ca1b459a831f7407dcfbe56add01d80dd7d7cbedc2a55b8",
       "finalHash": "b7838da16f5e4b497ca1b459a831f7407dcfbe56add01d80dd7d7cbedc2a55b8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "14. Como dizer 'Tenho 20 anos'?",
+        "options": [
+          {
+            "label": "Ni-juu sai desu",
+            "isCorrect": true
+          },
+          {
+            "label": "Ni-juu jin desu",
+            "isCorrect": false
+          },
+          {
+            "label": "Ni-juu en desu",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b7838da16f5e4b497ca1b459a831f7407dcfbe56add01d80dd7d7cbedc2a55b8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-14",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[14]",
@@ -25288,15 +25682,39 @@
       },
       "beforeHash": "7d6bfc58d031317bbc351c210ad831774e9e42699cd3f6700056427d04061098",
       "finalHash": "7d6bfc58d031317bbc351c210ad831774e9e42699cd3f6700056427d04061098",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "15. Traduza: 'Watashi no baggu'",
+        "options": [
+          {
+            "label": "Minha bolsa",
+            "isCorrect": true
+          },
+          {
+            "label": "Bolsa de alguém",
+            "isCorrect": false
+          },
+          {
+            "label": "Comprei uma bolsa",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7d6bfc58d031317bbc351c210ad831774e9e42699cd3f6700056427d04061098"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-15",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[15]",
@@ -25305,15 +25723,39 @@
       },
       "beforeHash": "45ba65f25a32310b55708c4e81bd75cf459a25d7078871629b91c861546f6f60",
       "finalHash": "45ba65f25a32310b55708c4e81bd75cf459a25d7078871629b91c861546f6f60",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "16. Qual palavra demonstrativa usar para um objeto que está na SUA própria mão?",
+        "options": [
+          {
+            "label": "Kore (これ)",
+            "isCorrect": true
+          },
+          {
+            "label": "Sore (それ)",
+            "isCorrect": false
+          },
+          {
+            "label": "Are (あれ)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "45ba65f25a32310b55708c4e81bd75cf459a25d7078871629b91c861546f6f60"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-16",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[16]",
@@ -25322,15 +25764,39 @@
       },
       "beforeHash": "5d6d446f130a1658fd0996817158df738838502c8fa6e08dda60be0c70996a71",
       "finalHash": "5d6d446f130a1658fd0996817158df738838502c8fa6e08dda60be0c70996a71",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "17. Qual palavra usar para indicar um prédio distante de ambos os falantes?",
+        "options": [
+          {
+            "label": "Are (あれ) / Asoko (あそこ)",
+            "isCorrect": true
+          },
+          {
+            "label": "Kore (これ) / Koko (ここ)",
+            "isCorrect": false
+          },
+          {
+            "label": "Sore (それ) / Soko (そこ)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5d6d446f130a1658fd0996817158df738838502c8fa6e08dda60be0c70996a71"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-17",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[17]",
@@ -25339,15 +25805,39 @@
       },
       "beforeHash": "2617655fec830c6902e2b5ead2a6bfee2d19ad109315497b25e2ad57ad57bbed",
       "finalHash": "2617655fec830c6902e2b5ead2a6bfee2d19ad109315497b25e2ad57ad57bbed",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "18. Qual verbo expressa a existência de coisas inanimadas (livros, chaves, mesas)?",
+        "options": [
+          {
+            "label": "Arimasu (あります)",
+            "isCorrect": true
+          },
+          {
+            "label": "Imasu (います)",
+            "isCorrect": false
+          },
+          {
+            "label": "Tabemasu (たべます)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2617655fec830c6902e2b5ead2a6bfee2d19ad109315497b25e2ad57ad57bbed"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-18",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[18]",
@@ -25356,15 +25846,39 @@
       },
       "beforeHash": "73e7d65be50c88c283a5b42409a7e61c52948393ce765691ac6d2d1235c48b2e",
       "finalHash": "73e7d65be50c88c283a5b42409a7e61c52948393ce765691ac6d2d1235c48b2e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "19. Qual verbo expressa a existência de seres vivos (pessoas, cachorros, gatos)?",
+        "options": [
+          {
+            "label": "Imasu (います)",
+            "isCorrect": true
+          },
+          {
+            "label": "Arimasu (あります)",
+            "isCorrect": false
+          },
+          {
+            "label": "Nomimasu (のみます)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "73e7d65be50c88c283a5b42409a7e61c52948393ce765691ac6d2d1235c48b2e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-19",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[19]",
@@ -25373,15 +25887,39 @@
       },
       "beforeHash": "24bd9793e9d0718af414bbe3314039bd68ef543266949f71af4db65e9072329b",
       "finalHash": "24bd9793e9d0718af414bbe3314039bd68ef543266949f71af4db65e9072329b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "20. Como dizer 'Vou para a escola'?",
+        "options": [
+          {
+            "label": "Gakkou ni ikimasu",
+            "isCorrect": true
+          },
+          {
+            "label": "Gakkou de ikimasu",
+            "isCorrect": false
+          },
+          {
+            "label": "Gakkou o ikimasu",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "24bd9793e9d0718af414bbe3314039bd68ef543266949f71af4db65e9072329b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-20",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[20]",
@@ -25390,15 +25928,39 @@
       },
       "beforeHash": "749c6c4f37f40518533b176d9811f3d11b51b1d37696970952ee21eba17593d4",
       "finalHash": "749c6c4f37f40518533b176d9811f3d11b51b1d37696970952ee21eba17593d4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "21. Qual partícula indica o meio de transporte ('ir de trem')?",
+        "options": [
+          {
+            "label": "で (de)",
+            "isCorrect": true
+          },
+          {
+            "label": "に (ni)",
+            "isCorrect": false
+          },
+          {
+            "label": "を (o)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "749c6c4f37f40518533b176d9811f3d11b51b1d37696970952ee21eba17593d4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-21",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[21]",
@@ -25407,15 +25969,39 @@
       },
       "beforeHash": "52a1a0963faba517290cbb9fe8d0201b73c8f0132588a27cdc63f500954b54cc",
       "finalHash": "52a1a0963faba517290cbb9fe8d0201b73c8f0132588a27cdc63f500954b54cc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "22. Quanto é 'San-juu' (30) em ienes?",
+        "options": [
+          {
+            "label": "30 Ienes",
+            "isCorrect": true
+          },
+          {
+            "label": "3 Ienes",
+            "isCorrect": false
+          },
+          {
+            "label": "300 Ienes",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "52a1a0963faba517290cbb9fe8d0201b73c8f0132588a27cdc63f500954b54cc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-22",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[22]",
@@ -25424,15 +26010,39 @@
       },
       "beforeHash": "98961840b9818434e06b5e8d8bc5feca560f73546dbe00c1f822c508184f70a8",
       "finalHash": "98961840b9818434e06b5e8d8bc5feca560f73546dbe00c1f822c508184f70a8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "23. Traduza: 'Ocha o nomimasu'",
+        "options": [
+          {
+            "label": "Bebo chá",
+            "isCorrect": true
+          },
+          {
+            "label": "Como chá",
+            "isCorrect": false
+          },
+          {
+            "label": "Compro chá",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "98961840b9818434e06b5e8d8bc5feca560f73546dbe00c1f822c508184f70a8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-23",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[23]",
@@ -25441,15 +26051,39 @@
       },
       "beforeHash": "e6e20f03cb26c2521878c90dff31b7d114d7c9a90ceae8073f01bba61c0fdc52",
       "finalHash": "e6e20f03cb26c2521878c90dff31b7d114d7c9a90ceae8073f01bba61c0fdc52",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "24. Como elogiar uma refeição durante o almoço dizendo 'É delicioso'?",
+        "options": [
+          {
+            "label": "Oishii desu!",
+            "isCorrect": true
+          },
+          {
+            "label": "Takai desu!",
+            "isCorrect": false
+          },
+          {
+            "label": "Furui desu!",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e6e20f03cb26c2521878c90dff31b7d114d7c9a90ceae8073f01bba61c0fdc52"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-24",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[24]",
@@ -25458,15 +26092,39 @@
       },
       "beforeHash": "be418ae03e3aff180f2399a7a826f779320a92a4d09a8f154250ae765474fd21",
       "finalHash": "be418ae03e3aff180f2399a7a826f779320a92a4d09a8f154250ae765474fd21",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "25. Como perguntar 'Que horas são agora?'",
+        "options": [
+          {
+            "label": "Ima nan-ji desu ka?",
+            "isCorrect": true
+          },
+          {
+            "label": "Ima nan-nichi desu ka?",
+            "isCorrect": false
+          },
+          {
+            "label": "Ima ikura desu ka?",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "be418ae03e3aff180f2399a7a826f779320a92a4d09a8f154250ae765474fd21"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-25",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[25]",
@@ -25475,15 +26133,39 @@
       },
       "beforeHash": "d14adc82f0ed729aacaad7006c2facd2dd52fdf5f30dc15081aa6d3b0466e07f",
       "finalHash": "d14adc82f0ed729aacaad7006c2facd2dd52fdf5f30dc15081aa6d3b0466e07f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "26. Qual é o dia da semana 'Getsuyoubi'?",
+        "options": [
+          {
+            "label": "Segunda-feira",
+            "isCorrect": true
+          },
+          {
+            "label": "Domingo",
+            "isCorrect": false
+          },
+          {
+            "label": "Sexta-feira",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d14adc82f0ed729aacaad7006c2facd2dd52fdf5f30dc15081aa6d3b0466e07f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-26",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[26]",
@@ -25492,15 +26174,39 @@
       },
       "beforeHash": "04e505bd5b37363884314f48769db8c18c1c1e223493963bc9a20e59d855cad4",
       "finalHash": "04e505bd5b37363884314f48769db8c18c1c1e223493963bc9a20e59d855cad4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "27. Como se diz 'Manhã' em japonês?",
+        "options": [
+          {
+            "label": "Asa (朝)",
+            "isCorrect": true
+          },
+          {
+            "label": "Hiru (昼)",
+            "isCorrect": false
+          },
+          {
+            "label": "Yoru (夜)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "04e505bd5b37363884314f48769db8c18c1c1e223493963bc9a20e59d855cad4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-27",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[27]",
@@ -25509,15 +26215,39 @@
       },
       "beforeHash": "cecadd6b887c0cb504b31d9a588798e4de661aefe42898e39833e1d3c5878eec",
       "finalHash": "cecadd6b887c0cb504b31d9a588798e4de661aefe42898e39833e1d3c5878eec",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "28. Como dizer 'Compro no Konbini'?",
+        "options": [
+          {
+            "label": "Konbini de kaimasu",
+            "isCorrect": true
+          },
+          {
+            "label": "Konbini ni kaimasu",
+            "isCorrect": false
+          },
+          {
+            "label": "Konbini o kaimasu",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cecadd6b887c0cb504b31d9a588798e4de661aefe42898e39833e1d3c5878eec"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-28",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[28]",
@@ -25526,15 +26256,39 @@
       },
       "beforeHash": "929555bcb9bcb52161768899df07ea9ced09624a12c8fc28c8202596de51665c",
       "finalHash": "929555bcb9bcb52161768899df07ea9ced09624a12c8fc28c8202596de51665c",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "29. Traduza: 'Watashi mo gakusei desu'",
+        "options": [
+          {
+            "label": "Eu também sou estudante",
+            "isCorrect": true
+          },
+          {
+            "label": "Eu não sou estudante",
+            "isCorrect": false
+          },
+          {
+            "label": "Aquele é o estudante",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "929555bcb9bcb52161768899df07ea9ced09624a12c8fc28c8202596de51665c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-practice-29",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_practice[29]",
@@ -25543,15 +26297,39 @@
       },
       "beforeHash": "b9f2d19b24a0845a45097f181a8f552597fcfaeae718712e8755453f42ce7b26",
       "finalHash": "b9f2d19b24a0845a45097f181a8f552597fcfaeae718712e8755453f42ce7b26",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "30. Qual palavra conectiva significa 'E / Além disso' entre frases?",
+        "options": [
+          {
+            "label": "Soshite (そして)",
+            "isCorrect": true
+          },
+          {
+            "label": "Demo (でも)",
+            "isCorrect": false
+          },
+          {
+            "label": "Karasu (から)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b9f2d19b24a0845a45097f181a8f552597fcfaeae718712e8755453f42ce7b26"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_5_sentenceBuilder[0]",
@@ -25559,16 +26337,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "31f3a04153aaade389394c768f861d969185e5a95133b3a3cd62c18cf21d9339",
-      "finalHash": "31f3a04153aaade389394c768f861d969185e5a95133b3a3cd62c18cf21d9339",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c527006b6b5c8eafe4144edf394f89775b5a6d84a4b884826170db157d64399c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "パスポート を おねがいします",
+        "translation": "Passaporte, por favor.",
+        "chunks": [
+          "パスポート",
+          "を",
+          "おねがいします"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "31f3a04153aaade389394c768f861d969185e5a95133b3a3cd62c18cf21d9339"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage3_5_sentenceBuilder[1]",
@@ -25576,16 +26370,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "30aad59ef833243ad5731cc42333dd772ddca82f76f0c2d5528030f1a94c329f",
-      "finalHash": "30aad59ef833243ad5731cc42333dd772ddca82f76f0c2d5528030f1a94c329f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f03b294f7d33c09fca1fb3ecc504db6384e68142e6cb35d48c8f20c6da3b1267",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "えき は どこ です か",
+        "translation": "Onde fica a estação?",
+        "chunks": [
+          "えき",
+          "は",
+          "どこ",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "30aad59ef833243ad5731cc42333dd772ddca82f76f0c2d5528030f1a94c329f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage4_dialog[0]",
@@ -25593,16 +26405,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "13d25e9946939e121b7b1a3b44ebf36f8e8023eb96e227874f28bc654b92c1d1",
-      "finalHash": "13d25e9946939e121b7b1a3b44ebf36f8e8023eb96e227874f28bc654b92c1d1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7aa6fe0df3f71ebd712b274bcd885f593e92c415b00c79348ba08e8ed2a93308",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: No balcão de informações, você procura a estação.",
+        "npcName": "Atendente",
+        "npcMessage": "なにか おこまりですか。",
+        "options": [
+          {
+            "text": "すみません、えき は どこ です か。",
+            "feedback": "A pergunta pede a localização da estação.",
+            "isCorrect": true
+          },
+          {
+            "text": "えき で いきます。",
+            "feedback": "A frase não formula a pergunta de localização.",
+            "isCorrect": false
+          },
+          {
+            "text": "パスポート です。",
+            "feedback": "A resposta não se relaciona à pergunta.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "13d25e9946939e121b7b1a3b44ebf36f8e8023eb96e227874f28bc654b92c1d1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage4_dialog[1]",
@@ -25610,16 +26455,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "b4ef74b3af7f5ded406bb51e08e3bcf7c16433586a0f92c9041c27e9ab0935cd",
-      "finalHash": "b4ef74b3af7f5ded406bb51e08e3bcf7c16433586a0f92c9041c27e9ab0935cd",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "33b26835bdd34dc23f25293a10840e84ad579d7500743ed066ba9eae08df0b9c",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Você quer informar seu meio de transporte.",
+        "npcName": "Colega",
+        "npcMessage": "なにで いきますか。",
+        "options": [
+          {
+            "text": "でんしゃ で いきます。",
+            "feedback": "A resposta informa o meio de transporte com で.",
+            "isCorrect": true
+          },
+          {
+            "text": "でんしゃ は どこ ですか。",
+            "feedback": "A frase pergunta outra informação.",
+            "isCorrect": false
+          },
+          {
+            "text": "でんしゃ が います。",
+            "feedback": "O verbo não é o usado para esse sentido.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b4ef74b3af7f5ded406bb51e08e3bcf7c16433586a0f92c9041c27e9ab0935cd"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage4_dialog[2]",
@@ -25627,16 +26505,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "2ea85ff131313cc72c384040e5908ea84d78bc2b01e13ef0416fa85a87a38dd8",
-      "finalHash": "2ea85ff131313cc72c384040e5908ea84d78bc2b01e13ef0416fa85a87a38dd8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7d04bf82d5474e69d5bdf215c245f63b94ca0547b5ad2551952ba49ece4786db",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 52
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Você conclui a revisão interna da trilha.",
+        "npcName": "Instrutor",
+        "npcMessage": "A1 の ふくしゅう は どう でしたか。",
+        "options": [
+          {
+            "text": "たのしかった です。ありがとう ございます。",
+            "feedback": "A resposta comenta a revisão e agradece de forma polida.",
+            "isCorrect": true
+          },
+          {
+            "text": "わたし は A1 です。",
+            "feedback": "A frase não responde à pergunta sobre a revisão.",
+            "isCorrect": false
+          },
+          {
+            "text": "さようなら です。",
+            "feedback": "A expressão não é uma resposta adequada ao contexto.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2ea85ff131313cc72c384040e5908ea84d78bc2b01e13ef0416fa85a87a38dd8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[0]",
@@ -25645,15 +26556,31 @@
       },
       "beforeHash": "868640de54b9ea3a2d5c51f7a4638fb5e040f307613c786d8f1e77bd0f8c7822",
       "finalHash": "868640de54b9ea3a2d5c51f7a4638fb5e040f307613c786d8f1e77bd0f8c7822",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Parabéns! O que significa 'A1 Kanryou'?",
+        "options": [
+          "Conclusão com sucesso do Nível A1!",
+          "Erro no sistema",
+          "Estação fechada"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "868640de54b9ea3a2d5c51f7a4638fb5e040f307613c786d8f1e77bd0f8c7822"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[1]",
@@ -25662,15 +26589,31 @@
       },
       "beforeHash": "ea67220aa26ae60ca243c7c2bab6af62542910fe2ae35f419a28edfaf53a1bb8",
       "finalHash": "ea67220aa26ae60ca243c7c2bab6af62542910fe2ae35f419a28edfaf53a1bb8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'くうこう (空港)' (Kuukou)?",
+        "options": [
+          "Aeroporto",
+          "Passaporte",
+          "Parabéns! / Felicitacões!"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ea67220aa26ae60ca243c7c2bab6af62542910fe2ae35f419a28edfaf53a1bb8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[2]",
@@ -25679,15 +26622,31 @@
       },
       "beforeHash": "67a9b1826bd53483821ab232229646de5ce92e05d466f3ad6b8bc377afed88eb",
       "finalHash": "67a9b1826bd53483821ab232229646de5ce92e05d466f3ad6b8bc377afed88eb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'パスポート' (Pasupooto)?",
+        "options": [
+          "Aeroporto",
+          "Passaporte",
+          "Parabéns! / Felicitacões!"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "67a9b1826bd53483821ab232229646de5ce92e05d466f3ad6b8bc377afed88eb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[3]",
@@ -25696,15 +26655,31 @@
       },
       "beforeHash": "01ac8a63a9baa482a97b8bee6bec7d2d24c470dff1744ec9cc8adb8754bd4979",
       "finalHash": "01ac8a63a9baa482a97b8bee6bec7d2d24c470dff1744ec9cc8adb8754bd4979",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'おめでとうございます' (Omedetou gozaimasu)?",
+        "options": [
+          "Passaporte",
+          "Aeroporto",
+          "Parabéns! / Felicitacões!"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "01ac8a63a9baa482a97b8bee6bec7d2d24c470dff1744ec9cc8adb8754bd4979"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[4]",
@@ -25713,10 +26688,26 @@
       },
       "beforeHash": "4a4d1ee86430dfb4ab5d97ef0f0beab062b1b31c3b6959cbc3487d00c76262fc",
       "finalHash": "4a4d1ee86430dfb4ab5d97ef0f0beab062b1b31c3b6959cbc3487d00c76262fc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'かんりょう (完了)' (Kanryou)?",
+        "options": [
+          "Conclusão / Finalizado",
+          "Aeroporto",
+          "Passaporte"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4a4d1ee86430dfb4ab5d97ef0f0beab062b1b31c3b6959cbc3487d00c76262fc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-5",
@@ -25749,23 +26740,21 @@
         "correctIndex": 0
       },
       "reasonKind": "source-correction",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 69
-        },
-        {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 122
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "edf2fbaec8b37cbce98aa8e35d1beceb673cc8952382faa6b2371eb02c5e4043"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-6",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[6]",
@@ -25774,15 +26763,31 @@
       },
       "beforeHash": "725ee6be0fd6ba578c864b3cbfaa6be4e54c91ff6bcb9508559ecd3e49211b21",
       "finalHash": "725ee6be0fd6ba578c864b3cbfaa6be4e54c91ff6bcb9508559ecd3e49211b21",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "No desembarque do Aeroporto de Haneda às 15h, como você saúda o oficial da imigração?",
+        "options": [
+          "☀️ こんにちは！ (Konnichiwa!)",
+          "🌅 おはようございます！ (Ohayou gozaimasu!)",
+          "🌙 こんばんは！ (Konbanwa!)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "725ee6be0fd6ba578c864b3cbfaa6be4e54c91ff6bcb9508559ecd3e49211b21"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-7",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[7]",
@@ -25791,15 +26796,31 @@
       },
       "beforeHash": "a71e405659af8573f463344bf462b5375806ba0d36b156d931399ab170758a83",
       "finalHash": "a71e405659af8573f463344bf462b5375806ba0d36b156d931399ab170758a83",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como pedir educadamente uma garrafa de água na loja de conveniência do aeroporto?",
+        "options": [
+          "🥤 みず を ください (Mizu o kudasai)",
+          "🥤 みず は どこ ですか (Mizu wa doko desu ka)",
+          "🥤 みず ですか (Mizu desu ka)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a71e405659af8573f463344bf462b5375806ba0d36b156d931399ab170758a83"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-8",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[8]",
@@ -25808,15 +26829,31 @@
       },
       "beforeHash": "1dc8e1b2f8f27b065f01592202917fa98d3af79f8dfbb273d517dcba26b3b181",
       "finalHash": "1dc8e1b2f8f27b065f01592202917fa98d3af79f8dfbb273d517dcba26b3b181",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como perguntar onde fica a estação de trem dentro do aeroporto?",
+        "options": [
+          "🚆 えき は どこ ですか？ (Eki wa doko desu ka?)",
+          "🚆 えき が あります (Eki ga arimasu)",
+          "🚆 えき で いきます (Eki de ikimasu)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1dc8e1b2f8f27b065f01592202917fa98d3af79f8dfbb273d517dcba26b3b181"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-9",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[9]",
@@ -25825,15 +26862,31 @@
       },
       "beforeHash": "af15feda88fb7ebe7b3fd6fee872b82e7b7836fa66b9a27b5872def345823b22",
       "finalHash": "af15feda88fb7ebe7b3fd6fee872b82e7b7836fa66b9a27b5872def345823b22",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Ao pagar uma passagem de 500 Ienes no caixa, qual a forma correta de perguntar o valor?",
+        "options": [
+          "💴 いくら ですか？ (Ikura desu ka?)",
+          "💴 なん ですか？ (Nan desu ka?)",
+          "💴 だれ ですか？ (Dare desu ka?)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "af15feda88fb7ebe7b3fd6fee872b82e7b7836fa66b9a27b5872def345823b22"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-10",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[10]",
@@ -25842,15 +26895,31 @@
       },
       "beforeHash": "2923973cbc7a46ad260fc828f898d9a7ad22ead503f74f9fd6d27465a4615e69",
       "finalHash": "2923973cbc7a46ad260fc828f898d9a7ad22ead503f74f9fd6d27465a4615e69",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual frase encerra sua jornada com chave de ouro agradecendo ao seu instrutor?",
+        "options": [
+          "🏆 せんせい、ほんとうに ありがとうございました！ (Sensei, hontou ni arigatou gozaimasu!)",
+          "😭 さようなら (Sayounara)",
+          "❓ なに ですか？ (Nani desu ka?)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2923973cbc7a46ad260fc828f898d9a7ad22ead503f74f9fd6d27465a4615e69"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-11",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[11]",
@@ -25859,15 +26928,31 @@
       },
       "beforeHash": "0218287ba5e856bbfc4c26da0310df58db8e7773cc152820b77569bc954fe3e3",
       "finalHash": "0218287ba5e856bbfc4c26da0310df58db8e7773cc152820b77569bc954fe3e3",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como se apresentar formalmente dizendo 'Prazer em conhecê-lo'?",
+        "options": [
+          "Hajimemashite",
+          "Arigatou gozaimasu",
+          "Gomen nasai"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0218287ba5e856bbfc4c26da0310df58db8e7773cc152820b77569bc954fe3e3"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-12",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[12]",
@@ -25876,15 +26961,31 @@
       },
       "beforeHash": "57c1ce00cf6bac2fd3a4314da6309a507c43a3256eefa422ecd2687ca807e03d",
       "finalHash": "57c1ce00cf6bac2fd3a4314da6309a507c43a3256eefa422ecd2687ca807e03d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como dizer a frase negativa 'Eu não sou estudante'?",
+        "options": [
+          "Gakusei ja arimasen",
+          "Gakusei desu",
+          "Gakusei desu ka"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "57c1ce00cf6bac2fd3a4314da6309a507c43a3256eefa422ecd2687ca807e03d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-13",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[13]",
@@ -25893,15 +26994,31 @@
       },
       "beforeHash": "684fb66a7366c7ca0390240f88bf8adc92c13fce4055cbd102f7323dae2b5067",
       "finalHash": "684fb66a7366c7ca0390240f88bf8adc92c13fce4055cbd102f7323dae2b5067",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual palavra usar ao esbarrar acidentalmente em alguém na rua?",
+        "options": [
+          "Sumimasen",
+          "Konnichiwa",
+          "Itadakimasu"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "684fb66a7366c7ca0390240f88bf8adc92c13fce4055cbd102f7323dae2b5067"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-14",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[14]",
@@ -25910,15 +27027,31 @@
       },
       "beforeHash": "ee0c1a4f6a085c14b3086abdd150a778548e743f1811985fc7e2ee64952d6988",
       "finalHash": "ee0c1a4f6a085c14b3086abdd150a778548e743f1811985fc7e2ee64952d6988",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como se despedir informalmente de um amigo que você verá amanhã?",
+        "options": [
+          "Mata ashita!",
+          "Sayounara",
+          "Hajimemashite"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ee0c1a4f6a085c14b3086abdd150a778548e743f1811985fc7e2ee64952d6988"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-15",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[15]",
@@ -25927,15 +27060,31 @@
       },
       "beforeHash": "5825c56e85594213edbf2d0d9cfcbfa6fbe707fcc033289e7dedf43f2e39184b",
       "finalHash": "5825c56e85594213edbf2d0d9cfcbfa6fbe707fcc033289e7dedf43f2e39184b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como perguntar o nome de alguém de forma polida?",
+        "options": [
+          "O-namae wa nan desu ka?",
+          "Kore wa nan desu ka?",
+          "Doko desu ka?"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5825c56e85594213edbf2d0d9cfcbfa6fbe707fcc033289e7dedf43f2e39184b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-16",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[16]",
@@ -25944,15 +27093,31 @@
       },
       "beforeHash": "d28f6a1db48178f684810f542ed5a6404e90d68f4f29828b84dd4497c8055c29",
       "finalHash": "d28f6a1db48178f684810f542ed5a6404e90d68f4f29828b84dd4497c8055c29",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como dizer 'Sou brasileiro(a)'?",
+        "options": [
+          "Burajiru-jin desu",
+          "Burajiru-go desu",
+          "Burajiru ni ikimasu"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d28f6a1db48178f684810f542ed5a6404e90d68f4f29828b84dd4497c8055c29"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-17",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[17]",
@@ -25961,15 +27126,31 @@
       },
       "beforeHash": "f749a075b1633008f7b5225fafde875a4c924cdf9872d373917976799b0113d6",
       "finalHash": "f749a075b1633008f7b5225fafde875a4c924cdf9872d373917976799b0113d6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Qual sufixo de respeito deve ser adicionado ao nome dos amigos/conhecidos?",
+        "options": [
+          "-san",
+          "-go",
+          "-jin"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f749a075b1633008f7b5225fafde875a4c924cdf9872d373917976799b0113d6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-18",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[18]",
@@ -25978,15 +27159,31 @@
       },
       "beforeHash": "8d1c0496cdd2cec2fc8042f232e96548c80a3cf3e3276810f67a39fbf212d73e",
       "finalHash": "8d1c0496cdd2cec2fc8042f232e96548c80a3cf3e3276810f67a39fbf212d73e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "O que a partícula 'Ka' no final da frase indica?",
+        "options": [
+          "Uma pergunta / ponto de interrogação",
+          "Uma negação",
+          "Um comando de ordem"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8d1c0496cdd2cec2fc8042f232e96548c80a3cf3e3276810f67a39fbf212d73e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_31-stage5-quiz-19",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_31;stage5_quiz[19]",
@@ -25995,10 +27192,26 @@
       },
       "beforeHash": "c1cf881d36dfc52c1c38ab1c4652393fa8a3a8292843baba1e9564335ab6d2df",
       "finalHash": "c1cf881d36dfc52c1c38ab1c4652393fa8a3a8292843baba1e9564335ab6d2df",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ],
+      "finalValue": {
+        "question": "Como dizer 'Tenho 20 anos'?",
+        "options": [
+          "Ni-juu sai desu",
+          "Ni-juu jin desu",
+          "Ni-juu en desu"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c1cf881d36dfc52c1c38ab1c4652393fa8a3a8292843baba1e9564335ab6d2df"
     },
     {
       "id": "ja-course-phase18-a2-a2_mod_01-module-metadata",
@@ -364372,8 +365585,8 @@
         "locator": "items[293]",
         "resource": "dictionary"
       },
-      "beforeHash": "de14b7d30ad7734166e0310599f2dc86c62afc5fd16017652c7c8abc97183f31",
-      "finalHash": "de14b7d30ad7734166e0310599f2dc86c62afc5fd16017652c7c8abc97183f31",
+      "beforeHash": "f74606f49fba11e4ba6e947d368c50110d02d4d773659dfd0f216f36fb76b667",
+      "finalHash": "f74606f49fba11e4ba6e947d368c50110d02d4d773659dfd0f216f36fb76b667",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -364389,8 +365602,8 @@
         "locator": "items[294]",
         "resource": "dictionary"
       },
-      "beforeHash": "2bb4f39dbec349d75088124f7d3ccb6ac6a6061d08699e3e13063d65ae6c588d",
-      "finalHash": "2bb4f39dbec349d75088124f7d3ccb6ac6a6061d08699e3e13063d65ae6c588d",
+      "beforeHash": "a4d5502884f4039c3f1f39a79cca37b01dbdb21d33e5a3a01f3b7332c43702fd",
+      "finalHash": "a4d5502884f4039c3f1f39a79cca37b01dbdb21d33e5a3a01f3b7332c43702fd",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -364406,8 +365619,8 @@
         "locator": "items[295]",
         "resource": "dictionary"
       },
-      "beforeHash": "b9ab78d5395ec75443dfd47e3c1e09495932e7de5332ece4df7795d24db6f7f2",
-      "finalHash": "b9ab78d5395ec75443dfd47e3c1e09495932e7de5332ece4df7795d24db6f7f2",
+      "beforeHash": "ff3f017c9fc1ac6e8db3e0cabe58caeac26c5fd91b5b0fff3dd11b99077a8ccc",
+      "finalHash": "ff3f017c9fc1ac6e8db3e0cabe58caeac26c5fd91b5b0fff3dd11b99077a8ccc",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -364423,8 +365636,8 @@
         "locator": "items[296]",
         "resource": "dictionary"
       },
-      "beforeHash": "af253ba6b3880e10383ba5d0c88549691e11fd386145da946382843e681cbff3",
-      "finalHash": "af253ba6b3880e10383ba5d0c88549691e11fd386145da946382843e681cbff3",
+      "beforeHash": "907d503ff528638270a3018af84929233c911ee2d41214e778bb18d663b3c30f",
+      "finalHash": "907d503ff528638270a3018af84929233c911ee2d41214e778bb18d663b3c30f",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -364440,8 +365653,8 @@
         "locator": "items[297]",
         "resource": "dictionary"
       },
-      "beforeHash": "00c896ec9a6ba713e0e6933f277e9cc55787a0ffa0f4a22143b5499d64084456",
-      "finalHash": "00c896ec9a6ba713e0e6933f277e9cc55787a0ffa0f4a22143b5499d64084456",
+      "beforeHash": "02beb94ca895e66f7abcef0696d6c15371fd0f9a814e46d816389ea33c0853ac",
+      "finalHash": "02beb94ca895e66f7abcef0696d6c15371fd0f9a814e46d816389ea33c0853ac",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -433041,8 +434254,8 @@
         "locator": "items[28]",
         "resource": "listening"
       },
-      "beforeHash": "6a930efdfd561a921c3892d6f810a9330fdb776e057a7cf6fdadaa9802362820",
-      "finalHash": "6a930efdfd561a921c3892d6f810a9330fdb776e057a7cf6fdadaa9802362820",
+      "beforeHash": "fd287a9212183207fe51bd1367c36e8e4863176f2098e8e16b286ada5d7d8b2a",
+      "finalHash": "fd287a9212183207fe51bd1367c36e8e4863176f2098e8e16b286ada5d7d8b2a",
       "reasonKind": "deterministic-derivation",
       "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
       "confidence": 0.99,
@@ -433051,12 +434264,12 @@
       ],
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 69
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 122
+          "sourceId": "tobira-2009",
+          "page": 52
         }
       ]
     },
@@ -440792,8 +442005,8 @@
         "locator": "reference[30]",
         "resource": "grammar"
       },
-      "beforeHash": "c91e0e07a3e139e614cccf42ad90f4b8dd977ae9980b6e9263c3d12234a067f8",
-      "finalHash": "c91e0e07a3e139e614cccf42ad90f4b8dd977ae9980b6e9263c3d12234a067f8",
+      "beforeHash": "b08968bdccf1b5f4c59d62091f39fb89a1448bda948816a8745e92ab8515a2c9",
+      "finalHash": "b08968bdccf1b5f4c59d62091f39fb89a1448bda948816a8745e92ab8515a2c9",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -445428,40 +446641,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_31-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[60]",
         "resource": "writing"
       },
-      "beforeHash": "7a0bafd26467e5c47e0bdc98304e275112231ae2df724ba27a02cd22a393c192",
-      "finalHash": "7a0bafd26467e5c47e0bdc98304e275112231ae2df724ba27a02cd22a393c192",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "3cf2ce101e04061a8fc7d5c8a802c7be3201958901f25a3763007e157ad2a646",
+      "finalHash": "3cf2ce101e04061a8fc7d5c8a802c7be3201958901f25a3763007e157ad2a646",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_31-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_31-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[61]",
         "resource": "writing"
       },
-      "beforeHash": "7466bf9ebb623d4bfc4ef096fc4c760728801f1f2371b79c8533e37322ab2059",
-      "finalHash": "7466bf9ebb623d4bfc4ef096fc4c760728801f1f2371b79c8533e37322ab2059",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "6b3168c20a9c74d4cbe370b9737194cf45f4df2ec6a06efbb3a3bf98cc52d9e7",
+      "finalHash": "6b3168c20a9c74d4cbe370b9737194cf45f4df2ec6a06efbb3a3bf98cc52d9e7",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_31-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 102
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a2-a2_mod_01-1",

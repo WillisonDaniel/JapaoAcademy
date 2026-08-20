@@ -8476,3 +8476,25 @@ CURSO_A1_DADOS[19].editorialReview = {
     connectors.stage4_dialog = [{scenario:"Situação 1: Um amigo conta quem irá à festa.",npcName:"Amigo",npcMessage:"わたしは パーティーに いきます。",options:[{text:"わたし も いきます。",feedback:"も acrescenta você ao grupo que irá à festa.",isCorrect:true},{text:"わたし は でも いきます。",feedback:"でも não substitui は dessa forma.",isCorrect:false},{text:"わたし は たのしい です。",feedback:"A frase não responde à informação dada.",isCorrect:false}]}];
     connectors.editorialReview = corrected;
 })();
+
+(function reviewA1Module31() {
+    const module = CURSO_A1_DADOS[30];
+    module.title = "Revisão guiada da trilha A1";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Omedetou gozaimasu. A1 no naiyou o fukushuu shimashou.",
+        missionTitle: "Revisão final A1",
+        missionDescription: "Retome, em situações curtas, as estruturas e o vocabulário praticados ao longo da trilha A1."
+    });
+    [["空港（くうこう）", "kuukou", "aeroporto", "Lugar usado no cenário de revisão."], ["パスポート", "pasupooto", "passaporte", "Documento de viagem."], ["おめでとうございます", "omedetou gozaimasu", "parabéns", "Expressão polida de felicitação."], ["完了（かんりょう）", "kanryou", "conclusão", "Substantivo que indica finalização."]].forEach((v,i)=>Object.assign(module.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(module.stage2_drops[4], { title: "Retomar e praticar", rule: "A revisão reúne estruturas já apresentadas no A1. Ela mede somente a prática interna da trilha.", formula: "[conteúdo estudado] + [prática de revisão]", example: "駅はどこですか。電車で行きます。" });
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "パスポート を おねがいします", translation: "Passaporte, por favor.", chunks: ["パスポート","を","おねがいします"] },
+        { sentenceJp: "えき は どこ です か", translation: "Onde fica a estação?", chunks: ["えき","は","どこ","です","か"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: No balcão de informações, você procura a estação.", npcName: "Atendente", npcMessage: "なにか おこまりですか。", options: [{ text: "すみません、えき は どこ です か。", feedback: "A pergunta pede a localização da estação.", isCorrect: true }, { text: "えき で いきます。", feedback: "A frase não formula a pergunta de localização.", isCorrect: false }, { text: "パスポート です。", feedback: "A resposta não se relaciona à pergunta.", isCorrect: false }] },
+        { scenario: "Situação 2: Você quer informar seu meio de transporte.", npcName: "Colega", npcMessage: "なにで いきますか。", options: [{ text: "でんしゃ で いきます。", feedback: "A resposta informa o meio de transporte com で.", isCorrect: true }, { text: "でんしゃ は どこ ですか。", feedback: "A frase pergunta outra informação.", isCorrect: false }, { text: "でんしゃ が います。", feedback: "O verbo não é o usado para esse sentido.", isCorrect: false }] },
+        { scenario: "Situação 3: Você conclui a revisão interna da trilha.", npcName: "Instrutor", npcMessage: "A1 の ふくしゅう は どう でしたか。", options: [{ text: "たのしかった です。ありがとう ございます。", feedback: "A resposta comenta a revisão e agradece de forma polida.", isCorrect: true }, { text: "わたし は A1 です。", feedback: "A frase não responde à pergunta sobre a revisão.", isCorrect: false }, { text: "さようなら です。", feedback: "A expressão não é uma resposta adequada ao contexto.", isCorrect: false }] }
+    ];
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

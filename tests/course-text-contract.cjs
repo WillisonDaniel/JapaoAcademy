@@ -185,7 +185,7 @@ function stripEditorialFields(value) {
 
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
-        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '1f76c25c60727353900a29dc2867bdd4e04495eadf4eb93c7089d8cc795662e4'],
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '23119266b91e7fa0f1ea4609816655044a24d638eda836bdaa31c9acc5521b6b'],
         ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '44179791ab39cbc5f321fde9a32de50c797c2f3cd7beeb4e8fd2965ad6f8a9ff'],
         ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '5a26923d65d10de65b41e445d87bfd9213429c203b19d317afcc7bd1973fd754'],
         ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '5609f87f3d464fd364bbcbf69427dc6ccd9c272fec0de3b58312820efb7e782f']
@@ -206,9 +206,9 @@ run('A1 e A2 possuem os 150 contratos editoriais previstos', () => {
     assert.equal(dialogueContracts, 89);
     assert.equal(audioContracts + dialogueContracts, 150);
     assert.equal(modules.filter(module => module.canDo).length, 61);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 31);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 30);
     assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'approved').length, 1);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 29);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 30);
     modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
         if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
     });
