@@ -14,7 +14,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_07 | stage1_context.audio | 私は学生です。田中さんは会社員です。 | Watashi wa gakusei desu. Tanaka-san wa kaishain desu. | Sou estudante. O Sr. Tanaka é funcionário de uma empresa. | corrected |
 | a1_mod_08 | stage1_context.audio | あなたは学生ですか。あの人は誰ですか。 | Anata wa gakusei desu ka. Ano hito wa dare desu ka. | Você é estudante? Quem é aquela pessoa? | corrected |
 | a1_mod_09 | stage1_context.audio | 一、二、三！二十五歳です。 | Ichi, ni, san! Nijuu-go sai desu. | Um, dois, três! Tenho 25 anos. | corrected |
-| a1_mod_10 | stage1_context.audio | 「私もブラジル人です。」「そうですか！」 | Watashi mo Burajiru-jin desu. Sou desu ka! | Eu também sou brasileiro. É mesmo? | pending-human-review |
+| a1_mod_10 | stage1_context.audio | 「私もブラジル人です。」「そうですか！」 | Watashi mo Burajiru-jin desu. Sou desu ka! | Eu também sou brasileiro. É mesmo? | corrected |
 | a1_mod_11 | stage1_context.audio | それは何ですか。 | Sore wa nan desu ka. | O que é isso? | pending-human-review |
 | a1_mod_12 | stage1_context.audio | 猫がいます。本があります。 | Neko ga imasu. Hon ga arimasu. | Há um gato. Há um livro. | pending-human-review |
 | a1_mod_13 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | pending-human-review |

@@ -8111,3 +8111,36 @@ CURSO_A1_DADOS[7].editorialReview = {
         sources: ["genki-2e-1-textbook", "tobira-2009"]
     };
 })();
+
+(function reviewA1Module10() {
+    const module = CURSO_A1_DADOS[9];
+    module.title = "Partícula も e そうですか";
+    Object.assign(module.stage1_context, { audioGuide: "Watashi mo Burajiru-jin desu. Sou desu ka.", missionDescription: "Use も para incluir um segundo tópico e pratique そうですか para indicar que você compreendeu uma informação." });
+    Object.assign(module.stage2_drops[0], { romaji: "Mo", translation: "também; até (partícula de inclusão)", timeContext: "Em わたしも, も ocupa o lugar de は para marcar “eu também”." });
+    Object.assign(module.stage2_drops[1], { kanji: "わたしも", romaji: "Watashi mo", timeContext: "Uma resposta possível quando a mesma informação também se aplica a você." });
+    Object.assign(module.stage2_drops[2], { kanji: "そうです", romaji: "Sou desu", translation: "É isso; é verdade", timeContext: "Pode confirmar uma informação, conforme o contexto." });
+    Object.assign(module.stage2_drops[3], { kanji: "そうですか", romaji: "Sou desu ka", translation: "É mesmo?; entendo.", timeContext: "Indica que você recebeu e compreendeu a informação anterior." });
+    Object.assign(module.stage2_drops[4], { title: "Inclusão com は e も", rule: "Quando も marca que o mesmo predicado também se aplica ao tópico, ele pode ocupar a posição de は: わたしは学生です → わたしも学生です. Outras combinações de partículas exigem estudo posterior.", formula: "A は B です。→ C も B です。", example: "ケンジさんは学生です。わたしも学生です。 (Kenji é estudante. Eu também sou estudante.)" });
+    module.stage3_practice = [
+        { question: "1. Seu colega diz: “わたしは会社員です”. Você também é funcionário. Como responde?", options: [{ label: "🤝 わたしも会社員です。 (Watashi mo kaishain desu.)", isCorrect: true }, { label: "❌ わたしはも会社員です。", isCorrect: false }, { label: "❓ わたしは会社員ですか。", isCorrect: false }] },
+        { question: "2. Nesta frase, qual forma marca “eu também sou brasileiro”?", options: [{ label: "わたしもブラジル人です。", isCorrect: true }, { label: "わたしはもブラジル人です。", isCorrect: false }, { label: "もわたしはブラジル人です。", isCorrect: false }] },
+        { question: "3. Qual expressão mostra que você entendeu uma informação nova?", options: [{ label: "🤔 そうですか。 (Sou desu ka.)", isCorrect: true }, { label: "👋 さようなら。", isCorrect: false }, { label: "🙅 いいえ。", isCorrect: false }] },
+        { question: "4. Como dizer “Kenji também é médico”?", options: [{ label: "ケンジさんはいしゃです。", isCorrect: false }, { label: "いしゃもケンジさんです。", isCorrect: false }, { label: "ケンジさんもいしゃです。", isCorrect: true }] },
+        { question: "5. Qual é um sentido possível de そうです?", options: [{ label: "É isso; é verdade.", isCorrect: true }, { label: "Quem é?", isCorrect: false }, { label: "Até logo.", isCorrect: false }] }
+    ];
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "わたし も がくせい です", translation: "Eu também sou estudante.", chunks: ["わたし", "も", "がくせい", "です"] },
+        { sentenceJp: "ケンジさん も いしゃ です", translation: "Kenji também é médico.", chunks: ["ケンジさん", "も", "いしゃ", "です"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: Em uma apresentação, Lucas diz que é brasileiro.", npcName: "Lucas", npcMessage: "わたしはブラジル人です。", options: [{ text: "そうですか。わたしもブラジル人です。", feedback: "Você reconheceu a informação e indicou que ela também se aplica a você.", isCorrect: true }, { text: "いいえ、わたしはブラジル人です。", feedback: "いいえ contradiz a informação anterior, embora sua frase seguinte diga o mesmo.", isCorrect: false }, { text: "さようなら。", feedback: "A resposta não continua a apresentação.", isCorrect: false }] },
+        { scenario: "Situação 2: A Dra. Takahashi comenta que seu irmão é engenheiro.", npcName: "Dra. Takahashi", npcMessage: "わたしのあにもエンジニアです。", options: [{ text: "そうですか。", feedback: "そうですか mostra que você compreendeu o comentário.", isCorrect: true }, { text: "わたしはもエンジニアです。", feedback: "Nesta construção, も ocupa a posição de は.", isCorrect: false }, { text: "だれですか。", feedback: "A pergunta não responde ao comentário apresentado.", isCorrect: false }] },
+        { scenario: "Situação 3: Em uma revisão, o professor pergunta se você é estudante.", npcName: "Professor Tanaka", npcMessage: "学生ですか。", options: [{ text: "はい、学生です。", feedback: "A resposta confirma diretamente a informação solicitada.", isCorrect: true }, { text: "いいえ、だれですか。", feedback: "A frase não responde à pergunta.", isCorrect: false }, { text: "ブラジル語です。", feedback: "A resposta precisa indicar se você é estudante.", isCorrect: false }] }
+    ];
+    module.stage5_quiz[0] = { question: "Em わたしも学生です, qual é a função de も?", options: ["Indicar que a mesma informação também se aplica ao tópico.", "Aparecer sempre antes do verbo.", "Formar uma pergunta."], correctIndex: 0 };
+    module.stage5_quiz[1].question = "Qual é um significado possível de ～も?";
+    module.stage5_quiz[2].question = "Qual é o sentido de わたしも?";
+    module.stage5_quiz[3].question = "Qual é o sentido de そうです?";
+    module.stage5_quiz[4].question = "Qual é o sentido de そうですか?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
