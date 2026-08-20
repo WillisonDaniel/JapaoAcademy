@@ -14270,7 +14270,7 @@
         "kind": "module-metadata"
       },
       "beforeHash": "e0f51fe8d8ab6171fa56f9f91dc61eb5938d2a68fc034f220d4fb089cf4ecc82",
-      "finalHash": "e8ed7f67b3f7ad9b8cffae40abde14bafd2bcde32a812a6305db1e71e99a5e74",
+      "finalHash": "deaa4c08b0b34b5f1d8caa49fc91e593f0582a5b65e60948a12e9557bbc4f485",
       "beforeValue": {
         "title": "Perguntando 'Quando?' & Datas (Itsu, -gatsu, -nichi)",
         "sectionTitle": "Localização, Lugares & Movimento",
@@ -14279,25 +14279,27 @@
         "missionDescription": "Aprenda a perguntar 'quando?' (itsu) e a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi), e finalize a Seção 3 com maestria!"
       },
       "finalValue": {
-        "title": "Perguntando 'Quando?' & Datas (Itsu, -gatsu, -nichi)",
+        "title": "いつ e datas do calendário",
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
-        "missionTitle": "Objetivo de Hoje: Mestre do Calendário",
-        "missionDescription": "Aprenda a perguntar 'quando?' (itsu), a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi) e conclua a Seção 3."
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique いつ e as leituras de meses e dias para perguntar e informar datas."
       },
-      "reasonKind": "source-correction",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
           "sourceId": "genki-2e-1-textbook",
           "page": 127
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 180
+          "sourceId": "tobira-2009",
+          "page": 307
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e8ed7f67b3f7ad9b8cffae40abde14bafd2bcde32a812a6305db1e71e99a5e74"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage1-context",
@@ -14310,7 +14312,7 @@
         "kind": "context"
       },
       "beforeHash": "5c262924dc6fc92e3579ff8216fd1a50f735a73bca8f41ffae59146cb4d7b4d9",
-      "finalHash": "7308c6cfcfe2ef6fa00229a5c619dc783192459f025ce90074f6b17debc85f5c",
+      "finalHash": "ca7240a583d7b727427c2790994f0ddc2eb23f6b419108d09803b12e9ed3e3f6",
       "beforeValue": {
         "audioGuide": "Tanjoubi wa itsu desu ka?",
         "missionTitle": "Objetivo de Hoje: Mestre do Calendário",
@@ -14326,8 +14328,8 @@
       },
       "finalValue": {
         "audioGuide": "Tanjoubi wa itsu desu ka?",
-        "missionTitle": "Objetivo de Hoje: Mestre do Calendário",
-        "missionDescription": "Aprenda a perguntar 'quando?' (itsu), a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi) e conclua a Seção 3.",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pratique いつ e as leituras de meses e dias para perguntar e informar datas.",
         "audio": {
           "displayText": "誕生日はいつですか。",
           "audioText": "誕生日はいつですか。",
@@ -14338,23 +14340,25 @@
         }
       },
       "reasonKind": "naturalness",
-      "rationale": "O valor foi corrigido e conferido em páginas localizadas do corpus; campos dependentes foram mantidos sincronizados.",
-      "confidence": 0.94,
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
           "sourceId": "genki-2e-1-textbook",
           "page": 127
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 180
+          "sourceId": "tobira-2009",
+          "page": 307
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7308c6cfcfe2ef6fa00229a5c619dc783192459f025ce90074f6b17debc85f5c"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage2_drops[0]",
@@ -14362,16 +14366,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "a6af630edd30b76ceddcb90f2c8c0c4e643edf390fc00b044cd43f9985dc56c8",
-      "finalHash": "a6af630edd30b76ceddcb90f2c8c0c4e643edf390fc00b044cd43f9985dc56c8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "89b2b849242ee1965121bb1861e55722871491883e537ddbc5300aacc01672b2",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "いつ",
+        "romaji": "itsu",
+        "translation": "quando?",
+        "timeContext": "Palavra interrogativa usada para perguntar quando algo acontece."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a6af630edd30b76ceddcb90f2c8c0c4e643edf390fc00b044cd43f9985dc56c8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage2_drops[1]",
@@ -14379,16 +14397,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "2ef03a6422b147d715df37e1675e81ce24a38d0dc51578185b68fc879e64a091",
-      "finalHash": "2ef03a6422b147d715df37e1675e81ce24a38d0dc51578185b68fc879e64a091",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e06f2fab323efea70a3c340de0fba6152035d9b4b70cfbd0465bad3d0428d4d0",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "きょう / あした / きのう",
+        "romaji": "kyou / ashita / kinou",
+        "translation": "hoje / amanhã / ontem",
+        "timeContext": "Em usos temporais básicos, normalmente aparecem sem に; outras partículas dependem da função na frase."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "2ef03a6422b147d715df37e1675e81ce24a38d0dc51578185b68fc879e64a091"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage2_drops[2]",
@@ -14396,16 +14428,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "a910e1a0ce1f98618f0e2bc7ffa3406bfdc8449d7add893a5f5a5c8b1447e5b4",
-      "finalHash": "a910e1a0ce1f98618f0e2bc7ffa3406bfdc8449d7add893a5f5a5c8b1447e5b4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6cf745d736815490e7d6ef0147cdef681bea54eed13beae0a04df25e9c538fb5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～月（～がつ）",
+        "romaji": "-gatsu",
+        "translation": "mês do calendário",
+        "timeContext": "Exemplo: 一月（いちがつ） = janeiro. Algumas leituras, como 四月（しがつ）, precisam ser aprendidas como formas do calendário."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a910e1a0ce1f98618f0e2bc7ffa3406bfdc8449d7add893a5f5a5c8b1447e5b4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage2_drops[3]",
@@ -14413,16 +14459,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "e504a61631e13d16ea083527cc2a55a14b5d75ed60dba95f29dadd4321a2689d",
-      "finalHash": "e504a61631e13d16ea083527cc2a55a14b5d75ed60dba95f29dadd4321a2689d",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ba54545a07813e8ef38e72580a2c24d055ab8351700c310318fcbfce9f6c3ddd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～日（～にち）",
+        "romaji": "-nichi",
+        "translation": "dia do mês",
+        "timeContext": "As datas incluem leituras especiais, entre elas ついたち, ふつか, じゅうよっか, はつか e にじゅうよっか. Exemplo: 15日 = じゅうごにち."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e504a61631e13d16ea083527cc2a55a14b5d75ed60dba95f29dadd4321a2689d"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage2_drops[4]",
@@ -14430,16 +14490,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "f8b25725b7236a926dc37cac54c0e6016671dcdf117bb93c9c999eb7abc44c04",
-      "finalHash": "f8b25725b7236a926dc37cac54c0e6016671dcdf117bb93c9c999eb7abc44c04",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "566197e0d1bc3bff30c5b1a3281a70bc75fb1d852a0f8f53ac984138c275e687",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Perguntar e informar datas",
+        "rule": "Para perguntar quando, use いつ. Uma data pode combinar mês e dia, respeitando as leituras próprias do calendário.",
+        "formula": "たんじょうびは いつですか。 (Tanjoubi wa itsu desu ka.)",
+        "example": "しがつ じゅうごにちです。 (Shigatsu juugonichi desu.) — É 15 de abril."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f8b25725b7236a926dc37cac54c0e6016671dcdf117bb93c9c999eb7abc44c04"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage3_practice[0]",
@@ -14447,16 +14521,40 @@
         "kind": "practice"
       },
       "beforeHash": "b843c5d433a42f193eb01c08dfa86823718a03d6ac80d3e1402c32695371be8a",
-      "finalHash": "b843c5d433a42f193eb01c08dfa86823718a03d6ac80d3e1402c32695371be8a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "766ff2e48a89783ade323445ac33ea7f53cc2a3fc062cb6a3faada049074843b",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "1. Como se pergunta “Quando é a festa?”",
+        "options": [
+          {
+            "label": "パーティーは どこですか。",
+            "isCorrect": false
+          },
+          {
+            "label": "パーティーは いつですか。",
+            "isCorrect": true
+          },
+          {
+            "label": "パーティーは だれですか。",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b843c5d433a42f193eb01c08dfa86823718a03d6ac80d3e1402c32695371be8a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage3_practice[1]",
@@ -14464,16 +14562,40 @@
         "kind": "practice"
       },
       "beforeHash": "a277c2403b102d35dc5119128ad0a8f85ed6495ff01f44fb69679fe66ffb9fa6",
-      "finalHash": "a277c2403b102d35dc5119128ad0a8f85ed6495ff01f44fb69679fe66ffb9fa6",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5b0aaf06156823ef4db6ee4e299bc2244d4e2cf3f45e660bdc4dad72625f4611",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "2. Qual é a leitura de 二月?",
+        "options": [
+          {
+            "label": "にがつ (nigatsu)",
+            "isCorrect": true
+          },
+          {
+            "label": "ににち (ninichi)",
+            "isCorrect": false
+          },
+          {
+            "label": "にじ (niji)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "a277c2403b102d35dc5119128ad0a8f85ed6495ff01f44fb69679fe66ffb9fa6"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage3_5_sentenceBuilder[0]",
@@ -14481,16 +14603,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "bcbabe8df3d4b555235371e76439d714d3a589a41f34eec61fe0cb724ed4d9a4",
-      "finalHash": "bcbabe8df3d4b555235371e76439d714d3a589a41f34eec61fe0cb724ed4d9a4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "0960c0fd01b1cf897795c57a8537b85f1f204193f9bb2802de2ca7b407fc24c9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "たんじょうび は いつ です か",
+        "translation": "Quando é o aniversário?",
+        "chunks": [
+          "たんじょうび",
+          "は",
+          "いつ",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bcbabe8df3d4b555235371e76439d714d3a589a41f34eec61fe0cb724ed4d9a4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage3_5_sentenceBuilder[1]",
@@ -14498,16 +14638,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "ddcbd886b1b2accc31efcfb2885348e3976f36a25936390949844decb9ecdcee",
-      "finalHash": "ddcbd886b1b2accc31efcfb2885348e3976f36a25936390949844decb9ecdcee",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "82ab44069af35d96771e0186425c982fb91495c46551cd5f76952946975672dd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "しがつ じゅうごにち です",
+        "translation": "É 15 de abril.",
+        "chunks": [
+          "しがつ",
+          "じゅうごにち",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ddcbd886b1b2accc31efcfb2885348e3976f36a25936390949844decb9ecdcee"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage4_dialog[0]",
@@ -14515,16 +14671,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "06dffb7d298ec27cb8f8fd58ff22ff92a39ec8ae3d2b8f131cb37632bb6dce00",
-      "finalHash": "06dffb7d298ec27cb8f8fd58ff22ff92a39ec8ae3d2b8f131cb37632bb6dce00",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "fbab98df2b8de5a5d4ba214ea658a78901b9b945b329ad20b3196c38b8dccc17",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 307
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você quer marcar um encontro com um amigo e pergunta quando ele está livre.",
+        "npcName": "Amigo Kenji",
+        "npcMessage": "いいね！ いつが いいですか。 (Boa ideia! Quando seria bom?)",
+        "options": [
+          {
+            "text": "あしたは どうですか。 (Que tal amanhã?)",
+            "feedback": "A resposta propõe amanhã de forma adequada ao contexto.",
+            "isCorrect": true
+          },
+          {
+            "text": "あした で いきます。",
+            "feedback": "Esta forma não é usada para fazer a sugestão apresentada.",
+            "isCorrect": false
+          },
+          {
+            "text": "あした が あります。",
+            "feedback": "あります expressa existência e não responde adequadamente à escolha de uma data.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "06dffb7d298ec27cb8f8fd58ff22ff92a39ec8ae3d2b8f131cb37632bb6dce00"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage5_quiz[0]",
@@ -14532,16 +14721,32 @@
         "kind": "quiz"
       },
       "beforeHash": "3d8e6b79236400554cde689f0c7403caea0632460e75f08e2e22acb67957e550",
-      "finalHash": "3d8e6b79236400554cde689f0c7403caea0632460e75f08e2e22acb67957e550",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c87756794cd5286747fa4633d1c3cd4c770f32709f18948008f65e10cf3d6ccb",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual palavra é usada para perguntar “quando?”",
+        "options": [
+          "Doko",
+          "Dare",
+          "Itsu"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3d8e6b79236400554cde689f0c7403caea0632460e75f08e2e22acb67957e550"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage5_quiz[1]",
@@ -14549,16 +14754,32 @@
         "kind": "quiz"
       },
       "beforeHash": "12fabe6f3774a73fa4977eae7e41bd3be906a40dc84b6ac4ef13ed5ee1c7dd8a",
-      "finalHash": "12fabe6f3774a73fa4977eae7e41bd3be906a40dc84b6ac4ef13ed5ee1c7dd8a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d3e84cedf4797353f941262b6e48a9ea63df8df772c5a7fc728bc3759b8bcea4",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de いつ (itsu)?",
+        "options": [
+          "Quando?",
+          "Hoje / Amanhã / Ontem",
+          "Sufixo para Mês"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "12fabe6f3774a73fa4977eae7e41bd3be906a40dc84b6ac4ef13ed5ee1c7dd8a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage5_quiz[2]",
@@ -14566,16 +14787,32 @@
         "kind": "quiz"
       },
       "beforeHash": "f94b70082512a47a2063a088393cefb7d34e903f7579db804c71147f18be5d62",
-      "finalHash": "f94b70082512a47a2063a088393cefb7d34e903f7579db804c71147f18be5d62",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7df679e7737ef047903d57bd4f28deec60405054133759a9248afa759fc011d1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de きょう / あした / きのう?",
+        "options": [
+          "Quando?",
+          "Hoje / Amanhã / Ontem",
+          "Sufixo para Mês"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f94b70082512a47a2063a088393cefb7d34e903f7579db804c71147f18be5d62"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage5_quiz[3]",
@@ -14583,16 +14820,32 @@
         "kind": "quiz"
       },
       "beforeHash": "160cf407ef1cdc65c32fe07300fb160ec724a777ad0151afa611490a3993cb46",
-      "finalHash": "160cf407ef1cdc65c32fe07300fb160ec724a777ad0151afa611490a3993cb46",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b1f596e865c2e11f159ea3d1ee713ce9ae8347bef5db4eedc5301de8e34fdc97",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "O que ～月（～がつ） indica em uma data?",
+        "options": [
+          "Hoje / Amanhã / Ontem",
+          "Quando?",
+          "Sufixo para Mês"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "160cf407ef1cdc65c32fe07300fb160ec724a777ad0151afa611490a3993cb46"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_15-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_15;stage5_quiz[4]",
@@ -14600,11 +14853,27 @@
         "kind": "quiz"
       },
       "beforeHash": "bb985a39195c5f4b19ee7c2885b2cde083fa5444105714e3b82a6a873f59374b",
-      "finalHash": "bb985a39195c5f4b19ee7c2885b2cde083fa5444105714e3b82a6a873f59374b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "5fd6e0fc6c45e8e288dc1390d897528ee1696ff89a31d9d9bf8eb723ed45a9b7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ],
+      "finalValue": {
+        "question": "O que ～日（～にち） indica em uma data?",
+        "options": [
+          "Sufixo para Dia do Mês",
+          "Quando?",
+          "Hoje / Amanhã / Ontem"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bb985a39195c5f4b19ee7c2885b2cde083fa5444105714e3b82a6a873f59374b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_16-module-metadata",
@@ -357659,8 +357928,8 @@
         "locator": "items[207]",
         "resource": "dictionary"
       },
-      "beforeHash": "5b7991be683278ceb49644c9bbf43e2af066ea6cb443bb8d32adb9d99f4b7fac",
-      "finalHash": "5b7991be683278ceb49644c9bbf43e2af066ea6cb443bb8d32adb9d99f4b7fac",
+      "beforeHash": "cfc699b202cf59114586001a65502787d84fdacd00a68e1b6a7f11b8720af5bd",
+      "finalHash": "cfc699b202cf59114586001a65502787d84fdacd00a68e1b6a7f11b8720af5bd",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -357676,8 +357945,8 @@
         "locator": "items[208]",
         "resource": "dictionary"
       },
-      "beforeHash": "a60eb7bc269b1d71530d609af0d8560d96f06e9c6cf6ba573a6dde4e1a74dcf7",
-      "finalHash": "a60eb7bc269b1d71530d609af0d8560d96f06e9c6cf6ba573a6dde4e1a74dcf7",
+      "beforeHash": "7867cea9ed58e299075775ec8a7d366180ac10d5be5aade44db6f2bd1ab698bf",
+      "finalHash": "7867cea9ed58e299075775ec8a7d366180ac10d5be5aade44db6f2bd1ab698bf",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -357693,8 +357962,8 @@
         "locator": "items[209]",
         "resource": "dictionary"
       },
-      "beforeHash": "df4fc7e06a5a467ef2f25061f90da23227276f9fcbc13baecffe6590b63f4cab",
-      "finalHash": "df4fc7e06a5a467ef2f25061f90da23227276f9fcbc13baecffe6590b63f4cab",
+      "beforeHash": "beacd00518a784bed4d12b005733670e7c0920dee9f4a105280d0ff4138de6bd",
+      "finalHash": "beacd00518a784bed4d12b005733670e7c0920dee9f4a105280d0ff4138de6bd",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -357710,8 +357979,8 @@
         "locator": "items[210]",
         "resource": "dictionary"
       },
-      "beforeHash": "9aec124cc8927e2d865272d3064d32f6f114f1abe1a144bfa34619221bd48856",
-      "finalHash": "9aec124cc8927e2d865272d3064d32f6f114f1abe1a144bfa34619221bd48856",
+      "beforeHash": "213a5b27c1cfe1cbd213bacfb45dd354405f9f4e96a824f92a11444f15f493db",
+      "finalHash": "213a5b27c1cfe1cbd213bacfb45dd354405f9f4e96a824f92a11444f15f493db",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -357727,8 +357996,8 @@
         "locator": "items[211]",
         "resource": "dictionary"
       },
-      "beforeHash": "34576dc219edac60f1326b1ff8a353fc016ddb31a5f2b1500bcb67eae6a3e5d2",
-      "finalHash": "34576dc219edac60f1326b1ff8a353fc016ddb31a5f2b1500bcb67eae6a3e5d2",
+      "beforeHash": "dc78c738e533ba2f4d1d22146b02403227d19bb1affda7c2695ff52d3e9e4f1c",
+      "finalHash": "dc78c738e533ba2f4d1d22146b02403227d19bb1affda7c2695ff52d3e9e4f1c",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -427398,8 +427667,8 @@
         "locator": "items[14]",
         "resource": "listening"
       },
-      "beforeHash": "d0ee88daed71985a135c582d8e9f6fe4a1d41786e200cce8ef478f0b4e08a781",
-      "finalHash": "d0ee88daed71985a135c582d8e9f6fe4a1d41786e200cce8ef478f0b4e08a781",
+      "beforeHash": "d570860ebb52b1bbffc9076446c56db46bab428fcd28c52e757636e0b87bad96",
+      "finalHash": "d570860ebb52b1bbffc9076446c56db46bab428fcd28c52e757636e0b87bad96",
       "reasonKind": "deterministic-derivation",
       "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
       "confidence": 0.99,
@@ -427412,8 +427681,8 @@
           "page": 127
         },
         {
-          "sourceId": "shinkanzen-n1-kanji",
-          "page": 180
+          "sourceId": "tobira-2009",
+          "page": 307
         }
       ]
     },
@@ -435161,8 +435430,8 @@
         "locator": "reference[14]",
         "resource": "grammar"
       },
-      "beforeHash": "7aeb70870ef8c1ec86b2399c31ec1ba0a7a87a9ec5f367f53ed3753f7fda931d",
-      "finalHash": "7aeb70870ef8c1ec86b2399c31ec1ba0a7a87a9ec5f367f53ed3753f7fda931d",
+      "beforeHash": "684d430f63dee2112a265c341254c2cd5ded42896df6bacecd78fcef725fe144",
+      "finalHash": "684d430f63dee2112a265c341254c2cd5ded42896df6bacecd78fcef725fe144",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -439301,40 +439570,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_15-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[28]",
         "resource": "writing"
       },
-      "beforeHash": "fd180fbea1da638ae5e999ccb121fc07e84032f3558c72a80fbe22a09aa45dc2",
-      "finalHash": "fd180fbea1da638ae5e999ccb121fc07e84032f3558c72a80fbe22a09aa45dc2",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "cd56dceae98eefaac566a1621b76a6bac85b7f05a07990bcfd2f17cd54e645e9",
+      "finalHash": "cd56dceae98eefaac566a1621b76a6bac85b7f05a07990bcfd2f17cd54e645e9",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_15-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_15-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[29]",
         "resource": "writing"
       },
-      "beforeHash": "db56cca4656607d86188a6fd3e6ea4f020aa4045cc393437ba14e2c945fe8ec8",
-      "finalHash": "db56cca4656607d86188a6fd3e6ea4f020aa4045cc393437ba14e2c945fe8ec8",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "0e6ebe928706fe73dc04846ecbc185e82e95c51dd83263334f765943817362e4",
+      "finalHash": "0e6ebe928706fe73dc04846ecbc185e82e95c51dd83263334f765943817362e4",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_15-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 127
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_16-1",

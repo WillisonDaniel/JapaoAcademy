@@ -207,8 +207,20 @@ O módulo foi confrontado com Genki I, p. 231 e 236, e Tobira, p. 70. A revisão
 
 Após a propagação, o ledger global contém 6.182 aprovações, 681 correções e 16.671 casos inconclusivos. Os quatorze módulos já auditados somam 292 alvos canônicos sustentados; neste lote, 18 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
+## Lote A1-15
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 17 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo de datas agora distingue o uso temporal normalmente sem `に` de outros papéis possíveis das partículas, registra as leituras especiais de dias do mês além dos dez primeiros dias e substitui duas atividades de dar/receber, alheias ao tema, por construção de perguntas e respostas com datas. Também foram normalizados diálogo, Romaji, traduções e feedbacks sem alterar o XP ou o identificador do módulo.
+
+As decisões usam as tabelas de calendário e palavras temporais do *Genki I* (pp. 92 e 127) e uma segunda família editorial (*Tobira*, p. 307) para a conferência contextual. Após a propagação, o ledger global contém 6.182 aprovações, 698 correções e 16.654 casos inconclusivos. Os quinze módulos já auditados somam 309 alvos canônicos sustentados; neste lote, 17 alvos canônicos e duas projeções derivadas deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-15 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-16 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

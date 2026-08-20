@@ -3559,84 +3559,84 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_15",
-        "title": "Perguntando 'Quando?' & Datas (Itsu, -gatsu, -nichi)",
+        "title": "いつ e datas do calendário",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 110,
         "stage1_context": {
             "audioGuide": "Tanjoubi wa itsu desu ka?",
-            "missionTitle": "Objetivo de Hoje: Mestre do Calendário",
-            "missionDescription": "Aprenda a perguntar 'quando?' (itsu) e a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi), e finalize a Seção 3 com maestria!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pratique いつ e as leituras de meses e dias para perguntar e informar datas."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いつ",
-                "romaji": "Itsu",
-                "translation": "Quando?",
-                "timeContext": "A palavra interrogativa para tempo."
+                "romaji": "itsu",
+                "translation": "quando?",
+                "timeContext": "Palavra interrogativa usada para perguntar quando algo acontece."
             },
             {
                 "type": "vocab",
                 "kanji": "きょう / あした / きのう",
-                "romaji": "Kyou / Ashita / Kinou",
-                "translation": "Hoje / Amanhã / Ontem",
-                "timeContext": "Palavras essenciais de tempo que não usam partículas."
+                "romaji": "kyou / ashita / kinou",
+                "translation": "hoje / amanhã / ontem",
+                "timeContext": "Em usos temporais básicos, normalmente aparecem sem に; outras partículas dependem da função na frase."
             },
             {
                 "type": "vocab",
-                "kanji": "～がつ (月)",
+                "kanji": "～月（～がつ）",
                 "romaji": "-gatsu",
-                "translation": "Sufixo para Mês",
-                "timeContext": "Ex: いちがつ (Ichigatsu) = Janeiro."
+                "translation": "mês do calendário",
+                "timeContext": "Exemplo: 一月（いちがつ） = janeiro. Algumas leituras, como 四月（しがつ）, precisam ser aprendidas como formas do calendário."
             },
             {
                 "type": "vocab",
-                "kanji": "～にち (日)",
+                "kanji": "～日（～にち）",
                 "romaji": "-nichi",
-                "translation": "Sufixo para Dia do Mês",
-                "timeContext": "Ex: じゅうごにち (Juu-go-nichi) = Dia 15. (Atenção: os primeiros 10 dias têm leitura especial!)"
+                "translation": "dia do mês",
+                "timeContext": "As datas incluem leituras especiais, entre elas ついたち, ふつか, じゅうよっか, はつか e にじゅうよっか. Exemplo: 15日 = じゅうごにち."
             },
             {
                 "type": "grammar_pill",
-                "title": "Perguntando e Respondendo Datas",
-                "rule": "Para perguntar 'quando', use 'itsu'. Para responder com uma data, use a estrutura [Mês] + [Dia].",
-                "formula": "たんじょうび は いつ です か？ (Tanjoubi wa itsu desu ka?)",
-                "example": "しがつ じゅうごにち です (Shigatsu juu-go-nichi desu) ➔ É dia 15 de abril."
+                "title": "Perguntar e informar datas",
+                "rule": "Para perguntar quando, use いつ. Uma data pode combinar mês e dia, respeitando as leituras próprias do calendário.",
+                "formula": "たんじょうびは いつですか。 (Tanjoubi wa itsu desu ka.)",
+                "example": "しがつ じゅうごにちです。 (Shigatsu juugonichi desu.) — É 15 de abril."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se pergunta 'Quando é a festa?'",
+                "question": "1. Como se pergunta “Quando é a festa?”",
                 "options": [
                     {
-                        "label": "パーティー は どこ です か？",
+                        "label": "パーティーは どこですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "パーティー は いつ です か？",
+                        "label": "パーティーは いつですか。",
                         "isCorrect": true
                     },
                     {
-                        "label": "パーティー は だれ です か？",
+                        "label": "パーティーは だれですか。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Se 'ni' é 2 e 'gatsu' é mês, como se diz 'Fevereiro'?",
+                "question": "2. Qual é a leitura de 二月?",
                 "options": [
                     {
-                        "label": "にがつ (Nigatsu)",
+                        "label": "にがつ (nigatsu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "ににち (Ninichi)",
+                        "label": "ににち (ninichi)",
                         "isCorrect": false
                     },
                     {
-                        "label": "にじ (Niji)",
+                        "label": "にじ (niji)",
                         "isCorrect": false
                     }
                 ]
@@ -3644,25 +3644,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "ともだち に プレゼント を あげます",
-                "translation": "Darei um presente ao amigo.",
+                "sentenceJp": "たんじょうび は いつ です か",
+                "translation": "Quando é o aniversário?",
                 "chunks": [
-                    "ともだち",
-                    "に",
-                    "プレゼント",
-                    "を",
-                    "あげます"
+                    "たんじょうび",
+                    "は",
+                    "いつ",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "せんせい に ほん を もらいました",
-                "translation": "Recebi um livro do professor.",
+                "sentenceJp": "しがつ じゅうごにち です",
+                "translation": "É 15 de abril.",
                 "chunks": [
-                    "せんせい",
-                    "に",
-                    "ほん",
-                    "を",
-                    "もらいました"
+                    "しがつ",
+                    "じゅうごにち",
+                    "です"
                 ]
             }
         ],
@@ -3670,21 +3668,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você quer marcar um encontro com um amigo e pergunta quando ele está livre.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "いいね！ いつ が いい です か？ (Boa ideia! Quando é bom para você?)",
+                "npcMessage": "いいね！ いつが いいですか。 (Boa ideia! Quando seria bom?)",
                 "options": [
                     {
-                        "text": "あした は どう です か？ (Que tal amanhã?)",
-                        "feedback": "Perfeito! Você usou 'ashita' corretamente para sugerir um dia.",
+                        "text": "あしたは どうですか。 (Que tal amanhã?)",
+                        "feedback": "A resposta propõe amanhã de forma adequada ao contexto.",
                         "isCorrect": true
                     },
                     {
                         "text": "あした で いきます。",
-                        "feedback": "Incorreto. A estrutura está errada.",
+                        "feedback": "Esta forma não é usada para fazer a sugestão apresentada.",
                         "isCorrect": false
                     },
                     {
                         "text": "あした が あります。",
-                        "feedback": "Incorreto. Você disse 'Existe um amanhã'.",
+                        "feedback": "あります expressa existência e não responde adequadamente à escolha de uma data.",
                         "isCorrect": false
                     }
                 ]
@@ -3692,7 +3690,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual palavra usamos para perguntar 'Quando?'",
+                "question": "Qual palavra é usada para perguntar “quando?”",
                 "options": [
                     "Doko",
                     "Dare",
@@ -3701,7 +3699,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'いつ' (Itsu)?",
+                "question": "Qual é o sentido de いつ (itsu)?",
                 "options": [
                     "Quando?",
                     "Hoje / Amanhã / Ontem",
@@ -3710,7 +3708,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'きょう / あした / きのう' (Kyou / Ashita / Kinou)?",
+                "question": "Qual é o sentido de きょう / あした / きのう?",
                 "options": [
                     "Quando?",
                     "Hoje / Amanhã / Ontem",
@@ -3719,7 +3717,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra '～がつ (月)' (-gatsu)?",
+                "question": "O que ～月（～がつ） indica em uma data?",
                 "options": [
                     "Hoje / Amanhã / Ontem",
                     "Quando?",
@@ -3728,7 +3726,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra '～にち (日)' (-nichi)?",
+                "question": "O que ～日（～にち） indica em uma data?",
                 "options": [
                     "Sufixo para Dia do Mês",
                     "Quando?",
@@ -8182,6 +8180,13 @@ CURSO_A1_DADOS[12].editorialReview = {
 };
 
 CURSO_A1_DADOS[13].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[14].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
