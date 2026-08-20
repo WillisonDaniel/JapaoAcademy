@@ -78,6 +78,25 @@ function validateSources(catalog) {
     assert.equal(catalog.summary.verticalAttempts, 180, 'total de tentativas verticais mudou sem revisao do relatorio');
     assert.equal(catalog.summary.meanOcrConfidence, 86.27, 'confianca media OCR mudou sem revisao do relatorio');
     assert.match(String(catalog.audioCorpus.aggregateSha256 || ''), HASH, 'hash agregado do corpus de audio ausente');
+    assert.ok(Array.isArray(catalog.externalSources), 'catalogo: externalSources deve ser uma lista');
+    for (const source of catalog.externalSources) {
+        assert.ok(source.id && !ids.has(source.id), `fonte externa duplicada ou sem id: ${source.id}`);
+        ids.add(source.id);
+        assert.ok(['dataset', 'pdf'].includes(source.kind), `${source.id}: tipo externo invalido`);
+        assert.ok(/^https:\/\//.test(source.url || ''), `${source.id}: URL oficial ausente`);
+        assert.ok(/^scratch\//.test(source.scratchPath || ''), `${source.id}: artefato externo deve permanecer em scratch/`);
+        assert.match(String(source.sha256 || ''), HASH, `${source.id}: SHA-256 ausente ou invalido`);
+        assert.ok(Number.isInteger(source.bytes) && source.bytes > 0, `${source.id}: tamanho invalido`);
+        assert.ok(Array.isArray(source.roles) && source.roles.length > 0, `${source.id}: funcao editorial ausente`);
+        if (source.kind === 'pdf') {
+            assert.ok(Number.isInteger(source.pageCount) && source.pageCount > 0, `${source.id}: paginas invalidas`);
+            assert.equal(source.visualSampleStatus, 'inspected', `${source.id}: amostra visual nao inspecionada`);
+            assert.deepEqual(source.visualSamplePages,
+                [1, Math.max(1, Math.floor(source.pageCount / 2)), source.pageCount], `${source.id}: amostra visual invalida`);
+        } else {
+            assert.ok(source.locationScheme && typeof source.locationScheme === 'string', `${source.id}: esquema de localizacao ausente`);
+        }
+    }
     return ids;
 }
 
@@ -102,7 +121,7 @@ function validateLedger(ledger, sources) {
         const independentSources = new Set();
         for (const reference of decision.references) {
             assert.ok(sources.has(reference.sourceId), `${decision.id}: fonte inexistente ${reference.sourceId}`);
-            const source = catalog.sources.find(item => item.id === reference.sourceId);
+            const source = [...catalog.sources, ...catalog.externalSources].find(item => item.id === reference.sourceId);
             if (source.kind === 'pdf') {
                 assert.ok(Number.isInteger(reference.page) && reference.page >= 1 && reference.page <= source.pageCount,
                     `${decision.id}: pagina invalida em ${reference.sourceId}`);
@@ -128,6 +147,12 @@ function validateLocalSources(catalog) {
         assert.equal(fs.statSync(file).size, source.bytes, `${source.id}: tamanho local divergiu`);
         assert.equal(hashFile(file), source.sha256, `${source.id}: hash local divergiu`);
     }
+    for (const source of catalog.externalSources) {
+        const file = path.join(ROOT, source.scratchPath);
+        assert.ok(fs.existsSync(file), `${source.id}: fonte externa local ausente`);
+        assert.equal(fs.statSync(file).size, source.bytes, `${source.id}: tamanho local divergiu`);
+        assert.equal(hashFile(file), source.sha256, `${source.id}: hash local divergiu`);
+    }
 }
 
 function validateOcrCoverage(catalog) {
@@ -147,6 +172,6 @@ validateLedger(ledger, sourceIds);
 if (CHECK_LOCAL) validateLocalSources(catalog);
 if (CHECK_OCR) validateOcrCoverage(catalog);
 
-console.log(`Ledger editorial japones: ${ledger.decisions.length} decisoes, ${catalog.sources.length} fontes rastreaveis.`);
+console.log(`Ledger editorial japones: ${ledger.decisions.length} decisoes, ${catalog.sources.length + catalog.externalSources.length} fontes rastreaveis.`);
 if (CHECK_LOCAL) console.log('Hashes locais do corpus: OK.');
 if (CHECK_OCR) console.log('Cobertura integral de extracao/OCR: OK.');

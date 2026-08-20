@@ -60,8 +60,13 @@ const kanjiN5Data = [
                     {
                         "word": "同音異義語 (O poder visual)",
                         "wordMeaning": "Palavras com o mesmo som e significados diferentes",
-                        "sentence": "「あめ」 pode ser 雨 (Chuva) ou 飴 (Bala de açúcar).",
-                        "sentenceMeaning": "O Kanji resolve o contexto visualmente sem margem para erro!"
+                        "sentence": "「あめ」は、漢字で「雨」または「飴」と書き分けます。",
+                        "sentenceMeaning": "A palavra ame pode ser escrita com os kanjis 雨 (chuva) ou 飴 (bala de açúcar), conforme o significado.",
+                        "editorialReview": {
+                            "status": "corrected",
+                            "phase": "17",
+                            "sourceIds": ["edrdg-kanjidic2"]
+                        }
                     }
                 ],
                 "radicals": [

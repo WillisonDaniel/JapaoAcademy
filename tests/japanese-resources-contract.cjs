@@ -47,16 +47,18 @@ test('chaves persistidas dos decks japoneses permanecem inalteradas', () => {
     Object.entries(expected).forEach(([type, key]) => assert.match(source, new RegExp(`t === '${type}'.*return '${key}'`)));
 });
 
-test('seis exemplos N5 saneados e excecao documentada permanecem rastreaveis', () => {
+test('sete exemplos N5 saneados permanecem rastreáveis sem exceção ativa', () => {
     const n5 = read('database/ja-JP/data_kanji_n5.js');
     ['訓読みで「食べる」と読みます。', '訓読みで「見る」と読みます。', '音読みの例は「水曜日」です。',
         '音読みの例は「学校」です。', '部首の木の下で人が休みます。', '部首として河と海を比べます。']
         .forEach(sentence => assert.ok(n5.includes(sentence), sentence));
     const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
-    assert.equal(occurrences.summary.byLevel.N5, 1);
+    assert.equal(occurrences.summary.byLevel.N5 || 0, 0);
     assert.equal(occurrences.summary.byLevel.N4 || 0, 0);
-    assert.equal(occurrences.summary.byRule['reading-pending-human-review'], 158);
-    assert.equal(occurrences.summary.bySeverity.allowed, 1);
+    assert.equal(occurrences.summary.byRule['reading-pending-human-review'] || 0, 0);
+    assert.equal(occurrences.summary.bySeverity.allowed, 0);
+    const ledger = JSON.parse(read('tests/JAPANESE_EDITORIAL_LEDGER.json'));
+    assert.ok(ledger.decisions.some(decision => decision.id === 'ja-n5-m01-kanji-00-example-01' && decision.state === 'corrected'));
 });
 
 test('snapshots estruturais N5 e N4 preservam modulos, itens e quizzes', () => {

@@ -35,12 +35,7 @@ const KANJI_SPECS = [
 ];
 
 // Exceções precisam identificar exatamente dataset, módulo, campo e regra.
-const ALLOWLIST = new Map([
-    [
-        'database/ja-JP/data_kanji_n5.js|1|kanjis[0].examples[1].sentence|kanji-example-missing-target',
-        'Exemplo introdutório compara homófonos e demonstra Kanji diferentes do caractere histórico 漢.'
-    ]
-]);
+const ALLOWLIST = new Map();
 
 function read(relativePath) {
     return fs.readFileSync(path.join(ROOT, relativePath), 'utf8');

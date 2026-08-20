@@ -1154,12 +1154,12 @@ test('auditoria editorial japonesa da Fase 2 permanece permanente e deterministi
         assert.match(audit, new RegExp(`rule: '${rule}'`), `regra ausente: ${rule}`);
     }
     assert.match(audit, /function runRuleFixtures\(\)/);
-    assert.match(audit, /const ALLOWLIST = new Map\(\[/);
+    assert.match(audit, /const ALLOWLIST = new Map\((?:\[)?/);
     assert.doesNotMatch(audit, /ALLOWLIST.*(?:N1|N2|N3).*\*/s, 'allowlist ampla por nível não é permitida');
 
     assert.equal(occurrences.schemaVersion, 1);
     assert.equal(occurrences.summary.bySeverity.blocking, 0);
-    assert.ok(occurrences.summary.bySeverity.editorial > 0, 'backlog editorial japonês deve permanecer inventariado');
+    assert.equal(occurrences.summary.bySeverity.editorial, 0, 'a fila objetiva concluída não deve reaparecer');
     assert.equal(Object.values(occurrences.metrics.course).reduce((sum, item) => sum + item.modules, 0), 105);
     assert.equal(Object.values(occurrences.metrics.kana).reduce((sum, item) => sum + item.modules, 0), 16);
     assert.equal(Object.values(occurrences.metrics.kanji).reduce((sum, item) => sum + item.modules, 0), 92);
@@ -1307,7 +1307,7 @@ test('recuperacao Kanji N2 da Fase 5 permanece rastreavel e nao aprovada', () =>
     assert.match(packageJson.scripts.test, /node tests\/kanji-n2-contract\.cjs/);
 });
 
-test('recuperacao Kanji N1 da Fase 6 preserva leituras ambiguas como pendentes', () => {
+test('recuperacao Kanji N1 da Fase 6 e decisões da Fase 17 permanecem rastreáveis', () => {
     const n1 = read('database/ja-JP/data_kanji_n1.js');
     const render = read('js/kanji/kanji-render.js');
     const audit = read('tests/japanese-editorial-audit.cjs');
@@ -1321,6 +1321,7 @@ test('recuperacao Kanji N1 da Fase 6 preserva leituras ambiguas como pendentes',
     assert.match(n1, /mechanically-convertible-onyomi/);
     assert.match(n1, /ambiguous-or-foreign/);
     assert.match(n1, /legacyValue/);
+    assert.match(n1, /N1_READING_EDITORIAL_CORRECTIONS/);
     assert.match(render, /Leitura pendente de revisão editorial/);
     assert.ok(page.indexOf('romaji-draft.js') < page.indexOf('data_kanji_n1.js'));
     assert.match(audit, /reading-pending-human-review/);
@@ -1328,10 +1329,10 @@ test('recuperacao Kanji N1 da Fase 6 preserva leituras ambiguas como pendentes',
     assert.equal(occurrences.summary.bySeverity.blocking, 0);
     const n1Occurrences = occurrences.occurrences.filter(item => item.level === 'N1');
     assert.equal(n1Occurrences.filter(item => item.rule.startsWith('kanji-example-')).length, 0);
-    assert.equal(n1Occurrences.filter(item => item.rule === 'reading-pending-human-review').length, 158);
+    assert.equal(n1Occurrences.filter(item => item.rule === 'reading-pending-human-review').length, 0);
     assert.match(contract, /565 leituras/);
     assert.match(contract, /fb568a7a2762c5391aa128332a23eebb6c7027a8bf4c8c9618dbfcc6fbedcf6d/);
-    assert.match(review, /ambiguous-or-foreign/);
+    assert.match(review, /\| corrected \|/i);
     assert.equal(packageJson.scripts['test:japanese-kanji-n1'], 'node tests/kanji-n1-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/kanji-n1-contract\.cjs/);
 });

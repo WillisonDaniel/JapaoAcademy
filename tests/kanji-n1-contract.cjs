@@ -41,13 +41,18 @@ run('gramatica N1 possui 24 contratos sem Romaji no texto principal', () => {
     contracts.forEach(module => { assert.ok(complete(module.grammar.content)); assert.match(module.grammar.content.displayText, JAPANESE); assert.doesNotMatch(module.grammar.content.displayText, /[A-Za-z]/); });
 });
 
-run('565 leituras foram classificadas sem inventar as 158 ambiguas', () => {
+run('565 leituras mantêm 407 conversões mecânicas e 158 decisões editoriais rastreadas', () => {
     const reviews = modules.flatMap(module => (module.kanjis || []).flatMap(kanji => ['onyomi','kunyomi'].flatMap(field =>
         kanji.readingEditorialReview && kanji.readingEditorialReview[field] ? [{ field, value: kanji[field], ...kanji.readingEditorialReview[field] }] : [])));
     assert.equal(reviews.length, 565);
     assert.equal(reviews.filter(item => item.classification === 'mechanically-convertible-onyomi').length, 407);
-    assert.equal(reviews.filter(item => item.classification === 'ambiguous-or-foreign').length, 158);
-    reviews.forEach(item => { assert.equal(item.status, 'pending-human-review'); if (item.proposal) assert.match(item.value, /[ァ-ヶ]/u); else assert.equal(item.value, item.legacyValue); });
+    assert.equal(reviews.filter(item => item.status === 'corrected' && item.phase === '17').length, 158);
+    reviews.filter(item => item.classification === 'mechanically-convertible-onyomi').forEach(item => {
+        assert.equal(item.status, 'pending-human-review'); assert.match(item.value, /[ァ-ヶ]/u);
+    });
+    reviews.filter(item => item.status === 'corrected').forEach(item => {
+        assert.ok(item.sourceIds.includes('edrdg-kanjidic2')); assert.notEqual(item.value, item.previousValue);
+    });
 });
 
 function stripEditorial(value) { if (Array.isArray(value)) return value.map(stripEditorial); if (!value || typeof value !== 'object') return value; const result={}; for (const [key,item] of Object.entries(value)) { if (!['content','editorialReview','readingEditorialReview'].includes(key)) result[key]=stripEditorial(item); } return result; }
@@ -60,11 +65,11 @@ run('snapshot estrutural N1 preserva tudo fora dos contratos autorizados', () =>
     assert.equal(hash, 'fb568a7a2762c5391aa128332a23eebb6c7027a8bf4c8c9618dbfcc6fbedcf6d');
 });
 
-run('auditoria zera exemplos N1 e mantém 158 leituras explicitamente pendentes', () => {
+run('auditoria zera exemplos e leituras objetivas N1 da Fase 17', () => {
     const report=JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json')); const n1=report.occurrences.filter(item=>item.level==='N1');
     assert.equal(report.summary.bySeverity.blocking,0); assert.equal(n1.filter(item=>item.rule.startsWith('kanji-example-')).length,0);
-    assert.equal(n1.filter(item=>item.rule==='reading-latin-only').length,0); assert.equal(n1.filter(item=>item.rule==='reading-pending-human-review').length,158);
-    const review=read('tests/JAPANESE_KANJI_N1_HUMAN_REVIEW.md'); assert.match(review,/ambiguous-or-foreign/); assert.doesNotMatch(review,/\| approved \|/i);
+    assert.equal(n1.filter(item=>item.rule==='reading-latin-only').length,0); assert.equal(n1.filter(item=>item.rule==='reading-pending-human-review').length,0);
+    const review=read('tests/JAPANESE_KANJI_N1_HUMAN_REVIEW.md'); assert.match(review,/\| corrected \|/i); assert.doesNotMatch(review,/ambiguous-or-foreign/);
 });
 
 run('contratos N3 e N2 permanecem estaveis', () => ['kanji-n3-contract.cjs','kanji-n2-contract.cjs'].forEach(file => {

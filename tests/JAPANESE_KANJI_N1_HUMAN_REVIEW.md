@@ -579,7 +579,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 7 | kanjis[28].examples[1].content | 陸 | 陸送 (rikusou) | トるククで陸送。 | Truck de rikusou. | Transporte terrestre via caminhão. | pending-human-review |
 | 7 | kanjis[29].examples[0].content | 送 | 送電 (souden) | ひグフヴおルたげ送電。 | High voltage souden. | Transmissão de energia de alta tensão. | pending-human-review |
 | 7 | kanjis[29].examples[1].content | 送 | 配送 (haisou) | ほめ配送。 | Home haisou. | Distribuição logística domiciliar. | pending-human-review |
-| 7 | kanjis[30].kunyomi | 配 | leitura: ambiguous-or-foreign | kubaru | kubaru | proposta:  | pending-human-review |
+| 7 | kanjis[30].kunyomi | 配 | leitura:  | くば・る (kubaru) |  | proposta:  | corrected |
 | 7 | kanjis[30].examples[0].content | 配 | 配送 (haisou) | 配送クえんてル。 | Haisou center. | Centro de distribuição logística. | pending-human-review |
 | 7 | kanjis[30].examples[1].content | 配 | 配給 (haikyuu) | えねルグイの配給。 | Energy no haikyuu. | Abastecimento de energia. | pending-human-review |
 | 7 | kanjis[31].examples[0].content | 枢 | 枢軸 (suujiku) | ルおぎスてぃクスの枢軸。 | Logistics no suujiku. | Eixo central de logística. | pending-human-review |
@@ -698,7 +698,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 9 | kanjis[2].examples[1].content | 菌 | 殺菌 (sakkin) | ひグフてムプ殺菌。 | High temp sakkin. | Esterilização em alta temperatura. | pending-human-review |
 | 9 | kanjis[3].examples[0].content | 胎 | 胎児 (taiji) | 胎児開発。 | Taiji development. | Desenvolvimento do feto. | pending-human-review |
 | 9 | kanjis[3].examples[1].content | 胎 | 胎盤 (taiban) | プルあクえんた胎盤。 | Placenta taiban. | Placenta fetal. | pending-human-review |
-| 9 | kanjis[4].kunyomi | 遺 | leitura: ambiguous-or-foreign | nokos (nokosu) | nokos (nokosu) | proposta:  | pending-human-review |
+| 9 | kanjis[4].kunyomi | 遺 | leitura:  | のこ・す (nokosu) |  | proposta:  | corrected |
 | 9 | kanjis[4].examples[0].content | 遺 | 遺伝 (iden) | 遺伝ふぁクとル。 | Iden factor. | Fator genético de hereditariedade. | pending-human-review |
 | 9 | kanjis[4].examples[1].content | 遺 | 遺伝子 (idenshi) | 遺伝子トへらプイ。 | Idenshi therapy. | Terapia gênica. | pending-human-review |
 | 9 | kanjis[5].examples[0].content | 伝 | 遺伝子 (idenshi) | 遺伝子せクうえんクえ。 | Idenshi sequence. | Sequenciamento genético. | pending-human-review |
@@ -846,7 +846,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 10 | kanjis[33].examples[1].content | 漠 | 漠然 (bakuzen) | 漠然スぱクえ。 | Bakuzen space. | Espaço vasto e vago. | pending-human-review |
 | 10 | kanjis[34].examples[0].content | 乾 | 乾燥 (kansou) | あいルの乾燥。 | Air no kansou. | Aridez do ar. | pending-human-review |
 | 10 | kanjis[34].examples[1].content | 乾 | 乾期 (kanki) | トろぴクあル乾期。 | Tropical kanki. | Estação seca tropical. | pending-human-review |
-| 10 | kanjis[35].kunyomi | 湿 | leitura: ambiguous-or-foreign | shimo (shimo) | shimo (shimo) | proposta:  | pending-human-review |
+| 10 | kanjis[35].kunyomi | 湿 | leitura:  | しめ・る (shimeru) / しめ・す (shimesu) / うるお・う (uruou) / うるお・す (uruosu) |  | proposta:  | corrected |
 | 10 | kanjis[35].examples[0].content | 湿 | 湿度 (shitsudo) | ひグフ湿度。 | High shitsudo. | Alta umidade do ar. | pending-human-review |
 | 10 | kanjis[35].examples[1].content | 湿 | 多湿 (tashitsu) | 多湿クルいまて。 | Tashitsu climate. | Clima hiper-úmido. | pending-human-review |
 | 10 | kanjis[36].examples[0].content | 酷 | 酷暑 (kokusho) | すっめル酷暑。 | Summer kokusho. | Onda de calor extremo no verão. | pending-human-review |
@@ -910,7 +910,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 11 | kanjis[22].examples[1].content | 寂 | 静寂 (seijaku) | てムプルえの静寂。 | Temple no seijaku. | Silêncio solene do templo. | pending-human-review |
 | 11 | kanjis[23].examples[0].content | 寥 | 寂寥 (jakuryou) | 寂寥ルあんドスクあぺ。 | Jakuryou landscape. | Paisagem de desolamento poético. | pending-human-review |
 | 11 | kanjis[23].examples[1].content | 寥 | 寥々 (ryouryou) | 寥々 スたル。 | Ryouryou star. | Estrelas escassas na noite. | pending-human-review |
-| 11 | kanjis[24].kunyomi | 幻 | leitura: ambiguous-or-foreign | maboroshi (maboroshi) | maboroshi (maboroshi) | proposta:  | pending-human-review |
+| 11 | kanjis[24].kunyomi | 幻 | leitura:  | まぼろし (maboroshi) |  | proposta:  | corrected |
 | 11 | kanjis[24].examples[0].content | 幻 | 幻想 (gensou) | 幻想ルいてらトうれ。 | Gensou literature. | Literatura de fantasia lírica. | pending-human-review |
 | 11 | kanjis[24].examples[1].content | 幻 | 幻惑 (genwaku) | 幻惑プフらせ。 | Genwaku phrase. | Frase de fascínio ilusório. | pending-human-review |
 | 11 | kanjis[25].examples[0].content | 幽 | 幽玄 (yuugen) | 幽玄べあうトイ。 | Yuugen beauty. | Beleza de sutileza e graça profunda. | pending-human-review |
@@ -1070,7 +1070,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 13 | kanjis[16].examples[1].content | 掲 | 掲示 (keiji) | のてぃクえ掲示。 | Notice keiji. | Proclamação de aviso. | pending-human-review |
 | 13 | kanjis[17].examples[0].content | 載 | 掲載 (keisai) | じょうルなル掲載。 | Journal keisai. | Veiculação em jornal. | pending-human-review |
 | 13 | kanjis[17].examples[1].content | 載 | 載録 (sairoku) | いんてルヴいえウの載録。 | Interview no sairoku. | Transcrição e publicação de entrevista. | pending-human-review |
-| 13 | kanjis[18].kunyomi | 警 | leitura: ambiguous-or-foreign | imashimeru | imashimeru | proposta:  | pending-human-review |
+| 13 | kanjis[18].kunyomi | 警 | leitura:  | いまし・める (imashimeru) |  | proposta:  | corrected |
 | 13 | kanjis[18].examples[0].content | 警 | 警告 (keikoku) | ぷブルいク警告。 | Public keikoku. | Advertência à opinião pública. | pending-human-review |
 | 13 | kanjis[18].examples[1].content | 警 | 警鐘 (keishou) | 警鐘をならす。 | Keishou o narasu. | Soar o alarme social. | pending-human-review |
 | 13 | kanjis[19].examples[0].content | 鐘 | 警鐘 (keishou) | 社会に警鐘。 | Society ni keishou. | Sinalizador de alarme para a sociedade. | pending-human-review |
@@ -1144,15 +1144,15 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 14 | kanjis[10].examples[1].content | 偏 | 偏重 (henchou) | うルばん偏重。 | Urban henchou. | Ênfase desequilibrada no urbano. | pending-human-review |
 | 14 | kanjis[11].examples[0].content | 少 | 少子化 (shoushika) | 少子化問題。 | Shoushika problem. | Problema do declínio da natalidade. | pending-human-review |
 | 14 | kanjis[11].examples[1].content | 少 | 少数 (shousuu) | 少数グろうプ。 | Shousuu group. | Grupo de minoria. | pending-human-review |
-| 14 | kanjis[12].kunyomi | 齢 | leitura: ambiguous-or-foreign | yowai (yowai) | yowai (yowai) | proposta:  | pending-human-review |
+| 14 | kanjis[12].kunyomi | 齢 | leitura:  | よわい (yowai) |  | proposta:  | corrected |
 | 14 | kanjis[12].examples[0].content | 齢 | 高齢化 (koureika) | 社会の高齢化。 | Society no koureika. | Envelhecimento da sociedade. | pending-human-review |
 | 14 | kanjis[12].examples[1].content | 齢 | 年齢 (nenrei) | 年齢ストるクトうれ。 | Nenrei structure. | Estrutura por faixa etária. | pending-human-review |
 | 14 | kanjis[13].examples[0].content | 老 | 老人 (roujin) | 老人ウえルふぁれ。 | Roujin welfare. | Bem-estar da pessoa idosa. | pending-human-review |
 | 14 | kanjis[13].examples[1].content | 老 | 老齢 (rourei) | 老齢ぺんスいおん。 | Rourei pension. | Pensão de velhice. | pending-human-review |
-| 14 | kanjis[14].kunyomi | 婚 | leitura: ambiguous-or-foreign | kon (kon) | kon (kon) | proposta:  | pending-human-review |
+| 14 | kanjis[14].kunyomi | 婚 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[14].examples[0].content | 婚 | 婚姻 (kon'in) | 婚姻らて。 | Kon'in rate. | Taxa de nupcialidade. | pending-human-review |
 | 14 | kanjis[14].examples[1].content | 婚 | 未婚 (mikon) | 未婚らて。 | Mikon rate. | Taxa de pessoas solteiras. | pending-human-review |
-| 14 | kanjis[15].kunyomi | 姻 | leitura: ambiguous-or-foreign | in (in) | in (in) | proposta:  | pending-human-review |
+| 14 | kanjis[15].kunyomi | 姻 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[15].examples[0].content | 姻 | 婚姻 (kon'in) | 婚姻法律。 | Kon'in law. | Legislação matrimonial. | pending-human-review |
 | 14 | kanjis[15].examples[1].content | 姻 | 姻戚 (inshaku) | 姻戚れルあてぃおん。 | Inshaku relation. | Relação de parentesco por casamento. | pending-human-review |
 | 14 | kanjis[16].examples[0].content | 育 | 育児 (ikuji) | 育児すっぽルト。 | Ikuji support. | Suporte à criação de filhos. | pending-human-review |
@@ -1165,24 +1165,24 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 14 | kanjis[19].examples[1].content | 養 | 養護 (yougo) | 養護ほめ。 | Yougo home. | Asilo de proteção a idosos. | pending-human-review |
 | 14 | kanjis[20].examples[0].content | 護 | 介護 (kaigo) | 介護サービス。 | Kaigo service. | Serviço de cuidados geriátricos. | pending-human-review |
 | 14 | kanjis[20].examples[1].content | 護 | 看護 (kango) | 看護し (看護師)。 | Kango-shi (看護師). | Profissional de enfermagem. | pending-human-review |
-| 14 | kanjis[21].kunyomi | 介 | leitura: ambiguous-or-foreign | kai (kai) | kai (kai) | proposta:  | pending-human-review |
+| 14 | kanjis[21].kunyomi | 介 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[21].examples[0].content | 介 | 介護 (kaigo) | 介護いんすらんクえ。 | Kaigo insurance. | Seguro de assistência geriátrica. | pending-human-review |
 | 14 | kanjis[21].examples[1].content | 介 | 媒介 (baikai) | そクいあル媒介。 | Social baikai. | Intermediação social. | pending-human-review |
-| 14 | kanjis[22].kunyomi | 籍 | leitura: ambiguous-or-foreign | seki (seki) | seki (seki) | proposta:  | pending-human-review |
+| 14 | kanjis[22].kunyomi | 籍 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[22].examples[0].content | 籍 | 戸籍 (koseki) | 戸籍制度。 | Koseki system. | Sistema de registro familiar civil. | pending-human-review |
 | 14 | kanjis[22].examples[1].content | 籍 | 国籍 (kokuseki) | 国籍法律。 | Kokuseki law. | Lei de nacionalidade. | pending-human-review |
 | 14 | kanjis[23].examples[0].content | 遷 | 変遷 (hensen) | 社会の変遷。 | Society no hensen. | Mutação da sociedade. | pending-human-review |
 | 14 | kanjis[23].examples[1].content | 遷 | 遷都 (sento) | 首都の遷都。 | Capital no sento. | Transferência da capital. | pending-human-review |
-| 14 | kanjis[24].kunyomi | 郊 | leitura: ambiguous-or-foreign | suburb | suburb | proposta:  | pending-human-review |
+| 14 | kanjis[24].kunyomi | 郊 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[24].examples[0].content | 郊 | 郊外 (kougai) | 郊外れスいでんクえ。 | Kougai residence. | Residência no subúrbio. | pending-human-review |
 | 14 | kanjis[24].examples[1].content | 郊 | 近郊 (kinkou) | ときょ近郊。 | Tokyo kinkou. | Arredores de Tóquio. | pending-human-review |
-| 14 | kanjis[25].kunyomi | 街 | leitura: ambiguous-or-foreign | machi (machi) | machi (machi) | proposta:  | pending-human-review |
+| 14 | kanjis[25].kunyomi | 街 | leitura:  | まち (machi) |  | proposta:  | corrected |
 | 14 | kanjis[25].examples[0].content | 街 | 市街地 (shigaichi) | 市街地開発。 | Shigaichi development. | Desenvolvimento da área urbana. | pending-human-review |
 | 14 | kanjis[25].examples[1].content | 街 | 街頭 (gaitou) | 街頭すルヴえイ。 | Gaitou survey. | Pesquisa nas vias públicas. | pending-human-review |
-| 14 | kanjis[26].kunyomi | 区 | leitura: ambiguous-or-foreign | ku (ku) | ku (ku) | proposta:  | pending-human-review |
+| 14 | kanjis[26].kunyomi | 区 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[26].examples[0].content | 区 | 区画 (kukaku) | ルあんドの区画。 | Land no kukaku. | Zoneamento da terra. | pending-human-review |
 | 14 | kanjis[26].examples[1].content | 区 | 地区 (chiku) | クおっめルクいあル地区。 | Commercial chiku. | Distrito comercial. | pending-human-review |
-| 14 | kanjis[27].kunyomi | 域 | leitura: ambiguous-or-foreign | iki (iki) | iki (iki) | proposta:  | pending-human-review |
+| 14 | kanjis[27].kunyomi | 域 | leitura:  | - |  | proposta:  | corrected |
 | 14 | kanjis[27].examples[0].content | 域 | 地域 (chiiki) | 地域社会。 | Chiiki society. | Sociedade comunitária local. | pending-human-review |
 | 14 | kanjis[27].examples[1].content | 域 | 区域 (kuiki) | うルばん区域。 | Urban kuiki. | Zona de abrangência urbana. | pending-human-review |
 | 14 | kanjis[28].examples[0].content | 膨 | 膨張 (bouchou) | 都市の膨張。 | City no bouchou. | Inchaço metropolitano. | pending-human-review |
@@ -1210,7 +1210,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 14 | kanjis[38].examples[1].content | 困 | 困難 (konnan) | えクおのみク困難。 | Economic konnan. | Adversidade econômica. | pending-human-review |
 | 14 | kanjis[39].examples[0].content | 窮 | 困窮 (konkyuu) | 困窮ほうせほルド。 | Konkyuu household. | Família em extrema indigência. | pending-human-review |
 | 14 | kanjis[39].examples[1].content | 窮 | 困窮者 (konkyuusha) | 困窮者すっぽルト。 | Konkyuusha support. | Apoio a pessoas em indigência. | pending-human-review |
-| 14 | kanjis[40].kunyomi | 戸 | leitura: ambiguous-or-foreign | to (to) | to (to) | proposta:  | pending-human-review |
+| 14 | kanjis[40].kunyomi | 戸 | leitura:  | と (to) |  | proposta:  | corrected |
 | 14 | kanjis[40].examples[0].content | 戸 | 戸籍 (koseki) | 戸籍れぎストらてぃおん。 | Koseki registration. | Registro civil de família. | pending-human-review |
 | 14 | kanjis[40].examples[1].content | 戸 | 戸数 (kosuu) | あきやの戸数。 | Akiya no kosuu. | Número de domicílios desocupados. | pending-human-review |
 | 14 | kanjis[41].examples[0].content | 衰 | 衰退 (suitai) | とウんの衰退。 | Town no suitai. | Esvaziamento da cidade. | pending-human-review |
@@ -1228,7 +1228,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[3].examples[0].content | 傲 | 傲慢 (gouman) | 傲慢態度。 | Gouman attitude. | Atitude de arrogância soberba. | pending-human-review |
 | 15 | kanjis[3].examples[1].content | 傲 | 傲岸 (gougan) | 傲岸なぼっス。 | Gougan na boss. | Chefe de prepotência inabalável. | pending-human-review |
 | 15 | kanjis[4].onyomi | 慢 | leitura: mechanically-convertible-onyomi | マン (MAN) | MAN (MAN) | proposta: マン (MAN) | pending-human-review |
-| 15 | kanjis[4].kunyomi | 慢 | leitura: ambiguous-or-foreign | man (man) | man (man) | proposta:  | pending-human-review |
+| 15 | kanjis[4].kunyomi | 慢 | leitura:  | - |  | proposta:  | corrected |
 | 15 | kanjis[4].examples[0].content | 慢 | 傲慢 (gouman) | 力の傲慢。 | Power no gouman. | Soberba do poder. | pending-human-review |
 | 15 | kanjis[4].examples[1].content | 慢 | 自慢 (jiman) | 自慢物語。 | Jiman story. | História de orgulho excessivo. | pending-human-review |
 | 15 | kanjis[5].onyomi | 妬 | leitura: mechanically-convertible-onyomi | ト (TO) | TO (TO) | proposta: ト (TO) | pending-human-review |
@@ -1247,7 +1247,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[9].examples[0].content | 軽 | 軽蔑 (keibetsu) | 軽蔑ルおおク。 | Keibetsu look. | Olhar de menosprezo. | pending-human-review |
 | 15 | kanjis[9].examples[1].content | 軽 | 軽視 (keishi) | さふぇトイの軽視。 | Safety no keishi. | Negligência com a segurança. | pending-human-review |
 | 15 | kanjis[10].onyomi | 差 | leitura: mechanically-convertible-onyomi | サ (SA) | SA (SA) | proposta: サ (SA) | pending-human-review |
-| 15 | kanjis[10].kunyomi | 差 | leitura: ambiguous-or-foreign | sa (sa) | sa (sa) | proposta:  | pending-human-review |
+| 15 | kanjis[10].kunyomi | 差 | leitura:  | さ・す (sasu) / さ・し (sashi) |  | proposta:  | corrected |
 | 15 | kanjis[10].examples[0].content | 差 | 差別 (sabetsu) | らクいあル差別。 | Racial sabetsu. | Discriminação racial. | pending-human-review |
 | 15 | kanjis[10].examples[1].content | 差 | 格差 (kakusa) | えクおのみク格差。 | Economic kakusa. | Desigualdade econômica. | pending-human-review |
 | 15 | kanjis[11].onyomi | 嫌 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
@@ -1257,11 +1257,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[12].examples[0].content | 悪 | 嫌悪 (ken'o) | 嫌悪のえもてぃおん。 | Ken'o no emotion. | Emoção de forte aversão. | pending-human-review |
 | 15 | kanjis[12].examples[1].content | 悪 | 悪意 (akui) | 悪意のるもル。 | Akui no rumor. | Boato de má-fé maliciosa. | pending-human-review |
 | 15 | kanjis[13].onyomi | 憎 | leitura: mechanically-convertible-onyomi | ゾウ (ZOU) | ZOU (ZOU) | proposta: ゾウ (ZOU) | pending-human-review |
-| 15 | kanjis[13].kunyomi | 憎 | leitura: ambiguous-or-foreign | nikui (nikui) | nikui (nikui) | proposta:  | pending-human-review |
+| 15 | kanjis[13].kunyomi | 憎 | leitura:  | にく・い (nikui) |  | proposta:  | corrected |
 | 15 | kanjis[13].examples[0].content | 憎 | 憎悪 (zouo) | はてクりめの憎悪。 | Hate crime no zouo. | Ódio visceral no crime de ódio. | pending-human-review |
 | 15 | kanjis[13].examples[1].content | 憎 | 憎しみ (nikushimi) | 憎しみ明確な。 | Nikushimi clear. | Desfazer o sentimento de ódio. | pending-human-review |
 | 15 | kanjis[14].onyomi | 恥 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
-| 15 | kanjis[14].kunyomi | 恥 | leitura: ambiguous-or-foreign | haji (haji) | haji (haji) | proposta:  | pending-human-review |
+| 15 | kanjis[14].kunyomi | 恥 | leitura:  | はじ (haji) |  | proposta:  | corrected |
 | 15 | kanjis[14].examples[0].content | 恥 | 恥辱 (chijoku) | ぷブルいク恥辱。 | Public chijoku. | Vexame e humilhação pública. | pending-human-review |
 | 15 | kanjis[14].examples[1].content | 恥 | 羞恥 (shuuchi) | 羞恥ふぇえルいんグ。 | Shuuchi feeling. | Sensação de constrangimento. | pending-human-review |
 | 15 | kanjis[15].onyomi | 羞 | leitura: mechanically-convertible-onyomi | シュウ (SHUU) | SHUU (SHUU) | proposta: シュウ (SHUU) | pending-human-review |
@@ -1274,18 +1274,18 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[17].examples[0].content | 患 | 患者 (kanja) | めんたル患者。 | Mental kanja. | Paciente psiquiátrico. | pending-human-review |
 | 15 | kanjis[17].examples[1].content | 患 | 疾患 (shikkan) | めんたル疾患。 | Mental shikkan. | Transtorno mental. | pending-human-review |
 | 15 | kanjis[18].onyomi | 癖 | leitura: mechanically-convertible-onyomi | ヘキ (HEKI) | HEKI (HEKI) | proposta: ヘキ (HEKI) | pending-human-review |
-| 15 | kanjis[18].kunyomi | 癖 | leitura: ambiguous-or-foreign | kuse (kuse) | kuse (kuse) | proposta:  | pending-human-review |
+| 15 | kanjis[18].kunyomi | 癖 | leitura:  | くせ (kuse) |  | proposta:  | corrected |
 | 15 | kanjis[18].examples[0].content | 癖 | 潔癖 (keppeki) | 潔癖しょう。 | Keppeki-shou. | Transtorno obsessivo-compulsivo. | pending-human-review |
 | 15 | kanjis[18].examples[1].content | 癖 | 癖好 (hekikou) | 癖好べはヴいおル。 | Hekikou behavior. | Comportamento compulsivo. | pending-human-review |
 | 15 | kanjis[19].onyomi | 狂 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
 | 15 | kanjis[19].examples[0].content | 狂 | 狂気 (kyouki) | クろウドの狂気。 | Crowd no kyouki. | Loucura da multidão. | pending-human-review |
 | 15 | kanjis[19].examples[1].content | 狂 | 狂信 (kyoushin) | 狂信ふぉっルおウえル。 | Kyoushin follower. | Seguidor fanático. | pending-human-review |
 | 15 | kanjis[20].onyomi | 妄 | leitura: mechanically-convertible-onyomi | モウ (MOU) | MOU (MOU) | proposta: モウ (MOU) | pending-human-review |
-| 15 | kanjis[20].kunyomi | 妄 | leitura: ambiguous-or-foreign | midari (midari) | midari (midari) | proposta:  | pending-human-review |
+| 15 | kanjis[20].kunyomi | 妄 | leitura:  | みだ・りに (midarini) |  | proposta:  | corrected |
 | 15 | kanjis[20].examples[0].content | 妄 | 妄想 (mousou) | ぺルせクうてぃおん妄想。 | Persecution mousou. | Delírio de perseguição. | pending-human-review |
 | 15 | kanjis[20].examples[1].content | 妄 | 妄信 (moushin) | どグまてぃク妄信。 | Dogmatic moushin. | Crença cega sem provas. | pending-human-review |
 | 15 | kanjis[21].onyomi | 痴 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
-| 15 | kanjis[21].kunyomi | 痴 | leitura: ambiguous-or-foreign | shire (shire) | shire (shire) | proposta:  | pending-human-review |
+| 15 | kanjis[21].kunyomi | 痴 | leitura:  | し・れる (shireru) / おろか (oroka) |  | proposta:  | corrected |
 | 15 | kanjis[21].examples[0].content | 痴 | 痴呆 (chihou) | 痴呆しょう (痴呆症)。 | Chihou-shou (痴呆症). | Quadro de demência senil. | pending-human-review |
 | 15 | kanjis[21].examples[1].content | 痴 | 愚痴 (guchi) | 愚痴をいう。 | Guchi o iu. | Fazer lamentações estéreis. | pending-human-review |
 | 15 | kanjis[22].onyomi | 抑 | leitura: mechanically-convertible-onyomi | ヨク (YOKU) | YOKU (YOKU) | proposta: ヨク (YOKU) | pending-human-review |
@@ -1310,11 +1310,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[28].examples[0].content | 迫 | 迫害 (hakugai) | みのりトイ迫害。 | Minority hakugai. | Perseguição a minorias. | pending-human-review |
 | 15 | kanjis[28].examples[1].content | 迫 | 圧迫 (appaku) | めんたル圧迫。 | Mental appaku. | Pressão psicológica. | pending-human-review |
 | 15 | kanjis[29].onyomi | 害 | leitura: mechanically-convertible-onyomi | ガイ (GAI) | GAI (GAI) | proposta: ガイ (GAI) | pending-human-review |
-| 15 | kanjis[29].kunyomi | 害 | leitura: ambiguous-or-foreign | gai (gai) | gai (gai) | proposta:  | pending-human-review |
+| 15 | kanjis[29].kunyomi | 害 | leitura:  | - |  | proposta:  | corrected |
 | 15 | kanjis[29].examples[0].content | 害 | 迫害 (hakugai) | グろうプ迫害。 | Group hakugai. | Perseguição de grupo. | pending-human-review |
 | 15 | kanjis[29].examples[1].content | 害 | 障害 (shougai) | 開発障害。 | Development shougai. | Transtorno do desenvolvimento. | pending-human-review |
 | 15 | kanjis[30].onyomi | 孤 | leitura: mechanically-convertible-onyomi | コ (KO) | KO (KO) | proposta: コ (KO) | pending-human-review |
-| 15 | kanjis[30].kunyomi | 孤 | leitura: ambiguous-or-foreign | hitori (hitori) | hitori (hitori) | proposta:  | pending-human-review |
+| 15 | kanjis[30].kunyomi | 孤 | leitura:  | - |  | proposta:  | corrected |
 | 15 | kanjis[30].examples[0].content | 孤 | 孤立 (koritsu) | そクいあル孤立。 | Social koritsu. | Isolamento social. | pending-human-review |
 | 15 | kanjis[30].examples[1].content | 孤 | 孤独 (kodoku) | 孤独国家。 | Kodoku state. | Estado de desamparo e solidão. | pending-human-review |
 | 15 | kanjis[31].onyomi | 閉 | leitura: mechanically-convertible-onyomi | ヘイ (HEI) | HEI (HEI) | proposta: ヘイ (HEI) | pending-human-review |
@@ -1339,38 +1339,38 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[37].examples[0].content | 依 | 依存 (izon) | あルクおほル依存。 | Alcohol izon. | Dependência de álcool. | pending-human-review |
 | 15 | kanjis[37].examples[1].content | 依 | 依存症 (izonshou) | がめ依存症。 | Game izonshou. | Transtorno de adicção em jogos. | pending-human-review |
 | 15 | kanjis[38].onyomi | 存 | leitura: mechanically-convertible-onyomi | ソン (SON) | SON (SON) | proposta: ソン (SON) | pending-human-review |
-| 15 | kanjis[38].kunyomi | 存 | leitura: ambiguous-or-foreign | son (son) | son (son) | proposta:  | pending-human-review |
+| 15 | kanjis[38].kunyomi | 存 | leitura:  | ながら・える (nagaraeru) / あ・る (aru) / たも・つ (tamotsu) / と・う (tou) |  | proposta:  | corrected |
 | 15 | kanjis[38].examples[0].content | 存 | 依存 (izon) | ドるグ依存。 | Drug izon. | Adicção compulsiva em drogas. | pending-human-review |
 | 15 | kanjis[38].examples[1].content | 存 | 存続 (sonzoku) | 存続りスク。 | Sonzoku risk. | Risco de subsistência do transtorno. | pending-human-review |
 | 15 | kanjis[39].onyomi | 怒 | leitura: mechanically-convertible-onyomi | ド (DO) | DO (DO) | proposta: ド (DO) | pending-human-review |
 | 15 | kanjis[39].examples[0].content | 怒 | 怒気 (doki) | 怒気声。 | Doki voice. | Voz em tom de fúria. | pending-human-review |
 | 15 | kanjis[39].examples[1].content | 怒 | 憤怒 (funnu) | 憤怒えぴそで。 | Funnu episode. | Episódio de fúria cega. | pending-human-review |
 | 15 | kanjis[40].onyomi | 憤 | leitura: mechanically-convertible-onyomi | フウン (HUN) | HUN (HUN) | proposta: フウン (HUN) | pending-human-review |
-| 15 | kanjis[40].kunyomi | 憤 | leitura: ambiguous-or-foreign | fungu (fungu) | fungu (fungu) | proposta:  | pending-human-review |
+| 15 | kanjis[40].kunyomi | 憤 | leitura:  | いきどお・る (ikidooru) |  | proposta:  | corrected |
 | 15 | kanjis[40].examples[0].content | 憤 | 憤怒 (funnu) | 憤怒おうトぶルスト。 | Funnu outburst. | Surto de ira e indignação. | pending-human-review |
 | 15 | kanjis[40].examples[1].content | 憤 | 憤慨 (hungai) | そクいあルいんじゅスてぃクえに憤慨。 | Social injustice ni hungai. | Indignação perante a injustiça social. | pending-human-review |
 | 15 | kanjis[41].onyomi | 慨 | leitura: mechanically-convertible-onyomi | ガイ (GAI) | GAI (GAI) | proposta: ガイ (GAI) | pending-human-review |
-| 15 | kanjis[41].kunyomi | 慨 | leitura: ambiguous-or-foreign | gai (gai) | gai (gai) | proposta:  | pending-human-review |
+| 15 | kanjis[41].kunyomi | 慨 | leitura:  | なげ・く (nageku) |  | proposta:  | corrected |
 | 15 | kanjis[41].examples[0].content | 慨 | 憤慨 (hungai) | 憤慨スたてめんト。 | Hungai statement. | Declaração de profunda indignação. | pending-human-review |
 | 15 | kanjis[41].examples[1].content | 慨 | 感想 (kansou) | 感慨の報告。 | Kansou report. | Relatório de impressões. | pending-human-review |
 | 16 | grammar.content | — | — | ふくつの精神をもってがしンしょうたんし、 もくひょうをたっせいします。 | Fukutsu no spirit o motte gashin-shoutan shi, mokuhyou o tassei shimasu. | Com espírito indomável, persevera-se através de privações para alcançar o objetivo. | pending-human-review |
 | 16 | kanjis[0].onyomi | 臥 | leitura: mechanically-convertible-onyomi | ガ (GA) | GA (GA) | proposta: ガ (GA) | pending-human-review |
-| 16 | kanjis[0].kunyomi | 臥 | leitura: ambiguous-or-foreign | husu (husu) | husu (husu) | proposta:  | pending-human-review |
+| 16 | kanjis[0].kunyomi | 臥 | leitura:  | ふせ・る (fuseru) / ふ・せる (fuseru) / ふ・す (fusu) |  | proposta:  | corrected |
 | 16 | kanjis[0].examples[0].content | 臥 | 臥薪嘗胆 (gashin-shoutan) | 臥薪嘗胆のえっふぉルト。 | Gashin-shoutan no effort. | Esforço de perseverar na amargura. | pending-human-review |
 | 16 | kanjis[0].examples[1].content | 臥 | 臥床 (gashou) | 臥床手当て。 | Gashou care. | Cuidados de repouso em leito. | pending-human-review |
 | 16 | kanjis[1].onyomi | 薪 | leitura: mechanically-convertible-onyomi | シン (SHIN) | SHIN (SHIN) | proposta: シン (SHIN) | pending-human-review |
-| 16 | kanjis[1].kunyomi | 薪 | leitura: ambiguous-or-foreign | tatemae (tatemae) | tatemae (tatemae) | proposta:  | pending-human-review |
+| 16 | kanjis[1].kunyomi | 薪 | leitura:  | たきぎ (takigi) / まき (maki) |  | proposta:  | corrected |
 | 16 | kanjis[1].examples[0].content | 薪 | 臥薪嘗胆 (gashin-shoutan) | 臥薪嘗胆精神。 | Gashin-shoutan spirit. | Espírito de deitar sobre a lenha e perseverar. | pending-human-review |
 | 16 | kanjis[1].examples[1].content | 薪 | 薪炭 (shintan) | 薪炭すっプルイ。 | Shintan supply. | Suprimento de lenha e carvão. | pending-human-review |
 | 16 | kanjis[2].onyomi | 嘗 | leitura: mechanically-convertible-onyomi | ショウ (SHOU) | SHOU (SHOU) | proposta: ショウ (SHOU) | pending-human-review |
 | 16 | kanjis[2].examples[0].content | 嘗 | 臥薪嘗胆 (gashin-shoutan) | 臥薪嘗胆みんドせト。 | Gashin-shoutan mindset. | Mentalidade de provar a amargura para a vitória. | pending-human-review |
 | 16 | kanjis[2].examples[1].content | 嘗 | 嘗味 (shoumi) | ウいねの嘗味。 | Wine no shoumi. | Degustação do vinho. | pending-human-review |
 | 16 | kanjis[3].onyomi | 胆 | leitura: mechanically-convertible-onyomi | タン (TAN) | TAN (TAN) | proposta: タン (TAN) | pending-human-review |
-| 16 | kanjis[3].kunyomi | 胆 | leitura: ambiguous-or-foreign | kimo (kimo) | kimo (kimo) | proposta:  | pending-human-review |
+| 16 | kanjis[3].kunyomi | 胆 | leitura:  | きも (kimo) |  | proposta:  | corrected |
 | 16 | kanjis[3].examples[0].content | 胆 | 臥薪嘗胆 (gashin-shoutan) | 臥薪嘗胆えんドうらんクえ。 | Gashin-shoutan endurance. | Resistência de Gashin-shoutan. | pending-human-review |
 | 16 | kanjis[3].examples[1].content | 胆 | 胆力 (tanryoku) | ストろんグ胆力。 | Strong tanryoku. | Firme coragem e determinação. | pending-human-review |
 | 16 | kanjis[4].onyomi | 孤 | leitura: mechanically-convertible-onyomi | コ (KO) | KO (KO) | proposta: コ (KO) | pending-human-review |
-| 16 | kanjis[4].kunyomi | 孤 | leitura: ambiguous-or-foreign | hitori (hitori) | hitori (hitori) | proposta:  | pending-human-review |
+| 16 | kanjis[4].kunyomi | 孤 | leitura:  | - |  | proposta:  | corrected |
 | 16 | kanjis[4].examples[0].content | 孤 | 孤軍奮闘 (kogun-funtou) | 孤軍奮闘でヴいクとルイ。 | Kogun-funtou de victory. | Vitória lutando sozinho contra tudo. | pending-human-review |
 | 16 | kanjis[4].examples[1].content | 孤 | 孤立無援 (koritsu-muen) | 孤立無援国家。 | Koritsu-muen state. | Estado de isolamento sem ajuda. | pending-human-review |
 | 16 | kanjis[5].onyomi | 奮 | leitura: mechanically-convertible-onyomi | フウン (HUN) | HUN (HUN) | proposta: フウン (HUN) | pending-human-review |
@@ -1392,59 +1392,59 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 16 | kanjis[10].examples[0].content | 磨 | 切磋琢磨 (sessha-takuma) | フりえんドスと切磋琢磨。 | Friends to sessha-takuma. | Aprimoramento conjunto entre amigos. | pending-human-review |
 | 16 | kanjis[10].examples[1].content | 磨 | 研磨 (kenma) | ルえんスの研磨。 | Lens no kenma. | Polimento de precisão da lente. | pending-human-review |
 | 16 | kanjis[11].onyomi | 鏡 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
-| 16 | kanjis[11].kunyomi | 鏡 | leitura: ambiguous-or-foreign | kagami (kagami) | kagami (kagami) | proposta:  | pending-human-review |
+| 16 | kanjis[11].kunyomi | 鏡 | leitura:  | かがみ (kagami) |  | proposta:  | corrected |
 | 16 | kanjis[11].examples[0].content | 鏡 | 明鏡止水 (meikyou-shisui) | 明鏡止水国家。 | Meikyou-shisui state. | Estado de mente serena como espelho. | pending-human-review |
 | 16 | kanjis[11].examples[1].content | 鏡 | 鏡面 (kyoumen) | ルあけの鏡面。 | Lake no kyoumen. | Superfície espelhada do lago. | pending-human-review |
 | 16 | kanjis[12].onyomi | 止 | leitura: mechanically-convertible-onyomi | シ (SHI) | SHI (SHI) | proposta: シ (SHI) | pending-human-review |
 | 16 | kanjis[12].examples[0].content | 止 | 明鏡止水 (meikyou-shisui) | 明鏡止水みんドせト。 | Meikyou-shisui mindset. | Mentalidade de mente serena e límpida. | pending-human-review |
 | 16 | kanjis[12].examples[1].content | 止 | 静止 (seishi) | 静止国家。 | Seishi state. | Estado de imobilidade e repouso. | pending-human-review |
 | 16 | kanjis[13].onyomi | 水 | leitura: mechanically-convertible-onyomi | スイ (SUI) | SUI (SUI) | proposta: スイ (SUI) | pending-human-review |
-| 16 | kanjis[13].kunyomi | 水 | leitura: ambiguous-or-foreign | mizu (mizu) | mizu (mizu) | proposta:  | pending-human-review |
+| 16 | kanjis[13].kunyomi | 水 | leitura:  | みず (mizu) / みず- (mizu-) |  | proposta:  | corrected |
 | 16 | kanjis[13].examples[0].content | 水 | 明鏡止水 (meikyou-shisui) | 明鏡止水精神。 | Meikyou-shisui spirit. | Espírito de água quieta e cristalina. | pending-human-review |
 | 16 | kanjis[13].examples[1].content | 水 | 浄水 (jousui) | 浄水プルあんト。 | Jousui plant. | Estação de purificação de água. | pending-human-review |
 | 16 | kanjis[14].onyomi | 花 | leitura: mechanically-convertible-onyomi | カ (KA) | KA (KA) | proposta: カ (KA) | pending-human-review |
-| 16 | kanjis[14].kunyomi | 花 | leitura: ambiguous-or-foreign | hana (hana) | hana (hana) | proposta:  | pending-human-review |
+| 16 | kanjis[14].kunyomi | 花 | leitura:  | はな (hana) |  | proposta:  | corrected |
 | 16 | kanjis[14].examples[0].content | 花 | 鏡花水月 (kyouka-suigetsu) | 鏡花水月べあうトイ。 | Kyouka-suigetsu beauty. | Beleza intangível e poética. | pending-human-review |
 | 16 | kanjis[14].examples[1].content | 花 | 生花 (ikebana) | 生花あルト。 | Ikebana art. | Arte do arranjo floral Ikebana. | pending-human-review |
 | 16 | kanjis[15].onyomi | 月 | leitura: mechanically-convertible-onyomi | ゲツ (GETSU) | GETSU (GETSU) | proposta: ゲツ (GETSU) | pending-human-review |
-| 16 | kanjis[15].kunyomi | 月 | leitura: ambiguous-or-foreign | tsuki (tsuki) | tsuki (tsuki) | proposta:  | pending-human-review |
+| 16 | kanjis[15].kunyomi | 月 | leitura:  | つき (tsuki) |  | proposta:  | corrected |
 | 16 | kanjis[15].examples[0].content | 月 | 鏡花水月 (kyouka-suigetsu) | 鏡花水月いであル。 | Kyouka-suigetsu ideal. | Ideal intangível de flor no espelho e lua na água. | pending-human-review |
 | 16 | kanjis[15].examples[1].content | 月 | 月光 (gekkou) | 月光いっルうみなてぃおん。 | Gekkou illumination. | Iluminação do luar. | pending-human-review |
 | 16 | kanjis[16].onyomi | 温 | leitura: mechanically-convertible-onyomi | オン (ON) | ON (ON) | proposta: オン (ON) | pending-human-review |
 | 16 | kanjis[16].examples[0].content | 温 | 温故知新 (onko-chishin) | 温故知新プひルおそプフイ。 | Onko-chishin philosophy. | Filosofia de aprender com o passado. | pending-human-review |
 | 16 | kanjis[16].examples[1].content | 温 | 温和 (onwa) | 温和ちゃらクてル。 | Onwa character. | Temperamento moderado e caloroso. | pending-human-review |
 | 16 | kanjis[17].onyomi | 故 | leitura: mechanically-convertible-onyomi | コ (KO) | KO (KO) | proposta: コ (KO) | pending-human-review |
-| 16 | kanjis[17].kunyomi | 故 | leitura: ambiguous-or-foreign | yue (yue) | yue (yue) | proposta:  | pending-human-review |
+| 16 | kanjis[17].kunyomi | 故 | leitura:  | ゆえ (yue) |  | proposta:  | corrected |
 | 16 | kanjis[17].examples[0].content | 故 | 温故知新 (onko-chishin) | 温故知新ルえあルにんグ。 | Onko-chishin learning. | Aprendizado de revisitar o passado. | pending-human-review |
 | 16 | kanjis[17].examples[1].content | 故 | 故事 (koji) | 故事せいご (故事成語)。 | Koji-seigo (故事成語). | Expressões idiomáticas de tradição histórica. | pending-human-review |
 | 16 | kanjis[18].onyomi | 新 | leitura: mechanically-convertible-onyomi | シン (SHIN) | SHIN (SHIN) | proposta: シン (SHIN) | pending-human-review |
 | 16 | kanjis[18].examples[0].content | 新 | 温故知新 (onko-chishin) | 温故知新精神。 | Onko-chishin spirit. | Espírito de criar o novo estudando o antigo. | pending-human-review |
 | 16 | kanjis[18].examples[1].content | 新 | 新進 (shinshin) | 新進ウりてル。 | Shinshin writer. | Escritor promissor e inovador. | pending-human-review |
 | 16 | kanjis[19].onyomi | 疾 | leitura: mechanically-convertible-onyomi | シツ (SHITSU) | SHITSU (SHITSU) | proposta: シツ (SHITSU) | pending-human-review |
-| 16 | kanjis[19].kunyomi | 疾 | leitura: ambiguous-or-foreign | toshi (toshi) | toshi (toshi) | proposta:  | pending-human-review |
+| 16 | kanjis[19].kunyomi | 疾 | leitura:  | はや・い (hayai) |  | proposta:  | corrected |
 | 16 | kanjis[19].examples[0].content | 疾 | 疾風迅雷 (shippuu-jinrai) | 疾風迅雷あったクク。 | Shippuu-jinrai attack. | Ataque veloz como o vento e o trovão. | pending-human-review |
 | 16 | kanjis[19].examples[1].content | 疾 | 疾走 (shisshou) | 疾走スぺえド。 | Shisshou speed. | Velocidade de corrida veloz. | pending-human-review |
 | 16 | kanjis[20].onyomi | 風 | leitura: mechanically-convertible-onyomi | フウ (FUU) | FUU (FUU) | proposta: フウ (FUU) | pending-human-review |
-| 16 | kanjis[20].kunyomi | 風 | leitura: ambiguous-or-foreign | kaze (kaze) | kaze (kaze) | proposta:  | pending-human-review |
+| 16 | kanjis[20].kunyomi | 風 | leitura:  | かぜ (kaze) |  | proposta:  | corrected |
 | 16 | kanjis[20].examples[0].content | 風 | 疾風迅雷 (shippuu-jinrai) | 疾風迅雷たクてぃク。 | Shippuu-jinrai tactic. | Tática de vendaval rápido. | pending-human-review |
 | 16 | kanjis[20].examples[1].content | 風 | 風浪 (fuurou) | ひグフ風浪。 | High fuurou. | Ondas altas provocadas pelo vento. | pending-human-review |
 | 16 | kanjis[21].onyomi | 迅 | leitura: mechanically-convertible-onyomi | ジン (JIN) | JIN (JIN) | proposta: ジン (JIN) | pending-human-review |
-| 16 | kanjis[21].kunyomi | 迅 | leitura: ambiguous-or-foreign | hayanai (hayanai) | hayanai (hayanai) | proposta:  | pending-human-review |
+| 16 | kanjis[21].kunyomi | 迅 | leitura:  | - |  | proposta:  | corrected |
 | 16 | kanjis[21].examples[0].content | 迅 | 疾風迅雷 (shippuu-jinrai) | 疾風迅雷れスぽんせ。 | Shippuu-jinrai response. | Resposta de extrema celeridade. | pending-human-review |
 | 16 | kanjis[21].examples[1].content | 迅 | 迅速 (jinsoku) | 迅速あクてぃおん。 | Jinsoku action. | Ação célere e de extrema presteza. | pending-human-review |
 | 16 | kanjis[22].onyomi | 雷 | leitura: mechanically-convertible-onyomi | ライ (RAI) | RAI (RAI) | proposta: ライ (RAI) | pending-human-review |
-| 16 | kanjis[22].kunyomi | 雷 | leitura: ambiguous-or-foreign | kaminari (kaminari) | kaminari (kaminari) | proposta:  | pending-human-review |
+| 16 | kanjis[22].kunyomi | 雷 | leitura:  | かみなり (kaminari) |  | proposta:  | corrected |
 | 16 | kanjis[22].examples[0].content | 雷 | 疾風迅雷 (shippuu-jinrai) | 疾風迅雷運動。 | Shippuu-jinrai movement. | Movimento célere como o trovão. | pending-human-review |
 | 16 | kanjis[22].examples[1].content | 雷 | 雷鳴 (raimei) | でぃスたんト雷鳴。 | Distant raimei. | Estrondo distante do trovão. | pending-human-review |
 | 16 | kanjis[23].onyomi | 百 | leitura: mechanically-convertible-onyomi | ヒャク (HYAKU) | HYAKU (HYAKU) | proposta: ヒャク (HYAKU) | pending-human-review |
-| 16 | kanjis[23].kunyomi | 百 | leitura: ambiguous-or-foreign | momo (momo) | momo (momo) | proposta:  | pending-human-review |
+| 16 | kanjis[23].kunyomi | 百 | leitura:  | もも (momo) |  | proposta:  | corrected |
 | 16 | kanjis[23].examples[0].content | 百 | 百戦錬磨 (hyakusen-renma) | 百戦錬磨指導者。 | Hyakusen-renma leader. | Líder veterano de cem batalhas. | pending-human-review |
 | 16 | kanjis[23].examples[1].content | 百 | 百花繚乱 (hyakka-ryouran) | 百花繚乱えら。 | Hyakka-ryouran era. | Era de profusão deslumbrante de talentos. | pending-human-review |
 | 16 | kanjis[24].onyomi | 練 | leitura: mechanically-convertible-onyomi | レン (REN) | REN (REN) | proposta: レン (REN) | pending-human-review |
 | 16 | kanjis[24].examples[0].content | 練 | 百戦錬磨 (hyakusen-renma) | 百戦錬磨の熟練者。 | Hyakusen-renma warrior. | Guerreiro veterano calejado. | pending-human-review |
 | 16 | kanjis[24].examples[1].content | 練 | 訓練 (kunren) | りごろうス訓練。 | Rigorous kunren. | Treinamento intensivo rigoroso. | pending-human-review |
 | 16 | kanjis[25].onyomi | 繚 | leitura: mechanically-convertible-onyomi | リョウ (RYOU) | RYOU (RYOU) | proposta: リョウ (RYOU) | pending-human-review |
-| 16 | kanjis[25].kunyomi | 繚 | leitura: ambiguous-or-foreign | ryou (ryou) | ryou (ryou) | proposta:  | pending-human-review |
+| 16 | kanjis[25].kunyomi | 繚 | leitura:  | まと・う (matou) / めぐ・る (meguru) |  | proposta:  | corrected |
 | 16 | kanjis[25].examples[0].content | 繚 | 百花繚乱 (hyakka-ryouran) | 文化の百花繚乱。 | Culture no hyakka-ryouran. | Profusão deslumbrante da cultura. | pending-human-review |
 | 16 | kanjis[25].examples[1].content | 繚 | 繚乱 (ryouran) | 繚乱ブルおおみんグ。 | Ryouran blooming. | Desabrochar exuberante. | pending-human-review |
 | 16 | kanjis[26].onyomi | 乱 | leitura: mechanically-convertible-onyomi | ラン (RAN) | RAN (RAN) | proposta: ラン (RAN) | pending-human-review |
@@ -1454,11 +1454,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 16 | kanjis[27].examples[0].content | 一 | 一刀両断 (ittou-ryoudan) | 一刀両断判断。 | Ittou-ryoudan decision. | Decisão drástica e imediata. | pending-human-review |
 | 16 | kanjis[27].examples[1].content | 一 | 一期一会 (ichigo-ichie) | 一期一会精神。 | Ichigo-ichie spirit. | Espírito de valorizar o encontro único. | pending-human-review |
 | 16 | kanjis[28].onyomi | 刀 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 16 | kanjis[28].kunyomi | 刀 | leitura: ambiguous-or-foreign | katana (katana) | katana (katana) | proposta:  | pending-human-review |
+| 16 | kanjis[28].kunyomi | 刀 | leitura:  | かたな (katana) |  | proposta:  | corrected |
 | 16 | kanjis[28].examples[0].content | 刀 | 一刀両断 (ittou-ryoudan) | 一刀両断でれそルヴえ。 | Ittou-ryoudan de resolve. | Resolver com corte drástico. | pending-human-review |
 | 16 | kanjis[28].examples[1].content | 刀 | 刀剣 (touken) | じゃぱねせ刀剣。 | Japanese touken. | Espada japonesa tradicional. | pending-human-review |
 | 16 | kanjis[29].onyomi | 両 | leitura: mechanically-convertible-onyomi | リョウ (RYOU) | RYOU (RYOU) | proposta: リョウ (RYOU) | pending-human-review |
-| 16 | kanjis[29].kunyomi | 両 | leitura: ambiguous-or-foreign | futatsu (futatsu) | futatsu (futatsu) | proposta:  | pending-human-review |
+| 16 | kanjis[29].kunyomi | 両 | leitura:  | ふたつ (futatsu) |  | proposta:  | corrected |
 | 16 | kanjis[29].examples[0].content | 両 | 一刀両断 (ittou-ryoudan) | 一刀両断れそルうてぃおん。 | Ittou-ryoudan resolution. | Resolução drástica de cortar o problema. | pending-human-review |
 | 16 | kanjis[29].examples[1].content | 両 | 両立 (ryouritsu) | 仕事あんド生活の両立。 | Work and life no ryouritsu. | Coexistência entre trabalho e vida. | pending-human-review |
 | 16 | kanjis[30].onyomi | 断 | leitura: mechanically-convertible-onyomi | ダン (DAN) | DAN (DAN) | proposta: ダン (DAN) | pending-human-review |
@@ -1468,45 +1468,45 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 16 | kanjis[31].examples[0].content | 会 | 一期一会 (ichigo-ichie) | 出会いの一期一会。 | Encounter no ichigo-ichie. | Valorizar o encontro único na vida. | pending-human-review |
 | 16 | kanjis[31].examples[1].content | 会 | 会合 (kaigou) | あンぬあル会合。 | Annual kaigou. | Reunião anual. | pending-human-review |
 | 16 | kanjis[32].onyomi | 期 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
-| 16 | kanjis[32].kunyomi | 期 | leitura: ambiguous-or-foreign | ki (ki) | ki (ki) | proposta:  | pending-human-review |
+| 16 | kanjis[32].kunyomi | 期 | leitura:  | - |  | proposta:  | corrected |
 | 16 | kanjis[32].examples[0].content | 期 | 一期一会 (ichigo-ichie) | 一期一会態度。 | Ichigo-ichie attitude. | Atitude de tratar cada momento como único. | pending-human-review |
 | 16 | kanjis[32].examples[1].content | 期 | 期間 (kikan) | ふぃクスえド期間。 | Fixed kikan. | Período fixo. | pending-human-review |
 | 16 | kanjis[33].onyomi | 臨 | leitura: mechanically-convertible-onyomi | リン (RIN) | RIN (RIN) | proposta: リン (RIN) | pending-human-review |
 | 16 | kanjis[33].examples[0].content | 臨 | 臨機応変 (rinki-ouhen) | 臨機応変あクてぃおん。 | Rinki-ouhen action. | Ação de adaptação flexível. | pending-human-review |
 | 16 | kanjis[33].examples[1].content | 臨 | 臨床 (rinshou) | 臨床どクとル。 | Rinshou doctor. | Médico de atendimento clínico. | pending-human-review |
 | 16 | kanjis[34].onyomi | 機 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
-| 16 | kanjis[34].kunyomi | 機 | leitura: ambiguous-or-foreign | hata (hata) | hata (hata) | proposta:  | pending-human-review |
+| 16 | kanjis[34].kunyomi | 機 | leitura:  | はた (hata) |  | proposta:  | corrected |
 | 16 | kanjis[34].examples[0].content | 機 | 臨機応変 (rinki-ouhen) | 臨機応変れスぽんせ。 | Rinki-ouhen response. | Resposta flexível conforme a oportunidade. | pending-human-review |
 | 16 | kanjis[34].examples[1].content | 機 | 契機 (keiki) | ちゃんげの契機。 | Change no keiki. | Gatilho para a mudança. | pending-human-review |
 | 16 | kanjis[35].onyomi | 晴 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
 | 16 | kanjis[35].examples[0].content | 晴 | 雨過天晴 (uka-tensei) | 雨過天晴ほぺ。 | Uka-tensei hope. | Esperança de superação após a tempestade. | pending-human-review |
 | 16 | kanjis[35].examples[1].content | 晴 | 快晴 (kaisei) | 快晴だイ。 | Kaisei day. | Dia de céu completamente limpo. | pending-human-review |
 | 16 | kanjis[36].onyomi | 天 | leitura: mechanically-convertible-onyomi | テン (TEN) | TEN (TEN) | proposta: テン (TEN) | pending-human-review |
-| 16 | kanjis[36].kunyomi | 天 | leitura: ambiguous-or-foreign | ame (ame) | ame (ame) | proposta:  | pending-human-review |
+| 16 | kanjis[36].kunyomi | 天 | leitura:  | あめ (ame) |  | proposta:  | corrected |
 | 16 | kanjis[36].examples[0].content | 天 | 雨過天晴 (uka-tensei) | 雨過天晴あフてルクりスいス。 | Uka-tensei after crisis. | O céu abre límpido após a crise. | pending-human-review |
 | 16 | kanjis[36].examples[1].content | 天 | 天体 (tentai) | 天体観察。 | Tentai observation. | Observação de corpos celestes. | pending-human-review |
 | 16 | kanjis[37].onyomi | 雨 | leitura: mechanically-convertible-onyomi | ウ (U) | U (U) | proposta: ウ (U) | pending-human-review |
-| 16 | kanjis[37].kunyomi | 雨 | leitura: ambiguous-or-foreign | ame (ame) | ame (ame) | proposta:  | pending-human-review |
+| 16 | kanjis[37].kunyomi | 雨 | leitura:  | あめ (ame) |  | proposta:  | corrected |
 | 16 | kanjis[37].examples[0].content | 雨 | 雨過天晴 (uka-tensei) | 雨過天晴プはせ。 | Uka-tensei phase. | Fase de céu limpo pós-tempestade. | pending-human-review |
 | 16 | kanjis[37].examples[1].content | 雨 | 雨量 (uryou) | ひグフ雨量。 | High uryou. | Elevado volume de chuva. | pending-human-review |
 | 16 | kanjis[38].onyomi | 研 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
 | 16 | kanjis[38].examples[0].content | 研 | 研鑽 (kensan) | あクあでみク研鑽。 | Academic kensan. | Estudo e aprimoramento acadêmico. | pending-human-review |
 | 16 | kanjis[38].examples[1].content | 研 | 研修 (kenshuu) | スたっフ研修。 | Staff kenshuu. | Treinamento de aperfeiçoamento da equipe. | pending-human-review |
 | 16 | kanjis[39].onyomi | 鑽 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
-| 16 | kanjis[39].kunyomi | 鑽 | leitura: ambiguous-or-foreign | kiri (kiri) | kiri (kiri) | proposta:  | pending-human-review |
+| 16 | kanjis[39].kunyomi | 鑽 | leitura:  | き・る (kiru) |  | proposta:  | corrected |
 | 16 | kanjis[39].examples[0].content | 鑽 | 研鑽 (kensan) | 研鑽をかさねる。 | Kensan o kasaneru. | Acumular dedicação e aprofundamento. | pending-human-review |
 | 16 | kanjis[39].examples[1].content | 鑽 | 研鑽者 (kensansha) | ででぃクあてド研鑽者。 | Dedicated kensansha. | Pesquisador dedicado. | pending-human-review |
 | 17 | grammar.content | — | — | にりつはいはんのしょうきょうをふまえて、 しこンさくごをくりかえします。 | Niritsu-haihan no shoukyou o fumaete, shikon-sakugo o kurikaeshimasu. | Diante do dilema da contradição, repete-se o processo de tentativa e erro. | pending-human-review |
 | 17 | kanjis[0].onyomi | 矛 | leitura: mechanically-convertible-onyomi | ム (MU) | MU (MU) | proposta: ム (MU) | pending-human-review |
-| 17 | kanjis[0].kunyomi | 矛 | leitura: ambiguous-or-foreign | hoko (hoko) | hoko (hoko) | proposta:  | pending-human-review |
+| 17 | kanjis[0].kunyomi | 矛 | leitura:  | ほこ (hoko) |  | proposta:  | corrected |
 | 17 | kanjis[0].examples[0].content | 矛 | 矛盾 (mujun) | ルおぎクの矛盾。 | Logic no mujun. | Contradição de lógica. | pending-human-review |
 | 17 | kanjis[0].examples[1].content | 矛 | 矛先 (hokosaki) | 矛先をトうルん。 | Hokosaki o turn. | Direcionar a ponta da lança da crítica. | pending-human-review |
 | 17 | kanjis[1].onyomi | 盾 | leitura: mechanically-convertible-onyomi | ジュン (JUN) | JUN (JUN) | proposta: ジュン (JUN) | pending-human-review |
-| 17 | kanjis[1].kunyomi | 盾 | leitura: ambiguous-or-foreign | tate (tate) | tate (tate) | proposta:  | pending-human-review |
+| 17 | kanjis[1].kunyomi | 盾 | leitura:  | たて (tate) |  | proposta:  | corrected |
 | 17 | kanjis[1].examples[0].content | 盾 | 矛盾 (mujun) | 矛盾スたてめんト。 | Mujun statement. | Declaração contraditória. | pending-human-review |
 | 17 | kanjis[1].examples[1].content | 盾 | 盾突く (tatetsuku) | ぼっスに盾突く。 | Boss ni tatetsuku. | Desafiar a autoridade do chefe. | pending-human-review |
 | 17 | kanjis[2].onyomi | 背 | leitura: mechanically-convertible-onyomi | ハイ (HAI) | HAI (HAI) | proposta: ハイ (HAI) | pending-human-review |
-| 17 | kanjis[2].kunyomi | 背 | leitura: ambiguous-or-foreign | se (se) | se (se) | proposta:  | pending-human-review |
+| 17 | kanjis[2].kunyomi | 背 | leitura:  | せ (se) |  | proposta:  | corrected |
 | 17 | kanjis[2].examples[0].content | 背 | 二律背反 (niritsu-haihan) | 二律背反でぃルえっま。 | Niritsu-haihan dilemma. | Dilema de antinomia. | pending-human-review |
 | 17 | kanjis[2].examples[1].content | 背 | 背反 (haihan) | ドうトイに背反。 | Duty ni haihan. | Oposição ao dever moral. | pending-human-review |
 | 17 | kanjis[3].onyomi | 反 | leitura: mechanically-convertible-onyomi | ハン (HAN) | HAN (HAN) | proposta: ハン (HAN) | pending-human-review |
@@ -1525,14 +1525,14 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 17 | kanjis[7].examples[0].content | 誤 | 試行錯誤 (shikon-sakugo) | 試行錯誤方法。 | Shikon-sakugo method. | Método de aprendizagem por erro. | pending-human-review |
 | 17 | kanjis[7].examples[1].content | 誤 | 誤解 (gokai) | 誤解をそルヴえ。 | Gokai o solve. | Esclarecer o mal-entendido. | pending-human-review |
 | 17 | kanjis[8].onyomi | 七 | leitura: mechanically-convertible-onyomi | シチ (SHICHI) | SHICHI (SHICHI) | proposta: シチ (SHICHI) | pending-human-review |
-| 17 | kanjis[8].kunyomi | 七 | leitura: ambiguous-or-foreign | nana (nana) | nana (nana) | proposta:  | pending-human-review |
+| 17 | kanjis[8].kunyomi | 七 | leitura:  | なな (nana) |  | proposta:  | corrected |
 | 17 | kanjis[8].examples[0].content | 七 | 七転八起 (shichiten-hachiki) | 七転八起精神。 | Shichiten-hachiki spirit. | Espírito de resiliência inabalável. | pending-human-review |
 | 17 | kanjis[8].examples[1].content | 七 | 七難 (shichinan) | 七難おヴえルクおめ。 | Shichinan overcome. | Superar as sete adversidades. | pending-human-review |
 | 17 | kanjis[9].onyomi | 転 | leitura: mechanically-convertible-onyomi | テン (TEN) | TEN (TEN) | proposta: テン (TEN) | pending-human-review |
 | 17 | kanjis[9].examples[0].content | 転 | 七転八起 (shichiten-hachiki) | 七転八起態度。 | Shichiten-hachiki attitude. | Atitude de resiliência perante as quedas. | pending-human-review |
 | 17 | kanjis[9].examples[1].content | 転 | 転倒 (tentou) | 転倒プれヴえんてぃおん。 | Tentou prevention. | Prevenção de quedas. | pending-human-review |
 | 17 | kanjis[10].onyomi | 八 | leitura: mechanically-convertible-onyomi | ハチ (HACHI) | HACHI (HACHI) | proposta: ハチ (HACHI) | pending-human-review |
-| 17 | kanjis[10].kunyomi | 八 | leitura: ambiguous-or-foreign | ya (ya) | ya (ya) | proposta:  | pending-human-review |
+| 17 | kanjis[10].kunyomi | 八 | leitura:  | や (ya) |  | proposta:  | corrected |
 | 17 | kanjis[10].examples[0].content | 八 | 七転八起 (shichiten-hachiki) | 七転八起生活。 | Shichiten-hachiki life. | Vida de constante superação. | pending-human-review |
 | 17 | kanjis[10].examples[1].content | 八 | 八方 (happou) | 八方べあうトイ。 | Happou beauty. | Gentil em todas as direções. | pending-human-review |
 | 17 | kanjis[11].onyomi | 起 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
@@ -1542,7 +1542,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 17 | kanjis[12].examples[0].content | 以 | 以心伝心 (ishin-denshin) | 以心伝心の関係。 | Ishinden-shin relationship. | Relação de compreensão mútua sem palavras. | pending-human-review |
 | 17 | kanjis[12].examples[1].content | 以 | 以降 (ikou) | とだイ以降。 | Today ikou. | A partir de hoje. | pending-human-review |
 | 17 | kanjis[13].onyomi | 心 | leitura: mechanically-convertible-onyomi | シン (SHIN) | SHIN (SHIN) | proposta: シン (SHIN) | pending-human-review |
-| 17 | kanjis[13].kunyomi | 心 | leitura: ambiguous-or-foreign | kokoro (kokoro) | kokoro (kokoro) | proposta:  | pending-human-review |
+| 17 | kanjis[13].kunyomi | 心 | leitura:  | こころ (kokoro) |  | proposta:  | corrected |
 | 17 | kanjis[13].examples[0].content | 心 | 以心伝心 (ishin-denshin) | 以心伝心の絆。 | Ishinden-shin bond. | Elo de empatia de mente para mente. | pending-human-review |
 | 17 | kanjis[13].examples[1].content | 心 | 心境 (shinkyou) | ぺあクえふル心境。 | Peaceful shinkyou. | Estado de espírito pacífico. | pending-human-review |
 | 17 | kanjis[14].onyomi | 死 | leitura: mechanically-convertible-onyomi | シ (SHI) | SHI (SHI) | proposta: シ (SHI) | pending-human-review |
@@ -1564,11 +1564,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 17 | kanjis[19].examples[0].content | 怒 | 喜怒哀楽 (kido-airaku) | 喜怒哀楽ばルあんクえ。 | Kido-airaku balance. | Equilíbrio das emoções humanas. | pending-human-review |
 | 17 | kanjis[19].examples[1].content | 怒 | 憤怒 (funnu) | 憤怒国家。 | Funnu state. | Estado de ira profunda. | pending-human-review |
 | 17 | kanjis[20].onyomi | 弱 | leitura: mechanically-convertible-onyomi | ジャク (JAKU) | JAKU (JAKU) | proposta: ジャク (JAKU) | pending-human-review |
-| 17 | kanjis[20].kunyomi | 弱 | leitura: ambiguous-or-foreign | yowai (yowai) | yowai (yowai) | proposta:  | pending-human-review |
+| 17 | kanjis[20].kunyomi | 弱 | leitura:  | よわ・い (yowai) |  | proposta:  | corrected |
 | 17 | kanjis[20].examples[0].content | 弱 | 弱肉強食 (jakuniku-kyoushouku) | 弱肉強食世界。 | Jakuniku-kyoushouku world. | Mundo regido pela lei da selva. | pending-human-review |
 | 17 | kanjis[20].examples[1].content | 弱 | 弱小 (jakushou) | 弱小会社。 | Jakushou company. | Empresa pequena e vulnerável. | pending-human-review |
 | 17 | kanjis[21].onyomi | 肉 | leitura: mechanically-convertible-onyomi | ニク (NIKU) | NIKU (NIKU) | proposta: ニク (NIKU) | pending-human-review |
-| 17 | kanjis[21].kunyomi | 肉 | leitura: ambiguous-or-foreign | niku (niku) | niku (niku) | proposta:  | pending-human-review |
+| 17 | kanjis[21].kunyomi | 肉 | leitura:  | しし (shishi) |  | proposta:  | corrected |
 | 17 | kanjis[21].examples[0].content | 肉 | 弱肉強食 (jakuniku-kyoushouku) | まルけトの弱肉強食。 | Market no jakuniku-kyoushouku. | Lei da selva no mercado. | pending-human-review |
 | 17 | kanjis[21].examples[1].content | 肉 | 肉体 (nikutai) | 肉体ルあぼル。 | Nikutai labor. | Trabalho corporal físico. | pending-human-review |
 | 17 | kanjis[22].onyomi | 強 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
@@ -1578,7 +1578,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 17 | kanjis[23].examples[0].content | 食 | 弱肉強食 (jakuniku-kyoushouku) | 弱肉強食クおムぺてぃてぃおん。 | Jakuniku-kyoushouku competition. | Competição da lei da selva. | pending-human-review |
 | 17 | kanjis[23].examples[1].content | 食 | 侵食 (shinshoku) | 海岸の侵食。 | Coast no shinshoku. | Erosão gradual da costa. | pending-human-review |
 | 17 | kanjis[24].onyomi | 朝 | leitura: mechanically-convertible-onyomi | チョウ (CHOU) | CHOU (CHOU) | proposta: チョウ (CHOU) | pending-human-review |
-| 17 | kanjis[24].kunyomi | 朝 | leitura: ambiguous-or-foreign | asa (asa) | asa (asa) | proposta:  | pending-human-review |
+| 17 | kanjis[24].kunyomi | 朝 | leitura:  | あさ (asa) |  | proposta:  | corrected |
 | 17 | kanjis[24].examples[0].content | 朝 | 朝三暮四 (chousan-boshi) | 朝三暮四ぽルいクイ。 | Chousan-boshi policy. | Política de ilusão inconstante. | pending-human-review |
 | 17 | kanjis[24].examples[1].content | 朝 | 朝令暮改 (chourei-bokai) | 朝令暮改経営。 | Chourei-bokai management. | Gestão de decretos contraditórios. | pending-human-review |
 | 17 | kanjis[25].onyomi | 三 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
@@ -1591,49 +1591,49 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 17 | kanjis[27].examples[0].content | 四 | 朝三暮四 (chousan-boshi) | 朝三暮四たクてぃク。 | Chousan-boshi tactic. | Tática de retórica inconstante. | pending-human-review |
 | 17 | kanjis[27].examples[1].content | 四 | 四方 (shihou) | 四方ヴいえウ。 | Shihou view. | Visão para todas as direções. | pending-human-review |
 | 17 | kanjis[28].onyomi | 令 | leitura: mechanically-convertible-onyomi | レイ (REI) | REI (REI) | proposta: レイ (REI) | pending-human-review |
-| 17 | kanjis[28].kunyomi | 令 | leitura: ambiguous-or-foreign | noritoto (noritoto) | noritoto (noritoto) | proposta:  | pending-human-review |
+| 17 | kanjis[28].kunyomi | 令 | leitura:  | - |  | proposta:  | corrected |
 | 17 | kanjis[28].examples[0].content | 令 | 朝令暮改 (chourei-bokai) | 朝令暮改ごヴえルんめんト。 | Chourei-bokai government. | Governo de ordens inconstantes. | pending-human-review |
 | 17 | kanjis[28].examples[1].content | 令 | 命令 (meirei) | ストりクト命令。 | Strict meirei. | Ordem estrita formal. | pending-human-review |
 | 17 | kanjis[29].onyomi | 改 | leitura: mechanically-convertible-onyomi | カイ (KAI) | KAI (KAI) | proposta: カイ (KAI) | pending-human-review |
 | 17 | kanjis[29].examples[0].content | 改 | 朝令暮改 (chourei-bokai) | 朝令暮改規則。 | Chourei-bokai rule. | Regras revogadas a toda hora. | pending-human-review |
 | 17 | kanjis[29].examples[1].content | 改 | 改革 (kaikaku) | 制度の改革。 | System no kaikaku. | Reestruturação do sistema. | pending-human-review |
 | 17 | kanjis[30].onyomi | 馬 | leitura: mechanically-convertible-onyomi | バ (BA) | BA (BA) | proposta: バ (BA) | pending-human-review |
-| 17 | kanjis[30].kunyomi | 馬 | leitura: ambiguous-or-foreign | uma (uma) | uma (uma) | proposta:  | pending-human-review |
+| 17 | kanjis[30].kunyomi | 馬 | leitura:  | うま (uma) |  | proposta:  | corrected |
 | 17 | kanjis[30].examples[0].content | 馬 | 馬耳東風 (baji-toufuu) | 馬耳東風態度。 | Baji-toufuu attitude. | Atitude de absoluta indiferença a conselhos. | pending-human-review |
 | 17 | kanjis[30].examples[1].content | 馬 | 競馬 (keiba) | 競馬トらクク。 | Keiba track. | Hipódromo de corrida de cavalos. | pending-human-review |
 | 17 | kanjis[31].onyomi | 耳 | leitura: mechanically-convertible-onyomi | ジ (JI) | JI (JI) | proposta: ジ (JI) | pending-human-review |
-| 17 | kanjis[31].kunyomi | 耳 | leitura: ambiguous-or-foreign | mimi (mimi) | mimi (mimi) | proposta:  | pending-human-review |
+| 17 | kanjis[31].kunyomi | 耳 | leitura:  | みみ (mimi) |  | proposta:  | corrected |
 | 17 | kanjis[31].examples[0].content | 耳 | 馬耳東風 (baji-toufuu) | あドヴいクえが馬耳東風。 | Advice ga baji-toufuu. | O conselho entra por um ouvido e sai pelo outro. | pending-human-review |
 | 17 | kanjis[31].examples[1].content | 耳 | 耳鼻 (jibi) | 耳鼻診療所。 | Jibi clinic. | Clínica de otorrinolaringologia. | pending-human-review |
 | 17 | kanjis[32].onyomi | 東 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 17 | kanjis[32].kunyomi | 東 | leitura: ambiguous-or-foreign | higashi (higashi) | higashi (higashi) | proposta:  | pending-human-review |
+| 17 | kanjis[32].kunyomi | 東 | leitura:  | ひがし (higashi) |  | proposta:  | corrected |
 | 17 | kanjis[32].examples[0].content | 東 | 馬耳東風 (baji-toufuu) | 馬耳東風ルいスてねル。 | Baji-toufuu listener. | Ouvinte de total indiferença. | pending-human-review |
 | 17 | kanjis[32].examples[1].content | 東 | 東洋 (touyou) | 東洋文化。 | Touyou culture. | Cultura do Oriente. | pending-human-review |
 | 17 | kanjis[33].onyomi | 独 | leitura: mechanically-convertible-onyomi | ドク (DOKU) | DOKU (DOKU) | proposta: ドク (DOKU) | pending-human-review |
-| 17 | kanjis[33].kunyomi | 独 | leitura: ambiguous-or-foreign | hitori (hitori) | hitori (hitori) | proposta:  | pending-human-review |
+| 17 | kanjis[33].kunyomi | 独 | leitura:  | ひと・り (hitori) |  | proposta:  | corrected |
 | 17 | kanjis[33].examples[0].content | 独 | 独断専行 (dokudan-senkou) | 独断専行まなげル。 | Dokudan-senkou manager. | Gerente de decisões arbitrárias. | pending-human-review |
 | 17 | kanjis[33].examples[1].content | 独 | 独立 (dokuritsu) | 国家の独立。 | State no dokuritsu. | Independência do Estado. | pending-human-review |
 | 17 | kanjis[34].onyomi | 専 | leitura: mechanically-convertible-onyomi | セン (SEN) | SEN (SEN) | proposta: セン (SEN) | pending-human-review |
 | 17 | kanjis[34].examples[0].content | 専 | 独断専行 (dokudan-senkou) | 独断専行あクてぃおん。 | Dokudan-senkou action. | Ação de tomar o controle arbitrário. | pending-human-review |
 | 17 | kanjis[34].examples[1].content | 専 | 専念 (sennen) | 勉強に専念。 | Study ni sennen. | Dedicação exclusiva aos estudos. | pending-human-review |
 | 17 | kanjis[35].onyomi | 面 | leitura: mechanically-convertible-onyomi | メン (MEN) | MEN (MEN) | proposta: メン (MEN) | pending-human-review |
-| 17 | kanjis[35].kunyomi | 面 | leitura: ambiguous-or-foreign | omote (omote) | omote (omote) | proposta:  | pending-human-review |
+| 17 | kanjis[35].kunyomi | 面 | leitura:  | おもて (omote) |  | proposta:  | corrected |
 | 17 | kanjis[35].examples[0].content | 面 | 八面六臂 (hachimen-roppi) | 八面六臂あクてぃヴいトイ。 | Hachimen-roppi activity. | Atuação polivalente e versátil. | pending-human-review |
 | 17 | kanjis[35].examples[1].content | 面 | 面目 (menboku) | 面目を保つ。 | Menboku o保つ. | Manter a honra pessoal. | pending-human-review |
 | 17 | kanjis[36].onyomi | 臂 | leitura: mechanically-convertible-onyomi | ヒ (HI) | HI (HI) | proposta: ヒ (HI) | pending-human-review |
-| 17 | kanjis[36].kunyomi | 臂 | leitura: ambiguous-or-foreign | hij (hij) | hij (hij) | proposta:  | pending-human-review |
+| 17 | kanjis[36].kunyomi | 臂 | leitura:  | ひじ (hiji) |  | proposta:  | corrected |
 | 17 | kanjis[36].examples[0].content | 臂 | 八面六臂 (hachimen-roppi) | 八面六臂の仕事。 | Hachimen-roppi no work. | Trabalho polivalente de imensa habilidade. | pending-human-review |
 | 17 | kanjis[36].examples[1].content | 臂 | 振臂 (shinhi) | 振臂する。 | Shinhi suru. | Erguer os braços entusiasticamente. | pending-human-review |
 | 17 | kanjis[37].onyomi | 我 | leitura: mechanically-convertible-onyomi | ガ (GA) | GA (GA) | proposta: ガ (GA) | pending-human-review |
-| 17 | kanjis[37].kunyomi | 我 | leitura: ambiguous-or-foreign | watashi (watashi) | watashi (watashi) | proposta:  | pending-human-review |
+| 17 | kanjis[37].kunyomi | 我 | leitura:  | われ (ware) / わ (wa) / わ・が- (waga-) / わが- (waga-) |  | proposta:  | corrected |
 | 17 | kanjis[37].examples[0].content | 我 | 我田引水 (gaden-insui) | 我田引水あルぐめんト。 | Gaden-insui argument. | Argumento egoísta em causa própria. | pending-human-review |
 | 17 | kanjis[37].examples[1].content | 我 | 我慢 (gaman) | ぱいんの我慢。 | Pain no gaman. | Suportar a dor com paciência. | pending-human-review |
 | 17 | kanjis[38].onyomi | 引 | leitura: mechanically-convertible-onyomi | イン (IN) | IN (IN) | proposta: イン (IN) | pending-human-review |
-| 17 | kanjis[38].kunyomi | 引 | leitura: ambiguous-or-foreign | hiki (hiki) | hiki (hiki) | proposta:  | pending-human-review |
+| 17 | kanjis[38].kunyomi | 引 | leitura:  | ひ・く (hiku) / ひ・ける (hikeru) |  | proposta:  | corrected |
 | 17 | kanjis[38].examples[0].content | 引 | 我田引水 (gaden-insui) | 我田引水ルおぎク。 | Gaden-insui logic. | Lógica de beneficiar apenas o próprio lado. | pending-human-review |
 | 17 | kanjis[38].examples[1].content | 引 | 引用 (inyou) | てクストの引用。 | Text no inyou. | Citação do texto. | pending-human-review |
 | 17 | kanjis[39].onyomi | 田 | leitura: mechanically-convertible-onyomi | デン (DEN) | DEN (DEN) | proposta: デン (DEN) | pending-human-review |
-| 17 | kanjis[39].kunyomi | 田 | leitura: ambiguous-or-foreign | ta (ta) | ta (ta) | proposta:  | pending-human-review |
+| 17 | kanjis[39].kunyomi | 田 | leitura:  | た (ta) |  | proposta:  | corrected |
 | 17 | kanjis[39].examples[0].content | 田 | 我田引水 (gaden-insui) | 我田引水ぽルいクイ。 | Gaden-insui policy. | Política egoísta de benefício próprio. | pending-human-review |
 | 17 | kanjis[39].examples[1].content | 田 | 田園 (den'en) | 田園スクえねルイ。 | Den'en scenery. | Cenário de campos rurais. | pending-human-review |
 | 18 | grammar.content | — | — | へいかからのきそうをたまわり、 しんじつとしてたてまつります。 | Heika kara no kisou o tamawari, shinjitsu to shite tatematsurimasu. | Recebe-se a honra concedida por Sua Majestade, oferecendo lealdade com profunda veneração. | pending-human-review |
@@ -1668,11 +1668,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 18 | kanjis[9].examples[0].content | 承 | 承知 (shouchi) | 承知した。 | Shouchi shita. | Entendido e consentido. | pending-human-review |
 | 18 | kanjis[9].examples[1].content | 承 | 承諾 (shoudaku) | プろぽさルの承諾。 | Proposal no shoudaku. | Aceitação formal da proposta. | pending-human-review |
 | 18 | kanjis[10].onyomi | 謙 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
-| 18 | kanjis[10].kunyomi | 謙 | leitura: ambiguous-or-foreign | hesonokamaru | hesonokamaru | proposta:  | pending-human-review |
+| 18 | kanjis[10].kunyomi | 謙 | leitura:  | へりくだ・る (herikudaru) |  | proposta:  | corrected |
 | 18 | kanjis[10].examples[0].content | 謙 | 謙虚 (kenkyo) | 謙虚な態度。 | Kenkyo na attitude. | Atitude de modéstia e humildade. | pending-human-review |
 | 18 | kanjis[10].examples[1].content | 謙 | 謙遜 (kenson) | 謙遜のとね。 | Kenson no tone. | Tom de modéstia protocolar. | pending-human-review |
 | 18 | kanjis[11].onyomi | 遜 | leitura: mechanically-convertible-onyomi | ソン (SON) | SON (SON) | proposta: ソン (SON) | pending-human-review |
-| 18 | kanjis[11].kunyomi | 遜 | leitura: ambiguous-or-foreign | hesonokamaru | hesonokamaru | proposta:  | pending-human-review |
+| 18 | kanjis[11].kunyomi | 遜 | leitura:  | したが・う (shitagau) / へりくだ・る (herikudaru) / ゆず・る (yuzuru) |  | proposta:  | corrected |
 | 18 | kanjis[11].examples[0].content | 遜 | 謙遜 (kenson) | 謙遜する。 | Kenson suru. | Agir com modéstia e cortesia. | pending-human-review |
 | 18 | kanjis[11].examples[1].content | 遜 | 遜色 (sonshoku) | 遜色ない。 | Sonshoku nai. | Sem qualquer inferioridade. | pending-human-review |
 | 18 | kanjis[12].onyomi | 啓 | leitura: mechanically-convertible-onyomi | ケイ (KEI) | KEI (KEI) | proposta: ケイ (KEI) | pending-human-review |
@@ -1682,7 +1682,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 18 | kanjis[13].examples[0].content | 謹 | 謹言 (kingon) | けいぐ謹言。 | Keigu kingon. | Atenciosamente. | pending-human-review |
 | 18 | kanjis[13].examples[1].content | 謹 | 謹慎 (kinshin) | せルフ謹慎。 | Self kinshin. | Recolhimento disciplinar autônomo. | pending-human-review |
 | 18 | kanjis[14].onyomi | 献 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
-| 18 | kanjis[14].kunyomi | 献 | leitura: ambiguous-or-foreign | tatematsuru | tatematsuru | proposta:  | pending-human-review |
+| 18 | kanjis[14].kunyomi | 献 | leitura:  | たてまつ・る (tatematsuru) |  | proposta:  | corrected |
 | 18 | kanjis[14].examples[0].content | 献 | 献上 (kenjou) | プろドうクトの献上。 | Product no kenjou. | Oferta de produto a Sua Majestade. | pending-human-review |
 | 18 | kanjis[14].examples[1].content | 献 | 献身 (kenshin) | 国家への献身。 | State e no kenshin. | Dedicação solene ao Estado. | pending-human-review |
 | 18 | kanjis[15].onyomi | 納 | leitura: mechanically-convertible-onyomi | ノウ (NOU) | NOU (NOU) | proposta: ノウ (NOU) | pending-human-review |
@@ -1695,50 +1695,50 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 18 | kanjis[17].examples[0].content | 垂 | 垂範 (suihan) | へいかの垂範。 | Heika no suihan. | Servir de modelo virtuoso por Sua Majestade. | pending-human-review |
 | 18 | kanjis[17].examples[1].content | 垂 | 垂示 (suiji) | いムぺりあル垂示。 | Imperial suiji. | Concessão de diretriz imperial. | pending-human-review |
 | 18 | kanjis[18].onyomi | 範 | leitura: mechanically-convertible-onyomi | ハン (HAN) | HAN (HAN) | proposta: ハン (HAN) | pending-human-review |
-| 18 | kanjis[18].kunyomi | 範 | leitura: ambiguous-or-foreign | nori (nori) | nori (nori) | proposta:  | pending-human-review |
+| 18 | kanjis[18].kunyomi | 範 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[18].examples[0].content | 範 | 模範 (mohan) | 模範ストうでんト。 | Mohan student. | Estudante modelo de conduta. | pending-human-review |
 | 18 | kanjis[18].examples[1].content | 範 | 規範 (kihan) | そクいあル規範。 | Social kihan. | Norma social ética. | pending-human-review |
 | 18 | kanjis[19].onyomi | 恩 | leitura: mechanically-convertible-onyomi | オン (ON) | ON (ON) | proposta: オン (ON) | pending-human-review |
-| 18 | kanjis[19].kunyomi | 恩 | leitura: ambiguous-or-foreign | megumi (megumi) | megumi (megumi) | proposta:  | pending-human-review |
+| 18 | kanjis[19].kunyomi | 恩 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[19].examples[0].content | 恩 | 恩恵 (onkei) | 自然の恩恵。 | Nature no onkei. | Benefício e graça da natureza. | pending-human-review |
 | 18 | kanjis[19].examples[1].content | 恩 | 恩賜 (onshi) | 恩賜わトクフ。 | Onshi watch. | Relógio de dádiva imperial. | pending-human-review |
 | 18 | kanjis[20].onyomi | 恵 | leitura: mechanically-convertible-onyomi | ケイ (KEI) | KEI (KEI) | proposta: ケイ (KEI) | pending-human-review |
 | 18 | kanjis[20].examples[0].content | 恵 | 恩恵 (onkei) | 平和の恩恵。 | Peace no onkei. | Bênção da paz. | pending-human-review |
 | 18 | kanjis[20].examples[1].content | 恵 | 恵愛 (keiai) | いムぺりあル恵愛。 | Imperial keiai. | Afeto e amor imperial. | pending-human-review |
 | 18 | kanjis[21].onyomi | 皇 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 18 | kanjis[21].kunyomi | 皇 | leitura: ambiguous-or-foreign | sumera (sumera) | sumera (sumera) | proposta:  | pending-human-review |
+| 18 | kanjis[21].kunyomi | 皇 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[21].examples[0].content | 皇 | 皇室 (koushitsu) | 皇室トらでぃてぃおん。 | Koushitsu tradition. | Tradição da Família Imperial. | pending-human-review |
 | 18 | kanjis[21].examples[1].content | 皇 | 皇帝 (koutei) | ろまん皇帝。 | Roman koutei. | Imperador romano. | pending-human-review |
 | 18 | kanjis[22].onyomi | 帝 | leitura: mechanically-convertible-onyomi | テイ (TEI) | TEI (TEI) | proposta: テイ (TEI) | pending-human-review |
-| 18 | kanjis[22].kunyomi | 帝 | leitura: ambiguous-or-foreign | mikado (mikado) | mikado (mikado) | proposta:  | pending-human-review |
+| 18 | kanjis[22].kunyomi | 帝 | leitura:  | みかど (mikado) |  | proposta:  | corrected |
 | 18 | kanjis[22].examples[0].content | 帝 | 帝国 (teikoku) | 帝国歴史。 | Teikoku history. | História do império. | pending-human-review |
 | 18 | kanjis[22].examples[1].content | 帝 | 皇帝 (koutei) | 皇帝ぱルあクえ。 | Koutei palace. | Palácio do soberano supremo. | pending-human-review |
 | 18 | kanjis[23].onyomi | 后 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 18 | kanjis[23].kunyomi | 后 | leitura: ambiguous-or-foreign | kisaki (kisaki) | kisaki (kisaki) | proposta:  | pending-human-review |
+| 18 | kanjis[23].kunyomi | 后 | leitura:  | きさき (kisaki) |  | proposta:  | corrected |
 | 18 | kanjis[23].examples[0].content | 后 | 皇后 (kougou) | 皇后へいか。 | Kougou-heika. | Sua Majestade a Imperatriz. | pending-human-review |
 | 18 | kanjis[23].examples[1].content | 后 | 皇太后 (koutaigou) | 皇太后ぱルあクえ。 | Koutaigou palace. | Palácio da Imperatriz-Mãe. | pending-human-review |
 | 18 | kanjis[24].onyomi | 妃 | leitura: mechanically-convertible-onyomi | ヒ (HI) | HI (HI) | proposta: ヒ (HI) | pending-human-review |
-| 18 | kanjis[24].kunyomi | 妃 | leitura: ambiguous-or-foreign | kisaki (kisaki) | kisaki (kisaki) | proposta:  | pending-human-review |
+| 18 | kanjis[24].kunyomi | 妃 | leitura:  | きさき (kisaki) |  | proposta:  | corrected |
 | 18 | kanjis[24].examples[0].content | 妃 | 妃殿下 (hidenka) | 妃殿下スぺえクフ。 | Hidenka speech. | Discurso de Sua Alteza a Princesa. | pending-human-review |
 | 18 | kanjis[24].examples[1].content | 妃 | 皇太子妃 (koutaishi-hi) | 皇太子妃訪問する。 | Koutaishi-hi visit. | Visita da Princesa Herdeira. | pending-human-review |
 | 18 | kanjis[25].onyomi | 宰 | leitura: mechanically-convertible-onyomi | サイ (SAI) | SAI (SAI) | proposta: サイ (SAI) | pending-human-review |
-| 18 | kanjis[25].kunyomi | 宰 | leitura: ambiguous-or-foreign | tsukasa (tsukasa) | tsukasa (tsukasa) | proposta:  | pending-human-review |
+| 18 | kanjis[25].kunyomi | 宰 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[25].examples[0].content | 宰 | 宰相 (saishou) | げルまん宰相。 | German saishou. | Chanceler alemão. | pending-human-review |
 | 18 | kanjis[25].examples[1].content | 宰 | 主宰 (shusai) | 行事の主宰。 | Event no shusai. | Patrono do evento de estado. | pending-human-review |
 | 18 | kanjis[26].onyomi | 相 | leitura: mechanically-convertible-onyomi | ショウ (SHOU) | SHOU (SHOU) | proposta: ショウ (SHOU) | pending-human-review |
-| 18 | kanjis[26].kunyomi | 相 | leitura: ambiguous-or-foreign | ai (ai) | ai (ai) | proposta:  | pending-human-review |
+| 18 | kanjis[26].kunyomi | 相 | leitura:  | あい- (ai-) |  | proposta:  | corrected |
 | 18 | kanjis[26].examples[0].content | 相 | 首相 (shushou) | 首相おっふぃクいあルれスいでんクえ。 | Shushou official residence. | Residência oficial do Primeiro-Ministro. | pending-human-review |
 | 18 | kanjis[26].examples[1].content | 相 | 外相 (gaishou) | 外相クおんふぇれんクえ。 | Gaishou conference. | Conferência do Ministro das Relações Exteriores. | pending-human-review |
 | 18 | kanjis[27].onyomi | 儀 | leitura: mechanically-convertible-onyomi | ギ (GI) | GI (GI) | proposta: ギ (GI) | pending-human-review |
-| 18 | kanjis[27].kunyomi | 儀 | leitura: ambiguous-or-foreign | nori (nori) | nori (nori) | proposta:  | pending-human-review |
+| 18 | kanjis[27].kunyomi | 儀 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[27].examples[0].content | 儀 | 儀式 (gishiki) | 国家儀式。 | State gishiki. | Cerimônia solene de estado. | pending-human-review |
 | 18 | kanjis[27].examples[1].content | 儀 | 礼儀 (reigi) | ストりクト礼儀。 | Strict reigi. | Estrito protocolo de respeito. | pending-human-review |
 | 18 | kanjis[28].onyomi | 礼 | leitura: mechanically-convertible-onyomi | レイ (REI) | REI (REI) | proposta: レイ (REI) | pending-human-review |
-| 18 | kanjis[28].kunyomi | 礼 | leitura: ambiguous-or-foreign | rei (rei) | rei (rei) | proposta:  | pending-human-review |
+| 18 | kanjis[28].kunyomi | 礼 | leitura:  | - |  | proposta:  | corrected |
 | 18 | kanjis[28].examples[0].content | 礼 | 礼節 (reisetsu) | でぃプルおまてぃク礼節。 | Diplomatic reisetsu. | Etiqueta diplomática formal. | pending-human-review |
 | 18 | kanjis[28].examples[1].content | 礼 | 無礼 (burei) | 無礼べはヴいおル。 | Burei behavior. | Falta de decoro protocolar. | pending-human-review |
 | 18 | kanjis[29].onyomi | 節 | leitura: mechanically-convertible-onyomi | セツ (SETSU) | SETSU (SETSU) | proposta: セツ (SETSU) | pending-human-review |
-| 18 | kanjis[29].kunyomi | 節 | leitura: ambiguous-or-foreign | fushi (fushi) | fushi (fushi) | proposta:  | pending-human-review |
+| 18 | kanjis[29].kunyomi | 節 | leitura:  | ふし (fushi) |  | proposta:  | corrected |
 | 18 | kanjis[29].examples[0].content | 節 | 礼節 (reisetsu) | 礼節をまもる。 | Reisetsu o mamoru. | Respeitar o decoro e a etiqueta. | pending-human-review |
 | 18 | kanjis[29].examples[1].content | 節 | 節度 (settodo) | 節度いんスぺえクフ。 | Settodo in speech. | Moderação e decoro nas palavras. | pending-human-review |
 | 18 | kanjis[30].onyomi | 伺 | leitura: mechanically-convertible-onyomi | シ (SHI) | SHI (SHI) | proposta: シ (SHI) | pending-human-review |
@@ -1757,22 +1757,22 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 18 | kanjis[34].examples[0].content | 賀 | 祝賀 (shukuga) | 祝賀ぱルトイ。 | Shukuga party. | Festa solene de celebração. | pending-human-review |
 | 18 | kanjis[34].examples[1].content | 賀 | 恭賀 (kyouga) | 恭賀しンねん (恭賀新年)。 | Kyouga Shinnen (恭賀新年). | Feliz Ano Novo (Saudação formalíssima). | pending-human-review |
 | 18 | kanjis[35].onyomi | 寿 | leitura: mechanically-convertible-onyomi | ジュ (JU) | JU (JU) | proposta: ジュ (JU) | pending-human-review |
-| 18 | kanjis[35].kunyomi | 寿 | leitura: ambiguous-or-foreign | kotobuki (kotobuki) | kotobuki (kotobuki) | proposta:  | pending-human-review |
+| 18 | kanjis[35].kunyomi | 寿 | leitura:  | ことぶき (kotobuki) |  | proposta:  | corrected |
 | 18 | kanjis[35].examples[0].content | 寿 | 祝寿 (shukuju) | 祝寿クえれもんイ。 | Shukuju ceremony. | Cerimônia de felicitações por longevidade. | pending-human-review |
 | 18 | kanjis[35].examples[1].content | 寿 | 寿福 (juhuku) | 寿福願う。 | Juhuku wish. | Desejo de longevidade e prosperidade. | pending-human-review |
 | 18 | kanjis[36].onyomi | 勅 | leitura: mechanically-convertible-onyomi | チョク (CHOKU) | CHOKU (CHOKU) | proposta: チョク (CHOKU) | pending-human-review |
-| 18 | kanjis[36].kunyomi | 勅 | leitura: ambiguous-or-foreign | mikonori (mikonori) | mikonori (mikonori) | proposta:  | pending-human-review |
+| 18 | kanjis[36].kunyomi | 勅 | leitura:  | いまし・める (imashimeru) / みことのり (mikotonori) |  | proposta:  | corrected |
 | 18 | kanjis[36].examples[0].content | 勅 | 勅令 (chokurei) | いムぺりあル勅令。 | Imperial chokurei. | Decreto imperial. | pending-human-review |
 | 18 | kanjis[36].examples[1].content | 勅 | 勅語 (chokugo) | 教育勅語。 | Education chokugo. | Pronunciamento imperial sobre educação. | pending-human-review |
 | 18 | kanjis[37].onyomi | 聖 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
-| 18 | kanjis[37].kunyomi | 聖 | leitura: ambiguous-or-foreign | hijiri (hijiri) | hijiri (hijiri) | proposta:  | pending-human-review |
+| 18 | kanjis[37].kunyomi | 聖 | leitura:  | ひじり (hijiri) |  | proposta:  | corrected |
 | 18 | kanjis[37].examples[0].content | 聖 | 聖旨 (seishi) | 聖旨をれクえいヴいんグ。 | Seishi o receiving. | Receber a vontade sagrada do Imperador. | pending-human-review |
 | 18 | kanjis[37].examples[1].content | 聖 | 聖域 (seiiki) | ぱルあクえ聖域。 | Palace seiiki. | Zona sagrada inviolável do Palácio. | pending-human-review |
 | 18 | kanjis[38].onyomi | 戴 | leitura: mechanically-convertible-onyomi | タイ (TAI) | TAI (TAI) | proposta: タイ (TAI) | pending-human-review |
 | 18 | kanjis[38].examples[0].content | 戴 | 戴冠 (taikan) | 戴冠クえれもんイ。 | Taikan ceremony. | Cerimônia de coroação do monarca. | pending-human-review |
 | 18 | kanjis[38].examples[1].content | 戴 | 頂戴 (choudai) | ぎフトを頂戴する。 | Gift o choudai suru. | Receber o presente com imensa humildade. | pending-human-review |
 | 18 | kanjis[39].onyomi | 頂 | leitura: mechanically-convertible-onyomi | チョウ (CHOU) | CHOU (CHOU) | proposta: チョウ (CHOU) | pending-human-review |
-| 18 | kanjis[39].kunyomi | 頂 | leitura: ambiguous-or-foreign | itadaki (itadaki) | itadaki (itadaki) | proposta:  | pending-human-review |
+| 18 | kanjis[39].kunyomi | 頂 | leitura:  | いただき (itadaki) |  | proposta:  | corrected |
 | 18 | kanjis[39].examples[0].content | 頂 | 頂戴 (choudai) | 頂戴します。 | Choudai shimasu. | Aceito e recebo respeitosamente. | pending-human-review |
 | 18 | kanjis[39].examples[1].content | 頂 | 頂上 (choujou) | もうんたいんの頂上。 | Mountain no choujou. | Cume da montanha. | pending-human-review |
 | 19 | grammar.content | — | — | うんめいのうつろいにほんろうされつつ、 しんたいのせんげんをおよぼします。 | Unmei no utsu-roi ni honrou saretsutsu, shintai no sengen o oyoboshimasu. | Sendo manipulado pelas vicissitudes do destino, estende-se a manifestação da fé. | pending-human-review |
@@ -1840,7 +1840,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 19 | kanjis[20].examples[0].content | 萌 | 萌える (moeru) | ぶドが萌える。 | Bud ga moeru. | Os brotos germinam. | pending-human-review |
 | 19 | kanjis[20].examples[1].content | 萌 | 萌芽 (houga) | えらの萌芽。 | Era no houga. | Germinação de uma nova era. | pending-human-review |
 | 19 | kanjis[21].onyomi | 芽 | leitura: mechanically-convertible-onyomi | ガ (GA) | GA (GA) | proposta: ガ (GA) | pending-human-review |
-| 19 | kanjis[21].kunyomi | 芽 | leitura: ambiguous-or-foreign | me (me) | me (me) | proposta:  | pending-human-review |
+| 19 | kanjis[21].kunyomi | 芽 | leitura:  | め (me) |  | proposta:  | corrected |
 | 19 | kanjis[21].examples[0].content | 芽 | 発芽 (hatsuga) | せえドの発芽。 | Seed no hatsuga. | Germinação da semente. | pending-human-review |
 | 19 | kanjis[21].examples[1].content | 芽 | 芽生え (mebae) | ルおヴえの芽生え。 | Love no mebae. | Surgimento do amor. | pending-human-review |
 | 19 | kanjis[22].onyomi | 滞 | leitura: mechanically-convertible-onyomi | タイ (TAI) | TAI (TAI) | proposta: タイ (TAI) | pending-human-review |
@@ -1953,7 +1953,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 20 | kanjis[17].examples[0].content | 鎖 | 鎖す (tazasu) | がてを鎖す。 | Gate o tazasu. | Trancar o portão. | pending-human-review |
 | 20 | kanjis[17].examples[1].content | 鎖 | 鎖国 (sakoku) | えど鎖国。 | Edo sakoku. | Isolamento no período Edo. | pending-human-review |
 | 20 | kanjis[18].onyomi | 禁 | leitura: mechanically-convertible-onyomi | キン (KIN) | KIN (KIN) | proposta: キン (KIN) | pending-human-review |
-| 20 | kanjis[18].kunyomi | 禁 | leitura: ambiguous-or-foreign | kinki (kinki) | kinki (kinki) | proposta:  | pending-human-review |
+| 20 | kanjis[18].kunyomi | 禁 | leitura:  | - |  | proposta:  | corrected |
 | 20 | kanjis[18].examples[0].content | 禁 | 禁じる (kinjiru) | えんトルイを禁じる。 | Entry o kinjiru. | Proibir a entrada. | pending-human-review |
 | 20 | kanjis[18].examples[1].content | 禁 | 禁止 (kinshi) | ぱルきんグ禁止。 | Parking kinshi. | Proibido estacionar. | pending-human-review |
 | 20 | kanjis[19].onyomi | 制 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
@@ -1972,14 +1972,14 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 20 | kanjis[23].examples[0].content | 助 | 助ける (tasukeru) | ヴいクてぃムを助ける。 | Victim o tasukeru. | Ajudar as vítimas. | pending-human-review |
 | 20 | kanjis[23].examples[1].content | 助 | 扶助 (hujo) | むトうあル扶助。 | Mutual hujo. | Assistência mútua. | pending-human-review |
 | 20 | kanjis[24].onyomi | 復 | leitura: mechanically-convertible-onyomi | フク (FUKU) | FUKU (FUKU) | proposta: フク (FUKU) | pending-human-review |
-| 20 | kanjis[24].kunyomi | 復 | leitura: ambiguous-or-foreign | mata (mata) | mata (mata) | proposta:  | pending-human-review |
+| 20 | kanjis[24].kunyomi | 復 | leitura:  | また (mata) |  | proposta:  | corrected |
 | 20 | kanjis[24].examples[0].content | 復 | 復する (fukusuru) | のルまルに復する。 | Normal ni fukusuru. | Voltar à normalidade. | pending-human-review |
 | 20 | kanjis[24].examples[1].content | 復 | 復興 (fukkou) | でぃさスてル復興。 | Disaster fukkou. | Reconstrução pós-desastre. | pending-human-review |
 | 20 | kanjis[25].onyomi | 興 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
 | 20 | kanjis[25].examples[0].content | 興 | 興す (okosu) | いんドうストルイを興す。 | Industry o okosu. | Erguer a indústria. | pending-human-review |
 | 20 | kanjis[25].examples[1].content | 興 | 復興 (fukkou) | あれあの復興。 | Area no fukkou. | Reconstrução da área. | pending-human-review |
 | 20 | kanjis[26].onyomi | 創 | leitura: mechanically-convertible-onyomi | ソウ (SOU) | SOU (SOU) | proposta: ソウ (SOU) | pending-human-review |
-| 20 | kanjis[26].kunyomi | 創 | leitura: ambiguous-or-foreign | kizu (kizu) | kizu (kizu) | proposta:  | pending-human-review |
+| 20 | kanjis[26].kunyomi | 創 | leitura:  | きず (kizu) |  | proposta:  | corrected |
 | 20 | kanjis[26].examples[0].content | 創 | 創傷 (soushou) | 創傷トれあトめんト。 | Soushou treatment. | Tratamento de ferida traumática. | pending-human-review |
 | 20 | kanjis[26].examples[1].content | 創 | 創造 (souzou) | 未来の創造。 | Future no souzou. | Criação do futuro. | pending-human-review |
 | 20 | kanjis[27].onyomi | 癒 | leitura: mechanically-convertible-onyomi | ユ (YU) | YU (YU) | proposta: ユ (YU) | pending-human-review |
@@ -1995,7 +1995,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 20 | kanjis[30].examples[0].content | 圧 | 鎮圧 (chinatsu) | ふぉルクえで鎮圧。 | Force de chinatsu. | Pacificação com uso de força. | pending-human-review |
 | 20 | kanjis[30].examples[1].content | 圧 | 抑圧 (yokuatsu) | ぽルいてぃクあル抑圧。 | Political yokuatsu. | Opressão política. | pending-human-review |
 | 20 | kanjis[31].onyomi | 服 | leitura: mechanically-convertible-onyomi | フウク (HUKU) | HUKU (HUKU) | proposta: フウク (HUKU) | pending-human-review |
-| 20 | kanjis[31].kunyomi | 服 | leitura: ambiguous-or-foreign | fuku (fuku) | fuku (fuku) | proposta:  | pending-human-review |
+| 20 | kanjis[31].kunyomi | 服 | leitura:  | - |  | proposta:  | corrected |
 | 20 | kanjis[31].examples[0].content | 服 | 服する (fukusuru) | 法律に服する。 | Law ni fukusuru. | Submeter-se às leis. | pending-human-review |
 | 20 | kanjis[31].examples[1].content | 服 | 服従 (fukujuu) | おルでルに服従。 | Order ni fukujuu. | Obediência às ordens. | pending-human-review |
 | 20 | kanjis[32].onyomi | 屈 | leitura: mechanically-convertible-onyomi | クツ (KUTSU) | KUTSU (KUTSU) | proposta: クツ (KUTSU) | pending-human-review |
@@ -2054,7 +2054,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 21 | kanjis[9].examples[0].content | 鈍 | 鈍い (nibui) | 鈍いれあクてぃおん。 | Nibui reaction. | Reação lenta. | pending-human-review |
 | 21 | kanjis[9].examples[1].content | 鈍 | 鈍感 (donkan) | 鈍感ぺルそん。 | Donkan person. | Pessoa insensível a nuances. | pending-human-review |
 | 21 | kanjis[10].onyomi | 剛 | leitura: mechanically-convertible-onyomi | ゴウ (GOU) | GOU (GOU) | proposta: ゴウ (GOU) | pending-human-review |
-| 21 | kanjis[10].kunyomi | 剛 | leitura: ambiguous-or-foreign | tuyoi (tuyoi) | tuyoi (tuyoi) | proposta:  | pending-human-review |
+| 21 | kanjis[10].kunyomi | 剛 | leitura:  | - |  | proposta:  | corrected |
 | 21 | kanjis[10].examples[0].content | 剛 | 剛健 (gouken) | 剛健精神。 | Gouken spirit. | Espírito vigoroso e firme. | pending-human-review |
 | 21 | kanjis[10].examples[1].content | 剛 | 剛性 (gousei) | ひグフ剛性。 | High gousei. | Elevada rigidez de material. | pending-human-review |
 | 21 | kanjis[11].onyomi | 柔 | leitura: mechanically-convertible-onyomi | ジュウ (JUU) | JUU (JUU) | proposta: ジュウ (JUU) | pending-human-review |
@@ -2079,7 +2079,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 21 | kanjis[17].examples[0].content | 臭 | 臭い (kusai) | 臭いおどル。 | Kusai odor. | Mau cheiro fétido. | pending-human-review |
 | 21 | kanjis[17].examples[1].content | 臭 | 悪臭 (akushuu) | 悪臭えみっスいおんス。 | Akushuu emissions. | Emissões de odor fétido. | pending-human-review |
 | 21 | kanjis[18].onyomi | 妙 | leitura: mechanically-convertible-onyomi | ミョウ (MYOU) | MYOU (MYOU) | proposta: ミョウ (MYOU) | pending-human-review |
-| 21 | kanjis[18].kunyomi | 妙 | leitura: ambiguous-or-foreign | tae (tae) | tae (tae) | proposta:  | pending-human-review |
+| 21 | kanjis[18].kunyomi | 妙 | leitura:  | たえ (tae) |  | proposta:  | corrected |
 | 21 | kanjis[18].examples[0].content | 妙 | 絶妙 (zetsumyou) | 絶妙ばルあんクえ。 | Zetsumyou balance. | Equilíbrio sutil e perfeito. | pending-human-review |
 | 21 | kanjis[18].examples[1].content | 妙 | 妙なる (taenaru) | 妙なる音楽。 | Taenaru music. | Música sublime e harmoniosa. | pending-human-review |
 | 21 | kanjis[19].onyomi | 巧 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
@@ -2110,22 +2110,22 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 21 | kanjis[27].examples[0].content | 凹 | 凹む (kubomu) | すルふぁクえが凹む。 | Surface ga kubomu. | A superfície fica côncava. | pending-human-review |
 | 21 | kanjis[27].examples[1].content | 凹 | 凹凸 (outotsu) | 凹凸ろあド。 | Outotsu road. | Estrada com irregularidades. | pending-human-review |
 | 21 | kanjis[28].onyomi | 凸 | leitura: mechanically-convertible-onyomi | トツ (TOTSU) | TOTSU (TOTSU) | proposta: トツ (TOTSU) | pending-human-review |
-| 21 | kanjis[28].kunyomi | 凸 | leitura: ambiguous-or-foreign | deko (deko) | deko (deko) | proposta:  | pending-human-review |
+| 21 | kanjis[28].kunyomi | 凸 | leitura:  | でこ (deko) |  | proposta:  | corrected |
 | 21 | kanjis[28].examples[0].content | 凸 | 凸版 (toppan) | 凸版プりんてぃんグ。 | Toppan printing. | Tipografia em alto relevo. | pending-human-review |
 | 21 | kanjis[28].examples[1].content | 凸 | 凹凸 (outotsu) | 凹凸てクストうれ。 | Outotsu texture. | Textura áspera com altos e baixos. | pending-human-review |
 | 21 | kanjis[29].onyomi | 密 | leitura: mechanically-convertible-onyomi | ミツ (MITSU) | MITSU (MITSU) | proposta: ミツ (MITSU) | pending-human-review |
-| 21 | kanjis[29].kunyomi | 密 | leitura: ambiguous-or-foreign | hisa (hisa) | hisa (hisa) | proposta:  | pending-human-review |
+| 21 | kanjis[29].kunyomi | 密 | leitura:  | ひそ・か (hisoka) |  | proposta:  | corrected |
 | 21 | kanjis[29].examples[0].content | 密 | 密な (mitsuna) | 密なふぉれスト。 | Mitsuna forest. | Floresta densa sem lacunas. | pending-human-review |
 | 21 | kanjis[29].examples[1].content | 密 | 精密 (seimitsu) | 精密いんストるめんト。 | Seimitsu instrument. | Instrumento de alta precisão. | pending-human-review |
 | 21 | kanjis[30].onyomi | 疎 | leitura: mechanically-convertible-onyomi | ソ (SO) | SO (SO) | proposta: ソ (SO) | pending-human-review |
-| 21 | kanjis[30].kunyomi | 疎 | leitura: ambiguous-or-foreign | mabara (mabara) | mabara (mabara) | proposta:  | pending-human-review |
+| 21 | kanjis[30].kunyomi | 疎 | leitura:  | まば・ら (mabara) |  | proposta:  | corrected |
 | 21 | kanjis[30].examples[0].content | 疎 | 疎ら (mabara) | 疎らトれえス。 | Mabara trees. | Árvores esparsas no terreno. | pending-human-review |
 | 21 | kanjis[30].examples[1].content | 疎 | 疎外 (sogai) | そクいあル疎外。 | Social sogai. | Distanciamento social. | pending-human-review |
 | 21 | kanjis[31].onyomi | 微 | leitura: mechanically-convertible-onyomi | ビ (BI) | BI (BI) | proposta: ビ (BI) | pending-human-review |
 | 21 | kanjis[31].examples[0].content | 微 | 微か (kasuka) | 微かそうんド。 | Kasuka sound. | Som sutil e quase imperceptível. | pending-human-review |
 | 21 | kanjis[31].examples[1].content | 微 | 微妙 (bimyou) | 微妙でぃっふぇれんクえ。 | Bimyou difference. | Diferença sutil e delicada. | pending-human-review |
 | 21 | kanjis[32].onyomi | 巨 | leitura: mechanically-convertible-onyomi | キョ (KYO) | KYO (KYO) | proposta: キョ (KYO) | pending-human-review |
-| 21 | kanjis[32].kunyomi | 巨 | leitura: ambiguous-or-foreign | oogata (oogata) | oogata (oogata) | proposta:  | pending-human-review |
+| 21 | kanjis[32].kunyomi | 巨 | leitura:  | - |  | proposta:  | corrected |
 | 21 | kanjis[32].examples[0].content | 巨 | 巨大 (kyodai) | 巨大ろクク。 | Kyodai rock. | Rocha gigante monumental. | pending-human-review |
 | 21 | kanjis[32].examples[1].content | 巨 | 巨額 (kyogaku) | 巨額ぶドげト。 | Kyogaku budget. | Orçamento financeiro monumental. | pending-human-review |
 | 21 | kanjis[33].onyomi | 幽 | leitura: mechanically-convertible-onyomi | ユウ (YUU) | YUU (YUU) | proposta: ユウ (YUU) | pending-human-review |
@@ -2135,18 +2135,18 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 21 | kanjis[34].examples[0].content | 顕 | 顕著 (kencho) | 顕著えっふぇクト。 | Kencho effect. | Efeito notável e ostensivo. | pending-human-review |
 | 21 | kanjis[34].examples[1].content | 顕 | 顕在 (kenzai) | 顕在問題。 | Kenzai problem. | Problema manifesto e visível. | pending-human-review |
 | 21 | kanjis[35].onyomi | 漠 | leitura: mechanically-convertible-onyomi | バク (BAKU) | BAKU (BAKU) | proposta: バク (BAKU) | pending-human-review |
-| 21 | kanjis[35].kunyomi | 漠 | leitura: ambiguous-or-foreign | sunabuchi (sunabuchi) | sunabuchi (sunabuchi) | proposta:  | pending-human-review |
+| 21 | kanjis[35].kunyomi | 漠 | leitura:  | - |  | proposta:  | corrected |
 | 21 | kanjis[35].examples[0].content | 漠 | 漠然 (bakuzen) | 漠然あんクスいえトイ。 | Bakuzen anxiety. | Ansiedade vaga e indeterminada. | pending-human-review |
 | 21 | kanjis[35].examples[1].content | 漠 | 砂漠 (sabaku) | ヴあスト砂漠。 | Vast sabaku. | Vasto deserto árido. | pending-human-review |
 | 21 | kanjis[36].onyomi | 惨 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
 | 21 | kanjis[36].examples[0].content | 惨 | 惨め (mijime) | 惨め国家。 | Mijime state. | Estado miserável e lamentável. | pending-human-review |
 | 21 | kanjis[36].examples[1].content | 惨 | 惨状 (sanjou) | るあいんの惨状。 | Ruain no sanjou. | Cenário trágico de ruína. | pending-human-review |
 | 21 | kanjis[37].onyomi | 絢 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
-| 21 | kanjis[37].kunyomi | 絢 | leitura: ambiguous-or-foreign | aya (aya) | aya (aya) | proposta:  | pending-human-review |
+| 21 | kanjis[37].kunyomi | 絢 | leitura:  | - |  | proposta:  | corrected |
 | 21 | kanjis[37].examples[0].content | 絢 | 絢爛 (kenran) | 絢爛べあうトイ。 | Kenran beauty. | Beleza deslumbrante e suntuosa. | pending-human-review |
 | 21 | kanjis[37].examples[1].content | 絢 | 絢飾 (kenshoku) | 絢飾ストイルえ。 | Kenshoku style. | Estilo ornamentado deslumbrante. | pending-human-review |
 | 21 | kanjis[38].onyomi | 朴 | leitura: mechanically-convertible-onyomi | ボク (BOKU) | BOKU (BOKU) | proposta: ボク (BOKU) | pending-human-review |
-| 21 | kanjis[38].kunyomi | 朴 | leitura: ambiguous-or-foreign | hoko (hoko) | hoko (hoko) | proposta:  | pending-human-review |
+| 21 | kanjis[38].kunyomi | 朴 | leitura:  | ほう (hou) / ほお (hoo) / えのき (enoki) |  | proposta:  | corrected |
 | 21 | kanjis[38].examples[0].content | 朴 | 素朴 (soboku) | 素朴たスて。 | Soboku taste. | Sabor simples e rústico. | pending-human-review |
 | 21 | kanjis[38].examples[1].content | 朴 | 朴訥 (bokutotsu) | 朴訥ぺルそん。 | Bokutotsu person. | Pessoa singela e franca. | pending-human-review |
 | 21 | kanjis[39].onyomi | 雅 | leitura: mechanically-convertible-onyomi | ガ (GA) | GA (GA) | proposta: ガ (GA) | pending-human-review |
@@ -2154,14 +2154,14 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 21 | kanjis[39].examples[1].content | 雅 | 風雅 (fuuga) | 風雅たスて。 | Fuuga taste. | Gosto elegante e poético. | pending-human-review |
 | 22 | grammar.content | — | — | ばくだいなざいせいの損失にたいして、 かこうな措置をおよぼします。 | Bakudai na zaisei no loss ni taishite, kakou na措置 o oyoboshimasu. | Em relação ao prejuízo financeiro colossal, aplicam-se medidas de extrema severidade. | pending-human-review |
 | 22 | kanjis[0].onyomi | 莫 | leitura: mechanically-convertible-onyomi | バク (BAKU) | BAKU (BAKU) | proposta: バク (BAKU) | pending-human-review |
-| 22 | kanjis[0].kunyomi | 莫 | leitura: ambiguous-or-foreign | baku (baku) | baku (baku) | proposta:  | pending-human-review |
+| 22 | kanjis[0].kunyomi | 莫 | leitura:  | くれ (kure) / なか・れ (nakare) / なし (nashi) |  | proposta:  | corrected |
 | 22 | kanjis[0].examples[0].content | 莫 | 莫大 (bakudai) | 莫大なウえあルトフ。 | Bakudai na wealth. | Riqueza monumental colossal. | pending-human-review |
 | 22 | kanjis[0].examples[1].content | 莫 | 莫甚 (bakushin) | 莫甚なだまげ。 | Bakushin na damage. | Dano extremamente grave. | pending-human-review |
 | 22 | kanjis[1].onyomi | 微 | leitura: mechanically-convertible-onyomi | ビ (BI) | BI (BI) | proposta: ビ (BI) | pending-human-review |
 | 22 | kanjis[1].examples[0].content | 微 | 微々たる (bibitaru) | 微々たるすム。 | Bibitaru sum. | Soma ínfima e insignificante. | pending-human-review |
 | 22 | kanjis[1].examples[1].content | 微 | 微少 (bishou) | 微少えルえめんト。 | Bishou element. | Elemento minúsculo irrisório. | pending-human-review |
 | 22 | kanjis[2].onyomi | 悠 | leitura: mechanically-convertible-onyomi | ユウ (YUU) | YUU (YUU) | proposta: ユウ (YUU) | pending-human-review |
-| 22 | kanjis[2].kunyomi | 悠 | leitura: ambiguous-or-foreign | yuu (yuu) | yuu (yuu) | proposta:  | pending-human-review |
+| 22 | kanjis[2].kunyomi | 悠 | leitura:  | - |  | proposta:  | corrected |
 | 22 | kanjis[2].examples[0].content | 悠 | 悠久 (yuukyuu) | 悠久の歴史。 | Yuukyuu no history. | História imemorial e eterna. | pending-human-review |
 | 22 | kanjis[2].examples[1].content | 悠 | 悠々 (yuuyuu) | 悠々 な生活。 | Yuuyuu na life. | Vida tranquila e sem pressa. | pending-human-review |
 | 22 | kanjis[3].onyomi | 烈 | leitura: mechanically-convertible-onyomi | レツ (RETSU) | RETSU (RETSU) | proposta: レツ (RETSU) | pending-human-review |
@@ -2186,29 +2186,29 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 22 | kanjis[9].examples[0].content | 惨 | 悲惨 (hisan) | 悲惨なわル。 | Hisan na war. | Guerra trágica e miserável. | pending-human-review |
 | 22 | kanjis[9].examples[1].content | 惨 | 惨憺 (santan) | 惨憺な国家。 | Santan na state. | Estado desolador e sombrio. | pending-human-review |
 | 22 | kanjis[10].onyomi | 壮 | leitura: mechanically-convertible-onyomi | ソウ (SOU) | SOU (SOU) | proposta: ソウ (SOU) | pending-human-review |
-| 22 | kanjis[10].kunyomi | 壮 | leitura: ambiguous-or-foreign | sakan (sakan) | sakan (sakan) | proposta:  | pending-human-review |
+| 22 | kanjis[10].kunyomi | 壮 | leitura:  | さかん (sakan) |  | proposta:  | corrected |
 | 22 | kanjis[10].examples[0].content | 壮 | 壮大 (soudai) | 壮大な計画。 | Soudai na plan. | Plano grandioso e majestoso. | pending-human-review |
 | 22 | kanjis[10].examples[1].content | 壮 | 壮快 (soukai) | 壮快ふぇえルいんグ。 | Soukai feeling. | Sensação vigorosa e revigorante. | pending-human-review |
 | 22 | kanjis[11].onyomi | 盛 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
 | 22 | kanjis[11].examples[0].content | 盛 | 盛大 (seidai) | 盛大なぱルトイ。 | Seidai na party. | Festa grandiosa e próspera. | pending-human-review |
 | 22 | kanjis[11].examples[1].content | 盛 | 旺盛 (ousei) | クうりおスいトイが旺盛。 | Curiosity ga ousei. | Curiosidade efusiva e vigorosa. | pending-human-review |
 | 22 | kanjis[12].onyomi | 旺 | leitura: mechanically-convertible-onyomi | オウ (OU) | OU (OU) | proposta: オウ (OU) | pending-human-review |
-| 22 | kanjis[12].kunyomi | 旺 | leitura: ambiguous-or-foreign | sakan (sakan) | sakan (sakan) | proposta:  | pending-human-review |
+| 22 | kanjis[12].kunyomi | 旺 | leitura:  | さかん (sakan) |  | proposta:  | corrected |
 | 22 | kanjis[12].examples[0].content | 旺 | 旺盛 (ousei) | えねルグイが旺盛。 | Energy ga ousei. | Pleno de energia vigorosa. | pending-human-review |
 | 22 | kanjis[12].examples[1].content | 旺 | 旺気 (ouki) | 旺気精神。 | Ouki spirit. | Espírito vigoroso e florescente. | pending-human-review |
 | 22 | kanjis[13].onyomi | 豪 | leitura: mechanically-convertible-onyomi | ゴウ (GOU) | GOU (GOU) | proposta: ゴウ (GOU) | pending-human-review |
-| 22 | kanjis[13].kunyomi | 豪 | leitura: ambiguous-or-foreign | eera (eera) | eera (eera) | proposta:  | pending-human-review |
+| 22 | kanjis[13].kunyomi | 豪 | leitura:  | えら・い (erai) |  | proposta:  | corrected |
 | 22 | kanjis[13].examples[0].content | 豪 | 豪華 (gouka) | 豪華なホテル。 | Gouka na hotel. | Hotel suntuoso e luxuoso. | pending-human-review |
 | 22 | kanjis[13].examples[1].content | 豪 | 豪快 (goukai) | 豪快なルあうグフてル。 | Goukai na laughter. | Gargalhada magnânima e vigorosa. | pending-human-review |
 | 22 | kanjis[14].onyomi | 華 | leitura: mechanically-convertible-onyomi | カ (KA) | KA (KA) | proposta: カ (KA) | pending-human-review |
-| 22 | kanjis[14].kunyomi | 華 | leitura: ambiguous-or-foreign | hana (hana) | hana (hana) | proposta:  | pending-human-review |
+| 22 | kanjis[14].kunyomi | 華 | leitura:  | はな (hana) |  | proposta:  | corrected |
 | 22 | kanjis[14].examples[0].content | 華 | 華々しい (hanabanashii) | 華々しいクあれえル。 | Hanabanashii career. | Carreira esplêndida e gloriosa. | pending-human-review |
 | 22 | kanjis[14].examples[1].content | 華 | 華麗 (karei) | 華麗なだんクえ。 | Karei na dance. | Dança magnífica e deslumbrante. | pending-human-review |
 | 22 | kanjis[15].onyomi | 麗 | leitura: mechanically-convertible-onyomi | レイ (REI) | REI (REI) | proposta: レイ (REI) | pending-human-review |
 | 22 | kanjis[15].examples[0].content | 麗 | 華麗 (karei) | 華麗なストイルえ。 | Karei na style. | Estilo magnífico e deslumbrante. | pending-human-review |
 | 22 | kanjis[15].examples[1].content | 麗 | 綺麗 (kirei) | 綺麗なフルおウえル。 | Kirei na flower. | Flor bela e formosa. | pending-human-review |
 | 22 | kanjis[16].onyomi | 燦 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
-| 22 | kanjis[16].kunyomi | 燦 | leitura: ambiguous-or-foreign | kora (kora) | kora (kora) | proposta:  | pending-human-review |
+| 22 | kanjis[16].kunyomi | 燦 | leitura:  | さん・たる (santaru) / あき・らか (akiraka) / きらめ・く (kirameku) / きら・めく (kirameku) |  | proposta:  | corrected |
 | 22 | kanjis[16].examples[0].content | 燦 | 燦然 (sanzen) | 燦然としね。 | Sanzen to shine. | Brilhar radiante com esplendor. | pending-human-review |
 | 22 | kanjis[16].examples[1].content | 燦 | 燦々 (sansan) | 燦々 と降り注ぐ。 | Sansan to降り注ぐ. | Verter resplendor ensolarado radiante. | pending-human-review |
 | 22 | kanjis[17].onyomi | 然 | leitura: mechanically-convertible-onyomi | ゼン (ZEN) | ZEN (ZEN) | proposta: ゼン (ZEN) | pending-human-review |
@@ -2218,7 +2218,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 22 | kanjis[18].examples[0].content | 遥 | 遥か (haruka) | 遥かなでぃスたんクえ。 | Haruka na distance. | Distância remota no horizonte. | pending-human-review |
 | 22 | kanjis[18].examples[1].content | 遥 | 遥遠 (youen) | 遥遠のぱスト。 | Youen no past. | Passado remotíssimo. | pending-human-review |
 | 22 | kanjis[19].onyomi | 廖 | leitura: mechanically-convertible-onyomi | リョウ (RYOU) | RYOU (RYOU) | proposta: リョウ (RYOU) | pending-human-review |
-| 22 | kanjis[19].kunyomi | 廖 | leitura: ambiguous-or-foreign | mora (mora) | mora (mora) | proposta:  | pending-human-review |
+| 22 | kanjis[19].kunyomi | 廖 | leitura:  | - |  | proposta:  | corrected |
 | 22 | kanjis[19].examples[0].content | 廖 | 寂廖 (jakuryou) | 寂廖なプルあクえ。 | Jakuryou na place. | Lugar vazio e solitário. | pending-human-review |
 | 22 | kanjis[19].examples[1].content | 廖 | 寥々 (ryouryou) | 廖姓の観客は少ない。 | Ryouryou na audience. | Pouquíssimos espectadores. | pending-human-review |
 | 22 | kanjis[20].onyomi | 渺 | leitura: mechanically-convertible-onyomi | ビョウ (BYOU) | BYOU (BYOU) | proposta: ビョウ (BYOU) | pending-human-review |
@@ -2246,7 +2246,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 22 | kanjis[27].examples[0].content | 崇 | 崇高 (suukou) | 崇高なごあル。 | Suukou na goal. | Meta sublime de nobreza moral. | pending-human-review |
 | 22 | kanjis[27].examples[1].content | 崇 | 崇拝 (suuhai) | 英雄の崇拝。 | Hero no suuhai. | Adoração ao herói. | pending-human-review |
 | 22 | kanjis[28].onyomi | 卑 | leitura: mechanically-convertible-onyomi | ヒ (HI) | HI (HI) | proposta: ヒ (HI) | pending-human-review |
-| 22 | kanjis[28].kunyomi | 卑 | leitura: ambiguous-or-foreign | yashii (yashii) | yashii (yashii) | proposta:  | pending-human-review |
+| 22 | kanjis[28].kunyomi | 卑 | leitura:  | いや・しい (iyashii) / いや・しむ (iyashimu) / いや・しめる (iyashimeru) |  | proposta:  | corrected |
 | 22 | kanjis[28].examples[0].content | 卑 | 卑劣 (hiretsu) | 卑劣なあクト。 | Hiretsu na act. | Ato vil e desleal. | pending-human-review |
 | 22 | kanjis[28].examples[1].content | 卑 | 卑近 (hikin) | 卑近なえクスあムプルえ。 | Hikin na example. | Exemplo comum e corriqueiro. | pending-human-review |
 | 22 | kanjis[29].onyomi | 劣 | leitura: mechanically-convertible-onyomi | レツ (RETSU) | RETSU (RETSU) | proposta: レツ (RETSU) | pending-human-review |
@@ -2265,7 +2265,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 22 | kanjis[33].examples[0].content | 厳 | 厳重 (genjuu) | 厳重なせクうりトイ。 | Genjuu na security. | Segurança estrita e rigorosa. | pending-human-review |
 | 22 | kanjis[33].examples[1].content | 厳 | 厳格 (genkaku) | 厳格な規則。 | Genkaku na rule. | Regras austeras e rigorosas. | pending-human-review |
 | 22 | kanjis[34].onyomi | 格 | leitura: mechanically-convertible-onyomi | カク (KAKU) | KAKU (KAKU) | proposta: カク (KAKU) | pending-human-review |
-| 22 | kanjis[34].kunyomi | 格 | leitura: ambiguous-or-foreign | kaku (kaku) | kaku (kaku) | proposta:  | pending-human-review |
+| 22 | kanjis[34].kunyomi | 格 | leitura:  | - |  | proposta:  | corrected |
 | 22 | kanjis[34].examples[0].content | 格 | 格調 (kakuchou) | 格調ひグフ。 | Kakuchou high. | Tom solene de nobre elevação. | pending-human-review |
 | 22 | kanjis[34].examples[1].content | 格 | 厳格 (genkaku) | 厳格制度。 | Genkaku system. | Sistema de norma estrita. | pending-human-review |
 | 22 | kanjis[35].onyomi | 峻 | leitura: mechanically-convertible-onyomi | シュン (SHUN) | SHUN (SHUN) | proposta: シュン (SHUN) | pending-human-review |
@@ -2285,14 +2285,14 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 22 | kanjis[39].examples[1].content | 酷 | 残酷 (zankoku) | 残酷わル。 | Zankoku war. | Guerra cruel. | pending-human-review |
 | 23 | grammar.content | — | — | じつじょうをふまえてなおかつがいして、 それによってろンします。 | Jitsujou o fumaete naokatsu gai-shite, sore ni yotte ron-shimasu. | Embasando-se na realidade e ademais resumindo-a, argumenta-se por meio disso. | pending-human-review |
 | 23 | kanjis[0].onyomi | 尚 | leitura: mechanically-convertible-onyomi | ショウ (SHOU) | SHOU (SHOU) | proposta: ショウ (SHOU) | pending-human-review |
-| 23 | kanjis[0].kunyomi | 尚 | leitura: ambiguous-or-foreign | nao (nao) | nao (nao) | proposta:  | pending-human-review |
+| 23 | kanjis[0].kunyomi | 尚 | leitura:  | なお (nao) |  | proposta:  | corrected |
 | 23 | kanjis[0].examples[0].content | 尚 | 尚更 (naosara) | 尚更いムぽルたんト。 | Naosara important. | Ainda mais importante. | pending-human-review |
 | 23 | kanjis[0].examples[1].content | 尚 | 尚且つ (naokatsu) | 明確な尚且つふぁスト。 | Clear naokatsu fast. | Claro e ademais célere. | pending-human-review |
 | 23 | kanjis[1].onyomi | 且 | leitura: mechanically-convertible-onyomi | ショ (SHO) | SHO (SHO) | proposta: ショ (SHO) | pending-human-review |
 | 23 | kanjis[1].examples[0].content | 且 | 且つ (katsu) | ふぁスト且つさふぇ。 | Fast katsu safe. | Rápido e também seguro. | pending-human-review |
 | 23 | kanjis[1].examples[1].content | 且 | 尚且つ (naokatsu) | 尚且つプれクいせ。 | Naokatsu precise. | E ademais preciso. | pending-human-review |
 | 23 | kanjis[2].onyomi | 概 | leitura: mechanically-convertible-onyomi | ガイ (GAI) | GAI (GAI) | proposta: ガイ (GAI) | pending-human-review |
-| 23 | kanjis[2].kunyomi | 概 | leitura: ambiguous-or-foreign | gai (gai) | gai (gai) | proposta:  | pending-human-review |
+| 23 | kanjis[2].kunyomi | 概 | leitura:  | おおむ・ね (oomune) |  | proposta:  | corrected |
 | 23 | kanjis[2].examples[0].content | 概 | 概して (gaishite) | 概してトるえ。 | Gaishite true. | De modo geral é verdadeiro. | pending-human-review |
 | 23 | kanjis[2].examples[1].content | 概 | 概要 (gaiyou) | 概要報告書。 | Gaiyou report. | Relatório de panorama geral. | pending-human-review |
 | 23 | kanjis[3].onyomi | 即 | leitura: mechanically-convertible-onyomi | ソク (SOKU) | SOKU (SOKU) | proposta: ソク (SOKU) | pending-human-review |
@@ -2302,7 +2302,7 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[4].examples[0].content | 乃 | 乃ち (sunawachi) | トるトフ、 乃ちフれえどム。 | Truth, sunawachi freedom. | A verdade, por conseguinte a liberdade. | pending-human-review |
 | 23 | kanjis[4].examples[1].content | 乃 | 乃公 (daikou) | 乃公ヴいえウ。 | Daikou view. | Minha própria visão. | pending-human-review |
 | 23 | kanjis[5].onyomi | 故 | leitura: mechanically-convertible-onyomi | コ (KO) | KO (KO) | proposta: コ (KO) | pending-human-review |
-| 23 | kanjis[5].kunyomi | 故 | leitura: ambiguous-or-foreign | yue (yue) | yue (yue) | proposta:  | pending-human-review |
+| 23 | kanjis[5].kunyomi | 故 | leitura:  | ゆえ (yue) |  | proposta:  | corrected |
 | 23 | kanjis[5].examples[0].content | 故 | 故に (yueni) | 故に、勝った。 | Yue ni, win. | Portanto, venceu-se. | pending-human-review |
 | 23 | kanjis[5].examples[1].content | 故 | 故事 (koji) | 故事せいご。 | Koji-seigo. | Expressão de origem histórica. | pending-human-review |
 | 23 | kanjis[6].onyomi | 抑 | leitura: mechanically-convertible-onyomi | ヨク (YOKU) | YOKU (YOKU) | proposta: ヨク (YOKU) | pending-human-review |
@@ -2330,11 +2330,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[13].examples[0].content | 宛 | 宛ら (sanagara) | 宛らぴクトうれ。 | Sanagara picture. | Exatamente como um quadro. | pending-human-review |
 | 23 | kanjis[13].examples[1].content | 宛 | 宛先 (atesaki) | ルえってルの宛先。 | Letter no atesaki. | Endereço de destino da carta. | pending-human-review |
 | 23 | kanjis[14].onyomi | 寧 | leitura: mechanically-convertible-onyomi | ネイ (NEI) | NEI (NEI) | proposta: ネイ (NEI) | pending-human-review |
-| 23 | kanjis[14].kunyomi | 寧 | leitura: ambiguous-or-foreign | mushiro (mushiro) | mushiro (mushiro) | proposta:  | pending-human-review |
+| 23 | kanjis[14].kunyomi | 寧 | leitura:  | むし・ろ (mushiro) |  | proposta:  | corrected |
 | 23 | kanjis[14].examples[0].content | 寧 | 寧ろ (mushiro) | 寧ろ良い。 | Mushiro good. | Antes de preferência bom. | pending-human-review |
 | 23 | kanjis[14].examples[1].content | 寧 | 丁寧 (teinei) | 丁寧ストイルえ。 | Teinei style. | Estilo polido e atencioso. | pending-human-review |
 | 23 | kanjis[15].onyomi | 猶 | leitura: mechanically-convertible-onyomi | ユウ (YUU) | YUU (YUU) | proposta: ユウ (YUU) | pending-human-review |
-| 23 | kanjis[15].kunyomi | 猶 | leitura: ambiguous-or-foreign | nao (nao) | nao (nao) | proposta:  | pending-human-review |
+| 23 | kanjis[15].kunyomi | 猶 | leitura:  | なお (nao) |  | proposta:  | corrected |
 | 23 | kanjis[15].examples[0].content | 猶 | 猶予 (yuuyo) | てぃめの猶予。 | Time no yuuyo. | Moratória de tempo. | pending-human-review |
 | 23 | kanjis[15].examples[1].content | 猶 | 猶更 (naosara) | 猶更はルド。 | Naosara hard. | Ainda mais difícil. | pending-human-review |
 | 23 | kanjis[16].onyomi | 必 | leitura: mechanically-convertible-onyomi | ヒツ (HITSU) | HITSU (HITSU) | proposta: ヒツ (HITSU) | pending-human-review |
@@ -2359,11 +2359,11 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[22].examples[0].content | 仮 | 仮に (karini) | 仮に勝つ。。。 | Karini win... | Se hipoteticamente vencer... | pending-human-review |
 | 23 | kanjis[22].examples[1].content | 仮 | 仮定 (katei) | 仮定おんばせ。 | Katei on base. | Baseado em hipótese. | pending-human-review |
 | 23 | kanjis[23].onyomi | 唯 | leitura: mechanically-convertible-onyomi | ユイ (YUI) | YUI (YUI) | proposta: ユイ (YUI) | pending-human-review |
-| 23 | kanjis[23].kunyomi | 唯 | leitura: ambiguous-or-foreign | tada (tada) | tada (tada) | proposta:  | pending-human-review |
+| 23 | kanjis[23].kunyomi | 唯 | leitura:  | ただ (tada) |  | proposta:  | corrected |
 | 23 | kanjis[23].examples[0].content | 唯 | 唯だ (tada) | 唯だおね。 | Tada one. | Tão somente um. | pending-human-review |
 | 23 | kanjis[23].examples[1].content | 唯 | 唯一 (yuiitsu) | 唯一の機会。 | Yuiitsu no chance. | Única e exclusiva chance. | pending-human-review |
 | 23 | kanjis[24].onyomi | 独 | leitura: mechanically-convertible-onyomi | ドク (DOKU) | DOKU (DOKU) | proposta: ドク (DOKU) | pending-human-review |
-| 23 | kanjis[24].kunyomi | 独 | leitura: ambiguous-or-foreign | hitori (hitori) | hitori (hitori) | proposta:  | pending-human-review |
+| 23 | kanjis[24].kunyomi | 独 | leitura:  | ひと・り (hitori) |  | proposta:  | corrected |
 | 23 | kanjis[24].examples[0].content | 独 | 独り (hitori) | 独り考える。 | Hitori think. | Pensar unicamente só. | pending-human-review |
 | 23 | kanjis[24].examples[1].content | 独 | 独立 (dokuritsu) | 独立国家。 | Dokuritsu state. | Estado independente. | pending-human-review |
 | 23 | kanjis[25].onyomi | 単 | leitura: mechanically-convertible-onyomi | タン (TAN) | TAN (TAN) | proposta: タン (TAN) | pending-human-review |
@@ -2379,34 +2379,34 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[28].examples[0].content | 固 | 固より (motoyori) | 固より知られる。 | Motoyori known. | Conhecido desde o início. | pending-human-review |
 | 23 | kanjis[28].examples[1].content | 固 | 断固 (danko) | 断固拒否。 | Danko refusal. | Recusa categórica e firme. | pending-human-review |
 | 23 | kanjis[29].onyomi | 素 | leitura: mechanically-convertible-onyomi | ソ (SO) | SO (SO) | proposta: ソ (SO) | pending-human-review |
-| 23 | kanjis[29].kunyomi | 素 | leitura: ambiguous-or-foreign | moto (moto) | moto (moto) | proposta:  | pending-human-review |
+| 23 | kanjis[29].kunyomi | 素 | leitura:  | もと (moto) |  | proposta:  | corrected |
 | 23 | kanjis[29].examples[0].content | 素 | 素より (motoyori) | 素より明確な。 | Motoyori clear. | Naturalmente claro. | pending-human-review |
 | 23 | kanjis[29].examples[1].content | 素 | 素朴 (soboku) | 素朴設計。 | Soboku design. | Design simples. | pending-human-review |
 | 23 | kanjis[30].onyomi | 元 | leitura: mechanically-convertible-onyomi | ゲン (GEN) | GEN (GEN) | proposta: ゲン (GEN) | pending-human-review |
-| 23 | kanjis[30].kunyomi | 元 | leitura: ambiguous-or-foreign | moto (moto) | moto (moto) | proposta:  | pending-human-review |
+| 23 | kanjis[30].kunyomi | 元 | leitura:  | もと (moto) |  | proposta:  | corrected |
 | 23 | kanjis[30].examples[0].content | 元 | 元より (motoyori) | 元より不可能。 | Motoyori impossible. | Originalmente impossível. | pending-human-review |
 | 23 | kanjis[30].examples[1].content | 元 | 元来 (ganrai) | 元来人間。 | Ganrai human. | Em essência humana. | pending-human-review |
 | 23 | kanjis[31].onyomi | 本 | leitura: mechanically-convertible-onyomi | ホン (HON) | HON (HON) | proposta: ホン (HON) | pending-human-review |
-| 23 | kanjis[31].kunyomi | 本 | leitura: ambiguous-or-foreign | moto (moto) | moto (moto) | proposta:  | pending-human-review |
+| 23 | kanjis[31].kunyomi | 本 | leitura:  | もと (moto) |  | proposta:  | corrected |
 | 23 | kanjis[31].examples[0].content | 本 | 本より (motoyori) | 本よりごあル。 | Motoyori goal. | Por essência a meta. | pending-human-review |
 | 23 | kanjis[31].examples[1].content | 本 | 本来 (honrai) | 本来目的。 | Honrai purpose. | Propósito em essência. | pending-human-review |
 | 23 | kanjis[32].onyomi | 総 | leitura: mechanically-convertible-onyomi | ソウ (SOU) | SOU (SOU) | proposta: ソウ (SOU) | pending-human-review |
-| 23 | kanjis[32].kunyomi | 総 | leitura: ambiguous-or-foreign | fusa (fusa) | fusa (fusa) | proposta:  | pending-human-review |
+| 23 | kanjis[32].kunyomi | 総 | leitura:  | ふさ (fusa) |  | proposta:  | corrected |
 | 23 | kanjis[32].examples[0].content | 総 | 総じて (soujite) | 総じて良い。 | Soujite good. | Em síntese, bom. | pending-human-review |
 | 23 | kanjis[32].examples[1].content | 総 | 総合 (sougou) | 総合評価。 | Sougou evaluation. | Avaliação integrativa. | pending-human-review |
 | 23 | kanjis[33].onyomi | 略 | leitura: mechanically-convertible-onyomi | リャク (RYAKU) | RYAKU (RYAKU) | proposta: リャク (RYAKU) | pending-human-review |
-| 23 | kanjis[33].kunyomi | 略 | leitura: ambiguous-or-foreign | hobo (hobo) | hobo (hobo) | proposta:  | pending-human-review |
+| 23 | kanjis[33].kunyomi | 略 | leitura:  | ほぼ (hobo) |  | proposta:  | corrected |
 | 23 | kanjis[33].examples[0].content | 略 | 概略 (gairyaku) | 概略計画。 | Gairyaku plan. | Esboço de plano. | pending-human-review |
 | 23 | kanjis[33].examples[1].content | 略 | 略す (ryakusu) | なめを略す。 | Name o ryakusu. | Abreviar o nome. | pending-human-review |
 | 23 | kanjis[34].onyomi | 諸 | leitura: mechanically-convertible-onyomi | ショ (SHO) | SHO (SHO) | proposta: ショ (SHO) | pending-human-review |
-| 23 | kanjis[34].kunyomi | 諸 | leitura: ambiguous-or-foreign | moro (moro) | moro (moro) | proposta:  | pending-human-review |
+| 23 | kanjis[34].kunyomi | 諸 | leitura:  | もろ (moro) |  | proposta:  | corrected |
 | 23 | kanjis[34].examples[0].content | 諸 | 諸々 (moromoro) | 諸々 問題。 | Moromoro problems. | Diversos problemas. | pending-human-review |
 | 23 | kanjis[34].examples[1].content | 諸 | 諸君 (shokun) | 諸君聞く。 | Shokun listen. | Senhores, escutem. | pending-human-review |
 | 23 | kanjis[35].onyomi | 各 | leitura: mechanically-convertible-onyomi | カク (KAKU) | KAKU (KAKU) | proposta: カク (KAKU) | pending-human-review |
 | 23 | kanjis[35].examples[0].content | 各 | 各々 (onono) | 各々 役割。 | Onono role. | Cada qual seu papel. | pending-human-review |
 | 23 | kanjis[35].examples[1].content | 各 | 各国 (kakkoku) | 各国指導者。 | Kakkoku leader. | Líderes de cada país. | pending-human-review |
 | 23 | kanjis[36].onyomi | 毎 | leitura: mechanically-convertible-onyomi | マイ (MAI) | MAI (MAI) | proposta: マイ (MAI) | pending-human-review |
-| 23 | kanjis[36].kunyomi | 毎 | leitura: ambiguous-or-foreign | goto (goto) | goto (goto) | proposta:  | pending-human-review |
+| 23 | kanjis[36].kunyomi | 毎 | leitura:  | ごと (goto) |  | proposta:  | corrected |
 | 23 | kanjis[36].examples[0].content | 毎 | 毎に (gotoni) | 段階毎に。 | Step gotoni. | A cada passo. | pending-human-review |
 | 23 | kanjis[36].examples[1].content | 毎 | 毎回 (maikai) | 毎回成功。 | Maikai success. | Sucesso a cada edição. | pending-human-review |
 | 23 | kanjis[37].onyomi | 随 | leitura: mechanically-convertible-onyomi | ズイ (ZUI) | ZUI (ZUI) | proposta: ズイ (ZUI) | pending-human-review |
@@ -2420,157 +2420,157 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[39].examples[1].content | 以 | 以南 (inan) | きゅしゅ以南。 | Kyushu inan. | Ao sul de Kyushu. | pending-human-review |
 | 24 | grammar.content | — | — | ぎふけんはほんしゅのクフūぶにいちし、 れきしてきなめいしょがおおくてんざいします。 | Gifu-ken wa Honshu no chūbu ni ichi shi, rekishi-teki na meisho ga ooku tenzai shimasu. | A prefeitura de Gifu localiza-se no centro de Honshu, abrigando muitos locais históricos. | pending-human-review |
 | 24 | kanjis[0].onyomi | 阜 | leitura: mechanically-convertible-onyomi | フウ (HU) | HU (HU) | proposta: フウ (HU) | pending-human-review |
-| 24 | kanjis[0].kunyomi | 阜 | leitura: ambiguous-or-foreign | oka (oka) | oka (oka) | proposta:  | pending-human-review |
+| 24 | kanjis[0].kunyomi | 阜 | leitura:  | - |  | proposta:  | corrected |
 | 24 | kanjis[0].examples[0].content | 阜 | 岐阜県 (gifuken) | 岐阜県のしらかわご。 | Gifuken no Shirakawa-go. | Shirakawa-go na prefeitura de Gifu. | pending-human-review |
 | 24 | kanjis[0].examples[1].content | 阜 | 岐阜 (gifu) | 岐阜城。 | Gifu castle. | Castelo de Gifu. | pending-human-review |
 | 24 | kanjis[1].onyomi | 潟 | leitura: mechanically-convertible-onyomi | セキ (SEKI) | SEKI (SEKI) | proposta: セキ (SEKI) | pending-human-review |
-| 24 | kanjis[1].kunyomi | 潟 | leitura: ambiguous-or-foreign | kata (kata) | kata (kata) | proposta:  | pending-human-review |
+| 24 | kanjis[1].kunyomi | 潟 | leitura:  | かた (kata) |  | proposta:  | corrected |
 | 24 | kanjis[1].examples[0].content | 潟 | 新潟県 (niigataken) | 新潟県の米。 | Niigataken no rice. | Arroz da prefeitura de Niigata. | pending-human-review |
 | 24 | kanjis[1].examples[1].content | 潟 | 干潟 (higata) | 干潟えクおスイスてム。 | Higata ecosystem. | Ecossistema da laguna. | pending-human-review |
 | 24 | kanjis[2].onyomi | 媛 | leitura: mechanically-convertible-onyomi | エン (EN) | EN (EN) | proposta: エン (EN) | pending-human-review |
-| 24 | kanjis[2].kunyomi | 媛 | leitura: ambiguous-or-foreign | hime (hime) | hime (hime) | proposta:  | pending-human-review |
+| 24 | kanjis[2].kunyomi | 媛 | leitura:  | ひめ (hime) |  | proposta:  | corrected |
 | 24 | kanjis[2].examples[0].content | 媛 | 愛媛県 (ehimeken) | 愛媛県のみかん。 | Ehimeken no mikan. | Mandarina da prefeitura de Ehime. | pending-human-review |
 | 24 | kanjis[2].examples[1].content | 媛 | 才媛 (saien) | ルいてらルイ才媛。 | Literary saien. | Dama de notável talento literário. | pending-human-review |
 | 24 | kanjis[3].onyomi | 茨 | leitura: mechanically-convertible-onyomi | シ (SHI) | SHI (SHI) | proposta: シ (SHI) | pending-human-review |
-| 24 | kanjis[3].kunyomi | 茨 | leitura: ambiguous-or-foreign | bara (bara) | bara (bara) | proposta:  | pending-human-review |
+| 24 | kanjis[3].kunyomi | 茨 | leitura:  | いばら (ibara) / かや (kaya) / くさぶき (kusabuki) |  | proposta:  | corrected |
 | 24 | kanjis[3].examples[0].content | 茨 | 茨城県 (ibaraki-ken) | 茨城県の水戸。 | Ibarakiken no Mito. | Mito na prefeitura de Ibaraki. | pending-human-review |
 | 24 | kanjis[3].examples[1].content | 茨 | 茨 (bara) | 茨のみち。 | Bara no michi. | Caminho de espinhos. | pending-human-review |
 | 24 | kanjis[4].onyomi | 埼 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
-| 24 | kanjis[4].kunyomi | 埼 | leitura: ambiguous-or-foreign | saki (saki) | saki (saki) | proposta:  | pending-human-review |
+| 24 | kanjis[4].kunyomi | 埼 | leitura:  | さき (saki) |  | proposta:  | corrected |
 | 24 | kanjis[4].examples[0].content | 埼 | 埼玉県 (saitamaken) | 埼玉県都市。 | Saitamaken city. | Cidade na prefeitura de Saitama. | pending-human-review |
 | 24 | kanjis[4].examples[1].content | 埼 | 埼 (saki) | クおあスたル埼。 | Coastal saki. | Cabo marítimo costeiro. | pending-human-review |
 | 24 | kanjis[5].onyomi | 栃 | leitura: mechanically-convertible-onyomi | レイ (REI) | REI (REI) | proposta: レイ (REI) | pending-human-review |
-| 24 | kanjis[5].kunyomi | 栃 | leitura: ambiguous-or-foreign | tochi (tochi) | tochi (tochi) | proposta:  | pending-human-review |
+| 24 | kanjis[5].kunyomi | 栃 | leitura:  | とち (tochi) |  | proposta:  | corrected |
 | 24 | kanjis[5].examples[0].content | 栃 | 栃木県 (tochigiken) | 栃木県のにっこ。 | Tochigiken no Nikko. | Nikko na prefeitura de Tochigi. | pending-human-review |
 | 24 | kanjis[5].examples[1].content | 栃 | 栃 (tochi) | 栃木。 | Tochi tree. | Árvore castanheira asiática. | pending-human-review |
 | 24 | kanjis[6].onyomi | 滋 | leitura: mechanically-convertible-onyomi | ジ (JI) | JI (JI) | proposta: ジ (JI) | pending-human-review |
 | 24 | kanjis[6].examples[0].content | 滋 | 滋賀県 (shigaken) | 滋賀県のびわこ。 | Shigaken no Biwako. | Lago Biwa na prefeitura de Shiga. | pending-human-review |
 | 24 | kanjis[6].examples[1].content | 滋 | 滋養 (jiyou) | 滋養食べ物。 | Jiyou food. | Alimento de alto valor nutritivo. | pending-human-review |
 | 24 | kanjis[7].onyomi | 鹿 | leitura: mechanically-convertible-onyomi | ロク (ROKU) | ROKU (ROKU) | proposta: ロク (ROKU) | pending-human-review |
-| 24 | kanjis[7].kunyomi | 鹿 | leitura: ambiguous-or-foreign | shika (shika) | shika (shika) | proposta:  | pending-human-review |
+| 24 | kanjis[7].kunyomi | 鹿 | leitura:  | しか (shika) |  | proposta:  | corrected |
 | 24 | kanjis[7].examples[0].content | 鹿 | 鹿児島県 (kagoshimaken) | 鹿児島県火山。 | Kagoshimaken volcano. | Vulcão na prefeitura de Kagoshima. | pending-human-review |
 | 24 | kanjis[7].examples[1].content | 鹿 | 鹿 (shika) | ならの鹿。 | Nara no shika. | Cervos de Nara. | pending-human-review |
 | 24 | kanjis[8].onyomi | 児 | leitura: mechanically-convertible-onyomi | ジ (JI) | JI (JI) | proposta: ジ (JI) | pending-human-review |
-| 24 | kanjis[8].kunyomi | 児 | leitura: ambiguous-or-foreign | ko (ko) | ko (ko) | proposta:  | pending-human-review |
+| 24 | kanjis[8].kunyomi | 児 | leitura:  | こ (ko) / -こ (-ko) |  | proposta:  | corrected |
 | 24 | kanjis[8].examples[0].content | 児 | 鹿児島 (kagoshima) | 鹿児島港。 | Kagoshima port. | Porto de Kagoshima. | pending-human-review |
 | 24 | kanjis[8].examples[1].content | 児 | 小児 (shouji) | 小児診療所。 | Shouji clinic. | Clínica pediátrica. | pending-human-review |
 | 24 | kanjis[9].onyomi | 沖 | leitura: mechanically-convertible-onyomi | チュ (CHU) | CHU (CHU) | proposta: チュ (CHU) | pending-human-review |
-| 24 | kanjis[9].kunyomi | 沖 | leitura: ambiguous-or-foreign | oki (oki) | oki (oki) | proposta:  | pending-human-review |
+| 24 | kanjis[9].kunyomi | 沖 | leitura:  | おき (oki) |  | proposta:  | corrected |
 | 24 | kanjis[9].examples[0].content | 沖 | 沖縄県 (okinawaken) | 沖縄県の海岸。 | Okinawaken no beach. | Praia na prefeitura de Okinawa. | pending-human-review |
 | 24 | kanjis[9].examples[1].content | 沖 | 沖合 (okiai) | 沖合ふぃしんグ。 | Okiai fishing. | Pesca em alto-mar. | pending-human-review |
 | 24 | kanjis[10].onyomi | 縄 | leitura: mechanically-convertible-onyomi | ジョウ (JOU) | JOU (JOU) | proposta: ジョウ (JOU) | pending-human-review |
-| 24 | kanjis[10].kunyomi | 縄 | leitura: ambiguous-or-foreign | nawa (nawa) | nawa (nawa) | proposta:  | pending-human-review |
+| 24 | kanjis[10].kunyomi | 縄 | leitura:  | なわ (nawa) |  | proposta:  | corrected |
 | 24 | kanjis[10].examples[0].content | 縄 | 沖縄 (okinawa) | 沖縄文化。 | Okinawa culture. | Cultura de Okinawa. | pending-human-review |
 | 24 | kanjis[10].examples[1].content | 縄 | 縄文 (joumon) | 縄文えら。 | Joumon era. | Era Jomon na pré-história do Japão. | pending-human-review |
 | 24 | kanjis[11].onyomi | 梨 | leitura: mechanically-convertible-onyomi | リ (RI) | RI (RI) | proposta: リ (RI) | pending-human-review |
-| 24 | kanjis[11].kunyomi | 梨 | leitura: ambiguous-or-foreign | nashi (nashi) | nashi (nashi) | proposta:  | pending-human-review |
+| 24 | kanjis[11].kunyomi | 梨 | leitura:  | なし (nashi) |  | proposta:  | corrected |
 | 24 | kanjis[11].examples[0].content | 梨 | 山梨県 (yamanashiken) | 山梨県のふじ。 | Yamanashiken no Fuji. | Monte Fuji na prefeitura de Yamanashi. | pending-human-review |
 | 24 | kanjis[11].examples[1].content | 梨 | 梨 (nashi) | 梨フるいト。 | Nashi fruit. | Pera asiática tradicional. | pending-human-review |
 | 24 | kanjis[12].onyomi | 阪 | leitura: mechanically-convertible-onyomi | ハン (HAN) | HAN (HAN) | proposta: ハン (HAN) | pending-human-review |
-| 24 | kanjis[12].kunyomi | 阪 | leitura: ambiguous-or-foreign | saka (saka) | saka (saka) | proposta:  | pending-human-review |
+| 24 | kanjis[12].kunyomi | 阪 | leitura:  | さか (saka) |  | proposta:  | corrected |
 | 24 | kanjis[12].examples[0].content | 阪 | 大阪府 (osakafu) | 大阪府経済。 | Osakafu economy. | Economia da província de Osaka. | pending-human-review |
 | 24 | kanjis[12].examples[1].content | 阪 | 阪神 (hanshin) | 阪神あれあ。 | Hanshin area. | Região metropolitana de Osaka e Kobe. | pending-human-review |
 | 24 | kanjis[13].onyomi | 岡 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 24 | kanjis[13].kunyomi | 岡 | leitura: ambiguous-or-foreign | oka (oka) | oka (oka) | proposta:  | pending-human-review |
+| 24 | kanjis[13].kunyomi | 岡 | leitura:  | おか (oka) |  | proposta:  | corrected |
 | 24 | kanjis[13].examples[0].content | 岡 | 福岡県 (fukuokaken) | 福岡県のはかた。 | Fukuokaken no Hakata. | Hakata na prefeitura de Fukuoka. | pending-human-review |
 | 24 | kanjis[13].examples[1].content | 岡 | 静岡県 (shizuokaken) | 静岡県てあ。 | Shizuokaken tea. | Chá da prefeitura de Shizuoka. | pending-human-review |
 | 24 | kanjis[14].onyomi | 奈 | leitura: mechanically-convertible-onyomi | ナ (NA) | NA (NA) | proposta: ナ (NA) | pending-human-review |
-| 24 | kanjis[14].kunyomi | 奈 | leitura: ambiguous-or-foreign | na (na) | na (na) | proposta:  | pending-human-review |
+| 24 | kanjis[14].kunyomi | 奈 | leitura:  | いかん (ikan) / からなし (karanashi) |  | proposta:  | corrected |
 | 24 | kanjis[14].examples[0].content | 奈 | 奈良県 (naraken) | 奈良県のだいぶつ。 | Naraken no Daibutsu. | Grande Buda na prefeitura de Nara. | pending-human-review |
 | 24 | kanjis[14].examples[1].content | 奈 | 奈良 (nara) | 奈良公園。 | Nara park. | Parque de Nara. | pending-human-review |
 | 24 | kanjis[15].onyomi | 岐 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
-| 24 | kanjis[15].kunyomi | 岐 | leitura: ambiguous-or-foreign | chira (chira) | chira (chira) | proposta:  | pending-human-review |
+| 24 | kanjis[15].kunyomi | 岐 | leitura:  | - |  | proposta:  | corrected |
 | 24 | kanjis[15].examples[0].content | 岐 | 分岐 (bunki) | ろあドの分岐。 | Road no bunki. | Bifurcação da estrada. | pending-human-review |
 | 24 | kanjis[15].examples[1].content | 岐 | 岐路 (kiro) | 生活の岐路。 | Life no kiro. | Encruzilhada da vida. | pending-human-review |
 | 24 | kanjis[16].onyomi | 熊 | leitura: mechanically-convertible-onyomi | ユウ (YUU) | YUU (YUU) | proposta: ユウ (YUU) | pending-human-review |
-| 24 | kanjis[16].kunyomi | 熊 | leitura: ambiguous-or-foreign | kuma (kuma) | kuma (kuma) | proposta:  | pending-human-review |
+| 24 | kanjis[16].kunyomi | 熊 | leitura:  | くま (kuma) |  | proposta:  | corrected |
 | 24 | kanjis[16].examples[0].content | 熊 | 熊本県 (kumamotoken) | 熊本県城。 | Kumamotoken castle. | Castelo de Kumamoto. | pending-human-review |
 | 24 | kanjis[16].examples[1].content | 熊 | 熊 (kuma) | 熊の生息地。 | Kuma no habitat. | Habitat de ursos selvagens. | pending-human-review |
 | 24 | kanjis[17].onyomi | 宮 | leitura: mechanically-convertible-onyomi | キュウ (KYUU) | KYUU (KYUU) | proposta: キュウ (KYUU) | pending-human-review |
-| 24 | kanjis[17].kunyomi | 宮 | leitura: ambiguous-or-foreign | miya (miya) | miya (miya) | proposta:  | pending-human-review |
+| 24 | kanjis[17].kunyomi | 宮 | leitura:  | みや (miya) |  | proposta:  | corrected |
 | 24 | kanjis[17].examples[0].content | 宮 | 宮城県 (miyagiken) | 宮城県のせんだい。 | Miyagiken no Sendai. | Sendai na prefeitura de Miyagi. | pending-human-review |
 | 24 | kanjis[17].examples[1].content | 宮 | 宮崎県 (miyazakiken) | 宮崎県ぱルム。 | Miyazakiken palm. | Palmeiras de Miyazaki. | pending-human-review |
 | 24 | kanjis[18].onyomi | 崎 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
-| 24 | kanjis[18].kunyomi | 崎 | leitura: ambiguous-or-foreign | saki (saki) | saki (saki) | proposta:  | pending-human-review |
+| 24 | kanjis[18].kunyomi | 崎 | leitura:  | さき (saki) |  | proposta:  | corrected |
 | 24 | kanjis[18].examples[0].content | 崎 | 長崎県 (nagasakiken) | 長崎県歴史。 | Nagasakiken history. | História da prefeitura de Nagasaki. | pending-human-review |
 | 24 | kanjis[18].examples[1].content | 崎 | 宮崎 (miyazaki) | 宮崎れそルト。 | Miyazaki resort. | Resort de Miyazaki. | pending-human-review |
 | 24 | kanjis[19].onyomi | 静 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
 | 24 | kanjis[19].examples[0].content | 静 | 静岡 (shizuoka) | 静岡プれふぇクトうれ。 | Shizuoka prefecture. | Prefeitura de Shizuoka. | pending-human-review |
 | 24 | kanjis[19].examples[1].content | 静 | 静寂 (seijaku) | ふぉれストの静寂。 | Forest no seijaku. | Silêncio plácido da floresta. | pending-human-review |
 | 24 | kanjis[20].onyomi | 香 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 24 | kanjis[20].kunyomi | 香 | leitura: ambiguous-or-foreign | kaori (kaori) | kaori (kaori) | proposta:  | pending-human-review |
+| 24 | kanjis[20].kunyomi | 香 | leitura:  | かお・り (kaori) |  | proposta:  | corrected |
 | 24 | kanjis[20].examples[0].content | 香 | 香川県 (kagawaken) | 香川県のうどん。 | Kagawaken no Udon. | Macarrão Udon de Kagawa. | pending-human-review |
 | 24 | kanjis[20].examples[1].content | 香 | 香水 (kousui) | 香水香り。 | Kousui scent. | Aroma de perfume. | pending-human-review |
 | 24 | kanjis[21].onyomi | 徳 | leitura: mechanically-convertible-onyomi | トク (TOKU) | TOKU (TOKU) | proposta: トク (TOKU) | pending-human-review |
-| 24 | kanjis[21].kunyomi | 徳 | leitura: ambiguous-or-foreign | isoku (isoku) | isoku (isoku) | proposta:  | pending-human-review |
+| 24 | kanjis[21].kunyomi | 徳 | leitura:  | - |  | proposta:  | corrected |
 | 24 | kanjis[21].examples[0].content | 徳 | 徳島県 (tokushimaken) | 徳島県のあわおどり。 | Tokushimaken no Awa-odori. | Dança Awa-odori em Tokushima. | pending-human-review |
 | 24 | kanjis[21].examples[1].content | 徳 | 道徳 (doutoku) | 道徳教育。 | Doutoku education. | Educação moral e ética. | pending-human-review |
 | 24 | kanjis[22].onyomi | 島 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 24 | kanjis[22].kunyomi | 島 | leitura: ambiguous-or-foreign | shima (shima) | shima (shima) | proposta:  | pending-human-review |
+| 24 | kanjis[22].kunyomi | 島 | leitura:  | しま (shima) |  | proposta:  | corrected |
 | 24 | kanjis[22].examples[0].content | 島 | 広島県 (hiroshimaken) | 広島県平和公園。 | Hiroshimaken peace park. | Parque da Paz de Hiroshima. | pending-human-review |
 | 24 | kanjis[22].examples[1].content | 島 | 離島 (ritou) | 離島開発。 | Ritou development. | Desenvolvimento de ilhas remotas. | pending-human-review |
 | 24 | kanjis[23].onyomi | 知 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
 | 24 | kanjis[23].examples[0].content | 知 | 高知県 (kochiken) | 高知県のかつらはま。 | Kochiken no Katsurahama. | Praia de Katsurahama em Kochi. | pending-human-review |
 | 24 | kanjis[23].examples[1].content | 知 | 知事 (chiji) | プれふぇクトうらル知事。 | Prefectural chiji. | Governador da prefeitura. | pending-human-review |
 | 24 | kanjis[24].onyomi | 福 | leitura: mechanically-convertible-onyomi | フウク (HUKU) | HUKU (HUKU) | proposta: フウク (HUKU) | pending-human-review |
-| 24 | kanjis[24].kunyomi | 福 | leitura: ambiguous-or-foreign | fuku (fuku) | fuku (fuku) | proposta:  | pending-human-review |
+| 24 | kanjis[24].kunyomi | 福 | leitura:  | - |  | proposta:  | corrected |
 | 24 | kanjis[24].examples[0].content | 福 | 福島県 (fukushimaken) | 福島県復興。 | Fukushimaken recovery. | Recuperação da prefeitura de Fukushima. | pending-human-review |
 | 24 | kanjis[24].examples[1].content | 福 | 福井県 (fukuiken) | 福井県でぃのさうル博物館。 | Fukuiken dinosaur museum. | Museu dos dinossauros de Fukui. | pending-human-review |
 | 24 | kanjis[25].onyomi | 井 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
-| 24 | kanjis[25].kunyomi | 井 | leitura: ambiguous-or-foreign | i (i) | i (i) | proposta:  | pending-human-review |
+| 24 | kanjis[25].kunyomi | 井 | leitura:  | い (i) |  | proposta:  | corrected |
 | 24 | kanjis[25].examples[0].content | 井 | 福井 (fukui) | 福井スたてぃおん。 | Fukui station. | Estação de Fukui. | pending-human-review |
 | 24 | kanjis[25].examples[1].content | 井 | 天井 (tenjou) | 天井照明。 | Tenjou light. | Luz do teto. | pending-human-review |
 | 24 | kanjis[26].onyomi | 廣 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
 | 24 | kanjis[26].examples[0].content | 廣 | 広島 (hiroshima) | 廣島ドーム。 | Hiroshima dome. | Domo de Hiroshima. | pending-human-review |
 | 24 | kanjis[26].examples[1].content | 廣 | 廣大 (koudai) | 廣大なルあんド。 | Koudai na land. | Terra vasta e imensa. | pending-human-review |
 | 24 | kanjis[27].onyomi | 鳥 | leitura: mechanically-convertible-onyomi | チョウ (CHOU) | CHOU (CHOU) | proposta: チョウ (CHOU) | pending-human-review |
-| 24 | kanjis[27].kunyomi | 鳥 | leitura: ambiguous-or-foreign | tori (tori) | tori (tori) | proposta:  | pending-human-review |
+| 24 | kanjis[27].kunyomi | 鳥 | leitura:  | とり (tori) |  | proposta:  | corrected |
 | 24 | kanjis[27].examples[0].content | 鳥 | 鳥取県 (tottoriken) | 鳥取県のさきゅう。 | Tottoriken no Sakyuu. | Dunas de areia de Tottori. | pending-human-review |
 | 24 | kanjis[27].examples[1].content | 鳥 | 野鳥 (yachou) | 野鳥観察。 | Yachou observation. | Observação de pássaros selvagens. | pending-human-review |
 | 24 | kanjis[28].onyomi | 取 | leitura: mechanically-convertible-onyomi | シュ (SHU) | SHU (SHU) | proposta: シュ (SHU) | pending-human-review |
 | 24 | kanjis[28].examples[0].content | 取 | 鳥取 (tottori) | 鳥取砂丘。 | Tottori dunes. | Dunas de Tottori. | pending-human-review |
 | 24 | kanjis[28].examples[1].content | 取 | 取得 (shutoku) | 免許の取得。 | License no shutoku. | Obtenção de licença. | pending-human-review |
 | 24 | kanjis[29].onyomi | 根 | leitura: mechanically-convertible-onyomi | コン (KON) | KON (KON) | proposta: コン (KON) | pending-human-review |
-| 24 | kanjis[29].kunyomi | 根 | leitura: ambiguous-or-foreign | ne (ne) | ne (ne) | proposta:  | pending-human-review |
+| 24 | kanjis[29].kunyomi | 根 | leitura:  | ね (ne) / -ね (-ne) |  | proposta:  | corrected |
 | 24 | kanjis[29].examples[0].content | 根 | 島根県 (shimaneken) | 島根県のいずも。 | Shimaneken no Izumo. | Santuário Izumo em Shimane. | pending-human-review |
 | 24 | kanjis[29].examples[1].content | 根 | 根本 (konpon) | 根本解決。 | Konpon solution. | Solução de cerne. | pending-human-review |
 | 24 | kanjis[30].onyomi | 和 | leitura: mechanically-convertible-onyomi | ワ (WA) | WA (WA) | proposta: ワ (WA) | pending-human-review |
 | 24 | kanjis[30].examples[0].content | 和 | 和歌山県 (wakayamaken) | 和歌山県のこやさん。 | Wakayamaken no Koyasan. | Monte Koya na prefeitura de Wakayama. | pending-human-review |
 | 24 | kanjis[30].examples[1].content | 和 | 和風 (wafuu) | 和風部屋。 | Wafuu room. | Quarto em estilo tradicional japonês. | pending-human-review |
 | 24 | kanjis[31].onyomi | 歌 | leitura: mechanically-convertible-onyomi | カ (KA) | KA (KA) | proposta: カ (KA) | pending-human-review |
-| 24 | kanjis[31].kunyomi | 歌 | leitura: ambiguous-or-foreign | uta (uta) | uta (uta) | proposta:  | pending-human-review |
+| 24 | kanjis[31].kunyomi | 歌 | leitura:  | うた (uta) |  | proposta:  | corrected |
 | 24 | kanjis[31].examples[0].content | 歌 | 和歌山 (wakayama) | 和歌山らめん。 | Wakayama ramen. | Ramen tradicional de Wakayama. | pending-human-review |
 | 24 | kanjis[31].examples[1].content | 歌 | 短歌 (tanka) | 短歌詩。 | Tanka poetry. | Poesia tradicional Tanka. | pending-human-review |
 | 24 | kanjis[32].onyomi | 山 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
-| 24 | kanjis[32].kunyomi | 山 | leitura: ambiguous-or-foreign | yama (yama) | yama (yama) | proposta:  | pending-human-review |
+| 24 | kanjis[32].kunyomi | 山 | leitura:  | やま (yama) |  | proposta:  | corrected |
 | 24 | kanjis[32].examples[0].content | 山 | 山口県 (yamaguchiken) | 山口県のはぎ。 | Yamaguchiken no Hagi. | Hagi na prefeitura de Yamaguchi. | pending-human-review |
 | 24 | kanjis[32].examples[1].content | 山 | 山脈 (sanmyaku) | じゃぱん山脈。 | Japan sanmyaku. | Cadeia de montanhas do Japão. | pending-human-review |
 | 24 | kanjis[33].onyomi | 口 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 24 | kanjis[33].kunyomi | 口 | leitura: ambiguous-or-foreign | kuchi (kuchi) | kuchi (kuchi) | proposta:  | pending-human-review |
+| 24 | kanjis[33].kunyomi | 口 | leitura:  | くち (kuchi) |  | proposta:  | corrected |
 | 24 | kanjis[33].examples[0].content | 口 | 山口 (yamaguchi) | 山口スたてぃおん。 | Yamaguchi station. | Estação de Yamaguchi. | pending-human-review |
 | 24 | kanjis[33].examples[1].content | 口 | 港口 (koukou) | 港の港口。 | Port no koukou. | Entrada do porto. | pending-human-review |
 | 24 | kanjis[34].onyomi | 州 | leitura: mechanically-convertible-onyomi | シュウ (SHUU) | SHUU (SHUU) | proposta: シュウ (SHUU) | pending-human-review |
-| 24 | kanjis[34].kunyomi | 州 | leitura: ambiguous-or-foreign | su (su) | su (su) | proposta:  | pending-human-review |
+| 24 | kanjis[34].kunyomi | 州 | leitura:  | す (su) |  | proposta:  | corrected |
 | 24 | kanjis[34].examples[0].content | 州 | 本州 (honshuu) | 本州島。 | Honshuu island. | Ilha principal de Honshu. | pending-human-review |
 | 24 | kanjis[34].examples[1].content | 州 | 九州 (kyuushuu) | 九州あれあ。 | Kyuushuu area. | Região de Kyushu. | pending-human-review |
 | 24 | kanjis[35].onyomi | 都 | leitura: mechanically-convertible-onyomi | ト (TO) | TO (TO) | proposta: ト (TO) | pending-human-review |
-| 24 | kanjis[35].kunyomi | 都 | leitura: ambiguous-or-foreign | miyako (miyako) | miyako (miyako) | proposta:  | pending-human-review |
+| 24 | kanjis[35].kunyomi | 都 | leitura:  | みやこ (miyako) |  | proposta:  | corrected |
 | 24 | kanjis[35].examples[0].content | 都 | 東京都 (toukyouto) | 東京都首都。 | Toukyouto capital. | Capital da Metrópole de Tóquio. | pending-human-review |
 | 24 | kanjis[35].examples[1].content | 都 | 首都 (shuto) | じゃぱんの首都。 | Japan no shuto. | Capital do Japão. | pending-human-review |
 | 24 | kanjis[36].onyomi | 府 | leitura: mechanically-convertible-onyomi | フ (FU) | FU (FU) | proposta: フ (FU) | pending-human-review |
-| 24 | kanjis[36].kunyomi | 府 | leitura: ambiguous-or-foreign | fu (fu) | fu (fu) | proposta:  | pending-human-review |
+| 24 | kanjis[36].kunyomi | 府 | leitura:  | - |  | proposta:  | corrected |
 | 24 | kanjis[36].examples[0].content | 府 | 京都府 (kyoutofu) | 京都府神社。 | Kyoutofu shrine. | Santuário na província de Quioto. | pending-human-review |
 | 24 | kanjis[36].examples[1].content | 府 | 政府 (seifu) | じゃぱん政府。 | Japan seifu. | Governo do Japão. | pending-human-review |
 | 24 | kanjis[37].onyomi | 県 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
-| 24 | kanjis[37].kunyomi | 県 | leitura: ambiguous-or-foreign | ken (ken) | ken (ken) | proposta:  | pending-human-review |
+| 24 | kanjis[37].kunyomi | 県 | leitura:  | か・ける (kakeru) |  | proposta:  | corrected |
 | 24 | kanjis[37].examples[0].content | 県 | 都道府県 (todoufuken) | 都道府県地図。 | Todoufuken map. | Mapa das 47 prefeituras do Japão. | pending-human-review |
 | 24 | kanjis[37].examples[1].content | 県 | 県庁 (kenchou) | 県庁事務所。 | Kenchou office. | Sede do governo da prefeitura. | pending-human-review |
 | 24 | kanjis[38].onyomi | 海 | leitura: mechanically-convertible-onyomi | カイ (KAI) | KAI (KAI) | proposta: カイ (KAI) | pending-human-review |
-| 24 | kanjis[38].kunyomi | 海 | leitura: ambiguous-or-foreign | umi (umi) | umi (umi) | proposta:  | pending-human-review |
+| 24 | kanjis[38].kunyomi | 海 | leitura:  | うみ (umi) |  | proposta:  | corrected |
 | 24 | kanjis[38].examples[0].content | 海 | 日本海 (nihonkai) | 日本海海岸。 | Nihonkai coast. | Costa do Mar do Japão. | pending-human-review |
 | 24 | kanjis[38].examples[1].content | 海 | 海外 (kaigai) | 海外旅行。 | Kaigai travel. | Viagem ao exterior. | pending-human-review |
 | 24 | kanjis[39].onyomi | 陸 | leitura: mechanically-convertible-onyomi | リク (RIKU) | RIKU (RIKU) | proposta: リク (RIKU) | pending-human-review |
-| 24 | kanjis[39].kunyomi | 陸 | leitura: ambiguous-or-foreign | oka (oka) | oka (oka) | proposta:  | pending-human-review |
+| 24 | kanjis[39].kunyomi | 陸 | leitura:  | おか (oka) |  | proposta:  | corrected |
 | 24 | kanjis[39].examples[0].content | 陸 | 陸上 (rikujou) | 陸上輸送。 | Rikujou transport. | Transporte em terra firme. | pending-human-review |
 | 24 | kanjis[39].examples[1].content | 陸 | 内陸 (nairiku) | 内陸あれあ。 | Nairiku area. | Região do interior sem acesso ao mar. | pending-human-review |
 

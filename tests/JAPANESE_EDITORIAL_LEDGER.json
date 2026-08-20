@@ -1,12 +1,3363 @@
 {
   "schemaVersion": 1,
-  "auditDate": "2026-08-14",
-  "states": ["approved", "corrected", "unresolved", "excluded"],
+  "auditDate": "2026-08-20",
+  "states": [
+    "approved",
+    "corrected",
+    "unresolved",
+    "excluded"
+  ],
   "policy": {
     "publicLabel": "Approved and corrected items are normal editorial approval; provenance remains internal.",
     "approvalEvidence": "approved and corrected decisions require at least one localized source reference.",
     "consensusEvidence": "naturalness and source-conflict decisions require two independent sources.",
     "unresolved": "Lack of consensus must remain unresolved and must not be forced into approval."
   },
-  "decisions": []
+  "decisions": [
+    {
+      "id": "ja-n5-m01-kanji-00-example-01",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n5.js",
+        "locator": "module=1;kanjis[0].examples[1]",
+        "character": "漢"
+      },
+      "beforeHash": "bd47d27ed5bde9b6babfcdcf2104598088e79656c937f82792a961e48ae41519",
+      "beforeValue": {
+        "sentence": "「あめ」 pode ser 雨 (Chuva) ou 飴 (Bala de açúcar).",
+        "sentenceMeaning": "O Kanji resolve o contexto visualmente sem margem para erro!"
+      },
+      "finalValue": {
+        "sentence": "「あめ」は、漢字で「雨」または「飴」と書き分けます。",
+        "sentenceMeaning": "A palavra ame pode ser escrita com os kanjis 雨 (chuva) ou 飴 (bala de açúcar), conforme o significado."
+      },
+      "reasonKind": "source-correction",
+      "rationale": "O exemplo foi reescrito integralmente em japonês, passou a conter o Kanji-alvo 漢 e manteve a comparação factual entre as leituras あめ de 雨 e 飴.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 雨 e literal 飴; reading ja_kun あめ"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m07-k30-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=7;kanjis[30].kunyomi",
+        "character": "配"
+      },
+      "beforeHash": "f0f4fd28887a730c94ffc3ae4673d462f913db1ea130ffb9c1a4ca34ed838433",
+      "beforeValue": "kubaru",
+      "finalValue": "くば・る (kubaru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 配; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m09-k04-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=9;kanjis[4].kunyomi",
+        "character": "遺"
+      },
+      "beforeHash": "fba76071520accf8c36caac4ce6e2cd66d58e90e56f5dce7a761d00495d04b56",
+      "beforeValue": "nokos (nokosu)",
+      "finalValue": "のこ・す (nokosu)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 遺; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m10-k35-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=10;kanjis[35].kunyomi",
+        "character": "湿"
+      },
+      "beforeHash": "d09bfb6d406d5bc304d49271387f56cd9af1855f6937a2b4a2a29f37873efbeb",
+      "beforeValue": "shimo (shimo)",
+      "finalValue": "しめ・る (shimeru) / しめ・す (shimesu) / うるお・う (uruou) / うるお・す (uruosu)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 湿; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m11-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=11;kanjis[24].kunyomi",
+        "character": "幻"
+      },
+      "beforeHash": "b2a2c2ae4df2b858703637c23c9aaa8fd1c9d523cbc8b9b0d071c9784b49d7bc",
+      "beforeValue": "maboroshi (maboroshi)",
+      "finalValue": "まぼろし (maboroshi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 幻; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m13-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=13;kanjis[18].kunyomi",
+        "character": "警"
+      },
+      "beforeHash": "78750bd5a08b8446055ae0b56fd01f904825f649d913b58d811b5d379f9c42a7",
+      "beforeValue": "imashimeru",
+      "finalValue": "いまし・める (imashimeru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 警; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k12-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[12].kunyomi",
+        "character": "齢"
+      },
+      "beforeHash": "48643c665107dccdd17b30ab07bbfce98aa628418ae8007d833f4922e6305848",
+      "beforeValue": "yowai (yowai)",
+      "finalValue": "よわい (yowai)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 齢; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[14].kunyomi",
+        "character": "婚"
+      },
+      "beforeHash": "c92434825b528658bb6e5be34fb0e3ac3b8affe147ba3e9672769620d5368f42",
+      "beforeValue": "kon (kon)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 婚; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k15-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[15].kunyomi",
+        "character": "姻"
+      },
+      "beforeHash": "56a371f737d9b472d328c27fcb6181c8d5635d74434c9d959b9e5feeac464539",
+      "beforeValue": "in (in)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 姻; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[21].kunyomi",
+        "character": "介"
+      },
+      "beforeHash": "ba30d15ccd489f3eeb35cfcb25bf621dca33f49f3a2b0c83b5b61f1d848f6a0f",
+      "beforeValue": "kai (kai)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 介; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k22-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[22].kunyomi",
+        "character": "籍"
+      },
+      "beforeHash": "433b696335bcb9dd3dd2563edf22bb7202a2f3bb8563e17e6adc142c47fb41b0",
+      "beforeValue": "seki (seki)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 籍; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[24].kunyomi",
+        "character": "郊"
+      },
+      "beforeHash": "d8521d9d88d9fccc9471fb6030f7248d741a78254a10fb05f6380218f36d23ab",
+      "beforeValue": "suburb",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 郊; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k25-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[25].kunyomi",
+        "character": "街"
+      },
+      "beforeHash": "41568201ab00a5f9d398f6d96d9e9a2fd51b221b5c2f7b5f5b1acfff9a6b4009",
+      "beforeValue": "machi (machi)",
+      "finalValue": "まち (machi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 街; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k26-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[26].kunyomi",
+        "character": "区"
+      },
+      "beforeHash": "81c5577bef46852500b96bd1ac3686e47915afc01e54bbb70877c38453f34d00",
+      "beforeValue": "ku (ku)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 区; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k27-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[27].kunyomi",
+        "character": "域"
+      },
+      "beforeHash": "27a708be2d43cd74e0a1ad1963484724cbbb941273cb7ebe5a68fb8606604cbe",
+      "beforeValue": "iki (iki)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 域; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m14-k40-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=14;kanjis[40].kunyomi",
+        "character": "戸"
+      },
+      "beforeHash": "0bf961bbab1c6dd69e52220670e231cfbaf19a4bb1cf32706bd5ed26edbbb372",
+      "beforeValue": "to (to)",
+      "finalValue": "と (to)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 戸; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k04-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[4].kunyomi",
+        "character": "慢"
+      },
+      "beforeHash": "a9ebd8446dab93c2dc01410b8b434f8ffacbbef4070df7dc92cd95d42a0f944c",
+      "beforeValue": "man (man)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 慢; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[10].kunyomi",
+        "character": "差"
+      },
+      "beforeHash": "3b92fce67d3713f60fbf8c68b1e972530114abf39f5c4445e6a866f2f54e363a",
+      "beforeValue": "sa (sa)",
+      "finalValue": "さ・す (sasu) / さ・し (sashi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 差; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k13-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[13].kunyomi",
+        "character": "憎"
+      },
+      "beforeHash": "86302e6dc310195fc5b8aae086c9538f1fa009863709bf7379e6f9f3241c5e3c",
+      "beforeValue": "nikui (nikui)",
+      "finalValue": "にく・い (nikui)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 憎; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[14].kunyomi",
+        "character": "恥"
+      },
+      "beforeHash": "f867606df73f48b9fd96f70d149172cc80e86ed23b48c31e9b211d803c0ad21b",
+      "beforeValue": "haji (haji)",
+      "finalValue": "はじ (haji)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 恥; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[18].kunyomi",
+        "character": "癖"
+      },
+      "beforeHash": "a2d389d6c4d0d66e64e90e83ca445d5b71dec8a06b569b20c43280fd3a70ac3f",
+      "beforeValue": "kuse (kuse)",
+      "finalValue": "くせ (kuse)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 癖; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k20-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[20].kunyomi",
+        "character": "妄"
+      },
+      "beforeHash": "9a7db43f3e49af89972d5c5d599f44c2aacca53708c05241806234cc56584439",
+      "beforeValue": "midari (midari)",
+      "finalValue": "みだ・りに (midarini)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 妄; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[21].kunyomi",
+        "character": "痴"
+      },
+      "beforeHash": "57a2e775283fafd06abab2a977ae4f97165115d25889051554c2c287e3fa3cb7",
+      "beforeValue": "shire (shire)",
+      "finalValue": "し・れる (shireru) / おろか (oroka)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 痴; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[29].kunyomi",
+        "character": "害"
+      },
+      "beforeHash": "27d168b1b2c09bdc4a91a5fa10eea525cc12ded42171268eb0818d7ae44c6d0d",
+      "beforeValue": "gai (gai)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 害; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k30-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[30].kunyomi",
+        "character": "孤"
+      },
+      "beforeHash": "69e78fa0fc61ab490ebff568b34601705ea5275cc6eb733ad534cc9aacb07be3",
+      "beforeValue": "hitori (hitori)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 孤; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k38-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[38].kunyomi",
+        "character": "存"
+      },
+      "beforeHash": "bb4d679faf57732da5cdee3364e49d358a81f841c7c288c1d2f96ac7fa9e6471",
+      "beforeValue": "son (son)",
+      "finalValue": "ながら・える (nagaraeru) / あ・る (aru) / たも・つ (tamotsu) / と・う (tou)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 存; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k40-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[40].kunyomi",
+        "character": "憤"
+      },
+      "beforeHash": "762f26e3bdc22bae4f02059721d74a55173ea4f288011cd4c76cfad931e79098",
+      "beforeValue": "fungu (fungu)",
+      "finalValue": "いきどお・る (ikidooru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 憤; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m15-k41-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=15;kanjis[41].kunyomi",
+        "character": "慨"
+      },
+      "beforeHash": "27d168b1b2c09bdc4a91a5fa10eea525cc12ded42171268eb0818d7ae44c6d0d",
+      "beforeValue": "gai (gai)",
+      "finalValue": "なげ・く (nageku)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 慨; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k00-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[0].kunyomi",
+        "character": "臥"
+      },
+      "beforeHash": "db8f2f2ef8f51cb929fb97d04e978db535d240822e01d8e21ac9293e46aaa0b4",
+      "beforeValue": "husu (husu)",
+      "finalValue": "ふせ・る (fuseru) / ふ・せる (fuseru) / ふ・す (fusu)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 臥; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k01-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[1].kunyomi",
+        "character": "薪"
+      },
+      "beforeHash": "07983256eaf73b0544baa0611e5f50183dc1a2db2ea0c4a90dbfe9d429afda1c",
+      "beforeValue": "tatemae (tatemae)",
+      "finalValue": "たきぎ (takigi) / まき (maki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 薪; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k03-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[3].kunyomi",
+        "character": "胆"
+      },
+      "beforeHash": "590f66a2a84b30f70681a900588edcc5479f47bb704505ab5d56500e5ca62670",
+      "beforeValue": "kimo (kimo)",
+      "finalValue": "きも (kimo)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 胆; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k04-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[4].kunyomi",
+        "character": "孤"
+      },
+      "beforeHash": "69e78fa0fc61ab490ebff568b34601705ea5275cc6eb733ad534cc9aacb07be3",
+      "beforeValue": "hitori (hitori)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 孤; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k11-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[11].kunyomi",
+        "character": "鏡"
+      },
+      "beforeHash": "5f5a8169591351e8b5acbea2a81cdb88ff0d8852a037ab511e1250d31533e945",
+      "beforeValue": "kagami (kagami)",
+      "finalValue": "かがみ (kagami)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 鏡; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k13-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[13].kunyomi",
+        "character": "水"
+      },
+      "beforeHash": "8dd1b761bb9785e515b8cdf7cd19dc29cca0e91de94a27e18e5df5fc6335eb30",
+      "beforeValue": "mizu (mizu)",
+      "finalValue": "みず (mizu) / みず- (mizu-)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 水; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[14].kunyomi",
+        "character": "花"
+      },
+      "beforeHash": "4091696564b0570a74e17c7081d4f3f3e6be5073fa541da71c9dd314fb686d42",
+      "beforeValue": "hana (hana)",
+      "finalValue": "はな (hana)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 花; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k15-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[15].kunyomi",
+        "character": "月"
+      },
+      "beforeHash": "0d21c053f569c56ce20fca74b989c335820499f47da2b0f7a9b8628e38641884",
+      "beforeValue": "tsuki (tsuki)",
+      "finalValue": "つき (tsuki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 月; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k17-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[17].kunyomi",
+        "character": "故"
+      },
+      "beforeHash": "52725e769ed7f2307c534ee5ab0abb4ed6f1b2d554d9e245e403db2f6fba5ab7",
+      "beforeValue": "yue (yue)",
+      "finalValue": "ゆえ (yue)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 故; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k19-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[19].kunyomi",
+        "character": "疾"
+      },
+      "beforeHash": "5e74718a4547829c15f963c6246ad73a448cabdbd3235b772a554d7e5a405b7e",
+      "beforeValue": "toshi (toshi)",
+      "finalValue": "はや・い (hayai)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 疾; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k20-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[20].kunyomi",
+        "character": "風"
+      },
+      "beforeHash": "f0aa5b2286153db6b00e5b6eda020334e7a3a80ffb97a6d822ddd338055db9d9",
+      "beforeValue": "kaze (kaze)",
+      "finalValue": "かぜ (kaze)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 風; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[21].kunyomi",
+        "character": "迅"
+      },
+      "beforeHash": "5f7ff40fa9728a12aab18a189161578e963a764862702425327a8a8b5cfc7f81",
+      "beforeValue": "hayanai (hayanai)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 迅; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k22-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[22].kunyomi",
+        "character": "雷"
+      },
+      "beforeHash": "9650954593b67b2e214c448a573ef6fa2ce55c65e3c7b548eeeb9c67a3dc84bc",
+      "beforeValue": "kaminari (kaminari)",
+      "finalValue": "かみなり (kaminari)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 雷; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k23-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[23].kunyomi",
+        "character": "百"
+      },
+      "beforeHash": "dd48f338a6a6b549271b0ea4f87581bd027d9c2f0da8d06f4f2dda163d87b351",
+      "beforeValue": "momo (momo)",
+      "finalValue": "もも (momo)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 百; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k25-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[25].kunyomi",
+        "character": "繚"
+      },
+      "beforeHash": "efff3beddb0dcad64680ff390a10a25f8128710d8cc83e4b32d8e09ac733d55c",
+      "beforeValue": "ryou (ryou)",
+      "finalValue": "まと・う (matou) / めぐ・る (meguru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 繚; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k28-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[28].kunyomi",
+        "character": "刀"
+      },
+      "beforeHash": "e3f129b8626e07ef8b246aff6e0663d3c46ea88df5646cbef3986e6964b6a17e",
+      "beforeValue": "katana (katana)",
+      "finalValue": "かたな (katana)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 刀; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[29].kunyomi",
+        "character": "両"
+      },
+      "beforeHash": "4ccbe1fb53bc585d4160edad8e94ee9bce2c8e05650414d0d7024baecf8371d1",
+      "beforeValue": "futatsu (futatsu)",
+      "finalValue": "ふたつ (futatsu)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 両; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k32-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[32].kunyomi",
+        "character": "期"
+      },
+      "beforeHash": "7f231bd792c6a6766a026d1fa88514e0e71b384fa23308ea3966b618d2867e00",
+      "beforeValue": "ki (ki)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 期; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k34-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[34].kunyomi",
+        "character": "機"
+      },
+      "beforeHash": "a584995d252ab8c4f94d682f5623377fd63abf9e9f4582f30f1c8499da97f52e",
+      "beforeValue": "hata (hata)",
+      "finalValue": "はた (hata)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 機; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k36-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[36].kunyomi",
+        "character": "天"
+      },
+      "beforeHash": "1d19d351f3b9df0774b8ee35b43d53a2fbb9e635ec05fdc3d5920fabb4142287",
+      "beforeValue": "ame (ame)",
+      "finalValue": "あめ (ame)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 天; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k37-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[37].kunyomi",
+        "character": "雨"
+      },
+      "beforeHash": "1d19d351f3b9df0774b8ee35b43d53a2fbb9e635ec05fdc3d5920fabb4142287",
+      "beforeValue": "ame (ame)",
+      "finalValue": "あめ (ame)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 雨; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m16-k39-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=16;kanjis[39].kunyomi",
+        "character": "鑽"
+      },
+      "beforeHash": "ed5342f8c70795bc7f2162f9475d46999be5d5b0a2317bc59307e2351ac27715",
+      "beforeValue": "kiri (kiri)",
+      "finalValue": "き・る (kiru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 鑽; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k00-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[0].kunyomi",
+        "character": "矛"
+      },
+      "beforeHash": "b65675aa1897bf5b5761a9447a0cf4b6fe653ed0d08e0ef08e0e048dd65112ad",
+      "beforeValue": "hoko (hoko)",
+      "finalValue": "ほこ (hoko)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 矛; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k01-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[1].kunyomi",
+        "character": "盾"
+      },
+      "beforeHash": "172b7f73f88469655de2fcaf7d1d30730242ae9acc8f15bce8bc10f3726cfd50",
+      "beforeValue": "tate (tate)",
+      "finalValue": "たて (tate)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 盾; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k02-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[2].kunyomi",
+        "character": "背"
+      },
+      "beforeHash": "0a7d2b4f7942a7791b135ac25072b976148baca07823a417493c6f02caddb58d",
+      "beforeValue": "se (se)",
+      "finalValue": "せ (se)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 背; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k08-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[8].kunyomi",
+        "character": "七"
+      },
+      "beforeHash": "00d74f43ba4594d57524b3741e3afce1fa5ef1e1f15bf94f549b081aca3f2c3c",
+      "beforeValue": "nana (nana)",
+      "finalValue": "なな (nana)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 七; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[10].kunyomi",
+        "character": "八"
+      },
+      "beforeHash": "adf05710a7b726735f660c835577efb4e6729679775a0b79666eb4a71e94af69",
+      "beforeValue": "ya (ya)",
+      "finalValue": "や (ya)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 八; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k13-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[13].kunyomi",
+        "character": "心"
+      },
+      "beforeHash": "5ae56608b87947680e6e4374e69d1061281454029d6fa1ee02b927848df51c18",
+      "beforeValue": "kokoro (kokoro)",
+      "finalValue": "こころ (kokoro)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 心; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k20-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[20].kunyomi",
+        "character": "弱"
+      },
+      "beforeHash": "48643c665107dccdd17b30ab07bbfce98aa628418ae8007d833f4922e6305848",
+      "beforeValue": "yowai (yowai)",
+      "finalValue": "よわ・い (yowai)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 弱; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[21].kunyomi",
+        "character": "肉"
+      },
+      "beforeHash": "31b12306a699a57aa07f0cfdf28fb9110cc5ea087c1706db32e36a51bc67bd99",
+      "beforeValue": "niku (niku)",
+      "finalValue": "しし (shishi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 肉; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[24].kunyomi",
+        "character": "朝"
+      },
+      "beforeHash": "665e01251a4c9f25d065e86c3c58985865f2a976866caa1cb5fb8070c24c99e4",
+      "beforeValue": "asa (asa)",
+      "finalValue": "あさ (asa)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 朝; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k28-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[28].kunyomi",
+        "character": "令"
+      },
+      "beforeHash": "94a9d7a58380be138fd0a9a950f42d23e1dd34379b8e906ee2c2e2984851de21",
+      "beforeValue": "noritoto (noritoto)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 令; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k30-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[30].kunyomi",
+        "character": "馬"
+      },
+      "beforeHash": "4a1e3c02fb9c3011431a4ad9f71db1f63149bff27f045a3b953847032932e2e6",
+      "beforeValue": "uma (uma)",
+      "finalValue": "うま (uma)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 馬; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k31-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[31].kunyomi",
+        "character": "耳"
+      },
+      "beforeHash": "c7e72522851a55464afb5f1e9dc0d947a753cc4e9eeacf8848e6b3940160cc08",
+      "beforeValue": "mimi (mimi)",
+      "finalValue": "みみ (mimi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 耳; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k32-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[32].kunyomi",
+        "character": "東"
+      },
+      "beforeHash": "c3edb0fbd6e9ad5fb55747126a59d0b5eeff1ff6844d1e2a9c1ff5ccb335d556",
+      "beforeValue": "higashi (higashi)",
+      "finalValue": "ひがし (higashi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 東; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k33-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[33].kunyomi",
+        "character": "独"
+      },
+      "beforeHash": "69e78fa0fc61ab490ebff568b34601705ea5275cc6eb733ad534cc9aacb07be3",
+      "beforeValue": "hitori (hitori)",
+      "finalValue": "ひと・り (hitori)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 独; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k35-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[35].kunyomi",
+        "character": "面"
+      },
+      "beforeHash": "944c904bd668fb2361ab042235a8e945ccadec880d6396f1a5cb38c4b7942dcd",
+      "beforeValue": "omote (omote)",
+      "finalValue": "おもて (omote)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 面; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k36-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[36].kunyomi",
+        "character": "臂"
+      },
+      "beforeHash": "e095d70ef40d6bcd1db3b70cce9853744f48c2109b34d5964d6e1a060624b256",
+      "beforeValue": "hij (hij)",
+      "finalValue": "ひじ (hiji)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 臂; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k37-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[37].kunyomi",
+        "character": "我"
+      },
+      "beforeHash": "3907108f82a805475372bd86cf3c89b1315dcb5059bea08b2c0698d51c10877c",
+      "beforeValue": "watashi (watashi)",
+      "finalValue": "われ (ware) / わ (wa) / わ・が- (waga-) / わが- (waga-)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 我; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k38-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[38].kunyomi",
+        "character": "引"
+      },
+      "beforeHash": "f731dc1e03d5bd780c7f301ccfee954de7f1ff51b2ca5787214a8a540e6a162f",
+      "beforeValue": "hiki (hiki)",
+      "finalValue": "ひ・く (hiku) / ひ・ける (hikeru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 引; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m17-k39-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=17;kanjis[39].kunyomi",
+        "character": "田"
+      },
+      "beforeHash": "64f27f85ce80c965e994640fea28da2f455082f3235f1f66692ee8b28e8cd833",
+      "beforeValue": "ta (ta)",
+      "finalValue": "た (ta)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 田; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[10].kunyomi",
+        "character": "謙"
+      },
+      "beforeHash": "5ab1372c47450e020360b2585d455d390c723443a4562a2bbd6eb497df8921fd",
+      "beforeValue": "hesonokamaru",
+      "finalValue": "へりくだ・る (herikudaru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 謙; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k11-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[11].kunyomi",
+        "character": "遜"
+      },
+      "beforeHash": "5ab1372c47450e020360b2585d455d390c723443a4562a2bbd6eb497df8921fd",
+      "beforeValue": "hesonokamaru",
+      "finalValue": "したが・う (shitagau) / へりくだ・る (herikudaru) / ゆず・る (yuzuru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 遜; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[14].kunyomi",
+        "character": "献"
+      },
+      "beforeHash": "0c66ce5e878f68890c91925eed629020e82cf2d8cb642e72efca0b2e56b0d05f",
+      "beforeValue": "tatematsuru",
+      "finalValue": "たてまつ・る (tatematsuru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 献; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[18].kunyomi",
+        "character": "範"
+      },
+      "beforeHash": "8ecabe5d96df6ae4e78352e5dedd5079a3311e1fe79ebd88a352791ecfd6a3e2",
+      "beforeValue": "nori (nori)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 範; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k19-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[19].kunyomi",
+        "character": "恩"
+      },
+      "beforeHash": "40f9f8efdd52894e478e54fcdcb79eb85a85d4f79ed47a9d4a0f974f99f4aeb9",
+      "beforeValue": "megumi (megumi)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 恩; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[21].kunyomi",
+        "character": "皇"
+      },
+      "beforeHash": "02e5a8019dae1e142dff6609ad5ff009d7c0bc93a03ce20f507a5ae718e3ce35",
+      "beforeValue": "sumera (sumera)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 皇; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k22-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[22].kunyomi",
+        "character": "帝"
+      },
+      "beforeHash": "021453a46b36502dfc8ec6bb241d086c340bfb2d918d739a56098405a89e958d",
+      "beforeValue": "mikado (mikado)",
+      "finalValue": "みかど (mikado)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 帝; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k23-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[23].kunyomi",
+        "character": "后"
+      },
+      "beforeHash": "eb1f8c77d0de49ecd445c5011adf2845b9def682a82a67a4ebb010659c62395a",
+      "beforeValue": "kisaki (kisaki)",
+      "finalValue": "きさき (kisaki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 后; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[24].kunyomi",
+        "character": "妃"
+      },
+      "beforeHash": "eb1f8c77d0de49ecd445c5011adf2845b9def682a82a67a4ebb010659c62395a",
+      "beforeValue": "kisaki (kisaki)",
+      "finalValue": "きさき (kisaki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 妃; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k25-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[25].kunyomi",
+        "character": "宰"
+      },
+      "beforeHash": "3a61e7f8101ca45980bfdc0a3c46902769b825b46506e9b868519881d5d879d4",
+      "beforeValue": "tsukasa (tsukasa)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 宰; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k26-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[26].kunyomi",
+        "character": "相"
+      },
+      "beforeHash": "e1e269e9d6b54b3c30d55ae8e3fe562c20274c13c69210854e16e4cd01aada84",
+      "beforeValue": "ai (ai)",
+      "finalValue": "あい- (ai-)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 相; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k27-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[27].kunyomi",
+        "character": "儀"
+      },
+      "beforeHash": "8ecabe5d96df6ae4e78352e5dedd5079a3311e1fe79ebd88a352791ecfd6a3e2",
+      "beforeValue": "nori (nori)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 儀; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k28-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[28].kunyomi",
+        "character": "礼"
+      },
+      "beforeHash": "7fa169ab3170c0889c14df19fa615fda2559b79f577dc3fc50bcc267409ba9a4",
+      "beforeValue": "rei (rei)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 礼; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[29].kunyomi",
+        "character": "節"
+      },
+      "beforeHash": "52a8973e331c72de6727c1339bcc2434dd79f353e2e633120c5f0ea53d84b8f4",
+      "beforeValue": "fushi (fushi)",
+      "finalValue": "ふし (fushi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 節; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k35-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[35].kunyomi",
+        "character": "寿"
+      },
+      "beforeHash": "89f3da6af8f8fe8f4d45ae2a40235b8effdfffbc1436bb6e3d0fa2929e960c9b",
+      "beforeValue": "kotobuki (kotobuki)",
+      "finalValue": "ことぶき (kotobuki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 寿; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k36-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[36].kunyomi",
+        "character": "勅"
+      },
+      "beforeHash": "d6e7fbd57fac2f62c1b8e6e5040293feb4abfe294e0eb1bd09715f69fa646b68",
+      "beforeValue": "mikonori (mikonori)",
+      "finalValue": "いまし・める (imashimeru) / みことのり (mikotonori)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 勅; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k37-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[37].kunyomi",
+        "character": "聖"
+      },
+      "beforeHash": "ef590c9d93548811a90885a1690d2f520987a37429a86ad47abed93df235dd01",
+      "beforeValue": "hijiri (hijiri)",
+      "finalValue": "ひじり (hijiri)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 聖; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m18-k39-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=18;kanjis[39].kunyomi",
+        "character": "頂"
+      },
+      "beforeHash": "96185586d1505a2ccd37733a24d5843b10b0881c3bfc81dcba95f4eb30482bd3",
+      "beforeValue": "itadaki (itadaki)",
+      "finalValue": "いただき (itadaki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 頂; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m19-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=19;kanjis[21].kunyomi",
+        "character": "芽"
+      },
+      "beforeHash": "e9a1bbcac8b162a82ac5e0095846ba330967e76a8d17ec6f8c037235674c1bac",
+      "beforeValue": "me (me)",
+      "finalValue": "め (me)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 芽; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m20-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=20;kanjis[18].kunyomi",
+        "character": "禁"
+      },
+      "beforeHash": "5eb61a4a4a6ac30929377fe2fe527893c32e17dd3c9e41cfc05a2ba7be897018",
+      "beforeValue": "kinki (kinki)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 禁; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m20-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=20;kanjis[24].kunyomi",
+        "character": "復"
+      },
+      "beforeHash": "cb7798b3fbf85b6a7d945b1d0c91ed634b81612188e2a18c987d9ef7bee4aac6",
+      "beforeValue": "mata (mata)",
+      "finalValue": "また (mata)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 復; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m20-k26-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=20;kanjis[26].kunyomi",
+        "character": "創"
+      },
+      "beforeHash": "3dbfbf5d647040fa16c63eb4e9d912146af2d3e4363e1afc9b4b4a6cdb69f91c",
+      "beforeValue": "kizu (kizu)",
+      "finalValue": "きず (kizu)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 創; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m20-k31-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=20;kanjis[31].kunyomi",
+        "character": "服"
+      },
+      "beforeHash": "2d0be20e1004d6847ad039e34878fb567faf46bad8d48f4926be45ac85b0a24d",
+      "beforeValue": "fuku (fuku)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 服; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[10].kunyomi",
+        "character": "剛"
+      },
+      "beforeHash": "d17e5773b4625b372f60cf1379910b055f29134159576793375f09f2ed5890d3",
+      "beforeValue": "tuyoi (tuyoi)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 剛; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[18].kunyomi",
+        "character": "妙"
+      },
+      "beforeHash": "fcfa1af58a592fc5708eb840bec4531df0e4116f60a77a6a009cf049ae66573e",
+      "beforeValue": "tae (tae)",
+      "finalValue": "たえ (tae)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 妙; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k28-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[28].kunyomi",
+        "character": "凸"
+      },
+      "beforeHash": "4772f55b4fe52218400fc6e46800326dbc50151bf239271dc286b2ef16ceb5cc",
+      "beforeValue": "deko (deko)",
+      "finalValue": "でこ (deko)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 凸; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[29].kunyomi",
+        "character": "密"
+      },
+      "beforeHash": "5e83a2580c1ad301578451e54a1ebc712c6169dac76510a58af572803a37611a",
+      "beforeValue": "hisa (hisa)",
+      "finalValue": "ひそ・か (hisoka)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 密; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k30-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[30].kunyomi",
+        "character": "疎"
+      },
+      "beforeHash": "4b252b2a84ba68483c28f24901dd2151962331e221e8df3193ccdfac33cd392d",
+      "beforeValue": "mabara (mabara)",
+      "finalValue": "まば・ら (mabara)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 疎; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k32-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[32].kunyomi",
+        "character": "巨"
+      },
+      "beforeHash": "1e728c1fd0c843d462bca210f7f6e8484abbb8676c27ed41b855581022bb322a",
+      "beforeValue": "oogata (oogata)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 巨; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k35-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[35].kunyomi",
+        "character": "漠"
+      },
+      "beforeHash": "c2515f10c20777e8386bb8f2f125431ec26717f693c201940545f70a3e1c74b0",
+      "beforeValue": "sunabuchi (sunabuchi)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 漠; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k37-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[37].kunyomi",
+        "character": "絢"
+      },
+      "beforeHash": "f439b940ca3ba3b2b55825898e8974cb3979c4683e7057efbab88c9d543f6d4f",
+      "beforeValue": "aya (aya)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 絢; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m21-k38-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=21;kanjis[38].kunyomi",
+        "character": "朴"
+      },
+      "beforeHash": "b65675aa1897bf5b5761a9447a0cf4b6fe653ed0d08e0ef08e0e048dd65112ad",
+      "beforeValue": "hoko (hoko)",
+      "finalValue": "ほう (hou) / ほお (hoo) / えのき (enoki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 朴; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k00-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[0].kunyomi",
+        "character": "莫"
+      },
+      "beforeHash": "29d0c6d558b61688b843ddf0db9714896d87f133571bf2476aba057901ad32f2",
+      "beforeValue": "baku (baku)",
+      "finalValue": "くれ (kure) / なか・れ (nakare) / なし (nashi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 莫; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k02-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[2].kunyomi",
+        "character": "悠"
+      },
+      "beforeHash": "55f5763200b2a982fa8124840fffe23f66c426c544536791afecab4522d2134c",
+      "beforeValue": "yuu (yuu)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 悠; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[10].kunyomi",
+        "character": "壮"
+      },
+      "beforeHash": "70b2a8e73489606b324fd438b5129dda223da3e9b1e15d66ae2c2b566139e178",
+      "beforeValue": "sakan (sakan)",
+      "finalValue": "さかん (sakan)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 壮; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k12-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[12].kunyomi",
+        "character": "旺"
+      },
+      "beforeHash": "70b2a8e73489606b324fd438b5129dda223da3e9b1e15d66ae2c2b566139e178",
+      "beforeValue": "sakan (sakan)",
+      "finalValue": "さかん (sakan)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 旺; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k13-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[13].kunyomi",
+        "character": "豪"
+      },
+      "beforeHash": "291449912fa340c1904dd7f9467837d533def6cc0c6a29b10e9c444d72af0daf",
+      "beforeValue": "eera (eera)",
+      "finalValue": "えら・い (erai)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 豪; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[14].kunyomi",
+        "character": "華"
+      },
+      "beforeHash": "4091696564b0570a74e17c7081d4f3f3e6be5073fa541da71c9dd314fb686d42",
+      "beforeValue": "hana (hana)",
+      "finalValue": "はな (hana)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 華; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k16-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[16].kunyomi",
+        "character": "燦"
+      },
+      "beforeHash": "49bf1bb9afa53a7dbb5ce8158c84bd21aacb96eb34a4f58ac3eb778299ce44ba",
+      "beforeValue": "kora (kora)",
+      "finalValue": "さん・たる (santaru) / あき・らか (akiraka) / きらめ・く (kirameku) / きら・めく (kirameku)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 燦; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k19-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[19].kunyomi",
+        "character": "廖"
+      },
+      "beforeHash": "6cbab3b10a8dd97b8faf6b56f2124c1802303d84e945da31cd346ab077210d18",
+      "beforeValue": "mora (mora)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 廖; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k28-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[28].kunyomi",
+        "character": "卑"
+      },
+      "beforeHash": "40920dd5f947021e2210ebf980dde8901c4d86d086a0a851151ba4d9616e3605",
+      "beforeValue": "yashii (yashii)",
+      "finalValue": "いや・しい (iyashii) / いや・しむ (iyashimu) / いや・しめる (iyashimeru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 卑; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m22-k34-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=22;kanjis[34].kunyomi",
+        "character": "格"
+      },
+      "beforeHash": "6dafa699e0c472e72a602982f072ee5154bbc8b235440c71dc2d320810ecfa56",
+      "beforeValue": "kaku (kaku)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 格; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k00-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[0].kunyomi",
+        "character": "尚"
+      },
+      "beforeHash": "d564f56f8c40a9b0e653b0e30045bfd7030897e403a45baaf940ead988cb3f72",
+      "beforeValue": "nao (nao)",
+      "finalValue": "なお (nao)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 尚; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k02-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[2].kunyomi",
+        "character": "概"
+      },
+      "beforeHash": "27d168b1b2c09bdc4a91a5fa10eea525cc12ded42171268eb0818d7ae44c6d0d",
+      "beforeValue": "gai (gai)",
+      "finalValue": "おおむ・ね (oomune)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 概; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k05-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[5].kunyomi",
+        "character": "故"
+      },
+      "beforeHash": "52725e769ed7f2307c534ee5ab0abb4ed6f1b2d554d9e245e403db2f6fba5ab7",
+      "beforeValue": "yue (yue)",
+      "finalValue": "ゆえ (yue)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 故; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[14].kunyomi",
+        "character": "寧"
+      },
+      "beforeHash": "078f8e6bda9cccb16cf79f58ef2780133b633732d278ad56596e0f167185ac7d",
+      "beforeValue": "mushiro (mushiro)",
+      "finalValue": "むし・ろ (mushiro)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 寧; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k15-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[15].kunyomi",
+        "character": "猶"
+      },
+      "beforeHash": "d564f56f8c40a9b0e653b0e30045bfd7030897e403a45baaf940ead988cb3f72",
+      "beforeValue": "nao (nao)",
+      "finalValue": "なお (nao)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 猶; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k23-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[23].kunyomi",
+        "character": "唯"
+      },
+      "beforeHash": "b9871e65aa0e67885abb872d13dafedb57c8147276dd9ae78feaf0000a2c8c7c",
+      "beforeValue": "tada (tada)",
+      "finalValue": "ただ (tada)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 唯; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[24].kunyomi",
+        "character": "独"
+      },
+      "beforeHash": "69e78fa0fc61ab490ebff568b34601705ea5275cc6eb733ad534cc9aacb07be3",
+      "beforeValue": "hitori (hitori)",
+      "finalValue": "ひと・り (hitori)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 独; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[29].kunyomi",
+        "character": "素"
+      },
+      "beforeHash": "87ee172bd870b99294df41dc712bf568fa93d0a95ba19694605797fb1ff67f94",
+      "beforeValue": "moto (moto)",
+      "finalValue": "もと (moto)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 素; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k30-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[30].kunyomi",
+        "character": "元"
+      },
+      "beforeHash": "87ee172bd870b99294df41dc712bf568fa93d0a95ba19694605797fb1ff67f94",
+      "beforeValue": "moto (moto)",
+      "finalValue": "もと (moto)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 元; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k31-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[31].kunyomi",
+        "character": "本"
+      },
+      "beforeHash": "87ee172bd870b99294df41dc712bf568fa93d0a95ba19694605797fb1ff67f94",
+      "beforeValue": "moto (moto)",
+      "finalValue": "もと (moto)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 本; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k32-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[32].kunyomi",
+        "character": "総"
+      },
+      "beforeHash": "fe1dd4d5532696e7b52f6110f3a4ebf7f8af953fca65926aeeac3a4d5e6331b1",
+      "beforeValue": "fusa (fusa)",
+      "finalValue": "ふさ (fusa)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 総; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k33-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[33].kunyomi",
+        "character": "略"
+      },
+      "beforeHash": "8fffbd58d78b16cbc179257c5714f6b51048555292ba37d18619b7be2d045128",
+      "beforeValue": "hobo (hobo)",
+      "finalValue": "ほぼ (hobo)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 略; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k34-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[34].kunyomi",
+        "character": "諸"
+      },
+      "beforeHash": "6f2fda4d32248347015affc5f0fd190b44ffabf81eeafed774b90a0500c4b205",
+      "beforeValue": "moro (moro)",
+      "finalValue": "もろ (moro)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 諸; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m23-k36-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=23;kanjis[36].kunyomi",
+        "character": "毎"
+      },
+      "beforeHash": "3107b4682d9a038bd9bcff72eed62f58a33ea3c2a7439186a841c37fcf4f432f",
+      "beforeValue": "goto (goto)",
+      "finalValue": "ごと (goto)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 毎; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k00-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[0].kunyomi",
+        "character": "阜"
+      },
+      "beforeHash": "b8c2e572b898bcd43170f72481a3df26e7b68714a9b65f8fd0ae263e500f68df",
+      "beforeValue": "oka (oka)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 阜; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k01-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[1].kunyomi",
+        "character": "潟"
+      },
+      "beforeHash": "f77d7b058554a7e6058eadc04920e1f907ebde38d2e1f91e818c6abe3ae81c6b",
+      "beforeValue": "kata (kata)",
+      "finalValue": "かた (kata)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 潟; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k02-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[2].kunyomi",
+        "character": "媛"
+      },
+      "beforeHash": "00b8b051a8e137ef8660473eb49ccf31a86490a6303969d32031bdb45895522c",
+      "beforeValue": "hime (hime)",
+      "finalValue": "ひめ (hime)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 媛; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k03-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[3].kunyomi",
+        "character": "茨"
+      },
+      "beforeHash": "b762d94072e7916338f94c49ed5af35cda9d06a76ea9900ad072fa57898c9e50",
+      "beforeValue": "bara (bara)",
+      "finalValue": "いばら (ibara) / かや (kaya) / くさぶき (kusabuki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 茨; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k04-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[4].kunyomi",
+        "character": "埼"
+      },
+      "beforeHash": "05bea42a7c2fd0a976e957c73d41a806e712c77e72b8d9c9ec6d1661bec0b65e",
+      "beforeValue": "saki (saki)",
+      "finalValue": "さき (saki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 埼; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k05-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[5].kunyomi",
+        "character": "栃"
+      },
+      "beforeHash": "9a5862cb3f93052fbcd6e3c5e5f60575d36f13fad7697c15b0c95425893455a4",
+      "beforeValue": "tochi (tochi)",
+      "finalValue": "とち (tochi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 栃; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k07-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[7].kunyomi",
+        "character": "鹿"
+      },
+      "beforeHash": "640f2ad3d4e341ea3fdc7bc15dcca1328ea6910699eb773113abcb0433025a58",
+      "beforeValue": "shika (shika)",
+      "finalValue": "しか (shika)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 鹿; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k08-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[8].kunyomi",
+        "character": "児"
+      },
+      "beforeHash": "d8b059f6d89698889796c658fb9150c087e34c934fd5f8c660d70d6cfe21db51",
+      "beforeValue": "ko (ko)",
+      "finalValue": "こ (ko) / -こ (-ko)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 児; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k09-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[9].kunyomi",
+        "character": "沖"
+      },
+      "beforeHash": "cbbefa7164a52bf63b849e87981146e276620f263d676cf79059ea8135fb2a24",
+      "beforeValue": "oki (oki)",
+      "finalValue": "おき (oki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 沖; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k10-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[10].kunyomi",
+        "character": "縄"
+      },
+      "beforeHash": "5fdf9d8fd95b34ad98dadaa1777dc285a225d14c407c4e74d6cae0d5b82baaf7",
+      "beforeValue": "nawa (nawa)",
+      "finalValue": "なわ (nawa)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 縄; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k11-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[11].kunyomi",
+        "character": "梨"
+      },
+      "beforeHash": "b82e03895d0f22436509d130b7179d57af7ffcb5a3e07ee1baa2d708f50fa1e1",
+      "beforeValue": "nashi (nashi)",
+      "finalValue": "なし (nashi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 梨; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k12-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[12].kunyomi",
+        "character": "阪"
+      },
+      "beforeHash": "a37497a29d29dea21470ba3191934c83bccce4fd34f72aed4d226f829aa79f68",
+      "beforeValue": "saka (saka)",
+      "finalValue": "さか (saka)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 阪; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k13-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[13].kunyomi",
+        "character": "岡"
+      },
+      "beforeHash": "b8c2e572b898bcd43170f72481a3df26e7b68714a9b65f8fd0ae263e500f68df",
+      "beforeValue": "oka (oka)",
+      "finalValue": "おか (oka)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 岡; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k14-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[14].kunyomi",
+        "character": "奈"
+      },
+      "beforeHash": "f794253bd4d6bfd3e690b6ec07895ec4b17925ea60ea446bef9217740314d350",
+      "beforeValue": "na (na)",
+      "finalValue": "いかん (ikan) / からなし (karanashi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 奈; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k15-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[15].kunyomi",
+        "character": "岐"
+      },
+      "beforeHash": "f29448a16f2557d9aeab06079d9abd6372c6dd05c782a949c8fa96d1a8f4fe60",
+      "beforeValue": "chira (chira)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 岐; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k16-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[16].kunyomi",
+        "character": "熊"
+      },
+      "beforeHash": "ed57056668e408340604182febae368ea22e71cc189c22f9603926a8248ab6c4",
+      "beforeValue": "kuma (kuma)",
+      "finalValue": "くま (kuma)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 熊; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k17-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[17].kunyomi",
+        "character": "宮"
+      },
+      "beforeHash": "0dc95a8e31f4ffae522fff04bab9fc165ffb52fb374a48766462fc65ee0a11d7",
+      "beforeValue": "miya (miya)",
+      "finalValue": "みや (miya)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 宮; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k18-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[18].kunyomi",
+        "character": "崎"
+      },
+      "beforeHash": "05bea42a7c2fd0a976e957c73d41a806e712c77e72b8d9c9ec6d1661bec0b65e",
+      "beforeValue": "saki (saki)",
+      "finalValue": "さき (saki)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 崎; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k20-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[20].kunyomi",
+        "character": "香"
+      },
+      "beforeHash": "fe387eeaf293a2915bd7acaf6fc6466f0f3da3f66da12357416edb0b4a7daac8",
+      "beforeValue": "kaori (kaori)",
+      "finalValue": "かお・り (kaori)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 香; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k21-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[21].kunyomi",
+        "character": "徳"
+      },
+      "beforeHash": "5779092fa347386661412ffcdd0415a098304598eb1a82fbb96fd03b3cd00a9d",
+      "beforeValue": "isoku (isoku)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 徳; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k22-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[22].kunyomi",
+        "character": "島"
+      },
+      "beforeHash": "0742cd0c10af6880a39741ada9746ab5c9b3b131aea4e69e9a89d18cf5f25072",
+      "beforeValue": "shima (shima)",
+      "finalValue": "しま (shima)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 島; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k24-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[24].kunyomi",
+        "character": "福"
+      },
+      "beforeHash": "2d0be20e1004d6847ad039e34878fb567faf46bad8d48f4926be45ac85b0a24d",
+      "beforeValue": "fuku (fuku)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 福; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k25-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[25].kunyomi",
+        "character": "井"
+      },
+      "beforeHash": "226b35d98813f9d96fbf733f8a5c0d1de20090ed0b542917365fd0b54825dc0b",
+      "beforeValue": "i (i)",
+      "finalValue": "い (i)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 井; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k27-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[27].kunyomi",
+        "character": "鳥"
+      },
+      "beforeHash": "a09888cfc8dc05df52fc1f12e8cb4bbb82210f1b57b18ad2658834c3f3a3b8ce",
+      "beforeValue": "tori (tori)",
+      "finalValue": "とり (tori)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 鳥; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k29-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[29].kunyomi",
+        "character": "根"
+      },
+      "beforeHash": "4f4f98d11b7558f6c773e1264317bb8c919b386c3ad992bee21b37afd51761e7",
+      "beforeValue": "ne (ne)",
+      "finalValue": "ね (ne) / -ね (-ne)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 根; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k31-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[31].kunyomi",
+        "character": "歌"
+      },
+      "beforeHash": "4a751e06674fa47e247a0877e0b540a709319576246acd2039d3cf987b81cece",
+      "beforeValue": "uta (uta)",
+      "finalValue": "うた (uta)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 歌; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k32-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[32].kunyomi",
+        "character": "山"
+      },
+      "beforeHash": "7c83cbaacf5531525703279b3681914d3a041809f247ad5fc2248650d16742cd",
+      "beforeValue": "yama (yama)",
+      "finalValue": "やま (yama)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 山; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k33-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[33].kunyomi",
+        "character": "口"
+      },
+      "beforeHash": "1014c64d06cdb790b4a328f6ef35d61d3695805f7d868d01fc735c863a9f7a8c",
+      "beforeValue": "kuchi (kuchi)",
+      "finalValue": "くち (kuchi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 口; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k34-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[34].kunyomi",
+        "character": "州"
+      },
+      "beforeHash": "ec04a5f7c2a8254c4f338f5ae8c2fc770199b6112c7451f07b58776fc418e3a7",
+      "beforeValue": "su (su)",
+      "finalValue": "す (su)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 州; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k35-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[35].kunyomi",
+        "character": "都"
+      },
+      "beforeHash": "a9f3a16802b7fd76db223dfc25c186128884e6dbd2a52c0e4f746ff6c5adef7b",
+      "beforeValue": "miyako (miyako)",
+      "finalValue": "みやこ (miyako)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 都; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k36-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[36].kunyomi",
+        "character": "府"
+      },
+      "beforeHash": "9c4308a7d73756715c7b2373773656f5902a8157a51f5888e8323f367bf5c230",
+      "beforeValue": "fu (fu)",
+      "finalValue": "-",
+      "reasonKind": "source-correction",
+      "rationale": "O valor anterior não era kun’yomi; o campo foi normalizado para ausência de leitura.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 府; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k37-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[37].kunyomi",
+        "character": "県"
+      },
+      "beforeHash": "9da59f9f54a3bc0781c878c9baa5f9d407c6a82e7f76914925e309c347ceb9f3",
+      "beforeValue": "ken (ken)",
+      "finalValue": "か・ける (kakeru)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.98,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 県; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k38-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[38].kunyomi",
+        "character": "海"
+      },
+      "beforeHash": "ea00a9d7f34626594009aa86304dceb9bdbd678f50780b0f20756dd811ff29e9",
+      "beforeValue": "umi (umi)",
+      "finalValue": "うみ (umi)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 海; reading ja_kun"
+        }
+      ]
+    },
+    {
+      "id": "ja-n1-reading-m24-k39-kunyomi",
+      "state": "corrected",
+      "target": {
+        "file": "database/ja-JP/data_kanji_n1.js",
+        "locator": "module=24;kanjis[39].kunyomi",
+        "character": "陸"
+      },
+      "beforeHash": "b8c2e572b898bcd43170f72481a3df26e7b68714a9b65f8fd0ae263e500f68df",
+      "beforeValue": "oka (oka)",
+      "finalValue": "おか (oka)",
+      "reasonKind": "source-correction",
+      "rationale": "A leitura foi normalizada em kana e Hepburn ASCII a partir do registro ja_kun localizado.",
+      "confidence": 0.99,
+      "references": [
+        {
+          "sourceId": "edrdg-kanjidic2",
+          "location": "literal 陸; reading ja_kun"
+        }
+      ]
+    }
+  ]
 }

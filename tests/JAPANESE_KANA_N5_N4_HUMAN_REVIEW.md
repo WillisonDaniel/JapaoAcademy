@@ -4,6 +4,7 @@ A Fase 7 preserva leituras latinas incertas e seis correções contextuais N5 co
 
 | Nível | Módulo | Campo | Kanji | Valor atual | Valor legado / observação | Status |
 |---|---|---|---|---|---|---|
+| N5 | 1 | kanjis[0].examples[1].sentence | 漢 | 「あめ」は、漢字で「雨」または「飴」と書き分けます。 | correção contextual | corrected |
 | N5 | 1 | kanjis[1].examples[0].sentence | 訓 | 訓読みで「食べる」と読みます。 | correção contextual | pending-human-review |
 | N5 | 1 | kanjis[1].examples[1].sentence | 訓 | 訓読みで「見る」と読みます。 | correção contextual | pending-human-review |
 | N5 | 1 | kanjis[2].examples[0].sentence | 音 | 音読みの例は「水曜日」です。 | correção contextual | pending-human-review |
