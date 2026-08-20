@@ -8288,3 +8288,50 @@ CURSO_A1_DADOS[19].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o significado de 木曜日（もくようび）?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Module23() {
+    const module = CURSO_A1_DADOS[22];
+    module.title = "Hoje, amanhã e partes do dia";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Kinou, eiga o mimashita.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Situe ações em hoje, amanhã, ontem, manhã, meio-dia e noite."
+    });
+    const words = [
+        ["今日（きょう）", "kyou", "hoje", "Expressão relativa ao momento presente."],
+        ["明日（あした）", "ashita", "amanhã", "Expressão relativa ao momento presente."],
+        ["昨日（きのう）", "kinou", "ontem", "Expressão relativa ao momento presente."],
+        ["朝（あさ）", "asa", "manhã", "Pode ser usado como expressão de tempo."],
+        ["昼（ひる）", "hiru", "meio-dia; período diurno", "O sentido preciso depende do contexto."],
+        ["夜（よる）", "yoru", "noite", "Pode ser usado como expressão de tempo."]
+    ];
+    words.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[6], {
+        title: "Expressões de tempo e に",
+        rule: "Hoje, amanhã e ontem normalmente não usam に. Com partes do dia, como 朝 e 夜, に pode aparecer conforme o estilo, a ênfase e a preferência do falante.",
+        formula: "今日／明日／昨日 + [ação]；朝（に）／夜（に）+ [ação]",
+        example: "明日 京都に行きます。朝（に）新聞を読みます。"
+    });
+    module.stage3_practice[0].question = "1. Como se diz “manhã” em japonês?";
+    module.stage3_practice[1].question = "2. Se hoje é 今日（きょう）, como se diz “ontem”?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "きのう えいが を みました", translation: "Ontem assisti a um filme.", chunks: ["きのう", "えいが", "を", "みました"] },
+        { sentenceJp: "あした かいしゃ へ いきます", translation: "Amanhã vou à empresa.", chunks: ["あした", "かいしゃ", "へ", "いきます"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Um colega pergunta sobre seus planos para amanhã.",
+        npcName: "Colega",
+        npcMessage: "あした、なに を します か。 (O que você vai fazer amanhã?)",
+        options: [
+            { text: "かいしゃ へ いきます。", feedback: "A resposta informa uma ação planejada para amanhã.", isCorrect: true },
+            { text: "きのう いきました。", feedback: "A frase se refere a ontem, não ao plano para amanhã.", isCorrect: false },
+            { text: "きょう です。", feedback: "A frase não diz qual ação você fará.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual palavra significa “noite”?";
+    module.stage5_quiz[1].question = "Qual é o significado de 今日（きょう）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 明日（あした）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 昨日（きのう）?";
+    module.stage5_quiz[4].question = "Qual é o significado de 朝（あさ）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
