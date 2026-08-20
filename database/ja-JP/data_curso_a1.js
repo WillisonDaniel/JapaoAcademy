@@ -3919,84 +3919,84 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_17",
-        "title": "Dinheiro e Preços",
+        "title": "Preços e ienes",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Kore wa ikura desu ka?",
-            "missionTitle": "Objetivo de Hoje: Independência Financeira",
-            "missionDescription": "Aprenda a perguntar 'quanto custa?' e a entender os preços em ienes. Vamos dominar os números maiores para você nunca mais passar aperto em uma loja!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pergunte preços com いくら e leia valores básicos em ienes, incluindo centenas e milhares."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いくら",
-                "romaji": "Ikura",
-                "translation": "Quanto custa?",
-                "timeContext": "A pergunta essencial para qualquer compra."
+                "romaji": "ikura",
+                "translation": "quanto?; quanto custa?",
+                "timeContext": "Em これはいくらですか, pergunta o preço de um item."
             },
             {
                 "type": "vocab",
-                "kanji": "えん (円)",
-                "romaji": "En",
-                "translation": "Iene (Moeda do Japão)",
-                "timeContext": "Sempre vem depois do número. Ex: 100円 (hyaku en)."
+                "kanji": "円（えん）",
+                "romaji": "en",
+                "translation": "iene; unidade monetária do Japão",
+                "timeContext": "Ao indicar um valor, 円 aparece depois da quantia: 100円（ひゃくえん）."
             },
             {
                 "type": "vocab",
-                "kanji": "ひゃく (百)",
-                "romaji": "Hyaku",
-                "translation": "100 (Cem)",
-                "timeContext": ""
+                "kanji": "百（ひゃく）",
+                "romaji": "hyaku",
+                "translation": "100; cem",
+                "timeContext": "Há mudanças sonoras em algumas centenas: 300 = さんびゃく, 600 = ろっぴゃく e 800 = はっぴゃく."
             },
             {
                 "type": "vocab",
-                "kanji": "せん (千)",
-                "romaji": "Sen",
-                "translation": "1.000 (Mil)",
-                "timeContext": ""
+                "kanji": "千（せん）",
+                "romaji": "sen",
+                "translation": "1.000; mil",
+                "timeContext": "Há mudanças sonoras em 3.000（さんぜん）e 8.000（はっせん）."
             },
             {
                 "type": "grammar_pill",
-                "title": "Construindo Números Grandes",
-                "rule": "A lógica é como Lego! Para dizer 2.500, você pensa 'dois mil e quinhentos'. Em japonês: にせん ごひゃく (ni-sen go-hyaku).",
-                "formula": "[Número] + 千 + [Número] + 百",
-                "example": "3.200円 ➔ さんぜん にひゃく えん (sanzen nihyaku en)."
+                "title": "Centenas e milhares em preços",
+                "rule": "Combine as unidades de mil e cem na ordem do maior valor para o menor, observando as mudanças de som próprias de certas combinações.",
+                "formula": "[milhar] + 千 + [centena] + 百 + 円",
+                "example": "3.200円 = さんぜん にひゃくえん (sanzen nihyaku en)."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se pergunta 'Quanto custa?' em japonês?",
+                "question": "1. Como se pergunta “Quanto custa isto?”",
                 "options": [
                     {
-                        "label": "いくら です か？ (Ikura desu ka?)",
+                        "label": "これは いくらですか。 (Kore wa ikura desu ka.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "なんさい です か？ (Nansai desu ka?)",
+                        "label": "これは なんさいですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "どこ です か？ (Doko desu ka?)",
+                        "label": "これは どこですか。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Se 'san' é 3 e 'zen' é a variação de 1000, como se diz 3.000 ienes?",
+                "question": "2. Qual é a leitura de 3.000 ienes?",
                 "options": [
                     {
-                        "label": "さんぜん えん (Sanzen en)",
+                        "label": "さんぜんえん (sanzen en)",
                         "isCorrect": true
                     },
                     {
-                        "label": "さんびゃく えん (Sanbyaku en)",
+                        "label": "さんびゃくえん (sanbyaku en)",
                         "isCorrect": false
                     },
                     {
-                        "label": "さんじゅう えん (Sanjuu en)",
+                        "label": "さんじゅうえん (sanjuu en)",
                         "isCorrect": false
                     }
                 ]
@@ -4004,26 +4004,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "きょう は あまり さむくない です",
-                "translation": "Hoje não está muito frio.",
+                "sentenceJp": "これ は いくら です か",
+                "translation": "Quanto custa isto?",
                 "chunks": [
-                    "きょう",
+                    "これ",
                     "は",
-                    "あまり",
-                    "さむくない",
-                    "です"
+                    "いくら",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "きのう の テスト は むずかしかっ た です",
-                "translation": "O teste de ontem foi difícil.",
+                "sentenceJp": "さんぜん にひゃく えん です",
+                "translation": "São 3.200 ienes.",
                 "chunks": [
-                    "きのう",
-                    "の",
-                    "テスト",
-                    "は",
-                    "むずかしかっ",
-                    "た",
+                    "さんぜん",
+                    "にひゃく",
+                    "えん",
                     "です"
                 ]
             }
@@ -4035,18 +4032,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "いらっしゃいませ！ (Bem-vindo!)",
                 "options": [
                     {
-                        "text": "すみません、これ は いくら です か？",
-                        "feedback": "Perfeito! Você usou 'sumimasen' para chamar a atenção e fez a pergunta de preço corretamente.",
+                        "text": "すみません、これは いくらですか。",
+                        "feedback": "A resposta chama a atenção do atendente e pergunta o preço do item.",
                         "isCorrect": true
                     },
                     {
                         "text": "これ は わたし の です。",
-                        "feedback": "Incorreto. Você disse 'Isto é meu', não perguntou o preço.",
+                        "feedback": "Essa frase identifica o objeto como seu, mas não pergunta o preço.",
                         "isCorrect": false
                     },
                     {
                         "text": "これ は なな です。",
-                        "feedback": "Incorreto. Você disse 'Isto é 7'.",
+                        "feedback": "A resposta não usa いくら nem informa uma quantia em 円.",
                         "isCorrect": false
                     }
                 ]
@@ -4054,7 +4051,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "O que significa 'hyaku en' (百円)?",
+                "question": "O que significa 百円（ひゃくえん）?",
                 "options": [
                     "100 ienes",
                     "1.000 ienes",
@@ -4063,7 +4060,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'いくら' (Ikura)?",
+                "question": "Qual é o sentido de いくら em uma pergunta de preço?",
                 "options": [
                     "Quanto custa?",
                     "Iene (Moeda do Japão)",
@@ -4072,7 +4069,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'えん (円)' (En)?",
+                "question": "O que 円（えん）indica depois de uma quantia?",
                 "options": [
                     "Quanto custa?",
                     "Iene (Moeda do Japão)",
@@ -4081,7 +4078,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'ひゃく (百)' (Hyaku)?",
+                "question": "Qual número corresponde a 百（ひゃく）?",
                 "options": [
                     "Iene (Moeda do Japão)",
                     "Quanto custa?",
@@ -4090,7 +4087,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'せん (千)' (Sen)?",
+                "question": "Qual número corresponde a 千（せん）?",
                 "options": [
                     "1.000 (Mil)",
                     "Quanto custa?",
@@ -8193,6 +8190,13 @@ CURSO_A1_DADOS[14].editorialReview = {
 };
 
 CURSO_A1_DADOS[15].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[16].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

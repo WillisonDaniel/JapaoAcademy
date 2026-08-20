@@ -15476,7 +15476,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_17-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;module.metadata",
@@ -15484,16 +15484,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "ccbb79344c914d20ff37e349def63fe6b6cfc37b3aa309278c6e49e9bfae2a38",
-      "finalHash": "ccbb79344c914d20ff37e349def63fe6b6cfc37b3aa309278c6e49e9bfae2a38",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c5eb3ec94e59e452eb1ae69a26786622c25d7e154054624d59cc8922f4b03ee2",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "title": "Preços e ienes",
+        "sectionTitle": "Números, Dinheiro & Compras",
+        "level": "A1",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pergunte preços com いくら e leia valores básicos em ienes, incluindo centenas e milhares."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ccbb79344c914d20ff37e349def63fe6b6cfc37b3aa309278c6e49e9bfae2a38"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage1_context",
@@ -15501,16 +15519,40 @@
         "kind": "context"
       },
       "beforeHash": "7d739b101fe77a9104bb41a5282ddbe3fcc0c3aaa7bea6d449d83c8453d440b4",
-      "finalHash": "7d739b101fe77a9104bb41a5282ddbe3fcc0c3aaa7bea6d449d83c8453d440b4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "de456c8286286a22541fe97446377c2ec5a3b8352927a23fe8140718aeab7cd5",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Kore wa ikura desu ka?",
+        "missionTitle": "Objetivo de hoje",
+        "missionDescription": "Pergunte preços com いくら e leia valores básicos em ienes, incluindo centenas e milhares.",
+        "audio": {
+          "displayText": "これはいくらですか。",
+          "audioText": "これはいくらですか。",
+          "furigana": "",
+          "romaji": "Kore wa ikura desu ka.",
+          "translation": "Quanto custa isto?",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7d739b101fe77a9104bb41a5282ddbe3fcc0c3aaa7bea6d449d83c8453d440b4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage2_drops[0]",
@@ -15518,16 +15560,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "9116ba572a8bbb0d801945d3f16fbc0e8c3343c3732068bff6f305b5891b2594",
-      "finalHash": "9116ba572a8bbb0d801945d3f16fbc0e8c3343c3732068bff6f305b5891b2594",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "8b4eafa9ae71a2c0457a5083ee2e9ee329192db2d93ec6d39f75ff86405c4ccd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "いくら",
+        "romaji": "ikura",
+        "translation": "quanto?; quanto custa?",
+        "timeContext": "Em これはいくらですか, pergunta o preço de um item."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "9116ba572a8bbb0d801945d3f16fbc0e8c3343c3732068bff6f305b5891b2594"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage2_drops[1]",
@@ -15535,16 +15591,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "1ac6b169e0ba1e225bf488b309f42dd693914ce5bcea5e7e7d1632069c66610e",
-      "finalHash": "1ac6b169e0ba1e225bf488b309f42dd693914ce5bcea5e7e7d1632069c66610e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c45a5d7d18fa133a5bc95c511cd75d896e106749240f787c16825f05b53d19bd",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "円（えん）",
+        "romaji": "en",
+        "translation": "iene; unidade monetária do Japão",
+        "timeContext": "Ao indicar um valor, 円 aparece depois da quantia: 100円（ひゃくえん）."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1ac6b169e0ba1e225bf488b309f42dd693914ce5bcea5e7e7d1632069c66610e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage2_drops[2]",
@@ -15552,16 +15622,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "72f65b64bd19f17f1357917cce7c6873e91b5f68467acd7495de3e5dfaf38627",
-      "finalHash": "72f65b64bd19f17f1357917cce7c6873e91b5f68467acd7495de3e5dfaf38627",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "83273837cbf5d5fa4abedf32a19c64a60418a50e0783f6190263191ba7d50092",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "百（ひゃく）",
+        "romaji": "hyaku",
+        "translation": "100; cem",
+        "timeContext": "Há mudanças sonoras em algumas centenas: 300 = さんびゃく, 600 = ろっぴゃく e 800 = はっぴゃく."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "72f65b64bd19f17f1357917cce7c6873e91b5f68467acd7495de3e5dfaf38627"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage2_drops[3]",
@@ -15569,16 +15653,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "479c8b538d7288f054a3368f8be6b715ab64c7c406893a7d40e383ab610e4a58",
-      "finalHash": "479c8b538d7288f054a3368f8be6b715ab64c7c406893a7d40e383ab610e4a58",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "de0f219e2a03e8fb2e1666271c613e56d3e8e25cc838a92b02a7eda63563f99f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "千（せん）",
+        "romaji": "sen",
+        "translation": "1.000; mil",
+        "timeContext": "Há mudanças sonoras em 3.000（さんぜん）e 8.000（はっせん）."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "479c8b538d7288f054a3368f8be6b715ab64c7c406893a7d40e383ab610e4a58"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage2-drops-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage2_drops[4]",
@@ -15586,16 +15684,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d6b4e150252f54d38c6d6a9ccc095fd6ecaf748e4c6ef0c96abb4c972917110f",
-      "finalHash": "d6b4e150252f54d38c6d6a9ccc095fd6ecaf748e4c6ef0c96abb4c972917110f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e19795a7d05e418de7da5cc7812726e69c8ec427a3b21a7d8a9089f9da18b9ff",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Centenas e milhares em preços",
+        "rule": "Combine as unidades de mil e cem na ordem do maior valor para o menor, observando as mudanças de som próprias de certas combinações.",
+        "formula": "[milhar] + 千 + [centena] + 百 + 円",
+        "example": "3.200円 = さんぜん にひゃくえん (sanzen nihyaku en)."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d6b4e150252f54d38c6d6a9ccc095fd6ecaf748e4c6ef0c96abb4c972917110f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage3_practice[0]",
@@ -15603,16 +15715,40 @@
         "kind": "practice"
       },
       "beforeHash": "eb8c64c0fab4b09e57ae4f226bc16e4ceb8020b5945c207d369672f8c0a9183f",
-      "finalHash": "eb8c64c0fab4b09e57ae4f226bc16e4ceb8020b5945c207d369672f8c0a9183f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "344940da6d5175c53c5810f8973ff805757143e08337ffa0d862c0fc7fd8593c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "1. Como se pergunta “Quanto custa isto?”",
+        "options": [
+          {
+            "label": "これは いくらですか。 (Kore wa ikura desu ka.)",
+            "isCorrect": true
+          },
+          {
+            "label": "これは なんさいですか。",
+            "isCorrect": false
+          },
+          {
+            "label": "これは どこですか。",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "eb8c64c0fab4b09e57ae4f226bc16e4ceb8020b5945c207d369672f8c0a9183f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage3_practice[1]",
@@ -15620,16 +15756,40 @@
         "kind": "practice"
       },
       "beforeHash": "4db6d2b9da0c93767318e52ff6214ce6d45363c264dd56e271b9a9dec5127981",
-      "finalHash": "4db6d2b9da0c93767318e52ff6214ce6d45363c264dd56e271b9a9dec5127981",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "409007a030ad3cc8441e8e2271c6890350e506de715a4a91ece9900d2f43fe07",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "2. Qual é a leitura de 3.000 ienes?",
+        "options": [
+          {
+            "label": "さんぜんえん (sanzen en)",
+            "isCorrect": true
+          },
+          {
+            "label": "さんびゃくえん (sanbyaku en)",
+            "isCorrect": false
+          },
+          {
+            "label": "さんじゅうえん (sanjuu en)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4db6d2b9da0c93767318e52ff6214ce6d45363c264dd56e271b9a9dec5127981"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage3_5_sentenceBuilder[0]",
@@ -15637,16 +15797,34 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "95893190f222de4fbaaa70862597740176c11e4c600d0d18fac607ac598671a0",
-      "finalHash": "95893190f222de4fbaaa70862597740176c11e4c600d0d18fac607ac598671a0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7499cc4fdd40e1559ccc8ec4fbcbc4a6b446d6cfb02989a30b813e2311368afe",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "これ は いくら です か",
+        "translation": "Quanto custa isto?",
+        "chunks": [
+          "これ",
+          "は",
+          "いくら",
+          "です",
+          "か"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "95893190f222de4fbaaa70862597740176c11e4c600d0d18fac607ac598671a0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage3_5_sentenceBuilder[1]",
@@ -15654,16 +15832,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "f56936f985ccbf6a09a353a7ba316a8d8134fd39ed64bdfb1c82455ab6f4face",
-      "finalHash": "f56936f985ccbf6a09a353a7ba316a8d8134fd39ed64bdfb1c82455ab6f4face",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "85b3f794524c24fff9c191a0e960991b73f32967991e72adf17148743414cf51",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "さんぜん にひゃく えん です",
+        "translation": "São 3.200 ienes.",
+        "chunks": [
+          "さんぜん",
+          "にひゃく",
+          "えん",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f56936f985ccbf6a09a353a7ba316a8d8134fd39ed64bdfb1c82455ab6f4face"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage4_dialog[0]",
@@ -15671,16 +15866,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "0a4a2b55ade97450526815afd422d2e684f6001e3cb797af86645795afd1f4bb",
-      "finalHash": "0a4a2b55ade97450526815afd422d2e684f6001e3cb797af86645795afd1f4bb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "625ec3ca08998eea7c4cce01eb5d3a87ac06c5818ae6ce72d72a17e844210b4f",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 41
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você está em uma loja de lembrancinhas e aponta para um chaveiro.",
+        "npcName": "Vendedor",
+        "npcMessage": "いらっしゃいませ！ (Bem-vindo!)",
+        "options": [
+          {
+            "text": "すみません、これは いくらですか。",
+            "feedback": "A resposta chama a atenção do atendente e pergunta o preço do item.",
+            "isCorrect": true
+          },
+          {
+            "text": "これ は わたし の です。",
+            "feedback": "Essa frase identifica o objeto como seu, mas não pergunta o preço.",
+            "isCorrect": false
+          },
+          {
+            "text": "これ は なな です。",
+            "feedback": "A resposta não usa いくら nem informa uma quantia em 円.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "0a4a2b55ade97450526815afd422d2e684f6001e3cb797af86645795afd1f4bb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage5_quiz[0]",
@@ -15688,16 +15916,32 @@
         "kind": "quiz"
       },
       "beforeHash": "45ce46871588143809e22c4470027ae4cb9f5214f86465efb8639f6213d1fdef",
-      "finalHash": "45ce46871588143809e22c4470027ae4cb9f5214f86465efb8639f6213d1fdef",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c7eb21247b258d5c481a556ea69a35ed21ae3cb26c430187fc87df081c41ba7e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "O que significa 百円（ひゃくえん）?",
+        "options": [
+          "100 ienes",
+          "1.000 ienes",
+          "10 ienes"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "45ce46871588143809e22c4470027ae4cb9f5214f86465efb8639f6213d1fdef"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage5_quiz[1]",
@@ -15705,16 +15949,32 @@
         "kind": "quiz"
       },
       "beforeHash": "c99505935d4a55e5ba2a788d3381be1c1d4a721f562e4c7112f0ed9e6b365b88",
-      "finalHash": "c99505935d4a55e5ba2a788d3381be1c1d4a721f562e4c7112f0ed9e6b365b88",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c856d0e9fd1eb9d8b74b32b2a223896a26d0c6feb593c6a446505fa9413020e6",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o sentido de いくら em uma pergunta de preço?",
+        "options": [
+          "Quanto custa?",
+          "Iene (Moeda do Japão)",
+          "100 (Cem)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c99505935d4a55e5ba2a788d3381be1c1d4a721f562e4c7112f0ed9e6b365b88"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage5_quiz[2]",
@@ -15722,16 +15982,32 @@
         "kind": "quiz"
       },
       "beforeHash": "c5e63ca85aab30e65e033fba79c5d88d4dbd791fade824b593f4020c004ff0c1",
-      "finalHash": "c5e63ca85aab30e65e033fba79c5d88d4dbd791fade824b593f4020c004ff0c1",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "99f4340ce592ee6463ae7216ff1e61df28e6517ffefe29b63fecf7503d7f396e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "O que 円（えん）indica depois de uma quantia?",
+        "options": [
+          "Quanto custa?",
+          "Iene (Moeda do Japão)",
+          "100 (Cem)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c5e63ca85aab30e65e033fba79c5d88d4dbd791fade824b593f4020c004ff0c1"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage5_quiz[3]",
@@ -15739,16 +16015,32 @@
         "kind": "quiz"
       },
       "beforeHash": "f20fd82f9a37fad460078906c3ac0f573bce495a8c9bd7ab16a90522de1ca6fb",
-      "finalHash": "f20fd82f9a37fad460078906c3ac0f573bce495a8c9bd7ab16a90522de1ca6fb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7e8c467d81f19575f5eea3fad465e0b6cb96ee52c4c0a74d52306caff44f9bef",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "Qual número corresponde a 百（ひゃく）?",
+        "options": [
+          "Iene (Moeda do Japão)",
+          "Quanto custa?",
+          "100 (Cem)"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f20fd82f9a37fad460078906c3ac0f573bce495a8c9bd7ab16a90522de1ca6fb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_17-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_17;stage5_quiz[4]",
@@ -15756,11 +16048,27 @@
         "kind": "quiz"
       },
       "beforeHash": "8901eb661492a35e2c3c5267a2f71bb7a267a43c7830945f4f9944be0fd5eaa7",
-      "finalHash": "8901eb661492a35e2c3c5267a2f71bb7a267a43c7830945f4f9944be0fd5eaa7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e83b0b1a8552e46355b8bacbf9e347a30f6d0c65f7cccf5758aa2a7b8aefddac",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ],
+      "finalValue": {
+        "question": "Qual número corresponde a 千（せん）?",
+        "options": [
+          "1.000 (Mil)",
+          "Quanto custa?",
+          "Iene (Moeda do Japão)"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "8901eb661492a35e2c3c5267a2f71bb7a267a43c7830945f4f9944be0fd5eaa7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_18-module-metadata",
@@ -358407,8 +358715,8 @@
         "locator": "items[217]",
         "resource": "dictionary"
       },
-      "beforeHash": "fca930e756b67fcb969c40c776f699793919c248a9eac586cfffe5990be9399a",
-      "finalHash": "fca930e756b67fcb969c40c776f699793919c248a9eac586cfffe5990be9399a",
+      "beforeHash": "f5c30217227ee36ca37399ae20c0d646b36725927e59f1f0c920bdda985e43c6",
+      "finalHash": "f5c30217227ee36ca37399ae20c0d646b36725927e59f1f0c920bdda985e43c6",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358424,8 +358732,8 @@
         "locator": "items[218]",
         "resource": "dictionary"
       },
-      "beforeHash": "f44e0923dd7418d736d99466b005c1cedc688c2e87fcfc1f7b218c541f8560bf",
-      "finalHash": "f44e0923dd7418d736d99466b005c1cedc688c2e87fcfc1f7b218c541f8560bf",
+      "beforeHash": "1c36e6f547272f74f0908222e990cbb99fbf1b529c6ddb1cf81ead366ca437a8",
+      "finalHash": "1c36e6f547272f74f0908222e990cbb99fbf1b529c6ddb1cf81ead366ca437a8",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358441,8 +358749,8 @@
         "locator": "items[219]",
         "resource": "dictionary"
       },
-      "beforeHash": "9cb30549808d0fd0fe111f6d9131da1e1264143167a1db64bc3b08e4a9cd4498",
-      "finalHash": "9cb30549808d0fd0fe111f6d9131da1e1264143167a1db64bc3b08e4a9cd4498",
+      "beforeHash": "73862fe5d48198d4de3f84c38b126d0e174277570f92224e918b5ddf599f7ae5",
+      "finalHash": "73862fe5d48198d4de3f84c38b126d0e174277570f92224e918b5ddf599f7ae5",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358458,8 +358766,8 @@
         "locator": "items[220]",
         "resource": "dictionary"
       },
-      "beforeHash": "2bd83c2f4acedcdc15aabb2514957b3cf7374d70f111134e16a88fb9b1f7b009",
-      "finalHash": "2bd83c2f4acedcdc15aabb2514957b3cf7374d70f111134e16a88fb9b1f7b009",
+      "beforeHash": "b76b8206f1b5078255a8329763200f8d752eb71bae0a8d00ae00d24598ea88b9",
+      "finalHash": "b76b8206f1b5078255a8329763200f8d752eb71bae0a8d00ae00d24598ea88b9",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -358475,8 +358783,8 @@
         "locator": "items[221]",
         "resource": "dictionary"
       },
-      "beforeHash": "0699a950ce0f727437347084d2f26836dda9c094d16f8ca1ac7666d84106047d",
-      "finalHash": "0699a950ce0f727437347084d2f26836dda9c094d16f8ca1ac7666d84106047d",
+      "beforeHash": "4d47006db53cf4bfbe7f0078db70590d6ad2724e44b7a9fca458702966af4cff",
+      "finalHash": "4d47006db53cf4bfbe7f0078db70590d6ad2724e44b7a9fca458702966af4cff",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -428026,21 +428334,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_17-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[16]",
         "resource": "listening"
       },
-      "beforeHash": "001d68e0a6e5b6af4958eb76cc42c9c341618b32f9faa149b2217e63f87a86f9",
-      "finalHash": "001d68e0a6e5b6af4958eb76cc42c9c341618b32f9faa149b2217e63f87a86f9",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "1a980ffb637b0f6fd35cc94e7046f22c04cf11f128582c5ee42f9a83f218b489",
+      "finalHash": "1a980ffb637b0f6fd35cc94e7046f22c04cf11f128582c5ee42f9a83f218b489",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_17-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 41
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_18-context-0",
@@ -435782,8 +436099,8 @@
         "locator": "reference[16]",
         "resource": "grammar"
       },
-      "beforeHash": "19cf32cecfb8e926f3703508774cf7dce8853e137e0486c7eb81692343d07ca4",
-      "finalHash": "19cf32cecfb8e926f3703508774cf7dce8853e137e0486c7eb81692343d07ca4",
+      "beforeHash": "cd02f388d9887bf609f9972db3788f695db4582b4bb9104aca5fb01e5ddbe72f",
+      "finalHash": "cd02f388d9887bf609f9972db3788f695db4582b4bb9104aca5fb01e5ddbe72f",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -439984,40 +440301,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_17-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[32]",
         "resource": "writing"
       },
-      "beforeHash": "950a1ffadd67d81a3c3205267897d1a27c89af535519120647e1fdd8fc00021b",
-      "finalHash": "950a1ffadd67d81a3c3205267897d1a27c89af535519120647e1fdd8fc00021b",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "06ae4f1d744dd8aa6314a9a7a616d9129d55b6455e29bdda7328fde1bb71f5d2",
+      "finalHash": "06ae4f1d744dd8aa6314a9a7a616d9129d55b6455e29bdda7328fde1bb71f5d2",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_17-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_17-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[33]",
         "resource": "writing"
       },
-      "beforeHash": "ce861aef59d3656bd7175eb2b779c15037db8fddce8141c52b2dd34321ab398b",
-      "finalHash": "ce861aef59d3656bd7175eb2b779c15037db8fddce8141c52b2dd34321ab398b",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "c9bb61c847392d131672b98cc2d51c0c1209d8923d1f9aa1cb2caf9f01b97f10",
+      "finalHash": "c9bb61c847392d131672b98cc2d51c0c1209d8923d1f9aa1cb2caf9f01b97f10",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_17-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 69
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_18-1",
