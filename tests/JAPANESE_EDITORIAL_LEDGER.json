@@ -6580,7 +6580,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_05-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;module.metadata",
@@ -6588,16 +6588,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "37711088667b2a0deb4ed8af36e9efd434da56dcd46b04fa372dac4c5dcf3b37",
-      "finalHash": "37711088667b2a0deb4ed8af36e9efd434da56dcd46b04fa372dac4c5dcf3b37",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1ca91257fac772f3202ac84b6563e45191f4cc1e8d84a05f7770e22e17b0b495",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "title": "Pessoas e formas de tratamento",
+        "sectionTitle": "Primeiros Passos & Etiqueta",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Aprenda formas básicas de tratamento e escolha uma maneira neutra de falar de si em apresentações."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "37711088667b2a0deb4ed8af36e9efd434da56dcd46b04fa372dac4c5dcf3b37"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage1_context",
@@ -6605,7 +6623,7 @@
         "kind": "context"
       },
       "beforeHash": "51944e5f555b70a28a7d699e15133433eeabb2084a12ee55b83aa8711bbebabe",
-      "finalHash": "29b36def2c5ac305b9d42675d551024834dd119124709590be4e1d15fefa9711",
+      "finalHash": "631043cf07f8deffbc79914a5f197a500ee415c88dbaf2519bfad94a2122e50d",
       "beforeValue": {
         "audioGuide": "Tanaka-san! Sensei, konnichiwa!",
         "missionTitle": "Objetivo de Hoje",
@@ -6622,7 +6640,7 @@
       "finalValue": {
         "audioGuide": "Tanaka-san, konnichiwa. Sensei, konnichiwa.",
         "missionTitle": "Objetivo de Hoje",
-        "missionDescription": "Fechar a Seção 1 com chave de ouro! Vamos aprender a chamar as pessoas com respeito e entender por que os japoneses evitam a palavra 'Você' (Anata).",
+        "missionDescription": "Aprenda formas básicas de tratamento e escolha uma maneira neutra de falar de si em apresentações.",
         "audio": {
           "displayText": "田中さん、こんにちは。先生、こんにちは。",
           "audioText": "田中さん、こんにちは。先生、こんにちは。",
@@ -6632,20 +6650,26 @@
           "scenario": ""
         }
       },
-      "reasonKind": "evidence-pending",
-      "rationale": "A correção objetiva foi aplicada, mas o alvo permanece editorialmente aberto até reunir o nível de evidência exigido pela política.",
-      "confidence": 0.72,
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
       "references": [
         {
-          "sourceId": "genki-2e-1-answer-key",
-          "page": 34
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
         }
-      ]
+      ],
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "29b36def2c5ac305b9d42675d551024834dd119124709590be4e1d15fefa9711"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage2_drops[0]",
@@ -6653,16 +6677,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "1df99d109d6a479e0e3040d6e71cdd87f1ebb03e7cfbf8f453f5b58fd9c19673",
-      "finalHash": "1df99d109d6a479e0e3040d6e71cdd87f1ebb03e7cfbf8f453f5b58fd9c19673",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ee31251524e6370d002f6cfb3a7fb3d1af295a1056e98b6c50238fb48d5ddcf6",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～さん",
+        "romaji": "~san",
+        "translation": "Sr. / Sra. / -san",
+        "timeContext": "Sufixo de tratamento comum após o nome de outra pessoa. Em uma apresentação, normalmente não o usamos no próprio nome."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "1df99d109d6a479e0e3040d6e71cdd87f1ebb03e7cfbf8f453f5b58fd9c19673"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage2_drops[1]",
@@ -6670,16 +6708,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "fc8d637bb13c728d02b8d42632e3f6585ab27d47390c8405f8e69236d8bc5799",
-      "finalHash": "fc8d637bb13c728d02b8d42632e3f6585ab27d47390c8405f8e69236d8bc5799",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "524ff4fc8cd30297f678a0dcd79397698ee953f05cffd451ae56e0cbdf5b78c5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "～せんせい",
+        "romaji": "~sensei",
+        "translation": "Professor(a) / médico(a) / -sensei",
+        "timeContext": "Título usado para professores e, em muitos contextos, médicos e outras profissões. Pode vir após o nome: 佐藤先生."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fc8d637bb13c728d02b8d42632e3f6585ab27d47390c8405f8e69236d8bc5799"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage2_drops[2]",
@@ -6687,16 +6739,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "7e38d4070e16e68d1e1a104d8b0e33b13ffacb4429414a045a95e3630e4af8eb",
-      "finalHash": "7e38d4070e16e68d1e1a104d8b0e33b13ffacb4429414a045a95e3630e4af8eb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "d39dcbd034229db34334cdf0e367c86cc52d3e0fca0dd03129d0cbdf386ba7c7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "わたし",
+        "romaji": "Watashi",
+        "translation": "Eu",
+        "timeContext": "Forma neutra e polida para 'eu', útil em apresentações e em muitos contextos formais."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7e38d4070e16e68d1e1a104d8b0e33b13ffacb4429414a045a95e3630e4af8eb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage2_drops[3]",
@@ -6704,16 +6770,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "93d31c34a23eeb9a074cb0bddc4672c86ca91ff83bda75fc05fdab87e8cce04b",
-      "finalHash": "93d31c34a23eeb9a074cb0bddc4672c86ca91ff83bda75fc05fdab87e8cce04b",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "21709fe21f8c04dcb67aba8af597ab95e1f62fd3d49cd47c89d9722bb0fea7a1",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Tratamento de si e do outro",
+        "rule": "Em apresentações, o padrão é dizer o próprio nome sem さん. Para outra pessoa, escolha o tratamento de acordo com a relação e a situação.",
+        "formula": "Outra pessoa ➔ 佐藤さん / 佐藤先生 | Eu ➔ わたしは ペドロ です",
+        "example": "はじめまして。わたしは ペドロ です。よろしく おねがいします。"
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "93d31c34a23eeb9a074cb0bddc4672c86ca91ff83bda75fc05fdab87e8cce04b"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_practice[0]",
@@ -6721,16 +6801,40 @@
         "kind": "practice"
       },
       "beforeHash": "3f6d3a9d08e5a202d902bc8eea96db2b27d8061881859454604457e0d947d4d3",
-      "finalHash": "3f6d3a9d08e5a202d902bc8eea96db2b27d8061881859454604457e0d947d4d3",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b36b6fa481cb172f643acd0a745988292df3c1539d50685b6696dac00de65a80",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "1. Qual apresentação usa o próprio nome de modo natural?",
+        "options": [
+          {
+            "label": "こんにちは！ わたしは ペドロさん です。 (Sou o Pedro-san)",
+            "isCorrect": false
+          },
+          {
+            "label": "はじめまして！ わたしは ペドロ です。 (Sou o Pedro)",
+            "isCorrect": true
+          },
+          {
+            "label": "はじめまして！ わたしは 先生 です。 (Sou professor.)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "3f6d3a9d08e5a202d902bc8eea96db2b27d8061881859454604457e0d947d4d3"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_practice[1]",
@@ -6738,16 +6842,40 @@
         "kind": "practice"
       },
       "beforeHash": "72e047ca86d8545739f0adff77d10b6731e7a0478f655da0000f2f6e873d8aaf",
-      "finalHash": "72e047ca86d8545739f0adff77d10b6731e7a0478f655da0000f2f6e873d8aaf",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "48bb4f1fb93bb6558c6aa6bedcdffed9169dc88c257e82743a6603fd4187e7a5",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "2. Você vai se consultar com a Dra. Takahashi. Qual forma é usual para tratá-la diretamente?",
+        "options": [
+          {
+            "label": "高橋先生 (Takahashi-sensei)",
+            "isCorrect": true
+          },
+          {
+            "label": "高橋さん (Takahashi-san)",
+            "isCorrect": false
+          },
+          {
+            "label": "タカハシ (Apenas Takahashi sem sufixo)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "72e047ca86d8545739f0adff77d10b6731e7a0478f655da0000f2f6e873d8aaf"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_practice[2]",
@@ -6755,16 +6883,40 @@
         "kind": "practice"
       },
       "beforeHash": "4c0173613cbf4a8eadeb8ab98391715b8a2a2d13574cef6c1edd5d7b66128069",
-      "finalHash": "4c0173613cbf4a8eadeb8ab98391715b8a2a2d13574cef6c1edd5d7b66128069",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "7aaed27648c6c0c5a51d076e192bb0371b08b56cc48cf64e2cb668ed00ba102e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "3. Por que uma apresentação normalmente não usa ～さん no próprio nome?",
+        "options": [
+          {
+            "label": "Porque ～さん é normalmente usado ao tratar outra pessoa; apresente seu próprio nome sem esse sufixo",
+            "isCorrect": true
+          },
+          {
+            "label": "Porque '~san' significa 'criança'",
+            "isCorrect": false
+          },
+          {
+            "label": "Porque só estrangeiros têm permissão para usar",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4c0173613cbf4a8eadeb8ab98391715b8a2a2d13574cef6c1edd5d7b66128069"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_practice[3]",
@@ -6772,16 +6924,40 @@
         "kind": "practice"
       },
       "beforeHash": "96ffb0aa8b4745c83224d4c228d509b025cd3f414c204366d808d67bffba930f",
-      "finalHash": "96ffb0aa8b4745c83224d4c228d509b025cd3f414c204366d808d67bffba930f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b92f245939a2974000fa655e41d34fcc10e86b70e602ca0a755239b61fc691df",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "4. Qual forma é neutra e polida para dizer 'eu' em uma apresentação?",
+        "options": [
+          {
+            "label": "俺 (Ore - muito masculino/gíria)",
+            "isCorrect": false
+          },
+          {
+            "label": "わたし (Watashi)",
+            "isCorrect": true
+          },
+          {
+            "label": "あなた (Anata)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "96ffb0aa8b4745c83224d4c228d509b025cd3f414c204366d808d67bffba930f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_practice[4]",
@@ -6789,16 +6965,40 @@
         "kind": "practice"
       },
       "beforeHash": "6504982f5a4faade2b1cf578b0303c6343212eadd94cba50ee6387ab6a8929f0",
-      "finalHash": "6504982f5a4faade2b1cf578b0303c6343212eadd94cba50ee6387ab6a8929f0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "3fcbc0b975e38623ff87057516b6f57d764c15b388c7cfab9525d37f1483ff3f",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "5. Ao falar com um cliente chamado Yamamoto, qual opção é normalmente mais polida?",
+        "options": [
+          {
+            "label": "Usar 山本さん (Yamamoto-san)",
+            "isCorrect": true
+          },
+          {
+            "label": "Usar apenas 山本 (Yamamoto)",
+            "isCorrect": false
+          },
+          {
+            "label": "Usar 俺 (ore)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "6504982f5a4faade2b1cf578b0303c6343212eadd94cba50ee6387ab6a8929f0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_5_sentenceBuilder[0]",
@@ -6806,16 +7006,33 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "c1791f0a285173d1159aca1677d1f358c7954b3d27b77a5f4b1d00c16be6618f",
-      "finalHash": "c1791f0a285173d1159aca1677d1f358c7954b3d27b77a5f4b1d00c16be6618f",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b9118c4b254b3be95cdd0653d2f7c81529a85ec9e73bc41d6f2544ebf3185832",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "わたし は ペドロ です",
+        "translation": "Eu sou Pedro.",
+        "chunks": [
+          "わたし",
+          "は",
+          "ペドロ",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c1791f0a285173d1159aca1677d1f358c7954b3d27b77a5f4b1d00c16be6618f"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage3_5_sentenceBuilder[1]",
@@ -6823,16 +7040,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "d628e1c5c4969b0a7cd513eb88a06fb585cbee212abbab9594360361bbc4aab7",
-      "finalHash": "d628e1c5c4969b0a7cd513eb88a06fb585cbee212abbab9594360361bbc4aab7",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "1414dfec2fc00fd1ad2af648fd0effafe5e74ee994da84ad1f8d7ec5b3982265",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "さとう せんせい です",
+        "translation": "É o professor Sato.",
+        "chunks": [
+          "さとう",
+          "せんせい",
+          "です"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d628e1c5c4969b0a7cd513eb88a06fb585cbee212abbab9594360361bbc4aab7"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage4_dialog[0]",
@@ -6840,16 +7073,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "184781e3063b42d8a4100a5b3f36348140f94ea335706fac9ff281ac82db180e",
-      "finalHash": "184781e3063b42d8a4100a5b3f36348140f94ea335706fac9ff281ac82db180e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "6ca030ad73a57e73b774125b2d53f615272ac0bc92bb13132cc504a109573f6f",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você encontra seu professor de japonês no corredor da universidade.",
+        "npcName": "Professor Sato",
+        "npcMessage": "あ！ こんにちは！ おげんき ですか？ (Ah! Olá! Como você está?)",
+        "options": [
+          {
+            "text": "こんにちは、佐藤さん！ (Konnichiwa, Satou-san!)",
+            "feedback": "É uma forma polida, mas ao falar diretamente com um professor, 先生 é a escolha mais usual neste contexto.",
+            "isCorrect": false
+          },
+          {
+            "text": "こんにちは、佐藤先生！ げんき です！ (Olá, Sato-sensei! Estou bem!)",
+            "feedback": "Boa escolha: 佐藤先生 é uma forma comum de tratar um professor diretamente.",
+            "isCorrect": true
+          },
+          {
+            "text": "おい！ サトウ！ (Oi! Sato!)",
+            "feedback": "Soa casual demais para um encontro com o professor na universidade.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "184781e3063b42d8a4100a5b3f36348140f94ea335706fac9ff281ac82db180e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage4_dialog[1]",
@@ -6857,16 +7123,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "46aa0c1378a2ab210c2a577540ae5ca1cf6e60c2aa177d0524f1d59621f2e5fd",
-      "finalHash": "46aa0c1378a2ab210c2a577540ae5ca1cf6e60c2aa177d0524f1d59621f2e5fd",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "dd8907e23dc0cbcae463d005c8c0cacd608dcb0650930e409132e0d73ef7e1c5",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Você está se apresentando em uma importante convenção de negócios em Osaka.",
+        "npcName": "Diretor Suzuki",
+        "npcMessage": "はじめまして。スズキ です。よろしくおねがいします。",
+        "options": [
+          {
+            "text": "はじめまして！ ペドロさん です。よろしく おねがいします！",
+            "feedback": "Em uma apresentação, é mais natural dizer o próprio nome sem さん.",
+            "isCorrect": false
+          },
+          {
+            "text": "はじめまして！ ペドロ です。こちらこそ、よろしく おねがいします！",
+            "feedback": "Boa apresentação: usa o próprio nome sem さん e responde de forma polida.",
+            "isCorrect": true
+          },
+          {
+            "text": "こんにちは、スズキ！",
+            "feedback": "Fica informal demais para uma primeira conversa de negócios.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "46aa0c1378a2ab210c2a577540ae5ca1cf6e60c2aa177d0524f1d59621f2e5fd"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage4_dialog[2]",
@@ -6874,16 +7173,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "551f36781a40dcb8b01eb2287e50c5eb10baa24c425d5dce957c815c8d0aae14",
-      "finalHash": "551f36781a40dcb8b01eb2287e50c5eb10baa24c425d5dce957c815c8d0aae14",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cf7c304d0b2e788c5bc079cc75b0a112ad814512d18a4f2320bd1e9dc785f615",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Na clínica médica, o enfermeiro precisa confirmar de quem é a vez para a consulta com o Dr. Tanaka.",
+        "npcName": "Enfermeiro",
+        "npcMessage": "ペドロさん！ 田中先生が お待ちです。 (Sr. Pedro! O Dr. Tanaka está esperando.)",
+        "options": [
+          {
+            "text": "はい、わたしです。ありがとうございます。 (Hai, watashi desu. Arigatou gozaimasu.)",
+            "feedback": "Boa resposta: confirma sua identidade e agradece de forma polida.",
+            "isCorrect": true
+          },
+          {
+            "text": "はい！ わたし・せんせい です！",
+            "feedback": "先生 é um título para a pessoa tratada; aqui ele não se aplica a você.",
+            "isCorrect": false
+          },
+          {
+            "text": "いいえ、田中さんです。",
+            "feedback": "Além de negar a chamada, esta resposta não corresponde à pessoa que o enfermeiro chamou.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "551f36781a40dcb8b01eb2287e50c5eb10baa24c425d5dce957c815c8d0aae14"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage5_quiz[0]",
@@ -6891,16 +7223,32 @@
         "kind": "quiz"
       },
       "beforeHash": "fa15770c52b4a07f2fe6c8b029ef75252daa5679b3c2a921fc41e53df529c858",
-      "finalHash": "fa15770c52b4a07f2fe6c8b029ef75252daa5679b3c2a921fc41e53df529c858",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "339028b4bfa2ec298e9bcc0de05490f5ca85de08eb264c149dfc0bdcfdc22a49",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "Por que uma apresentação normalmente evita 'Watashi wa Maria-san desu'?",
+        "options": [
+          "Porque '-san' é usado exclusivamente para homens.",
+          "Porque ～さん é normalmente usado para tratar outra pessoa, não para apresentar o próprio nome.",
+          "Porque a palavra 'Watashi' significa 'Você'."
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "fa15770c52b4a07f2fe6c8b029ef75252daa5679b3c2a921fc41e53df529c858"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage5_quiz[1]",
@@ -6909,15 +7257,31 @@
       },
       "beforeHash": "d3addbb9f07decda83a607b306b5dd32ace8a0b45109530969073a537b298e70",
       "finalHash": "d3addbb9f07decda83a607b306b5dd32ace8a0b45109530969073a537b298e70",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra '～さん' (~san)?",
+        "options": [
+          "Sr. / Sra. / Senhorita",
+          "Professor(a) / Médico(a) / Mestre",
+          "Eu"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d3addbb9f07decda83a607b306b5dd32ace8a0b45109530969073a537b298e70"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage5_quiz[2]",
@@ -6926,15 +7290,31 @@
       },
       "beforeHash": "f3bbbd1e33dca7376a1ffbd60bb739bba8135b0a6beaf0d6e3280bd164676b81",
       "finalHash": "f3bbbd1e33dca7376a1ffbd60bb739bba8135b0a6beaf0d6e3280bd164676b81",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra '～せんせい' (~sensei)?",
+        "options": [
+          "Sr. / Sra. / Senhorita",
+          "Professor(a) / Médico(a) / Mestre",
+          "Eu"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f3bbbd1e33dca7376a1ffbd60bb739bba8135b0a6beaf0d6e3280bd164676b81"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage5_quiz[3]",
@@ -6943,15 +7323,31 @@
       },
       "beforeHash": "d7d53bcd2f7136751c0e66b8c43a9d4462a4b29a6d93ac24f65c25f07521f5b5",
       "finalHash": "d7d53bcd2f7136751c0e66b8c43a9d4462a4b29a6d93ac24f65c25f07521f5b5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'わたし' (Watashi)?",
+        "options": [
+          "Professor(a) / Médico(a) / Mestre",
+          "Sr. / Sra. / Senhorita",
+          "Eu"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d7d53bcd2f7136751c0e66b8c43a9d4462a4b29a6d93ac24f65c25f07521f5b5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_05-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_05;stage5_quiz[4]",
@@ -6959,11 +7355,27 @@
         "kind": "quiz"
       },
       "beforeHash": "7d7b6919795f545f987973759d7e5daa81d30a5a14898180c5010a73cae83c22",
-      "finalHash": "7d7b6919795f545f987973759d7e5daa81d30a5a14898180c5010a73cae83c22",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "b9a2adf862a3521635bab73ae3ace57381b78b08f829b70b3213b7d11afc6dbe",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre o tratamento com ～さん, qual afirmação é correta?",
+        "options": [
+          "Em apresentações, normalmente dizemos o próprio nome sem ～さん e usamos ～さん para tratar outra pessoa.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "7d7b6919795f545f987973759d7e5daa81d30a5a14898180c5010a73cae83c22"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_06-module-metadata",
@@ -352847,8 +353259,8 @@
         "locator": "items[159]",
         "resource": "dictionary"
       },
-      "beforeHash": "eb25ecbde426332965198fe913f2ae7479d0d37e893b65fc6408df04dc90895b",
-      "finalHash": "eb25ecbde426332965198fe913f2ae7479d0d37e893b65fc6408df04dc90895b",
+      "beforeHash": "a518a980393ebd78af1370f89868e5bccb053fd7588f9d4898196821b5567f97",
+      "finalHash": "a518a980393ebd78af1370f89868e5bccb053fd7588f9d4898196821b5567f97",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352864,8 +353276,8 @@
         "locator": "items[160]",
         "resource": "dictionary"
       },
-      "beforeHash": "1b2354d5c2de6d23ef3c0679fb832f67034851b867623d340dedd8083cd2b337",
-      "finalHash": "1b2354d5c2de6d23ef3c0679fb832f67034851b867623d340dedd8083cd2b337",
+      "beforeHash": "8e41388b65a71532dbdfd76fe7f4e402f56181a98500df38bbb0cfddf5e66d96",
+      "finalHash": "8e41388b65a71532dbdfd76fe7f4e402f56181a98500df38bbb0cfddf5e66d96",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352881,8 +353293,8 @@
         "locator": "items[161]",
         "resource": "dictionary"
       },
-      "beforeHash": "58d436d4b1f97663082ff3bf8516d628403719c85cf31dd7f33c126a0b1500d3",
-      "finalHash": "58d436d4b1f97663082ff3bf8516d628403719c85cf31dd7f33c126a0b1500d3",
+      "beforeHash": "52ac13cfda7042b308db7da38c8c7957d18a951b4891e7a21924c454fe5a73e4",
+      "finalHash": "52ac13cfda7042b308db7da38c8c7957d18a951b4891e7a21924c454fe5a73e4",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -352898,8 +353310,8 @@
         "locator": "items[162]",
         "resource": "dictionary"
       },
-      "beforeHash": "5d886cc43845140ebe58aa659adead2eeaeae19332976e8aec6d6f220ceda262",
-      "finalHash": "5d886cc43845140ebe58aa659adead2eeaeae19332976e8aec6d6f220ceda262",
+      "beforeHash": "9577e4e2b5a2a8f70a3a6ca8bc59411092feafd71fac4e0a6149929aa91be080",
+      "finalHash": "9577e4e2b5a2a8f70a3a6ca8bc59411092feafd71fac4e0a6149929aa91be080",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -423116,21 +423528,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_05-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[4]",
         "resource": "listening"
       },
-      "beforeHash": "3e88465e1120d95fc11616dc2688316a1c9b91774922a779538939eb87cddfa6",
-      "finalHash": "3e88465e1120d95fc11616dc2688316a1c9b91774922a779538939eb87cddfa6",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "29538c6a954e9c13588eb2a05b6f018f3be911bb379ca41cd52e135f9f12d58c",
+      "finalHash": "29538c6a954e9c13588eb2a05b6f018f3be911bb379ca41cd52e135f9f12d58c",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_05-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        },
+        {
+          "sourceId": "tobira-2009",
+          "page": 50
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_06-context-0",
@@ -430932,8 +431353,8 @@
         "locator": "reference[4]",
         "resource": "grammar"
       },
-      "beforeHash": "bdff90d6fe1d0bc75cad9cba81b3bb392079b63b33363c9ce24c247b34a4328b",
-      "finalHash": "bdff90d6fe1d0bc75cad9cba81b3bb392079b63b33363c9ce24c247b34a4328b",
+      "beforeHash": "edfb45774ca5f475bf60844b6f3e0f145ab83ee9c86da306b56c1af9678f30c0",
+      "finalHash": "edfb45774ca5f475bf60844b6f3e0f145ab83ee9c86da306b56c1af9678f30c0",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -434762,40 +435183,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_05-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[8]",
         "resource": "writing"
       },
-      "beforeHash": "5fbd5cdc56206236dc909b033358913eae93917f9c94f87dea0158daa86c0ab3",
-      "finalHash": "5fbd5cdc56206236dc909b033358913eae93917f9c94f87dea0158daa86c0ab3",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "17b1f53b2973fa4d49babb69f08e3238bf18e454ff108ece2603995aaf67517c",
+      "finalHash": "17b1f53b2973fa4d49babb69f08e3238bf18e454ff108ece2603995aaf67517c",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_05-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_05-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[9]",
         "resource": "writing"
       },
-      "beforeHash": "ffc3b01dd68e0f7f1c9e46c034b9b0ed49571524ebe5c14720c0a00549605466",
-      "finalHash": "ffc3b01dd68e0f7f1c9e46c034b9b0ed49571524ebe5c14720c0a00549605466",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "1d5576778bc6286d1d12d844e49fbfaa14e4dc159ce3ed495e730b00fb4cc2f4",
+      "finalHash": "1d5576778bc6286d1d12d844e49fbfaa14e4dc159ce3ed495e730b00fb4cc2f4",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_05-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 40
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_06-1",

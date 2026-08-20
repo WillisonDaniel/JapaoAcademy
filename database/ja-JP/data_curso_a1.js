@@ -1061,73 +1061,73 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_05",
-        "title": "Pessoas, Pronomes e Respeito (-san, -sensei)",
+        "title": "Pessoas e formas de tratamento",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
         "xpReward": 85,
         "stage1_context": {
-            "audioGuide": "Tanaka-san! Sensei, konnichiwa!",
+            "audioGuide": "Tanaka-sensei, konnichiwa!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Fechar a Seção 1 com chave de ouro! Vamos aprender a chamar as pessoas com respeito e entender por que os japoneses evitam a palavra 'Você' (Anata)."
+            "missionDescription": "Aprenda formas básicas de tratamento e escolha uma maneira neutra de falar de si em apresentações."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "～さん",
                 "romaji": "~san",
-                "translation": "Sr. / Sra. / Senhorita",
-                "timeContext": "O sufixo de respeito mais seguro do Japão. Use após o nome de qualquer adulto."
+                "translation": "Sr. / Sra. / -san",
+                "timeContext": "Sufixo de tratamento comum após o nome de outra pessoa. Em uma apresentação, normalmente não o usamos no próprio nome."
             },
             {
                 "type": "vocab",
                 "kanji": "～せんせい",
                 "romaji": "~sensei",
-                "translation": "Professor(a) / Médico(a) / Mestre",
-                "timeContext": "Título usado no lugar do '-san' para pessoas que ensinam ou curam."
+                "translation": "Professor(a) / médico(a) / -sensei",
+                "timeContext": "Título usado para professores e, em muitos contextos, médicos e outras profissões. Pode vir após o nome: 佐藤先生."
             },
             {
                 "type": "vocab",
                 "kanji": "わたし",
                 "romaji": "Watashi",
                 "translation": "Eu",
-                "timeContext": "O pronome pessoal neutro e educado para 'Eu', usado tanto por homens quanto por mulheres."
+                "timeContext": "Forma neutra e polida para 'eu', útil em apresentações e em muitos contextos formais."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Regra de Ouro do '-san'",
-                "rule": "NUNCA, em hipótese alguma, coloque '-san' no seu PRÓPRIO nome! Isso soa extremamente arrogante e bizarro no Japão.",
-                "formula": "Correto ➔ [Nome do Outro] + さん | Errado ➔ わたしは [Seu Nome] + さん です",
-                "example": "Falar 'Watashi wa Carlos-san desu' é como dizer em português 'Eu sou o Vossa Excelência Carlos'."
+                "title": "Tratamento de si e do outro",
+                "rule": "Em apresentações, o padrão é dizer o próprio nome sem さん. Para outra pessoa, escolha o tratamento de acordo com a relação e a situação.",
+                "formula": "Outra pessoa ➔ 佐藤さん / 佐藤先生 | Eu ➔ わたしは ペドロ です",
+                "example": "はじめまして。わたしは ペドロ です。よろしく おねがいします。"
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual das frases abaixo está CULTURALMENTE CORRETA ao se apresentar?",
+                "question": "1. Qual apresentação usa o próprio nome de modo natural?",
                 "options": [
                     {
-                        "label": "こんにちは！ わたしは ぺどろ・さん です。 (Sou o Pedro-san)",
+                        "label": "こんにちは！ わたしは ペドロさん です。 (Sou o Pedro-san)",
                         "isCorrect": false
                     },
                     {
-                        "label": "こんにちは！ ぺどろ です。 (Sou o Pedro)",
+                        "label": "はじめまして！ わたしは ペドロ です。 (Sou o Pedro)",
                         "isCorrect": true
                     },
                     {
-                        "label": "はじめまして！ わたしは せんせい です。 (Sou o Sensei)",
+                        "label": "はじめまして！ わたしは 先生 です。 (Sou professor.)",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Você vai se consultar com a médica Dra. Takahashi na clínica. Como você a chama?",
+                "question": "2. Você vai se consultar com a Dra. Takahashi. Qual forma é usual para tratá-la diretamente?",
                 "options": [
                     {
-                        "label": "タカハシ・せんせい (Takahashi-sensei)",
+                        "label": "高橋先生 (Takahashi-sensei)",
                         "isCorrect": true
                     },
                     {
-                        "label": "タカハシ・さん (Takahashi-san)",
+                        "label": "高橋さん (Takahashi-san)",
                         "isCorrect": false
                     },
                     {
@@ -1137,10 +1137,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que colocar '~san' no seu próprio nome é considerado um gafe constrangedora?",
+                "question": "3. Por que uma apresentação normalmente não usa ～さん no próprio nome?",
                 "options": [
                     {
-                        "label": "Porque '~san' é um título de respeito para elevar o OUTRO; usá-lo em si mesmo soa arrogante",
+                        "label": "Porque ～さん é normalmente usado ao tratar outra pessoa; apresente seu próprio nome sem esse sufixo",
                         "isCorrect": true
                     },
                     {
@@ -1154,7 +1154,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Qual é o pronome pessoal mais educado e neutro para 'Eu', seguro em qualquer situação formal?",
+                "question": "4. Qual forma é neutra e polida para dizer 'eu' em uma apresentação?",
                 "options": [
                     {
                         "label": "俺 (Ore - muito masculino/gíria)",
@@ -1171,18 +1171,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Ao falar com seu cliente, o Sr. Yamamoto, por que você não deve chamá-lo apenas de 'Yamamoto'?",
+                "question": "5. Ao falar com um cliente chamado Yamamoto, qual opção é normalmente mais polida?",
                 "options": [
                     {
-                        "label": "Chamar adultos sem sufixo de respeito (yobisute) é considerado extremamente rude no Japão",
+                        "label": "Usar 山本さん (Yamamoto-san)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque Yamamoto é um nome proibido",
+                        "label": "Usar apenas 山本 (Yamamoto)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque os japoneses não usam sobrenomes",
+                        "label": "Usar 俺 (ore)",
                         "isCorrect": false
                     }
                 ]
@@ -1190,28 +1190,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "これ は わたし の カバン です",
-                "translation": "Esta é a minha bolsa.",
+                "sentenceJp": "わたし は ペドロ です",
+                "translation": "Eu sou Pedro.",
                 "chunks": [
-                    "これ",
-                    "は",
                     "わたし",
-                    "の",
-                    "カバン",
+                    "は",
+                    "ペドロ",
                     "です"
                 ]
             },
             {
-                "sentenceJp": "あれ は だれ の カサ です か",
-                "translation": "De quem é aquele guarda-chuva?",
+                "sentenceJp": "さとう せんせい です",
+                "translation": "É o professor Sato.",
                 "chunks": [
-                    "あれ",
-                    "は",
-                    "だれ",
-                    "の",
-                    "カサ",
-                    "です",
-                    "か"
+                    "さとう",
+                    "せんせい",
+                    "です"
                 ]
             }
         ],
@@ -1222,18 +1216,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "あ！ こんにちは！ おげんき ですか？ (Ah! Olá! Como você está?)",
                 "options": [
                     {
-                        "text": "こんにちは、サトウ・さん！ (Konnichiwa, Sato-san!)",
-                        "feedback": "Atenção: Para professores, usamos '-sensei' e nunca '-san'!",
+                        "text": "こんにちは、佐藤さん！ (Konnichiwa, Satou-san!)",
+                        "feedback": "É uma forma polida, mas ao falar diretamente com um professor, 先生 é a escolha mais usual neste contexto.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こんにちは、サトウ・せんせい！ げんき です！ (Olá, Sato-sensei! Estou bem!)",
-                        "feedback": "Mandou muito bem! Usou o título de honra exato para um mestre/professor.",
+                        "text": "こんにちは、佐藤先生！ げんき です！ (Olá, Sato-sensei! Estou bem!)",
+                        "feedback": "Boa escolha: 佐藤先生 é uma forma comum de tratar um professor diretamente.",
                         "isCorrect": true
                     },
                     {
                         "text": "おい！ サトウ！ (Oi! Sato!)",
-                        "feedback": "Extremamente rude! Chamar o professor apenas pelo sobrenome é uma ofensa grave.",
+                        "feedback": "Soa casual demais para um encontro com o professor na universidade.",
                         "isCorrect": false
                     }
                 ]
@@ -1244,18 +1238,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして。スズキ です。よろしくおねがいします。",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome]・さん です。 よろしくおねがいします！",
-                        "feedback": "Gafe grave! Você colocou '-san' no seu próprio nome! Soou arrogante.",
+                        "text": "はじめまして！ ペドロさん です。よろしく おねがいします！",
+                        "feedback": "Em uma apresentação, é mais natural dizer o próprio nome sem さん.",
                         "isCorrect": false
                     },
                     {
-                        "text": "はじめまして！ [Seu Nome] です。 こちらこそ、よろしくおねがいします！",
-                        "feedback": "Impecável! Apresentação humilde (sem -san para si mesmo) e respeitosa com o diretor.",
+                        "text": "はじめまして！ ペドロ です。こちらこそ、よろしく おねがいします！",
+                        "feedback": "Boa apresentação: usa o próprio nome sem さん e responde de forma polida.",
                         "isCorrect": true
                     },
                     {
                         "text": "こんにちは、スズキ！",
-                        "feedback": "Incorreto: Esqueceu o '-san' ao se referir ao Diretor Suzuki!",
+                        "feedback": "Fica informal demais para uma primeira conversa de negócios.",
                         "isCorrect": false
                     }
                 ]
@@ -1263,21 +1257,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Na clínica médica, o enfermeiro precisa confirmar de quem é a vez para a consulta com o Dr. Tanaka.",
                 "npcName": "Enfermeiro",
-                "npcMessage": "[Seu Nome]・さん！ タナカ・せんせい が おまち です。 (Sr(a). [Seu Nome]! O Dr. Tanaka está esperando.)",
+                "npcMessage": "ペドロさん！ 田中先生が お待ちです。 (Sr. Pedro! O Dr. Tanaka está esperando.)",
                 "options": [
                     {
-                        "text": "はい！ わたし です！ ありがとう！ (Sim! Sou eu! Obrigado!)",
-                        "feedback": "Perfeito! Usou o pronome 'Watashi' corretamente e entendeu o título '-sensei' do médico.",
+                        "text": "はい、わたしです。ありがとうございます。 (Hai, watashi desu. Arigatou gozaimasu.)",
+                        "feedback": "Boa resposta: confirma sua identidade e agradece de forma polida.",
                         "isCorrect": true
                     },
                     {
                         "text": "はい！ わたし・せんせい です！",
-                        "feedback": "Ops! Você chamou a si mesmo de 'Sensei' na frente da equipe médica!",
+                        "feedback": "先生 é um título para a pessoa tratada; aqui ele não se aplica a você.",
                         "isCorrect": false
                     },
                     {
-                        "text": "いいえ、タナカ・さん です。",
-                        "feedback": "Incorreto: Você rebaixou o título do médico de '-sensei' para '-san'!",
+                        "text": "いいえ、田中さんです。",
+                        "feedback": "Além de negar a chamada, esta resposta não corresponde à pessoa que o enfermeiro chamou.",
                         "isCorrect": false
                     }
                 ]
@@ -1285,10 +1279,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Por que é considerado um erro grave dizer 'Watashi wa Maria-san desu'?",
+                "question": "Por que uma apresentação normalmente evita 'Watashi wa Maria-san desu'?",
                 "options": [
                     "Porque '-san' é usado exclusivamente para homens.",
-                    "Porque não se deve usar sufixos de respeito (-san, -sensei) para se referir a si mesmo.",
+                    "Porque ～さん é normalmente usado para tratar outra pessoa, não para apresentar o próprio nome.",
                     "Porque a palavra 'Watashi' significa 'Você'."
                 ],
                 "correctIndex": 1
@@ -1321,9 +1315,9 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'A Regra de Ouro do '-san'': qual afirmação é correta?",
+                "question": "Sobre o tratamento com ～さん, qual afirmação é correta?",
                 "options": [
-                    "NUNCA, em hipótese alguma, coloque '-san' no seu PRÓPRIO nome! Isso soa extremamente arrogante e bizarro no Japão.",
+                    "Em apresentações, normalmente dizemos o próprio nome sem ～さん e usamos ～さん para tratar outra pessoa.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -7967,6 +7961,13 @@ CURSO_A1_DADOS[2].editorialReview = {
 };
 
 CURSO_A1_DADOS[3].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[4].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",

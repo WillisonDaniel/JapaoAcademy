@@ -77,8 +77,21 @@ O módulo foi conferido em Genki I, p. 35–36, e Tobira, p. 50. A revisão pass
 
 Após a propagação, o ledger global contém 6.138 aprovações, 494 correções e 16.902 casos inconclusivos. Os quatro módulos já auditados somam 85 alvos canônicos sustentados; a redução neste lote foi de 25 pendências canônicas e três projeções derivadas.
 
+## Lote A1-05
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 3 |
+| Corrigidos e aprovados | 18 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 21 |
+
+O módulo foi conferido em Genki I, p. 40 e 45, e Tobira, p. 50. A revisão retirou regras absolutas sobre `-さん`, `先生`, `私` e `あなた`; normalizou nomes, Romaji e diálogos; esclareceu que `-さん` costuma tratar outra pessoa e que `先生` é a forma usual para falar diretamente com um professor ou médico no cenário proposto. As atividades de montagem agora exercitam as formas de tratamento estudadas.
+
+Após a propagação, o ledger global contém 6.141 aprovações, 515 correções e 16.878 casos inconclusivos. Os cinco módulos já auditados somam 106 alvos canônicos sustentados; neste lote, 21 alvos canônicos e três projeções derivadas deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-05 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-06 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

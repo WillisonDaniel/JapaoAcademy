@@ -12,7 +12,7 @@ const slug = value => value.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').t
 const context = {};
 vm.createContext(context);
 vm.runInContext(`${fs.readFileSync(path.join(ROOT, 'database/ja-JP/data_curso_a1.js'), 'utf8')}\nglobalThis.__value=CURSO_A1_DADOS;`, context);
-const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03', 'a1_mod_04'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
+const courseModules = ['a1_mod_01', 'a1_mod_02', 'a1_mod_03', 'a1_mod_04', 'a1_mod_05'].map(moduleId => JSON.parse(JSON.stringify(context.__value.find(item => item.id === moduleId))));
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname, 'JAPANESE_EDITORIAL_LEDGER.json'), 'utf8'));
 const decisions = new Map(ledger.decisions.map(decision => [decision.id, decision]));
 
@@ -53,5 +53,7 @@ assert.doesNotMatch(runtime, /espinha dorsal|canivete suíço|3 Superpoderes|aug
 assert.match(runtime, /Escolha pelo contexto/);
 assert.match(runtime, /Otsukaresama deshita! Jaa ne!/);
 assert.doesNotMatch(runtime, /quase nunca usam 'Sayounara'|Adeus final|pode causar demissão|Adeus vaga|erro horrível/i);
+assert.match(runtime, /Tratamento de si e do outro/);
+assert.doesNotMatch(runtime, /qualquer adulto|nunca '-san'|rebaixou o título|extremamente arrogante e bizarro/i);
 
-console.log('Fase 21B.1: módulos A1-01 a A1-04 possuem 85/85 alvos sustentados e nenhum alvo inconclusivo.');
+console.log('Fase 21B.1: módulos A1-01 a A1-05 possuem 106/106 alvos sustentados e nenhum alvo inconclusivo.');
