@@ -267,8 +267,20 @@ O módulo de alimentação agora distingue os sentidos contextuais de `お茶` e
 
 As decisões usam o diálogo de restaurante do *Genki I* (p. 59), com uma segunda família editorial (*Tobira*, p. 122) para a conferência contextual de vocabulário alimentar. Após a propagação, o ledger global contém 6.182 aprovações, 779 correções e 16.573 casos inconclusivos. Os dezenove módulos já auditados somam 378 alvos canônicos sustentados; neste lote, 19 alvos canônicos e três projeções derivadas deixaram a fila aberta.
 
+## Lote A1-20
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 18 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo substitui títulos promocionais e regras absolutas sobre adjetivos em い por uma descrição limitada às formas trabalhadas. Corrige os sentidos contextuais de `高い`, `安い`, `野菜` e `果物`, remove a avaliação subjetiva automática de um preço e troca duas construções de existência por frases sobre alimentos. O diálogo passou a manter registro consistente e a avaliar sabor, não preço.
+
+As decisões usam o vocabulário alimentar do *Genki I* (p. 60), com uma segunda família editorial (*Tobira*, p. 122) para a conferência contextual. Após a propagação, o ledger global contém 6.182 aprovações, 800 correções e 16.552 casos inconclusivos. Os vinte módulos já auditados somam 396 alvos canônicos sustentados; neste lote, 18 alvos canônicos e três projeções derivadas deixaram a fila aberta.
+
 ## Próximo lote automático
 
-Continuar no módulo A1-20 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-21 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.

@@ -24,7 +24,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_17 | stage1_context.audio | これはいくらですか。 | Kore wa ikura desu ka. | Quanto custa isto? | corrected |
 | a1_mod_18 | stage1_context.audio | これをください。 | Kore o kudasai. | Isto, por favor. | corrected |
 | a1_mod_19 | stage1_context.audio | 水を飲みます。 | Mizu o nomimasu. | Bebo água. | corrected |
-| a1_mod_20 | stage1_context.audio | このラーメンはおいしいです。 | Kono raamen wa oishii desu. | Este ramen é saboroso. | pending-human-review |
+| a1_mod_20 | stage1_context.audio | このラーメンはおいしいです。 | Kono raamen wa oishii desu. | Este ramen é saboroso. | corrected |
 | a1_mod_21 | stage1_context.audio | 今、何時ですか。 | Ima, nan-ji desu ka. | Que horas são agora? | pending-human-review |
 | a1_mod_21 | stage4_dialog[0].content |  |  | A pessoa aguarda você iniciar a conversa. | pending-human-review |
 | a1_mod_22 | stage1_context.audio | 今日は月曜日です。 | Kyou wa getsuyoubi desu. | Hoje é segunda-feira. | pending-human-review |

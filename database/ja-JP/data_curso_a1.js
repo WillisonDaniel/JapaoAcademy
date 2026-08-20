@@ -4461,91 +4461,91 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_20",
-        "title": "Comida & Bebida II e Sabores",
+        "title": "Alimentos e adjetivos básicos",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 110,
         "stage1_context": {
             "audioGuide": "Kono ramen wa oishii desu.",
-            "missionTitle": "Objetivo de Hoje: O Crítico Gastronômico",
-            "missionDescription": "Expanda seu cardápio com vegetais e frutas, e aprenda os adjetivos mais importantes para descrever uma refeição: delicioso, caro e barato."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Amplie o vocabulário de alimentos e use adjetivos básicos para descrever sabor e preço."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "やさい (野菜)",
-                "romaji": "Yasai",
-                "translation": "Vegetais / Legumes",
+                "romaji": "yasai",
+                "translation": "verduras; legumes; vegetais",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "くだもの (果物)",
-                "romaji": "Kudamono",
-                "translation": "Fruta(s)",
+                "romaji": "kudamono",
+                "translation": "fruta; frutas",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "おいしい",
-                "romaji": "Oishii",
-                "translation": "Delicioso / Gostoso",
-                "timeContext": "O elogio mais importante para qualquer cozinheiro!"
+                "romaji": "oishii",
+                "translation": "gostoso; delicioso",
+                "timeContext": "Descreve algo saboroso, especialmente comida ou bebida."
             },
             {
                 "type": "vocab",
                 "kanji": "たかい (高い)",
-                "romaji": "Takai",
-                "translation": "Caro / Alto",
-                "timeContext": "Este adjetivo serve tanto para preço quanto para altura."
+                "romaji": "takai",
+                "translation": "caro; alto",
+                "timeContext": "Pode descrever preço elevado ou altura; o contexto define o sentido."
             },
             {
                 "type": "vocab",
                 "kanji": "やすい (安い)",
-                "romaji": "Yasui",
-                "translation": "Barato",
+                "romaji": "yasui",
+                "translation": "barato; de baixo preço",
                 "timeContext": ""
             },
             {
                 "type": "grammar_pill",
-                "title": "Descrevendo Coisas com Adjetivos-i",
-                "rule": "Adjetivos que terminam em 'i' (como oishii, takai, yasui) são muito fáceis de usar. Basta colocá-los antes do substantivo ou usar com 'desu' no final.",
-                "formula": "[Adjetivo] + [Substantivo] / [Substantivo] は [Adjetivo] です",
-                "example": "おいしい ラーメン (oishii ramen) / この ラーメン は おいしい です (kono ramen wa oishii desu)."
+                "title": "Descrever com adjetivos em い",
+                "rule": "Muitos adjetivos que terminam em い podem vir antes do substantivo ou aparecer no predicado com です. As formas deste módulo são exemplos básicos desse padrão.",
+                "formula": "[adjetivo] + [substantivo] / [substantivo] は [adjetivo] です",
+                "example": "おいしいラーメン / このラーメンは おいしいです。 (Kono ramen wa oishii desu.)"
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Você comeu um sushi incrível. Como você diz 'É delicioso!'?",
+                "question": "1. Você provou um prato e quer dizer que ele é gostoso. Qual resposta é adequada?",
                 "options": [
                     {
-                        "label": "おいしい です (Oishii desu)",
+                        "label": "おいしいです。 (Oishii desu.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "やすい です (Yasui desu)",
+                        "label": "やすいです。",
                         "isCorrect": false
                     },
                     {
-                        "label": "たかい です (Takai desu)",
+                        "label": "たかいです。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Um prato custa 5.000 ienes. Ele é...",
+                "question": "2. Em uma conversa sobre preço, qual palavra descreve algo caro?",
                 "options": [
                     {
-                        "label": "たかい (Takai)",
+                        "label": "たかい (takai)",
                         "isCorrect": true
                     },
                     {
-                        "label": "やすい (Yasui)",
+                        "label": "やすい (yasui)",
                         "isCorrect": false
                     },
                     {
-                        "label": "おいしい (Oishii)",
+                        "label": "おいしい (oishii)",
                         "isCorrect": false
                     }
                 ]
@@ -4553,27 +4553,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "つくえ の うえ に ほん が あります",
-                "translation": "Há um livro em cima da mesa.",
+                "sentenceJp": "この ラーメン は おいしい です",
+                "translation": "Este ramen é gostoso.",
                 "chunks": [
-                    "つくえ",
-                    "の",
-                    "うえ",
-                    "に",
-                    "ほん",
-                    "が",
-                    "あります"
+                    "この",
+                    "ラーメン",
+                    "は",
+                    "おいしい",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "にわ に いぬ が います",
-                "translation": "Há um cachorro no jardim.",
+                "sentenceJp": "この くだもの は やすい です",
+                "translation": "Esta fruta é barata.",
                 "chunks": [
-                    "にわ",
-                    "に",
-                    "いぬ",
-                    "が",
-                    "います"
+                    "この",
+                    "くだもの",
+                    "は",
+                    "やすい",
+                    "です"
                 ]
             }
         ],
@@ -4581,21 +4579,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está comendo com um amigo japonês e prova o prato dele.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "どう？ おいしい？ (E aí? É gostoso?)",
+                "npcMessage": "どうですか。おいしいですか。 (Como está? É gostoso?)",
                 "options": [
                     {
-                        "text": "うん、とても おいしい！ (Sim, muito delicioso!)",
-                        "feedback": "Perfeito! Uma resposta positiva e entusiasmada.",
+                        "text": "はい、とても おいしいです。 (Sim, está muito gostoso.)",
+                        "feedback": "A resposta avalia o sabor do prato de maneira adequada.",
                         "isCorrect": true
                     },
                     {
                         "text": "はい、やすい です。",
-                        "feedback": "Incorreto. Ele perguntou se era gostoso, não se era barato.",
+                        "feedback": "A frase avalia o preço, não o sabor perguntado.",
                         "isCorrect": false
                     },
                     {
                         "text": "いいえ、やさい です。",
-                        "feedback": "Incorreto. Você disse 'Não, é vegetal'.",
+                        "feedback": "A resposta nomeia uma categoria de alimento, mas não avalia o sabor.",
                         "isCorrect": false
                     }
                 ]
@@ -4603,7 +4601,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual adjetivo significa 'barato'?",
+                "question": "Qual adjetivo pode significar “barato”?",
                 "options": [
                     "Yasui",
                     "Takai",
@@ -4612,7 +4610,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'やさい (野菜)' (Yasai)?",
+                "question": "Qual é o sentido de 野菜（やさい）?",
                 "options": [
                     "Vegetais / Legumes",
                     "Fruta(s)",
@@ -4621,7 +4619,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'くだもの (果物)' (Kudamono)?",
+                "question": "Qual é o sentido de 果物（くだもの）?",
                 "options": [
                     "Vegetais / Legumes",
                     "Fruta(s)",
@@ -4630,7 +4628,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'おいしい' (Oishii)?",
+                "question": "Qual é o sentido de おいしい?",
                 "options": [
                     "Fruta(s)",
                     "Vegetais / Legumes",
@@ -4639,7 +4637,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'たかい (高い)' (Takai)?",
+                "question": "Qual é um sentido possível de 高い（たかい）?",
                 "options": [
                     "Caro / Alto",
                     "Vegetais / Legumes",
@@ -8202,6 +8200,13 @@ CURSO_A1_DADOS[17].editorialReview = {
 };
 
 CURSO_A1_DADOS[18].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[19].editorialReview = {
     status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
