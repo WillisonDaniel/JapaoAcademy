@@ -5,7 +5,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | Módulo | Campo | Japonês | Romaji | Tradução / cenário | Status |
 |---|---|---|---|---|---|
 | a1_mod_01 | stage1_context.audio | おはようございます。 | Ohayou gozaimasu. | Bom dia. | approved |
-| a1_mod_02 | stage1_context.audio | はじめまして。よろしくお願いします。 | Hajimemashite. Yoroshiku onegaishimasu. | Muito prazer. Conto com sua gentileza. | pending-human-review |
+| a1_mod_02 | stage1_context.audio | はじめまして。よろしくお願いします。 | Hajimemashite. Yoroshiku onegaishimasu. | Muito prazer. Espero contar com você. | corrected |
 | a1_mod_03 | stage1_context.audio | ありがとうございます。すみません。 | Arigatou gozaimasu. Sumimasen. | Muito obrigado. Com licença. | pending-human-review |
 | a1_mod_03 | stage4_dialog[2].content |  |  | O garçom está de costas, limpando o balcão do outro lado da sala. | pending-human-review |
 | a1_mod_04 | stage1_context.audio | お疲れ様でした。じゃあね。 | Otsukaresama deshita. Jaa ne. | Obrigado pelo esforço. Até mais. | pending-human-review |

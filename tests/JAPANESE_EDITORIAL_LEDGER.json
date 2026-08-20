@@ -4167,7 +4167,7 @@
     {
       "id": "ja-course-phase18-a1-a1_mod_02-module-metadata",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;module.metadata",
@@ -4175,16 +4175,34 @@
         "kind": "module-metadata"
       },
       "beforeHash": "c55635e074c6073f94dec17dc52ac7879408883a4bc4c3bc82e11c0a958822a3",
-      "finalHash": "c55635e074c6073f94dec17dc52ac7879408883a4bc4c3bc82e11c0a958822a3",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "f42e33c8f43b20c584640f665f3f13ed92346e1678d6b37c0f490871487ca4dd",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "title": "Prazer em Conhecer & Primeiras Apresentações",
+        "sectionTitle": "Primeiros Passos & Etiqueta",
+        "level": "A1",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Aprenda expressões frequentes de uma primeira apresentação e pratique uma troca breve e polida."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c55635e074c6073f94dec17dc52ac7879408883a4bc4c3bc82e11c0a958822a3"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage1-context",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage1_context",
@@ -4192,16 +4210,40 @@
         "kind": "context"
       },
       "beforeHash": "ab628fb56bba666408ed69b8e9986b1a3991e41e289649c181fd2c05961e5fc0",
-      "finalHash": "ab628fb56bba666408ed69b8e9986b1a3991e41e289649c181fd2c05961e5fc0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "71668f749ba73e7f4c23f04a1f6e5cd6940afcb24bc028619dbd1f4f4da5178b",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "audioGuide": "Hajimemashite! Yoroshiku onegaishimasu.",
+        "missionTitle": "Objetivo de Hoje",
+        "missionDescription": "Aprenda expressões frequentes de uma primeira apresentação e pratique uma troca breve e polida.",
+        "audio": {
+          "displayText": "はじめまして。よろしくお願いします。",
+          "audioText": "はじめまして。よろしくお願いします。",
+          "furigana": "",
+          "romaji": "Hajimemashite. Yoroshiku onegaishimasu.",
+          "translation": "Muito prazer. Espero contar com você.",
+          "scenario": ""
+        }
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "ab628fb56bba666408ed69b8e9986b1a3991e41e289649c181fd2c05961e5fc0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage2-drops-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage2_drops[0]",
@@ -4209,16 +4251,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "cd5b438f70975cd1444330c8d19555e4870895e5447e7351e9839d7fd00447e3",
-      "finalHash": "cd5b438f70975cd1444330c8d19555e4870895e5447e7351e9839d7fd00447e3",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ed0d6fb603b9aaefb51ff996e044a640f3a52467b084713342fd5e41fc3b1dd3",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "はじめまして",
+        "romaji": "Hajimemashite",
+        "translation": "Muito prazer / Prazer em conhecer você",
+        "timeContext": "Usado ao encontrar alguém pela primeira vez."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cd5b438f70975cd1444330c8d19555e4870895e5447e7351e9839d7fd00447e3"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage2-drops-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage2_drops[1]",
@@ -4226,16 +4282,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "e6daad12a2ebe5cc1358237af94b79c73b2dc7750e020b5ea2160e66ace1a188",
-      "finalHash": "e6daad12a2ebe5cc1358237af94b79c73b2dc7750e020b5ea2160e66ace1a188",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e23482286e3229288fd8bc2adec8c398abc4f2e90f5bddb07afa2d0b0a0dcb7e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "よろしくおねがいします",
+        "romaji": "Yoroshiku onegaishimasu",
+        "translation": "Muito prazer / Espero contar com você",
+        "timeContext": "Expressão contextual frequentemente usada ao encerrar uma apresentação."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e6daad12a2ebe5cc1358237af94b79c73b2dc7750e020b5ea2160e66ace1a188"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage2-drops-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage2_drops[2]",
@@ -4243,16 +4313,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "5d73ae42b1f53e979c7bf57b82efa8464dc3d74c23ae9a868a1d1cf9ef30ebc5",
-      "finalHash": "5d73ae42b1f53e979c7bf57b82efa8464dc3d74c23ae9a868a1d1cf9ef30ebc5",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a0e72fca85089a4eddd93a8592dbd8bede5fb25a85396548ee72a1c77fab6dc7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "vocab",
+        "kanji": "こちらこそ",
+        "romaji": "Kochira koso",
+        "translation": "Igualmente / Eu é que agradeço",
+        "timeContext": "Em uma apresentação, pode introduzir a resposta こちらこそ、よろしくおねがいします."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5d73ae42b1f53e979c7bf57b82efa8464dc3d74c23ae9a868a1d1cf9ef30ebc5"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage2-drops-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage2_drops[3]",
@@ -4260,16 +4344,30 @@
         "kind": "lesson-item"
       },
       "beforeHash": "d6adb382a5685358b21b9f891d155dada72efdcd05f9d91a9c662ad7b1839a05",
-      "finalHash": "d6adb382a5685358b21b9f891d155dada72efdcd05f9d91a9c662ad7b1839a05",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "41a4b140fbf0156727447402d12b2f60577e1961f7dede136ed55465924e7230",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "type": "grammar_pill",
+        "title": "Modelo básico de apresentação",
+        "rule": "Um modelo comum combina a saudação inicial, a identificação e uma expressão de cortesia.",
+        "formula": "はじめまして + [Nome] です + よろしくおねがいします",
+        "example": "Hajimemashite. Ana desu. Yoroshiku onegaishimasu."
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "d6adb382a5685358b21b9f891d155dada72efdcd05f9d91a9c662ad7b1839a05"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-practice-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_practice[0]",
@@ -4277,16 +4375,40 @@
         "kind": "practice"
       },
       "beforeHash": "777badd05c810c4ba2c3af63e87789cbee844e48304853bfb27f73b3b4394a09",
-      "finalHash": "777badd05c810c4ba2c3af63e87789cbee844e48304853bfb27f73b3b4394a09",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "8fd71bc874c1e7528815e4660a0a40a89673b1969510655faabb750abfbebb33",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "1. Qual expressão é adequada ao encontrar alguém pela primeira vez?",
+        "options": [
+          {
+            "label": "🤝 はじめまして (Hajimemashite)",
+            "isCorrect": true
+          },
+          {
+            "label": "🙇 よろしくおねがいします (Yoroshiku onegaishimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "🙏 こちらこそ (Kochirakoso)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "777badd05c810c4ba2c3af63e87789cbee844e48304853bfb27f73b3b4394a09"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-practice-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_practice[1]",
@@ -4294,16 +4416,40 @@
         "kind": "practice"
       },
       "beforeHash": "bd17bbd0e8c425257b4106c9ba632790bca1eb766166c8d61b8cda2adbe35ffc",
-      "finalHash": "bd17bbd0e8c425257b4106c9ba632790bca1eb766166c8d61b8cda2adbe35ffc",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "634fcd487a1c4a0a842141b0abe6b7b066df52e1d5252d6b5ba78beee129e1d9",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "2. Como você responde se um colega japonês se apresenta e diz: 'Yoroshiku onegaishimasu'?",
+        "options": [
+          {
+            "label": "🤝 こちらこそ、よろしくおねがいします (Kochira koso, yoroshiku onegaishimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "🌅 おはようございます (Ohayou gozaimasu)",
+            "isCorrect": false
+          },
+          {
+            "label": "👋 さようなら (Sayounara)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "bd17bbd0e8c425257b4106c9ba632790bca1eb766166c8d61b8cda2adbe35ffc"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-practice-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_practice[2]",
@@ -4311,16 +4457,40 @@
         "kind": "practice"
       },
       "beforeHash": "4d0c077a8c6c383bdd218ec0c3a400aed8c669fafd854600553d38f354159ed4",
-      "finalHash": "4d0c077a8c6c383bdd218ec0c3a400aed8c669fafd854600553d38f354159ed4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "a0af3ccf1e6336e28080842ea8f860eb8e3540f79909e86404f2bb364a62ffae",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "3. Qual expressão é frequentemente usada ao encerrar uma apresentação polida?",
+        "options": [
+          {
+            "label": "はじめまして (Hajimemashite)",
+            "isCorrect": false
+          },
+          {
+            "label": "よろしくおねがいします (Yoroshiku onegaishimasu)",
+            "isCorrect": true
+          },
+          {
+            "label": "こんにちは (Konnichiwa)",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "4d0c077a8c6c383bdd218ec0c3a400aed8c669fafd854600553d38f354159ed4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-practice-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_practice[3]",
@@ -4328,16 +4498,40 @@
         "kind": "practice"
       },
       "beforeHash": "68bb8a5907276bfb868fcc53b20a58eb4202e6c203040c2edcf64d1f8dcc1bb4",
-      "finalHash": "68bb8a5907276bfb868fcc53b20a58eb4202e6c203040c2edcf64d1f8dcc1bb4",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "ce7574922f290cebd79d030591c65d21a1c70f1961995e69e1de07029cbdaf4e",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "4. No modelo básico apresentado, o que aparece entre as duas expressões de cortesia?",
+        "options": [
+          {
+            "label": "A saudação inicial Hajimemashite",
+            "isCorrect": false
+          },
+          {
+            "label": "O seu nome acompanhado de 'です (desu)'",
+            "isCorrect": true
+          },
+          {
+            "label": "O agradecimento Kochirakoso",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "68bb8a5907276bfb868fcc53b20a58eb4202e6c203040c2edcf64d1f8dcc1bb4"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-practice-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "approved",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_practice[4]",
@@ -4346,15 +4540,39 @@
       },
       "beforeHash": "e71d1a2652ea2bc0b66aebe590a82d178b340a49d87c6def1c8193cb5f893e78",
       "finalHash": "e71d1a2652ea2bc0b66aebe590a82d178b340a49d87c6def1c8193cb5f893e78",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "reasonKind": "source-confirmation",
+      "rationale": "O alvo atual foi conferido individualmente em página localizada e visualmente inspecionada do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "5. Culturalmente, o que a expressão 'Yoroshiku onegaishimasu' transmite ao interlocutor?",
+        "options": [
+          {
+            "label": "'Espero construirmos uma boa relação / Conto com sua gentileza'",
+            "isCorrect": true
+          },
+          {
+            "label": "'Que horas são agora?'",
+            "isCorrect": false
+          },
+          {
+            "label": "'Me desculpe pelo incômodo'",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "e71d1a2652ea2bc0b66aebe590a82d178b340a49d87c6def1c8193cb5f893e78"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-5-sentencebuilder-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_5_sentenceBuilder[0]",
@@ -4362,16 +4580,32 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "c413d88841e380c17320ce0093654eeb854a15233e1c7591dcdcfeda3003c641",
-      "finalHash": "c413d88841e380c17320ce0093654eeb854a15233e1c7591dcdcfeda3003c641",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "471ea04d80b5d95deb6c50e6aec06a5da68892d7dd3fc3cf08214f8d1ee9e7df",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "はじめまして。タナカです。",
+        "translation": "Prazer em conhecê-lo. Sou Tanaka.",
+        "chunks": [
+          "はじめまして。",
+          "タナカ",
+          "です。"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "c413d88841e380c17320ce0093654eeb854a15233e1c7591dcdcfeda3003c641"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage3-5-sentencebuilder-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage3_5_sentenceBuilder[1]",
@@ -4379,16 +4613,31 @@
         "kind": "sentence-builder"
       },
       "beforeHash": "cd3482ec0dee7dc6a1befa1fae85b19038c2564635551428919a559bd98600fb",
-      "finalHash": "cd3482ec0dee7dc6a1befa1fae85b19038c2564635551428919a559bd98600fb",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "47eacc06160d9bb7c5635a8f6d825b37a6623a2f232de3c21ffea6a01bd36c74",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "sentenceJp": "よろしくおねがいします。",
+        "translation": "Conto com sua gentileza.",
+        "chunks": [
+          "よろしく",
+          "おねがいします。"
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "cd3482ec0dee7dc6a1befa1fae85b19038c2564635551428919a559bd98600fb"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage4-dialog-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage4_dialog[0]",
@@ -4396,16 +4645,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "02d693e4e144827ab3648860c572f074f4291eecc62aa9a2fac36c8f4954057a",
-      "finalHash": "02d693e4e144827ab3648860c572f074f4291eecc62aa9a2fac36c8f4954057a",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c852f25a8b7dd04a3b367389cbb114c10da28962c0f75fefb4d934c15e6fb522",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 1: Você está em uma reunião na empresa e o diretor Tanaka se aproxima para trocar cartões.",
+        "npcName": "Tanaka",
+        "npcMessage": "はじめまして。タナカです。よろしくおねがいします。",
+        "options": [
+          {
+            "text": "はじめまして。こちらこそ、よろしくおねがいします。",
+            "feedback": "Adequado: você respondeu à apresentação e retribuiu a expressão de cortesia.",
+            "isCorrect": true
+          },
+          {
+            "text": "こんばんは！ タナカです。",
+            "feedback": "Incorreto: Você não se chama Tanaka e usou boa noite!",
+            "isCorrect": false
+          },
+          {
+            "text": "はじめまして！",
+            "feedback": "Possível como saudação inicial, mas a outra opção responde de modo mais completo ao contexto proposto.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "02d693e4e144827ab3648860c572f074f4291eecc62aa9a2fac36c8f4954057a"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage4-dialog-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage4_dialog[1]",
@@ -4413,16 +4695,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "74dfcf58e7c8daa74536c3472ee3739340cec37da222ca0fd6079dd58bd8e7c2",
-      "finalHash": "74dfcf58e7c8daa74536c3472ee3739340cec37da222ca0fd6079dd58bd8e7c2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "75f1e487cfa1d097f10352d71a66b44290836a6fee95552d085d701a9c302604",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 2: Você se mudou para uma sharehouse (casa compartilhada) em Tóquio e encontra seu novo colega de quarto na sala.",
+        "npcName": "Hiro",
+        "npcMessage": "あ、こんにちは！ はじめまして、ヒロ です。",
+        "options": [
+          {
+            "text": "よろしくおねがいします！",
+            "feedback": "A expressão é polida, mas a outra opção também responde à saudação de primeiro encontro.",
+            "isCorrect": false
+          },
+          {
+            "text": "はじめまして。よろしくおねがいします！",
+            "feedback": "Adequado: você respondeu à saudação de primeiro encontro e acrescentou a expressão de cortesia.",
+            "isCorrect": true
+          },
+          {
+            "text": "こちらこそ！ ヒロです。",
+            "feedback": "Inadequado neste diálogo: você se identificou como Hiro, que é o nome do interlocutor.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "74dfcf58e7c8daa74536c3472ee3739340cec37da222ca0fd6079dd58bd8e7c2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage4-dialog-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage4_dialog[2]",
@@ -4430,16 +4745,49 @@
         "kind": "dialogue"
       },
       "beforeHash": "16b9733af1935d10bae7a1b1f92020a8a8b3e0e485f69baf3e8988435bf356c8",
-      "finalHash": "16b9733af1935d10bae7a1b1f92020a8a8b3e0e485f69baf3e8988435bf356c8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "cc80aed06cd50b5383ded60afc9c5954f4eb20d9962430e0dd9632705da9a143",
+      "reasonKind": "naturalness",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ],
+      "finalValue": {
+        "scenario": "Situação 3: Em um encontro de intercâmbio, você acaba de dizer 'Hajimemashite, [Seu Nome] desu. Yoroshiku onegaishimasu' para uma estudante.",
+        "npcName": "Estudante Sakura",
+        "npcMessage": "こちらこそ、よろしくおねがいします！",
+        "options": [
+          {
+            "text": "こちらこそ、よろしくおねがいします！",
+            "feedback": "Adequado: você retribuiu a cortesia de forma completa.",
+            "isCorrect": true
+          },
+          {
+            "text": "はじめまして！",
+            "feedback": "Pouco adequado aqui: a saudação de primeiro encontro já ocorreu no início do diálogo.",
+            "isCorrect": false
+          },
+          {
+            "text": "おはようございます！",
+            "feedback": "Fora de contexto gramatical e situacional.",
+            "isCorrect": false
+          }
+        ]
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "16b9733af1935d10bae7a1b1f92020a8a8b3e0e485f69baf3e8988435bf356c8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage5-quiz-0",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage5_quiz[0]",
@@ -4447,16 +4795,32 @@
         "kind": "quiz"
       },
       "beforeHash": "5fbb93cfb0198afce401ae472ab100e582d8f86a7d0e4d4c623471f0bce393a8",
-      "finalHash": "5fbb93cfb0198afce401ae472ab100e582d8f86a7d0e4d4c623471f0bce393a8",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "68713a98eb9b58804547304aeff42fa1400bda7271f41f9ded030769bb4eb2e7",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual expressão é frequentemente usada ao encerrar uma apresentação pessoal polida?",
+        "options": [
+          "はじめまして (Hajimemashite)",
+          "よろしくおねがいします (Yoroshiku onegaishimasu)",
+          "こんにちは (Konnichiwa)"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5fbb93cfb0198afce401ae472ab100e582d8f86a7d0e4d4c623471f0bce393a8"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage5-quiz-1",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage5_quiz[1]",
@@ -4464,16 +4828,32 @@
         "kind": "quiz"
       },
       "beforeHash": "5e96c782b3dca20d8ac44a3e524270bb07ce8157ddb850de019fc2189fadc52e",
-      "finalHash": "5e96c782b3dca20d8ac44a3e524270bb07ce8157ddb850de019fc2189fadc52e",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "e1785c0f72021643c56710e4e30a542a077d950bf121742e3c54470e935cca84",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'はじめまして' (Hajimemashite)?",
+        "options": [
+          "Muito prazer / Prazer em conhecer você",
+          "Muito prazer / Espero contar com você",
+          "Igualmente / Eu é que agradeço"
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "5e96c782b3dca20d8ac44a3e524270bb07ce8157ddb850de019fc2189fadc52e"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage5-quiz-2",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage5_quiz[2]",
@@ -4481,16 +4861,32 @@
         "kind": "quiz"
       },
       "beforeHash": "f104c6de9223c173d872be87fcc83fbce4468463e6bf458d982e5df75f6d3bb2",
-      "finalHash": "f104c6de9223c173d872be87fcc83fbce4468463e6bf458d982e5df75f6d3bb2",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "510c09b128f4a450bcd2331404d984feed77992bde5cf024a23a9ed87b4d6b24",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado correto da palavra 'よろしくおねがいします' (Yoroshiku onegaishimasu)?",
+        "options": [
+          "Muito prazer / Prazer em conhecer você",
+          "Muito prazer / Espero contar com você",
+          "Igualmente / Eu é que agradeço"
+        ],
+        "correctIndex": 1
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "f104c6de9223c173d872be87fcc83fbce4468463e6bf458d982e5df75f6d3bb2"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage5-quiz-3",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage5_quiz[3]",
@@ -4498,16 +4894,32 @@
         "kind": "quiz"
       },
       "beforeHash": "b371d41195888cc02fe815c0fbaddc64e6d5254b56032cb4b3535f8bcb958376",
-      "finalHash": "b371d41195888cc02fe815c0fbaddc64e6d5254b56032cb4b3535f8bcb958376",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "c4e4a1e47fce4efa3917b663c53880545a7200f02e4493dd50ac245d7f5be73c",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Qual é o significado contextual de 'こちらこそ' (Kochira koso)?",
+        "options": [
+          "Muito prazer / Espero contar com você",
+          "Muito prazer / Prazer em conhecer você",
+          "Igualmente / Eu é que agradeço"
+        ],
+        "correctIndex": 2
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "b371d41195888cc02fe815c0fbaddc64e6d5254b56032cb4b3535f8bcb958376"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_02-stage5-quiz-4",
       "phase": 18,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_curso_a1.js",
         "locator": "module=a1_mod_02;stage5_quiz[4]",
@@ -4515,11 +4927,27 @@
         "kind": "quiz"
       },
       "beforeHash": "be2c859c5a2977cdec47381278bee8c39d7fbf9629254fb4528589a1e7af0de0",
-      "finalHash": "be2c859c5a2977cdec47381278bee8c39d7fbf9629254fb4528589a1e7af0de0",
-      "reasonKind": "evidence-pending",
-      "rationale": "Alvo inventariado integralmente; ainda requer conferência individual localizada antes de aprovação editorial.",
-      "confidence": 0.35,
-      "references": []
+      "finalHash": "43824c00a1efd4e068f8b9fac8cc4025e2052dcd80e482d514fdbecda252640d",
+      "reasonKind": "source-correction",
+      "rationale": "O alvo foi corrigido na Fase 21B.1 e conferido em páginas localizadas e visualmente inspecionadas do corpus.",
+      "confidence": 0.97,
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ],
+      "finalValue": {
+        "question": "Sobre o modelo básico de apresentação: qual afirmação é correta?",
+        "options": [
+          "Um modelo comum combina saudação inicial, identificação e expressão de cortesia.",
+          "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
+          "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
+        ],
+        "correctIndex": 0
+      },
+      "resolutionPhase": "21B.1",
+      "previousFinalHash": "be2c859c5a2977cdec47381278bee8c39d7fbf9629254fb4528589a1e7af0de0"
     },
     {
       "id": "ja-course-phase18-a1-a1_mod_03-module-metadata",
@@ -351354,8 +351782,8 @@
         "locator": "items[146]",
         "resource": "dictionary"
       },
-      "beforeHash": "287ab7c079ed6fa275c756f60aa395f0a5306ab801a8308e9b981914fc2295ab",
-      "finalHash": "287ab7c079ed6fa275c756f60aa395f0a5306ab801a8308e9b981914fc2295ab",
+      "beforeHash": "70587e6fe75bbcc1e06c4e50103e8da91d8605487e5a548b79b0c42f4f3b7d79",
+      "finalHash": "70587e6fe75bbcc1e06c4e50103e8da91d8605487e5a548b79b0c42f4f3b7d79",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351371,8 +351799,8 @@
         "locator": "items[147]",
         "resource": "dictionary"
       },
-      "beforeHash": "e5208ebb87c0a734af93ba719a80eac755cb558aad375fe96595d0156e37c829",
-      "finalHash": "e5208ebb87c0a734af93ba719a80eac755cb558aad375fe96595d0156e37c829",
+      "beforeHash": "71900bfee755ab47e06cc95ed4f68f916276da5cf375dbb2b1614c07d7b5fd2f",
+      "finalHash": "71900bfee755ab47e06cc95ed4f68f916276da5cf375dbb2b1614c07d7b5fd2f",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351388,8 +351816,8 @@
         "locator": "items[148]",
         "resource": "dictionary"
       },
-      "beforeHash": "84f54a44b1c858145a1e1c7055b1fb3e6127e16914bfd6081cd2fbf5ff11182c",
-      "finalHash": "84f54a44b1c858145a1e1c7055b1fb3e6127e16914bfd6081cd2fbf5ff11182c",
+      "beforeHash": "c5d636c846d6433ace52dfda6ef79f382bcb0bac9aaeaa0a88bd5eef63b993f3",
+      "finalHash": "c5d636c846d6433ace52dfda6ef79f382bcb0bac9aaeaa0a88bd5eef63b993f3",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -351405,8 +351833,8 @@
         "locator": "items[149]",
         "resource": "dictionary"
       },
-      "beforeHash": "c8340256183df5825e9e5ee30babdc3c18c28d6ffad5f583a90e8bcd16090182",
-      "finalHash": "c8340256183df5825e9e5ee30babdc3c18c28d6ffad5f583a90e8bcd16090182",
+      "beforeHash": "c221c19d234d359dd993729c634a2f90a71ab2d7d4261c045665dc4e98e00e58",
+      "finalHash": "c221c19d234d359dd993729c634a2f90a71ab2d7d4261c045665dc4e98e00e58",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -421760,21 +422188,30 @@
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_02-context-0",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escuta_index.js",
         "locator": "items[1]",
         "resource": "listening"
       },
-      "beforeHash": "a017629c39ccb3830a84d53d28c779e3008a4f3814ef0c9c3278bf0769eba37e",
-      "finalHash": "a017629c39ccb3830a84d53d28c779e3008a4f3814ef0c9c3278bf0769eba37e",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "610d913e792ca3f0e43530232eea5fe20859ec9564f362bf9cd263d537bb657f",
+      "finalHash": "610d913e792ca3f0e43530232eea5fe20859ec9564f362bf9cd263d537bb657f",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_02-stage1-context"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        },
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 47
+        }
+      ]
     },
     {
       "id": "ja-phase20-listening-ja-listening-a1-a1_mod_03-context-0",
@@ -429582,8 +430019,8 @@
         "locator": "reference[1]",
         "resource": "grammar"
       },
-      "beforeHash": "83006047d18595ebe02144e878a03396ddd245e07317e935277e467f2c8850f1",
-      "finalHash": "83006047d18595ebe02144e878a03396ddd245e07317e935277e467f2c8850f1",
+      "beforeHash": "0e45620ad3b437a4971328024c4757f7d9dec8ea046da2a55bee2867e9469690",
+      "finalHash": "0e45620ad3b437a4971328024c4757f7d9dec8ea046da2a55bee2867e9469690",
       "reasonKind": "upstream-or-rule-pending",
       "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
       "confidence": 0.4,
@@ -433319,40 +433756,50 @@
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_02-1",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[2]",
         "resource": "writing"
       },
-      "beforeHash": "4dc5436b9590ac1ee1f50659acc70aea6410eeda21dd388127e4995db668e085",
-      "finalHash": "4dc5436b9590ac1ee1f50659acc70aea6410eeda21dd388127e4995db668e085",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "b5c079c959e94298d92bbe813debffc1b5b66990814040e180f4d7652f3a9f44",
+      "finalHash": "b5c079c959e94298d92bbe813debffc1b5b66990814040e180f4d7652f3a9f44",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_02-stage3-5-sentencebuilder-0"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_02-2",
       "phase": 20,
-      "state": "unresolved",
+      "state": "corrected",
       "target": {
         "file": "database/ja-JP/data_escrita_index.js",
         "locator": "items[3]",
         "resource": "writing"
       },
-      "beforeHash": "cc844c4983cca9a64487af54702e63ec8ed33a1ddbd6b791532c86e8cf6c455b",
-      "finalHash": "cc844c4983cca9a64487af54702e63ec8ed33a1ddbd6b791532c86e8cf6c455b",
-      "reasonKind": "upstream-or-rule-pending",
-      "rationale": "Registro derivado inventariado; a origem canônica ou uma regra própria ainda contém decisão editorial inconclusiva.",
-      "confidence": 0.4,
+      "beforeHash": "80336cbd4caf522f4dbcef268e6e066ef8ac9338760ed21cc98c889c3fb704cc",
+      "finalHash": "80336cbd4caf522f4dbcef268e6e066ef8ac9338760ed21cc98c889c3fb704cc",
+      "reasonKind": "deterministic-derivation",
+      "rationale": "Projeção determinística de alvo canônico aprovado ou corrigido; nenhum conteúdo linguístico novo foi inferido.",
+      "confidence": 0.99,
       "upstreamDecisionIds": [
         "ja-course-phase18-a1-a1_mod_02-stage3-5-sentencebuilder-1"
       ],
-      "references": []
+      "references": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 35
+        }
+      ]
     },
     {
       "id": "ja-phase20-writing-ja-writing-a1-a1_mod_03-1",

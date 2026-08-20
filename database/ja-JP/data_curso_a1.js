@@ -265,7 +265,7 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_02",
-        "title": "Prazer em Conhecer & Cartões de Visita",
+        "title": "Prazer em Conhecer & Primeiras Apresentações",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
@@ -273,41 +273,41 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Hajimemashite! Yoroshiku onegaishimasu.",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "No Japão, a primeira impressão é tudo! Vamos aprender a reverência cultural das apresentações e a famosa troca de cartões de visita (Meishi)."
+            "missionDescription": "Aprenda expressões frequentes de uma primeira apresentação e pratique uma troca breve e polida."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "はじめまして",
                 "romaji": "Hajimemashite",
-                "translation": "Prazer em conhecer / Como vai?",
-                "timeContext": "Dito literalmente no primeiríssimo segundo em que você conhece alguém."
+                "translation": "Muito prazer / Prazer em conhecer você",
+                "timeContext": "Usado ao encontrar alguém pela primeira vez."
             },
             {
                 "type": "vocab",
                 "kanji": "よろしくおねがいします",
                 "romaji": "Yoroshiku onegaishimasu",
-                "translation": "Conto com sua gentileza / Prazer em conhecê-lo",
-                "timeContext": "Frase essencial dita sempre ao FINAL de uma apresentação."
+                "translation": "Muito prazer / Espero contar com você",
+                "timeContext": "Expressão contextual frequentemente usada ao encerrar uma apresentação."
             },
             {
                 "type": "vocab",
                 "kanji": "こちらこそ",
-                "romaji": "Kochirakoso",
-                "translation": "O prazer é todo meu / Igualmente",
-                "timeContext": "Usado para responder quando alguém diz 'Yoroshiku onegaishimasu' para você."
+                "romaji": "Kochira koso",
+                "translation": "Igualmente / Eu é que agradeço",
+                "timeContext": "Em uma apresentação, pode introduzir a resposta こちらこそ、よろしくおねがいします."
             },
             {
                 "type": "grammar_pill",
-                "title": "O Sanduíche de Ouro da Apresentação",
-                "rule": "Toda apresentação formal japonesa segue uma fórmula perfeita de 3 passos parecida com um sanduíche!",
+                "title": "Modelo básico de apresentação",
+                "rule": "Um modelo comum combina a saudação inicial, a identificação e uma expressão de cortesia.",
                 "formula": "はじめまして + [Nome] です + よろしくおねがいします",
                 "example": "Hajimemashite. Ana desu. Yoroshiku onegaishimasu."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual é a primeiríssima palavra que você deve dizer ao ser apresentado a uma pessoa nova?",
+                "question": "1. Qual expressão é adequada ao encontrar alguém pela primeira vez?",
                 "options": [
                     {
                         "label": "🤝 はじめまして (Hajimemashite)",
@@ -327,7 +327,7 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como você responde se um colega japonês se apresenta e diz: 'Yoroshiku onegaishimasu'?",
                 "options": [
                     {
-                        "label": "🤝 こちらこそ (Kochirakoso - O prazer é meu!)",
+                        "label": "🤝 こちらこそ、よろしくおねがいします (Kochira koso, yoroshiku onegaishimasu)",
                         "isCorrect": true
                     },
                     {
@@ -341,7 +341,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Qual frase é considerada obrigatória para FECHAR (encerrar) uma apresentação formal?",
+                "question": "3. Qual expressão é frequentemente usada ao encerrar uma apresentação polida?",
                 "options": [
                     {
                         "label": "はじめまして (Hajimemashite)",
@@ -358,7 +358,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. No 'Sanduíche de Apresentação', o que deve ficar no MEIO da frase?",
+                "question": "4. No modelo básico apresentado, o que aparece entre as duas expressões de cortesia?",
                 "options": [
                     {
                         "label": "A saudação inicial Hajimemashite",
@@ -394,20 +394,20 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "はじめまして タナカ です",
+                "sentenceJp": "はじめまして。タナカです。",
                 "translation": "Prazer em conhecê-lo. Sou Tanaka.",
                 "chunks": [
-                    "はじめまして",
+                    "はじめまして。",
                     "タナカ",
-                    "です"
+                    "です。"
                 ]
             },
             {
-                "sentenceJp": "よろしく おねがいします",
+                "sentenceJp": "よろしくおねがいします。",
                 "translation": "Conto com sua gentileza.",
                 "chunks": [
                     "よろしく",
-                    "おねがいします"
+                    "おねがいします。"
                 ]
             }
         ],
@@ -415,21 +415,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está em uma reunião na empresa e o diretor Tanaka se aproxima para trocar cartões.",
                 "npcName": "Tanaka",
-                "npcMessage": "はじめまして。タナカ です。よろしくおねがいします。",
+                "npcMessage": "はじめまして。タナカです。よろしくおねがいします。",
                 "options": [
                     {
-                        "text": "こちらこそ！ [Seu Nome] です。よろしくおねがいします。",
-                        "feedback": "Perfeito! Você devolveu a cortesia com 'Kochirakoso' e se apresentou corretamente.",
+                        "text": "はじめまして。こちらこそ、よろしくおねがいします。",
+                        "feedback": "Adequado: você respondeu à apresentação e retribuiu a expressão de cortesia.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こんばんは！ タナカ です.",
+                        "text": "こんばんは！ タナカです。",
                         "feedback": "Incorreto: Você não se chama Tanaka e usou boa noite!",
                         "isCorrect": false
                     },
                     {
                         "text": "はじめまして！",
-                        "feedback": "Incompleto: Faltou dizer seu nome e o 'Yoroshiku onegaishimasu'.",
+                        "feedback": "Possível como saudação inicial, mas a outra opção responde de modo mais completo ao contexto proposto.",
                         "isCorrect": false
                     }
                 ]
@@ -441,17 +441,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "よろしくおねがいします！",
-                        "feedback": "Incompleto: Você foi educado, mas esqueceu de dizer seu nome!",
+                        "feedback": "A expressão é polida, mas a outra opção também responde à saudação de primeiro encontro.",
                         "isCorrect": false
                     },
                     {
-                        "text": "じめまして！ [Seu Nome] です。 よろしくおねがいします！",
-                        "feedback": "Excelente! Aplicou a técnica do sanduíche completa, gerando uma ótima primeira impressão.",
+                        "text": "はじめまして。よろしくおねがいします！",
+                        "feedback": "Adequado: você respondeu à saudação de primeiro encontro e acrescentou a expressão de cortesia.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こちらこそ！ ヒロ です.",
-                        "feedback": "Incorreto: 'Kochirakoso' só se usa para responder a um 'Yoroshiku', e você disse que é o Hiro!",
+                        "text": "こちらこそ！ ヒロです。",
+                        "feedback": "Inadequado neste diálogo: você se identificou como Hiro, que é o nome do interlocutor.",
                         "isCorrect": false
                     }
                 ]
@@ -459,16 +459,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Em um encontro de intercâmbio, você acaba de dizer 'Hajimemashite, [Seu Nome] desu. Yoroshiku onegaishimasu' para uma estudante.",
                 "npcName": "Estudante Sakura",
-                "npcMessage": "わあ！ [Seu Nome]・さん！ よろしくおねがいします！",
+                "npcMessage": "こちらこそ、よろしくおねがいします！",
                 "options": [
                     {
-                        "text": "こちらこそ！ (Kochirakoso!)",
-                        "feedback": "Mandou bem! Respondeu prontamente com 'O prazer é todo meu' para selar a amizade.",
+                        "text": "こちらこそ、よろしくおねがいします！",
+                        "feedback": "Adequado: você retribuiu a cortesia de forma completa.",
                         "isCorrect": true
                     },
                     {
-                        "text": "じめまして！",
-                        "feedback": "Incorreto: Vocês já disseram 'Hajimemashite' no início do diálogo!",
+                        "text": "はじめまして！",
+                        "feedback": "Pouco adequado aqui: a saudação de primeiro encontro já ocorreu no início do diálogo.",
                         "isCorrect": false
                     },
                     {
@@ -481,7 +481,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual expressão deve fechar (encerrar) a sua apresentação pessoal no Japão?",
+                "question": "Qual expressão é frequentemente usada ao encerrar uma apresentação pessoal polida?",
                 "options": [
                     "はじめまして (Hajimemashite)",
                     "よろしくおねがいします (Yoroshiku onegaishimasu)",
@@ -492,34 +492,34 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'はじめまして' (Hajimemashite)?",
                 "options": [
-                    "Prazer em conhecer / Como vai?",
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Prazer em conhecer você",
+                    "Muito prazer / Espero contar com você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'よろしくおねがいします' (Yoroshiku onegaishimasu)?",
                 "options": [
-                    "Prazer em conhecer / Como vai?",
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Prazer em conhecer você",
+                    "Muito prazer / Espero contar com você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'こちらこそ' (Kochirakoso)?",
+                "question": "Qual é o significado contextual de 'こちらこそ' (Kochira koso)?",
                 "options": [
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "Prazer em conhecer / Como vai?",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Espero contar com você",
+                    "Muito prazer / Prazer em conhecer você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'O Sanduíche de Ouro da Apresentação': qual afirmação é correta?",
+                "question": "Sobre o modelo básico de apresentação: qual afirmação é correta?",
                 "options": [
-                    "Toda apresentação formal japonesa segue uma fórmula perfeita de 3 passos parecida com um sanduíche!",
+                    "Um modelo comum combina saudação inicial, identificação e expressão de cortesia.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -7855,7 +7855,7 @@ const CURSO_A1_DADOS = [
 // Contrato textual editorial da Fase 3B. Conteúdo pendente de revisão humana qualificada.
 const A1_EDITORIAL_CONTRACT = [
     ["おはようございます。", "Ohayou gozaimasu.", "Bom dia.", "Cumprimentar alguém de modo adequado ao período do dia."],
-    ["はじめまして。よろしくお願いします。", "Hajimemashite. Yoroshiku onegaishimasu.", "Muito prazer. Conto com sua gentileza.", "Apresentar-se brevemente em um primeiro encontro."],
+    ["はじめまして。よろしくお願いします。", "Hajimemashite. Yoroshiku onegaishimasu.", "Muito prazer. Espero contar com você.", "Apresentar-se brevemente em um primeiro encontro."],
     ["ありがとうございます。すみません。", "Arigatou gozaimasu. Sumimasen.", "Muito obrigado. Com licença.", "Agradecer e pedir licença com expressões básicas."],
     ["お疲れ様でした。じゃあね。", "Otsukaresama deshita. Jaa ne.", "Obrigado pelo esforço. Até mais.", "Escolher uma despedida adequada à situação."],
     ["田中さん。先生、こんにちは。", "Tanaka-san. Sensei, konnichiwa.", "Sr. Tanaka. Professor, boa tarde.", "Usar formas básicas de tratamento com respeito."],
@@ -7957,6 +7957,13 @@ const A1_PHASE18_TEXT_REPLACEMENTS = new Map([
 
 CURSO_A1_DADOS[0].editorialReview = {
     status: "approved",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "quartet-1-textbook"]
+};
+
+CURSO_A1_DADOS[1].editorialReview = {
+    status: "corrected",
     phase: "21B.1",
     scope: "all-editorial-targets",
     sources: ["genki-2e-1-textbook", "quartet-1-textbook"]

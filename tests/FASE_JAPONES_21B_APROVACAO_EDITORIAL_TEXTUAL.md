@@ -38,8 +38,21 @@ As páginas foram renderizadas e verificadas visualmente; os PNGs permanecem em 
 - O aviso editorial foi removido somente do módulo A1-01, porque seus 21 alvos estão sustentados.
 - Os outros 30 módulos A1 permanecem inconclusivos e continuam sinalizados.
 
+## Lote A1-02
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 1 |
+| Corrigidos e aprovados | 20 |
+| Inconclusivos restantes no módulo | 0 |
+| Total auditado | 21 |
+
+O módulo de primeiras apresentações foi conferido nas mesmas duas famílias editoriais. Foram removidas alegações universais sobre uma fórmula obrigatória, corrigidos `じめまして`, `[Seu Nome]・さん`, pontuação, Romaji de `こちらこそ` e respostas pouco naturais. O módulo agora distingue um modelo frequente de uma regra absoluta.
+
+Após a propagação, o ledger global contém 6.134 aprovações, 450 correções e 16.950 casos inconclusivos. Os dois primeiros módulos somam 42 alvos canônicos sustentados e seis projeções derivadas retiradas da fila aberta.
+
 ## Próximo lote automático
 
-Continuar nos módulos A1-02 em diante, repetindo inspeção de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-03 e seguintes, repetindo inspeção de fonte, correção, ledger, testes e remoção granular de avisos.
 
 Como este lote altera datasets públicos e índices derivados, o cache PWA foi atualizado para `idiomas-academy-v47`. O asset visual permanece em `v46`, pois não houve alteração de CSS.
