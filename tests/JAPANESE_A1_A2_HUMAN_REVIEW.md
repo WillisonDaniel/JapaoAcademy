@@ -35,7 +35,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_28 | stage1_context.audio | 本があります。 | Hon ga arimasu. | Há um livro. | corrected |
 | a1_mod_29 | stage1_context.audio | 犬がいます。友達がいます。 | Inu ga imasu. Tomodachi ga imasu. | Há um cachorro. Há um amigo. | corrected |
 | a1_mod_30 | stage1_context.audio | 友達は行きます。そして、私も行きます。でも、田中さんは行きません。 | Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen. | Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai. | corrected |
-| a1_mod_31 | stage1_context.audio | おめでとうございます！A1修了です！ | Omedetou gozaimasu! A1 shuuryou desu! | Parabéns! O A1 foi concluído! | pending-human-review |
+| a1_mod_31 | stage1_context.audio | おめでとうございます！A1修了です！ | Omedetou gozaimasu! A1 shuuryou desu! | Parabéns! O A1 foi concluído! | corrected |
 | a2_mod_01 | stage1_context.audio | 毎朝七時に起きます。 | Maiasa shichi-ji ni okimasu. | Acordo às sete horas todas as manhãs. | pending-human-review |
 | a2_mod_01 | stage4_dialog[0].content | [Seu Nome]さん、朝、何時に起きますか。 | [Seu Nome]-san, asa, nan-ji ni okimasu ka. | A que horas você acorda de manhã? | pending-human-review |
 | a2_mod_01 | stage4_dialog[1].content | 今晩、何時に寝ますか。 | Konban, nan-ji ni nemasu ka. | A que horas vai dormir esta noite? | pending-human-review |
