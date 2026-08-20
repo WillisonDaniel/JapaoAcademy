@@ -8380,3 +8380,49 @@ CURSO_A1_DADOS[19].editorialReview = {
     module.stage5_quiz[4].question = "Qual é o significado trabalhado de 聞きます（ききます）?";
     module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
 })();
+
+(function reviewA1Module25() {
+    const module = CURSO_A1_DADOS[24];
+    module.title = "Verbos de movimento: ir, vir e voltar";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Gakkou e ikimasu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Descreva deslocamentos com ir, vir e voltar e marque destinos com へ ou に."
+    });
+    Object.assign(module.stage2_drops[0], { kanji: "行きます（いきます）", romaji: "ikimasu", translation: "ir", timeContext: "Indica movimento que parte do ponto de referência do falante." });
+    Object.assign(module.stage2_drops[1], { kanji: "来ます（きます）", romaji: "kimasu", translation: "vir", timeContext: "Indica movimento em direção ao ponto de referência do falante ou do ouvinte." });
+    Object.assign(module.stage2_drops[2], { kanji: "帰ります（かえります）", romaji: "kaerimasu", translation: "voltar; ir para casa", timeContext: "Usado para voltar a um lugar de referência, frequentemente a casa." });
+    Object.assign(module.stage2_drops[3], {
+        title: "Destino com へ e に",
+        rule: "Com verbos de movimento, へ e に podem marcar o destino. へ, pronunciado “e”, destaca a direção; に apresenta o destino como ponto de chegada.",
+        formula: "[lugar] へ／に [verbo de movimento]",
+        example: "図書館へ行きます。／図書館に行きます。 — Vou à biblioteca."
+    });
+    module.stage3_practice[0].question = "1. Você está no trabalho e vai para casa. Qual verbo é apropriado?";
+    module.stage3_practice[1].question = "2. Seu amigo, que estará na festa, pergunta se você vai até lá. Qual verbo ele usa?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "がっこう へ いきます", translation: "Vou à escola.", chunks: ["がっこう", "へ", "いきます"] },
+        { sentenceJp: "うち に かえります", translation: "Volto para casa.", chunks: ["うち", "に", "かえります"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Seu chefe pergunta para onde você vai depois do trabalho.",
+        npcName: "Chefe",
+        npcMessage: "このあと、どこ へ いきます か。 (Para onde você vai depois?)",
+        options: [
+            { text: "うち へ かえります。", feedback: "A resposta informa que você voltará para casa.", isCorrect: true },
+            { text: "うち へ きます。", feedback: "A escolha de 来ます depende de o ponto de referência ser a casa do interlocutor; não é a resposta esperada neste cenário.", isCorrect: false },
+            { text: "パン を たべます。", feedback: "A frase não informa o destino do deslocamento.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual é a diferença básica entre 行きます e 来ます?";
+    module.stage5_quiz[1].question = "Qual é o significado de 行きます（いきます）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 来ます（きます）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 帰ります（かえります）?";
+    module.stage5_quiz[4].question = "Qual afirmação descreve へ e に com verbos de movimento?";
+    module.stage5_quiz[4].options = [
+        "As duas podem marcar o destino; へ destaca a direção e に o ponto de chegada.",
+        "São usadas apenas para contar animais pequenos.",
+        "São formas arcaicas que não aparecem no cotidiano."
+    ];
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

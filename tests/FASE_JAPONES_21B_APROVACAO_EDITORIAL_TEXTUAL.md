@@ -293,7 +293,19 @@ As decisões usam a tabela de horários do *Genki I* (p. 49), com evidência ind
 
 ## Próximo lote automático
 
-Continuar no módulo A1-25 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+Continuar no módulo A1-26 e seguintes, repetindo localização de fonte, correção, ledger, testes e remoção granular de avisos.
+
+## Lote A1-25
+
+| Resultado | Alvos |
+|---|---:|
+| Aprovados sem alteração | 0 |
+| Corrigidos com evidência localizada | 16 |
+| Inconclusivos remanescentes no módulo | 0 |
+
+O módulo de movimento agora trata `行きます`, `来ます` e `帰ります` como verbos dependentes de ponto de referência, sem uma definição absoluta de “vir”. A comparação entre へ e に foi reduzida a seu uso inicial como marcadores de destino, e as construções passam a praticar deslocamentos em vez de desejos ainda não ensinados.
+
+As decisões usam os paradigmas e exemplos de `行く`, `来る` e `帰る` do *Genki I* (pp. 88–89), com uma segunda família editorial (*Tobira*, p. 40) para conferir exemplos de deslocamento e retorno. Após a propagação, o ledger global contém 6.182 aprovações, 903 correções e 16.449 casos inconclusivos. Os vinte e cinco módulos já auditados somam 485 alvos canônicos sustentados; neste lote, 16 alvos canônicos e duas projeções derivadas deixaram a fila aberta.
 
 ## Lote A1-24
 

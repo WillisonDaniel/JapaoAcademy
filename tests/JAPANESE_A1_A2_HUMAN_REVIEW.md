@@ -29,7 +29,7 @@ Conteúdo criado na Fase 3B. O status `pending-human-review` indica que a valida
 | a1_mod_22 | stage1_context.audio | 今日は月曜日です。 | Kyou wa getsuyoubi desu. | Hoje é segunda-feira. | corrected |
 | a1_mod_23 | stage1_context.audio | 昨日、映画を見ました。 | Kinou, eiga o mimashita. | Ontem, assisti a um filme. | corrected |
 | a1_mod_24 | stage1_context.audio | ご飯を食べます。 | Gohan o tabemasu. | Como arroz. | corrected |
-| a1_mod_25 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | pending-human-review |
+| a1_mod_25 | stage1_context.audio | 学校へ行きます。 | Gakkou e ikimasu. | Vou à escola. | corrected |
 | a1_mod_26 | stage1_context.audio | 電車で行きます。 | Densha de ikimasu. | Vou de trem. | pending-human-review |
 | a1_mod_27 | stage1_context.audio | 駅はどこですか。 | Eki wa doko desu ka. | Onde fica a estação? | pending-human-review |
 | a1_mod_28 | stage1_context.audio | 本があります。 | Hon ga arimasu. | Há um livro. | pending-human-review |
