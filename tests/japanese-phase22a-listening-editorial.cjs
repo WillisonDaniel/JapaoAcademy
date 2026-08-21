@@ -57,5 +57,5 @@ for (const [id, [japanese, romaji, translation]] of expected) {
     assert.equal(upstream.resolutionPhase, '22A');
 }
 
-assert.match(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8'), /idiomas-academy-v50/);
+assert.match(fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8'), /idiomas-academy-v51/);
 console.log('Fase 22A: 319/319 trechos de Escuta sustentados; 29 aprovados, 290 corrigidos e nenhuma pendência.');

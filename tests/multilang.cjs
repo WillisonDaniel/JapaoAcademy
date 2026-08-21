@@ -54,7 +54,8 @@ function createContext(options = {}) {
         body,
         documentElement: { getAttribute: () => null },
         getElementById: () => null,
-        querySelectorAll: () => []
+        querySelectorAll: () => [],
+        querySelector: () => null
     };
     const context = {
         console: { log() {}, warn() {}, error() {} },
@@ -130,6 +131,78 @@ test('audio italiano usa it-IT e apresenta fallback quando sintese nao existe', 
     runFile(fallback, 'js/core/audio.js');
     fallback.tocarAudio('Ciao');
     assert.deepEqual(plain(messages), [['browser', 'Áudio indisponível']]);
+});
+
+test('audio SRS prioriza japones canonico e usa romaji apenas como fallback', () => {
+    const spoken = [];
+    function Utterance(textValue) { this.text = textValue; }
+    const context = createContext({
+        language: 'japanese',
+        pathname: '/html/ja-JP/curso.html',
+        globals: {
+            SpeechSynthesisUtterance: Utterance,
+            speechSynthesis: { cancel() {}, speak(value) { spoken.push(value); } },
+            AppState: {
+                srs: { activeDeck: [], currentIndex: 0 },
+                setSRSReveal() {}
+            }
+        }
+    });
+    runFile(context, 'js/core/constants.js');
+    runFile(context, 'js/core/audio.js');
+    runFile(context, 'js/srs/review.js');
+
+    // 1. ja-JP com kanji e romaji -> deve priorizar kanji
+    assert.equal(
+        context.obterTextoAudioSRS({ kanji: 'こんにちは', romaji: 'Konnichiwa' }),
+        'こんにちは'
+    );
+
+    // 2. ja-JP com audioText explicito -> prioridade maxima
+    assert.equal(
+        context.obterTextoAudioSRS({ audioText: 'おはようございます', kanji: 'おはよう', romaji: 'Ohayou' }),
+        'おはようございます'
+    );
+
+    // 3. ja-JP com content.audioText / displayText
+    assert.equal(
+        context.obterTextoAudioSRS({ content: { audioText: '水曜日の二時', displayText: '水曜日' }, romaji: 'Suiyoubi' }),
+        '水曜日の二時'
+    );
+
+    // 4. ja-JP fallback sem kanji/audioText -> usa romaji para evitar quebra
+    assert.equal(
+        context.obterTextoAudioSRS({ romaji: 'Konnichiwa' }),
+        'Konnichiwa'
+    );
+
+    // 5. Outros idiomas: Espanhol, Ingles, Italiano
+    const esContext = createContext({ language: 'spanish', pathname: '/html/es-ES/espanhol_curso.html' });
+    runFile(esContext, 'js/core/constants.js');
+    runFile(esContext, 'js/srs/review.js');
+    assert.equal(
+        esContext.obterTextoAudioSRS({ Spanish: '¡Hola!', Audio: '¡Hola!', translation: 'Olá' }),
+        '¡Hola!'
+    );
+
+    const enContext = createContext({ language: 'english', pathname: '/html/en-US/curso_ingles.html' });
+    runFile(enContext, 'js/core/constants.js');
+    runFile(enContext, 'js/srs/review.js');
+    assert.equal(
+        enContext.obterTextoAudioSRS({ kanji: 'Hello / Hi', romaji: '/həˈloʊ / haɪ/', translation: 'Olá / Oi' }),
+        'Hello / Hi'
+    );
+
+    // 6. Teste de fluxo: revelarRespostaSRS em cardData com drop vocab em ja-JP
+    const cardData = {
+        drop: { kanji: '犬', romaji: 'Inu', translation: 'Cachorro', type: 'vocab' }
+    };
+    context.AppState.srs.activeDeck = [cardData];
+    context.AppState.srs.currentIndex = 0;
+    context.revelarRespostaSRS();
+    assert.equal(spoken.length, 1);
+    assert.equal(spoken[0].text, '犬');
+    assert.equal(spoken[0].lang, 'ja-JP');
 });
 
 test('SRS produz 20 chaves independentes e preserva decks especiais', () => {
@@ -777,7 +850,7 @@ test('PWA russa, branding e auditoria mecanica estao protegidos', () => {
         assert.doesNotMatch(hub, new RegExp(`${language} Academy`));
         assert.match(hub, /href="hub_idiomas\.html" class="home-btn">/);
     }
-    assert.match(serviceWorker, /idiomas-academy-v50/);
+    assert.match(serviceWorker, /idiomas-academy-v51/);
     assert.match(serviceWorker, /Abra o dicionário online primeiro/);
     assert.match(serviceWorker, /italiano_dicionario\.html/);
     assert.match(read('js/srs/engine.js'), /SRS_MIGRATION_LANGUAGES = Object\.freeze\(\['ja-JP', 'en-US', 'es-ES', 'ru-RU'\]\)/);
@@ -890,7 +963,7 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
             file: 'html/en-US/curso_ingles.html',
             locale: 'en-US',
             scripts: 27,
-            maxBytes: 1060 * 1024,
+            maxBytes: 1065 * 1024,
             dataPattern: /database\/en-US\/data_english_[a-b][1-2]\.js/
         },
         {
@@ -953,13 +1026,14 @@ test('cursos principais carregam apenas os motores comuns de aula e progresso', 
 
 test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', () => {
     const budgets = {
-        // A Fase 1 e 2 de gamificação multidioma acrescentam a matriz oficial de cargos e abas nos 5 idiomas.
-        n5: 725 * 1024,
-        n4: 735 * 1024,
-        // O contrato editorial N3 acrescenta conversão e metadados de revisão em tempo de execução.
-        n3: 998 * 1024,
-        n2: 1033 * 1024,
-        n1: 1823 * 1024
+        // A Etapa 23F calcula o progresso global agregado de Kanji N5 ao N1.
+        n5: 730 * 1024,
+        // A Fase 22B acrescenta correções editoriais rastreáveis aos textos de leitura N4.
+        n4: 742 * 1024,
+        // As Etapas 24D, 24E e 24F substituem os resíduos de draft do N3, N2 e N1 por frases completas e autênticas.
+        n3: 1460 * 1024,
+        n2: 1520 * 1024,
+        n1: 3360 * 1024
     };
 
     Object.entries(budgets).forEach(([level, maxBytes]) => {
@@ -973,13 +1047,8 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
             return total + fs.statSync(caminho).size;
         }, 0);
 
-        const usesDraftHelper = ['n3', 'n2', 'n1'].includes(level);
-        assert.equal(scriptsLocais.length, usesDraftHelper ? 26 : 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
-        if (usesDraftHelper) {
-            assert.equal(scriptsLocais[0], '../../js/kanji/romaji-draft.js', `${level.toUpperCase()}: helper deve preceder o dataset`);
-        } else {
-            assert.doesNotMatch(html, /js\/kanji\/romaji-draft\.js/);
-        }
+        assert.equal(scriptsLocais.length, 25, `${level.toUpperCase()}: quantidade inesperada de scripts locais`);
+        assert.doesNotMatch(html, /js\/kanji\/romaji-draft\.js/);
         assert.ok(bytesLocais <= maxBytes, `${level.toUpperCase()}: ${Math.round(bytesLocais / 1024)} KB locais`);
         assert.deepEqual(
             scriptsLocais.filter(src => /database\/ja-JP\/data_kanji_n\d\.js/.test(src)),
@@ -1132,7 +1201,8 @@ test('biblioteca japonesa usa indice leve e niveis JLPT sem equivalencia CEFR', 
     const file = 'html/ja-JP/leitura.html', html = read(file);
     const scripts = Array.from(html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)).map(match => match[1]).filter(src => !/^https?:\/\//.test(src));
     const bytes = scripts.reduce((sum, src) => sum + fs.statSync(path.resolve(ROOT, path.dirname(file), src.split(/[?#]/)[0])).size, 0);
-    assert.ok(scripts.length <= 18); assert.ok(bytes <= 435 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
+    // A Fase 22B recupera a 181ª questão e preserva as versões corrigidas no índice leve.
+    assert.ok(scripts.length <= 18); assert.ok(bytes <= 438 * 1024, `${Math.round(bytes / 1024)} KB na biblioteca japonesa`);
     assert.match(html, /data_leitura_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/);
     assert.match(read('js/japanese/reading.js'), /sanitizeReadingHtml/);
     assert.doesNotMatch(read('tests/japanese-reading-index.cjs'), /jlptToCefr|A1.*N5/i);

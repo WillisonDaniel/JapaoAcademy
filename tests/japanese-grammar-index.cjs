@@ -31,7 +31,6 @@ function loadCourse(level) {
 function loadKanji(level) {
     const sandbox = context();
     const number = level.slice(1);
-    if (['N3', 'N2', 'N1'].includes(level)) vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/kanji/romaji-draft.js'), 'utf8'), sandbox);
     const file = `database/ja-JP/data_kanji_n${number}.js`;
     vm.runInContext(`${fs.readFileSync(path.join(ROOT, file), 'utf8')}\n;globalThis.__data = kanjiN${number}Data;`, sandbox, { filename: file });
     return JSON.parse(JSON.stringify(sandbox.__data));

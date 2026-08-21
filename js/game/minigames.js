@@ -381,7 +381,7 @@ function nextGameCard() {
         if (isEnglishMinigame()) {
             input.placeholder = "Digite a tradução em português...";
         } else {
-            input.placeholder = "Digite em romaji ou português...";
+            input.placeholder = "Digite a leitura em Romaji ou Kana...";
         }
         if (inputMode === 'typing') input.focus();
     }

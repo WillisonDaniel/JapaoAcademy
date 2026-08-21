@@ -38,7 +38,7 @@ npm test
 - independência das 20 combinações de decks SRS; a migração v2 permanece congelada nos 16 decks dos quatro idiomas legados e preserva seus backups;
 - paridade dos índices leves de cursos, dicionários e minigame com os datasets completos;
 - auditorias editoriais técnicas russa e italiana, com relatórios sincronizados e limites de certificação documentados;
-- instalação do PWA, limite de 12 MB, dependências do precache, atualização de cache e contrato offline do shell, Dashboard, área russa e Italiano A1;
+- instalação do PWA, orçamento formalizado (meta <= 15,0 MB, hard cap <= 16,0 MB), dependências do precache, atualização de cache e contrato offline do shell, Dashboard, área russa e Italiano A1-B2;
 - correcoes criticas da Etapa 22, incluindo B2 modulo 12, Firebase, Service Worker e rolagem das aulas.
 
 O processo termina com codigo diferente de zero se qualquer verificacao falhar, permitindo seu uso futuro em integracao continua.

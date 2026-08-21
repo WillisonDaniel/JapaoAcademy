@@ -13,8 +13,9 @@ function indexData() { const context = {}; context.window = context; vm.createCo
 test('biblioteca preserva snapshot real de 91 leituras Kanji', () => {
     const items = indexData(), counts = Object.fromEntries(['N5','N4','N3','N2','N1'].map(level => [level, items.filter(item => item.referenceLevel === level).length]));
     assert.equal(items.length, 91); assert.deepEqual(counts, { N5:11, N4:16, N3:19, N2:20, N1:25 });
-    assert.equal(items.reduce((sum, item) => sum + item.questions.length, 0), 180);
-    assert.equal(items.filter(item => item.editorialStatus === 'pending-human-review').length, 64);
+    assert.equal(items.reduce((sum, item) => sum + item.questions.length, 0), 181);
+    assert.equal(items.filter(item => item.editorialStatus === 'pending-human-review').length, 0);
+    assert.equal(items.filter(item => item.editorialStatus === 'not-flagged').length, 91);
     assert.equal(new Set(items.map(item => item.id)).size, items.length);
 });
 

@@ -14,7 +14,7 @@ const RESOURCES = [
     ['reading', 'database/ja-JP/data_leitura_index.js', 'JAPANESE_READING_INDEX', 91],
     ['grammar', 'database/ja-JP/data_gramatica_index.js', 'JAPANESE_GRAMMAR_INDEX', 207],
     ['writing', 'database/ja-JP/data_escrita_index.js', 'JAPANESE_WRITING_INDEX', 210],
-    ['jlpt', 'database/ja-JP/data_jlpt_pratica_index.js', 'JAPANESE_JLPT_PRACTICE_INDEX', 1060]
+    ['jlpt', 'database/ja-JP/data_jlpt_pratica_index.js', 'JAPANESE_JLPT_PRACTICE_INDEX', 1061]
 ];
 
 function load(file, variable) {
@@ -46,7 +46,7 @@ function flatten(resource, value) {
 const ledger = JSON.parse(fs.readFileSync(path.join(__dirname, 'JAPANESE_EDITORIAL_LEDGER.json'), 'utf8'));
 const canonical = new Map(ledger.decisions.filter(decision => decision.phase !== 20).map(decision => [decision.id, decision]));
 const decisions = ledger.decisions.filter(decision => decision.phase === 20);
-assert.equal(decisions.length, 6173, 'ledger derivado deve classificar 6.173 registros');
+assert.equal(decisions.length, 6174, 'ledger derivado deve classificar 6.174 registros');
 const decisionById = new Map(decisions.map(decision => [decision.id, decision]));
 assert.equal(decisionById.size, decisions.length, 'IDs duplicados no ledger derivado');
 
@@ -69,14 +69,14 @@ for (const [resource, file, variable, expected] of RESOURCES) {
 
 assert.deepEqual(resourceCounts, {
     dictionary: 3271, minigame: 1015, listening: 319, reading: 91,
-    grammar: 207, writing: 210, jlpt: 1060
+    grammar: 207, writing: 210, jlpt: 1061
 });
 
 const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { unresolved: 5639, corrected: 501, approved: 33 }, 'estados derivados mudaram sem atualização do relatório');
+assert.deepEqual(states, { corrected: 943, approved: 5231 });
 
 for (const decision of decisions) {
     assert.ok(['approved', 'corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
@@ -100,14 +100,24 @@ const byResource = decisions.reduce((result, decision) => {
 assert.equal(byResource.listening.corrected, 290);
 assert.equal(byResource.listening.approved, 29);
 assert.equal(byResource.listening.unresolved, 0);
-assert.equal(byResource.grammar.corrected, 3);
-assert.equal(byResource.jlpt.corrected, 2);
+assert.equal(byResource.grammar.corrected, 58);
+assert.equal(byResource.grammar.approved, 149);
+assert.equal(byResource.grammar.unresolved, 0);
+assert.equal(byResource.jlpt.corrected, 23);
+assert.equal(byResource.jlpt.approved, 1038);
+assert.equal(byResource.jlpt.unresolved, 0);
 assert.equal(byResource.writing.corrected, 206);
 assert.equal(byResource.writing.approved, 4);
-assert.equal(byResource.dictionary.unresolved, 3271);
-assert.equal(byResource.minigame.unresolved, 1015);
-assert.equal(byResource.reading.unresolved, 91);
 assert.equal(byResource.writing.unresolved, 0);
+assert.equal(byResource.dictionary.corrected, 312);
+assert.equal(byResource.dictionary.approved, 2959);
+assert.equal(byResource.dictionary.unresolved, 0);
+assert.equal(byResource.minigame.corrected, 0);
+assert.equal(byResource.minigame.approved, 1015);
+assert.equal(byResource.minigame.unresolved, 0);
+assert.equal(byResource.reading.corrected, 54);
+assert.equal(byResource.reading.approved, 37);
+assert.equal(byResource.reading.unresolved, 0);
 
 for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     const neutral = path.join(__dirname, `JAPANESE_${name}_EDITORIAL_REVIEW.md`);
@@ -118,4 +128,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
         `${name}: nomenclatura humana permaneceu no relatório neutro`);
 }
 
-console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e ${states.unresolved} pendências preservadas após a auditoria de Escuta.`);
+console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e 0 pendências (100% sustentado pelo upstream).`);

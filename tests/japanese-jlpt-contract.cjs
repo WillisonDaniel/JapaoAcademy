@@ -10,12 +10,12 @@ const tests = [], test = (name, fn) => tests.push([name, fn]);
 function indexData() { const sandbox = {}; sandbox.window = sandbox; vm.createContext(sandbox); vm.runInContext(`${read('database/ja-JP/data_jlpt_pratica_index.js')}\n;globalThis.x=JAPANESE_JLPT_PRACTICE_INDEX`, sandbox); return JSON.parse(JSON.stringify(sandbox.x)); }
 function controller() { const sandbox = { console: { log() {}, warn() {}, error() {} }, Map, Set, Date, clearInterval, setInterval }; vm.createContext(sandbox); vm.runInContext(`${read('js/japanese/jlpt.js')}\n;globalThis.x={normalizeJlptAnswer,selectJlptSession,jlptOriginHref}`, sandbox); return sandbox.x; }
 
-test('índice preserva 1060 questões explícitas e a exclusão N4 conhecida', () => {
-    const data = indexData(), review = read('tests/JAPANESE_JLPT_EDITORIAL_REVIEW.md'); assert.equal(data.length, 1060); assert.equal(new Set(data.map(item => item.id)).size, 1060); assert.match(review, /Questões examinadas: \*\*1061\*\*/); assert.match(review, /Questões publicadas: \*\*1060\*\*/); assert.match(review, /Muito gentis \(tanto親切\)/);
+test('índice preserva 1061 questões explícitas sem exclusões editoriais', () => {
+    const data = indexData(), review = read('tests/JAPANESE_JLPT_EDITORIAL_REVIEW.md'); assert.equal(data.length, 1061); assert.equal(new Set(data.map(item => item.id)).size, 1061); assert.match(review, /Questões examinadas: \*\*1061\*\*/); assert.match(review, /Questões publicadas: \*\*1061\*\*/); assert.match(review, /Exclusões: \*\*0\*\*/);
 });
 
 test('contagens por nível e origem correspondem aos datasets', () => {
-    const data = indexData(), counts = Object.fromEntries(['N5', 'N4', 'N3', 'N2', 'N1'].map(level => [level, data.filter(item => item.level === level).length])); assert.deepEqual(counts, { N5: 122, N4: 181, N3: 217, N2: 240, N1: 300 }); assert.equal(data.filter(item => item.origin === 'module-quiz').length, 880); assert.equal(data.filter(item => item.origin === 'reading-comprehension').length, 180);
+    const data = indexData(), counts = Object.fromEntries(['N5', 'N4', 'N3', 'N2', 'N1'].map(level => [level, data.filter(item => item.level === level).length])); assert.deepEqual(counts, { N5: 122, N4: 182, N3: 217, N2: 240, N1: 300 }); assert.equal(data.filter(item => item.origin === 'module-quiz').length, 880); assert.equal(data.filter(item => item.origin === 'reading-comprehension').length, 181);
 });
 
 test('escolhas sempre contêm o gabarito e itens digitados preservam resposta explícita', () => {
@@ -40,6 +40,51 @@ test('respostas ficam em memória e nenhuma progressão paralela é alterada', (
 
 test('página carrega índice leve e PWA inclui os três recursos', () => {
     const html = read('html/ja-JP/jlpt.html'), sw = read('sw.js'), hub = read('hub_japones.html'); assert.match(html, /data_jlpt_pratica_index\.js/); assert.doesNotMatch(html, /data_kanji_n[1-5]\.js/); assert.match(hub, /html\/ja-JP\/jlpt\.html/); ['html/ja-JP/jlpt.html', 'js/japanese/jlpt.js', 'database/ja-JP/data_jlpt_pratica_index.js'].forEach(file => assert.match(sw, new RegExp(file.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))));
+});
+
+test('contagem de questões JLPT é dinâmica a partir do índice sem número hardcoded', () => {
+    const html = read('html/ja-JP/jlpt.html');
+    const hub = read('hub_japones.html');
+    const source = read('js/japanese/jlpt.js');
+
+    assert.doesNotMatch(html, /1[.\s]?060\s*questões/i);
+    assert.doesNotMatch(hub, /1[.\s]?060\s*questões/i);
+    assert.match(html, /id="jlpt-total-count"/);
+
+    const createElement = (props = {}) => ({
+        textContent: '',
+        value: '',
+        disabled: false,
+        addEventListener() {},
+        ...props
+    });
+    const elements = {
+        'jlpt-total-count': createElement({ textContent: 'Banco de questões JLPT' }),
+        'jlpt-availability': createElement(),
+        'jlpt-start': createElement(),
+        'jlpt-previous': createElement(),
+        'jlpt-next': createElement(),
+        'jlpt-finish': createElement(),
+        'jlpt-new-session': createElement(),
+        'jlpt-level': createElement({ value: 'N5' }),
+        'jlpt-origin': createElement({ value: 'all' }),
+        'jlpt-count': createElement({ value: '10' })
+    };
+    const document = {
+        getElementById: id => elements[id] || null,
+        querySelectorAll: () => []
+    };
+    const sandbox = {
+        document,
+        window: { addEventListener() {} },
+        JAPANESE_JLPT_PRACTICE_INDEX: new Array(1061).fill({ level: 'N5', origin: 'all' })
+    };
+    sandbox.window.document = document;
+    vm.createContext(sandbox);
+    vm.runInContext(source, sandbox);
+    sandbox.initializeJapaneseJlpt();
+
+    assert.equal(elements['jlpt-total-count'].textContent, '1.061 questões');
 });
 
 let passed = 0;

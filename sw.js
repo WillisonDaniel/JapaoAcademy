@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'idiomas-academy-';
-const CACHE_NAME = 'idiomas-academy-v50';
+const CACHE_NAME = 'idiomas-academy-v51';
 
 const ASSETS_TO_CACHE = [
     './',
@@ -96,7 +96,6 @@ const ASSETS_TO_CACHE = [
     './js/core/dictionary.js',
     './js/kanji/kanji-canvas.js',
     './js/kanji/kanji-render.js',
-    './js/kanji/romaji-draft.js',
     './js/japanese/listening.js',
     './js/japanese/reading.js',
     './js/japanese/grammar.js',

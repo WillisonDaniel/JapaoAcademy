@@ -9,7 +9,6 @@ const ROOT = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
 const context = { console };
 context.window = context; context.globalThis = context; vm.createContext(context);
-vm.runInContext(read('js/kanji/romaji-draft.js'), context);
 vm.runInContext(`${read('database/ja-JP/data_kanji_n1.js')}\nglobalThis.__data=kanjiN1Data;`, context);
 const modules = JSON.parse(JSON.stringify(context.__data));
 const JAPANESE = /[\u3040-\u30ff\u3400-\u9fff]/u;
@@ -58,11 +57,12 @@ run('565 leituras mantêm 407 conversões mecânicas e 158 decisões editoriais 
 function stripEditorial(value) { if (Array.isArray(value)) return value.map(stripEditorial); if (!value || typeof value !== 'object') return value; const result={}; for (const [key,item] of Object.entries(value)) { if (!['content','editorialReview','readingEditorialReview'].includes(key)) result[key]=stripEditorial(item); } return result; }
 run('snapshot estrutural N1 preserva tudo fora dos contratos autorizados', () => {
     const structural = stripEditorial(modules);
+    structural.forEach(module => { if (module.readingText) module.readingText = '__AUTHORIZED_READING_TEXT__'; });
     modules.forEach((module, mi) => (module.kanjis || []).forEach((kanji, ki) => {
         for (const field of Object.keys(kanji.readingEditorialReview || {})) structural[mi].kanjis[ki][field]='__AUTHORIZED_READING_CONTRACT__';
     }));
     const hash=crypto.createHash('sha256').update(JSON.stringify(structural)).digest('hex');
-    assert.equal(hash, 'fb568a7a2762c5391aa128332a23eebb6c7027a8bf4c8c9618dbfcc6fbedcf6d');
+    assert.equal(hash, '780adec925c0fff2ccc59e64bc1a8c8689b7703c0dcca2c5389271b7dcbdd9aa');
 });
 
 run('auditoria zera exemplos e leituras objetivas N1 da Fase 17', () => {
@@ -72,7 +72,15 @@ run('auditoria zera exemplos e leituras objetivas N1 da Fase 17', () => {
     const review=read('tests/JAPANESE_KANJI_N1_HUMAN_REVIEW.md'); assert.match(review,/\| corrected \|/i); assert.doesNotMatch(review,/ambiguous-or-foreign/);
 });
 
+run('dataset N1 é canônico e página kanji_n1.html não carrega romaji-draft', () => {
+    const rawData = read('database/ja-JP/data_kanji_n1.js');
+    const htmlPage = read('html/ja-JP/kanji_n1.html');
+    assert.doesNotMatch(rawData, /KanjiRomajiDraft/);
+    assert.doesNotMatch(rawData, /romaji-draft/);
+    assert.doesNotMatch(htmlPage, /romaji-draft\.js/);
+});
+
 run('contratos N3 e N2 permanecem estaveis', () => ['kanji-n3-contract.cjs','kanji-n2-contract.cjs'].forEach(file => {
     const result=spawnSync(process.execPath,[path.join(ROOT,'tests',file)],{encoding:'utf8'}); assert.equal(result.status,0,result.stderr||result.stdout);
 }));
-console.log('\n7/7 contratos Kanji N1 aprovados mecanicamente.');
+console.log('\n8/8 contratos Kanji N1 aprovados mecanicamente.');

@@ -34,7 +34,7 @@ phase17.forEach(decision => {
     assert.ok(decision.references.some(reference => reference.sourceId === 'edrdg-kanjidic2'), `${decision.id}: KANJIDIC2 não referenciado`);
 });
 
-const n1 = load('database/ja-JP/data_kanji_n1.js', 'kanjiN1Data', ['js/kanji/romaji-draft.js']);
+const n1 = load('database/ja-JP/data_kanji_n1.js', 'kanjiN1Data');
 const n1Decisions = phase17.filter(decision => decision.target.file.endsWith('data_kanji_n1.js'));
 assert.equal(n1Decisions.length, 158, 'fila N1 incompleta');
 for (const decision of n1Decisions) {

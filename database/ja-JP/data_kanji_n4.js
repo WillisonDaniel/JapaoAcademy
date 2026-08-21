@@ -7580,3 +7580,43 @@ kanjiN4Data.forEach(module => (module.kanjis || []).forEach(kanji => {
         };
     }
 }));
+
+// Auditoria editorial da Fase 22B: textos de leitura e compreensão.
+(() => {
+    const byModule = moduleNumber => kanjiN4Data.find(item => Number(item.module) === moduleNumber);
+    const patch = (moduleNumber, values) => Object.assign(byModule(moduleNumber).readingText, values);
+
+    const kindAnswer = 'Muito gentis (とても親切)';
+    const kindQuestion = byModule(1).readingText.comprehensionQuiz[0];
+    kindQuestion.options[0] = kindAnswer;
+    kindQuestion.a = kindAnswer;
+    patch(2, { romaji: 'Nihon no haru ni wa sakura ga sakimasu. Natsu no umi wa totemo aokute kirei desu. Aki wa kudamono ga oishiku nari, fuyu wa yuki ga furimasu. Asa kara yoru made kisetsu no henka o tanoshimimasu.' });
+    patch(3, { translation: 'Nas férias de verão fui para uma ilha perto do mar. Enquanto caminhava pelas florestas e bosques da ilha, soprava um vento fresco. Havia peixes no lago tranquilo, e a paisagem era muito bonita.' });
+    patch(4, { romaji: 'Toukyou no eki o dete, higashi no houkou e mukatte arukimashita. Michi no migigawa ni ookii tatemono ga miemashita. Mokutekichi wa eki kara amari tookunakute, totemo chikakatta desu.' });
+    patch(7, { translation: 'Todas as manhãs vou de bicicleta de casa até a estação. Na estação, faço baldeação para o trem e desço em frente à empresa. Na volta, às vezes caminho para cuidar da saúde.' });
+    patch(9, { translation: 'A bagagem da viagem estava muito pesada, mas o quarto do hotel era amplo e iluminado. Quando escureceu, jantei em um estabelecimento tranquilo ali perto.' });
+    patch(10, { romaji: 'Watashi wa Toukyou no kaisha de kaishain to shite hataraite imasu. Douryou to issho ni atarashii shigoto o susumete imasu. Shuumatsu wa nigiyaka na machi de kaimono o shite rifureshu shimasu.' });
+    patch(11, { romaji: 'Maitsuki hajime ni apaato no yachin o ginkou de haraimasu. Kongetsu wa atarashii hon o karite, tomodachi ni suki na CD o kashite agemashita. Hitsuyou na mono dake o kau you ni shite imasu.' });
+    const teaAnswer = 'Bebeu chá quente e dormiu (暖かいお茶を飲んで寝た)';
+    const teaQuestion = byModule(12).readingText.comprehensionQuiz[1];
+    teaQuestion.options[0] = teaAnswer;
+    teaQuestion.a = teaAnswer;
+    patch(15, { romaji: 'Mainichi nihongo no nooto o tsukutte, daiji na kotoba o oboete imasu. Isogashii toki mo wasurenai you ni, techou o mochiaruite imasu. Shourai, Nihon no shiten de hataraku no ga yume desu.' });
+
+    const review = byModule(16).readingText;
+    review.japanese = 'このN4の<ruby>参考<rt>さんこう</rt></ruby>レベルには、147<ruby>字<rt>じ</rt></ruby>の<ruby>異<rt>こと</rt></ruby>なる<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>収録<rt>しゅうろく</rt></ruby>されています。<ruby>復習表<rt>ふくしゅうひょう</rt></ruby>で<ruby>読<rt>よ</rt></ruby>みと<ruby>意味<rt>いみ</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>し、<ruby>例文<rt>れいぶん</rt></ruby>の<ruby>中<rt>なか</rt></ruby>で<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>を<ruby>見直<rt>みなお</rt></ruby>します。';
+    review.romaji = 'Kono N4 no sankou reberu ni wa, 147-ji no kotonaru kanji ga shuuroku sarete imasu. Fukushuu-hyou de yomi to imi o kakunin shi, reibun no naka de tsukaikata o minaoshimasu.';
+    review.translation = 'Este nível de referência N4 reúne 147 caracteres Kanji únicos. A tabela de revisão permite conferir suas leituras e significados e rever o uso em frases de exemplo.';
+    review.comprehensionQuiz = [
+        {
+            q: 'Quantos caracteres Kanji únicos aparecem neste nível de referência N4?',
+            options: ['147 caracteres únicos', 'Mais de 200 caracteres', '50 caracteres', '500 caracteres'],
+            a: '147 caracteres únicos', type: 'choice'
+        },
+        {
+            q: 'O que deve ser revisto nas frases de exemplo (例文)?',
+            options: ['O uso dos kanjis (使い方)', 'Somente a pontuação', 'A velocidade de escrita', 'A ordem dos módulos'],
+            a: 'O uso dos kanjis (使い方)', type: 'choice'
+        }
+    ];
+})();

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-21T00:00:00-03:00",
+  "summary": {
+    "totalLedgerDecisions": 23537,
+    "totalLedgerUnresolved": 5368,
+    "canonicalUnresolvedCount": 0,
+    "derivedUnresolvedCount": 5368,
+    "byLevel": {
+      "Hiragana": 0,
+      "Katakana": 0,
+      "N5": 0,
+      "N4": 0,
+      "N3": 0,
+      "N2": 0,
+      "N1": 0
+    },
+    "byPriorityTier": {
+      "Hiragana": 0,
+      "Katakana": 0,
+      "Kanji N5": 0,
+      "Kanji N4": 0,
+      "Kanji N3": 0,
+      "Kanji N2": 0,
+      "Kanji N1 (Módulos 1–5)": 0,
+      "Kanji N1 (Módulos 6–10)": 0,
+      "Kanji N1 (Módulos 11–15)": 0,
+      "Kanji N1 (Módulos 16–20)": 0,
+      "Kanji N1 (Módulos 21–25)": 0
+    },
+    "byType": {
+      "module metadata": 0,
+      "guidance": 0,
+      "vocabulary": 0,
+      "quiz": 0,
+      "reading": 0,
+      "example": 0,
+      "meaning": 0,
+      "grammar": 0
+    }
+  },
+  "evidencePolicy": {
+    "FATO LEXICAL OBJETIVO": {
+      "targets": [
+        "reading",
+        "meaning",
+        "vocabulary"
+      ],
+      "requirement": "Fonte lexicográfica ou institucional primária (ex: KANJIDIC2, JMdict, Kanji in Context)."
+    },
+    "GRAMÁTICA / NUANCE / REGISTRO": {
+      "targets": [
+        "grammar",
+        "module metadata"
+      ],
+      "requirement": "Duas famílias editoriais independentes quando necessário (ex: Shinkanzen Bunpo, Quartet, Tobira)."
+    },
+    "NATURALIDADE": {
+      "targets": [
+        "example",
+        "example translation"
+      ],
+      "requirement": "Exige naturalidade e plausibilidade idiomática; não aprovar apenas porque é sintaticamente possível."
+    },
+    "TRADUÇÃO": {
+      "targets": [
+        "meaning",
+        "vocabulary",
+        "example translation"
+      ],
+      "requirement": "Validação do significado contextual em português claro e contemporâneo."
+    },
+    "CULTURA E DIRECIONAMENTO": {
+      "targets": [
+        "guidance",
+        "module metadata"
+      ],
+      "requirement": "Referência institucional e pedagógica apropriada para mnemônicos e guias de traçado."
+    }
+  },
+  "queue": []
+}

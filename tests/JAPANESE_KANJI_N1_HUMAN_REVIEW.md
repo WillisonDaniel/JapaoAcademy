@@ -9,8 +9,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 1 | kanjis[0].examples[1].content | 哲 | 哲人 (tetsujin) | 古代哲人。 | Ancient tetsujin. | Sábio da antiguidade. | pending-human-review |
 | 1 | kanjis[1].examples[0].content | 倫 | 倫理 (rinri) | 倫理てきな判断。 | Rinri-teki na decision. | Decisão ética. | pending-human-review |
 | 1 | kanjis[1].examples[1].content | 倫 | 不倫 (furin) | 不倫のスキャンダル。 | Furin no scandal. | Escândalo de infidelidade. | pending-human-review |
-| 1 | kanjis[2].examples[0].content | 魂 | 魂 (tamashii) | 魂をこめて。 | Tamashii o komete. | Com toda a alma. | pending-human-review |
-| 1 | kanjis[2].examples[1].content | 魂 | 霊魂 (reikon) | 霊魂のいのり。 | Reikon no inori. | Oração pelas almas. | pending-human-review |
+| 1 | kanjis[2].examples[0].content | 魂 | 魂 (tamashii) | すべての情熱を注ぎ込んで魂を込めた作品を作ります。 | Tamashii o komete. | Com toda a alma. | pending-human-review |
+| 1 | kanjis[2].examples[1].content | 魂 | 霊魂 (reikon) | 闘魂を燃やして決勝戦の舞台に挑みます。 | Reikon no inori. | Oração pelas almas. | pending-human-review |
 | 1 | kanjis[3].examples[0].content | 凝 | 凝縮 (gyoushuku) | 本質の凝縮。 | Essence no gyoushuku. | Concentração da essência. | pending-human-review |
 | 1 | kanjis[3].examples[1].content | 凝 | 凝視 (gyoushi) | 目標を凝視。 | Target o gyoushi. | Olhar fixamente o alvo. | pending-human-review |
 | 1 | kanjis[4].examples[0].content | 悟 | 悟り (satori) | 悟りを開く。 | Satori o abrir. | Alcançar a iluminação. | pending-human-review |
@@ -20,8 +20,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 1 | kanjis[6].onyomi | 妄 | leitura: mechanically-convertible-onyomi | モウ (MOU) | MOU (MOU) | proposta: モウ (MOU) | pending-human-review |
 | 1 | kanjis[6].examples[0].content | 妄 | 妄想 (mousou) | 妄想をふかみる。 | Mousou o fukamiru. | Mergulhar em delírios. | pending-human-review |
 | 1 | kanjis[6].examples[1].content | 妄 | 被害妄想 (higaimousou) | 被害妄想になやむ。 | Higaimousou ni nayamu. | Sofrer de paranoia. | pending-human-review |
-| 1 | kanjis[7].examples[0].content | 幻 | 幻覚 (genkaku) | 幻覚をみる。 | Genkaku o miru. | Ter alucinações. | pending-human-review |
-| 1 | kanjis[7].examples[1].content | 幻 | 幻影 (genei) | 幻影を追う。 | Genei o chasing. | Perseguir uma ilusão. | pending-human-review |
+| 1 | kanjis[7].examples[0].content | 幻 | 幻覚 (genkaku) | 砂漠の彼方に美しいオアシスの幻影が見えました。 | Genkaku o miru. | Ter alucinações. | pending-human-review |
+| 1 | kanjis[7].examples[1].content | 幻 | 幻影 (genei) | 目の前に広がる景色が幻想的な雰囲気を醸し出します。 | Genei o chasing. | Perseguir uma ilusão. | pending-human-review |
 | 1 | kanjis[8].examples[0].content | 惑 | 迷惑 (meiwaku) | 迷惑をかける。 | Meiwaku o kakeru. | Causar incômodo. | pending-human-review |
 | 1 | kanjis[8].examples[1].content | 惑 | 惑わす (madowasu) | ひとを惑わす。 | Hito o madowasu. | Confundir as pessoas. | pending-human-review |
 | 1 | kanjis[9].examples[0].content | 愁 | 郷愁 (kyoushuu) | 郷愁にたつ。 | Kyoushuu ni tatsu. | Sentir nostalgia. | pending-human-review |
@@ -297,142 +297,142 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 4 | kanjis[15].examples[1].content | 覇 | 制覇 (seiha) | 世界制覇。 | World seiha. | Conquista da supremacia mundial. | pending-human-review |
 | 4 | kanjis[16].examples[0].content | 唱 | 提唱 (teishou) | トへおルイの提唱。 | Theory no teishou. | Proposição de teoria. | pending-human-review |
 | 4 | kanjis[16].examples[1].content | 唱 | 唱導 (shoudou) | 運動を唱導。 | Movement o shoudou. | Liderar o movimento. | pending-human-review |
-| 4 | kanjis[17].examples[0].content | 牒 | 通牒 (tsuuchou) | ふぃなル通牒。 | Final tsuuchou. | Ultimato final. | pending-human-review |
-| 4 | kanjis[17].examples[1].content | 牒 | 間牒 (kanchou) | 間牒をせんド。 | Kanchou o send. | Enviar o agente secreto. | pending-human-review |
+| 4 | kanjis[17].examples[0].content | 牒 | 通牒 (tsuuchou) | 敵国の暗号通信を傍受して秘密の通牒を解読します。 | Final tsuuchou. | Ultimato final. | pending-human-review |
+| 4 | kanjis[17].examples[1].content | 牒 | 間牒 (kanchou) | 警戒網をかいくぐって敵地に潜入した間牒を捕らえます。 | Kanchou o send. | Enviar o agente secreto. | pending-human-review |
 | 4 | kanjis[18].examples[0].content | 諜 | 諜報 (chouhou) | 諜報あげんクイ。 | Chouhou agency. | Agência de inteligência. | pending-human-review |
 | 4 | kanjis[18].examples[1].content | 諜 | 諜報員 (chouhouin) | せクれト諜報員。 | Secret chouhouin. | Agente secreto. | pending-human-review |
-| 4 | kanjis[19].examples[0].content | 枢 | 中枢 (chuusuu) | ごヴえルんめんトの中枢。 | Government no chuusuu. | Centro decisório do governo. | pending-human-review |
-| 4 | kanjis[19].examples[1].content | 枢 | 枢軸 (suujiku) | 枢軸こく。 | Suujiku-koku. | Países do Eixo. | pending-human-review |
+| 4 | kanjis[19].examples[0].content | 枢 | 中枢 (chuusuu) | 国家の意思決定を担う中枢機関が緊急会合を開きます。 | Government no chuusuu. | Centro decisório do governo. | pending-human-review |
+| 4 | kanjis[19].examples[1].content | 枢 | 枢軸 (suujiku) | 第二次世界大戦で対立した枢軸国の歴史を検証します。 | Suujiku-koku. | Países do Eixo. | pending-human-review |
 | 4 | kanjis[20].onyomi | 閣 | leitura: mechanically-convertible-onyomi | カク (KAKU) | KAKU (KAKU) | proposta: カク (KAKU) | pending-human-review |
-| 4 | kanjis[20].examples[0].content | 閣 | 閣僚 (kakuryou) | 閣僚めえてぃんグ。 | Kakuryou meeting. | Reunião dos membros do gabinete. | pending-human-review |
-| 4 | kanjis[20].examples[1].content | 閣 | 内閣 (naikaku) | 内閣あっプろヴあル。 | Naikaku approval. | Aprovação do gabinete. | pending-human-review |
-| 4 | kanjis[21].examples[0].content | 統 | 統括 (toukatsu) | 企画の統括。 | Project no toukatsu. | Comando geral do projeto. | pending-human-review |
-| 4 | kanjis[21].examples[1].content | 統 | 統治 (touchi) | 国家の統治。 | State no touchi. | Governança do Estado. | pending-human-review |
-| 4 | kanjis[22].examples[0].content | 裁 | 制裁 (seisai) | えクおのみク制裁。 | Economic seisai. | Sanções econômicas. | pending-human-review |
-| 4 | kanjis[22].examples[1].content | 裁 | 制裁措置 (seisai-soshi) | 制裁措置をど。 | Seisai-soshi o do. | Aplicar medidas de sanção. | pending-human-review |
-| 4 | kanjis[23].examples[0].content | 封 | 封鎖 (fuusa) | 港の封鎖。 | Port no fuusa. | Bloqueio do porto. | pending-human-review |
-| 4 | kanjis[23].examples[1].content | 封 | 同封 (doufuu) | ルえってルに同封。 | Letter ni doufuu. | Anexo na carta. | pending-human-review |
-| 4 | kanjis[24].examples[0].content | 鎖 | 鎖国 (sakoku) | えどぺりおドの鎖国。 | Edo period no sakoku. | Isolamento no período Edo. | pending-human-review |
-| 4 | kanjis[24].examples[1].content | 鎖 | 連鎖 (rensa) | 連鎖れあクてぃおん。 | Rensa reaction. | Reação em cadeia. | pending-human-review |
+| 4 | kanjis[20].examples[0].content | 閣 | 閣僚 (kakuryou) | 首相官邸で全閣僚が集まる閣議が開催されます。 | Kakuryou meeting. | Reunião dos membros do gabinete. | pending-human-review |
+| 4 | kanjis[20].examples[1].content | 閣 | 内閣 (naikaku) | 国会の信任を得て新しい内閣が正式に発足しました。 | Naikaku approval. | Aprovação do gabinete. | pending-human-review |
+| 4 | kanjis[21].examples[0].content | 統 | 統括 (toukatsu) | 複数の組織を一つにまとめて事業全体を統括します。 | Project no toukatsu. | Comando geral do projeto. | pending-human-review |
+| 4 | kanjis[21].examples[1].content | 統 | 統治 (touchi) | 主権国家として自国の領土を平和的に統治します。 | State no touchi. | Governança do Estado. | pending-human-review |
+| 4 | kanjis[22].examples[0].content | 裁 | 制裁 (seisai) | 国際法違反に対して厳しい経済制裁が科されます。 | Economic seisai. | Sanções econômicas. | pending-human-review |
+| 4 | kanjis[22].examples[1].content | 裁 | 制裁措置 (seisai-soshi) | 国際社会が協調して制裁措置を厳格に発動します。 | Seisai-soshi o do. | Aplicar medidas de sanção. | pending-human-review |
+| 4 | kanjis[23].examples[0].content | 封 | 封鎖 (fuusa) | 軍事的な衝突を防ぐため海上交通を封鎖します。 | Port no fuusa. | Bloqueio do porto. | pending-human-review |
+| 4 | kanjis[23].examples[1].content | 封 | 同封 (doufuu) | 手紙の封筒に大切な書類を同封して送ります。 | Letter ni doufuu. | Anexo na carta. | pending-human-review |
+| 4 | kanjis[24].examples[0].content | 鎖 | 鎖国 (sakoku) | 長年続いた鎖国政策を解いて外国と通商を始めます。 | Edo period no sakoku. | Isolamento no período Edo. | pending-human-review |
+| 4 | kanjis[24].examples[1].content | 鎖 | 連鎖 (rensa) | 市場の暴落が他の産業へ連鎖的な影響を及ぼします。 | Rensa reaction. | Reação em cadeia. | pending-human-review |
 | 4 | kanjis[25].examples[0].content | 撤 | 撤退 (tettai) | トろおプスの撤退。 | Troops no tettai. | Retirada das tropas. | pending-human-review |
 | 4 | kanjis[25].examples[1].content | 撤 | 撤回 (tekkai) | スたてめんトの撤回。 | Statement no tekkai. | Revogação da declaração. | pending-human-review |
-| 4 | kanjis[26].examples[0].content | 降 | 降伏 (koufuku) | 降伏どクうめんト。 | Koufuku document. | Documento de rendição. | pending-human-review |
-| 4 | kanjis[26].examples[1].content | 降 | 降下 (kouka) | ぱらちゅて降下。 | Parachute kouka. | Salto de paraquedas. | pending-human-review |
-| 4 | kanjis[27].examples[0].content | 屈 | 屈服 (kuppuku) | 敵に屈服。 | Enemy ni kuppuku. | Submeter-se ao inimigo. | pending-human-review |
-| 4 | kanjis[27].examples[1].content | 屈 | 不屈 (fukutsu) | 不屈の精神。 | Fukutsu no spirit. | Espírito indomável. | pending-human-review |
-| 4 | kanjis[28].examples[0].content | 服 | 服従 (fukujuu) | おルでルに服従。 | Order ni fukujuu. | Obediência às ordens. | pending-human-review |
-| 4 | kanjis[28].examples[1].content | 服 | 克服 (kokufuku) | クりスいスの克服。 | Crisis no kokufuku. | Superação da crise. | pending-human-review |
+| 4 | kanjis[26].examples[0].content | 降 | 降伏 (koufuku) | 激しい戦闘の末に敵軍が無条件降伏を受け入れました。 | Koufuku document. | Documento de rendição. | pending-human-review |
+| 4 | kanjis[26].examples[1].content | 降 | 降下 (kouka) | 夜になって冷たい雨が静かに降り始めました。 | Parachute kouka. | Salto de paraquedas. | pending-human-review |
+| 4 | kanjis[27].examples[0].content | 屈 | 屈服 (kuppuku) | 理不尽な圧力に屈服することなく正論を主張します。 | Enemy ni kuppuku. | Submeter-se ao inimigo. | pending-human-review |
+| 4 | kanjis[27].examples[1].content | 屈 | 不屈 (fukutsu) | どんな困難にも決して負けない不屈の闘志を燃やします。 | Fukutsu no spirit. | Espírito indomável. | pending-human-review |
+| 4 | kanjis[28].examples[0].content | 服 | 服従 (fukujuu) | 新しい季節に合わせて爽やかな洋服を買い揃えます。 | Order ni fukujuu. | Obediência às ordens. | pending-human-review |
+| 4 | kanjis[28].examples[1].content | 服 | 克服 (kokufuku) | 数々の試練や困難を乗り越えて見事に克服しました。 | Crisis no kokufuku. | Superação da crise. | pending-human-review |
 | 4 | kanjis[29].examples[0].content | 併 | 併合 (heigou) | てっりとルイの併合。 | Territory no heigou. | Anexação territorial. | pending-human-review |
 | 4 | kanjis[29].examples[1].content | 併 | 併用 (heiyou) | トをめトほドスの併用。 | Two methods no heiyou. | Uso combinado de dois métodos. | pending-human-review |
-| 4 | kanjis[30].examples[0].content | 呑 | 呑む (nomu) | 条件を呑む。 | Condition o nomu. | Aceitar as condições. | pending-human-review |
-| 4 | kanjis[30].examples[1].content | 呑 | 併呑 (heidon) | スまっルクおうんトルイの併呑。 | Small country no heidon. | Anexação voraz do pequeno país. | pending-human-review |
-| 4 | kanjis[31].examples[0].content | 割 | 割譲 (kattsujou) | ルあんドの割譲。 | Land no kattsujou. | Cessão de terras. | pending-human-review |
-| 4 | kanjis[31].examples[1].content | 割 | 分割 (bunkatsu) | てっりとルイの分割。 | Territory no bunkatsu. | Partição de território. | pending-human-review |
-| 4 | kanjis[32].examples[0].content | 譲 | 譲渡 (jouto) | りグフトスの譲渡。 | Rights no jouto. | Transferência de direitos. | pending-human-review |
-| 4 | kanjis[32].examples[1].content | 譲 | 譲歩 (jouho) | ねごてぃあてぃおんで譲歩。 | Negotiation de jouho. | Fazer concessão na negociação. | pending-human-review |
-| 4 | kanjis[33].examples[0].content | 跨 | 跨がる (matagaru) | トをクおうんトりえスに跨がる。 | Two countries ni matagaru. | Estender-se por dois países. | pending-human-review |
-| 4 | kanjis[33].examples[1].content | 跨 | 跨国 (kakoku) | 跨国きぎょう。 | Kakoku kigyou. | Empresa transnacional. | pending-human-review |
-| 4 | kanjis[34].examples[0].content | 隔 | 隔離 (kakuri) | 隔離あれあ。 | Kakuri area. | Área de quarentena e isolamento. | pending-human-review |
-| 4 | kanjis[34].examples[1].content | 隔 | 隔絶 (kakuzetsu) | 世界からの隔絶。 | World kara no kakuzetsu. | Isolamento absoluto do mundo. | pending-human-review |
-| 4 | kanjis[35].examples[0].content | 阻 | 阻止 (soshi) | いんヴあスいおんの阻止。 | Invasion no soshi. | Bloqueio da invasão. | pending-human-review |
-| 4 | kanjis[35].examples[1].content | 阻 | 阻害 (sogai) | 平和の阻害。 | Peace no sogai. | Obstrução à paz. | pending-human-review |
-| 4 | kanjis[36].examples[0].content | 遮 | 遮断 (shadan) | ろうての遮断。 | Route no shadan. | Bloqueio da rota. | pending-human-review |
-| 4 | kanjis[36].examples[1].content | 遮 | 遮断機 (shadanki) | ふみきりの遮断機。 | Fumikiri no shadanki. | Barreira do cruzamento. | pending-human-review |
-| 4 | kanjis[37].examples[0].content | 策 | 政策 (seisaku) | ふぉれいグん政策。 | Foreign seisaku. | Política externa. | pending-human-review |
-| 4 | kanjis[37].examples[1].content | 策 | 対策 (taisaku) | クりスいス対策。 | Crisis taisaku. | Contramedida de crise. | pending-human-review |
-| 4 | kanjis[38].examples[0].content | 謀 | 陰謀 (inbou) | 陰謀トへおルイ。 | Inbou theory. | Teoria da conspiração. | pending-human-review |
-| 4 | kanjis[38].examples[1].content | 謀 | 参謀 (sanbou) | みルいたルイ参謀。 | Military sanbou. | Estrategista militar. | pending-human-review |
-| 4 | kanjis[39].examples[0].content | 略 | 戦略 (senryaku) | グルおばル戦略。 | Global senryaku. | Estratégia global. | pending-human-review |
-| 4 | kanjis[39].examples[1].content | 略 | 侵略 (shinryaku) | 侵略を止める。 | Shinryaku o stop. | Parar a invasão. | pending-human-review |
+| 4 | kanjis[30].examples[0].content | 呑 | 呑む (nomu) | 相手が提示した厳しい条件を呑んで和解に応じます。 | Condition o nomu. | Aceitar as condições. | pending-human-review |
+| 4 | kanjis[30].examples[1].content | 呑 | 併呑 (heidon) | 大国が隣接する小国を併呑しようとする動きを警戒します。 | Small country no heidon. | Anexação voraz do pequeno país. | pending-human-review |
+| 4 | kanjis[31].examples[0].content | 割 | 割譲 (kattsujou) | 平和条約に基づいて国境地帯の領土が割譲されました。 | Land no kattsujou. | Cessão de terras. | pending-human-review |
+| 4 | kanjis[31].examples[1].content | 割 | 分割 (bunkatsu) | 参加者全員で公平に役割を分担して作業を進めます。 | Territory no bunkatsu. | Partição de território. | pending-human-review |
+| 4 | kanjis[32].examples[0].content | 譲 | 譲渡 (jouto) | 電車の中でお年寄りに席を親切に譲ります。 | Rights no jouto. | Transferência de direitos. | pending-human-review |
+| 4 | kanjis[32].examples[1].content | 譲 | 譲歩 (jouho) | 粘り強い外交交渉を通じてお互いに譲歩し合います。 | Negotiation de jouho. | Fazer concessão na negociação. | pending-human-review |
+| 4 | kanjis[33].examples[0].content | 跨 | 跨がる (matagaru) | この大山脈は二つの国に跨がってそびえ立っています。 | Two countries ni matagaru. | Estender-se por dois países. | pending-human-review |
+| 4 | kanjis[33].examples[1].content | 跨 | 跨国 (kakoku) | 世界各地で事業を展開する跨国企業が増えています。 | Kakoku kigyou. | Empresa transnacional. | pending-human-review |
+| 4 | kanjis[34].examples[0].content | 隔 | 隔離 (kakuri) | 感染症の拡大を防ぐために患者を一時的に隔離します。 | Kakuri area. | Área de quarentena e isolamento. | pending-human-review |
+| 4 | kanjis[34].examples[1].content | 隔 | 隔絶 (kakuzetsu) | 海を隔てた隣国との間で活発な文化交流を行います。 | World kara no kakuzetsu. | Isolamento absoluto do mundo. | pending-human-review |
+| 4 | kanjis[35].examples[0].content | 阻 | 阻止 (soshi) | 敵の不法な侵入を国境線で断固として阻止します。 | Invasion no soshi. | Bloqueio da invasão. | pending-human-review |
+| 4 | kanjis[35].examples[1].content | 阻 | 阻害 (sogai) | 過度な規制が自由な経済の成長を阻害しています。 | Peace no sogai. | Obstrução à paz. | pending-human-review |
+| 4 | kanjis[36].examples[0].content | 遮 | 遮断 (shadan) | 土砂崩れによって主要な幹線道路が遮断されました。 | Route no shadan. | Bloqueio da rota. | pending-human-review |
+| 4 | kanjis[36].examples[1].content | 遮 | 遮断機 (shadanki) | カーテンを閉めて強い日差しを遮ります。 | Fumikiri no shadanki. | Barreira do cruzamento. | pending-human-review |
+| 4 | kanjis[37].examples[0].content | 策 | 政策 (seisaku) | 国民の暮らしを守るための有効な経済政策を打ち出します。 | Foreign seisaku. | Política externa. | pending-human-review |
+| 4 | kanjis[37].examples[1].content | 策 | 対策 (taisaku) | 自然災害に備えて万全の防災対策を講じます。 | Crisis taisaku. | Contramedida de crise. | pending-human-review |
+| 4 | kanjis[38].examples[0].content | 謀 | 陰謀 (inbou) | 政権を覆そうとする危険な陰謀が事前に発覚しました。 | Inbou theory. | Teoria da conspiração. | pending-human-review |
+| 4 | kanjis[38].examples[1].content | 謀 | 参謀 (sanbou) | 作戦の成功に向けて有能な軍事参謀が戦略を練ります。 | Military sanbou. | Estrategista militar. | pending-human-review |
+| 4 | kanjis[39].examples[0].content | 略 | 戦略 (senryaku) | 国際競争を勝ち抜くための長期的な戦略を策定します。 | Global senryaku. | Estratégia global. | pending-human-review |
+| 4 | kanjis[39].examples[1].content | 略 | 侵略 (shinryaku) | 他国の主権を侵害する武力侵略を決して容認しません。 | Shinryaku o stop. | Parar a invasão. | pending-human-review |
 | 4 | kanjis[40].examples[0].content | 和 | 和平 (wahei) | 和平じょうやく。 | Wahei jouyaku. | Tratado de paz. | pending-human-review |
 | 4 | kanjis[40].examples[1].content | 和 | 和解 (wakai) | りょうこくの和解。 | Ryoukoku no wakai. | Reconciliação dos dois países. | pending-human-review |
-| 4 | kanjis[41].examples[0].content | 睦 | 親睦 (shinboku) | 親睦かい。 | Shinboku-kai. | Encontro de amizade internacional. | pending-human-review |
-| 4 | kanjis[41].examples[1].content | 睦 | 和睦 (waboku) | 和睦をむすぶ。 | Waboku o musubu. | Formar pacto de paz e amizade. | pending-human-review |
+| 4 | kanjis[41].examples[0].content | 睦 | 親睦 (shinboku) | 地域住民が集まって親睦を深める懇親会を開きます。 | Shinboku-kai. | Encontro de amizade internacional. | pending-human-review |
+| 4 | kanjis[41].examples[1].content | 睦 | 和睦 (waboku) | 対立していた両国が平和的な和睦を結びました。 | Waboku o musubu. | Formar pacto de paz e amizade. | pending-human-review |
 | 5 | grammar.content | — | — | ほうしょうにもとずいてよさんをはいぶんします。 | Houshou ni motozuite yosan o haibun shimasu. | Distribuímos o orçamento com base na lei. | pending-human-review |
-| 5 | kanjis[0].examples[0].content | 幣 | 紙幣 (shihei) | 紙幣をプりんト。 | Shihei o print. | Imprimir papel-moeda. | pending-human-review |
-| 5 | kanjis[0].examples[1].content | 幣 | 貨幣 (kahei) | 貨幣経済。 | Kahei economy. | Economia monetária. | pending-human-review |
-| 5 | kanjis[1].examples[0].content | 租 | 租税 (sozei) | 租税法律。 | Sozei law. | Legislação tributária. | pending-human-review |
-| 5 | kanjis[1].examples[1].content | 租 | 租界 (sokai) | ふぉれいグん租界。 | Foreign sokai. | Concessão territorial estrangeira. | pending-human-review |
-| 5 | kanjis[2].examples[0].content | 滞 | 滞納 (tainou) | たクスの滞納。 | Tax no tainou. | Atraso no imposto. | pending-human-review |
-| 5 | kanjis[2].examples[1].content | 滞 | 停滞 (teitai) | 経済の停滞。 | Economy no teitai. | Estagnação econômica. | pending-human-review |
-| 5 | kanjis[3].examples[0].content | 課 | 課税 (kazei) | 課税目標。 | Kazei target. | Alvo de tributação. | pending-human-review |
-| 5 | kanjis[3].examples[1].content | 課 | 人事課 (jinjika) | 人事課のスたっフ。 | Jinjika no staff. | Equipe da seção de RH. | pending-human-review |
-| 5 | kanjis[4].examples[0].content | 賦 | 賦課 (fuka) | たクスの賦課。 | Tax no fuka. | Lançamento de tributos. | pending-human-review |
-| 5 | kanjis[4].examples[1].content | 賦 | 月賦 (geppu) | 月賦ではらう。 | Geppu de harau. | Pagar em prestações mensais. | pending-human-review |
-| 5 | kanjis[5].examples[0].content | 徴 | 徴収 (choushuu) | たクスの徴収。 | Tax no choushuu. | Arrecadação de impostos. | pending-human-review |
-| 5 | kanjis[5].examples[1].content | 徴 | 徴兵 (chouhei) | 徴兵制度。 | Chouhei system. | Serviço militar obrigatório. | pending-human-review |
-| 5 | kanjis[6].examples[0].content | 収 | 歳入 (sainyuu) | 国の歳入を収める。 | State no sainyuu. | Receita anual do Estado. | pending-human-review |
-| 5 | kanjis[6].examples[1].content | 収 | 収支 (shuushi) | 収支ばルあんクえ。 | Shuushi balance. | Balanço de receitas e despesas. | pending-human-review |
-| 5 | kanjis[7].examples[0].content | 支 | 支出 (shishutsu) | よさんの支出。 | Yosan no shishutsu. | Desembolso do orçamento. | pending-human-review |
-| 5 | kanjis[7].examples[1].content | 支 | 支給 (shikyuu) | ぺんスいおんの支給。 | Pension no shikyuu. | Concessão de pensão. | pending-human-review |
-| 5 | kanjis[8].examples[0].content | 算 | 予算 (yosan) | なてぃおなル予算。 | National yosan. | Orçamento nacional. | pending-human-review |
-| 5 | kanjis[8].examples[1].content | 算 | 決算 (kesshan) | イえあルルイ決算。 | Yearly kesshan. | Balanço anual de contas. | pending-human-review |
-| 5 | kanjis[9].examples[0].content | 査 | 監査 (kansa) | 監査をれクえいヴえ。 | Kansa o receive. | Receber auditoria. | pending-human-review |
-| 5 | kanjis[9].examples[1].content | 査 | 検査 (kensa) | クうあルいトイ検査。 | Quality kensa. | Inspeção de qualidade. | pending-human-review |
-| 5 | kanjis[10].examples[0].content | 鑑 | 印鑑 (inkan) | 印鑑をプれっス。 | Inkan o press. | Carimbar o hanko oficial. | pending-human-review |
-| 5 | kanjis[10].examples[1].content | 鑑 | 鑑みる (kangamiru) | スいトうあてぃおんに鑑みる。 | Situation ni kangamiru. | Levar a situação em consideração. | pending-human-review |
-| 5 | kanjis[11].examples[0].content | 督 | 監督 (kantoku) | スいての監督。 | Site no kantoku. | Supervisão do local. | pending-human-review |
-| 5 | kanjis[11].examples[1].content | 督 | 督促 (tokusoku) | 督促じょう。 | Tokusoku-jou. | Notificação de cobrança de imposto. | pending-human-review |
-| 5 | kanjis[12].examples[0].content | 庁 | 庁舎 (chousha) | 都市庁舎。 | City chousha. | Edifício da prefeitura. | pending-human-review |
-| 5 | kanjis[12].examples[1].content | 庁 | 気象庁 (kishouchou) | 気象庁報告書。 | Kishouchou report. | Relatório da Agência Meteorológica. | pending-human-review |
+| 5 | kanjis[0].examples[0].content | 幣 | 紙幣 (shihei) | 国立印刷局で最新の偽造防止技術を用いた紙幣が印刷されます。 | Shihei o print. | Imprimir papel-moeda. | pending-human-review |
+| 5 | kanjis[0].examples[1].content | 幣 | 貨幣 (kahei) | 物々交換から発展して貨幣経済が急速に浸透しました。 | Kahei economy. | Economia monetária. | pending-human-review |
+| 5 | kanjis[1].examples[0].content | 租 | 租税 (sozei) | 国家の財政を支える租税に関する法律を整備します。 | Sozei law. | Legislação tributária. | pending-human-review |
+| 5 | kanjis[1].examples[1].content | 租 | 租界 (sokai) | 歴史の授業で近代における外国人租界の変遷を学びます。 | Foreign sokai. | Concessão territorial estrangeira. | pending-human-review |
+| 5 | kanjis[2].examples[0].content | 滞 | 滞納 (tainou) | 納税義務を怠って税金を長期にわたり滞納してはいけません。 | Tax no tainou. | Atraso no imposto. | pending-human-review |
+| 5 | kanjis[2].examples[1].content | 滞 | 停滞 (teitai) | 景気の停滞から抜け出すための景気刺激策を講じます。 | Economy no teitai. | Estagnação econômica. | pending-human-review |
+| 5 | kanjis[3].examples[0].content | 課 | 課税 (kazei) | 公平な基準に基づいて適正な課税を行います。 | Kazei target. | Alvo de tributação. | pending-human-review |
+| 5 | kanjis[3].examples[1].content | 課 | 人事課 (jinjika) | 本社の総務課で社内規定の改訂作業を担当します。 | Jinjika no staff. | Equipe da seção de RH. | pending-human-review |
+| 5 | kanjis[4].examples[0].content | 賦 | 賦課 (fuka) | 地方自治体が住民に対して適切に税金を賦課します。 | Tax no fuka. | Lançamento de tributos. | pending-human-review |
+| 5 | kanjis[4].examples[1].content | 賦 | 月賦 (geppu) | 高額な買い物の代金を月賦で計画的に支払います。 | Geppu de harau. | Pagar em prestações mensais. | pending-human-review |
+| 5 | kanjis[5].examples[0].content | 徴 | 徴収 (choushuu) | 法律の規定に従って所得税を確実に徴収します。 | Tax no choushuu. | Arrecadação de impostos. | pending-human-review |
+| 5 | kanjis[5].examples[1].content | 徴 | 徴兵 (chouhei) | かつての国家における徴兵制度の歴史を検証します。 | Chouhei system. | Serviço militar obrigatório. | pending-human-review |
+| 5 | kanjis[6].examples[0].content | 収 | 歳入 (sainyuu) | 新しい事業から得られる収益を慎重に試算します。 | State no sainyuu. | Receita anual do Estado. | pending-human-review |
+| 5 | kanjis[6].examples[1].content | 収 | 収支 (shuushi) | 年間を通じた家計の収支のバランスをしっかりと整えます。 | Shuushi balance. | Balanço de receitas e despesas. | pending-human-review |
+| 5 | kanjis[7].examples[0].content | 支 | 支出 (shishutsu) | 無駄な支出を削減して財政の健全化を目指します。 | Yosan no shishutsu. | Desembolso do orçamento. | pending-human-review |
+| 5 | kanjis[7].examples[1].content | 支 | 支給 (shikyuu) | 高齢者に対して毎月定期的に公的年金が支給されます。 | Pension no shikyuu. | Concessão de pensão. | pending-human-review |
+| 5 | kanjis[8].examples[0].content | 算 | 予算 (yosan) | 来年度の国家予算案が国会で審議されます。 | National yosan. | Orçamento nacional. | pending-human-review |
+| 5 | kanjis[8].examples[1].content | 算 | 決算 (kesshan) | 企業の年間決算を正確にまとめて税務署に申告します。 | Yearly kesshan. | Balanço anual de contas. | pending-human-review |
+| 5 | kanjis[9].examples[0].content | 査 | 監査 (kansa) | 会計の不正を防ぐために第三者機関による監査を受けます。 | Kansa o receive. | Receber auditoria. | pending-human-review |
+| 5 | kanjis[9].examples[1].content | 査 | 検査 (kensa) | 出荷前にすべての製品に対して厳格な品質検査を行います。 | Quality kensa. | Inspeção de qualidade. | pending-human-review |
+| 5 | kanjis[10].examples[0].content | 鑑 | 印鑑 (inkan) | 契約書に実印の印鑑を押して正式に締結します。 | Inkan o press. | Carimbar o hanko oficial. | pending-human-review |
+| 5 | kanjis[10].examples[1].content | 鑑 | 鑑みる (kangamiru) | 過去の失敗例に鑑みて再発防止策を徹底します。 | Situation ni kangamiru. | Levar a situação em consideração. | pending-human-review |
+| 5 | kanjis[11].examples[0].content | 督 | 監督 (kantoku) | 工事現場の安全管理を徹底するため監督が巡回します。 | Site no kantoku. | Supervisão do local. | pending-human-review |
+| 5 | kanjis[11].examples[1].content | 督 | 督促 (tokusoku) | 未払いの税金について正式な督促状が送付されました。 | Tokusoku-jou. | Notificação de cobrança de imposto. | pending-human-review |
+| 5 | kanjis[12].examples[0].content | 庁 | 庁舎 (chousha) | 新しく完成した近代的な県庁舎を見学します。 | City chousha. | Edifício da prefeitura. | pending-human-review |
+| 5 | kanjis[12].examples[1].content | 庁 | 気象庁 (kishouchou) | 気象庁から台風の上陸に関する最新の注意報が発表されます。 | Kishouchou report. | Relatório da Agência Meteorológica. | pending-human-review |
 | 5 | kanjis[13].examples[0].content | 局 | 局長 (kyokuchou) | ぶれあうの局長。 | Bureau no kyokuchou. | Diretor do departamento. | pending-human-review |
 | 5 | kanjis[13].examples[1].content | 局 | 郵便局 (yuubinkyoku) | 郵便局でせんド。 | Yuubinkyoku de send. | Enviar nos correios. | pending-human-review |
-| 5 | kanjis[14].examples[0].content | 班 | 班長 (hanchou) | チームの班長。 | Team no hanchou. | Líder de equipe. | pending-human-review |
-| 5 | kanjis[14].examples[1].content | 班 | 救護班 (kyuogohan) | 救護班のあクてぃヴいトイ。 | Kyuogohan no activity. | Atuação da equipe de socorro. | pending-human-review |
-| 5 | kanjis[15].examples[0].content | 臣 | 大臣 (daijin) | ふぃなんクえ大臣。 | Finance daijin. | Ministro das Finanças. | pending-human-review |
-| 5 | kanjis[15].examples[1].content | 臣 | 総理大臣 (sooridaijin) | 総理大臣。 | Prime Minister. | Primeiro-Ministro do Japão. | pending-human-review |
-| 5 | kanjis[16].examples[0].content | 宰 | 主宰 (shusai) | 行事の主宰。 | Event no shusai. | Presidência do evento. | pending-human-review |
-| 5 | kanjis[16].examples[1].content | 宰 | 宰相 (saishou) | げルまん宰相。 | German saishou. | Chanceler alemão. | pending-human-review |
-| 5 | kanjis[17].examples[0].content | 相 | 首相 (shushou) | 首相おっふぃクいあル。 | Shushou official. | Oficial do Primeiro-Ministro. | pending-human-review |
-| 5 | kanjis[17].examples[1].content | 相 | 外相 (gaishou) | 外相スぺえクフ。 | Gaishou speech. | Discurso do Ministro das Relações Exteriores. | pending-human-review |
-| 5 | kanjis[18].examples[0].content | 僚 | 官僚 (kanryou) | えルいて官僚。 | Elite kanryou. | Burocrata de elite. | pending-human-review |
-| 5 | kanjis[18].examples[1].content | 僚 | 同僚 (douryou) | 事務所の同僚。 | Office no douryou. | Colega de escritório. | pending-human-review |
-| 5 | kanjis[19].examples[0].content | 吏 | 官吏 (kanri) | 国家の官吏。 | State no kanri. | Oficial do Estado. | pending-human-review |
-| 5 | kanjis[19].examples[1].content | 吏 | 吏員 (riin) | 都市吏員。 | City riin. | Servidor público municipal. | pending-human-review |
-| 5 | kanjis[20].examples[0].content | 役 | 役所 (yakusho) | 役所にご。 | Yakusho ni go. | Ir à repartição pública. | pending-human-review |
-| 5 | kanjis[20].examples[1].content | 役 | 役員 (yakuin) | ぼあルド役員。 | Board yakuin. | Diretor do conselho. | pending-human-review |
-| 5 | kanjis[21].examples[0].content | 務 | 公務 (koumu) | 公務いんプろグれっス。 | Koumu in progress. | Serviço público em andamento. | pending-human-review |
-| 5 | kanjis[21].examples[1].content | 務 | 公務員 (koumuin) | 公務員えクスあム。 | Koumuin exam. | Exame para servidor público. | pending-human-review |
-| 5 | kanjis[22].examples[0].content | 任 | 任命 (ninmei) | みにスてルの任命。 | Minister no ninmei. | Nomeação do ministro. | pending-human-review |
-| 5 | kanjis[22].examples[1].content | 任 | 責任 (sekinin) | 責任をたけ。 | Sekinin o take. | Assumir a responsabilidade. | pending-human-review |
-| 5 | kanjis[23].examples[0].content | 命 | 命令 (meirei) | おっふぃクいあル命令。 | Official meirei. | Mandato oficial. | pending-human-review |
-| 5 | kanjis[23].examples[1].content | 命 | 生命 (seimei) | 生命プろてクてぃおん。 | Seimei protection. | Proteção da vida. | pending-human-review |
-| 5 | kanjis[24].examples[0].content | 罷 | 罷免 (himen) | みにスてルの罷免。 | Minister no himen. | Exoneração do ministro. | pending-human-review |
-| 5 | kanjis[24].examples[1].content | 罷 | 罷業 (higyou) | ルあぼル罷業。 | Labor higyou. | Greve dos trabalhadores. | pending-human-review |
-| 5 | kanjis[25].examples[0].content | 免 | 免除 (menjo) | たクスの免除。 | Tax no menjo. | Isenção de impostos. | pending-human-review |
-| 5 | kanjis[25].examples[1].content | 免 | 免許 (menkyo) | ドりヴえル免許。 | Driver menkyo. | Carteira de motorista. | pending-human-review |
-| 5 | kanjis[26].examples[0].content | 補 | 補助金 (hojokin) | 補助金をれクえいヴえ。 | Hojokin o receive. | Receber subsídio governamental. | pending-human-review |
-| 5 | kanjis[26].examples[1].content | 補 | 補正 (hosei) | 補正よさん。 | Hosei yosan. | Orçamento suplementar. | pending-human-review |
-| 5 | kanjis[27].examples[0].content | 助 | 助成金 (joseikin) | 助成金あっプルいクあてぃおん。 | Joseikin application. | Requerimento de subvenção. | pending-human-review |
-| 5 | kanjis[27].examples[1].content | 助 | 援助 (enjo) | ふぃなんクいあル援助。 | Financial enjo. | Assistência financeira. | pending-human-review |
-| 5 | kanjis[28].examples[0].content | 扶 | 扶養 (fuyou) | ふぁみルイ扶養。 | Family fuyou. | Sustento dos dependentes. | pending-human-review |
-| 5 | kanjis[28].examples[1].content | 扶 | 扶助 (fujo) | ぷブルいク扶助。 | Public fujo. | Auxílio público de subsistência. | pending-human-review |
-| 5 | kanjis[29].examples[0].content | 給 | 給付 (kyuufu) | べねふぃトの給付。 | Benefit no kyuufu. | Concessão de benefício. | pending-human-review |
-| 5 | kanjis[29].examples[1].content | 給 | 給与 (kyuuyo) | もんトフルイ給与。 | Monthly kyuuyo. | Remuneração mensal. | pending-human-review |
-| 5 | kanjis[30].examples[0].content | 融 | 融資 (yuushi) | ばんクの融資。 | Bank no yuushi. | Financiamento bancário. | pending-human-review |
-| 5 | kanjis[30].examples[1].content | 融 | 融和 (yuuwa) | ぽルいクイの融和。 | Policy no yuuwa. | Harmonização de políticas. | pending-human-review |
-| 5 | kanjis[31].examples[0].content | 債 | 国債 (kokusai) | 国債をいっすえ。 | Kokusai o issue. | Emitir títulos da dívida pública. | pending-human-review |
-| 5 | kanjis[31].examples[1].content | 債 | 負債 (fusai) | 国家の負債。 | State no fusai. | Passivo estatal. | pending-human-review |
-| 5 | kanjis[32].examples[0].content | 券 | 債券 (saiken) | 債券まルけト。 | Saiken market. | Mercado de títulos. | pending-human-review |
-| 5 | kanjis[32].examples[1].content | 券 | 証券 (shouken) | 証券会社。 | Shouken company. | Corretora de valores mobiliários. | pending-human-review |
-| 5 | kanjis[33].examples[0].content | 償 | 返償 (henshou) | でブトの返償。 | Debt no henshou. | Amortização da dívida. | pending-human-review |
-| 5 | kanjis[33].examples[1].content | 償 | 無償 (mushou) | 無償あいド。 | Mushou aid. | Ajuda sem custos. | pending-human-review |
-| 5 | kanjis[34].examples[0].content | 赤 | 赤字 (akaji) | よさんの赤字。 | Yosan no akaji. | Déficit orçamentário. | pending-human-review |
-| 5 | kanjis[34].examples[1].content | 赤 | 赤字国債 (akaji-kokusai) | 赤字国債いっすえ。 | Akaji-kokusai issue. | Emissão de títulos para déficit. | pending-human-review |
-| 5 | kanjis[35].examples[0].content | 黒 | 黒字 (kuroji) | 黒字ばルあんクえ。 | Kuroji balance. | Balanço no superávit. | pending-human-review |
-| 5 | kanjis[35].examples[1].content | 黒 | 黒字化 (kurojika) | ぶドげトの黒字化。 | Budget no kurojika. | Conversão do orçamento em superávit. | pending-human-review |
-| 5 | kanjis[36].examples[0].content | 膨 | 膨張 (bouchou) | ぶドげトの膨張。 | Budget no bouchou. | Expansão orçamentária. | pending-human-review |
-| 5 | kanjis[36].examples[1].content | 膨 | 膨大 (boudai) | 膨大なでブト。 | Boudai na debt. | Dívida colossal. | pending-human-review |
-| 5 | kanjis[37].examples[0].content | 縮 | 緊縮 (kinshuku) | 緊縮ぶドげト。 | Kinshuku budget. | Orçamento de austeridade fiscal. | pending-human-review |
-| 5 | kanjis[37].examples[1].content | 縮 | 縮小 (shukushou) | スクあルえの縮小。 | Scale no shukushou. | Redução de escala de gastos. | pending-human-review |
-| 5 | kanjis[38].examples[0].content | 警 | 警察 (keisatsu) | 警察スたてぃおん。 | Keisatsu station. | Delegacia de polícia. | pending-human-review |
-| 5 | kanjis[38].examples[1].content | 警 | 警備 (keibi) | せクうりトイ警備。 | Security keibi. | Vigilância de segurança. | pending-human-review |
+| 5 | kanjis[14].examples[0].content | 班 | 班長 (hanchou) | 作業チームの班長が本日の進捗状況を取りまとめます。 | Team no hanchou. | Líder de equipe. | pending-human-review |
+| 5 | kanjis[14].examples[1].content | 班 | 救護班 (kyuogohan) | 被災地へ救護班が急行して負傷者の手当てにあたります。 | Kyuogohan no activity. | Atuação da equipe de socorro. | pending-human-review |
+| 5 | kanjis[15].examples[0].content | 臣 | 大臣 (daijin) | 財務大臣が記者会見で新しい経済政策を発表しました。 | Finance daijin. | Ministro das Finanças. | pending-human-review |
+| 5 | kanjis[15].examples[1].content | 臣 | 総理大臣 (sooridaijin) | 内閣総理大臣が外国の首脳と会談を行いました。 | Prime Minister. | Primeiro-Ministro do Japão. | pending-human-review |
+| 5 | kanjis[16].examples[0].content | 宰 | 主宰 (shusai) | 著名な文化人が主宰する学術研究会に参加します。 | Event no shusai. | Presidência do evento. | pending-human-review |
+| 5 | kanjis[16].examples[1].content | 宰 | 宰相 (saishou) | 歴史上有名な宰相が国家の近代化を推し進めました。 | German saishou. | Chanceler alemão. | pending-human-review |
+| 5 | kanjis[17].examples[0].content | 相 | 首相 (shushou) | 各国の首相が集まって気候変動サミットが開催されます。 | Shushou official. | Oficial do Primeiro-Ministro. | pending-human-review |
+| 5 | kanjis[17].examples[1].content | 相 | 外相 (gaishou) | 外務大臣である外相が外交交渉の方針を表明しました。 | Gaishou speech. | Discurso do Ministro das Relações Exteriores. | pending-human-review |
+| 5 | kanjis[18].examples[0].content | 僚 | 官僚 (kanryou) | 中央省庁で政策の企画立案にあたる官僚が働きます。 | Elite kanryou. | Burocrata de elite. | pending-human-review |
+| 5 | kanjis[18].examples[1].content | 僚 | 同僚 (douryou) | 職場の同僚と協力して大きなプロジェクトを成功させました。 | Office no douryou. | Colega de escritório. | pending-human-review |
+| 5 | kanjis[19].examples[0].content | 吏 | 官吏 (kanri) | 国民全体の奉仕者として国家の官吏が職務を果たします。 | State no kanri. | Oficial do Estado. | pending-human-review |
+| 5 | kanjis[19].examples[1].content | 吏 | 吏員 (riin) | 住民のために市役所で働く吏員が窓口で案内します。 | City riin. | Servidor público municipal. | pending-human-review |
+| 5 | kanjis[20].examples[0].content | 役 | 役所 (yakusho) | 住民票を取得するために最寄りの役所へ向かいます。 | Yakusho ni go. | Ir à repartição pública. | pending-human-review |
+| 5 | kanjis[20].examples[1].content | 役 | 役員 (yakuin) | 会社の取締役会で役員が経営方針を決定します。 | Board yakuin. | Diretor do conselho. | pending-human-review |
+| 5 | kanjis[21].examples[0].content | 務 | 公務 (koumu) | 国民の義務として定められた公務を忠実にこなします。 | Koumu in progress. | Serviço público em andamento. | pending-human-review |
+| 5 | kanjis[21].examples[1].content | 務 | 公務員 (koumuin) | 国家公務員試験の合格を目指して猛勉強を重ねます。 | Koumuin exam. | Exame para servidor público. | pending-human-review |
+| 5 | kanjis[22].examples[0].content | 任 | 任命 (ninmei) | 新しい大臣の任命式が宮中で厳かに行われました。 | Minister no ninmei. | Nomeação do ministro. | pending-human-review |
+| 5 | kanjis[22].examples[1].content | 任 | 責任 (sekinin) | プロジェクトの最高責任者として重い責任を果たします。 | Sekinin o take. | Assumir a responsabilidade. | pending-human-review |
+| 5 | kanjis[23].examples[0].content | 命 | 命令 (meirei) | 上司からの正当な業務命令に従って作業を進めます。 | Official meirei. | Mandato oficial. | pending-human-review |
+| 5 | kanjis[23].examples[1].content | 命 | 生命 (seimei) | かけがえのない大切な生命を守るための医療活動です。 | Seimei protection. | Proteção da vida. | pending-human-review |
+| 5 | kanjis[24].examples[0].content | 罷 | 罷免 (himen) | 職権濫用を理由に不適格な大臣が罷免されました。 | Minister no himen. | Exoneração do ministro. | pending-human-review |
+| 5 | kanjis[24].examples[1].content | 罷 | 罷業 (higyou) | 労働組合が待遇改善を求めて罷業を決行しました。 | Labor higyou. | Greve dos trabalhadores. | pending-human-review |
+| 5 | kanjis[25].examples[0].content | 免 | 免除 (menjo) | 被災した住民に対して市税の免除措置が適用されます。 | Tax no menjo. | Isenção de impostos. | pending-human-review |
+| 5 | kanjis[25].examples[1].content | 免 | 免許 (menkyo) | 自動車学校を卒業して普通自動車の免許を取得しました。 | Driver menkyo. | Carteira de motorista. | pending-human-review |
+| 5 | kanjis[26].examples[0].content | 補 | 補助金 (hojokin) | 中小企業の技術開発を支援するため国から補助金が交付されます。 | Hojokin o receive. | Receber subsídio governamental. | pending-human-review |
+| 5 | kanjis[26].examples[1].content | 補 | 補正 (hosei) | 急な災害復旧のために補正予算案が可決されました。 | Hosei yosan. | Orçamento suplementar. | pending-human-review |
+| 5 | kanjis[27].examples[0].content | 助 | 助成金 (joseikin) | 地域の福祉活動に対して自治体から助成金が支給されます。 | Joseikin application. | Requerimento de subvenção. | pending-human-review |
+| 5 | kanjis[27].examples[1].content | 助 | 援助 (enjo) | 国際機関を通じて開発途上国への資金援助を行います。 | Financial enjo. | Assistência financeira. | pending-human-review |
+| 5 | kanjis[28].examples[0].content | 扶 | 扶養 (fuyou) | 家族を扶養するための手当が給与に加算されます。 | Family fuyou. | Sustento dos dependentes. | pending-human-review |
+| 5 | kanjis[28].examples[1].content | 扶 | 扶助 (fujo) | 生活に困窮する世帯へ公的な生活扶助を提供します。 | Public fujo. | Auxílio público de subsistência. | pending-human-review |
+| 5 | kanjis[29].examples[0].content | 給 | 給付 (kyuufu) | 要件を満たした対象者に特別給付金が給付されます。 | Benefit no kyuufu. | Concessão de benefício. | pending-human-review |
+| 5 | kanjis[29].examples[1].content | 給 | 給与 (kyuuyo) | 毎月の勤務実績に応じて適正な給与が支給されます。 | Monthly kyuuyo. | Remuneração mensal. | pending-human-review |
+| 5 | kanjis[30].examples[0].content | 融 | 融資 (yuushi) | 新規事業の立ち上げに向けて銀行から融資を受けます。 | Bank no yuushi. | Financiamento bancário. | pending-human-review |
+| 5 | kanjis[30].examples[1].content | 融 | 融和 (yuuwa) | 異なる文化を持つ人々の間で心の融和を図ります。 | Policy no yuuwa. | Harmonização de políticas. | pending-human-review |
+| 5 | kanjis[31].examples[0].content | 債 | 国債 (kokusai) | 国の財政赤字を補填するために新規の国債が発行されます。 | Kokusai o issue. | Emitir títulos da dívida pública. | pending-human-review |
+| 5 | kanjis[31].examples[1].content | 債 | 負債 (fusai) | 借入金を返済して会社の負債を圧縮します。 | State no fusai. | Passivo estatal. | pending-human-review |
+| 5 | kanjis[32].examples[0].content | 券 | 債券 (saiken) | 金融市場で国債や社債などの債券が取引されます。 | Saiken market. | Mercado de títulos. | pending-human-review |
+| 5 | kanjis[32].examples[1].content | 券 | 証券 (shouken) | 証券会社を通じて株式や投資信託を運用します。 | Shouken company. | Corretora de valores mobiliários. | pending-human-review |
+| 5 | kanjis[33].examples[0].content | 償 | 返償 (henshou) | 借り入れた公的資金の返償計画を策定します。 | Debt no henshou. | Amortização da dívida. | pending-human-review |
+| 5 | kanjis[33].examples[1].content | 償 | 無償 (mushou) | 被災地へ必要な物資を無償で提供します。 | Mushou aid. | Ajuda sem custos. | pending-human-review |
+| 5 | kanjis[34].examples[0].content | 赤 | 赤字 (akaji) | 今年度の国家財政は大幅な赤字となる見通しです。 | Yosan no akaji. | Déficit orçamentário. | pending-human-review |
+| 5 | kanjis[34].examples[1].content | 赤 | 赤字国債 (akaji-kokusai) | 歳入不足を補うために赤字国債が追加発行されます。 | Akaji-kokusai issue. | Emissão de títulos para déficit. | pending-human-review |
+| 5 | kanjis[35].examples[0].content | 黒 | 黒字 (kuroji) | 貿易収支が大幅な黒字を記録しました。 | Kuroji balance. | Balanço no superávit. | pending-human-review |
+| 5 | kanjis[35].examples[1].content | 黒 | 黒字化 (kurojika) | 財政改革を推進して早期の予算黒字化を目指します。 | Budget no kurojika. | Conversão do orçamento em superávit. | pending-human-review |
+| 5 | kanjis[36].examples[0].content | 膨 | 膨張 (bouchou) | 社会保障費の増大により国家予算が膨張しています。 | Budget no bouchou. | Expansão orçamentária. | pending-human-review |
+| 5 | kanjis[36].examples[1].content | 膨 | 膨大 (boudai) | 長年の借金が重なり膨大な負債を抱えることになりました。 | Boudai na debt. | Dívida colossal. | pending-human-review |
+| 5 | kanjis[37].examples[0].content | 縮 | 緊縮 (kinshuku) | 財政再建に向けて緊縮財政を推進します。 | Kinshuku budget. | Orçamento de austeridade fiscal. | pending-human-review |
+| 5 | kanjis[37].examples[1].content | 縮 | 縮小 (shukushou) | 事業規模の縮小に伴い経費を削減します。 | Scale no shukushou. | Redução de escala de gastos. | pending-human-review |
+| 5 | kanjis[38].examples[0].content | 警 | 警察 (keisatsu) | 街の治安を守るために警察官がパトロールします。 | Keisatsu station. | Delegacia de polícia. | pending-human-review |
+| 5 | kanjis[38].examples[1].content | 警 | 警備 (keibi) | 要人の来日に合わせて空港周辺の警備を強化します。 | Security keibi. | Vigilância de segurança. | pending-human-review |
 | 5 | kanjis[39].examples[0].content | 省 | 省庁 (shouchou) | ごヴえルんめんト省庁。 | Government shouchou. | Ministérios governamentais. | pending-human-review |
 | 5 | kanjis[39].examples[1].content | 省 | 反省 (hansei) | えっろルの反省。 | Error no hansei. | Reflexão sobre os erros. | pending-human-review |
-| 5 | kanjis[40].examples[0].content | 計 | 会計 (kaikei) | 会計かんさ。 | Kaikei kansa. | Auditoria contábil. | pending-human-review |
-| 5 | kanjis[40].examples[1].content | 計 | 計画 (keikaku) | なてぃおなル計画。 | National keikaku. | Plano nacional. | pending-human-review |
-| 5 | kanjis[41].examples[0].content | 税 | 税金 (zeikin) | 税金をぱイ。 | Zeikin o pay. | Pagar impostos. | pending-human-review |
-| 5 | kanjis[41].examples[1].content | 税 | 減税 (genzei) | たクス減税。 | Tax genzei. | Redução de impostos. | pending-human-review |
+| 5 | kanjis[40].examples[0].content | 計 | 会計 (kaikei) | 企業の財務状況を正しく把握するため厳格な会計監査を行います。 | Kaikei kansa. | Auditoria contábil. | pending-human-review |
+| 5 | kanjis[40].examples[1].content | 計 | 計画 (keikaku) | 都市の長期的な発展を目指して総合計画を策定します。 | National keikaku. | Plano nacional. | pending-human-review |
+| 5 | kanjis[41].examples[0].content | 税 | 税金 (zeikin) | 国民の義務として定められた税金を期限内に納めます。 | Zeikin o pay. | Pagar impostos. | pending-human-review |
+| 5 | kanjis[41].examples[1].content | 税 | 減税 (genzei) | 景気刺激策の一環として所得税の減税が実施されます。 | Tax genzei. | Redução de impostos. | pending-human-review |
 | 6 | grammar.content | — | — | かわせのきそうにたいしてけいこうをぶんせきします。 | Kawase no kisou ni taishite keikou o bunseki shimasu. | Analisamos a tendência em relação ao mercado de câmbio. | pending-human-review |
 | 6 | kanjis[0].examples[0].content | 騰 | 急騰 (kyuutou) | スとククの急騰。 | Stock no kyuutou. | Disparada das ações. | pending-human-review |
 | 6 | kanjis[0].examples[1].content | 騰 | 高騰 (koutou) | おいルプりクえの高騰。 | Oil price no koutou. | Carestia do preço do petróleo. | pending-human-review |
@@ -584,8 +584,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 7 | kanjis[30].examples[1].content | 配 | 配給 (haikyuu) | えねルグイの配給。 | Energy no haikyuu. | Abastecimento de energia. | pending-human-review |
 | 7 | kanjis[31].examples[0].content | 枢 | 枢軸 (suujiku) | ルおぎスてぃクスの枢軸。 | Logistics no suujiku. | Eixo central de logística. | pending-human-review |
 | 7 | kanjis[31].examples[1].content | 枢 | 中枢 (chuusuu) | 輸送の中枢。 | Transport no chuusuu. | Hub central de transporte. | pending-human-review |
-| 7 | kanjis[32].examples[0].content | 輸 | 輸送 (yusou) | へあヴイ輸送。 | Heavy yusou. | Transporte pesado de carga. | pending-human-review |
-| 7 | kanjis[32].examples[1].content | 輸 | 輸出 (yushutsu) | クあルの輸出。 | Car no yushutsu. | Exportação de automóveis. | pending-human-review |
+| 7 | kanjis[32].examples[0].content | 輸 | 輸送 (yusou) | エネルギー資源の多くを海外からの輸入に依存しています。 | Heavy yusou. | Transporte pesado de carga. | pending-human-review |
+| 7 | kanjis[32].examples[1].content | 輸 | 輸出 (yushutsu) | 高品質な日本車を世界各国へ大量に輸出します。 | Car no yushutsu. | Exportação de automóveis. | pending-human-review |
 | 7 | kanjis[33].examples[0].content | 充 | 充填 (juuten) | がスの充填。 | Gas no juuten. | Abastecimento de gás. | pending-human-review |
 | 7 | kanjis[33].examples[1].content | 充 | 充電 (juuden) | えヴの充電。 | EV no juuden. | Recarga de veículos elétricos. | pending-human-review |
 | 7 | kanjis[34].examples[0].content | 填 | 充填 (juuten) | ふえルの充填。 | Fuel no juuten. | Enchimento do reservatório de combustível. | pending-human-review |
@@ -780,85 +780,85 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 10 | kanjis[0].examples[1].content | 彗 | 彗星軌道 (suisei-kidou) | 彗星軌道クあルクうルあてぃおん。 | Suisei-kidou calculation. | Cálculo da órbita cometária. | pending-human-review |
 | 10 | kanjis[1].examples[0].content | 軌 | 軌道 (kidou) | プルあねトの軌道。 | Planet no kidou. | Órbita do planeta. | pending-human-review |
 | 10 | kanjis[1].examples[1].content | 軌 | 周回軌道 (shuukai-kidou) | さてっルいての周回軌道。 | Satellite no shuukai-kidou. | Órbita de circun-navegação do satélite. | pending-human-review |
-| 10 | kanjis[2].examples[0].content | 霜 | 霜害 (sougai) | クろプの霜害。 | Crop no sougai. | Danos da geada na lavoura. | pending-human-review |
-| 10 | kanjis[2].examples[1].content | 霜 | 晩霜 (bansou) | スプりんグの晩霜。 | Spring no bansou. | Geada tardia de primavera. | pending-human-review |
-| 10 | kanjis[3].examples[0].content | 霧 | 濃霧 (noumu) | 濃霧あルえルト。 | Noumu alert. | Alerta de nevoeiro denso. | pending-human-review |
-| 10 | kanjis[3].examples[1].content | 霧 | 霧散 (musan) | ふぉグの霧散。 | Fog no musan. | Dissipação do nevoeiro. | pending-human-review |
-| 10 | kanjis[4].examples[0].content | 雫 | 雨雫 (amashizuku) | ルえあフの雨雫。 | Leaf no amashizuku. | Gota de chuva na folha. | pending-human-review |
-| 10 | kanjis[4].examples[1].content | 雫 | 雫石 (shizukuishi) | 雫石あれあ。 | Shizukuishi area. | Região de Shizukuishi. | pending-human-review |
-| 10 | kanjis[5].examples[0].content | 雹 | 降雹 (kouhyou) | 降雹のてぃクえ。 | Kouhyou notice. | Aviso de precipitação de granizo. | pending-human-review |
-| 10 | kanjis[5].examples[1].content | 雹 | 雹害 (hyougai) | 雹害だまげ。 | Hyougai damage. | Danos causados por granizo. | pending-human-review |
-| 10 | kanjis[6].examples[0].content | 霆 | 雷霆 (raitei) | 雷霆そうんド。 | Raitei sound. | Som de trovão violento. | pending-human-review |
-| 10 | kanjis[6].examples[1].content | 霆 | 疾風迅雷 (shippuu-jinrai) | 雷霆のような疾風迅雷の行動。 | Shippuu-jinrai action. | Ação rápida como o trovão. | pending-human-review |
-| 10 | kanjis[7].examples[0].content | 嵐 | 嵐風 (ranpuu) | 嵐風わルにんグ。 | Ranpuu warning. | Alerta de vento de tempestade. | pending-human-review |
-| 10 | kanjis[7].examples[1].content | 嵐 | 暴風嵐 (boufuuarashi) | 暴風嵐あっプろあクフ。 | Boufuuarashi approach. | Aproximação de vendaval violento. | pending-human-review |
-| 10 | kanjis[8].examples[0].content | 巽 | 巽風 (sonpuu) | 巽風ブルおウいんグ。 | Sonpuu blowing. | Soprar do vento sueste. | pending-human-review |
-| 10 | kanjis[8].examples[1].content | 巽 | 巽位 (tatsumi-i) | 巽位でぃれクてぃおん。 | Tatsumi-i direction. | Direção sudeste. | pending-human-review |
-| 10 | kanjis[9].examples[0].content | 渦 | 渦潮 (uzushio) | なるとの渦潮。 | Naruto no uzushio. | Redemoinho marítimo de Naruto. | pending-human-review |
-| 10 | kanjis[9].examples[1].content | 渦 | 渦中 (kachuu) | トイプほおんの渦中。 | Typhoon no kachuu. | No centro do tufão. | pending-human-review |
-| 10 | kanjis[10].examples[0].content | 潮 | 潮汐 (chouseki) | もおんの潮汐。 | Moon no chouseki. | Marés gravitações da lua. | pending-human-review |
-| 10 | kanjis[10].examples[1].content | 潮 | 高潮 (takashio) | 高潮わルにんグ。 | Takashio warning. | Alerta de maré alta. | pending-human-review |
-| 10 | kanjis[11].examples[0].content | 震 | 震度 (shindo) | 震度 6 えあルトフクうあけ。 | Shindo 6 earthquake. | Terremoto de intensidade sísmica 6. | pending-human-review |
-| 10 | kanjis[11].examples[1].content | 震 | 震源 (shingen) | 震源でプトフ。 | Shingen depth. | Profundidade do hipocentro sísmico. | pending-human-review |
-| 10 | kanjis[12].examples[0].content | 噴 | 噴火 (funka) | 火山の噴火。 | Volcano no funka. | Erupção do vulcão. | pending-human-review |
-| 10 | kanjis[12].examples[1].content | 噴 | 噴出 (funshutsu) | がスの噴出。 | Gas no funshutsu. | Ejeção de gases vulcânicos. | pending-human-review |
-| 10 | kanjis[13].examples[0].content | 崖 | 断崖 (dangai) | クおあスたル断崖。 | Coastal dangai. | Escarpa costeira. | pending-human-review |
-| 10 | kanjis[13].examples[1].content | 崖 | 崖崩れ (gakekuzure) | 崖崩れりスク。 | Gakekuzure risk. | Risco de deslizamento. | pending-human-review |
-| 10 | kanjis[14].examples[0].content | 崩 | 崩落 (houraku) | もうんたいん崩落。 | Mountain houraku. | Desabamento de montanha. | pending-human-review |
-| 10 | kanjis[14].examples[1].content | 崩 | 崩壊 (houkai) | ストらたの崩壊。 | Strata no houkai. | Colapso das camadas geológicas. | pending-human-review |
-| 10 | kanjis[15].examples[0].content | 熔 | 熔岩 (yougan) | 熔岩フルおウ。 | Yougan flow. | Fluxo de lava vulcânica. | pending-human-review |
-| 10 | kanjis[15].examples[1].content | 熔 | 熔融 (youyuu) | ろククの熔融。 | Rock no youyuu. | Fusão de rochas magmáticas. | pending-human-review |
-| 10 | kanjis[16].examples[0].content | 岩 | 岩石 (ganseki) | いグねおうス岩石。 | Igneous ganseki. | Rocha ígnea magmática. | pending-human-review |
-| 10 | kanjis[16].examples[1].content | 岩 | 岩盤 (gamban) | そルいド岩盤。 | Solid gamban. | Leito rochoso sólido. | pending-human-review |
-| 10 | kanjis[17].examples[0].content | 盤 | 地盤 (jiban) | 地盤すブスいでんクえ。 | Jiban subsidence. | Subsidência do solo. | pending-human-review |
-| 10 | kanjis[17].examples[1].content | 盤 | 構造盤 (kouzou-ban) | てクとにク構造盤。 | Tectonic kouzou-ban. | Placa tectônica. | pending-human-review |
-| 10 | kanjis[18].examples[0].content | 圏 | 大気圏 (taikiken) | 大気圏れえんトルイ。 | Taikiken re-entry. | Reentrada na atmosfera. | pending-human-review |
-| 10 | kanjis[18].examples[1].content | 圏 | 成層圏 (seisouken) | 成層圏ルあイえル。 | Seisouken layer. | Camada da estratosfera. | pending-human-review |
-| 10 | kanjis[19].examples[0].content | 層 | 成層圏 (seisouken) | 成層圏おぞね。 | Seisouken ozone. | Ozônio da estratosfera. | pending-human-review |
-| 10 | kanjis[19].examples[1].content | 層 | 地層 (chisou) | 地層あなルイスいス。 | Chisou analysis. | Análise da camada geológica. | pending-human-review |
-| 10 | kanjis[20].examples[0].content | 緯 | 緯度 (ido) | ひグフ緯度あれあ。 | High ido area. | Região de alta latitude. | pending-human-review |
-| 10 | kanjis[20].examples[1].content | 緯 | 高緯度 (kouido) | 高緯度れぎおん。 | Kouido region. | Região de altas latitudes. | pending-human-review |
-| 10 | kanjis[21].examples[0].content | 経 | 経度 (keido) | えあスト経度。 | East keido. | Longitude leste. | pending-human-review |
-| 10 | kanjis[21].examples[1].content | 経 | 経緯 (keii) | げおグらプひク経緯。 | Geographic keii. | Coordenadas geográficas. | pending-human-review |
-| 10 | kanjis[22].examples[0].content | 極 | 極地 (kyokuchi) | 極地えクスぺでぃてぃおん。 | Kyokuchi expedition. | Expedição à região polar. | pending-human-review |
-| 10 | kanjis[22].examples[1].content | 極 | 南極 (nankyoku) | 南極クおんてぃねんト。 | Nankyoku continent. | Continente antártico. | pending-human-review |
+| 10 | kanjis[2].examples[0].content | 霜 | 霜害 (sougai) | 冷え込んだ冬の朝に地面一面に白い霜が降りました。 | Crop no sougai. | Danos da geada na lavoura. | pending-human-review |
+| 10 | kanjis[2].examples[1].content | 霜 | 晩霜 (bansou) | 晩秋の寒波で農作物に霜害が出ないように対策します。 | Spring no bansou. | Geada tardia de primavera. | pending-human-review |
+| 10 | kanjis[3].examples[0].content | 霧 | 濃霧 (noumu) | 濃霧注意報が発表されたため飛行機の離着陸が遅れました。 | Noumu alert. | Alerta de nevoeiro denso. | pending-human-review |
+| 10 | kanjis[3].examples[1].content | 霧 | 霧散 (musan) | 山の天候が急変して周囲が一瞬で霧に覆われました。 | Fog no musan. | Dissipação do nevoeiro. | pending-human-review |
+| 10 | kanjis[4].examples[0].content | 雫 | 雨雫 (amashizuku) | 雨上がりに木の葉の先から雨の雫が静かに滴り落ちます。 | Leaf no amashizuku. | Gota de chuva na folha. | pending-human-review |
+| 10 | kanjis[4].examples[1].content | 雫 | 雫石 (shizukuishi) | 岩手県にある雫石町の豊かな自然を満喫します。 | Shizukuishi area. | Região de Shizukuishi. | pending-human-review |
+| 10 | kanjis[5].examples[0].content | 雹 | 降雹 (kouhyou) | 初夏の雷雨とともにゴルフボール大の大きな雹が降りました。 | Kouhyou notice. | Aviso de precipitação de granizo. | pending-human-review |
+| 10 | kanjis[5].examples[1].content | 雹 | 雹害 (hyougai) | 突然の降雹によりビニールハウスに大きな雹害が出ました。 | Hyougai damage. | Danos causados por granizo. | pending-human-review |
+| 10 | kanjis[6].examples[0].content | 霆 | 雷霆 (raitei) | 漆黒の夜空を切り裂いて雷霆が轟き渡りました。 | Raitei sound. | Som de trovão violento. | pending-human-review |
+| 10 | kanjis[6].examples[1].content | 霆 | 疾風迅雷 (shippuu-jinrai) | 激しい雷雨とともに轟く雷霆の響きに圧倒されます。 | Shippuu-jinrai action. | Ação rápida como o trovão. | pending-human-review |
+| 10 | kanjis[7].examples[0].content | 嵐 | 嵐風 (ranpuu) | 台風の接近により海上で激しい暴風雨の嵐が吹き荒れます。 | Ranpuu warning. | Alerta de vento de tempestade. | pending-human-review |
+| 10 | kanjis[7].examples[1].content | 嵐 | 暴風嵐 (boufuuarashi) | 突然の激しい嵐が過ぎ去った後に青空が戻ってきました。 | Boufuuarashi approach. | Aproximação de vendaval violento. | pending-human-review |
+| 10 | kanjis[8].examples[0].content | 巽 | 巽風 (sonpuu) | 春の訪れとともに心地よい巽風が南東から吹いてきます。 | Sonpuu blowing. | Soprar do vento sueste. | pending-human-review |
+| 10 | kanjis[8].examples[1].content | 巽 | 巽位 (tatsumi-i) | 古い方位学で東南の方角を巽位と呼びます。 | Tatsumi-i direction. | Direção sudeste. | pending-human-review |
+| 10 | kanjis[9].examples[0].content | 渦 | 渦潮 (uzushio) | 鳴門海峡の激しい潮流によって巨大な渦潮が発生します。 | Naruto no uzushio. | Redemoinho marítimo de Naruto. | pending-human-review |
+| 10 | kanjis[9].examples[1].content | 渦 | 渦中 (kachuu) | 予期せぬ事件の渦中に巻き込まれて混乱しました。 | Typhoon no kachuu. | No centro do tufão. | pending-human-review |
+| 10 | kanjis[10].examples[0].content | 潮 | 潮汐 (chouseki) | 月の引力によって海水面が上下する潮汐の現象を学びます。 | Moon no chouseki. | Marés gravitações da lua. | pending-human-review |
+| 10 | kanjis[10].examples[1].content | 潮 | 高潮 (takashio) | 台風の高波による高潮警報が沿岸部に出されました。 | Takashio warning. | Alerta de maré alta. | pending-human-review |
+| 10 | kanjis[11].examples[0].content | 震 | 震度 (shindo) | 気象庁が地震の規模と各地の震度を速報で伝えます。 | Shindo 6 earthquake. | Terremoto de intensidade sísmica 6. | pending-human-review |
+| 10 | kanjis[11].examples[1].content | 震 | 震源 (shingen) | 海底深くを震源とする大きな地震が発生しました。 | Shingen depth. | Profundidade do hipocentro sísmico. | pending-human-review |
+| 10 | kanjis[12].examples[0].content | 噴 | 噴火 (funka) | 火山の火口から大量の火山灰と煙が勢いよく噴火しました。 | Volcano no funka. | Erupção do vulcão. | pending-human-review |
+| 10 | kanjis[12].examples[1].content | 噴 | 噴出 (funshutsu) | 地下深くから高温の温泉と水蒸気が噴出しています。 | Gas no funshutsu. | Ejeção de gases vulcânicos. | pending-human-review |
+| 10 | kanjis[13].examples[0].content | 崖 | 断崖 (dangai) | 海岸線に切り立つ険しい断崖絶壁を見上げます。 | Coastal dangai. | Escarpa costeira. | pending-human-review |
+| 10 | kanjis[13].examples[1].content | 崖 | 崖崩れ (gakekuzure) | 大雨による地盤の緩みで崖崩れが起きる危険があります。 | Gakekuzure risk. | Risco de deslizamento. | pending-human-review |
+| 10 | kanjis[14].examples[0].content | 崩 | 崩落 (houraku) | 集中豪雨によって山肌が崩壊して土砂が流出しました。 | Mountain houraku. | Desabamento de montanha. | pending-human-review |
+| 10 | kanjis[14].examples[1].content | 崩 | 崩壊 (houkai) | 激しい揺れで古い木造家屋が崩壊する被害が出ました。 | Strata no houkai. | Colapso das camadas geológicas. | pending-human-review |
+| 10 | kanjis[15].examples[0].content | 熔 | 熔岩 (yougan) | 火山の噴火口から真っ赤な熔岩がゆっくりと流出します。 | Yougan flow. | Fluxo de lava vulcânica. | pending-human-review |
+| 10 | kanjis[15].examples[1].content | 熔 | 熔融 (youyuu) | 超高温のマグマによって地下の岩石が熔融します。 | Rock no youyuu. | Fusão de rochas magmáticas. | pending-human-review |
+| 10 | kanjis[16].examples[0].content | 岩 | 岩石 (ganseki) | 地質調査で採取した様々な種類の岩石を分析します。 | Igneous ganseki. | Rocha ígnea magmática. | pending-human-review |
+| 10 | kanjis[16].examples[1].content | 岩 | 岩盤 (gamban) | 強固な岩盤の上に建物を基礎から建設します。 | Solid gamban. | Leito rochoso sólido. | pending-human-review |
+| 10 | kanjis[17].examples[0].content | 盤 | 地盤 (jiban) | 軟弱な地盤を強化するための地盤改良工事を行います。 | Jiban subsidence. | Subsidência do solo. | pending-human-review |
+| 10 | kanjis[17].examples[1].content | 盤 | 構造盤 (kouzou-ban) | 地球の表面を覆う巨大な構造盤であるプレートが動きます。 | Tectonic kouzou-ban. | Placa tectônica. | pending-human-review |
+| 10 | kanjis[18].examples[0].content | 圏 | 大気圏 (taikiken) | スペースシャトルが大気圏に再突入して無事に帰還しました。 | Taikiken re-entry. | Reentrada na atmosfera. | pending-human-review |
+| 10 | kanjis[18].examples[1].content | 圏 | 成層圏 (seisouken) | オゾン層が存在する成層圏を飛行機が飛行します。 | Seisouken layer. | Camada da estratosfera. | pending-human-review |
+| 10 | kanjis[19].examples[0].content | 層 | 成層圏 (seisouken) | 紫外線を吸収してくれる成層圏のオゾン層を守ります。 | Seisouken ozone. | Ozônio da estratosfera. | pending-human-review |
+| 10 | kanjis[19].examples[1].content | 層 | 地層 (chisou) | 崖の断面に露出した太古の地層を観察して年代を調べます。 | Chisou analysis. | Análise da camada geológica. | pending-human-review |
+| 10 | kanjis[20].examples[0].content | 緯 | 緯度 (ido) | 赤道に近い低緯度地域は年間を通じて温暖な気候です。 | High ido area. | Região de alta latitude. | pending-human-review |
+| 10 | kanjis[20].examples[1].content | 緯 | 高緯度 (kouido) | 極地に近い高緯度地域ではオーロラが観測されます。 | Kouido region. | Região de altas latitudes. | pending-human-review |
+| 10 | kanjis[21].examples[0].content | 経 | 経度 (keido) | グリニッジ子午線を基準とする経度を測定します。 | East keido. | Longitude leste. | pending-human-review |
+| 10 | kanjis[21].examples[1].content | 経 | 経緯 (keii) | 事件が発生した当時の詳しい経緯を時系列で説明します。 | Geographic keii. | Coordenadas geográficas. | pending-human-review |
+| 10 | kanjis[22].examples[0].content | 極 | 極地 (kyokuchi) | 過酷な気象条件にある極地の環境を研究する観測隊です。 | Kyokuchi expedition. | Expedição à região polar. | pending-human-review |
+| 10 | kanjis[22].examples[1].content | 極 | 南極 (nankyoku) | 厚い氷床に覆われた南極大陸で越冬観測を行います。 | Nankyoku continent. | Continente antártico. | pending-human-review |
 | 10 | kanjis[23].examples[0].content | 弧 | 島弧 (touko) | じゃぱねせ島弧。 | Japanese touko. | Arco insular do Japão. | pending-human-review |
 | 10 | kanjis[23].examples[1].content | 弧 | 円弧 (enko) | ほりぞんの円弧。 | Horizon no enko. | Arco do horizonte. | pending-human-review |
-| 10 | kanjis[24].examples[0].content | 蝕 | 日蝕 (nisshoku) | とたル日蝕。 | Total nisshoku. | Eclipse solar total. | pending-human-review |
-| 10 | kanjis[24].examples[1].content | 蝕 | 月蝕 (gesshoku) | ぱルてぃあル月蝕。 | Partial gesshoku. | Eclipse lunar parcial. | pending-human-review |
-| 10 | kanjis[25].examples[0].content | 暈 | 日暈 (hichou) | すんの日暈。 | Sun no hichou. | Halo luminoso ao redor do sol. | pending-human-review |
-| 10 | kanjis[25].examples[1].content | 暈 | 月暈 (tsukikasa) | もおんの月暈。 | Moon no tsukikasa. | Halo luminoso ao redor da lua. | pending-human-review |
-| 10 | kanjis[26].examples[0].content | 曙 | 曙光 (shokou) | 曙光の空。 | Shokou no sky. | Luz da alvorada no céu. | pending-human-review |
-| 10 | kanjis[26].examples[1].content | 曙 | 曙色 (akebono-iro) | 曙色クルおうド。 | Akebono-iro cloud. | Nuvem com a cor da alvorada. | pending-human-review |
-| 10 | kanjis[27].examples[0].content | 宵 | 宵の口 (yoi-no-kuchi) | 宵の口スたル。 | Yoi-no-kuchi star. | Estrela do começo da noite. | pending-human-review |
-| 10 | kanjis[27].examples[1].content | 宵 | 宵星 (yoiboshi) | ヴえぬス宵星。 | Venus yoiboshi. | Estrela vespertina Vênus. | pending-human-review |
-| 10 | kanjis[28].examples[0].content | 恒 | 恒星 (kousei) | 恒星えヴおルうてぃおん。 | Kousei evolution. | Evolução das estrelas fixas. | pending-human-review |
-| 10 | kanjis[28].examples[1].content | 恒 | 恒常 (koujou) | 恒常国家。 | Koujou state. | Estado de constância. | pending-human-review |
-| 10 | kanjis[29].examples[0].content | 惑 | 惑星 (wakusei) | えクスおプルあねト惑星。 | Exoplanet wakusei. | Exoplaneta. | pending-human-review |
-| 10 | kanjis[29].examples[1].content | 惑 | 惑乱 (wakuran) | おルびトの惑乱。 | Orbit no wakuran. | Perturbação da órbita. | pending-human-review |
-| 10 | kanjis[30].examples[0].content | 衛 | 衛星 (eisei) | なトうらル衛星。 | Natural eisei. | Satélite natural. | pending-human-review |
-| 10 | kanjis[30].examples[1].content | 衛 | 人工衛星 (jinkou-eisei) | 人工衛星おルびト。 | Jinkou-eisei orbit. | Órbita do satélite artificial. | pending-human-review |
-| 10 | kanjis[31].examples[0].content | 宙 | 宇宙 (uchuu) | 宇宙スたてぃおん。 | Uchuu station. | Estação espacial internacional. | pending-human-review |
-| 10 | kanjis[31].examples[1].content | 宙 | 宇宙船 (uchuusen) | まンねド宇宙船。 | Manned uchuusen. | Nave espacial tripulada. | pending-human-review |
-| 10 | kanjis[32].examples[0].content | 茫 | 茫々 (boubou) | 茫々 なうちゅう。 | Boubou na uchuu. | Vastidão sem fim do espaço. | pending-human-review |
-| 10 | kanjis[32].examples[1].content | 茫 | 茫洋 (bouyou) | 茫洋スぱクえ。 | Bouyou space. | Espaço sem limites. | pending-human-review |
-| 10 | kanjis[33].examples[0].content | 漠 | 砂漠 (sabaku) | さはら砂漠。 | Sahara sabaku. | Deserto do Saara. | pending-human-review |
-| 10 | kanjis[33].examples[1].content | 漠 | 漠然 (bakuzen) | 漠然スぱクえ。 | Bakuzen space. | Espaço vasto e vago. | pending-human-review |
-| 10 | kanjis[34].examples[0].content | 乾 | 乾燥 (kansou) | あいルの乾燥。 | Air no kansou. | Aridez do ar. | pending-human-review |
-| 10 | kanjis[34].examples[1].content | 乾 | 乾期 (kanki) | トろぴクあル乾期。 | Tropical kanki. | Estação seca tropical. | pending-human-review |
+| 10 | kanjis[24].examples[0].content | 蝕 | 日蝕 (nisshoku) | 太陽が月によって完全に隠される皆既日蝕を観測します。 | Total nisshoku. | Eclipse solar total. | pending-human-review |
+| 10 | kanjis[24].examples[1].content | 蝕 | 月蝕 (gesshoku) | 満月が地球の影に入って赤黒く見える月蝕を撮影します。 | Partial gesshoku. | Eclipse lunar parcial. | pending-human-review |
+| 10 | kanjis[25].examples[0].content | 暈 | 日暈 (hichou) | 巻層雲が広がる空に太陽を取り囲む美しい日暈が現れました。 | Sun no hichou. | Halo luminoso ao redor do sol. | pending-human-review |
+| 10 | kanjis[25].examples[1].content | 暈 | 月暈 (tsukikasa) | 夜空の月の周りにぼんやりとした月暈が見えます。 | Moon no tsukikasa. | Halo luminoso ao redor da lua. | pending-human-review |
+| 10 | kanjis[26].examples[0].content | 曙 | 曙光 (shokou) | 東の空が白み始め清々しい曙光が街を照らし出します。 | Shokou no sky. | Luz da alvorada no céu. | pending-human-review |
+| 10 | kanjis[26].examples[1].content | 曙 | 曙色 (akebono-iro) | 夜明け前の空が美しい曙色に染まっていきます。 | Akebono-iro cloud. | Nuvem com a cor da alvorada. | pending-human-review |
+| 10 | kanjis[27].examples[0].content | 宵 | 宵の口 (yoi-no-kuchi) | 夕暮れが過ぎて宵の口の西の空に一番星が輝きます。 | Yoi-no-kuchi star. | Estrela do começo da noite. | pending-human-review |
+| 10 | kanjis[27].examples[1].content | 宵 | 宵星 (yoiboshi) | 日没直後の空に明るく輝く宵星の金星を見つけました。 | Venus yoiboshi. | Estrela vespertina Vênus. | pending-human-review |
+| 10 | kanjis[28].examples[0].content | 恒 | 恒星 (kousei) | 自ら光り輝く太陽のような恒星の内部構造を研究します。 | Kousei evolution. | Evolução das estrelas fixas. | pending-human-review |
+| 10 | kanjis[28].examples[1].content | 恒 | 恒常 (koujou) | 生物の体内環境を一定に保つ恒常性の仕組みです。 | Koujou state. | Estado de constância. | pending-human-review |
+| 10 | kanjis[29].examples[0].content | 惑 | 惑星 (wakusei) | 太陽の周りを公転する地球や火星などの惑星を調べます。 | Exoplanet wakusei. | Exoplaneta. | pending-human-review |
+| 10 | kanjis[29].examples[1].content | 惑 | 惑乱 (wakuran) | 軌道のわずかな惑乱から未知の天体の存在を予測します。 | Orbit no wakuran. | Perturbação da órbita. | pending-human-review |
+| 10 | kanjis[30].examples[0].content | 衛 | 衛星 (eisei) | 月は地球の周りを回る唯一の天然の衛星です。 | Natural eisei. | Satélite natural. | pending-human-review |
+| 10 | kanjis[30].examples[1].content | 衛 | 人工衛星 (jinkou-eisei) | 気象観測や通信のために多くの人工衛星が打ち上げられます。 | Jinkou-eisei orbit. | Órbita do satélite artificial. | pending-human-review |
+| 10 | kanjis[31].examples[0].content | 宙 | 宇宙 (uchuu) | 無重力環境の研究を行う国際宇宙ステーションが周回します。 | Uchuu station. | Estação espacial internacional. | pending-human-review |
+| 10 | kanjis[31].examples[1].content | 宙 | 宇宙船 (uchuusen) | 最新鋭の宇宙船に乗って未知の惑星を目指します。 | Manned uchuusen. | Nave espacial tripulada. | pending-human-review |
+| 10 | kanjis[32].examples[0].content | 茫 | 茫々 (boubou) | 見渡す限り地平線が広がる茫茫たる草原を旅します。 | Boubou na uchuu. | Vastidão sem fim do espaço. | pending-human-review |
+| 10 | kanjis[32].examples[1].content | 茫 | 茫洋 (bouyou) | 果てしなく広がる茫洋たる大海原に船を漕ぎ出します。 | Bouyou space. | Espaço sem limites. | pending-human-review |
+| 10 | kanjis[33].examples[0].content | 漠 | 砂漠 (sabaku) | 乾燥した砂漠地帯をラクダに乗って移動します。 | Sahara sabaku. | Deserto do Saara. | pending-human-review |
+| 10 | kanjis[33].examples[1].content | 漠 | 漠然 (bakuzen) | 将来に対する漠然とした不安を解消するために対策を考えます。 | Bakuzen space. | Espaço vasto e vago. | pending-human-review |
+| 10 | kanjis[34].examples[0].content | 乾 | 乾燥 (kansou) | 冬のからっ風が吹いて空気がカラカラに乾燥しています。 | Air no kansou. | Aridez do ar. | pending-human-review |
+| 10 | kanjis[34].examples[1].content | 乾 | 乾期 (kanki) | 熱帯地方の雨期と乾期の気候の変化を調査します。 | Tropical kanki. | Estação seca tropical. | pending-human-review |
 | 10 | kanjis[35].kunyomi | 湿 | leitura:  | しめ・る (shimeru) / しめ・す (shimesu) / うるお・う (uruou) / うるお・す (uruosu) |  | proposta:  | corrected |
-| 10 | kanjis[35].examples[0].content | 湿 | 湿度 (shitsudo) | ひグフ湿度。 | High shitsudo. | Alta umidade do ar. | pending-human-review |
-| 10 | kanjis[35].examples[1].content | 湿 | 多湿 (tashitsu) | 多湿クルいまて。 | Tashitsu climate. | Clima hiper-úmido. | pending-human-review |
-| 10 | kanjis[36].examples[0].content | 酷 | 酷暑 (kokusho) | すっめル酷暑。 | Summer kokusho. | Onda de calor extremo no verão. | pending-human-review |
-| 10 | kanjis[36].examples[1].content | 酷 | 酷寒 (kokkan) | ぽルあル酷寒。 | Polar kokkan. | Frio polar extremo. | pending-human-review |
-| 10 | kanjis[37].examples[0].content | 猛 | 猛暑 (mousho) | 猛暑わルにんグ。 | Mousho warning. | Alerta de calor escaldante. | pending-human-review |
-| 10 | kanjis[37].examples[1].content | 猛 | 猛威 (moui) | トイプほおんの猛威。 | Typhoon no moui. | Fúria do tufão. | pending-human-review |
-| 10 | kanjis[38].examples[0].content | 汎 | 汎水 (hansui) | ばスいんの汎水。 | Basin no hansui. | Inundação da bacia. | pending-human-review |
-| 10 | kanjis[38].examples[1].content | 汎 | 汎用 (hanyou) | 汎用もでル。 | Hanyou model. | Modelo de aplicação ampla. | pending-human-review |
-| 10 | kanjis[39].examples[0].content | 氾 | 氾濫 (hanran) | りヴえルの氾濫。 | River no hanran. | Transbordamento do rio. | pending-human-review |
-| 10 | kanjis[39].examples[1].content | 氾 | 氾濫原 (hanrangen) | 氾濫原そいル。 | Hanrangen soil. | Solo da planície de inundação. | pending-human-review |
-| 10 | kanjis[40].examples[0].content | 濫 | 氾濫 (hanran) | 氾濫あルえルト。 | Hanran alert. | Alerta de inundação de bacia. | pending-human-review |
-| 10 | kanjis[40].examples[1].content | 濫 | 濫用 (ranyou) | わてル濫用。 | Water ranyou. | Uso excessivo de água. | pending-human-review |
+| 10 | kanjis[35].examples[0].content | 湿 | 湿度 (shitsudo) | 梅雨の時期は連日の雨で湿度が高く蒸し暑くなります。 | High shitsudo. | Alta umidade do ar. | pending-human-review |
+| 10 | kanjis[35].examples[1].content | 湿 | 多湿 (tashitsu) | 高温多湿な日本の夏を快適に過ごす工夫をします。 | Tashitsu climate. | Clima hiper-úmido. | pending-human-review |
+| 10 | kanjis[36].examples[0].content | 酷 | 酷暑 (kokusho) | 最高気温が四十度に迫る厳しい酷暑が続いています。 | Summer kokusho. | Onda de calor extremo no verão. | pending-human-review |
+| 10 | kanjis[36].examples[1].content | 酷 | 酷寒 (kokkan) | 氷点下三十度を下回る過酷な酷寒の地で暮らします。 | Polar kokkan. | Frio polar extremo. | pending-human-review |
+| 10 | kanjis[37].examples[0].content | 猛 | 猛暑 (mousho) | 連日の猛暑による熱中症に十分注意してください。 | Mousho warning. | Alerta de calor escaldante. | pending-human-review |
+| 10 | kanjis[37].examples[1].content | 猛 | 猛威 (moui) | 大型台風が猛威を振るい各地に暴風警報が出されました。 | Typhoon no moui. | Fúria do tufão. | pending-human-review |
+| 10 | kanjis[38].examples[0].content | 汎 | 汎水 (hansui) | 洪水により河川流域一帯に汎水が広がる被害が出ました。 | Basin no hansui. | Inundação da bacia. | pending-human-review |
+| 10 | kanjis[38].examples[1].content | 汎 | 汎用 (hanyou) | さまざまな気象データの解析に使える汎用的なソフトウェアです。 | Hanyou model. | Modelo de aplicação ampla. | pending-human-review |
+| 10 | kanjis[39].examples[0].content | 氾 | 氾濫 (hanran) | 大雨で川の水位が急上昇して堤防から氾濫しました。 | River no hanran. | Transbordamento do rio. | pending-human-review |
+| 10 | kanjis[39].examples[1].content | 氾 | 氾濫原 (hanrangen) | 河川の氾濫によって形成された肥沃な氾濫原が広がります。 | Hanrangen soil. | Solo da planície de inundação. | pending-human-review |
+| 10 | kanjis[40].examples[0].content | 濫 | 氾濫 (hanran) | 川の氾濫を防ぐために遊水地を整備します。 | Hanran alert. | Alerta de inundação de bacia. | pending-human-review |
+| 10 | kanjis[40].examples[1].content | 濫 | 濫用 (ranyou) | 貴重な地下水の濫用を防止するための条例を制定します。 | Water ranyou. | Uso excessivo de água. | pending-human-review |
 | 10 | kanjis[41].examples[0].content | 痕 | 痕跡 (konseki) | めておりての痕跡。 | Meteorite no konseki. | Vestígios de impacto de meteorito. | pending-human-review |
 | 10 | kanjis[41].examples[1].content | 痕 | 隕石痕 (inseki-ato) | 隕石痕クらてル。 | Inseki-ato crater. | Cratera de meteorito. | pending-human-review |
 | 11 | grammar.content | — | — | ぶんごのびはがっぺいしたゆうげんのひょうげんにほかならない。 | Bungo no bi wa gappei shita yuu-gen no hyougen ni hokanaranai. | A beleza da linguagem clássica não é nada além da expressão da sutileza e elegância profundas. | pending-human-review |
@@ -921,8 +921,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 11 | kanjis[27].examples[1].content | 憂 | 憂心 (yuushin) | 憂心国家。 | Yuushin state. | Estado de coração angustiado. | pending-human-review |
 | 11 | kanjis[28].examples[0].content | 鬱 | 憂鬱 (yuuutsu) | 憂鬱もおド。 | Yuuutsu mood. | Estado de melancolia profunda. | pending-human-review |
 | 11 | kanjis[28].examples[1].content | 鬱 | 鬱積 (utsuseki) | えもてぃおんの鬱積。 | Emotion no utsuseki. | Acúmulo de emoções no peito. | pending-human-review |
-| 11 | kanjis[29].examples[0].content | 萌 | 萌芽 (houga) | いであの萌芽。 | Idea no houga. | Germinação de uma nova ideia poética. | pending-human-review |
-| 11 | kanjis[29].examples[1].content | 萌 | 萌生 (housei) | スプりんグ萌生。 | Spring housei. | Brotar da vegetação na primavera. | pending-human-review |
+| 11 | kanjis[29].examples[0].content | 萌 | 萌芽 (houga) | 雪解けの野山に新緑の若芽が一斉に萌出します。 | Idea no houga. | Germinação de uma nova ideia poética. | pending-human-review |
+| 11 | kanjis[29].examples[1].content | 萌 | 萌生 (housei) | 春になると草木が青々と萌え出ずる風景が広がります。 | Spring housei. | Brotar da vegetação na primavera. | pending-human-review |
 | 11 | kanjis[30].examples[0].content | 薫 | 薫風 (kunpuu) | まイの薫風。 | May no kunpuu. | Brisa perfumada do mês de maio. | pending-human-review |
 | 11 | kanjis[30].examples[1].content | 薫 | 薫香 (kunkou) | てムプルえの薫香。 | Temple no kunkou. | Aroma de incenso do templo. | pending-human-review |
 | 11 | kanjis[31].examples[0].content | 芳 | 芳香 (houkou) | フルおウえルの芳香。 | Flower no houkou. | Fragrância da flor. | pending-human-review |
@@ -1020,8 +1020,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 12 | kanjis[34].examples[1].content | 織 | 組織 (soshiki) | てクスてぃルえ組織。 | Textile soshiki. | Trama do tecido. | pending-human-review |
 | 12 | kanjis[35].examples[0].content | 絢 | 絢爛 (kenran) | 絢爛でクおル。 | Kenran decor. | Decoração de magnífica suntuosidade. | pending-human-review |
 | 12 | kanjis[35].examples[1].content | 絢 | 絢飾 (kenshoku) | 絢飾スクれえん。 | Kenshoku screen. | Painel ornamentado. | pending-human-review |
-| 12 | kanjis[36].examples[0].content | 爛 | 絢爛 (kenran) | 絢爛えら。 | Kenran era. | Era de esplendor artístico. | pending-human-review |
-| 12 | kanjis[36].examples[1].content | 爛 | 爛漫 (ranman) | あルてぃスてぃク爛漫。 | Artistic ranman. | Plena vivacidade artística. | pending-human-review |
+| 12 | kanjis[36].examples[0].content | 爛 | 絢爛 (kenran) | 満開の桜が咲き誇り絢爛豪華な春の景色が広がります。 | Kenran era. | Era de esplendor artístico. | pending-human-review |
+| 12 | kanjis[36].examples[1].content | 爛 | 爛漫 (ranman) | 歴史上最も輝かしい文化が爛熟した黄金時代です。 | Artistic ranman. | Plena vivacidade artística. | pending-human-review |
 | 12 | kanjis[37].examples[0].content | 侘 | 侘び (wabi) | 侘び精神。 | Wabi spirit. | Espírito de simplicidade rústica Wabi. | pending-human-review |
 | 12 | kanjis[37].examples[1].content | 侘 | 侘寂 (wabisabi) | 侘寂あえストへてぃク。 | Wabisabi aesthetic. | Estética Wabi-Sabi. | pending-human-review |
 | 12 | kanjis[38].examples[0].content | 寂 | 寂び (sabi) | 寂びグらクえ。 | Sabi grace. | Graça da pátina do tempo Sabi. | pending-human-review |
@@ -1081,8 +1081,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 13 | kanjis[21].examples[1].content | 弾 | 糾弾文 (kyuudanbun) | 糾弾文ぷブルいクあてぃおん。 | Kyuudanbun publication. | Publicação do manifesto de acusação. | pending-human-review |
 | 13 | kanjis[22].examples[0].content | 詮 | 詮索 (sensaku) | プりヴあて詮索。 | Private sensaku. | Inquirição minuciosa. | pending-human-review |
 | 13 | kanjis[22].examples[1].content | 詮 | 詮議 (sengi) | 詮議めえてぃんグ。 | Sengi meeting. | Deliberação de investigação. | pending-human-review |
-| 13 | kanjis[23].examples[0].content | 索 | 詮索 (sensaku) | 詮索のきしゃ。 | Sensaku no kisha. | Jornalista em busca de fatos. | pending-human-review |
-| 13 | kanjis[23].examples[1].content | 索 | 検索 (kensaku) | データの検索。 | Data no kensaku. | Pesquisa de fontes de dados. | pending-human-review |
+| 13 | kanjis[23].examples[0].content | 索 | 詮索 (sensaku) | 膨大なデータベースの中から必要な情報を瞬時に検索します。 | Sensaku no kisha. | Jornalista em busca de fatos. | pending-human-review |
+| 13 | kanjis[23].examples[1].content | 索 | 検索 (kensaku) | 未知のバグの原因を探るため徹底的な模索を続けます。 | Data no kensaku. | Pesquisa de fontes de dados. | pending-human-review |
 | 13 | kanjis[24].examples[0].content | 撰 | 撰集 (senshuu) | えでぃとりあル撰集。 | Editorial senshuu. | Compilação de editoriais. | pending-human-review |
 | 13 | kanjis[24].examples[1].content | 撰 | 撰者 (senja) | あんトほルおグイ撰者。 | Anthology senja. | Organizador da antologia. | pending-human-review |
 | 13 | kanjis[25].examples[0].content | 編 | 編集 (henshuu) | 編集でスク。 | Henshuu desk. | Mesa de edição do jornal. | pending-human-review |
@@ -1147,14 +1147,14 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 14 | kanjis[12].kunyomi | 齢 | leitura:  | よわい (yowai) |  | proposta:  | corrected |
 | 14 | kanjis[12].examples[0].content | 齢 | 高齢化 (koureika) | 社会の高齢化。 | Society no koureika. | Envelhecimento da sociedade. | pending-human-review |
 | 14 | kanjis[12].examples[1].content | 齢 | 年齢 (nenrei) | 年齢ストるクトうれ。 | Nenrei structure. | Estrutura por faixa etária. | pending-human-review |
-| 14 | kanjis[13].examples[0].content | 老 | 老人 (roujin) | 老人ウえルふぁれ。 | Roujin welfare. | Bem-estar da pessoa idosa. | pending-human-review |
-| 14 | kanjis[13].examples[1].content | 老 | 老齢 (rourei) | 老齢ぺんスいおん。 | Rourei pension. | Pensão de velhice. | pending-human-review |
+| 14 | kanjis[13].examples[0].content | 老 | 老人 (roujin) | 地域社会全体で一人暮らしの老人を見守る体制を整えます。 | Roujin welfare. | Bem-estar da pessoa idosa. | pending-human-review |
+| 14 | kanjis[13].examples[1].content | 老 | 老齢 (rourei) | 豊かな老後を過ごすために健康と資産を計画的に維持します。 | Rourei pension. | Pensão de velhice. | pending-human-review |
 | 14 | kanjis[14].kunyomi | 婚 | leitura:  | - |  | proposta:  | corrected |
-| 14 | kanjis[14].examples[0].content | 婚 | 婚姻 (kon'in) | 婚姻らて。 | Kon'in rate. | Taxa de nupcialidade. | pending-human-review |
-| 14 | kanjis[14].examples[1].content | 婚 | 未婚 (mikon) | 未婚らて。 | Mikon rate. | Taxa de pessoas solteiras. | pending-human-review |
+| 14 | kanjis[14].examples[0].content | 婚 | 婚姻 (kon'in) | 多くの友人を招いて盛大な結婚披露宴を開きます。 | Kon'in rate. | Taxa de nupcialidade. | pending-human-review |
+| 14 | kanjis[14].examples[1].content | 婚 | 未婚 (mikon) | ハワイへの新婚旅行で素晴らしい思い出を作りました。 | Mikon rate. | Taxa de pessoas solteiras. | pending-human-review |
 | 14 | kanjis[15].kunyomi | 姻 | leitura:  | - |  | proposta:  | corrected |
-| 14 | kanjis[15].examples[0].content | 姻 | 婚姻 (kon'in) | 婚姻法律。 | Kon'in law. | Legislação matrimonial. | pending-human-review |
-| 14 | kanjis[15].examples[1].content | 姻 | 姻戚 (inshaku) | 姻戚れルあてぃおん。 | Inshaku relation. | Relação de parentesco por casamento. | pending-human-review |
+| 14 | kanjis[15].examples[0].content | 姻 | 婚姻 (kon'in) | 婚姻届を役所に提出して正式に夫婦となりました。 | Kon'in law. | Legislação matrimonial. | pending-human-review |
+| 14 | kanjis[15].examples[1].content | 姻 | 姻戚 (inshaku) | 結婚によって両家の間に新しい姻戚関係が結ばれます。 | Inshaku relation. | Relação de parentesco por casamento. | pending-human-review |
 | 14 | kanjis[16].examples[0].content | 育 | 育児 (ikuji) | 育児すっぽルト。 | Ikuji support. | Suporte à criação de filhos. | pending-human-review |
 | 14 | kanjis[16].examples[1].content | 育 | 保育 (hoiku) | 保育ふぁクいルいトイ。 | Hoiku facility. | Creche de assistência infantil. | pending-human-review |
 | 14 | kanjis[17].examples[0].content | 保 | 保育 (hoiku) | 保育し (保育士)。 | Hoiku-shi (保育士). | Educador infantil. | pending-human-review |
@@ -1216,8 +1216,8 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 14 | kanjis[41].examples[0].content | 衰 | 衰退 (suitai) | とウんの衰退。 | Town no suitai. | Esvaziamento da cidade. | pending-human-review |
 | 14 | kanjis[41].examples[1].content | 衰 | 衰弱 (suijaku) | ルおクあル経済の衰弱。 | Local economy no suijaku. | Debilitação da economia local. | pending-human-review |
 | 15 | grammar.content | — | — | めんたルしっかんにたいしてへんけんをすてることがもとめられている。 | Mental shikkan ni taishite henken o suteru koto ga motomerarete iru. | Exige-se descartar o preconceito em relação aos transtornos mentais. | pending-human-review |
-| 15 | kanjis[0].examples[0].content | 偏 | 偏見 (henken) | 偏見をすてる。 | Henken o suteru. | Descartar o preconceito. | pending-human-review |
-| 15 | kanjis[0].examples[1].content | 偏 | 偏重 (henchou) | あクあでみク偏重。 | Academic henchou. | Ênfase desproporcional no acadêmico. | pending-human-review |
+| 15 | kanjis[0].examples[0].content | 偏 | 偏見 (henken) | 特定の偏見にとらわれず公平な視点で判断します。 | Henken o suteru. | Descartar o preconceito. | pending-human-review |
+| 15 | kanjis[0].examples[1].content | 偏 | 偏重 (henchou) | 栄養が偏らないようにバランスの良い食事を摂ります。 | Academic henchou. | Ênfase desproporcional no acadêmico. | pending-human-review |
 | 15 | kanjis[1].onyomi | 虐 | leitura: mechanically-convertible-onyomi | ギャク (GYAKU) | GYAKU (GYAKU) | proposta: ギャク (GYAKU) | pending-human-review |
 | 15 | kanjis[1].examples[0].content | 虐 | 虐待 (gyakutai) | ちルド虐待。 | Child gyakutai. | Abuso infantil. | pending-human-review |
 | 15 | kanjis[1].examples[1].content | 虐 | 虐殺 (gyakusatsu) | まっス虐殺。 | Mass gyakusatsu. | Chacina de inocentes. | pending-human-review |
@@ -1225,12 +1225,12 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[2].examples[0].content | 嫉 | 嫉妬 (shitto) | 嫉妬ふぇえルいんグ。 | Shitto feeling. | Sentimento de inveja destrutiva. | pending-human-review |
 | 15 | kanjis[2].examples[1].content | 嫉 | 嫉視 (shisshi) | 嫉視のめ。 | Shisshi no me. | Olhar com inveja de ressentimento. | pending-human-review |
 | 15 | kanjis[3].onyomi | 傲 | leitura: mechanically-convertible-onyomi | ゴウ (GOU) | GOU (GOU) | proposta: ゴウ (GOU) | pending-human-review |
-| 15 | kanjis[3].examples[0].content | 傲 | 傲慢 (gouman) | 傲慢態度。 | Gouman attitude. | Atitude de arrogância soberba. | pending-human-review |
-| 15 | kanjis[3].examples[1].content | 傲 | 傲岸 (gougan) | 傲岸なぼっス。 | Gougan na boss. | Chefe de prepotência inabalável. | pending-human-review |
+| 15 | kanjis[3].examples[0].content | 傲 | 傲慢 (gouman) | 成功を収めても傲慢な態度をとらず謙虚でいるべきです。 | Gouman attitude. | Atitude de arrogância soberba. | pending-human-review |
+| 15 | kanjis[3].examples[1].content | 傲 | 傲岸 (gougan) | 自惚れて周囲を見下す傲り高ぶった姿勢を戒めます。 | Gougan na boss. | Chefe de prepotência inabalável. | pending-human-review |
 | 15 | kanjis[4].onyomi | 慢 | leitura: mechanically-convertible-onyomi | マン (MAN) | MAN (MAN) | proposta: マン (MAN) | pending-human-review |
 | 15 | kanjis[4].kunyomi | 慢 | leitura:  | - |  | proposta:  | corrected |
-| 15 | kanjis[4].examples[0].content | 慢 | 傲慢 (gouman) | 力の傲慢。 | Power no gouman. | Soberba do poder. | pending-human-review |
-| 15 | kanjis[4].examples[1].content | 慢 | 自慢 (jiman) | 自慢物語。 | Jiman story. | História de orgulho excessivo. | pending-human-review |
+| 15 | kanjis[4].examples[0].content | 慢 | 傲慢 (gouman) | 油断や慢心が思わぬ大きな失敗を招きます。 | Power no gouman. | Soberba do poder. | pending-human-review |
+| 15 | kanjis[4].examples[1].content | 慢 | 自慢 (jiman) | 相手を見下す高慢な態度は人間関係を壊します。 | Jiman story. | História de orgulho excessivo. | pending-human-review |
 | 15 | kanjis[5].onyomi | 妬 | leitura: mechanically-convertible-onyomi | ト (TO) | TO (TO) | proposta: ト (TO) | pending-human-review |
 | 15 | kanjis[5].examples[0].content | 妬 | 嫉妬 (shitto) | 嫉妬のフルあめ。 | Shitto no flame. | Chama da inveja tóxica. | pending-human-review |
 | 15 | kanjis[5].examples[1].content | 妬 | 妬み (netami) | 妬みえもてぃおん。 | Netami emotion. | Emoção de ressentimento velado. | pending-human-review |
@@ -1238,121 +1238,121 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 15 | kanjis[6].examples[0].content | 猜 | 猜疑 (saigi) | 猜疑みんド。 | Saigi mind. | Mente paranoica desconfiada. | pending-human-review |
 | 15 | kanjis[6].examples[1].content | 猜 | 猜疑心 (saigishin) | 猜疑心のこうれいしゃ。 | Saigishin no koureisha. | Paranoia desconfiada do indivíduo. | pending-human-review |
 | 15 | kanjis[7].onyomi | 侮 | leitura: mechanically-convertible-onyomi | ブ (BU) | BU (BU) | proposta: ブ (BU) | pending-human-review |
-| 15 | kanjis[7].examples[0].content | 侮 | 侮辱 (bujoku) | ぷブルいク侮辱。 | Public bujoku. | Insulto público verbal. | pending-human-review |
-| 15 | kanjis[7].examples[1].content | 侮 | 侮蔑 (bubetsu) | 侮蔑のめ。 | Bubetsu no me. | Olhar de desprezo preconceituoso. | pending-human-review |
+| 15 | kanjis[7].examples[0].content | 侮 | 侮辱 (bujoku) | 相手の能力を侮って油断したため負けてしまいました。 | Public bujoku. | Insulto público verbal. | pending-human-review |
+| 15 | kanjis[7].examples[1].content | 侮 | 侮蔑 (bubetsu) | 他人を公然と侮辱するような行為は法律で処罰されます。 | Bubetsu no me. | Olhar de desprezo preconceituoso. | pending-human-review |
 | 15 | kanjis[8].onyomi | 蔑 | leitura: mechanically-convertible-onyomi | ベツ (BETSU) | BETSU (BETSU) | proposta: ベツ (BETSU) | pending-human-review |
-| 15 | kanjis[8].examples[0].content | 蔑 | 侮蔑 (bubetsu) | みのりトイの侮蔑。 | Minority no bubetsu. | Menosprezo à minoria. | pending-human-review |
-| 15 | kanjis[8].examples[1].content | 蔑 | 軽蔑 (keibetsu) | 軽蔑とね。 | Keibetsu tone. | Tom de desprezo desdenhoso. | pending-human-review |
+| 15 | kanjis[8].examples[0].content | 蔑 | 侮蔑 (bubetsu) | 他人の真面目な努力を軽蔑するような態度は許されません。 | Minority no bubetsu. | Menosprezo à minoria. | pending-human-review |
+| 15 | kanjis[8].examples[1].content | 蔑 | 軽蔑 (keibetsu) | 交通ルールを蔑ろにして運転するのは極めて危険です。 | Keibetsu tone. | Tom de desprezo desdenhoso. | pending-human-review |
 | 15 | kanjis[9].onyomi | 軽 | leitura: mechanically-convertible-onyomi | ケイ (KEI) | KEI (KEI) | proposta: ケイ (KEI) | pending-human-review |
-| 15 | kanjis[9].examples[0].content | 軽 | 軽蔑 (keibetsu) | 軽蔑ルおおク。 | Keibetsu look. | Olhar de menosprezo. | pending-human-review |
-| 15 | kanjis[9].examples[1].content | 軽 | 軽視 (keishi) | さふぇトイの軽視。 | Safety no keishi. | Negligência com a segurança. | pending-human-review |
+| 15 | kanjis[9].examples[0].content | 軽 | 軽蔑 (keibetsu) | 問題を軽視せず早期に対策を講じることが重要です。 | Keibetsu look. | Olhar de menosprezo. | pending-human-review |
+| 15 | kanjis[9].examples[1].content | 軽 | 軽視 (keishi) | 安全管理を軽視した結果として重大な事故が起きました。 | Safety no keishi. | Negligência com a segurança. | pending-human-review |
 | 15 | kanjis[10].onyomi | 差 | leitura: mechanically-convertible-onyomi | サ (SA) | SA (SA) | proposta: サ (SA) | pending-human-review |
 | 15 | kanjis[10].kunyomi | 差 | leitura:  | さ・す (sasu) / さ・し (sashi) |  | proposta:  | corrected |
-| 15 | kanjis[10].examples[0].content | 差 | 差別 (sabetsu) | らクいあル差別。 | Racial sabetsu. | Discriminação racial. | pending-human-review |
-| 15 | kanjis[10].examples[1].content | 差 | 格差 (kakusa) | えクおのみク格差。 | Economic kakusa. | Desigualdade econômica. | pending-human-review |
+| 15 | kanjis[10].examples[0].content | 差 | 差別 (sabetsu) | いかなる人種差別や偏見も断固として許されません。 | Racial sabetsu. | Discriminação racial. | pending-human-review |
+| 15 | kanjis[10].examples[1].content | 差 | 格差 (kakusa) | 教育の機会均等を図り地域間の格差を是正します。 | Economic kakusa. | Desigualdade econômica. | pending-human-review |
 | 15 | kanjis[11].onyomi | 嫌 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
-| 15 | kanjis[11].examples[0].content | 嫌 | 嫌悪 (ken'o) | 嫌悪ふぇえルいんグ。 | Ken'o feeling. | Sensação de repulsa social. | pending-human-review |
-| 15 | kanjis[11].examples[1].content | 嫌 | 嫌悪感 (ken'okan) | ストろんグ嫌悪感。 | Strong ken'okan. | Forte sentimento de repulsa. | pending-human-review |
+| 15 | kanjis[11].examples[0].content | 嫌 | 嫌悪 (ken'o) | 不正行為に対して強い嫌悪感を抱きます。 | Ken'o feeling. | Sensação de repulsa social. | pending-human-review |
+| 15 | kanjis[11].examples[1].content | 嫌 | 嫌悪感 (ken'okan) | 強い嫌悪感を示す態度が相手を傷つけます。 | Strong ken'okan. | Forte sentimento de repulsa. | pending-human-review |
 | 15 | kanjis[12].onyomi | 悪 | leitura: mechanically-convertible-onyomi | アク (AKU) | AKU (AKU) | proposta: アク (AKU) | pending-human-review |
-| 15 | kanjis[12].examples[0].content | 悪 | 嫌悪 (ken'o) | 嫌悪のえもてぃおん。 | Ken'o no emotion. | Emoção de forte aversão. | pending-human-review |
-| 15 | kanjis[12].examples[1].content | 悪 | 悪意 (akui) | 悪意のるもル。 | Akui no rumor. | Boato de má-fé maliciosa. | pending-human-review |
+| 15 | kanjis[12].examples[0].content | 悪 | 嫌悪 (ken'o) | 悪意に満ちたデマや噂に惑わされないようにします。 | Ken'o no emotion. | Emoção de forte aversão. | pending-human-review |
+| 15 | kanjis[12].examples[1].content | 悪 | 悪意 (akui) | 悪意のあるプログラムからパソコンを保護します。 | Akui no rumor. | Boato de má-fé maliciosa. | pending-human-review |
 | 15 | kanjis[13].onyomi | 憎 | leitura: mechanically-convertible-onyomi | ゾウ (ZOU) | ZOU (ZOU) | proposta: ゾウ (ZOU) | pending-human-review |
 | 15 | kanjis[13].kunyomi | 憎 | leitura:  | にく・い (nikui) |  | proposta:  | corrected |
-| 15 | kanjis[13].examples[0].content | 憎 | 憎悪 (zouo) | はてクりめの憎悪。 | Hate crime no zouo. | Ódio visceral no crime de ódio. | pending-human-review |
-| 15 | kanjis[13].examples[1].content | 憎 | 憎しみ (nikushimi) | 憎しみ明確な。 | Nikushimi clear. | Desfazer o sentimento de ódio. | pending-human-review |
+| 15 | kanjis[13].examples[0].content | 憎 | 憎悪 (zouo) | 戦争が引き起こす憎悪の連鎖を断ち切らなければなりません。 | Hate crime no zouo. | Ódio visceral no crime de ódio. | pending-human-review |
+| 15 | kanjis[13].examples[1].content | 憎 | 憎しみ (nikushimi) | お互いに話し合って胸の中の憎しみを解消します。 | Nikushimi clear. | Desfazer o sentimento de ódio. | pending-human-review |
 | 15 | kanjis[14].onyomi | 恥 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
 | 15 | kanjis[14].kunyomi | 恥 | leitura:  | はじ (haji) |  | proposta:  | corrected |
-| 15 | kanjis[14].examples[0].content | 恥 | 恥辱 (chijoku) | ぷブルいク恥辱。 | Public chijoku. | Vexame e humilhação pública. | pending-human-review |
-| 15 | kanjis[14].examples[1].content | 恥 | 羞恥 (shuuchi) | 羞恥ふぇえルいんグ。 | Shuuchi feeling. | Sensação de constrangimento. | pending-human-review |
+| 15 | kanjis[14].examples[0].content | 恥 | 恥辱 (chijoku) | 人前で恥辱を受けるような失態を深く反省します。 | Public chijoku. | Vexame e humilhação pública. | pending-human-review |
+| 15 | kanjis[14].examples[1].content | 恥 | 羞恥 (shuuchi) | 失敗を振り返って恥ずかしい思いに苛まれます。 | Shuuchi feeling. | Sensação de constrangimento. | pending-human-review |
 | 15 | kanjis[15].onyomi | 羞 | leitura: mechanically-convertible-onyomi | シュウ (SHUU) | SHUU (SHUU) | proposta: シュウ (SHUU) | pending-human-review |
-| 15 | kanjis[15].examples[0].content | 羞 | 羞恥 (shuuchi) | 羞恥しん (羞恥心)。 | Shuuchi-shin (羞恥心). | Sentimento de constrangimento. | pending-human-review |
-| 15 | kanjis[15].examples[1].content | 羞 | 羞恥心 (shuuchishin) | 羞恥心損失。 | Shuuchishin loss. | Perda do sentimento de pudor. | pending-human-review |
+| 15 | kanjis[15].examples[0].content | 羞 | 羞恥 (shuuchi) | 褒められて照れくさそうに含羞の笑みを浮かべます。 | Shuuchi-shin (羞恥心). | Sentimento de constrangimento. | pending-human-review |
+| 15 | kanjis[15].examples[1].content | 羞 | 羞恥心 (shuuchishin) | 人としての恥を知る羞恥心を忘れてはいけません。 | Shuuchishin loss. | Perda do sentimento de pudor. | pending-human-review |
 | 15 | kanjis[16].onyomi | 辱 | leitura: mechanically-convertible-onyomi | ジョク (JOKU) | JOKU (JOKU) | proposta: ジョク (JOKU) | pending-human-review |
-| 15 | kanjis[16].examples[0].content | 辱 | 侮辱 (bujoku) | クおうルト侮辱。 | Court bujoku. | Insulto ao tribunal. | pending-human-review |
-| 15 | kanjis[16].examples[1].content | 辱 | 恥辱 (chijoku) | ふぁみルイの恥辱。 | Family no chijoku. | Deshonra da família. | pending-human-review |
+| 15 | kanjis[16].examples[0].content | 辱 | 侮辱 (bujoku) | 法廷の権威を損なうような侮辱行為は許されません。 | Court bujoku. | Insulto ao tribunal. | pending-human-review |
+| 15 | kanjis[16].examples[1].content | 辱 | 恥辱 (chijoku) | 家族に恥辱を与えることのないよう誠実に生きます。 | Family no chijoku. | Deshonra da família. | pending-human-review |
 | 15 | kanjis[17].onyomi | 患 | leitura: mechanically-convertible-onyomi | カン (KAN) | KAN (KAN) | proposta: カン (KAN) | pending-human-review |
-| 15 | kanjis[17].examples[0].content | 患 | 患者 (kanja) | めんたル患者。 | Mental kanja. | Paciente psiquiátrico. | pending-human-review |
-| 15 | kanjis[17].examples[1].content | 患 | 疾患 (shikkan) | めんたル疾患。 | Mental shikkan. | Transtorno mental. | pending-human-review |
+| 15 | kanjis[17].examples[0].content | 患 | 患者 (kanja) | 心身の不調を抱える患者に寄り添った医療を提供します。 | Mental kanja. | Paciente psiquiátrico. | pending-human-review |
+| 15 | kanjis[17].examples[1].content | 患 | 疾患 (shikkan) | ストレスが引き起こす心身の疾患を早期に治療します。 | Mental shikkan. | Transtorno mental. | pending-human-review |
 | 15 | kanjis[18].onyomi | 癖 | leitura: mechanically-convertible-onyomi | ヘキ (HEKI) | HEKI (HEKI) | proposta: ヘキ (HEKI) | pending-human-review |
 | 15 | kanjis[18].kunyomi | 癖 | leitura:  | くせ (kuse) |  | proposta:  | corrected |
-| 15 | kanjis[18].examples[0].content | 癖 | 潔癖 (keppeki) | 潔癖しょう。 | Keppeki-shou. | Transtorno obsessivo-compulsivo. | pending-human-review |
-| 15 | kanjis[18].examples[1].content | 癖 | 癖好 (hekikou) | 癖好べはヴいおル。 | Hekikou behavior. | Comportamento compulsivo. | pending-human-review |
+| 15 | kanjis[18].examples[0].content | 癖 | 潔癖 (keppeki) | 過度の潔癖症により日常生活に支障をきたしてしまいます。 | Keppeki-shou. | Transtorno obsessivo-compulsivo. | pending-human-review |
+| 15 | kanjis[18].examples[1].content | 癖 | 癖好 (hekikou) | 無意識に出てしまう癖を少しずつ直していきます。 | Hekikou behavior. | Comportamento compulsivo. | pending-human-review |
 | 15 | kanjis[19].onyomi | 狂 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
-| 15 | kanjis[19].examples[0].content | 狂 | 狂気 (kyouki) | クろウドの狂気。 | Crowd no kyouki. | Loucura da multidão. | pending-human-review |
-| 15 | kanjis[19].examples[1].content | 狂 | 狂信 (kyoushin) | 狂信ふぉっルおウえル。 | Kyoushin follower. | Seguidor fanático. | pending-human-review |
+| 15 | kanjis[19].examples[0].content | 狂 | 狂気 (kyouki) | 会場全体が狂気じみた熱狂の渦に包まれました。 | Crowd no kyouki. | Loucura da multidão. | pending-human-review |
+| 15 | kanjis[19].examples[1].content | 狂 | 狂信 (kyoushin) | 教祖の教えを盲目的に狂信する信者たちです。 | Kyoushin follower. | Seguidor fanático. | pending-human-review |
 | 15 | kanjis[20].onyomi | 妄 | leitura: mechanically-convertible-onyomi | モウ (MOU) | MOU (MOU) | proposta: モウ (MOU) | pending-human-review |
 | 15 | kanjis[20].kunyomi | 妄 | leitura:  | みだ・りに (midarini) |  | proposta:  | corrected |
-| 15 | kanjis[20].examples[0].content | 妄 | 妄想 (mousou) | ぺルせクうてぃおん妄想。 | Persecution mousou. | Delírio de perseguição. | pending-human-review |
-| 15 | kanjis[20].examples[1].content | 妄 | 妄信 (moushin) | どグまてぃク妄信。 | Dogmatic moushin. | Crença cega sem provas. | pending-human-review |
+| 15 | kanjis[20].examples[0].content | 妄 | 妄想 (mousou) | 誰かに監視されているという被害妄想に悩まされます。 | Persecution mousou. | Delírio de perseguição. | pending-human-review |
+| 15 | kanjis[20].examples[1].content | 妄 | 妄信 (moushin) | 怪しい話を根拠もなく妄信してはいけません。 | Dogmatic moushin. | Crença cega sem provas. | pending-human-review |
 | 15 | kanjis[21].onyomi | 痴 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
 | 15 | kanjis[21].kunyomi | 痴 | leitura:  | し・れる (shireru) / おろか (oroka) |  | proposta:  | corrected |
-| 15 | kanjis[21].examples[0].content | 痴 | 痴呆 (chihou) | 痴呆しょう (痴呆症)。 | Chihou-shou (痴呆症). | Quadro de demência senil. | pending-human-review |
-| 15 | kanjis[21].examples[1].content | 痴 | 愚痴 (guchi) | 愚痴をいう。 | Guchi o iu. | Fazer lamentações estéreis. | pending-human-review |
+| 15 | kanjis[21].examples[0].content | 痴 | 痴呆 (chihou) | 満員電車の中での悪質な痴漢行為を取り締まります。 | Chihou-shou (痴呆症). | Quadro de demência senil. | pending-human-review |
+| 15 | kanjis[21].examples[1].content | 痴 | 愚痴 (guchi) | いつまでも終わらない愚痴を言っても何も解決しません。 | Guchi o iu. | Fazer lamentações estéreis. | pending-human-review |
 | 15 | kanjis[22].onyomi | 抑 | leitura: mechanically-convertible-onyomi | ヨク (YOKU) | YOKU (YOKU) | proposta: ヨク (YOKU) | pending-human-review |
-| 15 | kanjis[22].examples[0].content | 抑 | 抑圧 (yokuatsu) | えもてぃおんの抑圧。 | Emotion no yokuatsu. | Repressão de emoções. | pending-human-review |
-| 15 | kanjis[22].examples[1].content | 抑 | 抑制 (yokusei) | いムぷルせ抑制。 | Impulse yokusei. | Inibição do impulso. | pending-human-review |
+| 15 | kanjis[22].examples[0].content | 抑 | 抑圧 (yokuatsu) | 感情の高ぶりを抑圧せずに適切に発散することが大切です。 | Emotion no yokuatsu. | Repressão de emoções. | pending-human-review |
+| 15 | kanjis[22].examples[1].content | 抑 | 抑制 (yokusei) | 衝動的な行動を理性でしっかりと抑制します。 | Impulse yokusei. | Inibição do impulso. | pending-human-review |
 | 15 | kanjis[23].onyomi | 鬱 | leitura: mechanically-convertible-onyomi | ウツ (UTSU) | UTSU (UTSU) | proposta: ウツ (UTSU) | pending-human-review |
-| 15 | kanjis[23].examples[0].content | 鬱 | 鬱病 (utsubyou) | 鬱病トれあトめんト。 | Utsubyou treatment. | Tratamento da depressão clínica. | pending-human-review |
-| 15 | kanjis[23].examples[1].content | 鬱 | 憂鬱 (yuuutsu) | 憂鬱だイ。 | Yuuutsu day. | Dia de profunda melancolia. | pending-human-review |
+| 15 | kanjis[23].examples[0].content | 鬱 | 鬱病 (utsubyou) | 専門のクリニックで鬱病の適切なカウンセリングを受けます。 | Utsubyou treatment. | Tratamento da depressão clínica. | pending-human-review |
+| 15 | kanjis[23].examples[1].content | 鬱 | 憂鬱 (yuuutsu) | 雨が降り続く日は気分が憂鬱になりがちです。 | Yuuutsu day. | Dia de profunda melancolia. | pending-human-review |
 | 15 | kanjis[24].onyomi | 躁 | leitura: mechanically-convertible-onyomi | ソウ (SOU) | SOU (SOU) | proposta: ソウ (SOU) | pending-human-review |
-| 15 | kanjis[24].examples[0].content | 躁 | 躁病 (soubyou) | 躁病えぴそで。 | Soubyou episode. | Episódio de mania eufórica. | pending-human-review |
-| 15 | kanjis[24].examples[1].content | 躁 | 躁鬱 (souutsu) | 躁鬱しょう。 | Souutsu-shou. | Transtorno bipolar. | pending-human-review |
+| 15 | kanjis[24].examples[0].content | 躁 | 躁病 (soubyou) | 気分が異常に高揚する躁状態の症状を治療します。 | Soubyou episode. | Episódio de mania eufórica. | pending-human-review |
+| 15 | kanjis[24].examples[1].content | 躁 | 躁鬱 (souutsu) | 気分の浮き沈みが激しい躁鬱病のケアを行います。 | Souutsu-shou. | Transtorno bipolar. | pending-human-review |
 | 15 | kanjis[25].onyomi | 恐 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
-| 15 | kanjis[25].examples[0].content | 恐 | 恐怖 (kyoufu) | 恐怖でぃそルでル。 | Kyoufu disorder. | Transtorno de pânico e fobia. | pending-human-review |
-| 15 | kanjis[25].examples[1].content | 恐 | 恐怖症 (kyoufushou) | そクいあル恐怖症。 | Social kyoufushou. | Fobia social. | pending-human-review |
+| 15 | kanjis[25].examples[0].content | 恐 | 恐怖 (kyoufu) | パニック発作による強い恐怖感を和らげる呼吸法です。 | Kyoufu disorder. | Transtorno de pânico e fobia. | pending-human-review |
+| 15 | kanjis[25].examples[1].content | 恐 | 恐怖症 (kyoufushou) | 人前で話すことに対する社交恐怖症を克服します。 | Social kyoufushou. | Fobia social. | pending-human-review |
 | 15 | kanjis[26].onyomi | 怖 | leitura: mechanically-convertible-onyomi | フウ (HU) | HU (HU) | proposta: フウ (HU) | pending-human-review |
-| 15 | kanjis[26].examples[0].content | 怖 | 恐怖 (kyoufu) | 恐怖ふぇえルいんグ。 | Kyoufu feeling. | Sensação de medo e pânico. | pending-human-review |
-| 15 | kanjis[26].examples[1].content | 怖 | 恐怖心 (kyoufushin) | 恐怖心をおヴえルクおめ。 | Kyoufushin o overcome. | Superar o sentimento de fobia. | pending-human-review |
+| 15 | kanjis[26].examples[0].content | 怖 | 恐怖 (kyoufu) | 暗闇に対する恐怖心を克服するために明かりをつけます。 | Kyoufu feeling. | Sensação de medo e pânico. | pending-human-review |
+| 15 | kanjis[26].examples[1].content | 怖 | 恐怖心 (kyoufushin) | 未知の体験に対する恐怖心を乗り越えて一歩を踏み出します。 | Kyoufushin o overcome. | Superar o sentimento de fobia. | pending-human-review |
 | 15 | kanjis[27].onyomi | 脅 | leitura: mechanically-convertible-onyomi | キョウ (KYOU) | KYOU (KYOU) | proposta: キョウ (KYOU) | pending-human-review |
-| 15 | kanjis[27].examples[0].content | 脅 | 脅迫 (kyouhaku) | 脅迫ルえってル。 | Kyouhaku letter. | Carta de intimidação e ameaça. | pending-human-review |
-| 15 | kanjis[27].examples[1].content | 脅 | 脅威 (kyoui) | せクうりトイの脅威。 | Security no kyoui. | Ameaça à segurança. | pending-human-review |
+| 15 | kanjis[27].examples[0].content | 脅 | 脅迫 (kyouhaku) | 卑劣な脅迫行為に対して警察に通報します。 | Kyouhaku letter. | Carta de intimidação e ameaça. | pending-human-review |
+| 15 | kanjis[27].examples[1].content | 脅 | 脅威 (kyoui) | 地球温暖化は人類の生存に対する深刻な脅威となっています。 | Security no kyoui. | Ameaça à segurança. | pending-human-review |
 | 15 | kanjis[28].onyomi | 迫 | leitura: mechanically-convertible-onyomi | ハク (HAKU) | HAKU (HAKU) | proposta: ハク (HAKU) | pending-human-review |
-| 15 | kanjis[28].examples[0].content | 迫 | 迫害 (hakugai) | みのりトイ迫害。 | Minority hakugai. | Perseguição a minorias. | pending-human-review |
-| 15 | kanjis[28].examples[1].content | 迫 | 圧迫 (appaku) | めんたル圧迫。 | Mental appaku. | Pressão psicológica. | pending-human-review |
+| 15 | kanjis[28].examples[0].content | 迫 | 迫害 (hakugai) | 少数派の人々に対する不当な迫害を根絶します。 | Minority hakugai. | Perseguição a minorias. | pending-human-review |
+| 15 | kanjis[28].examples[1].content | 迫 | 圧迫 (appaku) | 過密なスケジュールによる精神的な圧迫感を感じます。 | Mental appaku. | Pressão psicológica. | pending-human-review |
 | 15 | kanjis[29].onyomi | 害 | leitura: mechanically-convertible-onyomi | ガイ (GAI) | GAI (GAI) | proposta: ガイ (GAI) | pending-human-review |
 | 15 | kanjis[29].kunyomi | 害 | leitura:  | - |  | proposta:  | corrected |
-| 15 | kanjis[29].examples[0].content | 害 | 迫害 (hakugai) | グろうプ迫害。 | Group hakugai. | Perseguição de grupo. | pending-human-review |
-| 15 | kanjis[29].examples[1].content | 害 | 障害 (shougai) | 開発障害。 | Development shougai. | Transtorno do desenvolvimento. | pending-human-review |
+| 15 | kanjis[29].examples[0].content | 害 | 迫害 (hakugai) | 人権を侵害するあらゆる迫害行為に反対します。 | Group hakugai. | Perseguição de grupo. | pending-human-review |
+| 15 | kanjis[29].examples[1].content | 害 | 障害 (shougai) | 発達障害のある子どもたちに個別指導を行います。 | Development shougai. | Transtorno do desenvolvimento. | pending-human-review |
 | 15 | kanjis[30].onyomi | 孤 | leitura: mechanically-convertible-onyomi | コ (KO) | KO (KO) | proposta: コ (KO) | pending-human-review |
 | 15 | kanjis[30].kunyomi | 孤 | leitura:  | - |  | proposta:  | corrected |
-| 15 | kanjis[30].examples[0].content | 孤 | 孤立 (koritsu) | そクいあル孤立。 | Social koritsu. | Isolamento social. | pending-human-review |
-| 15 | kanjis[30].examples[1].content | 孤 | 孤独 (kodoku) | 孤独国家。 | Kodoku state. | Estado de desamparo e solidão. | pending-human-review |
+| 15 | kanjis[30].examples[0].content | 孤 | 孤立 (koritsu) | 地域社会から孤立している高齢者を見守るネットワークです。 | Social koritsu. | Isolamento social. | pending-human-review |
+| 15 | kanjis[30].examples[1].content | 孤 | 孤独 (kodoku) | 誰にも相談できず深い孤独感を抱えていました。 | Kodoku state. | Estado de desamparo e solidão. | pending-human-review |
 | 15 | kanjis[31].onyomi | 閉 | leitura: mechanically-convertible-onyomi | ヘイ (HEI) | HEI (HEI) | proposta: ヘイ (HEI) | pending-human-review |
-| 15 | kanjis[31].examples[0].content | 閉 | 閉鎖 (heisa) | みんドの閉鎖。 | Mind no heisa. | Fechamento e enclausuramento da mente. | pending-human-review |
-| 15 | kanjis[31].examples[1].content | 閉 | 閉塞 (heisoku) | そクいあル閉塞。 | Social heisoku. | Sensação de sufocamento social. | pending-human-review |
+| 15 | kanjis[31].examples[0].content | 閉 | 閉鎖 (heisa) | 精神的なショックから心を閉鎖して引きこもってしまいます。 | Mind no heisa. | Fechamento e enclausuramento da mente. | pending-human-review |
+| 15 | kanjis[31].examples[1].content | 閉 | 閉塞 (heisoku) | 社会全体の閉塞感を打破する新しいアイデアが求められます。 | Social heisoku. | Sensação de sufocamento social. | pending-human-review |
 | 15 | kanjis[32].onyomi | 逃 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 15 | kanjis[32].examples[0].content | 逃 | 逃避 (touhi) | 現実逃避。 | Reality touhi. | Fuga da realidade. | pending-human-review |
-| 15 | kanjis[32].examples[1].content | 逃 | 逃走 (tousou) | スクえねからの逃走。 | Scene kara no tousou. | Fuga do local. | pending-human-review |
+| 15 | kanjis[32].examples[0].content | 逃 | 逃避 (touhi) | 辛い現実に直面したときに現実逃避してしまいたくなります。 | Reality touhi. | Fuga da realidade. | pending-human-review |
+| 15 | kanjis[32].examples[1].content | 逃 | 逃走 (tousou) | 警察の追跡を振り切って犯人が現場から逃走しました。 | Scene kara no tousou. | Fuga do local. | pending-human-review |
 | 15 | kanjis[33].onyomi | 避 | leitura: mechanically-convertible-onyomi | ヒ (HI) | HI (HI) | proposta: ヒ (HI) | pending-human-review |
-| 15 | kanjis[33].examples[0].content | 避 | 回避 (kaihi) | クおんフルいクトの回避。 | Conflict no kaihi. | Esquiva do conflito. | pending-human-review |
-| 15 | kanjis[33].examples[1].content | 避 | 避難 (hinan) | 避難プルあクえ。 | Hinan place. | Local de abrigo. | pending-human-review |
+| 15 | kanjis[33].examples[0].content | 避 | 回避 (kaihi) | 不要な対立や衝突を上手に回避します。 | Conflict no kaihi. | Esquiva do conflito. | pending-human-review |
+| 15 | kanjis[33].examples[1].content | 避 | 避難 (hinan) | 災害時に住民が速やかに避難できるように誘導します。 | Hinan place. | Local de abrigo. | pending-human-review |
 | 15 | kanjis[34].onyomi | 惑 | leitura: mechanically-convertible-onyomi | ワク (WAKU) | WAKU (WAKU) | proposta: ワク (WAKU) | pending-human-review |
-| 15 | kanjis[34].examples[0].content | 惑 | 惑乱 (wakuran) | みんドの惑乱。 | Mind no wakuran. | Perturbação emocional. | pending-human-review |
-| 15 | kanjis[34].examples[1].content | 惑 | 迷惑 (meiwaku) | 迷惑べはヴいおル。 | Meiwaku behavior. | Comportamento causador de transtorno. | pending-human-review |
+| 15 | kanjis[34].examples[0].content | 惑 | 惑乱 (wakuran) | 甘い誘惑に惑わされないように強い意志を持ちます。 | Mind no wakuran. | Perturbação emocional. | pending-human-review |
+| 15 | kanjis[34].examples[1].content | 惑 | 迷惑 (meiwaku) | 近隣住民に迷惑をかけないように配慮して生活します。 | Meiwaku behavior. | Comportamento causador de transtorno. | pending-human-review |
 | 15 | kanjis[35].onyomi | 執 | leitura: mechanically-convertible-onyomi | シュウ (SHUU) | SHUU (SHUU) | proposta: シュウ (SHUU) | pending-human-review |
-| 15 | kanjis[35].examples[0].content | 執 | 執着 (shuuchaku) | いであの執着。 | Idea no shuuchaku. | Fixação obsessiva em uma ideia. | pending-human-review |
-| 15 | kanjis[35].examples[1].content | 執 | 執念 (shuunen) | れヴえんげの執念。 | Revenge no shuunen. | Obsessão rancorosa de vingança. | pending-human-review |
+| 15 | kanjis[35].examples[0].content | 執 | 執着 (shuuchaku) | 過去の栄光に過度に執着することなく前を向きます。 | Idea no shuuchaku. | Fixação obsessiva em uma ideia. | pending-human-review |
+| 15 | kanjis[35].examples[1].content | 執 | 執念 (shuunen) | 最後まで諦めない強い執念で研究を完成させました。 | Revenge no shuunen. | Obsessão rancorosa de vingança. | pending-human-review |
 | 15 | kanjis[36].onyomi | 障 | leitura: mechanically-convertible-onyomi | ショウ (SHOU) | SHOU (SHOU) | proposta: ショウ (SHOU) | pending-human-review |
-| 15 | kanjis[36].examples[0].content | 障 | 障害 (shougai) | めんたル障害。 | Mental shougai. | Transtorno psicológico. | pending-human-review |
-| 15 | kanjis[36].examples[1].content | 障 | 障壁 (shouheki) | みんドの障壁。 | Mind no shouheki. | Barreira atitudinal de preconceito. | pending-human-review |
+| 15 | kanjis[36].examples[0].content | 障 | 障害 (shougai) | 心身の障害を理由とする差別を解消する法律です。 | Mental shougai. | Transtorno psicológico. | pending-human-review |
+| 15 | kanjis[36].examples[1].content | 障 | 障壁 (shouheki) | 心の障壁を取り除いて多様な人々と共生します。 | Mind no shouheki. | Barreira atitudinal de preconceito. | pending-human-review |
 | 15 | kanjis[37].onyomi | 依 | leitura: mechanically-convertible-onyomi | イ (I) | I (I) | proposta: イ (I) | pending-human-review |
-| 15 | kanjis[37].examples[0].content | 依 | 依存 (izon) | あルクおほル依存。 | Alcohol izon. | Dependência de álcool. | pending-human-review |
-| 15 | kanjis[37].examples[1].content | 依 | 依存症 (izonshou) | がめ依存症。 | Game izonshou. | Transtorno de adicção em jogos. | pending-human-review |
+| 15 | kanjis[37].examples[0].content | 依 | 依存 (izon) | スマートフォンへの過度な依存を減らす工夫をします。 | Alcohol izon. | Dependência de álcool. | pending-human-review |
+| 15 | kanjis[37].examples[1].content | 依 | 依存症 (izonshou) | ゲーム依存症から回復するための支援プログラムです。 | Game izonshou. | Transtorno de adicção em jogos. | pending-human-review |
 | 15 | kanjis[38].onyomi | 存 | leitura: mechanically-convertible-onyomi | ソン (SON) | SON (SON) | proposta: ソン (SON) | pending-human-review |
 | 15 | kanjis[38].kunyomi | 存 | leitura:  | ながら・える (nagaraeru) / あ・る (aru) / たも・つ (tamotsu) / と・う (tou) |  | proposta:  | corrected |
-| 15 | kanjis[38].examples[0].content | 存 | 依存 (izon) | ドるグ依存。 | Drug izon. | Adicção compulsiva em drogas. | pending-human-review |
-| 15 | kanjis[38].examples[1].content | 存 | 存続 (sonzoku) | 存続りスク。 | Sonzoku risk. | Risco de subsistência do transtorno. | pending-human-review |
+| 15 | kanjis[38].examples[0].content | 存 | 依存 (izon) | 薬物依存から脱却するための専門的なリハビリを受けます。 | Drug izon. | Adicção compulsiva em drogas. | pending-human-review |
+| 15 | kanjis[38].examples[1].content | 存 | 存続 (sonzoku) | 伝統芸能の存続を守るために後継者を育成します。 | Sonzoku risk. | Risco de subsistência do transtorno. | pending-human-review |
 | 15 | kanjis[39].onyomi | 怒 | leitura: mechanically-convertible-onyomi | ド (DO) | DO (DO) | proposta: ド (DO) | pending-human-review |
-| 15 | kanjis[39].examples[0].content | 怒 | 怒気 (doki) | 怒気声。 | Doki voice. | Voz em tom de fúria. | pending-human-review |
-| 15 | kanjis[39].examples[1].content | 怒 | 憤怒 (funnu) | 憤怒えぴそで。 | Funnu episode. | Episódio de fúria cega. | pending-human-review |
+| 15 | kanjis[39].examples[0].content | 怒 | 怒気 (doki) | 上司が怒気を帯びた厳しい声で注意しました。 | Doki voice. | Voz em tom de fúria. | pending-human-review |
+| 15 | kanjis[39].examples[1].content | 怒 | 憤怒 (funnu) | 理不尽な仕打ちに対して激しい憤怒を覚えました。 | Funnu episode. | Episódio de fúria cega. | pending-human-review |
 | 15 | kanjis[40].onyomi | 憤 | leitura: mechanically-convertible-onyomi | フウン (HUN) | HUN (HUN) | proposta: フウン (HUN) | pending-human-review |
 | 15 | kanjis[40].kunyomi | 憤 | leitura:  | いきどお・る (ikidooru) |  | proposta:  | corrected |
-| 15 | kanjis[40].examples[0].content | 憤 | 憤怒 (funnu) | 憤怒おうトぶルスト。 | Funnu outburst. | Surto de ira e indignação. | pending-human-review |
-| 15 | kanjis[40].examples[1].content | 憤 | 憤慨 (hungai) | そクいあルいんじゅスてぃクえに憤慨。 | Social injustice ni hungai. | Indignação perante a injustiça social. | pending-human-review |
+| 15 | kanjis[40].examples[0].content | 憤 | 憤怒 (funnu) | 不正に対する怒りが爆発して激しい憤怒の叫びを上げました。 | Funnu outburst. | Surto de ira e indignação. | pending-human-review |
+| 15 | kanjis[40].examples[1].content | 憤 | 憤慨 (hungai) | 社会の不公正な扱いに強い憤慨の念を抱きます。 | Social injustice ni hungai. | Indignação perante a injustiça social. | pending-human-review |
 | 15 | kanjis[41].onyomi | 慨 | leitura: mechanically-convertible-onyomi | ガイ (GAI) | GAI (GAI) | proposta: ガイ (GAI) | pending-human-review |
 | 15 | kanjis[41].kunyomi | 慨 | leitura:  | なげ・く (nageku) |  | proposta:  | corrected |
-| 15 | kanjis[41].examples[0].content | 慨 | 憤慨 (hungai) | 憤慨スたてめんト。 | Hungai statement. | Declaração de profunda indignação. | pending-human-review |
-| 15 | kanjis[41].examples[1].content | 慨 | 感想 (kansou) | 感慨の報告。 | Kansou report. | Relatório de impressões. | pending-human-review |
+| 15 | kanjis[41].examples[0].content | 慨 | 憤慨 (hungai) | 不誠実な対応に対して公式に憤慨の声明を発表しました。 | Hungai statement. | Declaração de profunda indignação. | pending-human-review |
+| 15 | kanjis[41].examples[1].content | 慨 | 感想 (kansou) | 長年の努力が実を結び深い感慨に浸りました。 | Kansou report. | Relatório de impressões. | pending-human-review |
 | 16 | grammar.content | — | — | ふくつの精神をもってがしンしょうたんし、 もくひょうをたっせいします。 | Fukutsu no spirit o motte gashin-shoutan shi, mokuhyou o tassei shimasu. | Com espírito indomável, persevera-se através de privações para alcançar o objetivo. | pending-human-review |
 | 16 | kanjis[0].onyomi | 臥 | leitura: mechanically-convertible-onyomi | ガ (GA) | GA (GA) | proposta: ガ (GA) | pending-human-review |
 | 16 | kanjis[0].kunyomi | 臥 | leitura:  | ふせ・る (fuseru) / ふ・せる (fuseru) / ふ・す (fusu) |  | proposta:  | corrected |
@@ -1917,111 +1917,111 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 20 | kanjis[5].examples[0].content | 破 | 破る (yaburu) | プろみせを破る。 | Promise o yaburu. | Violar uma promessa. | pending-human-review |
 | 20 | kanjis[5].examples[1].content | 破 | 破壊 (hakai) | ストるクトうれの破壊。 | Structure no hakai. | Destruição da estrutura. | pending-human-review |
 | 20 | kanjis[6].onyomi | 壊 | leitura: mechanically-convertible-onyomi | カイ (KAI) | KAI (KAI) | proposta: カイ (KAI) | pending-human-review |
-| 20 | kanjis[6].examples[0].content | 壊 | 壊す (kowasu) | ぶいルでぃんグを壊す。 | Building o kowasu. | Demolir o edifício. | pending-human-review |
-| 20 | kanjis[6].examples[1].content | 壊 | 崩壊 (houkai) | 制度の崩壊。 | System no houkai. | Colapso do sistema. | pending-human-review |
+| 20 | kanjis[6].examples[0].content | 壊 | 壊す (kowasu) | 地震で倒壊した古い建物を安全に解体して壊します。 | Building o kowasu. | Demolir o edifício. | pending-human-review |
+| 20 | kanjis[6].examples[1].content | 壊 | 崩壊 (houkai) | バブル経済の崩壊により多くの企業が影響を受けました。 | System no houkai. | Colapso do sistema. | pending-human-review |
 | 20 | kanjis[7].onyomi | 侵 | leitura: mechanically-convertible-onyomi | シン (SHIN) | SHIN (SHIN) | proposta: シン (SHIN) | pending-human-review |
-| 20 | kanjis[7].examples[0].content | 侵 | 侵す (okasu) | てっりとルイを侵す。 | Territory o okasu. | Invadir o território. | pending-human-review |
-| 20 | kanjis[7].examples[1].content | 侵 | 侵略 (shinryaku) | みルいたルイ侵略。 | Military shinryaku. | Invasão militar. | pending-human-review |
+| 20 | kanjis[7].examples[0].content | 侵 | 侵す (okasu) | 他国の領空や領海を不法に侵してはいけません。 | Territory o okasu. | Invadir o território. | pending-human-review |
+| 20 | kanjis[7].examples[1].content | 侵 | 侵略 (shinryaku) | 他国への武力侵略を決して正当化することはできません。 | Military shinryaku. | Invasão militar. | pending-human-review |
 | 20 | kanjis[8].onyomi | 犯 | leitura: mechanically-convertible-onyomi | ハン (HAN) | HAN (HAN) | proposta: ハン (HAN) | pending-human-review |
-| 20 | kanjis[8].examples[0].content | 犯 | 犯す (okasu) | クりめを犯す。 | Crime o okasu. | Cometer um crime. | pending-human-review |
-| 20 | kanjis[8].examples[1].content | 犯 | 侵犯 (shinpan) | りグフトの侵犯。 | Right no shinpan. | Violação de direitos. | pending-human-review |
+| 20 | kanjis[8].examples[0].content | 犯 | 犯す (okasu) | 法律を犯すような反社会的な行為は厳しく罰せられます。 | Crime o okasu. | Cometer um crime. | pending-human-review |
+| 20 | kanjis[8].examples[1].content | 犯 | 侵犯 (shinpan) | 他国の領空侵犯に対して緊急発進を行います。 | Right no shinpan. | Violação de direitos. | pending-human-review |
 | 20 | kanjis[9].onyomi | 奪 | leitura: mechanically-convertible-onyomi | ダツ (DATSU) | DATSU (DATSU) | proposta: ダツ (DATSU) | pending-human-review |
-| 20 | kanjis[9].examples[0].content | 奪 | 奪う (ubau) | フれえどムを奪う。 | Freedom o ubau. | Usurpar a liberdade. | pending-human-review |
-| 20 | kanjis[9].examples[1].content | 奪 | 略奪 (ryakudatsu) | あっせトの略奪。 | Asset no ryakudatsu. | Saque de ativos. | pending-human-review |
+| 20 | kanjis[9].examples[0].content | 奪 | 奪う (ubau) | 武力によって市民の自由や平和を奪うことは許されません。 | Freedom o ubau. | Usurpar a liberdade. | pending-human-review |
+| 20 | kanjis[9].examples[1].content | 奪 | 略奪 (ryakudatsu) | 戦火の混乱に乗じた略奪行為を厳しく取り締まります。 | Asset no ryakudatsu. | Saque de ativos. | pending-human-review |
 | 20 | kanjis[10].onyomi | 討 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 20 | kanjis[10].examples[0].content | 討 | 討つ (utsu) | れべルを討つ。 | Rebel o utsu. | Subjugar os rebeldes. | pending-human-review |
-| 20 | kanjis[10].examples[1].content | 討 | 討伐 (toubatsu) | 敵の討伐。 | Enemy no toubatsu. | Expedição de supressão. | pending-human-review |
+| 20 | kanjis[10].examples[0].content | 討 | 討つ (utsu) | 悪政を行う敵の拠点を討つために軍を進めます。 | Rebel o utsu. | Subjugar os rebeldes. | pending-human-review |
+| 20 | kanjis[10].examples[1].content | 討 | 討伐 (toubatsu) | 治安を乱す賊を討伐するための遠征部隊を派遣します。 | Enemy no toubatsu. | Expedição de supressão. | pending-human-review |
 | 20 | kanjis[11].onyomi | 伐 | leitura: mechanically-convertible-onyomi | バツ (BATSU) | BATSU (BATSU) | proposta: バツ (BATSU) | pending-human-review |
-| 20 | kanjis[11].examples[0].content | 伐 | 討伐 (toubatsu) | 討伐あルムイ。 | Toubatsu army. | Exército de supressão. | pending-human-review |
-| 20 | kanjis[11].examples[1].content | 伐 | 伐採 (bassai) | トれえスの伐採。 | Trees no bassai. | Corte de árvores. | pending-human-review |
+| 20 | kanjis[11].examples[0].content | 伐 | 討伐 (toubatsu) | 山林の木々を適切に間伐して森林環境を保全します。 | Toubatsu army. | Exército de supressão. | pending-human-review |
+| 20 | kanjis[11].examples[1].content | 伐 | 伐採 (bassai) | 無許可での森林の伐採を法律で禁止します。 | Trees no bassai. | Corte de árvores. | pending-human-review |
 | 20 | kanjis[12].onyomi | 拒 | leitura: mechanically-convertible-onyomi | キョ (KYO) | KYO (KYO) | proposta: キョ (KYO) | pending-human-review |
-| 20 | kanjis[12].examples[0].content | 拒 | 拒む (kobamu) | おっふぇルを拒む。 | Offer o kobamu. | Recusar a proposta. | pending-human-review |
-| 20 | kanjis[12].examples[1].content | 拒 | 拒絶 (kyozetsu) | プろぽさルの拒絶。 | Proposal no kyozetsu. | Rejeição categórica da proposta. | pending-human-review |
+| 20 | kanjis[12].examples[0].content | 拒 | 拒む (kobamu) | 理不尽な要求に対しては毅然とした態度で拒みます。 | Offer o kobamu. | Recusar a proposta. | pending-human-review |
+| 20 | kanjis[12].examples[1].content | 拒 | 拒絶 (kyozetsu) | 不当な提案をきっぱりと拒絶しました。 | Proposal no kyozetsu. | Rejeição categórica da proposta. | pending-human-review |
 | 20 | kanjis[13].onyomi | 絶 | leitura: mechanically-convertible-onyomi | ゼツ (ZETSU) | ZETSU (ZETSU) | proposta: ゼツ (ZETSU) | pending-human-review |
-| 20 | kanjis[13].examples[0].content | 絶 | 絶つ (tatsu) | すっプルイを絶つ。 | Supply o tatsu. | Interromper o suprimento. | pending-human-review |
-| 20 | kanjis[13].examples[1].content | 絶 | 根絶 (konzetsu) | ぺストの根絶。 | Pest no konzetsu. | Erradicação total da praga. | pending-human-review |
+| 20 | kanjis[13].examples[0].content | 絶 | 絶つ (tatsu) | 敵の補給ルートを完全に絶って包囲します。 | Supply o tatsu. | Interromper o suprimento. | pending-human-review |
+| 20 | kanjis[13].examples[1].content | 絶 | 根絶 (konzetsu) | 社会から悪質な犯罪を根絶するための取り組みです。 | Pest no konzetsu. | Erradicação total da praga. | pending-human-review |
 | 20 | kanjis[14].onyomi | 斬 | leitura: mechanically-convertible-onyomi | ザン (ZAN) | ZAN (ZAN) | proposta: ザン (ZAN) | pending-human-review |
-| 20 | kanjis[14].examples[0].content | 斬 | 斬る (kiru) | 敵を斬る。 | Enemy o kiru. | Cortar o inimigo com a espada. | pending-human-review |
-| 20 | kanjis[14].examples[1].content | 斬 | 斬新 (zanshin) | 斬新いであ。 | Zanshin idea. | Ideia cortante e inédita. | pending-human-review |
+| 20 | kanjis[14].examples[0].content | 斬 | 斬る (kiru) | 研ぎ澄まされた名刀で一刀両断に斬り捨てます。 | Enemy o kiru. | Cortar o inimigo com a espada. | pending-human-review |
+| 20 | kanjis[14].examples[1].content | 斬 | 斬新 (zanshin) | 従来の常識を覆す斬新なアイデアで勝負します。 | Zanshin idea. | Ideia cortante e inédita. | pending-human-review |
 | 20 | kanjis[15].onyomi | 剪 | leitura: mechanically-convertible-onyomi | セン (SEN) | SEN (SEN) | proposta: セン (SEN) | pending-human-review |
-| 20 | kanjis[15].examples[0].content | 剪 | 剪定 (sentei) | 木の剪定。 | Tree no sentei. | Poda de galhos da árvore. | pending-human-review |
-| 20 | kanjis[15].examples[1].content | 剪 | 剪断 (sendan) | 剪断ストレス。 | Sendan stress. | Tensão por cisalhamento. | pending-human-review |
+| 20 | kanjis[15].examples[0].content | 剪 | 剪定 (sentei) | 庭師が伸びすぎた木の枝を綺麗に剪定します。 | Tree no sentei. | Poda de galhos da árvore. | pending-human-review |
+| 20 | kanjis[15].examples[1].content | 剪 | 剪断 (sendan) | 材料に強い剪断力がかかっても耐えられる設計です。 | Sendan stress. | Tensão por cisalhamento. | pending-human-review |
 | 20 | kanjis[16].onyomi | 封 | leitura: mechanically-convertible-onyomi | フウ (FUU) | FUU (FUU) | proposta: フウ (FUU) | pending-human-review |
-| 20 | kanjis[16].examples[0].content | 封 | 封じる (fuujiru) | あったククを封じる。 | Attack o fuujiru. | Conter o ataque inimigo. | pending-human-review |
-| 20 | kanjis[16].examples[1].content | 封 | 封鎖 (fuusa) | 港の封鎖。 | Port no fuusa. | Bloqueio do porto. | pending-human-review |
+| 20 | kanjis[16].examples[0].content | 封 | 封じる (fuujiru) | 敵の攻撃の進路を固く封じて守りを固めます。 | Attack o fuujiru. | Conter o ataque inimigo. | pending-human-review |
+| 20 | kanjis[16].examples[1].content | 封 | 封鎖 (fuusa) | 重要港湾の出入り口を封鎖して海上交通を遮断します。 | Port no fuusa. | Bloqueio do porto. | pending-human-review |
 | 20 | kanjis[17].onyomi | 鎖 | leitura: mechanically-convertible-onyomi | サ (SA) | SA (SA) | proposta: サ (SA) | pending-human-review |
-| 20 | kanjis[17].examples[0].content | 鎖 | 鎖す (tazasu) | がてを鎖す。 | Gate o tazasu. | Trancar o portão. | pending-human-review |
-| 20 | kanjis[17].examples[1].content | 鎖 | 鎖国 (sakoku) | えど鎖国。 | Edo sakoku. | Isolamento no período Edo. | pending-human-review |
+| 20 | kanjis[17].examples[0].content | 鎖 | 鎖す (tazasu) | 夜間は防犯のために頑丈な鉄門をしっかりと鎖します。 | Gate o tazasu. | Trancar o portão. | pending-human-review |
+| 20 | kanjis[17].examples[1].content | 鎖 | 鎖国 (sakoku) | 江戸幕府がとった鎖国政策の歴史的背景を学びます。 | Edo sakoku. | Isolamento no período Edo. | pending-human-review |
 | 20 | kanjis[18].onyomi | 禁 | leitura: mechanically-convertible-onyomi | キン (KIN) | KIN (KIN) | proposta: キン (KIN) | pending-human-review |
 | 20 | kanjis[18].kunyomi | 禁 | leitura:  | - |  | proposta:  | corrected |
-| 20 | kanjis[18].examples[0].content | 禁 | 禁じる (kinjiru) | えんトルイを禁じる。 | Entry o kinjiru. | Proibir a entrada. | pending-human-review |
-| 20 | kanjis[18].examples[1].content | 禁 | 禁止 (kinshi) | ぱルきんグ禁止。 | Parking kinshi. | Proibido estacionar. | pending-human-review |
+| 20 | kanjis[18].examples[0].content | 禁 | 禁じる (kinjiru) | 関係者以外の立ち入りを固く禁じます。 | Entry o kinjiru. | Proibir a entrada. | pending-human-review |
+| 20 | kanjis[18].examples[1].content | 禁 | 禁止 (kinshi) | 危険物を取り扱うエリア内での火気の使用は禁止です。 | Parking kinshi. | Proibido estacionar. | pending-human-review |
 | 20 | kanjis[19].onyomi | 制 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
-| 20 | kanjis[19].examples[0].content | 制 | 制する (seisuru) | スいトうあてぃおんを制する。 | Situation o seisuru. | Dominar a situação. | pending-human-review |
-| 20 | kanjis[19].examples[1].content | 制 | 制裁 (seisai) | えクおのみク制裁。 | Economic seisai. | Sanções econômicas. | pending-human-review |
+| 20 | kanjis[19].examples[0].content | 制 | 制する (seisuru) | 混乱する局面を冷静な判断で制して沈静化させます。 | Situation o seisuru. | Dominar a situação. | pending-human-review |
+| 20 | kanjis[19].examples[1].content | 制 | 制裁 (seisai) | 国際法に違反した国に対して経済制裁を発動します。 | Economic seisai. | Sanções econômicas. | pending-human-review |
 | 20 | kanjis[20].onyomi | 控 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 20 | kanjis[20].examples[0].content | 控 | 控える (hikaeru) | クおっめんトを控える。 | Comment o hikaeru. | Abster-se de comentários. | pending-human-review |
-| 20 | kanjis[20].examples[1].content | 控 | 控除 (koujo) | たクス控除。 | Tax koujo. | Dedução de imposto. | pending-human-review |
+| 20 | kanjis[20].examples[0].content | 控 | 控える (hikaeru) | 不要不急の外出を控えて自宅で静かに過ごします。 | Comment o hikaeru. | Abster-se de comentários. | pending-human-review |
+| 20 | kanjis[20].examples[1].content | 控 | 控除 (koujo) | 確定申告で医療費控除の申請を行います。 | Tax koujo. | Dedução de imposto. | pending-human-review |
 | 20 | kanjis[21].onyomi | 緊 | leitura: mechanically-convertible-onyomi | キン (KIN) | KIN (KIN) | proposta: キン (KIN) | pending-human-review |
-| 20 | kanjis[21].examples[0].content | 緊 | 緊縛 (kinbaku) | 緊縛国家。 | Kinbaku state. | Estado de estrita amarração. | pending-human-review |
-| 20 | kanjis[21].examples[1].content | 緊 | 緊縮 (kinshuku) | ぶドげトの緊縮。 | Budget no kinshuku. | Austeridade orçamentária. | pending-human-review |
+| 20 | kanjis[21].examples[0].content | 緊 | 緊縛 (kinbaku) | 緊張感を持って日々の訓練に臨みます。 | Kinbaku state. | Estado de estrita amarração. | pending-human-review |
+| 20 | kanjis[21].examples[1].content | 緊 | 緊縮 (kinshuku) | 財政赤字を削減するために緊縮財政を実施します。 | Budget no kinshuku. | Austeridade orçamentária. | pending-human-review |
 | 20 | kanjis[22].onyomi | 救 | leitura: mechanically-convertible-onyomi | キュウ (KYUU) | KYUU (KYUU) | proposta: キュウ (KYUU) | pending-human-review |
-| 20 | kanjis[22].examples[0].content | 救 | 救う (sukuu) | 生活を救う。 | Life o sukuu. | Salvar vidas. | pending-human-review |
-| 20 | kanjis[22].examples[1].content | 救 | 救援 (kyuuen) | 救援チーム。 | Kyuuen team. | Equipe de socorro emergencial. | pending-human-review |
+| 20 | kanjis[22].examples[0].content | 救 | 救う (sukuu) | 災害現場から逃げ遅れた人々を速やかに救います。 | Life o sukuu. | Salvar vidas. | pending-human-review |
+| 20 | kanjis[22].examples[1].content | 救 | 救援 (kyuuen) | 被災地に派遣された緊急救援隊が活動を開始します。 | Kyuuen team. | Equipe de socorro emergencial. | pending-human-review |
 | 20 | kanjis[23].onyomi | 助 | leitura: mechanically-convertible-onyomi | ジョ (JO) | JO (JO) | proposta: ジョ (JO) | pending-human-review |
-| 20 | kanjis[23].examples[0].content | 助 | 助ける (tasukeru) | ヴいクてぃムを助ける。 | Victim o tasukeru. | Ajudar as vítimas. | pending-human-review |
-| 20 | kanjis[23].examples[1].content | 助 | 扶助 (hujo) | むトうあル扶助。 | Mutual hujo. | Assistência mútua. | pending-human-review |
+| 20 | kanjis[23].examples[0].content | 助 | 助ける (tasukeru) | 困難な状況にある仲間を互いに助け合います。 | Victim o tasukeru. | Ajudar as vítimas. | pending-human-review |
+| 20 | kanjis[23].examples[1].content | 助 | 扶助 (hujo) | 困窮した生活を支えるための公的扶助制度です。 | Mutual hujo. | Assistência mútua. | pending-human-review |
 | 20 | kanjis[24].onyomi | 復 | leitura: mechanically-convertible-onyomi | フク (FUKU) | FUKU (FUKU) | proposta: フク (FUKU) | pending-human-review |
 | 20 | kanjis[24].kunyomi | 復 | leitura:  | また (mata) |  | proposta:  | corrected |
-| 20 | kanjis[24].examples[0].content | 復 | 復する (fukusuru) | のルまルに復する。 | Normal ni fukusuru. | Voltar à normalidade. | pending-human-review |
-| 20 | kanjis[24].examples[1].content | 復 | 復興 (fukkou) | でぃさスてル復興。 | Disaster fukkou. | Reconstrução pós-desastre. | pending-human-review |
+| 20 | kanjis[24].examples[0].content | 復 | 復する (fukusuru) | 怪我の治療を終えて元の健康な状態に復します。 | Normal ni fukusuru. | Voltar à normalidade. | pending-human-review |
+| 20 | kanjis[24].examples[1].content | 復 | 復興 (fukkou) | 地震で大きな被害を受けた被災地の復興を支援します。 | Disaster fukkou. | Reconstrução pós-desastre. | pending-human-review |
 | 20 | kanjis[25].onyomi | 興 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 20 | kanjis[25].examples[0].content | 興 | 興す (okosu) | いんドうストルイを興す。 | Industry o okosu. | Erguer a indústria. | pending-human-review |
-| 20 | kanjis[25].examples[1].content | 興 | 復興 (fukkou) | あれあの復興。 | Area no fukkou. | Reconstrução da área. | pending-human-review |
+| 20 | kanjis[25].examples[0].content | 興 | 興す (okosu) | 新しい産業を興して地域の雇用を創出します。 | Industry o okosu. | Erguer a indústria. | pending-human-review |
+| 20 | kanjis[25].examples[1].content | 興 | 復興 (fukkou) | 伝統文化の復興を目指して展示会を開催します。 | Area no fukkou. | Reconstrução da área. | pending-human-review |
 | 20 | kanjis[26].onyomi | 創 | leitura: mechanically-convertible-onyomi | ソウ (SOU) | SOU (SOU) | proposta: ソウ (SOU) | pending-human-review |
 | 20 | kanjis[26].kunyomi | 創 | leitura:  | きず (kizu) |  | proposta:  | corrected |
-| 20 | kanjis[26].examples[0].content | 創 | 創傷 (soushou) | 創傷トれあトめんト。 | Soushou treatment. | Tratamento de ferida traumática. | pending-human-review |
-| 20 | kanjis[26].examples[1].content | 創 | 創造 (souzou) | 未来の創造。 | Future no souzou. | Criação do futuro. | pending-human-review |
+| 20 | kanjis[26].examples[0].content | 創 | 創傷 (soushou) | 外科医が手術による創傷を丁寧に処置します。 | Soushou treatment. | Tratamento de ferida traumática. | pending-human-review |
+| 20 | kanjis[26].examples[1].content | 創 | 創造 (souzou) | 豊かな創造力を発揮して新しい芸術作品を生み出します。 | Future no souzou. | Criação do futuro. | pending-human-review |
 | 20 | kanjis[27].onyomi | 癒 | leitura: mechanically-convertible-onyomi | ユ (YU) | YU (YU) | proposta: ユ (YU) | pending-human-review |
-| 20 | kanjis[27].examples[0].content | 癒 | 癒やす (iyasu) | をうんドを癒やす。 | Wound o iyasu. | Cicatrizar as feridas. | pending-human-review |
-| 20 | kanjis[27].examples[1].content | 癒 | 治癒 (chiyu) | でぃせあせの治癒。 | Disease no chiyu. | Cura completa da doença. | pending-human-review |
+| 20 | kanjis[27].examples[0].content | 癒 | 癒やす (iyasu) | 温泉にゆっくりと浸かって心身の疲れを癒やします。 | Wound o iyasu. | Cicatrizar as feridas. | pending-human-review |
+| 20 | kanjis[27].examples[1].content | 癒 | 治癒 (chiyu) | 適切な治療により重い病気が完全に治癒しました。 | Disease no chiyu. | Cura completa da doença. | pending-human-review |
 | 20 | kanjis[28].onyomi | 宥 | leitura: mechanically-convertible-onyomi | ユ (YU) | YU (YU) | proposta: ユ (YU) | pending-human-review |
-| 20 | kanjis[28].examples[0].content | 宥 | 宥める (nadameru) | ぺおプルえを宥める。 | People o nadameru. | Acalmar os ânimos do povo. | pending-human-review |
-| 20 | kanjis[28].examples[1].content | 宥 | 宥和 (yuuwa) | 宥和ぽルいクイ。 | Yuuwa policy. | Política de conciliação. | pending-human-review |
+| 20 | kanjis[28].examples[0].content | 宥 | 宥める (nadameru) | 興奮している人々に優しく声をかけて宥めます。 | People o nadameru. | Acalmar os ânimos do povo. | pending-human-review |
+| 20 | kanjis[28].examples[1].content | 宥 | 宥和 (yuuwa) | 対立する組織の間を取り持つ宥和政策を推進します。 | Yuuwa policy. | Política de conciliação. | pending-human-review |
 | 20 | kanjis[29].onyomi | 鎮 | leitura: mechanically-convertible-onyomi | チン (CHIN) | CHIN (CHIN) | proposta: チン (CHIN) | pending-human-review |
-| 20 | kanjis[29].examples[0].content | 鎮 | 鎮める (shizumeru) | ぼうどうを鎮める。 | Boudou o shizumeru. | Pacificar o motim. | pending-human-review |
-| 20 | kanjis[29].examples[1].content | 鎮 | 鎮圧 (chinatsu) | れべっルいおんの鎮圧。 | Rebellion no chinatsu. | Supressão da rebelião. | pending-human-review |
+| 20 | kanjis[29].examples[0].content | 鎮 | 鎮める (shizumeru) | 薬を飲んで激しい胃の痛みを速やかに鎮めます。 | Boudou o shizumeru. | Pacificar o motim. | pending-human-review |
+| 20 | kanjis[29].examples[1].content | 鎮 | 鎮圧 (chinatsu) | 警察部隊が暴動を速やかに鎮圧して秩序を回復しました。 | Rebellion no chinatsu. | Supressão da rebelião. | pending-human-review |
 | 20 | kanjis[30].onyomi | 圧 | leitura: mechanically-convertible-onyomi | アツ (ATSU) | ATSU (ATSU) | proposta: アツ (ATSU) | pending-human-review |
-| 20 | kanjis[30].examples[0].content | 圧 | 鎮圧 (chinatsu) | ふぉルクえで鎮圧。 | Force de chinatsu. | Pacificação com uso de força. | pending-human-review |
-| 20 | kanjis[30].examples[1].content | 圧 | 抑圧 (yokuatsu) | ぽルいてぃクあル抑圧。 | Political yokuatsu. | Opressão política. | pending-human-review |
+| 20 | kanjis[30].examples[0].content | 圧 | 鎮圧 (chinatsu) | 圧倒的な武力で反乱軍を完全に鎮圧します。 | Force de chinatsu. | Pacificação com uso de força. | pending-human-review |
+| 20 | kanjis[30].examples[1].content | 圧 | 抑圧 (yokuatsu) | 言論の自由を奪う政治的抑圧に断固反対します。 | Political yokuatsu. | Opressão política. | pending-human-review |
 | 20 | kanjis[31].onyomi | 服 | leitura: mechanically-convertible-onyomi | フウク (HUKU) | HUKU (HUKU) | proposta: フウク (HUKU) | pending-human-review |
 | 20 | kanjis[31].kunyomi | 服 | leitura:  | - |  | proposta:  | corrected |
-| 20 | kanjis[31].examples[0].content | 服 | 服する (fukusuru) | 法律に服する。 | Law ni fukusuru. | Submeter-se às leis. | pending-human-review |
-| 20 | kanjis[31].examples[1].content | 服 | 服従 (fukujuu) | おルでルに服従。 | Order ni fukujuu. | Obediência às ordens. | pending-human-review |
+| 20 | kanjis[31].examples[0].content | 服 | 服する (fukusuru) | 国の最高法規である憲法と法律に服します。 | Law ni fukusuru. | Submeter-se às leis. | pending-human-review |
+| 20 | kanjis[31].examples[1].content | 服 | 服従 (fukujuu) | 上官の正当な命令に対して規律正しく服従します。 | Order ni fukujuu. | Obediência às ordens. | pending-human-review |
 | 20 | kanjis[32].onyomi | 屈 | leitura: mechanically-convertible-onyomi | クツ (KUTSU) | KUTSU (KUTSU) | proposta: クツ (KUTSU) | pending-human-review |
-| 20 | kanjis[32].examples[0].content | 屈 | 屈する (kussuru) | プれっすれに屈する。 | Pressure ni kussuru. | Curvar-se à pressão. | pending-human-review |
-| 20 | kanjis[32].examples[1].content | 屈 | 屈服 (kuppuku) | 敵に屈服。 | Enemy ni kuppuku. | Capitulação perante o inimigo. | pending-human-review |
+| 20 | kanjis[32].examples[0].content | 屈 | 屈する (kussuru) | 強大な権力の圧力にも決して屈することはありません。 | Pressure ni kussuru. | Curvar-se à pressão. | pending-human-review |
+| 20 | kanjis[32].examples[1].content | 屈 | 屈服 (kuppuku) | 圧倒的な敵の戦力を前にしてついに屈服しました。 | Enemy ni kuppuku. | Capitulação perante o inimigo. | pending-human-review |
 | 20 | kanjis[33].onyomi | 降 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 20 | kanjis[33].examples[0].content | 降 | 降る (huru) | 敵に降る。 | Enemy ni huru. | Render-se ao inimigo. | pending-human-review |
-| 20 | kanjis[33].examples[1].content | 降 | 降伏 (koufuku) | 降伏どクうめんト。 | Koufuku document. | Documento de capitulação formal. | pending-human-review |
+| 20 | kanjis[33].examples[0].content | 降 | 降る (huru) | 勝ち目がないことを悟り敵に降る決断を下しました。 | Enemy ni huru. | Render-se ao inimigo. | pending-human-review |
+| 20 | kanjis[33].examples[1].content | 降 | 降伏 (koufuku) | 戦局の悪化に伴い正式に降伏文書に調印しました。 | Koufuku document. | Documento de capitulação formal. | pending-human-review |
 | 20 | kanjis[34].onyomi | 赦 | leitura: mechanically-convertible-onyomi | シャ (SHA) | SHA (SHA) | proposta: シャ (SHA) | pending-human-review |
-| 20 | kanjis[34].examples[0].content | 赦 | 赦す (yurusu) | スいんを赦す。 | Sin o yurusu. | Perdoar o pecado. | pending-human-review |
-| 20 | kanjis[34].examples[1].content | 赦 | 容赦 (yousha) | 容赦ない。 | Yousha nai. | Sem qualquer clemência. | pending-human-review |
+| 20 | kanjis[34].examples[0].content | 赦 | 赦す (yurusu) | 過ちを心から反省した者を寛大な心で赦します。 | Sin o yurusu. | Perdoar o pecado. | pending-human-review |
+| 20 | kanjis[34].examples[1].content | 赦 | 容赦 (yousha) | 悪質な違法行為に対しては容赦なく厳罰を科します。 | Yousha nai. | Sem qualquer clemência. | pending-human-review |
 | 20 | kanjis[35].onyomi | 免 | leitura: mechanically-convertible-onyomi | メン (MEN) | MEN (MEN) | proposta: メン (MEN) | pending-human-review |
-| 20 | kanjis[35].examples[0].content | 免 | 免れる (managareru) | ぷにスフめんトを免れる。 | Punishment o managareru. | Escapar da punição. | pending-human-review |
-| 20 | kanjis[35].examples[1].content | 免 | 免除 (menjo) | たクスの免除。 | Tax no menjo. | Isenção formal de imposto. | pending-human-review |
+| 20 | kanjis[35].examples[0].content | 免 | 免れる (managareru) | シートベルトのおかげで重大な怪我を免れました。 | Punishment o managareru. | Escapar da punição. | pending-human-review |
+| 20 | kanjis[35].examples[1].content | 免 | 免除 (menjo) | 被災した世帯に対して住民税の免除措置が取られます。 | Tax no menjo. | Isenção formal de imposto. | pending-human-review |
 | 20 | kanjis[36].onyomi | 逃 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
-| 20 | kanjis[36].examples[0].content | 逃 | 逃れる (nogareru) | だんげルから逃れる。 | Danger kara nogareru. | Escapar do perigo. | pending-human-review |
-| 20 | kanjis[36].examples[1].content | 逃 | 逃避 (touhi) | れスぽんスいびルいトイ逃避。 | Responsibility touhi. | Fuga da responsabilidade. | pending-human-review |
+| 20 | kanjis[36].examples[0].content | 逃 | 逃れる (nogareru) | 迫り来る山火事の危険から安全な場所へ逃れます。 | Danger kara nogareru. | Escapar do perigo. | pending-human-review |
+| 20 | kanjis[36].examples[1].content | 逃 | 逃避 (touhi) | 困難な課題から現実逃避することなく立ち向かいます。 | Responsibility touhi. | Fuga da responsabilidade. | pending-human-review |
 | 20 | kanjis[37].onyomi | 避 | leitura: mechanically-convertible-onyomi | ヒ (HI) | HI (HI) | proposta: ヒ (HI) | pending-human-review |
-| 20 | kanjis[37].examples[0].content | 避 | 避ける (sakeru) | りスクを避ける。 | Risk o sakeru. | Evitar os riscos. | pending-human-review |
-| 20 | kanjis[37].examples[1].content | 避 | 回避 (kaihi) | わルの回避。 | War no kaihi. | Evasão da guerra. | pending-human-review |
+| 20 | kanjis[37].examples[0].content | 避 | 避ける (sakeru) | 交通事故の危険を避けるために歩道を歩きます。 | Risk o sakeru. | Evitar os riscos. | pending-human-review |
+| 20 | kanjis[37].examples[1].content | 避 | 回避 (kaihi) | 事態の悪化を防ぐため無益な争いを回避します。 | War no kaihi. | Evasão da guerra. | pending-human-review |
 | 20 | kanjis[38].onyomi | 解 | leitura: mechanically-convertible-onyomi | カイ (KAI) | KAI (KAI) | proposta: カイ (KAI) | pending-human-review |
-| 20 | kanjis[38].examples[0].content | 解 | 解く (toku) | クのトを解く。 | Knot o toku. | Desfazer os nós. | pending-human-review |
-| 20 | kanjis[38].examples[1].content | 解 | 解放 (kaihou) | スルあヴえスの解放。 | Slaves no kaihou. | Emancipação dos escravos. | pending-human-review |
+| 20 | kanjis[38].examples[0].content | 解 | 解く (toku) | 複雑に絡み合ったロープの結び目を丁寧に解きます。 | Knot o toku. | Desfazer os nós. | pending-human-review |
+| 20 | kanjis[38].examples[1].content | 解 | 解放 (kaihou) | 長年の拘束から解放されて自由の身となりました。 | Slaves no kaihou. | Emancipação dos escravos. | pending-human-review |
 | 20 | kanjis[39].onyomi | 治 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
-| 20 | kanjis[39].examples[0].content | 治 | 治安 (chian) | 治安のいじ。 | Chian no iji. | Manutenção da ordem pública. | pending-human-review |
-| 20 | kanjis[39].examples[1].content | 治 | 自治 (jichi) | ルおクあル自治。 | Local jichi. | Autonomia governamental local. | pending-human-review |
+| 20 | kanjis[39].examples[0].content | 治 | 治安 (chian) | 警察と市民が協力して街の良好な治安を維持します。 | Chian no iji. | Manutenção da ordem pública. | pending-human-review |
+| 20 | kanjis[39].examples[1].content | 治 | 自治 (jichi) | 地方分権を推進して住民参加による地方自治を発展させます。 | Local jichi. | Autonomia governamental local. | pending-human-review |
 | 21 | grammar.content | — | — | せんさいなちょうこくにたいして、 そぼくなめいようをひょうかします。 | Sensai na choukoku ni taishite, soboku na meiyou o hyouka shimasu. | Em relação à escultura delicada, avalia-se a impressão de simplicidade rústica. | pending-human-review |
 | 21 | kanjis[0].onyomi | 粗 | leitura: mechanically-convertible-onyomi | ソ (SO) | SO (SO) | proposta: ソ (SO) | pending-human-review |
 | 21 | kanjis[0].examples[0].content | 粗 | 粗末 (somatsu) | 粗末な食べ物。 | Somatsu na food. | Comida rústica e simples. | pending-human-review |
@@ -2413,165 +2413,165 @@ Rascunhos criados na Fase 6. A conversão mecânica e os testes estruturais não
 | 23 | kanjis[37].examples[0].content | 随 | 随時 (zuiji) | 随時更新。 | Zuiji update. | Atualização conforme a ocasião exigir. | pending-human-review |
 | 23 | kanjis[37].examples[1].content | 随 | 随所 (zuisho) | 随所いんてクスト。 | Zuisho in text. | Por toda parte no texto. | pending-human-review |
 | 23 | kanjis[38].onyomi | 応 | leitura: mechanically-convertible-onyomi | オウ (OU) | OU (OU) | proposta: オウ (OU) | pending-human-review |
-| 23 | kanjis[38].examples[0].content | 応 | 応じて (oujite) | ねえドに応じて。 | Need ni oujite. | De acordo com a necessidade. | pending-human-review |
-| 23 | kanjis[38].examples[1].content | 応 | 応急 (oukyuu) | 応急手当て。 | Oukyuu care. | Atendimento de emergência. | pending-human-review |
+| 23 | kanjis[38].examples[0].content | 応 | 応じて (oujite) | 顧客からの問い合わせに迅速に対応します。 | Need ni oujite. | De acordo com a necessidade. | pending-human-review |
+| 23 | kanjis[38].examples[1].content | 応 | 応急 (oukyuu) | 怪我をした人に応急手当を施します。 | Oukyuu care. | Atendimento de emergência. | pending-human-review |
 | 23 | kanjis[39].onyomi | 以 | leitura: mechanically-convertible-onyomi | イ (I) | I (I) | proposta: イ (I) | pending-human-review |
-| 23 | kanjis[39].examples[0].content | 以 | 以北 (ihoku) | ときょ以北。 | Tokyo ihoku. | Ao norte de Tóquio. | pending-human-review |
-| 23 | kanjis[39].examples[1].content | 以 | 以南 (inan) | きゅしゅ以南。 | Kyushu inan. | Ao sul de Kyushu. | pending-human-review |
+| 23 | kanjis[39].examples[0].content | 以 | 以北 (ihoku) | 東京以北の地域では冬になると大雪が降ります。 | Tokyo ihoku. | Ao norte de Tóquio. | pending-human-review |
+| 23 | kanjis[39].examples[1].content | 以 | 以南 (inan) | 九州以南の温暖な気候を活かした農業が盛んです。 | Kyushu inan. | Ao sul de Kyushu. | pending-human-review |
 | 24 | grammar.content | — | — | ぎふけんはほんしゅのクフūぶにいちし、 れきしてきなめいしょがおおくてんざいします。 | Gifu-ken wa Honshu no chūbu ni ichi shi, rekishi-teki na meisho ga ooku tenzai shimasu. | A prefeitura de Gifu localiza-se no centro de Honshu, abrigando muitos locais históricos. | pending-human-review |
 | 24 | kanjis[0].onyomi | 阜 | leitura: mechanically-convertible-onyomi | フウ (HU) | HU (HU) | proposta: フウ (HU) | pending-human-review |
 | 24 | kanjis[0].kunyomi | 阜 | leitura:  | - |  | proposta:  | corrected |
-| 24 | kanjis[0].examples[0].content | 阜 | 岐阜県 (gifuken) | 岐阜県のしらかわご。 | Gifuken no Shirakawa-go. | Shirakawa-go na prefeitura de Gifu. | pending-human-review |
-| 24 | kanjis[0].examples[1].content | 阜 | 岐阜 (gifu) | 岐阜城。 | Gifu castle. | Castelo de Gifu. | pending-human-review |
+| 24 | kanjis[0].examples[0].content | 阜 | 岐阜県 (gifuken) | 豊かな自然と歴史に恵まれた岐阜県を訪れます。 | Gifuken no Shirakawa-go. | Shirakawa-go na prefeitura de Gifu. | pending-human-review |
+| 24 | kanjis[0].examples[1].content | 阜 | 岐阜 (gifu) | 金華山の山頂にそびえる岐阜城を見学します。 | Gifu castle. | Castelo de Gifu. | pending-human-review |
 | 24 | kanjis[1].onyomi | 潟 | leitura: mechanically-convertible-onyomi | セキ (SEKI) | SEKI (SEKI) | proposta: セキ (SEKI) | pending-human-review |
 | 24 | kanjis[1].kunyomi | 潟 | leitura:  | かた (kata) |  | proposta:  | corrected |
-| 24 | kanjis[1].examples[0].content | 潟 | 新潟県 (niigataken) | 新潟県の米。 | Niigataken no rice. | Arroz da prefeitura de Niigata. | pending-human-review |
-| 24 | kanjis[1].examples[1].content | 潟 | 干潟 (higata) | 干潟えクおスイスてム。 | Higata ecosystem. | Ecossistema da laguna. | pending-human-review |
+| 24 | kanjis[1].examples[0].content | 潟 | 新潟県 (niigataken) | 米どころとして有名な新潟県産の美味しいお米を味わいます。 | Niigataken no rice. | Arroz da prefeitura de Niigata. | pending-human-review |
+| 24 | kanjis[1].examples[1].content | 潟 | 干潟 (higata) | 潮が引いた干潟で多様な海洋生物を観察します。 | Higata ecosystem. | Ecossistema da laguna. | pending-human-review |
 | 24 | kanjis[2].onyomi | 媛 | leitura: mechanically-convertible-onyomi | エン (EN) | EN (EN) | proposta: エン (EN) | pending-human-review |
 | 24 | kanjis[2].kunyomi | 媛 | leitura:  | ひめ (hime) |  | proposta:  | corrected |
-| 24 | kanjis[2].examples[0].content | 媛 | 愛媛県 (ehimeken) | 愛媛県のみかん。 | Ehimeken no mikan. | Mandarina da prefeitura de Ehime. | pending-human-review |
-| 24 | kanjis[2].examples[1].content | 媛 | 才媛 (saien) | ルいてらルイ才媛。 | Literary saien. | Dama de notável talento literário. | pending-human-review |
+| 24 | kanjis[2].examples[0].content | 媛 | 愛媛県 (ehimeken) | 温暖な気候でみかんの栽培が盛んな愛媛県です。 | Ehimeken no mikan. | Mandarina da prefeitura de Ehime. | pending-human-review |
+| 24 | kanjis[2].examples[1].content | 媛 | 才媛 (saien) | 文学の世界で活躍する才媛の作品を読みます。 | Literary saien. | Dama de notável talento literário. | pending-human-review |
 | 24 | kanjis[3].onyomi | 茨 | leitura: mechanically-convertible-onyomi | シ (SHI) | SHI (SHI) | proposta: シ (SHI) | pending-human-review |
 | 24 | kanjis[3].kunyomi | 茨 | leitura:  | いばら (ibara) / かや (kaya) / くさぶき (kusabuki) |  | proposta:  | corrected |
-| 24 | kanjis[3].examples[0].content | 茨 | 茨城県 (ibaraki-ken) | 茨城県の水戸。 | Ibarakiken no Mito. | Mito na prefeitura de Ibaraki. | pending-human-review |
-| 24 | kanjis[3].examples[1].content | 茨 | 茨 (bara) | 茨のみち。 | Bara no michi. | Caminho de espinhos. | pending-human-review |
+| 24 | kanjis[3].examples[0].content | 茨 | 茨城県 (ibaraki-ken) | 水戸黄門で有名な茨城県の偕楽園を散策します。 | Ibarakiken no Mito. | Mito na prefeitura de Ibaraki. | pending-human-review |
+| 24 | kanjis[3].examples[1].content | 茨 | 茨 (bara) | 険しい茨の道を切り拓いて成功を掴み取りました。 | Bara no michi. | Caminho de espinhos. | pending-human-review |
 | 24 | kanjis[4].onyomi | 埼 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
 | 24 | kanjis[4].kunyomi | 埼 | leitura:  | さき (saki) |  | proposta:  | corrected |
-| 24 | kanjis[4].examples[0].content | 埼 | 埼玉県 (saitamaken) | 埼玉県都市。 | Saitamaken city. | Cidade na prefeitura de Saitama. | pending-human-review |
-| 24 | kanjis[4].examples[1].content | 埼 | 埼 (saki) | クおあスたル埼。 | Coastal saki. | Cabo marítimo costeiro. | pending-human-review |
+| 24 | kanjis[4].examples[0].content | 埼 | 埼玉県 (saitamaken) | 首都圏のベッドタウンとして発展する埼玉県です。 | Saitamaken city. | Cidade na prefeitura de Saitama. | pending-human-review |
+| 24 | kanjis[4].examples[1].content | 埼 | 埼 (saki) | 海岸線の先端にある岬や埼を巡る旅に出ます。 | Coastal saki. | Cabo marítimo costeiro. | pending-human-review |
 | 24 | kanjis[5].onyomi | 栃 | leitura: mechanically-convertible-onyomi | レイ (REI) | REI (REI) | proposta: レイ (REI) | pending-human-review |
 | 24 | kanjis[5].kunyomi | 栃 | leitura:  | とち (tochi) |  | proposta:  | corrected |
-| 24 | kanjis[5].examples[0].content | 栃 | 栃木県 (tochigiken) | 栃木県のにっこ。 | Tochigiken no Nikko. | Nikko na prefeitura de Tochigi. | pending-human-review |
-| 24 | kanjis[5].examples[1].content | 栃 | 栃 (tochi) | 栃木。 | Tochi tree. | Árvore castanheira asiática. | pending-human-review |
+| 24 | kanjis[5].examples[0].content | 栃 | 栃木県 (tochigiken) | 日光の社寺など世界遺産を有する栃木県を訪れます。 | Tochigiken no Nikko. | Nikko na prefeitura de Tochigi. | pending-human-review |
+| 24 | kanjis[5].examples[1].content | 栃 | 栃 (tochi) | 森に自生する栃の木から採れた栃の実を加工します。 | Tochi tree. | Árvore castanheira asiática. | pending-human-review |
 | 24 | kanjis[6].onyomi | 滋 | leitura: mechanically-convertible-onyomi | ジ (JI) | JI (JI) | proposta: ジ (JI) | pending-human-review |
-| 24 | kanjis[6].examples[0].content | 滋 | 滋賀県 (shigaken) | 滋賀県のびわこ。 | Shigaken no Biwako. | Lago Biwa na prefeitura de Shiga. | pending-human-review |
-| 24 | kanjis[6].examples[1].content | 滋 | 滋養 (jiyou) | 滋養食べ物。 | Jiyou food. | Alimento de alto valor nutritivo. | pending-human-review |
+| 24 | kanjis[6].examples[0].content | 滋 | 滋賀県 (shigaken) | 日本最大の湖である琵琶湖がある滋賀県を旅します。 | Shigaken no Biwako. | Lago Biwa na prefeitura de Shiga. | pending-human-review |
+| 24 | kanjis[6].examples[1].content | 滋 | 滋養 (jiyou) | 栄養バランスの取れた滋養豊かな食事を摂ります。 | Jiyou food. | Alimento de alto valor nutritivo. | pending-human-review |
 | 24 | kanjis[7].onyomi | 鹿 | leitura: mechanically-convertible-onyomi | ロク (ROKU) | ROKU (ROKU) | proposta: ロク (ROKU) | pending-human-review |
 | 24 | kanjis[7].kunyomi | 鹿 | leitura:  | しか (shika) |  | proposta:  | corrected |
-| 24 | kanjis[7].examples[0].content | 鹿 | 鹿児島県 (kagoshimaken) | 鹿児島県火山。 | Kagoshimaken volcano. | Vulcão na prefeitura de Kagoshima. | pending-human-review |
-| 24 | kanjis[7].examples[1].content | 鹿 | 鹿 (shika) | ならの鹿。 | Nara no shika. | Cervos de Nara. | pending-human-review |
+| 24 | kanjis[7].examples[0].content | 鹿 | 鹿児島県 (kagoshimaken) | 雄大な桜島がそびえる鹿児島県を観光します。 | Kagoshimaken volcano. | Vulcão na prefeitura de Kagoshima. | pending-human-review |
+| 24 | kanjis[7].examples[1].content | 鹿 | 鹿 (shika) | 奈良公園で観光客と触れ合う鹿を眺めます。 | Nara no shika. | Cervos de Nara. | pending-human-review |
 | 24 | kanjis[8].onyomi | 児 | leitura: mechanically-convertible-onyomi | ジ (JI) | JI (JI) | proposta: ジ (JI) | pending-human-review |
 | 24 | kanjis[8].kunyomi | 児 | leitura:  | こ (ko) / -こ (-ko) |  | proposta:  | corrected |
-| 24 | kanjis[8].examples[0].content | 児 | 鹿児島 (kagoshima) | 鹿児島港。 | Kagoshima port. | Porto de Kagoshima. | pending-human-review |
-| 24 | kanjis[8].examples[1].content | 児 | 小児 (shouji) | 小児診療所。 | Shouji clinic. | Clínica pediátrica. | pending-human-review |
+| 24 | kanjis[8].examples[0].content | 児 | 鹿児島 (kagoshima) | 鹿児島港からフェリーに乗って離島へ向かいます。 | Kagoshima port. | Porto de Kagoshima. | pending-human-review |
+| 24 | kanjis[8].examples[1].content | 児 | 小児 (shouji) | 地域の小児科クリニックで定期健診を受けます。 | Shouji clinic. | Clínica pediátrica. | pending-human-review |
 | 24 | kanjis[9].onyomi | 沖 | leitura: mechanically-convertible-onyomi | チュ (CHU) | CHU (CHU) | proposta: チュ (CHU) | pending-human-review |
 | 24 | kanjis[9].kunyomi | 沖 | leitura:  | おき (oki) |  | proposta:  | corrected |
-| 24 | kanjis[9].examples[0].content | 沖 | 沖縄県 (okinawaken) | 沖縄県の海岸。 | Okinawaken no beach. | Praia na prefeitura de Okinawa. | pending-human-review |
-| 24 | kanjis[9].examples[1].content | 沖 | 沖合 (okiai) | 沖合ふぃしんグ。 | Okiai fishing. | Pesca em alto-mar. | pending-human-review |
+| 24 | kanjis[9].examples[0].content | 沖 | 沖縄県 (okinawaken) | 美しいエメラルドグリーンの海が広がる沖縄県です。 | Okinawaken no beach. | Praia na prefeitura de Okinawa. | pending-human-review |
+| 24 | kanjis[9].examples[1].content | 沖 | 沖合 (okiai) | 漁船に乗って沖合に出て大物の魚を釣り上げます。 | Okiai fishing. | Pesca em alto-mar. | pending-human-review |
 | 24 | kanjis[10].onyomi | 縄 | leitura: mechanically-convertible-onyomi | ジョウ (JOU) | JOU (JOU) | proposta: ジョウ (JOU) | pending-human-review |
 | 24 | kanjis[10].kunyomi | 縄 | leitura:  | なわ (nawa) |  | proposta:  | corrected |
-| 24 | kanjis[10].examples[0].content | 縄 | 沖縄 (okinawa) | 沖縄文化。 | Okinawa culture. | Cultura de Okinawa. | pending-human-review |
-| 24 | kanjis[10].examples[1].content | 縄 | 縄文 (joumon) | 縄文えら。 | Joumon era. | Era Jomon na pré-história do Japão. | pending-human-review |
+| 24 | kanjis[10].examples[0].content | 縄 | 沖縄 (okinawa) | 独特の歴史と琉球舞踊などの文化を持つ沖縄です。 | Okinawa culture. | Cultura de Okinawa. | pending-human-review |
+| 24 | kanjis[10].examples[1].content | 縄 | 縄文 (joumon) | 縄文時代の土器や遺跡から太古の暮らしを学びます。 | Joumon era. | Era Jomon na pré-história do Japão. | pending-human-review |
 | 24 | kanjis[11].onyomi | 梨 | leitura: mechanically-convertible-onyomi | リ (RI) | RI (RI) | proposta: リ (RI) | pending-human-review |
 | 24 | kanjis[11].kunyomi | 梨 | leitura:  | なし (nashi) |  | proposta:  | corrected |
-| 24 | kanjis[11].examples[0].content | 梨 | 山梨県 (yamanashiken) | 山梨県のふじ。 | Yamanashiken no Fuji. | Monte Fuji na prefeitura de Yamanashi. | pending-human-review |
-| 24 | kanjis[11].examples[1].content | 梨 | 梨 (nashi) | 梨フるいト。 | Nashi fruit. | Pera asiática tradicional. | pending-human-review |
+| 24 | kanjis[11].examples[0].content | 梨 | 山梨県 (yamanashiken) | 富士山の麓に位置し果物王国と呼ばれる山梨県です。 | Yamanashiken no Fuji. | Monte Fuji na prefeitura de Yamanashi. | pending-human-review |
+| 24 | kanjis[11].examples[1].content | 梨 | 梨 (nashi) | みずみずしくて甘い旬の梨を美味しくいただきます。 | Nashi fruit. | Pera asiática tradicional. | pending-human-review |
 | 24 | kanjis[12].onyomi | 阪 | leitura: mechanically-convertible-onyomi | ハン (HAN) | HAN (HAN) | proposta: ハン (HAN) | pending-human-review |
 | 24 | kanjis[12].kunyomi | 阪 | leitura:  | さか (saka) |  | proposta:  | corrected |
-| 24 | kanjis[12].examples[0].content | 阪 | 大阪府 (osakafu) | 大阪府経済。 | Osakafu economy. | Economia da província de Osaka. | pending-human-review |
-| 24 | kanjis[12].examples[1].content | 阪 | 阪神 (hanshin) | 阪神あれあ。 | Hanshin area. | Região metropolitana de Osaka e Kobe. | pending-human-review |
+| 24 | kanjis[12].examples[0].content | 阪 | 大阪府 (osakafu) | 西日本の経済の中心地である大阪府を訪れます。 | Osakafu economy. | Economia da província de Osaka. | pending-human-review |
+| 24 | kanjis[12].examples[1].content | 阪 | 阪神 (hanshin) | 阪神工業地帯で日本の製造業が発展しました。 | Hanshin area. | Região metropolitana de Osaka e Kobe. | pending-human-review |
 | 24 | kanjis[13].onyomi | 岡 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
 | 24 | kanjis[13].kunyomi | 岡 | leitura:  | おか (oka) |  | proposta:  | corrected |
-| 24 | kanjis[13].examples[0].content | 岡 | 福岡県 (fukuokaken) | 福岡県のはかた。 | Fukuokaken no Hakata. | Hakata na prefeitura de Fukuoka. | pending-human-review |
-| 24 | kanjis[13].examples[1].content | 岡 | 静岡県 (shizuokaken) | 静岡県てあ。 | Shizuokaken tea. | Chá da prefeitura de Shizuoka. | pending-human-review |
+| 24 | kanjis[13].examples[0].content | 岡 | 福岡県 (fukuokaken) | 全国有数のお茶の生産地である静岡県です。 | Fukuokaken no Hakata. | Hakata na prefeitura de Fukuoka. | pending-human-review |
+| 24 | kanjis[13].examples[1].content | 岡 | 静岡県 (shizuokaken) | 倉敷の美しい美観地区がある岡山県を散策します。 | Shizuokaken tea. | Chá da prefeitura de Shizuoka. | pending-human-review |
 | 24 | kanjis[14].onyomi | 奈 | leitura: mechanically-convertible-onyomi | ナ (NA) | NA (NA) | proposta: ナ (NA) | pending-human-review |
 | 24 | kanjis[14].kunyomi | 奈 | leitura:  | いかん (ikan) / からなし (karanashi) |  | proposta:  | corrected |
-| 24 | kanjis[14].examples[0].content | 奈 | 奈良県 (naraken) | 奈良県のだいぶつ。 | Naraken no Daibutsu. | Grande Buda na prefeitura de Nara. | pending-human-review |
-| 24 | kanjis[14].examples[1].content | 奈 | 奈良 (nara) | 奈良公園。 | Nara park. | Parque de Nara. | pending-human-review |
+| 24 | kanjis[14].examples[0].content | 奈 | 奈良県 (naraken) | 世界遺産の東大寺や法隆寺がある古都奈良です。 | Naraken no Daibutsu. | Grande Buda na prefeitura de Nara. | pending-human-review |
+| 24 | kanjis[14].examples[1].content | 奈 | 奈良 (nara) | 奈良公園の広大な敷地をのんびりと歩きます。 | Nara park. | Parque de Nara. | pending-human-review |
 | 24 | kanjis[15].onyomi | 岐 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
 | 24 | kanjis[15].kunyomi | 岐 | leitura:  | - |  | proposta:  | corrected |
-| 24 | kanjis[15].examples[0].content | 岐 | 分岐 (bunki) | ろあドの分岐。 | Road no bunki. | Bifurcação da estrada. | pending-human-review |
-| 24 | kanjis[15].examples[1].content | 岐 | 岐路 (kiro) | 生活の岐路。 | Life no kiro. | Encruzilhada da vida. | pending-human-review |
+| 24 | kanjis[15].examples[0].content | 岐 | 分岐 (bunki) | 山道を進むと道が二つに分岐する地点に出ました。 | Road no bunki. | Bifurcação da estrada. | pending-human-review |
+| 24 | kanjis[15].examples[1].content | 岐 | 岐路 (kiro) | 将来の進路を決める人生の大きな岐路に立っています。 | Life no kiro. | Encruzilhada da vida. | pending-human-review |
 | 24 | kanjis[16].onyomi | 熊 | leitura: mechanically-convertible-onyomi | ユウ (YUU) | YUU (YUU) | proposta: ユウ (YUU) | pending-human-review |
 | 24 | kanjis[16].kunyomi | 熊 | leitura:  | くま (kuma) |  | proposta:  | corrected |
-| 24 | kanjis[16].examples[0].content | 熊 | 熊本県 (kumamotoken) | 熊本県城。 | Kumamotoken castle. | Castelo de Kumamoto. | pending-human-review |
-| 24 | kanjis[16].examples[1].content | 熊 | 熊 (kuma) | 熊の生息地。 | Kuma no habitat. | Habitat de ursos selvagens. | pending-human-review |
+| 24 | kanjis[16].examples[0].content | 熊 | 熊本県 (kumamotoken) | 勇壮な石垣で知られる名城の熊本城を見学します。 | Kumamotoken castle. | Castelo de Kumamoto. | pending-human-review |
+| 24 | kanjis[16].examples[1].content | 熊 | 熊 (kuma) | 森の中で野生の熊の足跡を見つけて警戒します。 | Kuma no habitat. | Habitat de ursos selvagens. | pending-human-review |
 | 24 | kanjis[17].onyomi | 宮 | leitura: mechanically-convertible-onyomi | キュウ (KYUU) | KYUU (KYUU) | proposta: キュウ (KYUU) | pending-human-review |
 | 24 | kanjis[17].kunyomi | 宮 | leitura:  | みや (miya) |  | proposta:  | corrected |
-| 24 | kanjis[17].examples[0].content | 宮 | 宮城県 (miyagiken) | 宮城県のせんだい。 | Miyagiken no Sendai. | Sendai na prefeitura de Miyagi. | pending-human-review |
-| 24 | kanjis[17].examples[1].content | 宮 | 宮崎県 (miyazakiken) | 宮崎県ぱルム。 | Miyazakiken palm. | Palmeiras de Miyazaki. | pending-human-review |
+| 24 | kanjis[17].examples[0].content | 宮 | 宮城県 (miyagiken) | 南国の温暖な気候と豊かな自然が魅力の宮崎県です。 | Miyagiken no Sendai. | Sendai na prefeitura de Miyagi. | pending-human-review |
+| 24 | kanjis[17].examples[1].content | 宮 | 宮崎県 (miyazakiken) | 仙台七夕まつりで賑わう宮城県を訪れます。 | Miyazakiken palm. | Palmeiras de Miyazaki. | pending-human-review |
 | 24 | kanjis[18].onyomi | 崎 | leitura: mechanically-convertible-onyomi | キ (KI) | KI (KI) | proposta: キ (KI) | pending-human-review |
 | 24 | kanjis[18].kunyomi | 崎 | leitura:  | さき (saki) |  | proposta:  | corrected |
-| 24 | kanjis[18].examples[0].content | 崎 | 長崎県 (nagasakiken) | 長崎県歴史。 | Nagasakiken history. | História da prefeitura de Nagasaki. | pending-human-review |
-| 24 | kanjis[18].examples[1].content | 崎 | 宮崎 (miyazaki) | 宮崎れそルト。 | Miyazaki resort. | Resort de Miyazaki. | pending-human-review |
+| 24 | kanjis[18].examples[0].content | 崎 | 長崎県 (nagasakiken) | 異国情緒漂う歴史ある港町として有名な長崎県です。 | Nagasakiken history. | História da prefeitura de Nagasaki. | pending-human-review |
+| 24 | kanjis[18].examples[1].content | 崎 | 宮崎 (miyazaki) | 青島などの美しい海岸景観が広がる宮崎です。 | Miyazaki resort. | Resort de Miyazaki. | pending-human-review |
 | 24 | kanjis[19].onyomi | 静 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
-| 24 | kanjis[19].examples[0].content | 静 | 静岡 (shizuoka) | 静岡プれふぇクトうれ。 | Shizuoka prefecture. | Prefeitura de Shizuoka. | pending-human-review |
-| 24 | kanjis[19].examples[1].content | 静 | 静寂 (seijaku) | ふぉれストの静寂。 | Forest no seijaku. | Silêncio plácido da floresta. | pending-human-review |
+| 24 | kanjis[19].examples[0].content | 静 | 静岡 (shizuoka) | 富士山を望む風光明媚な静岡県をドライブします。 | Shizuoka prefecture. | Prefeitura de Shizuoka. | pending-human-review |
+| 24 | kanjis[19].examples[1].content | 静 | 静寂 (seijaku) | 深夜の森は物音一つしない静寂に包まれています。 | Forest no seijaku. | Silêncio plácido da floresta. | pending-human-review |
 | 24 | kanjis[20].onyomi | 香 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
 | 24 | kanjis[20].kunyomi | 香 | leitura:  | かお・り (kaori) |  | proposta:  | corrected |
-| 24 | kanjis[20].examples[0].content | 香 | 香川県 (kagawaken) | 香川県のうどん。 | Kagawaken no Udon. | Macarrão Udon de Kagawa. | pending-human-review |
-| 24 | kanjis[20].examples[1].content | 香 | 香水 (kousui) | 香水香り。 | Kousui scent. | Aroma de perfume. | pending-human-review |
+| 24 | kanjis[20].examples[0].content | 香 | 香川県 (kagawaken) | 讃岐うどんの本場として知られる香川県です。 | Kagawaken no Udon. | Macarrão Udon de Kagawa. | pending-human-review |
+| 24 | kanjis[20].examples[1].content | 香 | 香水 (kousui) | 部屋の中に上品なお香の香りが漂っています。 | Kousui scent. | Aroma de perfume. | pending-human-review |
 | 24 | kanjis[21].onyomi | 徳 | leitura: mechanically-convertible-onyomi | トク (TOKU) | TOKU (TOKU) | proposta: トク (TOKU) | pending-human-review |
 | 24 | kanjis[21].kunyomi | 徳 | leitura:  | - |  | proposta:  | corrected |
-| 24 | kanjis[21].examples[0].content | 徳 | 徳島県 (tokushimaken) | 徳島県のあわおどり。 | Tokushimaken no Awa-odori. | Dança Awa-odori em Tokushima. | pending-human-review |
-| 24 | kanjis[21].examples[1].content | 徳 | 道徳 (doutoku) | 道徳教育。 | Doutoku education. | Educação moral e ética. | pending-human-review |
+| 24 | kanjis[21].examples[0].content | 徳 | 徳島県 (tokushimaken) | 阿波踊りの熱気で街中が沸く徳島県を訪れます。 | Tokushimaken no Awa-odori. | Dança Awa-odori em Tokushima. | pending-human-review |
+| 24 | kanjis[21].examples[1].content | 徳 | 道徳 (doutoku) | 学校教育を通じて高い道徳心と思いやりの心を育みます。 | Doutoku education. | Educação moral e ética. | pending-human-review |
 | 24 | kanjis[22].onyomi | 島 | leitura: mechanically-convertible-onyomi | トウ (TOU) | TOU (TOU) | proposta: トウ (TOU) | pending-human-review |
 | 24 | kanjis[22].kunyomi | 島 | leitura:  | しま (shima) |  | proposta:  | corrected |
-| 24 | kanjis[22].examples[0].content | 島 | 広島県 (hiroshimaken) | 広島県平和公園。 | Hiroshimaken peace park. | Parque da Paz de Hiroshima. | pending-human-review |
-| 24 | kanjis[22].examples[1].content | 島 | 離島 (ritou) | 離島開発。 | Ritou development. | Desenvolvimento de ilhas remotas. | pending-human-review |
+| 24 | kanjis[22].examples[0].content | 島 | 広島県 (hiroshimaken) | 豊かな自然と離島の暮らしを体験する観光ツアーです。 | Hiroshimaken peace park. | Parque da Paz de Hiroshima. | pending-human-review |
+| 24 | kanjis[22].examples[1].content | 島 | 離島 (ritou) | 日本全国に点在する離島の振興を支援します。 | Ritou development. | Desenvolvimento de ilhas remotas. | pending-human-review |
 | 24 | kanjis[23].onyomi | 知 | leitura: mechanically-convertible-onyomi | チ (CHI) | CHI (CHI) | proposta: チ (CHI) | pending-human-review |
 | 24 | kanjis[23].examples[0].content | 知 | 高知県 (kochiken) | 高知県のかつらはま。 | Kochiken no Katsurahama. | Praia de Katsurahama em Kochi. | pending-human-review |
 | 24 | kanjis[23].examples[1].content | 知 | 知事 (chiji) | プれふぇクトうらル知事。 | Prefectural chiji. | Governador da prefeitura. | pending-human-review |
 | 24 | kanjis[24].onyomi | 福 | leitura: mechanically-convertible-onyomi | フウク (HUKU) | HUKU (HUKU) | proposta: フウク (HUKU) | pending-human-review |
 | 24 | kanjis[24].kunyomi | 福 | leitura:  | - |  | proposta:  | corrected |
-| 24 | kanjis[24].examples[0].content | 福 | 福島県 (fukushimaken) | 福島県復興。 | Fukushimaken recovery. | Recuperação da prefeitura de Fukushima. | pending-human-review |
-| 24 | kanjis[24].examples[1].content | 福 | 福井県 (fukuiken) | 福井県でぃのさうル博物館。 | Fukuiken dinosaur museum. | Museu dos dinossauros de Fukui. | pending-human-review |
+| 24 | kanjis[24].examples[0].content | 福 | 福島県 (fukushimaken) | 豊かな農産物と復興への歩みを進める福島県です。 | Fukushimaken recovery. | Recuperação da prefeitura de Fukushima. | pending-human-review |
+| 24 | kanjis[24].examples[1].content | 福 | 福井県 (fukuiken) | 恐竜博物館で有名な福井県を家族で訪れます。 | Fukuiken dinosaur museum. | Museu dos dinossauros de Fukui. | pending-human-review |
 | 24 | kanjis[25].onyomi | 井 | leitura: mechanically-convertible-onyomi | セイ (SEI) | SEI (SEI) | proposta: セイ (SEI) | pending-human-review |
 | 24 | kanjis[25].kunyomi | 井 | leitura:  | い (i) |  | proposta:  | corrected |
-| 24 | kanjis[25].examples[0].content | 井 | 福井 (fukui) | 福井スたてぃおん。 | Fukui station. | Estação de Fukui. | pending-human-review |
-| 24 | kanjis[25].examples[1].content | 井 | 天井 (tenjou) | 天井照明。 | Tenjou light. | Luz do teto. | pending-human-review |
+| 24 | kanjis[25].examples[0].content | 井 | 福井 (fukui) | 北陸新幹線の開通で賑わう福井駅に到着しました。 | Fukui station. | Estação de Fukui. | pending-human-review |
+| 24 | kanjis[25].examples[1].content | 井 | 天井 (tenjou) | 部屋の天井を見上げて照明器具の位置を確認します。 | Tenjou light. | Luz do teto. | pending-human-review |
 | 24 | kanjis[26].onyomi | 廣 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
-| 24 | kanjis[26].examples[0].content | 廣 | 広島 (hiroshima) | 廣島ドーム。 | Hiroshima dome. | Domo de Hiroshima. | pending-human-review |
-| 24 | kanjis[26].examples[1].content | 廣 | 廣大 (koudai) | 廣大なルあんド。 | Koudai na land. | Terra vasta e imensa. | pending-human-review |
+| 24 | kanjis[26].examples[0].content | 廣 | 広島 (hiroshima) | 世界遺産の原爆ドームがある廣島を訪れます。 | Hiroshima dome. | Domo de Hiroshima. | pending-human-review |
+| 24 | kanjis[26].examples[1].content | 廣 | 廣大 (koudai) | 見渡す限り地平線が広がる廣大な大地を旅します。 | Koudai na land. | Terra vasta e imensa. | pending-human-review |
 | 24 | kanjis[27].onyomi | 鳥 | leitura: mechanically-convertible-onyomi | チョウ (CHOU) | CHOU (CHOU) | proposta: チョウ (CHOU) | pending-human-review |
 | 24 | kanjis[27].kunyomi | 鳥 | leitura:  | とり (tori) |  | proposta:  | corrected |
-| 24 | kanjis[27].examples[0].content | 鳥 | 鳥取県 (tottoriken) | 鳥取県のさきゅう。 | Tottoriken no Sakyuu. | Dunas de areia de Tottori. | pending-human-review |
-| 24 | kanjis[27].examples[1].content | 鳥 | 野鳥 (yachou) | 野鳥観察。 | Yachou observation. | Observação de pássaros selvagens. | pending-human-review |
+| 24 | kanjis[27].examples[0].content | 鳥 | 鳥取県 (tottoriken) | 日本最大級の海岸砂丘である鳥取砂丘を歩きます。 | Tottoriken no Sakyuu. | Dunas de areia de Tottori. | pending-human-review |
+| 24 | kanjis[27].examples[1].content | 鳥 | 野鳥 (yachou) | 湖畔の自然保護区で季節の渡り鳥や野鳥を観察します。 | Yachou observation. | Observação de pássaros selvagens. | pending-human-review |
 | 24 | kanjis[28].onyomi | 取 | leitura: mechanically-convertible-onyomi | シュ (SHU) | SHU (SHU) | proposta: シュ (SHU) | pending-human-review |
-| 24 | kanjis[28].examples[0].content | 取 | 鳥取 (tottori) | 鳥取砂丘。 | Tottori dunes. | Dunas de Tottori. | pending-human-review |
-| 24 | kanjis[28].examples[1].content | 取 | 取得 (shutoku) | 免許の取得。 | License no shutoku. | Obtenção de licença. | pending-human-review |
+| 24 | kanjis[28].examples[0].content | 取 | 鳥取 (tottori) | 鳥取県の美しい海岸線をドライブします。 | Tottori dunes. | Dunas de Tottori. | pending-human-review |
+| 24 | kanjis[28].examples[1].content | 取 | 取得 (shutoku) | 試験に合格して国家資格を取得しました。 | License no shutoku. | Obtenção de licença. | pending-human-review |
 | 24 | kanjis[29].onyomi | 根 | leitura: mechanically-convertible-onyomi | コン (KON) | KON (KON) | proposta: コン (KON) | pending-human-review |
 | 24 | kanjis[29].kunyomi | 根 | leitura:  | ね (ne) / -ね (-ne) |  | proposta:  | corrected |
-| 24 | kanjis[29].examples[0].content | 根 | 島根県 (shimaneken) | 島根県のいずも。 | Shimaneken no Izumo. | Santuário Izumo em Shimane. | pending-human-review |
-| 24 | kanjis[29].examples[1].content | 根 | 根本 (konpon) | 根本解決。 | Konpon solution. | Solução de cerne. | pending-human-review |
+| 24 | kanjis[29].examples[0].content | 根 | 島根県 (shimaneken) | 出雲大社が鎮座する歴史深い島根県を訪ねます。 | Shimaneken no Izumo. | Santuário Izumo em Shimane. | pending-human-review |
+| 24 | kanjis[29].examples[1].content | 根 | 根本 (konpon) | 問題の根本的な原因を突き止めて解決します。 | Konpon solution. | Solução de cerne. | pending-human-review |
 | 24 | kanjis[30].onyomi | 和 | leitura: mechanically-convertible-onyomi | ワ (WA) | WA (WA) | proposta: ワ (WA) | pending-human-review |
-| 24 | kanjis[30].examples[0].content | 和 | 和歌山県 (wakayamaken) | 和歌山県のこやさん。 | Wakayamaken no Koyasan. | Monte Koya na prefeitura de Wakayama. | pending-human-review |
-| 24 | kanjis[30].examples[1].content | 和 | 和風 (wafuu) | 和風部屋。 | Wafuu room. | Quarto em estilo tradicional japonês. | pending-human-review |
+| 24 | kanjis[30].examples[0].content | 和 | 和歌山県 (wakayamaken) | 熊野古道や高野山がある和歌山県を巡ります。 | Wakayamaken no Koyasan. | Monte Koya na prefeitura de Wakayama. | pending-human-review |
+| 24 | kanjis[30].examples[1].content | 和 | 和風 (wafuu) | 畳や障子を取り入れた落ち着いた和風の部屋でくつろぎます。 | Wafuu room. | Quarto em estilo tradicional japonês. | pending-human-review |
 | 24 | kanjis[31].onyomi | 歌 | leitura: mechanically-convertible-onyomi | カ (KA) | KA (KA) | proposta: カ (KA) | pending-human-review |
 | 24 | kanjis[31].kunyomi | 歌 | leitura:  | うた (uta) |  | proposta:  | corrected |
-| 24 | kanjis[31].examples[0].content | 歌 | 和歌山 (wakayama) | 和歌山らめん。 | Wakayama ramen. | Ramen tradicional de Wakayama. | pending-human-review |
-| 24 | kanjis[31].examples[1].content | 歌 | 短歌 (tanka) | 短歌詩。 | Tanka poetry. | Poesia tradicional Tanka. | pending-human-review |
+| 24 | kanjis[31].examples[0].content | 歌 | 和歌山 (wakayama) | 和歌山ラーメンを地元の人気店で味わいます。 | Wakayama ramen. | Ramen tradicional de Wakayama. | pending-human-review |
+| 24 | kanjis[31].examples[1].content | 歌 | 短歌 (tanka) | 三十一文字で情景を詠む日本の伝統的な短歌です。 | Tanka poetry. | Poesia tradicional Tanka. | pending-human-review |
 | 24 | kanjis[32].onyomi | 山 | leitura: mechanically-convertible-onyomi | サン (SAN) | SAN (SAN) | proposta: サン (SAN) | pending-human-review |
 | 24 | kanjis[32].kunyomi | 山 | leitura:  | やま (yama) |  | proposta:  | corrected |
-| 24 | kanjis[32].examples[0].content | 山 | 山口県 (yamaguchiken) | 山口県のはぎ。 | Yamaguchiken no Hagi. | Hagi na prefeitura de Yamaguchi. | pending-human-review |
-| 24 | kanjis[32].examples[1].content | 山 | 山脈 (sanmyaku) | じゃぱん山脈。 | Japan sanmyaku. | Cadeia de montanhas do Japão. | pending-human-review |
+| 24 | kanjis[32].examples[0].content | 山 | 山口県 (yamaguchiken) | 明治維新の志士たちを輩出した山口県の萩を歩きます。 | Yamaguchiken no Hagi. | Hagi na prefeitura de Yamaguchi. | pending-human-review |
+| 24 | kanjis[32].examples[1].content | 山 | 山脈 (sanmyaku) | 雄大な山々が連なる日本山脈の稜線を眺めます。 | Japan sanmyaku. | Cadeia de montanhas do Japão. | pending-human-review |
 | 24 | kanjis[33].onyomi | 口 | leitura: mechanically-convertible-onyomi | コウ (KOU) | KOU (KOU) | proposta: コウ (KOU) | pending-human-review |
 | 24 | kanjis[33].kunyomi | 口 | leitura:  | くち (kuchi) |  | proposta:  | corrected |
-| 24 | kanjis[33].examples[0].content | 口 | 山口 (yamaguchi) | 山口スたてぃおん。 | Yamaguchi station. | Estação de Yamaguchi. | pending-human-review |
-| 24 | kanjis[33].examples[1].content | 口 | 港口 (koukou) | 港の港口。 | Port no koukou. | Entrada do porto. | pending-human-review |
+| 24 | kanjis[33].examples[0].content | 口 | 山口 (yamaguchi) | 新幹線の停車駅である新山口駅で乗り換えます。 | Yamaguchi station. | Estação de Yamaguchi. | pending-human-review |
+| 24 | kanjis[33].examples[1].content | 口 | 港口 (koukou) | 大型船が安全に出入りできるよう港口を整備します。 | Port no koukou. | Entrada do porto. | pending-human-review |
 | 24 | kanjis[34].onyomi | 州 | leitura: mechanically-convertible-onyomi | シュウ (SHUU) | SHUU (SHUU) | proposta: シュウ (SHUU) | pending-human-review |
 | 24 | kanjis[34].kunyomi | 州 | leitura:  | す (su) |  | proposta:  | corrected |
-| 24 | kanjis[34].examples[0].content | 州 | 本州 (honshuu) | 本州島。 | Honshuu island. | Ilha principal de Honshu. | pending-human-review |
-| 24 | kanjis[34].examples[1].content | 州 | 九州 (kyuushuu) | 九州あれあ。 | Kyuushuu area. | Região de Kyushu. | pending-human-review |
+| 24 | kanjis[34].examples[0].content | 州 | 本州 (honshuu) | 日本の国土の中心をなす最大の島である本州です。 | Honshuu island. | Ilha principal de Honshu. | pending-human-review |
+| 24 | kanjis[34].examples[1].content | 州 | 九州 (kyuushuu) | 豊かな自然と温暖な気候が魅力の九州地方です。 | Kyuushuu area. | Região de Kyushu. | pending-human-review |
 | 24 | kanjis[35].onyomi | 都 | leitura: mechanically-convertible-onyomi | ト (TO) | TO (TO) | proposta: ト (TO) | pending-human-review |
 | 24 | kanjis[35].kunyomi | 都 | leitura:  | みやこ (miyako) |  | proposta:  | corrected |
-| 24 | kanjis[35].examples[0].content | 都 | 東京都 (toukyouto) | 東京都首都。 | Toukyouto capital. | Capital da Metrópole de Tóquio. | pending-human-review |
-| 24 | kanjis[35].examples[1].content | 都 | 首都 (shuto) | じゃぱんの首都。 | Japan no shuto. | Capital do Japão. | pending-human-review |
+| 24 | kanjis[35].examples[0].content | 都 | 東京都 (toukyouto) | 日本の政治と経済の中心である東京都です。 | Toukyouto capital. | Capital da Metrópole de Tóquio. | pending-human-review |
+| 24 | kanjis[35].examples[1].content | 都 | 首都 (shuto) | 古都の歴史と伝統が息づく京都を散策します。 | Japan no shuto. | Capital do Japão. | pending-human-review |
 | 24 | kanjis[36].onyomi | 府 | leitura: mechanically-convertible-onyomi | フ (FU) | FU (FU) | proposta: フ (FU) | pending-human-review |
 | 24 | kanjis[36].kunyomi | 府 | leitura:  | - |  | proposta:  | corrected |
-| 24 | kanjis[36].examples[0].content | 府 | 京都府 (kyoutofu) | 京都府神社。 | Kyoutofu shrine. | Santuário na província de Quioto. | pending-human-review |
-| 24 | kanjis[36].examples[1].content | 府 | 政府 (seifu) | じゃぱん政府。 | Japan seifu. | Governo do Japão. | pending-human-review |
+| 24 | kanjis[36].examples[0].content | 府 | 京都府 (kyoutofu) | 千年の都としての歴史を誇る京都府です。 | Kyoutofu shrine. | Santuário na província de Quioto. | pending-human-review |
+| 24 | kanjis[36].examples[1].content | 府 | 政府 (seifu) | 国民の福祉と安全を守る日本政府の役割です。 | Japan seifu. | Governo do Japão. | pending-human-review |
 | 24 | kanjis[37].onyomi | 県 | leitura: mechanically-convertible-onyomi | ケン (KEN) | KEN (KEN) | proposta: ケン (KEN) | pending-human-review |
 | 24 | kanjis[37].kunyomi | 県 | leitura:  | か・ける (kakeru) |  | proposta:  | corrected |
-| 24 | kanjis[37].examples[0].content | 県 | 都道府県 (todoufuken) | 都道府県地図。 | Todoufuken map. | Mapa das 47 prefeituras do Japão. | pending-human-review |
-| 24 | kanjis[37].examples[1].content | 県 | 県庁 (kenchou) | 県庁事務所。 | Kenchou office. | Sede do governo da prefeitura. | pending-human-review |
+| 24 | kanjis[37].examples[0].content | 県 | 都道府県 (todoufuken) | 日本全国の四十七都道府県の特色を学びます。 | Todoufuken map. | Mapa das 47 prefeituras do Japão. | pending-human-review |
+| 24 | kanjis[37].examples[1].content | 県 | 県庁 (kenchou) | 行政の中心となる県庁の庁舎を訪れます。 | Kenchou office. | Sede do governo da prefeitura. | pending-human-review |
 | 24 | kanjis[38].onyomi | 海 | leitura: mechanically-convertible-onyomi | カイ (KAI) | KAI (KAI) | proposta: カイ (KAI) | pending-human-review |
 | 24 | kanjis[38].kunyomi | 海 | leitura:  | うみ (umi) |  | proposta:  | corrected |
-| 24 | kanjis[38].examples[0].content | 海 | 日本海 (nihonkai) | 日本海海岸。 | Nihonkai coast. | Costa do Mar do Japão. | pending-human-review |
-| 24 | kanjis[38].examples[1].content | 海 | 海外 (kaigai) | 海外旅行。 | Kaigai travel. | Viagem ao exterior. | pending-human-review |
+| 24 | kanjis[38].examples[0].content | 海 | 日本海 (nihonkai) | 豊かな漁場が広がる日本海の新鮮な海の幸を味わいます。 | Nihonkai coast. | Costa do Mar do Japão. | pending-human-review |
+| 24 | kanjis[38].examples[1].content | 海 | 海外 (kaigai) | 夏休みに家族で海外旅行に出かけます。 | Kaigai travel. | Viagem ao exterior. | pending-human-review |
 | 24 | kanjis[39].onyomi | 陸 | leitura: mechanically-convertible-onyomi | リク (RIKU) | RIKU (RIKU) | proposta: リク (RIKU) | pending-human-review |
 | 24 | kanjis[39].kunyomi | 陸 | leitura:  | おか (oka) |  | proposta:  | corrected |
-| 24 | kanjis[39].examples[0].content | 陸 | 陸上 (rikujou) | 陸上輸送。 | Rikujou transport. | Transporte em terra firme. | pending-human-review |
-| 24 | kanjis[39].examples[1].content | 陸 | 内陸 (nairiku) | 内陸あれあ。 | Nairiku area. | Região do interior sem acesso ao mar. | pending-human-review |
+| 24 | kanjis[39].examples[0].content | 陸 | 陸上 (rikujou) | トラックや鉄道を用いた効率的な陸上輸送ネットワークです。 | Rikujou transport. | Transporte em terra firme. | pending-human-review |
+| 24 | kanjis[39].examples[1].content | 陸 | 内陸 (nairiku) | 海に面していない内陸地域の気候の特徴を調べます。 | Nairiku area. | Região do interior sem acesso ao mar. | pending-human-review |
 
 Todas as linhas permanecem pendentes até revisão humana qualificada.

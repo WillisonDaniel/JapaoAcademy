@@ -4086,8 +4086,8 @@ const kanjiN5Data = [
         "grammar": {
             "title": "Expressões de Preferência: ～が 好きです / がきらいです (Gosto / Não Gosto)",
             "explanation": "Para expressar preferências alimentares no N5, a estrutura é: [Pessoa] は [Coisa] が 好きです (gosta de). O ponto crítico: use が (ga), não を (o), antes de 好き (suki = gostar) e 嫌い (kirai = não gostar/detestar). Para intensificar use 大好き (daisuki = adorar) e 大嫌い (daikirai = detestar muito). Para indicar o que quer pedir, use: ～をください (~ o kudasai = Por favor, me dê ~) ou ～にします (~ni shimasu = Vou pedir o ~, para fazer escolha).",
-            "example": "山田さんは魚料理が大妃きですが、肉がきらいです。寓海老山を一つください。",
-            "translation": "O Sr. Yamada adora peixe, mas não gosta de carne. Por favor, me dê um onigiride salmon."
+            "example": "山田さんは魚料理が大好きですが、肉がきらいです。おにぎりを一つください。",
+            "translation": "O Sr. Yamada adora pratos de peixe, mas não gosta de carne. Por favor, me dê um onigiri."
         },
         "readingText": {
             "title": "和食レストランで夕食 (Jantar no Restaurante de Culinária Japonesa)",
@@ -5960,3 +5960,34 @@ kanjiN5Data.forEach(module => (module.kanjis || []).forEach(kanji => {
 }));
 
 if (typeof window !== 'undefined') { window.kanjiN5Data = kanjiN5Data; }
+
+// Auditoria editorial da Fase 22B: textos de leitura e compreensão.
+(() => {
+    const byModule = moduleNumber => kanjiN5Data.find(item => Number(item.module) === moduleNumber);
+    const first = byModule(1).readingText;
+    first.japanese = '<ruby>私<rt>わたし</rt></ruby>は<ruby>毎日<rt>まいにち</rt></ruby>、<ruby>漢字<rt>かんじ</rt></ruby>の<ruby>意味<rt>いみ</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えます。<ruby>漢字<rt>かんじ</rt></ruby>は<ruby>古代<rt>こだい</rt></ruby>の<ruby>中国<rt>ちゅうごく</rt></ruby>から<ruby>日本<rt>にほん</rt></ruby>に<ruby>伝<rt>つた</rt></ruby>わりました。<ruby>正<rt>ただ</rt></ruby>しい<ruby>順番<rt>じゅんばん</rt></ruby>で<ruby>書<rt>か</rt></ruby>くことが<ruby>大切<rt>たいせつ</rt></ruby>です。';
+    first.romaji = 'Watashi wa mainichi, kanji no imi o kangaemasu. Kanji wa kodai no Chuugoku kara Nihon ni tsutawarimashita. Tadashii junban de kaku koto ga taisetsu desu.';
+    first.translation = 'Penso no significado dos kanjis todos os dias. Os kanjis foram transmitidos do antigo território chinês ao Japão. É importante escrevê-los na ordem correta dos traços.';
+
+    const waterAnswer = 'Bebeu água e voltou para casa (水を飲んで帰った)';
+    const waterQuestion = byModule(7).readingText.comprehensionQuiz[1];
+    waterQuestion.options[0] = waterAnswer;
+    waterQuestion.a = waterAnswer;
+
+    const review = byModule(11).readingText;
+    review.japanese = 'このN5の<ruby>参考<rt>さんこう</rt></ruby>レベルには、104<ruby>字<rt>じ</rt></ruby>の<ruby>異<rt>こと</rt></ruby>なる<ruby>漢字<rt>かんじ</rt></ruby>が<ruby>収録<rt>しゅうろく</rt></ruby>されています。<ruby>復習表<rt>ふくしゅうひょう</rt></ruby>で<ruby>読<rt>よ</rt></ruby>みと<ruby>意味<rt>いみ</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>します。';
+    review.romaji = 'Kono N5 no sankou reberu ni wa, 104-ji no kotonaru kanji ga shuuroku sarete imasu. Fukushuu-hyou de yomi to imi o kakunin shimasu.';
+    review.translation = 'Este nível de referência N5 reúne 104 caracteres Kanji únicos. A tabela de revisão permite conferir suas leituras e significados.';
+    review.comprehensionQuiz = [
+        {
+            q: 'Quantos caracteres Kanji únicos aparecem neste nível de referência N5?',
+            options: ['104 caracteres únicos', '10 caracteres', '50 caracteres', '500 caracteres'],
+            a: '104 caracteres únicos', type: 'choice'
+        },
+        {
+            q: 'O que deve ser conferido na tabela de revisão (復習表)?',
+            options: ['As leituras e os significados (読みと意味)', 'Somente a caligrafia', 'Apenas traduções em inglês', 'Datas históricas'],
+            a: 'As leituras e os significados (読みと意味)', type: 'choice'
+        }
+    ];
+})();

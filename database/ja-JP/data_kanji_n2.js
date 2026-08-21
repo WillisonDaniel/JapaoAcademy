@@ -1,5 +1,5 @@
 // ==========================================
-// JAPÃO ACADEMY - DADOS DO CURSO DATA KANJI_N2
+// JAPÃO ACADEMY - DADOS DO CURSO KANJIN2DATA
 // ==========================================
 
 const kanjiN2Data = [
@@ -11,7 +11,15 @@ const kanjiN2Data = [
             "title": "Construções de Registro Formal (~ni oite / ~ni te)",
             "explanation": "No N2, indica-se o contexto institucional ou empresarial formal em que ocorrem decisões corporativas.",
             "example": "Honsha ni oite kettei shimasu.",
-            "translation": "Decidiremos na matriz da empresa."
+            "translation": "Decidiremos na matriz da empresa.",
+            "content": {
+                "displayText": "ほんしゃにおいてけっていします。",
+                "audioText": "ほんしゃにおいてけっていします。",
+                "furigana": "",
+                "romaji": "Honsha ni oite kettei shimasu.",
+                "translation": "Decidiremos na matriz da empresa.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "企業と経営戦略 (Estratégia Empresarial e Gestão)",
@@ -53,13 +61,39 @@ const kanjiN2Data = [
                         "word": "企業 (kigyou)",
                         "wordMeaning": "Empresa / Corporação",
                         "sentence": "Kigyou no strategy.",
-                        "sentenceMeaning": "Estratégia corporativa."
+                        "sentenceMeaning": "Estratégia corporativa.",
+                        "content": {
+                            "displayText": "世界を舞台に活躍する大企業で働きます。",
+                            "audioText": "世界を舞台に活躍する大企業で働きます。",
+                            "furigana": "",
+                            "romaji": "Kigyou no strategy.",
+                            "translation": "Estratégia corporativa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "企画 (kikaku)",
                         "wordMeaning": "Planejamento / Projeto",
                         "sentence": "Kikaku-sho o kaku.",
-                        "sentenceMeaning": "Elaborar o projeto de planejamento."
+                        "sentenceMeaning": "Elaborar o projeto de planejamento.",
+                        "content": {
+                            "displayText": "企画しょをかく。",
+                            "audioText": "企画しょをかく。",
+                            "furigana": "",
+                            "romaji": "Kikaku-sho o kaku.",
+                            "translation": "Elaborar o projeto de planejamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -84,13 +118,39 @@ const kanjiN2Data = [
                         "word": "事業 (jigyou)",
                         "wordMeaning": "Empreendimento / Negócio",
                         "sentence": "Jigyou o kakudai suru.",
-                        "sentenceMeaning": "Expandir o empreendimento."
+                        "sentenceMeaning": "Expandir o empreendimento.",
+                        "content": {
+                            "displayText": "事業をかくだいする。",
+                            "audioText": "事業をかくだいする。",
+                            "furigana": "",
+                            "romaji": "Jigyou o kakudai suru.",
+                            "translation": "Expandir o empreendimento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "残業 (zangyou)",
                         "wordMeaning": "Hora extra",
                         "sentence": "Zangyou o减らす.",
-                        "sentenceMeaning": "Reduzir as horas extras."
+                        "sentenceMeaning": "Reduzir as horas extras.",
+                        "content": {
+                            "displayText": "今年の会社の営業実績が大幅に伸びました。",
+                            "audioText": "今年の会社の営業実績が大幅に伸びました。",
+                            "furigana": "",
+                            "romaji": "Zangyou o减らす.",
+                            "translation": "Reduzir as horas extras.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -111,13 +171,39 @@ const kanjiN2Data = [
                         "word": "招集 (shoushuu)",
                         "wordMeaning": "Convocação de reunião",
                         "sentence": "Kaigi o shoushuu suru.",
-                        "sentenceMeaning": "Convocar uma reunião."
+                        "sentenceMeaning": "Convocar uma reunião.",
+                        "content": {
+                            "displayText": "かいぎを招集する。",
+                            "audioText": "かいぎを招集する。",
+                            "furigana": "",
+                            "romaji": "Kaigi o shoushuu suru.",
+                            "translation": "Convocar uma reunião.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "招待 (shoutai)",
                         "wordMeaning": "Convite formal",
                         "sentence": "Shoutai-jou o send.",
-                        "sentenceMeaning": "Enviar o cartão de convite."
+                        "sentenceMeaning": "Enviar o cartão de convite.",
+                        "content": {
+                            "displayText": "招待じょうをせんド。",
+                            "audioText": "招待じょうをせんド。",
+                            "furigana": "",
+                            "romaji": "Shoutai-jou o send.",
+                            "translation": "Enviar o cartão de convite.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -146,13 +232,39 @@ const kanjiN2Data = [
                         "word": "創業 (sougyou)",
                         "wordMeaning": "Fundação de uma empresa",
                         "sentence": "Sougyou 100-nen.",
-                        "sentenceMeaning": "100 anos de fundação."
+                        "sentenceMeaning": "100 anos de fundação.",
+                        "content": {
+                            "displayText": "創業 100ねん。",
+                            "audioText": "創業 100ねん。",
+                            "furigana": "",
+                            "romaji": "Sougyou 100-nen.",
+                            "translation": "100 anos de fundação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "独創 (dokusou)",
                         "wordMeaning": "Originalidade / Inovação",
                         "sentence": "Dokusou-teki na idea.",
-                        "sentenceMeaning": "Ideia original e inovadora."
+                        "sentenceMeaning": "Ideia original e inovadora.",
+                        "content": {
+                            "displayText": "独創てきないであ。",
+                            "audioText": "独創てきないであ。",
+                            "furigana": "",
+                            "romaji": "Dokusou-teki na idea.",
+                            "translation": "Ideia original e inovadora.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -181,13 +293,39 @@ const kanjiN2Data = [
                         "word": "役員 (yakuin)",
                         "wordMeaning": "Diretor / Executivo",
                         "sentence": "Yakuin-kai.",
-                        "sentenceMeaning": "Reunião da diretoria."
+                        "sentenceMeaning": "Reunião da diretoria.",
+                        "content": {
+                            "displayText": "役員会で会社の将来の方針を話し合います。",
+                            "audioText": "役員会で会社の将来の方針を話し合います。",
+                            "furigana": "",
+                            "romaji": "Yakuin-kai.",
+                            "translation": "Reunião da diretoria.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "役割 (yakuwari)",
                         "wordMeaning": "Papel / Função",
                         "sentence": "Yakuwari o fukameru.",
-                        "sentenceMeaning": "Desempenhar a função."
+                        "sentenceMeaning": "Desempenhar a função.",
+                        "content": {
+                            "displayText": "役割をふかめる。",
+                            "audioText": "役割をふかめる。",
+                            "furigana": "",
+                            "romaji": "Yakuwari o fukameru.",
+                            "translation": "Desempenhar a função.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -208,13 +346,39 @@ const kanjiN2Data = [
                         "word": "幹部 (kanbu)",
                         "wordMeaning": "Quadros executivos / Liderança",
                         "sentence": "Kanbu kaigi.",
-                        "sentenceMeaning": "Reunião de executivos."
+                        "sentenceMeaning": "Reunião de executivos.",
+                        "content": {
+                            "displayText": "幹部かいぎ。",
+                            "audioText": "幹部かいぎ。",
+                            "furigana": "",
+                            "romaji": "Kanbu kaigi.",
+                            "translation": "Reunião de executivos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "幹事 (kanji)",
                         "wordMeaning": "Organizador / Secretário",
                         "sentence": "Party no kanji.",
-                        "sentenceMeaning": "Organizador da festa."
+                        "sentenceMeaning": "Organizador da festa.",
+                        "content": {
+                            "displayText": "ぱルトイの幹事。",
+                            "audioText": "ぱルトイの幹事。",
+                            "furigana": "",
+                            "romaji": "Party no kanji.",
+                            "translation": "Organizador da festa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -235,13 +399,39 @@ const kanjiN2Data = [
                         "word": "責任 (sekinin)",
                         "wordMeaning": "Responsabilidade",
                         "sentence": "Sekinin o tomaru.",
-                        "sentenceMeaning": "Assumir a responsabilidade."
+                        "sentenceMeaning": "Assumir a responsabilidade.",
+                        "content": {
+                            "displayText": "責任をとまる。",
+                            "audioText": "責任をとまる。",
+                            "furigana": "",
+                            "romaji": "Sekinin o tomaru.",
+                            "translation": "Assumir a responsabilidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "任命 (ninmei)",
                         "wordMeaning": "Nomeação oficial",
                         "sentence": "Manager ni ninmei.",
-                        "sentenceMeaning": "Nomeado como gerente."
+                        "sentenceMeaning": "Nomeado como gerente.",
+                        "content": {
+                            "displayText": "まなげルに任命。",
+                            "audioText": "まなげルに任命。",
+                            "furigana": "",
+                            "romaji": "Manager ni ninmei.",
+                            "translation": "Nomeado como gerente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -262,13 +452,39 @@ const kanjiN2Data = [
                         "word": "経営 (keiei)",
                         "wordMeaning": "Gestão / Administração de negócios",
                         "sentence": "Keiei o学ぶ.",
-                        "sentenceMeaning": "Estudar gestão de empresas."
+                        "sentenceMeaning": "Estudar gestão de empresas.",
+                        "content": {
+                            "displayText": "経営を学ぶ。",
+                            "audioText": "経営を学ぶ。",
+                            "furigana": "",
+                            "romaji": "Keiei o学ぶ.",
+                            "translation": "Estudar gestão de empresas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "営業 (eigyou)",
                         "wordMeaning": "Vendas / Operação comercial",
                         "sentence": "Eigyou hour.",
-                        "sentenceMeaning": "Horário de funcionamento."
+                        "sentenceMeaning": "Horário de funcionamento.",
+                        "content": {
+                            "displayText": "地域社会のために病院を経営します。",
+                            "audioText": "地域社会のために病院を経営します。",
+                            "furigana": "",
+                            "romaji": "Eigyou hour.",
+                            "translation": "Horário de funcionamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -289,13 +505,39 @@ const kanjiN2Data = [
                         "word": "裁量 (sairyou)",
                         "wordMeaning": "Discricionariedade / Autonomia de decisão",
                         "sentence": "Sairyou no ken.",
-                        "sentenceMeaning": "Poder de decisão autônoma."
+                        "sentenceMeaning": "Poder de decisão autônoma.",
+                        "content": {
+                            "displayText": "裁量のけん。",
+                            "audioText": "裁量のけん。",
+                            "furigana": "",
+                            "romaji": "Sairyou no ken.",
+                            "translation": "Poder de decisão autônoma.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "決裁 (kessai)",
                         "wordMeaning": "Aprovação de executivo",
                         "sentence": "Kessai o morau.",
-                        "sentenceMeaning": "Obter aprovação do executivo."
+                        "sentenceMeaning": "Obter aprovação do executivo.",
+                        "content": {
+                            "displayText": "決裁をもらう。",
+                            "audioText": "決裁をもらう。",
+                            "furigana": "",
+                            "romaji": "Kessai o morau.",
+                            "translation": "Obter aprovação do executivo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -316,13 +558,39 @@ const kanjiN2Data = [
                         "word": "妥協 (dakyou)",
                         "wordMeaning": "Compromisso / Acordo mútuo",
                         "sentence": "Dakyou-an o erabu.",
-                        "sentenceMeaning": "Escolher uma proposta de compromisso."
+                        "sentenceMeaning": "Escolher uma proposta de compromisso.",
+                        "content": {
+                            "displayText": "妥協あんをえらぶ。",
+                            "audioText": "妥協あんをえらぶ。",
+                            "furigana": "",
+                            "romaji": "Dakyou-an o erabu.",
+                            "translation": "Escolher uma proposta de compromisso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "妥当 (datou)",
                         "wordMeaning": "Adequado / Razoável",
                         "sentence": "Datou na kakaku.",
-                        "sentenceMeaning": "Preço razoável e adequado."
+                        "sentenceMeaning": "Preço razoável e adequado.",
+                        "content": {
+                            "displayText": "妥当なかかく。",
+                            "audioText": "妥当なかかく。",
+                            "furigana": "",
+                            "romaji": "Datou na kakaku.",
+                            "translation": "Preço razoável e adequado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -347,13 +615,39 @@ const kanjiN2Data = [
                         "word": "提案 (teian)",
                         "wordMeaning": "Proposta / Sugestão",
                         "sentence": "Teian o suru.",
-                        "sentenceMeaning": "Fazer uma proposta."
+                        "sentenceMeaning": "Fazer uma proposta.",
+                        "content": {
+                            "displayText": "提案をする。",
+                            "audioText": "提案をする。",
+                            "furigana": "",
+                            "romaji": "Teian o suru.",
+                            "translation": "Fazer uma proposta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "提携 (teikei)",
                         "wordMeaning": "Parceria / Aliança corporativa",
                         "sentence": "Company to teikei.",
-                        "sentenceMeaning": "Parceria com outra empresa."
+                        "sentenceMeaning": "Parceria com outra empresa.",
+                        "content": {
+                            "displayText": "会社と提携。",
+                            "audioText": "会社と提携。",
+                            "furigana": "",
+                            "romaji": "Company to teikei.",
+                            "translation": "Parceria com outra empresa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -378,13 +672,39 @@ const kanjiN2Data = [
                         "word": "案内 (annai)",
                         "wordMeaning": "Orientação / Guia",
                         "sentence": "Machi no annai.",
-                        "sentenceMeaning": "Guia da cidade."
+                        "sentenceMeaning": "Guia da cidade.",
+                        "content": {
+                            "displayText": "まちの案内。",
+                            "audioText": "まちの案内。",
+                            "furigana": "",
+                            "romaji": "Machi no annai.",
+                            "translation": "Guia da cidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "企画案 (kikakuan)",
                         "wordMeaning": "Esboço do projeto",
                         "sentence": "Kikakuan o submit.",
-                        "sentenceMeaning": "Submeter o esboço do projeto."
+                        "sentenceMeaning": "Submeter o esboço do projeto.",
+                        "content": {
+                            "displayText": "企画案をすブみト。",
+                            "audioText": "企画案をすブみト。",
+                            "furigana": "",
+                            "romaji": "Kikakuan o submit.",
+                            "translation": "Submeter o esboço do projeto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -413,13 +733,39 @@ const kanjiN2Data = [
                         "word": "対策 (taisaku)",
                         "wordMeaning": "Contramedida / Solução",
                         "sentence": "Taisaku o tateru.",
-                        "sentenceMeaning": "Elaborar contramedidas."
+                        "sentenceMeaning": "Elaborar contramedidas.",
+                        "content": {
+                            "displayText": "対策をたてる。",
+                            "audioText": "対策をたてる。",
+                            "furigana": "",
+                            "romaji": "Taisaku o tateru.",
+                            "translation": "Elaborar contramedidas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "政策 (seisaku)",
                         "wordMeaning": "Diretriz / Política governamental",
                         "sentence": "Keizai seisaku.",
-                        "sentenceMeaning": "Política econômica."
+                        "sentenceMeaning": "Política econômica.",
+                        "content": {
+                            "displayText": "けいざい政策。",
+                            "audioText": "けいざい政策。",
+                            "furigana": "",
+                            "romaji": "Keizai seisaku.",
+                            "translation": "Política econômica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -440,13 +786,39 @@ const kanjiN2Data = [
                         "word": "指導 (shidou)",
                         "wordMeaning": "Orientação / Liderança",
                         "sentence": "Shidou o ukeru.",
-                        "sentenceMeaning": "Receber orientação."
+                        "sentenceMeaning": "Receber orientação.",
+                        "content": {
+                            "displayText": "指導をうける。",
+                            "audioText": "指導をうける。",
+                            "furigana": "",
+                            "romaji": "Shidou o ukeru.",
+                            "translation": "Receber orientação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "導入 (dounyuu)",
                         "wordMeaning": "Implementação / Introdução",
                         "sentence": "System no dounyuu.",
-                        "sentenceMeaning": "Implementação do sistema."
+                        "sentenceMeaning": "Implementação do sistema.",
+                        "content": {
+                            "displayText": "制度の導入。",
+                            "audioText": "制度の導入。",
+                            "furigana": "",
+                            "romaji": "System no dounyuu.",
+                            "translation": "Implementação do sistema.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -475,13 +847,39 @@ const kanjiN2Data = [
                         "word": "派遣 (haken)",
                         "wordMeaning": "Despacho de funcionários / Terceirização",
                         "sentence": "Haken shain.",
-                        "sentenceMeaning": "Funcionário terceirizado enviado."
+                        "sentenceMeaning": "Funcionário terceirizado enviado.",
+                        "content": {
+                            "displayText": "派遣しゃいん。",
+                            "audioText": "派遣しゃいん。",
+                            "furigana": "",
+                            "romaji": "Haken shain.",
+                            "translation": "Funcionário terceirizado enviado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "立派 (rippa)",
                         "wordMeaning": "Esplêndido / Admirável",
                         "sentence": "Rippa na leader.",
-                        "sentenceMeaning": "Líder admirável."
+                        "sentenceMeaning": "Líder admirável.",
+                        "content": {
+                            "displayText": "立派な指導者。",
+                            "audioText": "立派な指導者。",
+                            "furigana": "",
+                            "romaji": "Rippa na leader.",
+                            "translation": "Líder admirável.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -506,13 +904,39 @@ const kanjiN2Data = [
                         "word": "所属 (shozoku)",
                         "wordMeaning": "Afiliação / Pertencimento",
                         "sentence": "Eigyou-bu no shozoku.",
-                        "sentenceMeaning": "Afiliado ao departamento de vendas."
+                        "sentenceMeaning": "Afiliado ao departamento de vendas.",
+                        "content": {
+                            "displayText": "入社後に希望していた広報部に所属します。",
+                            "audioText": "入社後に希望していた広報部に所属します。",
+                            "furigana": "",
+                            "romaji": "Eigyou-bu no shozoku.",
+                            "translation": "Afiliado ao departamento de vendas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "金属 (kinzoku)",
                         "wordMeaning": "Metal / Liga metálica",
                         "sentence": "Kinzoku no material.",
-                        "sentenceMeaning": "Material metálico."
+                        "sentenceMeaning": "Material metálico.",
+                        "content": {
+                            "displayText": "金属のまてりあル。",
+                            "audioText": "金属のまてりあル。",
+                            "furigana": "",
+                            "romaji": "Kinzoku no material.",
+                            "translation": "Material metálico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -533,13 +957,39 @@ const kanjiN2Data = [
                         "word": "勤務 (kinmu)",
                         "wordMeaning": "Expediente de trabalho",
                         "sentence": "Kinmu jikan.",
-                        "sentenceMeaning": "Horário de expediente."
+                        "sentenceMeaning": "Horário de expediente.",
+                        "content": {
+                            "displayText": "毎日のデスクワークで事務作業をこなします。",
+                            "audioText": "毎日のデスクワークで事務作業をこなします。",
+                            "furigana": "",
+                            "romaji": "Kinmu jikan.",
+                            "translation": "Horário de expediente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "義務 (gimu)",
                         "wordMeaning": "Dever / Obrigação",
                         "sentence": "Gimu o hatasu.",
-                        "sentenceMeaning": "Cumprir o dever."
+                        "sentenceMeaning": "Cumprir o dever.",
+                        "content": {
+                            "displayText": "義務をはたす。",
+                            "audioText": "義務をはたす。",
+                            "furigana": "",
+                            "romaji": "Gimu o hatasu.",
+                            "translation": "Cumprir o dever.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -568,13 +1018,39 @@ const kanjiN2Data = [
                         "word": "統合 (tougou)",
                         "wordMeaning": "Integração / Fusão corporativa",
                         "sentence": "Company no tougou.",
-                        "sentenceMeaning": "Fusão das empresas."
+                        "sentenceMeaning": "Fusão das empresas.",
+                        "content": {
+                            "displayText": "会社の統合。",
+                            "audioText": "会社の統合。",
+                            "furigana": "",
+                            "romaji": "Company no tougou.",
+                            "translation": "Fusão das empresas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "統計 (toukei)",
                         "wordMeaning": "Estatística",
                         "sentence": "Toukei data.",
-                        "sentenceMeaning": "Dados estatísticos."
+                        "sentenceMeaning": "Dados estatísticos.",
+                        "content": {
+                            "displayText": "統計データ。",
+                            "audioText": "統計データ。",
+                            "furigana": "",
+                            "romaji": "Toukei data.",
+                            "translation": "Dados estatísticos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -603,13 +1079,39 @@ const kanjiN2Data = [
                         "word": "融資 (yuushi)",
                         "wordMeaning": "Financiamento / Empréstimo bancário",
                         "sentence": "Bank no yuushi.",
-                        "sentenceMeaning": "Financiamento bancário."
+                        "sentenceMeaning": "Financiamento bancário.",
+                        "content": {
+                            "displayText": "ばんクの融資。",
+                            "audioText": "ばんクの融資。",
+                            "furigana": "",
+                            "romaji": "Bank no yuushi.",
+                            "translation": "Financiamento bancário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "金融 (kin'yuu)",
                         "wordMeaning": "Mercado financeiro / Finanças",
                         "sentence": "Kin'yuu market.",
-                        "sentenceMeaning": "Mercado financeiro."
+                        "sentenceMeaning": "Mercado financeiro.",
+                        "content": {
+                            "displayText": "金融まルけト。",
+                            "audioText": "金融まルけト。",
+                            "furigana": "",
+                            "romaji": "Kin'yuu market.",
+                            "translation": "Mercado financeiro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -721,7 +1223,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 2,
@@ -731,13 +1237,21 @@ const kanjiN2Data = [
             "title": "Expressando Flutuação Financeira (~ni yotte)",
             "explanation": "No N2, indica-se causalidade em oscilações de mercado, bolsas de valores e taxas de câmbio.",
             "example": "Kawase ni yotte kakaku ga kawaru.",
-            "translation": "O preço oscila dependendo do câmbio."
+            "translation": "O preço oscila dependendo do câmbio.",
+            "content": {
+                "displayText": "かわせによってかかくがかわる。",
+                "audioText": "かわせによってかかくがかわる。",
+                "furigana": "",
+                "romaji": "Kawase ni yotte kakaku ga kawaru.",
+                "translation": "O preço oscila dependendo do câmbio.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "国際貿易と株式市場 (Comércio Internacional e Mercado de Ações)",
             "japanese": "<ruby>貿易<rt>ぼうえき</rt></ruby>会社が<ruby>株式<rt>かぶしき</rt></ruby>を<ruby>発行<rt>はっこう</rt></ruby>して<ruby>資金<rt>しきん</rt></ruby>を<ruby>調達<rt>ちょうたつ</rt></ruby>し、<ruby>利益<rt>りえき</rt></ruby>を追求します。<ruby>契約<rt>けいやく</rt></ruby>に基づいて<ruby>納税<rt>のうぜい</rt></ruby>します。",
             "romaji": "Boueki kaisha ga kabushiki o hakkou shite shikin o choutatsu shi, rieki o tsuikyuu shimasu. Keiyaku ni motozuite nouzei shimasu.",
-            "translation": "A empresa de comércio emite ações para captar fundos e buscar lucros. Paga-se impostos com base no contrato.",
+            "translation": "A empresa de comércio emite ações para captar recursos e buscar lucros. Ela paga os impostos previstos com base no contrato.",
             "comprehensionQuiz": [
                 {
                     "q": "Por que a empresa emite ações (株式)?",
@@ -773,13 +1287,39 @@ const kanjiN2Data = [
                         "word": "財産 (zaisan)",
                         "wordMeaning": "Patrimônio / Bens",
                         "sentence": "Zaisan no kanri.",
-                        "sentenceMeaning": "Gestão do patrimônio."
+                        "sentenceMeaning": "Gestão do patrimônio.",
+                        "content": {
+                            "displayText": "財産のかんり。",
+                            "audioText": "財産のかんり。",
+                            "furigana": "",
+                            "romaji": "Zaisan no kanri.",
+                            "translation": "Gestão do patrimônio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "財布 (saifu)",
                         "wordMeaning": "Carteira",
                         "sentence": "Saifu o kaimashita.",
-                        "sentenceMeaning": "Comprei uma carteira."
+                        "sentenceMeaning": "Comprei uma carteira.",
+                        "content": {
+                            "displayText": "財布をかいました。",
+                            "audioText": "財布をかいました。",
+                            "furigana": "",
+                            "romaji": "Saifu o kaimashita.",
+                            "translation": "Comprei uma carteira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -804,13 +1344,39 @@ const kanjiN2Data = [
                         "word": "価格 (kakaku)",
                         "wordMeaning": "Preço / Valor fixado",
                         "sentence": "Kakaku ga agaru.",
-                        "sentenceMeaning": "O preço subiu."
+                        "sentenceMeaning": "O preço subiu.",
+                        "content": {
+                            "displayText": "商品の適正な市場価格を設定します。",
+                            "audioText": "商品の適正な市場価格を設定します。",
+                            "furigana": "",
+                            "romaji": "Kakaku ga agaru.",
+                            "translation": "O preço subiu.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "評価 (hyouka)",
                         "wordMeaning": "Avaliação / Apreciação",
                         "sentence": "Good hyouka.",
-                        "sentenceMeaning": "Boa avaliação."
+                        "sentenceMeaning": "Boa avaliação.",
+                        "content": {
+                            "displayText": "良い評価。",
+                            "audioText": "良い評価。",
+                            "furigana": "",
+                            "romaji": "Good hyouka.",
+                            "translation": "Boa avaliação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -835,13 +1401,39 @@ const kanjiN2Data = [
                         "word": "利益 (rieki)",
                         "wordMeaning": "Lucro / Ganho líquido",
                         "sentence": "Rieki o dasu.",
-                        "sentenceMeaning": "Gerar lucro."
+                        "sentenceMeaning": "Gerar lucro.",
+                        "content": {
+                            "displayText": "経費を削減して会社の純利益を増やします。",
+                            "audioText": "経費を削減して会社の純利益を増やします。",
+                            "furigana": "",
+                            "romaji": "Rieki o dasu.",
+                            "translation": "Gerar lucro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "益々 (masumasu)",
                         "wordMeaning": "Cada vez mais",
                         "sentence": "Masumasu genki.",
-                        "sentenceMeaning": "Cada vez mais saudável."
+                        "sentenceMeaning": "Cada vez mais saudável.",
+                        "content": {
+                            "displayText": "益々 げんき。",
+                            "audioText": "益々 げんき。",
+                            "furigana": "",
+                            "romaji": "Masumasu genki.",
+                            "translation": "Cada vez mais saudável.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -866,13 +1458,39 @@ const kanjiN2Data = [
                         "word": "損害 (songai)",
                         "wordMeaning": "Prejuízo / Dano financeiro",
                         "sentence": "Songai o hoshou.",
-                        "sentenceMeaning": "Indenizar o prejuízo."
+                        "sentenceMeaning": "Indenizar o prejuízo.",
+                        "content": {
+                            "displayText": "無理な投資が原因で多額の損失を出しました。",
+                            "audioText": "無理な投資が原因で多額の損失を出しました。",
+                            "furigana": "",
+                            "romaji": "Songai o hoshou.",
+                            "translation": "Indenizar o prejuízo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "損失 (sonshitsu)",
                         "wordMeaning": "Perda líquida",
                         "sentence": "Sonshitsu o dasu.",
-                        "sentenceMeaning": "Tiveram perda líquida."
+                        "sentenceMeaning": "Tiveram perda líquida.",
+                        "content": {
+                            "displayText": "損失をだす。",
+                            "audioText": "損失をだす。",
+                            "furigana": "",
+                            "romaji": "Sonshitsu o dasu.",
+                            "translation": "Tiveram perda líquida.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -897,13 +1515,39 @@ const kanjiN2Data = [
                         "word": "貿易 (boueki)",
                         "wordMeaning": "Comércio internacional",
                         "sentence": "Boueki kaisha.",
-                        "sentenceMeaning": "Empresa de comércio internacional."
+                        "sentenceMeaning": "Empresa de comércio internacional.",
+                        "content": {
+                            "displayText": "貿易かいしゃ。",
+                            "audioText": "貿易かいしゃ。",
+                            "furigana": "",
+                            "romaji": "Boueki kaisha.",
+                            "translation": "Empresa de comércio internacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "貿易風 (bouekifuu)",
                         "wordMeaning": "Ventos alísios de comércio",
                         "sentence": "Bouekifuu ga fuku.",
-                        "sentenceMeaning": "Sopram os ventos alísios."
+                        "sentenceMeaning": "Sopram os ventos alísios.",
+                        "content": {
+                            "displayText": "貿易風がふく。",
+                            "audioText": "貿易風がふく。",
+                            "furigana": "",
+                            "romaji": "Bouekifuu ga fuku.",
+                            "translation": "Sopram os ventos alísios.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -924,13 +1568,39 @@ const kanjiN2Data = [
                         "word": "税金 (zeikin)",
                         "wordMeaning": "Imposto",
                         "sentence": "Zeikin o harau.",
-                        "sentenceMeaning": "Pagar impostos."
+                        "sentenceMeaning": "Pagar impostos.",
+                        "content": {
+                            "displayText": "法律に基づいて正しく税金を納めます。",
+                            "audioText": "法律に基づいて正しく税金を納めます。",
+                            "furigana": "",
+                            "romaji": "Zeikin o harau.",
+                            "translation": "Pagar impostos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "消費税 (shouhizei)",
                         "wordMeaning": "Imposto sobre consumo (IVA)",
                         "sentence": "Shouhizei 10%.",
-                        "sentenceMeaning": "Imposto de consumo de 10%."
+                        "sentenceMeaning": "Imposto de consumo de 10%.",
+                        "content": {
+                            "displayText": "消費税 10%。",
+                            "audioText": "消費税 10%。",
+                            "furigana": "",
+                            "romaji": "Shouhizei 10%.",
+                            "translation": "Imposto de consumo de 10%.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -955,13 +1625,39 @@ const kanjiN2Data = [
                         "word": "株式 (kabushiki)",
                         "wordMeaning": "Ações societárias",
                         "sentence": "Kabushiki shijou.",
-                        "sentenceMeaning": "Mercado de ações."
+                        "sentenceMeaning": "Mercado de ações.",
+                        "content": {
+                            "displayText": "将来有望な企業の株式を購入します。",
+                            "audioText": "将来有望な企業の株式を購入します。",
+                            "furigana": "",
+                            "romaji": "Kabushiki shijou.",
+                            "translation": "Mercado de ações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "株主 (kabunushi)",
                         "wordMeaning": "Acionista",
                         "sentence": "Kabunushi soukai.",
-                        "sentenceMeaning": "Assembleia de acionistas."
+                        "sentenceMeaning": "Assembleia de acionistas.",
+                        "content": {
+                            "displayText": "株主そうかい。",
+                            "audioText": "株主そうかい。",
+                            "furigana": "",
+                            "romaji": "Kabunushi soukai.",
+                            "translation": "Assembleia de acionistas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -986,13 +1682,39 @@ const kanjiN2Data = [
                         "word": "証券 (shouken)",
                         "wordMeaning": "Títulos / Valores mobiliários",
                         "sentence": "Shouken kaisha.",
-                        "sentenceMeaning": "Corretora de valores mobiliários."
+                        "sentenceMeaning": "Corretora de valores mobiliários.",
+                        "content": {
+                            "displayText": "証券会社で投資信託の取引を始めます。",
+                            "audioText": "証券会社で投資信託の取引を始めます。",
+                            "furigana": "",
+                            "romaji": "Shouken kaisha.",
+                            "translation": "Corretora de valores mobiliários.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "債券 (saiken)",
                         "wordMeaning": "Bônus / Título de dívida",
                         "sentence": "Kokusai saiken.",
-                        "sentenceMeaning": "Títulos de dívida pública."
+                        "sentenceMeaning": "Títulos de dívida pública.",
+                        "content": {
+                            "displayText": "こくさい債券。",
+                            "audioText": "こくさい債券。",
+                            "furigana": "",
+                            "romaji": "Kokusai saiken.",
+                            "translation": "Títulos de dívida pública.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1013,13 +1735,39 @@ const kanjiN2Data = [
                         "word": "契約 (keiyaku)",
                         "wordMeaning": "Contrato formal",
                         "sentence": "Keiyaku o結ぶ.",
-                        "sentenceMeaning": "Assinar um contrato."
+                        "sentenceMeaning": "Assinar um contrato.",
+                        "content": {
+                            "displayText": "契約を結ぶ。",
+                            "audioText": "契約を結ぶ。",
+                            "furigana": "",
+                            "romaji": "Keiyaku o結ぶ.",
+                            "translation": "Assinar um contrato.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "契機 (keiki)",
                         "wordMeaning": "Oportunidade / Ponto de virada",
                         "sentence": "Sore o keiki ni.",
-                        "sentenceMeaning": "Aproveitando a oportunidade."
+                        "sentenceMeaning": "Aproveitando a oportunidade.",
+                        "content": {
+                            "displayText": "それを契機に。",
+                            "audioText": "それを契機に。",
+                            "furigana": "",
+                            "romaji": "Sore o keiki ni.",
+                            "translation": "Aproveitando a oportunidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1044,13 +1792,39 @@ const kanjiN2Data = [
                         "word": "約束 (yakusoku)",
                         "wordMeaning": "Promessa / Compromisso",
                         "sentence": "Yakusoku o mamoru.",
-                        "sentenceMeaning": "Manter a promessa."
+                        "sentenceMeaning": "Manter a promessa.",
+                        "content": {
+                            "displayText": "約束をまもる。",
+                            "audioText": "約束をまもる。",
+                            "furigana": "",
+                            "romaji": "Yakusoku o mamoru.",
+                            "translation": "Manter a promessa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "予約 (yoyaku)",
                         "wordMeaning": "Reserva",
                         "sentence": "Hotel no yoyaku.",
-                        "sentenceMeaning": "Reserva de hotel."
+                        "sentenceMeaning": "Reserva de hotel.",
+                        "content": {
+                            "displayText": "ホテルの予約。",
+                            "audioText": "ホテルの予約。",
+                            "furigana": "",
+                            "romaji": "Hotel no yoyaku.",
+                            "translation": "Reserva de hotel.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1071,13 +1845,39 @@ const kanjiN2Data = [
                         "word": "家賃 (yachin)",
                         "wordMeaning": "Aluguel da casa",
                         "sentence": "Yachin o harau.",
-                        "sentenceMeaning": "Pagar o aluguel."
+                        "sentenceMeaning": "Pagar o aluguel.",
+                        "content": {
+                            "displayText": "家賃をはらう。",
+                            "audioText": "家賃をはらう。",
+                            "furigana": "",
+                            "romaji": "Yachin o harau.",
+                            "translation": "Pagar o aluguel.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "賃金 (chingin)",
                         "wordMeaning": "Salário / Remuneração",
                         "sentence": "Chingin no raise.",
-                        "sentenceMeaning": "Aumento salarial."
+                        "sentenceMeaning": "Aumento salarial.",
+                        "content": {
+                            "displayText": "賃金のらいせ。",
+                            "audioText": "賃金のらいせ。",
+                            "furigana": "",
+                            "romaji": "Chingin no raise.",
+                            "translation": "Aumento salarial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1102,13 +1902,39 @@ const kanjiN2Data = [
                         "word": "負債 (fusai)",
                         "wordMeaning": "Passivo / Dívidas totais",
                         "sentence": "Fusai o抱える.",
-                        "sentenceMeaning": "Acumular dívidas."
+                        "sentenceMeaning": "Acumular dívidas.",
+                        "content": {
+                            "displayText": "国の財政を支えるために国債が発行されます。",
+                            "audioText": "国の財政を支えるために国債が発行されます。",
+                            "furigana": "",
+                            "romaji": "Fusai o抱える.",
+                            "translation": "Acumular dívidas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "国債 (kokusai)",
                         "wordMeaning": "Títulos da dívida pública",
                         "sentence": "Kokusai o kaimasu.",
-                        "sentenceMeaning": "Comprar títulos públicos."
+                        "sentenceMeaning": "Comprar títulos públicos.",
+                        "content": {
+                            "displayText": "国債をかいます。",
+                            "audioText": "国債をかいます。",
+                            "furigana": "",
+                            "romaji": "Kokusai o kaimasu.",
+                            "translation": "Comprar títulos públicos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1133,13 +1959,39 @@ const kanjiN2Data = [
                         "word": "納税 (nouzei)",
                         "wordMeaning": "Pagamento de impostos",
                         "sentence": "Nouzei no gimu.",
-                        "sentenceMeaning": "Dever de pagar impostos."
+                        "sentenceMeaning": "Dever de pagar impostos.",
+                        "content": {
+                            "displayText": "納税のぎむ。",
+                            "audioText": "納税のぎむ。",
+                            "furigana": "",
+                            "romaji": "Nouzei no gimu.",
+                            "translation": "Dever de pagar impostos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "納品 (nouhin)",
                         "wordMeaning": "Entrega de mercadorias",
                         "sentence": "Product no nouhin.",
-                        "sentenceMeaning": "Entrega dos produtos."
+                        "sentenceMeaning": "Entrega dos produtos.",
+                        "content": {
+                            "displayText": "プろドうクトの納品。",
+                            "audioText": "プろドうクトの納品。",
+                            "furigana": "",
+                            "romaji": "Product no nouhin.",
+                            "translation": "Entrega dos produtos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1168,13 +2020,39 @@ const kanjiN2Data = [
                         "word": "換替 (kawase)",
                         "wordMeaning": "Câmbio de moedas",
                         "sentence": "Kawase rate.",
-                        "sentenceMeaning": "Taxa de câmbio."
+                        "sentenceMeaning": "Taxa de câmbio.",
+                        "content": {
+                            "displayText": "換替らて。",
+                            "audioText": "換替らて。",
+                            "furigana": "",
+                            "romaji": "Kawase rate.",
+                            "translation": "Taxa de câmbio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "変換 (henkan)",
                         "wordMeaning": "Conversão de texto/dados",
                         "sentence": "Data no henkan.",
-                        "sentenceMeaning": "Conversão de dados."
+                        "sentenceMeaning": "Conversão de dados.",
+                        "content": {
+                            "displayText": "データの変換。",
+                            "audioText": "データの変換。",
+                            "furigana": "",
+                            "romaji": "Data no henkan.",
+                            "translation": "Conversão de dados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1199,13 +2077,39 @@ const kanjiN2Data = [
                         "word": "預金 (yokin)",
                         "wordMeaning": "Depósito bancário / Poupança",
                         "sentence": "Bank ni yokin suru.",
-                        "sentenceMeaning": "Fazer depósito no banco."
+                        "sentenceMeaning": "Fazer depósito no banco.",
+                        "content": {
+                            "displayText": "ばんクに預金する。",
+                            "audioText": "ばんクに預金する。",
+                            "furigana": "",
+                            "romaji": "Bank ni yokin suru.",
+                            "translation": "Fazer depósito no banco.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "預ける (azukeru)",
                         "wordMeaning": "Depositar / Deixar aos cuidados",
                         "sentence": "Luggage o azukeru.",
-                        "sentenceMeaning": "Deixar a bagagem aos cuidados."
+                        "sentenceMeaning": "Deixar a bagagem aos cuidados.",
+                        "content": {
+                            "displayText": "ルうっがげを預ける。",
+                            "audioText": "ルうっがげを預ける。",
+                            "furigana": "",
+                            "romaji": "Luggage o azukeru.",
+                            "translation": "Deixar a bagagem aos cuidados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1226,13 +2130,39 @@ const kanjiN2Data = [
                         "word": "貯金 (chokin)",
                         "wordMeaning": "Economias / Poupança acumulada",
                         "sentence": "Chokin o fuyasu.",
-                        "sentenceMeaning": "Aumentar as economias."
+                        "sentenceMeaning": "Aumentar as economias.",
+                        "content": {
+                            "displayText": "貯金をふやす。",
+                            "audioText": "貯金をふやす。",
+                            "furigana": "",
+                            "romaji": "Chokin o fuyasu.",
+                            "translation": "Aumentar as economias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "貯蔵 (chozou)",
                         "wordMeaning": "Armazenamento / Estocagem",
                         "sentence": "Food no chozou.",
-                        "sentenceMeaning": "Estocagem de alimentos."
+                        "sentenceMeaning": "Estocagem de alimentos.",
+                        "content": {
+                            "displayText": "食べ物の貯蔵。",
+                            "audioText": "食べ物の貯蔵。",
+                            "furigana": "",
+                            "romaji": "Food no chozou.",
+                            "translation": "Estocagem de alimentos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1257,13 +2187,39 @@ const kanjiN2Data = [
                         "word": "金額 (kingaku)",
                         "wordMeaning": "Quantia em dinheiro / Montante",
                         "sentence": "Kingaku o kakunin.",
-                        "sentenceMeaning": "Confirmar a quantia em dinheiro."
+                        "sentenceMeaning": "Confirmar a quantia em dinheiro.",
+                        "content": {
+                            "displayText": "今月の請求書の合計金額を確認します。",
+                            "audioText": "今月の請求書の合計金額を確認します。",
+                            "furigana": "",
+                            "romaji": "Kingaku o kakunin.",
+                            "translation": "Confirmar a quantia em dinheiro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "全額 (zengaku)",
                         "wordMeaning": "Valor total integral",
                         "sentence": "Zengaku harai.",
-                        "sentenceMeaning": "Pagamento do valor integral."
+                        "sentenceMeaning": "Pagamento do valor integral.",
+                        "content": {
+                            "displayText": "全額はらい。",
+                            "audioText": "全額はらい。",
+                            "furigana": "",
+                            "romaji": "Zengaku harai.",
+                            "translation": "Pagamento do valor integral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1288,13 +2244,39 @@ const kanjiN2Data = [
                         "word": "証明 (shoumei)",
                         "wordMeaning": "Comprovação / Prova",
                         "sentence": "Shoumei-sho.",
-                        "sentenceMeaning": "Certificado de comprovação."
+                        "sentenceMeaning": "Certificado de comprovação.",
+                        "content": {
+                            "displayText": "証明しょ。",
+                            "audioText": "証明しょ。",
+                            "furigana": "",
+                            "romaji": "Shoumei-sho.",
+                            "translation": "Certificado de comprovação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "保証 (hoshou)",
                         "wordMeaning": "Garantia",
                         "sentence": "1-nen no hoshou.",
-                        "sentenceMeaning": "Garantia de 1 ano."
+                        "sentenceMeaning": "Garantia de 1 ano.",
+                        "content": {
+                            "displayText": "1ねんの保証。",
+                            "audioText": "1ねんの保証。",
+                            "furigana": "",
+                            "romaji": "1-nen no hoshou.",
+                            "translation": "Garantia de 1 ano.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1323,13 +2305,39 @@ const kanjiN2Data = [
                         "word": "負担 (futan)",
                         "wordMeaning": "Carga / Ônus financeiro",
                         "sentence": "Cost no futan.",
-                        "sentenceMeaning": "Arcar com os custos."
+                        "sentenceMeaning": "Arcar com os custos.",
+                        "content": {
+                            "displayText": "会社の負債を計画的に返済していきます。",
+                            "audioText": "会社の負債を計画的に返済していきます。",
+                            "furigana": "",
+                            "romaji": "Cost no futan.",
+                            "translation": "Arcar com os custos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "勝負 (shoubu)",
                         "wordMeaning": "Disputa / Partida decisiva",
                         "sentence": "Shoubu o suru.",
-                        "sentenceMeaning": "Fazer uma disputa."
+                        "sentenceMeaning": "Fazer uma disputa.",
+                        "content": {
+                            "displayText": "勝負をする。",
+                            "audioText": "勝負をする。",
+                            "furigana": "",
+                            "romaji": "Shoubu o suru.",
+                            "translation": "Fazer uma disputa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1445,7 +2453,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 3,
@@ -1455,7 +2467,15 @@ const kanjiN2Data = [
             "title": "Expressando Regras Trabalhistas (~ni motozuite)",
             "explanation": "No N2, indica-se execução de normas e pagamentos com base em leis trabalhistas ou contratos.",
             "example": "Roudou-hou ni motozuite hatarakimasu.",
-            "translation": "Trabalho com base nas leis trabalhistas."
+            "translation": "Trabalho com base nas leis trabalhistas.",
+            "content": {
+                "displayText": "ろうどうほうにもとずいてはたらきます。",
+                "audioText": "ろうどうほうにもとずいてはたらきます。",
+                "furigana": "",
+                "romaji": "Roudou-hou ni motozuite hatarakimasu.",
+                "translation": "Trabalho com base nas leis trabalhistas.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "労働環境と社員の権利 (Ambiente de Trabalho e Direitos dos Funcionários)",
@@ -1497,13 +2517,39 @@ const kanjiN2Data = [
                         "word": "雇用 (koyou)",
                         "wordMeaning": "Emprego / Contratação",
                         "sentence": "Koyou o fuyasu.",
-                        "sentenceMeaning": "Aumentar as contratações."
+                        "sentenceMeaning": "Aumentar as contratações.",
+                        "content": {
+                            "displayText": "雇用をふやす。",
+                            "audioText": "雇用をふやす。",
+                            "furigana": "",
+                            "romaji": "Koyou o fuyasu.",
+                            "translation": "Aumentar as contratações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "雇主 (yatoinushi)",
                         "wordMeaning": "Empregador / Patrão",
                         "sentence": "Yatoinushi no duty.",
-                        "sentenceMeaning": "Dever do empregador."
+                        "sentenceMeaning": "Dever do empregador.",
+                        "content": {
+                            "displayText": "雇主のドうトイ。",
+                            "audioText": "雇主のドうトイ。",
+                            "furigana": "",
+                            "romaji": "Yatoinushi no duty.",
+                            "translation": "Dever do empregador.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1528,13 +2574,39 @@ const kanjiN2Data = [
                         "word": "回避 (kaihi)",
                         "wordMeaning": "Evasão / Evitar problemas",
                         "sentence": "Risk no kaihi.",
-                        "sentenceMeaning": "Evitar riscos."
+                        "sentenceMeaning": "Evitar riscos.",
+                        "content": {
+                            "displayText": "りスクの回避。",
+                            "audioText": "りスクの回避。",
+                            "furigana": "",
+                            "romaji": "Risk no kaihi.",
+                            "translation": "Evitar riscos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "避難 (hinan)",
                         "wordMeaning": "Evacuação",
                         "sentence": "Hinan kunren.",
-                        "sentenceMeaning": "Treinamento de evacuação."
+                        "sentenceMeaning": "Treinamento de evacuação.",
+                        "content": {
+                            "displayText": "避難くんれん。",
+                            "audioText": "避難くんれん。",
+                            "furigana": "",
+                            "romaji": "Hinan kunren.",
+                            "translation": "Treinamento de evacuação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1559,13 +2631,39 @@ const kanjiN2Data = [
                         "word": "労働 (roudou)",
                         "wordMeaning": "Trabalho manual/físico",
                         "sentence": "Roudou jikan.",
-                        "sentenceMeaning": "Horário de trabalho."
+                        "sentenceMeaning": "Horário de trabalho.",
+                        "content": {
+                            "displayText": "労働じかん。",
+                            "audioText": "労働じかん。",
+                            "furigana": "",
+                            "romaji": "Roudou jikan.",
+                            "translation": "Horário de trabalho.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "苦労 (kurou)",
                         "wordMeaning": "Dificuldade / Esforço árduo",
                         "sentence": "Kurou o kakeru.",
-                        "sentenceMeaning": "Causar preocupações."
+                        "sentenceMeaning": "Causar preocupações.",
+                        "content": {
+                            "displayText": "苦労をかける。",
+                            "audioText": "苦労をかける。",
+                            "furigana": "",
+                            "romaji": "Kurou o kakeru.",
+                            "translation": "Causar preocupações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1590,13 +2688,39 @@ const kanjiN2Data = [
                         "word": "働く (hataraku)",
                         "wordMeaning": "Trabalhar",
                         "sentence": "Company de hataraku.",
-                        "sentenceMeaning": "Trabalhar na empresa."
+                        "sentenceMeaning": "Trabalhar na empresa.",
+                        "content": {
+                            "displayText": "会社で働く。",
+                            "audioText": "会社で働く。",
+                            "furigana": "",
+                            "romaji": "Company de hataraku.",
+                            "translation": "Trabalhar na empresa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "共働き (tomotataraki)",
                         "wordMeaning": "Casal em que ambos trabalham",
                         "sentence": "Tomotataraki no family.",
-                        "sentenceMeaning": "Família em que ambos trabalham."
+                        "sentenceMeaning": "Família em que ambos trabalham.",
+                        "content": {
+                            "displayText": "共働きのふぁみルイ。",
+                            "audioText": "共働きのふぁみルイ。",
+                            "furigana": "",
+                            "romaji": "Tomotataraki no family.",
+                            "translation": "Família em que ambos trabalham.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1621,13 +2745,39 @@ const kanjiN2Data = [
                         "word": "報酬 (houshuu)",
                         "wordMeaning": "Remuneração / Honorários",
                         "sentence": "Houshuu o morau.",
-                        "sentenceMeaning": "Receber a remuneração."
+                        "sentenceMeaning": "Receber a remuneração.",
+                        "content": {
+                            "displayText": "報酬をもらう。",
+                            "audioText": "報酬をもらう。",
+                            "furigana": "",
+                            "romaji": "Houshuu o morau.",
+                            "translation": "Receber a remuneração.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "応酬 (oushuu)",
                         "wordMeaning": "Tróca de respostas / Réplica",
                         "sentence": "Kairou no oushuu.",
-                        "sentenceMeaning": "Troca de argumentos no debate."
+                        "sentenceMeaning": "Troca de argumentos no debate.",
+                        "content": {
+                            "displayText": "かいろうの応酬。",
+                            "audioText": "かいろうの応酬。",
+                            "furigana": "",
+                            "romaji": "Kairou no oushuu.",
+                            "translation": "Troca de argumentos no debate.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1648,13 +2798,39 @@ const kanjiN2Data = [
                         "word": "給与 (kyuuyo)",
                         "wordMeaning": "Salário / Vencimentos",
                         "sentence": "Kyuuyo meisai.",
-                        "sentenceMeaning": "Holerite de pagamento salarial."
+                        "sentenceMeaning": "Holerite de pagamento salarial.",
+                        "content": {
+                            "displayText": "給与めいさい。",
+                            "audioText": "給与めいさい。",
+                            "furigana": "",
+                            "romaji": "Kyuuyo meisai.",
+                            "translation": "Holerite de pagamento salarial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "供給 (kyoukyuu)",
                         "wordMeaning": "Oferta / Fornecimento",
                         "sentence": "Energy no kyoukyuu.",
-                        "sentenceMeaning": "Fornecimento de energia."
+                        "sentenceMeaning": "Fornecimento de energia.",
+                        "content": {
+                            "displayText": "えねルグイの供給。",
+                            "audioText": "えねルグイの供給。",
+                            "furigana": "",
+                            "romaji": "Energy no kyoukyuu.",
+                            "translation": "Fornecimento de energia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1679,13 +2855,39 @@ const kanjiN2Data = [
                         "word": "休暇 (kyuuka)",
                         "wordMeaning": "Férias / Licença do trabalho",
                         "sentence": "Natsu kyuuka.",
-                        "sentenceMeaning": "Férias de verão."
+                        "sentenceMeaning": "Férias de verão.",
+                        "content": {
+                            "displayText": "なつ休暇。",
+                            "audioText": "なつ休暇。",
+                            "furigana": "",
+                            "romaji": "Natsu kyuuka.",
+                            "translation": "Férias de verão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "余暇 (yoka)",
                         "wordMeaning": "Tempo livre / Lazer",
                         "sentence": "Yoka no tsukai-kata.",
-                        "sentenceMeaning": "Uso do tempo livre."
+                        "sentenceMeaning": "Uso do tempo livre.",
+                        "content": {
+                            "displayText": "余暇のつかいかた。",
+                            "audioText": "余暇のつかいかた。",
+                            "furigana": "",
+                            "romaji": "Yoka no tsukai-kata.",
+                            "translation": "Uso do tempo livre.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1706,13 +2908,39 @@ const kanjiN2Data = [
                         "word": "職業 (shokugyou)",
                         "wordMeaning": "Profissão / Ocupação",
                         "sentence": "Shokugyou deki na skill.",
-                        "sentenceMeaning": "Habilidade profissional."
+                        "sentenceMeaning": "Habilidade profissional.",
+                        "content": {
+                            "displayText": "職業できなスきっル。",
+                            "audioText": "職業できなスきっル。",
+                            "furigana": "",
+                            "romaji": "Shokugyou deki na skill.",
+                            "translation": "Habilidade profissional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "転職 (tenshoku)",
                         "wordMeaning": "Troca de emprego",
                         "sentence": "Tenshoku suru.",
-                        "sentenceMeaning": "Mudar de emprego."
+                        "sentenceMeaning": "Mudar de emprego.",
+                        "content": {
+                            "displayText": "転職する。",
+                            "audioText": "転職する。",
+                            "furigana": "",
+                            "romaji": "Tenshoku suru.",
+                            "translation": "Mudar de emprego.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1741,13 +2969,39 @@ const kanjiN2Data = [
                         "word": "退職 (taishoku)",
                         "wordMeaning": "Aposentadoria / Demissão voluntária",
                         "sentence": "60-sai de taishoku.",
-                        "sentenceMeaning": "Aposentar-se aos 60 anos."
+                        "sentenceMeaning": "Aposentar-se aos 60 anos.",
+                        "content": {
+                            "displayText": "60さいで退職。",
+                            "audioText": "60さいで退職。",
+                            "furigana": "",
+                            "romaji": "60-sai de taishoku.",
+                            "translation": "Aposentar-se aos 60 anos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "退屈 (taikutsu)",
                         "wordMeaning": "Tédio / Monotonia",
                         "sentence": "Taikutsu na jikan.",
-                        "sentenceMeaning": "Tempo tedioso."
+                        "sentenceMeaning": "Tempo tedioso.",
+                        "content": {
+                            "displayText": "退屈なじかん。",
+                            "audioText": "退屈なじかん。",
+                            "furigana": "",
+                            "romaji": "Taikutsu na jikan.",
+                            "translation": "Tempo tedioso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1776,13 +3030,39 @@ const kanjiN2Data = [
                         "word": "解雇 (kaiko)",
                         "wordMeaning": "Demissão / Dispensa",
                         "sentence": "Unfair kaiko.",
-                        "sentenceMeaning": "Demissão injusta."
+                        "sentenceMeaning": "Demissão injusta.",
+                        "content": {
+                            "displayText": "うんふぁいル解雇。",
+                            "audioText": "うんふぁいル解雇。",
+                            "furigana": "",
+                            "romaji": "Unfair kaiko.",
+                            "translation": "Demissão injusta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "解決 (kaiketsu)",
                         "wordMeaning": "Resolução de conflito",
                         "sentence": "Mondai no kaiketsu.",
-                        "sentenceMeaning": "Resolução do problema."
+                        "sentenceMeaning": "Resolução do problema.",
+                        "content": {
+                            "displayText": "もんだいの解決。",
+                            "audioText": "もんだいの解決。",
+                            "furigana": "",
+                            "romaji": "Mondai no kaiketsu.",
+                            "translation": "Resolução do problema.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1811,13 +3091,39 @@ const kanjiN2Data = [
                         "word": "罷免 (himen)",
                         "wordMeaning": "Demissão sumária de autoridade",
                         "sentence": "Minister no himen.",
-                        "sentenceMeaning": "Demissão sumária do ministro."
+                        "sentenceMeaning": "Demissão sumária do ministro.",
+                        "content": {
+                            "displayText": "みにスてルの罷免。",
+                            "audioText": "みにスてルの罷免。",
+                            "furigana": "",
+                            "romaji": "Minister no himen.",
+                            "translation": "Demissão sumária do ministro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "同盟罷業 (doumeihigyou)",
                         "wordMeaning": "Greve geral dos trabalhadores",
                         "sentence": "Doumeihigyou o suru.",
-                        "sentenceMeaning": "Fazer greve geral."
+                        "sentenceMeaning": "Fazer greve geral.",
+                        "content": {
+                            "displayText": "同盟罷業をする。",
+                            "audioText": "同盟罷業をする。",
+                            "furigana": "",
+                            "romaji": "Doumeihigyou o suru.",
+                            "translation": "Fazer greve geral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1842,13 +3148,39 @@ const kanjiN2Data = [
                         "word": "取扱 (toriatsukai)",
                         "wordMeaning": "Manuseio / Instruções de uso",
                         "sentence": "Toriatsukai setsumeisho.",
-                        "sentenceMeaning": "Manual de instruções de manuseio."
+                        "sentenceMeaning": "Manual de instruções de manuseio.",
+                        "content": {
+                            "displayText": "取扱せつめいしょ。",
+                            "audioText": "取扱せつめいしょ。",
+                            "furigana": "",
+                            "romaji": "Toriatsukai setsumeisho.",
+                            "translation": "Manual de instruções de manuseio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "扱う (atsukau)",
                         "wordMeaning": "Tratar / Lidara com",
                         "sentence": "Teinei ni atsukau.",
-                        "sentenceMeaning": "Tratar com polidez."
+                        "sentenceMeaning": "Tratar com polidez.",
+                        "content": {
+                            "displayText": "ていねいに扱う。",
+                            "audioText": "ていねいに扱う。",
+                            "furigana": "",
+                            "romaji": "Teinei ni atsukau.",
+                            "translation": "Tratar com polidez.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1877,13 +3209,39 @@ const kanjiN2Data = [
                         "word": "待遇 (taiguu)",
                         "wordMeaning": "Tratamento salarial / Condições",
                         "sentence": "Taiguu no kaizen.",
-                        "sentenceMeaning": "Melhoria do tratamento e condições."
+                        "sentenceMeaning": "Melhoria do tratamento e condições.",
+                        "content": {
+                            "displayText": "待遇のかいぜん。",
+                            "audioText": "待遇のかいぜん。",
+                            "furigana": "",
+                            "romaji": "Taiguu no kaizen.",
+                            "translation": "Melhoria do tratamento e condições.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "優遇 (yuuguu)",
                         "wordMeaning": "Tratamento preferencial / Privilégio",
                         "sentence": "VIP yuuguu.",
-                        "sentenceMeaning": "Tratamento preferencial VIP."
+                        "sentenceMeaning": "Tratamento preferencial VIP.",
+                        "content": {
+                            "displayText": "ヴいプ優遇。",
+                            "audioText": "ヴいプ優遇。",
+                            "furigana": "",
+                            "romaji": "VIP yuuguu.",
+                            "translation": "Tratamento preferencial VIP.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1904,13 +3262,39 @@ const kanjiN2Data = [
                         "word": "応募 (oubo)",
                         "wordMeaning": "Inscrição / Candidatura a vaga",
                         "sentence": "Job ni oubo suru.",
-                        "sentenceMeaning": "Candidatar-se à vaga."
+                        "sentenceMeaning": "Candidatar-se à vaga.",
+                        "content": {
+                            "displayText": "じょブに応募する。",
+                            "audioText": "じょブに応募する。",
+                            "furigana": "",
+                            "romaji": "Job ni oubo suru.",
+                            "translation": "Candidatar-se à vaga.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "対応 (taiou)",
                         "wordMeaning": "Atendimento / Suporte",
                         "sentence": "Quick taiou.",
-                        "sentenceMeaning": "Atendimento rápido."
+                        "sentenceMeaning": "Atendimento rápido.",
+                        "content": {
+                            "displayText": "クういクク対応。",
+                            "audioText": "クういクク対応。",
+                            "furigana": "",
+                            "romaji": "Quick taiou.",
+                            "translation": "Atendimento rápido.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1931,13 +3315,39 @@ const kanjiN2Data = [
                         "word": "募集 (boshuu)",
                         "wordMeaning": "Recrutamento / Vagas abertas",
                         "sentence": "Shain no boshuu.",
-                        "sentenceMeaning": "Recrutamento de funcionários."
+                        "sentenceMeaning": "Recrutamento de funcionários.",
+                        "content": {
+                            "displayText": "しゃいんの募集。",
+                            "audioText": "しゃいんの募集。",
+                            "furigana": "",
+                            "romaji": "Shain no boshuu.",
+                            "translation": "Recrutamento de funcionários.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "募金 (bokin)",
                         "wordMeaning": "Coleta de doações",
                         "sentence": "Bokin ni協力.",
-                        "sentenceMeaning": "Cooperar com a arrecadação de doações."
+                        "sentenceMeaning": "Cooperar com a arrecadação de doações.",
+                        "content": {
+                            "displayText": "募金に協力。",
+                            "audioText": "募金に協力。",
+                            "furigana": "",
+                            "romaji": "Bokin ni協力.",
+                            "translation": "Cooperar com a arrecadação de doações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1962,13 +3372,39 @@ const kanjiN2Data = [
                         "word": "昇進 (shoushin)",
                         "wordMeaning": "Promoção de cargo",
                         "sentence": "Manager ni shoushin.",
-                        "sentenceMeaning": "Promoção a gerente."
+                        "sentenceMeaning": "Promoção a gerente.",
+                        "content": {
+                            "displayText": "まなげルに昇進。",
+                            "audioText": "まなげルに昇進。",
+                            "furigana": "",
+                            "romaji": "Manager ni shoushin.",
+                            "translation": "Promoção a gerente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "昇給 (shoukyuu)",
                         "wordMeaning": "Aumento salarial",
                         "sentence": "Annual shoukyuu.",
-                        "sentenceMeaning": "Aumento salarial anual."
+                        "sentenceMeaning": "Aumento salarial anual.",
+                        "content": {
+                            "displayText": "あンぬあル昇給。",
+                            "audioText": "あンぬあル昇給。",
+                            "furigana": "",
+                            "romaji": "Annual shoukyuu.",
+                            "translation": "Aumento salarial anual.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -1993,13 +3429,39 @@ const kanjiN2Data = [
                         "word": "降格 (koukaku)",
                         "wordMeaning": "Rebaixamento de cargo",
                         "sentence": "Koukaku jinji.",
-                        "sentenceMeaning": "Rebaixamento de cargo no RH."
+                        "sentenceMeaning": "Rebaixamento de cargo no RH.",
+                        "content": {
+                            "displayText": "降格じんじ。",
+                            "audioText": "降格じんじ。",
+                            "furigana": "",
+                            "romaji": "Koukaku jinji.",
+                            "translation": "Rebaixamento de cargo no RH.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "降車 (kousha)",
                         "wordMeaning": "Desembarque do veículo",
                         "sentence": "Kousha guchi.",
-                        "sentenceMeaning": "Saída de desembarque."
+                        "sentenceMeaning": "Saída de desembarque.",
+                        "content": {
+                            "displayText": "降車ぐち。",
+                            "audioText": "降車ぐち。",
+                            "furigana": "",
+                            "romaji": "Kousha guchi.",
+                            "translation": "Saída de desembarque.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2024,13 +3486,39 @@ const kanjiN2Data = [
                         "word": "休憩 (kyuukei)",
                         "wordMeaning": "Pausa / Intervalo de descanso",
                         "sentence": "15-fun kyuukei.",
-                        "sentenceMeaning": "Descanso de 15 minutos."
+                        "sentenceMeaning": "Descanso de 15 minutos.",
+                        "content": {
+                            "displayText": "15ふん休憩。",
+                            "audioText": "15ふん休憩。",
+                            "furigana": "",
+                            "romaji": "15-fun kyuukei.",
+                            "translation": "Descanso de 15 minutos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "休業 (kyuugyou)",
                         "wordMeaning": "Suspensão temporária do trabalho",
                         "sentence": "Kyuugyou teate.",
-                        "sentenceMeaning": "Auxílio-suspensão de trabalho."
+                        "sentenceMeaning": "Auxílio-suspensão de trabalho.",
+                        "content": {
+                            "displayText": "休業てあて。",
+                            "audioText": "休業てあて。",
+                            "furigana": "",
+                            "romaji": "Kyuugyou teate.",
+                            "translation": "Auxílio-suspensão de trabalho.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2055,13 +3543,39 @@ const kanjiN2Data = [
                         "word": "協力 (kyouryoku)",
                         "wordMeaning": "Cooperação / Ajuda mútua",
                         "sentence": "Kyouryoku o tanomu.",
-                        "sentenceMeaning": "Pedir cooperação."
+                        "sentenceMeaning": "Pedir cooperação.",
+                        "content": {
+                            "displayText": "協力をたのむ。",
+                            "audioText": "協力をたのむ。",
+                            "furigana": "",
+                            "romaji": "Kyouryoku o tanomu.",
+                            "translation": "Pedir cooperação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "妥協 (dakyou)",
                         "wordMeaning": "Compromisso de partes",
                         "sentence": "Dakyou-an.",
-                        "sentenceMeaning": "Proposta de compromisso."
+                        "sentenceMeaning": "Proposta de compromisso.",
+                        "content": {
+                            "displayText": "妥協あん。",
+                            "audioText": "妥協あん。",
+                            "furigana": "",
+                            "romaji": "Dakyou-an.",
+                            "translation": "Proposta de compromisso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2177,7 +3691,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 4,
@@ -2187,7 +3705,15 @@ const kanjiN2Data = [
             "title": "Expressando Debate Político (~ni tsuite no debate)",
             "explanation": "No N2, utiliza-se a estrutura formal para introduzir matérias legislativas e debates públicos.",
             "example": "Seisaku ni tsuite debate shimasu.",
-            "translation": "Debatemos sobre as diretrizes políticas."
+            "translation": "Debatemos sobre as diretrizes políticas.",
+            "content": {
+                "displayText": "せいさくについてでばてします。",
+                "audioText": "せいさくについてでばてします。",
+                "furigana": "",
+                "romaji": "Seisaku ni tsuite debate shimasu.",
+                "translation": "Debatemos sobre as diretrizes políticas.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "選挙と議会の役割 (Eleições e o Papel do Parlamento)",
@@ -2229,13 +3755,39 @@ const kanjiN2Data = [
                         "word": "政治 (seiji)",
                         "wordMeaning": "Política",
                         "sentence": "Seiji no debate.",
-                        "sentenceMeaning": "Debate político."
+                        "sentenceMeaning": "Debate político.",
+                        "content": {
+                            "displayText": "政治のでばて。",
+                            "audioText": "政治のでばて。",
+                            "furigana": "",
+                            "romaji": "Seiji no debate.",
+                            "translation": "Debate político.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "政党 (seitou)",
                         "wordMeaning": "Partido político",
                         "sentence": "Seitou no candidate.",
-                        "sentenceMeaning": "Candidato do partido político."
+                        "sentenceMeaning": "Candidato do partido político.",
+                        "content": {
+                            "displayText": "政党のクあんでぃだて。",
+                            "audioText": "政党のクあんでぃだて。",
+                            "furigana": "",
+                            "romaji": "Seitou no candidate.",
+                            "translation": "Candidato do partido político.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2264,13 +3816,39 @@ const kanjiN2Data = [
                         "word": "投票 (touhyou)",
                         "wordMeaning": "Votação / Ato de votar",
                         "sentence": "Touhyou ni iku.",
-                        "sentenceMeaning": "Ir votar."
+                        "sentenceMeaning": "Ir votar.",
+                        "content": {
+                            "displayText": "投票にいく。",
+                            "audioText": "投票にいく。",
+                            "furigana": "",
+                            "romaji": "Touhyou ni iku.",
+                            "translation": "Ir votar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "開票 (kaihyou)",
                         "wordMeaning": "Apuração dos votos",
                         "sentence": "Kaihyou result.",
-                        "sentenceMeaning": "Resultado da apuração dos votos."
+                        "sentenceMeaning": "Resultado da apuração dos votos.",
+                        "content": {
+                            "displayText": "開票結果。",
+                            "audioText": "開票結果。",
+                            "furigana": "",
+                            "romaji": "Kaihyou result.",
+                            "translation": "Resultado da apuração dos votos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2291,13 +3869,39 @@ const kanjiN2Data = [
                         "word": "争点 (souten)",
                         "wordMeaning": "Ponto em disputa / Pauta principal",
                         "sentence": "Senkyo no souten.",
-                        "sentenceMeaning": "Pauta principal da eleição."
+                        "sentenceMeaning": "Pauta principal da eleição.",
+                        "content": {
+                            "displayText": "せんきょの争点。",
+                            "audioText": "せんきょの争点。",
+                            "furigana": "",
+                            "romaji": "Senkyo no souten.",
+                            "translation": "Pauta principal da eleição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "論争 (ronsou)",
                         "wordMeaning": "Controvérsia / Debate caloroso",
                         "sentence": "Seiji ronsou.",
-                        "sentenceMeaning": "Debate político caloroso."
+                        "sentenceMeaning": "Debate político caloroso.",
+                        "content": {
+                            "displayText": "せいじ論争。",
+                            "audioText": "せいじ論争。",
+                            "furigana": "",
+                            "romaji": "Seiji ronsou.",
+                            "translation": "Debate político caloroso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2318,13 +3922,39 @@ const kanjiN2Data = [
                         "word": "党首 (toushu)",
                         "wordMeaning": "Líder do partido político",
                         "sentence": "Toushu kaidan.",
-                        "sentenceMeaning": "Reunião de líderes partidários."
+                        "sentenceMeaning": "Reunião de líderes partidários.",
+                        "content": {
+                            "displayText": "党首かいだん。",
+                            "audioText": "党首かいだん。",
+                            "furigana": "",
+                            "romaji": "Toushu kaidan.",
+                            "translation": "Reunião de líderes partidários.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "野党 (yatou)",
                         "wordMeaning": "Partido de oposição",
                         "sentence": "Yatou no opinion.",
-                        "sentenceMeaning": "Opinião da oposição."
+                        "sentenceMeaning": "Opinião da oposição.",
+                        "content": {
+                            "displayText": "野党の意見。",
+                            "audioText": "野党の意見。",
+                            "furigana": "",
+                            "romaji": "Yatou no opinion.",
+                            "translation": "Opinião da oposição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2345,13 +3975,39 @@ const kanjiN2Data = [
                         "word": "選挙 (senkyo)",
                         "wordMeaning": "Eleição",
                         "sentence": "Senkyo ni iku.",
-                        "sentenceMeaning": "Ir às urnas votar."
+                        "sentenceMeaning": "Ir às urnas votar.",
+                        "content": {
+                            "displayText": "選挙にいく。",
+                            "audioText": "選挙にいく。",
+                            "furigana": "",
+                            "romaji": "Senkyo ni iku.",
+                            "translation": "Ir às urnas votar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "選手 (senshu)",
                         "wordMeaning": "Atleta / Jogador selecionado",
                         "sentence": "Famous senshu.",
-                        "sentenceMeaning": "Atleta famoso."
+                        "sentenceMeaning": "Atleta famoso.",
+                        "content": {
+                            "displayText": "ふぁもうス選手。",
+                            "audioText": "ふぁもうス選手。",
+                            "furigana": "",
+                            "romaji": "Famous senshu.",
+                            "translation": "Atleta famoso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2372,13 +4028,39 @@ const kanjiN2Data = [
                         "word": "挙手 (kyoshu)",
                         "wordMeaning": "Levantar a mão para votar",
                         "sentence": "Kyoshu de kettei.",
-                        "sentenceMeaning": "Decidir por voto de mãos erguidas."
+                        "sentenceMeaning": "Decidir por voto de mãos erguidas.",
+                        "content": {
+                            "displayText": "挙手でけってい。",
+                            "audioText": "挙手でけってい。",
+                            "furigana": "",
+                            "romaji": "Kyoshu de kettei.",
+                            "translation": "Decidir por voto de mãos erguidas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "一挙 (ikkyo)",
                         "wordMeaning": "De uma só vez / Com uma só ação",
                         "sentence": "Ikkyo ni解決.",
-                        "sentenceMeaning": "Resolver tudo de uma só vez."
+                        "sentenceMeaning": "Resolver tudo de uma só vez.",
+                        "content": {
+                            "displayText": "一挙に解決。",
+                            "audioText": "一挙に解決。",
+                            "furigana": "",
+                            "romaji": "Ikkyo ni解決.",
+                            "translation": "Resolver tudo de uma só vez.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2403,13 +4085,39 @@ const kanjiN2Data = [
                         "word": "内閣 (naikaku)",
                         "wordMeaning": "Gabinete de Governo / Ministério",
                         "sentence": "Naikaku総理大臣.",
-                        "sentenceMeaning": "Primeiro-Ministro do Gabinete."
+                        "sentenceMeaning": "Primeiro-Ministro do Gabinete.",
+                        "content": {
+                            "displayText": "内閣総理大臣。",
+                            "audioText": "内閣総理大臣。",
+                            "furigana": "",
+                            "romaji": "Naikaku総理大臣.",
+                            "translation": "Primeiro-Ministro do Gabinete.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "閣僚 (kakuryou)",
                         "wordMeaning": "Ministros do Gabinete",
                         "sentence": "Kakuryou kaigi.",
-                        "sentenceMeaning": "Reunião dos ministros."
+                        "sentenceMeaning": "Reunião dos ministros.",
+                        "content": {
+                            "displayText": "閣僚かいぎ。",
+                            "audioText": "閣僚かいぎ。",
+                            "furigana": "",
+                            "romaji": "Kakuryou kaigi.",
+                            "translation": "Reunião dos ministros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2434,13 +4142,39 @@ const kanjiN2Data = [
                         "word": "大臣 (daijin)",
                         "wordMeaning": "Ministro de Estado",
                         "sentence": "Gaimu daijin.",
-                        "sentenceMeaning": "Ministro das Relações Exteriores."
+                        "sentenceMeaning": "Ministro das Relações Exteriores.",
+                        "content": {
+                            "displayText": "がいむ大臣。",
+                            "audioText": "がいむ大臣。",
+                            "furigana": "",
+                            "romaji": "Gaimu daijin.",
+                            "translation": "Ministro das Relações Exteriores.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "総理大臣 (souridaijin)",
                         "wordMeaning": "Primeiro-Ministro",
                         "sentence": "Souridaijin no enzetsu.",
-                        "sentenceMeaning": "Discurso do Primeiro-Ministro."
+                        "sentenceMeaning": "Discurso do Primeiro-Ministro.",
+                        "content": {
+                            "displayText": "総理大臣のえんぜつ。",
+                            "audioText": "総理大臣のえんぜつ。",
+                            "furigana": "",
+                            "romaji": "Souridaijin no enzetsu.",
+                            "translation": "Discurso do Primeiro-Ministro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2461,13 +4195,39 @@ const kanjiN2Data = [
                         "word": "国会 (kokkai)",
                         "wordMeaning": "Parlamento / Congresso Nacional",
                         "sentence": "Kokkai gijidou.",
-                        "sentenceMeaning": "Prédio do Parlamento Nacional."
+                        "sentenceMeaning": "Prédio do Parlamento Nacional.",
+                        "content": {
+                            "displayText": "国会議事堂。",
+                            "audioText": "国会議事堂。",
+                            "furigana": "",
+                            "romaji": "Kokkai gijidou.",
+                            "translation": "Prédio do Parlamento Nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "議員 (giin)",
                         "wordMeaning": "Parlamentar / Deputado",
                         "sentence": "Shugiin giin.",
-                        "sentenceMeaning": "Deputado da Câmara Baixa."
+                        "sentenceMeaning": "Deputado da Câmara Baixa.",
+                        "content": {
+                            "displayText": "しゅぎいん議員。",
+                            "audioText": "しゅぎいん議員。",
+                            "furigana": "",
+                            "romaji": "Shugiin giin.",
+                            "translation": "Deputado da Câmara Baixa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2492,13 +4252,39 @@ const kanjiN2Data = [
                         "word": "参議院 (sangiin)",
                         "wordMeaning": "Câmara dos Conselheiros (Câmara Alta)",
                         "sentence": "Sangiin senkyo.",
-                        "sentenceMeaning": "Eleição para a Câmara Alta."
+                        "sentenceMeaning": "Eleição para a Câmara Alta.",
+                        "content": {
+                            "displayText": "参議院せんきょ。",
+                            "audioText": "参議院せんきょ。",
+                            "furigana": "",
+                            "romaji": "Sangiin senkyo.",
+                            "translation": "Eleição para a Câmara Alta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "病院 (byouin)",
                         "wordMeaning": "Hospital",
                         "sentence": "Byouin ni iku.",
-                        "sentenceMeaning": "Ir ao hospital."
+                        "sentenceMeaning": "Ir ao hospital.",
+                        "content": {
+                            "displayText": "病院にいく。",
+                            "audioText": "病院にいく。",
+                            "furigana": "",
+                            "romaji": "Byouin ni iku.",
+                            "translation": "Ir ao hospital.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2523,13 +4309,39 @@ const kanjiN2Data = [
                         "word": "政権 (seiken)",
                         "wordMeaning": "Governo em exercício / Poder político",
                         "sentence": "Seiken交代.",
-                        "sentenceMeaning": "Alternância de poder político."
+                        "sentenceMeaning": "Alternância de poder político.",
+                        "content": {
+                            "displayText": "政権交代。",
+                            "audioText": "政権交代。",
+                            "furigana": "",
+                            "romaji": "Seiken交代.",
+                            "translation": "Alternância de poder político.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "権力 (kenryoku)",
                         "wordMeaning": "Poder de autoridade",
                         "sentence": "Kenryoku no abuse.",
-                        "sentenceMeaning": "Abuso de poder."
+                        "sentenceMeaning": "Abuso de poder.",
+                        "content": {
+                            "displayText": "権力のあぶせ。",
+                            "audioText": "権力のあぶせ。",
+                            "furigana": "",
+                            "romaji": "Kenryoku no abuse.",
+                            "translation": "Abuso de poder.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2550,13 +4362,39 @@ const kanjiN2Data = [
                         "word": "候補 (kouho)",
                         "wordMeaning": "Candidato / Postulante",
                         "sentence": "Kouho-sha.",
-                        "sentenceMeaning": "Pessoa candidata ao cargo."
+                        "sentenceMeaning": "Pessoa candidata ao cargo.",
+                        "content": {
+                            "displayText": "候補しゃ。",
+                            "audioText": "候補しゃ。",
+                            "furigana": "",
+                            "romaji": "Kouho-sha.",
+                            "translation": "Pessoa candidata ao cargo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "気候 (kikou)",
                         "wordMeaning": "Clima regional",
                         "sentence": "Kikou no henka.",
-                        "sentenceMeaning": "Mudança climática."
+                        "sentenceMeaning": "Mudança climática.",
+                        "content": {
+                            "displayText": "気候のへんか。",
+                            "audioText": "気候のへんか。",
+                            "furigana": "",
+                            "romaji": "Kikou no henka.",
+                            "translation": "Mudança climática.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2581,13 +4419,39 @@ const kanjiN2Data = [
                         "word": "補修 (hoshuu)",
                         "wordMeaning": "Reparo / Manutenção",
                         "sentence": "Road no hoshuu.",
-                        "sentenceMeaning": "Manutenção da estrada."
+                        "sentenceMeaning": "Manutenção da estrada.",
+                        "content": {
+                            "displayText": "ろあドの補修。",
+                            "audioText": "ろあドの補修。",
+                            "furigana": "",
+                            "romaji": "Road no hoshuu.",
+                            "translation": "Manutenção da estrada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "補助 (hojo)",
                         "wordMeaning": "Subsídio / Auxílio financeiro",
                         "sentence": "Seifu no hojo.",
-                        "sentenceMeaning": "Subsídio do governo."
+                        "sentenceMeaning": "Subsídio do governo.",
+                        "content": {
+                            "displayText": "せいふの補助。",
+                            "audioText": "せいふの補助。",
+                            "furigana": "",
+                            "romaji": "Seifu no hojo.",
+                            "translation": "Subsídio do governo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2608,13 +4472,39 @@ const kanjiN2Data = [
                         "word": "制度 (seido)",
                         "wordMeaning": "Sistema / Instituição",
                         "sentence": "Senkyo seido.",
-                        "sentenceMeaning": "Sistema eleitoral."
+                        "sentenceMeaning": "Sistema eleitoral.",
+                        "content": {
+                            "displayText": "せんきょ制度。",
+                            "audioText": "せんきょ制度。",
+                            "furigana": "",
+                            "romaji": "Senkyo seido.",
+                            "translation": "Sistema eleitoral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "規制 (kisei)",
                         "wordMeaning": "Regulamentação / Restrição legal",
                         "sentence": "Law no kisei.",
-                        "sentenceMeaning": "Restrição legal."
+                        "sentenceMeaning": "Restrição legal.",
+                        "content": {
+                            "displayText": "法律の規制。",
+                            "audioText": "法律の規制。",
+                            "furigana": "",
+                            "romaji": "Law no kisei.",
+                            "translation": "Restrição legal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2635,13 +4525,39 @@ const kanjiN2Data = [
                         "word": "大統領 (daitouryou)",
                         "wordMeaning": "Presidente da República",
                         "sentence": "Daitouryou no visit.",
-                        "sentenceMeaning": "Visita do Presidente da República."
+                        "sentenceMeaning": "Visita do Presidente da República.",
+                        "content": {
+                            "displayText": "大統領の訪問する。",
+                            "audioText": "大統領の訪問する。",
+                            "furigana": "",
+                            "romaji": "Daitouryou no visit.",
+                            "translation": "Visita do Presidente da República.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "領土 (ryoudoku)",
                         "wordMeaning": "Território nacional",
                         "sentence": "Ryoudoku no mamoru.",
-                        "sentenceMeaning": "Defender o território nacional."
+                        "sentenceMeaning": "Defender o território nacional.",
+                        "content": {
+                            "displayText": "領土のまもる。",
+                            "audioText": "領土のまもる。",
+                            "furigana": "",
+                            "romaji": "Ryoudoku no mamoru.",
+                            "translation": "Defender o território nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2666,13 +4582,39 @@ const kanjiN2Data = [
                         "word": "監督 (kantoku)",
                         "wordMeaning": "Diretor de cinema / Treinador / Supervisor",
                         "sentence": "Movie no kantoku.",
-                        "sentenceMeaning": "Diretor do filme."
+                        "sentenceMeaning": "Diretor do filme.",
+                        "content": {
+                            "displayText": "映画の監督。",
+                            "audioText": "映画の監督。",
+                            "furigana": "",
+                            "romaji": "Movie no kantoku.",
+                            "translation": "Diretor do filme.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "督促 (tokusoku)",
                         "wordMeaning": "Cobrança formal / Lembrete de pagamento",
                         "sentence": "Payment no tokusoku.",
-                        "sentenceMeaning": "Cobrança formal de pagamento."
+                        "sentenceMeaning": "Cobrança formal de pagamento.",
+                        "content": {
+                            "displayText": "ぱイめんトの督促。",
+                            "audioText": "ぱイめんトの督促。",
+                            "furigana": "",
+                            "romaji": "Payment no tokusoku.",
+                            "translation": "Cobrança formal de pagamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2697,13 +4639,39 @@ const kanjiN2Data = [
                         "word": "同盟 (doumei)",
                         "wordMeaning": "Aliança política / Coalizão",
                         "sentence": "Doumei-koku.",
-                        "sentenceMeaning": "Países aliados."
+                        "sentenceMeaning": "Países aliados.",
+                        "content": {
+                            "displayText": "同盟こく。",
+                            "audioText": "同盟こく。",
+                            "furigana": "",
+                            "romaji": "Doumei-koku.",
+                            "translation": "Países aliados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "加盟 (kamei)",
                         "wordMeaning": "Adesão a tratado ou liga",
                         "sentence": "EU ni kamei suru.",
-                        "sentenceMeaning": "Aderir à União Europeia."
+                        "sentenceMeaning": "Aderir à União Europeia.",
+                        "content": {
+                            "displayText": "えうに加盟する。",
+                            "audioText": "えうに加盟する。",
+                            "furigana": "",
+                            "romaji": "EU ni kamei suru.",
+                            "translation": "Aderir à União Europeia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2724,13 +4692,39 @@ const kanjiN2Data = [
                         "word": "派閥 (habatsu)",
                         "wordMeaning": "Facção partidária interna",
                         "sentence": "Seitou no habatsu.",
-                        "sentenceMeaning": "Facção interna do partido."
+                        "sentenceMeaning": "Facção interna do partido.",
+                        "content": {
+                            "displayText": "せいとうの派閥。",
+                            "audioText": "せいとうの派閥。",
+                            "furigana": "",
+                            "romaji": "Seitou no habatsu.",
+                            "translation": "Facção interna do partido.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "党派 (touha)",
                         "wordMeaning": "Facção / Coligação partidária",
                         "sentence": "Touha o koete.",
-                        "sentenceMeaning": "Superando as divisões partidárias."
+                        "sentenceMeaning": "Superando as divisões partidárias.",
+                        "content": {
+                            "displayText": "党派をこえて。",
+                            "audioText": "党派をこえて。",
+                            "furigana": "",
+                            "romaji": "Touha o koete.",
+                            "translation": "Superando as divisões partidárias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2755,13 +4749,39 @@ const kanjiN2Data = [
                         "word": "総裁 (sousai)",
                         "wordMeaning": "Presidente de partido político",
                         "sentence": "Jimin-tou no sousai.",
-                        "sentenceMeaning": "Presidente do Partido Liberal Democrata."
+                        "sentenceMeaning": "Presidente do Partido Liberal Democrata.",
+                        "content": {
+                            "displayText": "最高裁判所で歴史的な判決が言い渡されます。",
+                            "audioText": "最高裁判所で歴史的な判決が言い渡されます。",
+                            "furigana": "",
+                            "romaji": "Jimin-tou no sousai.",
+                            "translation": "Presidente do Partido Liberal Democrata.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "仲裁 (chuusai)",
                         "wordMeaning": "Mediação / Arbitragem política",
                         "sentence": "Conflict no chuusai.",
-                        "sentenceMeaning": "Mediação do conflito."
+                        "sentenceMeaning": "Mediação do conflito.",
+                        "content": {
+                            "displayText": "クおんフルいクトの仲裁。",
+                            "audioText": "クおんフルいクトの仲裁。",
+                            "furigana": "",
+                            "romaji": "Conflict no chuusai.",
+                            "translation": "Mediação do conflito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2873,7 +4893,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 5,
@@ -2883,12 +4907,20 @@ const kanjiN2Data = [
             "title": "Expressando Conformidade Legal (~ni shitagatte)",
             "explanation": "No N2, indica-se execução de procedimentos de acordo com os trâmites do tribunal ou constituição.",
             "example": "Houritsu ni shitagatte saiban o shimasu.",
-            "translation": "Julgamos de acordo com a lei."
+            "translation": "Julgamos de acordo com a lei.",
+            "content": {
+                "displayText": "ほうりつにしたがってさいばんをします。",
+                "audioText": "ほうりつにしたがってさいばんをします。",
+                "furigana": "",
+                "romaji": "Houritsu ni shitagatte saiban o shimasu.",
+                "translation": "Julgamos de acordo com a lei.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "刑事裁判と人権の保護 (Processo Penal e Proteção dos Direitos Humanos)",
             "japanese": "<ruby>被告<rt>ひこく</rt></ruby>は<ruby>弁護士<rt>べんごし</rt></ruby>の<ruby>支援<rt>しえん</rt></ruby>を受け、<ruby>公正<rt>こうせい</rt></ruby>な<ruby>裁判<rt>さいばん</rt></ruby>を求める<ruby>権利<rt>けんり</rt></ruby>があります。<ruby>証拠<rt>しょうこ</rt></ruby>に基づいて<ruby>判決<rt>はんけつ</rt></ruby>が言い渡されます。",
-            "romaji": "Hikoku wa bengoshi no shien o uke, kousei na saiban o motomeru kenri ga arimasu. Shouko ni motozuite hanketsu ga iiiwatasaremasu.",
+            "romaji": "Hikoku wa bengoshi no shien o uke, kousei na saiban o motomeru kenri ga arimasu. Shouko ni motozuite hanketsu ga iiwatasaremasu.",
             "translation": "O réu tem o direito de receber o apoio de um advogado e exigir um julgamento justo. O veredito é proclamado com base nas provas.",
             "comprehensionQuiz": [
                 {
@@ -2925,13 +4957,39 @@ const kanjiN2Data = [
                         "word": "犯罪 (hanzai)",
                         "wordMeaning": "Crime",
                         "sentence": "Hanzai o防ぐ.",
-                        "sentenceMeaning": "Prevenir o crime."
+                        "sentenceMeaning": "Prevenir o crime.",
+                        "content": {
+                            "displayText": "犯罪を防ぐ。",
+                            "audioText": "犯罪を防ぐ。",
+                            "furigana": "",
+                            "romaji": "Hanzai o防ぐ.",
+                            "translation": "Prevenir o crime.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "犯人 (hannin)",
                         "wordMeaning": "Culpado / Criminoso",
                         "sentence": "Hannin o arrest.",
-                        "sentenceMeaning": "Prender o criminoso."
+                        "sentenceMeaning": "Prender o criminoso.",
+                        "content": {
+                            "displayText": "犯人をあっれスト。",
+                            "audioText": "犯人をあっれスト。",
+                            "furigana": "",
+                            "romaji": "Hannin o arrest.",
+                            "translation": "Prender o criminoso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2952,13 +5010,39 @@ const kanjiN2Data = [
                         "word": "無罪 (muzai)",
                         "wordMeaning": "Inocência",
                         "sentence": "Muzai no verdict.",
-                        "sentenceMeaning": "Veredito de inocência."
+                        "sentenceMeaning": "Veredito de inocência.",
+                        "content": {
+                            "displayText": "無罪のヴえルでぃクト。",
+                            "audioText": "無罪のヴえルでぃクト。",
+                            "furigana": "",
+                            "romaji": "Muzai no verdict.",
+                            "translation": "Veredito de inocência.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "重罪 (juuzai)",
                         "wordMeaning": "Crime grave / Felonia",
                         "sentence": "Juuzai o okasu.",
-                        "sentenceMeaning": "Cometer um crime grave."
+                        "sentenceMeaning": "Cometer um crime grave.",
+                        "content": {
+                            "displayText": "重罪をおかす。",
+                            "audioText": "重罪をおかす。",
+                            "furigana": "",
+                            "romaji": "Juuzai o okasu.",
+                            "translation": "Cometer um crime grave.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -2983,13 +5067,39 @@ const kanjiN2Data = [
                         "word": "裁判 (saiban)",
                         "wordMeaning": "Julgamento / Tribunal",
                         "sentence": "Saiban o okonao.",
-                        "sentenceMeaning": "Realizar o julgamento."
+                        "sentenceMeaning": "Realizar o julgamento.",
+                        "content": {
+                            "displayText": "裁判をおこなお。",
+                            "audioText": "裁判をおこなお。",
+                            "furigana": "",
+                            "romaji": "Saiban o okonao.",
+                            "translation": "Realizar o julgamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "判決 (hanketsu)",
                         "wordMeaning": "Veredito / Sentença judicial",
                         "sentence": "Hanketsu o dasu.",
-                        "sentenceMeaning": "Emitir a sentença judicial."
+                        "sentenceMeaning": "Emitir a sentença judicial.",
+                        "content": {
+                            "displayText": "判決をだす。",
+                            "audioText": "判決をだす。",
+                            "furigana": "",
+                            "romaji": "Hanketsu o dasu.",
+                            "translation": "Emitir a sentença judicial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3014,13 +5124,39 @@ const kanjiN2Data = [
                         "word": "起訴 (kiso)",
                         "wordMeaning": "Processo penal / Denúncia promotor",
                         "sentence": "Hannin o kiso suru.",
-                        "sentenceMeaning": "Denunciar o criminoso."
+                        "sentenceMeaning": "Denunciar o criminoso.",
+                        "content": {
+                            "displayText": "はンにんを起訴する。",
+                            "audioText": "はンにんを起訴する。",
+                            "furigana": "",
+                            "romaji": "Hannin o kiso suru.",
+                            "translation": "Denunciar o criminoso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "訴訟 (soshou)",
                         "wordMeaning": "Ação judicial / Processo civil",
                         "sentence": "Minji soshou.",
-                        "sentenceMeaning": "Processo judicial civil."
+                        "sentenceMeaning": "Processo judicial civil.",
+                        "content": {
+                            "displayText": "みんじ訴訟。",
+                            "audioText": "みんじ訴訟。",
+                            "furigana": "",
+                            "romaji": "Minji soshou.",
+                            "translation": "Processo judicial civil.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3045,13 +5181,39 @@ const kanjiN2Data = [
                         "word": "訴訟 (soshou)",
                         "wordMeaning": "Processo judicial",
                         "sentence": "Soshou o起こす.",
-                        "sentenceMeaning": "Mover processo judicial."
+                        "sentenceMeaning": "Mover processo judicial.",
+                        "content": {
+                            "displayText": "訴訟を起こす。",
+                            "audioText": "訴訟を起こす。",
+                            "furigana": "",
+                            "romaji": "Soshou o起こす.",
+                            "translation": "Mover processo judicial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "勝訴 (shouso)",
                         "wordMeaning": "Vitória na causa judicial",
                         "sentence": "Shouso no report.",
-                        "sentenceMeaning": "Notícia de vitória no tribunal."
+                        "sentenceMeaning": "Notícia de vitória no tribunal.",
+                        "content": {
+                            "displayText": "訴訟で勝ったという報告。",
+                            "audioText": "訴訟で勝ったという報告。",
+                            "furigana": "",
+                            "romaji": "Shouso no report.",
+                            "translation": "Notícia de vitória no tribunal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3080,13 +5242,39 @@ const kanjiN2Data = [
                         "word": "刑事 (keiji)",
                         "wordMeaning": "Caso penal / Detetive de polícia",
                         "sentence": "Keiji saiban.",
-                        "sentenceMeaning": "Processo penal."
+                        "sentenceMeaning": "Processo penal.",
+                        "content": {
+                            "displayText": "刑事さいばん。",
+                            "audioText": "刑事さいばん。",
+                            "furigana": "",
+                            "romaji": "Keiji saiban.",
+                            "translation": "Processo penal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "刑罰 (keibatsu)",
                         "wordMeaning": "Punição criminal",
                         "sentence": "Keibatsu o ukeru.",
-                        "sentenceMeaning": "Receber punição criminal."
+                        "sentenceMeaning": "Receber punição criminal.",
+                        "content": {
+                            "displayText": "刑罰をうける。",
+                            "audioText": "刑罰をうける。",
+                            "furigana": "",
+                            "romaji": "Keibatsu o ukeru.",
+                            "translation": "Receber punição criminal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3107,13 +5295,39 @@ const kanjiN2Data = [
                         "word": "罰金 (bakkin)",
                         "wordMeaning": "Multa financeira",
                         "sentence": "Bakkin o harau.",
-                        "sentenceMeaning": "Pagar multa financeira."
+                        "sentenceMeaning": "Pagar multa financeira.",
+                        "content": {
+                            "displayText": "罰金をはらう。",
+                            "audioText": "罰金をはらう。",
+                            "furigana": "",
+                            "romaji": "Bakkin o harau.",
+                            "translation": "Pagar multa financeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "処罰 (shobatsu)",
                         "wordMeaning": "Punição disciplinar",
                         "sentence": "Shobatsu o ukeru.",
-                        "sentenceMeaning": "Sofrer punição disciplinar."
+                        "sentenceMeaning": "Sofrer punição disciplinar.",
+                        "content": {
+                            "displayText": "処罰をうける。",
+                            "audioText": "処罰をうける。",
+                            "furigana": "",
+                            "romaji": "Shobatsu o ukeru.",
+                            "translation": "Sofrer punição disciplinar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3135,20 +5349,46 @@ const kanjiN2Data = [
                 "character": "禁",
                 "meaning": "Proibir / Vedado / Restrição legal",
                 "kunyomi": "きん (kin)",
-                "onyomi": "KIN (KIN)",
+                "onyomi": "キン (KIN)",
                 "mnemonic": "Árvores (林) sob aviso do altar proibindo entrada.",
                 "examples": [
                     {
                         "word": "禁止 (kinshi)",
                         "wordMeaning": "Proibição",
                         "sentence": "Chusha kinshi.",
-                        "sentenceMeaning": "Proibido estacionar."
+                        "sentenceMeaning": "Proibido estacionar.",
+                        "content": {
+                            "displayText": "ちゅしゃ禁止。",
+                            "audioText": "ちゅしゃ禁止。",
+                            "furigana": "",
+                            "romaji": "Chusha kinshi.",
+                            "translation": "Proibido estacionar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "禁錮 (kinko)",
                         "wordMeaning": "Prisão sem trabalho forçado",
                         "sentence": "Kinko 3-nen.",
-                        "sentenceMeaning": "3 anos de prisão simples."
+                        "sentenceMeaning": "3 anos de prisão simples.",
+                        "content": {
+                            "displayText": "禁錮 3ねん。",
+                            "audioText": "禁錮 3ねん。",
+                            "furigana": "",
+                            "romaji": "Kinko 3-nen.",
+                            "translation": "3 anos de prisão simples.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3173,13 +5413,39 @@ const kanjiN2Data = [
                         "word": "監獄 (kangoku)",
                         "wordMeaning": "Prisão / Penitenciária",
                         "sentence": "Kangoku ni ireru.",
-                        "sentenceMeaning": "Enviar para a prisão."
+                        "sentenceMeaning": "Enviar para a prisão.",
+                        "content": {
+                            "displayText": "監獄にいれる。",
+                            "audioText": "監獄にいれる。",
+                            "furigana": "",
+                            "romaji": "Kangoku ni ireru.",
+                            "translation": "Enviar para a prisão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "監査 (kansa)",
                         "wordMeaning": "Auditoria / Inspeção de contas",
                         "sentence": "Kansa o okonao.",
-                        "sentenceMeaning": "Realizar auditoria."
+                        "sentenceMeaning": "Realizar auditoria.",
+                        "content": {
+                            "displayText": "監査をおこなお。",
+                            "audioText": "監査をおこなお。",
+                            "furigana": "",
+                            "romaji": "Kansa o okonao.",
+                            "translation": "Realizar auditoria.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3208,13 +5474,39 @@ const kanjiN2Data = [
                         "word": "審理 (shinri)",
                         "wordMeaning": "Audiência judicial / Instrução probatória",
                         "sentence": "Court de shinri suru.",
-                        "sentenceMeaning": "Realizar a audiência no tribunal."
+                        "sentenceMeaning": "Realizar a audiência no tribunal.",
+                        "content": {
+                            "displayText": "クおうルトで審理する。",
+                            "audioText": "クおうルトで審理する。",
+                            "furigana": "",
+                            "romaji": "Court de shinri suru.",
+                            "translation": "Realizar a audiência no tribunal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "審判 (shinpan)",
                         "wordMeaning": "Juiz de jogo / Árbitro",
                         "sentence": "Game no shinpan.",
-                        "sentenceMeaning": "Árbitro da partida."
+                        "sentenceMeaning": "Árbitro da partida.",
+                        "content": {
+                            "displayText": "がめの審判。",
+                            "audioText": "がめの審判。",
+                            "furigana": "",
+                            "romaji": "Game no shinpan.",
+                            "translation": "Árbitro da partida.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3239,13 +5531,39 @@ const kanjiN2Data = [
                         "word": "証拠 (shouko)",
                         "wordMeaning": "Evidência / Prova material",
                         "sentence": "Shouko o atsumeru.",
-                        "sentenceMeaning": "Juntar provas materiais."
+                        "sentenceMeaning": "Juntar provas materiais.",
+                        "content": {
+                            "displayText": "証拠をあつめる。",
+                            "audioText": "証拠をあつめる。",
+                            "furigana": "",
+                            "romaji": "Shouko o atsumeru.",
+                            "translation": "Juntar provas materiais.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "証人 (shounin)",
                         "wordMeaning": "Testemunha ocular",
                         "sentence": "Shounin no koushou.",
-                        "sentenceMeaning": "Depoimento da testemunha."
+                        "sentenceMeaning": "Depoimento da testemunha.",
+                        "content": {
+                            "displayText": "証人のこうしょう。",
+                            "audioText": "証人のこうしょう。",
+                            "furigana": "",
+                            "romaji": "Shounin no koushou.",
+                            "translation": "Depoimento da testemunha.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3274,13 +5592,39 @@ const kanjiN2Data = [
                         "word": "弁護 (bengo)",
                         "wordMeaning": "Defesa jurídica",
                         "sentence": "Bengoshi o tanomu.",
-                        "sentenceMeaning": "Contratar um advogado de defesa."
+                        "sentenceMeaning": "Contratar um advogado de defesa.",
+                        "content": {
+                            "displayText": "弁護しをたのむ。",
+                            "audioText": "弁護しをたのむ。",
+                            "furigana": "",
+                            "romaji": "Bengoshi o tanomu.",
+                            "translation": "Contratar um advogado de defesa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "保護 (hogo)",
                         "wordMeaning": "Proteção / Custódia policial",
                         "sentence": "Victim no hogo.",
-                        "sentenceMeaning": "Proteção à vítima."
+                        "sentenceMeaning": "Proteção à vítima.",
+                        "content": {
+                            "displayText": "ヴいクてぃムの保護。",
+                            "audioText": "ヴいクてぃムの保護。",
+                            "furigana": "",
+                            "romaji": "Victim no hogo.",
+                            "translation": "Proteção à vítima.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3313,13 +5657,39 @@ const kanjiN2Data = [
                         "word": "法律 (houritsu)",
                         "wordMeaning": "Lei / Código de leis",
                         "sentence": "Houritsu o mamoru.",
-                        "sentenceMeaning": "Respeitar as leis."
+                        "sentenceMeaning": "Respeitar as leis.",
+                        "content": {
+                            "displayText": "法律をまもる。",
+                            "audioText": "法律をまもる。",
+                            "furigana": "",
+                            "romaji": "Houritsu o mamoru.",
+                            "translation": "Respeitar as leis.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "規律 (kiritsu)",
                         "wordMeaning": "Disciplina / Ordem interna",
                         "sentence": "Kiritsu o mamoru.",
-                        "sentenceMeaning": "Manter a disciplina."
+                        "sentenceMeaning": "Manter a disciplina.",
+                        "content": {
+                            "displayText": "規律をまもる。",
+                            "audioText": "規律をまもる。",
+                            "furigana": "",
+                            "romaji": "Kiritsu o mamoru.",
+                            "translation": "Manter a disciplina.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3344,13 +5714,39 @@ const kanjiN2Data = [
                         "word": "憲法 (kenpou)",
                         "wordMeaning": "Constituição",
                         "sentence": "Kenpou no spirit.",
-                        "sentenceMeaning": "Espírito da constituição."
+                        "sentenceMeaning": "Espírito da constituição.",
+                        "content": {
+                            "displayText": "憲法の精神。",
+                            "audioText": "憲法の精神。",
+                            "furigana": "",
+                            "romaji": "Kenpou no spirit.",
+                            "translation": "Espírito da constituição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "違憲 (iken)",
                         "wordMeaning": "Inconstitucionalidade",
                         "sentence": "Iken no判決.",
-                        "sentenceMeaning": "Sentença de inconstitucionalidade."
+                        "sentenceMeaning": "Sentença de inconstitucionalidade.",
+                        "content": {
+                            "displayText": "違憲の判決。",
+                            "audioText": "違憲の判決。",
+                            "furigana": "",
+                            "romaji": "Iken no判決.",
+                            "translation": "Sentença de inconstitucionalidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3379,13 +5775,39 @@ const kanjiN2Data = [
                         "word": "執行 (shikkou)",
                         "wordMeaning": "Execução penal / Cumprimento de sentença",
                         "sentence": "Kei no shikkou.",
-                        "sentenceMeaning": "Execução da pena."
+                        "sentenceMeaning": "Execução da pena.",
+                        "content": {
+                            "displayText": "けいの執行。",
+                            "audioText": "けいの執行。",
+                            "furigana": "",
+                            "romaji": "Kei no shikkou.",
+                            "translation": "Execução da pena.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "執筆 (shippitsu)",
                         "wordMeaning": "Redação de artigos/obras",
                         "sentence": "Kiji no shippitsu.",
-                        "sentenceMeaning": "Redação de artigos."
+                        "sentenceMeaning": "Redação de artigos.",
+                        "content": {
+                            "displayText": "きじの執筆。",
+                            "audioText": "きじの執筆。",
+                            "furigana": "",
+                            "romaji": "Kiji no shippitsu.",
+                            "translation": "Redação de artigos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3406,13 +5828,39 @@ const kanjiN2Data = [
                         "word": "警察 (keisatsu)",
                         "wordMeaning": "Polícia",
                         "sentence": "Keisatsu ni denwa.",
-                        "sentenceMeaning": "Ligar para a polícia."
+                        "sentenceMeaning": "Ligar para a polícia.",
+                        "content": {
+                            "displayText": "警察にでんわ。",
+                            "audioText": "警察にでんわ。",
+                            "furigana": "",
+                            "romaji": "Keisatsu ni denwa.",
+                            "translation": "Ligar para a polícia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "警告 (keikoku)",
                         "wordMeaning": "Aviso / Advertência",
                         "sentence": "Keikoku o dasu.",
-                        "sentenceMeaning": "Emitir uma advertência."
+                        "sentenceMeaning": "Emitir uma advertência.",
+                        "content": {
+                            "displayText": "警告をだす。",
+                            "audioText": "警告をだす。",
+                            "furigana": "",
+                            "romaji": "Keikoku o dasu.",
+                            "translation": "Emitir uma advertência.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3437,13 +5885,39 @@ const kanjiN2Data = [
                         "word": "逮捕 (taiho)",
                         "wordMeaning": "Prisão policial / Detenção",
                         "sentence": "Keisatsu ga taiho.",
-                        "sentenceMeaning": "A polícia efetuou a prisão."
+                        "sentenceMeaning": "A polícia efetuou a prisão.",
+                        "content": {
+                            "displayText": "けいさつが逮捕。",
+                            "audioText": "けいさつが逮捕。",
+                            "furigana": "",
+                            "romaji": "Keisatsu ga taiho.",
+                            "translation": "A polícia efetuou a prisão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "捕獲 (hokaku)",
                         "wordMeaning": "Captura",
                         "sentence": "Animal no hokaku.",
-                        "sentenceMeaning": "Captura do animal."
+                        "sentenceMeaning": "Captura do animal.",
+                        "content": {
+                            "displayText": "あにまルの捕獲。",
+                            "audioText": "あにまルの捕獲。",
+                            "furigana": "",
+                            "romaji": "Animal no hokaku.",
+                            "translation": "Captura do animal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3464,13 +5938,39 @@ const kanjiN2Data = [
                         "word": "抑制 (yokusei)",
                         "wordMeaning": "Repressão / Contenção",
                         "sentence": "Hanzai no yokusei.",
-                        "sentenceMeaning": "Contenção da criminalidade."
+                        "sentenceMeaning": "Contenção da criminalidade.",
+                        "content": {
+                            "displayText": "はんざいの抑制。",
+                            "audioText": "はんざいの抑制。",
+                            "furigana": "",
+                            "romaji": "Hanzai no yokusei.",
+                            "translation": "Contenção da criminalidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "抑圧 (yokuatsu)",
                         "wordMeaning": "Opressão / Supressão",
                         "sentence": "Freedom no yokuatsu.",
-                        "sentenceMeaning": "Supressão da liberdade."
+                        "sentenceMeaning": "Supressão da liberdade.",
+                        "content": {
+                            "displayText": "フれえどムの抑圧。",
+                            "audioText": "フれえどムの抑圧。",
+                            "furigana": "",
+                            "romaji": "Freedom no yokuatsu.",
+                            "translation": "Supressão da liberdade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3499,13 +5999,39 @@ const kanjiN2Data = [
                         "word": "監督 (kantoku)",
                         "wordMeaning": "Supervisor / Fiscal",
                         "sentence": "Field no kantoku.",
-                        "sentenceMeaning": "Supervisor de campo."
+                        "sentenceMeaning": "Supervisor de campo.",
+                        "content": {
+                            "displayText": "ふぃえルドの監督。",
+                            "audioText": "ふぃえルドの監督。",
+                            "furigana": "",
+                            "romaji": "Field no kantoku.",
+                            "translation": "Supervisor de campo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "督促 (tokusoku)",
                         "wordMeaning": "Exigência de cumprimento de pena/débito",
                         "sentence": "Tokusoku-jou.",
-                        "sentenceMeaning": "Carta de cobrança formal."
+                        "sentenceMeaning": "Carta de cobrança formal.",
+                        "content": {
+                            "displayText": "督促じょう。",
+                            "audioText": "督促じょう。",
+                            "furigana": "",
+                            "romaji": "Tokusoku-jou.",
+                            "translation": "Carta de cobrança formal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3621,7 +6147,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 6,
@@ -3631,7 +6161,15 @@ const kanjiN2Data = [
             "title": "Expressando Afirmação Editorial (~o meikaku ni suru)",
             "explanation": "No N2, utiliza-se a estrutura para explicitá opiniões em editoriais e análises de imprensa.",
             "example": "Ronten o meikaku ni shimasu.",
-            "translation": "Esclarecemos o ponto de discussão."
+            "translation": "Esclarecemos o ponto de discussão.",
+            "content": {
+                "displayText": "ろんてんをめいかくにします。",
+                "audioText": "ろんてんをめいかくにします。",
+                "furigana": "",
+                "romaji": "Ronten o meikaku ni shimasu.",
+                "translation": "Esclarecemos o ponto de discussão.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "報道の自由と批判精神 (Liberdade de Imprensa e Espírito Crítico)",
@@ -3673,13 +6211,39 @@ const kanjiN2Data = [
                         "word": "報道 (houdou)",
                         "wordMeaning": "Imprensa / Cobertura jornalística",
                         "sentence": "Houdou no freedom.",
-                        "sentenceMeaning": "Liberdade de imprensa."
+                        "sentenceMeaning": "Liberdade de imprensa.",
+                        "content": {
+                            "displayText": "研究成果を学会で詳しく報告します。",
+                            "audioText": "研究成果を学会で詳しく報告します。",
+                            "furigana": "",
+                            "romaji": "Houdou no freedom.",
+                            "translation": "Liberdade de imprensa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "広報 (kouhou)",
                         "wordMeaning": "Relações públicas / Assessoria de imprensa",
                         "sentence": "Kouhou-bu.",
-                        "sentenceMeaning": "Departamento de relações públicas."
+                        "sentenceMeaning": "Departamento de relações públicas.",
+                        "content": {
+                            "displayText": "広報ぶ。",
+                            "audioText": "広報ぶ。",
+                            "furigana": "",
+                            "romaji": "Kouhou-bu.",
+                            "translation": "Departamento de relações públicas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3704,13 +6268,39 @@ const kanjiN2Data = [
                         "word": "告知 (kokuchi)",
                         "wordMeaning": "Aviso prévio / Anúncio oficial",
                         "sentence": "Event no kokuchi.",
-                        "sentenceMeaning": "Anúncio do evento."
+                        "sentenceMeaning": "Anúncio do evento.",
+                        "content": {
+                            "displayText": "行事の告知。",
+                            "audioText": "行事の告知。",
+                            "furigana": "",
+                            "romaji": "Event no kokuchi.",
+                            "translation": "Anúncio do evento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "被告 (hikoku)",
                         "wordMeaning": "Réu / Acusado",
                         "sentence": "Hikoku no lawyer.",
-                        "sentenceMeaning": "Advogado do réu."
+                        "sentenceMeaning": "Advogado do réu.",
+                        "content": {
+                            "displayText": "被告のルあウイえル。",
+                            "audioText": "被告のルあウイえル。",
+                            "furigana": "",
+                            "romaji": "Hikoku no lawyer.",
+                            "translation": "Advogado do réu.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3735,13 +6325,39 @@ const kanjiN2Data = [
                         "word": "掲載 (keisai)",
                         "wordMeaning": "Publicação / Inserção de artigo",
                         "sentence": "Kiji no keisai.",
-                        "sentenceMeaning": "Publicação do artigo."
+                        "sentenceMeaning": "Publicação do artigo.",
+                        "content": {
+                            "displayText": "きじの掲載。",
+                            "audioText": "きじの掲載。",
+                            "furigana": "",
+                            "romaji": "Kiji no keisai.",
+                            "translation": "Publicação do artigo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "連載 (rensai)",
                         "wordMeaning": "Publicação em série / Folhetim",
                         "sentence": "Manga no rensai.",
-                        "sentenceMeaning": "Publicação em série do mangá."
+                        "sentenceMeaning": "Publicação em série do mangá.",
+                        "content": {
+                            "displayText": "まんがの連載。",
+                            "audioText": "まんがの連載。",
+                            "furigana": "",
+                            "romaji": "Manga no rensai.",
+                            "translation": "Publicação em série do mangá.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3762,13 +6378,39 @@ const kanjiN2Data = [
                         "word": "刊行 (kankou)",
                         "wordMeaning": "Lançamento / Publicação de livro",
                         "sentence": "Hon no kankou.",
-                        "sentenceMeaning": "Lançamento do livro."
+                        "sentenceMeaning": "Lançamento do livro.",
+                        "content": {
+                            "displayText": "ほんの刊行。",
+                            "audioText": "ほんの刊行。",
+                            "furigana": "",
+                            "romaji": "Hon no kankou.",
+                            "translation": "Lançamento do livro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "日刊 (nikkan)",
                         "wordMeaning": "Jornal diário",
                         "sentence": "Nikkan shinbun.",
-                        "sentenceMeaning": "Jornal diário."
+                        "sentenceMeaning": "Jornal diário.",
+                        "content": {
+                            "displayText": "日刊しんぶん。",
+                            "audioText": "日刊しんぶん。",
+                            "furigana": "",
+                            "romaji": "Nikkan shinbun.",
+                            "translation": "Jornal diário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3793,13 +6435,39 @@ const kanjiN2Data = [
                         "word": "雑誌 (zasshi)",
                         "wordMeaning": "Revista",
                         "sentence": "Zasshi no editor.",
-                        "sentenceMeaning": "Editor da revista."
+                        "sentenceMeaning": "Editor da revista.",
+                        "content": {
+                            "displayText": "雑誌のえでぃとル。",
+                            "audioText": "雑誌のえでぃとル。",
+                            "furigana": "",
+                            "romaji": "Zasshi no editor.",
+                            "translation": "Editor da revista.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "週刊誌 (shuukanshi)",
                         "wordMeaning": "Revista semanal",
                         "sentence": "Shuukanshi o yomu.",
-                        "sentenceMeaning": "Ler revista semanal."
+                        "sentenceMeaning": "Ler revista semanal.",
+                        "content": {
+                            "displayText": "週刊誌をよむ。",
+                            "audioText": "週刊誌をよむ。",
+                            "furigana": "",
+                            "romaji": "Shuukanshi o yomu.",
+                            "translation": "Ler revista semanal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3824,13 +6492,39 @@ const kanjiN2Data = [
                         "word": "印刷 (insatsu)",
                         "wordMeaning": "Impressão gráfica",
                         "sentence": "Insatsu-jo.",
-                        "sentenceMeaning": "Gráfica de impressão."
+                        "sentenceMeaning": "Gráfica de impressão.",
+                        "content": {
+                            "displayText": "印刷じょ。",
+                            "audioText": "印刷じょ。",
+                            "furigana": "",
+                            "romaji": "Insatsu-jo.",
+                            "translation": "Gráfica de impressão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "初刷 (shosatsu)",
                         "wordMeaning": "Primeira tiragem",
                         "sentence": "Shosatsu 10-man bu.",
-                        "sentenceMeaning": "Primeira tiragem de 100 mil exemplares."
+                        "sentenceMeaning": "Primeira tiragem de 100 mil exemplares.",
+                        "content": {
+                            "displayText": "初刷 10人ぶ。",
+                            "audioText": "初刷 10人ぶ。",
+                            "furigana": "",
+                            "romaji": "Shosatsu 10-man bu.",
+                            "translation": "Primeira tiragem de 100 mil exemplares.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3863,13 +6557,39 @@ const kanjiN2Data = [
                         "word": "講演 (kouen)",
                         "wordMeaning": "Palestra pública / Conferência",
                         "sentence": "Kouen o kiku.",
-                        "sentenceMeaning": "Assistir a uma palestra pública."
+                        "sentenceMeaning": "Assistir a uma palestra pública.",
+                        "content": {
+                            "displayText": "講演をきく。",
+                            "audioText": "講演をきく。",
+                            "furigana": "",
+                            "romaji": "Kouen o kiku.",
+                            "translation": "Assistir a uma palestra pública.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "休講 (kyuukou)",
                         "wordMeaning": "Cancelamento de aula",
                         "sentence": "Kyou wa kyuukou.",
-                        "sentenceMeaning": "Hoje a aula foi cancelada."
+                        "sentenceMeaning": "Hoje a aula foi cancelada.",
+                        "content": {
+                            "displayText": "きょうは休講。",
+                            "audioText": "きょうは休講。",
+                            "furigana": "",
+                            "romaji": "Kyou wa kyuukou.",
+                            "translation": "Hoje a aula foi cancelada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3890,13 +6610,39 @@ const kanjiN2Data = [
                         "word": "演説 (enzetsu)",
                         "wordMeaning": "Discurso político / Pronunciamento",
                         "sentence": "Enzetsu o suru.",
-                        "sentenceMeaning": "Fazer um discurso político."
+                        "sentenceMeaning": "Fazer um discurso político.",
+                        "content": {
+                            "displayText": "演説をする。",
+                            "audioText": "演説をする。",
+                            "furigana": "",
+                            "romaji": "Enzetsu o suru.",
+                            "translation": "Fazer um discurso político.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "演技 (engi)",
                         "wordMeaning": "Atuação / Performance artística",
                         "sentence": "Good engi.",
-                        "sentenceMeaning": "Boa atuação."
+                        "sentenceMeaning": "Boa atuação.",
+                        "content": {
+                            "displayText": "良い演技。",
+                            "audioText": "良い演技。",
+                            "furigana": "",
+                            "romaji": "Good engi.",
+                            "translation": "Boa atuação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3917,13 +6663,39 @@ const kanjiN2Data = [
                         "word": "記述 (kijutsu)",
                         "wordMeaning": "Descrição escrita",
                         "sentence": "Kijutsu shiki test.",
-                        "sentenceMeaning": "Teste de resposta descritiva."
+                        "sentenceMeaning": "Teste de resposta descritiva.",
+                        "content": {
+                            "displayText": "記述しき試験。",
+                            "audioText": "記述しき試験。",
+                            "furigana": "",
+                            "romaji": "Kijutsu shiki test.",
+                            "translation": "Teste de resposta descritiva.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "陳述 (chinjutsu)",
                         "wordMeaning": "Depoimento / Declaração oficial",
                         "sentence": "Opinion no chinjutsu.",
-                        "sentenceMeaning": "Declaração de opinião."
+                        "sentenceMeaning": "Declaração de opinião.",
+                        "content": {
+                            "displayText": "意見の陳述。",
+                            "audioText": "意見の陳述。",
+                            "furigana": "",
+                            "romaji": "Opinion no chinjutsu.",
+                            "translation": "Declaração de opinião.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3948,13 +6720,39 @@ const kanjiN2Data = [
                         "word": "論文 (ronbun)",
                         "wordMeaning": "Tese acadêmica / Artigo científico",
                         "sentence": "Ronbun o kaku.",
-                        "sentenceMeaning": "Escrever uma tese."
+                        "sentenceMeaning": "Escrever uma tese.",
+                        "content": {
+                            "displayText": "論文をかく。",
+                            "audioText": "論文をかく。",
+                            "furigana": "",
+                            "romaji": "Ronbun o kaku.",
+                            "translation": "Escrever uma tese.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "討論 (touron)",
                         "wordMeaning": "Debate / Discussão em painel",
                         "sentence": "Touron-kai.",
-                        "sentenceMeaning": "Painel de debate."
+                        "sentenceMeaning": "Painel de debate.",
+                        "content": {
+                            "displayText": "討論かい。",
+                            "audioText": "討論かい。",
+                            "furigana": "",
+                            "romaji": "Touron-kai.",
+                            "translation": "Painel de debate.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -3975,13 +6773,39 @@ const kanjiN2Data = [
                         "word": "評価 (hyouka)",
                         "wordMeaning": "Avaliação / Apreciação",
                         "sentence": "Hyouka o ukeru.",
-                        "sentenceMeaning": "Receber avaliação."
+                        "sentenceMeaning": "Receber avaliação.",
+                        "content": {
+                            "displayText": "評価をうける。",
+                            "audioText": "評価をうける。",
+                            "furigana": "",
+                            "romaji": "Hyouka o ukeru.",
+                            "translation": "Receber avaliação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "評判 (hyouban)",
                         "wordMeaning": "Reputação / Fama",
                         "sentence": "Good hyouban.",
-                        "sentenceMeaning": "Boa reputação."
+                        "sentenceMeaning": "Boa reputação.",
+                        "content": {
+                            "displayText": "良い評判。",
+                            "audioText": "良い評判。",
+                            "furigana": "",
+                            "romaji": "Good hyouban.",
+                            "translation": "Boa reputação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4006,13 +6830,39 @@ const kanjiN2Data = [
                         "word": "批判 (hihan)",
                         "wordMeaning": "Crítica / Repreensão",
                         "sentence": "Hihan o ukeru.",
-                        "sentenceMeaning": "Receber críticas."
+                        "sentenceMeaning": "Receber críticas.",
+                        "content": {
+                            "displayText": "批判をうける。",
+                            "audioText": "批判をうける。",
+                            "furigana": "",
+                            "romaji": "Hihan o ukeru.",
+                            "translation": "Receber críticas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "批准 (hizun)",
                         "wordMeaning": "Ratificação de tratado",
                         "sentence": "Treaty no hizun.",
-                        "sentenceMeaning": "Ratificação do tratado."
+                        "sentenceMeaning": "Ratificação do tratado.",
+                        "content": {
+                            "displayText": "トれあトイの批准。",
+                            "audioText": "トれあトイの批准。",
+                            "furigana": "",
+                            "romaji": "Treaty no hizun.",
+                            "translation": "Ratificação do tratado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4037,13 +6887,39 @@ const kanjiN2Data = [
                         "word": "執筆 (shippitsu)",
                         "wordMeaning": "Redação de artigos/obras",
                         "sentence": "Kiji no shippitsu.",
-                        "sentenceMeaning": "Redação do artigo."
+                        "sentenceMeaning": "Redação do artigo.",
+                        "content": {
+                            "displayText": "きじの執筆。",
+                            "audioText": "きじの執筆。",
+                            "furigana": "",
+                            "romaji": "Kiji no shippitsu.",
+                            "translation": "Redação do artigo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "執念 (shuunen)",
                         "wordMeaning": "Tenacidade / Obsessão",
                         "sentence": "Shuunen de finish.",
-                        "sentenceMeaning": "Concluir com tenacidade."
+                        "sentenceMeaning": "Concluir com tenacidade.",
+                        "content": {
+                            "displayText": "執念でふぃにスフ。",
+                            "audioText": "執念でふぃにスフ。",
+                            "furigana": "",
+                            "romaji": "Shuunen de finish.",
+                            "translation": "Concluir com tenacidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4064,13 +6940,39 @@ const kanjiN2Data = [
                         "word": "筆者 (hissha)",
                         "wordMeaning": "Autor / Escritor do artigo",
                         "sentence": "Hissha no opinion.",
-                        "sentenceMeaning": "Opinião do autor."
+                        "sentenceMeaning": "Opinião do autor.",
+                        "content": {
+                            "displayText": "筆者の意見。",
+                            "audioText": "筆者の意見。",
+                            "furigana": "",
+                            "romaji": "Hissha no opinion.",
+                            "translation": "Opinião do autor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "鉛筆 (enpitsu)",
                         "wordMeaning": "Lápis",
                         "sentence": "Enpitsu de kaku.",
-                        "sentenceMeaning": "Escrever a lápis."
+                        "sentenceMeaning": "Escrever a lápis.",
+                        "content": {
+                            "displayText": "鉛筆でかく。",
+                            "audioText": "鉛筆でかく。",
+                            "furigana": "",
+                            "romaji": "Enpitsu de kaku.",
+                            "translation": "Escrever a lápis.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4095,13 +6997,39 @@ const kanjiN2Data = [
                         "word": "原稿 (genkou)",
                         "wordMeaning": "Manuscrito original / Rascunho",
                         "sentence": "Genkou youshi.",
-                        "sentenceMeaning": "Papel de manuscrito."
+                        "sentenceMeaning": "Papel de manuscrito.",
+                        "content": {
+                            "displayText": "原稿ようし。",
+                            "audioText": "原稿ようし。",
+                            "furigana": "",
+                            "romaji": "Genkou youshi.",
+                            "translation": "Papel de manuscrito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "寄稿 (kikou)",
                         "wordMeaning": "Contribuição com artigo escrito",
                         "sentence": "Magazine ni kikou.",
-                        "sentenceMeaning": "Contribuir com artigo para a revista."
+                        "sentenceMeaning": "Contribuir com artigo para a revista.",
+                        "content": {
+                            "displayText": "まがズいねに寄稿。",
+                            "audioText": "まがズいねに寄稿。",
+                            "furigana": "",
+                            "romaji": "Magazine ni kikou.",
+                            "translation": "Contribuir com artigo para a revista.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4126,13 +7054,39 @@ const kanjiN2Data = [
                         "word": "翻訳 (honyaku)",
                         "wordMeaning": "Tradução escrita",
                         "sentence": "Hon no honyaku.",
-                        "sentenceMeaning": "Tradução do livro."
+                        "sentenceMeaning": "Tradução do livro.",
+                        "content": {
+                            "displayText": "ほんの翻訳。",
+                            "audioText": "ほんの翻訳。",
+                            "furigana": "",
+                            "romaji": "Hon no honyaku.",
+                            "translation": "Tradução do livro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "通訳 (tsuuyaku)",
                         "wordMeaning": "Intérprete oral",
                         "sentence": "Tsuuyaku-sha.",
-                        "sentenceMeaning": "Intérprete oral."
+                        "sentenceMeaning": "Intérprete oral.",
+                        "content": {
+                            "displayText": "通訳しゃ。",
+                            "audioText": "通訳しゃ。",
+                            "furigana": "",
+                            "romaji": "Tsuuyaku-sha.",
+                            "translation": "Intérprete oral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4153,13 +7107,39 @@ const kanjiN2Data = [
                         "word": "編集 (henshuu)",
                         "wordMeaning": "Edição de jornais/vídeo",
                         "sentence": "Henshuu-bu.",
-                        "sentenceMeaning": "Departamento de redação e edição."
+                        "sentenceMeaning": "Departamento de redação e edição.",
+                        "content": {
+                            "displayText": "編集ぶ。",
+                            "audioText": "編集ぶ。",
+                            "furigana": "",
+                            "romaji": "Henshuu-bu.",
+                            "translation": "Departamento de redação e edição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "長編 (chouhen)",
                         "wordMeaning": "Obra longa / Longa-metragem",
                         "sentence": "Chouhen novel.",
-                        "sentenceMeaning": "Romance longo."
+                        "sentenceMeaning": "Romance longo.",
+                        "content": {
+                            "displayText": "長編のヴえル。",
+                            "audioText": "長編のヴえル。",
+                            "furigana": "",
+                            "romaji": "Chouhen novel.",
+                            "translation": "Romance longo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4184,13 +7164,39 @@ const kanjiN2Data = [
                         "word": "著者 (chosha)",
                         "wordMeaning": "Autor / Escritor de livro",
                         "sentence": "Famous chosha.",
-                        "sentenceMeaning": "Autor famoso."
+                        "sentenceMeaning": "Autor famoso.",
+                        "content": {
+                            "displayText": "ふぁもうス著者。",
+                            "audioText": "ふぁもうス著者。",
+                            "furigana": "",
+                            "romaji": "Famous chosha.",
+                            "translation": "Autor famoso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "著しい (ichijirushii)",
                         "wordMeaning": "Notável / Marcante",
                         "sentence": "Ichijirushii growth.",
-                        "sentenceMeaning": "Crescimento notável."
+                        "sentenceMeaning": "Crescimento notável.",
+                        "content": {
+                            "displayText": "著しいグろウトフ。",
+                            "audioText": "著しいグろウトフ。",
+                            "furigana": "",
+                            "romaji": "Ichijirushii growth.",
+                            "translation": "Crescimento notável.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4215,13 +7221,39 @@ const kanjiN2Data = [
                         "word": "閲覧 (etsuran)",
                         "wordMeaning": "Consulta / Leitura de arquivo",
                         "sentence": "Document no etsuran.",
-                        "sentenceMeaning": "Consulta de documento."
+                        "sentenceMeaning": "Consulta de documento.",
+                        "content": {
+                            "displayText": "どクうめんトの閲覧。",
+                            "audioText": "どクうめんトの閲覧。",
+                            "furigana": "",
+                            "romaji": "Document no etsuran.",
+                            "translation": "Consulta de documento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "展覧会 (tenrankai)",
                         "wordMeaning": "Exposição artística / Mostra",
                         "sentence": "Tenrankai ni iku.",
-                        "sentenceMeaning": "Ir a uma exposição artística."
+                        "sentenceMeaning": "Ir a uma exposição artística.",
+                        "content": {
+                            "displayText": "展覧会にいく。",
+                            "audioText": "展覧会にいく。",
+                            "furigana": "",
+                            "romaji": "Tenrankai ni iku.",
+                            "translation": "Ir a uma exposição artística.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4333,7 +7365,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 7,
@@ -4343,13 +7379,21 @@ const kanjiN2Data = [
             "title": "Expressando Hipótese Científica (~ni mezasu)",
             "explanation": "No N2, introduz-se hipóteses de pesquisas e diretrizes de investigações científicas.",
             "example": "Jikken ni mezasite kenkyuu shimasu.",
-            "translation": "Pesquisamos visando o experimento."
+            "translation": "Pesquisamos visando o experimento.",
+            "content": {
+                "displayText": "じっけんにめざスいてけんきゅうします。",
+                "audioText": "じっけんにめざスいてけんきゅうします。",
+                "furigana": "",
+                "romaji": "Jikken ni mezasite kenkyuu shimasu.",
+                "translation": "Pesquisamos visando o experimento.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "科学技術と分析手法 (Tecnologia Científica e Métodos de Análise)",
             "japanese": "<ruby>研究<rt>けんきゅう</rt></ruby>者が<ruby>仮説<rt>かせつ</rt></ruby>を立て、<ruby>実験<rt>じっけん</rt></ruby>と<ruby>分析<rt>ぶんせき</rt></ruby>を繰り返します。<ruby>概念<rt>がいねん</rt></ruby>を<ruby>検証<rt>けんしょう</rt></ruby>して新しい<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>創出<rt>そうしゅつ</rt></ruby>します。",
-            "romaji": "Kenkyuusha ga kasetu o tate, jikken to bunseki o kurikaeshimasu. Gainen o kenshou shite atarashii gijutsu o soushutsu shimasu.",
-            "translation": "O pesquisador formula hipóteses, repetindo experimentos e análises. Verifica-se os conceitos para criar novas tecnologias.",
+            "romaji": "Kenkyuusha ga kasetsu o tate, jikken to bunseki o kurikaeshimasu. Gainen o kenshou shite atarashii gijutsu o soushutsu shimasu.",
+            "translation": "O pesquisador formula uma hipótese e repete experimentos e análises. Ele examina os conceitos para criar novas tecnologias.",
             "comprehensionQuiz": [
                 {
                     "q": "O que o pesquisador repete na investigação?",
@@ -4385,13 +7429,39 @@ const kanjiN2Data = [
                         "word": "研究 (kenkyuu)",
                         "wordMeaning": "Pesquisa científica",
                         "sentence": "Lab de kenkyuu.",
-                        "sentenceMeaning": "Pesquisa no laboratório."
+                        "sentenceMeaning": "Pesquisa no laboratório.",
+                        "content": {
+                            "displayText": "ルあブで研究。",
+                            "audioText": "ルあブで研究。",
+                            "furigana": "",
+                            "romaji": "Lab de kenkyuu.",
+                            "translation": "Pesquisa no laboratório.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "研修 (kenshuu)",
                         "wordMeaning": "Treinamento / Capacitação",
                         "sentence": "Kenshuu-sei.",
-                        "sentenceMeaning": "Trainee / Estagiário em capacitação."
+                        "sentenceMeaning": "Trainee / Estagiário em capacitação.",
+                        "content": {
+                            "displayText": "研修せい。",
+                            "audioText": "研修せい。",
+                            "furigana": "",
+                            "romaji": "Kenshuu-sei.",
+                            "translation": "Trainee / Estagiário em capacitação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4416,13 +7486,39 @@ const kanjiN2Data = [
                         "word": "究明 (kyuumei)",
                         "wordMeaning": "Investigação da causa",
                         "sentence": "Cause no kyuumei.",
-                        "sentenceMeaning": "Investigação da causa."
+                        "sentenceMeaning": "Investigação da causa.",
+                        "content": {
+                            "displayText": "クあうせの究明。",
+                            "audioText": "クあうせの究明。",
+                            "furigana": "",
+                            "romaji": "Cause no kyuumei.",
+                            "translation": "Investigação da causa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "探究 (tankyuu)",
                         "wordMeaning": "Busca / Pesquisa minuciosa",
                         "sentence": "Truth no tankyuu.",
-                        "sentenceMeaning": "Busca pela verdade."
+                        "sentenceMeaning": "Busca pela verdade.",
+                        "content": {
+                            "displayText": "トるトフの探究。",
+                            "audioText": "トるトフの探究。",
+                            "furigana": "",
+                            "romaji": "Truth no tankyuu.",
+                            "translation": "Busca pela verdade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4447,13 +7543,39 @@ const kanjiN2Data = [
                         "word": "実験 (jikken)",
                         "wordMeaning": "Experimento científico",
                         "sentence": "Jikken o okonao.",
-                        "sentenceMeaning": "Realizar o experimento."
+                        "sentenceMeaning": "Realizar o experimento.",
+                        "content": {
+                            "displayText": "実験をおこなお。",
+                            "audioText": "実験をおこなお。",
+                            "furigana": "",
+                            "romaji": "Jikken o okonao.",
+                            "translation": "Realizar o experimento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "事実 (jijitsu)",
                         "wordMeaning": "Fato real",
                         "sentence": "Jijitsu o report.",
-                        "sentenceMeaning": "Relatar o fato real."
+                        "sentenceMeaning": "Relatar o fato real.",
+                        "content": {
+                            "displayText": "事実を報告書。",
+                            "audioText": "事実を報告書。",
+                            "furigana": "",
+                            "romaji": "Jijitsu o report.",
+                            "translation": "Relatar o fato real.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4478,13 +7600,39 @@ const kanjiN2Data = [
                         "word": "試験 (shiken)",
                         "wordMeaning": "Exame / Prova",
                         "sentence": "Shiken ni pass.",
-                        "sentenceMeaning": "Passar no exame."
+                        "sentenceMeaning": "Passar no exame.",
+                        "content": {
+                            "displayText": "試験にぱっス。",
+                            "audioText": "試験にぱっス。",
+                            "furigana": "",
+                            "romaji": "Shiken ni pass.",
+                            "translation": "Passar no exame.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "体験 (taiken)",
                         "wordMeaning": "Experiência prática",
                         "sentence": "Taiken class.",
-                        "sentenceMeaning": "Aula de experiência prática."
+                        "sentenceMeaning": "Aula de experiência prática.",
+                        "content": {
+                            "displayText": "体験クルあっス。",
+                            "audioText": "体験クルあっス。",
+                            "furigana": "",
+                            "romaji": "Taiken class.",
+                            "translation": "Aula de experiência prática.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4505,13 +7653,39 @@ const kanjiN2Data = [
                         "word": "測定 (sokutei)",
                         "wordMeaning": "Medição / Aferição",
                         "sentence": "Data no sokutei.",
-                        "sentenceMeaning": "Medição de dados."
+                        "sentenceMeaning": "Medição de dados.",
+                        "content": {
+                            "displayText": "データの測定。",
+                            "audioText": "データの測定。",
+                            "furigana": "",
+                            "romaji": "Data no sokutei.",
+                            "translation": "Medição de dados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "予測 (yosoku)",
                         "wordMeaning": "Previsão / Estimativa",
                         "sentence": "Future no yosoku.",
-                        "sentenceMeaning": "Previsão do futuro."
+                        "sentenceMeaning": "Previsão do futuro.",
+                        "content": {
+                            "displayText": "未来の予測。",
+                            "audioText": "未来の予測。",
+                            "furigana": "",
+                            "romaji": "Future no yosoku.",
+                            "translation": "Previsão do futuro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4540,13 +7714,39 @@ const kanjiN2Data = [
                         "word": "試作 (shisaku)",
                         "wordMeaning": "Protótipo / Produção de teste",
                         "sentence": "Car no shisaku.",
-                        "sentenceMeaning": "Protótipo do carro."
+                        "sentenceMeaning": "Protótipo do carro.",
+                        "content": {
+                            "displayText": "クあルの試作。",
+                            "audioText": "クあルの試作。",
+                            "furigana": "",
+                            "romaji": "Car no shisaku.",
+                            "translation": "Protótipo do carro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "試み (kokoromi)",
                         "wordMeaning": "Tentativa / Experiência",
                         "sentence": "Atarashii kokoromi.",
-                        "sentenceMeaning": "Uma nova tentativa."
+                        "sentenceMeaning": "Uma nova tentativa.",
+                        "content": {
+                            "displayText": "あたらしい試み。",
+                            "audioText": "あたらしい試み。",
+                            "furigana": "",
+                            "romaji": "Atarashii kokoromi.",
+                            "translation": "Uma nova tentativa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4571,13 +7771,39 @@ const kanjiN2Data = [
                         "word": "模型 (mokei)",
                         "wordMeaning": "Maquete / Modelo reduzido",
                         "sentence": "Airplane no mokei.",
-                        "sentenceMeaning": "Maquete de avião."
+                        "sentenceMeaning": "Maquete de avião.",
+                        "content": {
+                            "displayText": "あいルプルあねの模型。",
+                            "audioText": "あいルプルあねの模型。",
+                            "furigana": "",
+                            "romaji": "Airplane no mokei.",
+                            "translation": "Maquete de avião.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "模倣 (mohou)",
                         "wordMeaning": "Imitação / Réplica",
                         "sentence": "Design no mohou.",
-                        "sentenceMeaning": "Imitação do design."
+                        "sentenceMeaning": "Imitação do design.",
+                        "content": {
+                            "displayText": "設計の模倣。",
+                            "audioText": "設計の模倣。",
+                            "furigana": "",
+                            "romaji": "Design no mohou.",
+                            "translation": "Imitação do design.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4602,13 +7828,39 @@ const kanjiN2Data = [
                         "word": "疑似 (giji)",
                         "wordMeaning": "Simulado / Pseudo-",
                         "sentence": "Giji experience.",
-                        "sentenceMeaning": "Experiência simulada."
+                        "sentenceMeaning": "Experiência simulada.",
+                        "content": {
+                            "displayText": "擬似体験。",
+                            "audioText": "擬似体験。",
+                            "furigana": "",
+                            "romaji": "Giji experience.",
+                            "translation": "Experiência simulada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "擬音語 (giongo)",
                         "wordMeaning": "Onomatopeia",
                         "sentence": "Giongo no study.",
-                        "sentenceMeaning": "Estudo de onomatopeias."
+                        "sentenceMeaning": "Estudo de onomatopeias.",
+                        "content": {
+                            "displayText": "擬音語の勉強。",
+                            "audioText": "擬音語の勉強。",
+                            "furigana": "",
+                            "romaji": "Giongo no study.",
+                            "translation": "Estudo de onomatopeias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4633,13 +7885,39 @@ const kanjiN2Data = [
                         "word": "範囲 (han'i)",
                         "wordMeaning": "Escopo / Alcance / Limite",
                         "sentence": "Test no han'i.",
-                        "sentenceMeaning": "Escopo da prova."
+                        "sentenceMeaning": "Escopo da prova.",
+                        "content": {
+                            "displayText": "試験の範囲。",
+                            "audioText": "試験の範囲。",
+                            "furigana": "",
+                            "romaji": "Test no han'i.",
+                            "translation": "Escopo da prova.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "模範 (mohan)",
                         "wordMeaning": "Modelo de excelência / Exemplo",
                         "sentence": "Mohan student.",
-                        "sentenceMeaning": "Aluno exemplar."
+                        "sentenceMeaning": "Aluno exemplar.",
+                        "content": {
+                            "displayText": "模範ストうでんト。",
+                            "audioText": "模範ストうでんト。",
+                            "furigana": "",
+                            "romaji": "Mohan student.",
+                            "translation": "Aluno exemplar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4668,13 +7946,39 @@ const kanjiN2Data = [
                         "word": "地域 (chiiki)",
                         "wordMeaning": "Região / Comunidade local",
                         "sentence": "Chiiki no society.",
-                        "sentenceMeaning": "Sociedade regional."
+                        "sentenceMeaning": "Sociedade regional.",
+                        "content": {
+                            "displayText": "地域の社会。",
+                            "audioText": "地域の社会。",
+                            "furigana": "",
+                            "romaji": "Chiiki no society.",
+                            "translation": "Sociedade regional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "領域 (ryouiki)",
                         "wordMeaning": "Domínio / Campo de estudo",
                         "sentence": "Special ryouiki.",
-                        "sentenceMeaning": "Campo de especialização."
+                        "sentenceMeaning": "Campo de especialização.",
+                        "content": {
+                            "displayText": "スぺクいあル領域。",
+                            "audioText": "スぺクいあル領域。",
+                            "furigana": "",
+                            "romaji": "Special ryouiki.",
+                            "translation": "Campo de especialização.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4703,13 +8007,39 @@ const kanjiN2Data = [
                         "word": "概念 (gainen)",
                         "wordMeaning": "Conceito / Ideia abstrata",
                         "sentence": "Gainen no setsumei.",
-                        "sentenceMeaning": "Explicação do conceito."
+                        "sentenceMeaning": "Explicação do conceito.",
+                        "content": {
+                            "displayText": "概念のせつめい。",
+                            "audioText": "概念のせつめい。",
+                            "furigana": "",
+                            "romaji": "Gainen no setsumei.",
+                            "translation": "Explicação do conceito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "概要 (gaiyou)",
                         "wordMeaning": "Resumo geral / Visão geral",
                         "sentence": "Project no gaiyou.",
-                        "sentenceMeaning": "Visão geral do projeto."
+                        "sentenceMeaning": "Visão geral do projeto.",
+                        "content": {
+                            "displayText": "企画の概要。",
+                            "audioText": "企画の概要。",
+                            "furigana": "",
+                            "romaji": "Project no gaiyou.",
+                            "translation": "Visão geral do projeto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4730,13 +8060,39 @@ const kanjiN2Data = [
                         "word": "理念 (rinen)",
                         "wordMeaning": "Filosofia / Princípio orientador",
                         "sentence": "Company no rinen.",
-                        "sentenceMeaning": "Filosofia da empresa."
+                        "sentenceMeaning": "Filosofia da empresa.",
+                        "content": {
+                            "displayText": "会社の理念。",
+                            "audioText": "会社の理念。",
+                            "furigana": "",
+                            "romaji": "Company no rinen.",
+                            "translation": "Filosofia da empresa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "記念 (kinen)",
                         "wordMeaning": "Comemoração / Memória",
                         "sentence": "Kinen-bi.",
-                        "sentenceMeaning": "Dia comemorativo."
+                        "sentenceMeaning": "Dia comemorativo.",
+                        "content": {
+                            "displayText": "記念び。",
+                            "audioText": "記念び。",
+                            "furigana": "",
+                            "romaji": "Kinen-bi.",
+                            "translation": "Dia comemorativo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4761,13 +8117,39 @@ const kanjiN2Data = [
                         "word": "考案 (kouan)",
                         "wordMeaning": "Invenção / Concepção de ideia",
                         "sentence": "Atarashii kouan.",
-                        "sentenceMeaning": "Nova concepção de ideia."
+                        "sentenceMeaning": "Nova concepção de ideia.",
+                        "content": {
+                            "displayText": "あたらしい考案。",
+                            "audioText": "あたらしい考案。",
+                            "furigana": "",
+                            "romaji": "Atarashii kouan.",
+                            "translation": "Nova concepção de ideia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "草案 (souan)",
                         "wordMeaning": "Rascunho do projeto",
                         "sentence": "Draft no souan.",
-                        "sentenceMeaning": "Rascunho do projeto."
+                        "sentenceMeaning": "Rascunho do projeto.",
+                        "content": {
+                            "displayText": "ドらフトの草案。",
+                            "audioText": "ドらフトの草案。",
+                            "furigana": "",
+                            "romaji": "Draft no souan.",
+                            "translation": "Rascunho do projeto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4796,13 +8178,39 @@ const kanjiN2Data = [
                         "word": "分析 (bunseki)",
                         "wordMeaning": "Análise de dados",
                         "sentence": "Data no bunseki.",
-                        "sentenceMeaning": "Análise de dados."
+                        "sentenceMeaning": "Análise de dados.",
+                        "content": {
+                            "displayText": "データの分析。",
+                            "audioText": "データの分析。",
+                            "furigana": "",
+                            "romaji": "Data no bunseki.",
+                            "translation": "Análise de dados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "解析 (kaiseki)",
                         "wordMeaning": "Análise avançada / Diagnóstico",
                         "sentence": "System no kaiseki.",
-                        "sentenceMeaning": "Diagnóstico do sistema."
+                        "sentenceMeaning": "Diagnóstico do sistema.",
+                        "content": {
+                            "displayText": "制度の解析。",
+                            "audioText": "制度の解析。",
+                            "furigana": "",
+                            "romaji": "System no kaiseki.",
+                            "translation": "Diagnóstico do sistema.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4827,13 +8235,39 @@ const kanjiN2Data = [
                         "word": "抽象 (chuushou)",
                         "wordMeaning": "Abstração / Abstrato",
                         "sentence": "Chuushou-teki na art.",
-                        "sentenceMeaning": "Arte abstrata."
+                        "sentenceMeaning": "Arte abstrata.",
+                        "content": {
+                            "displayText": "抽象てきなあルト。",
+                            "audioText": "抽象てきなあルト。",
+                            "furigana": "",
+                            "romaji": "Chuushou-teki na art.",
+                            "translation": "Arte abstrata.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "抽出 (chuushutsu)",
                         "wordMeaning": "Extração / Amostragem",
                         "sentence": "Data no chuushutsu.",
-                        "sentenceMeaning": "Extração de dados."
+                        "sentenceMeaning": "Extração de dados.",
+                        "content": {
+                            "displayText": "データの抽出。",
+                            "audioText": "データの抽出。",
+                            "furigana": "",
+                            "romaji": "Data no chuushutsu.",
+                            "translation": "Extração de dados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4858,13 +8292,39 @@ const kanjiN2Data = [
                         "word": "純粋 (junsui)",
                         "wordMeaning": "Puro / Genuíno / Sem contaminação",
                         "sentence": "Junsui na water.",
-                        "sentenceMeaning": "Água pura."
+                        "sentenceMeaning": "Água pura.",
+                        "content": {
+                            "displayText": "純粋なわてル。",
+                            "audioText": "純粋なわてル。",
+                            "furigana": "",
+                            "romaji": "Junsui na water.",
+                            "translation": "Água pura.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "単純 (tanjun)",
                         "wordMeaning": "Simples / Direto",
                         "sentence": "Tanjun na work.",
-                        "sentenceMeaning": "Trabalho simples."
+                        "sentenceMeaning": "Trabalho simples.",
+                        "content": {
+                            "displayText": "単純な仕事。",
+                            "audioText": "単純な仕事。",
+                            "furigana": "",
+                            "romaji": "Tanjun na work.",
+                            "translation": "Trabalho simples.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4885,13 +8345,39 @@ const kanjiN2Data = [
                         "word": "抜粋 (bassui)",
                         "wordMeaning": "Extrato / Trecho selecionado",
                         "sentence": "Text no bassui.",
-                        "sentenceMeaning": "Extrato do texto."
+                        "sentenceMeaning": "Extrato do texto.",
+                        "content": {
+                            "displayText": "てクストの抜粋。",
+                            "audioText": "てクストの抜粋。",
+                            "furigana": "",
+                            "romaji": "Text no bassui.",
+                            "translation": "Extrato do texto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "純粋 (junsui)",
                         "wordMeaning": "Pureza",
                         "sentence": "Junsui na heart.",
-                        "sentenceMeaning": "Coração puro."
+                        "sentenceMeaning": "Coração puro.",
+                        "content": {
+                            "displayText": "純粋な心。",
+                            "audioText": "純粋な心。",
+                            "furigana": "",
+                            "romaji": "Junsui na heart.",
+                            "translation": "Coração puro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4912,13 +8398,39 @@ const kanjiN2Data = [
                         "word": "技術 (gijutsu)",
                         "wordMeaning": "Tecnologia / Técnica",
                         "sentence": "Latest gijutsu.",
-                        "sentenceMeaning": "Tecnologia de ponta."
+                        "sentenceMeaning": "Tecnologia de ponta.",
+                        "content": {
+                            "displayText": "ルあてスト技術。",
+                            "audioText": "ルあてスト技術。",
+                            "furigana": "",
+                            "romaji": "Latest gijutsu.",
+                            "translation": "Tecnologia de ponta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "手術 (shujutsu)",
                         "wordMeaning": "Cirurgia médica",
                         "sentence": "Hospital de shujutsu.",
-                        "sentenceMeaning": "Cirurgia no hospital."
+                        "sentenceMeaning": "Cirurgia no hospital.",
+                        "content": {
+                            "displayText": "ほスぴたルで手術。",
+                            "audioText": "ほスぴたルで手術。",
+                            "furigana": "",
+                            "romaji": "Hospital de shujutsu.",
+                            "translation": "Cirurgia no hospital.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -4943,13 +8455,39 @@ const kanjiN2Data = [
                         "word": "創造 (souzou)",
                         "wordMeaning": "Criação de tecnologia",
                         "sentence": "Atarashii souzou.",
-                        "sentenceMeaning": "Nova criação tecnológica."
+                        "sentenceMeaning": "Nova criação tecnológica.",
+                        "content": {
+                            "displayText": "あたらしい創造。",
+                            "audioText": "あたらしい創造。",
+                            "furigana": "",
+                            "romaji": "Atarashii souzou.",
+                            "translation": "Nova criação tecnológica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "独創 (dokusou)",
                         "wordMeaning": "Originalidade científica",
                         "sentence": "Dokusou-teki na research.",
-                        "sentenceMeaning": "Pesquisa científica original."
+                        "sentenceMeaning": "Pesquisa científica original.",
+                        "content": {
+                            "displayText": "独創てきな研究。",
+                            "audioText": "独創てきな研究。",
+                            "furigana": "",
+                            "romaji": "Dokusou-teki na research.",
+                            "translation": "Pesquisa científica original.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5069,7 +8607,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 8,
@@ -5079,7 +8621,15 @@ const kanjiN2Data = [
             "title": "Expressando Sintomas Médicos (~ni oyobu)",
             "explanation": "No N2, descreve-se a extensão e alcance de sintomas patológicos no corpo humano.",
             "example": "Shintou ga zenshin ni oyobimasu.",
-            "translation": "A dor se estende por todo o corpo."
+            "translation": "A dor se estende por todo o corpo.",
+            "content": {
+                "displayText": "しんとうがぜんしんにおよびます。",
+                "audioText": "しんとうがぜんしんにおよびます。",
+                "furigana": "",
+                "romaji": "Shintou ga zenshin ni oyobimasu.",
+                "translation": "A dor se estende por todo o corpo.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "最新の医療と疾病予防 (Medicina Moderna e Prevenção de Doenças)",
@@ -5121,13 +8671,39 @@ const kanjiN2Data = [
                         "word": "治療 (chiryou)",
                         "wordMeaning": "Tratamento médico / Cura",
                         "sentence": "Byouin de chiryou.",
-                        "sentenceMeaning": "Tratamento no hospital."
+                        "sentenceMeaning": "Tratamento no hospital.",
+                        "content": {
+                            "displayText": "びょういんで治療。",
+                            "audioText": "びょういんで治療。",
+                            "furigana": "",
+                            "romaji": "Byouin de chiryou.",
+                            "translation": "Tratamento no hospital.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "完治 (kanchi)",
                         "wordMeaning": "Cura completa / Recuperação total",
                         "sentence": "Disease no kanchi.",
-                        "sentenceMeaning": "Cura completa da doença."
+                        "sentenceMeaning": "Cura completa da doença.",
+                        "content": {
+                            "displayText": "でぃせあせの完治。",
+                            "audioText": "でぃせあせの完治。",
+                            "furigana": "",
+                            "romaji": "Disease no kanchi.",
+                            "translation": "Cura completa da doença.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5152,13 +8728,39 @@ const kanjiN2Data = [
                         "word": "医療 (iryou)",
                         "wordMeaning": "Cuidados médicos / Medicina",
                         "sentence": "Iryou system.",
-                        "sentenceMeaning": "Sistema de cuidados médicos."
+                        "sentenceMeaning": "Sistema de cuidados médicos.",
+                        "content": {
+                            "displayText": "医療制度。",
+                            "audioText": "医療制度。",
+                            "furigana": "",
+                            "romaji": "Iryou system.",
+                            "translation": "Sistema de cuidados médicos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "療養 (ryouyou)",
                         "wordMeaning": "Recuperação / Convalescença",
                         "sentence": "Home de ryouyou.",
-                        "sentenceMeaning": "Convalescença em casa."
+                        "sentenceMeaning": "Convalescença em casa.",
+                        "content": {
+                            "displayText": "ほめで療養。",
+                            "audioText": "ほめで療養。",
+                            "furigana": "",
+                            "romaji": "Home de ryouyou.",
+                            "translation": "Convalescença em casa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5179,13 +8781,39 @@ const kanjiN2Data = [
                         "word": "患者 (kanja)",
                         "wordMeaning": "Paciente / Enfermo",
                         "sentence": "Kanja no care.",
-                        "sentenceMeaning": "Cuidado ao paciente."
+                        "sentenceMeaning": "Cuidado ao paciente.",
+                        "content": {
+                            "displayText": "患者の手当て。",
+                            "audioText": "患者の手当て。",
+                            "furigana": "",
+                            "romaji": "Kanja no care.",
+                            "translation": "Cuidado ao paciente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "患部 (kanbu)",
                         "wordMeaning": "Região afetada / Parte doente",
                         "sentence": "Kanbu o sterilize.",
-                        "sentenceMeaning": "Esterilizar a região afetada."
+                        "sentenceMeaning": "Esterilizar a região afetada.",
+                        "content": {
+                            "displayText": "患部をスてりルいぜ。",
+                            "audioText": "患部をスてりルいぜ。",
+                            "furigana": "",
+                            "romaji": "Kanbu o sterilize.",
+                            "translation": "Esterilizar a região afetada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5206,13 +8834,39 @@ const kanjiN2Data = [
                         "word": "診察 (shinsatsu)",
                         "wordMeaning": "Exame médico / Consulta",
                         "sentence": "Doctor no shinsatsu.",
-                        "sentenceMeaning": "Consulta do médico."
+                        "sentenceMeaning": "Consulta do médico.",
+                        "content": {
+                            "displayText": "どクとルの診察。",
+                            "audioText": "どクとルの診察。",
+                            "furigana": "",
+                            "romaji": "Doctor no shinsatsu.",
+                            "translation": "Consulta do médico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "診断 (shindan)",
                         "wordMeaning": "Diagnóstico médico",
                         "sentence": "Shindan-sho.",
-                        "sentenceMeaning": "Atestado de diagnóstico."
+                        "sentenceMeaning": "Atestado de diagnóstico.",
+                        "content": {
+                            "displayText": "診断しょ。",
+                            "audioText": "診断しょ。",
+                            "furigana": "",
+                            "romaji": "Shindan-sho.",
+                            "translation": "Atestado de diagnóstico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5241,13 +8895,39 @@ const kanjiN2Data = [
                         "word": "免疫 (men'eki)",
                         "wordMeaning": "Imunidade do organismo",
                         "sentence": "Men'eki o agaru.",
-                        "sentenceMeaning": "Aumentar a imunidade."
+                        "sentenceMeaning": "Aumentar a imunidade.",
+                        "content": {
+                            "displayText": "免疫をあがる。",
+                            "audioText": "免疫をあがる。",
+                            "furigana": "",
+                            "romaji": "Men'eki o agaru.",
+                            "translation": "Aumentar a imunidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "防疫 (boueki)",
                         "wordMeaning": "Prevenção de epidemias",
                         "sentence": "Boueki taisaku.",
-                        "sentenceMeaning": "Medida de prevenção de epidemias."
+                        "sentenceMeaning": "Medida de prevenção de epidemias.",
+                        "content": {
+                            "displayText": "防疫たいさく。",
+                            "audioText": "防疫たいさく。",
+                            "furigana": "",
+                            "romaji": "Boueki taisaku.",
+                            "translation": "Medida de prevenção de epidemias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5272,13 +8952,39 @@ const kanjiN2Data = [
                         "word": "症状 (shoujou)",
                         "wordMeaning": "Sintomas da doença",
                         "sentence": "Shoujou o check.",
-                        "sentenceMeaning": "Verificar os sintomas."
+                        "sentenceMeaning": "Verificar os sintomas.",
+                        "content": {
+                            "displayText": "症状をちぇクク。",
+                            "audioText": "症状をちぇクク。",
+                            "furigana": "",
+                            "romaji": "Shoujou o check.",
+                            "translation": "Verificar os sintomas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "重症 (juushou)",
                         "wordMeaning": "Estado grave da doença",
                         "sentence": "Juushou kanja.",
-                        "sentenceMeaning": "Paciente em estado grave."
+                        "sentenceMeaning": "Paciente em estado grave.",
+                        "content": {
+                            "displayText": "重症かんじゃ。",
+                            "audioText": "重症かんじゃ。",
+                            "furigana": "",
+                            "romaji": "Juushou kanja.",
+                            "translation": "Paciente em estado grave.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5307,13 +9013,39 @@ const kanjiN2Data = [
                         "word": "疾患 (shikkan)",
                         "wordMeaning": "Doença / Enfermidade",
                         "sentence": "Heart no shikkan.",
-                        "sentenceMeaning": "Doença cardíaca."
+                        "sentenceMeaning": "Doença cardíaca.",
+                        "content": {
+                            "displayText": "心の疾患。",
+                            "audioText": "心の疾患。",
+                            "furigana": "",
+                            "romaji": "Heart no shikkan.",
+                            "translation": "Doença cardíaca.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "疾走 (shissou)",
                         "wordMeaning": "Corrida veloz",
                         "sentence": "Shissou suru.",
-                        "sentenceMeaning": "Correr velozmente."
+                        "sentenceMeaning": "Correr velozmente.",
+                        "content": {
+                            "displayText": "疾走する。",
+                            "audioText": "疾走する。",
+                            "furigana": "",
+                            "romaji": "Shissou suru.",
+                            "translation": "Correr velozmente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5334,13 +9066,39 @@ const kanjiN2Data = [
                         "word": "頭痛 (zutsuu)",
                         "wordMeaning": "Dor de cabeça",
                         "sentence": "Zutsuu ga suru.",
-                        "sentenceMeaning": "Estar com dor de cabeça."
+                        "sentenceMeaning": "Estar com dor de cabeça.",
+                        "content": {
+                            "displayText": "頭痛がする。",
+                            "audioText": "頭痛がする。",
+                            "furigana": "",
+                            "romaji": "Zutsuu ga suru.",
+                            "translation": "Estar com dor de cabeça.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "鎮痛 (chintsuu)",
                         "wordMeaning": "Alívio da dor / Analgésico",
                         "sentence": "Chintsuu-zai.",
-                        "sentenceMeaning": "Remédio analgésico."
+                        "sentenceMeaning": "Remédio analgésico.",
+                        "content": {
+                            "displayText": "鎮痛ざい。",
+                            "audioText": "鎮痛ざい。",
+                            "furigana": "",
+                            "romaji": "Chintsuu-zai.",
+                            "translation": "Remédio analgésico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5369,13 +9127,39 @@ const kanjiN2Data = [
                         "word": "負傷 (fushou)",
                         "wordMeaning": "Ferimento / Lesão física",
                         "sentence": "Fushou-sha.",
-                        "sentenceMeaning": "Pessoa ferida."
+                        "sentenceMeaning": "Pessoa ferida.",
+                        "content": {
+                            "displayText": "負傷しゃ。",
+                            "audioText": "負傷しゃ。",
+                            "furigana": "",
+                            "romaji": "Fushou-sha.",
+                            "translation": "Pessoa ferida.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "重傷 (juushou)",
                         "wordMeaning": "Ferimento grave",
                         "sentence": "Juushou o oikakeru.",
-                        "sentenceMeaning": "Sofrer ferimento grave."
+                        "sentenceMeaning": "Sofrer ferimento grave.",
+                        "content": {
+                            "displayText": "重傷をおいかける。",
+                            "audioText": "重傷をおいかける。",
+                            "furigana": "",
+                            "romaji": "Juushou o oikakeru.",
+                            "translation": "Sofrer ferimento grave.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5400,13 +9184,39 @@ const kanjiN2Data = [
                         "word": "吐き気 (hakike)",
                         "wordMeaning": "Nausea / Vontade de vomitar",
                         "sentence": "Hakike ga suru.",
-                        "sentenceMeaning": "Sentir náuseas."
+                        "sentenceMeaning": "Sentir náuseas.",
+                        "content": {
+                            "displayText": "吐き気がする。",
+                            "audioText": "吐き気がする。",
+                            "furigana": "",
+                            "romaji": "Hakike ga suru.",
+                            "translation": "Sentir náuseas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "嘔吐 (outo)",
                         "wordMeaning": "Vômito",
                         "sentence": "Outo suru.",
-                        "sentenceMeaning": "Vomitar."
+                        "sentenceMeaning": "Vomitar.",
+                        "content": {
+                            "displayText": "嘔吐する。",
+                            "audioText": "嘔吐する。",
+                            "furigana": "",
+                            "romaji": "Outo suru.",
+                            "translation": "Vomitar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5431,13 +9241,39 @@ const kanjiN2Data = [
                         "word": "脈拍 (myakuhaku)",
                         "wordMeaning": "Pulsação cardíaca",
                         "sentence": "Myakuhaku o sokutei.",
-                        "sentenceMeaning": "Medir a pulsação."
+                        "sentenceMeaning": "Medir a pulsação.",
+                        "content": {
+                            "displayText": "脈拍をそくてい。",
+                            "audioText": "脈拍をそくてい。",
+                            "furigana": "",
+                            "romaji": "Myakuhaku o sokutei.",
+                            "translation": "Medir a pulsação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "動脈 (doumyaku)",
                         "wordMeaning": "Artéria",
                         "sentence": "Doumyaku kouka.",
-                        "sentenceMeaning": "Arteriosclerose."
+                        "sentenceMeaning": "Arteriosclerose.",
+                        "content": {
+                            "displayText": "動脈こうか。",
+                            "audioText": "動脈こうか。",
+                            "furigana": "",
+                            "romaji": "Doumyaku kouka.",
+                            "translation": "Arteriosclerose.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5462,13 +9298,39 @@ const kanjiN2Data = [
                         "word": "胃腸 (ichou)",
                         "wordMeaning": "Estômago e intestinos",
                         "sentence": "Ichou-yaku.",
-                        "sentenceMeaning": "Remédio para o estômago e intestinos."
+                        "sentenceMeaning": "Remédio para o estômago e intestinos.",
+                        "content": {
+                            "displayText": "胃腸やく。",
+                            "audioText": "胃腸やく。",
+                            "furigana": "",
+                            "romaji": "Ichou-yaku.",
+                            "translation": "Remédio para o estômago e intestinos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "大腸 (daichou)",
                         "wordMeaning": "Intestino grosso",
                         "sentence": "Daichou kensa.",
-                        "sentenceMeaning": "Exame do intestino grosso."
+                        "sentenceMeaning": "Exame do intestino grosso.",
+                        "content": {
+                            "displayText": "大腸けんさ。",
+                            "audioText": "大腸けんさ。",
+                            "furigana": "",
+                            "romaji": "Daichou kensa.",
+                            "translation": "Exame do intestino grosso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5489,13 +9351,39 @@ const kanjiN2Data = [
                         "word": "胃炎 (ien)",
                         "wordMeaning": "Gastrite / Inflamação no estômago",
                         "sentence": "Ien no kensa.",
-                        "sentenceMeaning": "Exame de gastrite."
+                        "sentenceMeaning": "Exame de gastrite.",
+                        "content": {
+                            "displayText": "胃炎のけんさ。",
+                            "audioText": "胃炎のけんさ。",
+                            "furigana": "",
+                            "romaji": "Ien no kensa.",
+                            "translation": "Exame de gastrite.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "胃病 (ibyou)",
                         "wordMeaning": "Enfermidade gástrica",
                         "sentence": "Ibyou ni nayamu.",
-                        "sentenceMeaning": "Sofrer de enfermidade gástrica."
+                        "sentenceMeaning": "Sofrer de enfermidade gástrica.",
+                        "content": {
+                            "displayText": "胃病になやむ。",
+                            "audioText": "胃病になやむ。",
+                            "furigana": "",
+                            "romaji": "Ibyou ni nayamu.",
+                            "translation": "Sofrer de enfermidade gástrica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5516,13 +9404,39 @@ const kanjiN2Data = [
                         "word": "内臓 (naizou)",
                         "wordMeaning": "Órgãos internos",
                         "sentence": "Naizou no kensa.",
-                        "sentenceMeaning": "Exame dos órgãos internos."
+                        "sentenceMeaning": "Exame dos órgãos internos.",
+                        "content": {
+                            "displayText": "内臓のけんさ。",
+                            "audioText": "内臓のけんさ。",
+                            "furigana": "",
+                            "romaji": "Naizou no kensa.",
+                            "translation": "Exame dos órgãos internos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "心臓 (shinzou)",
                         "wordMeaning": "Coração (órgão)",
                         "sentence": "Shinzou no beat.",
-                        "sentenceMeaning": "Batimento do coração."
+                        "sentenceMeaning": "Batimento do coração.",
+                        "content": {
+                            "displayText": "心臓のべあト。",
+                            "audioText": "心臓のべあト。",
+                            "furigana": "",
+                            "romaji": "Shinzou no beat.",
+                            "translation": "Batimento do coração.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5547,13 +9461,39 @@ const kanjiN2Data = [
                         "word": "落胆 (rakutan)",
                         "wordMeaning": "Desapontamento / Desânimo",
                         "sentence": "Rakutan suru.",
-                        "sentenceMeaning": "Ficar desapontado."
+                        "sentenceMeaning": "Ficar desapontado.",
+                        "content": {
+                            "displayText": "落胆する。",
+                            "audioText": "落胆する。",
+                            "furigana": "",
+                            "romaji": "Rakutan suru.",
+                            "translation": "Ficar desapontado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "大胆 (daitan)",
                         "wordMeaning": "Audacioso / Ousado",
                         "sentence": "Daitan na plan.",
-                        "sentenceMeaning": "Plano audacioso."
+                        "sentenceMeaning": "Plano audacioso.",
+                        "content": {
+                            "displayText": "大胆な計画。",
+                            "audioText": "大胆な計画。",
+                            "furigana": "",
+                            "romaji": "Daitan na plan.",
+                            "translation": "Plano audacioso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5582,13 +9522,39 @@ const kanjiN2Data = [
                         "word": "骨折 (kossetsu)",
                         "wordMeaning": "Fratura óssea",
                         "sentence": "Bone no kossetsu.",
-                        "sentenceMeaning": "Fratura no osso."
+                        "sentenceMeaning": "Fratura no osso.",
+                        "content": {
+                            "displayText": "ぼねの骨折。",
+                            "audioText": "ぼねの骨折。",
+                            "furigana": "",
+                            "romaji": "Bone no kossetsu.",
+                            "translation": "Fratura no osso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "骨格 (kokkaku)",
                         "wordMeaning": "Esqueleto / Estrutura óssea",
                         "sentence": "Body no kokkaku.",
-                        "sentenceMeaning": "Estrutura óssea do corpo."
+                        "sentenceMeaning": "Estrutura óssea do corpo.",
+                        "content": {
+                            "displayText": "ぼドイの骨格。",
+                            "audioText": "ぼドイの骨格。",
+                            "furigana": "",
+                            "romaji": "Body no kokkaku.",
+                            "translation": "Estrutura óssea do corpo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5609,13 +9575,39 @@ const kanjiN2Data = [
                         "word": "洗脳 (sennou)",
                         "wordMeaning": "Lavagem cerebral",
                         "sentence": "Sennou o防ぐ.",
-                        "sentenceMeaning": "Evitar a lavagem cerebral."
+                        "sentenceMeaning": "Evitar a lavagem cerebral.",
+                        "content": {
+                            "displayText": "洗脳を防ぐ。",
+                            "audioText": "洗脳を防ぐ。",
+                            "furigana": "",
+                            "romaji": "Sennou o防ぐ.",
+                            "translation": "Evitar a lavagem cerebral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "首脳 (shunou)",
                         "wordMeaning": "Líderes de Estado / Cúpula",
                         "sentence": "Shunou kaidan.",
-                        "sentenceMeaning": "Reunião de cúpula de líderes."
+                        "sentenceMeaning": "Reunião de cúpula de líderes.",
+                        "content": {
+                            "displayText": "首脳かいだん。",
+                            "audioText": "首脳かいだん。",
+                            "furigana": "",
+                            "romaji": "Shunou kaidan.",
+                            "translation": "Reunião de cúpula de líderes.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5640,13 +9632,39 @@ const kanjiN2Data = [
                         "word": "筋肉 (kinniku)",
                         "wordMeaning": "Músculo / Musculatura",
                         "sentence": "Kinniku o鍛える.",
-                        "sentenceMeaning": "Treinar a musculatura."
+                        "sentenceMeaning": "Treinar a musculatura.",
+                        "content": {
+                            "displayText": "筋肉を鍛える。",
+                            "audioText": "筋肉を鍛える。",
+                            "furigana": "",
+                            "romaji": "Kinniku o鍛える.",
+                            "translation": "Treinar a musculatura.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "筋道 (sujimichi)",
                         "wordMeaning": "Lógica / Sequência coerente",
                         "sentence": "Sujimichi o tateru.",
-                        "sentenceMeaning": "Montar um raciocínio lógico."
+                        "sentenceMeaning": "Montar um raciocínio lógico.",
+                        "content": {
+                            "displayText": "筋道をたてる。",
+                            "audioText": "筋道をたてる。",
+                            "furigana": "",
+                            "romaji": "Sujimichi o tateru.",
+                            "translation": "Montar um raciocínio lógico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5675,13 +9693,39 @@ const kanjiN2Data = [
                         "word": "消毒 (shoudoku)",
                         "wordMeaning": "Desinfecção / Esterilização",
                         "sentence": "Hand no shoudoku.",
-                        "sentenceMeaning": "Desinfecção das mãos."
+                        "sentenceMeaning": "Desinfecção das mãos.",
+                        "content": {
+                            "displayText": "はんドの消毒。",
+                            "audioText": "はんドの消毒。",
+                            "furigana": "",
+                            "romaji": "Hand no shoudoku.",
+                            "translation": "Desinfecção das mãos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "中毒 (chuudoku)",
                         "wordMeaning": "Intoxicação / Vício",
                         "sentence": "Food chuudoku.",
-                        "sentenceMeaning": "Intoxicação alimentar."
+                        "sentenceMeaning": "Intoxicação alimentar.",
+                        "content": {
+                            "displayText": "食べ物中毒。",
+                            "audioText": "食べ物中毒。",
+                            "furigana": "",
+                            "romaji": "Food chuudoku.",
+                            "translation": "Intoxicação alimentar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5797,7 +9841,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 9,
@@ -5807,7 +9855,15 @@ const kanjiN2Data = [
             "title": "Expressando Prevenção de Desastres (~ni備えて)",
             "explanation": "No N2, indica-se preparação de infraestrutura e suprimentos em antecipação a catástrofes.",
             "example": "Jishin ni sonaete bousai kunren o shimasu.",
-            "translation": "Treinamos prevenção preparando-nos para terremotos."
+            "translation": "Treinamos prevenção preparando-nos para terremotos.",
+            "content": {
+                "displayText": "じしんにそなえてぼうさいくんれんをします。",
+                "audioText": "じしんにそなえてぼうさいくんれんをします。",
+                "furigana": "",
+                "romaji": "Jishin ni sonaete bousai kunren o shimasu.",
+                "translation": "Treinamos prevenção preparando-nos para terremotos.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "地球環境の保護と自然災害 (Proteção do Meio Ambiente Global e Desastres)",
@@ -5849,13 +9905,39 @@ const kanjiN2Data = [
                         "word": "環境 (kankyou)",
                         "wordMeaning": "Meio ambiente",
                         "sentence": "Kankyou protection.",
-                        "sentenceMeaning": "Proteção ambiental."
+                        "sentenceMeaning": "Proteção ambiental.",
+                        "content": {
+                            "displayText": "環境プろてクてぃおん。",
+                            "audioText": "環境プろてクてぃおん。",
+                            "furigana": "",
+                            "romaji": "Kankyou protection.",
+                            "translation": "Proteção ambiental.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "循環 (junkan)",
                         "wordMeaning": "Circulação / Ciclo contínuo",
                         "sentence": "Blood no junkan.",
-                        "sentenceMeaning": "Circulação sanguínea."
+                        "sentenceMeaning": "Circulação sanguínea.",
+                        "content": {
+                            "displayText": "ブルおおドの循環。",
+                            "audioText": "ブルおおドの循環。",
+                            "furigana": "",
+                            "romaji": "Blood no junkan.",
+                            "translation": "Circulação sanguínea.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5880,13 +9962,39 @@ const kanjiN2Data = [
                         "word": "国境 (kokkyou)",
                         "wordMeaning": "Fronteira nacional",
                         "sentence": "Kokkyou o cross.",
-                        "sentenceMeaning": "Cruzar a fronteira nacional."
+                        "sentenceMeaning": "Cruzar a fronteira nacional.",
+                        "content": {
+                            "displayText": "国境をクろっス。",
+                            "audioText": "国境をクろっス。",
+                            "furigana": "",
+                            "romaji": "Kokkyou o cross.",
+                            "translation": "Cruzar a fronteira nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "心境 (shinkyou)",
                         "wordMeaning": "Estado de espírito",
                         "sentence": "Shinkyou no change.",
-                        "sentenceMeaning": "Mudança no estado de espírito."
+                        "sentenceMeaning": "Mudança no estado de espírito.",
+                        "content": {
+                            "displayText": "心境のちゃんげ。",
+                            "audioText": "心境のちゃんげ。",
+                            "furigana": "",
+                            "romaji": "Shinkyou no change.",
+                            "translation": "Mudança no estado de espírito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5915,13 +10023,39 @@ const kanjiN2Data = [
                         "word": "保存 (hozon)",
                         "wordMeaning": "Preservação / Conservação",
                         "sentence": "Food no hozon.",
-                        "sentenceMeaning": "Conservação de alimentos."
+                        "sentenceMeaning": "Conservação de alimentos.",
+                        "content": {
+                            "displayText": "食べ物の保存。",
+                            "audioText": "食べ物の保存。",
+                            "furigana": "",
+                            "romaji": "Food no hozon.",
+                            "translation": "Conservação de alimentos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "保持 (hoji)",
                         "wordMeaning": "Manutenção / Retenção de posse",
                         "sentence": "Record no hoji.",
-                        "sentenceMeaning": "Manutenção do recorde."
+                        "sentenceMeaning": "Manutenção do recorde.",
+                        "content": {
+                            "displayText": "れクおルドの保持。",
+                            "audioText": "れクおルドの保持。",
+                            "furigana": "",
+                            "romaji": "Record no hoji.",
+                            "translation": "Manutenção do recorde.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5942,13 +10076,39 @@ const kanjiN2Data = [
                         "word": "保護 (hogo)",
                         "wordMeaning": "Proteção / Preservação",
                         "sentence": "Nature no hogo.",
-                        "sentenceMeaning": "Proteção da natureza."
+                        "sentenceMeaning": "Proteção da natureza.",
+                        "content": {
+                            "displayText": "自然の保護。",
+                            "audioText": "自然の保護。",
+                            "furigana": "",
+                            "romaji": "Nature no hogo.",
+                            "translation": "Proteção da natureza.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "看護 (kango)",
                         "wordMeaning": "Enfermagem / Cuidados de saúde",
                         "sentence": "Kango-shi.",
-                        "sentenceMeaning": "Enfermeiro(a)."
+                        "sentenceMeaning": "Enfermeiro(a).",
+                        "content": {
+                            "displayText": "看護し。",
+                            "audioText": "看護し。",
+                            "furigana": "",
+                            "romaji": "Kango-shi.",
+                            "translation": "Enfermeiro(a).",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -5981,13 +10141,39 @@ const kanjiN2Data = [
                         "word": "地震 (jishin)",
                         "wordMeaning": "Terremoto",
                         "sentence": "Jishin ga okiru.",
-                        "sentenceMeaning": "Ocorrer um terremoto."
+                        "sentenceMeaning": "Ocorrer um terremoto.",
+                        "content": {
+                            "displayText": "地震がおきる。",
+                            "audioText": "地震がおきる。",
+                            "furigana": "",
+                            "romaji": "Jishin ga okiru.",
+                            "translation": "Ocorrer um terremoto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "震度 (shindo)",
                         "wordMeaning": "Escala de intensidade sísmica",
                         "sentence": "Shindo 5.",
-                        "sentenceMeaning": "Intensidade sísmica de grau 5."
+                        "sentenceMeaning": "Intensidade sísmica de grau 5.",
+                        "content": {
+                            "displayText": "震度 5。",
+                            "audioText": "震度 5。",
+                            "furigana": "",
+                            "romaji": "Shindo 5.",
+                            "translation": "Intensidade sísmica de grau 5.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6012,13 +10198,39 @@ const kanjiN2Data = [
                         "word": "暴風 (boufuu)",
                         "wordMeaning": "Vento tempestuoso / Vendaval",
                         "sentence": "Boufuu u警報.",
-                        "sentenceMeaning": "Alerta de vendaval."
+                        "sentenceMeaning": "Alerta de vendaval.",
+                        "content": {
+                            "displayText": "暴風う警報。",
+                            "audioText": "暴風う警報。",
+                            "furigana": "",
+                            "romaji": "Boufuu u警報.",
+                            "translation": "Alerta de vendaval.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "暴露 (bakuro)",
                         "wordMeaning": "Revelação / Exposição pública",
                         "sentence": "Secret no bakuro.",
-                        "sentenceMeaning": "Revelação do segredo."
+                        "sentenceMeaning": "Revelação do segredo.",
+                        "content": {
+                            "displayText": "せクれトの暴露。",
+                            "audioText": "せクれトの暴露。",
+                            "furigana": "",
+                            "romaji": "Secret no bakuro.",
+                            "translation": "Revelação do segredo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6047,13 +10259,39 @@ const kanjiN2Data = [
                         "word": "崩壊 (houkai)",
                         "wordMeaning": "Colapso / Desmoronamento",
                         "sentence": "Tatemono no houkai.",
-                        "sentenceMeaning": "Colapso do prédio."
+                        "sentenceMeaning": "Colapso do prédio.",
+                        "content": {
+                            "displayText": "たてものの崩壊。",
+                            "audioText": "たてものの崩壊。",
+                            "furigana": "",
+                            "romaji": "Tatemono no houkai.",
+                            "translation": "Colapso do prédio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "土砂崩れ (doshakuzure)",
                         "wordMeaning": "Deslizamento de terra e rocha",
                         "sentence": "Doshakuzure ga okiru.",
-                        "sentenceMeaning": "Ocorrer deslizamento de terra."
+                        "sentenceMeaning": "Ocorrer deslizamento de terra.",
+                        "content": {
+                            "displayText": "土砂崩れがおきる。",
+                            "audioText": "土砂崩れがおきる。",
+                            "furigana": "",
+                            "romaji": "Doshakuzure ga okiru.",
+                            "translation": "Ocorrer deslizamento de terra.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6078,13 +10316,39 @@ const kanjiN2Data = [
                         "word": "津波 (tsunami)",
                         "wordMeaning": "Tsunami / Onda gigante sísmica",
                         "sentence": "Tsunami warning.",
-                        "sentenceMeaning": "Alerta de tsunami."
+                        "sentenceMeaning": "Alerta de tsunami.",
+                        "content": {
+                            "displayText": "津波わルにんグ。",
+                            "audioText": "津波わルにんグ。",
+                            "furigana": "",
+                            "romaji": "Tsunami warning.",
+                            "translation": "Alerta de tsunami.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "津々浦々 (tsutsuraura)",
                         "wordMeaning": "Por todos os cantos do país",
                         "sentence": "Zenkoku tsutsuraura.",
-                        "sentenceMeaning": "Por todos os cantos do país."
+                        "sentenceMeaning": "Por todos os cantos do país.",
+                        "content": {
+                            "displayText": "ぜんこく津々浦々。",
+                            "audioText": "ぜんこく津々浦々。",
+                            "furigana": "",
+                            "romaji": "Zenkoku tsutsuraura.",
+                            "translation": "Por todos os cantos do país.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6113,13 +10377,39 @@ const kanjiN2Data = [
                         "word": "波浪 (harou)",
                         "wordMeaning": "Ondas altas / Agitação marítima",
                         "sentence": "Harou keiho.",
-                        "sentenceMeaning": "Alerta de ondas altas."
+                        "sentenceMeaning": "Alerta de ondas altas.",
+                        "content": {
+                            "displayText": "波浪けいほ。",
+                            "audioText": "波浪けいほ。",
+                            "furigana": "",
+                            "romaji": "Harou keiho.",
+                            "translation": "Alerta de ondas altas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "電波 (denpa)",
                         "wordMeaning": "Ondas eletromagnéticas / Sinal",
                         "sentence": "Denpa ga tsuyoi.",
-                        "sentenceMeaning": "O sinal de celular está forte."
+                        "sentenceMeaning": "O sinal de celular está forte.",
+                        "content": {
+                            "displayText": "電波がつよい。",
+                            "audioText": "電波がつよい。",
+                            "furigana": "",
+                            "romaji": "Denpa ga tsuyoi.",
+                            "translation": "O sinal de celular está forte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6144,13 +10434,39 @@ const kanjiN2Data = [
                         "word": "洪水 (kouzui)",
                         "wordMeaning": "Inundação / Enchente",
                         "sentence": "Kouzui no damage.",
-                        "sentenceMeaning": "Danos de inundação."
+                        "sentenceMeaning": "Danos de inundação.",
+                        "content": {
+                            "displayText": "洪水のだまげ。",
+                            "audioText": "洪水のだまげ。",
+                            "furigana": "",
+                            "romaji": "Kouzui no damage.",
+                            "translation": "Danos de inundação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "洪大 (koudai)",
                         "wordMeaning": "Vasto / Imenso",
                         "sentence": "Koudai na plain.",
-                        "sentenceMeaning": "Planície vasta."
+                        "sentenceMeaning": "Planície vasta.",
+                        "content": {
+                            "displayText": "洪大なプルあいん。",
+                            "audioText": "洪大なプルあいん。",
+                            "furigana": "",
+                            "romaji": "Koudai na plain.",
+                            "translation": "Planície vasta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6175,13 +10491,39 @@ const kanjiN2Data = [
                         "word": "噴火 (funka)",
                         "wordMeaning": "Erupção vulcânica",
                         "sentence": "Volcano no funka.",
-                        "sentenceMeaning": "Erupção do vulcão."
+                        "sentenceMeaning": "Erupção do vulcão.",
+                        "content": {
+                            "displayText": "火山の噴火。",
+                            "audioText": "火山の噴火。",
+                            "furigana": "",
+                            "romaji": "Volcano no funka.",
+                            "translation": "Erupção do vulcão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "噴水 (funsui)",
                         "wordMeaning": "Fonte de água / Chafariz",
                         "sentence": "Park no funsui.",
-                        "sentenceMeaning": "Chafariz do parque."
+                        "sentenceMeaning": "Chafariz do parque.",
+                        "content": {
+                            "displayText": "公園の噴水。",
+                            "audioText": "公園の噴水。",
+                            "furigana": "",
+                            "romaji": "Park no funsui.",
+                            "translation": "Chafariz do parque.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6206,13 +10548,39 @@ const kanjiN2Data = [
                         "word": "火災 (kasai)",
                         "wordMeaning": "Incêndio",
                         "sentence": "Kasai alarm.",
-                        "sentenceMeaning": "Alarme de incêndio."
+                        "sentenceMeaning": "Alarme de incêndio.",
+                        "content": {
+                            "displayText": "火災あルあルム。",
+                            "audioText": "火災あルあルム。",
+                            "furigana": "",
+                            "romaji": "Kasai alarm.",
+                            "translation": "Alarme de incêndio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "火山 (kazan)",
                         "wordMeaning": "Vulcão",
                         "sentence": "Fuji-san wa kazan.",
-                        "sentenceMeaning": "O Monte Fuji é um vulcão."
+                        "sentenceMeaning": "O Monte Fuji é um vulcão.",
+                        "content": {
+                            "displayText": "ふじさんは火山。",
+                            "audioText": "ふじさんは火山。",
+                            "furigana": "",
+                            "romaji": "Fuji-san wa kazan.",
+                            "translation": "O Monte Fuji é um vulcão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6233,13 +10601,39 @@ const kanjiN2Data = [
                         "word": "荒れ地 (arechi)",
                         "wordMeaning": "Terra devastada / Terreno baldio",
                         "sentence": "Arechi o kaiji.",
-                        "sentenceMeaning": "Desbravar terreno baldio."
+                        "sentenceMeaning": "Desbravar terreno baldio.",
+                        "content": {
+                            "displayText": "荒れ地をかいじ。",
+                            "audioText": "荒れ地をかいじ。",
+                            "furigana": "",
+                            "romaji": "Arechi o kaiji.",
+                            "translation": "Desbravar terreno baldio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "荒波 (aranami)",
                         "wordMeaning": "Ondas revoltas",
                         "sentence": "Umi no aranami.",
-                        "sentenceMeaning": "Ondas revoltas do mar."
+                        "sentenceMeaning": "Ondas revoltas do mar.",
+                        "content": {
+                            "displayText": "うみの荒波。",
+                            "audioText": "うみの荒波。",
+                            "furigana": "",
+                            "romaji": "Umi no aranami.",
+                            "translation": "Ondas revoltas do mar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6260,13 +10654,39 @@ const kanjiN2Data = [
                         "word": "災害 (saigai)",
                         "wordMeaning": "Desastre natural / Catástrofe",
                         "sentence": "Saigai taisaku.",
-                        "sentenceMeaning": "Contramedida de desastre."
+                        "sentenceMeaning": "Contramedida de desastre.",
+                        "content": {
+                            "displayText": "災害たいさく。",
+                            "audioText": "災害たいさく。",
+                            "furigana": "",
+                            "romaji": "Saigai taisaku.",
+                            "translation": "Contramedida de desastre.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "防災 (bousai)",
                         "wordMeaning": "Prevenção de desastres",
                         "sentence": "Bousai kunren.",
-                        "sentenceMeaning": "Treinamento de prevenção de desastres."
+                        "sentenceMeaning": "Treinamento de prevenção de desastres.",
+                        "content": {
+                            "displayText": "防災くんれん。",
+                            "audioText": "防災くんれん。",
+                            "furigana": "",
+                            "romaji": "Bousai kunren.",
+                            "translation": "Treinamento de prevenção de desastres.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6287,13 +10707,39 @@ const kanjiN2Data = [
                         "word": "被害 (higai)",
                         "wordMeaning": "Dano sofrido / Prejuízo",
                         "sentence": "Higai o ukeru.",
-                        "sentenceMeaning": "Sofrer danos."
+                        "sentenceMeaning": "Sofrer danos.",
+                        "content": {
+                            "displayText": "被害をうける。",
+                            "audioText": "被害をうける。",
+                            "furigana": "",
+                            "romaji": "Higai o ukeru.",
+                            "translation": "Sofrer danos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "公害 (kougai)",
                         "wordMeaning": "Poluição ambiental pública",
                         "sentence": "Kougai mondai.",
-                        "sentenceMeaning": "Problema de poluição pública."
+                        "sentenceMeaning": "Problema de poluição pública.",
+                        "content": {
+                            "displayText": "公害もんだい。",
+                            "audioText": "公害もんだい。",
+                            "furigana": "",
+                            "romaji": "Kougai mondai.",
+                            "translation": "Problema de poluição pública.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6318,13 +10764,39 @@ const kanjiN2Data = [
                         "word": "温暖化 (ondanka)",
                         "wordMeaning": "Aquecimento global",
                         "sentence": "Chikyuu ondanka.",
-                        "sentenceMeaning": "Aquecimento global da Terra."
+                        "sentenceMeaning": "Aquecimento global da Terra.",
+                        "content": {
+                            "displayText": "ちきゅう温暖化。",
+                            "audioText": "ちきゅう温暖化。",
+                            "furigana": "",
+                            "romaji": "Chikyuu ondanka.",
+                            "translation": "Aquecimento global da Terra.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "暖房 (danbou)",
                         "wordMeaning": "Aquecedor / Calefação",
                         "sentence": "Danbou o tsukeru.",
-                        "sentenceMeaning": "Ligar o aquecedor."
+                        "sentenceMeaning": "Ligar o aquecedor.",
+                        "content": {
+                            "displayText": "暖房をつける。",
+                            "audioText": "暖房をつける。",
+                            "furigana": "",
+                            "romaji": "Danbou o tsukeru.",
+                            "translation": "Ligar o aquecedor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6349,13 +10821,39 @@ const kanjiN2Data = [
                         "word": "乾燥 (kansou)",
                         "wordMeaning": "Secura / Desidratação",
                         "sentence": "Air no kansou.",
-                        "sentenceMeaning": "Secura do ar."
+                        "sentenceMeaning": "Secura do ar.",
+                        "content": {
+                            "displayText": "あいルの乾燥。",
+                            "audioText": "あいルの乾燥。",
+                            "furigana": "",
+                            "romaji": "Air no kansou.",
+                            "translation": "Secura do ar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "乾電池 (kandentachi)",
                         "wordMeaning": "Pilha seca",
                         "sentence": "Kandentachi o kaeru.",
-                        "sentenceMeaning": "Trocar as pilhas secas."
+                        "sentenceMeaning": "Trocar as pilhas secas.",
+                        "content": {
+                            "displayText": "乾電池をかえる。",
+                            "audioText": "乾電池をかえる。",
+                            "furigana": "",
+                            "romaji": "Kandentachi o kaeru.",
+                            "translation": "Trocar as pilhas secas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6376,13 +10874,39 @@ const kanjiN2Data = [
                         "word": "湿度 (shitsudo)",
                         "wordMeaning": "Umidade relativa do ar",
                         "sentence": "Shitsudo 80%.",
-                        "sentenceMeaning": "Umidade de 80%."
+                        "sentenceMeaning": "Umidade de 80%.",
+                        "content": {
+                            "displayText": "湿度 80%。",
+                            "audioText": "湿度 80%。",
+                            "furigana": "",
+                            "romaji": "Shitsudo 80%.",
+                            "translation": "Umidade de 80%.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "湿気 (shikki)",
                         "wordMeaning": "Humidade do ambiente",
                         "sentence": "Shikki ga ooi.",
-                        "sentenceMeaning": "Muita humidade."
+                        "sentenceMeaning": "Muita humidade.",
+                        "content": {
+                            "displayText": "湿気がおおい。",
+                            "audioText": "湿気がおおい。",
+                            "furigana": "",
+                            "romaji": "Shikki ga ooi.",
+                            "translation": "Muita humidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6403,13 +10927,39 @@ const kanjiN2Data = [
                         "word": "霜 (shimo)",
                         "wordMeaning": "Geada",
                         "sentence": "Shimo ga furu.",
-                        "sentenceMeaning": "Cair geada."
+                        "sentenceMeaning": "Cair geada.",
+                        "content": {
+                            "displayText": "霜がふる。",
+                            "audioText": "霜がふる。",
+                            "furigana": "",
+                            "romaji": "Shimo ga furu.",
+                            "translation": "Cair geada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "霜柱 (shimobashira)",
                         "wordMeaning": "Colunas de gelo no solo",
                         "sentence": "Shimobashira o step.",
-                        "sentenceMeaning": "Pisar nas colunas de gelo do solo."
+                        "sentenceMeaning": "Pisar nas colunas de gelo do solo.",
+                        "content": {
+                            "displayText": "霜柱を段階。",
+                            "audioText": "霜柱を段階。",
+                            "furigana": "",
+                            "romaji": "Shimobashira o step.",
+                            "translation": "Pisar nas colunas de gelo do solo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6525,7 +11075,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 10,
@@ -6535,13 +11089,21 @@ const kanjiN2Data = [
             "title": "Expressando Localização Geográfica (~ni沿って)",
             "explanation": "No N2, indica-se rotas e infraestruturas construídas ao longo de rios, litorais ou avenidas.",
             "example": "Kawa ni sotte road ga arimasu.",
-            "translation": "Há uma estrada ao longo do rio."
+            "translation": "Há uma estrada ao longo do rio.",
+            "content": {
+                "displayText": "かわにそってろあドがあります。",
+                "audioText": "かわにそってろあドがあります。",
+                "furigana": "",
+                "romaji": "Kawa ni sotte road ga arimasu.",
+                "translation": "Há uma estrada ao longo do rio.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "都市開発とインフラ建設 (Desenvolvimento Urbano e Construção de Infraestrutura)",
             "japanese": "<ruby>湾岸<rt>わんがん</rt></ruby>エリアに新しい<ruby>港<rt>みなと</rt></ruby>と<ruby>架橋<rt>かきょう</rt></ruby>を<ruby>建設<rt>けんせつ</rt></ruby>し、交通を<ruby>整備<rt>せいび</rt></ruby>します。<ruby>郊外<rt>こうがい</rt></ruby>へ<ruby>路線<rt>ろせん</rt></ruby>を<ruby>延伸<rt>えんしん</rt></ruby>します。",
             "romaji": "Wangan eria ni atarashii minato to kakyou o kensetsu shi, koutsuu o seibi shimasu. Kougai he rosen o enshin shimasu.",
-            "translation": "Constroem-se um novo porto e pontes na zona da baía, organizando o trânsito. Estende-se as linhas férreas em direção aos subúrbios.",
+            "translation": "Um novo porto e pontes são construídos na zona da baía, e a infraestrutura de transporte é aprimorada. As linhas são estendidas em direção aos subúrbios.",
             "comprehensionQuiz": [
                 {
                     "q": "O que é construído na zona da baía (湾岸エリア)?",
@@ -6577,13 +11139,39 @@ const kanjiN2Data = [
                         "word": "区域 (kuiki)",
                         "wordMeaning": "Zona / Setor delimitado",
                         "sentence": "Industrial kuiki.",
-                        "sentenceMeaning": "Setor industrial."
+                        "sentenceMeaning": "Setor industrial.",
+                        "content": {
+                            "displayText": "いんドうストりあル区域。",
+                            "audioText": "いんドうストりあル区域。",
+                            "furigana": "",
+                            "romaji": "Industrial kuiki.",
+                            "translation": "Setor industrial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "流域 (ryuuiik)",
                         "wordMeaning": "Bacia hidrográfica",
                         "sentence": "Kawa no ryuuiik.",
-                        "sentenceMeaning": "Bacia hidrográfica do rio."
+                        "sentenceMeaning": "Bacia hidrográfica do rio.",
+                        "content": {
+                            "displayText": "かわの流域。",
+                            "audioText": "かわの流域。",
+                            "furigana": "",
+                            "romaji": "Kawa no ryuuiik.",
+                            "translation": "Bacia hidrográfica do rio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6612,13 +11200,39 @@ const kanjiN2Data = [
                         "word": "陸上 (rikujou)",
                         "wordMeaning": "Sobre a terra / Atletismo",
                         "sentence": "Rikujou kyougi.",
-                        "sentenceMeaning": "Modalidade de atletismo."
+                        "sentenceMeaning": "Modalidade de atletismo.",
+                        "content": {
+                            "displayText": "陸上きょうぎ。",
+                            "audioText": "陸上きょうぎ。",
+                            "furigana": "",
+                            "romaji": "Rikujou kyougi.",
+                            "translation": "Modalidade de atletismo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "大陸 (tairiku)",
                         "wordMeaning": "Continente",
                         "sentence": "Asian tairiku.",
-                        "sentenceMeaning": "Continente asiático."
+                        "sentenceMeaning": "Continente asiático.",
+                        "content": {
+                            "displayText": "あスいあん大陸。",
+                            "audioText": "あスいあん大陸。",
+                            "furigana": "",
+                            "romaji": "Asian tairiku.",
+                            "translation": "Continente asiático.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6643,13 +11257,39 @@ const kanjiN2Data = [
                         "word": "港湾 (kouwan)",
                         "wordMeaning": "Portos e baías infraestruturais",
                         "sentence": "Kouwan facility.",
-                        "sentenceMeaning": "Instalações portuárias."
+                        "sentenceMeaning": "Instalações portuárias.",
+                        "content": {
+                            "displayText": "港湾ふぁクいルいトイ。",
+                            "audioText": "港湾ふぁクいルいトイ。",
+                            "furigana": "",
+                            "romaji": "Kouwan facility.",
+                            "translation": "Instalações portuárias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "東京湾 (toukyouwan)",
                         "wordMeaning": "Baía de Tóquio",
                         "sentence": "Toukyouwan no view.",
-                        "sentenceMeaning": "Vista da baía de Tóquio."
+                        "sentenceMeaning": "Vista da baía de Tóquio.",
+                        "content": {
+                            "displayText": "東京湾のヴいえウ。",
+                            "audioText": "東京湾のヴいえウ。",
+                            "furigana": "",
+                            "romaji": "Toukyouwan no view.",
+                            "translation": "Vista da baía de Tóquio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6674,13 +11314,39 @@ const kanjiN2Data = [
                         "word": "空港 (kuukou)",
                         "wordMeaning": "Aeroporto",
                         "sentence": "Narita kuukou.",
-                        "sentenceMeaning": "Aeroporto de Narita."
+                        "sentenceMeaning": "Aeroporto de Narita.",
+                        "content": {
+                            "displayText": "なりた空港。",
+                            "audioText": "なりた空港。",
+                            "furigana": "",
+                            "romaji": "Narita kuukou.",
+                            "translation": "Aeroporto de Narita.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "港町 (minatomachi)",
                         "wordMeaning": "Cidade portuária",
                         "sentence": "Kobe wa minatomachi.",
-                        "sentenceMeaning": "Kobe é uma cidade portuária."
+                        "sentenceMeaning": "Kobe é uma cidade portuária.",
+                        "content": {
+                            "displayText": "こべは港町。",
+                            "audioText": "こべは港町。",
+                            "furigana": "",
+                            "romaji": "Kobe wa minatomachi.",
+                            "translation": "Kobe é uma cidade portuária.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6701,13 +11367,39 @@ const kanjiN2Data = [
                         "word": "海岸 (kaigan)",
                         "wordMeaning": "Costa marítima / Litoral",
                         "sentence": "Kaigan o walk.",
-                        "sentenceMeaning": "Caminhar pelo litoral."
+                        "sentenceMeaning": "Caminhar pelo litoral.",
+                        "content": {
+                            "displayText": "海岸をわルク。",
+                            "audioText": "海岸をわルク。",
+                            "furigana": "",
+                            "romaji": "Kaigan o walk.",
+                            "translation": "Caminhar pelo litoral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "岸辺 (kishibe)",
                         "wordMeaning": "Margem do rio",
                         "sentence": "Kawa no kishibe.",
-                        "sentenceMeaning": "Margem do rio."
+                        "sentenceMeaning": "Margem do rio.",
+                        "content": {
+                            "displayText": "かわの岸辺。",
+                            "audioText": "かわの岸辺。",
+                            "furigana": "",
+                            "romaji": "Kawa no kishibe.",
+                            "translation": "Margem do rio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6732,13 +11424,39 @@ const kanjiN2Data = [
                         "word": "歩道橋 (hodoukyou)",
                         "wordMeaning": "Passarela de pedestres",
                         "sentence": "Hodoukyou o cross.",
-                        "sentenceMeaning": "Atravessar a passarela de pedestres."
+                        "sentenceMeaning": "Atravessar a passarela de pedestres.",
+                        "content": {
+                            "displayText": "歩道橋をクろっス。",
+                            "audioText": "歩道橋をクろっス。",
+                            "furigana": "",
+                            "romaji": "Hodoukyou o cross.",
+                            "translation": "Atravessar a passarela de pedestres.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "鉄橋 (tekkyou)",
                         "wordMeaning": "Ponte metálica / Viaduto ferroviário",
                         "sentence": "Train ga tekkyou o pass.",
-                        "sentenceMeaning": "O trem passa pela ponte metálica."
+                        "sentenceMeaning": "O trem passa pela ponte metálica.",
+                        "content": {
+                            "displayText": "列車が鉄橋をぱっス。",
+                            "audioText": "列車が鉄橋をぱっス。",
+                            "furigana": "",
+                            "romaji": "Train ga tekkyou o pass.",
+                            "translation": "O trem passa pela ponte metálica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6763,13 +11481,39 @@ const kanjiN2Data = [
                         "word": "坂道 (sakamichi)",
                         "wordMeaning": "Caminho de ladeira / Aclive",
                         "sentence": "Sakamichi o climb.",
-                        "sentenceMeaning": "Subir a ladeira."
+                        "sentenceMeaning": "Subir a ladeira.",
+                        "content": {
+                            "displayText": "坂道をクルいムブ。",
+                            "audioText": "坂道をクルいムブ。",
+                            "furigana": "",
+                            "romaji": "Sakamichi o climb.",
+                            "translation": "Subir a ladeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "急坂 (kyuuhan)",
                         "wordMeaning": "Ladeira íngremes",
                         "sentence": "Kyuuhan no road.",
-                        "sentenceMeaning": "Estrada de ladeira íngreme."
+                        "sentenceMeaning": "Estrada de ladeira íngreme.",
+                        "content": {
+                            "displayText": "急坂のろあド。",
+                            "audioText": "急坂のろあド。",
+                            "furigana": "",
+                            "romaji": "Kyuuhan no road.",
+                            "translation": "Estrada de ladeira íngreme.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6790,13 +11534,39 @@ const kanjiN2Data = [
                         "word": "渓谷 (keikoku)",
                         "wordMeaning": "Desfiladeiro / Cânion",
                         "sentence": "Keikoku no view.",
-                        "sentenceMeaning": "Vista do desfiladeiro."
+                        "sentenceMeaning": "Vista do desfiladeiro.",
+                        "content": {
+                            "displayText": "渓谷のヴいえウ。",
+                            "audioText": "渓谷のヴいえウ。",
+                            "furigana": "",
+                            "romaji": "Keikoku no view.",
+                            "translation": "Vista do desfiladeiro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "谷間 (tanima)",
                         "wordMeaning": "Vale profundo entre morros",
                         "sentence": "Morro no tanima.",
-                        "sentenceMeaning": "Entre os morros do vale."
+                        "sentenceMeaning": "Entre os morros do vale.",
+                        "content": {
+                            "displayText": "もっろの谷間。",
+                            "audioText": "もっろの谷間。",
+                            "furigana": "",
+                            "romaji": "Morro no tanima.",
+                            "translation": "Entre os morros do vale.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6817,13 +11587,39 @@ const kanjiN2Data = [
                         "word": "島国 (shimaguni)",
                         "wordMeaning": "País insular",
                         "sentence": "Nihon wa shimaguni.",
-                        "sentenceMeaning": "O Japão é um país insular."
+                        "sentenceMeaning": "O Japão é um país insular.",
+                        "content": {
+                            "displayText": "にほんは島国。",
+                            "audioText": "にほんは島国。",
+                            "furigana": "",
+                            "romaji": "Nihon wa shimaguni.",
+                            "translation": "O Japão é um país insular.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "半島 (hantou)",
                         "wordMeaning": "Península",
                         "sentence": "Izu hantou.",
-                        "sentenceMeaning": "Península de Izu."
+                        "sentenceMeaning": "Península de Izu.",
+                        "content": {
+                            "displayText": "いず半島。",
+                            "audioText": "いず半島。",
+                            "furigana": "",
+                            "romaji": "Izu hantou.",
+                            "translation": "Península de Izu.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6848,13 +11644,39 @@ const kanjiN2Data = [
                         "word": "郊外 (kougai)",
                         "wordMeaning": "Subúrbio / Periferia da cidade",
                         "sentence": "Kougai ni sumu.",
-                        "sentenceMeaning": "Morar no subúrbio."
+                        "sentenceMeaning": "Morar no subúrbio.",
+                        "content": {
+                            "displayText": "郊外にすむ。",
+                            "audioText": "郊外にすむ。",
+                            "furigana": "",
+                            "romaji": "Kougai ni sumu.",
+                            "translation": "Morar no subúrbio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "近郊 (kinkou)",
                         "wordMeaning": "Entorno suburbano",
                         "sentence": "Tokyo kinkou.",
-                        "sentenceMeaning": "Entorno de Tóquio."
+                        "sentenceMeaning": "Entorno de Tóquio.",
+                        "content": {
+                            "displayText": "ときょ近郊。",
+                            "audioText": "ときょ近郊。",
+                            "furigana": "",
+                            "romaji": "Tokyo kinkou.",
+                            "translation": "Entorno de Tóquio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6879,13 +11701,39 @@ const kanjiN2Data = [
                         "word": "中央 (chuuou)",
                         "wordMeaning": "Centro / Ponto central",
                         "sentence": "Chuuou line.",
-                        "sentenceMeaning": "Linha central de trem."
+                        "sentenceMeaning": "Linha central de trem.",
+                        "content": {
+                            "displayText": "中央ルいね。",
+                            "audioText": "中央ルいね。",
+                            "furigana": "",
+                            "romaji": "Chuuou line.",
+                            "translation": "Linha central de trem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "中央集権 (chuuoushuken)",
                         "wordMeaning": "Centralização do poder",
                         "sentence": "Seifu no chuuoushuken.",
-                        "sentenceMeaning": "Centralização governamental."
+                        "sentenceMeaning": "Centralização governamental.",
+                        "content": {
+                            "displayText": "せいふの中央集権。",
+                            "audioText": "せいふの中央集権。",
+                            "furigana": "",
+                            "romaji": "Seifu no chuuoushuken.",
+                            "translation": "Centralização governamental.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6910,13 +11758,39 @@ const kanjiN2Data = [
                         "word": "県庁 (kenchou)",
                         "wordMeaning": "Sede do governo provincial",
                         "sentence": "Kenchou所在地.",
-                        "sentenceMeaning": "Capital provincial."
+                        "sentenceMeaning": "Capital provincial.",
+                        "content": {
+                            "displayText": "県庁所在地。",
+                            "audioText": "県庁所在地。",
+                            "furigana": "",
+                            "romaji": "Kenchou所在地.",
+                            "translation": "Capital provincial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "県知事 (kenchiji)",
                         "wordMeaning": "Governador da província",
                         "sentence": "Kenchiji no election.",
-                        "sentenceMeaning": "Eleição do governador."
+                        "sentenceMeaning": "Eleição do governador.",
+                        "content": {
+                            "displayText": "県知事のえルえクてぃおん。",
+                            "audioText": "県知事のえルえクてぃおん。",
+                            "furigana": "",
+                            "romaji": "Kenchiji no election.",
+                            "translation": "Eleição do governador.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6937,13 +11811,39 @@ const kanjiN2Data = [
                         "word": "府知事 (fuchiji)",
                         "wordMeaning": "Governador da prefeitura (Osaka/Kyoto)",
                         "sentence": "Osaka fuchiji.",
-                        "sentenceMeaning": "Governador de Osaka."
+                        "sentenceMeaning": "Governador de Osaka.",
+                        "content": {
+                            "displayText": "おさか府知事。",
+                            "audioText": "おさか府知事。",
+                            "furigana": "",
+                            "romaji": "Osaka fuchiji.",
+                            "translation": "Governador de Osaka.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "政府 (seifu)",
                         "wordMeaning": "Governo",
                         "sentence": "Seifu no official.",
-                        "sentenceMeaning": "Oficial do governo."
+                        "sentenceMeaning": "Oficial do governo.",
+                        "content": {
+                            "displayText": "政府のおっふぃクいあル。",
+                            "audioText": "政府のおっふぃクいあル。",
+                            "furigana": "",
+                            "romaji": "Seifu no official.",
+                            "translation": "Oficial do governo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6972,13 +11872,39 @@ const kanjiN2Data = [
                         "word": "本州 (honshuu)",
                         "wordMeaning": "Honshu (Ilha principal do Japão)",
                         "sentence": "Honshuu island.",
-                        "sentenceMeaning": "Ilha de Honshu."
+                        "sentenceMeaning": "Ilha de Honshu.",
+                        "content": {
+                            "displayText": "本州島。",
+                            "audioText": "本州島。",
+                            "furigana": "",
+                            "romaji": "Honshuu island.",
+                            "translation": "Ilha de Honshu.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "三角州 (sankakusu)",
                         "wordMeaning": "Delta do rio",
                         "sentence": "Kawa no sankakusu.",
-                        "sentenceMeaning": "Delta do rio."
+                        "sentenceMeaning": "Delta do rio.",
+                        "content": {
+                            "displayText": "かわの三角州。",
+                            "audioText": "かわの三角州。",
+                            "furigana": "",
+                            "romaji": "Kawa no sankakusu.",
+                            "translation": "Delta do rio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -6999,13 +11925,39 @@ const kanjiN2Data = [
                         "word": "沿線 (ensen)",
                         "wordMeaning": "Ao longo da linha férrea",
                         "sentence": "Ensen no town.",
-                        "sentenceMeaning": "Cidade ao longo da linha."
+                        "sentenceMeaning": "Cidade ao longo da linha.",
+                        "content": {
+                            "displayText": "沿線のとウん。",
+                            "audioText": "沿線のとウん。",
+                            "furigana": "",
+                            "romaji": "Ensen no town.",
+                            "translation": "Cidade ao longo da linha.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "沿岸 (engan)",
                         "wordMeaning": "Faixa litorânea",
                         "sentence": "Engan fishery.",
-                        "sentenceMeaning": "Pesca litorânea."
+                        "sentenceMeaning": "Pesca litorânea.",
+                        "content": {
+                            "displayText": "沿岸ふぃしぇルイ。",
+                            "audioText": "沿岸ふぃしぇルイ。",
+                            "furigana": "",
+                            "romaji": "Engan fishery.",
+                            "translation": "Pesca litorânea.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7026,13 +11978,39 @@ const kanjiN2Data = [
                         "word": "傾向 (keikou)",
                         "wordMeaning": "Tendência / Inclinação",
                         "sentence": "Market no keikou.",
-                        "sentenceMeaning": "Tendência do mercado."
+                        "sentenceMeaning": "Tendência do mercado.",
+                        "content": {
+                            "displayText": "まルけトの傾向。",
+                            "audioText": "まルけトの傾向。",
+                            "furigana": "",
+                            "romaji": "Market no keikou.",
+                            "translation": "Tendência do mercado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "傾斜 (keisha)",
                         "wordMeaning": "Inclinação / Aclive",
                         "sentence": "Road no keisha.",
-                        "sentenceMeaning": "Inclinação da estrada."
+                        "sentenceMeaning": "Inclinação da estrada.",
+                        "content": {
+                            "displayText": "ろあドの傾斜。",
+                            "audioText": "ろあドの傾斜。",
+                            "furigana": "",
+                            "romaji": "Road no keisha.",
+                            "translation": "Inclinação da estrada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7061,13 +12039,39 @@ const kanjiN2Data = [
                         "word": "開拓 (kaitaku)",
                         "wordMeaning": "Desbravamento / Colonização",
                         "sentence": "Land no kaitaku.",
-                        "sentenceMeaning": "Desbravamento de terras."
+                        "sentenceMeaning": "Desbravamento de terras.",
+                        "content": {
+                            "displayText": "ルあんドの開拓。",
+                            "audioText": "ルあんドの開拓。",
+                            "furigana": "",
+                            "romaji": "Land no kaitaku.",
+                            "translation": "Desbravamento de terras.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "拓く (hiraku)",
                         "wordMeaning": "Abrir caminho / Desbravar",
                         "sentence": "Future o hiraku.",
-                        "sentenceMeaning": "Abrir caminho para o futuro."
+                        "sentenceMeaning": "Abrir caminho para o futuro.",
+                        "content": {
+                            "displayText": "未来を拓く。",
+                            "audioText": "未来を拓く。",
+                            "furigana": "",
+                            "romaji": "Future o hiraku.",
+                            "translation": "Abrir caminho para o futuro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7092,13 +12096,39 @@ const kanjiN2Data = [
                         "word": "建築 (kenchiku)",
                         "wordMeaning": "Arquitetura / Construção civil",
                         "sentence": "Kenchiku kaisha.",
-                        "sentenceMeaning": "Empresa de construção civil."
+                        "sentenceMeaning": "Empresa de construção civil.",
+                        "content": {
+                            "displayText": "建築かいしゃ。",
+                            "audioText": "建築かいしゃ。",
+                            "furigana": "",
+                            "romaji": "Kenchiku kaisha.",
+                            "translation": "Empresa de construção civil.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "新築 (shinchiku)",
                         "wordMeaning": "Construção nova / Recém-construído",
                         "sentence": "Shinchiku house.",
-                        "sentenceMeaning": "Casa recém-construída."
+                        "sentenceMeaning": "Casa recém-construída.",
+                        "content": {
+                            "displayText": "新築ほうせ。",
+                            "audioText": "新築ほうせ。",
+                            "furigana": "",
+                            "romaji": "Shinchiku house.",
+                            "translation": "Casa recém-construída.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7123,13 +12153,39 @@ const kanjiN2Data = [
                         "word": "建設 (kensetsu)",
                         "wordMeaning": "Construção civil / Edificação",
                         "sentence": "Kensetsu project.",
-                        "sentenceMeaning": "Projeto de construção civil."
+                        "sentenceMeaning": "Projeto de construção civil.",
+                        "content": {
+                            "displayText": "建設企画。",
+                            "audioText": "建設企画。",
+                            "furigana": "",
+                            "romaji": "Kensetsu project.",
+                            "translation": "Projeto de construção civil.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "施設 (shisetsu)",
                         "wordMeaning": "Instalação / Centro de serviço",
                         "sentence": "Public shisetsu.",
-                        "sentenceMeaning": "Instalação pública."
+                        "sentenceMeaning": "Instalação pública.",
+                        "content": {
+                            "displayText": "ぷブルいク施設。",
+                            "audioText": "ぷブルいク施設。",
+                            "furigana": "",
+                            "romaji": "Public shisetsu.",
+                            "translation": "Instalação pública.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7245,7 +12301,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 11,
@@ -7255,7 +12315,15 @@ const kanjiN2Data = [
             "title": "Expressando Percepção Abstrata (~ni taishite)",
             "explanation": "No N2, introduz-se atitudes mentais e posicionamentos filosóficos em relação a conceitos morais.",
             "example": "Rinri ni taishite shinken ni kangaemasu.",
-            "translation": "Pensamos seriamente em relação à ética."
+            "translation": "Pensamos seriamente em relação à ética.",
+            "content": {
+                "displayText": "りんりにたいしてしんけんにかんがえます。",
+                "audioText": "りんりにたいしてしんけんにかんがえます。",
+                "furigana": "",
+                "romaji": "Rinri ni taishite shinken ni kangaemasu.",
+                "translation": "Pensamos seriamente em relação à ética.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "哲学と人間精神 (Filosofia e o Espírito Humano)",
@@ -7297,13 +12365,39 @@ const kanjiN2Data = [
                         "word": "哲学 (tetsugaku)",
                         "wordMeaning": "Filosofia",
                         "sentence": "Tetsugaku no class.",
-                        "sentenceMeaning": "Aula de filosofia."
+                        "sentenceMeaning": "Aula de filosofia.",
+                        "content": {
+                            "displayText": "哲学のクルあっス。",
+                            "audioText": "哲学のクルあっス。",
+                            "furigana": "",
+                            "romaji": "Tetsugaku no class.",
+                            "translation": "Aula de filosofia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "哲人 (tetsujin)",
                         "wordMeaning": "Sábio / Filósofo",
                         "sentence": "Ancient tetsujin.",
-                        "sentenceMeaning": "Sábio da antiguidade."
+                        "sentenceMeaning": "Sábio da antiguidade.",
+                        "content": {
+                            "displayText": "古代哲人。",
+                            "audioText": "古代哲人。",
+                            "furigana": "",
+                            "romaji": "Ancient tetsujin.",
+                            "translation": "Sábio da antiguidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7328,13 +12422,39 @@ const kanjiN2Data = [
                         "word": "倫理 (rinri)",
                         "wordMeaning": "Ética / Moral",
                         "sentence": "Rinri-teki na decision.",
-                        "sentenceMeaning": "Decisão ética."
+                        "sentenceMeaning": "Decisão ética.",
+                        "content": {
+                            "displayText": "倫理てきな判断。",
+                            "audioText": "倫理てきな判断。",
+                            "furigana": "",
+                            "romaji": "Rinri-teki na decision.",
+                            "translation": "Decisão ética.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "不倫 (furin)",
                         "wordMeaning": "Adulterior / Infidelidade",
                         "sentence": "Furin no scandal.",
-                        "sentenceMeaning": "Escândalo de infidelidade."
+                        "sentenceMeaning": "Escândalo de infidelidade.",
+                        "content": {
+                            "displayText": "不倫のスキャンダル。",
+                            "audioText": "不倫のスキャンダル。",
+                            "furigana": "",
+                            "romaji": "Furin no scandal.",
+                            "translation": "Escândalo de infidelidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7355,13 +12475,39 @@ const kanjiN2Data = [
                         "word": "魂 (tamashii)",
                         "wordMeaning": "Alma / Espírito",
                         "sentence": "Tamashii o komete.",
-                        "sentenceMeaning": "Com toda a alma."
+                        "sentenceMeaning": "Com toda a alma.",
+                        "content": {
+                            "displayText": "魂をこめて。",
+                            "audioText": "魂をこめて。",
+                            "furigana": "",
+                            "romaji": "Tamashii o komete.",
+                            "translation": "Com toda a alma.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "霊魂 (reikon)",
                         "wordMeaning": "Alma / Espírito dos ancestrais",
                         "sentence": "Reikon no inori.",
-                        "sentenceMeaning": "Oração pelas almas dos ancestrais."
+                        "sentenceMeaning": "Oração pelas almas dos ancestrais.",
+                        "content": {
+                            "displayText": "霊魂のいのり。",
+                            "audioText": "霊魂のいのり。",
+                            "furigana": "",
+                            "romaji": "Reikon no inori.",
+                            "translation": "Oração pelas almas dos ancestrais.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7386,13 +12532,39 @@ const kanjiN2Data = [
                         "word": "凝縮 (gyoushuku)",
                         "wordMeaning": "Condensação / Concentração",
                         "sentence": "Essence no gyoushuku.",
-                        "sentenceMeaning": "Concentração da essência."
+                        "sentenceMeaning": "Concentração da essência.",
+                        "content": {
+                            "displayText": "本質の凝縮。",
+                            "audioText": "本質の凝縮。",
+                            "furigana": "",
+                            "romaji": "Essence no gyoushuku.",
+                            "translation": "Concentração da essência.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "凝る (koru)",
                         "wordMeaning": "Ficar rígido / Dedicar-se com paixão",
                         "sentence": "Hada ga koru.",
-                        "sentenceMeaning": "Ficar com os ombros rígidos."
+                        "sentenceMeaning": "Ficar com os ombros rígidos.",
+                        "content": {
+                            "displayText": "はだが凝る。",
+                            "audioText": "はだが凝る。",
+                            "furigana": "",
+                            "romaji": "Hada ga koru.",
+                            "translation": "Ficar com os ombros rígidos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7417,13 +12589,39 @@ const kanjiN2Data = [
                         "word": "悟り (satori)",
                         "wordMeaning": "Iluminação espiritual / Despertar",
                         "sentence": "Satori o abrir.",
-                        "sentenceMeaning": "Alcançar a iluminação."
+                        "sentenceMeaning": "Alcançar a iluminação.",
+                        "content": {
+                            "displayText": "悟りを開く。",
+                            "audioText": "悟りを開く。",
+                            "furigana": "",
+                            "romaji": "Satori o abrir.",
+                            "translation": "Alcançar a iluminação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "覚悟 (kakugo)",
                         "wordMeaning": "Determinação / Estar preparado",
                         "sentence": "Kakugo o kimeru.",
-                        "sentenceMeaning": "Tomar uma determinação firme."
+                        "sentenceMeaning": "Tomar uma determinação firme.",
+                        "content": {
+                            "displayText": "覚悟をきめる。",
+                            "audioText": "覚悟をきめる。",
+                            "furigana": "",
+                            "romaji": "Kakugo o kimeru.",
+                            "translation": "Tomar uma determinação firme.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7452,13 +12650,39 @@ const kanjiN2Data = [
                         "word": "検索 (kensaku)",
                         "wordMeaning": "Busca / Pesquisa em banco de dados",
                         "sentence": "Google de kensaku.",
-                        "sentenceMeaning": "Pesquisar no Google."
+                        "sentenceMeaning": "Pesquisar no Google.",
+                        "content": {
+                            "displayText": "ごおグルえで検索。",
+                            "audioText": "ごおグルえで検索。",
+                            "furigana": "",
+                            "romaji": "Google de kensaku.",
+                            "translation": "Pesquisar no Google.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "模索 (mosaku)",
                         "wordMeaning": "Busca às cegas / Procurar soluções",
                         "sentence": "Method no mosaku.",
-                        "sentenceMeaning": "Procurar métodos às cegas."
+                        "sentenceMeaning": "Procurar métodos às cegas.",
+                        "content": {
+                            "displayText": "方法の模索。",
+                            "audioText": "方法の模索。",
+                            "furigana": "",
+                            "romaji": "Method no mosaku.",
+                            "translation": "Procurar métodos às cegas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7479,13 +12703,39 @@ const kanjiN2Data = [
                         "word": "妄想 (mousou)",
                         "wordMeaning": "Delírio / Fantasia ilusória",
                         "sentence": "Mousou o fukamiru.",
-                        "sentenceMeaning": "Mergulhar em delírios."
+                        "sentenceMeaning": "Mergulhar em delírios.",
+                        "content": {
+                            "displayText": "妄想をふかみる。",
+                            "audioText": "妄想をふかみる。",
+                            "furigana": "",
+                            "romaji": "Mousou o fukamiru.",
+                            "translation": "Mergulhar em delírios.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "被害妄想 (higaimousou)",
                         "wordMeaning": "Paranoia de perseguição",
                         "sentence": "Higaimousou ni nayamu.",
-                        "sentenceMeaning": "Sofrer de paranoia de perseguição."
+                        "sentenceMeaning": "Sofrer de paranoia de perseguição.",
+                        "content": {
+                            "displayText": "被害妄想になやむ。",
+                            "audioText": "被害妄想になやむ。",
+                            "furigana": "",
+                            "romaji": "Higaimousou ni nayamu.",
+                            "translation": "Sofrer de paranoia de perseguição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7506,13 +12756,39 @@ const kanjiN2Data = [
                         "word": "幻覚 (genkaku)",
                         "wordMeaning": "Alucinação visual",
                         "sentence": "Genkaku o miru.",
-                        "sentenceMeaning": "Ter alucinações."
+                        "sentenceMeaning": "Ter alucinações.",
+                        "content": {
+                            "displayText": "幻覚をみる。",
+                            "audioText": "幻覚をみる。",
+                            "furigana": "",
+                            "romaji": "Genkaku o miru.",
+                            "translation": "Ter alucinações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "幻影 (genei)",
                         "wordMeaning": "Ilusão / Espectro",
                         "sentence": "Genei o chasing.",
-                        "sentenceMeaning": "Perseguir uma ilusão."
+                        "sentenceMeaning": "Perseguir uma ilusão.",
+                        "content": {
+                            "displayText": "幻影を追う。",
+                            "audioText": "幻影を追う。",
+                            "furigana": "",
+                            "romaji": "Genei o chasing.",
+                            "translation": "Perseguir uma ilusão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7533,13 +12809,39 @@ const kanjiN2Data = [
                         "word": "迷惑 (meiwaku)",
                         "wordMeaning": "Incômodo / Perturbação",
                         "sentence": "Meiwaku o kakeru.",
-                        "sentenceMeaning": "Causar incômodo."
+                        "sentenceMeaning": "Causar incômodo.",
+                        "content": {
+                            "displayText": "迷惑をかける。",
+                            "audioText": "迷惑をかける。",
+                            "furigana": "",
+                            "romaji": "Meiwaku o kakeru.",
+                            "translation": "Causar incômodo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "惑わす (madowasu)",
                         "wordMeaning": "Desorientar / Confundir",
                         "sentence": "Hito o madowasu.",
-                        "sentenceMeaning": "Confundir as pessoas."
+                        "sentenceMeaning": "Confundir as pessoas.",
+                        "content": {
+                            "displayText": "ひとを惑わす。",
+                            "audioText": "ひとを惑わす。",
+                            "furigana": "",
+                            "romaji": "Hito o madowasu.",
+                            "translation": "Confundir as pessoas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7572,13 +12874,39 @@ const kanjiN2Data = [
                         "word": "郷愁 (kyoushuu)",
                         "wordMeaning": "Nostalgia da terra natal",
                         "sentence": "Kyoushuu ni tatsu.",
-                        "sentenceMeaning": "Sentir nostalgia da terra natal."
+                        "sentenceMeaning": "Sentir nostalgia da terra natal.",
+                        "content": {
+                            "displayText": "郷愁にたつ。",
+                            "audioText": "郷愁にたつ。",
+                            "furigana": "",
+                            "romaji": "Kyoushuu ni tatsu.",
+                            "translation": "Sentir nostalgia da terra natal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "哀愁 (aishuu)",
                         "wordMeaning": "Melancolia profunda",
                         "sentence": "Aishuu no melody.",
-                        "sentenceMeaning": "Melodia de profunda melancolia."
+                        "sentenceMeaning": "Melodia de profunda melancolia.",
+                        "content": {
+                            "displayText": "哀愁の旋律。",
+                            "audioText": "哀愁の旋律。",
+                            "furigana": "",
+                            "romaji": "Aishuu no melody.",
+                            "translation": "Melodia de profunda melancolia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7599,13 +12927,39 @@ const kanjiN2Data = [
                         "word": "恥ずかしい (hazukashii)",
                         "wordMeaning": "Com vergonha / Tímido",
                         "sentence": "Hazukashii desu.",
-                        "sentenceMeaning": "Estou com vergonha."
+                        "sentenceMeaning": "Estou com vergonha.",
+                        "content": {
+                            "displayText": "恥ずかしいです。",
+                            "audioText": "恥ずかしいです。",
+                            "furigana": "",
+                            "romaji": "Hazukashii desu.",
+                            "translation": "Estou com vergonha.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "羞恥心 (shuuchishin)",
                         "wordMeaning": "Senso de pudor / Modéstia",
                         "sentence": "Shuuchishin ga arimasu.",
-                        "sentenceMeaning": "Ter senso de pudor."
+                        "sentenceMeaning": "Ter senso de pudor.",
+                        "content": {
+                            "displayText": "羞恥心があります。",
+                            "audioText": "羞恥心があります。",
+                            "furigana": "",
+                            "romaji": "Shuuchishin ga arimasu.",
+                            "translation": "Ter senso de pudor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7630,13 +12984,39 @@ const kanjiN2Data = [
                         "word": "憤慨 (fungai)",
                         "wordMeaning": "Indignação / Revolta moral",
                         "sentence": "Unfair ni fungai.",
-                        "sentenceMeaning": "Indignado com a injustiça."
+                        "sentenceMeaning": "Indignado com a injustiça.",
+                        "content": {
+                            "displayText": "うんふぁいルに憤慨。",
+                            "audioText": "うんふぁいルに憤慨。",
+                            "furigana": "",
+                            "romaji": "Unfair ni fungai.",
+                            "translation": "Indignado com a injustiça.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "義憤 (gifun)",
                         "wordMeaning": "Indignação justa / Ira virtuosa",
                         "sentence": "Gifun o felt.",
-                        "sentenceMeaning": "Sentir indignação justa."
+                        "sentenceMeaning": "Sentir indignação justa.",
+                        "content": {
+                            "displayText": "義憤を覚える。",
+                            "audioText": "義憤を覚える。",
+                            "furigana": "",
+                            "romaji": "Gifun o felt.",
+                            "translation": "Sentir indignação justa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7661,13 +13041,39 @@ const kanjiN2Data = [
                         "word": "恨み (urami)",
                         "wordMeaning": "Rancor / Mágua acumulada",
                         "sentence": "Urami o daku.",
-                        "sentenceMeaning": "Guardar rancor."
+                        "sentenceMeaning": "Guardar rancor.",
+                        "content": {
+                            "displayText": "恨みをだく。",
+                            "audioText": "恨みをだく。",
+                            "furigana": "",
+                            "romaji": "Urami o daku.",
+                            "translation": "Guardar rancor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "痛恨 (tsuukon)",
                         "wordMeaning": "Lamento profundo / Arrependimento",
                         "sentence": "Tsuukon no mistake.",
-                        "sentenceMeaning": "Erro profundamente lamentável."
+                        "sentenceMeaning": "Erro profundamente lamentável.",
+                        "content": {
+                            "displayText": "痛恨の間違い。",
+                            "audioText": "痛恨の間違い。",
+                            "furigana": "",
+                            "romaji": "Tsuukon no mistake.",
+                            "translation": "Erro profundamente lamentável.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7696,13 +13102,39 @@ const kanjiN2Data = [
                         "word": "慕う (shitau)",
                         "wordMeaning": "Admirar / Amar com saudade",
                         "sentence": "Teacher o shitau.",
-                        "sentenceMeaning": "Admirar o professor."
+                        "sentenceMeaning": "Admirar o professor.",
+                        "content": {
+                            "displayText": "恩師を慕う。",
+                            "audioText": "恩師を慕う。",
+                            "furigana": "",
+                            "romaji": "Teacher o shitau.",
+                            "translation": "Admirar o professor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "敬慕 (keibo)",
                         "wordMeaning": "Respeito e admiração profunda",
                         "sentence": "Keibo no spirit.",
-                        "sentenceMeaning": "Espírito de admiração profunda."
+                        "sentenceMeaning": "Espírito de admiração profunda.",
+                        "content": {
+                            "displayText": "敬慕の精神。",
+                            "audioText": "敬慕の精神。",
+                            "furigana": "",
+                            "romaji": "Keibo no spirit.",
+                            "translation": "Espírito de admiração profunda.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7727,13 +13159,39 @@ const kanjiN2Data = [
                         "word": "喜悦 (kietsu)",
                         "wordMeaning": "Jubilo / Alegria intensa",
                         "sentence": "Kietsu no voice.",
-                        "sentenceMeaning": "Voz de júbilo."
+                        "sentenceMeaning": "Voz de júbilo.",
+                        "content": {
+                            "displayText": "喜悦の声。",
+                            "audioText": "喜悦の声。",
+                            "furigana": "",
+                            "romaji": "Kietsu no voice.",
+                            "translation": "Voz de júbilo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "満悦 (man'etsu)",
                         "wordMeaning": "Plena satisfação",
                         "sentence": "Man'etsu no smile.",
-                        "sentenceMeaning": "Sorriso de plena satisfação."
+                        "sentenceMeaning": "Sorriso de plena satisfação.",
+                        "content": {
+                            "displayText": "満悦のスみルえ。",
+                            "audioText": "満悦のスみルえ。",
+                            "furigana": "",
+                            "romaji": "Man'etsu no smile.",
+                            "translation": "Sorriso de plena satisfação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7758,13 +13216,39 @@ const kanjiN2Data = [
                         "word": "信仰 (shinkou)",
                         "wordMeaning": "Fé / Crença religiosa",
                         "sentence": "Shinkou no heart.",
-                        "sentenceMeaning": "Coração de fé."
+                        "sentenceMeaning": "Coração de fé.",
+                        "content": {
+                            "displayText": "信仰の心。",
+                            "audioText": "信仰の心。",
+                            "furigana": "",
+                            "romaji": "Shinkou no heart.",
+                            "translation": "Coração de fé.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "仰ぎ見る (aogimiru)",
                         "wordMeaning": "Contemplar olhando para o alto",
                         "sentence": "Sky o aogimiru.",
-                        "sentenceMeaning": "Contemplar o céu."
+                        "sentenceMeaning": "Contemplar o céu.",
+                        "content": {
+                            "displayText": "空を仰ぎ見る。",
+                            "audioText": "空を仰ぎ見る。",
+                            "furigana": "",
+                            "romaji": "Sky o aogimiru.",
+                            "translation": "Contemplar o céu.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7793,13 +13277,39 @@ const kanjiN2Data = [
                         "word": "崇拝 (suuhai)",
                         "wordMeaning": "Adoração / Veneração",
                         "sentence": "Hero no suuhai.",
-                        "sentenceMeaning": "Adoração ao herói."
+                        "sentenceMeaning": "Adoração ao herói.",
+                        "content": {
+                            "displayText": "英雄の崇拝。",
+                            "audioText": "英雄の崇拝。",
+                            "furigana": "",
+                            "romaji": "Hero no suuhai.",
+                            "translation": "Adoração ao herói.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "崇高 (suukou)",
                         "wordMeaning": "Sublime / Elevado",
                         "sentence": "Suukou na goal.",
-                        "sentenceMeaning": "Meta sublime e elevada."
+                        "sentenceMeaning": "Meta sublime e elevada.",
+                        "content": {
+                            "displayText": "崇高なごあル。",
+                            "audioText": "崇高なごあル。",
+                            "furigana": "",
+                            "romaji": "Suukou na goal.",
+                            "translation": "Meta sublime e elevada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7828,13 +13338,39 @@ const kanjiN2Data = [
                         "word": "尊重 (sonchou)",
                         "wordMeaning": "Respeito / Valorização",
                         "sentence": "Opinion o sonchou.",
-                        "sentenceMeaning": "Respeitar as opiniões."
+                        "sentenceMeaning": "Respeitar as opiniões.",
+                        "content": {
+                            "displayText": "意見を尊重。",
+                            "audioText": "意見を尊重。",
+                            "furigana": "",
+                            "romaji": "Opinion o sonchou.",
+                            "translation": "Respeitar as opiniões.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "尊厳 (songen)",
                         "wordMeaning": "Dignidade",
                         "sentence": "Human no songen.",
-                        "sentenceMeaning": "Dignidade humana."
+                        "sentenceMeaning": "Dignidade humana.",
+                        "content": {
+                            "displayText": "人間の尊厳。",
+                            "audioText": "人間の尊厳。",
+                            "furigana": "",
+                            "romaji": "Human no songen.",
+                            "translation": "Dignidade humana.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7855,13 +13391,39 @@ const kanjiN2Data = [
                         "word": "敬語 (keigo)",
                         "wordMeaning": "Linguagem respeitosa (Keigo)",
                         "sentence": "Keigo o tsukau.",
-                        "sentenceMeaning": "Usar linguagem respeitosa."
+                        "sentenceMeaning": "Usar linguagem respeitosa.",
+                        "content": {
+                            "displayText": "敬語をつかう。",
+                            "audioText": "敬語をつかう。",
+                            "furigana": "",
+                            "romaji": "Keigo o tsukau.",
+                            "translation": "Usar linguagem respeitosa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "敬意 (keii)",
                         "wordMeaning": "Respeito / Vênia",
                         "sentence": "Keii o shimesu.",
-                        "sentenceMeaning": "Demonstrar respeito."
+                        "sentenceMeaning": "Demonstrar respeito.",
+                        "content": {
+                            "displayText": "敬意をしめす。",
+                            "audioText": "敬意をしめす。",
+                            "furigana": "",
+                            "romaji": "Keii o shimesu.",
+                            "translation": "Demonstrar respeito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -7977,7 +13539,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 12,
@@ -7987,7 +13553,15 @@ const kanjiN2Data = [
             "title": "Expressando Estética Cultural (~ni saku)",
             "explanation": "No N2, expressam-se manifestações de tradições artísticas e artesanais refinadas.",
             "example": "Geijutsu ni saku biken desu.",
-            "translation": "É um olhar belo voltado às artes."
+            "translation": "É um olhar belo voltado às artes.",
+            "content": {
+                "displayText": "げいじゅつにさくびけんです。",
+                "audioText": "げいじゅつにさくびけんです。",
+                "furigana": "",
+                "romaji": "Geijutsu ni saku biken desu.",
+                "translation": "É um olhar belo voltado às artes.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "日本の伝統建築と美意識 (Arquitetura Tradicional Japonesa e Estética)",
@@ -8029,13 +13603,39 @@ const kanjiN2Data = [
                         "word": "演劇 (engeki)",
                         "wordMeaning": "Peça teatral",
                         "sentence": "Engeki no stage.",
-                        "sentenceMeaning": "Palco de peça teatral."
+                        "sentenceMeaning": "Palco de peça teatral.",
+                        "content": {
+                            "displayText": "演劇のスたげ。",
+                            "audioText": "演劇のスたげ。",
+                            "furigana": "",
+                            "romaji": "Engeki no stage.",
+                            "translation": "Palco de peça teatral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "劇的 (gekiteki)",
                         "wordMeaning": "Dramático / Impressionante",
                         "sentence": "Gekiteki na change.",
-                        "sentenceMeaning": "Mudança dramática."
+                        "sentenceMeaning": "Mudança dramática.",
+                        "content": {
+                            "displayText": "劇的なちゃんげ。",
+                            "audioText": "劇的なちゃんげ。",
+                            "furigana": "",
+                            "romaji": "Gekiteki na change.",
+                            "translation": "Mudança dramática.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8060,13 +13660,39 @@ const kanjiN2Data = [
                         "word": "歌舞伎 (kabuki)",
                         "wordMeaning": "Teatro tradicional Kabuki",
                         "sentence": "Kabuki o miru.",
-                        "sentenceMeaning": "Assistir ao teatro Kabuki."
+                        "sentenceMeaning": "Assistir ao teatro Kabuki.",
+                        "content": {
+                            "displayText": "歌舞伎をみる。",
+                            "audioText": "歌舞伎をみる。",
+                            "furigana": "",
+                            "romaji": "Kabuki o miru.",
+                            "translation": "Assistir ao teatro Kabuki.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "舞踊 (buyou)",
                         "wordMeaning": "Dança clássica / Coreografia",
                         "sentence": "Nihon buyou.",
-                        "sentenceMeaning": "Dança clássica japonesa."
+                        "sentenceMeaning": "Dança clássica japonesa.",
+                        "content": {
+                            "displayText": "にほん舞踊。",
+                            "audioText": "にほん舞踊。",
+                            "furigana": "",
+                            "romaji": "Nihon buyou.",
+                            "translation": "Dança clássica japonesa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8087,13 +13713,39 @@ const kanjiN2Data = [
                         "word": "演奏 (ensou)",
                         "wordMeaning": "Apresentação musical / Performance",
                         "sentence": "Piano no ensou.",
-                        "sentenceMeaning": "Apresentação de piano."
+                        "sentenceMeaning": "Apresentação de piano.",
+                        "content": {
+                            "displayText": "ぴあのの演奏。",
+                            "audioText": "ぴあのの演奏。",
+                            "furigana": "",
+                            "romaji": "Piano no ensou.",
+                            "translation": "Apresentação de piano.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "奏者 (sousha)",
                         "wordMeaning": "Instrumentista / Músico executante",
                         "sentence": "Violin no sousha.",
-                        "sentenceMeaning": "Executante de violino."
+                        "sentenceMeaning": "Executante de violino.",
+                        "content": {
+                            "displayText": "ヴいおルいんの奏者。",
+                            "audioText": "ヴいおルいんの奏者。",
+                            "furigana": "",
+                            "romaji": "Violin no sousha.",
+                            "translation": "Executante de violino.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8122,13 +13774,39 @@ const kanjiN2Data = [
                         "word": "楽譜 (gakufu)",
                         "wordMeaning": "Partitura musical",
                         "sentence": "Gakufu o yomu.",
-                        "sentenceMeaning": "Ler a partitura musical."
+                        "sentenceMeaning": "Ler a partitura musical.",
+                        "content": {
+                            "displayText": "楽譜をよむ。",
+                            "audioText": "楽譜をよむ。",
+                            "furigana": "",
+                            "romaji": "Gakufu o yomu.",
+                            "translation": "Ler a partitura musical.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "家譜 (kafu)",
                         "wordMeaning": "Árvore genealógica da família",
                         "sentence": "Kafu no record.",
-                        "sentenceMeaning": "Registro da árvore genealógica."
+                        "sentenceMeaning": "Registro da árvore genealógica.",
+                        "content": {
+                            "displayText": "家譜のれクおルド。",
+                            "audioText": "家譜のれクおルド。",
+                            "furigana": "",
+                            "romaji": "Kafu no record.",
+                            "translation": "Registro da árvore genealógica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8153,13 +13831,39 @@ const kanjiN2Data = [
                         "word": "彫刻 (choukoku)",
                         "wordMeaning": "Escultura / Obra entalhada",
                         "sentence": "Stone no choukoku.",
-                        "sentenceMeaning": "Escultura de pedra."
+                        "sentenceMeaning": "Escultura de pedra.",
+                        "content": {
+                            "displayText": "スとねの彫刻。",
+                            "audioText": "スとねの彫刻。",
+                            "furigana": "",
+                            "romaji": "Stone no choukoku.",
+                            "translation": "Escultura de pedra.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "彫る (horu)",
                         "wordMeaning": "Esculpir / Entalhar",
                         "sentence": "Wood o horu.",
-                        "sentenceMeaning": "Entalhar a madeira."
+                        "sentenceMeaning": "Entalhar a madeira.",
+                        "content": {
+                            "displayText": "をおドを彫る。",
+                            "audioText": "をおドを彫る。",
+                            "furigana": "",
+                            "romaji": "Wood o horu.",
+                            "translation": "Entalhar a madeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8188,13 +13892,39 @@ const kanjiN2Data = [
                         "word": "水墨画 (suibokuga)",
                         "wordMeaning": "Pintura em tinta nankin",
                         "sentence": "Suibokuga o kaku.",
-                        "sentenceMeaning": "Pintar em tinta nankin."
+                        "sentenceMeaning": "Pintar em tinta nankin.",
+                        "content": {
+                            "displayText": "水墨画をかく。",
+                            "audioText": "水墨画をかく。",
+                            "furigana": "",
+                            "romaji": "Suibokuga o kaku.",
+                            "translation": "Pintar em tinta nankin.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "墨汁 (bokujuu)",
                         "wordMeaning": "Tinta nankin líquida",
                         "sentence": "Bokujuu de shodou.",
-                        "sentenceMeaning": "Praticar caligrafia com tinta nankin."
+                        "sentenceMeaning": "Praticar caligrafia com tinta nankin.",
+                        "content": {
+                            "displayText": "墨汁でしょどう。",
+                            "audioText": "墨汁でしょどう。",
+                            "furigana": "",
+                            "romaji": "Bokujuu de shodou.",
+                            "translation": "Praticar caligrafia com tinta nankin.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8219,13 +13949,39 @@ const kanjiN2Data = [
                         "word": "漆器 (shikki)",
                         "wordMeaning": "Utensílios de laca Urushi",
                         "sentence": "Shikki no bowl.",
-                        "sentenceMeaning": "Tigela de laca tradicional."
+                        "sentenceMeaning": "Tigela de laca tradicional.",
+                        "content": {
+                            "displayText": "漆器のぼウル。",
+                            "audioText": "漆器のぼウル。",
+                            "furigana": "",
+                            "romaji": "Shikki no bowl.",
+                            "translation": "Tigela de laca tradicional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "漆黒 (shikkoku)",
                         "wordMeaning": "Preto azeviche / Preto profundo",
                         "sentence": "Shikkoku no hair.",
-                        "sentenceMeaning": "Cabelo preto azeviche."
+                        "sentenceMeaning": "Cabelo preto azeviche.",
+                        "content": {
+                            "displayText": "漆黒のはいル。",
+                            "audioText": "漆黒のはいル。",
+                            "furigana": "",
+                            "romaji": "Shikkoku no hair.",
+                            "translation": "Cabelo preto azeviche.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8246,13 +14002,39 @@ const kanjiN2Data = [
                         "word": "陶器 (touki)",
                         "wordMeaning": "Louça de cerâmica / Porcelana",
                         "sentence": "Touki no cup.",
-                        "sentenceMeaning": "Xícara de cerâmica."
+                        "sentenceMeaning": "Xícara de cerâmica.",
+                        "content": {
+                            "displayText": "陶器のクうプ。",
+                            "audioText": "陶器のクうプ。",
+                            "furigana": "",
+                            "romaji": "Touki no cup.",
+                            "translation": "Xícara de cerâmica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "陶芸 (tougei)",
                         "wordMeaning": "Arte da cerâmica / Olaria",
                         "sentence": "Tougei class.",
-                        "sentenceMeaning": "Aula de arte da cerâmica."
+                        "sentenceMeaning": "Aula de arte da cerâmica.",
+                        "content": {
+                            "displayText": "陶芸クルあっス。",
+                            "audioText": "陶芸クルあっス。",
+                            "furigana": "",
+                            "romaji": "Tougei class.",
+                            "translation": "Aula de arte da cerâmica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8281,13 +14063,39 @@ const kanjiN2Data = [
                         "word": "巨匠 (kyoshou)",
                         "wordMeaning": "Grande mestre / Mestre aclamado",
                         "sentence": "Art no kyoshou.",
-                        "sentenceMeaning": "Grande mestre da arte."
+                        "sentenceMeaning": "Grande mestre da arte.",
+                        "content": {
+                            "displayText": "あルトの巨匠。",
+                            "audioText": "あルトの巨匠。",
+                            "furigana": "",
+                            "romaji": "Art no kyoshou.",
+                            "translation": "Grande mestre da arte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "意匠 (ishou)",
                         "wordMeaning": "Design artístico / Concepção gráfica",
                         "sentence": "Product no ishou.",
-                        "sentenceMeaning": "Design gráfico do produto."
+                        "sentenceMeaning": "Design gráfico do produto.",
+                        "content": {
+                            "displayText": "プろドうクトの意匠。",
+                            "audioText": "プろドうクトの意匠。",
+                            "furigana": "",
+                            "romaji": "Product no ishou.",
+                            "translation": "Design gráfico do produto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8308,13 +14116,39 @@ const kanjiN2Data = [
                         "word": "料亭 (ryoutei)",
                         "wordMeaning": "Restaurante tradicional de alta gastronomia",
                         "sentence": "Ryoutei de dinner.",
-                        "sentenceMeaning": "Jantar em restaurante tradicional."
+                        "sentenceMeaning": "Jantar em restaurante tradicional.",
+                        "content": {
+                            "displayText": "料亭ででぃンねル。",
+                            "audioText": "料亭ででぃンねル。",
+                            "furigana": "",
+                            "romaji": "Ryoutei de dinner.",
+                            "translation": "Jantar em restaurante tradicional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "東屋 (azumaya)",
                         "wordMeaning": "Quiosque de jardim / Gazebo",
                         "sentence": "Park no azumaya.",
-                        "sentenceMeaning": "Gazebo do parque."
+                        "sentenceMeaning": "Gazebo do parque.",
+                        "content": {
+                            "displayText": "公園の休憩亭。",
+                            "audioText": "公園の休憩亭。",
+                            "furigana": "",
+                            "romaji": "Park no azumaya.",
+                            "translation": "Gazebo do parque.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8335,13 +14169,39 @@ const kanjiN2Data = [
                         "word": "金閣寺 (kinkakuji)",
                         "wordMeaning": "Templo do Pavilhão Dourado",
                         "sentence": "Kinkakuji ni iku.",
-                        "sentenceMeaning": "Visitar o Templo Kinkakuji."
+                        "sentenceMeaning": "Visitar o Templo Kinkakuji.",
+                        "content": {
+                            "displayText": "金閣寺にいく。",
+                            "audioText": "金閣寺にいく。",
+                            "furigana": "",
+                            "romaji": "Kinkakuji ni iku.",
+                            "translation": "Visitar o Templo Kinkakuji.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "閣下 (kakka)",
                         "wordMeaning": "Vossa Excelência / Título nobre",
                         "sentence": "Ambassador kakka.",
-                        "sentenceMeaning": "Vossa Excelência Embaixador."
+                        "sentenceMeaning": "Vossa Excelência Embaixador.",
+                        "content": {
+                            "displayText": "あムばっさどル閣下。",
+                            "audioText": "あムばっさどル閣下。",
+                            "furigana": "",
+                            "romaji": "Ambassador kakka.",
+                            "translation": "Vossa Excelência Embaixador.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8366,13 +14226,39 @@ const kanjiN2Data = [
                         "word": "廊下 (rouka)",
                         "wordMeaning": "Corredor / Passagem interna",
                         "sentence": "Rouka o walk.",
-                        "sentenceMeaning": "Caminhar pelo corredor."
+                        "sentenceMeaning": "Caminhar pelo corredor.",
+                        "content": {
+                            "displayText": "廊下をわルク。",
+                            "audioText": "廊下をわルク。",
+                            "furigana": "",
+                            "romaji": "Rouka o walk.",
+                            "translation": "Caminhar pelo corredor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "画廊 (garou)",
                         "wordMeaning": "Galeria de arte",
                         "sentence": "Garou de exhibit.",
-                        "sentenceMeaning": "Exposição em galeria de arte."
+                        "sentenceMeaning": "Exposição em galeria de arte.",
+                        "content": {
+                            "displayText": "画廊でえクスひびト。",
+                            "audioText": "画廊でえクスひびト。",
+                            "furigana": "",
+                            "romaji": "Garou de exhibit.",
+                            "translation": "Exposição em galeria de arte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8401,13 +14287,39 @@ const kanjiN2Data = [
                         "word": "電柱 (denchuu)",
                         "wordMeaning": "Poste de iluminação/energia",
                         "sentence": "Denchuu ni hit.",
-                        "sentenceMeaning": "Bater no poste de energia."
+                        "sentenceMeaning": "Bater no poste de energia.",
+                        "content": {
+                            "displayText": "電柱にひト。",
+                            "audioText": "電柱にひト。",
+                            "furigana": "",
+                            "romaji": "Denchuu ni hit.",
+                            "translation": "Bater no poste de energia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "大黒柱 (daikokubashira)",
                         "wordMeaning": "Pilar mestre / Sustento da família",
                         "sentence": "Family no daikokubashira.",
-                        "sentenceMeaning": "O sustento principal da família."
+                        "sentenceMeaning": "O sustento principal da família.",
+                        "content": {
+                            "displayText": "ふぁみルイの大黒柱。",
+                            "audioText": "ふぁみルイの大黒柱。",
+                            "furigana": "",
+                            "romaji": "Family no daikokubashira.",
+                            "translation": "O sustento principal da família.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8432,13 +14344,39 @@ const kanjiN2Data = [
                         "word": "梁 (hari)",
                         "wordMeaning": "Viga de madeira no teto",
                         "sentence": "Mokuzou no hari.",
-                        "sentenceMeaning": "Viga de madeira da casa."
+                        "sentenceMeaning": "Viga de madeira da casa.",
+                        "content": {
+                            "displayText": "もくぞうの梁。",
+                            "audioText": "もくぞうの梁。",
+                            "furigana": "",
+                            "romaji": "Mokuzou no hari.",
+                            "translation": "Viga de madeira da casa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "橋梁 (kyouryou)",
                         "wordMeaning": "Pontes e grandes viadutos",
                         "sentence": "Kyouryou engineering.",
-                        "sentenceMeaning": "Engenharia de pontes e viadutos."
+                        "sentenceMeaning": "Engenharia de pontes e viadutos.",
+                        "content": {
+                            "displayText": "橋梁えんぎねえりんグ。",
+                            "audioText": "橋梁えんぎねえりんグ。",
+                            "furigana": "",
+                            "romaji": "Kyouryou engineering.",
+                            "translation": "Engenharia de pontes e viadutos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8471,13 +14409,39 @@ const kanjiN2Data = [
                         "word": "障子 (shouji)",
                         "wordMeaning": "Porta de correr de papel de arroz (Shoji)",
                         "sentence": "Shouji o open.",
-                        "sentenceMeaning": "Abrir a porta Shoji."
+                        "sentenceMeaning": "Abrir a porta Shoji.",
+                        "content": {
+                            "displayText": "障子をおぺん。",
+                            "audioText": "障子をおぺん。",
+                            "furigana": "",
+                            "romaji": "Shouji o open.",
+                            "translation": "Abrir a porta Shoji.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "障害 (shougai)",
                         "wordMeaning": "Obstáculo / Deficiência",
                         "sentence": "Shougai o koeru.",
-                        "sentenceMeaning": "Superar obstáculos."
+                        "sentenceMeaning": "Superar obstáculos.",
+                        "content": {
+                            "displayText": "障害をこえる。",
+                            "audioText": "障害をこえる。",
+                            "furigana": "",
+                            "romaji": "Shougai o koeru.",
+                            "translation": "Superar obstáculos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8502,13 +14466,39 @@ const kanjiN2Data = [
                         "word": "座禅 (zazen)",
                         "wordMeaning": "Meditação Zazen sentada",
                         "sentence": "Zazen o suru.",
-                        "sentenceMeaning": "Praticar meditação Zazen."
+                        "sentenceMeaning": "Praticar meditação Zazen.",
+                        "content": {
+                            "displayText": "座禅をする。",
+                            "audioText": "座禅をする。",
+                            "furigana": "",
+                            "romaji": "Zazen o suru.",
+                            "translation": "Praticar meditação Zazen.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "禅宗 (zenshuu)",
                         "wordMeaning": "Escola Budista Zen",
                         "sentence": "Zenshuu no otera.",
-                        "sentenceMeaning": "Templo da escola Zen."
+                        "sentenceMeaning": "Templo da escola Zen.",
+                        "content": {
+                            "displayText": "禅宗のおてら。",
+                            "audioText": "禅宗のおてら。",
+                            "furigana": "",
+                            "romaji": "Zenshuu no otera.",
+                            "translation": "Templo da escola Zen.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8529,13 +14519,39 @@ const kanjiN2Data = [
                         "word": "優雅 (yuuga)",
                         "wordMeaning": "Elegante / Gracioso",
                         "sentence": "Yuuga na dance.",
-                        "sentenceMeaning": "Dança graciosa e elegante."
+                        "sentenceMeaning": "Dança graciosa e elegante.",
+                        "content": {
+                            "displayText": "優雅なだんクえ。",
+                            "audioText": "優雅なだんクえ。",
+                            "furigana": "",
+                            "romaji": "Yuuga na dance.",
+                            "translation": "Dança graciosa e elegante.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "雅楽 (gagaku)",
                         "wordMeaning": "Música clássica da corte imperial",
                         "sentence": "Gagaku no concert.",
-                        "sentenceMeaning": "Concerto de música imperial Gagaku."
+                        "sentenceMeaning": "Concerto de música imperial Gagaku.",
+                        "content": {
+                            "displayText": "雅楽のクおんクえルト。",
+                            "audioText": "雅楽のクおんクえルト。",
+                            "furigana": "",
+                            "romaji": "Gagaku no concert.",
+                            "translation": "Concerto de música imperial Gagaku.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8560,13 +14576,39 @@ const kanjiN2Data = [
                         "word": "幽玄 (yuugen)",
                         "wordMeaning": "Beleza sutil e profunda (Conceito estético)",
                         "sentence": "Yuugen na bi.",
-                        "sentenceMeaning": "Beleza sutil e profunda."
+                        "sentenceMeaning": "Beleza sutil e profunda.",
+                        "content": {
+                            "displayText": "幽玄なび。",
+                            "audioText": "幽玄なび。",
+                            "furigana": "",
+                            "romaji": "Yuugen na bi.",
+                            "translation": "Beleza sutil e profunda.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "幽霊 (yuurei)",
                         "wordMeaning": "Fantasma / Espectro",
                         "sentence": "Yuurei no story.",
-                        "sentenceMeaning": "História de fantasma."
+                        "sentenceMeaning": "História de fantasma.",
+                        "content": {
+                            "displayText": "幽霊の物語。",
+                            "audioText": "幽霊の物語。",
+                            "furigana": "",
+                            "romaji": "Yuurei no story.",
+                            "translation": "História de fantasma.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8591,13 +14633,39 @@ const kanjiN2Data = [
                         "word": "粋 (iki)",
                         "wordMeaning": "Chique / Elegante estilo urbano",
                         "sentence": "Iki na costume.",
-                        "sentenceMeaning": "Traje elegante."
+                        "sentenceMeaning": "Traje elegante.",
+                        "content": {
+                            "displayText": "粋なクおストうめ。",
+                            "audioText": "粋なクおストうめ。",
+                            "furigana": "",
+                            "romaji": "Iki na costume.",
+                            "translation": "Traje elegante.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "抜粋 (bassui)",
                         "wordMeaning": "Seleção do melhor trecho",
                         "sentence": "Text no bassui.",
-                        "sentenceMeaning": "Seleção do melhor trecho."
+                        "sentenceMeaning": "Seleção do melhor trecho.",
+                        "content": {
+                            "displayText": "古典の名作から心に響く文章を抜粋します。",
+                            "audioText": "古典の名作から心に響く文章を抜粋します。",
+                            "furigana": "",
+                            "romaji": "Text no bassui.",
+                            "translation": "Seleção do melhor trecho.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8709,7 +14777,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 13,
@@ -8719,7 +14791,15 @@ const kanjiN2Data = [
             "title": "Expressando Relações Diplomáticas (~wo megutte)",
             "explanation": "No N2, expressam-se divergências ou negociações em torno de pautas e tratados internacionais.",
             "example": "Jouyaku o megutte koushou shimasu.",
-            "translation": "Negociamos em torno do tratado."
+            "translation": "Negociamos em torno do tratado.",
+            "content": {
+                "displayText": "じょうやくをめぐってこうしょうします。",
+                "audioText": "じょうやくをめぐってこうしょうします。",
+                "furigana": "",
+                "romaji": "Jouyaku o megutte koushou shimasu.",
+                "translation": "Negociamos em torno do tratado.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "国際社会と外交交渉 (Sociedade Internacional e Negociações Diplomáticas)",
@@ -8761,13 +14841,39 @@ const kanjiN2Data = [
                         "word": "邦人 (houjin)",
                         "wordMeaning": "Cidadão da nação no exterior / Compatriota",
                         "sentence": "Zai-gai houjin.",
-                        "sentenceMeaning": "Compatriotas residentes no exterior."
+                        "sentenceMeaning": "Compatriotas residentes no exterior.",
+                        "content": {
+                            "displayText": "ざいがい邦人。",
+                            "audioText": "ざいがい邦人。",
+                            "furigana": "",
+                            "romaji": "Zai-gai houjin.",
+                            "translation": "Compatriotas residentes no exterior.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "邦画 (houga)",
                         "wordMeaning": "Filme de cinema nacional",
                         "sentence": "Nihon no houga.",
-                        "sentenceMeaning": "Filme nacional japonês."
+                        "sentenceMeaning": "Filme nacional japonês.",
+                        "content": {
+                            "displayText": "にほんの邦画。",
+                            "audioText": "にほんの邦画。",
+                            "furigana": "",
+                            "romaji": "Nihon no houga.",
+                            "translation": "Filme nacional japonês.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8788,13 +14894,39 @@ const kanjiN2Data = [
                         "word": "同盟 (doumei)",
                         "wordMeaning": "Aliança / Coalizão",
                         "sentence": "Doumei-koku.",
-                        "sentenceMeaning": "Países aliados."
+                        "sentenceMeaning": "Países aliados.",
+                        "content": {
+                            "displayText": "同盟こく。",
+                            "audioText": "同盟こく。",
+                            "furigana": "",
+                            "romaji": "Doumei-koku.",
+                            "translation": "Países aliados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "連盟 (renmei)",
                         "wordMeaning": "Federação / Liga internacional",
                         "sentence": "Kokusai renmei.",
-                        "sentenceMeaning": "Liga internacional."
+                        "sentenceMeaning": "Liga internacional.",
+                        "content": {
+                            "displayText": "こくさい連盟。",
+                            "audioText": "こくさい連盟。",
+                            "furigana": "",
+                            "romaji": "Kokusai renmei.",
+                            "translation": "Liga internacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8815,13 +14947,39 @@ const kanjiN2Data = [
                         "word": "領土 (ryoudo)",
                         "wordMeaning": "Território nacional",
                         "sentence": "Ryoudoku no protection.",
-                        "sentenceMeaning": "Proteção do território nacional."
+                        "sentenceMeaning": "Proteção do território nacional.",
+                        "content": {
+                            "displayText": "国の領土の保全と安全を確保します。",
+                            "audioText": "国の領土の保全と安全を確保します。",
+                            "furigana": "",
+                            "romaji": "Ryoudoku no protection.",
+                            "translation": "Proteção do território nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "領事 (ryouji)",
                         "wordMeaning": "Cônsuel diplomático",
                         "sentence": "Ryouji-kan.",
-                        "sentenceMeaning": "Consulado diplomático."
+                        "sentenceMeaning": "Consulado diplomático.",
+                        "content": {
+                            "displayText": "領事かん。",
+                            "audioText": "領事かん。",
+                            "furigana": "",
+                            "romaji": "Ryouji-kan.",
+                            "translation": "Consulado diplomático.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8846,13 +15004,39 @@ const kanjiN2Data = [
                         "word": "侵略 (shinryaku)",
                         "wordMeaning": "Invasão / Agressão militar",
                         "sentence": "Shinryaku o stop.",
-                        "sentenceMeaning": "Parar a invasão militar."
+                        "sentenceMeaning": "Parar a invasão militar.",
+                        "content": {
+                            "displayText": "侵略を止める。",
+                            "audioText": "侵略を止める。",
+                            "furigana": "",
+                            "romaji": "Shinryaku o stop.",
+                            "translation": "Parar a invasão militar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "侵害 (shingai)",
                         "wordMeaning": "Violação de direitos",
                         "sentence": "Kenri no shingai.",
-                        "sentenceMeaning": "Violação de direitos."
+                        "sentenceMeaning": "Violação de direitos.",
+                        "content": {
+                            "displayText": "けんりの侵害。",
+                            "audioText": "けんりの侵害。",
+                            "furigana": "",
+                            "romaji": "Kenri no shingai.",
+                            "translation": "Violação de direitos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8877,13 +15061,39 @@ const kanjiN2Data = [
                         "word": "戦略 (senryaku)",
                         "wordMeaning": "Estratégia diplomática/militar",
                         "sentence": "Diplomacy no senryaku.",
-                        "sentenceMeaning": "Estratégia diplomática."
+                        "sentenceMeaning": "Estratégia diplomática.",
+                        "content": {
+                            "displayText": "外交上の重要な戦略を慎重に練り上げます。",
+                            "audioText": "外交上の重要な戦略を慎重に練り上げます。",
+                            "furigana": "",
+                            "romaji": "Diplomacy no senryaku.",
+                            "translation": "Estratégia diplomática.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "省略 (shouryaku)",
                         "wordMeaning": "Abreviação / Omissão",
                         "sentence": "Text no shouryaku.",
-                        "sentenceMeaning": "Abreviação do texto."
+                        "sentenceMeaning": "Abreviação do texto.",
+                        "content": {
+                            "displayText": "長い説明文の一部を簡潔に省略します。",
+                            "audioText": "長い説明文の一部を簡潔に省略します。",
+                            "furigana": "",
+                            "romaji": "Text no shouryaku.",
+                            "translation": "Abreviação do texto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8908,13 +15118,39 @@ const kanjiN2Data = [
                         "word": "条約 (jouyaku)",
                         "wordMeaning": "Tratado internacional",
                         "sentence": "Peace jouyaku.",
-                        "sentenceMeaning": "Tratado de paz."
+                        "sentenceMeaning": "Tratado de paz.",
+                        "content": {
+                            "displayText": "平和条約。",
+                            "audioText": "平和条約。",
+                            "furigana": "",
+                            "romaji": "Peace jouyaku.",
+                            "translation": "Tratado de paz.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "条件 (jouken)",
                         "wordMeaning": "Condição / Requisito",
                         "sentence": "Jouken o meet.",
-                        "sentenceMeaning": "Preencher os requisitos."
+                        "sentenceMeaning": "Preencher os requisitos.",
+                        "content": {
+                            "displayText": "契約を結ぶための重要な条件を満たします。",
+                            "audioText": "契約を結ぶための重要な条件を満たします。",
+                            "furigana": "",
+                            "romaji": "Jouken o meet.",
+                            "translation": "Preencher os requisitos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8935,13 +15171,39 @@ const kanjiN2Data = [
                         "word": "駐日 (chuunichi)",
                         "wordMeaning": "Residente no Japão (Embaixador)",
                         "sentence": "Chuunichi ambassador.",
-                        "sentenceMeaning": "Embaixador residente no Japão."
+                        "sentenceMeaning": "Embaixador residente no Japão.",
+                        "content": {
+                            "displayText": "駐日大使が両国の友好関係を深める活動を行います。",
+                            "audioText": "駐日大使が両国の友好関係を深める活動を行います。",
+                            "furigana": "",
+                            "romaji": "Chuunichi ambassador.",
+                            "translation": "Embaixador residente no Japão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "駐在 (chuuzai)",
                         "wordMeaning": "Posto diplomático residente",
                         "sentence": "Chuuzai-in.",
-                        "sentenceMeaning": "Expatriado residente a trabalho."
+                        "sentenceMeaning": "Expatriado residente a trabalho.",
+                        "content": {
+                            "displayText": "駐在いん。",
+                            "audioText": "駐在いん。",
+                            "furigana": "",
+                            "romaji": "Chuuzai-in.",
+                            "translation": "Expatriado residente a trabalho.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8966,13 +15228,39 @@ const kanjiN2Data = [
                         "word": "大使 (taishi)",
                         "wordMeaning": "Embaixador",
                         "sentence": "Taishi-kan.",
-                        "sentenceMeaning": "Embaixada."
+                        "sentenceMeaning": "Embaixada.",
+                        "content": {
+                            "displayText": "大使かん。",
+                            "audioText": "大使かん。",
+                            "furigana": "",
+                            "romaji": "Taishi-kan.",
+                            "translation": "Embaixada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "使命 (shimei)",
                         "wordMeaning": "Missão / Propósito",
                         "sentence": "Diplomatic shimei.",
-                        "sentenceMeaning": "Missão diplomática."
+                        "sentenceMeaning": "Missão diplomática.",
+                        "content": {
+                            "displayText": "平和を実現するための重い使命を担います。",
+                            "audioText": "平和を実現するための重い使命を担います。",
+                            "furigana": "",
+                            "romaji": "Diplomatic shimei.",
+                            "translation": "Missão diplomática.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -8997,13 +15285,39 @@ const kanjiN2Data = [
                         "word": "支援 (shien)",
                         "wordMeaning": "Apoio / Assistência",
                         "sentence": "Humanitarian shien.",
-                        "sentenceMeaning": "Assistência humanitária."
+                        "sentenceMeaning": "Assistência humanitária.",
+                        "content": {
+                            "displayText": "被災地へ食料や医薬品の人道支援物資を送ります。",
+                            "audioText": "被災地へ食料や医薬品の人道支援物資を送ります。",
+                            "furigana": "",
+                            "romaji": "Humanitarian shien.",
+                            "translation": "Assistência humanitária.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "応援 (ouen)",
                         "wordMeaning": "Torcida / Incentivo / Apoio",
                         "sentence": "Team o ouen.",
-                        "sentenceMeaning": "Torcer pela equipe."
+                        "sentenceMeaning": "Torcer pela equipe.",
+                        "content": {
+                            "displayText": "チームを応援。",
+                            "audioText": "チームを応援。",
+                            "furigana": "",
+                            "romaji": "Team o ouen.",
+                            "translation": "Torcer pela equipe.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9028,13 +15342,39 @@ const kanjiN2Data = [
                         "word": "国民 (kokumin)",
                         "wordMeaning": "Cidadãos da nação",
                         "sentence": "Kokumin no rights.",
-                        "sentenceMeaning": "Direitos dos cidadãos."
+                        "sentenceMeaning": "Direitos dos cidadãos.",
+                        "content": {
+                            "displayText": "主権を持つ国民の権利と自由を守ります。",
+                            "audioText": "主権を持つ国民の権利と自由を守ります。",
+                            "furigana": "",
+                            "romaji": "Kokumin no rights.",
+                            "translation": "Direitos dos cidadãos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "難民 (nanmin)",
                         "wordMeaning": "Refugiados de guerra/crise",
                         "sentence": "Nanmin no reception.",
-                        "sentenceMeaning": "Recepção de refugiados."
+                        "sentenceMeaning": "Recepção de refugiados.",
+                        "content": {
+                            "displayText": "戦争で住む場所を失った難民を受け入れます。",
+                            "audioText": "戦争で住む場所を失った難民を受け入れます。",
+                            "furigana": "",
+                            "romaji": "Nanmin no reception.",
+                            "translation": "Recepção de refugiados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9055,13 +15395,39 @@ const kanjiN2Data = [
                         "word": "貢献 (kouken)",
                         "wordMeaning": "Contribuição / Serviço prestado",
                         "sentence": "Peace ni kouken.",
-                        "sentenceMeaning": "Contribuir para a paz."
+                        "sentenceMeaning": "Contribuir para a paz.",
+                        "content": {
+                            "displayText": "平和に貢献。",
+                            "audioText": "平和に貢献。",
+                            "furigana": "",
+                            "romaji": "Peace ni kouken.",
+                            "translation": "Contribuir para a paz.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "貢物 (mitsugimono)",
                         "wordMeaning": "Tributo / Oferenda",
                         "sentence": "Mitsugimono o offer.",
-                        "sentenceMeaning": "Oferecer tributos."
+                        "sentenceMeaning": "Oferecer tributos.",
+                        "content": {
+                            "displayText": "かつて属国が皇帝に珍しい貢物を捧げました。",
+                            "audioText": "かつて属国が皇帝に珍しい貢物を捧げました。",
+                            "furigana": "",
+                            "romaji": "Mitsugimono o offer.",
+                            "translation": "Oferecer tributos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9086,13 +15452,39 @@ const kanjiN2Data = [
                         "word": "献身 (kenshin)",
                         "wordMeaning": "Dedicação total / Devoção",
                         "sentence": "Kenshin-teki na activity.",
-                        "sentenceMeaning": "Atividade de total dedicação."
+                        "sentenceMeaning": "Atividade de total dedicação.",
+                        "content": {
+                            "displayText": "地域社会の発展に献身的な努力を続けます。",
+                            "audioText": "地域社会の発展に献身的な努力を続けます。",
+                            "furigana": "",
+                            "romaji": "Kenshin-teki na activity.",
+                            "translation": "Atividade de total dedicação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "献血 (kenketsu)",
                         "wordMeaning": "Doação de sangue",
                         "sentence": "Kenketsu ni go.",
-                        "sentenceMeaning": "Ir fazer doação de sangue."
+                        "sentenceMeaning": "Ir fazer doação de sangue.",
+                        "content": {
+                            "displayText": "献血にご。",
+                            "audioText": "献血にご。",
+                            "furigana": "",
+                            "romaji": "Kenketsu ni go.",
+                            "translation": "Ir fazer doação de sangue.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9113,13 +15505,39 @@ const kanjiN2Data = [
                         "word": "紛争 (funsou)",
                         "wordMeaning": "Conflito / Disputa internacional",
                         "sentence": "Funsou no解決.",
-                        "sentenceMeaning": "Resolução do conflito."
+                        "sentenceMeaning": "Resolução do conflito.",
+                        "content": {
+                            "displayText": "紛争の解決。",
+                            "audioText": "紛争の解決。",
+                            "furigana": "",
+                            "romaji": "Funsou no解決.",
+                            "translation": "Resolução do conflito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "紛失 (funshitsu)",
                         "wordMeaning": "Extravio / Perda de documento",
                         "sentence": "Passport no funshitsu.",
-                        "sentenceMeaning": "Extravio do passaporte."
+                        "sentenceMeaning": "Extravio do passaporte.",
+                        "content": {
+                            "displayText": "大切なパスポートを旅行先で紛失してしまいました。",
+                            "audioText": "大切なパスポートを旅行先で紛失してしまいました。",
+                            "furigana": "",
+                            "romaji": "Passport no funshitsu.",
+                            "translation": "Extravio do passaporte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9148,13 +15566,39 @@ const kanjiN2Data = [
                         "word": "協定 (kyoutei)",
                         "wordMeaning": "Acordo / Convenção internacional",
                         "sentence": "Trade kyoutei.",
-                        "sentenceMeaning": "Acordo de comércio."
+                        "sentenceMeaning": "Acordo de comércio.",
+                        "content": {
+                            "displayText": "トらで協定。",
+                            "audioText": "トらで協定。",
+                            "furigana": "",
+                            "romaji": "Trade kyoutei.",
+                            "translation": "Acordo de comércio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "協議 (kyougi)",
                         "wordMeaning": "Consultas / Negociações multilaterais",
                         "sentence": "Kyougi o okonao.",
-                        "sentenceMeaning": "Realizar negociações."
+                        "sentenceMeaning": "Realizar negociações.",
+                        "content": {
+                            "displayText": "協議をおこなお。",
+                            "audioText": "協議をおこなお。",
+                            "furigana": "",
+                            "romaji": "Kyougi o okonao.",
+                            "translation": "Realizar negociações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9179,13 +15623,39 @@ const kanjiN2Data = [
                         "word": "条約 (jouyaku)",
                         "wordMeaning": "Tratado",
                         "sentence": "Ratify jouyaku.",
-                        "sentenceMeaning": "Ratificar o tratado."
+                        "sentenceMeaning": "Ratificar o tratado.",
+                        "content": {
+                            "displayText": "両国の代表が平和条約に正式に調印しました。",
+                            "audioText": "両国の代表が平和条約に正式に調印しました。",
+                            "furigana": "",
+                            "romaji": "Ratify jouyaku.",
+                            "translation": "Ratificar o tratado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "規約 (kiyaku)",
                         "wordMeaning": "Regulamento interno",
                         "sentence": "Kiyaku o mamoru.",
-                        "sentenceMeaning": "Respeitar o regulamento."
+                        "sentenceMeaning": "Respeitar o regulamento.",
+                        "content": {
+                            "displayText": "規約をまもる。",
+                            "audioText": "規約をまもる。",
+                            "furigana": "",
+                            "romaji": "Kiyaku o mamoru.",
+                            "translation": "Respeitar o regulamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9206,13 +15676,39 @@ const kanjiN2Data = [
                         "word": "地域 (chiiki)",
                         "wordMeaning": "Comunidade / Zona territorial",
                         "sentence": "Chiiki cooperation.",
-                        "sentenceMeaning": "Cooperação regional."
+                        "sentenceMeaning": "Cooperação regional.",
+                        "content": {
+                            "displayText": "周辺の国々と地域協力を深めていきます。",
+                            "audioText": "周辺の国々と地域協力を深めていきます。",
+                            "furigana": "",
+                            "romaji": "Chiiki cooperation.",
+                            "translation": "Cooperação regional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "海域 (kaiiki)",
                         "wordMeaning": "Área marítima territorial",
                         "sentence": "Kaiiki no patrol.",
-                        "sentenceMeaning": "Patrulhamento da área marítima."
+                        "sentenceMeaning": "Patrulhamento da área marítima.",
+                        "content": {
+                            "displayText": "海域のぱトろル。",
+                            "audioText": "海域のぱトろル。",
+                            "furigana": "",
+                            "romaji": "Kaiiki no patrol.",
+                            "translation": "Patrulhamento da área marítima.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9241,13 +15737,39 @@ const kanjiN2Data = [
                         "word": "和融 (wayuu)",
                         "wordMeaning": "Harmonia e reconciliação",
                         "sentence": "Wayuu no effort.",
-                        "sentenceMeaning": "Esforço de reconciliação."
+                        "sentenceMeaning": "Esforço de reconciliação.",
+                        "content": {
+                            "displayText": "対立していた両者が和融の道を模索します。",
+                            "audioText": "対立していた両者が和融の道を模索します。",
+                            "furigana": "",
+                            "romaji": "Wayuu no effort.",
+                            "translation": "Esforço de reconciliação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "金融 (kin'yuu)",
                         "wordMeaning": "Finanças internacionais",
                         "sentence": "Kin'yuu crisis.",
-                        "sentenceMeaning": "Crise financeira internacional."
+                        "sentenceMeaning": "Crise financeira internacional.",
+                        "content": {
+                            "displayText": "世界的な金融危機に対処するため中央銀行が動きます。",
+                            "audioText": "世界的な金融危機に対処するため中央銀行が動きます。",
+                            "furigana": "",
+                            "romaji": "Kin'yuu crisis.",
+                            "translation": "Crise financeira internacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9268,13 +15790,39 @@ const kanjiN2Data = [
                         "word": "避難 (hinan)",
                         "wordMeaning": "Evacuação / Refúgio",
                         "sentence": "Hinan camp.",
-                        "sentenceMeaning": "Campo de refugiados/evacuação."
+                        "sentenceMeaning": "Campo de refugiados/evacuação.",
+                        "content": {
+                            "displayText": "災害時に住民が安全な避難所へ避難します。",
+                            "audioText": "災害時に住民が安全な避難所へ避難します。",
+                            "furigana": "",
+                            "romaji": "Hinan camp.",
+                            "translation": "Campo de refugiados/evacuação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "回避 (kaihi)",
                         "wordMeaning": "Evitar guerra",
                         "sentence": "War no kaihi.",
-                        "sentenceMeaning": "Evitar a guerra."
+                        "sentenceMeaning": "Evitar a guerra.",
+                        "content": {
+                            "displayText": "わルの回避。",
+                            "audioText": "わルの回避。",
+                            "furigana": "",
+                            "romaji": "War no kaihi.",
+                            "translation": "Evitar a guerra.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9299,13 +15847,39 @@ const kanjiN2Data = [
                         "word": "国難 (kokunan)",
                         "wordMeaning": "Crise nacional",
                         "sentence": "Kokunan o overcome.",
-                        "sentenceMeaning": "Superar a crise nacional."
+                        "sentenceMeaning": "Superar a crise nacional.",
+                        "content": {
+                            "displayText": "国民が一丸となって国難を乗り越えます。",
+                            "audioText": "国民が一丸となって国難を乗り越えます。",
+                            "furigana": "",
+                            "romaji": "Kokunan o overcome.",
+                            "translation": "Superar a crise nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "難民 (nanmin)",
                         "wordMeaning": "Refugiados",
                         "sentence": "Nanmin rescue.",
-                        "sentenceMeaning": "Resgate de refugiados."
+                        "sentenceMeaning": "Resgate de refugiados.",
+                        "content": {
+                            "displayText": "海上で孤立した遭難者の救助活動を行います。",
+                            "audioText": "海上で孤立した遭難者の救助活動を行います。",
+                            "furigana": "",
+                            "romaji": "Nanmin rescue.",
+                            "translation": "Resgate de refugiados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9417,7 +15991,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 14,
@@ -9427,13 +16005,21 @@ const kanjiN2Data = [
             "title": "Expressando Trajeto em Viagem (~o keiyu shite)",
             "explanation": "No N2, indica-se pontos de baldeação e conexões de voo durante itinerários de viagem.",
             "example": "Tokyo o keiyu shite Paris ni ikimasu.",
-            "translation": "Vou a Paris fazendo escala em Tóquio."
+            "translation": "Vou a Paris fazendo escala em Tóquio.",
+            "content": {
+                "displayText": "ときょをけいゆしてぱりスにいきます。",
+                "audioText": "ときょをけいゆしてぱりスにいきます。",
+                "furigana": "",
+                "romaji": "Tokyo o keiyu shite Paris ni ikimasu.",
+                "translation": "Vou a Paris fazendo escala em Tóquio.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "国際航空と物流インフラ (Aviação Internacional e Logística)",
             "japanese": "<ruby>国際線<rt>こくさいせん</rt></ruby>の<ruby>航空機<rt>こうくうき</rt></ruby>が<ruby>貨物<rt>かもつ</rt></ruby>を<ruby>輸送<rt>ゆそう</rt></ruby>し、世界を<ruby>巡回<rt>じゅんかい</rt></ruby>します。<ruby>乗客<rt>じょうきゃく</rt></ruby>は<ruby>経由<rt>けいゆ</rt></ruby>地で<ruby>滞在<rt>たいざい</rt></ruby>します。",
             "romaji": "Kokusaisen no koukuuki ga kamotsu o yusou shi, sekai o junkai shimasu. Joukyaku wa keiyu-chi de taizai shimasu.",
-            "translation": "As aeronaves das linhas internacionais transportam cargas e circulam o mundo. Os passageiros permanecem nas conexões.",
+            "translation": "As aeronaves das linhas internacionais transportam cargas e circulam pelo mundo. Os passageiros fazem uma parada no local de conexão.",
             "comprehensionQuiz": [
                 {
                     "q": "O que as aeronaves internacionais transportam?",
@@ -9469,13 +16055,39 @@ const kanjiN2Data = [
                         "word": "航空 (koukuu)",
                         "wordMeaning": "Aviação / Navegação aérea",
                         "sentence": "Koukuu kaisha.",
-                        "sentenceMeaning": "Companhia aérea."
+                        "sentenceMeaning": "Companhia aérea.",
+                        "content": {
+                            "displayText": "航空かいしゃ。",
+                            "audioText": "航空かいしゃ。",
+                            "furigana": "",
+                            "romaji": "Koukuu kaisha.",
+                            "translation": "Companhia aérea.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "運航 (unkou)",
                         "wordMeaning": "Operação de voo/navio",
                         "sentence": "Flight no unkou.",
-                        "sentenceMeaning": "Operação do voo."
+                        "sentenceMeaning": "Operação do voo.",
+                        "content": {
+                            "displayText": "悪天候のため航空機の運航が一時見合わせとなりました。",
+                            "audioText": "悪天候のため航空機の運航が一時見合わせとなりました。",
+                            "furigana": "",
+                            "romaji": "Flight no unkou.",
+                            "translation": "Operação do voo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9496,13 +16108,39 @@ const kanjiN2Data = [
                         "word": "搬入 (hannyuu)",
                         "wordMeaning": "Carregamento para dentro / Entrada de carga",
                         "sentence": "Luggage no hannyuu.",
-                        "sentenceMeaning": "Carregamento das bagagens."
+                        "sentenceMeaning": "Carregamento das bagagens.",
+                        "content": {
+                            "displayText": "倉庫から工場へ重い資材を搬入します。",
+                            "audioText": "倉庫から工場へ重い資材を搬入します。",
+                            "furigana": "",
+                            "romaji": "Luggage no hannyuu.",
+                            "translation": "Carregamento das bagagens.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "搬送 (hansou)",
                         "wordMeaning": "Transporte médico / Remoção de paciente",
                         "sentence": "Hospital ni hansou.",
-                        "sentenceMeaning": "Remoção para o hospital."
+                        "sentenceMeaning": "Remoção para o hospital.",
+                        "content": {
+                            "displayText": "ほスぴたルに搬送。",
+                            "audioText": "ほスぴたルに搬送。",
+                            "furigana": "",
+                            "romaji": "Hospital ni hansou.",
+                            "translation": "Remoção para o hospital.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9527,13 +16165,39 @@ const kanjiN2Data = [
                         "word": "輸出 (yushutsu)",
                         "wordMeaning": "Exportação",
                         "sentence": "Car no yushutsu.",
-                        "sentenceMeaning": "Exportação de carros."
+                        "sentenceMeaning": "Exportação de carros.",
+                        "content": {
+                            "displayText": "日本から世界各国へ自動車を輸出します。",
+                            "audioText": "日本から世界各国へ自動車を輸出します。",
+                            "furigana": "",
+                            "romaji": "Car no yushutsu.",
+                            "translation": "Exportação de carros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "輸入 (yunyuu)",
                         "wordMeaning": "Importação",
                         "sentence": "Oil no yunyuu.",
-                        "sentenceMeaning": "Importação de petróleo."
+                        "sentenceMeaning": "Importação de petróleo.",
+                        "content": {
+                            "displayText": "おいルの輸入。",
+                            "audioText": "おいルの輸入。",
+                            "furigana": "",
+                            "romaji": "Oil no yunyuu.",
+                            "translation": "Importação de petróleo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9558,13 +16222,39 @@ const kanjiN2Data = [
                         "word": "寄港 (kikou)",
                         "wordMeaning": "Escala em porto marítimo",
                         "sentence": "Ship no kikou.",
-                        "sentenceMeaning": "Escala do navio no porto."
+                        "sentenceMeaning": "Escala do navio no porto.",
+                        "content": {
+                            "displayText": "しプの寄港。",
+                            "audioText": "しプの寄港。",
+                            "furigana": "",
+                            "romaji": "Ship no kikou.",
+                            "translation": "Escala do navio no porto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "立ち寄る (tachiyoru)",
                         "wordMeaning": "Dar uma passada / Fazer parada rápida",
                         "sentence": "Cafe ni tachiyoru.",
-                        "sentenceMeaning": "Dar uma passada no café."
+                        "sentenceMeaning": "Dar uma passada no café.",
+                        "content": {
+                            "displayText": "散歩のついでに近所の喫茶店へ立ち寄ります。",
+                            "audioText": "散歩のついでに近所の喫茶店へ立ち寄ります。",
+                            "furigana": "",
+                            "romaji": "Cafe ni tachiyoru.",
+                            "translation": "Dar uma passada no café.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9589,13 +16279,39 @@ const kanjiN2Data = [
                         "word": "宿泊 (shukuhaku)",
                         "wordMeaning": "Hospedagem / Pernoite",
                         "sentence": "Hotel ni shukuhaku.",
-                        "sentenceMeaning": "Hospedar-se no hotel."
+                        "sentenceMeaning": "Hospedar-se no hotel.",
+                        "content": {
+                            "displayText": "ホテルに宿泊。",
+                            "audioText": "ホテルに宿泊。",
+                            "furigana": "",
+                            "romaji": "Hotel ni shukuhaku.",
+                            "translation": "Hospedar-se no hotel.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "泊まる (tomaru)",
                         "wordMeaning": "Pernoitar",
                         "sentence": "Ryokan ni tomaru.",
-                        "sentenceMeaning": "Pernoitar na hospedaria."
+                        "sentenceMeaning": "Pernoitar na hospedaria.",
+                        "content": {
+                            "displayText": "りょかんに泊まる。",
+                            "audioText": "りょかんに泊まる。",
+                            "furigana": "",
+                            "romaji": "Ryokan ni tomaru.",
+                            "translation": "Pernoitar na hospedaria.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9620,13 +16336,39 @@ const kanjiN2Data = [
                         "word": "滞在 (taizai)",
                         "wordMeaning": "Estadia / Permanência no local",
                         "sentence": "Paris ni taizai.",
-                        "sentenceMeaning": "Estadia em Paris."
+                        "sentenceMeaning": "Estadia em Paris.",
+                        "content": {
+                            "displayText": "ぱりスに滞在。",
+                            "audioText": "ぱりスに滞在。",
+                            "furigana": "",
+                            "romaji": "Paris ni taizai.",
+                            "translation": "Estadia em Paris.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "滞納 (tainou)",
                         "wordMeaning": "Atraso no pagamento",
                         "sentence": "Yachin no tainou.",
-                        "sentenceMeaning": "Atraso do aluguel."
+                        "sentenceMeaning": "Atraso do aluguel.",
+                        "content": {
+                            "displayText": "やちんの滞納。",
+                            "audioText": "やちんの滞納。",
+                            "furigana": "",
+                            "romaji": "Yachin no tainou.",
+                            "translation": "Atraso do aluguel.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9647,13 +16389,39 @@ const kanjiN2Data = [
                         "word": "留学 (ryuugaku)",
                         "wordMeaning": "Intercâmbio / Estudo no exterior",
                         "sentence": "Japan ni ryuugaku.",
-                        "sentenceMeaning": "Intercâmbio no Japão."
+                        "sentenceMeaning": "Intercâmbio no Japão.",
+                        "content": {
+                            "displayText": "じゃぱんに留学。",
+                            "audioText": "じゃぱんに留学。",
+                            "furigana": "",
+                            "romaji": "Japan ni ryuugaku.",
+                            "translation": "Intercâmbio no Japão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "留守 (rusu)",
                         "wordMeaning": "Ausente de casa",
                         "sentence": "Tadaima rusu.",
-                        "sentenceMeaning": "Ausente no momento."
+                        "sentenceMeaning": "Ausente no momento.",
+                        "content": {
+                            "displayText": "ただいま留守。",
+                            "audioText": "ただいま留守。",
+                            "furigana": "",
+                            "romaji": "Tadaima rusu.",
+                            "translation": "Ausente no momento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9678,13 +16446,39 @@ const kanjiN2Data = [
                         "word": "乗車券 (joushagen)",
                         "wordMeaning": "Bilhete de embarque no trem",
                         "sentence": "Ticket o kaimasu.",
-                        "sentenceMeaning": "Comprar o bilhete de trem."
+                        "sentenceMeaning": "Comprar o bilhete de trem.",
+                        "content": {
+                            "displayText": "乗車券を買います。",
+                            "audioText": "乗車券を買います。",
+                            "furigana": "",
+                            "romaji": "Ticket o kaimasu.",
+                            "translation": "Comprar o bilhete de trem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "航空券 (koukuuken)",
                         "wordMeaning": "Passagem aérea",
                         "sentence": "Flight ticket.",
-                        "sentenceMeaning": "Passagem aérea."
+                        "sentenceMeaning": "Passagem aérea.",
+                        "content": {
+                            "displayText": "航空券。",
+                            "audioText": "航空券。",
+                            "furigana": "",
+                            "romaji": "Flight ticket.",
+                            "translation": "Passagem aérea.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9705,13 +16499,39 @@ const kanjiN2Data = [
                         "word": "手荷物 (tenimotsu)",
                         "wordMeaning": "Bagagem de mão",
                         "sentence": "Tenimotsu o check.",
-                        "sentenceMeaning": "Despachar a bagagem de mão."
+                        "sentenceMeaning": "Despachar a bagagem de mão.",
+                        "content": {
+                            "displayText": "飛行機に搭乗する前に手荷物の検査を受けます。",
+                            "audioText": "飛行機に搭乗する前に手荷物の検査を受けます。",
+                            "furigana": "",
+                            "romaji": "Tenimotsu o check.",
+                            "translation": "Despachar a bagagem de mão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "出荷 (shukka)",
                         "wordMeaning": "Expedição de mercadorias",
                         "sentence": "Product no shukka.",
-                        "sentenceMeaning": "Expedição de produtos."
+                        "sentenceMeaning": "Expedição de produtos.",
+                        "content": {
+                            "displayText": "工場から完成した商品の出荷が始まります。",
+                            "audioText": "工場から完成した商品の出荷が始まります。",
+                            "furigana": "",
+                            "romaji": "Product no shukka.",
+                            "translation": "Expedição de produtos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9740,13 +16560,39 @@ const kanjiN2Data = [
                         "word": "踏切 (fumikiri)",
                         "wordMeaning": "Cruzamento de ferrovia",
                         "sentence": "Fumikiri o cross.",
-                        "sentenceMeaning": "Atravessar o cruzamento da ferrovia."
+                        "sentenceMeaning": "Atravessar o cruzamento da ferrovia.",
+                        "content": {
+                            "displayText": "踏切をクろっス。",
+                            "audioText": "踏切をクろっス。",
+                            "furigana": "",
+                            "romaji": "Fumikiri o cross.",
+                            "translation": "Atravessar o cruzamento da ferrovia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "踏破 (touha)",
                         "wordMeaning": "Percorrer toda a trilha a pé",
                         "sentence": "Mountain no touha.",
-                        "sentenceMeaning": "Percorrer toda a trilha da montanha."
+                        "sentenceMeaning": "Percorrer toda a trilha da montanha.",
+                        "content": {
+                            "displayText": "もうんたいんの踏破。",
+                            "audioText": "もうんたいんの踏破。",
+                            "furigana": "",
+                            "romaji": "Mountain no touha.",
+                            "translation": "Percorrer toda a trilha da montanha.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9775,13 +16621,39 @@ const kanjiN2Data = [
                         "word": "半径 (hankei)",
                         "wordMeaning": "Raio de circulo",
                         "sentence": "Hankei 5km.",
-                        "sentenceMeaning": "Raio de 5 quilômetros."
+                        "sentenceMeaning": "Raio de 5 quilômetros.",
+                        "content": {
+                            "displayText": "避難場所から半径五キロメートルの範囲を調査します。",
+                            "audioText": "避難場所から半径五キロメートルの範囲を調査します。",
+                            "furigana": "",
+                            "romaji": "Hankei 5km.",
+                            "translation": "Raio de 5 quilômetros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "小径 (komichi)",
                         "wordMeaning": "Atalho / Caminho estreito",
                         "sentence": "Forest no komichi.",
-                        "sentenceMeaning": "Atalho da floresta."
+                        "sentenceMeaning": "Atalho da floresta.",
+                        "content": {
+                            "displayText": "森の中に続く静かな小径を歩きます。",
+                            "audioText": "森の中に続く静かな小径を歩きます。",
+                            "furigana": "",
+                            "romaji": "Forest no komichi.",
+                            "translation": "Atalho da floresta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9806,13 +16678,39 @@ const kanjiN2Data = [
                         "word": "途注 (tochuu)",
                         "wordMeaning": "No meio do caminho / Em curso",
                         "sentence": "Tochuu de stop.",
-                        "sentenceMeaning": "Parar no meio do caminho."
+                        "sentenceMeaning": "Parar no meio do caminho.",
+                        "content": {
+                            "displayText": "途注で止める。",
+                            "audioText": "途注で止める。",
+                            "furigana": "",
+                            "romaji": "Tochuu de stop.",
+                            "translation": "Parar no meio do caminho.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "前途 (zentu)",
                         "wordMeaning": "Futuro / Perspectiva do trajeto",
                         "sentence": "Zentu bright.",
-                        "sentenceMeaning": "Futuro brilhante."
+                        "sentenceMeaning": "Futuro brilhante.",
+                        "content": {
+                            "displayText": "前途ブりグフト。",
+                            "audioText": "前途ブりグフト。",
+                            "furigana": "",
+                            "romaji": "Zentu bright.",
+                            "translation": "Futuro brilhante.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9837,13 +16735,39 @@ const kanjiN2Data = [
                         "word": "国境越え (kokkyougoe)",
                         "wordMeaning": "Travessia da fronteira",
                         "sentence": "Kokkyou o koeru.",
-                        "sentenceMeaning": "Atravessar a fronteira nacional."
+                        "sentenceMeaning": "Atravessar a fronteira nacional.",
+                        "content": {
+                            "displayText": "国境を越える。",
+                            "audioText": "国境を越える。",
+                            "furigana": "",
+                            "romaji": "Kokkyou o koeru.",
+                            "translation": "Atravessar a fronteira nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "引越し (hikkoshi)",
                         "wordMeaning": "Mudança de residência",
                         "sentence": "House no hikkoshi.",
-                        "sentenceMeaning": "Mudança de casa."
+                        "sentenceMeaning": "Mudança de casa.",
+                        "content": {
+                            "displayText": "ほうせの引越し。",
+                            "audioText": "ほうせの引越し。",
+                            "furigana": "",
+                            "romaji": "House no hikkoshi.",
+                            "translation": "Mudança de casa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9872,13 +16796,39 @@ const kanjiN2Data = [
                         "word": "渡航 (tokou)",
                         "wordMeaning": "Viagem marítima/aérea internacional",
                         "sentence": "Overseas tokou.",
-                        "sentenceMeaning": "Viagem ao exterior."
+                        "sentenceMeaning": "Viagem ao exterior.",
+                        "content": {
+                            "displayText": "観光のために海外へ渡航する手続きを進めます。",
+                            "audioText": "観光のために海外へ渡航する手続きを進めます。",
+                            "furigana": "",
+                            "romaji": "Overseas tokou.",
+                            "translation": "Viagem ao exterior.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "渡す (watasu)",
                         "wordMeaning": "Entregar em mãos / Cruzar",
                         "sentence": "Passport o watasu.",
-                        "sentenceMeaning": "Entregar o passaporte."
+                        "sentenceMeaning": "Entregar o passaporte.",
+                        "content": {
+                            "displayText": "窓口で係員にパスポートを手渡します。",
+                            "audioText": "窓口で係員にパスポートを手渡します。",
+                            "furigana": "",
+                            "romaji": "Passport o watasu.",
+                            "translation": "Entregar o passaporte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9903,13 +16853,39 @@ const kanjiN2Data = [
                         "word": "巡回 (junkai)",
                         "wordMeaning": "Ronda / Circuito itinerante",
                         "sentence": "Patrol no junkai.",
-                        "sentenceMeaning": "Ronda de patrulhamento."
+                        "sentenceMeaning": "Ronda de patrulhamento.",
+                        "content": {
+                            "displayText": "ぱトろルの巡回。",
+                            "audioText": "ぱトろルの巡回。",
+                            "furigana": "",
+                            "romaji": "Patrol no junkai.",
+                            "translation": "Ronda de patrulhamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "巡業 (jungyou)",
                         "wordMeaning": "Turnê itinerante",
                         "sentence": "Sumo no jungyou.",
-                        "sentenceMeaning": "Turnê de sumô."
+                        "sentenceMeaning": "Turnê de sumô.",
+                        "content": {
+                            "displayText": "すもの巡業。",
+                            "audioText": "すもの巡業。",
+                            "furigana": "",
+                            "romaji": "Sumo no jungyou.",
+                            "translation": "Turnê de sumô.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9930,13 +16906,39 @@ const kanjiN2Data = [
                         "word": "経由 (keiyu)",
                         "wordMeaning": "Conexão / Escala / Via",
                         "sentence": "Tokyo keiyu.",
-                        "sentenceMeaning": "Conexão via Tóquio."
+                        "sentenceMeaning": "Conexão via Tóquio.",
+                        "content": {
+                            "displayText": "ときょ経由。",
+                            "audioText": "ときょ経由。",
+                            "furigana": "",
+                            "romaji": "Tokyo keiyu.",
+                            "translation": "Conexão via Tóquio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "経過 (keika)",
                         "wordMeaning": "Decurso do tempo / Progresso",
                         "sentence": "Time no keika.",
-                        "sentenceMeaning": "Decurso do tempo."
+                        "sentenceMeaning": "Decurso do tempo.",
+                        "content": {
+                            "displayText": "手術から一週間が経過して容体が安定しました。",
+                            "audioText": "手術から一週間が経過して容体が安定しました。",
+                            "furigana": "",
+                            "romaji": "Time no keika.",
+                            "translation": "Decurso do tempo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9961,13 +16963,39 @@ const kanjiN2Data = [
                         "word": "光景 (koukei)",
                         "wordMeaning": "Espectáculo visual / Cena",
                         "sentence": "Kandou koukei.",
-                        "sentenceMeaning": "Cena emocionante."
+                        "sentenceMeaning": "Cena emocionante.",
+                        "content": {
+                            "displayText": "かんどう光景。",
+                            "audioText": "かんどう光景。",
+                            "furigana": "",
+                            "romaji": "Kandou koukei.",
+                            "translation": "Cena emocionante.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "景気 (keiki)",
                         "wordMeaning": "Situação econômica / Clima de mercado",
                         "sentence": "Keiki ga ii.",
-                        "sentenceMeaning": "A economia vai bem."
+                        "sentenceMeaning": "A economia vai bem.",
+                        "content": {
+                            "displayText": "景気がいい。",
+                            "audioText": "景気がいい。",
+                            "furigana": "",
+                            "romaji": "Keiki ga ii.",
+                            "translation": "A economia vai bem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -9996,13 +17024,39 @@ const kanjiN2Data = [
                         "word": "開拓 (kaitaku)",
                         "wordMeaning": "Desbravamento de rotas",
                         "sentence": "Route no kaitaku.",
-                        "sentenceMeaning": "Desbravamento de novas rotas."
+                        "sentenceMeaning": "Desbravamento de novas rotas.",
+                        "content": {
+                            "displayText": "ろうての開拓。",
+                            "audioText": "ろうての開拓。",
+                            "furigana": "",
+                            "romaji": "Route no kaitaku.",
+                            "translation": "Desbravamento de novas rotas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "魚拓 (gyotaku)",
                         "wordMeaning": "Impressão artística de peixe",
                         "sentence": "Gyotaku o kaku.",
-                        "sentenceMeaning": "Fazer impressão de peixe."
+                        "sentenceMeaning": "Fazer impressão de peixe.",
+                        "content": {
+                            "displayText": "魚拓をかく。",
+                            "audioText": "魚拓をかく。",
+                            "furigana": "",
+                            "romaji": "Gyotaku o kaku.",
+                            "translation": "Fazer impressão de peixe.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10027,13 +17081,39 @@ const kanjiN2Data = [
                         "word": "観光 (kankou)",
                         "wordMeaning": "Turismo",
                         "sentence": "Kankou bus.",
-                        "sentenceMeaning": "Ônibus de turismo."
+                        "sentenceMeaning": "Ônibus de turismo.",
+                        "content": {
+                            "displayText": "観光一覧を見る。",
+                            "audioText": "観光一覧を見る。",
+                            "furigana": "",
+                            "romaji": "Kankou bus.",
+                            "translation": "Ônibus de turismo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "一覧 (ichiran)",
                         "wordMeaning": "Lista geral / Visão sintética",
                         "sentence": "List no ichiran.",
-                        "sentenceMeaning": "Lista sintética."
+                        "sentenceMeaning": "Lista sintética.",
+                        "content": {
+                            "displayText": "ウェブサイトで商品の一覧表を確認します。",
+                            "audioText": "ウェブサイトで商品の一覧表を確認します。",
+                            "furigana": "",
+                            "romaji": "List no ichiran.",
+                            "translation": "Lista sintética.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10145,7 +17225,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 15,
@@ -10155,7 +17239,15 @@ const kanjiN2Data = [
             "title": "Expressando Ação Intensiva (~ni mezasite)",
             "explanation": "No N2, descreve-se movimentos dirigidos com foco e determinação rumo ao objetivo.",
             "example": "Goal ni mezasite idomimasu.",
-            "translation": "Desafiamos visando a meta."
+            "translation": "Desafiamos visando a meta.",
+            "content": {
+                "displayText": "ごあルにめざスいていどみます。",
+                "audioText": "ごあルにめざスいていどみます。",
+                "furigana": "",
+                "romaji": "Goal ni mezasite idomimasu.",
+                "translation": "Desafiamos visando a meta.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "困難への挑戦と克服 (Desafio e Superação de Dificuldades)",
@@ -10197,13 +17289,39 @@ const kanjiN2Data = [
                         "word": "挑戦 (chousen)",
                         "wordMeaning": "Desafio / Tentativa",
                         "sentence": "New record ni chousen.",
-                        "sentenceMeaning": "Desafiar um novo recorde."
+                        "sentenceMeaning": "Desafiar um novo recorde.",
+                        "content": {
+                            "displayText": "世界新記録の樹立を目指して挑戦します。",
+                            "audioText": "世界新記録の樹立を目指して挑戦します。",
+                            "furigana": "",
+                            "romaji": "New record ni chousen.",
+                            "translation": "Desafiar um novo recorde.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "挑発 (chouhatsu)",
                         "wordMeaning": "Provocação",
                         "sentence": "Enemy no chouhatsu.",
-                        "sentenceMeaning": "Provocação do inimigo."
+                        "sentenceMeaning": "Provocação do inimigo.",
+                        "content": {
+                            "displayText": "敵の挑発。",
+                            "audioText": "敵の挑発。",
+                            "furigana": "",
+                            "romaji": "Enemy no chouhatsu.",
+                            "translation": "Provocação do inimigo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10224,13 +17342,39 @@ const kanjiN2Data = [
                         "word": "操作 (sousa)",
                         "wordMeaning": "Operação / Manuseio de máquina",
                         "sentence": "Machine no sousa.",
-                        "sentenceMeaning": "Operação da máquina."
+                        "sentenceMeaning": "Operação da máquina.",
+                        "content": {
+                            "displayText": "まちねの操作。",
+                            "audioText": "まちねの操作。",
+                            "furigana": "",
+                            "romaji": "Machine no sousa.",
+                            "translation": "Operação da máquina.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "操縦 (soujuu)",
                         "wordMeaning": "Pilotagem de veículo/aeronave",
                         "sentence": "Airplane no soujuu.",
-                        "sentenceMeaning": "Pilotagem da aeronave."
+                        "sentenceMeaning": "Pilotagem da aeronave.",
+                        "content": {
+                            "displayText": "パイロットが大型飛行機を巧みに操縦します。",
+                            "audioText": "パイロットが大型飛行機を巧みに操縦します。",
+                            "furigana": "",
+                            "romaji": "Airplane no soujuu.",
+                            "translation": "Pilotagem da aeronave.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10259,13 +17403,39 @@ const kanjiN2Data = [
                         "word": "抑制 (yokusei)",
                         "wordMeaning": "Contenção / Repressão",
                         "sentence": "Emotion no yokusei.",
-                        "sentenceMeaning": "Contenção de emoções."
+                        "sentenceMeaning": "Contenção de emoções.",
+                        "content": {
+                            "displayText": "感情の高ぶりを抑えて冷静に対処します。",
+                            "audioText": "感情の高ぶりを抑えて冷静に対処します。",
+                            "furigana": "",
+                            "romaji": "Emotion no yokusei.",
+                            "translation": "Contenção de emoções.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "抑圧 (yokuatsu)",
                         "wordMeaning": "Opressão / Supressão",
                         "sentence": "Freedom no yokuatsu.",
-                        "sentenceMeaning": "Supressão da liberdade."
+                        "sentenceMeaning": "Supressão da liberdade.",
+                        "content": {
+                            "displayText": "フれえどムの抑圧。",
+                            "audioText": "フれえどムの抑圧。",
+                            "furigana": "",
+                            "romaji": "Freedom no yokuatsu.",
+                            "translation": "Supressão da liberdade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10287,20 +17457,46 @@ const kanjiN2Data = [
                 "character": "奪",
                 "meaning": "Roubar / Extorquir / Tirar à força / Tomar",
                 "kunyomi": "うば・う (ubau)",
-                "onyomi": "DATSU (DATSU)",
+                "onyomi": "ダツ (DATSU)",
                 "mnemonic": "Mão agarrando e tirando o objeto precioso.",
                 "examples": [
                     {
                         "word": "略奪 (ryakudatsu)",
                         "wordMeaning": "Saque / Pilhagem",
                         "sentence": "City no ryakudatsu.",
-                        "sentenceMeaning": "Pilhagem da cidade."
+                        "sentenceMeaning": "Pilhagem da cidade.",
+                        "content": {
+                            "displayText": "都市の略奪。",
+                            "audioText": "都市の略奪。",
+                            "furigana": "",
+                            "romaji": "City no ryakudatsu.",
+                            "translation": "Pilhagem da cidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "奪う (ubau)",
                         "wordMeaning": "Tirar à força / Roubar",
                         "sentence": "Heart o ubau.",
-                        "sentenceMeaning": "Roubar o coração."
+                        "sentenceMeaning": "Roubar o coração.",
+                        "content": {
+                            "displayText": "心を奪う。",
+                            "audioText": "心を奪う。",
+                            "furigana": "",
+                            "romaji": "Heart o ubau.",
+                            "translation": "Roubar o coração.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10329,13 +17525,39 @@ const kanjiN2Data = [
                         "word": "拒否 (kyohi)",
                         "wordMeaning": "Recusa / Veto / Rejeição",
                         "sentence": "Offer no kyohi.",
-                        "sentenceMeaning": "Recusa da oferta."
+                        "sentenceMeaning": "Recusa da oferta.",
+                        "content": {
+                            "displayText": "無理な要求に対してきっぱりと拒否の意志を示します。",
+                            "audioText": "無理な要求に対してきっぱりと拒否の意志を示します。",
+                            "furigana": "",
+                            "romaji": "Offer no kyohi.",
+                            "translation": "Recusa da oferta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "拒絶 (kyozetsu)",
                         "wordMeaning": "Rejeição categórica",
                         "sentence": "Request no kyozetsu.",
-                        "sentenceMeaning": "Rejeição categórica do pedido."
+                        "sentenceMeaning": "Rejeição categórica do pedido.",
+                        "content": {
+                            "displayText": "不正な取引への誘いをきっぱりと拒絶します。",
+                            "audioText": "不正な取引への誘いをきっぱりと拒絶します。",
+                            "furigana": "",
+                            "romaji": "Request no kyozetsu.",
+                            "translation": "Rejeição categórica do pedido.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10356,13 +17578,39 @@ const kanjiN2Data = [
                         "word": "促進 (sokushin)",
                         "wordMeaning": "Promoção / Incentivo ao avanço",
                         "sentence": "Sales no sokushin.",
-                        "sentenceMeaning": "Promoção das vendas."
+                        "sentenceMeaning": "Promoção das vendas.",
+                        "content": {
+                            "displayText": "新商品の販売を促進するキャンペーンを実施します。",
+                            "audioText": "新商品の販売を促進するキャンペーンを実施します。",
+                            "furigana": "",
+                            "romaji": "Sales no sokushin.",
+                            "translation": "Promoção das vendas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "催促 (saisoku)",
                         "wordMeaning": "Cobrança / Pressionar por resposta",
                         "sentence": "Payment no saisoku.",
-                        "sentenceMeaning": "Cobrança de pagamento."
+                        "sentenceMeaning": "Cobrança de pagamento.",
+                        "content": {
+                            "displayText": "ぱイめんトの催促。",
+                            "audioText": "ぱイめんトの催促。",
+                            "furigana": "",
+                            "romaji": "Payment no saisoku.",
+                            "translation": "Cobrança de pagamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10387,13 +17635,39 @@ const kanjiN2Data = [
                         "word": "侵入 (shinnyuu)",
                         "wordMeaning": "Invasão / Infiltração",
                         "sentence": "House ni shinnyuu.",
-                        "sentenceMeaning": "Invasão de domicílio."
+                        "sentenceMeaning": "Invasão de domicílio.",
+                        "content": {
+                            "displayText": "ほうせに侵入。",
+                            "audioText": "ほうせに侵入。",
+                            "furigana": "",
+                            "romaji": "House ni shinnyuu.",
+                            "translation": "Invasão de domicílio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "侵食 (shinshoku)",
                         "wordMeaning": "Erosão / Corrosão gradual",
                         "sentence": "Soil no shinshoku.",
-                        "sentenceMeaning": "Erosão do solo."
+                        "sentenceMeaning": "Erosão do solo.",
+                        "content": {
+                            "displayText": "そいルの侵食。",
+                            "audioText": "そいルの侵食。",
+                            "furigana": "",
+                            "romaji": "Soil no shinshoku.",
+                            "translation": "Erosão do solo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10418,13 +17692,39 @@ const kanjiN2Data = [
                         "word": "阻止 (soshi)",
                         "wordMeaning": "Bloqueio / Impedimento de ação",
                         "sentence": "Plan no soshi.",
-                        "sentenceMeaning": "Impedimento do plano."
+                        "sentenceMeaning": "Impedimento do plano.",
+                        "content": {
+                            "displayText": "計画の阻止。",
+                            "audioText": "計画の阻止。",
+                            "furigana": "",
+                            "romaji": "Plan no soshi.",
+                            "translation": "Impedimento do plano.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "阻害 (sogai)",
                         "wordMeaning": "Obstrução / Prejuízo ao avanço",
                         "sentence": "Growth no sogai.",
-                        "sentenceMeaning": "Obstrução ao crescimento."
+                        "sentenceMeaning": "Obstrução ao crescimento.",
+                        "content": {
+                            "displayText": "不景気が企業の成長を阻害する要因となっています。",
+                            "audioText": "不景気が企業の成長を阻害する要因となっています。",
+                            "furigana": "",
+                            "romaji": "Growth no sogai.",
+                            "translation": "Obstrução ao crescimento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10445,13 +17745,39 @@ const kanjiN2Data = [
                         "word": "逃走 (tousou)",
                         "wordMeaning": "Fuga / Evasão",
                         "sentence": "Prisoner no tousou.",
-                        "sentenceMeaning": "Fuga do presidiário."
+                        "sentenceMeaning": "Fuga do presidiário.",
+                        "content": {
+                            "displayText": "プりそねルの逃走。",
+                            "audioText": "プりそねルの逃走。",
+                            "furigana": "",
+                            "romaji": "Prisoner no tousou.",
+                            "translation": "Fuga do presidiário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "逃げる (nigeru)",
                         "wordMeaning": "Fugir",
                         "sentence": "Danger kara nigeru.",
-                        "sentenceMeaning": "Fugir do perigo."
+                        "sentenceMeaning": "Fugir do perigo.",
+                        "content": {
+                            "displayText": "だんげルから逃げる。",
+                            "audioText": "だんげルから逃げる。",
+                            "furigana": "",
+                            "romaji": "Danger kara nigeru.",
+                            "translation": "Fugir do perigo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10472,13 +17798,39 @@ const kanjiN2Data = [
                         "word": "追加 (tsuika)",
                         "wordMeaning": "Adição / Suplemento",
                         "sentence": "Order no tsuika.",
-                        "sentenceMeaning": "Adição ao pedido."
+                        "sentenceMeaning": "Adição ao pedido.",
+                        "content": {
+                            "displayText": "おルでルの追加。",
+                            "audioText": "おルでルの追加。",
+                            "furigana": "",
+                            "romaji": "Order no tsuika.",
+                            "translation": "Adição ao pedido.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "追跡 (tsuiseki)",
                         "wordMeaning": "Rastreamento / Perseguição",
                         "sentence": "Package no tsuiseki.",
-                        "sentenceMeaning": "Rastreamento do pacote."
+                        "sentenceMeaning": "Rastreamento do pacote.",
+                        "content": {
+                            "displayText": "ぱクかげの追跡。",
+                            "audioText": "ぱクかげの追跡。",
+                            "furigana": "",
+                            "romaji": "Package no tsuiseki.",
+                            "translation": "Rastreamento do pacote.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10499,13 +17851,39 @@ const kanjiN2Data = [
                         "word": "捕獲 (hokaku)",
                         "wordMeaning": "Captura de animal/alvo",
                         "sentence": "Animal no hokaku.",
-                        "sentenceMeaning": "Captura do animal."
+                        "sentenceMeaning": "Captura do animal.",
+                        "content": {
+                            "displayText": "あにまルの捕獲。",
+                            "audioText": "あにまルの捕獲。",
+                            "furigana": "",
+                            "romaji": "Animal no hokaku.",
+                            "translation": "Captura do animal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "逮捕 (taiho)",
                         "wordMeaning": "Prisão policial",
                         "sentence": "Police ga taiho.",
-                        "sentenceMeaning": "A polícia efetuou a prisão."
+                        "sentenceMeaning": "A polícia efetuou a prisão.",
+                        "content": {
+                            "displayText": "警察が逃走していた犯人を現場で逮捕しました。",
+                            "audioText": "警察が逃走していた犯人を現場で逮捕しました。",
+                            "furigana": "",
+                            "romaji": "Police ga taiho.",
+                            "translation": "A polícia efetuou a prisão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10526,13 +17904,39 @@ const kanjiN2Data = [
                         "word": "救助 (kyuujo)",
                         "wordMeaning": "Resgate / Socorro emergencial",
                         "sentence": "Life no kyuujo.",
-                        "sentenceMeaning": "Resgate de vidas."
+                        "sentenceMeaning": "Resgate de vidas.",
+                        "content": {
+                            "displayText": "生活の救助。",
+                            "audioText": "生活の救助。",
+                            "furigana": "",
+                            "romaji": "Life no kyuujo.",
+                            "translation": "Resgate de vidas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "救急車 (kyuukyuusha)",
                         "wordMeaning": "Ambulância",
                         "sentence": "Kyuukyuusha o call.",
-                        "sentenceMeaning": "Chamar a ambulância."
+                        "sentenceMeaning": "Chamar a ambulância.",
+                        "content": {
+                            "displayText": "急病人が出たためすぐに救急車を呼びました。",
+                            "audioText": "急病人が出たためすぐに救急車を呼びました。",
+                            "furigana": "",
+                            "romaji": "Kyuukyuusha o call.",
+                            "translation": "Chamar a ambulância.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10557,13 +17961,39 @@ const kanjiN2Data = [
                         "word": "扶養 (fuyou)",
                         "wordMeaning": "Sustento da família / Dependente",
                         "sentence": "Family no fuyou.",
-                        "sentenceMeaning": "Sustento da família."
+                        "sentenceMeaning": "Sustento da família.",
+                        "content": {
+                            "displayText": "高齢の両親を家族みんなで扶養します。",
+                            "audioText": "高齢の両親を家族みんなで扶養します。",
+                            "furigana": "",
+                            "romaji": "Family no fuyou.",
+                            "translation": "Sustento da família.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "扶助 (fujo)",
                         "wordMeaning": "Ajuda / Suporte de subsistência",
                         "sentence": "Public fujo.",
-                        "sentenceMeaning": "Auxílio público de subsistência."
+                        "sentenceMeaning": "Auxílio público de subsistência.",
+                        "content": {
+                            "displayText": "生活に困窮する人々への公的扶助を行います。",
+                            "audioText": "生活に困窮する人々への公的扶助を行います。",
+                            "furigana": "",
+                            "romaji": "Public fujo.",
+                            "translation": "Auxílio público de subsistência.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10584,13 +18014,39 @@ const kanjiN2Data = [
                         "word": "防護 (bougo)",
                         "wordMeaning": "Proteção contra danos",
                         "sentence": "Bougo suit.",
-                        "sentenceMeaning": "Traje de proteção."
+                        "sentenceMeaning": "Traje de proteção.",
+                        "content": {
+                            "displayText": "防護すいト。",
+                            "audioText": "防護すいト。",
+                            "furigana": "",
+                            "romaji": "Bougo suit.",
+                            "translation": "Traje de proteção.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "救護 (kyuugo)",
                         "wordMeaning": "Primeiros socorros / Assistência",
                         "sentence": "Kyuugo station.",
-                        "sentenceMeaning": "Posto de primeiros socorros."
+                        "sentenceMeaning": "Posto de primeiros socorros.",
+                        "content": {
+                            "displayText": "マラソン大会のコースに救護所を設置します。",
+                            "audioText": "マラソン大会のコースに救護所を設置します。",
+                            "furigana": "",
+                            "romaji": "Kyuugo station.",
+                            "translation": "Posto de primeiros socorros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10623,13 +18079,39 @@ const kanjiN2Data = [
                         "word": "振込 (furikomi)",
                         "wordMeaning": "Transferência bancária",
                         "sentence": "Bank furikomi.",
-                        "sentenceMeaning": "Transferência bancária."
+                        "sentenceMeaning": "Transferência bancária.",
+                        "content": {
+                            "displayText": "ばんク振込。",
+                            "audioText": "ばんク振込。",
+                            "furigana": "",
+                            "romaji": "Bank furikomi.",
+                            "translation": "Transferência bancária.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "振動 (shindou)",
                         "wordMeaning": "Vibração / Oscilação",
                         "sentence": "Machine no shindou.",
-                        "sentenceMeaning": "Vibração da máquina."
+                        "sentenceMeaning": "Vibração da máquina.",
+                        "content": {
+                            "displayText": "まちねの振動。",
+                            "audioText": "まちねの振動。",
+                            "furigana": "",
+                            "romaji": "Machine no shindou.",
+                            "translation": "Vibração da máquina.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10654,13 +18136,39 @@ const kanjiN2Data = [
                         "word": "挙げる (ageru)",
                         "wordMeaning": "Erguer / Dar exemplos",
                         "sentence": "Example o ageru.",
-                        "sentenceMeaning": "Dar exemplos."
+                        "sentenceMeaning": "Dar exemplos.",
+                        "content": {
+                            "displayText": "分かりやすい例を挙げて詳しく説明します。",
+                            "audioText": "分かりやすい例を挙げて詳しく説明します。",
+                            "furigana": "",
+                            "romaji": "Example o ageru.",
+                            "translation": "Dar exemplos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "選挙 (senkyo)",
                         "wordMeaning": "Eleição",
                         "sentence": "Vote ni iku.",
-                        "sentenceMeaning": "Ir votar na eleição."
+                        "sentenceMeaning": "Ir votar na eleição.",
+                        "content": {
+                            "displayText": "選挙に行く。",
+                            "audioText": "選挙に行く。",
+                            "furigana": "",
+                            "romaji": "Vote ni iku.",
+                            "translation": "Ir votar na eleição.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10685,13 +18193,39 @@ const kanjiN2Data = [
                         "word": "掲示板 (keijiban)",
                         "wordMeaning": "Mural de avisos / Fórum",
                         "sentence": "Keijiban o check.",
-                        "sentenceMeaning": "Verificar o mural de avisos."
+                        "sentenceMeaning": "Verificar o mural de avisos.",
+                        "content": {
+                            "displayText": "駅の掲示板に運行情報のお知らせが貼ってあります。",
+                            "audioText": "駅の掲示板に運行情報のお知らせが貼ってあります。",
+                            "furigana": "",
+                            "romaji": "Keijiban o check.",
+                            "translation": "Verificar o mural de avisos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "掲げる (kakageru)",
                         "wordMeaning": "Hastear (bandeira) / Proclamar",
                         "sentence": "Flag o kakageru.",
-                        "sentenceMeaning": "Hastear a bandeira."
+                        "sentenceMeaning": "Hastear a bandeira.",
+                        "content": {
+                            "displayText": "学校のグラウンドに国旗を高く掲げます。",
+                            "audioText": "学校のグラウンドに国旗を高く掲げます。",
+                            "furigana": "",
+                            "romaji": "Flag o kakageru.",
+                            "translation": "Hastear a bandeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10716,13 +18250,39 @@ const kanjiN2Data = [
                         "word": "握手 (akushu)",
                         "wordMeaning": "Aperto de mão",
                         "sentence": "Akushu o suru.",
-                        "sentenceMeaning": "Dar um aperto de mão."
+                        "sentenceMeaning": "Dar um aperto de mão.",
+                        "content": {
+                            "displayText": "握手をする。",
+                            "audioText": "握手をする。",
+                            "furigana": "",
+                            "romaji": "Akushu o suru.",
+                            "translation": "Dar um aperto de mão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "握る (nigiru)",
                         "wordMeaning": "Segurar firme / Moldar (onigiri)",
                         "sentence": "Onigiri o nigiru.",
-                        "sentenceMeaning": "Moldar um onigiri."
+                        "sentenceMeaning": "Moldar um onigiri.",
+                        "content": {
+                            "displayText": "おにぎりを握る。",
+                            "audioText": "おにぎりを握る。",
+                            "furigana": "",
+                            "romaji": "Onigiri o nigiru.",
+                            "translation": "Moldar um onigiri.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10747,13 +18307,39 @@ const kanjiN2Data = [
                         "word": "勝利 (shouri)",
                         "wordMeaning": "Vitória / Conquista",
                         "sentence": "Shouri o get.",
-                        "sentenceMeaning": "Conquistar a vitória."
+                        "sentenceMeaning": "Conquistar a vitória.",
+                        "content": {
+                            "displayText": "決勝戦で熱戦を制して見事に勝利を収めました。",
+                            "audioText": "決勝戦で熱戦を制して見事に勝利を収めました。",
+                            "furigana": "",
+                            "romaji": "Shouri o get.",
+                            "translation": "Conquistar a vitória.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "決勝 (kesshou)",
                         "wordMeaning": "Partida final / Decisão",
                         "sentence": "Kesshou game.",
-                        "sentenceMeaning": "Partida final."
+                        "sentenceMeaning": "Partida final.",
+                        "content": {
+                            "displayText": "決勝がめ。",
+                            "audioText": "決勝がめ。",
+                            "furigana": "",
+                            "romaji": "Kesshou game.",
+                            "translation": "Partida final.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10865,7 +18451,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 16,
@@ -10875,13 +18465,21 @@ const kanjiN2Data = [
             "title": "Expressando Reação Emocional Intensa (~wo emedatsu)",
             "explanation": "No N2, expressa-se a intensificação de estados emocionais diante de surpresas ou temores.",
             "example": "Odoroki ni taishite kanjou o osaeru.",
-            "translation": "Contemos as emoções diante da surpresa."
+            "translation": "Contemos as emoções diante da surpresa.",
+            "content": {
+                "displayText": "おどろきにたいしてかんじょうをおさえる。",
+                "audioText": "おどろきにたいしてかんじょうをおさえる。",
+                "furigana": "",
+                "romaji": "Odoroki ni taishite kanjou o osaeru.",
+                "translation": "Contemos as emoções diante da surpresa.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "人間心理と感情の揺れ (Psicologia Humana e Oscilação de Sentimentos)",
             "japanese": "予期せぬ出来事に<ruby>驚喜<rt>きょうき</rt></ruby>し、時に<ruby>悲痛<rt>ひつう</rt></ruby>な<ruby>叫<rt>さけ</rt></ruby>びをあげます。<ruby>過去<rt>かこ</rt></ruby>を<ruby>懐<rt>なつ</rt></ruby>かしみ、<ruby>愛着<rt>あいちゃく</rt></ruby>を覚えます。",
-            "romaji": "Yokisenu dekigoto ni kyouki shi, toki ni hitsuu na sakebi o agetasu. Kako o natsukashimi, aichaku o oboemasu.",
-            "translation": "Delectamo-nos com eventos inesperados e às vezes soltamos gritos de dor profunda. Sentimos nostalgia do passado e desenvolvemos apego emocional.",
+            "romaji": "Yokisenu dekigoto ni kyouki shi, toki ni hitsuu na sakebi o agemasu. Kako o natsukashimi, aichaku o oboemasu.",
+            "translation": "Alegramo-nos intensamente com acontecimentos inesperados e, às vezes, soltamos gritos de profunda dor. Sentimos nostalgia do passado e desenvolvemos apego.",
             "comprehensionQuiz": [
                 {
                     "q": "O que a pessoa sente em relação ao passado?",
@@ -10917,13 +18515,39 @@ const kanjiN2Data = [
                         "word": "驚き (odoroki)",
                         "wordMeaning": "Surpresa / Espanto",
                         "sentence": "Odoroki no news.",
-                        "sentenceMeaning": "Notícia surpreendente."
+                        "sentenceMeaning": "Notícia surpreendente.",
+                        "content": {
+                            "displayText": "驚きのニュース。",
+                            "audioText": "驚きのニュース。",
+                            "furigana": "",
+                            "romaji": "Odoroki no news.",
+                            "translation": "Notícia surpreendente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "驚愕 (kyougaku)",
                         "wordMeaning": "Estupefação / Grande susto",
                         "sentence": "Kyougaku no fact.",
-                        "sentenceMeaning": "Fato estupefaciante."
+                        "sentenceMeaning": "Fato estupefaciante.",
+                        "content": {
+                            "displayText": "驚愕の事実。",
+                            "audioText": "驚愕の事実。",
+                            "furigana": "",
+                            "romaji": "Kyougaku no fact.",
+                            "translation": "Fato estupefaciante.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10948,13 +18572,39 @@ const kanjiN2Data = [
                         "word": "恐怖 (kyoufu)",
                         "wordMeaning": "Medo / Terror / Pavor",
                         "sentence": "Kyoufu o feel.",
-                        "sentenceMeaning": "Sentir pavor."
+                        "sentenceMeaning": "Sentir pavor.",
+                        "content": {
+                            "displayText": "恐怖を感じる。",
+                            "audioText": "恐怖を感じる。",
+                            "furigana": "",
+                            "romaji": "Kyoufu o feel.",
+                            "translation": "Sentir pavor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "怖い (kowai)",
                         "wordMeaning": "Assustador / Com medo",
                         "sentence": "Kowai story.",
-                        "sentenceMeaning": "História assustadora."
+                        "sentenceMeaning": "História assustadora.",
+                        "content": {
+                            "displayText": "怖い物語。",
+                            "audioText": "怖い物語。",
+                            "furigana": "",
+                            "romaji": "Kowai story.",
+                            "translation": "História assustadora.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -10975,13 +18625,39 @@ const kanjiN2Data = [
                         "word": "悲劇 (higeki)",
                         "wordMeaning": "Tragédia",
                         "sentence": "Higeki no story.",
-                        "sentenceMeaning": "História trágica."
+                        "sentenceMeaning": "História trágica.",
+                        "content": {
+                            "displayText": "悲劇の物語。",
+                            "audioText": "悲劇の物語。",
+                            "furigana": "",
+                            "romaji": "Higeki no story.",
+                            "translation": "História trágica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "悲痛 (hitsuu)",
                         "wordMeaning": "Dor profunda / Tristeza dolorosa",
                         "sentence": "Hitsuu na cry.",
-                        "sentenceMeaning": "Grito de profunda dor."
+                        "sentenceMeaning": "Grito de profunda dor.",
+                        "content": {
+                            "displayText": "事故現場から悲痛な叫び声が聞こえました。",
+                            "audioText": "事故現場から悲痛な叫び声が聞こえました。",
+                            "furigana": "",
+                            "romaji": "Hitsuu na cry.",
+                            "translation": "Grito de profunda dor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11006,13 +18682,39 @@ const kanjiN2Data = [
                         "word": "怒気 (doki)",
                         "wordMeaning": "Voz de raiva / Tom irado",
                         "sentence": "Doki o osetu.",
-                        "sentenceMeaning": "Tom de voz irado."
+                        "sentenceMeaning": "Tom de voz irado.",
+                        "content": {
+                            "displayText": "上司が怒気を帯びた声で注意しました。",
+                            "audioText": "上司が怒気を帯びた声で注意しました。",
+                            "furigana": "",
+                            "romaji": "Doki o osetu.",
+                            "translation": "Tom de voz irado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "激怒 (gekido)",
                         "wordMeaning": "Fúria intensa / Ira violenta",
                         "sentence": "Boss ga gekido.",
-                        "sentenceMeaning": "O chefe ficou furioso."
+                        "sentenceMeaning": "O chefe ficou furioso.",
+                        "content": {
+                            "displayText": "ぼっスが激怒。",
+                            "audioText": "ぼっスが激怒。",
+                            "furigana": "",
+                            "romaji": "Boss ga gekido.",
+                            "translation": "O chefe ficou furioso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11041,13 +18743,39 @@ const kanjiN2Data = [
                         "word": "絶叫 (zekkyou)",
                         "wordMeaning": "Grito histérico / Clamor alto",
                         "sentence": "Zekkyou machine.",
-                        "sentenceMeaning": "Montanha-russa de gritos."
+                        "sentenceMeaning": "Montanha-russa de gritos.",
+                        "content": {
+                            "displayText": "絶叫まちね。",
+                            "audioText": "絶叫まちね。",
+                            "furigana": "",
+                            "romaji": "Zekkyou machine.",
+                            "translation": "Montanha-russa de gritos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "叫び (sakebi)",
                         "wordMeaning": "Grito / Clamor",
                         "sentence": "Sakebi o escuchar.",
-                        "sentenceMeaning": "Ouvir o grito."
+                        "sentenceMeaning": "Ouvir o grito.",
+                        "content": {
+                            "displayText": "助けを求める大きな叫び声に気づきました。",
+                            "audioText": "助けを求める大きな叫び声に気づきました。",
+                            "furigana": "",
+                            "romaji": "Sakebi o escuchar.",
+                            "translation": "Ouvir o grito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11068,13 +18796,39 @@ const kanjiN2Data = [
                         "word": "嘆息 (tansoku)",
                         "wordMeaning": "Suspiro de lamento",
                         "sentence": "Tansoku o leak.",
-                        "sentenceMeaning": "Soltar um suspiro de lamento."
+                        "sentenceMeaning": "Soltar um suspiro de lamento.",
+                        "content": {
+                            "displayText": "思い通りにいかず深い嘆息を漏らします。",
+                            "audioText": "思い通りにいかず深い嘆息を漏らします。",
+                            "furigana": "",
+                            "romaji": "Tansoku o leak.",
+                            "translation": "Soltar um suspiro de lamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "嘆く (nageku)",
                         "wordMeaning": "Lamentar profundamente",
                         "sentence": "Fate o nageku.",
-                        "sentenceMeaning": "Lamentar o próprio destino."
+                        "sentenceMeaning": "Lamentar o próprio destino.",
+                        "content": {
+                            "displayText": "自らの不運な運命を深く嘆きます。",
+                            "audioText": "自らの不運な運命を深く嘆きます。",
+                            "furigana": "",
+                            "romaji": "Fate o nageku.",
+                            "translation": "Lamentar o próprio destino.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11095,13 +18849,39 @@ const kanjiN2Data = [
                         "word": "涙 (namida)",
                         "wordMeaning": "Lágrima",
                         "sentence": "Namida o wipe.",
-                        "sentenceMeaning": "Enxugar as lágrimas."
+                        "sentenceMeaning": "Enxugar as lágrimas.",
+                        "content": {
+                            "displayText": "涙をウいぺ。",
+                            "audioText": "涙をウいぺ。",
+                            "furigana": "",
+                            "romaji": "Namida o wipe.",
+                            "translation": "Enxugar as lágrimas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "感涙 (kanrui)",
                         "wordMeaning": "Lágrimas de emoção",
                         "sentence": "Kanrui o流す.",
-                        "sentenceMeaning": "Chorar de emoção."
+                        "sentenceMeaning": "Chorar de emoção.",
+                        "content": {
+                            "displayText": "感涙を流す。",
+                            "audioText": "感涙を流す。",
+                            "furigana": "",
+                            "romaji": "Kanrui o流す.",
+                            "translation": "Chorar de emoção.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11130,13 +18910,39 @@ const kanjiN2Data = [
                         "word": "悩み (nayami)",
                         "wordMeaning": "Preocupação / Dilema pessoal",
                         "sentence": "Nayami no consultation.",
-                        "sentenceMeaning": "Consulta sobre um dilema."
+                        "sentenceMeaning": "Consulta sobre um dilema.",
+                        "content": {
+                            "displayText": "将来の進路についての悩みを先生に相談します。",
+                            "audioText": "将来の進路についての悩みを先生に相談します。",
+                            "furigana": "",
+                            "romaji": "Nayami no consultation.",
+                            "translation": "Consulta sobre um dilema.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "苦悩 (kunou)",
                         "wordMeaning": "Tormento / Agonia mental",
                         "sentence": "Kunou o overcome.",
-                        "sentenceMeaning": "Superar a agonia mental."
+                        "sentenceMeaning": "Superar a agonia mental.",
+                        "content": {
+                            "displayText": "深刻な苦悩を乗り越えて前を向きます。",
+                            "audioText": "深刻な苦悩を乗り越えて前を向きます。",
+                            "furigana": "",
+                            "romaji": "Kunou o overcome.",
+                            "translation": "Superar a agonia mental.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11157,13 +18963,39 @@ const kanjiN2Data = [
                         "word": "悔しい (kuyashii)",
                         "wordMeaning": "Frustrado / Arrependido",
                         "sentence": "Kuyashii tear.",
-                        "sentenceMeaning": "Lágrimas de frustração."
+                        "sentenceMeaning": "Lágrimas de frustração.",
+                        "content": {
+                            "displayText": "悔しいてあル。",
+                            "audioText": "悔しいてあル。",
+                            "furigana": "",
+                            "romaji": "Kuyashii tear.",
+                            "translation": "Lágrimas de frustração.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "後悔 (koukai)",
                         "wordMeaning": "Arrependimento posterior",
                         "sentence": "Koukai suru.",
-                        "sentenceMeaning": "Arrepender-se depois."
+                        "sentenceMeaning": "Arrepender-se depois.",
+                        "content": {
+                            "displayText": "後悔する。",
+                            "audioText": "後悔する。",
+                            "furigana": "",
+                            "romaji": "Koukai suru.",
+                            "translation": "Arrepender-se depois.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11184,13 +19016,39 @@ const kanjiN2Data = [
                         "word": "慰め (nagusame)",
                         "wordMeaning": "Consolo / Conforto",
                         "sentence": "Nagusame no word.",
-                        "sentenceMeaning": "Palavra de consolo."
+                        "sentenceMeaning": "Palavra de consolo.",
+                        "content": {
+                            "displayText": "落ち込んでいる友人に温かい慰めの言葉をかけます。",
+                            "audioText": "落ち込んでいる友人に温かい慰めの言葉をかけます。",
+                            "furigana": "",
+                            "romaji": "Nagusame no word.",
+                            "translation": "Palavra de consolo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "慰安 (ian)",
                         "wordMeaning": "Recreação / Consolo / Alívio",
                         "sentence": "Ian trip.",
-                        "sentenceMeaning": "Viagem de recreação e descanso."
+                        "sentenceMeaning": "Viagem de recreação e descanso.",
+                        "content": {
+                            "displayText": "慰安トりプ。",
+                            "audioText": "慰安トりプ。",
+                            "furigana": "",
+                            "romaji": "Ian trip.",
+                            "translation": "Viagem de recreação e descanso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11219,13 +19077,39 @@ const kanjiN2Data = [
                         "word": "怨恨 (enkon)",
                         "wordMeaning": "Rancor profundo / Inimizade",
                         "sentence": "Enkon no motive.",
-                        "sentenceMeaning": "Motivo de rancor profundo."
+                        "sentenceMeaning": "Motivo de rancor profundo.",
+                        "content": {
+                            "displayText": "怨恨の動機。",
+                            "audioText": "怨恨の動機。",
+                            "furigana": "",
+                            "romaji": "Enkon no motive.",
+                            "translation": "Motivo de rancor profundo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "怨念 (onnen)",
                         "wordMeaning": "Sentimento de vingança / Rancor",
                         "sentence": "Onnen ga tsuyoi.",
-                        "sentenceMeaning": "Forte sentimento de vingança."
+                        "sentenceMeaning": "Forte sentimento de vingança.",
+                        "content": {
+                            "displayText": "怨念がつよい。",
+                            "audioText": "怨念がつよい。",
+                            "furigana": "",
+                            "romaji": "Onnen ga tsuyoi.",
+                            "translation": "Forte sentimento de vingança.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11254,13 +19138,39 @@ const kanjiN2Data = [
                         "word": "嫌悪 (ken'o)",
                         "wordMeaning": "Aversão / Repulsa",
                         "sentence": "Ken'o-kan.",
-                        "sentenceMeaning": "Sensação de aversão."
+                        "sentenceMeaning": "Sensação de aversão.",
+                        "content": {
+                            "displayText": "嫌悪かん。",
+                            "audioText": "嫌悪かん。",
+                            "furigana": "",
+                            "romaji": "Ken'o-kan.",
+                            "translation": "Sensação de aversão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "嫌い (kirai)",
                         "wordMeaning": "Odiar / Não gostar",
                         "sentence": "Natto ga kirai.",
-                        "sentenceMeaning": "Odiar natto."
+                        "sentenceMeaning": "Odiar natto.",
+                        "content": {
+                            "displayText": "独特の強い匂いがある納豆が嫌いです。",
+                            "audioText": "独特の強い匂いがある納豆が嫌いです。",
+                            "furigana": "",
+                            "romaji": "Natto ga kirai.",
+                            "translation": "Odiar natto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11289,13 +19199,39 @@ const kanjiN2Data = [
                         "word": "好意 (koui)",
                         "wordMeaning": "Boa vontade / Afeto",
                         "sentence": "Koui o daku.",
-                        "sentenceMeaning": "Nutrir afeto."
+                        "sentenceMeaning": "Nutrir afeto.",
+                        "content": {
+                            "displayText": "好意をだく。",
+                            "audioText": "好意をだく。",
+                            "furigana": "",
+                            "romaji": "Koui o daku.",
+                            "translation": "Nutrir afeto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "好物 (koubutsu)",
                         "wordMeaning": "Comida favorita",
                         "sentence": "Sushi wa koubutsu.",
-                        "sentenceMeaning": "Sushi é minha comida favorita."
+                        "sentenceMeaning": "Sushi é minha comida favorita.",
+                        "content": {
+                            "displayText": "すしは好物。",
+                            "audioText": "すしは好物。",
+                            "furigana": "",
+                            "romaji": "Sushi wa koubutsu.",
+                            "translation": "Sushi é minha comida favorita.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11320,13 +19256,39 @@ const kanjiN2Data = [
                         "word": "愛情 (aijou)",
                         "wordMeaning": "Amor / Afeto profundo",
                         "sentence": "Family no aijou.",
-                        "sentenceMeaning": "Amor da família."
+                        "sentenceMeaning": "Amor da família.",
+                        "content": {
+                            "displayText": "子どもたちに深い愛情を注いで育てます。",
+                            "audioText": "子どもたちに深い愛情を注いで育てます。",
+                            "furigana": "",
+                            "romaji": "Family no aijou.",
+                            "translation": "Amor da família.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "愛着 (aichaku)",
                         "wordMeaning": "Apego emocional",
                         "sentence": "Item ni aichaku.",
-                        "sentenceMeaning": "Apego emocional ao objeto."
+                        "sentenceMeaning": "Apego emocional ao objeto.",
+                        "content": {
+                            "displayText": "いてムに愛着。",
+                            "audioText": "いてムに愛着。",
+                            "furigana": "",
+                            "romaji": "Item ni aichaku.",
+                            "translation": "Apego emocional ao objeto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11347,13 +19309,39 @@ const kanjiN2Data = [
                         "word": "欲望 (yokubou)",
                         "wordMeaning": "Desejo / Ambição",
                         "sentence": "Human no yokubou.",
-                        "sentenceMeaning": "Desejos humanos."
+                        "sentenceMeaning": "Desejos humanos.",
+                        "content": {
+                            "displayText": "人間の欲望。",
+                            "audioText": "人間の欲望。",
+                            "furigana": "",
+                            "romaji": "Human no yokubou.",
+                            "translation": "Desejos humanos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "食欲 (shokuyoku)",
                         "wordMeaning": "Apetite",
                         "sentence": "Shokuyoku ga arimasu.",
-                        "sentenceMeaning": "Estar com apetite."
+                        "sentenceMeaning": "Estar com apetite.",
+                        "content": {
+                            "displayText": "食欲があります。",
+                            "audioText": "食欲があります。",
+                            "furigana": "",
+                            "romaji": "Shokuyoku ga arimasu.",
+                            "translation": "Estar com apetite.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11378,13 +19366,39 @@ const kanjiN2Data = [
                         "word": "貪欲 (donyoku)",
                         "wordMeaning": "Ganancioso / Voraz por conhecimento",
                         "sentence": "Donyoku ni study.",
-                        "sentenceMeaning": "Estudar com apetite insaciável."
+                        "sentenceMeaning": "Estudar com apetite insaciável.",
+                        "content": {
+                            "displayText": "貪欲に勉強。",
+                            "audioText": "貪欲に勉強。",
+                            "furigana": "",
+                            "romaji": "Donyoku ni study.",
+                            "translation": "Estudar com apetite insaciável.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "貪る (musaboru)",
                         "wordMeaning": "Devorar / Cobiçar insaciavelmente",
                         "sentence": "Book o musaboru.",
-                        "sentenceMeaning": "Devorar livros."
+                        "sentenceMeaning": "Devorar livros.",
+                        "content": {
+                            "displayText": "図書館で面白い小説を一心不乱に貪り読みます。",
+                            "audioText": "図書館で面白い小説を一心不乱に貪り読みます。",
+                            "furigana": "",
+                            "romaji": "Book o musaboru.",
+                            "translation": "Devorar livros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11409,13 +19423,39 @@ const kanjiN2Data = [
                         "word": "惜しい (oshii)",
                         "wordMeaning": "Quase! / Uma pena / Precioso",
                         "sentence": "Oshii match.",
-                        "sentenceMeaning": "Partida disputada (quase lá!)."
+                        "sentenceMeaning": "Partida disputada (quase lá!).",
+                        "content": {
+                            "displayText": "あと一歩のところで負けて惜しい試合でした。",
+                            "audioText": "あと一歩のところで負けて惜しい試合でした。",
+                            "furigana": "",
+                            "romaji": "Oshii match.",
+                            "translation": "Partida disputada (quase lá!).",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "名残惜しい (nagorioshii)",
                         "wordMeaning": "Relutante em se despedir",
                         "sentence": "Farewell ga nagorioshii.",
-                        "sentenceMeaning": "Relutante em se despedir."
+                        "sentenceMeaning": "Relutante em se despedir.",
+                        "content": {
+                            "displayText": "楽しい旅の終わりが名残惜しいです。",
+                            "audioText": "楽しい旅の終わりが名残惜しいです。",
+                            "furigana": "",
+                            "romaji": "Farewell ga nagorioshii.",
+                            "translation": "Relutante em se despedir.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11436,13 +19476,39 @@ const kanjiN2Data = [
                         "word": "懐かしい (natsukashii)",
                         "wordMeaning": "Nostálgico / Saudoso",
                         "sentence": "Natsukashii song.",
-                        "sentenceMeaning": "Música nostálgica."
+                        "sentenceMeaning": "Música nostálgica.",
+                        "content": {
+                            "displayText": "懐かしいそんグ。",
+                            "audioText": "懐かしいそんグ。",
+                            "furigana": "",
+                            "romaji": "Natsukashii song.",
+                            "translation": "Música nostálgica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "懐古 (kaiko)",
                         "wordMeaning": "Recordação do passado",
                         "sentence": "Kaiko趣味.",
-                        "sentenceMeaning": "Hobby de colecionar velharias."
+                        "sentenceMeaning": "Hobby de colecionar velharias.",
+                        "content": {
+                            "displayText": "懐古趣味。",
+                            "audioText": "懐古趣味。",
+                            "furigana": "",
+                            "romaji": "Kaiko趣味.",
+                            "translation": "Hobby de colecionar velharias.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11558,7 +19624,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 17,
@@ -11568,13 +19638,21 @@ const kanjiN2Data = [
             "title": "Expressando Dedicação aos Estudos (~ni hagemu)",
             "explanation": "No N2, utiliza-se para descrever o empenho diligente nos estudos e na formação profissional.",
             "example": "Benkyou ni hagemimasu.",
-            "translation": "Empenhamo-nos com dedicação aos estudos."
+            "translation": "Empenhamo-nos com dedicação aos estudos.",
+            "content": {
+                "displayText": "べんきょうにはげみます。",
+                "audioText": "べんきょうにはげみます。",
+                "furigana": "",
+                "romaji": "Benkyou ni hagemimasu.",
+                "translation": "Empenhamo-nos com dedicação aos estudos.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "学問の探求と教育制度 (Busca pelo Saber e Sistema Educacional)",
-            "japanese": "<ruby>学校<rt>がっこう</rt></ruby>で<ruby>教授<rt>きょうじゅ</rt></ruby>が<ruby>講義<rt>こうぎ</rt></ruby>を<ruby>担当<rt>たんとう</rt></ruby>し、<ruby>受講<rt>じゅこう</rt></ruby>生に<ruby>指導<rt>しどう</rt></ruby>します。<ruby>辞典<rt>じてん</rt></ruby>で言葉を調べ、<ruby>学業<rt>がくぎょう</rt></ruby>に<ruby>励<rt>はげ</rt></ruby>みます。",
-            "romaji": "Gakkou de kyouju ga kougi o tantou shi, jukousei ni shidou shimasu. Jiten de kotoba o shirabe, gakugyou ni hagemimasu.",
-            "translation": "Na escola o professor leciona a palestra e orienta os alunos. Consulta-se palavras no dicionário, dedicando-se aos estudos.",
+            "japanese": "<ruby>大学<rt>だいがく</rt></ruby>で<ruby>教授<rt>きょうじゅ</rt></ruby>が<ruby>講義<rt>こうぎ</rt></ruby>を<ruby>担当<rt>たんとう</rt></ruby>し、<ruby>受講<rt>じゅこう</rt></ruby>生に<ruby>指導<rt>しどう</rt></ruby>します。<ruby>辞典<rt>じてん</rt></ruby>で言葉を調べ、<ruby>学業<rt>がくぎょう</rt></ruby>に<ruby>励<rt>はげ</rt></ruby>みます。",
+            "romaji": "Daigaku de kyouju ga kougi o tantou shi, jukousei ni shidou shimasu. Jiten de kotoba o shirabe, gakugyou ni hagemimasu.",
+            "translation": "Na universidade, o professor ministra uma aula e orienta os estudantes. Os alunos consultam palavras no dicionário e se dedicam aos estudos.",
             "comprehensionQuiz": [
                 {
                     "q": "O que os alunos fazem com o dicionário (辞典)?",
@@ -11610,13 +19688,39 @@ const kanjiN2Data = [
                         "word": "辞典 (jiten)",
                         "wordMeaning": "Dicionário",
                         "sentence": "Jiten o yomu.",
-                        "sentenceMeaning": "Consultar o dicionário."
+                        "sentenceMeaning": "Consultar o dicionário.",
+                        "content": {
+                            "displayText": "辞典をよむ。",
+                            "audioText": "辞典をよむ。",
+                            "furigana": "",
+                            "romaji": "Jiten o yomu.",
+                            "translation": "Consultar o dicionário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "古典 (koten)",
                         "wordMeaning": "Obra clássica",
                         "sentence": "Koten literature.",
-                        "sentenceMeaning": "Literatura clássica."
+                        "sentenceMeaning": "Literatura clássica.",
+                        "content": {
+                            "displayText": "高校の国語の授業で古典の文学を読みます。",
+                            "audioText": "高校の国語の授業で古典の文学を読みます。",
+                            "furigana": "",
+                            "romaji": "Koten literature.",
+                            "translation": "Literatura clássica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11637,13 +19741,39 @@ const kanjiN2Data = [
                         "word": "冊子 (sasshi)",
                         "wordMeaning": "Brochura / Folheto informativo",
                         "sentence": "Sasshi o distribute.",
-                        "sentenceMeaning": "Distribuição de brochuras."
+                        "sentenceMeaning": "Distribuição de brochuras.",
+                        "content": {
+                            "displayText": "観光客向けに街の案内冊子を配布します。",
+                            "audioText": "観光客向けに街の案内冊子を配布します。",
+                            "furigana": "",
+                            "romaji": "Sasshi o distribute.",
+                            "translation": "Distribuição de brochuras.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "分冊 (bunsatsu)",
                         "wordMeaning": "Edição em volumes separados",
                         "sentence": "Bunsatsu book.",
-                        "sentenceMeaning": "Livro em volumes separados."
+                        "sentenceMeaning": "Livro em volumes separados.",
+                        "content": {
+                            "displayText": "大作の辞書が三つの分冊として出版されました。",
+                            "audioText": "大作の辞書が三つの分冊として出版されました。",
+                            "furigana": "",
+                            "romaji": "Bunsatsu book.",
+                            "translation": "Livro em volumes separados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11664,13 +19794,39 @@ const kanjiN2Data = [
                         "word": "戸籍 (koseki)",
                         "wordMeaning": "Registro de família civil",
                         "sentence": "Koseki touhon.",
-                        "sentenceMeaning": "Certidão de registro de família."
+                        "sentenceMeaning": "Certidão de registro de família.",
+                        "content": {
+                            "displayText": "戸籍とうほん。",
+                            "audioText": "戸籍とうほん。",
+                            "furigana": "",
+                            "romaji": "Koseki touhon.",
+                            "translation": "Certidão de registro de família.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "国籍 (kokuseki)",
                         "wordMeaning": "Nacionalidade civil",
                         "sentence": "Japanese kokuseki.",
-                        "sentenceMeaning": "Nacionalidade japonesa."
+                        "sentenceMeaning": "Nacionalidade japonesa.",
+                        "content": {
+                            "displayText": "じゃぱねせ国籍。",
+                            "audioText": "じゃぱねせ国籍。",
+                            "furigana": "",
+                            "romaji": "Japanese kokuseki.",
+                            "translation": "Nacionalidade japonesa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11695,13 +19851,39 @@ const kanjiN2Data = [
                         "word": "授業 (jugyou)",
                         "wordMeaning": "Aula escolar / Lição",
                         "sentence": "Jugyou ni attend.",
-                        "sentenceMeaning": "Assistir à aula."
+                        "sentenceMeaning": "Assistir à aula.",
+                        "content": {
+                            "displayText": "毎朝九時から大学の講義の授業が始まります。",
+                            "audioText": "毎朝九時から大学の講義の授業が始まります。",
+                            "furigana": "",
+                            "romaji": "Jugyou ni attend.",
+                            "translation": "Assistir à aula.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "教授 (kyouju)",
                         "wordMeaning": "Professor universitário / Cátedra",
                         "sentence": "University no kyouju.",
-                        "sentenceMeaning": "Professor universitário."
+                        "sentenceMeaning": "Professor universitário.",
+                        "content": {
+                            "displayText": "歴史学を専門とする大学教授の講演を聞きます。",
+                            "audioText": "歴史学を専門とする大学教授の講演を聞きます。",
+                            "furigana": "",
+                            "romaji": "University no kyouju.",
+                            "translation": "Professor universitário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11726,13 +19908,39 @@ const kanjiN2Data = [
                         "word": "訓練 (kunren)",
                         "wordMeaning": "Treinamento / Adestramento",
                         "sentence": "Bousai kunren.",
-                        "sentenceMeaning": "Treinamento de prevenção de desastres."
+                        "sentenceMeaning": "Treinamento de prevenção de desastres.",
+                        "content": {
+                            "displayText": "ぼうさい訓練。",
+                            "audioText": "ぼうさい訓練。",
+                            "furigana": "",
+                            "romaji": "Bousai kunren.",
+                            "translation": "Treinamento de prevenção de desastres.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "訓読み (kun'yomi)",
                         "wordMeaning": "Leitura nativa japonesa do kanji",
                         "sentence": "Kanji no kun'yomi.",
-                        "sentenceMeaning": "Leitura Kunyomi do kanji."
+                        "sentenceMeaning": "Leitura Kunyomi do kanji.",
+                        "content": {
+                            "displayText": "かんじの訓読み。",
+                            "audioText": "かんじの訓読み。",
+                            "furigana": "",
+                            "romaji": "Kanji no kun'yomi.",
+                            "translation": "Leitura Kunyomi do kanji.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11757,13 +19965,39 @@ const kanjiN2Data = [
                         "word": "指導 (shidou)",
                         "wordMeaning": "Orientação / Mentoria acadêmica",
                         "sentence": "Teacher no shidou.",
-                        "sentenceMeaning": "Orientação do professor."
+                        "sentenceMeaning": "Orientação do professor.",
+                        "content": {
+                            "displayText": "恩師の指導。",
+                            "audioText": "恩師の指導。",
+                            "furigana": "",
+                            "romaji": "Teacher no shidou.",
+                            "translation": "Orientação do professor.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "導入 (dounyuu)",
                         "wordMeaning": "Introdução / Implementação",
                         "sentence": "System no dounyuu.",
-                        "sentenceMeaning": "Introdução do sistema."
+                        "sentenceMeaning": "Introdução do sistema.",
+                        "content": {
+                            "displayText": "制度の導入。",
+                            "audioText": "制度の導入。",
+                            "furigana": "",
+                            "romaji": "System no dounyuu.",
+                            "translation": "Introdução do sistema.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11792,13 +20026,39 @@ const kanjiN2Data = [
                         "word": "練習 (renshuu)",
                         "wordMeaning": "Prática / Exercício",
                         "sentence": "Kanji no renshuu.",
-                        "sentenceMeaning": "Prática de kanji."
+                        "sentenceMeaning": "Prática de kanji.",
+                        "content": {
+                            "displayText": "かんじの練習。",
+                            "audioText": "かんじの練習。",
+                            "furigana": "",
+                            "romaji": "Kanji no renshuu.",
+                            "translation": "Prática de kanji.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "洗練 (senren)",
                         "wordMeaning": "Refinamento / Elegância treinada",
                         "sentence": "Senren shita design.",
-                        "sentenceMeaning": "Design refinado."
+                        "sentenceMeaning": "Design refinado.",
+                        "content": {
+                            "displayText": "洗練した設計。",
+                            "audioText": "洗練した設計。",
+                            "furigana": "",
+                            "romaji": "Senren shita design.",
+                            "translation": "Design refinado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11827,13 +20087,39 @@ const kanjiN2Data = [
                         "word": "学習 (gakushuu)",
                         "wordMeaning": "Aprendizado / Estudo",
                         "sentence": "Self gakushuu.",
-                        "sentenceMeaning": "Autoaprendizado."
+                        "sentenceMeaning": "Autoaprendizado.",
+                        "content": {
+                            "displayText": "図書館で毎日熱心に自習や学習を続けます。",
+                            "audioText": "図書館で毎日熱心に自習や学習を続けます。",
+                            "furigana": "",
+                            "romaji": "Self gakushuu.",
+                            "translation": "Autoaprendizado.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "習慣 (shuukan)",
                         "wordMeaning": "Hábito / Costurme",
                         "sentence": "Good shuukan.",
-                        "sentenceMeaning": "Bom hábito."
+                        "sentenceMeaning": "Bom hábito.",
+                        "content": {
+                            "displayText": "良い習慣。",
+                            "audioText": "良い習慣。",
+                            "furigana": "",
+                            "romaji": "Good shuukan.",
+                            "translation": "Bom hábito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11858,13 +20144,39 @@ const kanjiN2Data = [
                         "word": "通勤 (tsuukin)",
                         "wordMeaning": "Deslocamento ao trabalho",
                         "sentence": "Train de tsuukin.",
-                        "sentenceMeaning": "Ir ao trabalho de trem."
+                        "sentenceMeaning": "Ir ao trabalho de trem.",
+                        "content": {
+                            "displayText": "列車で通勤。",
+                            "audioText": "列車で通勤。",
+                            "furigana": "",
+                            "romaji": "Train de tsuukin.",
+                            "translation": "Ir ao trabalho de trem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "勤勉 (kinben)",
                         "wordMeaning": "Diligência / Esmero nos estudos",
                         "sentence": "Kinben na student.",
-                        "sentenceMeaning": "Estudante diligente."
+                        "sentenceMeaning": "Estudante diligente.",
+                        "content": {
+                            "displayText": "真面目で勤勉な態度が職場でも高く評価されています。",
+                            "audioText": "真面目で勤勉な態度が職場でも高く評価されています。",
+                            "furigana": "",
+                            "romaji": "Kinben na student.",
+                            "translation": "Estudante diligente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11885,13 +20197,39 @@ const kanjiN2Data = [
                         "word": "精進 (shoujin)",
                         "wordMeaning": "Empenho / Dedicação devota",
                         "sentence": "Study ni shoujin.",
-                        "sentenceMeaning": "Empenhar-se nos estudos."
+                        "sentenceMeaning": "Empenhar-se nos estudos.",
+                        "content": {
+                            "displayText": "勉強に精進。",
+                            "audioText": "勉強に精進。",
+                            "furigana": "",
+                            "romaji": "Study ni shoujin.",
+                            "translation": "Empenhar-se nos estudos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "精神 (seishin)",
                         "wordMeaning": "Espírito / Mente",
                         "sentence": "Seishin strength.",
-                        "sentenceMeaning": "Força mental."
+                        "sentenceMeaning": "Força mental.",
+                        "content": {
+                            "displayText": "困難に負けない強い精神力を鍛えます。",
+                            "audioText": "困難に負けない強い精神力を鍛えます。",
+                            "furigana": "",
+                            "romaji": "Seishin strength.",
+                            "translation": "Força mental.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11916,13 +20254,39 @@ const kanjiN2Data = [
                         "word": "励ます (hagemasu)",
                         "wordMeaning": "Encorajar / Incentivar",
                         "sentence": "Friend o hagemasu.",
-                        "sentenceMeaning": "Encorajar o amigo."
+                        "sentenceMeaning": "Encorajar o amigo.",
+                        "content": {
+                            "displayText": "フりえんドを励ます。",
+                            "audioText": "フりえんドを励ます。",
+                            "furigana": "",
+                            "romaji": "Friend o hagemasu.",
+                            "translation": "Encorajar o amigo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "奨励 (shourei)",
                         "wordMeaning": "Incentivo oficial / Estímulo",
                         "sentence": "Research no shourei.",
-                        "sentenceMeaning": "Estímulo à pesquisa."
+                        "sentenceMeaning": "Estímulo à pesquisa.",
+                        "content": {
+                            "displayText": "研究の奨励。",
+                            "audioText": "研究の奨励。",
+                            "furigana": "",
+                            "romaji": "Research no shourei.",
+                            "translation": "Estímulo à pesquisa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11947,13 +20311,39 @@ const kanjiN2Data = [
                         "word": "勉強 (benkyou)",
                         "wordMeaning": "Estudo / Aprendizado",
                         "sentence": "N2 no benkyou.",
-                        "sentenceMeaning": "Estudo do N2."
+                        "sentenceMeaning": "Estudo do N2.",
+                        "content": {
+                            "displayText": "日本語能力試験の合格を目指して勉強します。",
+                            "audioText": "日本語能力試験の合格を目指して勉強します。",
+                            "furigana": "",
+                            "romaji": "N2 no benkyou.",
+                            "translation": "Estudo do N2.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "勤勉 (kinben)",
                         "wordMeaning": "Diligência",
                         "sentence": "Kinben na personality.",
-                        "sentenceMeaning": "Personalidade diligente."
+                        "sentenceMeaning": "Personalidade diligente.",
+                        "content": {
+                            "displayText": "日々の勤勉な働きぶりが認められました。",
+                            "audioText": "日々の勤勉な働きぶりが認められました。",
+                            "furigana": "",
+                            "romaji": "Kinben na personality.",
+                            "translation": "Personalidade diligente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -11974,13 +20364,39 @@ const kanjiN2Data = [
                         "word": "学業 (gakugyou)",
                         "wordMeaning": "Estudos acadêmicos",
                         "sentence": "Gakugyou ni hagemu.",
-                        "sentenceMeaning": "Dedicador-se aos estudos acadêmicos."
+                        "sentenceMeaning": "Dedicador-se aos estudos acadêmicos.",
+                        "content": {
+                            "displayText": "学業にはげむ。",
+                            "audioText": "学業にはげむ。",
+                            "furigana": "",
+                            "romaji": "Gakugyou ni hagemu.",
+                            "translation": "Dedicador-se aos estudos acadêmicos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "卒業 (sutsugyou)",
                         "wordMeaning": "Formatura",
                         "sentence": "School no sutsugyou.",
-                        "sentenceMeaning": "Formatura escolar."
+                        "sentenceMeaning": "Formatura escolar.",
+                        "content": {
+                            "displayText": "スちょおルの卒業。",
+                            "audioText": "スちょおルの卒業。",
+                            "furigana": "",
+                            "romaji": "School no sutsugyou.",
+                            "translation": "Formatura escolar.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12001,13 +20417,39 @@ const kanjiN2Data = [
                         "word": "宿題 (shukudai)",
                         "wordMeaning": "Lição de casa",
                         "sentence": "Shukudai o do.",
-                        "sentenceMeaning": "Fazer a lição de casa."
+                        "sentenceMeaning": "Fazer a lição de casa.",
+                        "content": {
+                            "displayText": "宿題をど。",
+                            "audioText": "宿題をど。",
+                            "furigana": "",
+                            "romaji": "Shukudai o do.",
+                            "translation": "Fazer a lição de casa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "下宿 (geshuku)",
                         "wordMeaning": "Pensão / Alojamento de estudante",
                         "sentence": "Geshuku-sei.",
-                        "sentenceMeaning": "Estudante morador de pensão."
+                        "sentenceMeaning": "Estudante morador de pensão.",
+                        "content": {
+                            "displayText": "下宿せい。",
+                            "audioText": "下宿せい。",
+                            "furigana": "",
+                            "romaji": "Geshuku-sei.",
+                            "translation": "Estudante morador de pensão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12028,13 +20470,39 @@ const kanjiN2Data = [
                         "word": "問題 (mondai)",
                         "wordMeaning": "Problema / Questão de prova",
                         "sentence": "Mondai o solve.",
-                        "sentenceMeaning": "Resolver a questão da prova."
+                        "sentenceMeaning": "Resolver a questão da prova.",
+                        "content": {
+                            "displayText": "教科書の難しい数学の問題を自力で解きます。",
+                            "audioText": "教科書の難しい数学の問題を自力で解きます。",
+                            "furigana": "",
+                            "romaji": "Mondai o solve.",
+                            "translation": "Resolver a questão da prova.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "題名 (daimei)",
                         "wordMeaning": "Título do livro/obra",
                         "sentence": "Book no daimei.",
-                        "sentenceMeaning": "Título do livro."
+                        "sentenceMeaning": "Título do livro.",
+                        "content": {
+                            "displayText": "この小説の題名は非常に印象的です。",
+                            "audioText": "この小説の題名は非常に印象的です。",
+                            "furigana": "",
+                            "romaji": "Book no daimei.",
+                            "translation": "Título do livro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12059,13 +20527,39 @@ const kanjiN2Data = [
                         "word": "質問 (shitsumon)",
                         "wordMeaning": "Pergunta / Dúvida",
                         "sentence": "Shitsumon ga arimasu.",
-                        "sentenceMeaning": "Tenho uma pergunta."
+                        "sentenceMeaning": "Tenho uma pergunta.",
+                        "content": {
+                            "displayText": "質問があります。",
+                            "audioText": "質問があります。",
+                            "furigana": "",
+                            "romaji": "Shitsumon ga arimasu.",
+                            "translation": "Tenho uma pergunta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "品質 (hinshitsu)",
                         "wordMeaning": "Qualidade do produto",
                         "sentence": "High hinshitsu.",
-                        "sentenceMeaning": "Alta qualidade."
+                        "sentenceMeaning": "Alta qualidade.",
+                        "content": {
+                            "displayText": "職人の手によって高い品質が保たれています。",
+                            "audioText": "職人の手によって高い品質が保たれています。",
+                            "furigana": "",
+                            "romaji": "High hinshitsu.",
+                            "translation": "Alta qualidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12090,13 +20584,39 @@ const kanjiN2Data = [
                         "word": "問答 (mondou)",
                         "wordMeaning": "Perguntas e respostas / Diálogo",
                         "sentence": "Zen no mondou.",
-                        "sentenceMeaning": "Diálogo Zen."
+                        "sentenceMeaning": "Diálogo Zen.",
+                        "content": {
+                            "displayText": "ぜんの問答。",
+                            "audioText": "ぜんの問答。",
+                            "furigana": "",
+                            "romaji": "Zen no mondou.",
+                            "translation": "Diálogo Zen.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "問い (toi)",
                         "wordMeaning": "Questão / Indagação",
                         "sentence": "Toi ni kotaeru.",
-                        "sentenceMeaning": "Responder à indagação."
+                        "sentenceMeaning": "Responder à indagação.",
+                        "content": {
+                            "displayText": "問いにこたえる。",
+                            "audioText": "問いにこたえる。",
+                            "furigana": "",
+                            "romaji": "Toi ni kotaeru.",
+                            "translation": "Responder à indagação.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12121,13 +20641,39 @@ const kanjiN2Data = [
                         "word": "解答 (kaitou)",
                         "wordMeaning": "Gabarito / Resposta da prova",
                         "sentence": "Kaitou用紙.",
-                        "sentenceMeaning": "Folha de gabarito."
+                        "sentenceMeaning": "Folha de gabarito.",
+                        "content": {
+                            "displayText": "解答用紙。",
+                            "audioText": "解答用紙。",
+                            "furigana": "",
+                            "romaji": "Kaitou用紙.",
+                            "translation": "Folha de gabarito.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "回答 (kaitou)",
                         "wordMeaning": "Resposta a questionário",
                         "sentence": "Survey no kaitou.",
-                        "sentenceMeaning": "Resposta ao questionário."
+                        "sentenceMeaning": "Resposta ao questionário.",
+                        "content": {
+                            "displayText": "アンケート調査の回答を集計して分析します。",
+                            "audioText": "アンケート調査の回答を集計して分析します。",
+                            "furigana": "",
+                            "romaji": "Survey no kaitou.",
+                            "translation": "Resposta ao questionário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12243,7 +20789,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 18,
@@ -12253,7 +20803,15 @@ const kanjiN2Data = [
             "title": "Expressando Fabricação de Materiais (~ni yotte seizou)",
             "explanation": "No N2, utiliza-se a voz passiva ou instrumental para descrever produção industrial e matérias-primas.",
             "example": "Tetsu ni yotte seizou shimasu.",
-            "translation": "Fabricamos por meio de ferro."
+            "translation": "Fabricamos por meio de ferro.",
+            "content": {
+                "displayText": "てつによってせいぞうします。",
+                "audioText": "てつによってせいぞうします。",
+                "furigana": "",
+                "romaji": "Tetsu ni yotte seizou shimasu.",
+                "translation": "Fabricamos por meio de ferro.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "日本の製造業と資源活用 (Manufatura Japonesa e Uso de Recursos)",
@@ -12295,13 +20853,39 @@ const kanjiN2Data = [
                         "word": "鉄道 (tetsudou)",
                         "wordMeaning": "Ferrovia",
                         "sentence": "Tetsudou network.",
-                        "sentenceMeaning": "Rede ferroviária."
+                        "sentenceMeaning": "Rede ferroviária.",
+                        "content": {
+                            "displayText": "全国に張り巡らされた鉄道網を利用します。",
+                            "audioText": "全国に張り巡らされた鉄道網を利用します。",
+                            "furigana": "",
+                            "romaji": "Tetsudou network.",
+                            "translation": "Rede ferroviária.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "鉄鋼 (tekkou)",
                         "wordMeaning": "Siderurgia / Indústria de aço",
                         "sentence": "Tekkou factory.",
-                        "sentenceMeaning": "Fábrica siderúrgica."
+                        "sentenceMeaning": "Fábrica siderúrgica.",
+                        "content": {
+                            "displayText": "製鉄所で鉄鋼の生産が活発に行われています。",
+                            "audioText": "製鉄所で鉄鋼の生産が活発に行われています。",
+                            "furigana": "",
+                            "romaji": "Tekkou factory.",
+                            "translation": "Fábrica siderúrgica.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12322,13 +20906,39 @@ const kanjiN2Data = [
                         "word": "鉱物 (koubutsu)",
                         "wordMeaning": "Mineral",
                         "sentence": "Koubutsu collection.",
-                        "sentenceMeaning": "Coleção de minerais."
+                        "sentenceMeaning": "Coleção de minerais.",
+                        "content": {
+                            "displayText": "地層から様々な貴重な鉱物を採掘します。",
+                            "audioText": "地層から様々な貴重な鉱物を採掘します。",
+                            "furigana": "",
+                            "romaji": "Koubutsu collection.",
+                            "translation": "Coleção de minerais.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "炭鉱 (tankou)",
                         "wordMeaning": "Mina de carvão",
                         "sentence": "Tankou worker.",
-                        "sentenceMeaning": "Trabalhador de mina de carvão."
+                        "sentenceMeaning": "Trabalhador de mina de carvão.",
+                        "content": {
+                            "displayText": "昔はこの地域に大きな炭鉱がありました。",
+                            "audioText": "昔はこの地域に大きな炭鉱がありました。",
+                            "furigana": "",
+                            "romaji": "Tankou worker.",
+                            "translation": "Trabalhador de mina de carvão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12353,13 +20963,39 @@ const kanjiN2Data = [
                         "word": "銅像 (douzou)",
                         "wordMeaning": "Estátua de bronze/cobre",
                         "sentence": "Hero no douzou.",
-                        "sentenceMeaning": "Estátua de bronze do herói."
+                        "sentenceMeaning": "Estátua de bronze do herói.",
+                        "content": {
+                            "displayText": "英雄の銅像。",
+                            "audioText": "英雄の銅像。",
+                            "furigana": "",
+                            "romaji": "Hero no douzou.",
+                            "translation": "Estátua de bronze do herói.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "銅貨 (douka)",
                         "wordMeaning": "Moeda de cobre",
                         "sentence": "10-yen douka.",
-                        "sentenceMeaning": "Moeda de cobre de 10 ienes."
+                        "sentenceMeaning": "Moeda de cobre de 10 ienes.",
+                        "content": {
+                            "displayText": "自動販売機で十円の銅貨を使って切符を買います。",
+                            "audioText": "自動販売機で十円の銅貨を使って切符を買います。",
+                            "furigana": "",
+                            "romaji": "10-yen douka.",
+                            "translation": "Moeda de cobre de 10 ienes.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12384,13 +21020,39 @@ const kanjiN2Data = [
                         "word": "銀行 (ginkou)",
                         "wordMeaning": "Banco financeiro",
                         "sentence": "Ginkou de deposit.",
-                        "sentenceMeaning": "Depósito no banco."
+                        "sentenceMeaning": "Depósito no banco.",
+                        "content": {
+                            "displayText": "銀行の窓口で口座に預金を預け入れます。",
+                            "audioText": "銀行の窓口で口座に預金を預け入れます。",
+                            "furigana": "",
+                            "romaji": "Ginkou de deposit.",
+                            "translation": "Depósito no banco.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "銀メダル (gin-medaru)",
                         "wordMeaning": "Medalha de prata",
                         "sentence": "Gin-medaru o get.",
-                        "sentenceMeaning": "Conquistar a medalha de prata."
+                        "sentenceMeaning": "Conquistar a medalha de prata.",
+                        "content": {
+                            "displayText": "オリンピックで堂々の銀メダルを獲得しました。",
+                            "audioText": "オリンピックで堂々の銀メダルを獲得しました。",
+                            "furigana": "",
+                            "romaji": "Gin-medaru o get.",
+                            "translation": "Conquistar a medalha de prata.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12419,13 +21081,39 @@ const kanjiN2Data = [
                         "word": "石炭 (sekitan)",
                         "wordMeaning": "Carvão mineral",
                         "sentence": "Sekitan energy.",
-                        "sentenceMeaning": "Energia de carvão mineral."
+                        "sentenceMeaning": "Energia de carvão mineral.",
+                        "content": {
+                            "displayText": "火力発電所で石炭を燃料として発電します。",
+                            "audioText": "火力発電所で石炭を燃料として発電します。",
+                            "furigana": "",
+                            "romaji": "Sekitan energy.",
+                            "translation": "Energia de carvão mineral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "木炭 (mokutan)",
                         "wordMeaning": "Carvão vegetal / Desenho a carvão",
                         "sentence": "Mokutan gaki.",
-                        "sentenceMeaning": "Desenho a carvão vegetal."
+                        "sentenceMeaning": "Desenho a carvão vegetal.",
+                        "content": {
+                            "displayText": "木炭がき。",
+                            "audioText": "木炭がき。",
+                            "furigana": "",
+                            "romaji": "Mokutan gaki.",
+                            "translation": "Desenho a carvão vegetal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12454,13 +21142,39 @@ const kanjiN2Data = [
                         "word": "石油 (sekiyu)",
                         "wordMeaning": "Petróleo bruto",
                         "sentence": "Sekiyu price.",
-                        "sentenceMeaning": "Preço do petróleo."
+                        "sentenceMeaning": "Preço do petróleo.",
+                        "content": {
+                            "displayText": "海外から大型タンカーで石油を輸入します。",
+                            "audioText": "海外から大型タンカーで石油を輸入します。",
+                            "furigana": "",
+                            "romaji": "Sekiyu price.",
+                            "translation": "Preço do petróleo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "油断 (yudan)",
                         "wordMeaning": "Negligência / Baixar a guarda",
                         "sentence": "Yudan wa kinmotsu.",
-                        "sentenceMeaning": "Baixar a guarda é proibido!"
+                        "sentenceMeaning": "Baixar a guarda é proibido!",
+                        "content": {
+                            "displayText": "油断はきんもつ。",
+                            "audioText": "油断はきんもつ。",
+                            "furigana": "",
+                            "romaji": "Yudan wa kinmotsu.",
+                            "translation": "Baixar a guarda é proibido!",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12485,13 +21199,39 @@ const kanjiN2Data = [
                         "word": "油脂 (yushi)",
                         "wordMeaning": "Óleos e gorduras industriais",
                         "sentence": "Yushi processing.",
-                        "sentenceMeaning": "Processamento de óleos e gorduras."
+                        "sentenceMeaning": "Processamento de óleos e gorduras.",
+                        "content": {
+                            "displayText": "植物から良質な油脂を抽出して加工します。",
+                            "audioText": "植物から良質な油脂を抽出して加工します。",
+                            "furigana": "",
+                            "romaji": "Yushi processing.",
+                            "translation": "Processamento de óleos e gorduras.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "脂質 (shishitsu)",
                         "wordMeaning": "Lipídios / Gordura corporal",
                         "sentence": "Shishitsu check.",
-                        "sentenceMeaning": "Controle de lipídios."
+                        "sentenceMeaning": "Controle de lipídios.",
+                        "content": {
+                            "displayText": "健康診断で血液中の脂質の値を測定します。",
+                            "audioText": "健康診断で血液中の脂質の値を測定します。",
+                            "furigana": "",
+                            "romaji": "Shishitsu check.",
+                            "translation": "Controle de lipídios.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12516,13 +21256,39 @@ const kanjiN2Data = [
                         "word": "砂浜 (sunahama)",
                         "wordMeaning": "Praia de areia",
                         "sentence": "Sunahama o walk.",
-                        "sentenceMeaning": "Caminhar pela praia de areia."
+                        "sentenceMeaning": "Caminhar pela praia de areia.",
+                        "content": {
+                            "displayText": "夕暮れ時に広々とした砂浜を散歩します。",
+                            "audioText": "夕暮れ時に広々とした砂浜を散歩します。",
+                            "furigana": "",
+                            "romaji": "Sunahama o walk.",
+                            "translation": "Caminhar pela praia de areia.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "砂漠 (sabaku)",
                         "wordMeaning": "Deserto de areia",
                         "sentence": "Sahara sabaku.",
-                        "sentenceMeaning": "Deserto do Saara."
+                        "sentenceMeaning": "Deserto do Saara.",
+                        "content": {
+                            "displayText": "さはら砂漠。",
+                            "audioText": "さはら砂漠。",
+                            "furigana": "",
+                            "romaji": "Sahara sabaku.",
+                            "translation": "Deserto do Saara.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12551,13 +21317,39 @@ const kanjiN2Data = [
                         "word": "泥棒 (dorobou)",
                         "wordMeaning": "Ladrão / Assaltante",
                         "sentence": "Dorobou o arrest.",
-                        "sentenceMeaning": "Prender o ladrão."
+                        "sentenceMeaning": "Prender o ladrão.",
+                        "content": {
+                            "displayText": "留守中に侵入した泥棒を警察が逮捕しました。",
+                            "audioText": "留守中に侵入した泥棒を警察が逮捕しました。",
+                            "furigana": "",
+                            "romaji": "Dorobou o arrest.",
+                            "translation": "Prender o ladrão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "泥沼 (doronuma)",
                         "wordMeaning": "Pântano barrento / Situação sem saída",
                         "sentence": "Doronuma no state.",
-                        "sentenceMeaning": "Situação sem saída."
+                        "sentenceMeaning": "Situação sem saída.",
+                        "content": {
+                            "displayText": "泥沼の国家。",
+                            "audioText": "泥沼の国家。",
+                            "furigana": "",
+                            "romaji": "Doronuma no state.",
+                            "translation": "Situação sem saída.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12586,13 +21378,39 @@ const kanjiN2Data = [
                         "word": "岩石 (ganseki)",
                         "wordMeaning": "Rocha / Bloco de pedra",
                         "sentence": "Ganseki no analysis.",
-                        "sentenceMeaning": "Análise de rochas."
+                        "sentenceMeaning": "Análise de rochas.",
+                        "content": {
+                            "displayText": "火山の周辺にある岩石の成分を分析します。",
+                            "audioText": "火山の周辺にある岩石の成分を分析します。",
+                            "furigana": "",
+                            "romaji": "Ganseki no analysis.",
+                            "translation": "Análise de rochas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "溶岩 (yougan)",
                         "wordMeaning": "Lava vulcânica",
                         "sentence": "Yougan ga flow.",
-                        "sentenceMeaning": "A lava vulcânica flui."
+                        "sentenceMeaning": "A lava vulcânica flui.",
+                        "content": {
+                            "displayText": "噴火口から熱い溶岩がゆっくりと流れ出ます。",
+                            "audioText": "噴火口から熱い溶岩がゆっくりと流れ出ます。",
+                            "furigana": "",
+                            "romaji": "Yougan ga flow.",
+                            "translation": "A lava vulcânica flui.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12613,13 +21431,39 @@ const kanjiN2Data = [
                         "word": "木材 (mokuzai)",
                         "wordMeaning": "Madeira de construção",
                         "sentence": "Mokuzai house.",
-                        "sentenceMeaning": "Casa de madeira."
+                        "sentenceMeaning": "Casa de madeira.",
+                        "content": {
+                            "displayText": "木材ほうせ。",
+                            "audioText": "木材ほうせ。",
+                            "furigana": "",
+                            "romaji": "Mokuzai house.",
+                            "translation": "Casa de madeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "人材 (jinzai)",
                         "wordMeaning": "Recursos humanos / Talentos",
                         "sentence": "Jinzai agency.",
-                        "sentenceMeaning": "Agência de recursos humanos."
+                        "sentenceMeaning": "Agência de recursos humanos.",
+                        "content": {
+                            "displayText": "会社に必要な優秀な人材を採用します。",
+                            "audioText": "会社に必要な優秀な人材を採用します。",
+                            "furigana": "",
+                            "romaji": "Jinzai agency.",
+                            "translation": "Agência de recursos humanos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12644,13 +21488,39 @@ const kanjiN2Data = [
                         "word": "看板 (kanban)",
                         "wordMeaning": "Placa comercial / Letreiro",
                         "sentence": "Store no kanban.",
-                        "sentenceMeaning": "Placa da loja."
+                        "sentenceMeaning": "Placa da loja.",
+                        "content": {
+                            "displayText": "大通りに面した店の大きな看板を見上げます。",
+                            "audioText": "大通りに面した店の大きな看板を見上げます。",
+                            "furigana": "",
+                            "romaji": "Store no kanban.",
+                            "translation": "Placa da loja.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "黒板 (kokuban)",
                         "wordMeaning": "Lousa negra / Quadro",
                         "sentence": "Kokuban ni kaku.",
-                        "sentenceMeaning": "Escrever no quadro negro."
+                        "sentenceMeaning": "Escrever no quadro negro.",
+                        "content": {
+                            "displayText": "黒板にかく。",
+                            "audioText": "黒板にかく。",
+                            "furigana": "",
+                            "romaji": "Kokuban ni kaku.",
+                            "translation": "Escrever no quadro negro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12679,13 +21549,39 @@ const kanjiN2Data = [
                         "word": "木綿 (momen)",
                         "wordMeaning": "Tecido de algodão",
                         "sentence": "Momen no shirt.",
-                        "sentenceMeaning": "Camisa de algodão."
+                        "sentenceMeaning": "Camisa de algodão.",
+                        "content": {
+                            "displayText": "肌触りの良い純木綿のシャツを着ます。",
+                            "audioText": "肌触りの良い純木綿のシャツを着ます。",
+                            "furigana": "",
+                            "romaji": "Momen no shirt.",
+                            "translation": "Camisa de algodão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "綿密 (menmitsu)",
                         "wordMeaning": "Minucioso / Detalhado com precisão",
                         "sentence": "Menmitsu na plan.",
-                        "sentenceMeaning": "Plano minucioso."
+                        "sentenceMeaning": "Plano minucioso.",
+                        "content": {
+                            "displayText": "綿密な計画。",
+                            "audioText": "綿密な計画。",
+                            "furigana": "",
+                            "romaji": "Menmitsu na plan.",
+                            "translation": "Plano minucioso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12714,13 +21610,39 @@ const kanjiN2Data = [
                         "word": "絹糸 (kinuito)",
                         "wordMeaning": "Fio de seda",
                         "sentence": "Kinuito no kimono.",
-                        "sentenceMeaning": "Kimono de fio de seda."
+                        "sentenceMeaning": "Kimono de fio de seda.",
+                        "content": {
+                            "displayText": "絹糸のきもの。",
+                            "audioText": "絹糸のきもの。",
+                            "furigana": "",
+                            "romaji": "Kinuito no kimono.",
+                            "translation": "Kimono de fio de seda.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "人絹 (jinken)",
                         "wordMeaning": "Seda artificial / Raio",
                         "sentence": "Jinken fabric.",
-                        "sentenceMeaning": "Tecido de seda artificial."
+                        "sentenceMeaning": "Tecido de seda artificial.",
+                        "content": {
+                            "displayText": "光沢のある人絹の布地で服を仕立てます。",
+                            "audioText": "光沢のある人絹の布地で服を仕立てます。",
+                            "furigana": "",
+                            "romaji": "Jinken fabric.",
+                            "translation": "Tecido de seda artificial.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12745,13 +21667,39 @@ const kanjiN2Data = [
                         "word": "組織 (soshiki)",
                         "wordMeaning": "Organização / Estrutura corporativa",
                         "sentence": "Company no soshiki.",
-                        "sentenceMeaning": "Estrutura da empresa."
+                        "sentenceMeaning": "Estrutura da empresa.",
+                        "content": {
+                            "displayText": "会社の組織。",
+                            "audioText": "会社の組織。",
+                            "furigana": "",
+                            "romaji": "Company no soshiki.",
+                            "translation": "Estrutura da empresa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "織物 (orimono)",
                         "wordMeaning": "Tecido artesanal / Têxtil",
                         "sentence": "Traditional orimono.",
-                        "sentenceMeaning": "Tecido artesanal tradicional."
+                        "sentenceMeaning": "Tecido artesanal tradicional.",
+                        "content": {
+                            "displayText": "職人が手作業で伝統的な織物を織り上げます。",
+                            "audioText": "職人が手作業で伝統的な織物を織り上げます。",
+                            "furigana": "",
+                            "romaji": "Traditional orimono.",
+                            "translation": "Tecido artesanal tradicional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12780,13 +21728,39 @@ const kanjiN2Data = [
                         "word": "製造 (seizou)",
                         "wordMeaning": "Fabricação industrial / Manufatura",
                         "sentence": "Car no seizou.",
-                        "sentenceMeaning": "Fabricação de carros."
+                        "sentenceMeaning": "Fabricação de carros.",
+                        "content": {
+                            "displayText": "工場で精密機械や自動車の製造を行います。",
+                            "audioText": "工場で精密機械や自動車の製造を行います。",
+                            "furigana": "",
+                            "romaji": "Car no seizou.",
+                            "translation": "Fabricação de carros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "木造 (mokuzou)",
                         "wordMeaning": "Construído em madeira",
                         "sentence": "Mokuzou tatemono.",
-                        "sentenceMeaning": "Construção de madeira."
+                        "sentenceMeaning": "Construção de madeira.",
+                        "content": {
+                            "displayText": "木造たてもの。",
+                            "audioText": "木造たてもの。",
+                            "furigana": "",
+                            "romaji": "Mokuzou tatemono.",
+                            "translation": "Construção de madeira.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12815,13 +21789,39 @@ const kanjiN2Data = [
                         "word": "製品 (seihin)",
                         "wordMeaning": "Produto manufaturado",
                         "sentence": "New seihin.",
-                        "sentenceMeaning": "Novo produto."
+                        "sentenceMeaning": "Novo produto.",
+                        "content": {
+                            "displayText": "新製品の発表会に多くの報道陣が集まりました。",
+                            "audioText": "新製品の発表会に多くの報道陣が集まりました。",
+                            "furigana": "",
+                            "romaji": "New seihin.",
+                            "translation": "Novo produto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "日本製 (nihonsei)",
                         "wordMeaning": "Fabricado no Japão (Made in Japan)",
                         "sentence": "Nihonsei no watch.",
-                        "sentenceMeaning": "Relógio fabricado no Japão."
+                        "sentenceMeaning": "Relógio fabricado no Japão.",
+                        "content": {
+                            "displayText": "高品質な日本製の時計を大切に使います。",
+                            "audioText": "高品質な日本製の時計を大切に使います。",
+                            "furigana": "",
+                            "romaji": "Nihonsei no watch.",
+                            "translation": "Relógio fabricado no Japão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12846,13 +21846,39 @@ const kanjiN2Data = [
                         "word": "生産 (seisan)",
                         "wordMeaning": "Produção industrial/agrícola",
                         "sentence": "Food no seisan.",
-                        "sentenceMeaning": "Produção de alimentos."
+                        "sentenceMeaning": "Produção de alimentos.",
+                        "content": {
+                            "displayText": "食べ物の生産。",
+                            "audioText": "食べ物の生産。",
+                            "furigana": "",
+                            "romaji": "Food no seisan.",
+                            "translation": "Produção de alimentos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "土産 (miyage)",
                         "wordMeaning": "Lembrancinha regional / Souvenir",
                         "sentence": "O-miyage o buy.",
-                        "sentenceMeaning": "Comprar lembrancinhas."
+                        "sentenceMeaning": "Comprar lembrancinhas.",
+                        "content": {
+                            "displayText": "旅行の記念に地元の美味しいお土産を買います。",
+                            "audioText": "旅行の記念に地元の美味しいお土産を買います。",
+                            "furigana": "",
+                            "romaji": "O-miyage o buy.",
+                            "translation": "Comprar lembrancinhas.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -12968,7 +21994,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 19,
@@ -12978,13 +22008,21 @@ const kanjiN2Data = [
             "title": "Expressando Transações Financeiras (~ni motozuite shiharai)",
             "explanation": "No N2, utiliza-se a estrutura para pagamentos e emissões fiscais em conformidade com faturas.",
             "example": "Keiyaku ni motozuite shiharai shimasu.",
-            "translation": "Efetuamos o pagamento com base no contrato."
+            "translation": "Efetuamos o pagamento com base no contrato.",
+            "content": {
+                "displayText": "けいやくにもとずいてしはらいします。",
+                "audioText": "けいやくにもとずいてしはらいします。",
+                "furigana": "",
+                "romaji": "Keiyaku ni motozuite shiharai shimasu.",
+                "translation": "Efetuamos o pagamento com base no contrato.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "企業会計と消費市場 (Contabilidade Corporativa e Mercado de Consumo)",
-            "japanese": "<ruby>企業<rt>きぎょう</rt></ruby>は<ruby>商品<rt>しょうひん</rt></ruby>を<ruby>販売<rt>はんばい</rt></ruby>し、<ruby>利益<rt>りえき</rt></ruby>を<ruby>追及<rt>ついきゅう</rt></ruby>します。<ruby>経費<rt>けいひ</rt></ruby>や<ruby>税金<rt>ぜいきん</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>して<ruby>決算<rt>けっさん</rt></ruby>を行います。",
+            "japanese": "<ruby>企業<rt>きぎょう</rt></ruby>は<ruby>商品<rt>しょうひん</rt></ruby>を<ruby>販売<rt>はんばい</rt></ruby>し、<ruby>利益<rt>りえき</rt></ruby>を<ruby>追求<rt>ついきゅう</rt></ruby>します。<ruby>経費<rt>けいひ</rt></ruby>や<ruby>税金<rt>ぜいきん</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>して<ruby>決算<rt>けっさん</rt></ruby>を行います。",
             "romaji": "Kigyou wa shouhin o hanbai shi, rieki o tsuikyuu shimasu. Keihi ya zeikin o keisan shite kessan o okonaimasu.",
-            "translation": "As empresas vendem mercadorias e buscam o lucro. Calculam-se despesas e impostos, realizando o fechamento contábil.",
+            "translation": "As empresas vendem mercadorias e buscam lucro. Elas calculam despesas e impostos e realizam o fechamento contábil.",
             "comprehensionQuiz": [
                 {
                     "q": "O que as empresas calculam no fechamento contábil (決算)?",
@@ -13020,13 +22058,39 @@ const kanjiN2Data = [
                         "word": "販売 (hanbai)",
                         "wordMeaning": "Venda / Comercialização",
                         "sentence": "Online hanbai.",
-                        "sentenceMeaning": "Venda online."
+                        "sentenceMeaning": "Venda online.",
+                        "content": {
+                            "displayText": "公式ウェブサイトで商品のオンライン販売を始めます。",
+                            "audioText": "公式ウェブサイトで商品のオンライン販売を始めます。",
+                            "furigana": "",
+                            "romaji": "Online hanbai.",
+                            "translation": "Venda online.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "市販 (shihan)",
                         "wordMeaning": "Comercialização no mercado comum",
                         "sentence": "Shihan medicine.",
-                        "sentenceMeaning": "Remédio vendido no comércio."
+                        "sentenceMeaning": "Remédio vendido no comércio.",
+                        "content": {
+                            "displayText": "市販薬。",
+                            "audioText": "市販薬。",
+                            "furigana": "",
+                            "romaji": "Shihan medicine.",
+                            "translation": "Remédio vendido no comércio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13055,13 +22119,39 @@ const kanjiN2Data = [
                         "word": "売買 (baibai)",
                         "wordMeaning": "Compra e venda / Negociação",
                         "sentence": "Stock no baibai.",
-                        "sentenceMeaning": "Compra e venda de ações."
+                        "sentenceMeaning": "Compra e venda de ações.",
+                        "content": {
+                            "displayText": "証券取引所で株式の売買が活発に行われます。",
+                            "audioText": "証券取引所で株式の売買が活発に行われます。",
+                            "furigana": "",
+                            "romaji": "Stock no baibai.",
+                            "translation": "Compra e venda de ações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "買収 (baishuu)",
                         "wordMeaning": "Aquisição / Compra de empresa",
                         "sentence": "Company no baishuu.",
-                        "sentenceMeaning": "Aquisição da empresa."
+                        "sentenceMeaning": "Aquisição da empresa.",
+                        "content": {
+                            "displayText": "会社の買収。",
+                            "audioText": "会社の買収。",
+                            "furigana": "",
+                            "romaji": "Company no baishuu.",
+                            "translation": "Aquisição da empresa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13086,13 +22176,39 @@ const kanjiN2Data = [
                         "word": "購入 (kounyuu)",
                         "wordMeaning": "Aquisição / Compra de bem",
                         "sentence": "Car no kounyuu.",
-                        "sentenceMeaning": "Aquisição de um carro."
+                        "sentenceMeaning": "Aquisição de um carro.",
+                        "content": {
+                            "displayText": "マイホームを建てるために土地を購入します。",
+                            "audioText": "マイホームを建てるために土地を購入します。",
+                            "furigana": "",
+                            "romaji": "Car no kounyuu.",
+                            "translation": "Aquisição de um carro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "定期購読 (teikikoudoku)",
                         "wordMeaning": "Assinatura periódica",
                         "sentence": "Magazine no teikikoudoku.",
-                        "sentenceMeaning": "Assinatura periódica de revista."
+                        "sentenceMeaning": "Assinatura periódica de revista.",
+                        "content": {
+                            "displayText": "専門雑誌の定期購読を申し込みました。",
+                            "audioText": "専門雑誌の定期購読を申し込みました。",
+                            "furigana": "",
+                            "romaji": "Magazine no teikikoudoku.",
+                            "translation": "Assinatura periódica de revista.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13113,13 +22229,39 @@ const kanjiN2Data = [
                         "word": "家賃 (yachin)",
                         "wordMeaning": "Aluguel da casa",
                         "sentence": "Yachin o harau.",
-                        "sentenceMeaning": "Pagar o aluguel."
+                        "sentenceMeaning": "Pagar o aluguel.",
+                        "content": {
+                            "displayText": "家賃をはらう。",
+                            "audioText": "家賃をはらう。",
+                            "furigana": "",
+                            "romaji": "Yachin o harau.",
+                            "translation": "Pagar o aluguel.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "賃金 (chingin)",
                         "wordMeaning": "Salário / Remuneração por hora",
                         "sentence": "Chingin ageru.",
-                        "sentenceMeaning": "Aumentar o salário."
+                        "sentenceMeaning": "Aumentar o salário.",
+                        "content": {
+                            "displayText": "賃金あげる。",
+                            "audioText": "賃金あげる。",
+                            "furigana": "",
+                            "romaji": "Chingin ageru.",
+                            "translation": "Aumentar o salário.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13144,13 +22286,39 @@ const kanjiN2Data = [
                         "word": "小銭 (kozeni)",
                         "wordMeaning": "Moedas de troco / Dinheiro miúdo",
                         "sentence": "Kozeni o count.",
-                        "sentenceMeaning": "Contar as moedas de troco."
+                        "sentenceMeaning": "Contar as moedas de troco.",
+                        "content": {
+                            "displayText": "財布の中の小銭を取り出して支払います。",
+                            "audioText": "財布の中の小銭を取り出して支払います。",
+                            "furigana": "",
+                            "romaji": "Kozeni o count.",
+                            "translation": "Contar as moedas de troco.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "金銭 (kinsen)",
                         "wordMeaning": "Dinheiro / Recursos monetários",
                         "sentence": "Kinsen trouble.",
-                        "sentenceMeaning": "Problema de dinheiro."
+                        "sentenceMeaning": "Problema de dinheiro.",
+                        "content": {
+                            "displayText": "金銭面での無用なトラブルを防ぐ契約を結びます。",
+                            "audioText": "金銭面での無用なトラブルを防ぐ契約を結びます。",
+                            "furigana": "",
+                            "romaji": "Kinsen trouble.",
+                            "translation": "Problema de dinheiro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13175,13 +22343,39 @@ const kanjiN2Data = [
                         "word": "納税 (nousei)",
                         "wordMeaning": "Pagamento de impostos",
                         "sentence": "Nousei duty.",
-                        "sentenceMeaning": "Dever de pagar impostos."
+                        "sentenceMeaning": "Dever de pagar impostos.",
+                        "content": {
+                            "displayText": "期日までにしっかりと納税の義務を果たします。",
+                            "audioText": "期日までにしっかりと納税の義務を果たします。",
+                            "furigana": "",
+                            "romaji": "Nousei duty.",
+                            "translation": "Dever de pagar impostos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "納期 (nouki)",
                         "wordMeaning": "Prazo de entrega",
                         "sentence": "Nouki o mamoru.",
-                        "sentenceMeaning": "Respeitar o prazo de entrega."
+                        "sentenceMeaning": "Respeitar o prazo de entrega.",
+                        "content": {
+                            "displayText": "納期をまもる。",
+                            "audioText": "納期をまもる。",
+                            "furigana": "",
+                            "romaji": "Nouki o mamoru.",
+                            "translation": "Respeitar o prazo de entrega.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13210,13 +22404,39 @@ const kanjiN2Data = [
                         "word": "消費税 (shouhizei)",
                         "wordMeaning": "Imposto sobre consumo (IVA)",
                         "sentence": "Shouhizei 10%.",
-                        "sentenceMeaning": "Imposto de consumo a 10%."
+                        "sentenceMeaning": "Imposto de consumo a 10%.",
+                        "content": {
+                            "displayText": "買い物をすると十パーセントの消費税がかかります。",
+                            "audioText": "買い物をすると十パーセントの消費税がかかります。",
+                            "furigana": "",
+                            "romaji": "Shouhizei 10%.",
+                            "translation": "Imposto de consumo a 10%.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "減税 (genzei)",
                         "wordMeaning": "Redução de impostos",
                         "sentence": "Policy no genzei.",
-                        "sentenceMeaning": "Redução de impostos da política."
+                        "sentenceMeaning": "Redução de impostos da política.",
+                        "content": {
+                            "displayText": "景気回復を目指して政府が減税を実施します。",
+                            "audioText": "景気回復を目指して政府が減税を実施します。",
+                            "furigana": "",
+                            "romaji": "Policy no genzei.",
+                            "translation": "Redução de impostos da política.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13241,13 +22461,39 @@ const kanjiN2Data = [
                         "word": "学費 (gakuhi)",
                         "wordMeaning": "Anuidade / Custos de estudo",
                         "sentence": "Gakuhi o harau.",
-                        "sentenceMeaning": "Pagar a anuidade de estudo."
+                        "sentenceMeaning": "Pagar a anuidade de estudo.",
+                        "content": {
+                            "displayText": "学費をはらう。",
+                            "audioText": "学費をはらう。",
+                            "furigana": "",
+                            "romaji": "Gakuhi o harau.",
+                            "translation": "Pagar a anuidade de estudo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "旅費 (ryohi)",
                         "wordMeaning": "Despesas de viagem",
                         "sentence": "Ryohi no budget.",
-                        "sentenceMeaning": "Orçamento de despesas de viagem."
+                        "sentenceMeaning": "Orçamento de despesas de viagem.",
+                        "content": {
+                            "displayText": "出張に必要な旅費の概算を申請します。",
+                            "audioText": "出張に必要な旅費の概算を申請します。",
+                            "furigana": "",
+                            "romaji": "Ryohi no budget.",
+                            "translation": "Orçamento de despesas de viagem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13280,13 +22526,39 @@ const kanjiN2Data = [
                         "word": "充実 (juujitsu)",
                         "wordMeaning": "Plenitude / Vida plena",
                         "sentence": "Juujitsu shita life.",
-                        "sentenceMeaning": "Vida plena e realizada."
+                        "sentenceMeaning": "Vida plena e realizada.",
+                        "content": {
+                            "displayText": "充実した生活。",
+                            "audioText": "充実した生活。",
+                            "furigana": "",
+                            "romaji": "Juujitsu shita life.",
+                            "translation": "Vida plena e realizada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "充填 (juuten)",
                         "wordMeaning": "Abastecimento / Preenchimento",
                         "sentence": "Gas no juuten.",
-                        "sentenceMeaning": "Abastecimento de gás."
+                        "sentenceMeaning": "Abastecimento de gás.",
+                        "content": {
+                            "displayText": "ボンベにプロパンガスを安全に充填します。",
+                            "audioText": "ボンベにプロパンガスを安全に充填します。",
+                            "furigana": "",
+                            "romaji": "Gas no juuten.",
+                            "translation": "Abastecimento de gás.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13311,13 +22583,39 @@ const kanjiN2Data = [
                         "word": "過剰 (kajou)",
                         "wordMeaning": "Excesso / Sobra exagerada",
                         "sentence": "Kajou na packaging.",
-                        "sentenceMeaning": "Embalagem em excesso."
+                        "sentenceMeaning": "Embalagem em excesso.",
+                        "content": {
+                            "displayText": "環境に配慮して商品の過剰な包装を減らします。",
+                            "audioText": "環境に配慮して商品の過剰な包装を減らします。",
+                            "furigana": "",
+                            "romaji": "Kajou na packaging.",
+                            "translation": "Embalagem em excesso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "余剰 (yojou)",
                         "wordMeaning": "Superávit / Excedente",
                         "sentence": "Yojou fund.",
-                        "sentenceMeaning": "Fundo de excedente."
+                        "sentenceMeaning": "Fundo de excedente.",
+                        "content": {
+                            "displayText": "予算の余剰金を来年度の基金に積み立てます。",
+                            "audioText": "予算の余剰金を来年度の基金に積み立てます。",
+                            "furigana": "",
+                            "romaji": "Yojou fund.",
+                            "translation": "Fundo de excedente.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13338,13 +22636,39 @@ const kanjiN2Data = [
                         "word": "裕福 (yuufuku)",
                         "wordMeaning": "Rico / Abastado",
                         "sentence": "Yuufuku na family.",
-                        "sentenceMeaning": "Família abastada."
+                        "sentenceMeaning": "Família abastada.",
+                        "content": {
+                            "displayText": "裕福な家庭で大切に育てられました。",
+                            "audioText": "裕福な家庭で大切に育てられました。",
+                            "furigana": "",
+                            "romaji": "Yuufuku na family.",
+                            "translation": "Família abastada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "余裕 (yoyuu)",
                         "wordMeaning": "Folga financeira/tempo",
                         "sentence": "Yoyuu ga arimasu.",
-                        "sentenceMeaning": "Ter folga de tempo/dinheiro."
+                        "sentenceMeaning": "Ter folga de tempo/dinheiro.",
+                        "content": {
+                            "displayText": "余裕があります。",
+                            "audioText": "余裕があります。",
+                            "furigana": "",
+                            "romaji": "Yoyuu ga arimasu.",
+                            "translation": "Ter folga de tempo/dinheiro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13369,13 +22693,39 @@ const kanjiN2Data = [
                         "word": "貧乏 (binbou)",
                         "wordMeaning": "Pobreza",
                         "sentence": "Binbou kara escape.",
-                        "sentenceMeaning": "Escapar da pobreza."
+                        "sentenceMeaning": "Escapar da pobreza.",
+                        "content": {
+                            "displayText": "努力を重ねて極度の貧乏から抜け出しました。",
+                            "audioText": "努力を重ねて極度の貧乏から抜け出しました。",
+                            "furigana": "",
+                            "romaji": "Binbou kara escape.",
+                            "translation": "Escapar da pobreza.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "欠乏 (ketsubou)",
                         "wordMeaning": "Carência / Falta severa",
                         "sentence": "Water no ketsubou.",
-                        "sentenceMeaning": "Falta de água."
+                        "sentenceMeaning": "Falta de água.",
+                        "content": {
+                            "displayText": "干ばつの影響で飲料水が深刻に欠乏しています。",
+                            "audioText": "干ばつの影響で飲料水が深刻に欠乏しています。",
+                            "furigana": "",
+                            "romaji": "Water no ketsubou.",
+                            "translation": "Falta de água.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13396,13 +22746,39 @@ const kanjiN2Data = [
                         "word": "損害 (songai)",
                         "wordMeaning": "Prejuízo / Dano financeiro",
                         "sentence": "Songai insurance.",
-                        "sentenceMeaning": "Seguro contra prejuízos."
+                        "sentenceMeaning": "Seguro contra prejuízos.",
+                        "content": {
+                            "displayText": "万一の事故に備えて損害保険に加入します。",
+                            "audioText": "万一の事故に備えて損害保険に加入します。",
+                            "furigana": "",
+                            "romaji": "Songai insurance.",
+                            "translation": "Seguro contra prejuízos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "赤字損 (akajison)",
                         "wordMeaning": "Perda de déficit",
                         "sentence": "Akaji no loss.",
-                        "sentenceMeaning": "Perda de déficit."
+                        "sentenceMeaning": "Perda de déficit.",
+                        "content": {
+                            "displayText": "あかじの損失。",
+                            "audioText": "あかじの損失。",
+                            "furigana": "",
+                            "romaji": "Akaji no loss.",
+                            "translation": "Perda de déficit.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13427,13 +22803,39 @@ const kanjiN2Data = [
                         "word": "利益 (rieki)",
                         "wordMeaning": "Lucro financeiro",
                         "sentence": "Rieki o dasu.",
-                        "sentenceMeaning": "Gerar lucro."
+                        "sentenceMeaning": "Gerar lucro.",
+                        "content": {
+                            "displayText": "利益をだす。",
+                            "audioText": "利益をだす。",
+                            "furigana": "",
+                            "romaji": "Rieki o dasu.",
+                            "translation": "Gerar lucro.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "益虫 (ekichuu)",
                         "wordMeaning": "Inseto benéfico",
                         "sentence": "Ekichuu no role.",
-                        "sentenceMeaning": "Papel do inseto benéfico."
+                        "sentenceMeaning": "Papel do inseto benéfico.",
+                        "content": {
+                            "displayText": "益虫の役割。",
+                            "audioText": "益虫の役割。",
+                            "furigana": "",
+                            "romaji": "Ekichuu no role.",
+                            "translation": "Papel do inseto benéfico.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13458,13 +22860,39 @@ const kanjiN2Data = [
                         "word": "弁償 (benshou)",
                         "wordMeaning": "Ressarcimento / Indenização",
                         "sentence": "Damage no benshou.",
-                        "sentenceMeaning": "Ressarcimento de danos."
+                        "sentenceMeaning": "Ressarcimento de danos.",
+                        "content": {
+                            "displayText": "だまげの弁償。",
+                            "audioText": "だまげの弁償。",
+                            "furigana": "",
+                            "romaji": "Damage no benshou.",
+                            "translation": "Ressarcimento de danos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "無償 (mushou)",
                         "wordMeaning": "Gratuito / Sem custo",
                         "sentence": "Mushou offer.",
-                        "sentenceMeaning": "Oferta gratuita."
+                        "sentenceMeaning": "Oferta gratuita.",
+                        "content": {
+                            "displayText": "被災者に対して物資を無償で提供します。",
+                            "audioText": "被災者に対して物資を無償で提供します。",
+                            "furigana": "",
+                            "romaji": "Mushou offer.",
+                            "translation": "Oferta gratuita.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13489,13 +22917,39 @@ const kanjiN2Data = [
                         "word": "手帳 (techou)",
                         "wordMeaning": "Caderneta de anotações / Agenda",
                         "sentence": "Techou ni kaku.",
-                        "sentenceMeaning": "Escrever na agenda."
+                        "sentenceMeaning": "Escrever na agenda.",
+                        "content": {
+                            "displayText": "手帳にかく。",
+                            "audioText": "手帳にかく。",
+                            "furigana": "",
+                            "romaji": "Techou ni kaku.",
+                            "translation": "Escrever na agenda.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "通帳 (tsuuchou)",
                         "wordMeaning": "Caderneta bancária de conta",
                         "sentence": "Bank no tsuuchou.",
-                        "sentenceMeaning": "Caderneta bancária."
+                        "sentenceMeaning": "Caderneta bancária.",
+                        "content": {
+                            "displayText": "銀行で預金通帳の記帳をして残高を確かめます。",
+                            "audioText": "銀行で預金通帳の記帳をして残高を確かめます。",
+                            "furigana": "",
+                            "romaji": "Bank no tsuuchou.",
+                            "translation": "Caderneta bancária.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13520,13 +22974,39 @@ const kanjiN2Data = [
                         "word": "簿記 (boki)",
                         "wordMeaning": "Contabilidade / Escrituração",
                         "sentence": "Boki 2-kyuu.",
-                        "sentenceMeaning": "Nível 2 de contabilidade."
+                        "sentenceMeaning": "Nível 2 de contabilidade.",
+                        "content": {
+                            "displayText": "商工会議所で簿記二級の試験を受験します。",
+                            "audioText": "商工会議所で簿記二級の試験を受験します。",
+                            "furigana": "",
+                            "romaji": "Boki 2-kyuu.",
+                            "translation": "Nível 2 de contabilidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "名簿 (meibo)",
                         "wordMeaning": "Lista de nomes / Ficha de membros",
                         "sentence": "Member no meibo.",
-                        "sentenceMeaning": "Lista de membros."
+                        "sentenceMeaning": "Lista de membros.",
+                        "content": {
+                            "displayText": "同窓会の名簿を見て懐かしい友人に連絡します。",
+                            "audioText": "同窓会の名簿を見て懐かしい友人に連絡します。",
+                            "furigana": "",
+                            "romaji": "Member no meibo.",
+                            "translation": "Lista de membros.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13555,13 +23035,39 @@ const kanjiN2Data = [
                         "word": "予算 (yosan)",
                         "wordMeaning": "Orçamento financeiro",
                         "sentence": "Yosan o tateru.",
-                        "sentenceMeaning": "Montar o orçamento."
+                        "sentenceMeaning": "Montar o orçamento.",
+                        "content": {
+                            "displayText": "予算をたてる。",
+                            "audioText": "予算をたてる。",
+                            "furigana": "",
+                            "romaji": "Yosan o tateru.",
+                            "translation": "Montar o orçamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "計算 (keisan)",
                         "wordMeaning": "Cálculo",
                         "sentence": "Total no keisan.",
-                        "sentenceMeaning": "Cálculo do total."
+                        "sentenceMeaning": "Cálculo do total.",
+                        "content": {
+                            "displayText": "レジで合計金額の計算を正確に行います。",
+                            "audioText": "レジで合計金額の計算を正確に行います。",
+                            "furigana": "",
+                            "romaji": "Total no keisan.",
+                            "translation": "Cálculo do total.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13681,7 +23187,11 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "module": 20,
@@ -13691,7 +23201,15 @@ const kanjiN2Data = [
             "title": "Expressando Felicitações e Ritos (~ni際して)",
             "explanation": "No N2, utiliza-se a expressão formal para ocasiões especiais como casamentos e celebrações oficiais.",
             "example": "Kekkon ni saishite shukufuku shimasu.",
-            "translation": "Abençoamos por ocasião do casamento."
+            "translation": "Abençoamos por ocasião do casamento.",
+            "content": {
+                "displayText": "けっこんにさいしてしゅくふくします。",
+                "audioText": "けっこんにさいしてしゅくふくします。",
+                "furigana": "",
+                "romaji": "Kekkon ni saishite shukufuku shimasu.",
+                "translation": "Abençoamos por ocasião do casamento.",
+                "scenario": ""
+            }
         },
         "readingText": {
             "title": "冠婚葬祭と日本の暮らし (Ritos de Passagem e a Vida no Japão)",
@@ -13733,13 +23251,39 @@ const kanjiN2Data = [
                         "word": "結婚 (kekkon)",
                         "wordMeaning": "Casamento",
                         "sentence": "Kekkonshiki.",
-                        "sentenceMeaning": "Cerimônia de casamento."
+                        "sentenceMeaning": "Cerimônia de casamento.",
+                        "content": {
+                            "displayText": "結婚しき。",
+                            "audioText": "結婚しき。",
+                            "furigana": "",
+                            "romaji": "Kekkonshiki.",
+                            "translation": "Cerimônia de casamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "新婚 (shinkon)",
                         "wordMeaning": "Recém-casados",
                         "sentence": "Shinkon trip.",
-                        "sentenceMeaning": "Viagem de lua de mel de recém-casados."
+                        "sentenceMeaning": "Viagem de lua de mel de recém-casados.",
+                        "content": {
+                            "displayText": "結婚したばかりの新婚旅行でハワイを訪れます。",
+                            "audioText": "結婚したばかりの新婚旅行でハワイを訪れます。",
+                            "furigana": "",
+                            "romaji": "Shinkon trip.",
+                            "translation": "Viagem de lua de mel de recém-casados.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13772,13 +23316,39 @@ const kanjiN2Data = [
                         "word": "婚姻 (kon'in)",
                         "wordMeaning": "Matrimônio legal",
                         "sentence": "Kon'in届.",
-                        "sentenceMeaning": "Certidão de registro de matrimônio."
+                        "sentenceMeaning": "Certidão de registro de matrimônio.",
+                        "content": {
+                            "displayText": "婚姻届。",
+                            "audioText": "婚姻届。",
+                            "furigana": "",
+                            "romaji": "Kon'in届.",
+                            "translation": "Certidão de registro de matrimônio.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "姻戚 (inseki)",
                         "wordMeaning": "Parentes por afinidade de casamento",
                         "sentence": "Inseki relation.",
-                        "sentenceMeaning": "Relação de parentesco por casamento."
+                        "sentenceMeaning": "Relação de parentesco por casamento.",
+                        "content": {
+                            "displayText": "結婚によって新しい姻戚関係が結ばれます。",
+                            "audioText": "結婚によって新しい姻戚関係が結ばれます。",
+                            "furigana": "",
+                            "romaji": "Inseki relation.",
+                            "translation": "Relação de parentesco por casamento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13803,13 +23373,39 @@ const kanjiN2Data = [
                         "word": "妊娠 (ninshin)",
                         "wordMeaning": "Gravidez / Gestação",
                         "sentence": "Ninshin check.",
-                        "sentenceMeaning": "Exame de gravidez."
+                        "sentenceMeaning": "Exame de gravidez.",
+                        "content": {
+                            "displayText": "病院で定期的な妊娠の経過観察を受けます。",
+                            "audioText": "病院で定期的な妊娠の経過観察を受けます。",
+                            "furigana": "",
+                            "romaji": "Ninshin check.",
+                            "translation": "Exame de gravidez.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "妊婦 (ninpu)",
                         "wordMeaning": "Mulher grávida / Gestante",
                         "sentence": "Ninpu seat.",
-                        "sentenceMeaning": "Assento reservado a gestantes."
+                        "sentenceMeaning": "Assento reservado a gestantes.",
+                        "content": {
+                            "displayText": "電車の中で妊婦の方に席を譲ります。",
+                            "audioText": "電車の中で妊婦の方に席を譲ります。",
+                            "furigana": "",
+                            "romaji": "Ninpu seat.",
+                            "translation": "Assento reservado a gestantes.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13830,13 +23426,39 @@ const kanjiN2Data = [
                         "word": "主婦 (shufu)",
                         "wordMeaning": "Dona de casa",
                         "sentence": "Shufu no work.",
-                        "sentenceMeaning": "Trabalho de dona de casa."
+                        "sentenceMeaning": "Trabalho de dona de casa.",
+                        "content": {
+                            "displayText": "主婦の仕事。",
+                            "audioText": "主婦の仕事。",
+                            "furigana": "",
+                            "romaji": "Shufu no work.",
+                            "translation": "Trabalho de dona de casa.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "夫婦 (fuufu)",
                         "wordMeaning": "Marido e mulher / Casal",
                         "sentence": "Fuufu no love.",
-                        "sentenceMeaning": "Amor de casal."
+                        "sentenceMeaning": "Amor de casal.",
+                        "content": {
+                            "displayText": "仲の良い夫婦が手を繋いで公園を散歩します。",
+                            "audioText": "仲の良い夫婦が手を繋いで公園を散歩します。",
+                            "furigana": "",
+                            "romaji": "Fuufu no love.",
+                            "translation": "Amor de casal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13857,13 +23479,39 @@ const kanjiN2Data = [
                         "word": "配偶者 (haiguusha)",
                         "wordMeaning": "Cônjuge",
                         "sentence": "Haiguusha deduction.",
-                        "sentenceMeaning": "Dedução fiscal para cônjuge."
+                        "sentenceMeaning": "Dedução fiscal para cônjuge.",
+                        "content": {
+                            "displayText": "年末調整で配偶者控除の申請を行います。",
+                            "audioText": "年末調整で配偶者控除の申請を行います。",
+                            "furigana": "",
+                            "romaji": "Haiguusha deduction.",
+                            "translation": "Dedução fiscal para cônjuge.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "偶然 (guuzen)",
                         "wordMeaning": "Por acaso / Coincidência",
                         "sentence": "Guuzen meet.",
-                        "sentenceMeaning": "Encontrar por acaso."
+                        "sentenceMeaning": "Encontrar por acaso.",
+                        "content": {
+                            "displayText": "街を歩いていたら偶然昔の友人に会いました。",
+                            "audioText": "街を歩いていたら偶然昔の友人に会いました。",
+                            "furigana": "",
+                            "romaji": "Guuzen meet.",
+                            "translation": "Encontrar por acaso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13884,13 +23532,39 @@ const kanjiN2Data = [
                         "word": "孤独 (kodoku)",
                         "wordMeaning": "Solidão / Solitário",
                         "sentence": "Kodoku ni feel.",
-                        "sentenceMeaning": "Sentir solidão."
+                        "sentenceMeaning": "Sentir solidão.",
+                        "content": {
+                            "displayText": "孤独に感じる。",
+                            "audioText": "孤独に感じる。",
+                            "furigana": "",
+                            "romaji": "Kodoku ni feel.",
+                            "translation": "Sentir solidão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "孤立 (koritsu)",
                         "wordMeaning": "Isolamento social/geográfico",
                         "sentence": "Island ga koritsu.",
-                        "sentenceMeaning": "A ilha ficou isolada."
+                        "sentenceMeaning": "A ilha ficou isolada.",
+                        "content": {
+                            "displayText": "島が孤立。",
+                            "audioText": "島が孤立。",
+                            "furigana": "",
+                            "romaji": "Island ga koritsu.",
+                            "translation": "A ilha ficou isolada.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13915,13 +23589,39 @@ const kanjiN2Data = [
                         "word": "老人 (roujin)",
                         "wordMeaning": "Pessoa idosa / Ancião",
                         "sentence": "Roujin home.",
-                        "sentenceMeaning": "Asilo de idosos."
+                        "sentenceMeaning": "Asilo de idosos.",
+                        "content": {
+                            "displayText": "老人ほめ。",
+                            "audioText": "老人ほめ。",
+                            "furigana": "",
+                            "romaji": "Roujin home.",
+                            "translation": "Asilo de idosos.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "老後 (rougo)",
                         "wordMeaning": "Terceira idade / Velhice",
                         "sentence": "Rougo no plan.",
-                        "sentenceMeaning": "Planejamento para a terceira idade."
+                        "sentenceMeaning": "Planejamento para a terceira idade.",
+                        "content": {
+                            "displayText": "老後の計画。",
+                            "audioText": "老後の計画。",
+                            "furigana": "",
+                            "romaji": "Rougo no plan.",
+                            "translation": "Planejamento para a terceira idade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13946,13 +23646,39 @@ const kanjiN2Data = [
                         "word": "長寿 (chouju)",
                         "wordMeaning": "Longevidade / Vida longa",
                         "sentence": "Chouju no country.",
-                        "sentenceMeaning": "País de alta longevidade."
+                        "sentenceMeaning": "País de alta longevidade.",
+                        "content": {
+                            "displayText": "日本は世界でも有数の長寿国として知られています。",
+                            "audioText": "日本は世界でも有数の長寿国として知られています。",
+                            "furigana": "",
+                            "romaji": "Chouju no country.",
+                            "translation": "País de alta longevidade.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "寿司 (sushi)",
                         "wordMeaning": "Sushi",
                         "sentence": "Sushi o eat.",
-                        "sentenceMeaning": "Comer sushi."
+                        "sentenceMeaning": "Comer sushi.",
+                        "content": {
+                            "displayText": "お祝いで新鮮な魚を使った寿司を食べます。",
+                            "audioText": "お祝いで新鮮な魚を使った寿司を食べます。",
+                            "furigana": "",
+                            "romaji": "Sushi o eat.",
+                            "translation": "Comer sushi.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -13973,13 +23699,39 @@ const kanjiN2Data = [
                         "word": "祝福 (shukufuku)",
                         "wordMeaning": "Bênção / Felicitações",
                         "sentence": "Shukufuku no message.",
-                        "sentenceMeaning": "Mensagem de felicitações."
+                        "sentenceMeaning": "Mensagem de felicitações.",
+                        "content": {
+                            "displayText": "結婚する二人に心からの祝福の言葉を贈ります。",
+                            "audioText": "結婚する二人に心からの祝福の言葉を贈ります。",
+                            "furigana": "",
+                            "romaji": "Shukufuku no message.",
+                            "translation": "Mensagem de felicitações.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "祝日 (shukujitsu)",
                         "wordMeaning": "Feriado nacional",
                         "sentence": "Tomorrow wa shukujitsu.",
-                        "sentenceMeaning": "Amanhã é feriado nacional."
+                        "sentenceMeaning": "Amanhã é feriado nacional.",
+                        "content": {
+                            "displayText": "カレンダーを見ると明日は祝日でお休みです。",
+                            "audioText": "カレンダーを見ると明日は祝日でお休みです。",
+                            "furigana": "",
+                            "romaji": "Tomorrow wa shukujitsu.",
+                            "translation": "Amanhã é feriado nacional.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14008,13 +23760,39 @@ const kanjiN2Data = [
                         "word": "お礼 (orei)",
                         "wordMeaning": "Agradecimento / Retribuição gentil",
                         "sentence": "Orei o say.",
-                        "sentenceMeaning": "Dizer agradecimento."
+                        "sentenceMeaning": "Dizer agradecimento.",
+                        "content": {
+                            "displayText": "お世話になった先生に手紙でお礼を伝えます。",
+                            "audioText": "お世話になった先生に手紙でお礼を伝えます。",
+                            "furigana": "",
+                            "romaji": "Orei o say.",
+                            "translation": "Dizer agradecimento.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "礼儀 (reigi)",
                         "wordMeaning": "Etiqueta / Boas maneiras",
                         "sentence": "Reigi correct.",
-                        "sentenceMeaning": "Maneiras corretas de etiqueta."
+                        "sentenceMeaning": "Maneiras corretas de etiqueta.",
+                        "content": {
+                            "displayText": "目上の人に対して正しい礼儀を払います。",
+                            "audioText": "目上の人に対して正しい礼儀を払います。",
+                            "furigana": "",
+                            "romaji": "Reigi correct.",
+                            "translation": "Maneiras corretas de etiqueta.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14035,13 +23813,39 @@ const kanjiN2Data = [
                         "word": "儀式 (gishiki)",
                         "wordMeaning": "Cerimônia / Rito formal",
                         "sentence": "Formal gishiki.",
-                        "sentenceMeaning": "Cerimônia formal."
+                        "sentenceMeaning": "Cerimônia formal.",
+                        "content": {
+                            "displayText": "神聖な神社で厳かな儀式が行われます。",
+                            "audioText": "神聖な神社で厳かな儀式が行われます。",
+                            "furigana": "",
+                            "romaji": "Formal gishiki.",
+                            "translation": "Cerimônia formal.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "礼儀 (reigi)",
                         "wordMeaning": "Boas maneiras",
                         "sentence": "Reigi ga ii.",
-                        "sentenceMeaning": "Ter boas maneiras."
+                        "sentenceMeaning": "Ter boas maneiras.",
+                        "content": {
+                            "displayText": "礼儀がいい。",
+                            "audioText": "礼儀がいい。",
+                            "furigana": "",
+                            "romaji": "Reigi ga ii.",
+                            "translation": "Ter boas maneiras.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14066,13 +23870,39 @@ const kanjiN2Data = [
                         "word": "冠婚葬祭 (kankonsousai)",
                         "wordMeaning": "Ritos de passagem da vida (Maioridade, Casamento, Funeral, Ancestrais)",
                         "sentence": "Kankonsousai manners.",
-                        "sentenceMeaning": "Etiquetas dos ritos de passagem."
+                        "sentenceMeaning": "Etiquetas dos ritos de passagem.",
+                        "content": {
+                            "displayText": "冠婚葬祭のマナーをしっかりと身につけます。",
+                            "audioText": "冠婚葬祭のマナーをしっかりと身につけます。",
+                            "furigana": "",
+                            "romaji": "Kankonsousai manners.",
+                            "translation": "Etiquetas dos ritos de passagem.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "栄冠 (eikan)",
                         "wordMeaning": "Coroa de glória / Titulo de campeão",
                         "sentence": "Eikan o get.",
-                        "sentenceMeaning": "Conquistar a coroa de glória."
+                        "sentenceMeaning": "Conquistar a coroa de glória.",
+                        "content": {
+                            "displayText": "厳しい練習を重ねて大会で栄冠を勝ち取りました。",
+                            "audioText": "厳しい練習を重ねて大会で栄冠を勝ち取りました。",
+                            "furigana": "",
+                            "romaji": "Eikan o get.",
+                            "translation": "Conquistar a coroa de glória.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14097,13 +23927,39 @@ const kanjiN2Data = [
                         "word": "喪服 (mofuku)",
                         "wordMeaning": "Traje de luto",
                         "sentence": "Mofuku o wear.",
-                        "sentenceMeaning": "Vestir traje de luto."
+                        "sentenceMeaning": "Vestir traje de luto.",
+                        "content": {
+                            "displayText": "告別式に参列するため黒い喪服を着ます。",
+                            "audioText": "告別式に参列するため黒い喪服を着ます。",
+                            "furigana": "",
+                            "romaji": "Mofuku o wear.",
+                            "translation": "Vestir traje de luto.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "喪失 (soushitsu)",
                         "wordMeaning": "Perda / Extinção de posse",
                         "sentence": "Memory no soushitsu.",
-                        "sentenceMeaning": "Perda de memória."
+                        "sentenceMeaning": "Perda de memória.",
+                        "content": {
+                            "displayText": "事故のショックで一時的に記憶を喪失しました。",
+                            "audioText": "事故のショックで一時的に記憶を喪失しました。",
+                            "furigana": "",
+                            "romaji": "Memory no soushitsu.",
+                            "translation": "Perda de memória.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14124,13 +23980,39 @@ const kanjiN2Data = [
                         "word": "葬儀 (sougi)",
                         "wordMeaning": "Cerimônia fúnebre / Funeral",
                         "sentence": "Sougi ni attend.",
-                        "sentenceMeaning": "Comparecer ao funeral."
+                        "sentenceMeaning": "Comparecer ao funeral.",
+                        "content": {
+                            "displayText": "故人を偲んで葬儀に参列しました。",
+                            "audioText": "故人を偲んで葬儀に参列しました。",
+                            "furigana": "",
+                            "romaji": "Sougi ni attend.",
+                            "translation": "Comparecer ao funeral.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "埋葬 (maisou)",
                         "wordMeaning": "Sepultamento / Enterro",
                         "sentence": "Body no maisou.",
-                        "sentenceMeaning": "Sepultamento do corpo."
+                        "sentenceMeaning": "Sepultamento do corpo.",
+                        "content": {
+                            "displayText": "遺体を墓地に丁重に埋葬します。",
+                            "audioText": "遺体を墓地に丁重に埋葬します。",
+                            "furigana": "",
+                            "romaji": "Body no maisou.",
+                            "translation": "Sepultamento do corpo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14155,13 +24037,39 @@ const kanjiN2Data = [
                         "word": "墓地 (bochi)",
                         "wordMeaning": "Cemitério",
                         "sentence": "Bochi ni visit.",
-                        "sentenceMeaning": "Visitar o cemitério."
+                        "sentenceMeaning": "Visitar o cemitério.",
+                        "content": {
+                            "displayText": "墓地に訪問する。",
+                            "audioText": "墓地に訪問する。",
+                            "furigana": "",
+                            "romaji": "Bochi ni visit.",
+                            "translation": "Visitar o cemitério.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "お墓参り (ohakamairi)",
                         "wordMeaning": "Visita ao túmulo da família",
                         "sentence": "Ohakamairi ni iku.",
-                        "sentenceMeaning": "Ir fazer visita ao túmulo."
+                        "sentenceMeaning": "Ir fazer visita ao túmulo.",
+                        "content": {
+                            "displayText": "お墓参りにいく。",
+                            "audioText": "お墓参りにいく。",
+                            "furigana": "",
+                            "romaji": "Ohakamairi ni iku.",
+                            "translation": "Ir fazer visita ao túmulo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14186,13 +24094,39 @@ const kanjiN2Data = [
                         "word": "祈願 (kigan)",
                         "wordMeaning": "Prece / Oração fervorosa",
                         "sentence": "Success kigan.",
-                        "sentenceMeaning": "Prece pelo sucesso."
+                        "sentenceMeaning": "Prece pelo sucesso.",
+                        "content": {
+                            "displayText": "成功祈願。",
+                            "audioText": "成功祈願。",
+                            "furigana": "",
+                            "romaji": "Success kigan.",
+                            "translation": "Prece pelo sucesso.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "祈る (inoru)",
                         "wordMeaning": "Orar / Rezar por alguém",
                         "sentence": "Peace o inoru.",
-                        "sentenceMeaning": "Orar pela paz."
+                        "sentenceMeaning": "Orar pela paz.",
+                        "content": {
+                            "displayText": "平和を祈る。",
+                            "audioText": "平和を祈る。",
+                            "furigana": "",
+                            "romaji": "Peace o inoru.",
+                            "translation": "Orar pela paz.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14217,13 +24151,39 @@ const kanjiN2Data = [
                         "word": "夏祭り (natsu-matsuri)",
                         "wordMeaning": "Festival tradicional de verão",
                         "sentence": "Natsu-matsuri ni iku.",
-                        "sentenceMeaning": "Ir ao festival de verão."
+                        "sentenceMeaning": "Ir ao festival de verão.",
+                        "content": {
+                            "displayText": "夏祭りにいく。",
+                            "audioText": "夏祭りにいく。",
+                            "furigana": "",
+                            "romaji": "Natsu-matsuri ni iku.",
+                            "translation": "Ir ao festival de verão.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "祭日 (saijitsu)",
                         "wordMeaning": "Dia de festival religioso",
                         "sentence": "Saijitsu no festival.",
-                        "sentenceMeaning": "Festival no dia festivo."
+                        "sentenceMeaning": "Festival no dia festivo.",
+                        "content": {
+                            "displayText": "祭日の祭り。",
+                            "audioText": "祭日の祭り。",
+                            "furigana": "",
+                            "romaji": "Saijitsu no festival.",
+                            "translation": "Festival no dia festivo.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14252,13 +24212,39 @@ const kanjiN2Data = [
                         "word": "幸福 (koufuku)",
                         "wordMeaning": "Felicidade / Bem-estar",
                         "sentence": "Koufuku na life.",
-                        "sentenceMeaning": "Vida feliz."
+                        "sentenceMeaning": "Vida feliz.",
+                        "content": {
+                            "displayText": "幸福な生活。",
+                            "audioText": "幸福な生活。",
+                            "furigana": "",
+                            "romaji": "Koufuku na life.",
+                            "translation": "Vida feliz.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     },
                     {
                         "word": "幸運 (kouun)",
                         "wordMeaning": "Sorte / Boa fortuna",
                         "sentence": "Kouun o wish.",
-                        "sentenceMeaning": "Desejar boa sorte."
+                        "sentenceMeaning": "Desejar boa sorte.",
+                        "content": {
+                            "displayText": "幸運を願う。",
+                            "audioText": "幸運を願う。",
+                            "furigana": "",
+                            "romaji": "Kouun o wish.",
+                            "translation": "Desejar boa sorte.",
+                            "scenario": ""
+                        },
+                        "editorialReview": {
+                            "status": "pending-human-review",
+                            "phase": "5",
+                            "targetReplaced": true
+                        }
                     }
                 ],
                 "radicals": [
@@ -14370,68 +24356,20 @@ const kanjiN2Data = [
                 ],
                 "a": 0
             }
-        ]
+        ],
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     },
     {
         "isReviewTable": true,
         "module": 21,
         "title": "Módulo 21: Tabela Geral de Kanjis e Revisão do N2",
-        "description": "Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2."
+        "description": "Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2.",
+        "editorialReview": {
+            "status": "pending-human-review",
+            "phase": "5"
+        }
     }
 ];
-
-// Rascunhos editoriais da Fase 5; todos permanecem pendentes de revisão humana qualificada.
-const N2_ROMAJI_EDITORIAL_REPLACEMENTS = {
-    feel: '感じる', stop: '止める', eye: '目', enemy: '敵', spirit: '精神', voice: '声', sky: '空',
-    heart: '心', hero: '英雄', poor: '貧しい', attitude: '態度', success: '成功', opinion: '意見',
-    scandal: 'スキャンダル', essence: '本質', study: '勉強', ancient: '古代', decision: '判断',
-    motive: '動機', chasing: '追う', target: '目標', abrir: '開く', felt: '覚える', mistake: '間違い',
-    teacher: '恩師', man: '人', torawared: 'とらわれる', loss: '損失', arrival: '到着', melody: '旋律',
-    castle: '城', rice: '米', beach: '海岸', economy: '経済', park: '公園', habitat: '生息地',
-    education: '教育', recovery: '復興', museum: '博物館', light: '照明', dunes: '砂丘', room: '部屋',
-    poetry: '詩', capital: '首都', shrine: '神社', map: '地図', travel: '旅行', transport: '輸送',
-    encounter: '出会い', spend: '過ごす', enter: '入る', story: '物語', human: '人間', life: '生活',
-    fail: '失敗する', movement: '運動', win: '勝つ', chance: '機会', think: '考える', state: '国家',
-    condition: '条件', law: '法律', reality: '現実', fact: '事実', known: '知られる', refusal: '拒否',
-    clear: '明確な', design: '設計', impossible: '不可能', purpose: '目的', good: '良い', evaluation: '評価',
-    problems: '問題', listen: '聞く', role: '役割', leader: '指導者', step: '段階', update: '更新',
-    care: '手当て', solution: '解決', clinic: '診療所', volcano: '火山', island: '島', port: '港',
-    tree: '木', food: '食べ物', scent: '香り', peace: '平和', development: '開発', license: '免許',
-    observation: '観察', coast: '海岸', strategy: '戦略', method: '方法', research: '研究',
-    report: '報告書', project: '企画', system: '制度', business: '事業', management: '経営',
-    company: '会社', office: '事務所', service: 'サービス', data: 'データ', test: '試験',
-    team: 'チーム', news: 'ニュース', result: '結果', plan: '計画', future: '未来', culture: '文化',
-    society: '社会', history: '歴史', nature: '自然', world: '世界', visit: '訪問する', wish: '願う',
-    festival: '祭り', problem: '問題', work: '仕事', rule: '規則', power: '力', money: 'お金',
-    city: '都市', medicine: '薬', health: '健康', stress: 'ストレス', sports: 'スポーツ',
-    music: '音楽', movie: '映画', event: '行事', hotel: 'ホテル', bus: 'バス', train: '列車',
-    wa: 'は', o: 'を', e: 'へ'
-};
-
-if (typeof KanjiRomajiDraft === 'undefined') {
-    throw new Error('KanjiRomajiDraft deve carregar antes do dataset Kanji N2.');
-}
-KanjiRomajiDraft.apply(kanjiN2Data, {
-    phase: 5,
-    replacements: N2_ROMAJI_EDITORIAL_REPLACEMENTS,
-    overrides: [
-        [3, 8, 0, '国会議事堂。'],
-        [4, 4, 1, '訴訟で勝ったという報告。'],
-        [6, 7, 0, '擬似体験。'],
-        [11, 9, 1, '公園の休憩亭。'],
-        [13, 7, 0, '乗車券を買います。'],
-        [13, 7, 1, '航空券。'],
-        [13, 12, 0, '国境を越える。'],
-        [13, 18, 0, '観光一覧を見る。'],
-        [14, 15, 1, '選挙に行く。']
-    ]
-});
-
-// Correções objetivas de leituras sem Kana.
-if (kanjiN2Data[4] && kanjiN2Data[4].kanjis[7]) kanjiN2Data[4].kanjis[7].onyomi = 'キン (KIN)';
-if (kanjiN2Data[14] && kanjiN2Data[14].kanjis[3]) kanjiN2Data[14].kanjis[3].onyomi = 'ダツ (DATSU)';
-
-// A revisão referencia o inventário real sem alegar domínio integral.
-if (kanjiN2Data[20]) {
-    kanjiN2Data[20].description = 'Tabela de referência e revisão dos 375 registros apresentados nos 20 módulos da trilha N2.';
-}

@@ -107,6 +107,36 @@ test('escrita registra somente atividade real e preserva estados indisponiveis',
     assert.doesNotMatch(canvas, /fallback.*(?:stroke|traço)|generic.*(?:stroke|traço)/i);
 });
 
+test('minigame japones valida leitura em romaji ou kana e nao promete traducao em portugues', () => {
+    const game = read('js/game/minigames.js');
+    const html = read('html/ja-JP/minigame.html');
+
+    assert.doesNotMatch(game, /input\.placeholder\s*=\s*"Digite em romaji ou português\.\.\."/);
+    assert.match(game, /input\.placeholder\s*=\s*"Digite a leitura em Romaji ou Kana\.\.\."/);
+    assert.match(html, /placeholder="Digite a leitura em Romaji ou Kana\.\.\."/);
+});
+
+test('paginas japonesas possuem hierarquia semantica com h1 unico e lang ja em conteudos japoneses', () => {
+    const fs = require('node:fs');
+    const japanesePages = [
+        'hub_japones.html',
+        ...fs.readdirSync(path.join(ROOT, 'html/ja-JP')).filter(f => f.endsWith('.html')).map(f => `html/ja-JP/${f}`)
+    ];
+
+    japanesePages.forEach(page => {
+        const content = read(page);
+        const h1Matches = content.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi) || [];
+        assert.equal(h1Matches.length, 1, `${page} deve conter exatamente um único <h1> principal`);
+    });
+
+    assert.match(read('html/ja-JP/leitura.html'), /<h2\s+id="reading-title"\s+lang="ja">/);
+    assert.match(read('html/ja-JP/leitura.html'), /<div\s+id="reading-japanese"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/jlpt.html'), /<p\s+id="jlpt-question"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/minigame.html'), /<div\s+id="g-big-kana"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/escrita.html'), /<h2\s+id="writing-title"/);
+    assert.match(read('html/ja-JP/gramatica.html'), /<h2\s+id="grammar-title"/);
+});
+
 const failed = results.filter(result => !result.ok);
 console.log(`\nRecursos japoneses: ${results.length - failed.length}/${results.length} contratos aprovados.`);
 if (failed.length) process.exit(1);

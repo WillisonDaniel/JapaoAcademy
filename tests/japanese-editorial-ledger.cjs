@@ -165,13 +165,52 @@ function validateOcrCoverage(catalog) {
     assert.equal(coverage.summary.failedPages, 0, 'cobertura OCR possui falhas');
 }
 
+function validateQueue(ledger, queueData) {
+    assert.equal(queueData.schemaVersion, 1, 'fila editorial: schemaVersion invalido');
+    assert.ok(Array.isArray(queueData.queue), 'fila editorial: queue deve ser uma lista');
+    assert.equal(queueData.summary.canonicalUnresolvedCount, 0, 'contagem de unresolved canonicos divergiu');
+    assert.equal(queueData.queue.length, 0, 'tamanho da fila editorial divergiu dos unresolved canonicos');
+
+    const canonicalFiles = new Set([
+        'database/ja-JP/data_hiragana.js',
+        'database/ja-JP/data_katakana.js',
+        'database/ja-JP/data_kanji_n5.js',
+        'database/ja-JP/data_kanji_n4.js',
+        'database/ja-JP/data_kanji_n3.js',
+        'database/ja-JP/data_kanji_n2.js',
+        'database/ja-JP/data_kanji_n1.js'
+    ]);
+    const ledgerCanonicalUnresolved = new Set(
+        ledger.decisions
+            .filter(d => d.state === 'unresolved' && canonicalFiles.has(d.target.file))
+            .map(d => d.id)
+    );
+    assert.equal(ledgerCanonicalUnresolved.size, 0, 'total de unresolved canonicos no ledger divergiu');
+
+    const seenQueueIds = new Set();
+    for (const item of queueData.queue) {
+        assert.ok(item.id && !seenQueueIds.has(item.id), `item duplicado ou sem id na fila: ${item.id}`);
+        seenQueueIds.add(item.id);
+        assert.ok(ledgerCanonicalUnresolved.has(item.id), `item na fila nao consta como unresolved canonico no ledger: ${item.id}`);
+        assert.ok(canonicalFiles.has(item.file), `arquivo derivado indevido na fila canonica: ${item.file}`);
+        assert.ok(item.locator && item.module && item.type && item.currentState === 'unresolved', `${item.id}: campos obrigatorios ausentes`);
+        assert.equal(item.reasonKind, 'CANONICAL_EVIDENCE_PENDING', `${item.id}: reasonKind deve ser CANONICAL_EVIDENCE_PENDING`);
+        assert.ok(Number.isInteger(item.priority) && item.priority >= 1 && item.priority <= 11, `${item.id}: prioridade invalida`);
+    }
+}
+
+const QUEUE_PATH = path.join(__dirname, 'JAPANESE_FINAL_EDITORIAL_QUEUE.json');
 const catalog = readJson(SOURCES_PATH);
 const ledger = readJson(LEDGER_PATH);
 const sourceIds = validateSources(catalog);
 validateLedger(ledger, sourceIds);
+if (fs.existsSync(QUEUE_PATH)) {
+    validateQueue(ledger, readJson(QUEUE_PATH));
+}
 if (CHECK_LOCAL) validateLocalSources(catalog);
 if (CHECK_OCR) validateOcrCoverage(catalog);
 
 console.log(`Ledger editorial japones: ${ledger.decisions.length} decisoes, ${catalog.sources.length + catalog.externalSources.length} fontes rastreaveis.`);
+if (fs.existsSync(QUEUE_PATH)) console.log(`Fila editorial final: 0 alvos canonicos pendentes (100% certificado).`);
 if (CHECK_LOCAL) console.log('Hashes locais do corpus: OK.');
 if (CHECK_OCR) console.log('Cobertura integral de extracao/OCR: OK.');

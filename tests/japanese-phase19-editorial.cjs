@@ -35,11 +35,10 @@ const EXPECTED_KINDS = {
     'kanji-quiz': 880
 };
 
-function load(file, variable, withDraft = false) {
+function load(file, variable) {
     const context = { console };
     context.window = context;
     vm.createContext(context);
-    if (withDraft) vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/kanji/romaji-draft.js'), 'utf8'), context);
     vm.runInContext(`${fs.readFileSync(path.join(ROOT, file), 'utf8')}\nglobalThis.__value=${variable};`, context, { filename: file });
     return JSON.parse(JSON.stringify(context.__value));
 }
@@ -123,7 +122,7 @@ let kanjiModules = 0;
 let kanjiRecords = 0;
 const uniqueKanji = new Set();
 for (const [scope, file, variable] of KANJI) {
-    const modules = load(file, variable, true);
+    const modules = load(file, variable);
     kanjiModules += modules.length;
     modules.forEach(module => (module.kanjis || []).forEach(item => {
         kanjiRecords += 1;
@@ -164,17 +163,17 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(states.approved, 6126, 'quantidade de aprovacoes da Fase 19 mudou');
-assert.equal(states.corrected, 23, 'quantidade de correcoes da Fase 19 mudou');
-assert.equal(states.unresolved, 8750, 'fila inconclusiva da Fase 19 mudou');
+assert.equal(states.approved, 14100, 'quantidade de aprovacoes da Fase 19 mudou');
+assert.equal(states.corrected, 799, 'quantidade de correcoes da Fase 19 mudou');
+assert.equal(states.unresolved || 0, 0, 'fila inconclusiva da Fase 19 mudou');
 
 const sourceApproved = decisions.filter(decision => decision.state === 'approved');
-assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kana-reading').length, 389);
-assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-identity').length, 2214);
-assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-on').length, 2139);
-assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-kun').length, 1384);
+assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kana-reading').length, 406);
+assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-identity').length, 2215);
+assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-on').length, 2215);
+assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-kun').length, 2215);
 
-const n5 = load('database/ja-JP/data_kanji_n5.js', 'kanjiN5Data', true);
+const n5 = load('database/ja-JP/data_kanji_n5.js', 'kanjiN5Data');
 const n5Text = JSON.stringify(n5);
 assert.match(n5[0].grammar.example, /中国から日本に伝わり/);
 assert.match(n5[0].kanjis[3].meaning, /Bushu/);

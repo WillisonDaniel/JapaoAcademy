@@ -115,11 +115,11 @@
                         <span id="g-badge" style="position: absolute; top: 1.5rem; background: rgba(126, 34, 206, 0.1); color: var(--game-primary); padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">ALFABETO</span>
                         
                         <div style="margin: 2rem 0; cursor: pointer; text-align: center;" onclick="if(gCard) speakKana(gCard.k)">
-                            <div id="g-big-kana" class="g-char">あ</div>
+                            <div id="g-big-kana" class="g-char" lang="ja">あ</div>
                             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">🔊 Clique para ouvir</div>
                         </div>
                         
-                        <input type="text" id="g-ans-input" class="g-input" aria-label="Resposta do minigame" placeholder="ROMAJI" autocomplete="off" onkeydown="if(event.key === 'Enter') checkTypingAnswer()">
+                        <input type="text" id="g-ans-input" class="g-input" aria-label="Resposta do minigame" placeholder="Digite a leitura em Romaji ou Kana..." autocomplete="off" onkeydown="if(event.key === 'Enter') checkTypingAnswer()">
                         <button id="g-mic-btn" class="mic-btn" style="display:none;" onclick="startListening()">🎤 Falar</button>
                         <div id="g-feedback" style="min-height: 3rem; margin-top: 1rem; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px; transition: 0.2s; opacity: 0; text-align: center; display: flex; flex-direction: column; justify-content: center;">...</div>
                     </div>
