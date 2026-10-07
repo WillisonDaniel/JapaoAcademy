@@ -1,0 +1,3150 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-09-24",
+  "phase": "25B-master-closure",
+  "summary": {
+    "totalTargets": 18,
+    "supportedCount": 16,
+    "partiallySupportedCount": 0,
+    "unsupportedCount": 2,
+    "decisionSufficientCount": 16,
+    "decisionInsufficientCount": 2,
+    "referencesReplacedIn25B3": 6,
+    "referencesReplacedIn25B4": 1
+  },
+  "targets": [
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-0-examples-0",
+      "word": "港 (minato)",
+      "finalDisplayText": "港に大きな船が泊まっています。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "genki-2e-2-textbook",
+          "page": 277,
+          "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 277,
+            "corpusArtifact": "scratch/japanese-corpus/genki-2e-2-textbook/page-0277.json",
+            "corpusArtifactSha256": "620aca1f574d5c2c2b218ae7426d54eaddf83af349683ef7a71081abb1d86298",
+            "extractionMode": "ocr",
+            "pageTextSha256": "05d27d543d1450ba8d773e19f6995a2116beef326f453ec49f74111c156671f1"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "港"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "みなと"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "port"
+            }
+          },
+          "evidenceSummary": "Kanji 港 e vocabulário 港 (みなと) documentados na lição 13 com leitura kunyomi みなと e significado port/harbor.",
+          "evidenceId": "ev-n3-m1-kanjis-0-examples-0-genki-2e-2-textbook-p277"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 港; reading ja_kun みなと",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m1-k0-ex0-1",
+          "type": "orthography",
+          "claim": "大きな船",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277",
+            "edrdg-kanjidic2"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-0-genki-2e-2-textbook-p277",
+            "kanjidic2"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "港",
+          "expectedToken": "大きな船",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ふねがたつ",
+          "expectedFinalValue": "大きな船",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k0-ex0-2",
+          "type": "collocation",
+          "claim": "港に船が泊まる",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-0-genki-2e-2-textbook-p277"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "港",
+          "expectedToken": "港に船が泊まる",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k0-ex0-3",
+          "type": "inflection",
+          "claim": "泊まっています",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-0-genki-2e-2-textbook-p277"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "港",
+          "expectedToken": "泊まっています",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m1-k0-ex0-1",
+          "claim-m1-k0-ex0-2",
+          "claim-m1-k0-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 15
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "A página 277 do Genki II documenta diretamente a leitura kunyomi e o Kanji 港, enquanto Tobira p.15 era uma referência contextual genérica."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Hardening de proveniência criptográfica."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Auditoria semântica confirmou target-word, target-reading e meaning no texto exato da página 277."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-0-examples-1",
+      "word": "空港 (kuukou)",
+      "finalDisplayText": "予定より早く空港に到着しました。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "genki-2e-2-textbook",
+          "page": 277,
+          "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 277,
+            "corpusArtifact": "scratch/japanese-corpus/genki-2e-2-textbook/page-0277.json",
+            "corpusArtifactSha256": "620aca1f574d5c2c2b218ae7426d54eaddf83af349683ef7a71081abb1d86298",
+            "extractionMode": "ocr",
+            "pageTextSha256": "05d27d543d1450ba8d773e19f6995a2116beef326f453ec49f74111c156671f1"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "空港"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "くうこう"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "airport"
+            }
+          },
+          "evidenceSummary": "Vocabulário composto 空港 (くうこう) documentado na lição 13 com leitura onyomi コウ e significado airport.",
+          "evidenceId": "ev-n3-m1-kanjis-0-examples-1-genki-2e-2-textbook-p277"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 港; reading ja_on コウ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m1-k0-ex1-1",
+          "type": "orthography",
+          "claim": "到着",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-1-genki-2e-2-textbook-p277"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex1-1",
+          "proofType": "target-word",
+          "observedToken": "空港",
+          "expectedToken": "到着",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "arrival",
+          "expectedFinalValue": "到着",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k0-ex1-2",
+          "type": "inflection",
+          "claim": "到着しました",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-1-genki-2e-2-textbook-p277"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex1-2",
+          "proofType": "target-word",
+          "observedToken": "空港",
+          "expectedToken": "到着しました",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k0-ex1-3",
+          "type": "collocation",
+          "claim": "予定より早く空港に到着する",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p277"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-0-examples-1-genki-2e-2-textbook-p277"
+          ],
+          "proofForClaimId": "claim-m1-k0-ex1-3",
+          "proofType": "target-word",
+          "observedToken": "空港",
+          "expectedToken": "予定より早く空港に到着する",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m1-k0-ex1-1",
+          "claim-m1-k0-ex1-2",
+          "claim-m1-k0-ex1-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 142
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Refinada a página para a seção de Kanji da lição 13 (p.277), onde 空港 é introduzido formalmente com furigana e tradução."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Hardening de proveniência criptográfica."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Auditoria semântica confirmou target-word, target-reading e meaning no texto exato da página 277."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 277
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-2-examples-0",
+      "word": "招く (maneku)",
+      "finalDisplayText": "週末に友人を家に招きます。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 346,
+          "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 346,
+            "corpusArtifact": "scratch/japanese-corpus/quartet-1-textbook/page-0346.json",
+            "corpusArtifactSha256": "e1256532e397549282eb9b3d05224fa6967029a00454bbb075e5daea840ecc06",
+            "extractionMode": "ocr",
+            "pageTextSha256": "7ae080279bc730f6170f8d7c84f87b789c3231c814ca9a65121700d6bf263140"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "招く",
+              "baseForm": "招く",
+              "observedForm": "招く",
+              "morphologicalRelation": "exact"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "まねく"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "to invite"
+            }
+          },
+          "evidenceSummary": "Entrada de vocabulário e ideograma 招く (まねく / to invite) documentada formalmente no vocabulário de Quartet I p.346.",
+          "evidenceId": "ev-n3-m1-kanjis-2-examples-0-quartet-1-textbook-p346"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 招; reading ja_kun まね.く",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m1-k2-ex0-1",
+          "type": "inflection",
+          "claim": "招きます",
+          "evidenceRefs": [
+            "quartet-1-textbook:p346"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-2-examples-0-quartet-1-textbook-p346"
+          ],
+          "proofForClaimId": "claim-m1-k2-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "招く",
+          "expectedToken": "招きます",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "招います",
+          "expectedFinalValue": "招きます",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k2-ex0-2",
+          "type": "orthography",
+          "claim": "友人 / 家",
+          "evidenceRefs": [
+            "quartet-1-textbook:p346"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-2-examples-0-quartet-1-textbook-p346"
+          ],
+          "proofForClaimId": "claim-m1-k2-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "招く",
+          "expectedToken": "友人 / 家",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k2-ex0-3",
+          "type": "collocation",
+          "claim": "友人を家に招く",
+          "evidenceRefs": [
+            "quartet-1-textbook:p346"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-2-examples-0-quartet-1-textbook-p346"
+          ],
+          "proofForClaimId": "claim-m1-k2-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "招く",
+          "expectedToken": "友人を家に招く",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m1-k2-ex0-1",
+          "claim-m1-k2-ex0-2",
+          "claim-m1-k2-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 88
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 88
+          },
+          "changeReason": "Referência preliminar mantida."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 88
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 346
+          },
+          "changeReason": "Substituída Tobira p.88 por Quartet I p.346 com entrada lexical exata 招く (まねく / to invite)."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 346
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-7-examples-0",
+      "word": "偶然 (guuzen)",
+      "finalDisplayText": "駅で偶然昔の友達に会いました。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "quartet-1-textbook",
+          "page": 46,
+          "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 46,
+            "corpusArtifact": "scratch/japanese-corpus/quartet-1-textbook/page-0046.json",
+            "corpusArtifactSha256": "e82861c748dbdb9f62961e883081792b250eff5d7c3c64cbdf72f75bba98d792",
+            "extractionMode": "ocr",
+            "pageTextSha256": "c93ee4b0128e98b8c0c4e77b1a1ac86bc8beec70ce57f3097f0c87cda9bc43c3"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "context"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "偶然"
+            },
+            "context": {
+              "verificationMode": "text-exact",
+              "observedToken": "偶然だね"
+            }
+          },
+          "evidenceSummary": "Uso autêntico do termo 偶然 em diálogo espontâneo de encontro casual em Quartet I p.46.",
+          "evidenceId": "ev-n3-m1-kanjis-7-examples-0-quartet-1-textbook-p46"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 偶; reading ja_on グウ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m1-k7-ex0-1",
+          "type": "inflection",
+          "claim": "会いました",
+          "evidenceRefs": [
+            "quartet-1-textbook:p46"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-7-examples-0-quartet-1-textbook-p46"
+          ],
+          "proofForClaimId": "claim-m1-k7-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "偶然",
+          "expectedToken": "会いました",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "あおうと",
+          "expectedFinalValue": "会いました",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k7-ex0-2",
+          "type": "orthography",
+          "claim": "友達 / 駅",
+          "evidenceRefs": [
+            "quartet-1-textbook:p46"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-7-examples-0-quartet-1-textbook-p46"
+          ],
+          "proofForClaimId": "claim-m1-k7-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "偶然",
+          "expectedToken": "友達 / 駅",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m1-k7-ex0-3",
+          "type": "collocation",
+          "claim": "偶然昔の友達に会う",
+          "evidenceRefs": [
+            "quartet-1-textbook:p46"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m1-kanjis-7-examples-0-quartet-1-textbook-p46"
+          ],
+          "proofForClaimId": "claim-m1-k7-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "偶然",
+          "expectedToken": "偶然昔の友達に会う",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "context"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m1-k7-ex0-1",
+          "claim-m1-k7-ex0-2",
+          "claim-m1-k7-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 160
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 160
+          },
+          "changeReason": "Referência preliminar."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 160
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 46
+          },
+          "changeReason": "Substituída Genki II p.160 por Quartet I p.46 com ocorrência exata 偶然だね."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 46
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m4-kanjis-7-examples-0",
+      "word": "恋人 (koibito)",
+      "finalDisplayText": "休日に恋人と映画を見に行きます。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "tobira-2009",
+          "page": 395,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 395,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0395.json",
+            "corpusArtifactSha256": "f8c5d26b562918df06d9d27f1632060fd178d98e565068807df38cce3985b64e",
+            "extractionMode": "ocr",
+            "pageTextSha256": "72e300c69beb57e12e1db9a81374e2a562e1c40113a86647d5fbfc6f7732fa29"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "恋人"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "こいびと"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "boyfriend/girlfriend"
+            }
+          },
+          "evidenceSummary": "Entrada lexical completa 恋人 (こいびと / boyfriend/girlfriend) no vocabulário oficial de Tobira p.395.",
+          "evidenceId": "ev-n3-m4-kanjis-7-examples-0-tobira-2009-p395"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 恋; reading ja_kun こい",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m4-k7-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "映画を見に行きます",
+          "evidenceRefs": [
+            "tobira-2009:p395"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m4-kanjis-7-examples-0-tobira-2009-p395"
+          ],
+          "proofForClaimId": "claim-m4-k7-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "恋人",
+          "expectedToken": "映画を見に行きます",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "あおうと",
+          "expectedFinalValue": "映画を見に行きます",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m4-k7-ex0-2",
+          "type": "case-particle",
+          "claim": "恋人と",
+          "evidenceRefs": [
+            "tobira-2009:p395"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m4-kanjis-7-examples-0-tobira-2009-p395"
+          ],
+          "proofForClaimId": "claim-m4-k7-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "恋人",
+          "expectedToken": "恋人と",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m4-k7-ex0-3",
+          "type": "collocation",
+          "claim": "休日に恋人と映画を見に行く",
+          "evidenceRefs": [
+            "tobira-2009:p395"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m4-kanjis-7-examples-0-tobira-2009-p395"
+          ],
+          "proofForClaimId": "claim-m4-k7-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "恋人",
+          "expectedToken": "休日に恋人と映画を見に行く",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m4-k7-ex0-1",
+          "claim-m4-k7-ex0-2",
+          "claim-m4-k7-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 204
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 204
+          },
+          "changeReason": "Referência preliminar."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 204
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 395
+          },
+          "changeReason": "Substituída Genki I p.204 por Tobira p.395 que possui a entrada lexical completa 恋人 (こいびと)."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 395
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m9-kanjis-11-examples-1",
+      "word": "寒波 (kanpa)",
+      "finalDisplayText": "日本列島に強い寒波がやってきました。",
+      "ledgerState": "unresolved",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "tobira-2009",
+          "page": 112,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 112,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0112.json",
+            "corpusArtifactSha256": "8d2253002f95e34e2559c2a67e99138b89cec52c5cade3089b119e70da6436b9",
+            "extractionMode": "ocr",
+            "pageTextSha256": "174fca55a89afe879b003b114fb8d343db47d784e36f90bd54dc0859aaf98d6b"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "context"
+          ],
+          "supportEvidence": {
+            "context": {
+              "verificationMode": "text-exact",
+              "observedToken": "毎日のように"
+            }
+          },
+          "evidenceSummary": "Contexto meteorológico geral de Tobira p.112 insuficiente para atestar o composto 寒波 e a colocação 寒波がやってくる.",
+          "evidenceId": "ev-n3-m9-kanjis-11-examples-1-tobira-2009-p112"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 寒; reading ja_on カン",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m9-k11-ex1-1",
+          "type": "collocation",
+          "claim": "寒波がやってくる",
+          "evidenceRefs": [],
+          "status": "UNSUPPORTED",
+          "evidenceIds": [],
+          "proofForClaimId": "claim-m9-k11-ex1-1",
+          "proofMode": "context-only",
+          "proofType": "context",
+          "observedToken": null,
+          "expectedToken": "寒波がやってくる",
+          "normalizedRelation": "MATCHES",
+          "assertion": false
+        },
+        {
+          "id": "claim-m9-k11-ex1-2",
+          "type": "orthography",
+          "claim": "日本列島 / 強い寒波",
+          "evidenceRefs": [],
+          "status": "UNSUPPORTED",
+          "evidenceIds": [],
+          "proofForClaimId": "claim-m9-k11-ex1-2",
+          "proofMode": "context-only",
+          "proofType": "target-word",
+          "observedToken": null,
+          "expectedToken": "日本列島 / 強い寒波",
+          "normalizedRelation": "MATCHES",
+          "assertion": false
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": false,
+        "targetIdentityEvidenceRefs": [],
+        "correctionDeltaVerified": false,
+        "correctionDeltaClaimIds": [
+          "claim-m9-k11-ex1-1",
+          "claim-m9-k11-ex1-2"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": false
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 112
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 112
+          },
+          "changeReason": "Referência mantida."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 112
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 112
+          },
+          "changeReason": "Calibrado supports para context em Tobira p.112."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 112
+          },
+          "changeReason": "Decisão reaberta para unresolved: contexto temático geral insuficiente para provar o composto 寒波 e a colocação."
+        }
+      ],
+      "decision": "UNSUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m12-kanjis-6-examples-0",
+      "word": "印刷 (insatsu)",
+      "finalDisplayText": "会議で使う書類を印刷します。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "genki-2e-1-textbook",
+          "page": 17,
+          "sourceSha256": "846cc2c9fc4d5310c8e6b3ee711817186239c3810e4433ec350015f32a4004b5",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 17,
+            "corpusArtifact": "scratch/japanese-corpus/genki-2e-1-textbook/page-0017.json",
+            "corpusArtifactSha256": "22bac76701b42c44f958f133ae5d91867b439b6b792602bdc1b577b0dd5e75e1",
+            "extractionMode": "ocr",
+            "pageTextSha256": "77c91ff86b2e4f2f5c65303ed1c7cca8e8f1b9351651d4f9f09f6f1c0fbb94e6"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "印刷"
+            }
+          },
+          "evidenceSummary": "Ocorrência explícita do termo 印刷 (impressão de textos japoneses) em Genki I p.17.",
+          "evidenceId": "ev-n3-m12-kanjis-6-examples-0-genki-2e-1-textbook-p17"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 刷; reading ja_on サツ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m12-k6-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "書類",
+          "evidenceRefs": [
+            "genki-2e-1-textbook:p17"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m12-kanjis-6-examples-0-genki-2e-1-textbook-p17"
+          ],
+          "proofForClaimId": "claim-m12-k6-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "印刷",
+          "expectedToken": "書類",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ぱぺル",
+          "expectedFinalValue": "書類",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m12-k6-ex0-2",
+          "type": "collocation",
+          "claim": "書類を印刷する",
+          "evidenceRefs": [
+            "genki-2e-1-textbook:p17"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m12-kanjis-6-examples-0-genki-2e-1-textbook-p17"
+          ],
+          "proofForClaimId": "claim-m12-k6-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "印刷",
+          "expectedToken": "書類を印刷する",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m12-k6-ex0-3",
+          "type": "inflection",
+          "claim": "印刷します",
+          "evidenceRefs": [
+            "genki-2e-1-textbook:p17"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m12-kanjis-6-examples-0-genki-2e-1-textbook-p17"
+          ],
+          "proofForClaimId": "claim-m12-k6-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "印刷",
+          "expectedToken": "印刷します",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m12-k6-ex0-1",
+          "claim-m12-k6-ex0-2",
+          "claim-m12-k6-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 178
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 17
+          },
+          "changeReason": "Substituída para Genki I p.17 onde 印刷 é introduzido formalmente."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 17
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 17
+          },
+          "changeReason": "Auditoria semântica confirmou target-word 印刷 no texto exato."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 17
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-3-examples-1",
+      "word": "濃厚 (noukou)",
+      "finalDisplayText": "このラーメンは濃厚なスープが特徴です。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "quartet-2-textbook",
+          "page": 321,
+          "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 321,
+            "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0321.json",
+            "corpusArtifactSha256": "17fc072276b8a05a5ba56f280c4c33820d39a92a3ba76ebd66d4eee670628abb",
+            "extractionMode": "ocr",
+            "pageTextSha256": "978d11395a0321000cf1b7dd8d4471374e0f448ee8338569f406dd39cfc9f5f6"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "のうこうな"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "strong; thick"
+            }
+          },
+          "evidenceSummary": "Entrada lexical com leitura のうこうな e significado strong; thick em Quartet II p.321.",
+          "evidenceId": "ev-n3-m16-kanjis-3-examples-1-quartet-2-textbook-p321"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 厚; reading ja_on コウ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m16-k3-ex1-1",
+          "type": "orthography",
+          "claim": "スープ",
+          "evidenceRefs": [
+            "quartet-2-textbook:p321"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-3-examples-1-quartet-2-textbook-p321"
+          ],
+          "proofForClaimId": "claim-m16-k3-ex1-1",
+          "proofType": "target-word",
+          "observedToken": "のうこうな",
+          "expectedToken": "スープ",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "そうプ",
+          "expectedFinalValue": "スープ",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k3-ex1-2",
+          "type": "collocation",
+          "claim": "濃厚なスープ",
+          "evidenceRefs": [
+            "quartet-2-textbook:p321"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-3-examples-1-quartet-2-textbook-p321"
+          ],
+          "proofForClaimId": "claim-m16-k3-ex1-2",
+          "proofType": "target-word",
+          "observedToken": "のうこうな",
+          "expectedToken": "濃厚なスープ",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k3-ex1-3",
+          "type": "grammar-structure",
+          "claim": "XはYが特徴です",
+          "evidenceRefs": [
+            "quartet-2-textbook:p321"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-3-examples-1-quartet-2-textbook-p321"
+          ],
+          "proofForClaimId": "claim-m16-k3-ex1-3",
+          "proofType": "target-word",
+          "observedToken": "のうこうな",
+          "expectedToken": "特徴",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m16-k3-ex1-1",
+          "claim-m16-k3-ex1-2",
+          "claim-m16-k3-ex1-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 145
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Quartet II p.321 introduz formalmente o adjetivo."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Calibrado supports para target-reading e meaning comprovados no texto."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-4-examples-0",
+      "word": "薄い (usui)",
+      "finalDisplayText": "ノートの薄い紙に丁寧に文字を書きます。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "tobira-2009",
+          "page": 294,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 294,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0294.json",
+            "corpusArtifactSha256": "0284322e5072a4891521c15046444e148fbeee018628f9ce330af048feddaa30",
+            "extractionMode": "ocr",
+            "pageTextSha256": "09413f5cfbea24ae36ffa966820d93736c71db5920871f18e12a4d3232b82ea6"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "薄い"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "うすい"
+            }
+          },
+          "evidenceSummary": "Adjetivo i 薄い (うすい) documentado no vocabulário de Tobira p.294.",
+          "evidenceId": "ev-n3-m16-kanjis-4-examples-0-tobira-2009-p294"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 薄; reading ja_kun うす.い",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m16-k4-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "紙",
+          "evidenceRefs": [
+            "tobira-2009:p294"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-4-examples-0-tobira-2009-p294"
+          ],
+          "proofForClaimId": "claim-m16-k4-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "薄い",
+          "expectedToken": "紙",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ぱぺル",
+          "expectedFinalValue": "紙",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k4-ex0-2",
+          "type": "collocation",
+          "claim": "薄い紙",
+          "evidenceRefs": [
+            "tobira-2009:p294"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-4-examples-0-tobira-2009-p294"
+          ],
+          "proofForClaimId": "claim-m16-k4-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "薄い",
+          "expectedToken": "薄い紙",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k4-ex0-3",
+          "type": "grammar-structure",
+          "claim": "ノートの薄い紙に丁寧に文字を書く",
+          "evidenceRefs": [
+            "tobira-2009:p294"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-4-examples-0-tobira-2009-p294"
+          ],
+          "proofForClaimId": "claim-m16-k4-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "薄い",
+          "expectedToken": "ノートの薄い紙に丁寧に文字を書く",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m16-k4-ex0-1",
+          "claim-m16-k4-ex0-2",
+          "claim-m16-k4-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-1-textbook",
+            "page": 118
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 294
+          },
+          "changeReason": "Tobira p.294 ensina 薄い diretamente."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 294
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 294
+          },
+          "changeReason": "Auditoria semântica confirmou target-word e target-reading em Tobira p.294."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 294
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-12-examples-0",
+      "word": "硬い (katai)",
+      "finalDisplayText": "この海岸には硬い石がたくさんあります。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "shinkanzen-n1-kanji",
+          "page": 210,
+          "sourceSha256": "842d398f0145b5e2a6f83715e91786f747ece08c0b1debaacd5b8c15f17005a2",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 210,
+            "corpusArtifact": "scratch/japanese-corpus/shinkanzen-n1-kanji/page-0210.json",
+            "corpusArtifactSha256": "2ea59d029a317960bd61112f2248dd069d2dff9ce1cf862b35b5b2c96d1e79d3",
+            "extractionMode": "ocr",
+            "pageTextSha256": "21dcea2a9a3e82981129b1345592d0a8a108ac44063472eb680d64381bb7c55a"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "contrast"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "硬い"
+            },
+            "contrast": {
+              "verificationMode": "text-exact",
+              "observedToken": "固い、硬い"
+            }
+          },
+          "evidenceSummary": "Diferenciação e uso do ideograma 硬い em contraste com 固い e 堅い em Shinkanzen Kanji p.210.",
+          "evidenceId": "ev-n3-m16-kanjis-12-examples-0-shinkanzen-n1-kanji-p210"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 硬; reading ja_kun かた.い",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m16-k12-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "石",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p210"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-12-examples-0-shinkanzen-n1-kanji-p210"
+          ],
+          "proofForClaimId": "claim-m16-k12-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "硬い",
+          "expectedToken": "石",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "スとね",
+          "expectedFinalValue": "石",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k12-ex0-2",
+          "type": "collocation",
+          "claim": "硬い石",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p210"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-12-examples-0-shinkanzen-n1-kanji-p210"
+          ],
+          "proofForClaimId": "claim-m16-k12-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "硬い",
+          "expectedToken": "硬い石",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m16-k12-ex0-3",
+          "type": "orthography",
+          "claim": "海岸 / 石",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p210"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m16-kanjis-12-examples-0-shinkanzen-n1-kanji-p210"
+          ],
+          "proofForClaimId": "claim-m16-k12-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "硬い",
+          "expectedToken": "海岸 / 石",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "contrast"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m16-k12-ex0-1",
+          "claim-m16-k12-ex0-2",
+          "claim-m16-k12-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 96
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 30
+          },
+          "changeReason": "Quartet I p.30 trazia uso em kana."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 30
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "shinkanzen-n1-kanji",
+            "page": 210
+          },
+          "changeReason": "Substituída Quartet I p.30 por Shinkanzen Kanji p.210 com grafia exata em Kanji 硬い e o contraste."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "shinkanzen-n1-kanji",
+            "page": 210
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-2-examples-1",
+      "word": "自律 (jiritsu)",
+      "finalDisplayText": "一人暮らしを始めて自律した生活を送ります。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "quartet-2-textbook",
+          "page": 356,
+          "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 356,
+            "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0356.json",
+            "corpusArtifactSha256": "86d157d3e26a57f22e5f6e653a2b045b424651cfa43ce86fdb331f21a2880619",
+            "extractionMode": "ocr",
+            "pageTextSha256": "528c73278e7e7e46604b0c66ac76da47419abe6dbf58a71a8613097489e5a269"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "じりつ"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "autonomy"
+            }
+          },
+          "evidenceSummary": "Índice de Kanji e radical 律 com leitura じりつ e glosa autonomy em Quartet II p.356.",
+          "evidenceId": "ev-n3-m17-kanjis-2-examples-1-quartet-2-textbook-p356"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 律; reading ja_on リツ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m17-k2-ex1-1",
+          "type": "lexical-replacement",
+          "claim": "生活を送ります",
+          "evidenceRefs": [
+            "quartet-2-textbook:p356"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-2-examples-1-quartet-2-textbook-p356"
+          ],
+          "proofForClaimId": "claim-m17-k2-ex1-1",
+          "proofType": "target-word",
+          "observedToken": "じりつ",
+          "expectedToken": "生活を送ります",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ぺルそん",
+          "expectedFinalValue": "生活を送ります",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k2-ex1-2",
+          "type": "collocation",
+          "claim": "自律した生活",
+          "evidenceRefs": [
+            "quartet-2-textbook:p356"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-2-examples-1-quartet-2-textbook-p356"
+          ],
+          "proofForClaimId": "claim-m17-k2-ex1-2",
+          "proofType": "target-word",
+          "observedToken": "じりつ",
+          "expectedToken": "自律した生活",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k2-ex1-3",
+          "type": "grammar-structure",
+          "claim": "一人暮らしを始めて...生活を送る",
+          "evidenceRefs": [
+            "quartet-2-textbook:p356"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-2-examples-1-quartet-2-textbook-p356"
+          ],
+          "proofForClaimId": "claim-m17-k2-ex1-3",
+          "proofType": "target-word",
+          "observedToken": "じりつ",
+          "expectedToken": "一人暮らしを始めて...生活を送る",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m17-k2-ex1-1",
+          "claim-m17-k2-ex1-2",
+          "claim-m17-k2-ex1-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 210
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 356
+          },
+          "changeReason": "Quartet II p.356 indexa o radical."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 356
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 356
+          },
+          "changeReason": "Calibrado supports para target-reading e meaning comprovados no texto."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "quartet-2-textbook",
+            "page": 356
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-3-examples-0",
+      "word": "禁止 (kinshi)",
+      "finalDisplayText": "建物の前は駐車禁止になっています。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "genki-2e-2-textbook",
+          "page": 323,
+          "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 323,
+            "corpusArtifact": "scratch/japanese-corpus/genki-2e-2-textbook/page-0323.json",
+            "corpusArtifactSha256": "0d0a5a5439e47f4ba33f9336e3eaa62e1642474ce1c0d87cb9c4b486bb8acc07",
+            "extractionMode": "ocr",
+            "pageTextSha256": "384aa6a664e0c29dccb07531a8922a041eacb02907949aa73447ef5e42085823"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "禁止"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "きんし"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "to prohibit"
+            }
+          },
+          "evidenceSummary": "Entrada lexical 禁止する(きんしする) to prohibit em Genki II p.323.",
+          "evidenceId": "ev-n3-m17-kanjis-3-examples-0-genki-2e-2-textbook-p323"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 禁; reading ja_on キン",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m17-k3-ex0-1",
+          "type": "orthography",
+          "claim": "駐車",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p323"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-3-examples-0-genki-2e-2-textbook-p323"
+          ],
+          "proofForClaimId": "claim-m17-k3-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "禁止",
+          "expectedToken": "駐車",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ちゅしゃ禁止",
+          "expectedFinalValue": "駐車",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k3-ex0-2",
+          "type": "collocation",
+          "claim": "駐車禁止",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p323"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-3-examples-0-genki-2e-2-textbook-p323"
+          ],
+          "proofForClaimId": "claim-m17-k3-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "禁止",
+          "expectedToken": "駐車禁止",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k3-ex0-3",
+          "type": "grammar-structure",
+          "claim": "〜になっています",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p323"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-3-examples-0-genki-2e-2-textbook-p323"
+          ],
+          "proofForClaimId": "claim-m17-k3-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "禁止",
+          "expectedToken": "になっています",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m17-k3-ex0-1",
+          "claim-m17-k3-ex0-2",
+          "claim-m17-k3-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 178
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 323
+          },
+          "changeReason": "Entrada lexical exata do Kanji 禁 e termo 禁止."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 323
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 323
+          },
+          "changeReason": "Auditoria semântica confirmou target-word, target-reading e meaning."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 323
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-10-examples-1",
+      "word": "野党 (yatou)",
+      "finalDisplayText": "与党と野党が国会で政策について議論します。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "shinkanzen-n1-bunpo",
+          "page": 33,
+          "sourceSha256": "38f53fcb649a40b8d8e442eb25de2cbf4e30203bd208e2633a823c0a74e27549",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 33,
+            "corpusArtifact": "scratch/japanese-corpus/shinkanzen-n1-bunpo/page-0033.json",
+            "corpusArtifactSha256": "8cc76cd7f2f68bfe4fa046c6e48dd20ea98a3a7b023c78589a9842b0dc2100bc",
+            "extractionMode": "ocr",
+            "pageTextSha256": "ae1f92061d2dac4c3a24c77190feab54415c63c4ba8f930f80796a6111f5ad7e"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "contrast"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "野党"
+            },
+            "contrast": {
+              "verificationMode": "text-exact",
+              "observedToken": "与党であれ野党であれ"
+            }
+          },
+          "evidenceSummary": "Oposição formal 与党であれ野党であれ em contexto político em Shinkanzen Bunpo p.33.",
+          "evidenceId": "ev-n3-m17-kanjis-10-examples-1-shinkanzen-n1-bunpo-p33"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 党; reading ja_on トウ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m17-k10-ex1-1",
+          "type": "lexical-replacement",
+          "claim": "議論します",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p33"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-10-examples-1-shinkanzen-n1-bunpo-p33"
+          ],
+          "proofForClaimId": "claim-m17-k10-ex1-1",
+          "proofType": "target-word",
+          "observedToken": "野党",
+          "expectedToken": "議論します",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "でばて",
+          "expectedFinalValue": "議論します",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k10-ex1-2",
+          "type": "contrast",
+          "claim": "与党と野党",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p33"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-10-examples-1-shinkanzen-n1-bunpo-p33"
+          ],
+          "proofForClaimId": "claim-m17-k10-ex1-2",
+          "proofType": "contrast",
+          "observedToken": "与党であれ野党であれ",
+          "expectedToken": "与党と野党",
+          "proofMode": "context-only",
+          "normalizedRelation": "DIFFERS_FROM",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k10-ex1-3",
+          "type": "collocation",
+          "claim": "政策について議論する",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p33"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-10-examples-1-shinkanzen-n1-bunpo-p33"
+          ],
+          "proofForClaimId": "claim-m17-k10-ex1-3",
+          "proofType": "target-word",
+          "observedToken": "野党",
+          "expectedToken": "政策について議論する",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "contrast"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m17-k10-ex1-1",
+          "claim-m17-k10-ex1-2",
+          "claim-m17-k10-ex1-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 320
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 33
+          },
+          "changeReason": "Shinkanzen Bunpo p.33 traz a oposição política explícita."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 33
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 33
+          },
+          "changeReason": "Auditoria semântica confirmou target-word e contrast no texto."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 33
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-18-examples-0",
+      "word": "政治 (seiji)",
+      "finalDisplayText": "大学で日本の政治について深く学んでいます。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "tobira-2009",
+          "page": 357,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 357,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0357.json",
+            "corpusArtifactSha256": "b034e19d08950806428735bd226415676efb3b834f2af70b9761f0e1d3940317",
+            "extractionMode": "ocr",
+            "pageTextSha256": "bd94c52ce3a1dc49469bfb11b1e0cc2f3363a14ed2f3224d1fa9b41e1a1e75c5"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "政治"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "せいじ"
+            }
+          },
+          "evidenceSummary": "Entrada de vocabulário e leitura 政治(家) せいじ(か) em Tobira p.357.",
+          "evidenceId": "ev-n3-m17-kanjis-18-examples-0-tobira-2009-p357"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 政; reading ja_on セイ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m17-k18-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "深く学んでいます",
+          "evidenceRefs": [
+            "tobira-2009:p357"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-18-examples-0-tobira-2009-p357"
+          ],
+          "proofForClaimId": "claim-m17-k18-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "政治",
+          "expectedToken": "深く学んでいます",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "でばて",
+          "expectedFinalValue": "深く学んでいます",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k18-ex0-2",
+          "type": "collocation",
+          "claim": "日本の政治について学ぶ",
+          "evidenceRefs": [
+            "tobira-2009:p357"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-18-examples-0-tobira-2009-p357"
+          ],
+          "proofForClaimId": "claim-m17-k18-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "政治",
+          "expectedToken": "日本の政治について学ぶ",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m17-k18-ex0-3",
+          "type": "grammar-structure",
+          "claim": "〜について深く学んでいる",
+          "evidenceRefs": [
+            "tobira-2009:p357"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m17-kanjis-18-examples-0-tobira-2009-p357"
+          ],
+          "proofForClaimId": "claim-m17-k18-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "政治",
+          "expectedToken": "について深く学んでいる",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m17-k18-ex0-1",
+          "claim-m17-k18-ex0-2",
+          "claim-m17-k18-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 315
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Frase contextual de estudo de política."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 321
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 357
+          },
+          "changeReason": "Substituída para Tobira p.357 com comprovação direta de target-word 政治 e target-reading せいじ."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 357
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-9-examples-1",
+      "word": "既婚 (kikon)",
+      "finalDisplayText": "申請書類に既婚か未婚かを記入します。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "shinkanzen-n1-kanji",
+          "page": 109,
+          "sourceSha256": "842d398f0145b5e2a6f83715e91786f747ece08c0b1debaacd5b8c15f17005a2",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 109,
+            "corpusArtifact": "scratch/japanese-corpus/shinkanzen-n1-kanji/page-0109.json",
+            "corpusArtifactSha256": "cb2b6d28e4545026f2b4a96b6e9eba02ffbecbdae61f2af8d02ebabe919105d3",
+            "extractionMode": "ocr",
+            "pageTextSha256": "a768751ab736680c4d85a7e27c3e5e6cc142948ba4a6043d45248615802de511"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "contrast"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "既婚者",
+              "baseForm": "既婚",
+              "observedForm": "既婚者",
+              "morphologicalRelation": "compound-base"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "きこん"
+            },
+            "contrast": {
+              "verificationMode": "text-exact",
+              "observedToken": "みこん"
+            }
+          },
+          "evidenceSummary": "Exercício formal com o composto 既婚者, leitura exata きこん (opção 4) e contraste com 未婚 (opção 1 みこん) em Shinkanzen Kanji p.109.",
+          "evidenceId": "ev-n3-m18-kanjis-9-examples-1-shinkanzen-n1-kanji-p109"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 既; reading ja_on キ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m18-k9-ex1-1",
+          "type": "lexical-replacement",
+          "claim": "未婚かを記入します",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p109"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-9-examples-1-shinkanzen-n1-kanji-p109"
+          ],
+          "proofForClaimId": "claim-m18-k9-ex1-1",
+          "proofType": "target-word",
+          "observedToken": "既婚者",
+          "expectedToken": "未婚かを記入します",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ぺルそん",
+          "expectedFinalValue": "未婚かを記入します",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k9-ex1-2",
+          "type": "contrast",
+          "claim": "既婚か未婚か",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p109"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-9-examples-1-shinkanzen-n1-kanji-p109"
+          ],
+          "proofForClaimId": "claim-m18-k9-ex1-2",
+          "proofType": "contrast",
+          "observedToken": "みこん",
+          "expectedToken": "既婚か未婚か",
+          "proofMode": "context-only",
+          "normalizedRelation": "DIFFERS_FROM",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k9-ex1-3",
+          "type": "collocation",
+          "claim": "書類に記入する",
+          "evidenceRefs": [
+            "shinkanzen-n1-kanji:p109"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-9-examples-1-shinkanzen-n1-kanji-p109"
+          ],
+          "proofForClaimId": "claim-m18-k9-ex1-3",
+          "proofType": "target-word",
+          "observedToken": "既婚者",
+          "expectedToken": "書類に記入する",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "contrast"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m18-k9-ex1-1",
+          "claim-m18-k9-ex1-2",
+          "claim-m18-k9-ex1-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 82
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 260
+          },
+          "changeReason": "Seção de afixos de Quartet I."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 260
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "shinkanzen-n1-kanji",
+            "page": 108
+          },
+          "changeReason": "Substituída Quartet I p.260 por Shinkanzen Kanji p.108 com entrada 既婚."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "shinkanzen-n1-kanji",
+            "page": 109
+          },
+          "changeReason": "Refinada a página para Shinkanzen Kanji p.109, que traz o exercício com 既婚者 e a leitura lexical completa きこん e contraste com 未婚 (みこん)."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-10-examples-0",
+      "word": "未来 (mirai)",
+      "finalDisplayText": "明るい未来のために毎日一生懸命勉強します。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "genki-2e-2-textbook",
+          "page": 297,
+          "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 297,
+            "corpusArtifact": "scratch/japanese-corpus/genki-2e-2-textbook/page-0297.json",
+            "corpusArtifactSha256": "c6faab3ae6c37cc204e6d72e6bff109b4aaebf2227eeb0af72f3ad51b4c00d0b",
+            "extractionMode": "ocr",
+            "pageTextSha256": "fa754747d362a3dd3628a5e26ef9ab1c1e8c7798991cd6677c9ed6e735d432b2"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "target-reading",
+            "meaning"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "未来"
+            },
+            "target-reading": {
+              "verificationMode": "text-exact",
+              "observedToken": "みらい"
+            },
+            "meaning": {
+              "verificationMode": "lexical-gloss",
+              "observedToken": "future"
+            }
+          },
+          "evidenceSummary": "Entrada de vocabulário 未来 (みらい / future) em Genki II p.297.",
+          "evidenceId": "ev-n3-m18-kanjis-10-examples-0-genki-2e-2-textbook-p297"
+        },
+        {
+          "evidenceId": "ev-n3-m18-kanjis-10-examples-0-tobira-2009-p377",
+          "sourceId": "tobira-2009",
+          "page": 377,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 377,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0377.json",
+            "corpusArtifactSha256": "6c4e53e8b1b436de287b0487998a287b43388fcf8f8758c6241e8717d12b4f35",
+            "extractionMode": "ocr",
+            "pageTextSha256": "62ad304d6ab18b2811fdb004efd3def5395cb885ed1796732f3ee4064c6976da"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "collocation"
+          ],
+          "supportEvidence": {
+            "collocation": {
+              "verificationMode": "text-exact",
+              "observedToken": "明るい未来"
+            }
+          },
+          "evidenceSummary": "Colocação 明るい未来 documentada no texto principal de Tobira p.377 (明るい未来を予測する人もいれば、暗い未来を予測する人もいる)."
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 未; reading ja_on ミ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m18-k10-ex0-1",
+          "type": "lexical-replacement",
+          "claim": "毎日一生懸命勉強します",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p297"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-10-examples-0-genki-2e-2-textbook-p297"
+          ],
+          "proofForClaimId": "claim-m18-k10-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "未来",
+          "expectedToken": "毎日一生懸命勉強します",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "ドれあム",
+          "expectedFinalValue": "毎日一生懸命勉強します",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k10-ex0-2",
+          "type": "collocation",
+          "claim": "明るい未来",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p297",
+            "tobira-2009:p377"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-10-examples-0-genki-2e-2-textbook-p297",
+            "ev-n3-m18-kanjis-10-examples-0-tobira-2009-p377"
+          ],
+          "proofForClaimId": "claim-m18-k10-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "未来",
+          "expectedToken": "明るい未来",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k10-ex0-3",
+          "type": "grammar-structure",
+          "claim": "〜のために",
+          "evidenceRefs": [
+            "genki-2e-2-textbook:p297"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-10-examples-0-genki-2e-2-textbook-p297"
+          ],
+          "proofForClaimId": "claim-m18-k10-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "未来",
+          "expectedToken": "のために",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "target-reading",
+          "meaning"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m18-k10-ex0-1",
+          "claim-m18-k10-ex0-2",
+          "claim-m18-k10-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 220
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 297
+          },
+          "changeReason": "Entrada lexical da lição 16."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 297
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 297
+          },
+          "changeReason": "Auditoria semântica confirmou target-word, target-reading e meaning."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "genki-2e-2-textbook",
+            "page": 297
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-12-examples-0",
+      "word": "久々 (hisahisa)",
+      "finalDisplayText": "高校の友達と久々に会って食事をしました。",
+      "ledgerState": "corrected",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "shinkanzen-n1-bunpo",
+          "page": 158,
+          "sourceSha256": "38f53fcb649a40b8d8e442eb25de2cbf4e30203bd208e2633a823c0a74e27549",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 158,
+            "corpusArtifact": "scratch/japanese-corpus/shinkanzen-n1-bunpo/page-0158.json",
+            "corpusArtifactSha256": "d64ca022ccb84a6c906a9d1854e13d564234f5f789ddd435b008dd4824fa7bd4",
+            "extractionMode": "ocr",
+            "pageTextSha256": "047c3da8194dd4711c641c9eaf0f22b220565f73f49c695cb48b0fd5cbf30681"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "target-word",
+            "grammar-pattern"
+          ],
+          "supportEvidence": {
+            "target-word": {
+              "verificationMode": "text-exact",
+              "observedToken": "久々"
+            },
+            "grammar-pattern": {
+              "verificationMode": "text-exact",
+              "observedToken": "久々に"
+            }
+          },
+          "evidenceSummary": "Uso adverbial e padrão gramatical 久々に em Shinkanzen Bunpo p.158.",
+          "evidenceId": "ev-n3-m18-kanjis-12-examples-0-shinkanzen-n1-bunpo-p158"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 久; reading ja_kun ひさ.しい",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m18-k12-ex0-1",
+          "type": "orthography",
+          "claim": "久々に (sem espaço)",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p158"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-12-examples-0-shinkanzen-n1-bunpo-p158"
+          ],
+          "proofForClaimId": "claim-m18-k12-ex0-1",
+          "proofType": "target-word",
+          "observedToken": "久々",
+          "expectedToken": "久々に",
+          "proofMode": "correction-delta",
+          "deltaPath": "example.content.displayText",
+          "baselineValue": "久々 にあおうと",
+          "expectedFinalValue": "久々に",
+          "normalizedRelation": "CORRECTED_TO",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k12-ex0-2",
+          "type": "inflection",
+          "claim": "会って食事をしました",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p158"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-12-examples-0-shinkanzen-n1-bunpo-p158"
+          ],
+          "proofForClaimId": "claim-m18-k12-ex0-2",
+          "proofType": "target-word",
+          "observedToken": "久々",
+          "expectedToken": "会って食事をしました",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        },
+        {
+          "id": "claim-m18-k12-ex0-3",
+          "type": "collocation",
+          "claim": "久々に会う",
+          "evidenceRefs": [
+            "shinkanzen-n1-bunpo:p158"
+          ],
+          "status": "SUPPORTED",
+          "evidenceIds": [
+            "ev-n3-m18-kanjis-12-examples-0-shinkanzen-n1-bunpo-p158"
+          ],
+          "proofForClaimId": "claim-m18-k12-ex0-3",
+          "proofType": "target-word",
+          "observedToken": "久々",
+          "expectedToken": "久々に会う",
+          "proofMode": "context-only",
+          "normalizedRelation": "MATCHES",
+          "assertion": true
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": true,
+        "targetIdentityEvidenceRefs": [
+          "target-word",
+          "grammar-pattern"
+        ],
+        "correctionDeltaVerified": true,
+        "correctionDeltaClaimIds": [
+          "claim-m18-k12-ex0-1",
+          "claim-m18-k12-ex0-2",
+          "claim-m18-k12-ex0-3"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": true
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "quartet-1-textbook",
+            "page": 190
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 158
+          },
+          "changeReason": "Exemplo direto do uso adverbial 久々に."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 158
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 158
+          },
+          "changeReason": "Auditoria semântica confirmou target-word e grammar-pattern."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "shinkanzen-n1-bunpo",
+            "page": 158
+          },
+          "changeReason": "Portão de suficiência de decisão confirmou sustentação do target e do delta de correção."
+        }
+      ],
+      "decision": "SUPPORTED"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-12-examples-1",
+      "word": "永久 (eikyuu)",
+      "finalDisplayText": "世界の永久平和を心から願っています。",
+      "ledgerState": "unresolved",
+      "targetWordRepresented": true,
+      "evidence": [
+        {
+          "sourceId": "tobira-2009",
+          "page": 340,
+          "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+          "sourceHashVerified": true,
+          "ocrUsedAsLocator": true,
+          "renderedPageInspected": false,
+          "pageEvidence": {
+            "page": 340,
+            "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0340.json",
+            "corpusArtifactSha256": "2565a2e0ec3ddfd4fac7c4a7b85eca38b2b038ed77114ebd3f1328b2fb373fca",
+            "extractionMode": "ocr",
+            "pageTextSha256": "08dc03d680c2051e4d9b07bbc54267ddc7ec2414e80e6bf0becc7fc9a6312704"
+          },
+          "visualEvidence": {
+            "required": false,
+            "inspected": false,
+            "renderArtifactSha256": null,
+            "inspectedAt": null,
+            "reason": "unambiguous OCR text layer verified"
+          },
+          "supports": [
+            "context"
+          ],
+          "supportEvidence": {
+            "context": {
+              "verificationMode": "text-exact",
+              "observedToken": "政治"
+            }
+          },
+          "evidenceSummary": "Contexto sociopolítico de Tobira p.340 insuficiente para atestar o composto 永久 e a colocação 永久平和を願う.",
+          "evidenceId": "ev-n3-m18-kanjis-12-examples-1-tobira-2009-p340"
+        }
+      ],
+      "kanjidicEvidence": {
+        "verified": true,
+        "location": "literal 久; reading ja_on キュウ",
+        "supports": [
+          "character-reading"
+        ]
+      },
+      "correctionClaims": [
+        {
+          "id": "claim-m18-k12-ex1-1",
+          "type": "collocation",
+          "claim": "永久平和を願う",
+          "evidenceRefs": [],
+          "status": "UNSUPPORTED",
+          "evidenceIds": [],
+          "proofForClaimId": "claim-m18-k12-ex1-1",
+          "proofMode": "context-only",
+          "proofType": "context",
+          "observedToken": null,
+          "expectedToken": "永久平和を願う",
+          "normalizedRelation": "MATCHES",
+          "assertion": false
+        },
+        {
+          "id": "claim-m18-k12-ex1-2",
+          "type": "orthography",
+          "claim": "永久平和",
+          "evidenceRefs": [],
+          "status": "UNSUPPORTED",
+          "evidenceIds": [],
+          "proofForClaimId": "claim-m18-k12-ex1-2",
+          "proofMode": "context-only",
+          "proofType": "target-word",
+          "observedToken": null,
+          "expectedToken": "永久平和",
+          "normalizedRelation": "MATCHES",
+          "assertion": false
+        }
+      ],
+      "decisionEvidenceProfile": {
+        "targetIdentityVerified": false,
+        "targetIdentityEvidenceRefs": [],
+        "correctionDeltaVerified": false,
+        "correctionDeltaClaimIds": [
+          "claim-m18-k12-ex1-1",
+          "claim-m18-k12-ex1-2"
+        ],
+        "translationVerified": true,
+        "mechanicalFieldsVerified": true,
+        "decisionSufficient": false
+      },
+      "referenceHistory": [
+        {
+          "phase": "25B",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 340
+          }
+        },
+        {
+          "phase": "25B.1",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 340
+          },
+          "changeReason": "Referência contextual."
+        },
+        {
+          "phase": "25B.2",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 340
+          },
+          "changeReason": "Hardening de proveniência."
+        },
+        {
+          "phase": "25B.3",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 340
+          },
+          "changeReason": "Calibrado supports para context em Tobira p.340."
+        },
+        {
+          "phase": "25B.4",
+          "reference": {
+            "sourceId": "tobira-2009",
+            "page": 340
+          },
+          "changeReason": "Decisão reaberta para unresolved: contexto temático geral insuficiente para provar o composto 永久 e a colocação."
+        }
+      ],
+      "decision": "UNSUPPORTED"
+    }
+  ]
+}

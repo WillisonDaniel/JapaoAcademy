@@ -1,0 +1,67 @@
+{
+  "index": 569,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0",
+  "module": 7,
+  "kanjiIndex": 17,
+  "exampleIndex": 0,
+  "character": "術",
+  "targetWord": "技術 (gijutsu)",
+  "reading": "ジュツ (JUTSU)",
+  "romaji": "Latest gijutsu.",
+  "translation": "Tecnologia de ponta.",
+  "example": {
+    "displayText": "ルあてスト技術。",
+    "audioText": "ルあてスト技術。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "術",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "技術 (gijutsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ルあてスト技術。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Latest gijutsu.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-17-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Tecnologia de ponta.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.977Z"
+}

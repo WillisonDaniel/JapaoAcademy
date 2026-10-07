@@ -1,0 +1,67 @@
+{
+  "index": 629,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1",
+  "module": 9,
+  "kanjiIndex": 14,
+  "exampleIndex": 1,
+  "character": "害",
+  "targetWord": "公害 (kougai)",
+  "reading": "ガイ (GAI)",
+  "romaji": "Kougai mondai.",
+  "translation": "Problema de poluição pública.",
+  "example": {
+    "displayText": "公害もんだい。",
+    "audioText": "公害もんだい。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "害",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "公害 (kougai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "公害もんだい。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kougai mondai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-14-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Problema de poluição pública.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"公害\" ou o exemplo \"公害もんだい。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.022Z"
+}

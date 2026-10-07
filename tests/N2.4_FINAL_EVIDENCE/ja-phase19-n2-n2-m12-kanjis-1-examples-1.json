@@ -1,0 +1,67 @@
+{
+  "index": 125,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1",
+  "module": 12,
+  "kanjiIndex": 1,
+  "exampleIndex": 1,
+  "character": "舞",
+  "targetWord": "舞踊 (buyou)",
+  "reading": "ブ (BU)",
+  "romaji": "Nihon buyou.",
+  "translation": "Dança clássica japonesa.",
+  "example": {
+    "displayText": "にほん舞踊。",
+    "audioText": "にほん舞踊。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "舞",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "舞踊 (buyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "にほん舞踊。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Nihon buyou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-1-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Dança clássica japonesa.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"舞踊\" ou o exemplo \"にほん舞踊。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.623Z"
+}

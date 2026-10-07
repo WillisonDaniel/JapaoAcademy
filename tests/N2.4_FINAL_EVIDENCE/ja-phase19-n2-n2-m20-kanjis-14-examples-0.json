@@ -1,0 +1,67 @@
+{
+  "index": 406,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0",
+  "module": 20,
+  "kanjiIndex": 14,
+  "exampleIndex": 0,
+  "character": "墓",
+  "targetWord": "墓地 (bochi)",
+  "reading": "ボ (BO)",
+  "romaji": "Bochi ni visit.",
+  "translation": "Visitar o cemitério.",
+  "example": {
+    "displayText": "墓地に訪問する。",
+    "audioText": "墓地に訪問する。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "墓",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "墓地 (bochi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "墓地に訪問する。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Bochi ni visit.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-14-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Visitar o cemitério.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"墓地\" ou o exemplo \"墓地に訪問する。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.854Z"
+}

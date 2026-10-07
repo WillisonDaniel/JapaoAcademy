@@ -1,0 +1,67 @@
+{
+  "index": 481,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0",
+  "module": 4,
+  "kanjiIndex": 2,
+  "exampleIndex": 0,
+  "character": "争",
+  "targetWord": "争点 (souten)",
+  "reading": "ソウ (SOU)",
+  "romaji": "Senkyo no souten.",
+  "translation": "Pauta principal da eleição.",
+  "example": {
+    "displayText": "せんきょの争点。",
+    "audioText": "せんきょの争点。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "争",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "争点 (souten)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "せんきょの争点。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Senkyo no souten.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-2-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pauta principal da eleição.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"争点\" ou o exemplo \"せんきょの争点。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.909Z"
+}

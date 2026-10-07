@@ -1,0 +1,67 @@
+{
+  "index": 251,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1",
+  "module": 16,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "驚",
+  "targetWord": "驚愕 (kyougaku)",
+  "reading": "キョウ (KYOU)",
+  "romaji": "Kyougaku no fact.",
+  "translation": "Fato estupefaciante.",
+  "example": {
+    "displayText": "驚愕の事実。",
+    "audioText": "驚愕の事実。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "驚",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "驚愕 (kyougaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "驚愕の事実。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyougaku no fact.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Fato estupefaciante.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"驚愕\" ou o exemplo \"驚愕の事実。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.726Z"
+}

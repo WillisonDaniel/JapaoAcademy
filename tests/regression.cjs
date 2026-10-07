@@ -1268,8 +1268,8 @@ test('recuperacao Kanji N3 da Fase 4 permanece rastreavel e nao aprovada', () =>
     assert.equal(occurrences.summary.bySeverity.blocking, 0);
     assert.equal(occurrences.occurrences.filter(item => item.level === 'N3').length, 0);
     assert.match(contract, /720 exemplos/);
-    assert.match(contract, /f56ffed1ab7f31f9eea081380b5c70bf0421816c5cbff215985a61406e924710/);
-    assert.match(review, /Todas as linhas permanecem pendentes/);
+    assert.match(contract, /c3f7b378adbf6961db8d026e8b376d0ce8946c778cc65c9b51735453467db1e1/);
+    assert.match(review, /pending-human-review/);
     assert.equal(packageJson.scripts['test:japanese-kanji-n3'], 'node tests/kanji-n3-contract.cjs');
     assert.match(packageJson.scripts.test, /node tests\/kanji-n3-contract\.cjs/);
 });

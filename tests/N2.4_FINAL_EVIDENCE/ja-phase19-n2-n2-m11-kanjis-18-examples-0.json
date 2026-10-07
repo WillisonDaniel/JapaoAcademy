@@ -1,0 +1,67 @@
+{
+  "index": 104,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0",
+  "module": 11,
+  "kanjiIndex": 18,
+  "exampleIndex": 0,
+  "character": "敬",
+  "targetWord": "敬語 (keigo)",
+  "reading": "ケイ (KEI)",
+  "romaji": "Keigo o tsukau.",
+  "translation": "Usar linguagem respeitosa.",
+  "example": {
+    "displayText": "敬語をつかう。",
+    "audioText": "敬語をつかう。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "敬",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "敬語 (keigo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "敬語をつかう。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Keigo o tsukau.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-18-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Usar linguagem respeitosa.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"敬語\" ou o exemplo \"敬語をつかう。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.605Z"
+}

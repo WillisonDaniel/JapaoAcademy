@@ -1,0 +1,67 @@
+{
+  "index": 432,
+  "targetId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1",
+  "module": 3,
+  "kanjiIndex": 10,
+  "exampleIndex": 1,
+  "character": "罷",
+  "targetWord": "同盟罷業 (doumeihigyou)",
+  "reading": "ヒ (HI)",
+  "romaji": "Doumeihigyou o suru.",
+  "translation": "Fazer greve geral.",
+  "example": {
+    "displayText": "同盟罷業をする。",
+    "audioText": "同盟罷業をする。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "罷",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "同盟罷業 (doumeihigyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "同盟罷業をする。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Doumeihigyou o suru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-10-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Fazer greve geral.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"同盟罷業\" ou o exemplo \"同盟罷業をする。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.872Z"
+}

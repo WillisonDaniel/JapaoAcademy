@@ -1,0 +1,67 @@
+{
+  "index": 466,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0",
+  "module": 4,
+  "kanjiIndex": 11,
+  "exampleIndex": 0,
+  "character": "候",
+  "targetWord": "候補 (kouho)",
+  "reading": "コウ (KOU)",
+  "romaji": "Kouho-sha.",
+  "translation": "Pessoa candidata ao cargo.",
+  "example": {
+    "displayText": "候補しゃ。",
+    "audioText": "候補しゃ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "候",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "候補 (kouho)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "候補しゃ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kouho-sha.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-11-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pessoa candidata ao cargo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"候補\" ou o exemplo \"候補しゃ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.898Z"
+}

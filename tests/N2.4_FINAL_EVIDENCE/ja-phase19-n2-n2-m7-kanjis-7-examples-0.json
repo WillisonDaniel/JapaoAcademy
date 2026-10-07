@@ -1,0 +1,67 @@
+{
+  "index": 652,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0",
+  "module": 7,
+  "kanjiIndex": 7,
+  "exampleIndex": 0,
+  "character": "擬",
+  "targetWord": "疑似 (giji)",
+  "reading": "ギ (GI)",
+  "romaji": "Giji experience.",
+  "translation": "Experiência simulada.",
+  "example": {
+    "displayText": "擬似体験。",
+    "audioText": "擬似体験。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "AMBIGUOUS",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "AMBIGUOUS",
+  "finalDecision": "AMBIGUOUS",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "擬",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "疑似 (giji)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "擬似体験。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Giji experience.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Experiência simulada.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "AMBIGUIDADE ORTOGRÁFICA E RESÍDUO DE INGLÊS: O vocábulo-alvo declara o ideograma curricular 疑 (疑似), enquanto a frase displayText emprega a variante ortográfica 擬似 (com o kanji 擬). O campo romaji registra resíduo em inglês (\"Giji experience.\"). Mantido como AMBIGUOUS pendente de uniformização de política ortográfica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.040Z"
+}

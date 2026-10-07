@@ -1,0 +1,67 @@
+{
+  "index": 490,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1",
+  "module": 4,
+  "kanjiIndex": 8,
+  "exampleIndex": 1,
+  "character": "議",
+  "targetWord": "議員 (giin)",
+  "reading": "ギ (GI)",
+  "romaji": "Shugiin giin.",
+  "translation": "Deputado da Câmara Baixa.",
+  "example": {
+    "displayText": "しゅぎいん議員。",
+    "audioText": "しゅぎいん議員。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "議",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "議員 (giin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "しゅぎいん議員。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shugiin giin.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-8-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Deputado da Câmara Baixa.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"議員\" ou o exemplo \"しゅぎいん議員。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.917Z"
+}

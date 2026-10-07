@@ -1,0 +1,67 @@
+{
+  "index": 300,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0",
+  "module": 17,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "訓",
+  "targetWord": "訓練 (kunren)",
+  "reading": "クン (KUN)",
+  "romaji": "Bousai kunren.",
+  "translation": "Treinamento de prevenção de desastres.",
+  "example": {
+    "displayText": "ぼうさい訓練。",
+    "audioText": "ぼうさい訓練。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "訓",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "訓練 (kunren)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ぼうさい訓練。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Bousai kunren.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Treinamento de prevenção de desastres.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"訓練\" ou o exemplo \"ぼうさい訓練。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.763Z"
+}

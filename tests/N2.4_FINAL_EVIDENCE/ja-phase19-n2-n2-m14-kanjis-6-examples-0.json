@@ -1,0 +1,96 @@
+{
+  "index": 16,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0",
+  "module": 14,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "留",
+  "targetWord": "留学 (ryuugaku)",
+  "reading": "リュウ (RYUU) / ル (RU)",
+  "romaji": "Japan ni ryuugaku.",
+  "translation": "Intercâmbio no Japão.",
+  "example": {
+    "displayText": "じゃぱんに留学。",
+    "audioText": "じゃぱんに留学。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "留",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "留学 (ryuugaku)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "じゃぱんに留学。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Japan ni ryuugaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Intercâmbio no Japão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 55,
+      "file": "quartet-2-textbook-p0055.json"
+    },
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 180,
+      "file": "quartet-2-textbook-p0180.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0055.json",
+    "quartet-2-textbook-p0180.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0055.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "留学",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "quartet-2-textbook-p0180.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "留学",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"留学\" possui atestação lexical primária na testemunha quartet-2-textbook-p0055.json (p. 55), porém a frase de exemplo canônica (\"じゃぱんに留学。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.533Z"
+}

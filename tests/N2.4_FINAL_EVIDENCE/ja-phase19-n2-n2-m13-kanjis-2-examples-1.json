@@ -1,0 +1,67 @@
+{
+  "index": 178,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1",
+  "module": 13,
+  "kanjiIndex": 2,
+  "exampleIndex": 1,
+  "character": "領",
+  "targetWord": "領事 (ryouji)",
+  "reading": "リョウ (RYOU)",
+  "romaji": "Ryouji-kan.",
+  "translation": "Consulado diplomático.",
+  "example": {
+    "displayText": "領事かん。",
+    "audioText": "領事かん。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "領",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "領事 (ryouji)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "領事かん。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ryouji-kan.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Consulado diplomático.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"領事\" ou o exemplo \"領事かん。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.669Z"
+}

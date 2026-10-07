@@ -1,0 +1,67 @@
+{
+  "index": 169,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0",
+  "module": 13,
+  "kanjiIndex": 14,
+  "exampleIndex": 0,
+  "character": "約",
+  "targetWord": "条約 (jouyaku)",
+  "reading": "ヤク (YAKU)",
+  "romaji": "Ratify jouyaku.",
+  "translation": "Ratificar o tratado.",
+  "example": {
+    "displayText": "両国の代表が平和条約に正式に調印しました。",
+    "audioText": "両国の代表が平和条約に正式に調印しました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "約",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "条約 (jouyaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "両国の代表が平和条約に正式に調印しました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ratify jouyaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-14-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ratificar o tratado.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"条約\" ou o exemplo \"両国の代表が平和条約に正式に調印しました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.660Z"
+}

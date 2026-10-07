@@ -168,8 +168,6 @@ function validateOcrCoverage(catalog) {
 function validateQueue(ledger, queueData) {
     assert.equal(queueData.schemaVersion, 1, 'fila editorial: schemaVersion invalido');
     assert.ok(Array.isArray(queueData.queue), 'fila editorial: queue deve ser uma lista');
-    assert.equal(queueData.summary.canonicalUnresolvedCount, 0, 'contagem de unresolved canonicos divergiu');
-    assert.equal(queueData.queue.length, 0, 'tamanho da fila editorial divergiu dos unresolved canonicos');
 
     const canonicalFiles = new Set([
         'database/ja-JP/data_hiragana.js',
@@ -180,21 +178,41 @@ function validateQueue(ledger, queueData) {
         'database/ja-JP/data_kanji_n2.js',
         'database/ja-JP/data_kanji_n1.js'
     ]);
+    const ledgerUnresolved = new Set(
+        ledger.decisions.filter(d => d.state === 'unresolved').map(d => d.id)
+    );
     const ledgerCanonicalUnresolved = new Set(
         ledger.decisions
             .filter(d => d.state === 'unresolved' && canonicalFiles.has(d.target.file))
             .map(d => d.id)
     );
-    assert.equal(ledgerCanonicalUnresolved.size, 0, 'total de unresolved canonicos no ledger divergiu');
+    const ledgerDerivedUnresolved = new Set(
+        ledger.decisions
+            .filter(d => d.state === 'unresolved' && d.phase === 20)
+            .map(d => d.id)
+    );
+
+    assert.equal(queueData.summary.totalLedgerUnresolved, ledgerUnresolved.size, 'totalLedgerUnresolved divergiu do ledger');
+    assert.equal(queueData.summary.canonicalUnresolvedCount, ledgerCanonicalUnresolved.size, 'canonicalUnresolvedCount divergiu do ledger');
+    assert.equal(queueData.summary.derivedUnresolvedCount, ledgerDerivedUnresolved.size, 'derivedUnresolvedCount divergiu do ledger');
+    assert.equal(queueData.summary.derivedUpstreamPendingCount + queueData.summary.derivedRulePendingCount, ledgerDerivedUnresolved.size,
+        'derivedUpstreamPendingCount + derivedRulePendingCount deve igualar derivedUnresolvedCount');
+    assert.equal(queueData.queue.length, ledgerUnresolved.size, 'tamanho da fila editorial divergiu dos unresolved no ledger');
 
     const seenQueueIds = new Set();
     for (const item of queueData.queue) {
         assert.ok(item.id && !seenQueueIds.has(item.id), `item duplicado ou sem id na fila: ${item.id}`);
         seenQueueIds.add(item.id);
-        assert.ok(ledgerCanonicalUnresolved.has(item.id), `item na fila nao consta como unresolved canonico no ledger: ${item.id}`);
-        assert.ok(canonicalFiles.has(item.file), `arquivo derivado indevido na fila canonica: ${item.file}`);
+        assert.ok(ledgerUnresolved.has(item.id), `item na fila nao consta como unresolved no ledger: ${item.id}`);
         assert.ok(item.locator && item.module && item.type && item.currentState === 'unresolved', `${item.id}: campos obrigatorios ausentes`);
-        assert.equal(item.reasonKind, 'CANONICAL_EVIDENCE_PENDING', `${item.id}: reasonKind deve ser CANONICAL_EVIDENCE_PENDING`);
+        assert.ok(['CANONICAL_EVIDENCE_PENDING', 'DERIVED_UPSTREAM_PENDING', 'DERIVED_RULE_PENDING'].includes(item.reasonKind),
+            `${item.id}: reasonKind invalido: ${item.reasonKind}`);
+        if (item.reasonKind === 'CANONICAL_EVIDENCE_PENDING') {
+            assert.ok(canonicalFiles.has(item.file), `arquivo derivado indevido na fila canonica: ${item.file}`);
+            assert.ok(ledgerCanonicalUnresolved.has(item.id), `item canonico nao coincide com ledger canonico: ${item.id}`);
+        } else {
+            assert.ok(ledgerDerivedUnresolved.has(item.id), `item derivado nao coincide com ledger derivado: ${item.id}`);
+        }
         assert.ok(Number.isInteger(item.priority) && item.priority >= 1 && item.priority <= 11, `${item.id}: prioridade invalida`);
     }
 }
@@ -211,6 +229,9 @@ if (CHECK_LOCAL) validateLocalSources(catalog);
 if (CHECK_OCR) validateOcrCoverage(catalog);
 
 console.log(`Ledger editorial japones: ${ledger.decisions.length} decisoes, ${catalog.sources.length + catalog.externalSources.length} fontes rastreaveis.`);
-if (fs.existsSync(QUEUE_PATH)) console.log(`Fila editorial final: 0 alvos canonicos pendentes (100% certificado).`);
+if (fs.existsSync(QUEUE_PATH)) {
+    const q = readJson(QUEUE_PATH);
+    console.log(`Fila editorial recalculada: ${q.summary.canonicalUnresolvedCount} canonicos e ${q.summary.derivedUnresolvedCount} derivados pendentes (total ${q.summary.totalLedgerUnresolved}).`);
+}
 if (CHECK_LOCAL) console.log('Hashes locais do corpus: OK.');
 if (CHECK_OCR) console.log('Cobertura integral de extracao/OCR: OK.');

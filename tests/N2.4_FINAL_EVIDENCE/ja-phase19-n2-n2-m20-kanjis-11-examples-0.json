@@ -1,0 +1,67 @@
+{
+  "index": 400,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0",
+  "module": 20,
+  "kanjiIndex": 11,
+  "exampleIndex": 0,
+  "character": "冠",
+  "targetWord": "冠婚葬祭 (kankonsousai)",
+  "reading": "カン (KAN)",
+  "romaji": "Kankonsousai manners.",
+  "translation": "Etiquetas dos ritos de passagem.",
+  "example": {
+    "displayText": "冠婚葬祭のマナーをしっかりと身につけます。",
+    "audioText": "冠婚葬祭のマナーをしっかりと身につけます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "冠",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "冠婚葬祭 (kankonsousai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "冠婚葬祭のマナーをしっかりと身につけます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kankonsousai manners.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-11-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Etiquetas dos ritos de passagem.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"冠婚葬祭\" ou o exemplo \"冠婚葬祭のマナーをしっかりと身につけます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.847Z"
+}

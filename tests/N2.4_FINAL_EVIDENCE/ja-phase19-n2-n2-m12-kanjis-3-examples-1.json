@@ -1,0 +1,67 @@
+{
+  "index": 147,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1",
+  "module": 12,
+  "kanjiIndex": 3,
+  "exampleIndex": 1,
+  "character": "譜",
+  "targetWord": "家譜 (kafu)",
+  "reading": "フ (FU)",
+  "romaji": "Kafu no record.",
+  "translation": "Registro da árvore genealógica.",
+  "example": {
+    "displayText": "家譜のれクおルド。",
+    "audioText": "家譜のれクおルド。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "譜",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "家譜 (kafu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "家譜のれクおルド。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kafu no record.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-3-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Registro da árvore genealógica.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"家譜\" ou o exemplo \"家譜のれクおルド。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.641Z"
+}

@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "artifactName": "N2.6_SHINKANZEN_SOURCE_INVENTORY",
+  "generatedAt": "2026-09-27T11:59:17Z",
+  "phase": "N2.6-SHINKANZEN-EXTRACTION-AND-INTEGRATION",
+  "description": "Inventário físico, criptográfico e estrutural dos 5 novos livros Shin Kanzen Master N2",
+  "summary": {
+    "totalSources": 5,
+    "totalPages": 1007,
+    "totalSearchablePages": 999,
+    "totalEmptyPages": 8,
+    "totalBytes": 245941186,
+    "totalCharacters": 823400,
+    "totalJapaneseCharacters": 405778,
+    "overallMeanConfidence": 81.5
+  },
+  "sources": [
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "title": "新完全マスター文法 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Bunpō",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Bunpo.pdf",
+      "fileName": "Shinkanzen Master N2 Bunpo.pdf",
+      "bytes": 69215273,
+      "sha256": "9F71994C965A0FA9F7E44B9400FA5E6B9C2A97C09C8F28E2D9A1948ECB86967C",
+      "pageCount": 229,
+      "pagesExtracted": 229,
+      "searchablePages": 223,
+      "emptyPages": 6,
+      "meanConfidence": 83.65,
+      "totalCharacters": 198870,
+      "totalJapaneseCharacters": 104628,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "友松悦子",
+        "福島佐知",
+        "中村かおり"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-565-7",
+      "roles": [
+        "grammar",
+        "n2-preparation",
+        "exercises",
+        "mock-test"
+      ],
+      "bookletStartPage": 217,
+      "elapsedSeconds": 3.02
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "title": "新完全マスター聴解 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Chōkai",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Chokai.pdf",
+      "fileName": "Shinkanzen Master N2 Chokai.pdf",
+      "bytes": 11862604,
+      "sha256": "EEEB4D3DD1BA6DD6C273E0068D003F49A3AB20ABE5FD50DDE124DD8C3761777B",
+      "pageCount": 161,
+      "pagesExtracted": 161,
+      "searchablePages": 161,
+      "emptyPages": 0,
+      "meanConfidence": 74.11,
+      "totalCharacters": 96539,
+      "totalJapaneseCharacters": 44631,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "中村かおり",
+        "福島佐知",
+        "友松悦子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-567-1",
+      "roles": [
+        "listening",
+        "n2-preparation",
+        "scripts",
+        "answers",
+        "exercises"
+      ],
+      "bookletStartPage": 115,
+      "elapsedSeconds": 75.02,
+      "chokaiDetails": {
+        "sectionsSummary": {
+          "front_matter": 7,
+          "mondai_shoukai": 8,
+          "jitsuryoku_yousei": 87,
+          "mogi_shiken": 10,
+          "bessatsu_front": 4,
+          "bessatsu_answers_scripts": 45
+        },
+        "referencedTracksCount": 2,
+        "referencedTracks": [
+          "CD1-Track2",
+          "CD1-Track62"
+        ],
+        "physicalAudioPresentOnDisk": 0,
+        "audioDeferred": 0,
+        "audioNote": "Faixas de áudio são referenciadas no texto impresso (CD1/CD2), sem arquivos .mp3 no repositório. Nenhuma transcrição automática foi executada."
+      }
+    },
+    {
+      "sourceId": "shinkanzen-n2-dokkai",
+      "title": "新完全マスター読解 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Dokkai",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Dokkai.pdf",
+      "fileName": "Shinkanzen Master N2 Dokkai.pdf",
+      "bytes": 114250044,
+      "sha256": "55C7082F529752126DDCB98FC0841E98A223A329F0CD5BF150ED028F8213AEDB",
+      "pageCount": 239,
+      "pagesExtracted": 239,
+      "searchablePages": 239,
+      "emptyPages": 0,
+      "meanConfidence": 84.4,
+      "totalCharacters": 178462,
+      "totalJapaneseCharacters": 110157,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "友松悦子",
+        "清野有希",
+        "辻和子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-572-5",
+      "roles": [
+        "reading",
+        "n2-preparation",
+        "passages",
+        "answers",
+        "explanations"
+      ],
+      "bookletStartPage": 201,
+      "elapsedSeconds": 93.86
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "title": "新完全マスター語彙 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Goi",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Goi.pdf",
+      "fileName": "Shinkanzen Master N2 Goi.pdf",
+      "bytes": 40691294,
+      "sha256": "5B1FF7F9EB08BA4E324645534DFEE42A61CA78779B2797C25170958D9A9801E4",
+      "pageCount": 246,
+      "pagesExtracted": 246,
+      "searchablePages": 246,
+      "emptyPages": 0,
+      "meanConfidence": 81.57,
+      "totalCharacters": 251293,
+      "totalJapaneseCharacters": 106813,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "伊藤秀明",
+        "前坊香菜子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-571-8",
+      "roles": [
+        "vocabulary",
+        "n2-preparation",
+        "collocations",
+        "exercises",
+        "mock-test"
+      ],
+      "bookletStartPage": 217,
+      "elapsedSeconds": 119.07
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "title": "新完全マスター漢字 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Kanji",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Kanji.pdf",
+      "fileName": "Shinkanzen Master N2 Kanji.pdf",
+      "bytes": 9921971,
+      "sha256": "6EFC4DB8F0A551BF4E71900E312A678AA55505F1C2687191ABDA0ADB481AD143",
+      "pageCount": 132,
+      "pagesExtracted": 132,
+      "searchablePages": 130,
+      "emptyPages": 2,
+      "meanConfidence": 83.75,
+      "totalCharacters": 98236,
+      "totalJapaneseCharacters": 39549,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "石井怜子",
+        "青木幸子",
+        "鈴木秀子",
+        "ほか"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-547-3",
+      "roles": [
+        "kanji",
+        "n2-preparation",
+        "readings",
+        "stroke-order",
+        "exercises"
+      ],
+      "bookletStartPage": 113,
+      "elapsedSeconds": 47.99
+    }
+  ]
+}

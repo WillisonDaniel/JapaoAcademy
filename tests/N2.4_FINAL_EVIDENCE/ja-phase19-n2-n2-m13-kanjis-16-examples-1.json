@@ -1,0 +1,67 @@
+{
+  "index": 173,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1",
+  "module": 13,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "融",
+  "targetWord": "金融 (kin'yuu)",
+  "reading": "ユウ (YUU)",
+  "romaji": "Kin'yuu crisis.",
+  "translation": "Crise financeira internacional.",
+  "example": {
+    "displayText": "世界的な金融危機に対処するため中央銀行が動きます。",
+    "audioText": "世界的な金融危機に対処するため中央銀行が動きます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "融",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "金融 (kin'yuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "世界的な金融危機に対処するため中央銀行が動きます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kin'yuu crisis.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Crise financeira internacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"金融\" ou o exemplo \"世界的な金融危機に対処するため中央銀行が動きます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.663Z"
+}

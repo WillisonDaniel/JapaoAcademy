@@ -1,0 +1,67 @@
+{
+  "index": 184,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0",
+  "module": 13,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "駐",
+  "targetWord": "駐日 (chuunichi)",
+  "reading": "チュウ (CHUU)",
+  "romaji": "Chuunichi ambassador.",
+  "translation": "Embaixador residente no Japão.",
+  "example": {
+    "displayText": "駐日大使が両国の友好関係を深める活動を行います。",
+    "audioText": "駐日大使が両国の友好関係を深める活動を行います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "駐",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "駐日 (chuunichi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "駐日大使が両国の友好関係を深める活動を行います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Chuunichi ambassador.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Embaixador residente no Japão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"駐日\" ou o exemplo \"駐日大使が両国の友好関係を深める活動を行います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.673Z"
+}

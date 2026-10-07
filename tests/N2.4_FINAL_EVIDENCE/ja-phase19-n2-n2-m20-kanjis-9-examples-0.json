@@ -1,0 +1,96 @@
+{
+  "index": 29,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0",
+  "module": 20,
+  "kanjiIndex": 9,
+  "exampleIndex": 0,
+  "character": "礼",
+  "targetWord": "お礼 (orei)",
+  "reading": "レイ (REI) / ライ (RAI)",
+  "romaji": "Orei o say.",
+  "translation": "Dizer agradecimento.",
+  "example": {
+    "displayText": "お世話になった先生に手紙でお礼を伝えます。",
+    "audioText": "お世話になった先生に手紙でお礼を伝えます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "礼",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "お礼 (orei)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "お世話になった先生に手紙でお礼を伝えます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Orei o say.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-9-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Dizer agradecimento.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 180,
+      "file": "quartet-2-textbook-p0180.json"
+    },
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 213,
+      "file": "quartet-2-textbook-p0213.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0180.json",
+    "quartet-2-textbook-p0213.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0180.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "お礼",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "quartet-2-textbook-p0213.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "お礼",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"お礼\" possui atestação lexical primária na testemunha quartet-2-textbook-p0180.json (p. 180), porém a frase de exemplo canônica (\"お世話になった先生に手紙でお礼を伝えます。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.546Z"
+}

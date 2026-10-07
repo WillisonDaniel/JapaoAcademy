@@ -76,7 +76,7 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { corrected: 943, approved: 5231 });
+assert.deepEqual(states, { corrected: 943, approved: 4537, unresolved: 694 });
 
 for (const decision of decisions) {
     assert.ok(['approved', 'corrected', 'unresolved'].includes(decision.state), `${decision.id}: estado derivado não permitido`);
@@ -101,11 +101,11 @@ assert.equal(byResource.listening.corrected, 290);
 assert.equal(byResource.listening.approved, 29);
 assert.equal(byResource.listening.unresolved, 0);
 assert.equal(byResource.grammar.corrected, 58);
-assert.equal(byResource.grammar.approved, 149);
-assert.equal(byResource.grammar.unresolved, 0);
+assert.equal(byResource.grammar.approved, 85);
+assert.equal(byResource.grammar.unresolved, 64);
 assert.equal(byResource.jlpt.corrected, 23);
-assert.equal(byResource.jlpt.approved, 1038);
-assert.equal(byResource.jlpt.unresolved, 0);
+assert.equal(byResource.jlpt.approved, 408);
+assert.equal(byResource.jlpt.unresolved, 630);
 assert.equal(byResource.writing.corrected, 206);
 assert.equal(byResource.writing.approved, 4);
 assert.equal(byResource.writing.unresolved, 0);
@@ -128,4 +128,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
         `${name}: nomenclatura humana permaneceu no relatório neutro`);
 }
 
-console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e 0 pendências (100% sustentado pelo upstream).`);
+console.log(`Recursos derivados: ${decisions.length} registros; ${states.approved} aprovados, ${states.corrected} corrigidos e ${states.unresolved} pendências (alinhado com upstream e índices).`);

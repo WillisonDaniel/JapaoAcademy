@@ -1,0 +1,96 @@
+{
+  "index": 1,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1",
+  "module": 1,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "企",
+  "targetWord": "企画 (kikaku)",
+  "reading": "キ (KI)",
+  "romaji": "Kikaku-sho o kaku.",
+  "translation": "Elaborar o projeto de planejamento.",
+  "example": {
+    "displayText": "企画しょをかく。",
+    "audioText": "企画しょをかく。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "企",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "企画 (kikaku)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "企画しょをかく。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kikaku-sho o kaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Elaborar o projeto de planejamento.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 175,
+      "file": "quartet-2-textbook-p0175.json"
+    },
+    {
+      "sourceId": "tobira-2009",
+      "page": 426,
+      "file": "tobira-2009-p0426.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0175.json",
+    "tobira-2009-p0426.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0175.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "企画",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "tobira-2009-p0426.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "企画",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"企画\" possui atestação lexical primária na testemunha quartet-2-textbook-p0175.json (p. 175), porém a frase de exemplo canônica (\"企画しょをかく。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.521Z"
+}

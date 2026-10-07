@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-2-textbook",
+  "page": 25,
+  "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0025.json",
+  "corpusArtifactSha256": "9a4446c1cd4e4afa4e411bc001208b6d31502f6285497e7c896a5cfafc8c746f",
+  "extractionMode": "ocr",
+  "pageTextSha256": "c3ff45fb92e14d153eac0f60b6fcbe2cec3454c9c48a52ed6ed046690a7fb823",
+  "text": "[18]\n\n(6) Study app\nQUARTET2 Vocab & Kanji ((OS/Android)\nThe app for studying vocabulary and kanji covered in the textbook is available.\n\n  Structure and Content of Workbook II\n\nThe workbook offers practice exercises related to each textbook lesson’s 読み物 and 3a ・ 表現\n\n画 読み物ワーク This section provides three types of exercises for 読み物 1 and 2一一(A) true/\nfalse questions on the readings, (B) reading strategy exercises, and (C) questions that delve\ninto the readings’ content in greater detail.\n\n団 xe ・表現ワーク Two sets of exercises are provided for the items covered by 文型・表現ノー\n\nト\nand (B) exercises covering all grammatical patterns and expressions presented in the\n\n(A) basic problems on items that require output (marked with @ in the textbook),\n\nlesson.\n\nThe workbook also includes practices for the 上級へのチャレンジ and RFF vy Y sections of 7\nラッシュアップ in the textbook. The worksheets should be used after studying the corresponding\npart of the textbook in order to check your mastery of the kanji.\n\n",
+  "normalizedText": "[18] (6) Study app QUARTET2 Vocab & Kanji ((OS/Android) The app for studying vocabulary and kanji covered in the textbook is available. Structure and Content of Workbook II The workbook offers practice exercises related to each textbook lesson’s 読み物 and 3a ・ 表現 画 読み物ワーク This section provides three types of exercises for 読み物 1 and 2一一(A) true/ false questions on the readings, (B) reading strategy exercises, and (C) questions that delve into the readings’ content in greater detail. 団 xe ・表現ワーク Two sets of exercises are provided for the items covered by 文型・表現ノー ト and (B) exercises covering all grammatical patterns and expressions presented in the (A) basic problems on items that require output (marked with @ in the textbook), lesson. The workbook also includes practices for the 上級へのチャレンジ and RFF vy Y sections of 7 ラッシュアップ in the textbook. The worksheets should be used after studying the corresponding part of the textbook in order to check your mastery of the kanji.",
+  "associatedTargets": [
+    "ja-phase19-n2-n2-m1-module-metadata"
+  ]
+}

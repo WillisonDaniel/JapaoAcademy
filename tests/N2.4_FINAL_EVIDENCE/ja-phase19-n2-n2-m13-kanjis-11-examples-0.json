@@ -1,0 +1,67 @@
+{
+  "index": 164,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0",
+  "module": 13,
+  "kanjiIndex": 11,
+  "exampleIndex": 0,
+  "character": "献",
+  "targetWord": "献身 (kenshin)",
+  "reading": "ケン (KEN) / コン (KON)",
+  "romaji": "Kenshin-teki na activity.",
+  "translation": "Atividade de total dedicação.",
+  "example": {
+    "displayText": "地域社会の発展に献身的な努力を続けます。",
+    "audioText": "地域社会の発展に献身的な努力を続けます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "献",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "献身 (kenshin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "地域社会の発展に献身的な努力を続けます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kenshin-teki na activity.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-11-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Atividade de total dedicação.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"献身\" ou o exemplo \"地域社会の発展に献身的な努力を続けます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.656Z"
+}

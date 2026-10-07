@@ -1,0 +1,67 @@
+{
+  "index": 271,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0",
+  "module": 16,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "叫",
+  "targetWord": "絶叫 (zekkyou)",
+  "reading": "キョウ (KYOU)",
+  "romaji": "Zekkyou machine.",
+  "translation": "Montanha-russa de gritos.",
+  "example": {
+    "displayText": "絶叫まちね。",
+    "audioText": "絶叫まちね。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "叫",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "絶叫 (zekkyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "絶叫まちね。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Zekkyou machine.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Montanha-russa de gritos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"絶叫\" ou o exemplo \"絶叫まちね。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.741Z"
+}

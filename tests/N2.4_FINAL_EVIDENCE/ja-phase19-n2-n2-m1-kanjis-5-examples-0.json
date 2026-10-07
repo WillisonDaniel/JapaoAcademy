@@ -1,0 +1,67 @@
+{
+  "index": 48,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0",
+  "module": 1,
+  "kanjiIndex": 5,
+  "exampleIndex": 0,
+  "character": "幹",
+  "targetWord": "幹部 (kanbu)",
+  "reading": "カン (KAN)",
+  "romaji": "Kanbu kaigi.",
+  "translation": "Reunião de executivos.",
+  "example": {
+    "displayText": "幹部かいぎ。",
+    "audioText": "幹部かいぎ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "幹",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "幹部 (kanbu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "幹部かいぎ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kanbu kaigi.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-5-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Reunião de executivos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"幹部\" ou o exemplo \"幹部かいぎ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.560Z"
+}

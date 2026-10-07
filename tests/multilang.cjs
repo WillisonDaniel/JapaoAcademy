@@ -1029,7 +1029,7 @@ test('trilhas JLPT carregam apenas o dataset e os motores usados pela pagina', (
         // A Etapa 23F calcula o progresso global agregado de Kanji N5 ao N1.
         n5: 730 * 1024,
         // A Fase 22B acrescenta correções editoriais rastreáveis aos textos de leitura N4.
-        n4: 742 * 1024,
+        n4: 745 * 1024,
         // As Etapas 24D, 24E e 24F substituem os resíduos de draft do N3, N2 e N1 por frases completas e autênticas.
         n3: 1460 * 1024,
         n2: 1520 * 1024,

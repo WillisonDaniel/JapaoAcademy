@@ -1,0 +1,67 @@
+{
+  "index": 552,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1",
+  "module": 6,
+  "kanjiIndex": 6,
+  "exampleIndex": 1,
+  "character": "講",
+  "targetWord": "休講 (kyuukou)",
+  "reading": "コウ (KOU)",
+  "romaji": "Kyou wa kyuukou.",
+  "translation": "Hoje a aula foi cancelada.",
+  "example": {
+    "displayText": "きょうは休講。",
+    "audioText": "きょうは休講。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "講",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "休講 (kyuukou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "きょうは休講。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyou wa kyuukou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Hoje a aula foi cancelada.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"休講\" ou o exemplo \"きょうは休講。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.962Z"
+}

@@ -1,0 +1,96 @@
+{
+  "index": 7,
+  "targetId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1",
+  "module": 10,
+  "kanjiIndex": 12,
+  "exampleIndex": 1,
+  "character": "府",
+  "targetWord": "政府 (seifu)",
+  "reading": "フ (FU)",
+  "romaji": "Seifu no official.",
+  "translation": "Oficial do governo.",
+  "example": {
+    "displayText": "政府のおっふぃクいあル。",
+    "audioText": "政府のおっふぃクいあル。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "府",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "政府 (seifu)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "政府のおっふぃクいあル。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Seifu no official.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-12-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Oficial do governo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 131,
+      "file": "quartet-2-textbook-p0131.json"
+    },
+    {
+      "sourceId": "tobira-2009",
+      "page": 285,
+      "file": "tobira-2009-p0285.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0131.json",
+    "tobira-2009-p0285.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0131.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "政府",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "tobira-2009-p0285.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "政府",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"政府\" possui atestação lexical primária na testemunha quartet-2-textbook-p0131.json (p. 131), porém a frase de exemplo canônica (\"政府のおっふぃクいあル。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.527Z"
+}

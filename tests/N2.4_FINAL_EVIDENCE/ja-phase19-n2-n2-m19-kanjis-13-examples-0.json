@@ -1,0 +1,83 @@
+{
+  "index": 23,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0",
+  "module": 19,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "益",
+  "targetWord": "利益 (rieki)",
+  "reading": "エキ (EKI) / ヤク (YAKU)",
+  "romaji": "Rieki o dasu.",
+  "translation": "Gerar lucro.",
+  "example": {
+    "displayText": "利益をだす。",
+    "audioText": "利益をだす。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "益",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "利益 (rieki)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "利益をだす。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Rieki o dasu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Gerar lucro.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 224,
+      "file": "quartet-2-textbook-p0224.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0224.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0224.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "利益",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"利益\" possui atestação lexical primária na testemunha quartet-2-textbook-p0224.json (p. 224), porém a frase de exemplo canônica (\"利益をだす。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.541Z"
+}

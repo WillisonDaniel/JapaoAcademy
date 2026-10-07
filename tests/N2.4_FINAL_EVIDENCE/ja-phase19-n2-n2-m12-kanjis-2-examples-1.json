@@ -1,0 +1,67 @@
+{
+  "index": 145,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1",
+  "module": 12,
+  "kanjiIndex": 2,
+  "exampleIndex": 1,
+  "character": "奏",
+  "targetWord": "奏者 (sousha)",
+  "reading": "ソウ (SOU)",
+  "romaji": "Violin no sousha.",
+  "translation": "Executante de violino.",
+  "example": {
+    "displayText": "ヴいおルいんの奏者。",
+    "audioText": "ヴいおルいんの奏者。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "奏",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "奏者 (sousha)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ヴいおルいんの奏者。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Violin no sousha.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-2-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Executante de violino.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"奏者\" ou o exemplo \"ヴいおルいんの奏者。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.640Z"
+}

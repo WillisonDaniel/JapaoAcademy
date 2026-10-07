@@ -1,0 +1,83 @@
+{
+  "index": 32,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0",
+  "module": 4,
+  "kanjiIndex": 5,
+  "exampleIndex": 0,
+  "character": "挙",
+  "targetWord": "挙手 (kyoshu)",
+  "reading": "キョ (KYO)",
+  "romaji": "Kyoshu de kettei.",
+  "translation": "Decidir por voto de mãos erguidas.",
+  "example": {
+    "displayText": "挙手でけってい。",
+    "audioText": "挙手でけってい。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "挙",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "挙手 (kyoshu)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "挙手でけってい。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyoshu de kettei.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-5-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Decidir por voto de mãos erguidas.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 55,
+      "file": "quartet-2-textbook-p0055.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0055.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0055.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "挙手",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"挙手\" possui atestação lexical primária na testemunha quartet-2-textbook-p0055.json (p. 55), porém a frase de exemplo canônica (\"挙手でけってい。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.548Z"
+}

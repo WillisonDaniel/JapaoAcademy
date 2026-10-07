@@ -1,0 +1,13 @@
+# Local large media and textbooks
+livros/
+
+# Local OCR scratch workspace and tool environments
+scratch/
+
+# Python caches and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+*.tmp

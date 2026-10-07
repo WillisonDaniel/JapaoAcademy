@@ -21,7 +21,7 @@ const states = ledger.decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.deepEqual(states, { corrected: 2999, approved: 20538 });
+assert.deepEqual(states, { corrected: 2310, approved: 16621, unresolved: 4606 });
 assert.equal(ledger.decisions.filter(item => item.phase === 18).length, 2305);
 assert.equal(ledger.decisions.filter(item => item.phase === 19).length, 14899);
 assert.equal(ledger.decisions.filter(item => item.phase === 20).length, 6174);
@@ -59,4 +59,4 @@ for (const name of ['GRAMMAR', 'WRITING', 'JLPT']) {
     assert.ok(!fs.existsSync(path.join(__dirname, `JAPANESE_${name}_HUMAN_REVIEW.md`)));
 }
 
-console.log(`Release textual: ${ledger.decisions.length} alvos; ${states.approved + states.corrected} sustentados e ${states.unresolved || 0} inconclusivos (100% certificado e reconciliado).`);
+console.log(`Release textual: ${ledger.decisions.length} alvos; ${states.approved} aprovados, ${states.corrected} corrigidos e ${states.unresolved} inconclusivos (verdade editorial reconciliada).`);

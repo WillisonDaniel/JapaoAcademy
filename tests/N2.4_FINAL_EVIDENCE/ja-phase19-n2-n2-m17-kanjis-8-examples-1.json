@@ -1,0 +1,67 @@
+{
+  "index": 305,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1",
+  "module": 17,
+  "kanjiIndex": 8,
+  "exampleIndex": 1,
+  "character": "勤",
+  "targetWord": "勤勉 (kinben)",
+  "reading": "キン (KIN) / ゴン (GON)",
+  "romaji": "Kinben na student.",
+  "translation": "Estudante diligente.",
+  "example": {
+    "displayText": "真面目で勤勉な態度が職場でも高く評価されています。",
+    "audioText": "真面目で勤勉な態度が職場でも高く評価されています。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "勤",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "勤勉 (kinben)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "真面目で勤勉な態度が職場でも高く評価されています。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kinben na student.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-8-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Estudante diligente.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"勤勉\" ou o exemplo \"真面目で勤勉な態度が職場でも高く評価されています。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.767Z"
+}

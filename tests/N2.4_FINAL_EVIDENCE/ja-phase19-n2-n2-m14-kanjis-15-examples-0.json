@@ -1,0 +1,67 @@
+{
+  "index": 203,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0",
+  "module": 14,
+  "kanjiIndex": 15,
+  "exampleIndex": 0,
+  "character": "経",
+  "targetWord": "経由 (keiyu)",
+  "reading": "ケイ (KEI) / キョウ (KYOU)",
+  "romaji": "Tokyo keiyu.",
+  "translation": "Conexão via Tóquio.",
+  "example": {
+    "displayText": "ときょ経由。",
+    "audioText": "ときょ経由。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "経",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "経由 (keiyu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ときょ経由。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tokyo keiyu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Conexão via Tóquio.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"経由\" ou o exemplo \"ときょ経由。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.688Z"
+}

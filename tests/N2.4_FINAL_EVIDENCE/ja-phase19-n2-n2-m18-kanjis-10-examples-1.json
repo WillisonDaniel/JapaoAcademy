@@ -1,0 +1,96 @@
+{
+  "index": 21,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1",
+  "module": 18,
+  "kanjiIndex": 10,
+  "exampleIndex": 1,
+  "character": "材",
+  "targetWord": "人材 (jinzai)",
+  "reading": "ザイ (ZAI)",
+  "romaji": "Jinzai agency.",
+  "translation": "Agência de recursos humanos.",
+  "example": {
+    "displayText": "会社に必要な優秀な人材を採用します。",
+    "audioText": "会社に必要な優秀な人材を採用します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "材",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "人材 (jinzai)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "会社に必要な優秀な人材を採用します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Jinzai agency.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-10-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Agência de recursos humanos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 190,
+      "file": "quartet-2-textbook-p0190.json"
+    },
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 224,
+      "file": "quartet-2-textbook-p0224.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0190.json",
+    "quartet-2-textbook-p0224.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0190.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "人材",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "quartet-2-textbook-p0224.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "人材",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"人材\" possui atestação lexical primária na testemunha quartet-2-textbook-p0190.json (p. 190), porém a frase de exemplo canônica (\"会社に必要な優秀な人材を採用します。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.537Z"
+}

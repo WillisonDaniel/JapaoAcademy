@@ -1,0 +1,67 @@
+{
+  "index": 307,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1",
+  "module": 17,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "精",
+  "targetWord": "精神 (seishin)",
+  "reading": "セイ (SEI) / ショウ (SHOU)",
+  "romaji": "Seishin strength.",
+  "translation": "Força mental.",
+  "example": {
+    "displayText": "困難に負けない強い精神力を鍛えます。",
+    "audioText": "困難に負けない強い精神力を鍛えます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "精",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "精神 (seishin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "困難に負けない強い精神力を鍛えます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Seishin strength.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Força mental.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"精神\" ou o exemplo \"困難に負けない強い精神力を鍛えます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.769Z"
+}

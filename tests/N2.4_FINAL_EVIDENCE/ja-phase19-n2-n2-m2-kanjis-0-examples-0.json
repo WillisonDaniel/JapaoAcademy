@@ -1,0 +1,67 @@
+{
+  "index": 370,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0",
+  "module": 2,
+  "kanjiIndex": 0,
+  "exampleIndex": 0,
+  "character": "財",
+  "targetWord": "財産 (zaisan)",
+  "reading": "ザイ (ZAI) / サイ (SAI)",
+  "romaji": "Zaisan no kanri.",
+  "translation": "Gestão do patrimônio.",
+  "example": {
+    "displayText": "財産のかんり。",
+    "audioText": "財産のかんり。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "財",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "財産 (zaisan)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "財産のかんり。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Zaisan no kanri.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Gestão do patrimônio.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"財産\" ou o exemplo \"財産のかんり。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.821Z"
+}

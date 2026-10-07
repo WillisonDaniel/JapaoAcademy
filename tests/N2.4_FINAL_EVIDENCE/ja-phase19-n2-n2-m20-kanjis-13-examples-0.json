@@ -1,0 +1,67 @@
+{
+  "index": 404,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0",
+  "module": 20,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "葬",
+  "targetWord": "葬儀 (sougi)",
+  "reading": "ソウ (SOU)",
+  "romaji": "Sougi ni attend.",
+  "translation": "Comparecer ao funeral.",
+  "example": {
+    "displayText": "故人を偲んで葬儀に参列しました。",
+    "audioText": "故人を偲んで葬儀に参列しました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "葬",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "葬儀 (sougi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "故人を偲んで葬儀に参列しました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sougi ni attend.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Comparecer ao funeral.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"葬儀\" ou o exemplo \"故人を偲んで葬儀に参列しました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.852Z"
+}

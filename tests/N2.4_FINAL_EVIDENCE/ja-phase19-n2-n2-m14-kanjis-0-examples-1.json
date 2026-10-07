@@ -1,0 +1,67 @@
+{
+  "index": 191,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1",
+  "module": 14,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "航",
+  "targetWord": "運航 (unkou)",
+  "reading": "コウ (KOU)",
+  "romaji": "Flight no unkou.",
+  "translation": "Operação do voo.",
+  "example": {
+    "displayText": "悪天候のため航空機の運航が一時見合わせとなりました。",
+    "audioText": "悪天候のため航空機の運航が一時見合わせとなりました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "航",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "運航 (unkou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "悪天候のため航空機の運航が一時見合わせとなりました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Flight no unkou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Operação do voo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"運航\" ou o exemplo \"悪天候のため航空機の運航が一時見合わせとなりました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.678Z"
+}

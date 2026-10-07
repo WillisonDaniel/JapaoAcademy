@@ -1,0 +1,67 @@
+{
+  "index": 567,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0",
+  "module": 7,
+  "kanjiIndex": 16,
+  "exampleIndex": 0,
+  "character": "粋",
+  "targetWord": "抜粋 (bassui)",
+  "reading": "スイ (SUI)",
+  "romaji": "Text no bassui.",
+  "translation": "Extrato do texto.",
+  "example": {
+    "displayText": "てクストの抜粋。",
+    "audioText": "てクストの抜粋。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "粋",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "抜粋 (bassui)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "てクストの抜粋。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Text no bassui.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-16-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Extrato do texto.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"抜粋\" ou o exemplo \"てクストの抜粋。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.976Z"
+}

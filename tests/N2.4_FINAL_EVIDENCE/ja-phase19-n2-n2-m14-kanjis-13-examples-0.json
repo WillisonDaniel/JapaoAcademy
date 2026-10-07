@@ -1,0 +1,67 @@
+{
+  "index": 199,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0",
+  "module": 14,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "渡",
+  "targetWord": "渡航 (tokou)",
+  "reading": "ト (TO)",
+  "romaji": "Overseas tokou.",
+  "translation": "Viagem ao exterior.",
+  "example": {
+    "displayText": "観光のために海外へ渡航する手続きを進めます。",
+    "audioText": "観光のために海外へ渡航する手続きを進めます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "渡",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "渡航 (tokou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "観光のために海外へ渡航する手続きを進めます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Overseas tokou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Viagem ao exterior.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"渡航\" ou o exemplo \"観光のために海外へ渡航する手続きを進めます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.684Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 273,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0",
+  "module": 16,
+  "kanjiIndex": 5,
+  "exampleIndex": 0,
+  "character": "嘆",
+  "targetWord": "嘆息 (tansoku)",
+  "reading": "タン (TAN)",
+  "romaji": "Tansoku o leak.",
+  "translation": "Soltar um suspiro de lamento.",
+  "example": {
+    "displayText": "思い通りにいかず深い嘆息を漏らします。",
+    "audioText": "思い通りにいかず深い嘆息を漏らします。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "嘆",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "嘆息 (tansoku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "思い通りにいかず深い嘆息を漏らします。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tansoku o leak.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-5-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Soltar um suspiro de lamento.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"嘆息\" ou o exemplo \"思い通りにいかず深い嘆息を漏らします。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.742Z"
+}

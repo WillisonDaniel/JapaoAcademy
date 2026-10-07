@@ -1,0 +1,67 @@
+{
+  "index": 369,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1",
+  "module": 19,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "剰",
+  "targetWord": "余剰 (yojou)",
+  "reading": "ジョウ (JOU)",
+  "romaji": "Yojou fund.",
+  "translation": "Fundo de excedente.",
+  "example": {
+    "displayText": "予算の余剰金を来年度の基金に積み立てます。",
+    "audioText": "予算の余剰金を来年度の基金に積み立てます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "剰",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "余剰 (yojou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "予算の余剰金を来年度の基金に積み立てます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yojou fund.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Fundo de excedente.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"余剰\" ou o exemplo \"予算の余剰金を来年度の基金に積み立てます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.820Z"
+}

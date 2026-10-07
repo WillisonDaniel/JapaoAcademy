@@ -1,0 +1,83 @@
+{
+  "index": 26,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0",
+  "module": 2,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "貿",
+  "targetWord": "貿易 (boueki)",
+  "reading": "ボウ (BOU)",
+  "romaji": "Boueki kaisha.",
+  "translation": "Empresa de comércio internacional.",
+  "example": {
+    "displayText": "貿易かいしゃ。",
+    "audioText": "貿易かいしゃ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "貿",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "貿易 (boueki)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "貿易かいしゃ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Boueki kaisha.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Empresa de comércio internacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 285,
+      "file": "tobira-2009-p0285.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0285.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0285.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "貿易",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"貿易\" possui atestação lexical primária na testemunha tobira-2009-p0285.json (p. 285), porém a frase de exemplo canônica (\"貿易かいしゃ。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.544Z"
+}

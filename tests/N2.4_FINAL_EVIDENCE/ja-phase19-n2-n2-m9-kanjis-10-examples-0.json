@@ -1,0 +1,67 @@
+{
+  "index": 620,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0",
+  "module": 9,
+  "kanjiIndex": 10,
+  "exampleIndex": 0,
+  "character": "噴",
+  "targetWord": "噴火 (funka)",
+  "reading": "フン (FUN)",
+  "romaji": "Volcano no funka.",
+  "translation": "Erupção do vulcão.",
+  "example": {
+    "displayText": "火山の噴火。",
+    "audioText": "火山の噴火。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "噴",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "噴火 (funka)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "火山の噴火。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Volcano no funka.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-10-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Erupção do vulcão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"噴火\" ou o exemplo \"火山の噴火。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.015Z"
+}

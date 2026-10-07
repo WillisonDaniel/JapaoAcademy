@@ -1,0 +1,67 @@
+{
+  "index": 359,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1",
+  "module": 19,
+  "kanjiIndex": 4,
+  "exampleIndex": 1,
+  "character": "銭",
+  "targetWord": "金銭 (kinsen)",
+  "reading": "セン (SEN)",
+  "romaji": "Kinsen trouble.",
+  "translation": "Problema de dinheiro.",
+  "example": {
+    "displayText": "金銭面での無用なトラブルを防ぐ契約を結びます。",
+    "audioText": "金銭面での無用なトラブルを防ぐ契約を結びます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "銭",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "金銭 (kinsen)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "金銭面での無用なトラブルを防ぐ契約を結びます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kinsen trouble.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-4-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Problema de dinheiro.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"金銭\" ou o exemplo \"金銭面での無用なトラブルを防ぐ契約を結びます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.810Z"
+}

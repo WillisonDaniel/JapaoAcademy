@@ -1,0 +1,67 @@
+{
+  "index": 298,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0",
+  "module": 17,
+  "kanjiIndex": 3,
+  "exampleIndex": 0,
+  "character": "授",
+  "targetWord": "授業 (jugyou)",
+  "reading": "ジュ (JU)",
+  "romaji": "Jugyou ni attend.",
+  "translation": "Assistir à aula.",
+  "example": {
+    "displayText": "毎朝九時から大学の講義の授業が始まります。",
+    "audioText": "毎朝九時から大学の講義の授業が始まります。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "授",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "授業 (jugyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "毎朝九時から大学の講義の授業が始まります。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Jugyou ni attend.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-3-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Assistir à aula.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"授業\" ou o exemplo \"毎朝九時から大学の講義の授業が始まります。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.762Z"
+}

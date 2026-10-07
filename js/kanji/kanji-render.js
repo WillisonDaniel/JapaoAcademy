@@ -140,7 +140,14 @@ function renderKanjiModule(moduleIndex) {
             const meaningVal = item.meaning || item.significado || '';
             const kunVal = item.kunyomi || item.kun || '-';
             const onVal = item.onyomi || item.on || '-';
-            const readingPending = '';
+            const review = item.readingEditorialReview || {};
+            const hasPendingReading = Boolean(
+                review.status === 'pending-human-review' ||
+                (review.onyomi && review.onyomi.status === 'pending-human-review') ||
+                (review.kunyomi && review.kunyomi.status === 'pending-human-review')
+            );
+            const readingPending = hasPendingReading
+                ? '<small class="reading-editorial-pending">Leitura pendente de revisão editorial</small>' : '';
             const mnemonicVal = item.mnemonic || item.dica || '';
             const examplesList = item.examples || item.exemplos || [];
 

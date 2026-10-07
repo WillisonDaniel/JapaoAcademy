@@ -1,0 +1,67 @@
+{
+  "index": 323,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1",
+  "module": 18,
+  "kanjiIndex": 17,
+  "exampleIndex": 1,
+  "character": "産",
+  "targetWord": "土産 (miyage)",
+  "reading": "サン (SAN)",
+  "romaji": "O-miyage o buy.",
+  "translation": "Comprar lembrancinhas.",
+  "example": {
+    "displayText": "旅行の記念に地元の美味しいお土産を買います。",
+    "audioText": "旅行の記念に地元の美味しいお土産を買います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "産",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "土産 (miyage)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "旅行の記念に地元の美味しいお土産を買います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "O-miyage o buy.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Comprar lembrancinhas.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"土産\" ou o exemplo \"旅行の記念に地元の美味しいお土産を買います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.782Z"
+}

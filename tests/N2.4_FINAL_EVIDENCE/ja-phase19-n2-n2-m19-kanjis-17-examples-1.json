@@ -1,0 +1,67 @@
+{
+  "index": 353,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1",
+  "module": 19,
+  "kanjiIndex": 17,
+  "exampleIndex": 1,
+  "character": "算",
+  "targetWord": "計算 (keisan)",
+  "reading": "サン (SAN)",
+  "romaji": "Total no keisan.",
+  "translation": "Cálculo do total.",
+  "example": {
+    "displayText": "レジで合計金額の計算を正確に行います。",
+    "audioText": "レジで合計金額の計算を正確に行います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "算",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "計算 (keisan)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "レジで合計金額の計算を正確に行います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Total no keisan.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-17-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Cálculo do total.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"計算\" ou o exemplo \"レジで合計金額の計算を正確に行います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.805Z"
+}

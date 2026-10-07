@@ -1,0 +1,67 @@
+{
+  "index": 112,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0",
+  "module": 11,
+  "kanjiIndex": 5,
+  "exampleIndex": 0,
+  "character": "索",
+  "targetWord": "検索 (kensaku)",
+  "reading": "サク (SAKU)",
+  "romaji": "Google de kensaku.",
+  "translation": "Pesquisar no Google.",
+  "example": {
+    "displayText": "ごおグルえで検索。",
+    "audioText": "ごおグルえで検索。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "索",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "検索 (kensaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ごおグルえで検索。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Google de kensaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-5-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pesquisar no Google.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"検索\" ou o exemplo \"ごおグルえで検索。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.612Z"
+}

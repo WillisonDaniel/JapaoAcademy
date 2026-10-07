@@ -1,0 +1,67 @@
+{
+  "index": 270,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1",
+  "module": 16,
+  "kanjiIndex": 3,
+  "exampleIndex": 1,
+  "character": "怒",
+  "targetWord": "激怒 (gekido)",
+  "reading": "ド (DO) / ヌ (NU)",
+  "romaji": "Boss ga gekido.",
+  "translation": "O chefe ficou furioso.",
+  "example": {
+    "displayText": "ぼっスが激怒。",
+    "audioText": "ぼっスが激怒。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "怒",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "激怒 (gekido)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ぼっスが激怒。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Boss ga gekido.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-3-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "O chefe ficou furioso.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"激怒\" ou o exemplo \"ぼっスが激怒。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.740Z"
+}

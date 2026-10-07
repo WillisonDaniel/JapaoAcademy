@@ -1,0 +1,67 @@
+{
+  "index": 480,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1",
+  "module": 4,
+  "kanjiIndex": 18,
+  "exampleIndex": 1,
+  "character": "裁",
+  "targetWord": "仲裁 (chuusai)",
+  "reading": "サイ (SAI)",
+  "romaji": "Conflict no chuusai.",
+  "translation": "Mediação do conflito.",
+  "example": {
+    "displayText": "クおんフルいクトの仲裁。",
+    "audioText": "クおんフルいクトの仲裁。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "裁",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "仲裁 (chuusai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "クおんフルいクトの仲裁。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Conflict no chuusai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-18-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Mediação do conflito.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"仲裁\" ou o exemplo \"クおんフルいクトの仲裁。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.909Z"
+}

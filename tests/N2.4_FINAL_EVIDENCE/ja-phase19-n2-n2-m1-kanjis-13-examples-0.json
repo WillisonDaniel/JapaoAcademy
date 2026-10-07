@@ -1,0 +1,96 @@
+{
+  "index": 4,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0",
+  "module": 1,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "導",
+  "targetWord": "指導 (shidou)",
+  "reading": "ドウ (DOU)",
+  "romaji": "Shidou o ukeru.",
+  "translation": "Receber orientação.",
+  "example": {
+    "displayText": "指導をうける。",
+    "audioText": "指導をうける。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "導",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "指導 (shidou)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "指導をうける。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shidou o ukeru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Receber orientação.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 213,
+      "file": "quartet-2-textbook-p0213.json"
+    },
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 224,
+      "file": "quartet-2-textbook-p0224.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0213.json",
+    "quartet-2-textbook-p0224.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0213.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "指導",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "quartet-2-textbook-p0224.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "指導",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"指導\" possui atestação lexical primária na testemunha quartet-2-textbook-p0213.json (p. 213), porém a frase de exemplo canônica (\"指導をうける。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.526Z"
+}

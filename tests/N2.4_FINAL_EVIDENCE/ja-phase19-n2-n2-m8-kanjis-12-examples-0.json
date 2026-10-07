@@ -1,0 +1,67 @@
+{
+  "index": 590,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0",
+  "module": 8,
+  "kanjiIndex": 12,
+  "exampleIndex": 0,
+  "character": "胃",
+  "targetWord": "胃炎 (ien)",
+  "reading": "イ (I)",
+  "romaji": "Ien no kensa.",
+  "translation": "Exame de gastrite.",
+  "example": {
+    "displayText": "胃炎のけんさ。",
+    "audioText": "胃炎のけんさ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "胃",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "胃炎 (ien)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "胃炎のけんさ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ien no kensa.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-12-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Exame de gastrite.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"胃炎\" ou o exemplo \"胃炎のけんさ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.993Z"
+}

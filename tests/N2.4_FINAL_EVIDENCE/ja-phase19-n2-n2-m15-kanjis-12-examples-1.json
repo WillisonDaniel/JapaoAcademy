@@ -1,0 +1,67 @@
+{
+  "index": 230,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1",
+  "module": 15,
+  "kanjiIndex": 12,
+  "exampleIndex": 1,
+  "character": "扶",
+  "targetWord": "扶助 (fujo)",
+  "reading": "フ (FU)",
+  "romaji": "Public fujo.",
+  "translation": "Auxílio público de subsistência.",
+  "example": {
+    "displayText": "生活に困窮する人々への公的扶助を行います。",
+    "audioText": "生活に困窮する人々への公的扶助を行います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "扶",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "扶助 (fujo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "生活に困窮する人々への公的扶助を行います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Public fujo.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-12-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Auxílio público de subsistência.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"扶助\" ou o exemplo \"生活に困窮する人々への公的扶助を行います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.709Z"
+}

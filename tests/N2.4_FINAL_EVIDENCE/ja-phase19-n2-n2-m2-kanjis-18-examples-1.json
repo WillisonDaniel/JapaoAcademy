@@ -1,0 +1,67 @@
+{
+  "index": 384,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1",
+  "module": 2,
+  "kanjiIndex": 18,
+  "exampleIndex": 1,
+  "character": "負",
+  "targetWord": "勝負 (shoubu)",
+  "reading": "フ (FU)",
+  "romaji": "Shoubu o suru.",
+  "translation": "Fazer uma disputa.",
+  "example": {
+    "displayText": "勝負をする。",
+    "audioText": "勝負をする。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "負",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "勝負 (shoubu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "勝負をする。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shoubu o suru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-18-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Fazer uma disputa.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"勝負\" ou o exemplo \"勝負をする。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.834Z"
+}

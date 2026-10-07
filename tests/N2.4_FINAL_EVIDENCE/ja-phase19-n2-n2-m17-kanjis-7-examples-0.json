@@ -1,0 +1,67 @@
+{
+  "index": 303,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0",
+  "module": 17,
+  "kanjiIndex": 7,
+  "exampleIndex": 0,
+  "character": "習",
+  "targetWord": "学習 (gakushuu)",
+  "reading": "シュウ (SHUU)",
+  "romaji": "Self gakushuu.",
+  "translation": "Autoaprendizado.",
+  "example": {
+    "displayText": "図書館で毎日熱心に自習や学習を続けます。",
+    "audioText": "図書館で毎日熱心に自習や学習を続けます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "習",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "学習 (gakushuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "図書館で毎日熱心に自習や学習を続けます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Self gakushuu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-7-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Autoaprendizado.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"学習\" ou o exemplo \"図書館で毎日熱心に自習や学習を続けます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.766Z"
+}

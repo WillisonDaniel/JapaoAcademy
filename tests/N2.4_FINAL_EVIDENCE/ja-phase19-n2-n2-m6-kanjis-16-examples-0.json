@@ -1,0 +1,67 @@
+{
+  "index": 538,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0",
+  "module": 6,
+  "kanjiIndex": 16,
+  "exampleIndex": 0,
+  "character": "編",
+  "targetWord": "編集 (henshuu)",
+  "reading": "ヘン (HEN)",
+  "romaji": "Henshuu-bu.",
+  "translation": "Departamento de redação e edição.",
+  "example": {
+    "displayText": "編集ぶ。",
+    "audioText": "編集ぶ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "編",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "編集 (henshuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "編集ぶ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Henshuu-bu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-16-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Departamento de redação e edição.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"編集\" ou o exemplo \"編集ぶ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.953Z"
+}

@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-25T18:20:00-03:00",
+  "description": "Dossiês de Evidência e Decisões Editoriais Humanas — Piloto de 20 Alvos N2.1",
+  "batchSummary": {
+    "totalSelected": 20,
+    "totalReviewed": 20,
+    "decisionsCount": {
+      "APPROVED": 0,
+      "DATA_QUALITY_ISSUE": 9,
+      "UNRESOLVED": 9,
+      "NEEDS_SOURCE": 2,
+      "REJECTED": 0
+    },
+    "priorityDistribution": {
+      "P0": 4,
+      "P1": 8,
+      "P2": 4,
+      "P3": 2,
+      "P4": 2
+    },
+    "categoryDistribution": {
+      "EVIDENCE_READY": 4,
+      "DATA_QUALITY_ISSUE": 8,
+      "AMBIGUOUS": 2,
+      "EVIDENCE_DEFICIENT": 4,
+      "SOURCE_REQUIRED": 2
+    },
+    "lastUpdated": "2026-09-26T12:45:00-03:00",
+    "consolidationPhase": "N2.1.1-PILOT-CONSOLIDATION",
+    "categoryDistributionNote": "5 categorias com ocorrência no lote de 20 (DATA_QUALITY_ISSUE: 8 na triagem inicial [9 pós-consolidação], EVIDENCE_READY: 4 [com evidência lexical], EVIDENCE_DEFICIENT: 4, AMBIGUOUS: 2, SOURCE_REQUIRED: 2), dentro da taxonomia geral de 6 categorias (com REVIEWED_UNRESOLVED tendo zero ocorrências no lote inicial)."
+  },
+  "dossiers": [
+    {
+      "index": 1,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-10-examples-0",
+      "targetWord": "提案 (teian)",
+      "reading": "",
+      "romaji": "Teian o suru.",
+      "translation": "Fazer uma proposta.",
+      "example": {
+        "displayText": "提案をする。",
+        "audioText": "提案をする。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_READY",
+      "priority": "P1",
+      "availableSources": [
+        "quartet-2-textbook"
+      ],
+      "sourceLocation": "Quartet II p.55 (Dialogue / Project Planning)",
+      "witness": {
+        "filename": "quartet-2-textbook-p0055.json",
+        "sha256": "c5419e3ac3121f8c084007168c45d4a7fda6fb9014c84d5bb118d9e27a2ef139",
+        "path": "tests/n2-witness/quartet-2-textbook-p0055.json"
+      },
+      "observedToken": "提案",
+      "expectedToken": "提案",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Mapear página ou fonte que ateste a frase de colocação específica ou formular contrato editorial de aprovação por componentes.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "Reavaliação N2.1.1: Evidência lexical primária atesta existência e adequação pedagógica do lema N2 提案, mas não comprova o registro/exemplo completo do dataset. Conforme regra N2.1.1, evidência lexical parcial não gera aprovação integral; classificado como UNRESOLVED com evidenceScope: LEXICAL_ONLY.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [
+        {
+          "evidenceId": "ev-ja-phase19-n2-n2-m1-kanjis-10-examples-0-01",
+          "sourceId": "quartet-2-textbook",
+          "witnessPath": "tests/n2-witness/quartet-2-textbook-p0055.json",
+          "witnessSha256": "c5419e3ac3121f8c084007168c45d4a7fda6fb9014c84d5bb118d9e27a2ef139",
+          "page": 55,
+          "observedToken": "提案",
+          "contextSnippet": "443.Kaiwa_L7-2\n\nSPR Nv POE\n\nかく\n\n国際交流サークル部長の青山絵理 (絵) とメンバーのジョージ・テイラー (ジ:)、ワン・メ\n\nあおやまえ り\n\nイリン (x). ABM (研:) などが国際交流イベントについて話し合っつている。\n\n028\n\n研:\n\nほん だ けん\n\n",
+          "supports": [
+            "claim-ja-phase19-n2-n2-m1-kanjis-10-examples-0-01"
+          ]
+        }
+      ],
+      "correctionClaims": [
+        {
+          "claimId": "claim-ja-phase19-n2-n2-m1-kanjis-10-examples-0-01",
+          "claimType": "orthography",
+          "field": "word",
+          "description": "Comprova atestação lexical do composto N2 提案 (Quartet II p.55)",
+          "proofBinding": {
+            "proofId": "proof-ja-phase19-n2-n2-m1-kanjis-10-examples-0-01",
+            "proofType": "target-word",
+            "evidenceRef": "ev-ja-phase19-n2-n2-m1-kanjis-10-examples-0-01",
+            "observedToken": "提案",
+            "expectedToken": "提案",
+            "relation": "EQUALS"
+          }
+        }
+      ],
+      "previousDecision": "APPROVED",
+      "evidenceScope": "LEXICAL_ONLY",
+      "supportedClaims": [
+        "target_word"
+      ],
+      "unsupportedClaims": [
+        "example_sentence",
+        "example_translation",
+        "romaji"
+      ],
+      "sourceCoverage": "Quartet II p.55 comprova vocábulo 提案 (ていあん / proposal) na margem lexical e em contexto de diálogo.",
+      "recordCoverage": "Frase específica do dataset (\"提案をする。\"), transliteração romaji (\"Teian o suru.\") e tradução (\"Fazer uma proposta.\") não constam do artefato da fonte.",
+      "decisionBasis": "Reavaliação N2.1.1: Evidência lexical primária atesta existência e adequação pedagógica do lema N2 提案, mas não comprova o registro/exemplo completo do dataset. Conforme regra N2.1.1, evidência lexical parcial não gera aprovação integral; classificado como UNRESOLVED com evidenceScope: LEXICAL_ONLY."
+    },
+    {
+      "index": 2,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-6-examples-0",
+      "targetWord": "責任 (sekinin)",
+      "reading": "",
+      "romaji": "Sekinin o tomaru.",
+      "translation": "Assumir a responsabilidade.",
+      "example": {
+        "displayText": "責任をとまる。",
+        "audioText": "責任をとまる。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_READY",
+      "priority": "P1",
+      "availableSources": [
+        "quartet-2-textbook"
+      ],
+      "sourceLocation": "Quartet II p.131 (Reading Section / Corporate Responsibility)",
+      "witness": {
+        "filename": "quartet-2-textbook-p0131.json",
+        "sha256": "fc388f82ff9aaf411bc8e6f9e60f02c4a90d041e2896b2b44e1a96c6147ee91f",
+        "path": "tests/n2-witness/quartet-2-textbook-p0131.json"
+      },
+      "observedToken": "責任",
+      "expectedToken": "責任",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Substituir a frase agramatical \"責任をとまる。\" por exemplo autêntico como \"責任を持つ。\" ou \"責任を果たす。\" em etapa de correção de dados.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "Reavaliação N2.1.1: Detectado erro objetivo de qualidade no dado canônico do dataset (colocação agramatical \"責任をとまる。\"). A testemunha primária atesta o vocábulo 責任, mas a frase do dataset está corrompida. Reclassificado para DATA_QUALITY_ISSUE para substituição do exemplo em etapa de correção autorizada.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [
+        {
+          "evidenceId": "ev-ja-phase19-n2-n2-m1-kanjis-6-examples-0-01",
+          "sourceId": "quartet-2-textbook",
+          "witnessPath": "tests/n2-witness/quartet-2-textbook-p0131.json",
+          "witnessSha256": "fc388f82ff9aaf411bc8e6f9e60f02c4a90d041e2896b2b44e1a96c6147ee91f",
+          "page": 131,
+          "observedToken": "責任",
+          "contextSnippet": "1\n\n10\n\n15\n\n20\n\n104\n\nの Milne ンクシング ンクググ\n\nはじめに\n\nNHK 放送文化研究所が加習 している国際比較調査グループ ISSP (international\nSocial Survey Programme) が 2016年に実施した「政府の役割」 の結果から、35 ",
+          "supports": [
+            "claim-ja-phase19-n2-n2-m1-kanjis-6-examples-0-01"
+          ]
+        }
+      ],
+      "correctionClaims": [],
+      "previousDecision": "APPROVED",
+      "evidenceScope": "LEXICAL_ONLY",
+      "supportedClaims": [
+        "target_word"
+      ],
+      "unsupportedClaims": [
+        "example_sentence",
+        "grammatical_collocation"
+      ],
+      "sourceCoverage": "Quartet II p.131 atesta o substantivo 責任 (せきにん) na expressão 政府の責任.",
+      "recordCoverage": "Dataset registra \"責任をとまる。\" no displayText e \"Sekinin o tomaru.\" no romaji, que é agramatical em japonês (\"assumir responsabilidade\" exige 取る / 持つ / 負う, nunca とまる).",
+      "decisionBasis": "Reavaliação N2.1.1: Detectado erro objetivo de qualidade no dado canônico do dataset (colocação agramatical \"責任をとまる。\"). A testemunha primária atesta o vocábulo 責任, mas a frase do dataset está corrompida. Reclassificado para DATA_QUALITY_ISSUE para substituição do exemplo em etapa de correção autorizada."
+    },
+    {
+      "index": 3,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-13-examples-0",
+      "targetWord": "指導 (shidou)",
+      "reading": "",
+      "romaji": "Shidou o ukeru.",
+      "translation": "Receber orientação.",
+      "example": {
+        "displayText": "指導をうける。",
+        "audioText": "指導をうける。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_READY",
+      "priority": "P1",
+      "availableSources": [
+        "quartet-2-textbook"
+      ],
+      "sourceLocation": "Quartet II p.213 (Model Conversation / Workplace Guidance)",
+      "witness": {
+        "filename": "quartet-2-textbook-p0213.json",
+        "sha256": "5155e0d3c807e1e4ef0874cce4f17e6ae374babbe29c00f9ca76e6b16adc2e20",
+        "path": "tests/n2-witness/quartet-2-textbook-p0213.json"
+      },
+      "observedToken": "指導",
+      "expectedToken": "指導",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Localizar citação com a colocação 指導を受ける em Quartet II ou Tobira para elevação a RECORD_LEVEL.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "Reavaliação N2.1.1: A testemunha comprova a autenticidade e nível pedagógico N2 do lema 指導, mas não sustenta a frase específica do dataset. Evidência lexical não autoriza aprovação integral; classificado como UNRESOLVED com evidenceScope: LEXICAL_ONLY.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [
+        {
+          "evidenceId": "ev-ja-phase19-n2-n2-m1-kanjis-13-examples-0-01",
+          "sourceId": "quartet-2-textbook",
+          "witnessPath": "tests/n2-witness/quartet-2-textbook-p0213.json",
+          "witnessSha256": "5155e0d3c807e1e4ef0874cce4f17e6ae374babbe29c00f9ca76e6b16adc2e20",
+          "page": 213,
+          "observedToken": "指導",
+          "contextSnippet": "186\n\n1-3 | モデル会話                                          7) 3.Kaiwa_L12-1\n\nンク  フォーマルな会i\n\n旅立ちの時\n\nEU だ\n\nジョージ・テイラー (ジ:) が中村先生 (中:) のオフィスにやってくる。\n\nジ: 9失礼し",
+          "supports": [
+            "claim-ja-phase19-n2-n2-m1-kanjis-13-examples-0-01"
+          ]
+        }
+      ],
+      "correctionClaims": [
+        {
+          "claimId": "claim-ja-phase19-n2-n2-m1-kanjis-13-examples-0-01",
+          "claimType": "orthography",
+          "field": "word",
+          "description": "Comprova atestação lexical do vocábulo N2 指導 (Quartet II p.213)",
+          "proofBinding": {
+            "proofId": "proof-ja-phase19-n2-n2-m1-kanjis-13-examples-0-01",
+            "proofType": "target-word",
+            "evidenceRef": "ev-ja-phase19-n2-n2-m1-kanjis-13-examples-0-01",
+            "observedToken": "指導",
+            "expectedToken": "指導",
+            "relation": "EQUALS"
+          }
+        }
+      ],
+      "previousDecision": "APPROVED",
+      "evidenceScope": "LEXICAL_ONLY",
+      "supportedClaims": [
+        "target_word"
+      ],
+      "unsupportedClaims": [
+        "example_sentence",
+        "example_translation",
+        "romaji"
+      ],
+      "sourceCoverage": "Quartet II p.213 comprova o vocábulo 指導 (しどう / guidance) no glossário de vocabulário da Unidade 12.",
+      "recordCoverage": "Exemplo específico do dataset (\"指導をうける。\"), romaji (\"Shidou o ukeru.\") e tradução (\"Receber orientação.\") não aparecem nesta forma na página da fonte.",
+      "decisionBasis": "Reavaliação N2.1.1: A testemunha comprova a autenticidade e nível pedagógico N2 do lema 指導, mas não sustenta a frase específica do dataset. Evidência lexical não autoriza aprovação integral; classificado como UNRESOLVED com evidenceScope: LEXICAL_ONLY."
+    },
+    {
+      "index": 4,
+      "targetId": "ja-phase19-n2-n2-m2-kanjis-2-examples-0",
+      "targetWord": "利益 (rieki)",
+      "reading": "",
+      "romaji": "Rieki o dasu.",
+      "translation": "Gerar lucro.",
+      "example": {
+        "displayText": "経費を削減して会社の純利益を増やします。",
+        "audioText": "経費を削減して会社の純利益を増やします。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_READY",
+      "priority": "P1",
+      "availableSources": [
+        "quartet-2-textbook"
+      ],
+      "sourceLocation": "Quartet II p.224 (Seminar Section / Corporate Finance)",
+      "witness": {
+        "filename": "quartet-2-textbook-p0224.json",
+        "sha256": "88ea710bf8333ebd6ff124cdf00b70bc645d4bcbb1b51e8750e961769b5037c7",
+        "path": "tests/n2-witness/quartet-2-textbook-p0224.json"
+      },
+      "observedToken": "利益",
+      "expectedToken": "利益",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Harmonizar o romaji/tradução e localizar testemunha primária para a frase com 純利益.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "Reavaliação N2.1.1: O vocábulo 利益 é atestado na fonte primária em escopo lexical, mas a frase completa complexa do dataset não é coberta pela página do Quartet II. Reclassificado para UNRESOLVED com evidenceScope: LEXICAL_ONLY.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [
+        {
+          "evidenceId": "ev-ja-phase19-n2-n2-m2-kanjis-2-examples-0-01",
+          "sourceId": "quartet-2-textbook",
+          "witnessPath": "tests/n2-witness/quartet-2-textbook-p0224.json",
+          "witnessSha256": "88ea710bf8333ebd6ff124cdf00b70bc645d4bcbb1b51e8750e961769b5037c7",
+          "page": 224,
+          "observedToken": "利益",
+          "contextSnippet": "求められる人材\n\nERD ROS AM\n\n1 4.Chokai_L12-1\n\n大学の就職セミナーで、キャリアセンターの人が今の日本企業が求める人材について話してい\nます。センターの人によると、日本企業が求める能力のうち、こごこれからの時代に最も必要な能力は\nahのどれですかが。\n\n利益profit ",
+          "supports": [
+            "claim-ja-phase19-n2-n2-m2-kanjis-2-examples-0-01"
+          ]
+        }
+      ],
+      "correctionClaims": [
+        {
+          "claimId": "claim-ja-phase19-n2-n2-m2-kanjis-2-examples-0-01",
+          "claimType": "orthography",
+          "field": "word",
+          "description": "Comprova atestação lexical do termo financeiro N2 利益 (Quartet II p.224)",
+          "proofBinding": {
+            "proofId": "proof-ja-phase19-n2-n2-m2-kanjis-2-examples-0-01",
+            "proofType": "target-word",
+            "evidenceRef": "ev-ja-phase19-n2-n2-m2-kanjis-2-examples-0-01",
+            "observedToken": "利益",
+            "expectedToken": "利益",
+            "relation": "EQUALS"
+          }
+        }
+      ],
+      "previousDecision": "APPROVED",
+      "evidenceScope": "LEXICAL_ONLY",
+      "supportedClaims": [
+        "target_word"
+      ],
+      "unsupportedClaims": [
+        "example_sentence",
+        "example_translation",
+        "romaji"
+      ],
+      "sourceCoverage": "Quartet II p.224 atesta o termo financeiro 利益 (りえき / profit) na seção de vocabulário de seminário corporativo.",
+      "recordCoverage": "A sentença do dataset (\"経費を削減して会社の純利益を増やします。\") não consta do texto da fonte, e o romaji (\"Rieki o dasu.\") difere do displayText.",
+      "decisionBasis": "Reavaliação N2.1.1: O vocábulo 利益 é atestado na fonte primária em escopo lexical, mas a frase completa complexa do dataset não é coberta pela página do Quartet II. Reclassificado para UNRESOLVED com evidenceScope: LEXICAL_ONLY."
+    },
+    {
+      "index": 5,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-1-examples-1",
+      "targetWord": "残業 (zangyou)",
+      "reading": "",
+      "romaji": "Zangyou o减らす.",
+      "translation": "Reduzir as horas extras.",
+      "example": {
+        "displayText": "今年の会社の営業実績が大幅に伸びました。",
+        "audioText": "今年の会社の営業実績が大幅に伸びました。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P0",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "减らす (caractere chinês no romaji)",
+      "expectedToken": "残業",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Necessita substituição completa do exemplo por frase japonesa autêntica com 残業 e romaji regular em etapa de correção autorizada.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "ERRO ESTRUTURAL GRAVE: A palavra-alvo 残業 está totalmente ausente de displayText (\"今年の会社の営業実績が大幅に伸びました。\"). Adicionalmente, romaji contém ideograma simplificado chinês \"Zangyou o减らす.\" e tradução incompatível com o texto japonês.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 6,
+      "targetId": "ja-phase19-n2-n2-m12-kanjis-9-examples-1",
+      "targetWord": "東屋 (azumaya)",
+      "reading": "",
+      "romaji": "Park no azumaya.",
+      "translation": "Gazebo do parque.",
+      "example": {
+        "displayText": "公園の休憩亭。",
+        "audioText": "公園の休憩亭。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P0",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "休憩亭",
+      "expectedToken": "東屋",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Substituir frase por exemplo natural contendo 東屋 em contexto paisagístico/parque.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "DISCREPÂNCIA LEXICAL: A palavra-alvo é 東屋 (あずまや), mas o displayText registra \"公園の休憩亭。\", omitindo o ideograma e a palavra-alvo canônica.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 7,
+      "targetId": "ja-phase19-n2-n2-m19-kanjis-12-examples-1",
+      "targetWord": "赤字損 (akajison)",
+      "reading": "",
+      "romaji": "Akaji no loss.",
+      "translation": "Perda de déficit.",
+      "example": {
+        "displayText": "あかじの損失。",
+        "audioText": "あかじの損失。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P0",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "あかじの損失。",
+      "expectedToken": "赤字損",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Normalizar palavra-alvo para 赤字 (composto N2 legítimo) e reescrever exemplo com padrão pedagógico.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "CORRUPÇÃO DE COMPOSTO: Palavra-alvo 赤字損 é um falso composto inexistente nos léxicos canônicos N2. O texto está em hiragana parcial \"あかじの損失。\" e romaji \"Akaji no loss.\"",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 8,
+      "targetId": "ja-phase19-n2-n2-m2-kanjis-11-examples-0",
+      "targetWord": "負債 (fusai)",
+      "reading": "",
+      "romaji": "Fusai o抱える.",
+      "translation": "Acumular dívidas.",
+      "example": {
+        "displayText": "国の財政を支えるために国債が発行されます。",
+        "audioText": "国の財政を支えるために国債が発行されます。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P0",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "国債 (em vez de 負債)",
+      "expectedToken": "負債",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Reescrever sentença canônica para utilizar 負債 (ex.: 多額の負債を抱える) com romaji corrigido.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "FALTA DE PALAVRA-ALVO E RESÍDUO NÃO-ASCII: O displayText (\"国の財政を支えるために国債が発行されます。\") usa 国債 em vez de 負債. Além disso, romaji contém kanji inserido (\"Fusai o抱える.\").",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 9,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-0-examples-0",
+      "targetWord": "企業 (kigyou)",
+      "reading": "",
+      "romaji": "Kigyou no strategy.",
+      "translation": "Estratégia corporativa.",
+      "example": {
+        "displayText": "世界を舞台に活躍する大企業で働きます。",
+        "audioText": "世界を舞台に活躍する大企業で働きます。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P1",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "strategy (em romaji)",
+      "expectedToken": "Kigyou no senryaku",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Alinhar romaji (\"Sekai o butai ni katsuyaku suru daikigyou de hatarakimasu.\") e tradução ao displayText japonês autêntico.",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "RESÍDUO DE INGLÊS E DIVERGÊNCIA DE TRADUÇÃO: O romaji possui \"Kigyou no strategy.\" e a tradução \"Estratégia corporativa\" reflete o rascunho em inglês, enquanto o displayText japonês é \"世界を舞台に活躍する大企業で働きます。\"",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 10,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-3-examples-1",
+      "targetWord": "独創 (dokusou)",
+      "reading": "",
+      "romaji": "Dokusou-teki na idea.",
+      "translation": "Ideia original e inovadora.",
+      "example": {
+        "displayText": "独創てきないであ。",
+        "audioText": "独創てきないであ。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P1",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "idea (em romaji)",
+      "expectedToken": "Dokusouteki na aidea",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Corrigir romaji para \"Dokusouteki na aidea.\"",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "RESÍDUO MECÂNICO: Romaji contém palavra em inglês residual \"Dokusou-teki na idea.\" em vez de transliteração em romaji canônico do japonês.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 11,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-11-examples-1",
+      "targetWord": "企画案 (kikakuan)",
+      "reading": "",
+      "romaji": "Kikakuan o submit.",
+      "translation": "Submeter o esboço do projeto.",
+      "example": {
+        "displayText": "企画案をすブみト。",
+        "audioText": "企画案をすブみト。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P1",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "submit (em romaji)",
+      "expectedToken": "teishutsu suru",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Substituir verbo residual por提出する (teishutsu suru) ou 出す (dasu).",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "RESÍDUO MECÂNICO: Romaji contém verbo em inglês \"Kikakuan o submit.\" O texto e a transliteração necessitam de padronização.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 12,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-13-examples-1",
+      "targetWord": "導入 (dounyuu)",
+      "reading": "",
+      "romaji": "System no dounyuu.",
+      "translation": "Implementação do sistema.",
+      "example": {
+        "displayText": "制度の導入。",
+        "audioText": "制度の導入。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "DATA_QUALITY_ISSUE",
+      "priority": "P1",
+      "availableSources": [],
+      "sourceLocation": "Dataset canônico data_kanji_n2.js",
+      "witness": null,
+      "observedToken": "system (em romaji)",
+      "expectedToken": "shisutemu",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Normalizar romaji para \"Shisutemu no dounyuu.\"",
+      "editorialDecision": "DATA_QUALITY_ISSUE",
+      "decisionRationale": "RESÍDUO MECÂNICO: Romaji registra \"System no dounyuu.\" com termo em inglês no lugar de transcrição fonética padronizada.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "CORRUPT_OR_DEFICIENT"
+    },
+    {
+      "index": 13,
+      "targetId": "ja-phase19-n2-n2-m7-kanjis-7-examples-0",
+      "targetWord": "疑似 (giji)",
+      "reading": "",
+      "romaji": "Giji experience.",
+      "translation": "Experiência simulada.",
+      "example": {
+        "displayText": "擬似体験。",
+        "audioText": "擬似体験。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "AMBIGUOUS",
+      "priority": "P4",
+      "availableSources": [],
+      "sourceLocation": "Dicionário Koujien / Daijirin",
+      "witness": null,
+      "observedToken": "擬似体験 (texto) vs 疑似 (palavra)",
+      "expectedToken": "疑似 / 擬似",
+      "linguisticRelation": "MATCHES",
+      "openQuestions": "Adotar 疑似 (Jōyō) como preferencial mantendo 擬似 como variante aceita na tabela de normalização?",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "AMBIGUIDADE ORTOGRÁFICA: 疑似 e 擬似 são grafias intercambiáveis na imprensa e literatura técnica japonesa (variantes de uso comum). Decisão requer política editorial consolidada sobre padronização de kanji hyouki.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 14,
+      "targetId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0",
+      "targetWord": "国境越え (kokkyougoe)",
+      "reading": "",
+      "romaji": "Kokkyou o koeru.",
+      "translation": "Atravessar a fronteira nacional.",
+      "example": {
+        "displayText": "国境を越える。",
+        "audioText": "国境を越える。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "AMBIGUOUS",
+      "priority": "P4",
+      "availableSources": [],
+      "sourceLocation": "Quartet II / Tobira Gramática N2",
+      "witness": null,
+      "observedToken": "国境を越える (predicado verbal) vs 国境越え (substantivo)",
+      "expectedToken": "国境越え / 国境を越える",
+      "linguisticRelation": "DIFFERS_FROM",
+      "openQuestions": "Ajustar o lema para 国境を越える ou reescrever a frase como oração substantivada?",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "AMBIGUIDADE MORFOSSINTÁTICA: O lema cadastrado é o substantivo composto 国境越え (kokkyougoe), mas a frase modelo exemplifica a oração verbal 国境を越える (kokkyou o koeru). Ambas as formas são pedagogicamente válidas, mas diferem estruturalmente.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 15,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-1-examples-0",
+      "targetWord": "事業 (jigyou)",
+      "reading": "",
+      "romaji": "Jigyou o kakudai suru.",
+      "translation": "Expandir o empreendimento.",
+      "example": {
+        "displayText": "事業をかくだいする。",
+        "audioText": "事業をかくだいする。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_DEFICIENT",
+      "priority": "P2",
+      "availableSources": [],
+      "sourceLocation": "Pendente de mapeamento em Quartet II / Shin Kanzen Master",
+      "witness": null,
+      "observedToken": "事業",
+      "expectedToken": "事業",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Mapear página exata do Quartet II ou Tobira onde 事業 を拡大する aparece.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "EVIDÊNCIA DEFICIENTE: Vocábulo N2 事業 (じぎょう) é canônico e o texto \"事業をかくだいする。\" é gramaticalmente correto, mas inexiste testemunha bibliográfica com hash criptográfico e página extraída no repositório.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 16,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-2-examples-0",
+      "targetWord": "招集 (shoushuu)",
+      "reading": "",
+      "romaji": "Kaigi o shoushuu suru.",
+      "translation": "Convocar uma reunião.",
+      "example": {
+        "displayText": "かいぎを招集する。",
+        "audioText": "かいぎを招集する。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_DEFICIENT",
+      "priority": "P2",
+      "availableSources": [],
+      "sourceLocation": "Pendente de mapeamento em Quartet II / Tobira",
+      "witness": null,
+      "observedToken": "招集",
+      "expectedToken": "招集",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Localizar ocorrência de 招集 na unidade de reuniões/diretoria de livro-texto credenciado.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "EVIDÊNCIA DEFICIENTE: Termo N2 招集 (しょうしゅう) é semanticamente adequado em \"かいぎを招集する。\", porém ainda carece de witness bibliográfico primário registrado.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 17,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-3-examples-0",
+      "targetWord": "創業 (sougyou)",
+      "reading": "",
+      "romaji": "Sougyou 100-nen.",
+      "translation": "100 anos de fundação.",
+      "example": {
+        "displayText": "創業 100ねん。",
+        "audioText": "創業 100ねん。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_DEFICIENT",
+      "priority": "P2",
+      "availableSources": [],
+      "sourceLocation": "Pendente de mapeamento em material didático",
+      "witness": null,
+      "observedToken": "創業",
+      "expectedToken": "創業",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Vincular a capítulo histórico/empresarial do Quartet II.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "EVIDÊNCIA DEFICIENTE: Exemplo \"創業 100ねん。\" possui kanji e leitura canônicos, mas falta citação primária de suporte.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 18,
+      "targetId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0",
+      "targetWord": "役員 (yakuin)",
+      "reading": "",
+      "romaji": "Yakuin-kai.",
+      "translation": "Reunião da diretoria.",
+      "example": {
+        "displayText": "役員会で会社の将来の方針を話し合います。",
+        "audioText": "役員会で会社の将来の方針を話し合います。"
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "EVIDENCE_DEFICIENT",
+      "priority": "P2",
+      "availableSources": [],
+      "sourceLocation": "Pendente de mapeamento em Quartet II",
+      "witness": null,
+      "observedToken": "役員",
+      "expectedToken": "役員",
+      "linguisticRelation": "EQUALS",
+      "openQuestions": "Comprovar ocorrência de 役員会 em material N2 autêntico.",
+      "editorialDecision": "UNRESOLVED",
+      "decisionRationale": "EVIDÊNCIA DEFICIENTE: O exemplo \"役員会で会社の将来の方針を話し合います。\" é linguística e pedagogicamente excelente, mas requer vinculação a página específica de livro-texto.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 19,
+      "targetId": "ja-phase19-n2-n2-m1-module-metadata",
+      "targetWord": "Módulo 1: Mundo Corporativo, Gestão e Estrutura de Empresas",
+      "reading": "",
+      "romaji": "",
+      "translation": "Módulo 1: Mundo Corporativo, Gestão e Estrutura de Empresas",
+      "example": {
+        "displayText": "Estude 19 ideogramas de diretoria, departamentos, estratégias corporativas, gestão e reuniões de negócios.",
+        "audioText": ""
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "SOURCE_REQUIRED",
+      "priority": "P3",
+      "availableSources": [],
+      "sourceLocation": "Syllabus / Currículo Quartet II",
+      "witness": null,
+      "observedToken": "Mundo Corporativo, Gestão e Estrutura de Empresas",
+      "expectedToken": "Ementa N2 Módulo 1",
+      "linguisticRelation": "MATCHES",
+      "openQuestions": "Formalizar matriz de equivalência curricular entre Módulo 1 e Unidades 7-8 do Quartet II.",
+      "editorialDecision": "NEEDS_SOURCE",
+      "decisionRationale": "FONTE CURRICULAR REQUERIDA: Metadados do Módulo 1 cobrem vocabulário de governança e gestão. Necessita confirmação formal da matriz curricular contra índice geral de competências do Quadro JLPT N2.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    },
+    {
+      "index": 20,
+      "targetId": "ja-phase19-n2-n2-m2-module-metadata",
+      "targetWord": "Módulo 2: Finanças, Mercado, Contratos e Comércio Internacional",
+      "reading": "",
+      "romaji": "",
+      "translation": "Módulo 2: Finanças, Mercado, Contratos e Comércio Internacional",
+      "example": {
+        "displayText": "Estude 19 ideogramas de ações, patrimônio, investimentos, lucros, tributos, acordos e comércio exterior.",
+        "audioText": ""
+      },
+      "currentEngineState": "UNSUPPORTED",
+      "editorialCategory": "SOURCE_REQUIRED",
+      "priority": "P3",
+      "availableSources": [],
+      "sourceLocation": "Syllabus / Currículo Quartet II / Tobira",
+      "witness": null,
+      "observedToken": "Economia, Finanças e Negociações Comerciais",
+      "expectedToken": "Ementa N2 Módulo 2",
+      "linguisticRelation": "MATCHES",
+      "openQuestions": "Mapear ementa temática com o capítulo de economia e comércio exterior do Tobira (Cap. 11-12).",
+      "editorialDecision": "NEEDS_SOURCE",
+      "decisionRationale": "FONTE CURRICULAR REQUERIDA: Metadados do Módulo 2 cobrem conceitos fiscais, bancários e de balanço. Depende de validação documental de syllabus didático.",
+      "reviewStatus": "reviewed-pilot",
+      "evidence": [],
+      "correctionClaims": [],
+      "evidenceScope": "DEFICIENT"
+    }
+  ]
+}

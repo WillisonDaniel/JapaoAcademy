@@ -1,0 +1,67 @@
+{
+  "index": 474,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0",
+  "module": 4,
+  "kanjiIndex": 15,
+  "exampleIndex": 0,
+  "character": "督",
+  "targetWord": "監督 (kantoku)",
+  "reading": "トク (TOKU)",
+  "romaji": "Movie no kantoku.",
+  "translation": "Diretor do filme.",
+  "example": {
+    "displayText": "映画の監督。",
+    "audioText": "映画の監督。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "督",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "監督 (kantoku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "映画の監督。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Movie no kantoku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-15-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Diretor do filme.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"監督\" ou o exemplo \"映画の監督。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.904Z"
+}

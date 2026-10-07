@@ -1,0 +1,67 @@
+{
+  "index": 365,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1",
+  "module": 19,
+  "kanjiIndex": 7,
+  "exampleIndex": 1,
+  "character": "費",
+  "targetWord": "旅費 (ryohi)",
+  "reading": "ヒ (HI)",
+  "romaji": "Ryohi no budget.",
+  "translation": "Orçamento de despesas de viagem.",
+  "example": {
+    "displayText": "出張に必要な旅費の概算を申請します。",
+    "audioText": "出張に必要な旅費の概算を申請します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "費",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "旅費 (ryohi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "出張に必要な旅費の概算を申請します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ryohi no budget.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Orçamento de despesas de viagem.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"旅費\" ou o exemplo \"出張に必要な旅費の概算を申請します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.815Z"
+}

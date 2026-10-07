@@ -1,0 +1,67 @@
+{
+  "index": 318,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1",
+  "module": 18,
+  "kanjiIndex": 14,
+  "exampleIndex": 1,
+  "character": "織",
+  "targetWord": "織物 (orimono)",
+  "reading": "シキ (SHIKI) / ショク (SHOKU)",
+  "romaji": "Traditional orimono.",
+  "translation": "Tecido artesanal tradicional.",
+  "example": {
+    "displayText": "職人が手作業で伝統的な織物を織り上げます。",
+    "audioText": "職人が手作業で伝統的な織物を織り上げます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "織",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "織物 (orimono)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "職人が手作業で伝統的な織物を織り上げます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Traditional orimono.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-14-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Tecido artesanal tradicional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"織物\" ou o exemplo \"職人が手作業で伝統的な織物を織り上げます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.778Z"
+}

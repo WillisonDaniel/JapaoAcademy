@@ -1,0 +1,67 @@
+{
+  "index": 158,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0",
+  "module": 13,
+  "kanjiIndex": 0,
+  "exampleIndex": 0,
+  "character": "邦",
+  "targetWord": "邦人 (houjin)",
+  "reading": "ホウ (HOU)",
+  "romaji": "Zai-gai houjin.",
+  "translation": "Compatriotas residentes no exterior.",
+  "example": {
+    "displayText": "ざいがい邦人。",
+    "audioText": "ざいがい邦人。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "邦",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "邦人 (houjin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ざいがい邦人。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Zai-gai houjin.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Compatriotas residentes no exterior.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"邦人\" ou o exemplo \"ざいがい邦人。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.650Z"
+}

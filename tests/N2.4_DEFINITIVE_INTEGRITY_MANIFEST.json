@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "manifestName": "N2.4_DEFINITIVE_INTEGRITY_MANIFEST",
+  "generatedAt": "2026-09-27T03:09:29.501Z",
+  "phase": "N2.4-DEFINITIVE-RESOLUTION",
+  "description": "Manifesto externo de integridade física e rastreabilidade criptográfica SHA-256 da Etapa N2.4 (Resolução Definitiva dos 652 alvos do Kanji N2)",
+  "datasetStatus": {
+    "n1": {
+      "before": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "after": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "status": "BYTE-IDENTICAL"
+    },
+    "n2": {
+      "before": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "after": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "status": "BYTE-IDENTICAL (NO CHANGE REQUIRED)"
+    },
+    "n3": {
+      "before": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "after": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "status": "BYTE-IDENTICAL"
+    }
+  },
+  "resolutionSummary": {
+    "initialUnresolved652": 652,
+    "finalUnresolved652": 0,
+    "finalApproved": 0,
+    "finalDataQualityIssue": 10,
+    "finalNeedsSource": 640,
+    "finalAmbiguous": 2,
+    "totalN2Targets": 771,
+    "consolidatedDecisionsTally": {
+      "approved": 0,
+      "dataQualityIssue": 108,
+      "needsSource": 661,
+      "ambiguous": 2,
+      "unresolved": 0,
+      "rejected": 0
+    },
+    "datasetChangesCount": 0
+  },
+  "artifactsCount": 20,
+  "artifacts": [
+    {
+      "file": "database/ja-JP/data_kanji_n1.js",
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "size": 2908746,
+      "scope": "protected-dataset-n1"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n2.js",
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "size": 1067287,
+      "scope": "canonical-dataset-n2"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n3.js",
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "size": 753295,
+      "scope": "protected-dataset-n3"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_LEDGER.json",
+      "sha256": "64C8DF4682405FF698DEAC5154FA1F12E7F02B1DB12D1D6A0801644E5F219D37",
+      "size": 22477718,
+      "scope": "editorial-ledger"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_REVIEW_QUEUE.json",
+      "sha256": "CD72333370710768A58D85F559F50C942A63E5754CAEAFB71B68926E395F9FFE",
+      "size": 859297,
+      "scope": "prioritized-review-queue"
+    },
+    {
+      "file": "tests/N2.4_INITIAL_BASELINE.json",
+      "sha256": "2C9617441F908B1D00ED7748316ECF676E99F005B3394991F41C8A97321AB53D",
+      "size": 41985,
+      "scope": "n24-initial-baseline"
+    },
+    {
+      "file": "tests/N2.4_INITIAL_UNRESOLVED_652.json",
+      "sha256": "6CC368A5B8D620549D16526D6D82384DA8BEB54CFDD9B610519F52C989A56B61",
+      "size": 297116,
+      "scope": "n24-initial-unresolved-652"
+    },
+    {
+      "file": "tests/N2.4_EDITORIAL_RESOLUTION_EVIDENCE.json",
+      "sha256": "D706033244952ACE2718FA8557D5EA311446A2E90EB2586095EBDA139FF5D479",
+      "size": 1717059,
+      "scope": "n24-editorial-resolution-evidence"
+    },
+    {
+      "file": "tests/japanese-n2.4-resolution-gate.cjs",
+      "sha256": "AC1947A869C13217FCED29D173DD509233D260701F23F18710A142FF33AD0181",
+      "size": 6239,
+      "scope": "n24-resolution-gate-script"
+    },
+    {
+      "file": "tests/N2.4_DEFINITIVE_RESOLUTION_REPORT.md",
+      "sha256": "CFD7F462899ABFDBFAE31C983833ECF27B5216CF37FC4CD7069F9CF41F0A2E88",
+      "size": 15544,
+      "scope": "n24-definitive-resolution-report"
+    },
+    {
+      "file": "tests/N2.3_EDITORIAL_REMEDIATION_REPORT.md",
+      "sha256": "1DC20765C28069ADF67501AAAEAAF72B590F9E238F00DBEBBD82B25B164A0C67",
+      "size": 18435,
+      "scope": "n23-remediation-report"
+    },
+    {
+      "file": "tests/N2.3_INTEGRITY_MANIFEST.json",
+      "sha256": "EF8CA357B65454932867323BB7F98323B334FC743CCE2B01798087E0CC184231",
+      "size": 4212,
+      "scope": "n23-integrity-manifest"
+    },
+    {
+      "file": "tests/N2.2_EDITORIAL_REVIEW_REPORT.md",
+      "sha256": "7DA8CCD2FE63A6C9980A245042370694991194BCD754169F5962E1E0435444F3",
+      "size": 9371,
+      "scope": "n22-editorial-report"
+    },
+    {
+      "file": "tests/N2.2_INTEGRITY_MANIFEST.json",
+      "sha256": "03D2EF2622918D8539E3EEA31AEB33ED0352222E81EBCB4DCFCE691DACAA728A",
+      "size": 2918,
+      "scope": "n22-integrity-manifest"
+    },
+    {
+      "file": "tests/N2.1_PILOT_BATCH_REPORT.md",
+      "sha256": "32F0EE3FAE681DBFA3A666FD422C58A69C81D209EEE7C4F7457CB43B91E8DAC1",
+      "size": 36757,
+      "scope": "pilot-batch-report"
+    },
+    {
+      "file": "tests/N2.1.1_PILOT_CONSOLIDATION_REPORT.md",
+      "sha256": "7E7E5088EBC46F525A61B2A6EF1A5DECC9D4649ED2C32AA8B1328693D31B8732",
+      "size": 11716,
+      "scope": "pilot-consolidation-report"
+    },
+    {
+      "file": "tests/N2.1.1_INTEGRITY_MANIFEST.json",
+      "sha256": "B63024F28F2831FBDB6FE36A9A70B6540C50588A080CA65824D25334AC4D4C6B",
+      "size": 2194,
+      "scope": "n211-integrity-manifest"
+    },
+    {
+      "file": "tests/japanese-n2-witness-gate.cjs",
+      "sha256": "D6DE6E457D5B8486AD09C54AF38F8893DDA8930DD7B94C23270587568D6454E6",
+      "size": 4187,
+      "scope": "n2-witness-gate-script"
+    },
+    {
+      "file": "tests/japanese-n2-decision-sufficiency.cjs",
+      "sha256": "16A87996397EBA6154D1D885B0D09575DEB1F1A58EBADE40DA33BD035000043B",
+      "size": 4695,
+      "scope": "n2-decision-sufficiency-script"
+    },
+    {
+      "file": "tests/japanese-n2-adversarial-mutation.cjs",
+      "sha256": "CBEAA28F2C9139D110ECAB76B6B683C74070334DA4EC24D00BB18A16F8EA1C39",
+      "size": 33752,
+      "scope": "n2-adversarial-mutation-script"
+    }
+  ]
+}

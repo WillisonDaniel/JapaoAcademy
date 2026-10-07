@@ -1,0 +1,67 @@
+{
+  "index": 185,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1",
+  "module": 13,
+  "kanjiIndex": 6,
+  "exampleIndex": 1,
+  "character": "駐",
+  "targetWord": "駐在 (chuuzai)",
+  "reading": "チュウ (CHUU)",
+  "romaji": "Chuuzai-in.",
+  "translation": "Expatriado residente a trabalho.",
+  "example": {
+    "displayText": "駐在いん。",
+    "audioText": "駐在いん。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "駐",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "駐在 (chuuzai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "駐在いん。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Chuuzai-in.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-6-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Expatriado residente a trabalho.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"駐在\" ou o exemplo \"駐在いん。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.674Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 96,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1",
+  "module": 11,
+  "kanjiIndex": 13,
+  "exampleIndex": 1,
+  "character": "慕",
+  "targetWord": "敬慕 (keibo)",
+  "reading": "ボ (BO)",
+  "romaji": "Keibo no spirit.",
+  "translation": "Espírito de admiração profunda.",
+  "example": {
+    "displayText": "敬慕の精神。",
+    "audioText": "敬慕の精神。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "慕",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "敬慕 (keibo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "敬慕の精神。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Keibo no spirit.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-13-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Espírito de admiração profunda.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"敬慕\" ou o exemplo \"敬慕の精神。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.599Z"
+}

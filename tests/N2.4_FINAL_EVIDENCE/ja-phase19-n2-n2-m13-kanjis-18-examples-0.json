@@ -1,0 +1,67 @@
+{
+  "index": 176,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0",
+  "module": 13,
+  "kanjiIndex": 18,
+  "exampleIndex": 0,
+  "character": "難",
+  "targetWord": "国難 (kokunan)",
+  "reading": "ナン (NAN)",
+  "romaji": "Kokunan o overcome.",
+  "translation": "Superar a crise nacional.",
+  "example": {
+    "displayText": "国民が一丸となって国難を乗り越えます。",
+    "audioText": "国民が一丸となって国難を乗り越えます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "難",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "国難 (kokunan)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "国民が一丸となって国難を乗り越えます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kokunan o overcome.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-18-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Superar a crise nacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"国難\" ou o exemplo \"国民が一丸となって国難を乗り越えます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.666Z"
+}

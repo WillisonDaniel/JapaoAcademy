@@ -1,0 +1,67 @@
+{
+  "index": 339,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0",
+  "module": 19,
+  "kanjiIndex": 0,
+  "exampleIndex": 0,
+  "character": "販",
+  "targetWord": "販売 (hanbai)",
+  "reading": "ハン (HAN)",
+  "romaji": "Online hanbai.",
+  "translation": "Venda online.",
+  "example": {
+    "displayText": "公式ウェブサイトで商品のオンライン販売を始めます。",
+    "audioText": "公式ウェブサイトで商品のオンライン販売を始めます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "販",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "販売 (hanbai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "公式ウェブサイトで商品のオンライン販売を始めます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Online hanbai.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Venda online.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.794Z"
+}

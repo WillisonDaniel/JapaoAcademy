@@ -1,0 +1,96 @@
+{
+  "index": 37,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0",
+  "module": 7,
+  "kanjiIndex": 0,
+  "exampleIndex": 0,
+  "character": "研",
+  "targetWord": "研究 (kenkyuu)",
+  "reading": "ケン (KEN)",
+  "romaji": "Lab de kenkyuu.",
+  "translation": "Pesquisa no laboratório.",
+  "example": {
+    "displayText": "ルあブで研究。",
+    "audioText": "ルあブで研究。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "研",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "研究 (kenkyuu)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ルあブで研究。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Lab de kenkyuu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-0-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pesquisa no laboratório.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 131,
+      "file": "quartet-2-textbook-p0131.json"
+    },
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 224,
+      "file": "quartet-2-textbook-p0224.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0131.json",
+    "quartet-2-textbook-p0224.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0131.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "研究",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "quartet-2-textbook-p0224.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "研究",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"研究\" possui atestação lexical primária na testemunha quartet-2-textbook-p0131.json (p. 131), porém a frase de exemplo canônica (\"ルあブで研究。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.552Z"
+}

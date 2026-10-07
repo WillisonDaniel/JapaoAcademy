@@ -1,0 +1,67 @@
+{
+  "index": 262,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1",
+  "module": 16,
+  "kanjiIndex": 14,
+  "exampleIndex": 1,
+  "character": "欲",
+  "targetWord": "食欲 (shokuyoku)",
+  "reading": "ヨク (YOKU)",
+  "romaji": "Shokuyoku ga arimasu.",
+  "translation": "Estar com apetite.",
+  "example": {
+    "displayText": "食欲があります。",
+    "audioText": "食欲があります。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "欲",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "食欲 (shokuyoku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "食欲があります。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shokuyoku ga arimasu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-14-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Estar com apetite.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"食欲\" ou o exemplo \"食欲があります。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.734Z"
+}

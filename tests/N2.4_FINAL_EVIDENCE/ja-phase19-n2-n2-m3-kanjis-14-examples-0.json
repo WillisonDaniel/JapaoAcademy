@@ -1,0 +1,67 @@
+{
+  "index": 439,
+  "targetId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0",
+  "module": 3,
+  "kanjiIndex": 14,
+  "exampleIndex": 0,
+  "character": "募",
+  "targetWord": "募集 (boshuu)",
+  "reading": "ボ (BO)",
+  "romaji": "Shain no boshuu.",
+  "translation": "Recrutamento de funcionários.",
+  "example": {
+    "displayText": "しゃいんの募集。",
+    "audioText": "しゃいんの募集。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "募",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "募集 (boshuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "しゃいんの募集。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shain no boshuu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-14-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Recrutamento de funcionários.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"募集\" ou o exemplo \"しゃいんの募集。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.878Z"
+}

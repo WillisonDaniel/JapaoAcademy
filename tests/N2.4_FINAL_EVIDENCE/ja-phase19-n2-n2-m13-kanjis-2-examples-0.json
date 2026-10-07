@@ -1,0 +1,67 @@
+{
+  "index": 177,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0",
+  "module": 13,
+  "kanjiIndex": 2,
+  "exampleIndex": 0,
+  "character": "領",
+  "targetWord": "領土 (ryoudo)",
+  "reading": "リョウ (RYOU)",
+  "romaji": "Ryoudoku no protection.",
+  "translation": "Proteção do território nacional.",
+  "example": {
+    "displayText": "国の領土の保全と安全を確保します。",
+    "audioText": "国の領土の保全と安全を確保します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "領",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "領土 (ryoudo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "国の領土の保全と安全を確保します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ryoudoku no protection.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-2-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Proteção do território nacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"領土\" ou o exemplo \"国の領土の保全と安全を確保します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.668Z"
+}

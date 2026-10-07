@@ -1,0 +1,67 @@
+{
+  "index": 644,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1",
+  "module": 9,
+  "kanjiIndex": 6,
+  "exampleIndex": 1,
+  "character": "崩",
+  "targetWord": "土砂崩れ (doshakuzure)",
+  "reading": "ホウ (HOU)",
+  "romaji": "Doshakuzure ga okiru.",
+  "translation": "Ocorrer deslizamento de terra.",
+  "example": {
+    "displayText": "土砂崩れがおきる。",
+    "audioText": "土砂崩れがおきる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "崩",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "土砂崩れ (doshakuzure)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "土砂崩れがおきる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Doshakuzure ga okiru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ocorrer deslizamento de terra.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"土砂崩れ\" ou o exemplo \"土砂崩れがおきる。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.034Z"
+}

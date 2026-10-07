@@ -1,0 +1,67 @@
+{
+  "index": 351,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0",
+  "module": 19,
+  "kanjiIndex": 16,
+  "exampleIndex": 0,
+  "character": "簿",
+  "targetWord": "簿記 (boki)",
+  "reading": "ボ (BO)",
+  "romaji": "Boki 2-kyuu.",
+  "translation": "Nível 2 de contabilidade.",
+  "example": {
+    "displayText": "商工会議所で簿記二級の試験を受験します。",
+    "audioText": "商工会議所で簿記二級の試験を受験します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "簿",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "簿記 (boki)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "商工会議所で簿記二級の試験を受験します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Boki 2-kyuu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-16-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Nível 2 de contabilidade.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"簿記\" ou o exemplo \"商工会議所で簿記二級の試験を受験します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.804Z"
+}

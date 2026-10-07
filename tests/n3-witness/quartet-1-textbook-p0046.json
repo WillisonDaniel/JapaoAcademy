@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-1-textbook",
+  "page": 46,
+  "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-1-textbook/page-0046.json",
+  "corpusArtifactSha256": "e82861c748dbdb9f62961e883081792b250eff5d7c3c64cbdf72f75bba98d792",
+  "extractionMode": "ocr",
+  "pageTextSha256": "c93ee4b0128e98b8c0c4e77b1a1ac86bc8beec70ce57f3097f0c87cda9bc43c3",
+  "text": "1 -3  | モデル会話                                                                    7 3.Kaiwa_L1-1\n\nBP カジュアルな会\n新しいルームメート\n\nショーシンシ・デイラー (クツ ) J 宗で日本人学生の本田研 (研:) に初めて会う。\n\nほん だ けん\n\nMe OFF OR Ns ae,\n\nジ: PU USELT.\n\nHe お Deal CHU Vv AA ko?\n\n3: はい。ジョーン・テイラーつって言います。ジョージって呼んでください。\nアメリカのシアトル出身です。当これから 1 年間、お世話になります。\nよろしくお願いします。\n\nOR choose, よろ く。 See ct.\n\nジ: 9 何て呼んだらいいですか。\n\n研: 研でいいよ。\n\nジ: 9@研は何年生ですか。\n\nRm: 3年生。ちなみに、国際学部です。\n\nYe Aos 僕も国際学部の3年生 |\n\n研: 偶然だね。何かわからないことがあったら、いつでも僕に聞いて。\n\n2 ame Je esあの、これ、たいしたものじゃないんだけど、シアトルで\n有名なコーヒー豆です。\n\nMW: Pb: ありがとの2。 Re DHE, KS Tl\n\nジ: ” 喜んでもらえてよかった。\n\n研: じゃあお、早速コーヒーいれるから、飲みながらゆっくり話そうよ。\n\niG ers\n\n   もしかして  by any chance   お世話になります Thank you in advance for taking care of me.\nちなみに for your information; incidentally 際学部  department of international studies\n{AZA coincidence たいしたものじゃないんだけど it’s nothing special but\n\nコーヒー豆 coffee beans   FAR right now; right away\n\n020\n\n",
+  "normalizedText": "1 -3 | モデル会話 7 3.Kaiwa_L1-1 BP カジュアルな会 新しいルームメート ショーシンシ・デイラー (クツ ) J 宗で日本人学生の本田研 (研:) に初めて会う。 ほん だ けん Me OFF OR Ns ae, ジ: PU USELT. He お Deal CHU Vv AA ko? 3: はい。ジョーン・テイラーつって言います。ジョージって呼んでください。 アメリカのシアトル出身です。当これから 1 年間、お世話になります。 よろしくお願いします。 OR choose, よろ く。 See ct. ジ: 9 何て呼んだらいいですか。 研: 研でいいよ。 ジ: 9@研は何年生ですか。 Rm: 3年生。ちなみに、国際学部です。 Ye Aos 僕も国際学部の3年生 | 研: 偶然だね。何かわからないことがあったら、いつでも僕に聞いて。 2 ame Je esあの、これ、たいしたものじゃないんだけど、シアトルで 有名なコーヒー豆です。 MW: Pb: ありがとの2。 Re DHE, KS Tl ジ: ” 喜んでもらえてよかった。 研: じゃあお、早速コーヒーいれるから、飲みながらゆっくり話そうよ。 iG ers もしかして by any chance お世話になります Thank you in advance for taking care of me. ちなみに for your information; incidentally 際学部 department of international studies {AZA coincidence たいしたものじゃないんだけど it’s nothing special but コーヒー豆 coffee beans FAR right now; right away 020",
+  "associatedTargets": [
+    "ja-phase19-n3-n3-m1-kanjis-7-examples-0"
+  ]
+}

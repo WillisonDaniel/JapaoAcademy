@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "manifestName": "N2.6_SHINKANZEN_INTEGRITY_MANIFEST",
+  "generatedAt": "2026-09-27T11:59:17Z",
+  "phase": "N2.6-SHINKANZEN-EXTRACTION-AND-INTEGRATION",
+  "auditResult": "N2.6-EXTRACTION-INTEGRATION: PASS",
+  "editorialInvariance": {
+    "approvedTargetsCreated": 0,
+    "datasetAlterations": 0,
+    "ledgerAlterations": 0,
+    "reviewQueueAlterations": 0,
+    "n1Status": "BYTE-IDENTICAL",
+    "n2Status": "BYTE-IDENTICAL",
+    "n3Status": "BYTE-IDENTICAL"
+  },
+  "newCorpusSources": [
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "title": "新完全マスター文法 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Bunpō",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Bunpo.pdf",
+      "fileName": "Shinkanzen Master N2 Bunpo.pdf",
+      "bytes": 69215273,
+      "sha256": "9F71994C965A0FA9F7E44B9400FA5E6B9C2A97C09C8F28E2D9A1948ECB86967C",
+      "pageCount": 229,
+      "pagesExtracted": 229,
+      "searchablePages": 223,
+      "emptyPages": 6,
+      "meanConfidence": 83.65,
+      "totalCharacters": 198870,
+      "totalJapaneseCharacters": 104628,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "友松悦子",
+        "福島佐知",
+        "中村かおり"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-565-7",
+      "roles": [
+        "grammar",
+        "n2-preparation",
+        "exercises",
+        "mock-test"
+      ],
+      "bookletStartPage": 217,
+      "elapsedSeconds": 3.02
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "title": "新完全マスター聴解 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Chōkai",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Chokai.pdf",
+      "fileName": "Shinkanzen Master N2 Chokai.pdf",
+      "bytes": 11862604,
+      "sha256": "EEEB4D3DD1BA6DD6C273E0068D003F49A3AB20ABE5FD50DDE124DD8C3761777B",
+      "pageCount": 161,
+      "pagesExtracted": 161,
+      "searchablePages": 161,
+      "emptyPages": 0,
+      "meanConfidence": 74.11,
+      "totalCharacters": 96539,
+      "totalJapaneseCharacters": 44631,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "中村かおり",
+        "福島佐知",
+        "友松悦子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-567-1",
+      "roles": [
+        "listening",
+        "n2-preparation",
+        "scripts",
+        "answers",
+        "exercises"
+      ],
+      "bookletStartPage": 115,
+      "elapsedSeconds": 75.02,
+      "chokaiDetails": {
+        "sectionsSummary": {
+          "front_matter": 7,
+          "mondai_shoukai": 8,
+          "jitsuryoku_yousei": 87,
+          "mogi_shiken": 10,
+          "bessatsu_front": 4,
+          "bessatsu_answers_scripts": 45
+        },
+        "referencedTracksCount": 2,
+        "referencedTracks": [
+          "CD1-Track2",
+          "CD1-Track62"
+        ],
+        "physicalAudioPresentOnDisk": 0,
+        "audioDeferred": 0,
+        "audioNote": "Faixas de áudio são referenciadas no texto impresso (CD1/CD2), sem arquivos .mp3 no repositório. Nenhuma transcrição automática foi executada."
+      }
+    },
+    {
+      "sourceId": "shinkanzen-n2-dokkai",
+      "title": "新完全マスター読解 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Dokkai",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Dokkai.pdf",
+      "fileName": "Shinkanzen Master N2 Dokkai.pdf",
+      "bytes": 114250044,
+      "sha256": "55C7082F529752126DDCB98FC0841E98A223A329F0CD5BF150ED028F8213AEDB",
+      "pageCount": 239,
+      "pagesExtracted": 239,
+      "searchablePages": 239,
+      "emptyPages": 0,
+      "meanConfidence": 84.4,
+      "totalCharacters": 178462,
+      "totalJapaneseCharacters": 110157,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "友松悦子",
+        "清野有希",
+        "辻和子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-572-5",
+      "roles": [
+        "reading",
+        "n2-preparation",
+        "passages",
+        "answers",
+        "explanations"
+      ],
+      "bookletStartPage": 201,
+      "elapsedSeconds": 93.86
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "title": "新完全マスター語彙 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Goi",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Goi.pdf",
+      "fileName": "Shinkanzen Master N2 Goi.pdf",
+      "bytes": 40691294,
+      "sha256": "5B1FF7F9EB08BA4E324645534DFEE42A61CA78779B2797C25170958D9A9801E4",
+      "pageCount": 246,
+      "pagesExtracted": 246,
+      "searchablePages": 246,
+      "emptyPages": 0,
+      "meanConfidence": 81.57,
+      "totalCharacters": 251293,
+      "totalJapaneseCharacters": 106813,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "伊藤秀明",
+        "前坊香菜子"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-571-8",
+      "roles": [
+        "vocabulary",
+        "n2-preparation",
+        "collocations",
+        "exercises",
+        "mock-test"
+      ],
+      "bookletStartPage": 217,
+      "elapsedSeconds": 119.07
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "title": "新完全マスター漢字 日本語能力試験N2",
+      "titleRomaji": "Shin Kanzen Master N2 Kanji",
+      "physicalPath": "D:\\Documentos\\Japones\\WIP\\livros\\N2\\Shinkanzen Master N2 Kanji.pdf",
+      "fileName": "Shinkanzen Master N2 Kanji.pdf",
+      "bytes": 9921971,
+      "sha256": "6EFC4DB8F0A551BF4E71900E312A678AA55505F1C2687191ABDA0ADB481AD143",
+      "pageCount": 132,
+      "pagesExtracted": 132,
+      "searchablePages": 130,
+      "emptyPages": 2,
+      "meanConfidence": 83.75,
+      "totalCharacters": 98236,
+      "totalJapaneseCharacters": 39549,
+      "extractionMode": "ocr-tesseract-integral",
+      "authors": [
+        "石井怜子",
+        "青木幸子",
+        "鈴木秀子",
+        "ほか"
+      ],
+      "publisher": "株式会社スリーエーネットワーク",
+      "isbn": "978-4-88319-547-3",
+      "roles": [
+        "kanji",
+        "n2-preparation",
+        "readings",
+        "stroke-order",
+        "exercises"
+      ],
+      "bookletStartPage": 113,
+      "elapsedSeconds": 47.99
+    }
+  ],
+  "baselineArtifactsVerified": [
+    {
+      "file": "database/ja-JP/data_kanji_n1.js",
+      "size": 2908746,
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n2.js",
+      "size": 1067287,
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n3.js",
+      "size": 753295,
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_LEDGER.json",
+      "size": 22477718,
+      "sha256": "64C8DF4682405FF698DEAC5154FA1F12E7F02B1DB12D1D6A0801644E5F219D37",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_REVIEW_QUEUE.json",
+      "size": 859297,
+      "sha256": "CD72333370710768A58D85F559F50C942A63E5754CAEAFB71B68926E395F9FFE",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.4_INITIAL_UNRESOLVED_652.json",
+      "size": 297116,
+      "sha256": "6CC368A5B8D620549D16526D6D82384DA8BEB54CFDD9B610519F52C989A56B61",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.4_INITIAL_BASELINE.json",
+      "size": 41985,
+      "sha256": "2C9617441F908B1D00ED7748316ECF676E99F005B3394991F41C8A97321AB53D",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.4_EDITORIAL_RESOLUTION_EVIDENCE.json",
+      "size": 1717059,
+      "sha256": "D706033244952ACE2718FA8557D5EA311446A2E90EB2586095EBDA139FF5D479",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.4_DEFINITIVE_RESOLUTION_REPORT.md",
+      "size": 15544,
+      "sha256": "CFD7F462899ABFDBFAE31C983833ECF27B5216CF37FC4CD7069F9CF41F0A2E88",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.4_DEFINITIVE_INTEGRITY_MANIFEST.json",
+      "size": 5820,
+      "sha256": "F5C42019B7E9A0EB804D2527DE6BF799A35ACD600AB0E115BE4230C0D5A34F06",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.5_CORPUS_RESTORATION_AUDIT_REPORT.md",
+      "size": 17657,
+      "sha256": "101C6D50A9ECD20DAE24DDF81AB3F31E2FDD491D0DE223515AB47A688D14EE55",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.5_CORPUS_RESTORATION_INTEGRITY_MANIFEST.json",
+      "size": 4690,
+      "sha256": "A655686C02EE39A0DF1B3227C7A9E8856DEA42C4BFD8974DFB9E42673C930C14",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.5_CORPUS_INVENTORY.json",
+      "size": 21071,
+      "sha256": "3DF4D4B5AB9153524987D073624ABE9A7C191E726346D42F2F944359B7335DA1",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.5_NEEDS_SOURCE_BASELINE.json",
+      "size": 508352,
+      "sha256": "2034E38C56C78776EDA1726F7979F6295713FC5844AA221B8B0CC0F56351837E",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    },
+    {
+      "file": "tests/N2.5_EVIDENCE_RECOVERY_MATRIX.json",
+      "size": 434539,
+      "sha256": "C6CD9E0095700A1747773602333448FF9AA4A57E3FD695D7A63CE8A462EB2BEC",
+      "status": "BYTE-IDENTICAL-BASELINE"
+    }
+  ]
+}

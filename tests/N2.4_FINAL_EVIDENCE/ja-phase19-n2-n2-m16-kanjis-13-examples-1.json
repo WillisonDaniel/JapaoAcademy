@@ -1,0 +1,67 @@
+{
+  "index": 260,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1",
+  "module": 16,
+  "kanjiIndex": 13,
+  "exampleIndex": 1,
+  "character": "愛",
+  "targetWord": "愛着 (aichaku)",
+  "reading": "アイ (AI)",
+  "romaji": "Item ni aichaku.",
+  "translation": "Apego emocional ao objeto.",
+  "example": {
+    "displayText": "いてムに愛着。",
+    "audioText": "いてムに愛着。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "愛",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "愛着 (aichaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "いてムに愛着。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Item ni aichaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-13-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Apego emocional ao objeto.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"愛着\" ou o exemplo \"いてムに愛着。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.733Z"
+}

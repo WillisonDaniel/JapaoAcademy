@@ -1,0 +1,83 @@
+{
+  "index": 22,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0",
+  "module": 18,
+  "kanjiIndex": 17,
+  "exampleIndex": 0,
+  "character": "産",
+  "targetWord": "生産 (seisan)",
+  "reading": "サン (SAN)",
+  "romaji": "Food no seisan.",
+  "translation": "Produção de alimentos.",
+  "example": {
+    "displayText": "食べ物の生産。",
+    "audioText": "食べ物の生産。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "産",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "生産 (seisan)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "食べ物の生産。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Food no seisan.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-17-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Produção de alimentos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 285,
+      "file": "tobira-2009-p0285.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0285.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0285.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "生産",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"生産\" possui atestação lexical primária na testemunha tobira-2009-p0285.json (p. 285), porém a frase de exemplo canônica (\"食べ物の生産。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.538Z"
+}

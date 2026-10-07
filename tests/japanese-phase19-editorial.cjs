@@ -163,14 +163,14 @@ const states = decisions.reduce((result, decision) => {
     result[decision.state] = (result[decision.state] || 0) + 1;
     return result;
 }, {});
-assert.equal(states.approved, 14100, 'quantidade de aprovacoes da Fase 19 mudou');
-assert.equal(states.corrected, 799, 'quantidade de correcoes da Fase 19 mudou');
-assert.equal(states.unresolved || 0, 0, 'fila inconclusiva da Fase 19 mudou');
+assert.equal(states.approved, 10877, 'quantidade de aprovacoes da Fase 19 mudou');
+assert.equal(states.corrected, 110, 'quantidade de correcoes da Fase 19 mudou');
+assert.equal(states.unresolved, 3912, 'fila inconclusiva da Fase 19 mudou');
 
 const sourceApproved = decisions.filter(decision => decision.state === 'approved');
 assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kana-reading').length, 406);
 assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-identity').length, 2215);
-assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-on').length, 2215);
+assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-on').length, 1808);
 assert.equal(sourceApproved.filter(decision => decision.target.kind === 'kanji-reading-kun').length, 2215);
 
 const n5 = load('database/ja-JP/data_kanji_n5.js', 'kanjiN5Data');

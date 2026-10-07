@@ -1,0 +1,67 @@
+{
+  "index": 335,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0",
+  "module": 18,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "泥",
+  "targetWord": "泥棒 (dorobou)",
+  "reading": "デイ (DEI)",
+  "romaji": "Dorobou o arrest.",
+  "translation": "Prender o ladrão.",
+  "example": {
+    "displayText": "留守中に侵入した泥棒を警察が逮捕しました。",
+    "audioText": "留守中に侵入した泥棒を警察が逮捕しました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "泥",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "泥棒 (dorobou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "留守中に侵入した泥棒を警察が逮捕しました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Dorobou o arrest.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Prender o ladrão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"泥棒\" ou o exemplo \"留守中に侵入した泥棒を警察が逮捕しました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.791Z"
+}

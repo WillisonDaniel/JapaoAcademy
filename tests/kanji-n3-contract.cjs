@@ -40,6 +40,8 @@ run('inventario N3 permanece em 19 modulos, 360 registros e 720 exemplos', () =>
 });
 
 run('todos os exemplos N3 possuem contrato japones completo e rastreavel', () => {
+    let pendingCount = 0;
+    let correctedCount = 0;
     modules.forEach(module => {
         assert.equal(module.editorialReview.status, 'pending-human-review');
         (module.kanjis || []).forEach(kanji => {
@@ -51,11 +53,16 @@ run('todos os exemplos N3 possuem contrato japones completo e rastreavel', () =>
                 assert.ok(example.content.displayText.includes(kanji.character), `${module.module}/${kanji.character}: alvo ausente`);
                 assert.equal(example.content.romaji, example.sentence);
                 assert.equal(example.content.translation, example.sentenceMeaning);
-                assert.equal(example.editorialReview.status, 'pending-human-review');
+                assert.ok(['pending-human-review', 'corrected'].includes(example.editorialReview.status));
+                if (example.editorialReview.status === 'corrected') correctedCount++;
+                else pendingCount++;
                 assert.equal(example.editorialReview.targetReplaced, true);
             });
         });
     });
+    assert.equal(correctedCount + pendingCount, 720, 'Total de exemplos N3 deve ser 720');
+    assert.equal(correctedCount, 16, 'Quantidade de exemplos N3 corrigidos deve ser 16');
+    assert.equal(pendingCount, 704, 'Quantidade de exemplos N3 pendentes deve ser 704');
 });
 
 run('dataset N3 é canônico e página kanji_n3.html não carrega romaji-draft', () => {
@@ -96,7 +103,7 @@ run('snapshot estrutural N3 preserva tudo fora das correcoes autorizadas', () =>
     review.description = '__AUTHORIZED_REVIEW_TEXT__';
     for (const field of ['title', 'explanation', 'example', 'translation']) review.grammar[field] = '__AUTHORIZED_REVIEW_TEXT__';
     const hash = crypto.createHash('sha256').update(JSON.stringify(structural)).digest('hex');
-    assert.equal(hash, 'f56ffed1ab7f31f9eea081380b5c70bf0421816c5cbff215985a61406e924710');
+    assert.equal(hash, 'c3f7b378adbf6961db8d026e8b376d0ce8946c778cc65c9b51735453467db1e1');
 });
 
 run('leituras objetivas e modulo de revisao nao alegam dominio integral', () => {

@@ -1,0 +1,67 @@
+{
+  "index": 218,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1",
+  "module": 14,
+  "kanjiIndex": 8,
+  "exampleIndex": 1,
+  "character": "荷",
+  "targetWord": "出荷 (shukka)",
+  "reading": "カ (KA)",
+  "romaji": "Product no shukka.",
+  "translation": "Expedição de produtos.",
+  "example": {
+    "displayText": "工場から完成した商品の出荷が始まります。",
+    "audioText": "工場から完成した商品の出荷が始まります。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "荷",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "出荷 (shukka)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "工場から完成した商品の出荷が始まります。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Product no shukka.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-8-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Expedição de produtos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"出荷\" ou o exemplo \"工場から完成した商品の出荷が始まります。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.699Z"
+}

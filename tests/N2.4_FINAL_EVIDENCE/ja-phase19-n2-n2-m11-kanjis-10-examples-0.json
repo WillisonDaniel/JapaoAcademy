@@ -1,0 +1,67 @@
+{
+  "index": 89,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0",
+  "module": 11,
+  "kanjiIndex": 10,
+  "exampleIndex": 0,
+  "character": "恥",
+  "targetWord": "恥ずかしい (hazukashii)",
+  "reading": "チ (CHI)",
+  "romaji": "Hazukashii desu.",
+  "translation": "Estou com vergonha.",
+  "example": {
+    "displayText": "恥ずかしいです。",
+    "audioText": "恥ずかしいです。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "恥",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "恥ずかしい (hazukashii)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "恥ずかしいです。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hazukashii desu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-10-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Estou com vergonha.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"恥ずかしい\" ou o exemplo \"恥ずかしいです。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.593Z"
+}

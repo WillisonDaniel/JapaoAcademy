@@ -1,0 +1,67 @@
+{
+  "index": 168,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1",
+  "module": 13,
+  "kanjiIndex": 13,
+  "exampleIndex": 1,
+  "character": "協",
+  "targetWord": "協議 (kyougi)",
+  "reading": "キョウ (KYOU)",
+  "romaji": "Kyougi o okonao.",
+  "translation": "Realizar negociações.",
+  "example": {
+    "displayText": "協議をおこなお。",
+    "audioText": "協議をおこなお。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "協",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "協議 (kyougi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "協議をおこなお。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyougi o okonao.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-13-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Realizar negociações.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"協議\" ou o exemplo \"協議をおこなお。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.659Z"
+}

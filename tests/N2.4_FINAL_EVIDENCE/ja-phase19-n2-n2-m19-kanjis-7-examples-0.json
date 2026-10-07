@@ -1,0 +1,67 @@
+{
+  "index": 364,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0",
+  "module": 19,
+  "kanjiIndex": 7,
+  "exampleIndex": 0,
+  "character": "費",
+  "targetWord": "学費 (gakuhi)",
+  "reading": "ヒ (HI)",
+  "romaji": "Gakuhi o harau.",
+  "translation": "Pagar a anuidade de estudo.",
+  "example": {
+    "displayText": "学費をはらう。",
+    "audioText": "学費をはらう。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "費",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "学費 (gakuhi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "学費をはらう。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gakuhi o harau.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-7-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pagar a anuidade de estudo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"学費\" ou o exemplo \"学費をはらう。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.813Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 268,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1",
+  "module": 16,
+  "kanjiIndex": 2,
+  "exampleIndex": 1,
+  "character": "悲",
+  "targetWord": "悲痛 (hitsuu)",
+  "reading": "ヒ (HI)",
+  "romaji": "Hitsuu na cry.",
+  "translation": "Grito de profunda dor.",
+  "example": {
+    "displayText": "事故現場から悲痛な叫び声が聞こえました。",
+    "audioText": "事故現場から悲痛な叫び声が聞こえました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "悲",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "悲痛 (hitsuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "事故現場から悲痛な叫び声が聞こえました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hitsuu na cry.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-2-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Grito de profunda dor.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"悲痛\" ou o exemplo \"事故現場から悲痛な叫び声が聞こえました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.739Z"
+}

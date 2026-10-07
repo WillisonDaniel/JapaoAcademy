@@ -1,0 +1,67 @@
+{
+  "index": 423,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1",
+  "module": 20,
+  "kanjiIndex": 7,
+  "exampleIndex": 1,
+  "character": "寿",
+  "targetWord": "寿司 (sushi)",
+  "reading": "ジュ (JU) / ス (SU)",
+  "romaji": "Sushi o eat.",
+  "translation": "Comer sushi.",
+  "example": {
+    "displayText": "お祝いで新鮮な魚を使った寿司を食べます。",
+    "audioText": "お祝いで新鮮な魚を使った寿司を食べます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "寿",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "寿司 (sushi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "お祝いで新鮮な魚を使った寿司を食べます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sushi o eat.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-7-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Comer sushi.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"寿司\" ou o exemplo \"お祝いで新鮮な魚を使った寿司を食べます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.866Z"
+}
