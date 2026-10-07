@@ -1,0 +1,67 @@
+{
+  "index": 500,
+  "targetId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1",
+  "module": 5,
+  "kanjiIndex": 12,
+  "exampleIndex": 1,
+  "character": "律",
+  "targetWord": "規律 (kiritsu)",
+  "reading": "リツ (RITSU) / リチ (RICHI)",
+  "romaji": "Kiritsu o mamoru.",
+  "translation": "Manter a disciplina.",
+  "example": {
+    "displayText": "規律をまもる。",
+    "audioText": "規律をまもる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "律",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "規律 (kiritsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "規律をまもる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kiritsu o mamoru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-12-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Manter a disciplina.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"規律\" ou o exemplo \"規律をまもる。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.924Z"
+}

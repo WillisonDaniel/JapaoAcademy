@@ -1,0 +1,67 @@
+{
+  "index": 340,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1",
+  "module": 19,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "販",
+  "targetWord": "市販 (shihan)",
+  "reading": "ハン (HAN)",
+  "romaji": "Shihan medicine.",
+  "translation": "Remédio vendido no comércio.",
+  "example": {
+    "displayText": "市販薬。",
+    "audioText": "市販薬。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "販",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "市販 (shihan)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "市販薬。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shihan medicine.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Remédio vendido no comércio.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"市販\" ou o exemplo \"市販薬。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.795Z"
+}

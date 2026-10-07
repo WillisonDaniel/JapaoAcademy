@@ -1,0 +1,83 @@
+{
+  "index": 9,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0",
+  "module": 11,
+  "kanjiIndex": 17,
+  "exampleIndex": 0,
+  "character": "尊",
+  "targetWord": "尊重 (sonchou)",
+  "reading": "ソン (SON)",
+  "romaji": "Opinion o sonchou.",
+  "translation": "Respeitar as opiniões.",
+  "example": {
+    "displayText": "意見を尊重。",
+    "audioText": "意見を尊重。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "尊",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "尊重 (sonchou)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "意見を尊重。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Opinion o sonchou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-17-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Respeitar as opiniões.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 224,
+      "file": "quartet-2-textbook-p0224.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0224.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0224.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "尊重",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"尊重\" possui atestação lexical primária na testemunha quartet-2-textbook-p0224.json (p. 224), porém a frase de exemplo canônica (\"意見を尊重。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.528Z"
+}

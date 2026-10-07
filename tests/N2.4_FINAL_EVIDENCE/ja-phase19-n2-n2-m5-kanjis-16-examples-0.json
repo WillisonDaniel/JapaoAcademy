@@ -1,0 +1,67 @@
+{
+  "index": 506,
+  "targetId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0",
+  "module": 5,
+  "kanjiIndex": 16,
+  "exampleIndex": 0,
+  "character": "捕",
+  "targetWord": "逮捕 (taiho)",
+  "reading": "ホ (HO)",
+  "romaji": "Keisatsu ga taiho.",
+  "translation": "A polícia efetuou a prisão.",
+  "example": {
+    "displayText": "けいさつが逮捕。",
+    "audioText": "けいさつが逮捕。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "捕",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "逮捕 (taiho)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "けいさつが逮捕。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Keisatsu ga taiho.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-16-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "A polícia efetuou a prisão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"逮捕\" ou o exemplo \"けいさつが逮捕。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.928Z"
+}

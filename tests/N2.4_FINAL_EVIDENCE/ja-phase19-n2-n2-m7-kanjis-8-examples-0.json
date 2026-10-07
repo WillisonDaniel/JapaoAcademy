@@ -1,0 +1,67 @@
+{
+  "index": 580,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0",
+  "module": 7,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "範",
+  "targetWord": "範囲 (han'i)",
+  "reading": "ハン (HAN)",
+  "romaji": "Test no han'i.",
+  "translation": "Escopo da prova.",
+  "example": {
+    "displayText": "試験の範囲。",
+    "audioText": "試験の範囲。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "範",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "範囲 (han'i)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "試験の範囲。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Test no han'i.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Escopo da prova.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"範囲\" ou o exemplo \"試験の範囲。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.986Z"
+}

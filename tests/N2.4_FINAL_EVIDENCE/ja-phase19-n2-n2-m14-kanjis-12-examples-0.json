@@ -1,0 +1,67 @@
+{
+  "index": 651,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0",
+  "module": 14,
+  "kanjiIndex": 12,
+  "exampleIndex": 0,
+  "character": "越",
+  "targetWord": "国境越え (kokkyougoe)",
+  "reading": "エツ (ETSU)",
+  "romaji": "Kokkyou o koeru.",
+  "translation": "Atravessar a fronteira nacional.",
+  "example": {
+    "displayText": "国境を越える。",
+    "audioText": "国境を越える。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "AMBIGUOUS",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "AMBIGUOUS",
+  "finalDecision": "AMBIGUOUS",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "越",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "国境越え (kokkyougoe)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "国境を越える。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kokkyou o koeru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-12-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Atravessar a fronteira nacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "AMBIGUIDADE FLEXIONAL/SINTÁTICA: O vocábulo-alvo declara o substantivo composto 国境越え (kokkyougoe), enquanto a frase displayText emprega a locução verbal plena 国境を越える。 Mantido como AMBIGUOUS pendente de diretriz editorial do projeto.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.039Z"
+}

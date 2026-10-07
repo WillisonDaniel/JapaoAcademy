@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "manifestName": "N2.2_INTEGRITY_MANIFEST",
+  "generatedAt": "2026-09-26T16:08:33.784Z",
+  "phase": "N2.2-EDITORIAL-REVIEW",
+  "description": "Manifesto externo de integridade física e rastreabilidade criptográfica SHA-256 da Etapa N2.1.1A + N2.2 (Revisão Editorial Completa dos 751 alvos restantes e consolidação dos 771)",
+  "artifactsCount": 12,
+  "artifacts": [
+    {
+      "file": "database/ja-JP/data_kanji_n1.js",
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "size": 2908746,
+      "scope": "protected-dataset-n1"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n2.js",
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "size": 1067287,
+      "scope": "protected-dataset-n2"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n3.js",
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "size": 753295,
+      "scope": "protected-dataset-n3"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_LEDGER.json",
+      "sha256": "489121D2554370E5A8F610CA22B3D215B0741A5956488CF5A28A63EF4F321CAD",
+      "size": 22168144,
+      "scope": "editorial-ledger"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_REVIEW_QUEUE.json",
+      "sha256": "BB83C765CB79EAA17BDE357BCC02496117BC2C969FB280217B302FF4ED9724A1",
+      "size": 561777,
+      "scope": "prioritized-review-queue"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_TRIAGE_REPORT.md",
+      "sha256": "CAAD1B5B4D6FC2F4512627C22398A47F0D14D7C88CA19E93B663E32AC7BC362A",
+      "size": 9701,
+      "scope": "triage-report"
+    },
+    {
+      "file": "tests/N2.1_PILOT_BATCH_EVIDENCE.json",
+      "sha256": "F18E6AE2FFF98391EA9BAF41860ED9572F3079D71F3B89A4B54784DA0102A5BF",
+      "size": 36774,
+      "scope": "pilot-batch-evidence"
+    },
+    {
+      "file": "tests/N2.1_PILOT_BATCH_REPORT.md",
+      "sha256": "32F0EE3FAE681DBFA3A666FD422C58A69C81D209EEE7C4F7457CB43B91E8DAC1",
+      "size": 36757,
+      "scope": "pilot-batch-report"
+    },
+    {
+      "file": "tests/N2.1.1_PILOT_CONSOLIDATION_REPORT.md",
+      "sha256": "7E7E5088EBC46F525A61B2A6EF1A5DECC9D4649ED2C32AA8B1328693D31B8732",
+      "size": 11716,
+      "scope": "pilot-consolidation-report"
+    },
+    {
+      "file": "tests/N2.1.1_INTEGRITY_MANIFEST.json",
+      "sha256": "B63024F28F2831FBDB6FE36A9A70B6540C50588A080CA65824D25334AC4D4C6B",
+      "size": 2194,
+      "scope": "n211-integrity-manifest"
+    },
+    {
+      "file": "tests/N2.2_EDITORIAL_REVIEW_EVIDENCE.json",
+      "sha256": "1A2B7088468DEBFCD8BF6F9A0F9EEC9F6928D34EA39F58F13A04B43482D74B56",
+      "size": 903571,
+      "scope": "n22-review-evidence"
+    },
+    {
+      "file": "tests/N2.2_EDITORIAL_REVIEW_REPORT.md",
+      "sha256": "7DA8CCD2FE63A6C9980A245042370694991194BCD754169F5962E1E0435444F3",
+      "size": 9371,
+      "scope": "n22-editorial-report"
+    }
+  ]
+}

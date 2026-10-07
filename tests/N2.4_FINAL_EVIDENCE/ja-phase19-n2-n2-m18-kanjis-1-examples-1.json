@@ -1,0 +1,67 @@
+{
+  "index": 311,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1",
+  "module": 18,
+  "kanjiIndex": 1,
+  "exampleIndex": 1,
+  "character": "鉱",
+  "targetWord": "炭鉱 (tankou)",
+  "reading": "コウ (KOU)",
+  "romaji": "Tankou worker.",
+  "translation": "Trabalhador de mina de carvão.",
+  "example": {
+    "displayText": "昔はこの地域に大きな炭鉱がありました。",
+    "audioText": "昔はこの地域に大きな炭鉱がありました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "鉱",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "炭鉱 (tankou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "昔はこの地域に大きな炭鉱がありました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tankou worker.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-1-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Trabalhador de mina de carvão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"炭鉱\" ou o exemplo \"昔はこの地域に大きな炭鉱がありました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.771Z"
+}

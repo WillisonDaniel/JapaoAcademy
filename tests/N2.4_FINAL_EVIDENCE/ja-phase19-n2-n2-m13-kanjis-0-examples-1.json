@@ -1,0 +1,67 @@
+{
+  "index": 159,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1",
+  "module": 13,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "邦",
+  "targetWord": "邦画 (houga)",
+  "reading": "ホウ (HOU)",
+  "romaji": "Nihon no houga.",
+  "translation": "Filme nacional japonês.",
+  "example": {
+    "displayText": "にほんの邦画。",
+    "audioText": "にほんの邦画。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "邦",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "邦画 (houga)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "にほんの邦画。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Nihon no houga.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Filme nacional japonês.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"邦画\" ou o exemplo \"にほんの邦画。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.651Z"
+}

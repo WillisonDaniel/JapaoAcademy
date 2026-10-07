@@ -1,0 +1,67 @@
+{
+  "index": 371,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1",
+  "module": 2,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "財",
+  "targetWord": "財布 (saifu)",
+  "reading": "ザイ (ZAI) / サイ (SAI)",
+  "romaji": "Saifu o kaimashita.",
+  "translation": "Comprei uma carteira.",
+  "example": {
+    "displayText": "財布をかいました。",
+    "audioText": "財布をかいました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "財",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "財布 (saifu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "財布をかいました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Saifu o kaimashita.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Comprei uma carteira.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"財布\" ou o exemplo \"財布をかいました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.822Z"
+}

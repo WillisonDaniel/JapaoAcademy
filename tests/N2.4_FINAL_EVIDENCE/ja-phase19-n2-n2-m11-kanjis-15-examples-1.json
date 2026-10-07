@@ -1,0 +1,67 @@
+{
+  "index": 100,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1",
+  "module": 11,
+  "kanjiIndex": 15,
+  "exampleIndex": 1,
+  "character": "仰",
+  "targetWord": "仰ぎ見る (aogimiru)",
+  "reading": "ギョウ (GYOU) / コウ (KOU)",
+  "romaji": "Sky o aogimiru.",
+  "translation": "Contemplar o céu.",
+  "example": {
+    "displayText": "空を仰ぎ見る。",
+    "audioText": "空を仰ぎ見る。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "仰",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "仰ぎ見る (aogimiru)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "空を仰ぎ見る。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sky o aogimiru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-15-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Contemplar o céu.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"仰ぎ見る\" ou o exemplo \"空を仰ぎ見る。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.602Z"
+}

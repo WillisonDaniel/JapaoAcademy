@@ -1,0 +1,67 @@
+{
+  "index": 394,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1",
+  "module": 2,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "約",
+  "targetWord": "予約 (yoyaku)",
+  "reading": "ヤク (YAKU)",
+  "romaji": "Hotel no yoyaku.",
+  "translation": "Reserva de hotel.",
+  "example": {
+    "displayText": "ホテルの予約。",
+    "audioText": "ホテルの予約。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "約",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "予約 (yoyaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ホテルの予約。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hotel no yoyaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Reserva de hotel.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"予約\" ou o exemplo \"ホテルの予約。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.843Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 152,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0",
+  "module": 12,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "漆",
+  "targetWord": "漆器 (shikki)",
+  "reading": "シツ (SHITSU)",
+  "romaji": "Shikki no bowl.",
+  "translation": "Tigela de laca tradicional.",
+  "example": {
+    "displayText": "漆器のぼウル。",
+    "audioText": "漆器のぼウル。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "漆",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "漆器 (shikki)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "漆器のぼウル。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shikki no bowl.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Tigela de laca tradicional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"漆器\" ou o exemplo \"漆器のぼウル。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.646Z"
+}

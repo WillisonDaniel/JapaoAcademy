@@ -1,0 +1,67 @@
+{
+  "index": 382,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0",
+  "module": 2,
+  "kanjiIndex": 17,
+  "exampleIndex": 0,
+  "character": "証",
+  "targetWord": "証明 (shoumei)",
+  "reading": "ショウ (SHOU)",
+  "romaji": "Shoumei-sho.",
+  "translation": "Certificado de comprovação.",
+  "example": {
+    "displayText": "証明しょ。",
+    "audioText": "証明しょ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "証",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "証明 (shoumei)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "証明しょ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shoumei-sho.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-17-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Certificado de comprovação.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"証明\" ou o exemplo \"証明しょ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.830Z"
+}

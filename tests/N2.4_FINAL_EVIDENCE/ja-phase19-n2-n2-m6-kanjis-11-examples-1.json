@@ -1,0 +1,67 @@
+{
+  "index": 530,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1",
+  "module": 6,
+  "kanjiIndex": 11,
+  "exampleIndex": 1,
+  "character": "批",
+  "targetWord": "批准 (hizun)",
+  "reading": "ヒ (HI)",
+  "romaji": "Treaty no hizun.",
+  "translation": "Ratificação do tratado.",
+  "example": {
+    "displayText": "トれあトイの批准。",
+    "audioText": "トれあトイの批准。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "批",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "批准 (hizun)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "トれあトイの批准。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Treaty no hizun.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-11-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ratificação do tratado.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"批准\" ou o exemplo \"トれあトイの批准。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.948Z"
+}

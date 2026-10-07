@@ -1,0 +1,83 @@
+{
+  "index": 34,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0",
+  "module": 6,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "筆",
+  "targetWord": "筆者 (hissha)",
+  "reading": "ヒツ (HITSU)",
+  "romaji": "Hissha no opinion.",
+  "translation": "Opinião do autor.",
+  "example": {
+    "displayText": "筆者の意見。",
+    "audioText": "筆者の意見。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "筆",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "筆者 (hissha)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "筆者の意見。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hissha no opinion.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Opinião do autor.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 190,
+      "file": "quartet-2-textbook-p0190.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0190.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0190.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "筆者",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"筆者\" possui atestação lexical primária na testemunha quartet-2-textbook-p0190.json (p. 190), porém a frase de exemplo canônica (\"筆者の意見。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.550Z"
+}

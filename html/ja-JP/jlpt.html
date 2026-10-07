@@ -20,7 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../style.css?v=28f">
-    <link rel="stylesheet" href="../../japanese-experience.css?v=44">
+    <link rel="stylesheet" href="../../japanese-experience.css?v=46">
 </head>
 
 <body data-mode="jlpt-practice" data-lang="japanese" class="japanese-experience jp-study-page jp-jlpt-page">
@@ -41,7 +41,7 @@
             </div>
             <div class="jp-page-stat">
                 <span>Banco atual</span>
-                <strong>1.060 questões</strong>
+                <strong id="jlpt-total-count">Banco de questões JLPT</strong>
             </div>
         </section>
 
@@ -116,10 +116,10 @@
             </div>
 
             <!-- OPÇÃO DE CRONÔMETRO -->
-            <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
+            <label class="jp-check-field" for="jlpt-timer-enabled" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem;">
                 <input id="jlpt-timer-enabled" type="checkbox" style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
-                <label for="jlpt-timer-enabled" style="font-weight: 600; color: var(--text-main); cursor: pointer; user-select: none;">Mostrar cronômetro pessoal, sem limite</label>
-            </div>
+                <span style="font-weight: 600; color: var(--text-main); cursor: pointer; user-select: none;">Mostrar cronômetro pessoal, sem limite</span>
+            </label>
 
             <!-- DISPONIBILIDADE & BOTÃO INICIAR -->
             <p id="jlpt-availability" class="jlpt-status" aria-live="polite" style="font-size: 0.95rem; font-weight: 700; color: var(--text-muted); margin-bottom: 1.5rem;"></p>
@@ -133,9 +133,9 @@
                 <span id="jlpt-timer" hidden class="pill-badge" style="background: var(--bg-color); border: 1px solid var(--border-color); font-family: monospace; font-size: 1.1rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 8px;">00:00</span>
             </div>
 
-            <div id="jlpt-editorial" class="jlpt-editorial" hidden style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-muted);">⚠️ Esta questão pertence a conteúdo pendente de revisão editorial humana.</div>
+            <div id="jlpt-editorial" class="jlpt-editorial" hidden style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-muted);">⚠️ Esta questão pertence a conteúdo com decisão editorial inconclusiva.</div>
 
-            <p id="jlpt-question" class="jlpt-question" style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.7; color: var(--text-main); margin-bottom: 1.5rem;"></p>
+            <p id="jlpt-question" class="jlpt-question" lang="ja" style="font-family: 'Noto Sans JP', sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.7; color: var(--text-main); margin-bottom: 1.5rem;"></p>
 
             <div id="jlpt-answer" style="margin-bottom: 1.25rem;"></div>
 
@@ -184,4 +184,3 @@
 </body>
 
 </html>
-

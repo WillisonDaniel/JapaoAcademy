@@ -1,0 +1,83 @@
+{
+  "index": 15,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1",
+  "module": 14,
+  "kanjiIndex": 4,
+  "exampleIndex": 1,
+  "character": "泊",
+  "targetWord": "泊まる (tomaru)",
+  "reading": "ハク (HAKU)",
+  "romaji": "Ryokan ni tomaru.",
+  "translation": "Pernoitar na hospedaria.",
+  "example": {
+    "displayText": "りょかんに泊まる。",
+    "audioText": "りょかんに泊まる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "泊",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "泊まる (tomaru)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "りょかんに泊まる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ryokan ni tomaru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-4-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pernoitar na hospedaria.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 285,
+      "file": "tobira-2009-p0285.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0285.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0285.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "泊まる",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"泊まる\" possui atestação lexical primária na testemunha tobira-2009-p0285.json (p. 285), porém a frase de exemplo canônica (\"りょかんに泊まる。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.533Z"
+}

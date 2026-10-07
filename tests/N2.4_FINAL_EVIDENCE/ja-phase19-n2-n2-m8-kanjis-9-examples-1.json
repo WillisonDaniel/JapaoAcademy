@@ -1,0 +1,67 @@
+{
+  "index": 615,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1",
+  "module": 8,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "吐",
+  "targetWord": "嘔吐 (outo)",
+  "reading": "ト (TO)",
+  "romaji": "Outo suru.",
+  "translation": "Vomitar.",
+  "example": {
+    "displayText": "嘔吐する。",
+    "audioText": "嘔吐する。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "吐",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "嘔吐 (outo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "嘔吐する。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Outo suru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Vomitar.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"嘔吐\" ou o exemplo \"嘔吐する。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.012Z"
+}

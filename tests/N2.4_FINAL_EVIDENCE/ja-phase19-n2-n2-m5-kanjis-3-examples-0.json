@@ -1,0 +1,67 @@
+{
+  "index": 513,
+  "targetId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0",
+  "module": 5,
+  "kanjiIndex": 3,
+  "exampleIndex": 0,
+  "character": "訴",
+  "targetWord": "起訴 (kiso)",
+  "reading": "ソ (SO)",
+  "romaji": "Hannin o kiso suru.",
+  "translation": "Denunciar o criminoso.",
+  "example": {
+    "displayText": "はンにんを起訴する。",
+    "audioText": "はンにんを起訴する。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "訴",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "起訴 (kiso)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "はンにんを起訴する。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hannin o kiso suru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m5-kanjis-3-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Denunciar o criminoso.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"起訴\" ou o exemplo \"はンにんを起訴する。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.933Z"
+}

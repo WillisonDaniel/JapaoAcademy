@@ -1735,6 +1735,38 @@ function renderizarInsightsDashboard(dados = dashboardDadosAtuais, estatisticas 
     });
 }
 
+function renderizarMuralPatentesDashboard() {
+    const grid = document.getElementById('dashboard-ranks-grid');
+    if (!grid) return;
+
+    const idiomas = [
+        { id: 'japanese', nome: 'Japonês', bandeira: '🇯🇵', cor: '#ef4444' },
+        { id: 'english',  nome: 'Inglês',  bandeira: '🇺🇸', cor: '#3b82f6' },
+        { id: 'spanish',  nome: 'Espanhol', bandeira: '🇪🇸', cor: '#f97316' },
+        { id: 'russian',  nome: 'Russo',    bandeira: '🇷🇺', cor: '#8b5cf6' },
+        { id: 'italian',  nome: 'Italiano', bandeira: '🇮🇹', cor: '#10b981' }
+    ];
+
+    grid.innerHTML = idiomas.map(lang => {
+        const xp = typeof obterXPDoIdioma === 'function' ? obterXPDoIdioma(lang.id) : 0;
+        const nivel = typeof calcularNivel === 'function' ? calcularNivel(xp) : 1;
+        const cargo = typeof obterCargoPorNivel === 'function' ? obterCargoPorNivel(nivel, lang.id) : { titulo: 'Iniciante', icone: '🌱' };
+        const xpNoNivel = xp % 100;
+
+        return `
+            <div class="dashboard-rank-badge-card" onclick="abrirModalNiveisECargos('${lang.id}')" style="background: var(--card-bg); border: 2px solid var(--border-color); border-radius: 16px; padding: 18px; text-align: center; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: var(--shadow);" onmouseenter="this.style.transform='translateY(-4px)'" onmouseleave="this.style.transform='none'">
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 6px;">${lang.bandeira} ${lang.nome}</div>
+                <div style="font-size: 2.4rem; margin: 4px 0;">${cargo.icone}</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: ${lang.cor}; font-family: 'Fredoka', sans-serif;">${cargo.titulo}</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-top: 4px;">Nível ${nivel} • <span style="color:var(--text-muted);">${xp} XP</span></div>
+                <div style="background: var(--border-color); height: 6px; border-radius: 3px; overflow: hidden; margin-top: 10px;">
+                    <div style="background: ${lang.cor}; width: ${xpNoNivel}%; height: 100%; border-radius: 3px;"></div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso = false) {
     const carregando = document.getElementById('dashboard-loading');
     const apresentacao = document.getElementById('dashboard-signed-out');
@@ -1776,6 +1808,7 @@ function renderizarMeuProgresso(user = obterUsuarioDashboard(), registrarAcesso 
         atualizarSRSDashboard(resumoSRS);
         atualizarResumoGeralDashboard(resumo);
         atualizarOpcoesAtividadeDashboard(dados);
+        renderizarMuralPatentesDashboard();
         const estatisticas = renderizarEstatisticasDashboard(dados, streak);
         renderizarCalendarioDashboard(dados, dashboardMesCalendarioAtual, new Date());
         renderizarHistoricoSRSDashboard(dados);
@@ -1899,6 +1932,7 @@ if (typeof window !== 'undefined') {
     window.classificarHabilidadeJaponesaSessao = classificarHabilidadeJaponesaSessao;
     window.criarResumoHabilidadesJaponesDashboard = criarResumoHabilidadesJaponesDashboard;
     window.renderizarHabilidadesJaponesDashboard = renderizarHabilidadesJaponesDashboard;
+    window.renderizarMuralPatentesDashboard = renderizarMuralPatentesDashboard;
     window.renderizarMeuProgresso = renderizarMeuProgresso;
     window.inicializarMeuProgresso = inicializarMeuProgresso;
     if (typeof window.addEventListener === 'function') {

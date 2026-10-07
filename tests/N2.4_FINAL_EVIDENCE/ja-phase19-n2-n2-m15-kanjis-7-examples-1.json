@@ -1,0 +1,67 @@
+{
+  "index": 247,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1",
+  "module": 15,
+  "kanjiIndex": 7,
+  "exampleIndex": 1,
+  "character": "阻",
+  "targetWord": "阻害 (sogai)",
+  "reading": "ソ (SO)",
+  "romaji": "Growth no sogai.",
+  "translation": "Obstrução ao crescimento.",
+  "example": {
+    "displayText": "不景気が企業の成長を阻害する要因となっています。",
+    "audioText": "不景気が企業の成長を阻害する要因となっています。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "阻",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "阻害 (sogai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "不景気が企業の成長を阻害する要因となっています。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Growth no sogai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-7-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Obstrução ao crescimento.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"阻害\" ou o exemplo \"不景気が企業の成長を阻害する要因となっています。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.723Z"
+}

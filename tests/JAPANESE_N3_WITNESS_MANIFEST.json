@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-25T02:46:04.637Z",
+  "witnessCount": 18,
+  "witnessDirectory": "tests/n3-witness",
+  "witnessFiles": [
+    {
+      "filename": "genki-2e-1-textbook-p0017.json",
+      "witnessPath": "tests/n3-witness/genki-2e-1-textbook-p0017.json",
+      "witnessSha256": "f9606d3e4b4e11ec8a969c58b1d87a7d520d99a5ef1b5999947553bb4fc5d643",
+      "sourceId": "genki-2e-1-textbook",
+      "page": 17,
+      "sourceSha256": "846cc2c9fc4d5310c8e6b3ee711817186239c3810e4433ec350015f32a4004b5",
+      "pageTextSha256": "77c91ff86b2e4f2f5c65303ed1c7cca8e8f1b9351651d4f9f09f6f1c0fbb94e6",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m12-kanjis-6-examples-0"
+      ]
+    },
+    {
+      "filename": "genki-2e-2-textbook-p0277.json",
+      "witnessPath": "tests/n3-witness/genki-2e-2-textbook-p0277.json",
+      "witnessSha256": "6acc7b3423000b90422980327f153159d6d98395e84a1b6aa83b79ba2c2bd200",
+      "sourceId": "genki-2e-2-textbook",
+      "page": 277,
+      "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+      "pageTextSha256": "05d27d543d1450ba8d773e19f6995a2116beef326f453ec49f74111c156671f1",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m1-kanjis-0-examples-0",
+        "ja-phase19-n3-n3-m1-kanjis-0-examples-1"
+      ]
+    },
+    {
+      "filename": "genki-2e-2-textbook-p0297.json",
+      "witnessPath": "tests/n3-witness/genki-2e-2-textbook-p0297.json",
+      "witnessSha256": "4cea33e17613632b578f4b201fec96d1d107453ea8578f680a1abe230c482583",
+      "sourceId": "genki-2e-2-textbook",
+      "page": 297,
+      "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+      "pageTextSha256": "fa754747d362a3dd3628a5e26ef9ab1c1e8c7798991cd6677c9ed6e735d432b2",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m18-kanjis-10-examples-0"
+      ]
+    },
+    {
+      "filename": "genki-2e-2-textbook-p0323.json",
+      "witnessPath": "tests/n3-witness/genki-2e-2-textbook-p0323.json",
+      "witnessSha256": "7c2e2629a971928a74b11cce6450a69a26cb4b182e80678622a02d55884dc25c",
+      "sourceId": "genki-2e-2-textbook",
+      "page": 323,
+      "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+      "pageTextSha256": "384aa6a664e0c29dccb07531a8922a041eacb02907949aa73447ef5e42085823",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m17-kanjis-3-examples-0"
+      ]
+    },
+    {
+      "filename": "quartet-1-textbook-p0046.json",
+      "witnessPath": "tests/n3-witness/quartet-1-textbook-p0046.json",
+      "witnessSha256": "2ff7327ca3e4c37bf12c8a51fc8ebb99baffcfc6d0e735bd64864438be20861b",
+      "sourceId": "quartet-1-textbook",
+      "page": 46,
+      "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+      "pageTextSha256": "c93ee4b0128e98b8c0c4e77b1a1ac86bc8beec70ce57f3097f0c87cda9bc43c3",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m1-kanjis-7-examples-0"
+      ]
+    },
+    {
+      "filename": "quartet-1-textbook-p0346.json",
+      "witnessPath": "tests/n3-witness/quartet-1-textbook-p0346.json",
+      "witnessSha256": "e12d1e05fcc0e99d2aea0daef7947e4453db5c44959e42f0520eb340adde7600",
+      "sourceId": "quartet-1-textbook",
+      "page": 346,
+      "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+      "pageTextSha256": "7ae080279bc730f6170f8d7c84f87b789c3231c814ca9a65121700d6bf263140",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m1-kanjis-2-examples-0"
+      ]
+    },
+    {
+      "filename": "quartet-2-textbook-p0321.json",
+      "witnessPath": "tests/n3-witness/quartet-2-textbook-p0321.json",
+      "witnessSha256": "19aa1eac530fc4932838dba5551a663bc7b494858a09e53f7db4382103a7e520",
+      "sourceId": "quartet-2-textbook",
+      "page": 321,
+      "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+      "pageTextSha256": "978d11395a0321000cf1b7dd8d4471374e0f448ee8338569f406dd39cfc9f5f6",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m16-kanjis-3-examples-1"
+      ]
+    },
+    {
+      "filename": "quartet-2-textbook-p0356.json",
+      "witnessPath": "tests/n3-witness/quartet-2-textbook-p0356.json",
+      "witnessSha256": "cee24b8f0a3753b999e5f745730072f009501a1043b5be676f60eaee0bd4dcfb",
+      "sourceId": "quartet-2-textbook",
+      "page": 356,
+      "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+      "pageTextSha256": "528c73278e7e7e46604b0c66ac76da47419abe6dbf58a71a8613097489e5a269",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m17-kanjis-2-examples-1"
+      ]
+    },
+    {
+      "filename": "shinkanzen-n1-bunpo-p0033.json",
+      "witnessPath": "tests/n3-witness/shinkanzen-n1-bunpo-p0033.json",
+      "witnessSha256": "e3f894212ad98b6c397662454481a5657a7e877e6a82458ed4dc7544d8ca377f",
+      "sourceId": "shinkanzen-n1-bunpo",
+      "page": 33,
+      "sourceSha256": "38f53fcb649a40b8d8e442eb25de2cbf4e30203bd208e2633a823c0a74e27549",
+      "pageTextSha256": "ae1f92061d2dac4c3a24c77190feab54415c63c4ba8f930f80796a6111f5ad7e",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m17-kanjis-10-examples-1"
+      ]
+    },
+    {
+      "filename": "shinkanzen-n1-bunpo-p0158.json",
+      "witnessPath": "tests/n3-witness/shinkanzen-n1-bunpo-p0158.json",
+      "witnessSha256": "f1e49e80dc7d1f5fcb975d4661dc6690c8c44af18db70e1a967f66851d349e2b",
+      "sourceId": "shinkanzen-n1-bunpo",
+      "page": 158,
+      "sourceSha256": "38f53fcb649a40b8d8e442eb25de2cbf4e30203bd208e2633a823c0a74e27549",
+      "pageTextSha256": "047c3da8194dd4711c641c9eaf0f22b220565f73f49c695cb48b0fd5cbf30681",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m18-kanjis-12-examples-0"
+      ]
+    },
+    {
+      "filename": "shinkanzen-n1-kanji-p0109.json",
+      "witnessPath": "tests/n3-witness/shinkanzen-n1-kanji-p0109.json",
+      "witnessSha256": "fbe6e9dd0f8d0c9b882e50656ff5a9542d2d52d8207fa8a6068102dbff051800",
+      "sourceId": "shinkanzen-n1-kanji",
+      "page": 109,
+      "sourceSha256": "842d398f0145b5e2a6f83715e91786f747ece08c0b1debaacd5b8c15f17005a2",
+      "pageTextSha256": "a768751ab736680c4d85a7e27c3e5e6cc142948ba4a6043d45248615802de511",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m18-kanjis-9-examples-1"
+      ]
+    },
+    {
+      "filename": "shinkanzen-n1-kanji-p0210.json",
+      "witnessPath": "tests/n3-witness/shinkanzen-n1-kanji-p0210.json",
+      "witnessSha256": "7aa42705a3301e4c4053dbb610315bc3f74e13a5053c839c00a005f917138976",
+      "sourceId": "shinkanzen-n1-kanji",
+      "page": 210,
+      "sourceSha256": "842d398f0145b5e2a6f83715e91786f747ece08c0b1debaacd5b8c15f17005a2",
+      "pageTextSha256": "21dcea2a9a3e82981129b1345592d0a8a108ac44063472eb680d64381bb7c55a",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m16-kanjis-12-examples-0"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0112.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0112.json",
+      "witnessSha256": "f4448b232063c4d8e4e2e92975392570cd030e1630625f55f4d41f858d2d983a",
+      "sourceId": "tobira-2009",
+      "page": 112,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "174fca55a89afe879b003b114fb8d343db47d784e36f90bd54dc0859aaf98d6b",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m9-kanjis-11-examples-1"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0294.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0294.json",
+      "witnessSha256": "9b365a991f40b3d1b74d658da6dad2b7d99eb1cdaa84503c98b34dab0c6ad443",
+      "sourceId": "tobira-2009",
+      "page": 294,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "09413f5cfbea24ae36ffa966820d93736c71db5920871f18e12a4d3232b82ea6",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m16-kanjis-4-examples-0"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0340.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0340.json",
+      "witnessSha256": "be016bcc5eac23075921feef1a706a609b94b39c1ca4ce36164679a01a8b6313",
+      "sourceId": "tobira-2009",
+      "page": 340,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "08dc03d680c2051e4d9b07bbc54267ddc7ec2414e80e6bf0becc7fc9a6312704",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m18-kanjis-12-examples-1"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0357.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0357.json",
+      "witnessSha256": "e20bdd738f2ac676ade8c6b06b8520b67f6b09695773140cbf6a44aaeb94a08c",
+      "sourceId": "tobira-2009",
+      "page": 357,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "bd94c52ce3a1dc49469bfb11b1e0cc2f3363a14ed2f3224d1fa9b41e1a1e75c5",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m17-kanjis-18-examples-0"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0377.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0377.json",
+      "witnessSha256": "2ba418931d59bcebebbafb69b9998b14e1a25e65225bb953eba724133127b516",
+      "sourceId": "tobira-2009",
+      "page": 377,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "62ad304d6ab18b2811fdb004efd3def5395cb885ed1796732f3ee4064c6976da",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m18-kanjis-10-examples-0"
+      ]
+    },
+    {
+      "filename": "tobira-2009-p0395.json",
+      "witnessPath": "tests/n3-witness/tobira-2009-p0395.json",
+      "witnessSha256": "51dd3d24dce9e4a2b650c4c4b75c62ae9e163be26c95562b1794f524b98158fe",
+      "sourceId": "tobira-2009",
+      "page": 395,
+      "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+      "pageTextSha256": "72e300c69beb57e12e1db9a81374e2a562e1c40113a86647d5fbfc6f7732fa29",
+      "extractionMode": "ocr",
+      "associatedTargets": [
+        "ja-phase19-n3-n3-m4-kanjis-7-examples-0"
+      ]
+    }
+  ]
+}

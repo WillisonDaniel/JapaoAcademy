@@ -1,0 +1,67 @@
+{
+  "index": 143,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1",
+  "module": 12,
+  "kanjiIndex": 18,
+  "exampleIndex": 1,
+  "character": "粋",
+  "targetWord": "抜粋 (bassui)",
+  "reading": "スイ (SUI)",
+  "romaji": "Text no bassui.",
+  "translation": "Seleção do melhor trecho.",
+  "example": {
+    "displayText": "古典の名作から心に響く文章を抜粋します。",
+    "audioText": "古典の名作から心に響く文章を抜粋します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "粋",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "抜粋 (bassui)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "古典の名作から心に響く文章を抜粋します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Text no bassui.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-18-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Seleção do melhor trecho.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"抜粋\" ou o exemplo \"古典の名作から心に響く文章を抜粋します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.638Z"
+}

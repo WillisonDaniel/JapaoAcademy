@@ -1,0 +1,67 @@
+{
+  "index": 179,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0",
+  "module": 13,
+  "kanjiIndex": 3,
+  "exampleIndex": 0,
+  "character": "侵",
+  "targetWord": "侵略 (shinryaku)",
+  "reading": "シン (SHIN)",
+  "romaji": "Shinryaku o stop.",
+  "translation": "Parar a invasão militar.",
+  "example": {
+    "displayText": "侵略を止める。",
+    "audioText": "侵略を止める。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "侵",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "侵略 (shinryaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "侵略を止める。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shinryaku o stop.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-3-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Parar a invasão militar.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.670Z"
+}

@@ -1,0 +1,83 @@
+{
+  "index": 30,
+  "targetId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0",
+  "module": 3,
+  "kanjiIndex": 18,
+  "exampleIndex": 0,
+  "character": "協",
+  "targetWord": "協力 (kyouryoku)",
+  "reading": "キョウ (KYOU)",
+  "romaji": "Kyouryoku o tanomu.",
+  "translation": "Pedir cooperação.",
+  "example": {
+    "displayText": "協力をたのむ。",
+    "audioText": "協力をたのむ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "協",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "協力 (kyouryoku)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "協力をたのむ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyouryoku o tanomu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-18-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pedir cooperação.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 426,
+      "file": "tobira-2009-p0426.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0426.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0426.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "協力",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"協力\" possui atestação lexical primária na testemunha tobira-2009-p0426.json (p. 426), porém a frase de exemplo canônica (\"協力をたのむ。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.546Z"
+}

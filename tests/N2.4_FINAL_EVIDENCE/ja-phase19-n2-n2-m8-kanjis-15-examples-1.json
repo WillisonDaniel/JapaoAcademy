@@ -1,0 +1,67 @@
+{
+  "index": 596,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1",
+  "module": 8,
+  "kanjiIndex": 15,
+  "exampleIndex": 1,
+  "character": "骨",
+  "targetWord": "骨格 (kokkaku)",
+  "reading": "コツ (KOTSU)",
+  "romaji": "Body no kokkaku.",
+  "translation": "Estrutura óssea do corpo.",
+  "example": {
+    "displayText": "ぼドイの骨格。",
+    "audioText": "ぼドイの骨格。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "骨",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "骨格 (kokkaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ぼドイの骨格。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Body no kokkaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-15-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Estrutura óssea do corpo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"骨格\" ou o exemplo \"ぼドイの骨格。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.997Z"
+}

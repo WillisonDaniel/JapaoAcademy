@@ -155,6 +155,8 @@
 .jp-study-page .jp-filter-field >:is(input, select) { width:100%;margin:0 }
 .jp-study-page .jp-filter-field-grow { flex:1 1 280px }
 .jp-study-page .jp-check-field { display:inline-flex;align-items:center;gap:10px;line-height:1.45 }
+.jp-study-page .dict-filter-pill { min-height:44px;padding-block:9px }
+.jp-study-page .jp-check-field { min-height:44px;padding-block:8px }
 .jp-study-page .jp-check-field > input { flex:0 0 auto;width:18px;min-height:18px;margin:0 }
 .jp-study-page:is(input, select, textarea) { min-height:46px;padding:10px 13px;border:1px solid var(--jp-line);border-radius:12px;color:var(--jp-ink);background:var(--jp-surface-raised);box-shadow:inset 0 1px 0 rgba(255, 255, 255, .7), 0 2px 7px rgba(30, 58, 138, .06) }
 .dark-theme.jp-study-page:is(input, select, textarea) { box-shadow:inset 0 1px 0 rgba(255, 255, 255, .04) }

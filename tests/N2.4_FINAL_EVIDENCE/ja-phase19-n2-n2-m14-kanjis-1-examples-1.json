@@ -1,0 +1,67 @@
+{
+  "index": 193,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1",
+  "module": 14,
+  "kanjiIndex": 1,
+  "exampleIndex": 1,
+  "character": "搬",
+  "targetWord": "搬送 (hansou)",
+  "reading": "ハン (HAN)",
+  "romaji": "Hospital ni hansou.",
+  "translation": "Remoção para o hospital.",
+  "example": {
+    "displayText": "ほスぴたルに搬送。",
+    "audioText": "ほスぴたルに搬送。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "搬",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "搬送 (hansou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ほスぴたルに搬送。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Hospital ni hansou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Remoção para o hospital.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"搬送\" ou o exemplo \"ほスぴたルに搬送。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.679Z"
+}

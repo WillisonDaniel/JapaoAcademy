@@ -1,0 +1,83 @@
+{
+  "index": 6,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1",
+  "module": 1,
+  "kanjiIndex": 4,
+  "exampleIndex": 1,
+  "character": "役",
+  "targetWord": "役割 (yakuwari)",
+  "reading": "ヤク (YAKU) / エキ (EKI)",
+  "romaji": "Yakuwari o fukameru.",
+  "translation": "Desempenhar a função.",
+  "example": {
+    "displayText": "役割をふかめる。",
+    "audioText": "役割をふかめる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "役",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "役割 (yakuwari)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "役割をふかめる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yakuwari o fukameru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Desempenhar a função.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 131,
+      "file": "quartet-2-textbook-p0131.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0131.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0131.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "役割",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"役割\" possui atestação lexical primária na testemunha quartet-2-textbook-p0131.json (p. 131), porém a frase de exemplo canônica (\"役割をふかめる。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.527Z"
+}

@@ -1,0 +1,96 @@
+{
+  "index": 3,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0",
+  "module": 1,
+  "kanjiIndex": 12,
+  "exampleIndex": 0,
+  "character": "策",
+  "targetWord": "対策 (taisaku)",
+  "reading": "サク (SAKU)",
+  "romaji": "Taisaku o tateru.",
+  "translation": "Elaborar contramedidas.",
+  "example": {
+    "displayText": "対策をたてる。",
+    "audioText": "対策をたてる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "策",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "対策 (taisaku)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "対策をたてる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Taisaku o tateru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Elaborar contramedidas.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 131,
+      "file": "quartet-2-textbook-p0131.json"
+    },
+    {
+      "sourceId": "tobira-2009",
+      "page": 262,
+      "file": "tobira-2009-p0262.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0131.json",
+    "tobira-2009-p0262.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0131.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "対策",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "tobira-2009-p0262.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "対策",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"対策\" possui atestação lexical primária na testemunha quartet-2-textbook-p0131.json (p. 131), porém a frase de exemplo canônica (\"対策をたてる。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.525Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 589,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1",
+  "module": 8,
+  "kanjiIndex": 11,
+  "exampleIndex": 1,
+  "character": "腸",
+  "targetWord": "大腸 (daichou)",
+  "reading": "チョウ (CHOU)",
+  "romaji": "Daichou kensa.",
+  "translation": "Exame do intestino grosso.",
+  "example": {
+    "displayText": "大腸けんさ。",
+    "audioText": "大腸けんさ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "腸",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "大腸 (daichou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "大腸けんさ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Daichou kensa.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-11-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Exame do intestino grosso.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"大腸\" ou o exemplo \"大腸けんさ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.992Z"
+}

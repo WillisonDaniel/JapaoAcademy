@@ -1,0 +1,67 @@
+{
+  "index": 454,
+  "targetId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1",
+  "module": 3,
+  "kanjiIndex": 6,
+  "exampleIndex": 1,
+  "character": "暇",
+  "targetWord": "余暇 (yoka)",
+  "reading": "カ (KA)",
+  "romaji": "Yoka no tsukai-kata.",
+  "translation": "Uso do tempo livre.",
+  "example": {
+    "displayText": "余暇のつかいかた。",
+    "audioText": "余暇のつかいかた。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "暇",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "余暇 (yoka)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "余暇のつかいかた。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yoka no tsukai-kata.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m3-kanjis-6-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Uso do tempo livre.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"余暇\" ou o exemplo \"余暇のつかいかた。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.888Z"
+}

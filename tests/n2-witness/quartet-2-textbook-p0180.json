@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-2-textbook",
+  "page": 180,
+  "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0180.json",
+  "corpusArtifactSha256": "c5417d46f97345b0952aeb079741c71bd65f5b677ad1633a8ed937bc07c32ffb",
+  "extractionMode": "ocr",
+  "pageTextSha256": "d4177788aeb7ca57f2926595933afdb9ef442fe7ff508f2d4accc8b87868dfa6",
+  "text": "フローチャート\n\nあなた : 難しいお願いをする    ]       先生 :\n\nお願いされる\n\n| 第 | 一\n\nO 話しかける\nFS Bs Rye OE AL oy pe\ndiのの\n\n何ですが。\n\n(O 話を切り出す)\nあの、来週の発表のこ ERA\n\nええ。\n\nO 理由を言ってお願いする\n実は、その日に興味がある会社の企業説明会があり\n\n直前のこ とで申し訳ありませんが、(投業を欠席さ\nせていただきたいので、) 発表の日を別の日に変え\nCURE CL EDP,\n\nCAL We Gish\n\n@ 状況を詳しく説明し、もう一度強くお願いする\n留学生対象の説明会はこの日しかないので、どうし\nても参加したいんです。こちらの都合で申し訳ござ\nいませんが、今回だなけでもご配慮いただけないで\nCED.\n\ndd Che Voll) RU TIA\n\nO 条件を出 して交渉する (negotiate)\n\nでは、  発表の日 を代わっでぐれる人を見つけてきますので、\n\nなんとかご検討いただけないでしょうか。\n\nけんとう\n\nわがりました。 今回だけりですよ。\n\nO お礼を言って、 会話を終える\nあり2がとうこさいます。\n勝手を言って、申し訳ありません。\n\n話す\n\n— Bud] SAWN we P/U ()\n\n153\n\n",
+  "normalizedText": "フローチャート あなた : 難しいお願いをする ] 先生 : お願いされる | 第 | 一 O 話しかける FS Bs Rye OE AL oy pe diのの 何ですが。 (O 話を切り出す) あの、来週の発表のこ ERA ええ。 O 理由を言ってお願いする 実は、その日に興味がある会社の企業説明会があり 直前のこ とで申し訳ありませんが、(投業を欠席さ せていただきたいので、) 発表の日を別の日に変え CURE CL EDP, CAL We Gish @ 状況を詳しく説明し、もう一度強くお願いする 留学生対象の説明会はこの日しかないので、どうし ても参加したいんです。こちらの都合で申し訳ござ いませんが、今回だなけでもご配慮いただけないで CED. dd Che Voll) RU TIA O 条件を出 して交渉する (negotiate) では、 発表の日 を代わっでぐれる人を見つけてきますので、 なんとかご検討いただけないでしょうか。 けんとう わがりました。 今回だけりですよ。 O お礼を言って、 会話を終える あり2がとうこさいます。 勝手を言って、申し訳ありません。 話す — Bud] SAWN we P/U () 153",
+  "associatedTargets": [
+    "ja-phase19-n2-n2-m1-kanjis-0-examples-0"
+  ]
+}

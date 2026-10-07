@@ -63,6 +63,11 @@ function finishJlptSession() {
 function resetJlptSession() { stopJlptTimer(); jlptSession = []; jlptAnswers = new Map(); jlptEl('jlpt-result').hidden = true; jlptEl('jlpt-session').hidden = true; jlptEl('jlpt-config').hidden = false; updateJlptAvailability(); }
 function initializeJapaneseJlpt() {
     if (!Array.isArray(jlptIndex())) { jlptEl('jlpt-availability').textContent = 'Preparação indisponível.'; return; }
+    const totalCountEl = jlptEl('jlpt-total-count');
+    const items = jlptIndex();
+    if (totalCountEl && Array.isArray(items) && items.length > 0) {
+        totalCountEl.textContent = `${items.length.toLocaleString('pt-BR')} questões`;
+    }
     document.querySelectorAll('.jlpt-level-pills .dict-filter-pill').forEach(pill => {
         pill.addEventListener('click', () => syncJlptLevelPills(pill.dataset.level || 'N5'));
     });

@@ -1,0 +1,67 @@
+{
+  "index": 155,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0",
+  "module": 12,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "匠",
+  "targetWord": "巨匠 (kyoshou)",
+  "reading": "ショウ (SHOU)",
+  "romaji": "Art no kyoshou.",
+  "translation": "Grande mestre da arte.",
+  "example": {
+    "displayText": "あルトの巨匠。",
+    "audioText": "あルトの巨匠。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "匠",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "巨匠 (kyoshou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "あルトの巨匠。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Art no kyoshou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Grande mestre da arte.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"巨匠\" ou o exemplo \"あルトの巨匠。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.648Z"
+}

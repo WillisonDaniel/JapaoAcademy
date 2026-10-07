@@ -1,0 +1,67 @@
+{
+  "index": 283,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0",
+  "module": 17,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "冊",
+  "targetWord": "冊子 (sasshi)",
+  "reading": "サツ (SATSU) / サク (SAKU)",
+  "romaji": "Sasshi o distribute.",
+  "translation": "Distribuição de brochuras.",
+  "example": {
+    "displayText": "観光客向けに街の案内冊子を配布します。",
+    "audioText": "観光客向けに街の案内冊子を配布します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "冊",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "冊子 (sasshi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "観光客向けに街の案内冊子を配布します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sasshi o distribute.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Distribuição de brochuras.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"冊子\" ou o exemplo \"観光客向けに街の案内冊子を配布します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.749Z"
+}

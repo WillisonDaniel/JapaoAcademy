@@ -1,0 +1,67 @@
+{
+  "index": 172,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0",
+  "module": 13,
+  "kanjiIndex": 16,
+  "exampleIndex": 0,
+  "character": "融",
+  "targetWord": "和融 (wayuu)",
+  "reading": "ユウ (YUU)",
+  "romaji": "Wayuu no effort.",
+  "translation": "Esforço de reconciliação.",
+  "example": {
+    "displayText": "対立していた両者が和融の道を模索します。",
+    "audioText": "対立していた両者が和融の道を模索します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "融",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "和融 (wayuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "対立していた両者が和融の道を模索します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Wayuu no effort.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-16-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Esforço de reconciliação.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"和融\" ou o exemplo \"対立していた両者が和融の道を模索します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.662Z"
+}

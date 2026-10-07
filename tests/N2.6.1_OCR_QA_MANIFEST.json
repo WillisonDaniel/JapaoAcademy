@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "artifactName": "N2.6.1_OCR_QA_MANIFEST",
+  "generatedAt": "2026-09-27T12:35:37Z",
+  "stage": "N2.6.1-OCR-QA-HARDENING",
+  "auditResult": "N2.6.1-OCR-HARDENING: PASS",
+  "corpusOverview": {
+    "totalSources": 5,
+    "totalPages": 1007,
+    "totalCharacters": 868495,
+    "totalJapaneseCharacters": 413154,
+    "netJapaneseGain": 7376,
+    "overallMeanConfidence": 81.79
+  },
+  "sources": {
+    "shinkanzen-n2-bunpo": {
+      "pageCount": 229,
+      "searchablePages": 229,
+      "emptyPages": 0,
+      "totalCharacters": 205355,
+      "totalJapaneseCharacters": 106893,
+      "meanConfidence": 83.51
+    },
+    "shinkanzen-n2-chokai": {
+      "pageCount": 161,
+      "searchablePages": 161,
+      "emptyPages": 0,
+      "totalCharacters": 96928,
+      "totalJapaneseCharacters": 45021,
+      "meanConfidence": 74.55
+    },
+    "shinkanzen-n2-dokkai": {
+      "pageCount": 239,
+      "searchablePages": 239,
+      "emptyPages": 0,
+      "totalCharacters": 178462,
+      "totalJapaneseCharacters": 110157,
+      "meanConfidence": 84.4
+    },
+    "shinkanzen-n2-goi": {
+      "pageCount": 246,
+      "searchablePages": 246,
+      "emptyPages": 0,
+      "totalCharacters": 289514,
+      "totalJapaneseCharacters": 111534,
+      "meanConfidence": 82.73
+    },
+    "shinkanzen-n2-kanji": {
+      "pageCount": 132,
+      "searchablePages": 130,
+      "emptyPages": 2,
+      "totalCharacters": 98236,
+      "totalJapaneseCharacters": 39549,
+      "meanConfidence": 83.75
+    }
+  },
+  "triageMetrics": {
+    "initialLowConfidencePages": 13,
+    "independentSuspiciousPages": 27,
+    "totalInvestigatedPages": 57,
+    "pagesReOcrReplaced": 24,
+    "pagesRetained": 33,
+    "unresolvedOcr": 0,
+    "integrityMismatches": 0
+  },
+  "emptyPagesAudit": {
+    "bunpoEmptyRecovered": 6,
+    "kanjiValidEmpty": 2,
+    "chokaiValidEmpty": 1,
+    "goiValidEmpty": 1
+  },
+  "duplicationAudit": {
+    "bunpoDuplicatesResolved": 4,
+    "note": "Bunpo p222-p225 re-extraidos com PSM 6, eliminando duplicacao indevida com p226-p229."
+  },
+  "documentaryCorrection": {
+    "goiActual": {
+      "chars": 289514,
+      "jp": 111534
+    },
+    "kanjiActual": {
+      "chars": 98236,
+      "jp": 39549
+    },
+    "discrepancyNote": "Os valores informados no resumo manual anterior continham transposicao. Os dados fisicos do corpus foram confirmados canonicos e agora estao enriquecidos pelo re-OCR."
+  },
+  "chokaiDifferentiation": {
+    "bookletCoverPage": 115,
+    "bookletContentStartPage": 117,
+    "clarification": "A pagina 115 e a capa interna (separador fisico) do livreto 別冊. O conteudo de roteiros e respostas inicia-se efetivamente na pagina 117."
+  },
+  "editorialInvariance": {
+    "approvedTargetsCreated": 0,
+    "datasetAlterations": 0,
+    "ledgerAlterations": 0,
+    "reviewQueueAlterations": 0,
+    "n1Status": "BYTE-IDENTICAL",
+    "n2Status": "BYTE-IDENTICAL",
+    "n3Status": "BYTE-IDENTICAL"
+  }
+}

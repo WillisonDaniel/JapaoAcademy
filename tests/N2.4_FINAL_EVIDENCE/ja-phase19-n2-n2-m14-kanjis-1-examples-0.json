@@ -1,0 +1,67 @@
+{
+  "index": 192,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0",
+  "module": 14,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "搬",
+  "targetWord": "搬入 (hannyuu)",
+  "reading": "ハン (HAN)",
+  "romaji": "Luggage no hannyuu.",
+  "translation": "Carregamento das bagagens.",
+  "example": {
+    "displayText": "倉庫から工場へ重い資材を搬入します。",
+    "audioText": "倉庫から工場へ重い資材を搬入します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "搬",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "搬入 (hannyuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "倉庫から工場へ重い資材を搬入します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Luggage no hannyuu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Carregamento das bagagens.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"搬入\" ou o exemplo \"倉庫から工場へ重い資材を搬入します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.679Z"
+}

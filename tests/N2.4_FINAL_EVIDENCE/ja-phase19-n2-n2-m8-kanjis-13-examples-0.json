@@ -1,0 +1,67 @@
+{
+  "index": 592,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0",
+  "module": 8,
+  "kanjiIndex": 13,
+  "exampleIndex": 0,
+  "character": "臓",
+  "targetWord": "内臓 (naizou)",
+  "reading": "ゾク (ZOU)",
+  "romaji": "Naizou no kensa.",
+  "translation": "Exame dos órgãos internos.",
+  "example": {
+    "displayText": "内臓のけんさ。",
+    "audioText": "内臓のけんさ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "臓",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "内臓 (naizou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "内臓のけんさ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Naizou no kensa.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-13-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Exame dos órgãos internos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"内臓\" ou o exemplo \"内臓のけんさ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.994Z"
+}

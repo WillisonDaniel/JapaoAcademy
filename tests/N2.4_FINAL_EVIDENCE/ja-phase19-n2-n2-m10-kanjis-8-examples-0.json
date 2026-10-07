@@ -1,0 +1,67 @@
+{
+  "index": 83,
+  "targetId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0",
+  "module": 10,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "島",
+  "targetWord": "島国 (shimaguni)",
+  "reading": "トウ (TOU)",
+  "romaji": "Nihon wa shimaguni.",
+  "translation": "O Japão é um país insular.",
+  "example": {
+    "displayText": "にほんは島国。",
+    "audioText": "にほんは島国。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "島",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "島国 (shimaguni)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "にほんは島国。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Nihon wa shimaguni.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "O Japão é um país insular.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"島国\" ou o exemplo \"にほんは島国。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.589Z"
+}

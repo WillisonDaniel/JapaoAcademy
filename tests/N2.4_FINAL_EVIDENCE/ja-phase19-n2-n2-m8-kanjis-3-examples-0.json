@@ -1,0 +1,67 @@
+{
+  "index": 603,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0",
+  "module": 8,
+  "kanjiIndex": 3,
+  "exampleIndex": 0,
+  "character": "診",
+  "targetWord": "診察 (shinsatsu)",
+  "reading": "シン (SHIN)",
+  "romaji": "Doctor no shinsatsu.",
+  "translation": "Consulta do médico.",
+  "example": {
+    "displayText": "どクとルの診察。",
+    "audioText": "どクとルの診察。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "診",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "診察 (shinsatsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "どクとルの診察。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Doctor no shinsatsu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Consulta do médico.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"診察\" ou o exemplo \"どクとルの診察。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.004Z"
+}

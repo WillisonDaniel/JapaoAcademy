@@ -1,0 +1,67 @@
+{
+  "index": 201,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0",
+  "module": 14,
+  "kanjiIndex": 14,
+  "exampleIndex": 0,
+  "character": "巡",
+  "targetWord": "巡回 (junkai)",
+  "reading": "ジュン (JUN)",
+  "romaji": "Patrol no junkai.",
+  "translation": "Ronda de patrulhamento.",
+  "example": {
+    "displayText": "ぱトろルの巡回。",
+    "audioText": "ぱトろルの巡回。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "巡",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "巡回 (junkai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ぱトろルの巡回。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Patrol no junkai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-14-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ronda de patrulhamento.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"巡回\" ou o exemplo \"ぱトろルの巡回。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.686Z"
+}

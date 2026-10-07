@@ -1,0 +1,14 @@
+{
+  "sourceId": "tobira-2009",
+  "page": 428,
+  "sourceSha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+  "corpusArtifact": "scratch/japanese-corpus/tobira-2009/page-0428.json",
+  "corpusArtifactSha256": "eb4db92b21a80db25bf40d21c8895ac9cb418a0cfff51f8dcce6e4b1c3d6b490",
+  "extractionMode": "ocr",
+  "pageTextSha256": "9cb665564974b664fca7499cdf0505c5639d1153e09008fba5d979c2bfd8f6fd",
+  "text": "97\n\n84874244470\n\n1920081033003\n\nISBN978-4-87424-447-0\nC0081 ¥3300E\n\n定価三本体価格 3.300 B + Bi\n\n1OBIRA\n\nGATEWAY TO\nADVANCED\n\nJAPANESE\n\nLEARNING THROUGH\nCONTENT AND MULTIMEDIA\n\n",
+  "normalizedText": "97 84874244470 1920081033003 ISBN978-4-87424-447-0 C0081 ¥3300E 定価三本体価格 3.300 B + Bi 1OBIRA GATEWAY TO ADVANCED JAPANESE LEARNING THROUGH CONTENT AND MULTIMEDIA",
+  "associatedTargets": [
+    "ja-phase19-n2-n2-m2-kanjis-1-examples-0"
+  ]
+}

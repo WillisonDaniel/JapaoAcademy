@@ -1,0 +1,67 @@
+{
+  "index": 47,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0",
+  "module": 1,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "役",
+  "targetWord": "役員 (yakuin)",
+  "reading": "ヤク (YAKU) / エキ (EKI)",
+  "romaji": "Yakuin-kai.",
+  "translation": "Reunião da diretoria.",
+  "example": {
+    "displayText": "役員会で会社の将来の方針を話し合います。",
+    "audioText": "役員会で会社の将来の方針を話し合います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "役",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "役員 (yakuin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "役員会で会社の将来の方針を話し合います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yakuin-kai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Reunião da diretoria.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"役員\" ou o exemplo \"役員会で会社の将来の方針を話し合います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.559Z"
+}

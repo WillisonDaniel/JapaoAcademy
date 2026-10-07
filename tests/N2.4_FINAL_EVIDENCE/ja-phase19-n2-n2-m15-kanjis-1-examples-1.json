@@ -1,0 +1,67 @@
+{
+  "index": 224,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1",
+  "module": 15,
+  "kanjiIndex": 1,
+  "exampleIndex": 1,
+  "character": "操",
+  "targetWord": "操縦 (soujuu)",
+  "reading": "ソウ (SOU)",
+  "romaji": "Airplane no soujuu.",
+  "translation": "Pilotagem da aeronave.",
+  "example": {
+    "displayText": "パイロットが大型飛行機を巧みに操縦します。",
+    "audioText": "パイロットが大型飛行機を巧みに操縦します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "操",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "操縦 (soujuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "パイロットが大型飛行機を巧みに操縦します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Airplane no soujuu.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Pilotagem da aeronave.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.705Z"
+}

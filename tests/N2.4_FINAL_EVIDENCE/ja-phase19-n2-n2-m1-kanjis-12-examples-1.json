@@ -1,0 +1,67 @@
+{
+  "index": 42,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1",
+  "module": 1,
+  "kanjiIndex": 12,
+  "exampleIndex": 1,
+  "character": "策",
+  "targetWord": "政策 (seisaku)",
+  "reading": "サク (SAKU)",
+  "romaji": "Keizai seisaku.",
+  "translation": "Política econômica.",
+  "example": {
+    "displayText": "けいざい政策。",
+    "audioText": "けいざい政策。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "策",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "政策 (seisaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "けいざい政策。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Keizai seisaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-12-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Política econômica.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"政策\" ou o exemplo \"けいざい政策。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.556Z"
+}

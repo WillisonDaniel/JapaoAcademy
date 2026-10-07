@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 1,
+  "artifactName": "N2.6.1_OCR_PAGE_REVIEW",
+  "generatedAt": "2026-09-27T12:35:37Z",
+  "stage": "N2.6.1-OCR-QA-HARDENING",
+  "summary": {
+    "totalInvestigatedPages": 57,
+    "reOcrReplaced": 24,
+    "retainedValid": 33,
+    "categories": {
+      "OCR_IMPROVED": 24,
+      "LEGITIMATE_STRUCTURAL_PAGE": 15,
+      "LEGITIMATE_INDEX_TABLE": 9,
+      "VALID_EMPTY_PAGE": 4,
+      "OCR_ACCEPTABLE": 5,
+      "OCR_UNRESOLVED": 0,
+      "INTEGRITY_MISMATCH": 0
+    }
+  },
+  "pages": [
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 4,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 440 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 5,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 400 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 6,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 401 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 7,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 160 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 33,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 519 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 104,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Recuperados 360 caracteres japoneses em pagina que estava vazia por colisao de thread."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 204,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Pagina de titulo separador de secao (模擬試験). Texto curto e correto."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 217,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Capa interna do livreto de respostas (別冊). Titulo e diagramacao corretos."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 218,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Grade de gabarito com numeros e letras (1.b, 2.a). Proporcao japonesa baixa legitima."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 219,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Grade de gabarito com respostas. Proporcao japonesa baixa legitima."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 220,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Grade de gabarito com respostas. Proporcao japonesa baixa legitima."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 222,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Corrigida duplicacao com p226; reextraido gabarito real da pagina 222 (1.328 caracteres)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 223,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Corrigida duplicacao com p227; reextraido gabarito real da pagina 223 (1.207 caracteres)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 224,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Corrigida duplicacao com p228; reextraido gabarito real da pagina 224 (1.243 caracteres)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 225,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Corrigida duplicacao com p229; reextraido gabarito e explicacoes reais da pagina 225 (1.504 caracteres, 279 JP)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 226,
+      "action": "RETAIN",
+      "status": "OCR_ACCEPTABLE",
+      "reason": "Contem explicacoes gramaticais reais do gabarito. Mantido integralmente."
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 227,
+      "action": "RETAIN",
+      "status": "OCR_ACCEPTABLE",
+      "reason": "Contem explicacoes gramaticais reais do gabarito. Mantido integralmente."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 2,
+      "action": "RETAIN",
+      "status": "OCR_ACCEPTABLE",
+      "reason": "Pagina de creditos e informacoes editoriais em ingles e japones. Legivel."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 3,
+      "action": "RETAIN",
+      "status": "OCR_ACCEPTABLE",
+      "reason": "Pagina de copyright 100% em ingles (©2011 Nakamura Kaori...). Ratio japones 0% legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 22,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural de capitulo (実力養成編). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 29,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Re-OCR escala 2.5 recuperou sentencas e instrucoes completas do exercicio (de 17 para 54 JP)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 35,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Re-OCR escala 2.5 recuperou roteiro e enunciados (de 63 para 142 JP, conf de 57% para 81%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 80,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Re-OCR escala 2.5 recuperou textos dos exercicios de escuta (de 102 para 319 JP, conf de 51% para 73%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 102,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Re-OCR escala 2.5 recuperou sintese e instrucoes de escuta (de 10 para 67 JP, conf de 63% para 73%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 104,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Folha grafica de respostas do simulado (diagrama de preenchimento). Sem texto denso."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 114,
+      "action": "RETAIN",
+      "status": "VALID_EMPTY_PAGE",
+      "reason": "Pagina em branco divisoria antes do livreto de respostas (pixels escuros 2,07%, media 251,1)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 115,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Capa grafica escura do caderno de respostas (pixels escuros 93,7%, media 112,2)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-dokkai",
+      "page": 9,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural de secao (第1部 実力養成編). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-dokkai",
+      "page": 81,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural de capitulo (お知らせ・説明書きなど). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-dokkai",
+      "page": 201,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Capa interna do livreto de respostas (別冊). Diagramacao e texto corretos."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 3,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "Re-OCR escala 2.5 PSM 6 recuperou integralmente os itens do sumario (de 51 para 385 JP, conf de 54% para 74%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 9,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural (実力養成編 第1部). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 94,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural (実力養成編 第2部). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 191,
+      "action": "RETAIN",
+      "status": "VALID_EMPTY_PAGE",
+      "reason": "Pagina em branco divisoria antes do simulado/indice (pixels escuros 1,27%, media 252,0)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 197,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico. Proporcao japonesa de 9,6% devida a centenas de numeros de paginas."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 198,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico. Proporcao japonesa de 9,2% devida a centenas de numeros de paginas."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 199,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 eliminou ruidos de pipes/pontos e recuperou vocabulos (de 75 para 563 JP, conf de 49% para 82%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 200,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 eliminou ruidos de colunas e recuperou vocabulos (de 162 para 564 JP, conf de 52% para 79%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 201,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico bem segmentada. Mantida."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 202,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 recuperou centenas de verbetes do indice kanji/kana (de 32 para 648 JP, conf de 43% para 83%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 203,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 reorganizou fluxo de colunas do indice (de 95 para 536 JP, conf de 72% para 76%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 204,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 eliminou simbolos graficos parasitas e recuperou verbetes (de 48 para 595 JP, conf de 45% para 83%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 205,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico com alta densidade de verbetes e numeros. Mantida."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 206,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 eliminou barras verticais e recuperou verbetes (de 39 para 587 JP, conf de 48% para 81%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 207,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 recuperou indexacao lexico-semantica (de 88 para 606 JP, conf de 56% para 82%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 209,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 eliminou colunas falsas e recuperou verbetes (de 66 para 561 JP, conf de 45% para 79%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 210,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico com boa segmentacao original. Mantida."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 211,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_INDEX_TABLE",
+      "reason": "Pagina de indice lexico com boa segmentacao original. Mantida."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 213,
+      "action": "RE-OCR_REPLACED",
+      "status": "OCR_IMPROVED",
+      "reason": "PSM 4 recuperou ultima pagina do indice (de 56 para 388 JP, conf de 48% para 80%)."
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 214,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Capa interna do livreto de respostas (別冊). Diagramacao e texto corretos."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 2,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Folha de rosto interna com titulo e logotipo da editora. Texto curto correto."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 3,
+      "action": "RETAIN",
+      "status": "OCR_ACCEPTABLE",
+      "reason": "Pagina de copyright editorial em ingles (© 2010 by Ishii Reiko...). Ratio japones 0% legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 11,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural (第1部 実力養成編). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 27,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural (第2部 実力養成編). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 68,
+      "action": "RETAIN",
+      "status": "LEGITIMATE_STRUCTURAL_PAGE",
+      "reason": "Separador estrutural (第3部 模擬試験). Texto curto legitimo."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 131,
+      "action": "RETAIN",
+      "status": "VALID_EMPTY_PAGE",
+      "reason": "Pagina de guarda final em branco (pixels escuros 1,79%, media 251,4). Ausencia de texto confirmada."
+    },
+    {
+      "sourceId": "shinkanzen-n2-kanji",
+      "page": 132,
+      "action": "RETAIN",
+      "status": "VALID_EMPTY_PAGE",
+      "reason": "Contracapa grafica final escura (pixels escuros 93,1%, media 138,5). Ilustracao sem texto imprimivel."
+    }
+  ],
+  "hardeningDossiers": [
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 4,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 783,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 440,
+      "deltaJapaneseCharacters": 440,
+      "originalConfidence": null,
+      "candidateConfidence": 82.92,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "76adafb77a080ac0eef9ea2ae412afdde1b907298b37c65ec4adf9d63d9fc786",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 5,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 793,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 400,
+      "deltaJapaneseCharacters": 400,
+      "originalConfidence": null,
+      "candidateConfidence": 84.34,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "47c9da713c20d131864fba272d48489e133e095aa8f627329d1c9bc775094516",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 6,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 746,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 401,
+      "deltaJapaneseCharacters": 401,
+      "originalConfidence": null,
+      "candidateConfidence": 84.17,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "80b84cb6202808f260b94b26c0e01dd870c1c94f944da828077a6b5e82f92303",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 7,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 446,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 160,
+      "deltaJapaneseCharacters": 160,
+      "originalConfidence": null,
+      "candidateConfidence": 70.85,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "794e38d07a40e446018db7ec196eb0f435b83c10a8b327b6e94d15ea873eaeb9",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 33,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 1247,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 519,
+      "deltaJapaneseCharacters": 519,
+      "originalConfidence": null,
+      "candidateConfidence": 86.45,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "1bfc856adf168220ca1a2543d3b143962e8de81c26765fb3bc476f943e799021",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 104,
+      "reason": "EMPTY_RECOVERY_THREAD_COLLISION",
+      "originalCharacters": 0,
+      "candidateCharacters": 792,
+      "originalJapaneseCharacters": 0,
+      "candidateJapaneseCharacters": 360,
+      "deltaJapaneseCharacters": 360,
+      "originalConfidence": null,
+      "candidateConfidence": 88.87,
+      "originalTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidateTextSha256": "74e94cde58efc68e536d741b4f66d1972a942bc625eaf300991b9911d2d69baa",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 222,
+      "reason": "DUPLICATION_CORRECTION_ANSWER_KEY",
+      "originalCharacters": 967,
+      "candidateCharacters": 1328,
+      "originalJapaneseCharacters": 53,
+      "candidateJapaneseCharacters": 22,
+      "deltaJapaneseCharacters": -31,
+      "originalConfidence": 78.65,
+      "candidateConfidence": 70.01,
+      "originalTextSha256": "22e43ac07455503f767bb61a491510f0b5d54bc3a7170dff39ffd92cce3b04ac",
+      "candidateTextSha256": "e3ee1ae784f7efb47c45058c7a0fb329dac84c615e297f69402887a030295ace",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 223,
+      "reason": "DUPLICATION_CORRECTION_ANSWER_KEY",
+      "originalCharacters": 1433,
+      "candidateCharacters": 1207,
+      "originalJapaneseCharacters": 96,
+      "candidateJapaneseCharacters": 3,
+      "deltaJapaneseCharacters": -93,
+      "originalConfidence": 78.45,
+      "candidateConfidence": 69.26,
+      "originalTextSha256": "8bec964ccf3cd5f223836a0d1a59393e987a8a94693fa79b03653addd7ea11b1",
+      "candidateTextSha256": "5b35d1a0d4489b7cd31ed1a09b2be8fb88721fbf08cf7e2844b8f707de0a9891",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 224,
+      "reason": "DUPLICATION_CORRECTION_ANSWER_KEY",
+      "originalCharacters": 1091,
+      "candidateCharacters": 1243,
+      "originalJapaneseCharacters": 158,
+      "candidateJapaneseCharacters": 4,
+      "deltaJapaneseCharacters": -154,
+      "originalConfidence": 78.22,
+      "candidateConfidence": 73.41,
+      "originalTextSha256": "2b54d4ca3eb90c113b9a2c1d66f67d528766de59dd2fc55dfd76bda1e22fd2f4",
+      "candidateTextSha256": "64b4fec4fe304252d64c347da0caf861de07451505e73e8c63747e61fe7e2d2d",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-bunpo",
+      "page": 225,
+      "reason": "DUPLICATION_CORRECTION_ANSWER_KEY",
+      "originalCharacters": 113,
+      "candidateCharacters": 1504,
+      "originalJapaneseCharacters": 16,
+      "candidateJapaneseCharacters": 279,
+      "deltaJapaneseCharacters": 263,
+      "originalConfidence": 85.18,
+      "candidateConfidence": 79.72,
+      "originalTextSha256": "e9cf2c0b16cdd5089a98b54110ebb3aa89b1560c1815f0697e861699a23ca2bb",
+      "candidateTextSha256": "9e69cad73b3440ac1eeee2aa2e93c1bb7aa12fe0fe1ebde259264ace8c654279",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 3,
+      "reason": "TOC_LAYOUT_RECOVERY",
+      "originalCharacters": 724,
+      "candidateCharacters": 1230,
+      "originalJapaneseCharacters": 51,
+      "candidateJapaneseCharacters": 385,
+      "deltaJapaneseCharacters": 334,
+      "originalConfidence": 53.91,
+      "candidateConfidence": 73.6,
+      "originalTextSha256": "abefa0d3b500caafd50341364601702b5e196a11405cd60d9803e7df3e1fa7f4",
+      "candidateTextSha256": "94bd86df6b6ff48d8f0e7a025366adcb7613278b69b77bb510890d2a7a1a77c0",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 199,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1615,
+      "candidateCharacters": 6129,
+      "originalJapaneseCharacters": 75,
+      "candidateJapaneseCharacters": 563,
+      "deltaJapaneseCharacters": 488,
+      "originalConfidence": 49.11,
+      "candidateConfidence": 81.93,
+      "originalTextSha256": "7a455e5eaca683f2045ef5f815006388a248472547007289ac1a9a1b070d176f",
+      "candidateTextSha256": "8c979fef68b91dbd038aaa5d11a088182234b8bff57af15b16cb781bdde0a00d",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 200,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1829,
+      "candidateCharacters": 5295,
+      "originalJapaneseCharacters": 162,
+      "candidateJapaneseCharacters": 564,
+      "deltaJapaneseCharacters": 402,
+      "originalConfidence": 52.04,
+      "candidateConfidence": 78.8,
+      "originalTextSha256": "6dfa6754e15334ee6f94ebc5451e6054d29334084ee32792196d0918a13e6c34",
+      "candidateTextSha256": "cfad138aedfafc2b6c83fd3560cb29f1a9d0a83262d2904bdced31d8ecf7db46",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 202,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1501,
+      "candidateCharacters": 6326,
+      "originalJapaneseCharacters": 32,
+      "candidateJapaneseCharacters": 648,
+      "deltaJapaneseCharacters": 616,
+      "originalConfidence": 42.56,
+      "candidateConfidence": 82.68,
+      "originalTextSha256": "defc42c93b1bc3028534cd86b93d3d6c92a33470256d3c2a4ef58f251c965d85",
+      "candidateTextSha256": "333842cbcce2c4bce67d9d00fc45c18f755c14dc04a3df9ecb05d23637e402f7",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 203,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1037,
+      "candidateCharacters": 6561,
+      "originalJapaneseCharacters": 95,
+      "candidateJapaneseCharacters": 536,
+      "deltaJapaneseCharacters": 441,
+      "originalConfidence": 72.46,
+      "candidateConfidence": 75.84,
+      "originalTextSha256": "dff990b0074dfdf03c53cface3116c67b3902202d6e7dba2d4a28358803284a5",
+      "candidateTextSha256": "778bb5310d90aae2ff0c88931f5712b576523a5e3f1607882363f85fd96d2e02",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 204,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1318,
+      "candidateCharacters": 5911,
+      "originalJapaneseCharacters": 48,
+      "candidateJapaneseCharacters": 595,
+      "deltaJapaneseCharacters": 547,
+      "originalConfidence": 45.03,
+      "candidateConfidence": 82.53,
+      "originalTextSha256": "28662ea3a20fccedf1bebd6d32f75ac9b2f58e5b2da76564e4608f5e4aa46696",
+      "candidateTextSha256": "93f5eeef76eabd50d370b073c8c6684b665999df80d60c0cb057ef3a367189ed",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 206,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1264,
+      "candidateCharacters": 6034,
+      "originalJapaneseCharacters": 39,
+      "candidateJapaneseCharacters": 587,
+      "deltaJapaneseCharacters": 548,
+      "originalConfidence": 48.19,
+      "candidateConfidence": 80.81,
+      "originalTextSha256": "4bc539f6f9b5da8653706a7be69fd12eef6e95731405e0f183c81c9c872686ba",
+      "candidateTextSha256": "89026ebc67d6946fd8ed3dcdbc8a472c8aeedf3a8ddf2f07fd09611b89330798",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 207,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1473,
+      "candidateCharacters": 4962,
+      "originalJapaneseCharacters": 88,
+      "candidateJapaneseCharacters": 606,
+      "deltaJapaneseCharacters": 518,
+      "originalConfidence": 56.37,
+      "candidateConfidence": 82.3,
+      "originalTextSha256": "7d84f88d2ab2aa9196b56b5d9e7df1d4085e78115ce388c5ddf3d56709490dc2",
+      "candidateTextSha256": "75db957d1996539530329c7f2a2986e6c123240fc45d5345fc667fb3ff431b28",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 209,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 1422,
+      "candidateCharacters": 5168,
+      "originalJapaneseCharacters": 66,
+      "candidateJapaneseCharacters": 561,
+      "deltaJapaneseCharacters": 495,
+      "originalConfidence": 44.5,
+      "candidateConfidence": 78.97,
+      "originalTextSha256": "3ec6c8cbbfa10c8ca5ac98582fb0c057ed774457afa773352b5d54ef7196bb42",
+      "candidateTextSha256": "126a329093c35abac023628d719663ee904a21c6379768f8e2e0a3bf7ecd9d84",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-goi",
+      "page": 213,
+      "reason": "INDEX_MULTICOLUMN_DOT_LEADER_RECOVERY",
+      "originalCharacters": 934,
+      "candidateCharacters": 3722,
+      "originalJapaneseCharacters": 56,
+      "candidateJapaneseCharacters": 388,
+      "deltaJapaneseCharacters": 332,
+      "originalConfidence": 47.95,
+      "candidateConfidence": 79.59,
+      "originalTextSha256": "d44acb06cc018fba283e02b1f0f30be1a1344c06bbd1dce10b8f644bbd4afd7d",
+      "candidateTextSha256": "636284151af2090bf430226a330c16e14c0a7b74648d8ae560424dea0e4833d3",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 29,
+      "reason": "LISTENING_EXERCISE_DIALOGUE_RECOVERY",
+      "originalCharacters": 203,
+      "candidateCharacters": 181,
+      "originalJapaneseCharacters": 17,
+      "candidateJapaneseCharacters": 54,
+      "deltaJapaneseCharacters": 37,
+      "originalConfidence": 52.34,
+      "candidateConfidence": 67.48,
+      "originalTextSha256": "57472d26f116fff620ecd2e4b274b08dd60ec1c226a03cd67fc6d6d966cfcc9f",
+      "candidateTextSha256": "bcd4f370051ac4177659f0c0269d8b2388e0bd38df02649fd1c835d0c48f6078",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 35,
+      "reason": "LISTENING_EXERCISE_SCRIPT_RECOVERY",
+      "originalCharacters": 366,
+      "candidateCharacters": 598,
+      "originalJapaneseCharacters": 63,
+      "candidateJapaneseCharacters": 142,
+      "deltaJapaneseCharacters": 79,
+      "originalConfidence": 57.38,
+      "candidateConfidence": 80.57,
+      "originalTextSha256": "60af60f8cc89689ed8a15703e64bf2c7a9e6706799a6ee04ec1463da73b4b662",
+      "candidateTextSha256": "f1d9618f0fb985506fd454f0b6d6d465cdd4beb4138138b08e54c0131dfba16d",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 80,
+      "reason": "LISTENING_EXERCISE_TEXT_RECOVERY",
+      "originalCharacters": 735,
+      "candidateCharacters": 795,
+      "originalJapaneseCharacters": 102,
+      "candidateJapaneseCharacters": 319,
+      "deltaJapaneseCharacters": 217,
+      "originalConfidence": 50.93,
+      "candidateConfidence": 73.44,
+      "originalTextSha256": "63f9b7267267001c0d7db9e67fd51c8e7192d2cfbe94542ec5605ed917fb920b",
+      "candidateTextSha256": "5a77d2228a27aa240b780d695f90139cbf408ac25996a09f85e677572347da03",
+      "decision": "RE-OCR_REPLACED"
+    },
+    {
+      "sourceId": "shinkanzen-n2-chokai",
+      "page": 102,
+      "reason": "LISTENING_EXERCISE_SUMMARY_RECOVERY",
+      "originalCharacters": 71,
+      "candidateCharacters": 190,
+      "originalJapaneseCharacters": 10,
+      "candidateJapaneseCharacters": 67,
+      "deltaJapaneseCharacters": 57,
+      "originalConfidence": 63.5,
+      "candidateConfidence": 73.34,
+      "originalTextSha256": "8b1b38f6bed034b868f4be93d64236153af1d15feb4df9aba43f71b3c0cdde2a",
+      "candidateTextSha256": "ba3c10c270847e2cee5774cc882cd94084f29bd89a58f308023f5ca82728965f",
+      "decision": "RE-OCR_REPLACED"
+    }
+  ]
+}

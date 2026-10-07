@@ -1,0 +1,67 @@
+{
+  "index": 272,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1",
+  "module": 16,
+  "kanjiIndex": 4,
+  "exampleIndex": 1,
+  "character": "叫",
+  "targetWord": "叫び (sakebi)",
+  "reading": "キョウ (KYOU)",
+  "romaji": "Sakebi o escuchar.",
+  "translation": "Ouvir o grito.",
+  "example": {
+    "displayText": "助けを求める大きな叫び声に気づきました。",
+    "audioText": "助けを求める大きな叫び声に気づきました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "叫",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "叫び (sakebi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "助けを求める大きな叫び声に気づきました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sakebi o escuchar.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-4-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ouvir o grito.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"叫び\" ou o exemplo \"助けを求める大きな叫び声に気づきました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.741Z"
+}

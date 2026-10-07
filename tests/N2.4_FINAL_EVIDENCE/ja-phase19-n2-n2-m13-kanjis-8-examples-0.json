@@ -1,0 +1,67 @@
+{
+  "index": 188,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0",
+  "module": 13,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "援",
+  "targetWord": "支援 (shien)",
+  "reading": "エン (EN)",
+  "romaji": "Humanitarian shien.",
+  "translation": "Assistência humanitária.",
+  "example": {
+    "displayText": "被災地へ食料や医薬品の人道支援物資を送ります。",
+    "audioText": "被災地へ食料や医薬品の人道支援物資を送ります。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "援",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "支援 (shien)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "被災地へ食料や医薬品の人道支援物資を送ります。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Humanitarian shien.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Assistência humanitária.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"支援\" ou o exemplo \"被災地へ食料や医薬品の人道支援物資を送ります。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.676Z"
+}

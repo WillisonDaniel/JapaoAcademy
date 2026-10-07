@@ -1,0 +1,67 @@
+{
+  "index": 327,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1",
+  "module": 18,
+  "kanjiIndex": 3,
+  "exampleIndex": 1,
+  "character": "銀",
+  "targetWord": "銀メダル (gin-medaru)",
+  "reading": "ギン (GIN)",
+  "romaji": "Gin-medaru o get.",
+  "translation": "Conquistar a medalha de prata.",
+  "example": {
+    "displayText": "オリンピックで堂々の銀メダルを獲得しました。",
+    "audioText": "オリンピックで堂々の銀メダルを獲得しました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "銀",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "銀メダル (gin-medaru)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "オリンピックで堂々の銀メダルを獲得しました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gin-medaru o get.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-3-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Conquistar a medalha de prata.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"銀メダル\" ou o exemplo \"オリンピックで堂々の銀メダルを獲得しました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.785Z"
+}

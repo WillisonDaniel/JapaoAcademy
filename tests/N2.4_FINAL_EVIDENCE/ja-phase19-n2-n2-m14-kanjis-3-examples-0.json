@@ -1,0 +1,67 @@
+{
+  "index": 211,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0",
+  "module": 14,
+  "kanjiIndex": 3,
+  "exampleIndex": 0,
+  "character": "寄",
+  "targetWord": "寄港 (kikou)",
+  "reading": "キ (KI)",
+  "romaji": "Ship no kikou.",
+  "translation": "Escala do navio no porto.",
+  "example": {
+    "displayText": "しプの寄港。",
+    "audioText": "しプの寄港。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "寄",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "寄港 (kikou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "しプの寄港。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ship no kikou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-3-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Escala do navio no porto.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"寄港\" ou o exemplo \"しプの寄港。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.694Z"
+}

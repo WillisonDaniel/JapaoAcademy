@@ -1,0 +1,67 @@
+{
+  "index": 255,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1",
+  "module": 16,
+  "kanjiIndex": 10,
+  "exampleIndex": 1,
+  "character": "怨",
+  "targetWord": "怨念 (onnen)",
+  "reading": "エン (EN) / オン (ON)",
+  "romaji": "Onnen ga tsuyoi.",
+  "translation": "Forte sentimento de vingança.",
+  "example": {
+    "displayText": "怨念がつよい。",
+    "audioText": "怨念がつよい。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "怨",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "怨念 (onnen)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "怨念がつよい。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Onnen ga tsuyoi.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-10-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Forte sentimento de vingança.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"怨念\" ou o exemplo \"怨念がつよい。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.729Z"
+}

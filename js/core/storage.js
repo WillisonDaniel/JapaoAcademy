@@ -666,6 +666,7 @@ function criarBackupNuvem() {
     const backup = {
         progressoGlobal: JSON.parse(localStorage.getItem('japao_academy_progress') || (typeof progressoGlobal !== 'undefined' ? JSON.stringify(progressoGlobal) : '{}')),
         xpTotal: obterXPAtualParaBackup(),
+        xpPorIdioma: typeof obterTodosXPsPorIdioma === 'function' ? obterTodosXPsPorIdioma() : JSON.parse(localStorage.getItem('ja_xp_per_language') || '{}'),
         userStats: JSON.parse(localStorage.getItem('ja_user_stats') || '{}'),
         streakData: JSON.parse(localStorage.getItem('ja_streak_data') || '{}'),
         achievements: JSON.parse(localStorage.getItem('ja_unlocked_achievements') || '[]'),
@@ -698,36 +699,30 @@ function estimarXPMinimoDeBackupLegado(progresso) {
     ];
 
     cursosEspeciais.forEach(curso => {
-        const concluidos = Array.isArray(progresso[curso.key])
-            ? Array.from(new Set(progresso[curso.key].filter(Number.isInteger)))
-            : [];
-        if (concluidos.length === 0) return;
-
-        const dadosCurso = typeof getCourseData === 'function' ? getCourseData(curso.mode) : null;
-        const totalModulos = dadosCurso && dadosCurso.length ? dadosCurso.length : curso.fallbackTotal;
-        if (!totalModulos) return;
-
-        const concluidosValidos = concluidos.filter(indice => indice >= 0 && indice < totalModulos).length;
-        const xpPorModulo = Math.max(1, Math.round(curso.budget / totalModulos));
-        xpEstimado += concluidosValidos * xpPorModulo;
+        const salvos = Array.isArray(progresso[curso.key]) ? progresso[curso.key] : [];
+        if (salvos.length === 0) return;
+        const totalModulos = typeof obterTotalModulosCursoNormalizado === 'function'
+            ? obterTotalModulosCursoNormalizado(curso.mode)
+            : (curso.fallbackTotal || 0);
+        const xpPorModulo = totalModulos > 0 ? Math.round(curso.budget / totalModulos) : 0;
+        xpEstimado += new Set(salvos).size * xpPorModulo;
     });
 
     return xpEstimado;
 }
 
 function obterXPDoBackup(dadosNuvem) {
-    if (dadosNuvem && Object.prototype.hasOwnProperty.call(dadosNuvem, 'xpTotal')) {
-        const xpPersistido = parseInt(dadosNuvem.xpTotal, 10);
-        return Number.isFinite(xpPersistido) && xpPersistido >= 0 ? xpPersistido : 0;
-    }
+    if (!dadosNuvem || typeof dadosNuvem !== 'object') return 0;
+    const xpTotal = parseInt(dadosNuvem.xpTotal, 10);
+    if (Number.isFinite(xpTotal) && xpTotal >= 0) return xpTotal;
 
-    const progresso = dadosNuvem && dadosNuvem.progressoGlobal ? dadosNuvem.progressoGlobal : {};
-    const estatisticas = dadosNuvem && dadosNuvem.userStats ? dadosNuvem.userStats : {};
-    const candidatosLegados = [progresso.xpTotal, progresso.xp, estatisticas.xpTotal, estatisticas.xp]
-        .map(valor => parseInt(valor, 10))
-        .filter(valor => Number.isFinite(valor) && valor >= 0);
-    candidatosLegados.push(estimarXPMinimoDeBackupLegado(progresso));
-    return Math.max(0, ...candidatosLegados);
+    const progressoGlobal = dadosNuvem.progressoGlobal && typeof dadosNuvem.progressoGlobal === 'object'
+        ? dadosNuvem.progressoGlobal
+        : null;
+    const xpLegado = progressoGlobal ? parseInt(progressoGlobal.xp, 10) : NaN;
+    if (Number.isFinite(xpLegado) && xpLegado >= 0) return xpLegado;
+
+    return estimarXPMinimoDeBackupLegado(progressoGlobal);
 }
 
 function mesclarListasProgresso(local = [], remoto = []) {
@@ -803,6 +798,23 @@ function aplicarDadosDoBackup(dadosNuvem, uid) {
     const xpMesclado = Math.max(xpLocal, xpNuvem);
     if (typeof AppState !== 'undefined' && typeof AppState.setXP === 'function') AppState.setXP(xpMesclado);
     else localStorage.setItem('ja_user_xp', xpMesclado.toString());
+
+    // Mesclagem do XP por idioma (sem perda de progresso offline)
+    const xpPorIdiomaLocal = typeof obterTodosXPsPorIdioma === 'function' ? obterTodosXPsPorIdioma() : (JSON.parse(localStorage.getItem('ja_xp_per_language')) || {});
+    const xpPorIdiomaNuvem = dadosNuvem && dadosNuvem.xpPorIdioma ? dadosNuvem.xpPorIdioma : {};
+    const xpPorIdiomaMesclado = {
+        japanese: Math.max(Number(xpPorIdiomaLocal.japanese) || 0, Number(xpPorIdiomaNuvem.japanese) || 0),
+        english:  Math.max(Number(xpPorIdiomaLocal.english) || 0,  Number(xpPorIdiomaNuvem.english) || 0),
+        spanish:  Math.max(Number(xpPorIdiomaLocal.spanish) || 0,  Number(xpPorIdiomaNuvem.spanish) || 0),
+        russian:  Math.max(Number(xpPorIdiomaLocal.russian) || 0,  Number(xpPorIdiomaNuvem.russian) || 0),
+        italian:  Math.max(Number(xpPorIdiomaLocal.italian) || 0,  Number(xpPorIdiomaNuvem.italian) || 0)
+    };
+    localStorage.setItem('ja_xp_per_language', JSON.stringify(xpPorIdiomaMesclado));
+    if (typeof window !== 'undefined' && typeof window.definirTodosXPsPorIdioma === 'function') {
+        window.definirTodosXPsPorIdioma(xpPorIdiomaMesclado);
+    }
+    if (typeof atualizarHeaderXP === 'function') atualizarHeaderXP();
+    if (typeof renderizarMuralPatentesDashboard === 'function') renderizarMuralPatentesDashboard();
 
     if (dadosNuvem.userStats) localStorage.setItem('ja_user_stats', JSON.stringify(dadosNuvem.userStats));
     if (dadosNuvem.streakData) localStorage.setItem('ja_streak_data', JSON.stringify(dadosNuvem.streakData));
@@ -962,14 +974,14 @@ function obterCaminhoMeuProgresso() {
     const pathname = (typeof window !== 'undefined' && window.location && window.location.pathname)
         ? window.location.pathname.replace(/\\/g, '/')
         : '';
-    if (pathname.includes('/html/')) return '../../index.html';
-    return 'index.html';
+    if (pathname.includes('/html/')) return '../../meu-progresso.html';
+    return 'meu-progresso.html';
 }
 
 function irParaMeuProgresso() {
     if (typeof window === 'undefined' || !window.location) return false;
     const path = (window.location.pathname || '').replace(/\\/g, '/');
-    if (/\/meu-progresso\.html$/i.test(path) || /\/index\.html$/i.test(path) || /\/$/i.test(path)) return false;
+    if (/\/meu-progresso\.html$/i.test(path)) return false;
     window.location.href = obterCaminhoMeuProgresso();
     return true;
 }

@@ -1,0 +1,83 @@
+{
+  "index": 39,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0",
+  "module": 9,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "震",
+  "targetWord": "地震 (jishin)",
+  "reading": "シン (SHIN)",
+  "romaji": "Jishin ga okiru.",
+  "translation": "Ocorrer um terremoto.",
+  "example": {
+    "displayText": "地震がおきる。",
+    "audioText": "地震がおきる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "震",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "地震 (jishin)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "地震がおきる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Jishin ga okiru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ocorrer um terremoto.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 262,
+      "file": "tobira-2009-p0262.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0262.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0262.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "地震",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"地震\" possui atestação lexical primária na testemunha tobira-2009-p0262.json (p. 262), porém a frase de exemplo canônica (\"地震がおきる。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.554Z"
+}

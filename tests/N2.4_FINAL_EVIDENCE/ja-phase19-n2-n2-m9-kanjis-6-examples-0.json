@@ -1,0 +1,67 @@
+{
+  "index": 643,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0",
+  "module": 9,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "崩",
+  "targetWord": "崩壊 (houkai)",
+  "reading": "ホウ (HOU)",
+  "romaji": "Tatemono no houkai.",
+  "translation": "Colapso do prédio.",
+  "example": {
+    "displayText": "たてものの崩壊。",
+    "audioText": "たてものの崩壊。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "崩",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "崩壊 (houkai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "たてものの崩壊。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tatemono no houkai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Colapso do prédio.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"崩壊\" ou o exemplo \"たてものの崩壊。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.033Z"
+}

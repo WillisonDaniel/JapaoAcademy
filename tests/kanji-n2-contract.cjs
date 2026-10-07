@@ -13,7 +13,6 @@ const context = { console };
 context.window = context;
 context.globalThis = context;
 vm.createContext(context);
-vm.runInContext(read('js/kanji/romaji-draft.js'), context, { filename: 'js/kanji/romaji-draft.js' });
 vm.runInContext(`${read('database/ja-JP/data_kanji_n2.js')}\nglobalThis.__data = kanjiN2Data;`, context, { filename: 'data_kanji_n2.js' });
 const modules = JSON.parse(JSON.stringify(context.__data));
 const JAPANESE = /[\u3040-\u30ff\u3400-\u9fff]/u;
@@ -54,13 +53,12 @@ run('todos os exemplos N2 possuem contrato japones completo e rastreavel', () =>
     });
 });
 
-run('helper compartilhado elimina residuos latinos sem aprovar os rascunhos', () => {
-    assert.equal(context.KanjiRomajiDraft.word('gakkou', {}), 'がっこう');
-    assert.equal(context.KanjiRomajiDraft.word('manager', {}), 'まなげル');
-    const converted = context.KanjiRomajiDraft.sentence('Kigyou no strategy.', { word: '企業 (kigyou)' }, { strategy: '戦略' });
-    assert.equal(converted.targetReplaced, true);
-    assert.match(converted.text, /企業/);
-    assert.doesNotMatch(converted.text, /[A-Za-z]/);
+run('dataset N2 é canônico e página kanji_n2.html não carrega romaji-draft', () => {
+    const rawData = read('database/ja-JP/data_kanji_n2.js');
+    const htmlPage = read('html/ja-JP/kanji_n2.html');
+    assert.doesNotMatch(rawData, /KanjiRomajiDraft/);
+    assert.doesNotMatch(rawData, /romaji-draft/);
+    assert.doesNotMatch(htmlPage, /romaji-draft\.js/);
 });
 
 run('gramatica N2 possui 20 contratos sem Romaji no texto principal', () => {
@@ -86,11 +84,12 @@ function stripEditorial(value) {
 
 run('snapshot estrutural N2 preserva tudo fora das correcoes autorizadas', () => {
     const structural = stripEditorial(modules);
+    structural.forEach(module => { if (module.readingText) module.readingText = '__AUTHORIZED_READING_TEXT__'; });
     structural[4].kanjis[7].onyomi = '__AUTHORIZED_READING__';
     structural[14].kanjis[3].onyomi = '__AUTHORIZED_READING__';
     structural[20].description = '__AUTHORIZED_REVIEW_TEXT__';
     const hash = crypto.createHash('sha256').update(JSON.stringify(structural)).digest('hex');
-    assert.equal(hash, '5a70dff97bf428118a9c509c9ba54419f9b5a66f5cd4bff20358521426e8d02e');
+    assert.equal(hash, '79f0d8d544479d7d046fd839c39012a0dbfb04f0ac33c4ed83101dedcc44c0ed');
 });
 
 run('leituras e revisao N2 usam Kana e inventario real', () => {

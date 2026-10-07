@@ -1,0 +1,67 @@
+{
+  "index": 491,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0",
+  "module": 4,
+  "kanjiIndex": 9,
+  "exampleIndex": 0,
+  "character": "院",
+  "targetWord": "参議院 (sangiin)",
+  "reading": "イン (IN)",
+  "romaji": "Sangiin senkyo.",
+  "translation": "Eleição para a Câmara Alta.",
+  "example": {
+    "displayText": "参議院せんきょ。",
+    "audioText": "参議院せんきょ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "院",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "参議院 (sangiin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "参議院せんきょ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Sangiin senkyo.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Eleição para a Câmara Alta.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"参議院\" ou o exemplo \"参議院せんきょ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.918Z"
+}

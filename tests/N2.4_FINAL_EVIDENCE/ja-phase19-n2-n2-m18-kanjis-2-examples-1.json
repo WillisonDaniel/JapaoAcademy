@@ -1,0 +1,67 @@
+{
+  "index": 325,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1",
+  "module": 18,
+  "kanjiIndex": 2,
+  "exampleIndex": 1,
+  "character": "銅",
+  "targetWord": "銅貨 (douka)",
+  "reading": "ドウ (DOU)",
+  "romaji": "10-yen douka.",
+  "translation": "Moeda de cobre de 10 ienes.",
+  "example": {
+    "displayText": "自動販売機で十円の銅貨を使って切符を買います。",
+    "audioText": "自動販売機で十円の銅貨を使って切符を買います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "銅",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "銅貨 (douka)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "自動販売機で十円の銅貨を使って切符を買います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "10-yen douka.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-2-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Moeda de cobre de 10 ienes.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"銅貨\" ou o exemplo \"自動販売機で十円の銅貨を使って切符を買います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.783Z"
+}

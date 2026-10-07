@@ -1,0 +1,67 @@
+{
+  "index": 163,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1",
+  "module": 13,
+  "kanjiIndex": 10,
+  "exampleIndex": 1,
+  "character": "貢",
+  "targetWord": "貢物 (mitsugimono)",
+  "reading": "コウ (KOU) / ク (KU)",
+  "romaji": "Mitsugimono o offer.",
+  "translation": "Oferecer tributos.",
+  "example": {
+    "displayText": "かつて属国が皇帝に珍しい貢物を捧げました。",
+    "audioText": "かつて属国が皇帝に珍しい貢物を捧げました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "貢",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "貢物 (mitsugimono)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "かつて属国が皇帝に珍しい貢物を捧げました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Mitsugimono o offer.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-10-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Oferecer tributos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"貢物\" ou o exemplo \"かつて属国が皇帝に珍しい貢物を捧げました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.655Z"
+}

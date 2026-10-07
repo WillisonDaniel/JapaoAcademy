@@ -1,0 +1,67 @@
+{
+  "index": 102,
+  "targetId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1",
+  "module": 11,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "崇",
+  "targetWord": "崇高 (suukou)",
+  "reading": "スウ (SUU)",
+  "romaji": "Suukou na goal.",
+  "translation": "Meta sublime e elevada.",
+  "example": {
+    "displayText": "崇高なごあル。",
+    "audioText": "崇高なごあル。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "崇",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "崇高 (suukou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "崇高なごあル。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Suukou na goal.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m11-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Meta sublime e elevada.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"崇高\" ou o exemplo \"崇高なごあル。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.603Z"
+}

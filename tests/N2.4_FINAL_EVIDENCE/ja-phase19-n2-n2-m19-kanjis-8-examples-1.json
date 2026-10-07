@@ -1,0 +1,67 @@
+{
+  "index": 367,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1",
+  "module": 19,
+  "kanjiIndex": 8,
+  "exampleIndex": 1,
+  "character": "充",
+  "targetWord": "充填 (juuten)",
+  "reading": "ジュー (JUU)",
+  "romaji": "Gas no juuten.",
+  "translation": "Abastecimento de gás.",
+  "example": {
+    "displayText": "ボンベにプロパンガスを安全に充填します。",
+    "audioText": "ボンベにプロパンガスを安全に充填します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "充",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "充填 (juuten)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ボンベにプロパンガスを安全に充填します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gas no juuten.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-8-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Abastecimento de gás.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"充填\" ou o exemplo \"ボンベにプロパンガスを安全に充填します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.816Z"
+}

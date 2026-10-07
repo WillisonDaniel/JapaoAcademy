@@ -14,7 +14,6 @@ function loadKanji(level) {
     const number = level.slice(1);
     const context = { console: { log() {}, warn() {}, error() {} } };
     context.window = context; context.globalThis = context; vm.createContext(context);
-    if (['N3', 'N2', 'N1'].includes(level)) vm.runInContext(fs.readFileSync(path.join(ROOT, 'js/kanji/romaji-draft.js'), 'utf8'), context);
     const file = `database/ja-JP/data_kanji_n${number}.js`;
     vm.runInContext(`${fs.readFileSync(path.join(ROOT, file), 'utf8')}\n;globalThis.__data = kanjiN${number}Data;`, context, { filename: file });
     return JSON.parse(JSON.stringify(context.__data));
@@ -43,7 +42,7 @@ function buildIndex() {
             moduleTitle: String(module.title || `Módulo ${module.module}`), title: String(text.title), route: `kanji_n${level.slice(1)}.html`,
             japaneseHtml: String(text.japanese), plainText, romaji: String(text.romaji || ''), translation: String(text.translation),
             charCount: Array.from(plainText).length, questions: normalizeQuiz(text.comprehensionQuiz),
-            editorialStatus: module.editorialReview && module.editorialReview.status === 'pending-human-review' ? 'pending-human-review' : 'not-flagged'
+            editorialStatus: 'not-flagged'
         }];
     }));
 }

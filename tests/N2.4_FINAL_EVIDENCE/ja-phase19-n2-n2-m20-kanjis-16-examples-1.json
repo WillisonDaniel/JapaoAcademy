@@ -1,0 +1,67 @@
+{
+  "index": 411,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1",
+  "module": 20,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "祭",
+  "targetWord": "祭日 (saijitsu)",
+  "reading": "サイ (SAI)",
+  "romaji": "Saijitsu no festival.",
+  "translation": "Festival no dia festivo.",
+  "example": {
+    "displayText": "祭日の祭り。",
+    "audioText": "祭日の祭り。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "祭",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "祭日 (saijitsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "祭日の祭り。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Saijitsu no festival.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Festival no dia festivo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"祭日\" ou o exemplo \"祭日の祭り。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.857Z"
+}

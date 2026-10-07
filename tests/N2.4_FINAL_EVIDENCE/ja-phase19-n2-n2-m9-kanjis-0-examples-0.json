@@ -1,0 +1,67 @@
+{
+  "index": 616,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0",
+  "module": 9,
+  "kanjiIndex": 0,
+  "exampleIndex": 0,
+  "character": "環",
+  "targetWord": "環境 (kankyou)",
+  "reading": "カン (KAN)",
+  "romaji": "Kankyou protection.",
+  "translation": "Proteção ambiental.",
+  "example": {
+    "displayText": "環境プろてクてぃおん。",
+    "audioText": "環境プろてクてぃおん。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "環",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "環境 (kankyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "環境プろてクてぃおん。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kankyou protection.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-0-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Proteção ambiental.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"環境\" ou o exemplo \"環境プろてクてぃおん。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.013Z"
+}

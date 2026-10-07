@@ -1,0 +1,83 @@
+{
+  "index": 17,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1",
+  "module": 16,
+  "kanjiIndex": 11,
+  "exampleIndex": 1,
+  "character": "嫌",
+  "targetWord": "嫌い (kirai)",
+  "reading": "ケン (KEN) / ゲン (GEN)",
+  "romaji": "Natto ga kirai.",
+  "translation": "Odiar natto.",
+  "example": {
+    "displayText": "独特の強い匂いがある納豆が嫌いです。",
+    "audioText": "独特の強い匂いがある納豆が嫌いです。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "嫌",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "嫌い (kirai)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "独特の強い匂いがある納豆が嫌いです。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Natto ga kirai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-11-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Odiar natto.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 170,
+      "file": "quartet-2-textbook-p0170.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0170.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0170.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "嫌い",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"嫌い\" possui atestação lexical primária na testemunha quartet-2-textbook-p0170.json (p. 170), porém a frase de exemplo canônica (\"独特の強い匂いがある納豆が嫌いです。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.534Z"
+}

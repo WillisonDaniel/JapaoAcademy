@@ -26,9 +26,6 @@ function loadDataset(relativePath, variableName) {
     context.window = context;
     context.globalThis = context;
     vm.createContext(context);
-    if (/data_kanji_n[123]\.js$/.test(relativePath)) {
-        vm.runInContext(read('js/kanji/romaji-draft.js'), context, { filename: 'js/kanji/romaji-draft.js' });
-    }
     vm.runInContext(`${read(relativePath)}\nglobalThis.__dataset = ${variableName};`, context, { filename: relativePath });
     return JSON.parse(JSON.stringify(context.__dataset));
 }

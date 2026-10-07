@@ -1,0 +1,67 @@
+{
+  "index": 618,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0",
+  "module": 9,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "境",
+  "targetWord": "国境 (kokkyou)",
+  "reading": "キョウ (KYOU) / ケイ (KEI)",
+  "romaji": "Kokkyou o cross.",
+  "translation": "Cruzar a fronteira nacional.",
+  "example": {
+    "displayText": "国境をクろっス。",
+    "audioText": "国境をクろっス。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "境",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "国境 (kokkyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "国境をクろっス。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kokkyou o cross.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Cruzar a fronteira nacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"国境\" ou o exemplo \"国境をクろっス。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.014Z"
+}

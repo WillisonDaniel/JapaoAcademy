@@ -185,10 +185,10 @@ function stripEditorialFields(value) {
 
 run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     const fixtures = [
-        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '52fd4f27dc2b2b8c404773a60f6ef4c9d7fbd4f49454c108a30346f05ad1afbc'],
-        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '02b8b3325910503dc7eff5294d836419b835f348c2c07dce8964ff76eac5de44'],
-        ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', '1963747d67c549242073eb9f419c3a86fabc82d3b6b2ce5ab19011c54b674dae'],
-        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', '91f8860fee76d18bd2c958fabc097e5bf3269dde716f6780721f1978e3374dd2']
+        ['database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS', '23119266b91e7fa0f1ea4609816655044a24d638eda836bdaa31c9acc5521b6b'],
+        ['database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS', '52512e3aa86185b86151a28a4f5bec08ed4f0ff1591d571f6bcde104b2e09038'],
+        ['database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS', 'eb603690932c3ca4f8044a72b7a8325ebe2a49f2576467bb1f63933fcd6262d6'],
+        ['database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS', 'ce2fc286bc4a1869dd9082277de2ddea38ccd3d73b2cbc5db9c27a8c76b55de4']
     ];
     fixtures.forEach(([file, variable, expected]) => {
         const structural = JSON.stringify(stripEditorialFields(loadDataset(file, variable)));
@@ -196,17 +196,19 @@ run('migracoes A1 a B2 preservam os snapshots estruturais anteriores', () => {
     });
 });
 
-run('A1 e A2 possuem os 151 contratos editoriais previstos', () => {
+run('A1 e A2 possuem os 150 contratos editoriais previstos', () => {
     const a1 = loadDataset('database/ja-JP/data_curso_a1.js', 'CURSO_A1_DADOS');
     const a2 = loadDataset('database/ja-JP/data_curso_a2.js', 'CURSO_A2_DADOS');
     const modules = [...a1, ...a2];
     const audioContracts = modules.filter(module => module.stage1_context && module.stage1_context.audio).length;
     const dialogueContracts = modules.flatMap(module => module.stage4_dialog || []).filter(dialogue => dialogue.content).length;
     assert.equal(audioContracts, 61);
-    assert.equal(dialogueContracts, 90);
-    assert.equal(audioContracts + dialogueContracts, 151);
+    assert.equal(dialogueContracts, 89);
+    assert.equal(audioContracts + dialogueContracts, 150);
     assert.equal(modules.filter(module => module.canDo).length, 61);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 61);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 0);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'approved').length, 1);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 60);
     modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
         if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
     });
@@ -218,20 +220,21 @@ run('auditoria reduz a zero as ocorrencias alvo de A1 e A2', () => {
     assert.equal(target.length, 0);
     assert.equal(report.summary.bySeverity.blocking, 0);
     assert.match(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /pending-human-review/);
-    assert.doesNotMatch(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| approved \|/i);
+    assert.match(read('tests/JAPANESE_A1_A2_HUMAN_REVIEW.md'), /\| a1_mod_01 \|[^\n]+\| approved \|/i);
 });
 
-run('B1 e B2 possuem os 165 contratos editoriais previstos', () => {
+run('B1 e B2 possuem os 176 contratos editoriais previstos', () => {
     const b1 = loadDataset('database/ja-JP/data_curso_b1.js', 'CURSO_B1_DADOS');
     const b2 = loadDataset('database/ja-JP/data_curso_b2.js', 'CURSO_B2_DADOS');
     const modules = [...b1, ...b2];
     const audioContracts = modules.filter(module => module.stage1_context && module.stage1_context.audio).length;
     const dialogueContracts = modules.flatMap(module => module.stage4_dialog || []).filter(dialogue => dialogue.content).length;
     assert.equal(audioContracts, 44);
-    assert.equal(dialogueContracts, 121);
-    assert.equal(audioContracts + dialogueContracts, 165);
+    assert.equal(dialogueContracts, 132);
+    assert.equal(audioContracts + dialogueContracts, 176);
     assert.equal(modules.filter(module => module.canDo).length, 44);
-    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 44);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'pending-human-review').length, 0);
+    assert.equal(modules.filter(module => module.editorialReview && module.editorialReview.status === 'corrected').length, 44);
     modules.flatMap(module => module.stage4_dialog || []).forEach(dialogue => {
         if (dialogue.content) assert.doesNotMatch(dialogue.content.audioText || '', /\[\s*(?:Seu\s+)?Nome\s*\]/i);
     });

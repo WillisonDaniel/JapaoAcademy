@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "manifestName": "N2.1.1_INTEGRITY_MANIFEST",
+  "generatedAt": "2026-09-26T15:43:05.057Z",
+  "phase": "N2.1.1-PILOT-CONSOLIDATION",
+  "description": "Manifesto externo de integridade física e rastreabilidade criptográfica SHA-256 da Etapa N2.1.1",
+  "artifactsCount": 9,
+  "artifacts": [
+    {
+      "file": "database/ja-JP/data_kanji_n1.js",
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "size": 2908746,
+      "scope": "protected-dataset-n1"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n2.js",
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "size": 1067287,
+      "scope": "protected-dataset-n2"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n3.js",
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "size": 753295,
+      "scope": "protected-dataset-n3"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_LEDGER.json",
+      "sha256": "9DD3752DF37D366FF4DB3BD8B926FC77CB9F11C64BCABB6D8C41087E2E9B5A65",
+      "size": 21819112,
+      "scope": "editorial-ledger"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_REVIEW_QUEUE.json",
+      "sha256": "13D2FAFD388B59AF7B46CA6D1E60F714903AFB64B6FEE79535E0DF050F3622EF",
+      "size": 443813,
+      "scope": "prioritized-review-queue"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_TRIAGE_REPORT.md",
+      "sha256": "CAAD1B5B4D6FC2F4512627C22398A47F0D14D7C88CA19E93B663E32AC7BC362A",
+      "size": 9701,
+      "scope": "triage-report"
+    },
+    {
+      "file": "tests/N2.1_PILOT_BATCH_EVIDENCE.json",
+      "sha256": "F18E6AE2FFF98391EA9BAF41860ED9572F3079D71F3B89A4B54784DA0102A5BF",
+      "size": 36774,
+      "scope": "pilot-batch-evidence"
+    },
+    {
+      "file": "tests/N2.1_PILOT_BATCH_REPORT.md",
+      "sha256": "32F0EE3FAE681DBFA3A666FD422C58A69C81D209EEE7C4F7457CB43B91E8DAC1",
+      "size": 36757,
+      "scope": "pilot-batch-report"
+    },
+    {
+      "file": "tests/N2.1.1_PILOT_CONSOLIDATION_REPORT.md",
+      "sha256": "7E7E5088EBC46F525A61B2A6EF1A5DECC9D4649ED2C32AA8B1328693D31B8732",
+      "size": 11716,
+      "scope": "consolidation-report"
+    }
+  ]
+}

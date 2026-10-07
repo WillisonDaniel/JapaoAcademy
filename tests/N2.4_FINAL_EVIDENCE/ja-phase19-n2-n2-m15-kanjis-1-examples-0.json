@@ -1,0 +1,67 @@
+{
+  "index": 223,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0",
+  "module": 15,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "操",
+  "targetWord": "操作 (sousa)",
+  "reading": "ソウ (SOU)",
+  "romaji": "Machine no sousa.",
+  "translation": "Operação da máquina.",
+  "example": {
+    "displayText": "まちねの操作。",
+    "audioText": "まちねの操作。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "操",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "操作 (sousa)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "まちねの操作。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Machine no sousa.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Operação da máquina.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"操作\" ou o exemplo \"まちねの操作。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.704Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 537,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1",
+  "module": 6,
+  "kanjiIndex": 15,
+  "exampleIndex": 1,
+  "character": "訳",
+  "targetWord": "通訳 (tsuuyaku)",
+  "reading": "ヤク (YAKU)",
+  "romaji": "Tsuuyaku-sha.",
+  "translation": "Intérprete oral.",
+  "example": {
+    "displayText": "通訳しゃ。",
+    "audioText": "通訳しゃ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "訳",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "通訳 (tsuuyaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "通訳しゃ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tsuuyaku-sha.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-15-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Intérprete oral.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"通訳\" ou o exemplo \"通訳しゃ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.953Z"
+}

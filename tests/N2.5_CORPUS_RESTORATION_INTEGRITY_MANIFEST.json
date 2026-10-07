@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "manifestName": "N2.5_CORPUS_RESTORATION_INTEGRITY_MANIFEST",
+  "generatedAt": "2026-09-27T11:10:22.930Z",
+  "phase": "N2.5-READ-ONLY-AUDIT",
+  "description": "Manifesto externo de integridade física e rastreabilidade criptográfica SHA-256 da Etapa N2.5 (Auditoria Read-Only de Restauração do Corpus e Recuperação Potencial de Evidência N2)",
+  "auditResult": "N2.5-READ-ONLY-AUDIT: PASS",
+  "datasetStatus": {
+    "n1": {
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "status": "BYTE-IDENTICAL"
+    },
+    "n2": {
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "status": "BYTE-IDENTICAL"
+    },
+    "n3": {
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "status": "BYTE-IDENTICAL"
+    }
+  },
+  "auditFindings": {
+    "corpusDeclaredSources": 21,
+    "corpusPhysicallyRestoredSources": 21,
+    "corpusHashMatches": 21,
+    "corpusHashMismatches": 0,
+    "corpusDeclaredPages": 4238,
+    "corpusAvailablePages": 4238,
+    "corpusSearchablePages": 4201,
+    "corpusEmptyPages": 37,
+    "needsSourceAudited": 640,
+    "recordLevelCandidate": 1,
+    "contextualPartial": 248,
+    "lexicalOnly": 19,
+    "notFound": 372,
+    "dataQualitySignal": 0,
+    "causalityClassification": "PARTIALLY_SUPPORTED"
+  },
+  "artifactsCount": 15,
+  "artifacts": [
+    {
+      "file": "database/ja-JP/data_kanji_n1.js",
+      "size": 2908746,
+      "sha256": "64BACAA4E00B2D025897E81295B8AB16ACE69382095A63AA360264DC20B4CF2C",
+      "purpose": "protected-dataset-n1"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n2.js",
+      "size": 1067287,
+      "sha256": "B6A86705FE9B094C119E1CE17ED10BC1A9BFBDED12477136DC574ABCBE268545",
+      "purpose": "canonical-dataset-n2"
+    },
+    {
+      "file": "database/ja-JP/data_kanji_n3.js",
+      "size": 753295,
+      "sha256": "C9E5FF4CA62007B1D04ECD6BB0BCBB9F9217D447D3105309CF3E5F072E3A03C0",
+      "purpose": "protected-dataset-n3"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_LEDGER.json",
+      "size": 22477718,
+      "sha256": "64C8DF4682405FF698DEAC5154FA1F12E7F02B1DB12D1D6A0801644E5F219D37",
+      "purpose": "editorial-ledger"
+    },
+    {
+      "file": "tests/N2_EDITORIAL_REVIEW_QUEUE.json",
+      "size": 859297,
+      "sha256": "CD72333370710768A58D85F559F50C942A63E5754CAEAFB71B68926E395F9FFE",
+      "purpose": "prioritized-review-queue"
+    },
+    {
+      "file": "tests/JAPANESE_EDITORIAL_SOURCES.json",
+      "size": 20478,
+      "sha256": "CFE4BA5CE2ABC29E03B4131BC19A5919754D5FBBD74E29B3527D9607EFFCC71F",
+      "purpose": "declared-source-catalog"
+    },
+    {
+      "file": "tests/N2.5_NEEDS_SOURCE_BASELINE.json",
+      "size": 508352,
+      "sha256": "2034E38C56C78776EDA1726F7979F6295713FC5844AA221B8B0CC0F56351837E",
+      "purpose": "n25-needs-source-baseline"
+    },
+    {
+      "file": "tests/N2.5_CORPUS_INVENTORY.json",
+      "size": 21071,
+      "sha256": "3DF4D4B5AB9153524987D073624ABE9A7C191E726346D42F2F944359B7335DA1",
+      "purpose": "n25-corpus-inventory"
+    },
+    {
+      "file": "tests/N2.5_EVIDENCE_RECOVERY_MATRIX.json",
+      "size": 434539,
+      "sha256": "C6CD9E0095700A1747773602333448FF9AA4A57E3FD695D7A63CE8A462EB2BEC",
+      "purpose": "n25-evidence-recovery-matrix"
+    },
+    {
+      "file": "tests/N2.5_CORPUS_RESTORATION_AUDIT_REPORT.md",
+      "size": 17657,
+      "sha256": "101C6D50A9ECD20DAE24DDF81AB3F31E2FDD491D0DE223515AB47A688D14EE55",
+      "purpose": "n25-corpus-restoration-audit-report"
+    },
+    {
+      "file": "tests/N2.4_DEFINITIVE_RESOLUTION_REPORT.md",
+      "size": 15544,
+      "sha256": "CFD7F462899ABFDBFAE31C983833ECF27B5216CF37FC4CD7069F9CF41F0A2E88",
+      "purpose": "n24-definitive-resolution-report"
+    },
+    {
+      "file": "tests/N2.4_DEFINITIVE_INTEGRITY_MANIFEST.json",
+      "size": 5820,
+      "sha256": "F5C42019B7E9A0EB804D2527DE6BF799A35ACD600AB0E115BE4230C0D5A34F06",
+      "purpose": "n24-definitive-integrity-manifest"
+    },
+    {
+      "file": "tests/japanese-n2.4-resolution-gate.cjs",
+      "size": 6239,
+      "sha256": "AC1947A869C13217FCED29D173DD509233D260701F23F18710A142FF33AD0181",
+      "purpose": "n24-resolution-gate-script"
+    },
+    {
+      "file": "tests/japanese-n2-witness-gate.cjs",
+      "size": 4187,
+      "sha256": "D6DE6E457D5B8486AD09C54AF38F8893DDA8930DD7B94C23270587568D6454E6",
+      "purpose": "n2-witness-gate-script"
+    },
+    {
+      "file": "tests/japanese-n2-decision-sufficiency.cjs",
+      "size": 4695,
+      "sha256": "16A87996397EBA6154D1D885B0D09575DEB1F1A58EBADE40DA33BD035000043B",
+      "purpose": "n2-decision-sufficiency-script"
+    }
+  ]
+}

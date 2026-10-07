@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "phase": "25B",
+  "resolvedAt": "2026-08-21T11:53:00.000Z",
+  "targetCount": 18,
+  "targets": [
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-0-examples-0",
+      "module": 1,
+      "character": "港",
+      "word": "港 (minato)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m1-kanjis-0-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-0-examples-1",
+      "module": 1,
+      "character": "港",
+      "word": "空港 (kuukou)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m1-kanjis-0-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-2-examples-0",
+      "module": 1,
+      "character": "招",
+      "word": "招く (maneku)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m1-kanjis-2-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m1-kanjis-7-examples-0",
+      "module": 1,
+      "character": "偶",
+      "word": "偶然 (guuzen)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m1-kanjis-7-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m4-kanjis-7-examples-0",
+      "module": 4,
+      "character": "恋",
+      "word": "恋人 (koibito)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m4-kanjis-7-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m9-kanjis-11-examples-1",
+      "module": 9,
+      "character": "寒",
+      "word": "寒波 (kanpa)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m9-kanjis-11-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m12-kanjis-6-examples-0",
+      "module": 12,
+      "character": "刷",
+      "word": "印刷 (insatsu)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m12-kanjis-6-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-3-examples-1",
+      "module": 16,
+      "character": "厚",
+      "word": "濃厚 (noukou)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m16-kanjis-3-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-4-examples-0",
+      "module": 16,
+      "character": "薄",
+      "word": "薄い (usui)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m16-kanjis-4-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m16-kanjis-12-examples-0",
+      "module": 16,
+      "character": "硬",
+      "word": "硬い (katai)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m16-kanjis-12-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-2-examples-1",
+      "module": 17,
+      "character": "律",
+      "word": "自律 (jiritsu)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m17-kanjis-2-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-3-examples-0",
+      "module": 17,
+      "character": "禁",
+      "word": "禁止 (kinshi)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m17-kanjis-3-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-10-examples-1",
+      "module": 17,
+      "character": "党",
+      "word": "野党 (yatou)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m17-kanjis-10-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m17-kanjis-18-examples-0",
+      "module": 17,
+      "character": "政",
+      "word": "政治 (seiji)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m17-kanjis-18-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-9-examples-1",
+      "module": 18,
+      "character": "既",
+      "word": "既婚 (kikon)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m18-kanjis-9-examples-1"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-10-examples-0",
+      "module": 18,
+      "character": "未",
+      "word": "未来 (mirai)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m18-kanjis-10-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-12-examples-0",
+      "module": 18,
+      "character": "久",
+      "word": "久々 (hisahisa)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m18-kanjis-12-examples-0"
+    },
+    {
+      "id": "ja-phase19-n3-n3-m18-kanjis-12-examples-1",
+      "module": 18,
+      "character": "久",
+      "word": "永久 (eikyuu)",
+      "state": "corrected",
+      "evidenceAuditId": "ja-phase19-n3-n3-m18-kanjis-12-examples-1"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "index": 252,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0",
+  "module": 16,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "怖",
+  "targetWord": "恐怖 (kyoufu)",
+  "reading": "フ (FU)",
+  "romaji": "Kyoufu o feel.",
+  "translation": "Sentir pavor.",
+  "example": {
+    "displayText": "恐怖を感じる。",
+    "audioText": "恐怖を感じる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "怖",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "恐怖 (kyoufu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "恐怖を感じる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kyoufu o feel.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Sentir pavor.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"恐怖\" ou o exemplo \"恐怖を感じる。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.726Z"
+}

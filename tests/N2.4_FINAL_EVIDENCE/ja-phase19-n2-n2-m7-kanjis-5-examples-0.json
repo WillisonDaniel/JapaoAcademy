@@ -1,0 +1,67 @@
+{
+  "index": 576,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0",
+  "module": 7,
+  "kanjiIndex": 5,
+  "exampleIndex": 0,
+  "character": "試",
+  "targetWord": "試作 (shisaku)",
+  "reading": "シ (SHI)",
+  "romaji": "Car no shisaku.",
+  "translation": "Protótipo do carro.",
+  "example": {
+    "displayText": "クあルの試作。",
+    "audioText": "クあルの試作。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "試",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "試作 (shisaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "クあルの試作。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Car no shisaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Protótipo do carro.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"試作\" ou o exemplo \"クあルの試作。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.982Z"
+}

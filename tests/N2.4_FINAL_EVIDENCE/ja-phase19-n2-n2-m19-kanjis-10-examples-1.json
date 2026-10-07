@@ -1,0 +1,67 @@
+{
+  "index": 343,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1",
+  "module": 19,
+  "kanjiIndex": 10,
+  "exampleIndex": 1,
+  "character": "裕",
+  "targetWord": "余裕 (yoyuu)",
+  "reading": "ユ (YU)",
+  "romaji": "Yoyuu ga arimasu.",
+  "translation": "Ter folga de tempo/dinheiro.",
+  "example": {
+    "displayText": "余裕があります。",
+    "audioText": "余裕があります。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "裕",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "余裕 (yoyuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "余裕があります。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yoyuu ga arimasu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ter folga de tempo/dinheiro.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"余裕\" ou o exemplo \"余裕があります。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.797Z"
+}

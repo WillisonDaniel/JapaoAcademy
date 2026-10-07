@@ -1,0 +1,67 @@
+{
+  "index": 647,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0",
+  "module": 9,
+  "kanjiIndex": 8,
+  "exampleIndex": 0,
+  "character": "波",
+  "targetWord": "波浪 (harou)",
+  "reading": "ハ (HA)",
+  "romaji": "Harou keiho.",
+  "translation": "Alerta de ondas altas.",
+  "example": {
+    "displayText": "波浪けいほ。",
+    "audioText": "波浪けいほ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "波",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "波浪 (harou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "波浪けいほ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Harou keiho.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-8-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Alerta de ondas altas.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"波浪\" ou o exemplo \"波浪けいほ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.036Z"
+}

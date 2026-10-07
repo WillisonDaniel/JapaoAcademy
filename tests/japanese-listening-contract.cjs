@@ -21,8 +21,8 @@ function loadIndex() {
 test('indice auditivo possui snapshot deterministico A1-B2', () => {
     const items = loadIndex();
     const counts = Object.fromEntries(['A1', 'A2', 'B1', 'B2'].map(level => [level, items.filter(item => item.level === level).length]));
-    assert.deepEqual(counts, { A1: 29, A2: 117, B1: 66, B2: 53 });
-    assert.equal(items.length, 265);
+    assert.deepEqual(counts, { A1: 29, A2: 117, B1: 96, B2: 77 });
+    assert.equal(items.length, 319);
     assert.equal(new Set(items.map(item => item.id)).size, items.length);
     items.forEach(item => {
         assert.match(item.audioText, /[\u3040-\u30ff\u3400-\u9fff]/u);

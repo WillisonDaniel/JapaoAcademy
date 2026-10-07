@@ -1,0 +1,67 @@
+{
+  "index": 637,
+  "targetId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0",
+  "module": 9,
+  "kanjiIndex": 2,
+  "exampleIndex": 0,
+  "character": "保",
+  "targetWord": "保存 (hozon)",
+  "reading": "ホ (HO)",
+  "romaji": "Food no hozon.",
+  "translation": "Conservação de alimentos.",
+  "example": {
+    "displayText": "食べ物の保存。",
+    "audioText": "食べ物の保存。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "保",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "保存 (hozon)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "食べ物の保存。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Food no hozon.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m9-kanjis-2-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Conservação de alimentos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"保存\" ou o exemplo \"食べ物の保存。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.029Z"
+}

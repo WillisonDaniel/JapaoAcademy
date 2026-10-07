@@ -1,0 +1,67 @@
+{
+  "index": 416,
+  "targetId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1",
+  "module": 20,
+  "kanjiIndex": 3,
+  "exampleIndex": 1,
+  "character": "婦",
+  "targetWord": "夫婦 (fuufu)",
+  "reading": "フ (FU)",
+  "romaji": "Fuufu no love.",
+  "translation": "Amor de casal.",
+  "example": {
+    "displayText": "仲の良い夫婦が手を繋いで公園を散歩します。",
+    "audioText": "仲の良い夫婦が手を繋いで公園を散歩します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "婦",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "夫婦 (fuufu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "仲の良い夫婦が手を繋いで公園を散歩します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Fuufu no love.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m20-kanjis-3-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Amor de casal.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"夫婦\" ou o exemplo \"仲の良い夫婦が手を繋いで公園を散歩します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.861Z"
+}

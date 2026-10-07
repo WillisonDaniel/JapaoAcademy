@@ -1,0 +1,67 @@
+{
+  "index": 196,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0",
+  "module": 14,
+  "kanjiIndex": 11,
+  "exampleIndex": 0,
+  "character": "途",
+  "targetWord": "途注 (tochuu)",
+  "reading": "ト (TO)",
+  "romaji": "Tochuu de stop.",
+  "translation": "Parar no meio do caminho.",
+  "example": {
+    "displayText": "途注で止める。",
+    "audioText": "途注で止める。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "途",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "途注 (tochuu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "途注で止める。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Tochuu de stop.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-11-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Parar no meio do caminho.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.681Z"
+}

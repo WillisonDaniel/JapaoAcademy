@@ -1,0 +1,67 @@
+{
+  "index": 204,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1",
+  "module": 14,
+  "kanjiIndex": 15,
+  "exampleIndex": 1,
+  "character": "経",
+  "targetWord": "経過 (keika)",
+  "reading": "ケイ (KEI) / キョウ (KYOU)",
+  "romaji": "Time no keika.",
+  "translation": "Decurso do tempo.",
+  "example": {
+    "displayText": "手術から一週間が経過して容体が安定しました。",
+    "audioText": "手術から一週間が経過して容体が安定しました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "経",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "経過 (keika)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "手術から一週間が経過して容体が安定しました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Time no keika.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-15-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Decurso do tempo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"経過\" ou o exemplo \"手術から一週間が経過して容体が安定しました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.689Z"
+}

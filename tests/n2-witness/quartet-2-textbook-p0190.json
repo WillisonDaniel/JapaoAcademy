@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-2-textbook",
+  "page": 190,
+  "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0190.json",
+  "corpusArtifactSha256": "5915787039ff8edd7644fad1621c7169811818030ec8254bba43076c80182b5b",
+  "extractionMode": "ocr",
+  "pageTextSha256": "758622773737e4410bffd9adc919b20e3d567a8bfb7b00bdb65fd8d92b64a82d",
+  "text": "発想の転換\n\nはっ そぞそう    てん かん\n=A.\nINE:\n>» ビジネス書を読んで、 その経営捉学がわかる\n\\えい   $\n> 二話を含んだ文草を読  で、 筆者の主張がわかる\nnt          AS  ao\n\nと 小論文が書ける\n\n人や社会とのつながり\n求められる人材\n\n> 別れの時に感謝の気持ちが伝えられる\n\nかんしゃ\n\n> ディベートができる\n\n",
+  "normalizedText": "発想の転換 はっ そぞそう てん かん =A. INE: >» ビジネス書を読んで、 その経営捉学がわかる \\えい $ > 二話を含んだ文草を読 で、 筆者の主張がわかる nt AS ao と 小論文が書ける 人や社会とのつながり 求められる人材 > 別れの時に感謝の気持ちが伝えられる かんしゃ > ディベートができる",
+  "associatedTargets": [
+    "ja-phase19-n2-n2-m1-kanjis-7-examples-0"
+  ]
+}

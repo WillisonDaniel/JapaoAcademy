@@ -1,0 +1,67 @@
+{
+  "index": 208,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1",
+  "module": 14,
+  "kanjiIndex": 17,
+  "exampleIndex": 1,
+  "character": "拓",
+  "targetWord": "魚拓 (gyotaku)",
+  "reading": "タク (TAKU)",
+  "romaji": "Gyotaku o kaku.",
+  "translation": "Fazer impressão de peixe.",
+  "example": {
+    "displayText": "魚拓をかく。",
+    "audioText": "魚拓をかく。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "拓",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "魚拓 (gyotaku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "魚拓をかく。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gyotaku o kaku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-17-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Fazer impressão de peixe.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"魚拓\" ou o exemplo \"魚拓をかく。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.692Z"
+}

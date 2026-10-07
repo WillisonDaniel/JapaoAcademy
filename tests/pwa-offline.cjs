@@ -7,8 +7,11 @@ const vm = require('node:vm');
 
 const ROOT = path.resolve(__dirname, '..');
 const SW_PATH = path.join(ROOT, 'sw.js');
-// Limite expandido para 60 MB garantindo folga total para os 5 idiomas e novos conteúdos
-const MAX_PRECACHE_BYTES = 60 * 1024 * 1024;
+// Orçamento formalizado de precache PWA (5 idiomas):
+// - Meta / Target de performance: <= 15.0 MB
+// - Hard Cap de CI / Regressão: <= 16.0 MB
+const TARGET_PRECACHE_BYTES = 15.0 * 1024 * 1024;
+const MAX_PRECACHE_BYTES = 16.0 * 1024 * 1024;
 
 const REQUIRED_OFFLINE = [
     './',
@@ -41,6 +44,7 @@ const REQUIRED_OFFLINE = [
     './database/ru-RU/data_russo_dicionario.js',
     './database/ru-RU/data_dicionario_index.js',
     './js/minigame/minigame_russo.js',
+    './js/core/instant-nav.js',
     './manifest.json',
     './favicon.png',
     './favicon-512.png',
@@ -198,8 +202,12 @@ async function main() {
     assert.deepEqual(missingFiles, [], `recursos ausentes no precache: ${missingFiles.join(', ')}`);
 
     const totalBytes = [...unique].reduce((sum, asset) => sum + fs.statSync(localFile(asset)).size, 0);
+    const totalMB = totalBytes / 1024 / 1024;
     assert.ok(totalBytes <= MAX_PRECACHE_BYTES,
-        `precache de ${(totalBytes / 1024 / 1024).toFixed(2)} MB excede o limite de 60 MB`);
+        `precache de ${totalMB.toFixed(2)} MB excede o hard cap estrito de ${(MAX_PRECACHE_BYTES / 1024 / 1024).toFixed(1)} MB`);
+    if (totalBytes > TARGET_PRECACHE_BYTES) {
+        console.warn(`[AVISO] Precache de ${totalMB.toFixed(2)} MB ultrapassou a meta de ${(TARGET_PRECACHE_BYTES / 1024 / 1024).toFixed(1)} MB, mas está dentro do hard cap (${(MAX_PRECACHE_BYTES / 1024 / 1024).toFixed(1)} MB).`);
+    }
 
     const missingContract = REQUIRED_OFFLINE.filter(asset => !unique.has(normalizeAsset(asset)));
     assert.deepEqual(missingContract, [], `contrato offline incompleto: ${missingContract.join(', ')}`);
@@ -219,7 +227,7 @@ async function main() {
     await runLifecycleSimulation(ASSETS_TO_CACHE, OPTIONAL_REMOTE_ASSETS);
     await runItalianDictionaryCachingSimulation();
 
-    console.log(`\u2713 PWA: ${unique.size} recursos locais, ${(totalBytes / 1024 / 1024).toFixed(2)} MB`);
+    console.log(`\u2713 PWA: ${unique.size} recursos locais, ${totalMB.toFixed(2)} MB (meta <= ${(TARGET_PRECACHE_BYTES / 1024 / 1024).toFixed(1)} MB, hard cap <= ${(MAX_PRECACHE_BYTES / 1024 / 1024).toFixed(1)} MB)`);
     assert.equal(unique.has('./html/it-IT/italiano_dicionario.html'), false, 'a página do dicionário italiano deve usar cache sob demanda');
     assert.equal(unique.has('./database/it-IT/data_dicionario_index.js'), false, 'o índice do dicionário italiano deve usar cache sob demanda');
 

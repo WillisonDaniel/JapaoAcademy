@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-1-textbook",
+  "page": 346,
+  "sourceSha256": "424b212e7e7fa4586d79b3e720dce1623d6ffae323c7dd0815df2d112af647df",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-1-textbook/page-0346.json",
+  "corpusArtifactSha256": "e1256532e397549282eb9b3d05224fa6967029a00454bbb075e5daea840ecc06",
+  "extractionMode": "ocr",
+  "pageTextSha256": "7ae080279bc730f6170f8d7c84f87b789c3231c814ca9a65121700d6bf263140",
+  "text": "漢字チャレンジ ①②\n\n268» 27]\n\n268\n=\n\nice\n\nヒョウ    | IR (ひょうてん) freezing point\n\nO] | A FX\n269              dry;          カン        | ETA (じゃっかんめい) small number of people\nconcern;     E: © 千す (ほす) to dry\nperpetrate\n\"lc\n270              hair          モウ       | 毛髪 (もうはつっ) hair (on the head)\nけ O E (lt) hair\nor - =D\n271              old age       ロワウ       7  ぐる 老人 (45 UK) old person\nお 老い \\る (おいる) to grow old\n(0 ご * = of oe =\nq 272               Surname      セイ        1  の 姓名 (せいめい) full name\nOL bh kb HW We He\n273              crimson;      ss Bie       7  る紅葉 (こうよう) autumn leaves\nren     べに   i DAL (くちべに) lipstick\n9) <                          ‘on\nDI * & & F © FF oF Re\n274             book;        チョワウ     | © Ft (てちょうぅ) pocket diary\nalbum:                :\ne   curtain\napr rop plo pl pF PE TE RE NE RR\n275              suburbs;      yy dy,       7  る郊外 (こうがい) suburbs\n—-        countr\nx  |\nし    こし   こし   こに   a.   so   a.   こに   こに\n(9)          rw がな RE R RI eB\n276            freeze        トウ      7 © 凍結 (とうけつ) freezing\n~                        i 4 RA (こおぉる) to freeze\nao > j yj 7たか WF je je TH ye ie\n277            invite       ジン 17    | る 招待 (しょうたい) invitation\nまね 招く (まねく) to invite\n\nJd\nD\n\n(9 - 7\n\nER EE:\n\n058\n\n",
+  "normalizedText": "漢字チャレンジ ①② 268» 27] 268 = ice ヒョウ | IR (ひょうてん) freezing point O] | A FX 269 dry; カン | ETA (じゃっかんめい) small number of people concern; E: © 千す (ほす) to dry perpetrate \"lc 270 hair モウ | 毛髪 (もうはつっ) hair (on the head) け O E (lt) hair or - =D 271 old age ロワウ 7 ぐる 老人 (45 UK) old person お 老い \\る (おいる) to grow old (0 ご * = of oe = q 272 Surname セイ 1 の 姓名 (せいめい) full name OL bh kb HW We He 273 crimson; ss Bie 7 る紅葉 (こうよう) autumn leaves ren べに i DAL (くちべに) lipstick 9) < ‘on DI * & & F © FF oF Re 274 book; チョワウ | © Ft (てちょうぅ) pocket diary album: : e curtain apr rop plo pl pF PE TE RE NE RR 275 suburbs; yy dy, 7 る郊外 (こうがい) suburbs —- countr x | し こし こし こに a. so a. こに こに (9) rw がな RE R RI eB 276 freeze トウ 7 © 凍結 (とうけつ) freezing ~ i 4 RA (こおぉる) to freeze ao > j yj 7たか WF je je TH ye ie 277 invite ジン 17 | る 招待 (しょうたい) invitation まね 招く (まねく) to invite Jd D (9 - 7 ER EE: 058",
+  "associatedTargets": [
+    "ja-phase19-n3-n3-m1-kanjis-2-examples-0"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sourceId": "quartet-2-textbook",
+  "page": 224,
+  "sourceSha256": "65c2def09a84337999be7d31d64ce6fff4452d327edb51bd344f3bd0c85f5476",
+  "corpusArtifact": "scratch/japanese-corpus/quartet-2-textbook/page-0224.json",
+  "corpusArtifactSha256": "7db91110c97f1e0fbc5c08f760144a610475b517d4218845a63ce62e18f5e4a2",
+  "extractionMode": "ocr",
+  "pageTextSha256": "b1cc7e2357e796dc639e126d27cd758ae08dcf09acfe7ac9ff07b8d789215ef1",
+  "text": "求められる人材\n\nERD ROS AM\n\n1 4.Chokai_L12-1\n\n大学の就職セミナーで、キャリアセンターの人が今の日本企業が求める人材について話してい\nます。センターの人によると、日本企業が求める能力のうち、こごこれからの時代に最も必要な能力は\nahのどれですかが。\n\n利益profit HART Z tocontribute 14% ERA lifetime employment\n\nFI FF P| promotion by seniority  BP$RZ7 adaptable fighting potential\n業務 routine business 主体性 selfdirected\n\nLED ESRT SAM                                                                 これまで E 今後\n\na. チームワークを尊重できる   —s\n\nc. 担当職務の技能・知識を持つ as\n\nd. 目ら考え行動できる            E\n\ne リーターシップが取れる          Sao\n\nÉ 部下や後輩の指導ができる         ーー\n\n9. 専門的知識を持つ                 aa\n\nh. 自社にない新しい発想を持つ O\n\n0 10 20 30 40 50 60 70 80 90\n\n参考 : パーソル総合研究所\nデータで語る「企業が求める人材|\n\n指示 instructions 職務 duties 技能 ability 指導 guide\n専門的知識 expert knowledge 発想 idea\n\n197\n\n",
+  "normalizedText": "求められる人材 ERD ROS AM 1 4.Chokai_L12-1 大学の就職セミナーで、キャリアセンターの人が今の日本企業が求める人材について話してい ます。センターの人によると、日本企業が求める能力のうち、こごこれからの時代に最も必要な能力は ahのどれですかが。 利益profit HART Z tocontribute 14% ERA lifetime employment FI FF P| promotion by seniority BP$RZ7 adaptable fighting potential 業務 routine business 主体性 selfdirected LED ESRT SAM これまで E 今後 a. チームワークを尊重できる —s c. 担当職務の技能・知識を持つ as d. 目ら考え行動できる E e リーターシップが取れる Sao É 部下や後輩の指導ができる ーー 9. 専門的知識を持つ aa h. 自社にない新しい発想を持つ O 0 10 20 30 40 50 60 70 80 90 参考 : パーソル総合研究所 データで語る「企業が求める人材| 指示 instructions 職務 duties 技能 ability 指導 guide 専門的知識 expert knowledge 発想 idea 197",
+  "associatedTargets": [
+    "ja-phase19-n2-n2-m2-kanjis-2-examples-0"
+  ]
+}

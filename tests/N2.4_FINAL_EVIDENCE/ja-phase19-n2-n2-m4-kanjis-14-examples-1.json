@@ -1,0 +1,67 @@
+{
+  "index": 473,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1",
+  "module": 4,
+  "kanjiIndex": 14,
+  "exampleIndex": 1,
+  "character": "領",
+  "targetWord": "領土 (ryoudoku)",
+  "reading": "リョウ (RYOU)",
+  "romaji": "Ryoudoku no mamoru.",
+  "translation": "Defender o território nacional.",
+  "example": {
+    "displayText": "領土のまもる。",
+    "audioText": "領土のまもる。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "領",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "領土 (ryoudoku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "領土のまもる。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Ryoudoku no mamoru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-14-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Defender o território nacional.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"領土\" ou o exemplo \"領土のまもる。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.904Z"
+}

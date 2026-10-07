@@ -1,0 +1,67 @@
+{
+  "index": 342,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0",
+  "module": 19,
+  "kanjiIndex": 10,
+  "exampleIndex": 0,
+  "character": "裕",
+  "targetWord": "裕福 (yuufuku)",
+  "reading": "ユ (YU)",
+  "romaji": "Yuufuku na family.",
+  "translation": "Família abastada.",
+  "example": {
+    "displayText": "裕福な家庭で大切に育てられました。",
+    "audioText": "裕福な家庭で大切に育てられました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "裕",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "裕福 (yuufuku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "裕福な家庭で大切に育てられました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yuufuku na family.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-10-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Família abastada.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"裕福\" ou o exemplo \"裕福な家庭で大切に育てられました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.796Z"
+}

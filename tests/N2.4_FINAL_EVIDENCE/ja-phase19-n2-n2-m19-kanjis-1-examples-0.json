@@ -1,0 +1,67 @@
+{
+  "index": 341,
+  "targetId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0",
+  "module": 19,
+  "kanjiIndex": 1,
+  "exampleIndex": 0,
+  "character": "買",
+  "targetWord": "売買 (baibai)",
+  "reading": "バイ (BAI)",
+  "romaji": "Stock no baibai.",
+  "translation": "Compra e venda de ações.",
+  "example": {
+    "displayText": "証券取引所で株式の売買が活発に行われます。",
+    "audioText": "証券取引所で株式の売買が活発に行われます。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "買",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "売買 (baibai)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "証券取引所で株式の売買が活発に行われます。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Stock no baibai.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m19-kanjis-1-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Compra e venda de ações.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"売買\" ou o exemplo \"証券取引所で株式の売買が活発に行われます。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.796Z"
+}

@@ -117,15 +117,42 @@ function fecharSessaoSRS() {
     if (typeof atualizarCountSRS === 'function') atualizarCountSRS();
 }
 
+function obterTextoAudioSRS(drop, cardData) {
+    if (!drop && !cardData) return '';
+    const d = drop || (cardData && cardData.drop) || {};
+    const idiomaSRS = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
+
+    if (idiomaSRS === 'ja-JP') {
+        const audioText = (d.content && d.content.audioText) || d.audioText || d.audio || (cardData && cardData.audioText);
+        if (audioText && String(audioText).trim()) return String(audioText).trim();
+
+        const displayText = (d.content && d.content.displayText) || d.displayText || d.kanji || d.japanese || d.word || (cardData && (cardData.char || cardData.character));
+        if (displayText && String(displayText).trim()) return String(displayText).trim();
+
+        const kana = d.kana || (cardData && cardData.char);
+        if (kana && String(kana).trim()) return String(kana).trim();
+
+        const romaji = (d.content && d.content.romaji) || d.romaji || (cardData && cardData.romaji);
+        if (romaji && String(romaji).trim()) return String(romaji).trim();
+
+        return '';
+    }
+
+    return String(
+        d.Audio || d.audio || d.Spanish || d.Italian || d.Russian ||
+        d.kanji || d.word || d.title || d.romaji || (cardData && (cardData.char || cardData.character)) || ''
+    ).trim();
+}
+
 function renderizarCardSRS() {
     const container = document.getElementById('conteudo-card-srs');
+    if (!container) return;
+
     const appSrs = typeof AppState !== 'undefined' ? AppState.srs : null;
     const sessaoCards = (appSrs && appSrs.activeDeck) ? appSrs.activeDeck : (typeof srsSessaoCards !== 'undefined' ? srsSessaoCards : []);
     const indexAtivo = (appSrs && typeof appSrs.currentIndex === 'number') ? appSrs.currentIndex : (typeof srsIndexAtivo !== 'undefined' ? srsIndexAtivo : 0);
 
-    if (!container || sessaoCards.length === 0) return;
-
-    if (indexAtivo >= sessaoCards.length) {
+    if (!sessaoCards || sessaoCards.length === 0 || indexAtivo >= sessaoCards.length) {
         renderizarConclusaoSRS();
         return;
     }
@@ -306,8 +333,7 @@ function renderizarCardSRS() {
         const drop = cardData.drop || {};
         const nivelLabel = (cardData.level || (srsTipoAtivo ? srsTipoAtivo.toUpperCase() : 'A1'));
         if (drop.type === 'vocab') {
-            const idiomaSRS = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
-            const srsTextAudio = idiomaSRS !== 'ja-JP' ? (drop.kanji || drop.romaji) : (drop.romaji || drop.kanji);
+            const srsTextAudio = obterTextoAudioSRS(drop, cardData);
             const cleanSrsParam = String(srsTextAudio).replace(/\//g, ' ').replace(/'/g, "\\'");
 
             frenteHTML = `
@@ -370,8 +396,7 @@ function revelarRespostaSRS() {
         else if (cardData.char && typeof speakKana === 'function') speakKana(cardData.char);
         else if (cardData.character && typeof speakKana === 'function') speakKana(cardData.character);
         else if (cardData.drop && typeof tocarAudio === 'function') {
-            const idiomaSRS = typeof getCurrentLanguageCode === 'function' ? getCurrentLanguageCode() : 'ja-JP';
-            const targetTxt = idiomaSRS !== 'ja-JP' ? (cardData.drop.kanji || cardData.drop.romaji) : (cardData.drop.romaji || cardData.drop.kanji);
+            const targetTxt = obterTextoAudioSRS(cardData.drop, cardData);
             if (targetTxt) tocarAudio(targetTxt);
         }
     }
@@ -429,6 +454,7 @@ function renderizarConclusaoSRS() {
 
 // Exposição explícita no objeto window
 if (typeof window !== 'undefined') {
+    window.obterTextoAudioSRS = obterTextoAudioSRS;
     window.iniciarSessaoSRS = iniciarSessaoSRS;
     window.fecharSessaoSRS = fecharSessaoSRS;
     window.renderizarCardSRS = renderizarCardSRS;

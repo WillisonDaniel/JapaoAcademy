@@ -1,0 +1,67 @@
+{
+  "index": 140,
+  "targetId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0",
+  "module": 12,
+  "kanjiIndex": 17,
+  "exampleIndex": 0,
+  "character": "幽",
+  "targetWord": "幽玄 (yuugen)",
+  "reading": "ユウ (YUU)",
+  "romaji": "Yuugen na bi.",
+  "translation": "Beleza sutil e profunda.",
+  "example": {
+    "displayText": "幽玄なび。",
+    "audioText": "幽玄なび。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "幽",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "幽玄 (yuugen)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "幽玄なび。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Yuugen na bi.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m12-kanjis-17-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Beleza sutil e profunda.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"幽玄\" ou o exemplo \"幽玄なび。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.635Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 200,
+  "targetId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1",
+  "module": 14,
+  "kanjiIndex": 13,
+  "exampleIndex": 1,
+  "character": "渡",
+  "targetWord": "渡す (watasu)",
+  "reading": "ト (TO)",
+  "romaji": "Passport o watasu.",
+  "translation": "Entregar o passaporte.",
+  "example": {
+    "displayText": "窓口で係員にパスポートを手渡します。",
+    "audioText": "窓口で係員にパスポートを手渡します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "渡",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "渡す (watasu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "窓口で係員にパスポートを手渡します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Passport o watasu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m14-kanjis-13-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Entregar o passaporte.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (palavra-alvo omitida no displayText). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.685Z"
+}

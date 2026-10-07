@@ -47,16 +47,18 @@ test('chaves persistidas dos decks japoneses permanecem inalteradas', () => {
     Object.entries(expected).forEach(([type, key]) => assert.match(source, new RegExp(`t === '${type}'.*return '${key}'`)));
 });
 
-test('seis exemplos N5 saneados e excecao documentada permanecem rastreaveis', () => {
+test('sete exemplos N5 saneados permanecem rastreáveis sem exceção ativa', () => {
     const n5 = read('database/ja-JP/data_kanji_n5.js');
     ['訓読みで「食べる」と読みます。', '訓読みで「見る」と読みます。', '音読みの例は「水曜日」です。',
         '音読みの例は「学校」です。', '部首の木の下で人が休みます。', '部首として河と海を比べます。']
         .forEach(sentence => assert.ok(n5.includes(sentence), sentence));
     const occurrences = JSON.parse(read('tests/JAPANESE_EDITORIAL_OCCURRENCES.json'));
-    assert.equal(occurrences.summary.byLevel.N5, 1);
+    assert.equal(occurrences.summary.byLevel.N5 || 0, 0);
     assert.equal(occurrences.summary.byLevel.N4 || 0, 0);
-    assert.equal(occurrences.summary.byRule['reading-pending-human-review'], 158);
-    assert.equal(occurrences.summary.bySeverity.allowed, 1);
+    assert.equal(occurrences.summary.byRule['reading-pending-human-review'] || 0, 0);
+    assert.equal(occurrences.summary.bySeverity.allowed, 0);
+    const ledger = JSON.parse(read('tests/JAPANESE_EDITORIAL_LEDGER.json'));
+    assert.ok(ledger.decisions.some(decision => decision.id === 'ja-n5-m01-kanji-00-example-01' && decision.state === 'corrected'));
 });
 
 test('snapshots estruturais N5 e N4 preservam modulos, itens e quizzes', () => {
@@ -103,6 +105,36 @@ test('escrita registra somente atividade real e preserva estados indisponiveis',
     assert.match(canvas, /Ordem de traços indisponível offline para este caractere/);
     assert.match(canvas, /Não foi possível carregar a ordem de traços deste caractere/);
     assert.doesNotMatch(canvas, /fallback.*(?:stroke|traço)|generic.*(?:stroke|traço)/i);
+});
+
+test('minigame japones valida leitura em romaji ou kana e nao promete traducao em portugues', () => {
+    const game = read('js/game/minigames.js');
+    const html = read('html/ja-JP/minigame.html');
+
+    assert.doesNotMatch(game, /input\.placeholder\s*=\s*"Digite em romaji ou português\.\.\."/);
+    assert.match(game, /input\.placeholder\s*=\s*"Digite a leitura em Romaji ou Kana\.\.\."/);
+    assert.match(html, /placeholder="Digite a leitura em Romaji ou Kana\.\.\."/);
+});
+
+test('paginas japonesas possuem hierarquia semantica com h1 unico e lang ja em conteudos japoneses', () => {
+    const fs = require('node:fs');
+    const japanesePages = [
+        'hub_japones.html',
+        ...fs.readdirSync(path.join(ROOT, 'html/ja-JP')).filter(f => f.endsWith('.html')).map(f => `html/ja-JP/${f}`)
+    ];
+
+    japanesePages.forEach(page => {
+        const content = read(page);
+        const h1Matches = content.match(/<h1\b[^>]*>[\s\S]*?<\/h1>/gi) || [];
+        assert.equal(h1Matches.length, 1, `${page} deve conter exatamente um único <h1> principal`);
+    });
+
+    assert.match(read('html/ja-JP/leitura.html'), /<h2\s+id="reading-title"\s+lang="ja">/);
+    assert.match(read('html/ja-JP/leitura.html'), /<div\s+id="reading-japanese"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/jlpt.html'), /<p\s+id="jlpt-question"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/minigame.html'), /<div\s+id="g-big-kana"[^>]*lang="ja"/);
+    assert.match(read('html/ja-JP/escrita.html'), /<h2\s+id="writing-title"/);
+    assert.match(read('html/ja-JP/gramatica.html'), /<h2\s+id="grammar-title"/);
 });
 
 const failed = results.filter(result => !result.ok);

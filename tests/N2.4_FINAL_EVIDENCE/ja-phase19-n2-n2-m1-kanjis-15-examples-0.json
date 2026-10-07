@@ -1,0 +1,67 @@
+{
+  "index": 44,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0",
+  "module": 1,
+  "kanjiIndex": 15,
+  "exampleIndex": 0,
+  "character": "属",
+  "targetWord": "所属 (shozoku)",
+  "reading": "ゾク (ZOKU)",
+  "romaji": "Eigyou-bu no shozoku.",
+  "translation": "Afiliado ao departamento de vendas.",
+  "example": {
+    "displayText": "入社後に希望していた広報部に所属します。",
+    "audioText": "入社後に希望していた広報部に所属します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "属",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "所属 (shozoku)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "入社後に希望していた広報部に所属します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Eigyou-bu no shozoku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-15-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Afiliado ao departamento de vendas.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"所属\" ou o exemplo \"入社後に希望していた広報部に所属します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.557Z"
+}

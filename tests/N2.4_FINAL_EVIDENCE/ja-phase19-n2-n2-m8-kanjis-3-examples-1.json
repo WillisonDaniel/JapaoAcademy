@@ -1,0 +1,67 @@
+{
+  "index": 604,
+  "targetId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1",
+  "module": 8,
+  "kanjiIndex": 3,
+  "exampleIndex": 1,
+  "character": "診",
+  "targetWord": "診断 (shindan)",
+  "reading": "シン (SHIN)",
+  "romaji": "Shindan-sho.",
+  "translation": "Atestado de diagnóstico.",
+  "example": {
+    "displayText": "診断しょ。",
+    "audioText": "診断しょ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "診",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "診断 (shindan)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "診断しょ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Shindan-sho.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m8-kanjis-3-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Atestado de diagnóstico.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"診断\" ou o exemplo \"診断しょ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:50.004Z"
+}

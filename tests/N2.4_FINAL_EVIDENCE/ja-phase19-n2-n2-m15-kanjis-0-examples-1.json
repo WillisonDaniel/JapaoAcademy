@@ -1,0 +1,67 @@
+{
+  "index": 222,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1",
+  "module": 15,
+  "kanjiIndex": 0,
+  "exampleIndex": 1,
+  "character": "挑",
+  "targetWord": "挑発 (chouhatsu)",
+  "reading": "チョウ (CHOU)",
+  "romaji": "Enemy no chouhatsu.",
+  "translation": "Provocação do inimigo.",
+  "example": {
+    "displayText": "敵の挑発。",
+    "audioText": "敵の挑発。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "挑",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "挑発 (chouhatsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "敵の挑発。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Enemy no chouhatsu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-0-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Provocação do inimigo.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"挑発\" ou o exemplo \"敵の挑発。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.704Z"
+}

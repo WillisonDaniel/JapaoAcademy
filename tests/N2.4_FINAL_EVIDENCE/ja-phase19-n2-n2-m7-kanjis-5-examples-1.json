@@ -1,0 +1,67 @@
+{
+  "index": 577,
+  "targetId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1",
+  "module": 7,
+  "kanjiIndex": 5,
+  "exampleIndex": 1,
+  "character": "試",
+  "targetWord": "試み (kokoromi)",
+  "reading": "シ (SHI)",
+  "romaji": "Atarashii kokoromi.",
+  "translation": "Uma nova tentativa.",
+  "example": {
+    "displayText": "あたらしい試み。",
+    "audioText": "あたらしい試み。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "試",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "試み (kokoromi)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "あたらしい試み。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Atarashii kokoromi.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m7-kanjis-5-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Uma nova tentativa.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"試み\" ou o exemplo \"あたらしい試み。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.983Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 322,
+  "targetId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1",
+  "module": 18,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "製",
+  "targetWord": "日本製 (nihonsei)",
+  "reading": "セイ (SEI)",
+  "romaji": "Nihonsei no watch.",
+  "translation": "Relógio fabricado no Japão.",
+  "example": {
+    "displayText": "高品質な日本製の時計を大切に使います。",
+    "audioText": "高品質な日本製の時計を大切に使います。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "製",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "日本製 (nihonsei)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "高品質な日本製の時計を大切に使います。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Nihonsei no watch.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m18-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Relógio fabricado no Japão.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"日本製\" ou o exemplo \"高品質な日本製の時計を大切に使います。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.781Z"
+}

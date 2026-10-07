@@ -1,0 +1,14 @@
+{
+  "sourceId": "genki-2e-2-textbook",
+  "page": 297,
+  "sourceSha256": "22ac667db23c565c0b776116282a7290aed0ae54a5fb6a20f981e4d328a0687e",
+  "corpusArtifact": "scratch/japanese-corpus/genki-2e-2-textbook/page-0297.json",
+  "corpusArtifactSha256": "c6faab3ae6c37cc204e6d72e6bff109b4aaebf2227eeb0af72f3ad51b4c00d0b",
+  "extractionMode": "ocr",
+  "pageTextSha256": "fa754747d362a3dd3628a5e26ef9ab1c1e8c7798991cd6677c9ed6e735d432b2",
+  "text": "第16課ゅ>297\n\n1.        4 ele\n= 書く\n\nよう。太字は新しい読み方です。\n\n小学生 (しょうながくせぃ) 出す (だすず)\n\n(Ce ee tous 所 (127)\n7. 食べる\n8テストの前\n\nMEAD 「ドラえもん」\n\n—\n\nschool students\n7 助ける(たすける) to help; to rescue [ru-verb]\n\n=                    N\n\n時 E\n1 空 (そら) sky                  12 写す (うつす) to copy [z-verb]\n1 飛ぶ (とぶ) to fly [u-verb]                  17 続く (つづく) to continue [u-verb]\n1 違う (ちがう) to be different [u-verb]      19 例えば (たとえば) for example\n3 そんな such...               19 どこでも anywhere\n4 未来 (なみらい) future                   20 4X... Then...\n4ロボット robot                21 場所 (ばしょ) place\n5 ひみつ secret                  24 また inaddition\n5 道具 (どうぐ) tool                  24 弱い (よわい) weak\n5 ポケット pocket                  24 味方 (みかた) person on one’s side\n6 小学生 (しょうがくせい) elementary       29 戻る (もどる) to return; to go back\n\n[u-verb]\n29 教室 (きょうしつ) classroom\n\n11 てのようなもの something like...          34 て以外 (一いがい) other than...\nSe                                                                       JJ\n[DBOB] 1.くに            4つき            ヵ ただたべる\n。 2.きた        5.じぶん       8.テストのまえ\n3.つかう          6.かく\n",
+  "normalizedText": "第16課ゅ>297 1. 4 ele = 書く よう。太字は新しい読み方です。 小学生 (しょうながくせぃ) 出す (だすず) (Ce ee tous 所 (127) 7. 食べる 8テストの前 MEAD 「ドラえもん」 — school students 7 助ける(たすける) to help; to rescue [ru-verb] = N 時 E 1 空 (そら) sky 12 写す (うつす) to copy [z-verb] 1 飛ぶ (とぶ) to fly [u-verb] 17 続く (つづく) to continue [u-verb] 1 違う (ちがう) to be different [u-verb] 19 例えば (たとえば) for example 3 そんな such... 19 どこでも anywhere 4 未来 (なみらい) future 20 4X... Then... 4ロボット robot 21 場所 (ばしょ) place 5 ひみつ secret 24 また inaddition 5 道具 (どうぐ) tool 24 弱い (よわい) weak 5 ポケット pocket 24 味方 (みかた) person on one’s side 6 小学生 (しょうがくせい) elementary 29 戻る (もどる) to return; to go back [u-verb] 29 教室 (きょうしつ) classroom 11 てのようなもの something like... 34 て以外 (一いがい) other than... Se JJ [DBOB] 1.くに 4つき ヵ ただたべる 。 2.きた 5.じぶん 8.テストのまえ 3.つかう 6.かく",
+  "associatedTargets": [
+    "ja-phase19-n3-n3-m18-kanjis-10-examples-0"
+  ]
+}

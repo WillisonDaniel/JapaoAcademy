@@ -1,0 +1,83 @@
+{
+  "index": 5,
+  "targetId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1",
+  "module": 1,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "務",
+  "targetWord": "義務 (gimu)",
+  "reading": "ム (MU)",
+  "romaji": "Gimu o hatasu.",
+  "translation": "Cumprir o dever.",
+  "example": {
+    "displayText": "義務をはたす。",
+    "audioText": "義務をはたす。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "務",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "義務 (gimu)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "義務をはたす。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gimu o hatasu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m1-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Cumprir o dever.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 262,
+      "file": "tobira-2009-p0262.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0262.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0262.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "義務",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"義務\" possui atestação lexical primária na testemunha tobira-2009-p0262.json (p. 262), porém a frase de exemplo canônica (\"義務をはたす。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.526Z"
+}

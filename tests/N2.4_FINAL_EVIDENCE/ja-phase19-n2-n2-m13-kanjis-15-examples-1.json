@@ -1,0 +1,67 @@
+{
+  "index": 171,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1",
+  "module": 13,
+  "kanjiIndex": 15,
+  "exampleIndex": 1,
+  "character": "域",
+  "targetWord": "海域 (kaiiki)",
+  "reading": "イキ (IKI)",
+  "romaji": "Kaiiki no patrol.",
+  "translation": "Patrulhamento da área marítima.",
+  "example": {
+    "displayText": "海域のぱトろル。",
+    "audioText": "海域のぱトろル。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "域",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "海域 (kaiiki)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "海域のぱトろル。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kaiiki no patrol.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-15-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Patrulhamento da área marítima.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"海域\" ou o exemplo \"海域のぱトろル。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.661Z"
+}

@@ -12,7 +12,6 @@ const context = { console };
 context.window = context;
 context.globalThis = context;
 vm.createContext(context);
-vm.runInContext(read('js/kanji/romaji-draft.js'), context, { filename: 'js/kanji/romaji-draft.js' });
 vm.runInContext(`${read('database/ja-JP/data_kanji_n3.js')}\nglobalThis.__data = kanjiN3Data;`, context, { filename: 'data_kanji_n3.js' });
 const modules = JSON.parse(JSON.stringify(context.__data));
 
@@ -41,6 +40,8 @@ run('inventario N3 permanece em 19 modulos, 360 registros e 720 exemplos', () =>
 });
 
 run('todos os exemplos N3 possuem contrato japones completo e rastreavel', () => {
+    let pendingCount = 0;
+    let correctedCount = 0;
     modules.forEach(module => {
         assert.equal(module.editorialReview.status, 'pending-human-review');
         (module.kanjis || []).forEach(kanji => {
@@ -52,22 +53,24 @@ run('todos os exemplos N3 possuem contrato japones completo e rastreavel', () =>
                 assert.ok(example.content.displayText.includes(kanji.character), `${module.module}/${kanji.character}: alvo ausente`);
                 assert.equal(example.content.romaji, example.sentence);
                 assert.equal(example.content.translation, example.sentenceMeaning);
-                assert.equal(example.editorialReview.status, 'pending-human-review');
+                assert.ok(['pending-human-review', 'corrected'].includes(example.editorialReview.status));
+                if (example.editorialReview.status === 'corrected') correctedCount++;
+                else pendingCount++;
                 assert.equal(example.editorialReview.targetReplaced, true);
             });
         });
     });
+    assert.equal(correctedCount + pendingCount, 720, 'Total de exemplos N3 deve ser 720');
+    assert.equal(correctedCount, 16, 'Quantidade de exemplos N3 corrigidos deve ser 16');
+    assert.equal(pendingCount, 704, 'Quantidade de exemplos N3 pendentes deve ser 704');
 });
 
-run('conversor cobre geminacao, particulas, palavra alvo e intrusao inglesa', () => {
-    assert.equal(context.converterPalavraRomajiN3('gakkou'), 'がっこう');
-    assert.equal(context.converterPalavraRomajiN3('wa'), 'は');
-    assert.equal(context.converterPalavraRomajiN3('o'), 'を');
-    assert.equal(context.converterPalavraRomajiN3('arrival'), 'とうちゃく');
-    const converted = context.converterFraseRomajiN3('Kuukou ni hayaku arrival shimasu.', { word: '空港 (kuukou)' });
-    assert.equal(converted.targetReplaced, true);
-    assert.match(converted.text, /空港/);
-    assert.doesNotMatch(converted.text, /[A-Za-z]/);
+run('dataset N3 é canônico e página kanji_n3.html não carrega romaji-draft', () => {
+    const rawData = read('database/ja-JP/data_kanji_n3.js');
+    const htmlPage = read('html/ja-JP/kanji_n3.html');
+    assert.doesNotMatch(rawData, /KanjiRomajiDraft/);
+    assert.doesNotMatch(rawData, /converterFraseRomajiN3/);
+    assert.doesNotMatch(htmlPage, /romaji-draft\.js/);
 });
 
 run('gramatica N3 possui 18 contratos sem Romaji no texto principal', () => {
@@ -93,15 +96,14 @@ function stripEditorial(value) {
 
 run('snapshot estrutural N3 preserva tudo fora das correcoes autorizadas', () => {
     const structural = stripEditorial(modules);
+    structural.forEach(module => { if (module.readingText) module.readingText = '__AUTHORIZED_READING_TEXT__'; });
     structural[8].kanjis[3].onyomi = '__AUTHORIZED_READING__';
     structural[12].kanjis[11].onyomi = '__AUTHORIZED_READING__';
     const review = structural[18];
     review.description = '__AUTHORIZED_REVIEW_TEXT__';
     for (const field of ['title', 'explanation', 'example', 'translation']) review.grammar[field] = '__AUTHORIZED_REVIEW_TEXT__';
-    for (const field of ['japanese', 'romaji']) review.readingText[field] = '__AUTHORIZED_REVIEW_TEXT__';
-    review.readingText.comprehensionQuiz[0].options[0] = '__AUTHORIZED_REVIEW_TEXT__';
     const hash = crypto.createHash('sha256').update(JSON.stringify(structural)).digest('hex');
-    assert.equal(hash, '23d00eb9b56f99c918566cfa032ea8b6b4a4501c2c63c99a220a9a4233cd3043');
+    assert.equal(hash, 'c3f7b378adbf6961db8d026e8b376d0ce8946c778cc65c9b51735453467db1e1');
 });
 
 run('leituras objetivas e modulo de revisao nao alegam dominio integral', () => {

@@ -61,7 +61,7 @@ function renderKanjiModule(moduleIndex) {
             </div>
             <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; margin-bottom:12px;">${moduleData.grammar.explanation}</p>
             <div style="background:var(--card-bg); border-left:4px solid #f59e0b; padding:10px 14px; border-radius:8px; font-size:0.9rem;">
-                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;">${grammarExample}</span> ${grammarAudio}
+                <strong style="color:var(--text-main);">Exemplo Prático:</strong> <span style="color:#f59e0b; font-weight:bold;" lang="ja">${grammarExample}</span> ${grammarAudio}
                 ${grammarRomaji}
                 <small style="color:var(--text-muted); display:block; margin-top:3px;">"${grammarTranslation}"</small>
             </div>
@@ -99,11 +99,11 @@ function renderKanjiModule(moduleIndex) {
                 cell.className = 'review-grid-cell';
                 cell.tabIndex = -1;
                 cell.innerHTML = `
-                    <div class="grid-char">${charVal}</div>
+                    <div class="grid-char" lang="ja">${charVal}</div>
                     <div class="grid-meaning">${meaningVal}</div>
                     <div class="grid-readings">
-                        <div><strong>K:</strong> ${kunVal.split(' ')[0]}</div>
-                        <div><strong>O:</strong> ${onVal.split(' ')[0]}</div>
+                        <div><strong>K:</strong> <span lang="ja">${kunVal.split(' ')[0]}</span></div>
+                        <div><strong>O:</strong> <span lang="ja">${onVal.split(' ')[0]}</span></div>
                     </div>
                     <div class="grid-badge">Módulo ${item.originModule || '?'}</div>
                 `;
@@ -140,7 +140,13 @@ function renderKanjiModule(moduleIndex) {
             const meaningVal = item.meaning || item.significado || '';
             const kunVal = item.kunyomi || item.kun || '-';
             const onVal = item.onyomi || item.on || '-';
-            const readingPending = item.readingEditorialReview
+            const review = item.readingEditorialReview || {};
+            const hasPendingReading = Boolean(
+                review.status === 'pending-human-review' ||
+                (review.onyomi && review.onyomi.status === 'pending-human-review') ||
+                (review.kunyomi && review.kunyomi.status === 'pending-human-review')
+            );
+            const readingPending = hasPendingReading
                 ? '<small class="reading-editorial-pending">Leitura pendente de revisão editorial</small>' : '';
             const mnemonicVal = item.mnemonic || item.dica || '';
             const examplesList = item.examples || item.exemplos || [];
@@ -167,10 +173,10 @@ function renderKanjiModule(moduleIndex) {
                     examplesHTML += `
                         <div class="kanji-example-item">
                             <div class="ex-word">
-                                ${w} ${wm ? `<span>(${wm})</span>` : ''}
+                                <span lang="ja">${w}</span> ${wm ? `<span>(${wm})</span>` : ''}
                                 ${audioText ? `<button type="button" class="audio-btn kanji-example-audio" data-kanji-audio="${audioAttribute}" title="Ouvir frase">🔊</button>` : ''}
                             </div>
-                            ${s ? `<div class="ex-sentence">${s}</div>` : ''}
+                            ${s ? `<div class="ex-sentence" lang="ja">${s}</div>` : ''}
                             ${romajiHTML}
                             ${sm ? `<div class="ex-translation">"${sm}"</div>` : ''}
                         </div>
@@ -196,7 +202,7 @@ function renderKanjiModule(moduleIndex) {
                             <span></span>
                             ${renderBotaoFav}
                         </div>
-                        <div class="kanji-char">${charVal}</div>
+                        <div class="kanji-char" lang="ja">${charVal}</div>
                         <div class="kanji-meaning">${meaningVal}</div>
                         <button class="audio-btn" onclick="playKanjiAudio('${charVal}', event)" style="width:100%; margin-top:8px; padding: 8px;">🔊 Ouvir Kanji</button>
 
@@ -216,11 +222,11 @@ function renderKanjiModule(moduleIndex) {
                     <div class="kanji-info-box">
                         <div class="kanji-reading-group">
                             <span class="reading-label">Kunyomi (Japonês):</span>
-                            <div class="reading-val kunyomi-val">${kunVal}</div>
+                            <div class="reading-val kunyomi-val" lang="ja">${kunVal}</div>
                         </div>
                         <div class="kanji-reading-group">
                             <span class="reading-label">Onyomi (Chino-Japonês):</span>
-                            <div class="reading-val onyomi-val">${onVal}</div>
+                            <div class="reading-val onyomi-val" lang="ja">${onVal}</div>
                         </div>
                         ${readingPending}
                         ${mnemonicHTML}
@@ -285,7 +291,7 @@ function renderKanjiModule(moduleIndex) {
                 </div>
             </div>
 
-            <div class="reading-japanese-text kana-text">
+            <div class="reading-japanese-text kana-text" lang="ja">
                 ${rtData.japanese || ''}
                 ${rtData.romaji ? `<div class="reading-romaji-text">${rtData.romaji}</div>` : ''}
             </div>
@@ -462,20 +468,69 @@ function abrirTrilhaKanji(nivelJLPT) {
 }
 
 function calcularProgressoKanjiGlobal() {
-    const totalN5 = (typeof kanjiN5Data !== 'undefined' ? kanjiN5Data.length : 10);
-    const prog = typeof progressoGlobal !== 'undefined' ? progressoGlobal : {};
-    const concCount = (prog.progress_kanji || []).length;
-    const percentual = totalN5 > 0 ? Math.min(100, Math.round((concCount / totalN5) * 100)) : 0;
-    const xpCalculado = concCount * 100;
+    const prog = typeof progressoGlobal !== 'undefined' && progressoGlobal ? progressoGlobal : {};
+    const appProg = (typeof AppState !== 'undefined' && AppState.course && AppState.course.progress)
+        ? AppState.course.progress
+        : null;
+
+    const getList = (key, altKey) => {
+        let arr = (appProg && Array.isArray(appProg[key])) ? appProg[key] : (prog && Array.isArray(prog[key]) ? prog[key] : null);
+        if (!arr && altKey) {
+            arr = (appProg && Array.isArray(appProg[altKey])) ? appProg[altKey] : (prog && Array.isArray(prog[altKey]) ? prog[altKey] : null);
+        }
+        return Array.isArray(arr) ? arr : [];
+    };
+
+    const n5List = getList('progress_kanji', 'progress_kanji_n5');
+    const n4List = getList('progress_kanji_n4');
+    const n3List = getList('progress_kanji_n3');
+    const n2List = getList('progress_kanji_n2');
+    const n1List = getList('progress_kanji_n1');
+
+    const totalN5 = (typeof kanjiN5Data !== 'undefined' && Array.isArray(kanjiN5Data)) ? kanjiN5Data.length : 11;
+    const totalN4 = (typeof kanjiN4Data !== 'undefined' && Array.isArray(kanjiN4Data)) ? kanjiN4Data.length : 16;
+    const totalN3 = (typeof kanjiN3Data !== 'undefined' && Array.isArray(kanjiN3Data)) ? kanjiN3Data.length : 19;
+    const totalN2 = (typeof kanjiN2Data !== 'undefined' && Array.isArray(kanjiN2Data)) ? kanjiN2Data.length : 21;
+    const totalN1 = (typeof kanjiN1Data !== 'undefined' && Array.isArray(kanjiN1Data)) ? kanjiN1Data.length : 25;
+
+    const concN5 = Math.min(n5List.length, totalN5);
+    const concN4 = Math.min(n4List.length, totalN4);
+    const concN3 = Math.min(n3List.length, totalN3);
+    const concN2 = Math.min(n2List.length, totalN2);
+    const concN1 = Math.min(n1List.length, totalN1);
+
+    const totalConcluidos = concN5 + concN4 + concN3 + concN2 + concN1;
+    const totalModulos = totalN5 + totalN4 + totalN3 + totalN2 + totalN1;
+    const percentual = totalModulos > 0 ? Math.min(100, Math.round((totalConcluidos / totalModulos) * 100)) : 0;
+    const xpCalculado = totalConcluidos * 100;
+
     const elPercent = document.getElementById('progresso-kanji-percent');
     const elXP = document.getElementById('progresso-kanji-xp');
     const elBar = document.getElementById('progresso-kanji-bar');
     const elSubtext = document.getElementById('progresso-kanji-subtext');
+
     if (elPercent) elPercent.innerText = `${percentual}%`;
     if (elXP) elXP.innerText = `${xpCalculado} XP`;
     if (elBar) elBar.style.width = `${percentual}%`;
-    if (elSubtext) elSubtext.innerText = `${concCount} / ${totalN5} Módulos Dominados no N5`;
-    return { percentual, concCount, totalN5, xpCalculado };
+    if (elSubtext) {
+        elSubtext.innerText = `${totalConcluidos} / ${totalModulos} Módulos Dominados • N5: ${concN5}/${totalN5} | N4: ${concN4}/${totalN4} | N3: ${concN3}/${totalN3} | N2: ${concN2}/${totalN2} | N1: ${concN1}/${totalN1}`;
+    }
+
+    return {
+        percentual,
+        totalConcluidos,
+        totalModulos,
+        concCount: totalConcluidos,
+        totalN5: totalModulos,
+        xpCalculado,
+        niveis: {
+            N5: { concluidos: concN5, total: totalN5 },
+            N4: { concluidos: concN4, total: totalN4 },
+            N3: { concluidos: concN3, total: totalN3 },
+            N2: { concluidos: concN2, total: totalN2 },
+            N1: { concluidos: concN1, total: totalN1 }
+        }
+    };
 }
 
 function atualizarUIProgressoKanji() {

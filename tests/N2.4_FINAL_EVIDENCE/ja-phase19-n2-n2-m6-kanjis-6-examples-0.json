@@ -1,0 +1,67 @@
+{
+  "index": 551,
+  "targetId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0",
+  "module": 6,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "講",
+  "targetWord": "講演 (kouen)",
+  "reading": "コウ (KOU)",
+  "romaji": "Kouen o kiku.",
+  "translation": "Assistir a uma palestra pública.",
+  "example": {
+    "displayText": "講演をきく。",
+    "audioText": "講演をきく。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "講",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "講演 (kouen)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "講演をきく。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kouen o kiku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m6-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Assistir a uma palestra pública.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"講演\" ou o exemplo \"講演をきく。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.962Z"
+}

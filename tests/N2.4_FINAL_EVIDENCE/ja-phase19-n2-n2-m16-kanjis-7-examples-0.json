@@ -1,0 +1,67 @@
+{
+  "index": 275,
+  "targetId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0",
+  "module": 16,
+  "kanjiIndex": 7,
+  "exampleIndex": 0,
+  "character": "悩",
+  "targetWord": "悩み (nayami)",
+  "reading": "ノウ (NOU)",
+  "romaji": "Nayami no consultation.",
+  "translation": "Consulta sobre um dilema.",
+  "example": {
+    "displayText": "将来の進路についての悩みを先生に相談します。",
+    "audioText": "将来の進路についての悩みを先生に相談します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "悩",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "悩み (nayami)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "将来の進路についての悩みを先生に相談します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Nayami no consultation.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m16-kanjis-7-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Consulta sobre um dilema.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"悩み\" ou o exemplo \"将来の進路についての悩みを先生に相談します。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.743Z"
+}

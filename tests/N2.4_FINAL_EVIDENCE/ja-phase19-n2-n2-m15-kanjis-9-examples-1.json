@@ -1,0 +1,67 @@
+{
+  "index": 250,
+  "targetId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1",
+  "module": 15,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "追",
+  "targetWord": "追跡 (tsuiseki)",
+  "reading": "ツイ (TSUI)",
+  "romaji": "Package no tsuiseki.",
+  "translation": "Rastreamento do pacote.",
+  "example": {
+    "displayText": "ぱクかげの追跡。",
+    "audioText": "ぱクかげの追跡。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "追",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "追跡 (tsuiseki)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ぱクかげの追跡。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Package no tsuiseki.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m15-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Rastreamento do pacote.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"追跡\" ou o exemplo \"ぱクかげの追跡。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.725Z"
+}

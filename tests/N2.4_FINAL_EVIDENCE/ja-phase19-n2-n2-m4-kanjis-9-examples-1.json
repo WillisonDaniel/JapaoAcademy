@@ -1,0 +1,67 @@
+{
+  "index": 492,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1",
+  "module": 4,
+  "kanjiIndex": 9,
+  "exampleIndex": 1,
+  "character": "院",
+  "targetWord": "病院 (byouin)",
+  "reading": "イン (IN)",
+  "romaji": "Byouin ni iku.",
+  "translation": "Ir ao hospital.",
+  "example": {
+    "displayText": "病院にいく。",
+    "audioText": "病院にいく。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "院",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "病院 (byouin)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "病院にいく。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Byouin ni iku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-9-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ir ao hospital.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"病院\" ou o exemplo \"病院にいく。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.918Z"
+}

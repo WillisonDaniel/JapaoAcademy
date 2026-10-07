@@ -151,7 +151,6 @@ function createContext(config) {
 
 function buildDictionary(config) {
     const context = createContext(config);
-    if (config.code === 'ja-JP') runFile(context, 'js/kanji/romaji-draft.js');
     config.datasets.forEach(file => runFile(context, file));
     runFile(context, 'js/course/moduleNormalizer.js');
     runFile(context, 'js/core/state.js');

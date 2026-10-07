@@ -1,0 +1,83 @@
+{
+  "index": 31,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1",
+  "module": 4,
+  "kanjiIndex": 4,
+  "exampleIndex": 1,
+  "character": "選",
+  "targetWord": "選手 (senshu)",
+  "reading": "セン (SEN)",
+  "romaji": "Famous senshu.",
+  "translation": "Atleta famoso.",
+  "example": {
+    "displayText": "ふぁもうス選手。",
+    "audioText": "ふぁもうス選手。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "選",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "選手 (senshu)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "ふぁもうス選手。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Famous senshu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Atleta famoso.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 170,
+      "file": "quartet-2-textbook-p0170.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0170.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0170.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "選手",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"選手\" possui atestação lexical primária na testemunha quartet-2-textbook-p0170.json (p. 170), porém a frase de exemplo canônica (\"ふぁもうス選手。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.547Z"
+}

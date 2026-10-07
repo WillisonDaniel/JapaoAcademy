@@ -683,6 +683,47 @@
       ]
     }
   ],
+  "externalSources": [
+    {
+      "id": "edrdg-kanjidic2",
+      "title": "KANJIDIC2",
+      "kind": "dataset",
+      "publisher": "Electronic Dictionary Research and Development Group",
+      "url": "https://www.edrdg.org/kanjidic/kanjidic2.xml.gz",
+      "retrievedAt": "2026-08-20",
+      "scratchPath": "scratch/editorial-sources/kanjidic2.xml.gz",
+      "sha256": "c4f26fcab3771ad15dc58e6bc6e6015a6da4b3d7734833a82f94c7c279fe7b1d",
+      "bytes": 1488573,
+      "locationScheme": "literal Unicode e tipo de leitura ja_on/ja_kun",
+      "roles": [
+        "kanji-readings",
+        "cross-check"
+      ]
+    },
+    {
+      "id": "bunka-joyo-kanji-2010",
+      "title": "常用漢字表",
+      "kind": "pdf",
+      "publisher": "Agência de Assuntos Culturais do Japão",
+      "url": "https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/pdf/joyokanjihyo_20101130.pdf",
+      "retrievedAt": "2026-08-20",
+      "scratchPath": "scratch/editorial-sources/joyokanjihyo_20101130.pdf",
+      "sha256": "d9f28aeb4ce8250dbde07de20ac66cca71805ba09d94e4942c752dffa84d8d42",
+      "bytes": 3551021,
+      "pageCount": 164,
+      "visualSamplePages": [
+        1,
+        82,
+        164
+      ],
+      "visualSampleStatus": "inspected",
+      "roles": [
+        "official-joyo-readings",
+        "official-scope",
+        "cross-check"
+      ]
+    }
+  ],
   "audioCorpus": {
     "root": "livros/Genki 2nd Edition",
     "files": 464,

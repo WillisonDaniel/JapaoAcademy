@@ -1,0 +1,67 @@
+{
+  "index": 485,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0",
+  "module": 4,
+  "kanjiIndex": 4,
+  "exampleIndex": 0,
+  "character": "選",
+  "targetWord": "選挙 (senkyo)",
+  "reading": "セン (SEN)",
+  "romaji": "Senkyo ni iku.",
+  "translation": "Ir às urnas votar.",
+  "example": {
+    "displayText": "選挙にいく。",
+    "audioText": "選挙にいく。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "選",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "選挙 (senkyo)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "選挙にいく。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Senkyo ni iku.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-4-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Ir às urnas votar.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"選挙\" ou o exemplo \"選挙にいく。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.912Z"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 287,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0",
+  "module": 17,
+  "kanjiIndex": 12,
+  "exampleIndex": 0,
+  "character": "業",
+  "targetWord": "学業 (gakugyou)",
+  "reading": "ギョウ (GYOU) / ゴウ (GOU)",
+  "romaji": "Gakugyou ni hagemu.",
+  "translation": "Dedicador-se aos estudos acadêmicos.",
+  "example": {
+    "displayText": "学業にはげむ。",
+    "audioText": "学業にはげむ。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "業",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "学業 (gakugyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "学業にはげむ。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Gakugyou ni hagemu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-12-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Dedicador-se aos estudos acadêmicos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"学業\" ou o exemplo \"学業にはげむ。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.754Z"
+}

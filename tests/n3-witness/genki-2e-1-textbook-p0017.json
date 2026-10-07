@@ -1,0 +1,14 @@
+{
+  "sourceId": "genki-2e-1-textbook",
+  "page": 17,
+  "sourceSha256": "846cc2c9fc4d5310c8e6b3ee711817186239c3810e4433ec350015f32a4004b5",
+  "corpusArtifact": "scratch/japanese-corpus/genki-2e-1-textbook/page-0017.json",
+  "corpusArtifactSha256": "22bac76701b42c44f958f133ae5d91867b439b6b792602bdc1b577b0dd5e75e1",
+  "extractionMode": "ocr",
+  "pageTextSha256": "77c91ff86b2e4f2f5c65303ed1c7cca8e8f1b9351651d4f9f09f6f1c0fbb94e6",
+  "text": "AIC DUT >> 17\n\n本文の日本語は、ほとんどが「教科書体]」 の書体で組まれています。 教科書体は手書き文字\nに近い書体ですから、学習者は自分が書く文字のモデルとすることができます。ただし、実際\nに印刷された日本語文では、さまざまな書体を見ることがあります。 文字によっては、書体に\nLotPev BRR YES. HICHENECIOOMMEOD VIC ko TOI ORMABEDS\nあるので、注意が必要です。\n\n例 :   教科書体    明朝体   ゴシック体 手書き文字\nx き さ さ\nき & き 4\nり 。り り り\nb Bb ら 5\ne          こ          E          a\nやゃや や や や\n",
+  "normalizedText": "AIC DUT >> 17 本文の日本語は、ほとんどが「教科書体]」 の書体で組まれています。 教科書体は手書き文字 に近い書体ですから、学習者は自分が書く文字のモデルとすることができます。ただし、実際 に印刷された日本語文では、さまざまな書体を見ることがあります。 文字によっては、書体に LotPev BRR YES. HICHENECIOOMMEOD VIC ko TOI ORMABEDS あるので、注意が必要です。 例 : 教科書体 明朝体 ゴシック体 手書き文字 x き さ さ き & き 4 り 。り り り b Bb ら 5 e こ E a やゃや や や や",
+  "associatedTargets": [
+    "ja-phase19-n3-n3-m12-kanjis-6-examples-0"
+  ]
+}

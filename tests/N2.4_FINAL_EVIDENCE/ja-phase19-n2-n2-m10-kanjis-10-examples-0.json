@@ -1,0 +1,67 @@
+{
+  "index": 57,
+  "targetId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0",
+  "module": 10,
+  "kanjiIndex": 10,
+  "exampleIndex": 0,
+  "character": "央",
+  "targetWord": "中央 (chuuou)",
+  "reading": "オウ (OU)",
+  "romaji": "Chuuou line.",
+  "translation": "Linha central de trem.",
+  "example": {
+    "displayText": "中央ルいね。",
+    "audioText": "中央ルいね。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "DATA_QUALITY_ISSUE",
+  "finalDecision": "DATA_QUALITY_ISSUE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "央",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "中央 (chuuou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "中央ルいね。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Chuuou line.",
+      "status": "corrupt"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m10-kanjis-10-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Linha central de trem.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "DEFEITO OBJETIVO DE DADOS: Detectada anomalia no registro canônico (termo em inglês residual no romaji). Classificado e resolvido como DATA_QUALITY_ISSUE para saneamento quando houver testemunha primária substituta autorizada.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.569Z"
+}

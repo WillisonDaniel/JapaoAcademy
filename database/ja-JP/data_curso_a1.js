@@ -9,7 +9,7 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Ohayou gozaimasu!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Você acabou de pousar no Japão! Vamos aprender a cumprimentar as pessoas nas ruas em cada período do dia e dizer quem você é de forma educada e natural."
+            "missionDescription": "Vamos aprender saudações usadas em diferentes momentos do dia e uma estrutura nominal polida para se apresentar."
         },
         "stage2_drops": [
             {
@@ -17,28 +17,28 @@ const CURSO_A1_DADOS = [
                 "kanji": "おはようございます",
                 "romaji": "Ohayou gozaimasu",
                 "translation": "Bom dia (Formal)",
-                "timeContext": "Usado até aproximadamente 10h da manhã com professores, chefes e desconhecidos."
+                "timeContext": "Saudação de bom-dia; ございます torna a expressão mais polida."
             },
             {
                 "type": "vocab",
                 "kanji": "こんにちは",
                 "romaji": "Konnichiwa",
                 "translation": "Boa tarde / Olá",
-                "timeContext": "Usado durante todo o dia claro (entre 10h e o pôr do sol)."
+                "timeContext": "Saudação usada ao encontrar alguém durante o dia."
             },
             {
                 "type": "vocab",
                 "kanji": "こんばんは",
                 "romaji": "Konbanwa",
                 "translation": "Boa noite",
-                "timeContext": "Usado ao chegar ou encontrar alguém à noite (nunca para ir dormir!)."
+                "timeContext": "Saudação usada ao encontrar alguém à noite; antes de dormir, usa-se おやすみなさい."
             },
             {
                 "type": "grammar_pill",
                 "title": "O Camaleão 'です (Desu)'",
-                "rule": "Para dizer 'Eu sou...' ou 'É...', colocamos a palavra mágica です (desu) sempre no final da frase. Ela funciona como o verbo ser/estar e garante que você soe educado!",
-                "formula": "[ Seu Nome ] + です (desu)",
-                "example": "Carlos です ➔ (Sou o Carlos). Dica: O 'u' final não é pronunciado, soando como 'dess'."
+                "rule": "No padrão nominal X は Y です, です marca o predicado como polido. Conforme o contexto, a tradução pode usar formas de 'ser', mas です não corresponde sozinho a todos os usos de 'ser' ou 'estar'.",
+                "formula": "[ Tópico ] は [ Nome ou identificação ] です",
+                "example": "わたしはカルロスです。 ➔ Eu sou o Carlos. Na fala corrente, a vogal final de です pode ser pouco audível."
             }
         ],
         "stage3_practice": [
@@ -50,7 +50,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "☀️ Tarde (Dia claro)",
+                        "label": "☀️ Durante o dia",
                         "isCorrect": true
                     },
                     {
@@ -77,7 +77,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Qual é a posição gramatical correta da palavra mágica 'です (desu)' na frase?",
+                "question": "3. No padrão nominal afirmativo X は Y です, onde aparece です?",
                 "options": [
                     {
                         "label": "Sempre no início absoluto da frase",
@@ -88,7 +88,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "Sempre no final da frase",
+                        "label": "Depois do nome ou identificação que forma o predicado",
                         "isCorrect": true
                     }
                 ]
@@ -111,10 +111,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Para dizer formalmente 'Sou a Ana' em japonês, qual é a estrutura perfeita?",
+                "question": "5. Qual opção segue o padrão nominal polido X は Y です para dizer 'Sou a Ana'?",
                 "options": [
                     {
-                        "label": "Ana です (Ana desu)",
+                        "label": "わたしはアナです (Watashi wa Ana desu)",
                         "isCorrect": true
                     },
                     {
@@ -137,30 +137,30 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "sentenceJp": "わたし は カロス です",
+                "sentenceJp": "わたし は カルロス です",
                 "translation": "Eu sou o Carlos.",
                 "chunks": [
                     "わたし",
                     "は",
-                    "カロス",
+                    "カルロス",
                     "です"
                 ]
             }
         ],
         "stage4_dialog": [
             {
-                "scenario": "Situação 1: Você está no elevador do hotel em Tóquio às 14:00 e um nativo simpático puxa assunto.",
+                "scenario": "Situação 1: Você está no elevador do hotel em Tóquio durante a tarde e outro hóspede inicia uma conversa.",
                 "npcName": "Kenji",
-                "npcMessage": "こんにちは！ ケンジ です。 (Konnichiwa! Kenji desu.)",
+                "npcMessage": "こんにちは。ケンジです。 (Konnichiwa. Kenji desu.)",
                 "options": [
                     {
                         "text": "おはようございます！",
-                        "feedback": "Incorreto: São 14:00 da tarde!",
+                        "feedback": "Esta não é a saudação diurna trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こんにちは！ [Seu Nome] です.",
-                        "feedback": "Mandou bem! Saudação correta para a tarde e uso perfeito do desu.",
+                        "text": "こんにちは。[Seu Nome]です。",
+                        "feedback": "Correto: você usou a saudação diurna e o padrão nominal polido do módulo.",
                         "isCorrect": true
                     },
                     {
@@ -173,21 +173,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 2: Você entra em uma padaria local às 08:00 da manhã e o padeiro acena com um sorriso.",
                 "npcName": "Padeiro Sato",
-                "npcMessage": "あ！ おはようございます！ (Ah! Ohayou gozaimasu!)",
+                "npcMessage": "あ、おはようございます。 (A, ohayou gozaimasu.)",
                 "options": [
                     {
-                        "text": "こんばんは！ [Seu Nome] です.",
-                        "feedback": "Ops! 'Konbanwa' é usado apenas à noite!",
+                        "text": "こんばんは。[Seu Nome]です。",
+                        "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
-                        "text": "おはようございます！ [Seu Nome] です.",
-                        "feedback": "Perfeito! Você respondeu com o 'Bom dia' formal e se apresentou com naturalidade.",
+                        "text": "おはようございます。",
+                        "feedback": "Correto: você respondeu com a saudação polida de bom-dia.",
                         "isCorrect": true
                     },
                     {
                         "text": "こんにちは！",
-                        "feedback": "Inadequado para as 8h da manhã em um ambiente de comércio formal.",
+                        "feedback": "Esta não é a saudação de bom-dia trabalhada nesta situação.",
                         "isCorrect": false
                     }
                 ]
@@ -195,21 +195,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Você chega ao seu ryokan (pousada tradicional) às 19:45 e a anfitriã abre a porta de correr.",
                 "npcName": "Anfitriã Suzuki",
-                "npcMessage": "いらっしゃいませ！ こんばんは！ (Bem-vindo(a)! Boa noite!)",
+                "npcMessage": "いらっしゃいませ。こんばんは。 (Bem-vindo(a). Boa noite.)",
                 "options": [
                     {
-                        "text": "こんばんは！ [Seu Nome] です.",
-                        "feedback": "Excelente! Resposta educada, no tempo correto e com apresentação clara.",
+                        "text": "こんばんは。",
+                        "feedback": "Correto: você respondeu com a saudação noturna trabalhada no módulo.",
                         "isCorrect": true
                     },
                     {
                         "text": "おはようございます！",
-                        "feedback": "Incorreto: Você não pode dar 'Bom dia' às 19:45 da noite!",
+                        "feedback": "Esta não é a saudação noturna trabalhada nesta situação.",
                         "isCorrect": false
                     },
                     {
                         "text": "です [Seu Nome]！",
-                        "feedback": "Erro gramatical grave: O 'desu' nunca pode vir antes do nome!",
+                        "feedback": "Essa ordem não segue o padrão nominal X は Y です trabalhado no módulo.",
                         "isCorrect": false
                     }
                 ]
@@ -217,7 +217,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual saudação você DEVE usar ao ver seu professor às 7h30 da manhã?",
+                "question": "Qual é a saudação polida de bom-dia trabalhada no módulo?",
                 "options": [
                     "こんにちは (Konnichiwa)",
                     "おはようございます (Ohayou gozaimasu)",
@@ -255,7 +255,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Sobre a regra 'O Camaleão 'です (Desu)'': qual afirmação é correta?",
                 "options": [
-                    "Para dizer 'Eu sou...' ou 'É...', colocamos a palavra mágica です (desu) sempre no final da frase. Ela funciona como o verbo ser/estar e garante que você soe educado!",
+                    "No padrão X は Y です, です marca o predicado nominal como polido.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -265,7 +265,7 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_02",
-        "title": "Prazer em Conhecer & Cartões de Visita",
+        "title": "Prazer em Conhecer & Primeiras Apresentações",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
@@ -273,41 +273,41 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Hajimemashite! Yoroshiku onegaishimasu.",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "No Japão, a primeira impressão é tudo! Vamos aprender a reverência cultural das apresentações e a famosa troca de cartões de visita (Meishi)."
+            "missionDescription": "Aprenda expressões frequentes de uma primeira apresentação e pratique uma troca breve e polida."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "はじめまして",
                 "romaji": "Hajimemashite",
-                "translation": "Prazer em conhecer / Como vai?",
-                "timeContext": "Dito literalmente no primeiríssimo segundo em que você conhece alguém."
+                "translation": "Muito prazer / Prazer em conhecer você",
+                "timeContext": "Usado ao encontrar alguém pela primeira vez."
             },
             {
                 "type": "vocab",
                 "kanji": "よろしくおねがいします",
                 "romaji": "Yoroshiku onegaishimasu",
-                "translation": "Conto com sua gentileza / Prazer em conhecê-lo",
-                "timeContext": "Frase essencial dita sempre ao FINAL de uma apresentação."
+                "translation": "Muito prazer / Espero contar com você",
+                "timeContext": "Expressão contextual frequentemente usada ao encerrar uma apresentação."
             },
             {
                 "type": "vocab",
                 "kanji": "こちらこそ",
-                "romaji": "Kochirakoso",
-                "translation": "O prazer é todo meu / Igualmente",
-                "timeContext": "Usado para responder quando alguém diz 'Yoroshiku onegaishimasu' para você."
+                "romaji": "Kochira koso",
+                "translation": "Igualmente / Eu é que agradeço",
+                "timeContext": "Em uma apresentação, pode introduzir a resposta こちらこそ、よろしくおねがいします."
             },
             {
                 "type": "grammar_pill",
-                "title": "O Sanduíche de Ouro da Apresentação",
-                "rule": "Toda apresentação formal japonesa segue uma fórmula perfeita de 3 passos parecida com um sanduíche!",
+                "title": "Modelo básico de apresentação",
+                "rule": "Um modelo comum combina a saudação inicial, a identificação e uma expressão de cortesia.",
                 "formula": "はじめまして + [Nome] です + よろしくおねがいします",
                 "example": "Hajimemashite. Ana desu. Yoroshiku onegaishimasu."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual é a primeiríssima palavra que você deve dizer ao ser apresentado a uma pessoa nova?",
+                "question": "1. Qual expressão é adequada ao encontrar alguém pela primeira vez?",
                 "options": [
                     {
                         "label": "🤝 はじめまして (Hajimemashite)",
@@ -327,7 +327,7 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como você responde se um colega japonês se apresenta e diz: 'Yoroshiku onegaishimasu'?",
                 "options": [
                     {
-                        "label": "🤝 こちらこそ (Kochirakoso - O prazer é meu!)",
+                        "label": "🤝 こちらこそ、よろしくおねがいします (Kochira koso, yoroshiku onegaishimasu)",
                         "isCorrect": true
                     },
                     {
@@ -341,7 +341,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Qual frase é considerada obrigatória para FECHAR (encerrar) uma apresentação formal?",
+                "question": "3. Qual expressão é frequentemente usada ao encerrar uma apresentação polida?",
                 "options": [
                     {
                         "label": "はじめまして (Hajimemashite)",
@@ -358,7 +358,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. No 'Sanduíche de Apresentação', o que deve ficar no MEIO da frase?",
+                "question": "4. No modelo básico apresentado, o que aparece entre as duas expressões de cortesia?",
                 "options": [
                     {
                         "label": "A saudação inicial Hajimemashite",
@@ -394,20 +394,20 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "はじめまして タナカ です",
+                "sentenceJp": "はじめまして。タナカです。",
                 "translation": "Prazer em conhecê-lo. Sou Tanaka.",
                 "chunks": [
-                    "はじめまして",
+                    "はじめまして。",
                     "タナカ",
-                    "です"
+                    "です。"
                 ]
             },
             {
-                "sentenceJp": "よろしく おねがいします",
+                "sentenceJp": "よろしくおねがいします。",
                 "translation": "Conto com sua gentileza.",
                 "chunks": [
                     "よろしく",
-                    "おねがいします"
+                    "おねがいします。"
                 ]
             }
         ],
@@ -415,21 +415,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está em uma reunião na empresa e o diretor Tanaka se aproxima para trocar cartões.",
                 "npcName": "Tanaka",
-                "npcMessage": "はじめまして。タナカ です。よろしくおねがいします。",
+                "npcMessage": "はじめまして。タナカです。よろしくおねがいします。",
                 "options": [
                     {
-                        "text": "こちらこそ！ [Seu Nome] です。よろしくおねがいします。",
-                        "feedback": "Perfeito! Você devolveu a cortesia com 'Kochirakoso' e se apresentou corretamente.",
+                        "text": "はじめまして。こちらこそ、よろしくおねがいします。",
+                        "feedback": "Adequado: você respondeu à apresentação e retribuiu a expressão de cortesia.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こんばんは！ タナカ です.",
+                        "text": "こんばんは！ タナカです。",
                         "feedback": "Incorreto: Você não se chama Tanaka e usou boa noite!",
                         "isCorrect": false
                     },
                     {
                         "text": "はじめまして！",
-                        "feedback": "Incompleto: Faltou dizer seu nome e o 'Yoroshiku onegaishimasu'.",
+                        "feedback": "Possível como saudação inicial, mas a outra opção responde de modo mais completo ao contexto proposto.",
                         "isCorrect": false
                     }
                 ]
@@ -441,17 +441,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "よろしくおねがいします！",
-                        "feedback": "Incompleto: Você foi educado, mas esqueceu de dizer seu nome!",
+                        "feedback": "A expressão é polida, mas a outra opção também responde à saudação de primeiro encontro.",
                         "isCorrect": false
                     },
                     {
-                        "text": "じめまして！ [Seu Nome] です。 よろしくおねがいします！",
-                        "feedback": "Excelente! Aplicou a técnica do sanduíche completa, gerando uma ótima primeira impressão.",
+                        "text": "はじめまして。よろしくおねがいします！",
+                        "feedback": "Adequado: você respondeu à saudação de primeiro encontro e acrescentou a expressão de cortesia.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こちらこそ！ ヒロ です.",
-                        "feedback": "Incorreto: 'Kochirakoso' só se usa para responder a um 'Yoroshiku', e você disse que é o Hiro!",
+                        "text": "こちらこそ！ ヒロです。",
+                        "feedback": "Inadequado neste diálogo: você se identificou como Hiro, que é o nome do interlocutor.",
                         "isCorrect": false
                     }
                 ]
@@ -459,16 +459,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Em um encontro de intercâmbio, você acaba de dizer 'Hajimemashite, [Seu Nome] desu. Yoroshiku onegaishimasu' para uma estudante.",
                 "npcName": "Estudante Sakura",
-                "npcMessage": "わあ！ [Seu Nome]・さん！ よろしくおねがいします！",
+                "npcMessage": "こちらこそ、よろしくおねがいします！",
                 "options": [
                     {
-                        "text": "こちらこそ！ (Kochirakoso!)",
-                        "feedback": "Mandou bem! Respondeu prontamente com 'O prazer é todo meu' para selar a amizade.",
+                        "text": "こちらこそ、よろしくおねがいします！",
+                        "feedback": "Adequado: você retribuiu a cortesia de forma completa.",
                         "isCorrect": true
                     },
                     {
-                        "text": "じめまして！",
-                        "feedback": "Incorreto: Vocês já disseram 'Hajimemashite' no início do diálogo!",
+                        "text": "はじめまして！",
+                        "feedback": "Pouco adequado aqui: a saudação de primeiro encontro já ocorreu no início do diálogo.",
                         "isCorrect": false
                     },
                     {
@@ -481,7 +481,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual expressão deve fechar (encerrar) a sua apresentação pessoal no Japão?",
+                "question": "Qual expressão é frequentemente usada ao encerrar uma apresentação pessoal polida?",
                 "options": [
                     "はじめまして (Hajimemashite)",
                     "よろしくおねがいします (Yoroshiku onegaishimasu)",
@@ -492,34 +492,34 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'はじめまして' (Hajimemashite)?",
                 "options": [
-                    "Prazer em conhecer / Como vai?",
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Prazer em conhecer você",
+                    "Muito prazer / Espero contar com você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'よろしくおねがいします' (Yoroshiku onegaishimasu)?",
                 "options": [
-                    "Prazer em conhecer / Como vai?",
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Prazer em conhecer você",
+                    "Muito prazer / Espero contar com você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'こちらこそ' (Kochirakoso)?",
+                "question": "Qual é o significado contextual de 'こちらこそ' (Kochira koso)?",
                 "options": [
-                    "Conto com sua gentileza / Prazer em conhecê-lo",
-                    "Prazer em conhecer / Como vai?",
-                    "O prazer é todo meu / Igualmente"
+                    "Muito prazer / Espero contar com você",
+                    "Muito prazer / Prazer em conhecer você",
+                    "Igualmente / Eu é que agradeço"
                 ],
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'O Sanduíche de Ouro da Apresentação': qual afirmação é correta?",
+                "question": "Sobre o modelo básico de apresentação: qual afirmação é correta?",
                 "options": [
-                    "Toda apresentação formal japonesa segue uma fórmula perfeita de 3 passos parecida com um sanduíche!",
+                    "Um modelo comum combina saudação inicial, identificação e expressão de cortesia.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -529,7 +529,7 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_03",
-        "title": "As Palavras Mágicas: Arigatou & Sumimasen",
+        "title": "Agradecer, Pedir Licença e Desculpar-se",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
@@ -537,36 +537,36 @@ const CURSO_A1_DADOS = [
         "stage1_context": {
             "audioGuide": "Arigatou gozaimasu! Sumimasen!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "A gentileza é a espinha dorsal do Japão. Hoje você vai dominar as duas palavras mais importantes para sobreviver em lojas, trens e restaurantes."
+            "missionDescription": "Pratique expressões frequentes para agradecer, pedir licença e fazer uma desculpa breve em situações cotidianas."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "ありがとうございます",
                 "romaji": "Arigatou gozaimasu",
-                "translation": "Muito obrigado (Formal)",
-                "timeContext": "A forma educada padrão. Dizer apenas 'Arigatou' é casual demais para desconhecidos."
+                "translation": "Muito obrigado / Obrigado",
+                "timeContext": "Forma polida de agradecimento, adequada em situações com desconhecidos e atendimento."
             },
             {
                 "type": "vocab",
                 "kanji": "すみません",
                 "romaji": "Sumimasen",
-                "translation": "Com licença / Desculpe / Obrigado",
-                "timeContext": "O canivete suíço japonês! Serve para chamar o garçom, pedir licença no trem ou pedir desculpas leves."
+                "translation": "Com licença / Desculpe",
+                "timeContext": "Pode chamar a atenção de alguém, pedir licença, desculpar-se e, em certos contextos, reconhecer o incômodo causado por um favor."
             },
             {
                 "type": "vocab",
                 "kanji": "ごめんなさい",
                 "romaji": "Gomennasai",
-                "translation": "Me desculpe / Perdão",
-                "timeContext": "Mais pessoal e emocional. Usado com amigos, família ou quando você realmente cometeu um erro."
+                "translation": "Desculpe / Perdão",
+                "timeContext": "É uma desculpa mais direta e costuma aparecer em contextos pessoais ou menos formais."
             },
             {
                 "type": "grammar_pill",
-                "title": "Os 3 Superpoderes do 'Sumimasen'",
-                "rule": "Por que os japoneses usam tanto Sumimasen? Porque ele tem 3 funções em 1 só palavra!",
-                "formula": "1. Chamar Atenção (Ei, garçom!) | 2. Pedir Licença/Desculpa | 3. Agradecer um favor",
-                "example": "Se alguém pega algo que você deixou cair no chão, você diz 'Sumimasen' (Desculpe o incômodo / Obrigado)."
+                "title": "Usos frequentes de すみません",
+                "rule": "O sentido de すみません depende da situação: pode iniciar um pedido, pedir licença ou expressar uma desculpa breve.",
+                "formula": "1. Chamar atenção | 2. Pedir licença ou desculpar-se | 3. Reconhecer o esforço associado a um favor",
+                "example": "Ao receber um favor, すみません pode reconhecer o trabalho que a outra pessoa teve; ありがとうございます deixa o agradecimento explícito."
             }
         ],
         "stage3_practice": [
@@ -588,14 +588,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. Qual é a diferença fundamental entre 'Sumimasen' e 'Gomennasai'?",
+                "question": "2. Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
                 "options": [
                     {
                         "label": "Gomennasai é social/leve; Sumimasen é apenas para a família",
                         "isCorrect": false
                     },
                     {
-                        "label": "Gomennasai é emotivo/pessoal para erros; Sumimasen é social, leve e multifuncional",
+                        "label": "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção",
                         "isCorrect": true
                     },
                     {
@@ -605,10 +605,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que devemos evitar dizer apenas 'Arigatou' (sem gozaimasu) para um vendedor de loja?",
+                "question": "3. Por que 'Arigatou gozaimasu' é uma escolha segura ao agradecer um vendedor?",
                 "options": [
                     {
-                        "label": "Porque soa íntimo e informal demais para um desconhecido",
+                        "label": "Porque é uma forma polida de agradecimento adequada ao atendimento",
                         "isCorrect": true
                     },
                     {
@@ -639,14 +639,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Se alguém corre para segurar a porta do elevador para você não perder a viagem, por que um japonês diria 'Sumimasen'?",
+                "question": "5. Se alguém segura a porta do elevador para você, por que 'Sumimasen' pode acompanhar o agradecimento?",
                 "options": [
                     {
                         "label": "Para xingar a pessoa que segurou a porta",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque Sumimasen também funciona como agradecimento ('Desculpe o incômodo que te causei')",
+                        "label": "Porque pode reconhecer o incômodo ou esforço causado pelo favor, junto de um agradecimento explícito",
                         "isCorrect": true
                     },
                     {
@@ -658,23 +658,17 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は ガクセイ です",
-                "translation": "Eu sou estudante.",
+                "sentenceJp": "ありがとうございます。",
+                "translation": "Muito obrigado.",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "ガクセイ",
-                    "です"
+                    "ありがとうございます。"
                 ]
             },
             {
-                "sentenceJp": "マリアさん は ブラジルじん です",
-                "translation": "A Sra. Maria é brasileira.",
+                "sentenceJp": "すみません。",
+                "translation": "Com licença / Desculpe.",
                 "chunks": [
-                    "マリアさん",
-                    "は",
-                    "ブラジルじん",
-                    "です"
+                    "すみません。"
                 ]
             }
         ],
@@ -682,20 +676,20 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está saindo do metrô lotado em Tóquio e acidentalmente pisa de leve no pé de uma senhora.",
                 "npcName": "Senhora no Metrô",
-                "npcMessage": "いてっ！ (Ite! - Ai!)",
+                "npcMessage": "痛っ！",
                 "options": [
                     {
-                        "text": "ありがとうございます！ (Arigatou gozaimasu)",
-                        "feedback": "Incorreto! Você não pode agradecer por pisar no pé de alguém!",
+                        "text": "ありがとうございます！",
+                        "feedback": "Inadequado: neste contexto, é necessário pedir desculpas primeiro.",
                         "isCorrect": false
                     },
                     {
-                        "text": "あ、すみません！ (A, sumimasen!)",
-                        "feedback": "Excelente! Uma desculpa rápida, educada e socialmente perfeita para o dia a dia.",
+                        "text": "あ、すみません！",
+                        "feedback": "Adequado: você fez uma desculpa breve após esbarrar na pessoa.",
                         "isCorrect": true
                     },
                     {
-                        "text": "よろしくおねがいします！ (Yoroshiku...)",
+                        "text": "よろしくおねがいします！",
                         "feedback": "Incorreto: Isso é usado em apresentações pessoais.",
                         "isCorrect": false
                     }
@@ -704,16 +698,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 2: Você deixa sua carteira cair na rua e um pedestre corre atrás de você para devolvê-la.",
                 "npcName": "Pedestre Gentil",
-                "npcMessage": "あの！ これ、おちましたよ！ (Com licença! Isso caiu!)",
+                "npcMessage": "あの、これ、落としましたよ。",
                 "options": [
                     {
-                        "text": "ごめんなさい！ (Gomennasai!)",
-                        "feedback": "Ops! Gomennasai soa como se você tivesse cometido um crime contra ele. Use agradecimento!",
+                        "text": "ごめんなさい！",
+                        "feedback": "Menos adequado: a situação pede principalmente agradecimento pela devolução.",
                         "isCorrect": false
                     },
                     {
                         "text": "あ！ ありがとうございます！ すみません！",
-                        "feedback": "Perfeito! O combo 'Muito obrigado + Desculpe o incômodo' é o auge da fluência cultural!",
+                        "feedback": "Adequado: você agradeceu e também reconheceu o trabalho da pessoa ao devolver a carteira.",
                         "isCorrect": true
                     },
                     {
@@ -729,17 +723,17 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "*(Limpando o balcão do outro lado da sala)*",
                 "options": [
                     {
-                        "text": "すみません！ (Sumimasen!)",
-                        "feedback": "Mandou bem! Em restaurantes japoneses, é normal e esperado chamar o garçom em bom som com Sumimasen.",
+                        "text": "すみません！",
+                        "feedback": "Adequado: すみません é uma forma frequente de chamar a atenção de um atendente.",
                         "isCorrect": true
                     },
                     {
-                        "text": "こんにちは！ (Konnichiwa!)",
+                        "text": "こんにちは！",
                         "feedback": "Incomum para chamar garçons em restaurantes.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こちらこそ！ (Kochirakoso!)",
+                        "text": "こちらこそ！",
                         "feedback": "Completamente sem sentido no contexto.",
                         "isCorrect": false
                     }
@@ -748,10 +742,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a diferença entre 'Sumimasen' e 'Gomennasai' ao pedir desculpas?",
+                "question": "Qual descrição diferencia melhor 'Sumimasen' e 'Gomennasai'?",
                 "options": [
                     "Não há nenhuma diferença, são idênticos em tudo.",
-                    "Gomennasai é mais pessoal/afetivo para erros; Sumimasen é social, leve e serve para chamar atenção.",
+                    "Gomennasai é uma desculpa mais direta e pessoal; Sumimasen também pode pedir licença ou chamar atenção.",
                     "Sumimasen só pode ser usado à noite."
                 ],
                 "correctIndex": 1
@@ -759,34 +753,34 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'ありがとうございます' (Arigatou gozaimasu)?",
                 "options": [
-                    "Muito obrigado (Formal)",
-                    "Com licença / Desculpe / Obrigado",
-                    "Me desculpe / Perdão"
+                    "Muito obrigado / Obrigado",
+                    "Com licença / Desculpe",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'すみません' (Sumimasen)?",
                 "options": [
-                    "Muito obrigado (Formal)",
-                    "Com licença / Desculpe / Obrigado",
-                    "Me desculpe / Perdão"
+                    "Muito obrigado / Obrigado",
+                    "Com licença / Desculpe",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'ごめんなさい' (Gomennasai)?",
                 "options": [
-                    "Com licença / Desculpe / Obrigado",
-                    "Muito obrigado (Formal)",
-                    "Me desculpe / Perdão"
+                    "Com licença / Desculpe",
+                    "Muito obrigado / Obrigado",
+                    "Desculpe / Perdão"
                 ],
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'Os 3 Superpoderes do 'Sumimasen'': qual afirmação é correta?",
+                "question": "Sobre os usos frequentes de 'Sumimasen': qual afirmação é correta?",
                 "options": [
-                    "Por que os japoneses usam tanto Sumimasen? Porque ele tem 3 funções em 1 só palavra!",
+                    "O sentido de Sumimasen depende da situação e pode incluir pedir licença, desculpar-se ou chamar atenção.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -796,51 +790,51 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_04",
-        "title": "Despedidas e Variações: Sayounara vs. Ja ne",
+        "title": "Despedidas: registro e contexto",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
         "xpReward": 80,
         "stage1_context": {
-            "audioGuide": "Otsukaresama deshita! Ja ne!",
+            "audioGuide": "Otsukaresama deshita! Jaa ne!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Sabia que os japoneses quase nunca usam 'Sayounara' no dia a dia? Vamos aprender a nos despedir do jeito certo entre amigos e no trabalho!"
+            "missionDescription": "Escolha despedidas adequadas à relação e ao contexto: casual entre amigos, profissional e mais formal."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "さようなら",
                 "romaji": "Sayounara",
-                "translation": "Adeus / Até um longo tempo",
-                "timeContext": "Evite no dia a dia! Soa dramático, como se você não fosse ver a pessoa por muito tempo."
+                "translation": "Adeus / despedida",
+                "timeContext": "Pode sugerir uma separação maior ou mais marcada pelo contexto. É comum, por exemplo, quando alunos se despedem do professor; não é o equivalente universal de 'tchau'."
             },
             {
                 "type": "vocab",
                 "kanji": "じゃあね / またね",
-                "romaji": "Ja ne / Mata ne",
-                "translation": "Até logo / Tchau tchau!",
-                "timeContext": "A forma mais comum e natural de se despedir de amigos, colegas de escola e familiares."
+                "romaji": "Jaa ne / Mata ne",
+                "translation": "Até mais / Até logo",
+                "timeContext": "Formas casuais entre pessoas próximas quando se espera se ver novamente em breve."
             },
             {
                 "type": "vocab",
                 "kanji": "おつかれさまでした",
                 "romaji": "Otsukaresama deshita",
-                "translation": "Obrigado pelo seu duro trabalho / Bom descanso",
-                "timeContext": "Frase sagrada no ambiente de trabalho e cursos ao final do dia ou de um projeto."
+                "translation": "Obrigado pelo esforço / Bom trabalho",
+                "timeContext": "Expressão frequente ao encerrar uma atividade, especialmente em contextos de trabalho; a outra pessoa pode responder com a mesma expressão."
             },
             {
                 "type": "vocab",
                 "kanji": "しつれいします",
                 "romaji": "Shitsurei shimasu",
                 "translation": "Com licença (ao me retirar)",
-                "timeContext": "Despedida muito formal usada ao sair da sala de um professor, chefe ou cliente."
+                "timeContext": "Forma polida para sair, por exemplo, do escritório de um professor. Em empresas, também se ouve お先に失礼します ao sair antes dos demais."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Armadilha do 'Sayounara'",
-                "rule": "Em animes antigos traduzimos Sayounara como simples 'Tchau', mas no Japão real tem peso de 'Adeus final'.",
-                "formula": "Amigos ➔ じゃあね (Ja ne) | Trabalho ➔ おつかれさま (Otsukaresama)",
-                "example": "Dizer Sayounara para o chefe no fim do dia soa como se você estivesse se demitindo da empresa!"
+                "title": "Escolha pelo contexto",
+                "rule": "Há várias despedidas em japonês. A escolha depende da proximidade, da situação e de quando se espera ver a pessoa outra vez.",
+                "formula": "Amigos ➔ じゃあ、またね | Trabalho ➔ おつかれさまでした | Saída formal ➔ 失礼します",
+                "example": "Ao deixar o escritório de um professor, 失礼します é uma opção polida; com um amigo, じゃあ、またね combina melhor."
             }
         ],
         "stage3_practice": [
@@ -869,7 +863,7 @@ const CURSO_A1_DADOS = [
                         "isCorrect": false
                     },
                     {
-                        "label": "👋 じゃあね！ / またね！ (Ja ne! / Mata ne!)",
+                        "label": "👋 じゃあね！ / またね！ (Jaa ne! / Mata ne!)",
                         "isCorrect": true
                     },
                     {
@@ -879,18 +873,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que dizer 'Sayounara' para sua esposa/marido antes de ir trabalhar de manhã é um erro horrível?",
+                "question": "3. Qual despedida tende a ser mais natural ao sair de casa de manhã, esperando voltar depois?",
                 "options": [
                     {
-                        "label": "Porque soa como se você estivesse pedindo divórcio e nunca mais fosse voltar",
+                        "label": "いってきます (Ittekimasu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque é informal demais para casais",
+                        "label": "さようなら (Sayounara)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque significa 'Bom apetite'",
+                        "label": "いただきます (Itadakimasu)",
                         "isCorrect": false
                     }
                 ]
@@ -899,7 +893,7 @@ const CURSO_A1_DADOS = [
                 "question": "4. Você está na sala de um professor universitário tirando dúvidas. Ao fechar a porta para ir embora, o que você diz?",
                 "options": [
                     {
-                        "label": "じゃあね！ (Ja ne!)",
+                        "label": "じゃあね！ (Jaa ne!)",
                         "isCorrect": false
                     },
                     {
@@ -932,24 +926,20 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "これ は ほん です",
-                "translation": "Isto é um livro.",
+                "sentenceJp": "じゃあ また ね",
+                "translation": "Então, até mais.",
                 "chunks": [
-                    "これ",
-                    "は",
-                    "ほん",
-                    "です"
+                    "じゃあ",
+                    "また",
+                    "ね"
                 ]
             },
             {
-                "sentenceJp": "それ は なん です か",
-                "translation": "O que é isso?",
+                "sentenceJp": "しつれい します",
+                "translation": "Com licença (ao me retirar).",
                 "chunks": [
-                    "それ",
-                    "は",
-                    "なん",
-                    "です",
-                    "か"
+                    "しつれい",
+                    "します"
                 ]
             }
         ],
@@ -961,17 +951,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "しつれいします (Shitsurei shimasu)",
-                        "feedback": "Muitíssimo formal e robótico para dizer a um amigo de classe!",
+                        "feedback": "É uma despedida polida, mas aqui a relação é casual; uma forma como じゃあね combina melhor.",
                         "isCorrect": false
                     },
                     {
-                        "text": "うん、じゃあね！ またね！ (Un, ja ne! Mata ne!)",
-                        "feedback": "Perfeito! Natural, amigável e com a entonação exata entre amigos.",
+                        "text": "うん、じゃあね！ またね！ (Un, jaa ne! Mata ne!)",
+                        "feedback": "Boa escolha: é casual e adequada entre colegas próximos que esperam se ver no dia seguinte.",
                         "isCorrect": true
                     },
                     {
                         "text": "さようなら... (Sayounara...)",
-                        "feedback": "Incorreto! O Kenji vai achar que você vai mudar de cidade e nunca mais voltará!",
+                        "feedback": "Não é a opção mais usual aqui: さようなら pode transmitir uma separação mais marcada do que a situação pede.",
                         "isCorrect": false
                     }
                 ]
@@ -982,13 +972,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "おさきに しつれいします。 (Com licença, estou indo na frente.)",
                 "options": [
                     {
-                        "text": "じゃあね、サトウ・さん！",
-                        "feedback": "Extremamente informal! Falar assim com o chefe pode causar demissão!",
+                        "text": "じゃあね、佐藤さん！",
+                        "feedback": "É casual demais para esta interação profissional. Prefira uma despedida polida.",
                         "isCorrect": false
                     },
                     {
                         "text": "おつかれさまでした！ (Otsukaresama deshita!)",
-                        "feedback": "Excelente! Resposta corporativa perfeita, agradecendo o esforço do chefe.",
+                        "feedback": "Boa resposta: reconhece o esforço em um contexto de trabalho.",
                         "isCorrect": true
                     },
                     {
@@ -1005,17 +995,17 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "ありがとうございます！ しつれいします！",
-                        "feedback": "Impecável! 'Muito obrigado! Com licença ao me retirar' mostra respeito e etiqueta profissional de alto nível.",
+                        "feedback": "Boa escolha: agradece pela entrevista e usa uma despedida polida ao sair.",
                         "isCorrect": true
                     },
                     {
                         "text": "またね！ バイバイ！ (Até logo! Bye bye!)",
-                        "feedback": "Socorro! Informal demais! Adeus vaga de emprego!",
+                        "feedback": "É informal para uma entrevista. Escolha uma despedida polida.",
                         "isCorrect": false
                     },
                     {
                         "text": "さようなら！",
-                        "feedback": "Passa a impressão de que você desistiu da vaga para sempre.",
+                        "feedback": "Não é a despedida mais adequada a esta situação profissional; agradeça e retire-se de modo polido.",
                         "isCorrect": false
                     }
                 ]
@@ -1023,10 +1013,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Por que não devemos dizer 'Sayounara' para colegas ao sair do trabalho todo dia?",
+                "question": "Por que さようなら não é a escolha padrão para colegas ao sair do trabalho?",
                 "options": [
                     "Porque é uma gíria muito informal de adolescentes.",
-                    "Porque passa uma ideia dramática de separação longa ou adeus definitivo.",
+                    "Porque pode sugerir uma separação mais marcada; おつかれさまでした é mais comum nesse contexto.",
                     "Porque é proibido por lei no Japão."
                 ],
                 "correctIndex": 1
@@ -1034,27 +1024,27 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'さようなら' (Sayounara)?",
                 "options": [
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 0
             },
             {
                 "question": "Qual é o significado correto da palavra 'じゃあね / またね' (Ja ne / Mata ne)?",
                 "options": [
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'おつかれさまでした' (Otsukaresama deshita)?",
                 "options": [
-                    "Até logo / Tchau tchau!",
-                    "Adeus / Até um longo tempo",
-                    "Obrigado pelo seu duro trabalho / Bom descanso"
+                    "Até mais / Até logo",
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Obrigado pelo esforço / Bom trabalho"
                 ],
                 "correctIndex": 2
             },
@@ -1062,8 +1052,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'しつれいします' (Shitsurei shimasu)?",
                 "options": [
                     "Com licença (ao me retirar)",
-                    "Adeus / Até um longo tempo",
-                    "Até logo / Tchau tchau!"
+                    "Adeus / despedida, às vezes com separação mais marcada",
+                    "Até mais / Até logo"
                 ],
                 "correctIndex": 0
             }
@@ -1071,73 +1061,73 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_05",
-        "title": "Pessoas, Pronomes e Respeito (-san, -sensei)",
+        "title": "Pessoas e formas de tratamento",
         "section": 1,
         "sectionTitle": "Primeiros Passos & Etiqueta",
         "level": "A1",
         "xpReward": 85,
         "stage1_context": {
-            "audioGuide": "Tanaka-san! Sensei, konnichiwa!",
+            "audioGuide": "Tanaka-sensei, konnichiwa!",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Fechar a Seção 1 com chave de ouro! Vamos aprender a chamar as pessoas com respeito e entender por que os japoneses evitam a palavra 'Você' (Anata)."
+            "missionDescription": "Aprenda formas básicas de tratamento e escolha uma maneira neutra de falar de si em apresentações."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "～さん",
                 "romaji": "~san",
-                "translation": "Sr. / Sra. / Senhorita",
-                "timeContext": "O sufixo de respeito mais seguro do Japão. Use após o nome de qualquer adulto."
+                "translation": "Sr. / Sra. / -san",
+                "timeContext": "Sufixo de tratamento comum após o nome de outra pessoa. Em uma apresentação, normalmente não o usamos no próprio nome."
             },
             {
                 "type": "vocab",
                 "kanji": "～せんせい",
                 "romaji": "~sensei",
-                "translation": "Professor(a) / Médico(a) / Mestre",
-                "timeContext": "Título usado no lugar do '-san' para pessoas que ensinam ou curam."
+                "translation": "Professor(a) / médico(a) / -sensei",
+                "timeContext": "Título usado para professores e, em muitos contextos, médicos e outras profissões. Pode vir após o nome: 佐藤先生."
             },
             {
                 "type": "vocab",
                 "kanji": "わたし",
                 "romaji": "Watashi",
                 "translation": "Eu",
-                "timeContext": "O pronome pessoal neutro e educado para 'Eu', usado tanto por homens quanto por mulheres."
+                "timeContext": "Forma neutra e polida para 'eu', útil em apresentações e em muitos contextos formais."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Regra de Ouro do '-san'",
-                "rule": "NUNCA, em hipótese alguma, coloque '-san' no seu PRÓPRIO nome! Isso soa extremamente arrogante e bizarro no Japão.",
-                "formula": "Correto ➔ [Nome do Outro] + さん | Errado ➔ わたしは [Seu Nome] + さん です",
-                "example": "Falar 'Watashi wa Carlos-san desu' é como dizer em português 'Eu sou o Vossa Excelência Carlos'."
+                "title": "Tratamento de si e do outro",
+                "rule": "Em apresentações, o padrão é dizer o próprio nome sem さん. Para outra pessoa, escolha o tratamento de acordo com a relação e a situação.",
+                "formula": "Outra pessoa ➔ 佐藤さん / 佐藤先生 | Eu ➔ わたしは ペドロ です",
+                "example": "はじめまして。わたしは ペドロ です。よろしく おねがいします。"
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual das frases abaixo está CULTURALMENTE CORRETA ao se apresentar?",
+                "question": "1. Qual apresentação usa o próprio nome de modo natural?",
                 "options": [
                     {
-                        "label": "こんにちは！ わたしは ぺどろ・さん です。 (Sou o Pedro-san)",
+                        "label": "こんにちは！ わたしは ペドロさん です。 (Sou o Pedro-san)",
                         "isCorrect": false
                     },
                     {
-                        "label": "こんにちは！ ぺどろ です。 (Sou o Pedro)",
+                        "label": "はじめまして！ わたしは ペドロ です。 (Sou o Pedro)",
                         "isCorrect": true
                     },
                     {
-                        "label": "はじめまして！ わたしは せんせい です。 (Sou o Sensei)",
+                        "label": "はじめまして！ わたしは 先生 です。 (Sou professor.)",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Você vai se consultar com a médica Dra. Takahashi na clínica. Como você a chama?",
+                "question": "2. Você vai se consultar com a Dra. Takahashi. Qual forma é usual para tratá-la diretamente?",
                 "options": [
                     {
-                        "label": "タカハシ・せんせい (Takahashi-sensei)",
+                        "label": "高橋先生 (Takahashi-sensei)",
                         "isCorrect": true
                     },
                     {
-                        "label": "タカハシ・さん (Takahashi-san)",
+                        "label": "高橋さん (Takahashi-san)",
                         "isCorrect": false
                     },
                     {
@@ -1147,10 +1137,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "3. Por que colocar '~san' no seu próprio nome é considerado um gafe constrangedora?",
+                "question": "3. Por que uma apresentação normalmente não usa ～さん no próprio nome?",
                 "options": [
                     {
-                        "label": "Porque '~san' é um título de respeito para elevar o OUTRO; usá-lo em si mesmo soa arrogante",
+                        "label": "Porque ～さん é normalmente usado ao tratar outra pessoa; apresente seu próprio nome sem esse sufixo",
                         "isCorrect": true
                     },
                     {
@@ -1164,7 +1154,7 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Qual é o pronome pessoal mais educado e neutro para 'Eu', seguro em qualquer situação formal?",
+                "question": "4. Qual forma é neutra e polida para dizer 'eu' em uma apresentação?",
                 "options": [
                     {
                         "label": "俺 (Ore - muito masculino/gíria)",
@@ -1181,18 +1171,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Ao falar com seu cliente, o Sr. Yamamoto, por que você não deve chamá-lo apenas de 'Yamamoto'?",
+                "question": "5. Ao falar com um cliente chamado Yamamoto, qual opção é normalmente mais polida?",
                 "options": [
                     {
-                        "label": "Chamar adultos sem sufixo de respeito (yobisute) é considerado extremamente rude no Japão",
+                        "label": "Usar 山本さん (Yamamoto-san)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque Yamamoto é um nome proibido",
+                        "label": "Usar apenas 山本 (Yamamoto)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque os japoneses não usam sobrenomes",
+                        "label": "Usar 俺 (ore)",
                         "isCorrect": false
                     }
                 ]
@@ -1200,28 +1190,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "これ は わたし の カバン です",
-                "translation": "Esta é a minha bolsa.",
+                "sentenceJp": "わたし は ペドロ です",
+                "translation": "Eu sou Pedro.",
                 "chunks": [
-                    "これ",
-                    "は",
                     "わたし",
-                    "の",
-                    "カバン",
+                    "は",
+                    "ペドロ",
                     "です"
                 ]
             },
             {
-                "sentenceJp": "あれ は だれ の カサ です か",
-                "translation": "De quem é aquele guarda-chuva?",
+                "sentenceJp": "さとう せんせい です",
+                "translation": "É o professor Sato.",
                 "chunks": [
-                    "あれ",
-                    "は",
-                    "だれ",
-                    "の",
-                    "カサ",
-                    "です",
-                    "か"
+                    "さとう",
+                    "せんせい",
+                    "です"
                 ]
             }
         ],
@@ -1232,18 +1216,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "あ！ こんにちは！ おげんき ですか？ (Ah! Olá! Como você está?)",
                 "options": [
                     {
-                        "text": "こんにちは、サトウ・さん！ (Konnichiwa, Sato-san!)",
-                        "feedback": "Atenção: Para professores, usamos '-sensei' e nunca '-san'!",
+                        "text": "こんにちは、佐藤さん！ (Konnichiwa, Satou-san!)",
+                        "feedback": "É uma forma polida, mas ao falar diretamente com um professor, 先生 é a escolha mais usual neste contexto.",
                         "isCorrect": false
                     },
                     {
-                        "text": "こんにちは、サトウ・せんせい！ げんき です！ (Olá, Sato-sensei! Estou bem!)",
-                        "feedback": "Mandou muito bem! Usou o título de honra exato para um mestre/professor.",
+                        "text": "こんにちは、佐藤先生！ げんき です！ (Olá, Sato-sensei! Estou bem!)",
+                        "feedback": "Boa escolha: 佐藤先生 é uma forma comum de tratar um professor diretamente.",
                         "isCorrect": true
                     },
                     {
                         "text": "おい！ サトウ！ (Oi! Sato!)",
-                        "feedback": "Extremamente rude! Chamar o professor apenas pelo sobrenome é uma ofensa grave.",
+                        "feedback": "Soa casual demais para um encontro com o professor na universidade.",
                         "isCorrect": false
                     }
                 ]
@@ -1254,18 +1238,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして。スズキ です。よろしくおねがいします。",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome]・さん です。 よろしくおねがいします！",
-                        "feedback": "Gafe grave! Você colocou '-san' no seu próprio nome! Soou arrogante.",
+                        "text": "はじめまして！ ペドロさん です。よろしく おねがいします！",
+                        "feedback": "Em uma apresentação, é mais natural dizer o próprio nome sem さん.",
                         "isCorrect": false
                     },
                     {
-                        "text": "はじめまして！ [Seu Nome] です。 こちらこそ、よろしくおねがいします！",
-                        "feedback": "Impecável! Apresentação humilde (sem -san para si mesmo) e respeitosa com o diretor.",
+                        "text": "はじめまして！ ペドロ です。こちらこそ、よろしく おねがいします！",
+                        "feedback": "Boa apresentação: usa o próprio nome sem さん e responde de forma polida.",
                         "isCorrect": true
                     },
                     {
                         "text": "こんにちは、スズキ！",
-                        "feedback": "Incorreto: Esqueceu o '-san' ao se referir ao Diretor Suzuki!",
+                        "feedback": "Fica informal demais para uma primeira conversa de negócios.",
                         "isCorrect": false
                     }
                 ]
@@ -1273,21 +1257,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Na clínica médica, o enfermeiro precisa confirmar de quem é a vez para a consulta com o Dr. Tanaka.",
                 "npcName": "Enfermeiro",
-                "npcMessage": "[Seu Nome]・さん！ タナカ・せんせい が おまち です。 (Sr(a). [Seu Nome]! O Dr. Tanaka está esperando.)",
+                "npcMessage": "ペドロさん！ 田中先生が お待ちです。 (Sr. Pedro! O Dr. Tanaka está esperando.)",
                 "options": [
                     {
-                        "text": "はい！ わたし です！ ありがとう！ (Sim! Sou eu! Obrigado!)",
-                        "feedback": "Perfeito! Usou o pronome 'Watashi' corretamente e entendeu o título '-sensei' do médico.",
+                        "text": "はい、わたしです。ありがとうございます。 (Hai, watashi desu. Arigatou gozaimasu.)",
+                        "feedback": "Boa resposta: confirma sua identidade e agradece de forma polida.",
                         "isCorrect": true
                     },
                     {
                         "text": "はい！ わたし・せんせい です！",
-                        "feedback": "Ops! Você chamou a si mesmo de 'Sensei' na frente da equipe médica!",
+                        "feedback": "先生 é um título para a pessoa tratada; aqui ele não se aplica a você.",
                         "isCorrect": false
                     },
                     {
-                        "text": "いいえ、タナカ・さん です。",
-                        "feedback": "Incorreto: Você rebaixou o título do médico de '-sensei' para '-san'!",
+                        "text": "いいえ、田中さんです。",
+                        "feedback": "Além de negar a chamada, esta resposta não corresponde à pessoa que o enfermeiro chamou.",
                         "isCorrect": false
                     }
                 ]
@@ -1295,10 +1279,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Por que é considerado um erro grave dizer 'Watashi wa Maria-san desu'?",
+                "question": "Por que uma apresentação normalmente evita 'Watashi wa Maria-san desu'?",
                 "options": [
                     "Porque '-san' é usado exclusivamente para homens.",
-                    "Porque não se deve usar sufixos de respeito (-san, -sensei) para se referir a si mesmo.",
+                    "Porque ～さん é normalmente usado para tratar outra pessoa, não para apresentar o próprio nome.",
                     "Porque a palavra 'Watashi' significa 'Você'."
                 ],
                 "correctIndex": 1
@@ -1331,9 +1315,9 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'A Regra de Ouro do '-san'': qual afirmação é correta?",
+                "question": "Sobre o tratamento com ～さん, qual afirmação é correta?",
                 "options": [
-                    "NUNCA, em hipótese alguma, coloque '-san' no seu PRÓPRIO nome! Isso soa extremamente arrogante e bizarro no Japão.",
+                    "Em apresentações, normalmente dizemos o próprio nome sem ～さん e usamos ～さん para tratar outra pessoa.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -1359,40 +1343,40 @@ const CURSO_A1_DADOS = [
                 "kanji": "にほん (日本)",
                 "romaji": "Nihon",
                 "translation": "Japão",
-                "timeContext": "O nome nativo do país do sol nascente."
+                "timeContext": "Nome comum do Japão em japonês."
             },
             {
                 "type": "vocab",
                 "kanji": "ブラジル",
                 "romaji": "Burajiru",
                 "translation": "Brasil",
-                "timeContext": "Como é um nome estrangeiro, é sempre escrito no alfabeto Katakana!"
+                "timeContext": "Nome de país estrangeiro geralmente escrito em katakana: ブラジル."
             },
             {
                 "type": "vocab",
                 "kanji": "～じん (人)",
                 "romaji": "~jin",
-                "translation": "Sufixo de Nacionalidade (Pessoa de...)",
-                "timeContext": "Basta colar após o nome de qualquer país para dizer a nacionalidade."
+                "translation": "Pessoa de / nacionalidade",
+                "timeContext": "Forma muitas nacionalidades, como 日本人 e ブラジル人. Aprenda cada forma de país como vocabulário, pois há exceções."
             },
             {
                 "type": "vocab",
                 "kanji": "～ご (語)",
                 "romaji": "~go",
-                "translation": "Sufixo de Idioma (Língua de...)",
-                "timeContext": "Colado após o nome do país para se referir à língua falada ali."
+                "translation": "Idioma / língua",
+                "timeContext": "Aparece em nomes de idiomas, como 日本語. Nem todo idioma segue apenas 'nome do país + 語'; 英語 é um exemplo importante."
             },
             {
                 "type": "grammar_pill",
-                "title": "O Lego das Nacionalidades",
-                "rule": "Para criar nacionalidades e idiomas no japonês, você não precisa decorar palavras totalmente novas! Basta pegar o nome do país e adicionar o sufixo correto no final.",
-                "formula": "País + じん (jin) = Nacionalidade | País + ご (go) = Idioma",
-                "example": "Nihon (Japão) ➔ Nihon-jin (Japonês/Pessoa) ➔ Nihon-go (Língua Japonesa). Brasil ➔ Burajiru-jin (Brasileiro)."
+                "title": "Nacionalidade e idioma",
+                "rule": "日本人 indica uma pessoa japonesa e 日本語 indica o idioma japonês. Muitos nomes seguem padrões parecidos, mas convém aprender cada forma frequente.",
+                "formula": "日本 + 人 = 日本人 | 日本 + 語 = 日本語",
+                "example": "日本人 (Nihonjin) = pessoa japonesa; 日本語 (Nihongo) = língua japonesa; ブラジル人 (Burajirujin) = pessoa brasileira."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se diz 'Eu sou brasileiro(a)' de forma formal em japonês?",
+                "question": "1. Como dizer 'Sou brasileiro(a)' em uma apresentação simples?",
                 "options": [
                     {
                         "label": "🇧🇷 わたしは ブラジルじん です (Watashi wa Burajiru-jin desu)",
@@ -1409,14 +1393,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. O que acontece se você disser 'Watashi wa Burajiru-go desu' em uma apresentação?",
+                "question": "2. O que há de inadequado em dizer 'Watashi wa Burajiru-go desu' para informar sua nacionalidade?",
                 "options": [
                     {
                         "label": "Você estará dizendo corretamente que nasceu no Brasil",
                         "isCorrect": false
                     },
                     {
-                        "label": "Você estará dizendo 'Eu sou o idioma brasileiro', o que soa muito engraçado!",
+                        "label": "ブラジル語 é um idioma; para informar nacionalidade, use ブラジル人",
                         "isCorrect": true
                     },
                     {
@@ -1443,10 +1427,10 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Por que a palavra 'Burajiru' (Brasil) é escrita com o alfabeto Katakana?",
+                "question": "4. Por que ブラジル (Burajiru) aparece em katakana?",
                 "options": [
                     {
-                        "label": "Porque todas as palavras de origem estrangeira são escritas em Katakana",
+                        "label": "Porque é a grafia convencional desse nome estrangeiro em japonês",
                         "isCorrect": true
                     },
                     {
@@ -1479,22 +1463,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "いま なんじ です か",
-                "translation": "Que horas são agora?",
+                "sentenceJp": "わたし は ブラジルじん です",
+                "translation": "Eu sou brasileiro(a).",
                 "chunks": [
-                    "いま",
-                    "なんじ",
-                    "です",
-                    "か"
+                    "わたし",
+                    "は",
+                    "ブラジルじん",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "いま 7じ はん です",
-                "translation": "Agora são 7 horas e meia.",
+                "sentenceJp": "にほんご の ほん です",
+                "translation": "É um livro de japonês.",
                 "chunks": [
-                    "いま",
-                    "7じ",
-                    "はん",
+                    "にほんご",
+                    "の",
+                    "ほん",
                     "です"
                 ]
             }
@@ -1503,21 +1487,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você passa pela imigração no Aeroporto de Narita e o oficial pergunta sua nacionalidade.",
                 "npcName": "Oficial de Imigração",
-                "npcMessage": "こんにちは。[Seu Nome]・さん ですね。おくに は どちら ですか？ (Olá, Sr(a). [Seu Nome]. Qual é o seu país?)",
+                "npcMessage": "こんにちは。どちらの ご出身ですか？ (Olá. De onde você é?)",
                 "options": [
                     {
-                        "text": "こんにちは！ ブラジルじん です。よろしくおねがいします。",
-                        "feedback": "Perfeito! Você respondeu sua nacionalidade de forma clara e respeitosa com o oficial.",
+                        "text": "ブラジルじん です。 (Burajiru-jin desu.)",
+                        "feedback": "Boa resposta para praticar nacionalidade: ブラジル人 identifica uma pessoa brasileira.",
                         "isCorrect": true
                     },
                     {
                         "text": "ブラジルご です！",
-                        "feedback": "Ops! Você respondeu 'Sou o idioma brasileiro' para o oficial da imigração!",
+                        "feedback": "ブラジル語 se refere a um idioma, não à nacionalidade da pessoa.",
                         "isCorrect": false
                     },
                     {
                         "text": "さようなら！",
-                        "feedback": "Incorreto: Nunca se despeça antes de responder a pergunta da imigração!",
+                        "feedback": "Não responde à pergunta sobre sua origem.",
                         "isCorrect": false
                     }
                 ]
@@ -1528,13 +1512,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "わあ！ はじめまして！ わたし は にほんじん です。",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome] です。 わたし は ブラジルじん です！",
-                        "feedback": "Excelente! Você retribuiu a apresentação e usou o sufixo -jin perfeitamente para criar conexão.",
+                        "text": "はじめまして！ ペドロ です。わたし は ブラジルじん です！",
+                        "feedback": "Boa apresentação: informa seu nome e usa ブラジル人 para a nacionalidade.",
                         "isCorrect": true
                     },
                     {
                         "text": "こちらこそ！ にほんじん です！",
-                        "feedback": "Incorreto: Você disse que também é japonês(a) e usou 'Kochirakoso' no momento errado!",
+                        "feedback": "Você se descreve como japonês(a), o que não corresponde ao cenário proposto.",
                         "isCorrect": false
                     },
                     {
@@ -1550,13 +1534,13 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "いらっしゃいませ！ なに を おさがし ですか？ (Bem-vindo! O que está procurando?)",
                 "options": [
                     {
-                        "text": "すみません！ にほんご の ほん (Livro) です！",
-                        "feedback": "Mandou muito bem! Usou 'Sumimasen' para chamar atenção e pediu pelo idioma Nihon-go corretamente.",
+                        "text": "すみません。にほんご の ほん は ありますか？",
+                        "feedback": "Boa pergunta: 日本語 indica o idioma e 本 indica o livro procurado.",
                         "isCorrect": true
                     },
                     {
                         "text": "にほんじん です！",
-                        "feedback": "Confuso: O atendente perguntou o que você procura e você respondeu 'Sou uma pessoa japonesa'!",
+                        "feedback": "日本人 descreve uma pessoa, não o livro procurado.",
                         "isCorrect": false
                     },
                     {
@@ -1582,7 +1566,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Japão",
                     "Brasil",
-                    "Sufixo de Nacionalidade (Pessoa de...)"
+                    "Pessoa de / nacionalidade"
                 ],
                 "correctIndex": 0
             },
@@ -1591,7 +1575,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Japão",
                     "Brasil",
-                    "Sufixo de Nacionalidade (Pessoa de...)"
+                    "Pessoa de / nacionalidade"
                 ],
                 "correctIndex": 1
             },
@@ -1607,7 +1591,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra '～ご (語)' (~go)?",
                 "options": [
-                    "Sufixo de Idioma (Língua de...)",
+                    "Idioma / língua",
                     "Japão",
                     "Brasil"
                 ],
@@ -1617,15 +1601,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_07",
-        "title": "Profissões & Ocupações (Gakusei, Kaishain)",
+        "title": "Ocupações e o tópico は",
         "section": 2,
         "sectionTitle": "Identidade & Profissões",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
-            "audioGuide": "Watashi wa gakusei desu. Kaishain desu.",
+            "audioGuide": "Watashi wa gakusei desu. Watashi wa kaishain desu.",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "O que você faz da vida? No Japão, sua ocupação define muito sobre como as pessoas interagem com você. Vamos aprender a falar sobre trabalho e estudos e conhecer a famosa partícula 'wa' (は)!"
+            "missionDescription": "Fale sobre estudos e trabalho com frases nominais simples e use は para marcar o tópico quando ele precisa ficar explícito."
         },
         "stage2_drops": [
             {
@@ -1633,35 +1617,35 @@ const CURSO_A1_DADOS = [
                 "kanji": "がくせい (学生)",
                 "romaji": "Gakusei",
                 "translation": "Estudante / Aluno(a)",
-                "timeContext": "Usado para estudantes universitários ou de escolas de idiomas."
+                "timeContext": "Pessoa que estuda em uma instituição de ensino; o contexto esclarece o tipo de curso."
             },
             {
                 "type": "vocab",
                 "kanji": "かいしゃいん (会社員)",
                 "romaji": "Kaishain",
-                "translation": "Funcionário(a) de Empresa / Office Worker",
-                "timeContext": "A profissão mais comum no mundo corporativo japonês."
+                "translation": "Funcionário(a) de empresa",
+                "timeContext": "Pessoa empregada por uma empresa; não indica uma função específica."
             },
             {
                 "type": "vocab",
                 "kanji": "いしゃ (医者)",
                 "romaji": "Isha",
                 "translation": "Médico(a)",
-                "timeContext": "Profissional da saúde (lembrando que para chamá-los usamos -sensei!)."
+                "timeContext": "Pessoa cuja profissão é a medicina. Ao se dirigir a um médico, 先生 é frequente em muitos contextos."
             },
             {
                 "type": "vocab",
                 "kanji": "エンジニア",
                 "romaji": "Enjinia",
-                "translation": "Engenheiro(a) / Programador(a)",
-                "timeContext": "Palavra importada do inglês (Engineer), por isso escrita em Katakana."
+                "translation": "Engenheiro(a)",
+                "timeContext": "Empréstimo escrito em katakana; pode abranger diferentes especialidades de engenharia."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Tópico 'は' (Wa)",
-                "rule": "Para dizer 'Eu sou estudante' ou '[Nome] é médico', usamos a partícula は (escrita com o hiragana 'ha', mas pronunciada 'WA') para indicar de QUEM estamos falando na frase!",
-                "formula": "わたし は [ Profissão ] です (Watashi wa [Profissão] desu)",
-                "example": "わたし は エンジニア です ➔ (Eu sou programador/engenheiro). Se você quiser falar de outra pessoa: ケンジさん は かいしゃいん です ➔ (O Kenji é funcionário de empresa)."
+                "title": "A partícula de tópico は",
+                "rule": "Quando funciona como partícula, は é pronunciada wa. Ela introduz o tópico sobre o qual a frase faz uma afirmação; o tópico pode ser omitido quando já está claro.",
+                "formula": "X は Y です (X wa Y desu)",
+                "example": "わたし は エンジニア です = Eu sou engenheiro(a). けんじさん は かいしゃいん です = Kenji trabalha em uma empresa."
             }
         ],
         "stage3_practice": [
@@ -1717,18 +1701,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "4. Qual a estrutura gramatical perfeita para dizer 'O Sr. Tanaka é programador/engenheiro'?",
+                "question": "4. Qual frase apresenta Tanaka como engenheiro?",
                 "options": [
                     {
-                        "label": "タナカ・さん は エンジニア です (Tanaka-san wa Enjinia desu)",
+                        "label": "田中さん は エンジニア です (Tanaka-san wa enjinia desu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "エンジニア は タナカ・さん です (Enjinia wa Tanaka-san desu)",
+                        "label": "エンジニア は 田中さん です (Enjinia wa Tanaka-san desu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "タナカ・さん エンジニア は です (Tanaka-san Enjinia wa desu)",
+                        "label": "田中さん エンジニア は です (Tanaka-san enjinia wa desu)",
                         "isCorrect": false
                     }
                 ]
@@ -1753,23 +1737,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "きょう は なんようび です か",
-                "translation": "Que dia da semana é hoje?",
+                "sentenceJp": "わたし は がくせい です",
+                "translation": "Eu sou estudante.",
                 "chunks": [
-                    "きょう",
+                    "わたし",
                     "は",
-                    "なんようび",
-                    "です",
-                    "か"
+                    "がくせい",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "きょう は げつようび です",
-                "translation": "Hoje é segunda-feira.",
+                "sentenceJp": "けんじさん は かいしゃいん です",
+                "translation": "Kenji trabalha em uma empresa.",
                 "chunks": [
-                    "きょう",
+                    "けんじさん",
                     "は",
-                    "げつようび",
+                    "かいしゃいん",
                     "です"
                 ]
             }
@@ -1781,8 +1764,8 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして！ ユキ です。 わたし は がくせい です。 よろしくおねがいします！ (Prazer! Sou a Yuki. Sou estudante. Conto com sua gentileza!)",
                 "options": [
                     {
-                        "text": "じめまして！ [Seu Nome] です。 わたし は エンジニア です。 よろしく！",
-                        "feedback": "Perfeito! Você se apresentou, disse seu nome, usou a partícula 'wa' corretamente para sua profissão e devolveu a cortesia!",
+                        "text": "はじめまして！ ペドロ です。わたし は エンジニア です。よろしく おねがいします。",
+                        "feedback": "Boa apresentação: informa nome e ocupação com a estrutura X は Y です.",
                         "isCorrect": true
                     },
                     {
@@ -1803,8 +1786,8 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "はじめまして。ヤマモト です。 わたし は かいしゃいん です。",
                 "options": [
                     {
-                        "text": "こちらこそ！ [Seu Nome] です。 わたし は がくせい です。 よろしくおねがいします！",
-                        "feedback": "Impecável! Devolveu o cumprimento com 'Kochirakoso', se apresentou e declarou sua ocupação como estudante com elegância.",
+                        "text": "こちらこそ。ペドロ です。わたし は がくせい です。よろしく おねがいします。",
+                        "feedback": "Boa resposta: apresenta-se e informa que é estudante de modo polido.",
                         "isCorrect": true
                     },
                     {
@@ -1814,7 +1797,7 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "わたし は ヤマモト です！",
-                        "feedback": "Erro grave: Você roubou o nome do Sr. Yamamoto!",
+                        "feedback": "Você se apresenta com o nome da outra pessoa, o que não corresponde à situação.",
                         "isCorrect": false
                     }
                 ]
@@ -1822,16 +1805,16 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Na recepção do hospital, a atendente precisa preencher seu cadastro profissional.",
                 "npcName": "Atendente do Hospital",
-                "npcMessage": "[Seu Nome]・さん、おしごと (Trabalho) は なん ですか？",
+                "npcMessage": "ペドロさん、おしごと は なん ですか？",
                 "options": [
                     {
                         "text": "わたし は エンジニア です！",
-                        "feedback": "Mandou muito bem! Entendeu a pergunta sobre trabalho ('oshigoto') e respondeu sua profissão perfeitamente.",
+                        "feedback": "Boa resposta: informa uma ocupação com a estrutura estudada.",
                         "isCorrect": true
                     },
                     {
                         "text": "わたし は ブラジルじん です！",
-                        "feedback": "Ops! Ela perguntou seu TRABALHO e você respondeu sua NACIONALIDADE!",
+                        "feedback": "A pergunta é sobre trabalho; a resposta fornece nacionalidade.",
                         "isCorrect": false
                     },
                     {
@@ -1892,37 +1875,37 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_08",
-        "title": "A Magia da Pergunta: O Marcador 'Ka' e 'Dare'",
+        "title": "Perguntas com か, だれ e なん",
         "section": 2,
         "sectionTitle": "Identidade & Profissões",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
-            "audioGuide": "Anata wa gakusei desu ka? Dare desu ka?",
+            "audioGuide": "Gakusei desu ka? Ano hito wa dare desu ka?",
             "missionTitle": "Objetivo de Hoje",
-            "missionDescription": "Até agora você só afirmou coisas. Mas como fazer perguntas em japonês? Esqueça o ponto de interrogação (?): no Japão, usamos uma sílaba mágica no final da frase para transformar tudo em pergunta!"
+            "missionDescription": "Forme perguntas simples com か e escolha palavras interrogativas adequadas ao que deseja perguntar."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "～か",
                 "romaji": "~ka",
-                "translation": "Partícula de Pergunta (O ponto de interrogação falado)",
-                "timeContext": "Colocada sempre no final absoluto da frase para transformá-la em pergunta."
+                "translation": "Partícula de pergunta",
+                "timeContext": "Em perguntas polidas simples, か costuma vir ao fim da frase. Na escrita contemporânea, o ponto de interrogação também pode aparecer."
             },
             {
                 "type": "vocab",
                 "kanji": "あなた",
                 "romaji": "Anata",
                 "translation": "Você",
-                "timeContext": "Atenção: Evite usar 'Anata' se você já sabe o nome da pessoa! No Japão é muito mais educado perguntar usando [Nome] + san."
+                "timeContext": "Pode significar 'você', mas seu uso depende de relação e contexto. Muitas vezes o japonês omite o pronome ou usa o nome/título da pessoa."
             },
             {
                 "type": "vocab",
                 "kanji": "だれ / どなた",
                 "romaji": "Dare / Donata",
-                "translation": "Quem? / Quem? (Mais formal)",
-                "timeContext": "Usado para perguntar a identidade de alguém. 'Donata' é a versão super educada."
+                "translation": "Quem? / quem? (polido)",
+                "timeContext": "だれ pergunta quem é alguém; どなた é uma alternativa mais polida."
             },
             {
                 "type": "vocab",
@@ -1933,10 +1916,10 @@ const CURSO_A1_DADOS = [
             },
             {
                 "type": "grammar_pill",
-                "title": "Fórmula Mágica da Pergunta",
-                "rule": "Para transformar QUALQUER frase em pergunta no japonês, você não precisa mudar a ordem das palavras como no inglês ou português. Basta colar a partícula か (ka) no final!",
-                "formula": "Afirmação: [Seu Nome]さん です (É o(a) [Seu Nome]) ➔ Pergunta: [Seu Nome]さん です か (É o(a) [Seu Nome]?)",
-                "example": "がくせい です か？ (Gakusei desu ka? = Você é estudante?) | あの ひと は だれ です か？ (Ano hito wa dare desu ka? = Quem é aquela pessoa?)."
+                "title": "Perguntas básicas",
+                "rule": "Uma pergunta polida de sim/não pode ser formada ao acrescentar か ao enunciado. Perguntas também podem usar palavras como なん e だれ.",
+                "formula": "Afirmação: がくせいです。 → Pergunta: がくせいですか。",
+                "example": "あの ひと は だれ ですか。 = Quem é aquela pessoa? せんこう は なん ですか。 = Qual é sua área de estudo?"
             }
         ],
         "stage3_practice": [
@@ -1958,14 +1941,14 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "2. Por que os falantes nativos de japonês evitam usar a palavra 'Anata' (Você) em conversas diretas?",
+                "question": "2. Qual orientação é mais segura sobre あなた em uma conversa direta?",
                 "options": [
                     {
                         "label": "Porque 'Anata' é um palavrão proibido no Japão",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque soa distante e frio; é muito mais educado chamar a pessoa pelo Nome + sufixo (-san)",
+                        "label": "O contexto decide: muitas vezes o pronome é omitido ou se usa nome/título, mas あなた não é um palavrão",
                         "isCorrect": true
                     },
                     {
@@ -2028,23 +2011,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は まいにち べんきょう します",
-                "translation": "Eu estudo todos os dias.",
+                "sentenceJp": "がくせい です か",
+                "translation": "Você é estudante?",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "まいにち",
-                    "べんきょう",
-                    "します"
+                    "がくせい",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "あした は はたらきません",
-                "translation": "Amanhã não vou trabalhar.",
+                "sentenceJp": "あの ひと は だれ です か",
+                "translation": "Quem é aquela pessoa?",
                 "chunks": [
-                    "あした",
+                    "あの ひと",
                     "は",
-                    "はたらきません"
+                    "だれ",
+                    "です",
+                    "か"
                 ]
             }
         ],
@@ -2052,21 +2035,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está na recepção de um hotel em Quioto e o atendente quer confirmar sua identidade e profissão.",
                 "npcName": "Atendente do Hotel",
-                "npcMessage": "[Seu Nome]・さん です か？ かいしゃいん です か？ (Você é o(a) Sr(a). [Seu Nome]? É funcionário(a) de empresa?)",
+                "npcMessage": "ペドロさん です か？ かいしゃいん です か？ (Você é o Pedro? É funcionário de empresa?)",
                 "options": [
                     {
-                        "text": "はい、[Seu Nome] です。 がくせい です。",
-                        "feedback": "Mandou muito bem! 'Hai' (Sim), confirmou seu nome e respondeu sua verdadeira ocupação com clareza.",
+                        "text": "はい、ペドロ です。がくせい です。",
+                        "feedback": "Boa resposta: confirma a identidade e informa a ocupação.",
                         "isCorrect": true
                     },
                     {
                         "text": "いいえ、だれ です か？ (Não, quem é você?)",
-                        "feedback": "Incorreto e grosseiro com o recepcionista!",
+                        "feedback": "Não responde às perguntas de confirmação feitas pelo atendente.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、かいしゃいん です か？",
-                        "feedback": "Ops! Você respondeu devolvendo exatamente a mesma pergunta com 'ka' no final!",
+                        "feedback": "A resposta repete a pergunta em vez de confirmar ou corrigir a informação.",
                         "isCorrect": false
                     }
                 ]
@@ -2078,12 +2061,12 @@ const CURSO_A1_DADOS = [
                 "options": [
                     {
                         "text": "ケンジさん、この ひと は どなた です か？ (Kenji-san, quem é esta pessoa?)",
-                        "feedback": "Perfeito! Usou 'Donata desu ka' demonstrando alto nível de etiqueta e curiosidade educada.",
+                        "feedback": "Boa escolha: どなた é uma forma polida de perguntar quem é uma pessoa.",
                         "isCorrect": true
                     },
                     {
                         "text": "この ひと は なに です か？ (O que é esta pessoa?)",
-                        "feedback": "Gafe horrível! Perguntar 'O que é isso?' para um ser humano é extremamente ofensivo!",
+                        "feedback": "なに pergunta 'o que'; para identificar uma pessoa, use だれ ou どなた.",
                         "isCorrect": false
                     },
                     {
@@ -2096,7 +2079,7 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 3: Em uma aula de conversação em Tóquio, o professor quer testar se você entendeu a partícula de pergunta.",
                 "npcName": "Professor Sato",
-                "npcMessage": "[Seu Nome]・さん は、 にほんじん です か？ ブラジルじん です か？",
+                "npcMessage": "ペドロさん は、にほんじん です か？ ブラジルじん です か？",
                 "options": [
                     {
                         "text": "はい！ にほんじん です か？",
@@ -2105,12 +2088,12 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "わたし は ブラジルじん です！",
-                        "feedback": "Excelente! Ouviu as duas opções da pergunta e afirmou com firmeza e precisão a sua nacionalidade brasileira!",
+                        "feedback": "Boa resposta: responde afirmativamente com a nacionalidade proposta.",
                         "isCorrect": true
                     },
                     {
                         "text": "いいえ、ブラジルご です。",
-                        "feedback": "Ops! Você disse 'Não, eu sou o idioma brasileiro'!",
+                        "feedback": "ブラジル語 se refere a um idioma, não à nacionalidade da pessoa.",
                         "isCorrect": false
                     }
                 ]
@@ -2960,51 +2943,51 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_12",
-        "title": "Verbos de Existência: Imasu & Arimasu",
+        "title": "Existência com います e あります",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Neko ga imasu. Hon ga arimasu.",
-            "missionTitle": "Objetivo de Hoje: O Mundo Animado e Inanimado",
-            "missionDescription": "Domine a diferença crucial entre 'ter/haver' para seres vivos (います) e para objetos/coisas (あります). Esta é uma das regras mais importantes do japonês básico!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Distinga います, usado com pessoas e outros seres sencientes, de あります, usado com coisas, acontecimentos e certas relações de posse."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "います",
                 "romaji": "Imasu",
-                "translation": "Haver / Existir / Estar (Para seres vivos)",
-                "timeContext": "Use para pessoas, animais, insetos, etc."
+                "translation": "haver / existir / estar (pessoas e outros seres sencientes)",
+                "timeContext": "Use em exemplos de existência com pessoas e animais."
             },
             {
                 "type": "vocab",
                 "kanji": "あります",
                 "romaji": "Arimasu",
-                "translation": "Haver / Existir / Ter (Para objetos inanimados)",
-                "timeContext": "Use para coisas, plantas, lugares, ideias, etc."
+                "translation": "haver / existir / ter (coisas e acontecimentos)",
+                "timeContext": "Use com coisas; あります também pode indicar posse ou a ocorrência de um evento."
             },
             {
                 "type": "vocab",
                 "kanji": "ねこ / いぬ",
                 "romaji": "Neko / Inu",
                 "translation": "Gato / Cachorro",
-                "timeContext": "Exemplos clássicos de seres que usam 'imasu'."
+                "timeContext": "Exemplos de animais apresentados com います."
             },
             {
                 "type": "vocab",
                 "kanji": "つくえ / ほん",
                 "romaji": "Tsukue / Hon",
                 "translation": "Mesa / Livro",
-                "timeContext": "Exemplos clássicos de objetos que usam 'arimasu'."
+                "timeContext": "Exemplos de objetos apresentados com あります."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Existência 'が' (ga)",
-                "rule": "Quando você introduz algo pela primeira vez dizendo 'Há um gato' ou 'Tem um livro', você usa a partícula 'ga' antes do verbo de existência.",
-                "formula": "[Coisa/Ser] + が + あります / います",
-                "example": "へや に つくえ が あります (Heya ni tsukue GA arimasu) ➔ No quarto, HÁ UMA mesa."
+                "title": "Existência com に e が",
+                "rule": "Na construção básica de existência, o lugar pode ser marcado por に e o elemento apresentado por が.",
+                "formula": "[Lugar] に [Pessoa/coisa] が います / あります",
+                "example": "へやに つくえが あります (Heya ni tsukue ga arimasu.) — Há uma mesa no quarto."
             }
         ],
         "stage3_practice": [
@@ -3077,18 +3060,18 @@ const CURSO_A1_DADOS = [
                 ]
             },
             {
-                "question": "5. Por que plantas, apesar de serem seres vivos na biologia, usam o verbo 'arimasu' no japonês?",
+                "question": "5. Na divisão elementar apresentada, qual verbo é normalmente usado para indicar a existência de uma planta?",
                 "options": [
                     {
-                        "label": "Porque no japonês, a regra é sobre a capacidade de se mover por conta própria.",
+                        "label": "あります (Arimasu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "Porque os japoneses não gostam de plantas.",
+                        "label": "います (Imasu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "Porque é uma exceção sem motivo.",
+                        "label": "いきます (Ikimasu)",
                         "isCorrect": false
                     }
                 ]
@@ -3096,25 +3079,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "レストラン で ひるごはん を たべます",
-                "translation": "Almoço no restaurante.",
+                "sentenceJp": "こうえん に いぬ が います",
+                "translation": "Há um cachorro no parque.",
                 "chunks": [
-                    "レストラン",
-                    "で",
-                    "ひるごはん",
-                    "を",
-                    "たべます"
+                    "こうえん",
+                    "に",
+                    "いぬ",
+                    "が",
+                    "います"
                 ]
             },
             {
-                "sentenceJp": "こうえん で ほん を よみます",
-                "translation": "Lerei um livro no parque.",
+                "sentenceJp": "へや に つくえ が あります",
+                "translation": "Há uma mesa no quarto.",
                 "chunks": [
-                    "こうえん",
-                    "で",
-                    "ほん",
-                    "を",
-                    "よみます"
+                    "へや",
+                    "に",
+                    "つくえ",
+                    "が",
+                    "あります"
                 ]
             }
         ],
@@ -3122,7 +3105,7 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está descrevendo seu quarto para um amigo japonês.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "へえ、[Nome]・さん の へや には なに が あります か？ (Sério? O que tem no seu quarto?)",
+                "npcMessage": "へやには なにが ありますか。 (O que há no quarto?)",
                 "options": [
                     {
                         "text": "ベッド が あります。 それから、ねこ が あります。",
@@ -3131,12 +3114,12 @@ const CURSO_A1_DADOS = [
                     },
                     {
                         "text": "ベッド が あります。 それから、ねこ が います。",
-                        "feedback": "Perfeito! Você usou 'arimasu' para a cama (objeto) e 'imasu' para o gato (ser vivo).",
+                        "feedback": "A resposta usa あります para a cama e います para o gato.",
                         "isCorrect": true
                     },
                     {
                         "text": "ベッド が います。 ねこ が います。",
-                        "feedback": "Ops! Camas não são seres vivos, não podem 'imasu'!",
+                        "feedback": "Para a existência de uma cama, use あります neste padrão.",
                         "isCorrect": false
                     }
                 ]
@@ -3144,10 +3127,10 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a regra principal para escolher entre 'imasu' e 'arimasu'?",
+                "question": "Na apresentação básica, como se distingue います de あります?",
                 "options": [
                     "Formal vs. Informal",
-                    "Seres que se movem vs. Coisas que não se movem",
+                    "Pessoas e outros seres sencientes vs. coisas e acontecimentos",
                     "Presente vs. Passado"
                 ],
                 "correctIndex": 1
@@ -3155,8 +3138,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'います' (Imasu)?",
                 "options": [
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 0
@@ -3164,8 +3147,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'あります' (Arimasu)?",
                 "options": [
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 1
@@ -3173,8 +3156,8 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'ねこ / いぬ' (Neko / Inu)?",
                 "options": [
-                    "Haver / Existir / Ter (Para objetos inanimados)",
-                    "Haver / Existir / Estar (Para seres vivos)",
+                    "haver / existir / ter (coisas e acontecimentos)",
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
                     "Gato / Cachorro"
                 ],
                 "correctIndex": 2
@@ -3183,8 +3166,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'つくえ / ほん' (Tsukue / Hon)?",
                 "options": [
                     "Mesa / Livro",
-                    "Haver / Existir / Estar (Para seres vivos)",
-                    "Haver / Existir / Ter (Para objetos inanimados)"
+                    "haver / existir / estar (pessoas e outros seres sencientes)",
+                    "haver / existir / ter (coisas e acontecimentos)"
                 ],
                 "correctIndex": 0
             }
@@ -3192,15 +3175,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_13",
-        "title": "Verbos de Movimento: Ikimasu, Kimasu, Kaerimasu",
+        "title": "Movimento com 行きます・来ます・帰ります",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Gakkou e ikimasu.",
-            "missionTitle": "Objetivo de Hoje: Colocando o Mundo em Movimento",
-            "missionDescription": "Aprenda a dizer que vai, vem e volta para casa, usando as partículas de direção essenciais 'e' (へ) e 'ni' (に)."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pratique os verbos ir, vir e retornar, marcando o destino do movimento com へ ou に."
         },
         "stage2_drops": [
             {
@@ -3208,21 +3191,21 @@ const CURSO_A1_DADOS = [
                 "kanji": "いきます (行きます)",
                 "romaji": "Ikimasu",
                 "translation": "Ir (para algum lugar)",
-                "timeContext": "Movimento de saída, se afastando de onde você está."
+                "timeContext": "Indica deslocamento para um destino visto como “ir”."
             },
             {
                 "type": "vocab",
                 "kanji": "きます (来ます)",
                 "romaji": "Kimasu",
-                "translation": "Vir (para cá)",
-                "timeContext": "Movimento de chegada, em direção a onde você está."
+                "translation": "Vir",
+                "timeContext": "Indica movimento em direção ao lugar tomado como referência pelo falante."
             },
             {
                 "type": "vocab",
                 "kanji": "かえります (帰ります)",
                 "romaji": "Kaerimasu",
-                "translation": "Voltar (para casa/origem)",
-                "timeContext": "Verbo específico para o retorno ao ponto de partida (casa, país)."
+                "translation": "Voltar / retornar",
+                "timeContext": "Indica retorno a casa ou a outro lugar entendido como base ou origem."
             },
             {
                 "type": "vocab",
@@ -3233,10 +3216,10 @@ const CURSO_A1_DADOS = [
             },
             {
                 "type": "grammar_pill",
-                "title": "Partículas de Destino: へ (e) & に (ni)",
-                "rule": "Para indicar o destino de um movimento, usamos as partículas 'e' (へ) ou 'ni' (に) após o lugar. 'へ' foca na DIREÇÃO, enquanto 'に' foca no PONTO DE CHEGADA. Para iniciantes, são praticamente intercambiáveis!",
+                "title": "Destino com へ e に",
+                "rule": "Com verbos de movimento, へ e に podem marcar o destino. へ é pronunciado e. Essa substituição não vale para todos os outros usos de に.",
                 "formula": "[Lugar] + へ/に + [Verbo de Movimento]",
-                "example": "とうきょう へ いきます (Toukyou e ikimasu) ➔ Vou para Tóquio."
+                "example": "とうきょうへ いきます (Toukyou e ikimasu.) — Vou para Tóquio."
             }
         ],
         "stage3_practice": [
@@ -3294,34 +3277,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "いっしょ に えいが を みませんか",
-                "translation": "Gostaria de assistir a um filme juntos?",
-                "chunks": [
-                    "いっしょ",
-                    "に",
-                    "えいが",
-                    "を",
-                    "みませんか"
-                ]
+                "sentenceJp": "がっこう へ いきます",
+                "translation": "Vou para a escola.",
+                "chunks": ["がっこう", "へ", "いきます"]
             },
             {
-                "sentenceJp": "いいですね いきましょう",
-                "translation": "Boa ideia, vamos!",
-                "chunks": [
-                    "いいですね",
-                    "いきましょう"
-                ]
+                "sentenceJp": "うち に かえります",
+                "translation": "Volto para casa.",
+                "chunks": ["うち", "に", "かえります"]
             }
         ],
         "stage4_dialog": [
             {
                 "scenario": "Situação 1: Você encontra seu professor no corredor e ele pergunta sobre seus planos para depois da aula.",
                 "npcName": "Sato-sensei",
-                "npcMessage": "[Nome]-さん、このあと どこへ いきますか？ (Depois daqui, para onde você vai?)",
+                "npcMessage": "このあと どこへ いきますか。 (Depois daqui, para onde você vai?)",
                 "options": [
                     {
                         "text": "うち へ かえります。",
-                        "feedback": "Perfeito! Resposta clara e correta usando o verbo de retorno.",
+                        "feedback": "A resposta usa 帰ります para indicar o retorno a casa.",
                         "isCorrect": true
                     },
                     {
@@ -3339,9 +3313,9 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a principal diferença entre 'ikimasu' e 'kimasu'?",
+                "question": "Qual contraste básico existe entre 行きます e 来ます?",
                 "options": [
-                    "'Ikimasu' é ir, 'kimasu' é vir.",
+                    "行きます é ir; 来ます é vir em relação ao ponto de referência.",
                     "'Ikimasu' é formal, 'kimasu' é informal.",
                     "Não há diferença."
                 ],
@@ -3351,8 +3325,8 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'いきます (行きます)' (Ikimasu)?",
                 "options": [
                     "Ir (para algum lugar)",
-                    "Vir (para cá)",
-                    "Voltar (para casa/origem)"
+                    "Vir",
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 0
             },
@@ -3360,17 +3334,17 @@ const CURSO_A1_DADOS = [
                 "question": "Qual é o significado correto da palavra 'きます (来ます)' (Kimasu)?",
                 "options": [
                     "Ir (para algum lugar)",
-                    "Vir (para cá)",
-                    "Voltar (para casa/origem)"
+                    "Vir",
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 1
             },
             {
                 "question": "Qual é o significado correto da palavra 'かえります (帰ります)' (Kaerimasu)?",
                 "options": [
-                    "Vir (para cá)",
+                    "Vir",
                     "Ir (para algum lugar)",
-                    "Voltar (para casa/origem)"
+                    "Voltar / retornar"
                 ],
                 "correctIndex": 2
             },
@@ -3379,7 +3353,7 @@ const CURSO_A1_DADOS = [
                 "options": [
                     "Escola / Estação / Casa",
                     "Ir (para algum lugar)",
-                    "Vir (para cá)"
+                    "Vir"
                 ],
                 "correctIndex": 0
             }
@@ -3387,15 +3361,15 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_14",
-        "title": "Meios e Ferramentas: A Partícula 'de' (で)",
+        "title": "Meios e instrumentos com で",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 105,
         "stage1_context": {
             "audioGuide": "Densha de ikimasu.",
-            "missionTitle": "Objetivo de Hoje: Como Você Faz?",
-            "missionDescription": "Descubra o poder da partícula 'de' (で) para indicar o meio de transporte que você usa, a ferramenta com que escreve ou o idioma em que fala."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Use で para indicar meio de transporte, instrumento ou idioma empregado em uma ação."
         },
         "stage2_drops": [
             {
@@ -3403,7 +3377,7 @@ const CURSO_A1_DADOS = [
                 "kanji": "でんしゃ (電車)",
                 "romaji": "Densha",
                 "translation": "Trem",
-                "timeContext": "Principal meio de transporte no Japão."
+                "timeContext": "Exemplo de meio de transporte marcado por で."
             },
             {
                 "type": "vocab",
@@ -3417,21 +3391,21 @@ const CURSO_A1_DADOS = [
                 "kanji": "バス",
                 "romaji": "Basu",
                 "translation": "Ônibus",
-                "timeContext": "Escrito em Katakana por ser palavra estrangeira (Bus)."
+                "timeContext": "Empréstimo linguístico normalmente escrito em katakana."
             },
             {
                 "type": "vocab",
                 "kanji": "はし",
                 "romaji": "Hashi",
-                "translation": "Hashi (pauzinhos para comer)",
-                "timeContext": "Ferramenta essencial na culinária asiática."
+                "translation": "hashi / palitos para comer",
+                "timeContext": "Exemplo de instrumento marcado por で."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Partícula de Meio/Método 'で' (de)",
-                "rule": "A partícula 'de' (で) é usada para indicar o MEIO pelo qual uma ação é realizada. Pode ser um veículo, uma ferramenta, um idioma, etc.",
+                "title": "Meio ou instrumento com で",
+                "rule": "A partícula で pode marcar o meio de transporte, o instrumento ou o idioma usado para realizar uma ação.",
                 "formula": "[Meio/Ferramenta] + で + [Verbo]",
-                "example": "えき まで でんしゃ で いきます (Eki made densha DE ikimasu) ➔ Vou até a estação DE trem."
+                "example": "バスで えきまで いきました (Basu de eki made ikimashita.) — Fui até a estação de ônibus."
             }
         ],
         "stage3_practice": [
@@ -3490,7 +3464,7 @@ const CURSO_A1_DADOS = [
         "stage3_5_sentenceBuilder": [
             {
                 "sentenceJp": "はし で すし を たべます",
-                "translation": "Como sushi com palzinhos (hashi).",
+                "translation": "Como sushi com palitos (hashi).",
                 "chunks": [
                     "はし",
                     "で",
@@ -3515,11 +3489,11 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Seu colega pergunta como você vai para o trabalho todos os dias.",
                 "npcName": "Colega",
-                "npcMessage": "かいしゃ へ なんで いきますか？ (Como você vai para a empresa?)",
+                "npcMessage": "かいしゃへ なにで いきますか。 (Com que meio você vai para a empresa?)",
                 "options": [
                     {
                         "text": "でんしゃ で いきます。",
-                        "feedback": "Perfeito! Resposta direta e correta usando a partícula 'de' para o meio de transporte.",
+                        "feedback": "A resposta marca o meio de transporte com で.",
                         "isCorrect": true
                     },
                     {
@@ -3537,7 +3511,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual é a função da partícula 'de' (で) em 'kuruma de ikimasu'?",
+                "question": "Qual é a função de で em くるまで いきます?",
                 "options": [
                     "Indicar o destino.",
                     "Indicar o meio de transporte.",
@@ -3575,7 +3549,7 @@ const CURSO_A1_DADOS = [
             {
                 "question": "Qual é o significado correto da palavra 'はし' (Hashi)?",
                 "options": [
-                    "Hashi (pauzinhos para comer)",
+                    "hashi / palitos para comer",
                     "Trem",
                     "Carro"
                 ],
@@ -3585,84 +3559,84 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_15",
-        "title": "Perguntando 'Quando?' & Datas (Itsu, -gatsu, -nichi)",
+        "title": "いつ e datas do calendário",
         "section": 3,
         "sectionTitle": "Localização, Lugares & Movimento",
         "level": "A1",
         "xpReward": 110,
         "stage1_context": {
             "audioGuide": "Tanjoubi wa itsu desu ka?",
-            "missionTitle": "Objetivo de Hoje: Mestre do Calendário",
-            "missionDescription": "Aprenda a perguntar 'quando?' (itsu) e a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi), e finalize a Seção 3 com maestria!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pratique いつ e as leituras de meses e dias para perguntar e informar datas."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いつ",
-                "romaji": "Itsu",
-                "translation": "Quando?",
-                "timeContext": "A palavra interrogativa para tempo."
+                "romaji": "itsu",
+                "translation": "quando?",
+                "timeContext": "Palavra interrogativa usada para perguntar quando algo acontece."
             },
             {
                 "type": "vocab",
                 "kanji": "きょう / あした / きのう",
-                "romaji": "Kyou / Ashita / Kinou",
-                "translation": "Hoje / Amanhã / Ontem",
-                "timeContext": "Palavras essenciais de tempo que não usam partículas."
+                "romaji": "kyou / ashita / kinou",
+                "translation": "hoje / amanhã / ontem",
+                "timeContext": "Em usos temporais básicos, normalmente aparecem sem に; outras partículas dependem da função na frase."
             },
             {
                 "type": "vocab",
-                "kanji": "～がつ (月)",
+                "kanji": "～月（～がつ）",
                 "romaji": "-gatsu",
-                "translation": "Sufixo para Mês",
-                "timeContext": "Ex: いちがつ (Ichigatsu) = Janeiro."
+                "translation": "mês do calendário",
+                "timeContext": "Exemplo: 一月（いちがつ） = janeiro. Algumas leituras, como 四月（しがつ）, precisam ser aprendidas como formas do calendário."
             },
             {
                 "type": "vocab",
-                "kanji": "～にち (日)",
+                "kanji": "～日（～にち）",
                 "romaji": "-nichi",
-                "translation": "Sufixo para Dia do Mês",
-                "timeContext": "Ex: じゅうごにち (Juu-go-nichi) = Dia 15. (Atenção: os primeiros 10 dias têm leitura especial!)"
+                "translation": "dia do mês",
+                "timeContext": "As datas incluem leituras especiais, entre elas ついたち, ふつか, じゅうよっか, はつか e にじゅうよっか. Exemplo: 15日 = じゅうごにち."
             },
             {
                 "type": "grammar_pill",
-                "title": "Perguntando e Respondendo Datas",
-                "rule": "Para perguntar 'quando', use 'itsu'. Para responder com uma data, use a estrutura [Mês] + [Dia].",
-                "formula": "たんじょうび は いつ です か？ (Tanjoubi wa itsu desu ka?)",
-                "example": "しがつ じゅうごにち です (Shigatsu juu-go-nichi desu) ➔ É dia 15 de abril."
+                "title": "Perguntar e informar datas",
+                "rule": "Para perguntar quando, use いつ. Uma data pode combinar mês e dia, respeitando as leituras próprias do calendário.",
+                "formula": "たんじょうびは いつですか。 (Tanjoubi wa itsu desu ka.)",
+                "example": "しがつ じゅうごにちです。 (Shigatsu juugonichi desu.) — É 15 de abril."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se pergunta 'Quando é a festa?'",
+                "question": "1. Como se pergunta “Quando é a festa?”",
                 "options": [
                     {
-                        "label": "パーティー は どこ です か？",
+                        "label": "パーティーは どこですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "パーティー は いつ です か？",
+                        "label": "パーティーは いつですか。",
                         "isCorrect": true
                     },
                     {
-                        "label": "パーティー は だれ です か？",
+                        "label": "パーティーは だれですか。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Se 'ni' é 2 e 'gatsu' é mês, como se diz 'Fevereiro'?",
+                "question": "2. Qual é a leitura de 二月?",
                 "options": [
                     {
-                        "label": "にがつ (Nigatsu)",
+                        "label": "にがつ (nigatsu)",
                         "isCorrect": true
                     },
                     {
-                        "label": "ににち (Ninichi)",
+                        "label": "ににち (ninichi)",
                         "isCorrect": false
                     },
                     {
-                        "label": "にじ (Niji)",
+                        "label": "にじ (niji)",
                         "isCorrect": false
                     }
                 ]
@@ -3670,25 +3644,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "ともだち に プレゼント を あげます",
-                "translation": "Darei um presente ao amigo.",
+                "sentenceJp": "たんじょうび は いつ です か",
+                "translation": "Quando é o aniversário?",
                 "chunks": [
-                    "ともだち",
-                    "に",
-                    "プレゼント",
-                    "を",
-                    "あげます"
+                    "たんじょうび",
+                    "は",
+                    "いつ",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "せんせい に ほん を もらいました",
-                "translation": "Recebi um livro do professor.",
+                "sentenceJp": "しがつ じゅうごにち です",
+                "translation": "É 15 de abril.",
                 "chunks": [
-                    "せんせい",
-                    "に",
-                    "ほん",
-                    "を",
-                    "もらいました"
+                    "しがつ",
+                    "じゅうごにち",
+                    "です"
                 ]
             }
         ],
@@ -3696,21 +3668,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você quer marcar um encontro com um amigo e pergunta quando ele está livre.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "いいね！ いつ が いい です か？ (Boa ideia! Quando é bom para você?)",
+                "npcMessage": "いいね！ いつが いいですか。 (Boa ideia! Quando seria bom?)",
                 "options": [
                     {
-                        "text": "あした は どう です か？ (Que tal amanhã?)",
-                        "feedback": "Perfeito! Você usou 'ashita' corretamente para sugerir um dia.",
+                        "text": "あしたは どうですか。 (Que tal amanhã?)",
+                        "feedback": "A resposta propõe amanhã de forma adequada ao contexto.",
                         "isCorrect": true
                     },
                     {
                         "text": "あした で いきます。",
-                        "feedback": "Incorreto. A estrutura está errada.",
+                        "feedback": "Esta forma não é usada para fazer a sugestão apresentada.",
                         "isCorrect": false
                     },
                     {
                         "text": "あした が あります。",
-                        "feedback": "Incorreto. Você disse 'Existe um amanhã'.",
+                        "feedback": "あります expressa existência e não responde adequadamente à escolha de uma data.",
                         "isCorrect": false
                     }
                 ]
@@ -3718,7 +3690,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual palavra usamos para perguntar 'Quando?'",
+                "question": "Qual palavra é usada para perguntar “quando?”",
                 "options": [
                     "Doko",
                     "Dare",
@@ -3727,7 +3699,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'いつ' (Itsu)?",
+                "question": "Qual é o sentido de いつ (itsu)?",
                 "options": [
                     "Quando?",
                     "Hoje / Amanhã / Ontem",
@@ -3736,7 +3708,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'きょう / あした / きのう' (Kyou / Ashita / Kinou)?",
+                "question": "Qual é o sentido de きょう / あした / きのう?",
                 "options": [
                     "Quando?",
                     "Hoje / Amanhã / Ontem",
@@ -3745,7 +3717,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra '～がつ (月)' (-gatsu)?",
+                "question": "O que ～月（～がつ） indica em uma data?",
                 "options": [
                     "Hoje / Amanhã / Ontem",
                     "Quando?",
@@ -3754,7 +3726,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra '～にち (日)' (-nichi)?",
+                "question": "O que ～日（～にち） indica em uma data?",
                 "options": [
                     "Sufixo para Dia do Mês",
                     "Quando?",
@@ -3766,67 +3738,67 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_16",
-        "title": "Contando de 1 a 10",
+        "title": "Números de 1 a 10",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 90,
         "stage1_context": {
             "audioGuide": "Ichi, ni, san, yon...",
-            "missionTitle": "Objetivo de Hoje: A Base Numérica",
-            "missionDescription": "Contar é a base para tudo: preços, horas, idade. Vamos dominar os números de 1 a 10 e entender por que alguns têm duas pronúncias."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Reconheça e pronuncie os números de 1 a 10, observando que algumas leituras mudam conforme o contexto."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いち, に, さん",
-                "romaji": "Ichi, Ni, San",
+                "romaji": "ichi, ni, san",
                 "translation": "1, 2, 3",
-                "timeContext": "A base da contagem japonesa."
+                "timeContext": "Leituras básicas dos números 1, 2 e 3 quando aparecem isolados."
             },
             {
                 "type": "vocab",
                 "kanji": "よん (し), ご, ろく",
-                "romaji": "Yon (Shi), Go, Roku",
+                "romaji": "yon (shi), go, roku",
                 "translation": "4, 5, 6",
-                "timeContext": ""
+                "timeContext": "O número 4 pode ter as leituras よん ou し; a escolha depende da palavra ou do contador associado."
             },
             {
                 "type": "vocab",
                 "kanji": "なな (しち), はち, きゅう",
-                "romaji": "Nana (Shichi), Hachi, Kyuu",
+                "romaji": "nana (shichi), hachi, kyuu",
                 "translation": "7, 8, 9",
-                "timeContext": ""
+                "timeContext": "O número 7 pode ter as leituras なな ou しち; a forma adequada depende do contexto."
             },
             {
                 "type": "vocab",
                 "kanji": "じゅう",
-                "romaji": "Juu",
+                "romaji": "juu",
                 "translation": "10",
-                "timeContext": "Com o 'Juu', você já pode formar números até 99!"
+                "timeContext": "じゅう é 10 e também participa da formação das dezenas, como にじゅう (20)."
             },
             {
                 "type": "grammar_pill",
-                "title": "Os Números da Sorte (e do Azar)",
-                "rule": "Os números 4 e 7 têm duas leituras. 'Shi' (4) tem o mesmo som de 'morte' (死), e 'shichi' (7) pode ser confundido com 'ichi' (1). Por isso, no dia a dia, os japoneses preferem usar 'yon' e 'nana' para evitar confusão e superstição!",
-                "formula": "Prefira: よん (Yon) e なな (Nana)",
-                "example": "Ao contar objetos, é mais comum ouvir 'yon-mai' (4 folhas) do que 'shi-mai'."
+                "title": "Leituras que dependem do contexto",
+                "rule": "Os números 4 e 7 possuem mais de uma leitura. Não há uma única forma correta para todos os usos: horas, datas, idade e contadores podem selecionar leituras específicas.",
+                "formula": "4: よん / し　　7: なな / しち",
+                "example": "Na sequência básica, é possível praticar いち、に、さん、よん、ご、ろく、なな、はち、きゅう、じゅう."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual a pronúncia mais comum e segura para o número 4 no dia a dia?",
+                "question": "1. Qual destas é uma leitura do número 4?",
                 "options": [
                     {
-                        "label": "よん (Yon)",
+                        "label": "よん (yon)",
                         "isCorrect": true
                     },
                     {
-                        "label": "し (Shi)",
+                        "label": "さん (san)",
                         "isCorrect": false
                     },
                     {
-                        "label": "なな (Nana)",
+                        "label": "なな (nana)",
                         "isCorrect": false
                     }
                 ]
@@ -3835,15 +3807,15 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como se diz o número 8 em japonês?",
                 "options": [
                     {
-                        "label": "はち (Hachi)",
+                        "label": "はち (hachi)",
                         "isCorrect": true
                     },
                     {
-                        "label": "ろく (Roku)",
+                        "label": "ろく (roku)",
                         "isCorrect": false
                     },
                     {
-                        "label": "じゅう (Juu)",
+                        "label": "じゅう (juu)",
                         "isCorrect": false
                     }
                 ]
@@ -3851,48 +3823,47 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "とうきょう は おおきい まち です",
-                "translation": "Tóquio é uma cidade grande.",
+                "sentenceJp": "いち に さん よん ご",
+                "translation": "Um, dois, três, quatro, cinco.",
                 "chunks": [
-                    "とうきょう",
-                    "は",
-                    "おおきい",
-                    "まち",
-                    "です"
+                    "いち",
+                    "に",
+                    "さん",
+                    "よん",
+                    "ご"
                 ]
             },
             {
-                "sentenceJp": "この おちゃ は とても あつい です",
-                "translation": "Este chá está muito quente.",
+                "sentenceJp": "ろく なな はち きゅう じゅう",
+                "translation": "Seis, sete, oito, nove, dez.",
                 "chunks": [
-                    "この",
-                    "おちゃ",
-                    "は",
-                    "とても",
-                    "あつい",
-                    "です"
+                    "ろく",
+                    "なな",
+                    "はち",
+                    "きゅう",
+                    "じゅう"
                 ]
             }
         ],
         "stage4_dialog": [
             {
-                "scenario": "Situação 1: Você está em uma loja e o vendedor pergunta quantos itens você quer.",
-                "npcName": "Vendedor",
-                "npcMessage": "いくつ ですか？ (Quantos são?)",
+                "scenario": "Situação 1: Um colega pede que você leia os quatro primeiros dígitos de um número de telefone.",
+                "npcName": "Colega",
+                "npcMessage": "さいしょの よんけたは なんですか。 (Quais são os quatro primeiros dígitos?)",
                 "options": [
                     {
-                        "text": "よん、おねがいします。(Quatro, por favor.)",
-                        "feedback": "Perfeito! Você usou 'yon', a forma mais comum para o número 4.",
+                        "text": "いち、に、さん、よんです。 (São 1, 2, 3 e 4.)",
+                        "feedback": "A resposta lê os quatro dígitos na ordem solicitada.",
                         "isCorrect": true
                     },
                     {
-                        "text": "し、おねがいします。",
-                        "feedback": "Funciona, mas 'yon' é mais natural e evita o som de 'morte'.",
+                        "text": "いち、に、さんです。",
+                        "feedback": "A resposta informa somente três dígitos.",
                         "isCorrect": false
                     },
                     {
-                        "text": "じゅう、おねがいします。",
-                        "feedback": "Ops! Você pediu 10 em vez de 4.",
+                        "text": "よん、さん、に、いちです。",
+                        "feedback": "Os mesmos dígitos foram lidos na ordem inversa.",
                         "isCorrect": false
                     }
                 ]
@@ -3900,7 +3871,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual número é 'kyuu' em japonês?",
+                "question": "Qual número corresponde a きゅう (kyuu)?",
                 "options": [
                     "9",
                     "7",
@@ -3909,7 +3880,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'いち, に, さん' (Ichi, Ni, San)?",
+                "question": "Quais números correspondem a いち、に、さん?",
                 "options": [
                     "1, 2, 3",
                     "4, 5, 6",
@@ -3918,7 +3889,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'よん (し), ご, ろく' (Yon (Shi), Go, Roku)?",
+                "question": "Quais números correspondem a よん（し）、ご、ろく?",
                 "options": [
                     "1, 2, 3",
                     "4, 5, 6",
@@ -3927,7 +3898,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'なな (しち), はち, きゅう' (Nana (Shichi), Hachi, Kyuu)?",
+                "question": "Quais números correspondem a なな（しち）、はち、きゅう?",
                 "options": [
                     "4, 5, 6",
                     "1, 2, 3",
@@ -3936,7 +3907,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'じゅう' (Juu)?",
+                "question": "Qual número corresponde a じゅう (juu)?",
                 "options": [
                     "10",
                     "1, 2, 3",
@@ -3948,84 +3919,84 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_17",
-        "title": "Dinheiro e Preços",
+        "title": "Preços e ienes",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 100,
         "stage1_context": {
             "audioGuide": "Kore wa ikura desu ka?",
-            "missionTitle": "Objetivo de Hoje: Independência Financeira",
-            "missionDescription": "Aprenda a perguntar 'quanto custa?' e a entender os preços em ienes. Vamos dominar os números maiores para você nunca mais passar aperto em uma loja!"
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Pergunte preços com いくら e leia valores básicos em ienes, incluindo centenas e milhares."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "いくら",
-                "romaji": "Ikura",
-                "translation": "Quanto custa?",
-                "timeContext": "A pergunta essencial para qualquer compra."
+                "romaji": "ikura",
+                "translation": "quanto?; quanto custa?",
+                "timeContext": "Em これはいくらですか, pergunta o preço de um item."
             },
             {
                 "type": "vocab",
-                "kanji": "えん (円)",
-                "romaji": "En",
-                "translation": "Iene (Moeda do Japão)",
-                "timeContext": "Sempre vem depois do número. Ex: 100円 (hyaku en)."
+                "kanji": "円（えん）",
+                "romaji": "en",
+                "translation": "iene; unidade monetária do Japão",
+                "timeContext": "Ao indicar um valor, 円 aparece depois da quantia: 100円（ひゃくえん）."
             },
             {
                 "type": "vocab",
-                "kanji": "ひゃく (百)",
-                "romaji": "Hyaku",
-                "translation": "100 (Cem)",
-                "timeContext": ""
+                "kanji": "百（ひゃく）",
+                "romaji": "hyaku",
+                "translation": "100; cem",
+                "timeContext": "Há mudanças sonoras em algumas centenas: 300 = さんびゃく, 600 = ろっぴゃく e 800 = はっぴゃく."
             },
             {
                 "type": "vocab",
-                "kanji": "せん (千)",
-                "romaji": "Sen",
-                "translation": "1.000 (Mil)",
-                "timeContext": ""
+                "kanji": "千（せん）",
+                "romaji": "sen",
+                "translation": "1.000; mil",
+                "timeContext": "Há mudanças sonoras em 3.000（さんぜん）e 8.000（はっせん）."
             },
             {
                 "type": "grammar_pill",
-                "title": "Construindo Números Grandes",
-                "rule": "A lógica é como Lego! Para dizer 2.500, você pensa 'dois mil e quinhentos'. Em japonês: にせん ごひゃく (ni-sen go-hyaku).",
-                "formula": "[Número] + 千 + [Número] + 百",
-                "example": "3.200円 ➔ さんぜん にひゃく えん (sanzen nihyaku en)."
+                "title": "Centenas e milhares em preços",
+                "rule": "Combine as unidades de mil e cem na ordem do maior valor para o menor, observando as mudanças de som próprias de certas combinações.",
+                "formula": "[milhar] + 千 + [centena] + 百 + 円",
+                "example": "3.200円 = さんぜん にひゃくえん (sanzen nihyaku en)."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Como se pergunta 'Quanto custa?' em japonês?",
+                "question": "1. Como se pergunta “Quanto custa isto?”",
                 "options": [
                     {
-                        "label": "いくら です か？ (Ikura desu ka?)",
+                        "label": "これは いくらですか。 (Kore wa ikura desu ka.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "なんさい です か？ (Nansai desu ka?)",
+                        "label": "これは なんさいですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "どこ です か？ (Doko desu ka?)",
+                        "label": "これは どこですか。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Se 'san' é 3 e 'zen' é a variação de 1000, como se diz 3.000 ienes?",
+                "question": "2. Qual é a leitura de 3.000 ienes?",
                 "options": [
                     {
-                        "label": "さんぜん えん (Sanzen en)",
+                        "label": "さんぜんえん (sanzen en)",
                         "isCorrect": true
                     },
                     {
-                        "label": "さんびゃく えん (Sanbyaku en)",
+                        "label": "さんびゃくえん (sanbyaku en)",
                         "isCorrect": false
                     },
                     {
-                        "label": "さんじゅう えん (Sanjuu en)",
+                        "label": "さんじゅうえん (sanjuu en)",
                         "isCorrect": false
                     }
                 ]
@@ -4033,26 +4004,23 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "きょう は あまり さむくない です",
-                "translation": "Hoje não está muito frio.",
+                "sentenceJp": "これ は いくら です か",
+                "translation": "Quanto custa isto?",
                 "chunks": [
-                    "きょう",
+                    "これ",
                     "は",
-                    "あまり",
-                    "さむくない",
-                    "です"
+                    "いくら",
+                    "です",
+                    "か"
                 ]
             },
             {
-                "sentenceJp": "きのう の テスト は むずかしかっ た です",
-                "translation": "O teste de ontem foi difícil.",
+                "sentenceJp": "さんぜん にひゃく えん です",
+                "translation": "São 3.200 ienes.",
                 "chunks": [
-                    "きのう",
-                    "の",
-                    "テスト",
-                    "は",
-                    "むずかしかっ",
-                    "た",
+                    "さんぜん",
+                    "にひゃく",
+                    "えん",
                     "です"
                 ]
             }
@@ -4064,18 +4032,18 @@ const CURSO_A1_DADOS = [
                 "npcMessage": "いらっしゃいませ！ (Bem-vindo!)",
                 "options": [
                     {
-                        "text": "すみません、これ は いくら です か？",
-                        "feedback": "Perfeito! Você usou 'sumimasen' para chamar a atenção e fez a pergunta de preço corretamente.",
+                        "text": "すみません、これは いくらですか。",
+                        "feedback": "A resposta chama a atenção do atendente e pergunta o preço do item.",
                         "isCorrect": true
                     },
                     {
                         "text": "これ は わたし の です。",
-                        "feedback": "Incorreto. Você disse 'Isto é meu', não perguntou o preço.",
+                        "feedback": "Essa frase identifica o objeto como seu, mas não pergunta o preço.",
                         "isCorrect": false
                     },
                     {
                         "text": "これ は なな です。",
-                        "feedback": "Incorreto. Você disse 'Isto é 7'.",
+                        "feedback": "A resposta não usa いくら nem informa uma quantia em 円.",
                         "isCorrect": false
                     }
                 ]
@@ -4083,7 +4051,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "O que significa 'hyaku en' (百円)?",
+                "question": "O que significa 百円（ひゃくえん）?",
                 "options": [
                     "100 ienes",
                     "1.000 ienes",
@@ -4092,7 +4060,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'いくら' (Ikura)?",
+                "question": "Qual é o sentido de いくら em uma pergunta de preço?",
                 "options": [
                     "Quanto custa?",
                     "Iene (Moeda do Japão)",
@@ -4101,7 +4069,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'えん (円)' (En)?",
+                "question": "O que 円（えん）indica depois de uma quantia?",
                 "options": [
                     "Quanto custa?",
                     "Iene (Moeda do Japão)",
@@ -4110,7 +4078,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'ひゃく (百)' (Hyaku)?",
+                "question": "Qual número corresponde a 百（ひゃく）?",
                 "options": [
                     "Iene (Moeda do Japão)",
                     "Quanto custa?",
@@ -4119,7 +4087,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'せん (千)' (Sen)?",
+                "question": "Qual número corresponde a 千（せん）?",
                 "options": [
                     "1.000 (Mil)",
                     "Quanto custa?",
@@ -4131,44 +4099,44 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_18",
-        "title": "Comprando na Loja de Conveniência",
+        "title": "Pedidos e pagamento em lojas",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 105,
         "stage1_context": {
             "audioGuide": "Kore o kudasai.",
-            "missionTitle": "Objetivo de Hoje: Mestre do Konbini",
-            "missionDescription": "Aprenda a frase mágica para pedir qualquer coisa em uma loja, como pedir uma sacola e como dizer que vai pagar com cartão."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Peça um item com ～をください e pratique vocabulário básico para sacola e pagamento com cartão."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
-                "kanji": "～を ください",
+                "kanji": "～をください",
                 "romaji": "o kudasai",
-                "translation": "Me dê ~, por favor",
-                "timeContext": "A forma mais direta e educada de pedir um item em uma loja."
+                "translation": "~ por favor; dê-me ~, por favor",
+                "timeContext": "Expressão polida e frequente para solicitar um item em situações de atendimento."
             },
             {
                 "type": "vocab",
-                "kanji": "ふくろ",
-                "romaji": "Fukuro",
-                "translation": "Sacola",
-                "timeContext": "No Japão, muitas vezes perguntam se você precisa de uma."
+                "kanji": "袋（ふくろ）",
+                "romaji": "fukuro",
+                "translation": "saco; sacola",
+                "timeContext": "Em uma loja, pode referir-se à sacola para levar a compra."
             },
             {
                 "type": "vocab",
                 "kanji": "カード",
-                "romaji": "Kaado",
-                "translation": "Cartão (de crédito/débito)",
-                "timeContext": "Palavra estrangeira, por isso em Katakana."
+                "romaji": "kaado",
+                "translation": "cartão",
+                "timeContext": "Em um pagamento, カード pode indicar o cartão usado na transação."
             },
             {
                 "type": "grammar_pill",
-                "title": "A Fórmula do Pedido",
-                "rule": "Para pedir algo, aponte ou pegue o item e diga o nome dele seguido da partícula de objeto 'o' (を) e o verbo 'kudasai'.",
+                "title": "Pedir um item com ～をください",
+                "rule": "Coloque o item antes de をください para fazer um pedido polido. ください integra a expressão de solicitação; não é apresentado aqui como um verbo independente.",
                 "formula": "[Item] + を + ください",
-                "example": "おみず を ください (O-mizu o kudasai) ➔ Me dê a água, por favor."
+                "example": "おみずをください。 (Omizu o kudasai.) — Água, por favor."
             }
         ],
         "stage3_practice": [
@@ -4176,21 +4144,21 @@ const CURSO_A1_DADOS = [
                 "question": "1. Você quer comprar um pão. Como você pede ao atendente?",
                 "options": [
                     {
-                        "label": "パン を ください (Pan o kudasai)",
+                        "label": "パンをください。 (Pan o kudasai.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "パン は いくら です か (Pan wa ikura desu ka)",
+                        "label": "パンは いくらですか。",
                         "isCorrect": false
                     },
                     {
-                        "label": "パン が あります (Pan ga arimasu)",
+                        "label": "パンが あります。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. O atendente pergunta 'Fukuro wa irimasu ka?'. O que ele quer saber?",
+                "question": "2. O atendente pergunta 袋はいりますか（Fukuro wa irimasu ka）. O que ele quer saber?",
                 "options": [
                     {
                         "label": "Se você quer uma sacola.",
@@ -4209,26 +4177,22 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "この へや は しずか です",
-                "translation": "Este quarto é silencioso.",
+                "sentenceJp": "この パン を ください",
+                "translation": "Este pão, por favor.",
                 "chunks": [
                     "この",
-                    "へや",
-                    "は",
-                    "しずか",
-                    "です"
+                    "パン",
+                    "を",
+                    "ください"
                 ]
             },
             {
-                "sentenceJp": "きょうと は ゆうめい な まち です",
-                "translation": "Quioto é uma cidade famosa.",
+                "sentenceJp": "カード で おねがいします",
+                "translation": "Com cartão, por favor.",
                 "chunks": [
-                    "きょうと",
-                    "は",
-                    "ゆうめい",
-                    "な",
-                    "まち",
-                    "です"
+                    "カード",
+                    "で",
+                    "おねがいします"
                 ]
             }
         ],
@@ -4236,21 +4200,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: No caixa do konbini, você quer pagar com seu cartão.",
                 "npcName": "Atendente",
-                "npcMessage": "おかいけい は ごひゃくえん です。(A conta é 500 ienes.)",
+                "npcMessage": "おかいけいは ごひゃくえんです。 (A conta é 500 ienes.)",
                 "options": [
                     {
-                        "text": "カード で おねがいします。(Com cartão, por favor.)",
-                        "feedback": "Perfeito! Você usou a partícula 'de' para indicar o meio de pagamento.",
+                        "text": "カードで おねがいします。 (Com cartão, por favor.)",
+                        "feedback": "A resposta indica o cartão como forma de pagamento.",
                         "isCorrect": true
                     },
                     {
                         "text": "ふくろ を ください。",
-                        "feedback": "Incorreto. Você pediu uma sacola em vez de dizer como vai pagar.",
+                        "feedback": "Essa frase pede uma sacola, mas não informa a forma de pagamento.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、ごひゃくえん です。",
-                        "feedback": "Incorreto. Você apenas repetiu o preço para o atendente.",
+                        "feedback": "Essa frase apenas repete o valor informado.",
                         "isCorrect": false
                     }
                 ]
@@ -4258,16 +4222,16 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a frase para pedir um item em uma loja?",
+                "question": "Qual estrutura pode ser usada para pedir um item em uma loja?",
                 "options": [
-                    "~ o kudasai",
+                    "～をください",
                     "~ wa doko desu ka",
                     "~ ga suki desu"
                 ],
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra '～を ください' (o kudasai)?",
+                "question": "Qual é o sentido de ～をください?",
                 "options": [
                     "Me dê ~, por favor",
                     "Sacola",
@@ -4276,7 +4240,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'ふくろ' (Fukuro)?",
+                "question": "Qual é o sentido de 袋（ふくろ）?",
                 "options": [
                     "Me dê ~, por favor",
                     "Sacola",
@@ -4285,7 +4249,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'カード' (Kaado)?",
+                "question": "Qual é o sentido de カード?",
                 "options": [
                     "Sacola",
                     "Me dê ~, por favor",
@@ -4294,9 +4258,9 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Sobre a regra 'A Fórmula do Pedido': qual afirmação é correta?",
+                "question": "Sobre ～をください, qual afirmação é correta?",
                 "options": [
-                    "Para pedir algo, aponte ou pegue o item e diga o nome dele seguido da partícula de objeto 'o' (を) e o verbo 'kudasai'.",
+                    "O item pode aparecer antes de をください para formar um pedido polido.",
                     "Esta regra é utilizada exclusivamente para contagem de animais pequenos.",
                     "Esta estrutura é uma forma arcaica e não deve ser usada no cotidiano."
                 ],
@@ -4306,81 +4270,81 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_19",
-        "title": "Comida & Bebida I",
+        "title": "Comidas e bebidas básicas",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 95,
         "stage1_context": {
             "audioGuide": "Mizu o nomimasu.",
-            "missionTitle": "Objetivo de Hoje: O Cardápio Básico",
-            "missionDescription": "Aprenda o vocabulário essencial para sobreviver em qualquer restaurante ou mercado: água, chá, arroz, pão, carne e peixe."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Reconheça palavras básicas de comida e bebida e pratique como marcar o objeto de comer ou beber."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "みず (水)",
-                "romaji": "Mizu",
-                "translation": "Água",
+                "romaji": "mizu",
+                "translation": "água",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "おちゃ (お茶)",
-                "romaji": "Ocha",
-                "translation": "Chá (geralmente verde)",
-                "timeContext": ""
+                "romaji": "ocha",
+                "translation": "chá",
+                "timeContext": "Pode designar chá em geral; o contexto indica o tipo de chá."
             },
             {
                 "type": "vocab",
                 "kanji": "ごはん (ご飯)",
-                "romaji": "Gohan",
-                "translation": "Arroz cozido / Refeição",
-                "timeContext": ""
+                "romaji": "gohan",
+                "translation": "arroz cozido; refeição",
+                "timeContext": "O sentido pode ser “arroz cozido” ou “refeição”, conforme a frase."
             },
             {
                 "type": "vocab",
                 "kanji": "パン",
-                "romaji": "Pan",
-                "translation": "Pão",
-                "timeContext": "Vem do português, por isso é escrito em Katakana!"
+                "romaji": "pan",
+                "translation": "pão",
+                "timeContext": "Empréstimo histórico do português, normalmente escrito em katakana."
             },
             {
                 "type": "vocab",
                 "kanji": "にく (肉)",
-                "romaji": "Niku",
-                "translation": "Carne",
+                "romaji": "niku",
+                "translation": "carne",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "さかな (魚)",
-                "romaji": "Sakana",
-                "translation": "Peixe",
+                "romaji": "sakana",
+                "translation": "peixe",
                 "timeContext": ""
             },
             {
                 "type": "grammar_pill",
-                "title": "O Objeto da Ação: Partícula 'o' (を)",
-                "rule": "Quando você realiza uma ação (comer, beber, ver), o que sofre essa ação é marcado pela partícula 'o' (を).",
-                "formula": "[Comida/Bebida] を [Verbo]",
-                "example": "わたし は パン を たべます (Watashi wa pan o tabemasu) ➔ Eu como pão."
+                "title": "O objeto direto com を",
+                "rule": "Em frases como comer, beber ou ver, を marca o objeto direto: aquilo sobre o qual a ação recai.",
+                "formula": "[comida ou bebida] を [verbo]",
+                "example": "わたしは パンを たべます。 (Watashi wa pan o tabemasu.) — Eu como pão."
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Qual a palavra para 'arroz cozido', que também pode significar 'refeição'?",
+                "question": "1. Qual palavra pode significar “arroz cozido” ou “refeição”, conforme o contexto?",
                 "options": [
                     {
-                        "label": "ごはん (Gohan)",
+                        "label": "ごはん (gohan)",
                         "isCorrect": true
                     },
                     {
-                        "label": "みず (Mizu)",
+                        "label": "みず (mizu)",
                         "isCorrect": false
                     },
                     {
-                        "label": "にく (Niku)",
+                        "label": "にく (niku)",
                         "isCorrect": false
                     }
                 ]
@@ -4389,15 +4353,15 @@ const CURSO_A1_DADOS = [
                 "question": "2. Como se diz 'Eu bebo chá'?",
                 "options": [
                     {
-                        "label": "おちゃ を のみます (Ocha o nomimasu)",
+                        "label": "おちゃを のみます。 (Ocha o nomimasu.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "おちゃ が あります (Ocha ga arimasu)",
+                        "label": "おちゃが あります。",
                         "isCorrect": false
                     },
                     {
-                        "label": "おちゃ です (Ocha desu)",
+                        "label": "おちゃです。",
                         "isCorrect": false
                     }
                 ]
@@ -4405,26 +4369,21 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "わたし は にほんの たべもの が すき です",
-                "translation": "Eu gosto de comida japonesa.",
+                "sentenceJp": "みず を のみます",
+                "translation": "Bebo água.",
                 "chunks": [
-                    "わたし",
-                    "は",
-                    "にほんの",
-                    "たべもの",
-                    "が",
-                    "すき",
-                    "です"
+                    "みず",
+                    "を",
+                    "のみます"
                 ]
             },
             {
-                "sentenceJp": "スポーツ が あまり すきではありません",
-                "translation": "Não gosto muito de esportes.",
+                "sentenceJp": "パン を たべます",
+                "translation": "Como pão.",
                 "chunks": [
-                    "スポーツ",
-                    "が",
-                    "あまり",
-                    "すきではありません"
+                    "パン",
+                    "を",
+                    "たべます"
                 ]
             }
         ],
@@ -4432,21 +4391,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Em um restaurante, o garçom pergunta o que você quer beber.",
                 "npcName": "Garçom",
-                "npcMessage": "おのみもの は？ (E a bebida?)",
+                "npcMessage": "お飲み物は 何にしますか。 (O que vai querer de bebida?)",
                 "options": [
                     {
-                        "text": "みず を おねがいします。(Água, por favor.)",
-                        "feedback": "Perfeito! Pedido claro e educado.",
+                        "text": "みずを おねがいします。 (Água, por favor.)",
+                        "feedback": "A resposta pede uma bebida de maneira adequada ao contexto.",
                         "isCorrect": true
                     },
                     {
                         "text": "さかな です。",
-                        "feedback": "Incorreto. Ele perguntou sobre a bebida, e você respondeu 'É peixe'.",
+                        "feedback": "A resposta nomeia um alimento, não uma bebida.",
                         "isCorrect": false
                     },
                     {
                         "text": "はい、そうです。",
-                        "feedback": "Incorreto. 'Sim, é isso' não responde à pergunta.",
+                        "feedback": "A resposta não especifica qual bebida você quer.",
                         "isCorrect": false
                     }
                 ]
@@ -4454,7 +4413,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual a palavra para 'carne' em japonês?",
+                "question": "Qual palavra significa “carne”?",
                 "options": [
                     "Niku",
                     "Sakana",
@@ -4463,7 +4422,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'みず (水)' (Mizu)?",
+                "question": "Qual é o sentido de 水（みず）?",
                 "options": [
                     "Água",
                     "Chá (geralmente verde)",
@@ -4472,7 +4431,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'おちゃ (お茶)' (Ocha)?",
+                "question": "Qual é o sentido de お茶（おちゃ）?",
                 "options": [
                     "Água",
                     "Chá (geralmente verde)",
@@ -4481,7 +4440,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'ごはん (ご飯)' (Gohan)?",
+                "question": "Qual é o sentido de ご飯（ごはん）?",
                 "options": [
                     "Chá (geralmente verde)",
                     "Água",
@@ -4490,7 +4449,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'パン' (Pan)?",
+                "question": "Qual é o sentido de パン?",
                 "options": [
                     "Pão",
                     "Água",
@@ -4502,91 +4461,91 @@ const CURSO_A1_DADOS = [
     },
     {
         "id": "a1_mod_20",
-        "title": "Comida & Bebida II e Sabores",
+        "title": "Alimentos e adjetivos básicos",
         "section": 4,
         "sectionTitle": "Números, Dinheiro & Compras",
         "level": "A1",
         "xpReward": 110,
         "stage1_context": {
             "audioGuide": "Kono ramen wa oishii desu.",
-            "missionTitle": "Objetivo de Hoje: O Crítico Gastronômico",
-            "missionDescription": "Expanda seu cardápio com vegetais e frutas, e aprenda os adjetivos mais importantes para descrever uma refeição: delicioso, caro e barato."
+            "missionTitle": "Objetivo de hoje",
+            "missionDescription": "Amplie o vocabulário de alimentos e use adjetivos básicos para descrever sabor e preço."
         },
         "stage2_drops": [
             {
                 "type": "vocab",
                 "kanji": "やさい (野菜)",
-                "romaji": "Yasai",
-                "translation": "Vegetais / Legumes",
+                "romaji": "yasai",
+                "translation": "verduras; legumes; vegetais",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "くだもの (果物)",
-                "romaji": "Kudamono",
-                "translation": "Fruta(s)",
+                "romaji": "kudamono",
+                "translation": "fruta; frutas",
                 "timeContext": ""
             },
             {
                 "type": "vocab",
                 "kanji": "おいしい",
-                "romaji": "Oishii",
-                "translation": "Delicioso / Gostoso",
-                "timeContext": "O elogio mais importante para qualquer cozinheiro!"
+                "romaji": "oishii",
+                "translation": "gostoso; delicioso",
+                "timeContext": "Descreve algo saboroso, especialmente comida ou bebida."
             },
             {
                 "type": "vocab",
                 "kanji": "たかい (高い)",
-                "romaji": "Takai",
-                "translation": "Caro / Alto",
-                "timeContext": "Este adjetivo serve tanto para preço quanto para altura."
+                "romaji": "takai",
+                "translation": "caro; alto",
+                "timeContext": "Pode descrever preço elevado ou altura; o contexto define o sentido."
             },
             {
                 "type": "vocab",
                 "kanji": "やすい (安い)",
-                "romaji": "Yasui",
-                "translation": "Barato",
+                "romaji": "yasui",
+                "translation": "barato; de baixo preço",
                 "timeContext": ""
             },
             {
                 "type": "grammar_pill",
-                "title": "Descrevendo Coisas com Adjetivos-i",
-                "rule": "Adjetivos que terminam em 'i' (como oishii, takai, yasui) são muito fáceis de usar. Basta colocá-los antes do substantivo ou usar com 'desu' no final.",
-                "formula": "[Adjetivo] + [Substantivo] / [Substantivo] は [Adjetivo] です",
-                "example": "おいしい ラーメン (oishii ramen) / この ラーメン は おいしい です (kono ramen wa oishii desu)."
+                "title": "Descrever com adjetivos em い",
+                "rule": "Muitos adjetivos que terminam em い podem vir antes do substantivo ou aparecer no predicado com です. As formas deste módulo são exemplos básicos desse padrão.",
+                "formula": "[adjetivo] + [substantivo] / [substantivo] は [adjetivo] です",
+                "example": "おいしいラーメン / このラーメンは おいしいです。 (Kono ramen wa oishii desu.)"
             }
         ],
         "stage3_practice": [
             {
-                "question": "1. Você comeu um sushi incrível. Como você diz 'É delicioso!'?",
+                "question": "1. Você provou um prato e quer dizer que ele é gostoso. Qual resposta é adequada?",
                 "options": [
                     {
-                        "label": "おいしい です (Oishii desu)",
+                        "label": "おいしいです。 (Oishii desu.)",
                         "isCorrect": true
                     },
                     {
-                        "label": "やすい です (Yasui desu)",
+                        "label": "やすいです。",
                         "isCorrect": false
                     },
                     {
-                        "label": "たかい です (Takai desu)",
+                        "label": "たかいです。",
                         "isCorrect": false
                     }
                 ]
             },
             {
-                "question": "2. Um prato custa 5.000 ienes. Ele é...",
+                "question": "2. Em uma conversa sobre preço, qual palavra descreve algo caro?",
                 "options": [
                     {
-                        "label": "たかい (Takai)",
+                        "label": "たかい (takai)",
                         "isCorrect": true
                     },
                     {
-                        "label": "やすい (Yasui)",
+                        "label": "やすい (yasui)",
                         "isCorrect": false
                     },
                     {
-                        "label": "おいしい (Oishii)",
+                        "label": "おいしい (oishii)",
                         "isCorrect": false
                     }
                 ]
@@ -4594,27 +4553,25 @@ const CURSO_A1_DADOS = [
         ],
         "stage3_5_sentenceBuilder": [
             {
-                "sentenceJp": "つくえ の うえ に ほん が あります",
-                "translation": "Há um livro em cima da mesa.",
+                "sentenceJp": "この ラーメン は おいしい です",
+                "translation": "Este ramen é gostoso.",
                 "chunks": [
-                    "つくえ",
-                    "の",
-                    "うえ",
-                    "に",
-                    "ほん",
-                    "が",
-                    "あります"
+                    "この",
+                    "ラーメン",
+                    "は",
+                    "おいしい",
+                    "です"
                 ]
             },
             {
-                "sentenceJp": "にわ に いぬ が います",
-                "translation": "Há um cachorro no jardim.",
+                "sentenceJp": "この くだもの は やすい です",
+                "translation": "Esta fruta é barata.",
                 "chunks": [
-                    "にわ",
-                    "に",
-                    "いぬ",
-                    "が",
-                    "います"
+                    "この",
+                    "くだもの",
+                    "は",
+                    "やすい",
+                    "です"
                 ]
             }
         ],
@@ -4622,21 +4579,21 @@ const CURSO_A1_DADOS = [
             {
                 "scenario": "Situação 1: Você está comendo com um amigo japonês e prova o prato dele.",
                 "npcName": "Amigo Kenji",
-                "npcMessage": "どう？ おいしい？ (E aí? É gostoso?)",
+                "npcMessage": "どうですか。おいしいですか。 (Como está? É gostoso?)",
                 "options": [
                     {
-                        "text": "うん、とても おいしい！ (Sim, muito delicioso!)",
-                        "feedback": "Perfeito! Uma resposta positiva e entusiasmada.",
+                        "text": "はい、とても おいしいです。 (Sim, está muito gostoso.)",
+                        "feedback": "A resposta avalia o sabor do prato de maneira adequada.",
                         "isCorrect": true
                     },
                     {
                         "text": "はい、やすい です。",
-                        "feedback": "Incorreto. Ele perguntou se era gostoso, não se era barato.",
+                        "feedback": "A frase avalia o preço, não o sabor perguntado.",
                         "isCorrect": false
                     },
                     {
                         "text": "いいえ、やさい です。",
-                        "feedback": "Incorreto. Você disse 'Não, é vegetal'.",
+                        "feedback": "A resposta nomeia uma categoria de alimento, mas não avalia o sabor.",
                         "isCorrect": false
                     }
                 ]
@@ -4644,7 +4601,7 @@ const CURSO_A1_DADOS = [
         ],
         "stage5_quiz": [
             {
-                "question": "Qual adjetivo significa 'barato'?",
+                "question": "Qual adjetivo pode significar “barato”?",
                 "options": [
                     "Yasui",
                     "Takai",
@@ -4653,7 +4610,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'やさい (野菜)' (Yasai)?",
+                "question": "Qual é o sentido de 野菜（やさい）?",
                 "options": [
                     "Vegetais / Legumes",
                     "Fruta(s)",
@@ -4662,7 +4619,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 0
             },
             {
-                "question": "Qual é o significado correto da palavra 'くだもの (果物)' (Kudamono)?",
+                "question": "Qual é o sentido de 果物（くだもの）?",
                 "options": [
                     "Vegetais / Legumes",
                     "Fruta(s)",
@@ -4671,7 +4628,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 1
             },
             {
-                "question": "Qual é o significado correto da palavra 'おいしい' (Oishii)?",
+                "question": "Qual é o sentido de おいしい?",
                 "options": [
                     "Fruta(s)",
                     "Vegetais / Legumes",
@@ -4680,7 +4637,7 @@ const CURSO_A1_DADOS = [
                 "correctIndex": 2
             },
             {
-                "question": "Qual é o significado correto da palavra 'たかい (高い)' (Takai)?",
+                "question": "Qual é um sentido possível de 高い（たかい）?",
                 "options": [
                     "Caro / Alto",
                     "Vegetais / Legumes",
@@ -7855,7 +7812,7 @@ const CURSO_A1_DADOS = [
 // Contrato textual editorial da Fase 3B. Conteúdo pendente de revisão humana qualificada.
 const A1_EDITORIAL_CONTRACT = [
     ["おはようございます。", "Ohayou gozaimasu.", "Bom dia.", "Cumprimentar alguém de modo adequado ao período do dia."],
-    ["はじめまして。よろしくお願いします。", "Hajimemashite. Yoroshiku onegaishimasu.", "Muito prazer. Conto com sua gentileza.", "Apresentar-se brevemente em um primeiro encontro."],
+    ["はじめまして。よろしくお願いします。", "Hajimemashite. Yoroshiku onegaishimasu.", "Muito prazer. Espero contar com você.", "Apresentar-se brevemente em um primeiro encontro."],
     ["ありがとうございます。すみません。", "Arigatou gozaimasu. Sumimasen.", "Muito obrigado. Com licença.", "Agradecer e pedir licença com expressões básicas."],
     ["お疲れ様でした。じゃあね。", "Otsukaresama deshita. Jaa ne.", "Obrigado pelo esforço. Até mais.", "Escolher uma despedida adequada à situação."],
     ["田中さん。先生、こんにちは。", "Tanaka-san. Sensei, konnichiwa.", "Sr. Tanaka. Professor, boa tarde.", "Usar formas básicas de tratamento com respeito."],
@@ -7919,3 +7876,625 @@ CURSO_A1_DADOS[20].stage4_dialog[0].content = {
 };
 
 if (typeof window !== "undefined") { window.CURSO_A1_DADOS = CURSO_A1_DADOS; }
+
+const A1_PHASE18_AUDIO_CORRECTIONS = {
+    a1_mod_05: ["田中さん、こんにちは。先生、こんにちは。", "Tanaka-san, konnichiwa. Sensei, konnichiwa.", "Olá, Sr. Tanaka. Olá, professor."],
+    a1_mod_06: ["私はブラジル人です。日本語を勉強しています。", "Watashi wa Burajiru-jin desu. Nihongo o benkyou shite imasu.", "Sou brasileiro e estudo japonês."],
+    a1_mod_07: ["私は学生です。田中さんは会社員です。", "Watashi wa gakusei desu. Tanaka-san wa kaishain desu.", "Sou estudante. O Sr. Tanaka é funcionário de uma empresa."],
+    a1_mod_08: ["あなたは学生ですか。あの人は誰ですか。", "Anata wa gakusei desu ka. Ano hito wa dare desu ka.", "Você é estudante? Quem é aquela pessoa?"],
+    a1_mod_10: ["「私もブラジル人です。」「そうですか！」", "Watashi mo Burajiru-jin desu. Sou desu ka!", "Eu também sou brasileiro. É mesmo?"],
+    a1_mod_24: ["ご飯を食べます。", "Gohan o tabemasu.", "Como arroz."],
+    a1_mod_30: ["友達は行きます。そして、私も行きます。でも、田中さんは行きません。", "Tomodachi wa ikimasu. Soshite, watashi mo ikimasu. Demo, Tanaka-san wa ikimasen.", "Meu amigo vai. Eu também vou. Mas o Sr. Tanaka não vai."]
+};
+Object.entries(A1_PHASE18_AUDIO_CORRECTIONS).forEach(([moduleId, values]) => {
+    const module = CURSO_A1_DADOS.find(item => item.id === moduleId);
+    const [displayText, romaji, translation] = values;
+    module.stage1_context.audioGuide = romaji;
+    Object.assign(module.stage1_context.audio, { displayText, audioText: displayText, romaji, translation });
+    module.editorialReview.phase18 = { status: "corrected", target: "stage1_context.audio" };
+});
+
+const A1_PHASE18_TEXT_REPLACEMENTS = new Map([
+    ["Perfeito! O combo 'Muito obrigado + Desculpe o incômodo' é o auge da fluência cultural!", "Perfeito! Você combinou agradecimento e pedido de desculpas de modo adequado ao contexto."],
+    ["Aprenda a perguntar 'quando?' (itsu) e a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi), e finalize a Seção 3 com maestria!", "Aprenda a perguntar 'quando?' (itsu), a formar datas básicas com os sufixos de mês (-gatsu) e dia (-nichi) e conclua a Seção 3."],
+    ["Fantástico! Usou 'Soshite' e a partícula 'Mo' (também) com enorme fluência!", "Fantástico! Você usou 'soshite' e a partícula 'mo' (também) de forma adequada."],
+    ["Chegou a hora de provar sua fluência A1! Enfrente o grande teste integrando saudações, pronomes, compras, valores, direções e existências na chegada ao Japão.", "Chegou a hora de revisar a trilha A1. Este teste integra saudações, pronomes, compras, valores, direções e expressões de existência."],
+    ["O Passaporte da Fluência A1", "Revisão de conclusão A1"],
+    ["[Esforço] + [Prática] = 日本語 A1 Master!", "[Conteúdo A1] + [Prática] = trilha A1 concluída"],
+    ["Sobre a regra 'O Passaporte da Fluência A1': qual afirmação é correta?", "Sobre a revisão de conclusão A1: qual afirmação é correta?"]
+]);
+(function applyA1Phase18Text(value) {
+    if (Array.isArray(value)) return value.forEach(applyA1Phase18Text);
+    if (!value || typeof value !== "object") return;
+    Object.entries(value).forEach(([key, item]) => {
+        if (typeof item === "string" && A1_PHASE18_TEXT_REPLACEMENTS.has(item)) value[key] = A1_PHASE18_TEXT_REPLACEMENTS.get(item);
+        else applyA1Phase18Text(item);
+    });
+})(CURSO_A1_DADOS);
+
+CURSO_A1_DADOS[0].editorialReview = {
+    status: "approved",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "quartet-1-textbook"]
+};
+
+CURSO_A1_DADOS[1].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "quartet-1-textbook"]
+};
+
+CURSO_A1_DADOS[2].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[3].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[4].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[5].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[6].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[7].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+(function reviewA1Module09() {
+    const module = CURSO_A1_DADOS[8];
+    module.title = "Números de 1 a 10 e idades com ～歳";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Ichi, ni, san. Ni-juu-go-sai desu.",
+        missionDescription: "Pratique os números de 1 a 10 e a forma ～歳 (sai) para falar de idade em exemplos simples."
+    });
+    Object.assign(module.stage2_drops[0], {
+        romaji: "Ichi, ni, san",
+        timeContext: "Números básicos usados em contagens e combinações."
+    });
+    Object.assign(module.stage2_drops[1], {
+        kanji: "よん（し）、ご、ろく",
+        romaji: "Yon (shi), go, roku",
+        timeContext: "よん é uma leitura básica de 4; し também aparece em combinações, como しがつ (abril)."
+    });
+    Object.assign(module.stage2_drops[2], {
+        kanji: "なな（しち）、はち、きゅう、じゅう",
+        romaji: "Nana (shichi), hachi, kyuu, juu",
+        timeContext: "Algumas leituras variam conforme o contador ou a palavra seguinte."
+    });
+    Object.assign(module.stage2_drops[3], {
+        title: "Números e idade com ～歳",
+        rule: "Em números compostos, 20 é にじゅう e 25 é にじゅうご. Para indicar idade, usa-se ～歳 (さい) após o número.",
+        formula: "[Número] + 歳（さい）です",
+        example: "25 anos → にじゅうごさいです (Ni-juu-go-sai desu). Para 20 anos, はたち é uma leitura comum de 二十歳."
+    });
+    Object.assign(module.stage3_practice[0], {
+        question: "1. Sabendo que 3 é さん e 10 é じゅう, como se diz “30 anos” em japonês?",
+        options: [
+            { label: "🎂 さんじゅうさいです (San-juu-sai desu)", isCorrect: true },
+            { label: "🎂 じゅうさんさいです (Juu-san-sai desu)", isCorrect: false },
+            { label: "🎂 はたちです (Hatachi desu)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[1], {
+        question: "2. Qual leitura é frequentemente usada para a idade de 20 anos?",
+        options: [
+            { label: "にじゅうさい (Ni-juu-sai)", isCorrect: false },
+            { label: "はたち (Hatachi)", isCorrect: true },
+            { label: "じゅうにさい (Juu-ni-sai)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[2], {
+        question: "3. Qual leitura básica de 4 aparece na lista de números do módulo?",
+        options: [
+            { label: "よん (Yon)", isCorrect: true },
+            { label: "ご (Go)", isCorrect: false },
+            { label: "きゅう (Kyuu)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[3], {
+        question: "4. Qual frase pergunta a idade de alguém? Use-a apenas quando o contexto tornar a pergunta apropriada.",
+        options: [
+            { label: "なんごですか？ (Nan-go desu ka?)", isCorrect: false },
+            { label: "なんさいですか？ (Nan-sai desu ka?)", isCorrect: true },
+            { label: "だれですか？ (Dare desu ka?)", isCorrect: false }
+        ]
+    });
+    Object.assign(module.stage3_practice[4], {
+        question: "5. Como se diz “18 anos” com 10 = じゅう e 8 = はち?",
+        options: [
+            { label: "はちじゅうさい (Hachi-juu-sai — 80 anos)", isCorrect: false },
+            { label: "じゅうはっさい (Juu-hassai — 18 anos)", isCorrect: true },
+            { label: "はたち (Hatachi — 20 anos)", isCorrect: false }
+        ]
+    });
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "わたし は にじゅうごさい です", translation: "Tenho 25 anos.", chunks: ["わたし", "は", "にじゅうごさい", "です"] },
+        { sentenceJp: "メアリーさん は じゅうきゅうさい です", translation: "Mary tem 19 anos.", chunks: ["メアリーさん", "は", "じゅうきゅうさい", "です"] }
+    ];
+    module.stage4_dialog = [
+        {
+            scenario: "Situação 1: Em uma atividade de apresentação, a professora pede uma resposta-modelo sobre idade.",
+            npcName: "Professora Suzuki",
+            npcMessage: "たとえば、なんさいですか。 (Por exemplo: quantos anos você tem?)",
+            options: [
+                { text: "わたし は にじゅうごさい です。 (Tenho 25 anos.)", feedback: "Boa resposta-modelo: ela usa um número seguido de ～歳です.", isCorrect: true },
+                { text: "わたし は にじゅうごじん です。", feedback: "-人 não indica idade. Use ～歳 para este significado.", isCorrect: false },
+                { text: "いち、に、さん です。", feedback: "A resposta precisa informar uma idade completa.", isCorrect: false }
+            ]
+        },
+        {
+            scenario: "Situação 2: Em um exercício de leitura, Kenji pergunta pela idade de uma pessoa de 20 anos.",
+            npcName: "Kenji",
+            npcMessage: "はたち です か。 (Você tem 20 anos?)",
+            options: [
+                { text: "いいえ、わたし は じゅうきゅうさい です。 (Não, tenho 19 anos.)", feedback: "A resposta usa じゅうきゅうさい para 19 anos.", isCorrect: true },
+                { text: "はい、じゅうさい です。", feedback: "じゅうさい significa 10 anos, não 20.", isCorrect: false },
+                { text: "こんにちは。", feedback: "A frase não responde à pergunta sobre idade.", isCorrect: false }
+            ]
+        },
+        {
+            scenario: "Situação 3: Ao comprar um ingresso com desconto estudantil, a atendente pergunta sua idade.",
+            npcName: "Atendente do museu",
+            npcMessage: "すみません。がくせいですか。なんさいですか。 (Com licença. Você é estudante? Quantos anos tem?)",
+            options: [
+                { text: "はい、がくせいです。はたちです。", feedback: "A resposta usa a leitura apresentada para 20 anos.", isCorrect: false },
+                { text: "はい、がくせいです。にじゅうにさいです。 (Sim, sou estudante. Tenho 22 anos.)", feedback: "Boa resposta: ela confirma a condição e informa a idade com ～歳です.", isCorrect: true },
+                { text: "ありがとう。", feedback: "Ainda falta responder à pergunta sobre a idade.", isCorrect: false }
+            ]
+        }
+    ];
+    module.stage5_quiz[0].question = "Qual é a leitura de 35 em japonês?";
+    module.stage5_quiz[0].options = ["さんじゅうご (San-juu-go)", "ごじゅうさん (Go-juu-san)", "さんごじゅう (San-go-juu)"];
+    module.stage5_quiz[1].question = "Qual é o significado de いち、に、さん?";
+    module.stage5_quiz[2].question = "Qual é o significado de よん（し）、ご、ろく?";
+    module.stage5_quiz[3].question = "Qual é o significado de なな（しち）、はち、きゅう、じゅう?";
+    module.stage5_quiz[4].question = "Sobre números e idade com ～歳, qual afirmação é correta?";
+    module.stage5_quiz[4].options[0] = "25 anos pode ser expresso como にじゅうごさいです (Ni-juu-go-sai desu); はたち é uma leitura comum para 20 anos.";
+    module.editorialReview = {
+        status: "corrected",
+        phase: "21B.1",
+        scope: "all-editorial-targets",
+        sources: ["genki-2e-1-textbook", "tobira-2009"]
+    };
+})();
+
+(function reviewA1Module10() {
+    const module = CURSO_A1_DADOS[9];
+    module.title = "Partícula も e そうですか";
+    Object.assign(module.stage1_context, { audioGuide: "Watashi mo Burajiru-jin desu. Sou desu ka.", missionDescription: "Use も para incluir um segundo tópico e pratique そうですか para indicar que você compreendeu uma informação." });
+    Object.assign(module.stage2_drops[0], { romaji: "Mo", translation: "também; até (partícula de inclusão)", timeContext: "Em わたしも, も ocupa o lugar de は para marcar “eu também”." });
+    Object.assign(module.stage2_drops[1], { kanji: "わたしも", romaji: "Watashi mo", timeContext: "Uma resposta possível quando a mesma informação também se aplica a você." });
+    Object.assign(module.stage2_drops[2], { kanji: "そうです", romaji: "Sou desu", translation: "É isso; é verdade", timeContext: "Pode confirmar uma informação, conforme o contexto." });
+    Object.assign(module.stage2_drops[3], { kanji: "そうですか", romaji: "Sou desu ka", translation: "É mesmo?; entendo.", timeContext: "Indica que você recebeu e compreendeu a informação anterior." });
+    Object.assign(module.stage2_drops[4], { title: "Inclusão com は e も", rule: "Quando も marca que o mesmo predicado também se aplica ao tópico, ele pode ocupar a posição de は: わたしは学生です → わたしも学生です. Outras combinações de partículas exigem estudo posterior.", formula: "A は B です。→ C も B です。", example: "ケンジさんは学生です。わたしも学生です。 (Kenji é estudante. Eu também sou estudante.)" });
+    module.stage3_practice = [
+        { question: "1. Seu colega diz: “わたしは会社員です”. Você também é funcionário. Como responde?", options: [{ label: "🤝 わたしも会社員です。 (Watashi mo kaishain desu.)", isCorrect: true }, { label: "❌ わたしはも会社員です。", isCorrect: false }, { label: "❓ わたしは会社員ですか。", isCorrect: false }] },
+        { question: "2. Nesta frase, qual forma marca “eu também sou brasileiro”?", options: [{ label: "わたしもブラジル人です。", isCorrect: true }, { label: "わたしはもブラジル人です。", isCorrect: false }, { label: "もわたしはブラジル人です。", isCorrect: false }] },
+        { question: "3. Qual expressão mostra que você entendeu uma informação nova?", options: [{ label: "🤔 そうですか。 (Sou desu ka.)", isCorrect: true }, { label: "👋 さようなら。", isCorrect: false }, { label: "🙅 いいえ。", isCorrect: false }] },
+        { question: "4. Como dizer “Kenji também é médico”?", options: [{ label: "ケンジさんはいしゃです。", isCorrect: false }, { label: "いしゃもケンジさんです。", isCorrect: false }, { label: "ケンジさんもいしゃです。", isCorrect: true }] },
+        { question: "5. Qual é um sentido possível de そうです?", options: [{ label: "É isso; é verdade.", isCorrect: true }, { label: "Quem é?", isCorrect: false }, { label: "Até logo.", isCorrect: false }] }
+    ];
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "わたし も がくせい です", translation: "Eu também sou estudante.", chunks: ["わたし", "も", "がくせい", "です"] },
+        { sentenceJp: "ケンジさん も いしゃ です", translation: "Kenji também é médico.", chunks: ["ケンジさん", "も", "いしゃ", "です"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: Em uma apresentação, Lucas diz que é brasileiro.", npcName: "Lucas", npcMessage: "わたしはブラジル人です。", options: [{ text: "そうですか。わたしもブラジル人です。", feedback: "Você reconheceu a informação e indicou que ela também se aplica a você.", isCorrect: true }, { text: "いいえ、わたしはブラジル人です。", feedback: "いいえ contradiz a informação anterior, embora sua frase seguinte diga o mesmo.", isCorrect: false }, { text: "さようなら。", feedback: "A resposta não continua a apresentação.", isCorrect: false }] },
+        { scenario: "Situação 2: A Dra. Takahashi comenta que seu irmão é engenheiro.", npcName: "Dra. Takahashi", npcMessage: "わたしのあにもエンジニアです。", options: [{ text: "そうですか。", feedback: "そうですか mostra que você compreendeu o comentário.", isCorrect: true }, { text: "わたしはもエンジニアです。", feedback: "Nesta construção, も ocupa a posição de は.", isCorrect: false }, { text: "だれですか。", feedback: "A pergunta não responde ao comentário apresentado.", isCorrect: false }] },
+        { scenario: "Situação 3: Em uma revisão, o professor pergunta se você é estudante.", npcName: "Professor Tanaka", npcMessage: "学生ですか。", options: [{ text: "はい、学生です。", feedback: "A resposta confirma diretamente a informação solicitada.", isCorrect: true }, { text: "いいえ、だれですか。", feedback: "A frase não responde à pergunta.", isCorrect: false }, { text: "ブラジル語です。", feedback: "A resposta precisa indicar se você é estudante.", isCorrect: false }] }
+    ];
+    module.stage5_quiz[0] = { question: "Em わたしも学生です, qual é a função de も?", options: ["Indicar que a mesma informação também se aplica ao tópico.", "Aparecer sempre antes do verbo.", "Formar uma pergunta."], correctIndex: 0 };
+    module.stage5_quiz[1].question = "Qual é um significado possível de ～も?";
+    module.stage5_quiz[2].question = "Qual é o sentido de わたしも?";
+    module.stage5_quiz[3].question = "Qual é o sentido de そうです?";
+    module.stage5_quiz[4].question = "Qual é o sentido de そうですか?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Module11() {
+    const module = CURSO_A1_DADOS[10];
+    module.title = "これ・それ・あれ e lugares";
+    Object.assign(module.stage1_context, { audioGuide: "Sore wa nan desu ka?", missionTitle: "Objetivo de hoje", missionDescription: "Pratique palavras que apontam para objetos e lugares, escolhendo a forma de acordo com a relação entre falante, ouvinte e referente." });
+    Object.assign(module.stage2_drops[0], { romaji: "Kore", translation: "isto; este aqui", timeContext: "Refere-se, em regra, a algo próximo de quem fala." });
+    Object.assign(module.stage2_drops[1], { romaji: "Sore", translation: "isso; esse aí", timeContext: "Refere-se, em regra, a algo próximo de quem ouve ou já saliente na conversa." });
+    Object.assign(module.stage2_drops[2], { romaji: "Are", translation: "aquilo; aquele lá", timeContext: "Refere-se a algo distante de falante e ouvinte." });
+    Object.assign(module.stage2_drops[3], { romaji: "Koko / soko / asoko", translation: "aqui / aí / ali", timeContext: "São palavras para lugares; a escolha também depende da situação de fala." });
+    Object.assign(module.stage2_drops[4], { title: "Palavras que apontam", rule: "これ・それ・あれ apontam para coisas. ここ・そこ・あそこ apontam para lugares. A proximidade é interpretada na situação de fala.", formula: "これ / それ / あれ / どれ; ここ / そこ / あそこ / どこ", example: "トイレはどこですか。 (Toire wa doko desu ka.) — Onde fica o banheiro?" });
+    module.stage3_practice[0].question = "1. Você segura uma caneta e pergunta “O que é isto?”. Qual palavra usa?";
+    module.stage3_practice[1].question = "2. Seu interlocutor segura um livro. Como pergunta “O que é isso?”";
+    module.stage3_practice[2].question = "3. Vocês veem um prédio distante. Como pergunta “O que é aquilo?”";
+    module.stage3_practice[3].question = "4. Para perguntar onde fica a estação, qual pergunta é adequada?";
+    module.stage3_practice[4].question = "5. Se a estação está no local onde você está, qual resposta usa ここ?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "これ は なん です か", translation: "O que é isto?", chunks: ["これ", "は", "なん", "です", "か"] },
+        { sentenceJp: "トイレ は どこ です か", translation: "Onde fica o banheiro?", chunks: ["トイレ", "は", "どこ", "です", "か"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: Em uma loja, o produto está perto do atendente.", npcName: "Atendente", npcMessage: "いらっしゃいませ。", options: [{ text: "すみません。それはなんですか。", feedback: "A resposta usa それ para o item perto do atendente.", isCorrect: true }, { text: "すみません。これはなんですか。", feedback: "Neste cenário, o item está perto do atendente, não de quem pergunta.", isCorrect: false }, { text: "すみません。あれはなんですか。", feedback: "あれ indicaria algo distante de ambas as pessoas.", isCorrect: false }] },
+        { scenario: "Situação 2: A estação que você indica fica distante de vocês.", npcName: "Turista", npcMessage: "しぶや駅はどこですか。", options: [{ text: "しぶや駅はあそこです。", feedback: "あそこ aponta para o lugar distante indicado.", isCorrect: true }, { text: "しぶや駅はここです。", feedback: "ここ seria usado se a estação estivesse no local atual.", isCorrect: false }, { text: "わたしは学生です。", feedback: "A resposta não informa um lugar.", isCorrect: false }] }
+    ];
+    module.stage5_quiz[0].question = "Qual é a diferença principal entre これ e ここ?";
+    module.stage5_quiz[0].options[1] = "これ aponta para uma coisa; ここ aponta para um lugar.";
+    module.stage5_quiz[1].question = "Qual é um sentido de これ?";
+    module.stage5_quiz[2].question = "Qual é um sentido de それ?";
+    module.stage5_quiz[3].question = "Qual é um sentido de あれ?";
+    module.stage5_quiz[4].question = "Qual é o sentido de ここ / そこ / あそこ?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+CURSO_A1_DADOS[11].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[12].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[13].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[14].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[15].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[16].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[17].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[18].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+CURSO_A1_DADOS[19].editorialReview = {
+    status: "corrected",
+    phase: "21B.1",
+    scope: "all-editorial-targets",
+    sources: ["genki-2e-1-textbook", "tobira-2009"]
+};
+
+(function reviewA1Module21() {
+    const module = CURSO_A1_DADOS[20];
+    module.title = "Horas, minutos e meia hora";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Ima nanji desu ka?",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Pergunte e informe horas básicas, minutos e meia hora com as leituras próprias do relógio."
+    });
+    Object.assign(module.stage2_drops[0], { kanji: "今（いま）", romaji: "ima", translation: "agora", timeContext: "Usado para indicar o momento atual." });
+    Object.assign(module.stage2_drops[1], { kanji: "～時（～じ）", romaji: "ji", translation: "hora", timeContext: "Forma horários como 一時（いちじ）. Algumas horas têm leituras próprias, como 四時（よじ）e 七時（しちじ）." });
+    Object.assign(module.stage2_drops[2], { kanji: "～分（～ふん／～ぷん）", romaji: "fun / pun", translation: "minuto", timeContext: "A leitura varia conforme o número: 五分（ごふん）, 八分（はっぷん）e 十分（じゅっぷん）são exemplos." });
+    Object.assign(module.stage2_drops[3], { kanji: "半（はん）", romaji: "han", translation: "meia hora", timeContext: "Depois da hora, indica “e meia”: 二時半（にじはん）." });
+    Object.assign(module.stage2_drops[4], { title: "Informar uma hora", rule: "Combine a hora com 時; acrescente minutos ou 半 quando necessário. Para perguntar as horas, use 今何時ですか.", formula: "[hora]時 [minutos]分 / [hora]時半", example: "今は五時半です。 (Ima wa goji han desu.) — Agora são cinco e meia." });
+    module.stage3_practice[0] = { question: "1. Como se pergunta “Que horas são agora?”", options: [{ label: "いま なんじですか。 (Ima nanji desu ka.)", isCorrect: true }, { label: "いま いくらですか。", isCorrect: false }, { label: "いま どこですか。", isCorrect: false }] };
+    module.stage3_practice[1] = { question: "2. Como se diz “São duas e meia”?", options: [{ label: "にじはんです。 (Niji han desu.)", isCorrect: true }, { label: "にふんです。", isCorrect: false }, { label: "にじです。", isCorrect: false }] };
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "いま は ごじ はん です", translation: "Agora são cinco e meia.", chunks: ["いま", "は", "ごじ", "はん", "です"] },
+        { sentenceJp: "いま なんじ です か", translation: "Que horas são agora?", chunks: ["いま", "なんじ", "です", "か"] }
+    ];
+    module.stage4_dialog = [{ scenario: "Situação 1: Na estação, você quer confirmar a hora.", npcName: "Pessoa na estação", npcMessage: "どうしましたか。 (O que houve?)", options: [{ text: "すみません、いま なんじですか。", feedback: "A resposta chama a atenção da pessoa e pergunta a hora atual.", isCorrect: true }, { text: "でんしゃは おいしいです。", feedback: "A frase não faz uma pergunta sobre horário.", isCorrect: false }, { text: "わたしは がくせいです。", feedback: "A apresentação não responde à situação.", isCorrect: false }] }];
+    module.stage5_quiz[0].question = "O que 半（はん）indica em 三時半?";
+    module.stage5_quiz[1].question = "Qual é o sentido de 今（いま）?";
+    module.stage5_quiz[2].question = "O que ～時（～じ）indica em um horário?";
+    module.stage5_quiz[3].question = "O que ～分（～ふん／～ぷん）indica em um horário?";
+    module.stage5_quiz[4].question = "Qual é o sentido de 半（はん）depois de uma hora?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Module22() {
+    const module = CURSO_A1_DADOS[21];
+    module.title = "Dias da semana";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Kyou wa getsuyoubi desu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Reconheça e use os dias da semana em perguntas e compromissos simples."
+    });
+    const days = [
+        ["月曜日（げつようび）", "getsuyoubi", "segunda-feira", "O primeiro kanji é 月, “lua”."],
+        ["火曜日（かようび）", "kayoubi", "terça-feira", "O primeiro kanji é 火, “fogo”."],
+        ["水曜日（すいようび）", "suiyoubi", "quarta-feira", "O primeiro kanji é 水, “água”."],
+        ["木曜日（もくようび）", "mokuyoubi", "quinta-feira", "O primeiro kanji é 木, “árvore/madeira”."],
+        ["金曜日（きんようび）", "kinyoubi", "sexta-feira", "O primeiro kanji é 金, “ouro/metal”."],
+        ["土曜日（どようび）", "doyoubi", "sábado", "O primeiro kanji é 土, “terra/solo”."],
+        ["日曜日（にちようび）", "nichiyoubi", "domingo", "O primeiro kanji é 日, “sol/dia”."]
+    ];
+    days.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[7], {
+        title: "Formação dos dias da semana",
+        rule: "Os nomes dos dias da semana terminam em 曜日（ようび）. O primeiro kanji distingue cada dia.",
+        formula: "[kanji do dia] + 曜日（ようび）",
+        example: "日曜日（にちようび）é domingo; 月曜日（げつようび）é segunda-feira."
+    });
+    module.stage3_practice[0].question = "1. Qual dia da semana é 火曜日（かようび）?";
+    module.stage3_practice[1].question = "2. Como se diz “sábado” em japonês?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "きょう は げつようび です", translation: "Hoje é segunda-feira.", chunks: ["きょう", "は", "げつようび", "です"] },
+        { sentenceJp: "パーティー は どようび です", translation: "A festa é no sábado.", chunks: ["パーティー", "は", "どようび", "です"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Você quer saber quando será a festa.",
+        npcName: "Amigo Kenji",
+        npcMessage: "パーティー に いきましょう。 (Vamos à festa.)",
+        options: [
+            { text: "パーティー は なんようび です か。", feedback: "A pergunta identifica corretamente o dia da semana da festa.", isCorrect: true },
+            { text: "なんじ です か。", feedback: "A pergunta pede o horário, não o dia.", isCorrect: false },
+            { text: "どようび です。", feedback: "A frase dá uma resposta sem antes perguntar o dia.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual é a leitura de 金曜日?";
+    module.stage5_quiz[1].question = "Qual é o significado de 月曜日（げつようび）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 火曜日（かようび）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 水曜日（すいようび）?";
+    module.stage5_quiz[4].question = "Qual é o significado de 木曜日（もくようび）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Module23() {
+    const module = CURSO_A1_DADOS[22];
+    module.title = "Hoje, amanhã e partes do dia";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Kinou, eiga o mimashita.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Situe ações em hoje, amanhã, ontem, manhã, meio-dia e noite."
+    });
+    const words = [
+        ["今日（きょう）", "kyou", "hoje", "Expressão relativa ao momento presente."],
+        ["明日（あした）", "ashita", "amanhã", "Expressão relativa ao momento presente."],
+        ["昨日（きのう）", "kinou", "ontem", "Expressão relativa ao momento presente."],
+        ["朝（あさ）", "asa", "manhã", "Pode ser usado como expressão de tempo."],
+        ["昼（ひる）", "hiru", "meio-dia; período diurno", "O sentido preciso depende do contexto."],
+        ["夜（よる）", "yoru", "noite", "Pode ser usado como expressão de tempo."]
+    ];
+    words.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[6], {
+        title: "Expressões de tempo e に",
+        rule: "Hoje, amanhã e ontem normalmente não usam に. Com partes do dia, como 朝 e 夜, に pode aparecer conforme o estilo, a ênfase e a preferência do falante.",
+        formula: "今日／明日／昨日 + [ação]；朝（に）／夜（に）+ [ação]",
+        example: "明日 京都に行きます。朝（に）新聞を読みます。"
+    });
+    module.stage3_practice[0].question = "1. Como se diz “manhã” em japonês?";
+    module.stage3_practice[1].question = "2. Se hoje é 今日（きょう）, como se diz “ontem”?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "きのう えいが を みました", translation: "Ontem assisti a um filme.", chunks: ["きのう", "えいが", "を", "みました"] },
+        { sentenceJp: "あした かいしゃ へ いきます", translation: "Amanhã vou à empresa.", chunks: ["あした", "かいしゃ", "へ", "いきます"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Um colega pergunta sobre seus planos para amanhã.",
+        npcName: "Colega",
+        npcMessage: "あした、なに を します か。 (O que você vai fazer amanhã?)",
+        options: [
+            { text: "かいしゃ へ いきます。", feedback: "A resposta informa uma ação planejada para amanhã.", isCorrect: true },
+            { text: "きのう いきました。", feedback: "A frase se refere a ontem, não ao plano para amanhã.", isCorrect: false },
+            { text: "きょう です。", feedback: "A frase não diz qual ação você fará.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual palavra significa “noite”?";
+    module.stage5_quiz[1].question = "Qual é o significado de 今日（きょう）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 明日（あした）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 昨日（きのう）?";
+    module.stage5_quiz[4].question = "Qual é o significado de 朝（あさ）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Module24() {
+    const module = CURSO_A1_DADOS[23];
+    module.title = "Verbos de ação: comer, beber, ver e ouvir";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Gohan o tabemasu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Use quatro verbos frequentes com を para indicar o objeto da ação."
+    });
+    const verbs = [
+        ["食べます（たべます）", "tabemasu", "comer", "Usado para alimentos e refeições."],
+        ["飲みます（のみます）", "nomimasu", "beber", "Usado para bebidas."],
+        ["見ます（みます）", "mimasu", "ver; assistir", "Pode descrever ver TV, filmes e outras coisas."],
+        ["聞きます（ききます）", "kikimasu", "ouvir; escutar", "Neste módulo, é usado para ouvir música."]
+    ];
+    verbs.forEach(([kanji, romaji, translation, timeContext], index) => Object.assign(module.stage2_drops[index], { kanji, romaji, translation, timeContext }));
+    Object.assign(module.stage2_drops[4], {
+        title: "Objeto direto com を",
+        rule: "A partícula を, pronunciada “o”, marca o objeto diretamente envolvido na ação do verbo.",
+        formula: "[objeto] を [verbo]",
+        example: "音楽を聞きます。 (Ongaku o kikimasu.) — Ouço música."
+    });
+    module.stage3_practice[0].question = "1. Para dizer “Eu assisto TV”, qual verbo você usa?";
+    module.stage3_practice[1].question = "2. Complete: おんがく ___ ききます。";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "テレビ を みます", translation: "Assisto TV.", chunks: ["テレビ", "を", "みます"] },
+        { sentenceJp: "おんがく を ききます", translation: "Ouço música.", chunks: ["おんがく", "を", "ききます"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Em um restaurante, o garçom pergunta o que você vai comer.",
+        npcName: "Garçom",
+        npcMessage: "なに を たべます か。 (O que você vai comer?)",
+        options: [
+            { text: "ラーメン を たべます。", feedback: "A resposta informa o alimento e usa を com o verbo corretamente.", isCorrect: true },
+            { text: "みず を のみます。", feedback: "A frase fala de uma bebida, não do alimento solicitado.", isCorrect: false },
+            { text: "はい、たべます。", feedback: "A resposta não informa o que você vai comer.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual partícula marca o objeto direto em 食べます?";
+    module.stage5_quiz[1].question = "Qual é o significado de 食べます（たべます）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 飲みます（のみます）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 見ます（みます）?";
+    module.stage5_quiz[4].question = "Qual é o significado trabalhado de 聞きます（ききます）?";
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Module25() {
+    const module = CURSO_A1_DADOS[24];
+    module.title = "Verbos de movimento: ir, vir e voltar";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Gakkou e ikimasu.",
+        missionTitle: "Objetivo de hoje",
+        missionDescription: "Descreva deslocamentos com ir, vir e voltar e marque destinos com へ ou に."
+    });
+    Object.assign(module.stage2_drops[0], { kanji: "行きます（いきます）", romaji: "ikimasu", translation: "ir", timeContext: "Indica movimento que parte do ponto de referência do falante." });
+    Object.assign(module.stage2_drops[1], { kanji: "来ます（きます）", romaji: "kimasu", translation: "vir", timeContext: "Indica movimento em direção ao ponto de referência do falante ou do ouvinte." });
+    Object.assign(module.stage2_drops[2], { kanji: "帰ります（かえります）", romaji: "kaerimasu", translation: "voltar; ir para casa", timeContext: "Usado para voltar a um lugar de referência, frequentemente a casa." });
+    Object.assign(module.stage2_drops[3], {
+        title: "Destino com へ e に",
+        rule: "Com verbos de movimento, へ e に podem marcar o destino. へ, pronunciado “e”, destaca a direção; に apresenta o destino como ponto de chegada.",
+        formula: "[lugar] へ／に [verbo de movimento]",
+        example: "図書館へ行きます。／図書館に行きます。 — Vou à biblioteca."
+    });
+    module.stage3_practice[0].question = "1. Você está no trabalho e vai para casa. Qual verbo é apropriado?";
+    module.stage3_practice[1].question = "2. Seu amigo, que estará na festa, pergunta se você vai até lá. Qual verbo ele usa?";
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "がっこう へ いきます", translation: "Vou à escola.", chunks: ["がっこう", "へ", "いきます"] },
+        { sentenceJp: "うち に かえります", translation: "Volto para casa.", chunks: ["うち", "に", "かえります"] }
+    ];
+    module.stage4_dialog = [{
+        scenario: "Situação 1: Seu chefe pergunta para onde você vai depois do trabalho.",
+        npcName: "Chefe",
+        npcMessage: "このあと、どこ へ いきます か。 (Para onde você vai depois?)",
+        options: [
+            { text: "うち へ かえります。", feedback: "A resposta informa que você voltará para casa.", isCorrect: true },
+            { text: "うち へ きます。", feedback: "A escolha de 来ます depende de o ponto de referência ser a casa do interlocutor; não é a resposta esperada neste cenário.", isCorrect: false },
+            { text: "パン を たべます。", feedback: "A frase não informa o destino do deslocamento.", isCorrect: false }
+        ]
+    }];
+    module.stage5_quiz[0].question = "Qual é a diferença básica entre 行きます e 来ます?";
+    module.stage5_quiz[1].question = "Qual é o significado de 行きます（いきます）?";
+    module.stage5_quiz[2].question = "Qual é o significado de 来ます（きます）?";
+    module.stage5_quiz[3].question = "Qual é o significado de 帰ります（かえります）?";
+    module.stage5_quiz[4].question = "Qual afirmação descreve へ e に com verbos de movimento?";
+    module.stage5_quiz[4].options = [
+        "As duas podem marcar o destino; へ destaca a direção e に o ponto de chegada.",
+        "São usadas apenas para contar animais pequenos.",
+        "São formas arcaicas que não aparecem no cotidiano."
+    ];
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();
+
+(function reviewA1Modules26To30() {
+    const corrected = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+    const transport = CURSO_A1_DADOS[25];
+    transport.title = "Meios de transporte";
+    Object.assign(transport.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga como você se desloca usando veículos e a partícula で." });
+    [["電車（でんしゃ）", "densha", "trem", "Meio de transporte ferroviário."], ["地下鉄（ちかてつ）", "chikatetsu", "metrô", "Trem urbano subterrâneo."], ["バス", "basu", "ônibus", "Empréstimo escrito em katakana."], ["タクシー", "takushii", "táxi", "Empréstimo escrito em katakana."]].forEach((v,i)=>Object.assign(transport.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(transport.stage2_drops[4], { title: "Meio de transporte com で", rule: "Com um veículo, で pode indicar o meio usado para se deslocar.", formula: "[veículo] で [verbo de movimento]", example: "電車で行きます。 (Densha de ikimasu.) — Vou de trem." });
+    transport.stage3_5_sentenceBuilder = [{sentenceJp:"でんしゃ で いきます",translation:"Vou de trem.",chunks:["でんしゃ","で","いきます"]},{sentenceJp:"バス で かえります",translation:"Volto de ônibus.",chunks:["バス","で","かえります"]}];
+    transport.stage4_dialog = [{scenario:"Situação 1: Um colega pergunta como você vai ao trabalho.",npcName:"Colega",npcMessage:"なにで かいしゃへ いきますか。",options:[{text:"ちかてつ で いきます。",feedback:"A resposta informa o meio de transporte.",isCorrect:true},{text:"かいしゃ です。",feedback:"A frase não informa como você se desloca.",isCorrect:false},{text:"こんばんは。",feedback:"A saudação não responde à pergunta.",isCorrect:false}]}];
+    transport.editorialReview = corrected;
+
+    const location = CURSO_A1_DADOS[26];
+    location.title = "Perguntar onde fica";
+    Object.assign(location.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Pergunte onde um lugar fica e interprete aqui, aí e lá no contexto da conversa." });
+    [["どこ", "doko", "onde", "Palavra interrogativa para lugar."], ["ここ", "koko", "aqui", "Lugar próximo do falante."], ["そこ", "soko", "aí; ali", "Lugar próximo do ouvinte ou já mencionado."], ["あそこ", "asoko", "lá", "Lugar distante do falante e do ouvinte."]].forEach((v,i)=>Object.assign(location.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(location.stage2_drops[4], { title: "Perguntar localização", rule: "Use o lugar seguido de はどこですか para perguntar onde ele fica.", formula: "[lugar] は どこですか", example: "駅はどこですか。 (Eki wa doko desu ka.) — Onde fica a estação?" });
+    location.stage3_5_sentenceBuilder = [{sentenceJp:"トイレ は どこ です か",translation:"Onde fica o banheiro?",chunks:["トイレ","は","どこ","です","か"]},{sentenceJp:"えき は あそこ です",translation:"A estação fica lá.",chunks:["えき","は","あそこ","です"]}];
+    location.stage4_dialog = [{scenario:"Situação 1: Você procura uma loja de conveniência.",npcName:"Pedestre",npcMessage:"なにか おこまりですか。 (Posso ajudar?)",options:[{text:"すみません、コンビニ は どこ です か。",feedback:"A pergunta pede a localização da loja.",isCorrect:true},{text:"コンビニ は あそこ です。",feedback:"A frase dá uma indicação sem antes perguntar.",isCorrect:false},{text:"ありがとう です。",feedback:"Primeiro é preciso pedir a informação.",isCorrect:false}]}];
+    location.stage5_quiz[4].question = "Qual é uma forma mais polida de perguntar “onde”?";
+    location.stage5_quiz[4].options = ["どちら", "どれ", "だれ"];
+    location.editorialReview = corrected;
+
+    const inanimate = CURSO_A1_DADOS[27];
+    inanimate.title = "Existência de coisas com あります";
+    Object.assign(inanimate.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga que objetos e plantas existem em um lugar usando あります." });
+    [["あります", "arimasu", "haver; existir", "Usado neste nível para coisas e plantas."], ["ありません", "arimasen", "não haver; não existir", "Forma negativa polida de あります."], ["本（ほん）", "hon", "livro", "Coisa inanimada."], ["車（くるま）", "kuruma", "carro; veículo", "Coisa inanimada."]].forEach((v,i)=>Object.assign(inanimate.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(inanimate.stage2_drops[4], { title: "Existência com あります", rule: "Para indicar a existência de coisas e plantas, use [lugar] に [coisa] が あります.", formula: "[lugar] に [coisa] が あります", example: "机に本があります。 — Há um livro na mesa." });
+    inanimate.stage3_5_sentenceBuilder = [{sentenceJp:"つくえ に ほん が あります",translation:"Há um livro na mesa.",chunks:["つくえ","に","ほん","が","あります"]},{sentenceJp:"くるま が あります",translation:"Há um carro.",chunks:["くるま","が","あります"]}];
+    inanimate.stage4_dialog = [{scenario:"Situação 1: Você pergunta se há dicionários na livraria.",npcName:"Atendente",npcMessage:"なにを おさがしですか。",options:[{text:"じしょ が あります か。",feedback:"A pergunta verifica a existência de dicionários.",isCorrect:true},{text:"じしょ が います か。",feedback:"O módulo usa あります para dicionários, que são coisas.",isCorrect:false},{text:"じしょ です。",feedback:"A frase não formula a pergunta.",isCorrect:false}]}];
+    inanimate.editorialReview = corrected;
+
+    const animate = CURSO_A1_DADOS[28];
+    animate.title = "Existência de pessoas e animais com います";
+    Object.assign(animate.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Diga que pessoas e animais estão presentes usando います." });
+    [["います", "imasu", "haver; estar", "Usado neste nível para pessoas e animais."], ["いません", "imasen", "não haver; não estar", "Forma negativa polida de います."], ["犬（いぬ）", "inu", "cachorro", "Animal."], ["猫（ねこ）", "neko", "gato", "Animal."]].forEach((v,i)=>Object.assign(animate.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(animate.stage2_drops[4], { title: "Existência com います", rule: "Para pessoas e animais, use [lugar] に [pessoa ou animal] が います.", formula: "[lugar] に [ser animado] が います", example: "公園に犬がいます。 — Há um cachorro no parque." });
+    animate.stage3_5_sentenceBuilder = [{sentenceJp:"ねこ が います",translation:"Há um gato.",chunks:["ねこ","が","います"]},{sentenceJp:"へや に せんせい が います",translation:"O professor está na sala.",chunks:["へや","に","せんせい","が","います"]}];
+    animate.stage4_dialog = [{scenario:"Situação 1: Você procura Tanaka na recepção.",npcName:"Recepcionista",npcMessage:"なにか ごようですか。",options:[{text:"すみません、たなかさん は います か。",feedback:"A pergunta verifica se a pessoa está presente.",isCorrect:true},{text:"たなかさん は あります か。",feedback:"Para uma pessoa, o módulo usa います.",isCorrect:false},{text:"たなかさん です。",feedback:"A frase não pergunta se a pessoa está presente.",isCorrect:false}]}];
+    animate.editorialReview = corrected;
+
+    const connectors = CURSO_A1_DADOS[29];
+    connectors.title = "Conectar ideias com そして、でも e も";
+    Object.assign(connectors.stage1_context, { missionTitle: "Objetivo de hoje", missionDescription: "Conecte frases simples e indique inclusão com も." });
+    [["そして", "soshite", "e; então", "Conecta enunciados em sequência."], ["でも", "demo", "mas", "Introduz contraste entre enunciados."], ["も", "mo", "também", "Em frases simples, pode substituir は ou が para marcar inclusão."], ["楽しい（たのしい）", "tanoshii", "divertido; agradável", "Adjetivo em い."]].forEach((v,i)=>Object.assign(connectors.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(connectors.stage2_drops[4], { title: "Inclusão com も", rule: "Em frases simples, も pode substituir は ou が para acrescentar “também”.", formula: "X は [ação]. Y も [ação].", example: "友達は行きます。私も行きます。 — Meu amigo vai. Eu também vou." });
+    connectors.stage3_5_sentenceBuilder = [{sentenceJp:"ともだち は いきます そして わたし も いきます",translation:"Meu amigo vai, e eu também vou.",chunks:["ともだち","は","いきます","そして","わたし","も","いきます"]},{sentenceJp:"たなかさん は いきます でも わたし は いきません",translation:"Tanaka vai, mas eu não vou.",chunks:["たなかさん","は","いきます","でも","わたし","は","いきません"]}];
+    connectors.stage4_dialog = [{scenario:"Situação 1: Um amigo conta quem irá à festa.",npcName:"Amigo",npcMessage:"わたしは パーティーに いきます。",options:[{text:"わたし も いきます。",feedback:"も acrescenta você ao grupo que irá à festa.",isCorrect:true},{text:"わたし は でも いきます。",feedback:"でも não substitui は dessa forma.",isCorrect:false},{text:"わたし は たのしい です。",feedback:"A frase não responde à informação dada.",isCorrect:false}]}];
+    connectors.editorialReview = corrected;
+})();
+
+(function reviewA1Module31() {
+    const module = CURSO_A1_DADOS[30];
+    module.title = "Revisão guiada da trilha A1";
+    Object.assign(module.stage1_context, {
+        audioGuide: "Omedetou gozaimasu. A1 no naiyou o fukushuu shimashou.",
+        missionTitle: "Revisão final A1",
+        missionDescription: "Retome, em situações curtas, as estruturas e o vocabulário praticados ao longo da trilha A1."
+    });
+    [["空港（くうこう）", "kuukou", "aeroporto", "Lugar usado no cenário de revisão."], ["パスポート", "pasupooto", "passaporte", "Documento de viagem."], ["おめでとうございます", "omedetou gozaimasu", "parabéns", "Expressão polida de felicitação."], ["完了（かんりょう）", "kanryou", "conclusão", "Substantivo que indica finalização."]].forEach((v,i)=>Object.assign(module.stage2_drops[i],{kanji:v[0],romaji:v[1],translation:v[2],timeContext:v[3]}));
+    Object.assign(module.stage2_drops[4], { title: "Retomar e praticar", rule: "A revisão reúne estruturas já apresentadas no A1. Ela mede somente a prática interna da trilha.", formula: "[conteúdo estudado] + [prática de revisão]", example: "駅はどこですか。電車で行きます。" });
+    module.stage3_5_sentenceBuilder = [
+        { sentenceJp: "パスポート を おねがいします", translation: "Passaporte, por favor.", chunks: ["パスポート","を","おねがいします"] },
+        { sentenceJp: "えき は どこ です か", translation: "Onde fica a estação?", chunks: ["えき","は","どこ","です","か"] }
+    ];
+    module.stage4_dialog = [
+        { scenario: "Situação 1: No balcão de informações, você procura a estação.", npcName: "Atendente", npcMessage: "なにか おこまりですか。", options: [{ text: "すみません、えき は どこ です か。", feedback: "A pergunta pede a localização da estação.", isCorrect: true }, { text: "えき で いきます。", feedback: "A frase não formula a pergunta de localização.", isCorrect: false }, { text: "パスポート です。", feedback: "A resposta não se relaciona à pergunta.", isCorrect: false }] },
+        { scenario: "Situação 2: Você quer informar seu meio de transporte.", npcName: "Colega", npcMessage: "なにで いきますか。", options: [{ text: "でんしゃ で いきます。", feedback: "A resposta informa o meio de transporte com で.", isCorrect: true }, { text: "でんしゃ は どこ ですか。", feedback: "A frase pergunta outra informação.", isCorrect: false }, { text: "でんしゃ が います。", feedback: "O verbo não é o usado para esse sentido.", isCorrect: false }] },
+        { scenario: "Situação 3: Você conclui a revisão interna da trilha.", npcName: "Instrutor", npcMessage: "A1 の ふくしゅう は どう でしたか。", options: [{ text: "たのしかった です。ありがとう ございます。", feedback: "A resposta comenta a revisão e agradece de forma polida.", isCorrect: true }, { text: "わたし は A1 です。", feedback: "A frase não responde à pergunta sobre a revisão.", isCorrect: false }, { text: "さようなら です。", feedback: "A expressão não é uma resposta adequada ao contexto.", isCorrect: false }] }
+    ];
+    module.editorialReview = { status: "corrected", phase: "21B.1", scope: "all-editorial-targets", sources: ["genki-2e-1-textbook", "tobira-2009"] };
+})();

@@ -1,0 +1,67 @@
+{
+  "index": 464,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1",
+  "module": 4,
+  "kanjiIndex": 1,
+  "exampleIndex": 1,
+  "character": "票",
+  "targetWord": "開票 (kaihyou)",
+  "reading": "ヒョウ (HYOU)",
+  "romaji": "Kaihyou result.",
+  "translation": "Resultado da apuração dos votos.",
+  "example": {
+    "displayText": "開票結果。",
+    "audioText": "開票結果。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "票",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "開票 (kaihyou)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "開票結果。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kaihyou result.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-1-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Resultado da apuração dos votos.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"開票\" ou o exemplo \"開票結果。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.896Z"
+}

@@ -1,0 +1,96 @@
+{
+  "index": 18,
+  "targetId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0",
+  "module": 17,
+  "kanjiIndex": 11,
+  "exampleIndex": 0,
+  "character": "勉",
+  "targetWord": "勉強 (benkyou)",
+  "reading": "ベン (BEN)",
+  "romaji": "N2 no benkyou.",
+  "translation": "Estudo do N2.",
+  "example": {
+    "displayText": "日本語能力試験の合格を目指して勉強します。",
+    "audioText": "日本語能力試験の合格を目指して勉強します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "勉",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "勉強 (benkyou)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "日本語能力試験の合格を目指して勉強します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "N2 no benkyou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m17-kanjis-11-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Estudo do N2.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "quartet-2-textbook",
+      "page": 175,
+      "file": "quartet-2-textbook-p0175.json"
+    },
+    {
+      "sourceId": "tobira-2009",
+      "page": 262,
+      "file": "tobira-2009-p0262.json"
+    }
+  ],
+  "witnesses": [
+    "quartet-2-textbook-p0175.json",
+    "tobira-2009-p0262.json"
+  ],
+  "proof": [
+    {
+      "witness": "quartet-2-textbook-p0175.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "勉強",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    },
+    {
+      "witness": "tobira-2009-p0262.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "勉強",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"勉強\" possui atestação lexical primária na testemunha quartet-2-textbook-p0175.json (p. 175), porém a frase de exemplo canônica (\"日本語能力試験の合格を目指して勉強します。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.535Z"
+}

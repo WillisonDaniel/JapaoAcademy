@@ -1,0 +1,67 @@
+{
+  "index": 477,
+  "targetId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1",
+  "module": 4,
+  "kanjiIndex": 16,
+  "exampleIndex": 1,
+  "character": "盟",
+  "targetWord": "加盟 (kamei)",
+  "reading": "メイ (MEI)",
+  "romaji": "EU ni kamei suru.",
+  "translation": "Aderir à União Europeia.",
+  "example": {
+    "displayText": "えうに加盟する。",
+    "audioText": "えうに加盟する。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "盟",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "加盟 (kamei)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "えうに加盟する。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "EU ni kamei suru.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m4-kanjis-16-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Aderir à União Europeia.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"加盟\" ou o exemplo \"えうに加盟する。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.907Z"
+}

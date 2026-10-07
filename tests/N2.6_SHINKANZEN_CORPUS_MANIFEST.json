@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "artifactName": "N2.6_SHINKANZEN_CORPUS_MANIFEST",
+  "generatedAt": "2026-09-27T11:59:17Z",
+  "phase": "N2.6-SHINKANZEN-EXTRACTION-AND-INTEGRATION",
+  "corpusDirectory": "scratch/japanese-corpus",
+  "sourcesExtracted": [
+    {
+      "id": "shinkanzen-n2-bunpo",
+      "path": "scratch/japanese-corpus/shinkanzen-n2-bunpo",
+      "pagesCount": 229,
+      "searchablePages": 223,
+      "emptyPages": 6,
+      "meanConfidence": 83.65,
+      "totalJapaneseCharacters": 104628,
+      "sha256": "9F71994C965A0FA9F7E44B9400FA5E6B9C2A97C09C8F28E2D9A1948ECB86967C",
+      "bytes": 69215273
+    },
+    {
+      "id": "shinkanzen-n2-chokai",
+      "path": "scratch/japanese-corpus/shinkanzen-n2-chokai",
+      "pagesCount": 161,
+      "searchablePages": 161,
+      "emptyPages": 0,
+      "meanConfidence": 74.11,
+      "totalJapaneseCharacters": 44631,
+      "sha256": "EEEB4D3DD1BA6DD6C273E0068D003F49A3AB20ABE5FD50DDE124DD8C3761777B",
+      "bytes": 11862604
+    },
+    {
+      "id": "shinkanzen-n2-dokkai",
+      "path": "scratch/japanese-corpus/shinkanzen-n2-dokkai",
+      "pagesCount": 239,
+      "searchablePages": 239,
+      "emptyPages": 0,
+      "meanConfidence": 84.4,
+      "totalJapaneseCharacters": 110157,
+      "sha256": "55C7082F529752126DDCB98FC0841E98A223A329F0CD5BF150ED028F8213AEDB",
+      "bytes": 114250044
+    },
+    {
+      "id": "shinkanzen-n2-goi",
+      "path": "scratch/japanese-corpus/shinkanzen-n2-goi",
+      "pagesCount": 246,
+      "searchablePages": 246,
+      "emptyPages": 0,
+      "meanConfidence": 81.57,
+      "totalJapaneseCharacters": 106813,
+      "sha256": "5B1FF7F9EB08BA4E324645534DFEE42A61CA78779B2797C25170958D9A9801E4",
+      "bytes": 40691294
+    },
+    {
+      "id": "shinkanzen-n2-kanji",
+      "path": "scratch/japanese-corpus/shinkanzen-n2-kanji",
+      "pagesCount": 132,
+      "searchablePages": 130,
+      "emptyPages": 2,
+      "meanConfidence": 83.75,
+      "totalJapaneseCharacters": 39549,
+      "sha256": "6EFC4DB8F0A551BF4E71900E312A678AA55505F1C2687191ABDA0ADB481AD143",
+      "bytes": 9921971
+    }
+  ],
+  "chokaiDifferentiation": {
+    "sectionsSummary": {
+      "front_matter": 7,
+      "mondai_shoukai": 8,
+      "jitsuryoku_yousei": 87,
+      "mogi_shiken": 10,
+      "bessatsu_front": 4,
+      "bessatsu_answers_scripts": 45
+    },
+    "referencedTracksCount": 2,
+    "referencedTracks": [
+      "CD1-Track2",
+      "CD1-Track62"
+    ],
+    "physicalAudioPresentOnDisk": 0,
+    "audioDeferred": 0,
+    "audioNote": "Faixas de áudio são referenciadas no texto impresso (CD1/CD2), sem arquivos .mp3 no repositório. Nenhuma transcrição automática foi executada."
+  }
+}

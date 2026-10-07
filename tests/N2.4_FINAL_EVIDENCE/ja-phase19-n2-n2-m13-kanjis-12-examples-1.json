@@ -1,0 +1,67 @@
+{
+  "index": 166,
+  "targetId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1",
+  "module": 13,
+  "kanjiIndex": 12,
+  "exampleIndex": 1,
+  "character": "紛",
+  "targetWord": "紛失 (funshitsu)",
+  "reading": "フン (FUN)",
+  "romaji": "Passport no funshitsu.",
+  "translation": "Extravio do passaporte.",
+  "example": {
+    "displayText": "大切なパスポートを旅行先で紛失してしまいました。",
+    "audioText": "大切なパスポートを旅行先で紛失してしまいました。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_DEFICIENT",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "DEFICIENT",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "紛",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "紛失 (funshitsu)",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "大切なパスポートを旅行先で紛失してしまいました。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Passport no funshitsu.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m13-kanjis-12-examples-1-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Extravio do passaporte.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [],
+  "witnesses": [],
+  "proof": [],
+  "correction": null,
+  "decisionRationale": "FONTE BIBLIOGRÁFICA REQUERIDA: Nenhuma testemunha primária atualmente indexada no repositório cobre o vocábulo \"紛失\" ou o exemplo \"大切なパスポートを旅行先で紛失してしまいました。\". Classificado e decidido formalmente como NEEDS_SOURCE, requerendo ampliação da indexação bibliográfica (Quartet II / Tobira / Shin Kanzen Master).",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.658Z"
+}

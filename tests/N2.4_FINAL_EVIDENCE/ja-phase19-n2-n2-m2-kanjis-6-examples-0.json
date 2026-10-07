@@ -1,0 +1,83 @@
+{
+  "index": 28,
+  "targetId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0",
+  "module": 2,
+  "kanjiIndex": 6,
+  "exampleIndex": 0,
+  "character": "株",
+  "targetWord": "株式 (kabushiki)",
+  "reading": "シュ (SHU)",
+  "romaji": "Kabushiki shijou.",
+  "translation": "Mercado de ações.",
+  "example": {
+    "displayText": "将来有望な企業の株式を購入します。",
+    "audioText": "将来有望な企業の株式を購入します。"
+  },
+  "previousState": "unresolved",
+  "previousCategory": "EVIDENCE_READY",
+  "previousDecision": "UNRESOLVED",
+  "previousEvidenceScope": "LEXICAL_ONLY",
+  "finalCategory": "SOURCE_REQUIRED",
+  "finalDecision": "NEEDS_SOURCE",
+  "claims": [
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0-kanji",
+      "claimType": "kanji_identity",
+      "field": "character",
+      "value": "株",
+      "status": "verified_dataset"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0-word",
+      "claimType": "target_word",
+      "field": "word",
+      "value": "株式 (kabushiki)",
+      "status": "witness_attested"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0-sentence",
+      "claimType": "practice_sentence",
+      "field": "content.displayText",
+      "value": "将来有望な企業の株式を購入します。",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0-romaji",
+      "claimType": "practice_romaji",
+      "field": "content.romaji",
+      "value": "Kabushiki shijou.",
+      "status": "pending_source"
+    },
+    {
+      "claimId": "ja-phase19-n2-n2-m2-kanjis-6-examples-0-translation",
+      "claimType": "practice_translation",
+      "field": "content.translation",
+      "value": "Mercado de ações.",
+      "status": "pending_source"
+    }
+  ],
+  "sources": [
+    {
+      "sourceId": "tobira-2009",
+      "page": 426,
+      "file": "tobira-2009-p0426.json"
+    }
+  ],
+  "witnesses": [
+    "tobira-2009-p0426.json"
+  ],
+  "proof": [
+    {
+      "witness": "tobira-2009-p0426.json",
+      "hasTargetWord": true,
+      "hasSentence": false,
+      "observedToken": "株式",
+      "relation": "LEXICAL_ATTESTATION_ONLY"
+    }
+  ],
+  "correction": null,
+  "decisionRationale": "FONTE ADICIONAL REQUERIDA (ESCOPO LEXICAL INCOMPLETO): O vocábulo \"株式\" possui atestação lexical primária na testemunha tobira-2009-p0426.json (p. 426), porém a frase de exemplo canônica (\"将来有望な企業の株式を購入します。\") não está presente na fonte. Em conformidade com a regra OCORRÊNCIA LEXICAL ≠ RECORD_LEVEL, o alvo é formalmente classificado como NEEDS_SOURCE, requerendo indexação de testemunha com frase autêntica.",
+  "reviewEvent": "N2.4-EDITORIAL-RESOLUTION",
+  "reviewBatch": "N2.4-definitive",
+  "reviewedAt": "2026-09-27T03:07:49.545Z"
+}
